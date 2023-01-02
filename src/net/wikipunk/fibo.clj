@@ -8,9 +8,15 @@
    [net.wikipunk.fibo.boot]
    [net.wikipunk.rdf :as rdf]))
 
+(declare quickstart)
+
 (defrecord FIBO [vocab domains modules submodules]
   com/Lifecycle
   (start [this]
+    (try
+      (binding [*ns* (or (:quickstart-ns this) (find-ns 'dev))]
+        (quickstart))
+      (catch Throwable ex))
     this)
   (stop [this]
     this)
