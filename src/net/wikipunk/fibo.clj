@@ -279,4 +279,9 @@
            '[net.wikipunk.rdf.fibo-sec-sec-sch :as fibo-sec-sec-sch]
            '[net.wikipunk.rdf.fibo-spec :as fibo-spec]
            '[net.wikipunk.rdf.lcc-lr :as lcc-lr]
-           '[net.wikipunk.rdf.lcc-cr :as lcc-cr]))
+           '[net.wikipunk.rdf.lcc-cr :as lcc-cr]
+           '[net.wikipunk.rdf.lcc-m49 :as lcc-m49]
+           '[net.wikipunk.rdf.lcc-3166-1 :as lcc-3166-1]
+           '[net.wikipunk.rdf.lcc-3166-2 :as lcc-3166-2]
+           '[net.wikipunk.rdf.lcc-639-1 :as lcc-639-1]
+           '[net.wikipunk.rdf.lcc-639-2 :as lcc-639-2]))
