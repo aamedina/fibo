@@ -13,7 +13,7 @@
    [clojure.java.shell :as sh :refer [sh]]
    [clojure.pprint :refer [pprint pp]]
    [clojure.reflect :refer [reflect]]
-   [clojure.repl :refer [apropos dir doc find-doc pst source]]
+   [clojure.repl :refer [apropos dir find-doc pst source]]
    [clojure.set :as set]
    [clojure.string :as str]
    [clojure.tools.namespace.repl :refer [refresh refresh-all clear]]
@@ -23,7 +23,7 @@
    [com.walmartlabs.schematic :as sc]
    [net.wikipunk.fibo :as fibo]
    [net.wikipunk.fibo.boot :as boot]
-   [net.wikipunk.rdf :as rdf]
+   [net.wikipunk.rdf :as rdf :refer [doc]]
    [net.wikipunk.rdf.acl :as acl]
    [net.wikipunk.rdf.adms :as adms]
    [net.wikipunk.rdf.as :as as]
@@ -72,8 +72,6 @@
    [net.wikipunk.rdf.vs :as vs]
    [net.wikipunk.rdf.xsd :as xsd]
    [zprint.core :as zprint]))
-
-(fibo/quickstart)
 
 (set-init
   (fn [_]

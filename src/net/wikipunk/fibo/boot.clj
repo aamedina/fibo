@@ -7,11 +7,6 @@
    :rdfa/uri         "https://spec.edmcouncil.org/fibo/ontology/MetadataFIBO/"
    :rdf/type         :rdfa/PrefixMapping})
 
-(def sm
-  {:rdfa/uri    "http://www.omg.org/techprocess/ab/SpecificationMetadata/"
-   :rdfa/prefix "sm"
-   :rdf/type    :rdfa/PrefixMapping})
-
 (def fibo-fbc-mod
   {:dcat/downloadURL
      "https://spec.edmcouncil.org/fibo/ontology/FBC/MetadataFBC/FBCDomain",

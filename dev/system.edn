@@ -1,6 +1,6 @@
-{:vocab {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator}
+{:vocab {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
+         :sc/refs      [:fibo]}
  :fibo  {:sc/create-fn net.wikipunk.fibo/map->FIBO
-         :sc/refs      [:vocab]
          :domains      [net.wikipunk.fibo.boot/fibo-fbc-mod
                         net.wikipunk.fibo.boot/fibo-der-mod
                         net.wikipunk.fibo.boot/fibo-bp-mod
