@@ -277,4 +277,6 @@
            '[net.wikipunk.rdf.fibo-sec-sec-pls :as fibo-sec-sec-pls]
            '[net.wikipunk.rdf.fibo-sec-sec-rst :as fibo-sec-sec-rst]
            '[net.wikipunk.rdf.fibo-sec-sec-sch :as fibo-sec-sec-sch]
-           '[net.wikipunk.rdf.fibo-spec :as fibo-spec]))
+           '[net.wikipunk.rdf.fibo-spec :as fibo-spec]
+           '[net.wikipunk.rdf.lcc-lr :as lcc-lr]
+           '[net.wikipunk.rdf.lcc-cr :as lcc-cr]))
