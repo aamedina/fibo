@@ -2051,3 +2051,27 @@
   {:rdfa/uri    "https://www.omg.org/spec/LCC/Languages/ISO639-2-LanguageCodes/"
    :rdfa/prefix "lcc-639-2"
    :rdf/type    :rdfa/PrefixMapping})
+
+(def lcc-3166-2-ca
+  {:dcat/downloadURL "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA.rdf"
+   :rdfa/prefix      "lcc-3166-2-ca"
+   :rdfa/uri         "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"
+   :rdf/type         :rdfa/PrefixMapping})
+
+(def lcc-3166-2-gb
+  {:dcat/downloadURL "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB.rdf"
+   :rdfa/prefix      "lcc-3166-2-gb"
+   :rdfa/uri         "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"
+   :rdf/type         :rdfa/PrefixMapping})
+
+(def lcc-3166-2-mx
+  {:dcat/downloadURL "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX.rdf"
+   :rdfa/prefix      "lcc-3166-2-mx"
+   :rdfa/uri         "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"
+   :rdf/type         :rdfa/PrefixMapping})
+
+(def lcc-3166-2-us
+  {:dcat/downloadURL "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US.rdf"
+   :rdfa/prefix      "lcc-3166-2-us"
+   :rdfa/uri         "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
+   :rdf/type         :rdfa/PrefixMapping})
