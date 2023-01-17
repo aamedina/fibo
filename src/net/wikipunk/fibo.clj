@@ -290,4 +290,8 @@
            '[net.wikipunk.rdf.lcc-3166-1 :as lcc-3166-1]
            '[net.wikipunk.rdf.lcc-3166-2 :as lcc-3166-2]
            '[net.wikipunk.rdf.lcc-639-1 :as lcc-639-1]
-           '[net.wikipunk.rdf.lcc-639-2 :as lcc-639-2]))
+           '[net.wikipunk.rdf.lcc-639-2 :as lcc-639-2]
+           '[net.wikipunk.rdf.lcc-3166-2-ca :as lcc-3166-2-ca]
+           '[net.wikipunk.rdf.lcc-3166-2-mx :as lcc-3166-2-mx]
+           '[net.wikipunk.rdf.lcc-3166-2-gb :as lcc-3166-2-gb]
+           '[net.wikipunk.rdf.lcc-3166-2-us :as lcc-3166-2-us]))
