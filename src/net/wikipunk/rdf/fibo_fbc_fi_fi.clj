@@ -234,15 +234,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "financial instrument",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-agr-ctr/WrittenContract
+   :rdfs/subClassOf [:fibo-fnd-agr-ctr/WrittenContract
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
-                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
-                      :rdf/type       :owl/Restriction}
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :lcc-lr/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
                      {:owl/onDataRange :xsd/boolean,
                       :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
                       :owl/qualifiedCardinality 1,
@@ -250,15 +247,18 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
                       :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass
-                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
-                      :owl/onProperty :lcc-lr/isIdentifiedBy,
-                      :rdf/type :owl/Restriction}],
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "written contract that gives rise to both a financial asset of one entity and a financial liability of another entity",
    :skos/example
@@ -370,15 +370,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "packaged financial product",
    :rdfs/seeAlso
-   "https://www.sec.gov/Archives/edgar/data/36995/000121465907002234/c101872fwp.htm",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/comprises,
+   ["https://www.sec.gov/Archives/edgar/data/36995/000121465907002234/c101872fwp.htm"],
+   :rdfs/subClassOf [:fibo-fbc-pas-fpas/FinancialProduct
+                     :fibo-fnd-pas-pas/ContractualProduct
+                     {:owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-fbc-pas-fpas/FinancialProduct
                                      :fibo-fbc-fi-fi/FinancialInstrument],
                        :rdf/type    :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-pas-fpas/FinancialProduct
-                     :fibo-fnd-pas-pas/ContractualProduct
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fbc-pas-fpas/FinancialProductCatalog,
                       :owl/onProperty :fibo-fnd-rel-rel/isIncludedIn,
@@ -440,11 +440,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "security",
-   :rdfs/subClassOf [:fibo-fbc-fi-fi/FinancialInstrument
-                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fi-fi/FinancialInstrument],
    :skos/definition "financial instrument that can be bought or sold"})
 
 (def SpotContract

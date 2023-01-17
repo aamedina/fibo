@@ -221,14 +221,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
    :rdfs/label "interest rate benchmark",
-   :rdfs/subClassOf [:fibo-fnd-qt-qtu/QuantityKind
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-be-fct-pub/MarketDataProvider,
-                      :owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-be-fct-pub/Publisher,
+                      :owl/onProperty :fibo-fnd-rel-rel/isProducedBy,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-qt-qtu/QuantityKind
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/DateTime,
-                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
+                      :owl/onClass    :fibo-fnd-dt-fd/Duration,
+                      :owl/onProperty :fibo-ind-ir-ir/hasTenor,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
@@ -238,12 +238,12 @@
                       :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-be-fct-pub/Publisher,
-                      :owl/onProperty :fibo-fnd-rel-rel/isProducedBy,
+                      :owl/onClass    :fibo-fnd-dt-fd/DateTime,
+                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/Duration,
-                      :owl/onProperty :fibo-ind-ir-ir/hasTenor,
+                      :owl/onClass    :fibo-be-fct-pub/MarketDataProvider,
+                      :owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "classifier for regularly updated interest rates that are publicly accessible, typically set by a central bank or group of financial institutions"})
@@ -359,22 +359,22 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
    :rdfs/label "reference interest rate",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+   :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-dt-fd/Duration,
+                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
+                      :rdf/type          :owl/Restriction}
+                     :fibo-ind-ind-ind/MarketRate
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
                       :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/allValuesFrom :fibo-fnd-dt-fd/Duration,
-                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
-                      :rdf/type          :owl/Restriction}
-                     :fibo-fnd-acc-cur/InterestRate],
+                     :fibo-fnd-acc-cur/InterestRate
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "market rate that is a rate of interest paid by or agreed among some bank or set of banks"})
 

@@ -47,7 +47,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/MetadataCAECorporateEvents/",
    :rdfs/label "Corporate Events Module",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright "Copyright (c) 2013-2022 EDM Council, Inc.",
    :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/BE/"
                   "https://www.omg.org/spec/LCC/"

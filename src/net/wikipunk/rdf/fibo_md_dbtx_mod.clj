@@ -45,6 +45,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/MetadataMDDebtTemporal/",
    :rdfs/label "Debt Temporal",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright "Copyright (c) 2014-2022 EDM Council, Inc.",
    :sm/moduleAbbreviation "fibo-md-dbtx"})

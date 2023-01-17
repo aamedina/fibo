@@ -168,7 +168,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
    :rdfs/label "CBOE Global Markets, Inc. US-DE",
-   :rdfs/seeAlso "http://www.bloomberg.com/",
+   :rdfs/seeAlso ["http://www.bloomberg.com/"],
    :skos/definition
    "the CBOE Global Markets, Inc. legal entity that is a Delaware corporation"})
 
@@ -231,7 +231,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
    :rdfs/label "Intercontinental Exchange Holdings",
-   :rdfs/seeAlso "http://www.theice.com/",
+   :rdfs/seeAlso ["http://www.theice.com/"],
    :skos/definition
    "Intercontinental Exchange holding company and financial service provider that owns exchanges for financial and commodity markets, and operates 23 regulated exchanges and marketplaces"})
 

@@ -1,13 +1,16 @@
 (ns net.wikipunk.rdf.fibo-fnd-law-jur
-  "This ontology defines high level concepts relating to jurisdictions for use in other FIBO ontology elements. This includes a general definition of jurisdiction along with some basic types of jurisdiction, along with the factors which distinguish one type of jurisdiction from another. This ontology also defines basic types of legal system, and extends the basic concept of law which is in the LegalCore ontology.."
-  {:dcat/downloadURL
+  "This ontology defines high level concepts relating to jurisdictions for use in other FIBO ontology elements. This includes a general definition of jurisdiction along with some basic types of jurisdiction, along with the factors which distinguish one type of jurisdiction from another."
+  {:cmns-av/copyright ["Copyright (c) 2013-2023 Object Management Group, Inc."
+                       "Copyright (c) 2013-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
    :dcterms/abstract
-   "This ontology defines high level concepts relating to jurisdictions for use in other FIBO ontology elements. This includes a general definition of jurisdiction along with some basic types of jurisdiction, along with the factors which distinguish one type of jurisdiction from another. This ontology also defines basic types of legal system, and extends the basic concept of law which is in the LegalCore ontology..",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   "This ontology defines high level concepts relating to jurisdictions for use in other FIBO ontology elements. This includes a general definition of jurisdiction along with some basic types of jurisdiction, along with the factors which distinguish one type of jurisdiction from another.",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
@@ -16,7 +19,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-aap-ppl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
     "fibo-fnd-law-cor"
@@ -32,7 +36,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
@@ -46,24 +49,13 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction.rdf version of the ontology was modified to remove the constraint on jurisdiction that it is governed by some legal system, eliminate the class legal system and its children, which were very general and not used anywhere in FIBO, clean up remaining definitions with better sources, and eliminate an unused import."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction.rdf version of the ontology was modified to extend the concept of a tax identifier and identification scheme with the applicable jurisdiction."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Law/Jurisdiction.rdf version of the ontology was was modified per the FIBO 2.0 RFC to integrate LCC."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction.rdf version of the ontology was modified to address hygiene issues with respect to text formatting."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2013-2022 EDM Council, Inc."
-                  "Copyright (c) 2013-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/"],
-   :sm/fileAbbreviation "fibo-fnd-law-jur",
-   :sm/filename "Jurisdiction.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction.rdf version of the ontology was modified to address hygiene issues with respect to text formatting."]})
 
 (def Jurisdiction
   "power of a court to adjudicate cases, issue orders, and interpret and apply the law with respect to some specific geographic area"
-  {:db/ident :fibo-fnd-law-jur/Jurisdiction,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.law.cornell.edu/wex/jurisdiction",
+  {:cmns-av/adaptedFrom "https://www.law.cornell.edu/wex/jurisdiction",
+   :db/ident :fibo-fnd-law-jur/Jurisdiction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
@@ -77,20 +69,20 @@
 
 (def StatuteLaw
   "law enacted by a legislature"
-  {:db/ident :fibo-fnd-law-jur/StatuteLaw,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.law.cornell.edu/wex/statute",
-   :fibo-fnd-utl-av/explanatoryNote
-   ["In the United States, statutes may also be called acts, such as the Civil Rights Act of 1964 or the Sarbanes-Oxley Act. Federal laws must be passed by both houses of Congress, the House of Representative and the Senate, and then usually require approval from the president before they can take effect."
-    "Statutes may originate with national, state legislatures or local municipalities. Statutory laws are subordinate to the higher constitutional laws of the land."],
+  {:cmns-av/adaptedFrom "https://www.law.cornell.edu/wex/statute",
+   :cmns-av/explanatoryNote
+   ["Statutes may originate with national, state legislatures or local municipalities. Statutory laws are subordinate to the higher constitutional laws of the land."
+    "In the United States, statutes may also be called acts, such as the Civil Rights Act of 1964 or the Sarbanes-Oxley Act. Federal laws must be passed by both houses of Congress, the House of Representative and the Senate, and then usually require approval from the president before they can take effect."],
+   :db/ident :fibo-fnd-law-jur/StatuteLaw,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "statute law"},
-   :rdfs/subClassOf [:fibo-fnd-law-cor/Law
-                     {:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-law-cor/Law],
    :skos/altLabel "statutory law",
    :skos/definition "law enacted by a legislature"})
 

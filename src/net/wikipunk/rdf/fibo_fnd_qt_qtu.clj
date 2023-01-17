@@ -1,13 +1,16 @@
 (ns net.wikipunk.rdf.fibo-fnd-qt-qtu
-  "This ontology provides an initial set of concepts supporting the representation of quantities, units, systems of quantities, and systems of units for use in FIBO. It is compatible with and can be mapped directly to the OMG Date Time Vocabulary (DTV) Quantities Ontology, but has been integrated into FND to provide local coverage of quantities and measurements and eliminate the SBVR mark-up."
-  {:dcat/downloadURL
+  "This ontology provides an initial set of concepts supporting the representation of quantities, units, systems of quantities, and systems of units. It is compatible with and can be mapped directly to the OMG Date Time Vocabulary (DTV) Quantities Ontology, but has been integrated into FND to provide local coverage of quantities and measurements and eliminate the SBVR mark-up."
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
+                       "Copyright (c) 2015-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :dcterms/abstract
-   "This ontology provides an initial set of concepts supporting the representation of quantities, units, systems of quantities, and systems of units for use in FIBO. It is compatible with and can be mapped directly to the OMG Date Time Vocabulary (DTV) Quantities Ontology, but has been integrated into FND to provide local coverage of quantities and measurements and eliminate the SBVR mark-up.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   "This ontology provides an initial set of concepts supporting the representation of quantities, units, systems of quantities, and systems of units. It is compatible with and can be mapped directly to the OMG Date Time Vocabulary (DTV) Quantities Ontology, but has been integrated into FND to provide local coverage of quantities and measurements and eliminate the SBVR mark-up.",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
@@ -15,7 +18,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-arr-cls"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-qt-qtu"
@@ -24,13 +28,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-cr"  "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "owl"     "http://www.w3.org/2002/07/owl#",
-    "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
-    "skos"    "http://www.w3.org/2004/02/skos/core#",
-    "sm"      "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-    "xsd"     "http://www.w3.org/2001/XMLSchema#"},
+    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
@@ -44,24 +47,14 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/ was modified to rename (migrate) the hasDefinition property to isDefinedIn."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/ was modified to untangle this ontology from analytics, untangle quantity values (measurements) from measures and add refinements from SysML and ISO 11179, including dimensionality."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/ was modified to eliminate circular definitions."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/ was modified to address hygiene issues with respect to text formatting and eliminate dead links."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/ was modified to allow for dimensionless quantity kinds, including but not limited to percentages, and to eliminate duplication with concepts in LCC."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2015-2022 EDM Council, Inc."
-                  "Copyright (c) 2015-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/"],
-   :sm/fileAbbreviation "fibo-fnd-qt-qtu",
-   :sm/filename "QuantitiesAndUnits.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/ was modified to allow for dimensionless quantity kinds, including but not limited to percentages, and to eliminate duplication with concepts in LCC."]})
 
 (def BaseQuantity
   "quantity kind in a conventionally chosen subset of a given system of quantities, where no subset quantity can be expressed in terms of the others"
-  {:db/ident :fibo-fnd-qt-qtu/BaseQuantity,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+  {:cmns-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+   :db/ident :fibo-fnd-qt-qtu/BaseQuantity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
@@ -78,10 +71,10 @@
 
 (def BaseUnit
   "measurement unit that is defined by a system of units to be the reference measurement unit for a base quantity"
-  {:db/ident :fibo-fnd-qt-qtu/BaseUnit,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+   :cmns-av/explanatoryNote
    "Quantity units that are not base units are derived units.",
+   :db/ident :fibo-fnd-qt-qtu/BaseUnit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
@@ -92,23 +85,23 @@
 
 (def DerivedQuantity
   "quantity kind that may be defined as a product of powers of one or more other kinds of quantity"
-  {:db/ident :fibo-fnd-qt-qtu/DerivedQuantity,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+   :cmns-av/explanatoryNote
    "A derived quantity may also be used to define a synonym kind of quantity for another kind of quantity.",
+   :db/ident :fibo-fnd-qt-qtu/DerivedQuantity,
    :owl/disjointWith :fibo-fnd-qt-qtu/BaseQuantity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label "derived quantity",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-qt-qtu/hasFactor,
-                      :owl/someValuesFrom :fibo-fnd-qt-qtu/QuantityKindFactor,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/isDerivedFrom,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-qt-qtu/isDerivedFrom,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-qt-qtu/BaseQuantity
                                             :fibo-fnd-qt-qtu/DerivedQuantity],
                                            :rdf/type :owl/Class},
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasFactor,
+                      :owl/someValuesFrom :fibo-fnd-qt-qtu/QuantityKindFactor,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-qt-qtu/QuantityKind],
    :skos/definition
@@ -117,10 +110,10 @@
 
 (def DerivedUnit
   "measurement unit that is defined with respect to one or more base units, such as as a product of powers of one or more other measurement units"
-  {:db/ident :fibo-fnd-qt-qtu/DerivedUnit,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+   :cmns-av/explanatoryNote
    "Every derived unit is defined in terms of base units.",
+   :db/ident :fibo-fnd-qt-qtu/DerivedUnit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
@@ -140,12 +133,12 @@
 
 (def Dimensionality
   "classifier that represents a set of equivalent units of measure"
-  {:db/ident :fibo-fnd-qt-qtu/Dimensionality,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    ["https://www.omg.org/spec/SysML/1.5/"
     "ISO 11179-3:2013 Information technology - Metadata registries (MDR)"],
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "Note that this definition is broader than that provided in SysML, which is an expression of the dependence of a quantity on the base quantities of a system of quantities as a product of powers of factors corresponding to the base quantities.",
+   :db/ident :fibo-fnd-qt-qtu/Dimensionality,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
@@ -160,10 +153,10 @@
 
 (def MeasurementUnit
   "quantity, defined and adopted by convention, with which any other quantity of the same kind can be compared to express the ratio of the two quantities as a number"
-  {:db/ident :fibo-fnd-qt-qtu/MeasurementUnit,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+   :cmns-av/explanatoryNote
    "A Unit is a quantity in terms of which the magnitudes of other quantities that have the same quantity kind can be stated. A unit often relies on precise and reproducible ways to measure the unit. For example, a unit of length such as meter may be specified as a multiple of a particular wavelength of light. A unit may also specify less stable or precise ways to express some value, such as a cost expressed in some currency, or a severity rating measured by a numerical scale.",
+   :db/ident :fibo-fnd-qt-qtu/MeasurementUnit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
@@ -182,10 +175,10 @@
 
 (def Quantity
   "property of a phenomenon, body, or substance, to which a number can be assigned with respect to a reference"
-  {:db/ident :fibo-fnd-qt-qtu/Quantity,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+   :cmns-av/explanatoryNote
    "A quantity as defined here is said to be a \"scalar\" as distinct from a \"vector.\" However, a vector or a tensor whose components are quantities is also considered to be a quantity.",
+   :db/ident :fibo-fnd-qt-qtu/Quantity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
@@ -202,11 +195,11 @@
 
 (def QuantityKind
   "classifier for 'quantity' that characterizes quantities as being mutually comparable"
-  {:db/ident :fibo-fnd-qt-qtu/QuantityKind,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
-   :fibo-fnd-utl-av/explanatoryNote
-   ["A QuantityKind is a kind of quantity that may be stated by means of defined units. For example, the quantity kind of length may be measured by units of meters, kilometers, or feet. Note that this definition allows for dimensionless quantity kinds, such as rates."
-    "Every instance of 'quantity kind' is also a specialization of 'quantity'. So the concept 'duration' is an instance of 'quantity kind' and it is a specialization of 'quantity', i.e., it is a classifier of actual quantities. But a given duration (i.e., the duration of something) is an instance of 'duration' and thus a 'quantity value,' not an instance of 'quantity kind'. For example, a 'year' is not an instance of quantity kind; it is an instance of quantity, but not a category of quantity."],
+  {:cmns-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+   :cmns-av/explanatoryNote
+   ["Every instance of 'quantity kind' is also a specialization of 'quantity'. So the concept 'duration' is an instance of 'quantity kind' and it is a specialization of 'quantity', i.e., it is a classifier of actual quantities. But a given duration (i.e., the duration of something) is an instance of 'duration' and thus a 'quantity value,' not an instance of 'quantity kind'. For example, a 'year' is not an instance of quantity kind; it is an instance of quantity, but not a category of quantity."
+    "A QuantityKind is a kind of quantity that may be stated by means of defined units. For example, the quantity kind of length may be measured by units of meters, kilometers, or feet. Note that this definition allows for dimensionless quantity kinds, such as rates."],
+   :db/ident :fibo-fnd-qt-qtu/QuantityKind,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
@@ -225,8 +218,8 @@
 
 (def QuantityKindFactor
   "factor in a product of powers that defines a derived quantity"
-  {:db/ident :fibo-fnd-qt-qtu/QuantityKindFactor,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+  {:cmns-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+   :db/ident :fibo-fnd-qt-qtu/QuantityKindFactor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
@@ -245,47 +238,47 @@
 
 (def QuantityValue
   "number and measurement unit together giving magnitude of a quantity"
-  {:db/ident :fibo-fnd-qt-qtu/QuantityValue,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+   :cmns-av/explanatoryNote
    "The quantity expressed by a quantity value is the quantity whose ratio to the measurement unit is the number. Note that dimensionless quantities may not have a measurement unit associated with them.",
-   :fibo-fnd-utl-av/synonym "measurement",
+   :cmns-av/synonym "measurement",
+   :db/ident :fibo-fnd-qt-qtu/QuantityValue,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label "quantity value",
-   :rdfs/subClassOf [{:owl/onDataRange :xsd/decimal,
-                      :owl/onProperty  :fibo-fnd-qt-qtu/hasNumericValue,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-qt-qtu/MeasurementUnit,
                       :owl/onProperty :fibo-fnd-qt-qtu/hasMeasurementUnit,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/decimal,
+                      :owl/onProperty  :fibo-fnd-qt-qtu/hasNumericValue,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "number and measurement unit together giving magnitude of a quantity",
    :skos/example "2 days, 3.5 hours, 150 lb, 45.5 miles"})
 
 (def SystemOfQuantities
   "set of quantities together with a set of non-contradictory equations relating those quantities"
-  {:db/ident :fibo-fnd-qt-qtu/SystemOfQuantities,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+  {:cmns-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+   :db/ident :fibo-fnd-qt-qtu/SystemOfQuantities,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "system of quantities"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/defines,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-arr-cls/ClassificationScheme
+                     {:owl/onProperty     :fibo-fnd-rel-rel/defines,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-qt-qtu/BaseQuantity
                                             :fibo-fnd-qt-qtu/DerivedQuantity],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-cls/ClassificationScheme
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
                       :owl/onProperty :lcc-cr/uses,
@@ -297,13 +290,17 @@
 
 (def SystemOfUnits
   "set of measurement units associated with a system of quantities, together with a set of rules that assign one measurement unit to be the base unit for each base quantity in the system of quantities and a set of rules for the derivation of other units from the base units"
-  {:db/ident :fibo-fnd-qt-qtu/SystemOfUnits,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+  {:cmns-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+   :db/ident :fibo-fnd-qt-qtu/SystemOfUnits,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label "system of units",
    :rdfs/subClassOf [:fibo-fnd-arr-cls/ClassificationScheme
+                     {:owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
+                      :owl/onProperty :fibo-fnd-rel-rel/appliesTo,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/SystemOfUnits,
                       :owl/onProperty :lcc-cr/uses,
@@ -311,10 +308,6 @@
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/SystemOfUnits,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
-                      :owl/onProperty :fibo-fnd-rel-rel/appliesTo,
-                      :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/defines,
                       :owl/someValuesFrom :fibo-fnd-qt-qtu/MeasurementUnit,
@@ -326,8 +319,8 @@
 
 (def UnitFactor
   "factor in a product of powers that defines a derived unit"
-  {:db/ident :fibo-fnd-qt-qtu/UnitFactor,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+  {:cmns-av/adaptedFrom "https://www.omg.org/spec/SysML/1.5/",
+   :db/ident :fibo-fnd-qt-qtu/UnitFactor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",

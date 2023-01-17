@@ -1,28 +1,32 @@
 (ns net.wikipunk.rdf.fibo-fnd-agr-ctr
-  "This ontology defines concepts relating to contracts, for use in other FIBO ontology elements. These include written contracts which are the concrete evidence of agreements between parties, along with verbal contracts. Contracts are further broken down into bilateral and transferable contracts, the latter being the basis for most financial instruments. Properties of contracts are also defined, in particular contractual terms and contract parties. These concepts all form the basis of concepts in the financial services industry, for example interest payment terms are a kind of contract terms set, and security holders are a kind of contract counterparty."
-  {:dcat/downloadURL
+  "This ontology defines the concept of contract and roles that parties to contract play in the context of financial agreements. Coverage includes written contracts which are the concrete evidence of agreements between parties and verbal contracts. Contracts are further broken down into bilateral and transferable contracts, the latter being the basis for most financial instruments, and basic properties of contracts, such as terms and conditions, are also covered."
+  {:cmns-av/copyright ["Copyright (c) 2013-2023 EDM Council, Inc."
+                       "Copyright (c) 2013-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :dcterms/abstract
-   "This ontology defines concepts relating to contracts, for use in other FIBO ontology elements. These include written contracts which are the concrete evidence of agreements between parties, along with verbal contracts. Contracts are further broken down into bilateral and transferable contracts, the latter being the basis for most financial instruments. Properties of contracts are also defined, in particular contractual terms and contract parties. These concepts all form the basis of concepts in the financial services industry, for example interest payment terms are a kind of contract terms set, and security holders are a kind of contract counterparty.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   "This ontology defines the concept of contract and roles that parties to contract play in the context of financial agreements. Coverage includes written contracts which are the concrete evidence of agreements between parties and verbal contracts. Contracts are further broken down into bilateral and transferable contracts, the latter being the basis for most financial instruments, and basic properties of contracts, such as terms and conditions, are also covered.",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
+    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"],
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-aap-ppl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
     "fibo-fnd-agr-agr"
@@ -52,7 +56,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -63,43 +66,27 @@
    :rdfs/label "Contracts Ontology",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to add the concept of a master agreement and fix spelling errors."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to add the concept of a term sheet, revise definitions to be ISO 704 compliant, and eliminate duplication of concepts in LCC."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 1.2 RTF report to revise definitions related to contractual element, add contractual commitment and deprecate contract terms set."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to simplify the contract party hierarchy, eliminate ambiguity in definitions where feasible and add restrictions on identity documents to avoid circular dependencies."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to clean up the definition of transferable contract, including eliminating an unnecessary equivalence, adding subclasses for assignable and novatable contracts, and to restrictions from contract to written contract that did not make sense with respect to a verbal contract."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 2.0 RFC to augment restrictions on contract and contractual commitment."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to eliminate deprecated elements."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The http://www.omg.org/spec/FIBO/Foundations/20130601/Agreements/Contracts.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to simplify the contract party hierarchy, eliminate ambiguity in definitions where feasible and add restrictions on identity documents to avoid circular dependencies."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to move the property hasTerm from FinancialInstruments to Contracts as it is more broadly applicable."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to eliminate references to external dictionary sites that no longer resolve, move the concept of an extension provision from Debt to Contracts to support representation of preferred shares and other extendable contracts, added a property for contract duration which is needed for long-term options, moved PromissoryNote to Debt for better integration with related concepts, and integrated additional contractual elements, including representations, warranties, and termination provision."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to clean up the definition of transferable contract, including eliminating an unnecessary equivalence, adding subclasses for assignable and novatable contracts, and to restrictions from contract to written contract that did not make sense with respect to a verbal contract."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to add the concepts of breach of contract and breach of covenant."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 1.2 RTF report to revise definitions related to contractual element, add contractual commitment and deprecate contract terms set."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 1.1 RTF report to add a parent of hasDate to date properties."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to eliminate deprecated elements."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of the ontology was was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to change a duplicate definition on hasContractDuration to an explanatory note."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 1.1 RTF report to add a parent of hasDate to date properties."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2013-2022 EDM Council, Inc."
-                  "Copyright (c) 2013-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/"
-    "https://www.omg.org/spec/LCC/"],
-   :sm/fileAbbreviation "fibo-fnd-agr-ctr",
-   :sm/filename "Contracts.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to add the concept of a term sheet, revise definitions to be ISO 704 compliant, and eliminate duplication of concepts in LCC."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to eliminate references to external dictionary sites that no longer resolve, move the concept of an extension provision from Debt to Contracts to support representation of preferred shares and other extendable contracts, added a property for contract duration which is needed for long-term options, moved PromissoryNote to Debt for better integration with related concepts, and integrated additional contractual elements, including representations, warranties, and termination provision."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 2.0 RFC to augment restrictions on contract and contractual commitment."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."]})
 
 (def AssignableContract
   "contract in which contract holder (assignor) may transfer some or all of their rights and obligations to another party (assignee)"
-  {:db/ident :fibo-fnd-agr-ctr/AssignableContract,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Note that while the assignor may divest themselves of some rights, that assignment does not necessarily eliminate performance obligations of the assignor to the third party. Characteristics that are important to understand with respect to an assignment include the circumstances in which the assignor remains obligated and any remedies available if the assignor does not perform.",
+   :db/ident :fibo-fnd-agr-ctr/AssignableContract,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -115,11 +102,11 @@
 
 (def BreachOfContract
   "classifier of events representing a violation of an express, or implied, condition of a contract to do or not to do something, without a legitimate excuse"
-  {:db/ident :fibo-fnd-agr-ctr/BreachOfContract,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Examples of events that are considered a breach of contract include discovery of misrepresentation, not completing a job, not paying in full or on time, failing to deliver all the goods, substituting inferior or significantly different goods, not providing a bond when required, being late without excuse, or any act that demonstrates that a party will not complete required work ('anticipatory breach.') Breach of contract is one of the most common causes of law suits for damages and/or court-ordered 'specific performance' of the contract. A breach of contract frequently invalidates the contract."},
+   :db/ident :fibo-fnd-agr-ctr/BreachOfContract,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -140,11 +127,11 @@
 
 (def BreachOfCovenant
   "classifier of events representing breaking a promise specified in a contract to do or not to do something, without a legitimate excuse"
-  {:db/ident :fibo-fnd-agr-ctr/BreachOfCovenant,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "In the case of a breach of a covenant or warranty, the contract remains binding and damages only are recoverable for the breach, whereas a breach of contract typically invalidates the entire contract."},
+   :db/ident :fibo-fnd-agr-ctr/BreachOfCovenant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -165,10 +152,10 @@
 
 (def ConditionPrecedent
   "stipulation that specifies conditions that must be met before some aspect of a contract takes effect"
-  {:db/ident :fibo-fnd-agr-ctr/ConditionPrecedent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    ["There may also be condition precedents in the ongoing life of a contract, which state that if condition X occurs, event Y will then occur. Condition X is the condition precedent."
     "Condition precedents are common in wills and trusts. They include events or states of affairs that act as triggers for the contract to come into effect, such as a beneficiary reaching the age of maturity, or death of a trustor, as well as define obligations on a party to the contract, such as those required of a trustee on the death of a trustor."],
+   :db/ident :fibo-fnd-agr-ctr/ConditionPrecedent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -179,24 +166,24 @@
 
 (def Contract
   "voluntary, deliberate agreement between competent parties to which the parties agree to be legally bound, and for which the parties provide valuable consideration"
-  {:db/ident :fibo-fnd-agr-ctr/Contract,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    ["Contracts are usually written but may be spoken or implied, and generally have to do with employment, sale or lease, or tenancy."
     "A contractual relationship is evidenced by (1) an offer, (2) acceptance of the offer, and a (3) valid (legal and valuable) consideration. A contract is a kind of agreement, and as such it embodies the assertion that it has been negotiated, such negotiation having included the presence of some offer and the acceptance of that offer on the part of either or both of the parties."],
+   :db/ident :fibo-fnd-agr-ctr/Contract,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "contract",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 2,
-                      :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
-                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
                       :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 2,
+                      :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
+                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-agr-agr/Agreement],
    :skos/definition
@@ -234,9 +221,9 @@
 
 (def ContractPrincipal
   "party that originates a contract and is identified as the first party to that contract, in the event that the contract distinguishes any party as such"
-  {:db/ident :fibo-fnd-agr-ctr/ContractPrincipal,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The principal to a contract is typically the originator and, in the case of a security, the issuer. In law, the principal is the party that has the primary responsibility in a liability or obligation, as opposed to an endorser, guarantor, or surety.",
+   :db/ident :fibo-fnd-agr-ctr/ContractPrincipal,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -300,9 +287,9 @@
 
 (def Counterparty
   "party to a contract with whom one negotiates on a given agreement"
-  {:db/ident :fibo-fnd-agr-ctr/Counterparty,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The counterparty is usually the party 'on the other side' of a contract from the perspective of the issuer or holder. The term 'counterparty' can refer to any party to an agreement, depending on context.",
+   :db/ident :fibo-fnd-agr-ctr/Counterparty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -313,9 +300,9 @@
 
 (def ExtensionProvision
   "contract terms that specify the conditions under which a contract can be extended"
-  {:db/ident :fibo-fnd-agr-ctr/ExtensionProvision,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "In the case of a debt instrument, an extension may include extending the time allowed for repayment of the principal, the maturity date, and so forth.",
+   :db/ident :fibo-fnd-agr-ctr/ExtensionProvision,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -330,10 +317,10 @@
 
 (def MasterAgreement
   "contract between named parties that outlines the terms and conditions designed to apply to a number of accounts, transactions, or other activities between the parties, and that consolidates and provides overarching terms for separate but related agreements"
-  {:db/ident :fibo-fnd-agr-ctr/MasterAgreement,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A master agreement can be used to set out standard terms and conditions so that any new agreements don't need to cover the same information again.",
-   :fibo-fnd-utl-av/synonym "master contract",
+   :cmns-av/synonym "master contract",
+   :db/ident :fibo-fnd-agr-ctr/MasterAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -352,10 +339,10 @@
 
 (def MutualContractualAgreement
   "contract between named parties whose individual rights and obligations are not transferable to another party without prior written permission"
-  {:db/ident :fibo-fnd-agr-ctr/MutualContractualAgreement,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A mutual contractual agreement involves an exchange of a promises in which the promises made by each party represent considerations supporting the promises of the other party(ies).",
-   :fibo-fnd-utl-av/synonym "bilateral contract",
+   :cmns-av/synonym "bilateral contract",
+   :db/ident :fibo-fnd-agr-ctr/MutualContractualAgreement,
    :owl/disjointWith :fibo-fnd-agr-ctr/UnilateralContract,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -379,10 +366,10 @@
 
 (def NovateableContract
   "contract that may be replaced by another contract, and in that event, extinguishes the rights and obligations in effect under the original contract with those in the new agreement"
-  {:db/ident :fibo-fnd-agr-ctr/NovateableContract,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    ["Novation is different from assignment in the following ways: (1) novation is a consensual transfer of contractual rights and obligations, while an assignment can transfer only obligations and does not require the consent of the benefiting party, and (2) novation terminates the original contract, but assignment does not."
     "In general, novation means consensual substitution of a party or obligation in the original contract with a new party or obligation in the successor contract. The new party takes on the rights and obligations of the original party. The corresponding novation agreement must be signed by the transferor, the transferee, and the counterparty (the other contracting party). Novation is frequently used in mergers and acquisitions to replace any outstanding relationships or rights and obligations of the organization being subsumed with relationships or obligations of the acquiring entity. It is also commonly used with respect to loan rescheduling."],
+   :db/ident :fibo-fnd-agr-ctr/NovateableContract,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -393,9 +380,9 @@
 
 (def Representation
   "contractual element that is a statement made by a party to the contract, before or at the time of making the contract, in regard to some fact, circumstance, or state of affairs pertinent to the contract, which the counterparty(ies) rely on, or is influential in bringing about the contract"
-  {:db/ident :fibo-fnd-agr-ctr/Representation,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A party may later claim misrepresentation if a false representation has been made. They may be entitled to rescind the contract, which means that the contract would be set aside and the receiving party may also be entitled to damages to put them back into the position they would have been had the contract never been entered into.",
+   :db/ident :fibo-fnd-agr-ctr/Representation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -409,9 +396,9 @@
 
 (def TermSheet
   "nonbinding agreement setting forth the basic terms and conditions under which a proposed business deal may be made"
-  {:db/ident :fibo-fnd-agr-ctr/TermSheet,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Term sheets state the intentions of the parties and are used to guide legal counsel in the preparation of proposed agreements or contracts.",
+   :db/ident :fibo-fnd-agr-ctr/TermSheet,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -425,9 +412,9 @@
 
 (def TerminationProvision
   "contractual element that specifies the circumstances under which the parties can dissolve their legal relationship and discontinue the fulfillment of their obligations under the contract"
-  {:db/ident :fibo-fnd-agr-ctr/TerminationProvision,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Common reasons for termination include mutual consent, certain notices, breach or failure of a precedent or condition, insolvency, change in control, the occurrence of certain events, and court orders that prohibit continuation of the contract. Termination provisions may include whether they are mutual or unilateral, and may include rights with respect to any cure.",
+   :db/ident :fibo-fnd-agr-ctr/TerminationProvision,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -452,9 +439,9 @@
 
 (def UnilateralContract
   "contract in which one party makes an express promise without securing a reciprocal agreement from the other party(ies)"
-  {:db/ident :fibo-fnd-agr-ctr/UnilateralContract,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "In a unilateral, or one-sided, contract, one party, known as the offeror, makes a promise in exchange for an act (or abstention from acting) by another party, known as the offeree. If the offeree acts on the offeror's promise, the offeror is legally obligated to fulfill the contract, but an offeree cannot be forced to act (or not act), because no return promise has been made to the offeror. After an offeree has performed, only one enforceable promise exists, that of the offeror.",
+   :db/ident :fibo-fnd-agr-ctr/UnilateralContract,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -479,11 +466,11 @@
 
 (def Warranty
   "contractual element that is a statement of fact"
-  {:db/ident :fibo-fnd-agr-ctr/Warranty,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "If a warranty is determined to be false, the receiving party has a claim for breach of contract. If it is a fundamental breach the receiving party may have the right to terminate the contact in addition to a claim for damages. However, unlike a claim for misrepresentation, the contract may not necessarily be voided in its entirety as a consequence."},
+   :db/ident :fibo-fnd-agr-ctr/Warranty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -502,30 +489,30 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "written contract",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+   [{:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-dt-fd/DateTimeStamp,
      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
      :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
+     :rdf/type           :owl/Restriction}
     {:owl/onDataRange :xsd/boolean,
      :owl/onProperty  :fibo-fnd-agr-ctr/isAssignable,
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-dt-fd/Date,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDate,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-dt-fd/DateTimeStamp,
      :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
      :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-dt-fd/Date,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDate,
+     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
      :rdf/type           :owl/Restriction}
     :fibo-fnd-agr-ctr/Contract],
    :skos/definition
@@ -544,9 +531,9 @@
 
 (def hasContractDuration
   "indicates the period of time during which a contract is intended to be in force once it has been executed"
-  {:db/ident :fibo-fnd-agr-ctr/hasContractDuration,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Note that the duration may be relative or explicit, depending on the nature of the contract, and may be extended if the provisions of the contract permit extension.",
+   :db/ident :fibo-fnd-agr-ctr/hasContractDuration,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-agr-ctr/Contract,
    :rdfs/isDefinedBy
@@ -622,9 +609,9 @@
 
 (def hasExecutionDate
   "indicates the date a contract has been signed by all the necessary parties"
-  {:db/ident :fibo-fnd-agr-ctr/hasExecutionDate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This may or may not be the 'effective date' of the contract, which may be specified in the body of the document.",
+   :db/ident :fibo-fnd-agr-ctr/hasExecutionDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -661,9 +648,9 @@
 
 (def hasExtensionProvision
   "specifies the details of a contract provision allowing extension of some aspect of the contract"
-  {:db/ident :fibo-fnd-agr-ctr/hasExtensionProvision,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Typically a contract extension refers to the termination date, coverage period, or, in the case of a security, may refer to extension of repayment or maturity dates.",
+   :db/ident :fibo-fnd-agr-ctr/hasExtensionProvision,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-agr-ctr/Contract,
    :rdfs/isDefinedBy
@@ -676,9 +663,9 @@
 
 (def hasGoverningJurisdiction
   "indicates the jurisdiction governing the contract, as agreed by all parties"
-  {:db/ident :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "In a written contract this is generally identified, for example, as Governing Law, namely the jurisdiction in which any disputes arising from the contract are to be resolved.",
+   :db/ident :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-agr-ctr/Contract,
    :rdfs/isDefinedBy
@@ -693,9 +680,9 @@
 
 (def hasNonBindingTerm
   "refers to a term that is included in an agreement that is not considered legally binding"
-  {:db/ident :fibo-fnd-agr-ctr/hasNonBindingTerm,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "In other words, a breach of such terms in the future would not be considered to be a breach of the contract.",
+   :db/ident :fibo-fnd-agr-ctr/hasNonBindingTerm,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-agr-agr/Agreement,
    :rdfs/isDefinedBy
@@ -748,9 +735,9 @@
 
 (def isAssignable
   "indicates whether the contract and the rights thereunder may be assigned by one of the signatories to some other party"
-  {:db/ident :fibo-fnd-agr-ctr/isAssignable,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "An assignment (Latin cessio) is a term used with similar meanings in the law of contracts and in the law of real estate. In both instances, it encompasses the transfer of rights held by one party, the assignor, to another party, the assignee. The details of the assignment determines some additional rights and liabilities (or duties). Typically a third-party is involved in a contract with the assignor, and the contract is in effect transferred to the assignee.",
+   :db/ident :fibo-fnd-agr-ctr/isAssignable,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fnd-agr-ctr/Contract,
    :rdfs/isDefinedBy

@@ -393,6 +393,7 @@
    :skos/definition "1-4 units"})
 
 (def GovernmentSponsoredLoan
+  "government-sponsored loan"
   {:db/ident :fibo-loan-reln-mtg/GovernmentSponsoredLoan,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -468,12 +469,16 @@
    :rdfs/label "mortgage",
    :rdfs/subClassOf
    [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-reln-mtg/UniversalLoanIdentifier,
-     :owl/onProperty :lcc-lr/isIdentifiedBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-reln-mtg/MortgageIndemnityGuarantor,
      :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-reln-mtg/Mortgage,
+     :owl/onProperty :fibo-loan-reln-mtg/assumes,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-ln-ln/Servicer,
+     :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatingServiceProvider,
      :owl/someValuesFrom {:owl/intersectionOf
@@ -483,19 +488,10 @@
                             :rdf/type           :owl/Restriction}],
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-reln-mtg/Mortgage,
-     :owl/onProperty :fibo-loan-reln-mtg/assumes,
-     :rdf/type       :owl/Restriction}
-    :fibo-loan-ln-ln/CollateralizedLoan
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-ln-ln/Servicer,
-     :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
-     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-loan-reln-mtg/hasClosingDate,
      :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
      :rdf/type           :owl/Restriction}
-    :fibo-loan-ln-ln/ClosedEndCredit
+    :fibo-loan-ln-ln/CollateralizedLoan
     {:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatorPerson,
      :owl/someValuesFrom {:owl/intersectionOf
                           [:fibo-be-le-lp/LegallyCompetentNaturalPerson
@@ -503,7 +499,12 @@
                             :owl/someValuesFrom :fibo-loan-reln-mtg/NMLSR-ID,
                             :rdf/type           :owl/Restriction}],
                           :rdf/type :owl/Class},
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-loan-ln-ln/ClosedEndCredit
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-reln-mtg/UniversalLoanIdentifier,
+     :owl/onProperty :lcc-lr/isIdentifiedBy,
+     :rdf/type       :owl/Restriction}],
    :skos/definition "a loan contract that is secured by real property",
    :skos/editorialNote
    {:rdf/language "en",
@@ -582,6 +583,7 @@
    "the purpose for which mortgage loan proceeds will be used, such as real property purchase, dwelling construction, or loan refinancing"})
 
 (def MortgageLoanPurpose-BusinessOrCommercial
+  "business or commercial"
   {:db/ident :fibo-loan-reln-mtg/MortgageLoanPurpose-BusinessOrCommercial,
    :rdf/type [:fibo-loan-reln-mtg/MortgageLoanPurpose :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -589,6 +591,7 @@
    :rdfs/label "business or commercial"})
 
 (def MortgageLoanPurpose-DwellingConstruction
+  "dwelling construction"
   {:db/ident :fibo-loan-reln-mtg/MortgageLoanPurpose-DwellingConstruction,
    :rdf/type [:fibo-loan-reln-mtg/MortgageLoanPurpose :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -596,6 +599,7 @@
    :rdfs/label "dwelling construction"})
 
 (def MortgageLoanPurpose-HomeImprovement
+  "home improvement"
   {:db/ident :fibo-loan-reln-mtg/MortgageLoanPurpose-HomeImprovement,
    :rdf/type [:fibo-loan-reln-mtg/MortgageLoanPurpose :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -603,6 +607,7 @@
    :rdfs/label "home improvement"})
 
 (def MortgageLoanPurpose-LoanRefinancing
+  "loan refinancing"
   {:db/ident :fibo-loan-reln-mtg/MortgageLoanPurpose-LoanRefinancing,
    :rdf/type [:fibo-loan-reln-mtg/MortgageLoanPurpose :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -610,6 +615,7 @@
    :rdfs/label "loan refinancing"})
 
 (def MortgageLoanPurpose-MortgageModification
+  "mortgage modification"
   {:db/ident :fibo-loan-reln-mtg/MortgageLoanPurpose-MortgageModification,
    :rdf/type [:fibo-loan-reln-mtg/MortgageLoanPurpose :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -617,6 +623,7 @@
    :rdfs/label "mortgage modification"})
 
 (def MortgageLoanPurpose-RealPropertyPurchase
+  "real property purchase"
   {:db/ident :fibo-loan-reln-mtg/MortgageLoanPurpose-RealPropertyPurchase,
    :rdf/type [:fibo-loan-reln-mtg/MortgageLoanPurpose :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -709,14 +716,14 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-loan-reln-mtg/hasAppraisedValue,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-asmt/hasAppraiser,
-                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraiser,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-asmt/ValueAssessment
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-loan-reln-mtg/PropertyInspection,
                       :owl/onProperty :fibo-fnd-dt-oc/hasInput,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-arr-asmt/hasAppraiser,
+                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraiser,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "value assessment that estimates the amount of money a real estate property is worth",
    :skos/editorialNote
@@ -875,6 +882,7 @@
    :skos/definition "relates an inspection to the thing being inspected"})
 
 (def isLienOn
+  "is lien on"
   {:db/ident :fibo-loan-reln-mtg/isLienOn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy

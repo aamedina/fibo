@@ -72,6 +72,7 @@
     "loan covering construction and development costs, secured by a mortgage on the property financed"}})
 
 (def ConstructionLoanContract
+  "construction loan contract"
   {:db/ident :fibo-loan-reln-cnst/ConstructionLoanContract,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -241,6 +242,7 @@
     "The maximum amount of the loan that can be drawn by the Borrower on completion of this Milestone."}})
 
 (def hasMilestoneTerm
+  "has milestone term"
   {:db/ident :fibo-loan-reln-cnst/hasMilestoneTerm,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-loan-reln-cnst/ConstructionLoanContract,

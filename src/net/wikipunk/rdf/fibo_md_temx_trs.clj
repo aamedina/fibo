@@ -88,6 +88,7 @@
     "trading status of a listed security on a given trading exchange"}})
 
 (def Inactive
+  "inactive"
   {:db/ident :fibo-md-temx-trs/Inactive,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -146,6 +147,7 @@
     "Exchange Traded Security trading status is now a separate term, covering trading suspension on an exchange, so that does not form part of this term."}})
 
 (def TradingHalted
+  "trading halted"
   {:db/ident :fibo-md-temx-trs/TradingHalted,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy

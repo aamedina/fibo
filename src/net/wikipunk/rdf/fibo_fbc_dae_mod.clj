@@ -47,7 +47,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/",
    :rdfs/label "FIBO FBC Debt and Equities Module",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
    :sm/copyright ["Copyright (c) 2017-2022 Object Management Group, Inc."
                   "Copyright (c) 2017-2022 EDM Council, Inc."],

@@ -93,6 +93,7 @@
    :sm/fileAbbreviation "fibo-bp-iss-pmbs"})
 
 (def AllocatePrimaryIdentifier
+  "allocate primary identifier"
   {:db/ident :fibo-bp-iss-pmbs/AllocatePrimaryIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -102,6 +103,7 @@
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def AllocateRatings
+  "allocate ratings"
   {:db/ident :fibo-bp-iss-pmbs/AllocateRatings,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -111,6 +113,7 @@
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def AssessPoolSuitabilityForIssuance
+  "assess pool suitability for issuance"
   {:db/ident :fibo-bp-iss-pmbs/AssessPoolSuitabilityForIssuance,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -124,6 +127,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def AssessRatings
+  "assess ratings"
   {:db/ident :fibo-bp-iss-pmbs/AssessRatings,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -150,6 +154,7 @@
     "An entity which may become a primary investor in the issue. Term origin:MBS PoC Reviews"}})
 
 (def CloseDeal
+  "close deal"
   {:db/ident :fibo-bp-iss-pmbs/CloseDeal,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -182,6 +187,7 @@
                      :rdf/value    "the denom of the notes"}})
 
 (def DefinePoolCharacteristics
+  "define pool characteristics"
   {:db/ident :fibo-bp-iss-pmbs/DefinePoolCharacteristics,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -237,6 +243,7 @@
     "Draft of set of information defining one tranche of a tranched issue. This will become the termsheet of an individual tranche within that issue. Term origin:MBS PoC Reviews"}})
 
 (def DrawUpOfferingMemorandum
+  "draw up offering memorandum"
   {:db/ident :fibo-bp-iss-pmbs/DrawUpOfferingMemorandum,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -246,6 +253,7 @@
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def DrawUpTrancheTermsheets
+  "draw up tranche termsheets"
   {:db/ident :fibo-bp-iss-pmbs/DrawUpTrancheTermsheets,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -259,6 +267,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def FinalizePoolContent
+  "finalize pool content"
   {:db/ident :fibo-bp-iss-pmbs/FinalizePoolContent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -272,6 +281,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def FinalizeProspectus
+  "finalize prospectus"
   {:db/ident :fibo-bp-iss-pmbs/FinalizeProspectus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -285,6 +295,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def GetCommitmentFromInvestors
+  "get commitment from investors"
   {:db/ident :fibo-bp-iss-pmbs/GetCommitmentFromInvestors,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -304,6 +315,7 @@
     :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def IdentifyConformingMortgage
+  "identify conforming mortgage"
   {:db/ident :fibo-bp-iss-pmbs/IdentifyConformingMortgage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -316,6 +328,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def IdentifyUnderwriter
+  "identify underwriter"
   {:db/ident :fibo-bp-iss-pmbs/IdentifyUnderwriter,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -329,6 +342,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def InAssemblyMortgagePool
+  "in assembly mortgage pool"
   {:db/ident :fibo-bp-iss-pmbs/InAssemblyMortgagePool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -341,6 +355,7 @@
                      :fibo-sec-dbt-mbs/NonAgencyMortgagePool]})
 
 (def InIssuanceNonAgencyMortgagePool
+  "in issuance non agency mortgage pool"
   {:db/ident :fibo-bp-iss-pmbs/InIssuanceNonAgencyMortgagePool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -375,6 +390,7 @@
     "In reality there is one termsheet that has sets of information for the terms for each Tranche. This class of information identifies the terms of one tranche, but it does not exist as a separate document in its own right. Further Notes ? We may need to firm up the relationship between the individual tranche termsheet and the information about the relationships among these (some of which are quite complex) and the terms that are common to more than one tranche. In practice these may be separate sections of one document. Term origin:MBS PoC Reviews"}})
 
 (def Investor
+  "investor"
   {:db/ident :fibo-bp-iss-pmbs/Investor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -383,6 +399,7 @@
                 :rdf/value    "investor"}})
 
 (def MBSSecuritizationEnd
+  "m b s securitization end"
   {:db/ident :fibo-bp-iss-pmbs/MBSSecuritizationEnd,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -391,6 +408,7 @@
                 :rdf/value    "m b s securitization end"}})
 
 (def MBSSecuritizationStart
+  "m b s securitization start"
   {:db/ident :fibo-bp-iss-pmbs/MBSSecuritizationStart,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -420,6 +438,7 @@
     "What happens here? e.g. notices / marketing (phone calls) Structured Finance: There's not really notices in the newspaper, it's a very small market and it's all based on relationships so there's no public notice. So you would get an email from the sales person at the bank who has just closed the deal and is now selling these (this bank is the broker/dealer who bought it?) There's not really much of a secondary market - the initial investors would often hold on to these. There is something around Bloomberg - you can go there and see what's available, if someone has a number of notes from a iven tranche, that they are willing to sell. So there's no transpoarency (!!) Sales would be OTC but less transparent e.g. if you look up a normal OTC stock, you would be able to see more of this information, than in these (non Agency) MBS issues and other SF. DOES THIS APPLY IN ALL MBS??."}})
 
 (def MarketIssueToPrimaryInvestors
+  "market issue to primary investors"
   {:db/ident :fibo-bp-iss-pmbs/MarketIssueToPrimaryInvestors,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -433,6 +452,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def NonAgencyPoolCreationEnd
+  "non agency pool creation end"
   {:db/ident :fibo-bp-iss-pmbs/NonAgencyPoolCreationEnd,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -445,6 +465,7 @@
                      :rdf/type :owl/Restriction}})
 
 (def NonAgencyPoolCreationProcess
+  "non agency pool creation process"
   {:db/ident :fibo-bp-iss-pmbs/NonAgencyPoolCreationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -454,6 +475,7 @@
    :rdfs/subClassOf :fibo-bp-iss-dbti/RetailAssetPoolCreationProcess})
 
 (def NonAgencyPoolCreationStart
+  "non agency pool creation start"
   {:db/ident :fibo-bp-iss-pmbs/NonAgencyPoolCreationStart,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -462,6 +484,7 @@
                 :rdf/value    "non agency pool creation start"}})
 
 (def NotYetIssuedNonAgencyMortgagePool
+  "not yet issued non agency mortgage pool"
   {:db/ident :fibo-bp-iss-pmbs/NotYetIssuedNonAgencyMortgagePool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -495,6 +518,7 @@
     "The agency which will provide the primary securitiy identifier for the security. Term origin:MBS PoC Reviews"}})
 
 (def PoolLifecycleStateSelection
+  "PoolLifecycleStateSelection"
   {:db/ident :fibo-bp-iss-pmbs/PoolLifecycleStateSelection,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -504,6 +528,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStage})
 
 (def PoolReadyForIssue
+  "pool ready for issue"
   {:db/ident :fibo-bp-iss-pmbs/PoolReadyForIssue,
    :owl/equivalentClass {:owl/unionOf
                          [:fibo-bp-iss-pmbs/FinalizePoolContent
@@ -516,6 +541,7 @@
                 :rdf/value    "pool ready for issue"}})
 
 (def PoolTrustee
+  "pool trustee"
   {:db/ident :fibo-bp-iss-pmbs/PoolTrustee,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -529,6 +555,7 @@
                      :fibo-fnd-pty-pty/PartyInRole]})
 
 (def PotentialMBSInvestor
+  "potential m b s investor"
   {:db/ident :fibo-bp-iss-pmbs/PotentialMBSInvestor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -585,6 +612,7 @@
     "A party which becomes the primary investor in the issue, by purchasing some of the tranches of the issue. Term origin:MBS PoC Reviews"}})
 
 (def PurchaseMortgageIntoPool
+  "purchase mortgage into pool"
   {:db/ident :fibo-bp-iss-pmbs/PurchaseMortgageIntoPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -601,6 +629,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def RatingsAgency
+  "ratings agency"
   {:db/ident :fibo-bp-iss-pmbs/RatingsAgency,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -612,6 +641,7 @@
                      :rdf/type           :owl/Restriction}})
 
 (def RatingsSuitableForIssue
+  "ratings suitable for issue"
   {:db/ident :fibo-bp-iss-pmbs/RatingsSuitableForIssue,
    :owl/equivalentClass {:owl/unionOf
                          [:fibo-bp-iss-pmbs/DrawUpOfferingMemorandum
@@ -707,6 +737,7 @@
     "The draft prospectus for a tranched Mortgage Backed Securities issue, as determined by the issuing entity prior to marketing the issue. Certain terms in the draft prospectus will be finalized later in the issuance process to become the actual Prospectus. Term origin:MBS PoC Reviews"}})
 
 (def TranchedMBSDealSettlement
+  "tranched m b s deal settlement"
   {:db/ident :fibo-bp-iss-pmbs/TranchedMBSDealSettlement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -790,6 +821,7 @@
     "An outline of the tranched prospectus, provind an intial representation of the possible tranches and their features. Term origin:MBS PoC Reviews"}})
 
 (def TranchedMBSSecuritizationProcess
+  "tranched m b s securitization process"
   {:db/ident :fibo-bp-iss-pmbs/TranchedMBSSecuritizationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -827,6 +859,7 @@
      "The Offering Memorandum will include or attach the terms for two or more individual tranches that will make up the issue, and the structure of the tranches, including how they will relate to one another (priorities and so on). Term origin:MBS PoC Reviews"}]})
 
 (def addsTo
+  "adds to"
   {:db/ident :fibo-bp-iss-pmbs/addsTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/PurchaseMortgageIntoPool,
@@ -837,6 +870,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/InAssemblyMortgagePool})
 
 (def allocatesIdentifier
+  "allocates identifier"
   {:db/ident :fibo-bp-iss-pmbs/allocatesIdentifier,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/NumberingAgency,
@@ -847,6 +881,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/AllocatePrimaryIdentifier})
 
 (def allocatesRatings
+  "allocates ratings"
   {:db/ident :fibo-bp-iss-pmbs/allocatesRatings,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/RatingsAgency,
@@ -857,6 +892,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/AllocateRatings})
 
 (def commitmentBasedOn
+  "commitment based on"
   {:db/ident :fibo-bp-iss-pmbs/commitmentBasedOn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/GetCommitmentFromInvestors,
@@ -867,6 +903,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/TranchedDraftProspectus})
 
 (def commitsTo
+  "commits to"
   {:db/ident :fibo-bp-iss-pmbs/commitsTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/BrokerDealer,
@@ -877,6 +914,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/GetCommitmentFromInvestors})
 
 (def decomposesInto
+  "decomposes into"
   {:db/ident :fibo-bp-iss-pmbs/decomposesInto,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedMBSDealSettlement,
@@ -888,6 +926,7 @@
    :fibo-bp-iss-pmbs/TranchedMBSPrimaryDealTransactionSettlementProcess})
 
 (def denominationIncrement
+  "denomination increment"
   {:db/ident :fibo-bp-iss-pmbs/denominationIncrement,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TrancheNotesParameters,
@@ -898,6 +937,7 @@
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount})
 
 (def finalizes.1
+  "finalizes"
   {:db/ident :fibo-bp-iss-pmbs/finalizes.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/FinalizePoolContent,
@@ -908,6 +948,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/InIssuanceNonAgencyMortgagePool})
 
 (def flow
+  "flow"
   {:db/ident :fibo-bp-iss-pmbs/flow,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/NonAgencyPoolCreationEnd,
@@ -918,6 +959,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/MBSSecuritizationStart})
 
 (def hasContent
+  "has content"
   {:db/ident :fibo-bp-iss-pmbs/hasContent,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedMBSProspectusOutline,
@@ -929,6 +971,7 @@
    :rdfs/subPropertyOf :lcc-cr/hasPart})
 
 (def hasContent.1
+  "has content"
   {:db/ident :fibo-bp-iss-pmbs/hasContent.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedMBSProspectusOutline,
@@ -940,6 +983,7 @@
    :rdfs/subPropertyOf :lcc-cr/hasPart})
 
 (def hasCounterparty
+  "has counterparty"
   {:db/ident :fibo-bp-iss-pmbs/hasCounterparty,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedMBSDealTransaction,
@@ -950,6 +994,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/PrimaryInvestor})
 
 (def hasPrimaryHolder
+  "has primary holder"
   {:db/ident :fibo-bp-iss-pmbs/hasPrimaryHolder,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/TranchedMBSInstrument,
@@ -960,6 +1005,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/PrimaryInvestor})
 
 (def hasPrincipalParty
+  "has principal party"
   {:db/ident :fibo-bp-iss-pmbs/hasPrincipalParty,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedMBSDealTransaction,
@@ -970,6 +1016,7 @@
    :rdfs/range :fibo-sec-dbt-mbs/NonAgencyMBSIssuer})
 
 (def hasResource
+  "has resource"
   {:db/ident :fibo-bp-iss-pmbs/hasResource,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/GetCommitmentFromInvestors,
@@ -980,6 +1027,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheNotesParameters})
 
 (def hasResource.1
+  "has resource"
   {:db/ident :fibo-bp-iss-pmbs/hasResource.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/MarketIssueToPrimaryInvestors,
@@ -990,6 +1038,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/TranchedOfferingMemorandum})
 
 (def hasResource.2
+  "has resource"
   {:db/ident :fibo-bp-iss-pmbs/hasResource.2,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/GetCommitmentFromInvestors,
@@ -1000,6 +1049,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheNotesParameters})
 
 (def hasTrustee
+  "has trustee"
   {:db/ident :fibo-bp-iss-pmbs/hasTrustee,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/NonAgencyMortgagePool,
@@ -1010,6 +1060,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/PoolTrustee})
 
 (def identifierIssuedBy
+  "identifier issued by"
   {:db/ident :fibo-bp-iss-pmbs/identifierIssuedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/TranchedMBSInstrument,
@@ -1020,6 +1071,7 @@
    :rdfs/range :fibo-bp-iss-prc/PrimaryIdentifierIssuer})
 
 (def includesDetailsAbout
+  "includes details about"
   {:db/ident :fibo-bp-iss-pmbs/includesDetailsAbout,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedOfferingMemorandum,
@@ -1030,6 +1082,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/TrancheStructureAndTermsheet})
 
 (def includesDetailsAbout.1
+  "includes details about"
   {:db/ident :fibo-bp-iss-pmbs/includesDetailsAbout.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedOfferingMemorandum,
@@ -1040,6 +1093,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/IndividualTrancheDefinitions})
 
 (def isAssessmentOf
+  "is assessment of"
   {:db/ident :fibo-bp-iss-pmbs/isAssessmentOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/AssessPoolSuitabilityForIssuance,
@@ -1050,6 +1104,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/InAssemblyMortgagePool})
 
 (def isDefiningOf
+  "isDefiningOf"
   {:db/ident :fibo-bp-iss-pmbs/isDefiningOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/DefinePoolCharacteristics,
@@ -1060,6 +1115,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/NotYetIssuedNonAgencyMortgagePool})
 
 (def isIssueOf
+  "is issue of"
   {:db/ident :fibo-bp-iss-pmbs/isIssueOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/MakeSecuritiesAvailableInMarket,
@@ -1070,6 +1126,7 @@
    :rdfs/range :fibo-sec-dbt-mbs/TranchedMBSDeal})
 
 (def isPurchaseOf
+  "is purchase of"
   {:db/ident :fibo-bp-iss-pmbs/isPurchaseOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/PurchaseMortgageIntoPool,
@@ -1095,6 +1152,7 @@
     "This has not been seen - incliuded as it's implicit but we might want to get rid of this. ACTION: Look at example prospectus document, mark up against this model; if this item is not seen, we could remove it"}})
 
 (def mayBecome
+  "may become"
   {:db/ident :fibo-bp-iss-pmbs/mayBecome,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/PoolTrustee,
@@ -1105,6 +1163,7 @@
    :rdfs/range :fibo-sec-dbt-mbs/TranchedMBSIssueUnderwriter})
 
 (def mayIncludeDetailsAbout
+  "may include details about"
   {:db/ident :fibo-bp-iss-pmbs/mayIncludeDetailsAbout,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedOfferingMemorandum,
@@ -1115,6 +1174,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheNotesParameters})
 
 (def minimumDenomination
+  "minimum denomination"
   {:db/ident :fibo-bp-iss-pmbs/minimumDenomination,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TrancheNotesParameters,
@@ -1125,6 +1185,7 @@
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount})
 
 (def refersTo
+  "refers to"
   {:db/ident :fibo-bp-iss-pmbs/refersTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/IdentifyConformingMortgage,
@@ -1135,6 +1196,7 @@
    :rdfs/range :fibo-loan-reln-mtg/Mortgage})
 
 (def requires
+  "requires"
   {:db/ident :fibo-bp-iss-pmbs/requires,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/DrawUpTrancheTermsheets,
@@ -1145,6 +1207,7 @@
    :rdfs/range :fibo-sec-dbt-mbs/NonAgencyMortgagePool})
 
 (def requires.1
+  "requires"
   {:db/ident :fibo-bp-iss-pmbs/requires.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/MakeSecuritiesAvailableInMarket,
@@ -1155,6 +1218,7 @@
    :rdfs/range :fibo-sec-dbt-mbs/TranchedMBSDealProspectus})
 
 (def resultsIn
+  "results in"
   {:db/ident :fibo-bp-iss-pmbs/resultsIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/CloseDeal,
@@ -1165,6 +1229,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/TranchedMBSDealTransaction})
 
 (def resultsIn.1
+  "results in"
   {:db/ident :fibo-bp-iss-pmbs/resultsIn.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/DefineNotesParameters,
@@ -1175,6 +1240,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheNotesParameters})
 
 (def resultsIn.2
+  "results in"
   {:db/ident :fibo-bp-iss-pmbs/resultsIn.2,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/FinalizeProspectus,
@@ -1185,6 +1251,7 @@
    :rdfs/range :fibo-sec-dbt-mbs/TranchedMBSDealProspectus})
 
 (def resultsInPublicationOf
+  "results in publication of"
   {:db/ident :fibo-bp-iss-pmbs/resultsInPublicationOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/CloseDeal,

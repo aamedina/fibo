@@ -1,13 +1,21 @@
 (ns net.wikipunk.rdf.fibo-fnd-acc-4217
   "This ontology represents the subset of the ISO 4217 standard that include the actual currency codes."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
+                       "Copyright (c) 2015-2023 Object Management Group, Inc."
+                       "Copyright (c) 2022-2023 agnos.ai UK Ltd."
+                       "Copyright (c) 2015-2023 Thematix Partners LLC"],
+   :cmns-av/directSource
+   ["ISO 4217 Currency and funds code list, 2023-01-01, as maintained by the SNV, available at http://www.currency-iso.org/en/home.html"
+    "ISO 4217:2015 Codes for the representation of currencies and funds"],
+   :cmns-av/explanatoryNote
+   "This release includes all codes included in the ISO 4217 published code set.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
    :dcterms/abstract
    "This ontology represents the subset of the ISO 4217 standard that include the actual currency codes.",
-   :dcterms/issued #inst "2021-10-01T04:00:00.000-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :fibo-fnd-utl-av/explanatoryNote
-   "This release includes all codes included in the ISO 4217 published code set.",
+   :dcterms/issued #inst "2023-01-01T05:00:00.000-00:00",
+   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/modified #inst "2023-01-03T05:00:00.000-00:00",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
@@ -18,7 +26,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/ISO4217-CurrencyCodes/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-acc-4217"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
     "fibo-fnd-acc-cur"
@@ -33,7 +42,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -44,28 +52,13 @@
    :rdfs/label "ISO 4217-1 Currency Codes Ontology",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/ version of this ontology reflects the move of precious metal from products and services to currency amount, with no additional changes to the codes themselves."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/ version of this ontology was modified to reflect latest ISO and LCC data."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/ version of this ontology was modified to replace Swaziland with Eswatini, which was revised by the LCC 1.1 RTF to reflect the change to the country name per the U.N."
-    "This version was generated from the ISO XML file as published on October 1, 2021"
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/ version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary and reference the latest updates to the ISO currency codes."
+    "This version was compared with and modified per the ISO XML file as published on January 1, 2023, available at https://www.six-group.com/en/products-services/financial-information/data-standards.html."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/ version of this ontology was modified to eliminate unnecessary dependencies on the relations ontology, and to replace rdfs:comment with skos:definition per FIBO policy."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/ version of this ontology was modified to eliminate duplication with concepts in LCC."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/ version of this ontology was modified to address hygiene errors with respect to text formatting."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/ version of this ontology was modified to reflect latest ISO and LCC data."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/contributor
-   ["Thematix Partners LLC" "Adaptive, Inc." "agnos.ai UK Ltd."],
-   :sm/copyright ["Copyright (c) 2022 agnos.ai UK Ltd."
-                  "Copyright (c) 2015-2022 Object Management Group, Inc."
-                  "Copyright (c) 2015-2022 EDM Council, Inc."
-                  "Copyright (c) 2015-2022 Thematix Partners LLC"],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"],
-   :sm/directSource
-   ["ISO 4217:2015 - Codes for the representation of currencies and funds"
-    "Revised ISO 4217 Codes List, as maintained by the SNV, available at http://www.currency-iso.org/en/home.html"],
-   :sm/fileAbbreviation "fibo-fnd-acc-4217",
-   :sm/filename "ISO4217-CurrencyCodes.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/ version of this ontology was modified to address hygiene errors with respect to text formatting."]})
 
 (def ADBUnitofAccount
   "the ADB Unit of Account"
@@ -692,7 +685,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
    :rdfs/label "Bolívar Soberano",
    :skos/definition {:rdf/language "en",
-                     :rdf/value    "the currency Bolívar Soberano"}})
+                     :rdf/value    "the currency Bolívar Soberano"},
+   :skos/note
+   {:rdf/language "en",
+    :rdf/value
+    "The Bolívar Soberano (VES) is redenominated by removing six zeros from the denominations. A new currency code VED/926 representing the new valuation (1,000,000 times old VES/928) is introduced on 1 October 2021 for any internal needs during the redenomination process, but is not replacing VES as the official currency code. The Central Bank of Venezuela will not adopt the new codes in the local system, VES/928 remains in use. The actual currency code VES/928 remains the valid code after 1 October 2021 to use in any future transactions to indicate the redenominated Bolívar Soberano."}})
 
 (def BondMarketsUnitEuropeanCompositeUnit_EURCO
   "the Bond Markets Unit European Composite Unit (EURCO)"
@@ -1549,6 +1546,7 @@
                      :lcc-3166-1/SanMarino
                      :lcc-3166-1/Monaco
                      :lcc-3166-1/Slovakia
+                     :lcc-3166-1/Croatia
                      :lcc-3166-1/Finland
                      :lcc-3166-1/Montenegro
                      :lcc-3166-1/Slovenia
@@ -1879,7 +1877,8 @@
    :lcc-lr/hasTag "HRK",
    :lcc-lr/identifies :fibo-fnd-acc-4217/Kuna,
    :lcc-lr/isMemberOf :fibo-fnd-acc-4217/ISO4217-CodeSet,
-   :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
+   :owl/deprecated true,
+   :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/CurrencyIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
    :rdfs/label "HRK",
@@ -2322,17 +2321,22 @@
 
 (def Kuna
   "the currency Kuna"
-  {:db/ident :fibo-fnd-acc-4217/Kuna,
+  {:cmns-av/explanatoryNote
+   "The Kuna (HRK) will be retained in FIBO at least through 2023 due to the possibility of dual listing and to support instrument pricing that predated this change.",
+   :db/ident :fibo-fnd-acc-4217/Kuna,
    :fibo-fnd-acc-cur/hasMinorUnit "2",
    :fibo-fnd-acc-cur/hasNumericCode "191",
    :lcc-cr/isUsedBy :lcc-3166-1/Croatia,
    :lcc-lr/hasName "Kuna",
-   :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
+   :owl/deprecated true,
+   :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Currency],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
    :rdfs/label "Kuna",
    :skos/definition {:rdf/language "en",
-                     :rdf/value    "the currency Kuna"}})
+                     :rdf/value    "the currency Kuna"},
+   :skos/note
+   "Effective 1 Jan 2023, Croatia will use the Euro as its primary currency. The Kuna (HRK) and Euro (EUR) will be used during the parallel circulation period from 1 January 2023 to 14 January 2023 inclusive. The period of mandatory dual price display lasts from 5 September 2022 to 31 December 2023. As of 1 January 2023, the Kuna should be listed as the old/historic currency of Croatia. The exchange rate is fixed at EUR 1 = HRK 7.53450"})
 
 (def KuwaitiDinar
   "the currency Kuwaiti Dinar"
@@ -2534,7 +2538,7 @@
   "the currency Leone"
   {:db/ident :fibo-fnd-acc-4217/Leone,
    :fibo-fnd-acc-cur/hasMinorUnit "2",
-   :fibo-fnd-acc-cur/hasNumericCode "694",
+   :fibo-fnd-acc-cur/hasNumericCode ["925" "694"],
    :lcc-cr/isUsedBy :lcc-3166-1/SierraLeone,
    :lcc-lr/hasName "Leone",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
@@ -2542,7 +2546,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
    :rdfs/label "Leone",
    :skos/definition {:rdf/language "en",
-                     :rdf/value    "the currency Leone"}})
+                     :rdf/value    "the currency Leone"},
+   :skos/note
+   "The Sierra Leonean LEONE (SLL) is redenominated by removing three (3) zeros from the denominations. A new currency code SLE/925 representing the new valuation (1,000 times old SLL/694) is introduced on 1st April 2022 for any internal needs during the redenomination process, and is replacing SLL as the official currency code, after the transition period to be determined. During this transition period, both the old Leone and new Leone will be in physical circulation for at least 90 days. The Bank of Sierra Leone will adopt the new code in the local system but SLL/694 shall remain in use until further notice. The Sierra Leonean currency shall continue to be the LEONE and this will not change after redenomination."})
 
 (def LiberianDollar
   "the currency Liberian Dollar"
@@ -2885,12 +2891,12 @@
 
 (def MexicanUnidaddeInversion_UDI
   "the funds Mexican Unidad de Inversion (UDI)"
-  {:db/ident :fibo-fnd-acc-4217/MexicanUnidaddeInversion_UDI,
+  {:cmns-av/explanatoryNote
+   "The UDI is an inflation adjusted mechanism set by the Central Bank of Mexico according to the variation in the Mexican Consumer Price Index. The value of the UDI is expressed in terms of Mexican Pesos per UDI. It is used to denominate mortgage loans, some bank deposits with maturities of 3 month or more and Government bonds (UDIBONOS).",
+   :db/ident :fibo-fnd-acc-4217/MexicanUnidaddeInversion_UDI,
    :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/MexicanPeso,
    :fibo-fnd-acc-cur/hasMinorUnit "2",
    :fibo-fnd-acc-cur/hasNumericCode "979",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The UDI is an inflation adjusted mechanism set by the Central Bank of Mexico according to the variation in the Mexican Consumer Price Index. The value of the UDI is expressed in terms of Mexican Pesos per UDI. It is used to denominate mortgage loans, some bank deposits with maturities of 3 month or more and Government bonds (UDIBONOS).",
    :lcc-cr/isUsedBy :lcc-3166-1/Mexico,
    :lcc-lr/hasName "Mexican Unidad de Inversion (UDI)",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Funds],
@@ -2944,12 +2950,12 @@
 
 (def Mvdol
   "the funds Mvdol"
-  {:db/ident :fibo-fnd-acc-4217/Mvdol,
+  {:cmns-av/explanatoryNote
+   "For indexation purposes and denomination of certain financial instruments (e.g. treasury bills). The Mvdol is set daily by the Central Bank of Bolivia based on the official USD/BOB rate.",
+   :db/ident :fibo-fnd-acc-4217/Mvdol,
    :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/Boliviano,
    :fibo-fnd-acc-cur/hasMinorUnit "2",
    :fibo-fnd-acc-cur/hasNumericCode "984",
-   :fibo-fnd-utl-av/explanatoryNote
-   "For indexation purposes and denomination of certain financial instruments (e.g. treasury bills). The Mvdol is set daily by the Central Bank of Bolivia based on the official USD/BOB rate.",
    :lcc-cr/isUsedBy :lcc-3166-1/Bolivia,
    :lcc-lr/hasName "Mvdol",
    :rdf/type [:fibo-fnd-acc-cur/Funds :owl/NamedIndividual],
@@ -3798,6 +3804,24 @@
                      :rdf/value
                      "the currency identifier for Saint Helena Pound"}})
 
+(def SLE
+  "the currency identifier for Leone"
+  {:db/ident :fibo-fnd-acc-4217/SLE,
+   :lcc-lr/denotes :fibo-fnd-acc-4217/Leone,
+   :lcc-lr/hasTag "SLE",
+   :lcc-lr/identifies :fibo-fnd-acc-4217/Leone,
+   :lcc-lr/isMemberOf :fibo-fnd-acc-4217/ISO4217-CodeSet,
+   :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   :rdfs/label "SLE",
+   :skos/definition {:rdf/language "en",
+                     :rdf/value    "the currency identifier for Leone"},
+   :skos/note
+   {:rdf/language "en",
+    :rdf/value
+    "The Sierra Leonean LEONE (SLL) is redenominated by removing three (3) zeros from the denominations. A new currency code SLE/925 representing the new valuation (1,000 times old SLL/694) is introduced on 1st April 2022 for any internal needs during the redenomination process, and is replacing SLL as the official currency code, after the transition period to be determined. During this transition period, both the old Leone and new Leone will be in physical circulation for at least 90 days. The Bank of Sierra Leone will adopt the new code in the local system but SLL/694 shall remain in use until further notice. The Sierra Leonean currency shall continue to be the LEONE and this will not change after redenomination."}})
+
 (def SLL
   "the currency identifier for Leone"
   {:db/ident :fibo-fnd-acc-4217/SLL,
@@ -4522,12 +4546,12 @@
 
 (def USDollar_Nextday
   "the funds US Dollar (Next day)"
-  {:db/ident :fibo-fnd-acc-4217/USDollar_Nextday,
+  {:cmns-av/explanatoryNote
+   "\"Next day\" funds are immediately available for transfer in like funds, and, subject to settlement, available the next business day for same day funds transfer or withdrawal in cash.",
+   :db/ident :fibo-fnd-acc-4217/USDollar_Nextday,
    :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/USDollar,
    :fibo-fnd-acc-cur/hasMinorUnit "2",
    :fibo-fnd-acc-cur/hasNumericCode "997",
-   :fibo-fnd-utl-av/explanatoryNote
-   "\"Next day\" funds are immediately available for transfer in like funds, and, subject to settlement, available the next business day for same day funds transfer or withdrawal in cash.",
    :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
    :lcc-lr/hasName "US Dollar (Next day)",
    :rdf/type [:fibo-fnd-acc-cur/Funds :owl/NamedIndividual],
@@ -4626,27 +4650,32 @@
                      :rdf/value    "the currency Uganda Shilling"}})
 
 (def UnidadPrevisional
-  "the currency Unidad Previsional"
+  "the funds Unidad Previsional"
   {:db/ident :fibo-fnd-acc-4217/UnidadPrevisional,
+   :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/PesoUruguayo,
    :fibo-fnd-acc-cur/hasMinorUnit "4",
    :fibo-fnd-acc-cur/hasNumericCode "927",
    :lcc-cr/isUsedBy :lcc-3166-1/Uruguay,
    :lcc-lr/hasName "Unidad Previsional",
-   :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
+   :rdf/type [:fibo-fnd-acc-cur/Funds :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
    :rdfs/label "Unidad Previsional",
    :skos/definition {:rdf/language "en",
-                     :rdf/value    "the currency Unidad Previsional"}})
+                     :rdf/value    "the funds Unidad Previsional"},
+   :skos/note
+   {:rdf/language "en",
+    :rdf/value
+    "The Unidad Previsional (UP) is a daily accounting unit that tracks changes to the nominal wage index. The value of UP is expressed in terms of Uruguayan Pesos per UP, with the initial value of one peso (UYU 1.00) on 04/30/2018. The institution responsible for the calculation and publication is the Instituto Nacional de Estadística (National Bureau of Statistics) according to Law 19,608."}})
 
 (def UnidaddeFomento
   "the funds Unidad de Fomento"
-  {:db/ident :fibo-fnd-acc-4217/UnidaddeFomento,
+  {:cmns-av/explanatoryNote
+   "The CLF is a daily economically-financial unit calculated by the Central Bank of Chile according to inflation (as measured by the Chilean Consumer Price Index of the previous month). The value of the CLF is expressed in terms of Chilean Pesos per CLF. The use of CLF has been widely extended to all types of bank loans, financial investments (time deposits, mortgages and other public or private indexed instruments), contracts and fees in some cases.",
+   :db/ident :fibo-fnd-acc-4217/UnidaddeFomento,
    :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/ChileanPeso,
    :fibo-fnd-acc-cur/hasMinorUnit "4",
    :fibo-fnd-acc-cur/hasNumericCode "990",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The CLF is a daily economically-financial unit calculated by the Central Bank of Chile according to inflation (as measured by the Chilean Consumer Price Index of the previous month). The value of the CLF is expressed in terms of Chilean Pesos per CLF. The use of CLF has been widely extended to all types of bank loans, financial investments (time deposits, mortgages and other public or private indexed instruments), contracts and fees in some cases.",
    :lcc-cr/isUsedBy :lcc-3166-1/Chile,
    :lcc-lr/hasName "Unidad de Fomento",
    :rdf/type [:fibo-fnd-acc-cur/Funds :owl/NamedIndividual],
@@ -4658,12 +4687,12 @@
 
 (def UnidaddeValorReal
   "the funds Unidad de Valor Real"
-  {:db/ident :fibo-fnd-acc-4217/UnidaddeValorReal,
+  {:cmns-av/explanatoryNote
+   "The UVR is a daily account unit set by the Central Bank of Colombia according to the variation in the Consumer Price Index of Colombia. The value of UVR is expressed in terms of Colombian Pesos per UVR. It is used to denominate and update mortgage loans and some public debt bonds.",
+   :db/ident :fibo-fnd-acc-4217/UnidaddeValorReal,
    :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/ColombianPeso,
    :fibo-fnd-acc-cur/hasMinorUnit "2",
    :fibo-fnd-acc-cur/hasNumericCode "970",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The UVR is a daily account unit set by the Central Bank of Colombia according to the variation in the Consumer Price Index of Colombia. The value of UVR is expressed in terms of Colombian Pesos per UVR. It is used to denominate and update mortgage loans and some public debt bonds.",
    :lcc-cr/isUsedBy :lcc-3166-1/Colombia,
    :lcc-lr/hasName "Unidad de Valor Real",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Funds],
@@ -4675,12 +4704,12 @@
 
 (def UruguayPesoenUnidadesIndexadas_UI
   "the funds Uruguay Peso en Unidades Indexadas (UI)"
-  {:db/ident :fibo-fnd-acc-4217/UruguayPesoenUnidadesIndexadas_UI,
+  {:cmns-av/explanatoryNote
+   "The UYI (URUIURUI) is used for issuance of debt instruments by the Uruguayan government in the international global bond market. It is calculated based on an established methodology using underlying inflationary statistics in the Uruguayan market. (Introduced in 2002).",
+   :db/ident :fibo-fnd-acc-4217/UruguayPesoenUnidadesIndexadas_UI,
    :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/PesoUruguayo,
    :fibo-fnd-acc-cur/hasMinorUnit "0",
    :fibo-fnd-acc-cur/hasNumericCode "940",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The UYI (URUIURUI) is used for issuance of debt instruments by the Uruguayan government in the international global bond market. It is calculated based on an established methodology using underlying inflationary statistics in the Uruguayan market. (Introduced in 2002).",
    :lcc-cr/isUsedBy :lcc-3166-1/Uruguay,
    :lcc-lr/hasName "Uruguay Peso en Unidades Indexadas (UI)",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Funds],
@@ -4712,13 +4741,16 @@
    :lcc-lr/hasTag "VED",
    :lcc-lr/identifies :fibo-fnd-acc-4217/BolívarSoberano,
    :lcc-lr/isMemberOf :fibo-fnd-acc-4217/ISO4217-CodeSet,
-   :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
+   :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/CurrencyIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
    :rdfs/label "VED",
    :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "the currency identifier for Bolívar Soberano"}})
+                     :rdf/value "the currency identifier for Bolívar Soberano"},
+   :skos/note
+   {:rdf/language "en",
+    :rdf/value
+    "Note that the numeric currency code corresponding to the Bolívar Soberano with currency code 'VED' is 926."}})
 
 (def VES
   "the currency identifier for Bolívar Soberano"
@@ -4732,8 +4764,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
    :rdfs/label "VES",
    :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "the currency identifier for Bolívar Soberano"}})
+                     :rdf/value "the currency identifier for Bolívar Soberano"},
+   :skos/note
+   {:rdf/language "en",
+    :rdf/value
+    "Note that the numeric currency code corresponding to the Bolívar Soberano with currency code 'VES' is 928."}})
 
 (def VND
   "the currency identifier for Dong"
@@ -4779,12 +4814,12 @@
 
 (def WIREuro
   "the funds WIR Euro"
-  {:db/ident :fibo-fnd-acc-4217/WIREuro,
+  {:cmns-av/explanatoryNote
+   "WIR Euro - WIR Bank for use with the EFTPOS system with their own WIR-card and the Electronic Banking Services",
+   :db/ident :fibo-fnd-acc-4217/WIREuro,
    :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/Euro,
    :fibo-fnd-acc-cur/hasMinorUnit "2",
    :fibo-fnd-acc-cur/hasNumericCode "947",
-   :fibo-fnd-utl-av/explanatoryNote
-   "WIR Euro - WIR Bank for use with the EFTPOS system with their own WIR-card and the Electronic Banking Services",
    :lcc-cr/isUsedBy :lcc-3166-1/Switzerland,
    :lcc-lr/hasName "WIR Euro",
    :rdf/type [:fibo-fnd-acc-cur/Funds :owl/NamedIndividual],
@@ -4796,12 +4831,12 @@
 
 (def WIRFranc
   "the funds WIR Franc"
-  {:db/ident :fibo-fnd-acc-4217/WIRFranc,
+  {:cmns-av/explanatoryNote
+   "WIR Franc - WIR Bank for use with the EFTPOS system with their own WIR-card and the Electronic Banking Services.",
+   :db/ident :fibo-fnd-acc-4217/WIRFranc,
    :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/SwissFranc,
    :fibo-fnd-acc-cur/hasMinorUnit "2",
    :fibo-fnd-acc-cur/hasNumericCode "948",
-   :fibo-fnd-utl-av/explanatoryNote
-   "WIR Franc - WIR Bank for use with the EFTPOS system with their own WIR-card and the Electronic Banking Services.",
    :lcc-cr/isUsedBy :lcc-3166-1/Switzerland,
    :lcc-lr/hasName "WIR Franc",
    :rdf/type [:fibo-fnd-acc-cur/Funds :owl/NamedIndividual],

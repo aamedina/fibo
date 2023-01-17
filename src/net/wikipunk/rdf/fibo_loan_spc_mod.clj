@@ -49,7 +49,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MetadataLOANLoansSpecific/",
    :rdfs/label "Loans - Specific Module",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/contributor ["Tahoe Blue Ltd"
                     "Thematix Partners LLC"
                     "John F. Gemski"

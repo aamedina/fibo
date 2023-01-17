@@ -64,7 +64,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/MetadataIND/",
    :rdfs/label "Indices and Indicators",
-   :rdfs/seeAlso "https://www.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"],
    :sm/contributor
    ["Adaptive, Inc."
     "Citigroup"

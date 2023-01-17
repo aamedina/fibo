@@ -47,7 +47,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/MetadataBEPrivateLimitedCompanies/",
    :rdfs/label "Private Limited Companies",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright ["Copyright (c) 2015-2018 EDM Council, Inc."
                   "Copyright (c) 2015-2018 Object Management Group, Inc."],
    :sm/moduleAbbreviation "fibo-be-plc"})

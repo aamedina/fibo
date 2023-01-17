@@ -86,6 +86,7 @@
     "contract definition for a credit event as it pertains to the master agreement"}})
 
 (def CreditSupportAgreement
+  "credit support agreement"
   {:db/ident :fibo-der-drc-ma/CreditSupportAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -102,6 +103,7 @@
                      :fibo-fnd-agr-ctr/Contract]})
 
 (def CreditSupportBeneficiary
+  "credit support beneficiary"
   {:db/ident :fibo-der-drc-ma/CreditSupportBeneficiary,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -132,6 +134,7 @@
                      :rdf/value "Failure of some Credit Support Agreement."}})
 
 (def CrossDefaultProvisions
+  "cross default provisions"
   {:db/ident :fibo-der-drc-ma/CrossDefaultProvisions,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -298,6 +301,7 @@
     "Example text: \"Each obligation of each party under Section 2(a)(i) is subject to (1) the condition precedent that no Event of Default or Potential Event of Default with respect to the other party has occurred and is continuing, (2) the condition precedent that no Early Termination Date in respect of the relevant Transaction has occurred or been effectively designated and (3) each other applicable condition precedent specified in this Agreement. \" In the above, the Obligations defined under Section 2(a)(i) of the Master Agrement is the obligation to make each payment or delivery defined in a Confirmation for a transaction carried out under this Master Agreement."}})
 
 (def MasterAgreementContractualCommitment
+  "master agreement contractual commitment"
   {:db/ident :fibo-der-drc-ma/MasterAgreementContractualCommitment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -596,6 +600,7 @@
     "Selection of possible places to be specified for the payments in a Master Agreement."}})
 
 (def PaymentPlaceSpecifiedEitherInMasterAgreementOrConfirmation
+  "payment place specified either in master agreement or confirmation"
   {:db/ident
    :fibo-der-drc-ma/PaymentPlaceSpecifiedEitherInMasterAgreementOrConfirmation,
    :rdf/type :owl/Class,
@@ -608,6 +613,7 @@
    :rdfs/subClassOf :fibo-der-drc-ma/PaymentPlaceSpecificationMethod})
 
 (def PaymentPlaceSpecifiedInConfirmationMessage
+  "payment place specified in confirmation message"
   {:db/ident :fibo-der-drc-ma/PaymentPlaceSpecifiedInConfirmationMessage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -617,6 +623,7 @@
    :rdfs/subClassOf :fibo-der-drc-ma/PaymentPlaceSpecificationMethod})
 
 (def PaymentPlaceSpecifiedInMasterAgreement
+  "payment place specified in master agreement"
   {:db/ident :fibo-der-drc-ma/PaymentPlaceSpecifiedInMasterAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -780,6 +787,7 @@
     "The basis upon which default interest is to be calculated, as a period of time (e.g. daily)."}})
 
 (def describesTreatmentOf
+  "describes treatment of"
   {:db/ident :fibo-der-drc-ma/describesTreatmentOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-der-drc-ma/MasterAgreementTerminationProvision,
@@ -834,6 +842,7 @@
     "If a party is required to deduct or withhold tax, whether that party is to promptly forward to the other party an official receipt (or a certified copy), or other documentation reasonably acceptable to that party, evidencing such payment to such authorities."}})
 
 (def freelyTransferableFunds
+  "freely transferable funds"
   {:db/ident :fibo-der-drc-ma/freelyTransferableFunds,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-der-drc-ma/PaymentObligation,
@@ -844,6 +853,7 @@
    :rdfs/range :xsd/boolean})
 
 (def hasBeneficiary
+  "has beneficiary"
   {:db/ident :fibo-der-drc-ma/hasBeneficiary,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-der-drc-ma/CreditSupportAgreement,
@@ -900,6 +910,7 @@
     "Whether liability on the part of the counterparty (the party which is not assessed as being liable for the relevant tax) includes liability for penalties in respect of the late or non payment of that tax by the party so assessed."}})
 
 (def invokedInEventOf
+  "invoked in event of"
   {:db/ident :fibo-der-drc-ma/invokedInEventOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain
@@ -911,6 +922,7 @@
    :rdfs/range :fibo-der-drc-ma/MasterAgreementTerminationEvent})
 
 (def invokedInEventOf.1
+  "invoked in event of"
   {:db/ident :fibo-der-drc-ma/invokedInEventOf.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain
@@ -922,6 +934,7 @@
    :rdfs/range :fibo-fbc-dae-cre/CreditEvent})
 
 (def isFailureInForceOf
+  "is failure in force of"
   {:db/ident :fibo-der-drc-ma/isFailureInForceOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-der-drc-ma/CreditSupportDefaultEvent,
@@ -932,6 +945,7 @@
    :rdfs/range :fibo-der-drc-ma/CreditSupportAgreement})
 
 (def isPredicatedOn
+  "is predicated on"
   {:db/ident :fibo-der-drc-ma/isPredicatedOn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-agr-ctr/ConditionPrecedent,
@@ -972,6 +986,7 @@
     "The currency for payments under this Master Agreement. ISDA Master Agreement example text: Payment in the Contractual Currency. Each payment under this Agreement will be made in the relevant currency specified in this Agreement for that payment (the \"Contractual Currency\"). To the extent permitted by applicable law, any obligation to make payments under this Agreement in the Contractual Currency will not be discharged or satisfied by any tender in any currency other than the Contractual Currency, except to the extent such tender results in the actual receipt by the party to which payment is owed, acting in a reasonable manner and in good faith in converting the currency so tendered into the Contractual Currency, of the full amount in the Contractual Currency of all amounts payable in respect of this Agreement. If for any reason the amount in the Contractual Currency so received falls short of the amount in the Contractual Currency payable in respect of this Agreement, the party required to make the payment will, to the extent permitted by applicable law, immediately pay such additional amount in the Contractual Currency as may be necessary to compensate for the shortfall. If for any reason the amount in the Contractual Currency so received exceeds the amount in the Contractual Currency payable in respect of this Agreement, the party receiving the payment will refund promptly the amount of such excess."}})
 
 (def mayBeVariedByOne
+  "may be varied by one"
   {:db/ident :fibo-der-drc-ma/mayBeVariedByOne,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-der-drc-ma/ObligationInRespectOfNetting,
@@ -1162,6 +1177,7 @@
     "Whether this Obligation is subject to other provisions in the Master Agreement."}})
 
 (def thresholdAmount
+  "threshold amount"
   {:db/ident :fibo-der-drc-ma/thresholdAmount,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-der-drc-ma/CrossDefaultProvisions,

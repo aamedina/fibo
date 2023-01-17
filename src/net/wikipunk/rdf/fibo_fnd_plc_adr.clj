@@ -1,10 +1,12 @@
 (ns net.wikipunk.rdf.fibo-fnd-plc-adr
   "This ontology provides high level definitions for addresses and address components including elements that are common to addressing standards."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2013-2023 Object Management Group, Inc."
+                       "Copyright (c) 2013-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :dcterms/abstract
    "This ontology provides high level definitions for addresses and address components including elements that are common to addressing standards.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
@@ -14,11 +16,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"],
+    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-arr-cls"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-arr-id"
@@ -39,7 +43,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
@@ -57,20 +60,8 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses.rdf version of this ontology was modified to make postcode a subclass of geographic region identifier and fix spelling errors."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses.rdf version of this ontology was modified to eliminate duplication of concepts in LCC, simplify address representation and merge countries with locations."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses.rdf version of this ontology was modified to address hygiene issues with respect to text formatting."
-    "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Places/Addresses.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.1 RTF report. Differences from the 1.0 version include the addition of a hasAddress property and PhysicalAddress class as a parent of PostalAddress."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2013-2022 EDM Council, Inc."
-                  "Copyright (c) 2013-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"],
-   :sm/fileAbbreviation "fibo-fnd-plc-adr",
-   :sm/filename "Addresses.rdf"})
+    "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Places/Addresses.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.1 RTF report. Differences from the 1.0 version include the addition of a hasAddress property and PhysicalAddress class as a parent of PostalAddress."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def Address
   "index to a location to which communications may be delivered"
@@ -153,29 +144,29 @@
 
 (def ConventionalStreetAddress
   "physical address that identifies a location on a street to which communications may be delivered"
-  {:db/ident :fibo-fnd-plc-adr/ConventionalStreetAddress,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Other unconventional addresses may include rural and highway route addresses, general delivery addresses, post office box addresses, private mail center addresses, and so forth.",
+   :db/ident :fibo-fnd-plc-adr/ConventionalStreetAddress,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "conventional street address",
    :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-plc-adr/StreetAddress,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasStreetAddress,
-                      :rdf/type       :owl/Restriction}
+                      :owl/onDataRange :rdfs/Literal,
+                      :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine3,
+                      :rdf/type        :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine1,
                       :rdf/type        :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine3,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine2,
                       :rdf/type        :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-plc-adr/StreetAddress,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasStreetAddress,
+                      :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/PhysicalAddress],
    :skos/definition
    "physical address that identifies a location on a street to which communications may be delivered"})
@@ -194,10 +185,10 @@
 
 (def Floor
   "all of the rooms or areas on the same level of a building; a story"
-  {:db/ident :fibo-fnd-plc-adr/Floor,
-   :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Labeling systems for floors vary from country to country, and may be specific to the building, for example, whether or not a 13th floor is identified as such tends to be on a case-by-case basis.",
+   :db/ident :fibo-fnd-plc-adr/Floor,
+   :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
@@ -320,27 +311,15 @@
 
 (def PhysicalAddress
   "physical address where communications can be addressed, papers served or representatives located for any kind of organization or person"
-  {:db/ident :fibo-fnd-plc-adr/PhysicalAddress,
-   :fibo-fnd-utl-av/usageNote
+  {:cmns-av/usageNote
    "Typically, addresses will have only one postcode expressed either as a string value or individual, and only a municipality (individual) or city (string value).",
+   :db/ident :fibo-fnd-plc-adr/PhysicalAddress,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "physical address"},
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
-                      :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-plc-adr/hasPostalCode,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-plc-loc/Municipality,
-                      :owl/onProperty :fibo-fnd-plc-loc/hasMunicipality,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-plc-adr/Address
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-plc-adr/Postcode,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasIndividualPostcode,
-                      :rdf/type       :owl/Restriction}
+   :rdfs/subClassOf [:fibo-fnd-plc-adr/Address
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-loc/PhysicalLocation,
                       :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
@@ -349,9 +328,21 @@
                       :owl/onClass    :lcc-cr/Country,
                       :owl/onProperty :fibo-fnd-plc-loc/hasCountry,
                       :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-plc-adr/Postcode,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasIndividualPostcode,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-plc-loc/Municipality,
+                      :owl/onProperty :fibo-fnd-plc-loc/hasMunicipality,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-plc-loc/hasSubdivision,
                       :owl/someValuesFrom :lcc-cr/CountrySubdivision,
                       :rdf/type           :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :rdfs/Literal,
+                      :owl/onProperty  :fibo-fnd-plc-adr/hasPostalCode,
+                      :rdf/type        :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fnd-plc-loc/hasCityName,
@@ -389,7 +380,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "physical addressing scheme",
-   :rdfs/seeAlso "https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf",
+   :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"],
    :rdfs/subClassOf
    [{:owl/unionOf [{:owl/minQualifiedCardinality 0,
                     :owl/onClass    :fibo-fnd-plc-adr/PhysicalAddressIdentifier,
@@ -429,9 +420,9 @@
 
 (def PostOfficeBox
   "post office box associated with an address"
-  {:db/ident :fibo-fnd-plc-adr/PostOfficeBox,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Post office box identifiers are only unique to a given jurisdiction, which may be a post office, town, or other region.",
+   :db/ident :fibo-fnd-plc-adr/PostOfficeBox,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
@@ -473,8 +464,8 @@
 
 (def Postcode
   "sequence of characters used to assist in the sorting of mail"
-  {:db/ident :fibo-fnd-plc-adr/Postcode,
-   :fibo-fnd-utl-av/synonym "postal code",
+  {:cmns-av/synonym "postal code",
+   :db/ident :fibo-fnd-plc-adr/Postcode,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
@@ -517,10 +508,10 @@
 
 (def PrimaryAddressNumber
   "address component that identifies a location with respect to a given street"
-  {:db/ident :fibo-fnd-plc-adr/PrimaryAddressNumber,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Although traditionally called a 'number', the street number may consist of alphanumeric characters, for example, '221B'.",
-   :fibo-fnd-utl-av/synonym "street number",
+   :cmns-av/synonym "street number",
+   :db/ident :fibo-fnd-plc-adr/PrimaryAddressNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
@@ -591,9 +582,9 @@
 
 (def SecondaryUnitDesignator
   "classifier for a smaller structure or component within a larger facility, such as an apartment, office, mail stop, or other similar designation"
-  {:db/ident :fibo-fnd-plc-adr/SecondaryUnitDesignator,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Note that only certain secondary units require a secondary range, such as an apartment number, to complete a delivery point.",
+   :db/ident :fibo-fnd-plc-adr/SecondaryUnitDesignator,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
@@ -677,30 +668,30 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "street address",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-adr/StreetSuffix,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasStreetSuffix,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/SecondaryUnit,
                       :owl/onProperty :fibo-fnd-plc-adr/hasSecondaryUnit,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-plc-adr/PrimaryAddressNumber,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasPrimaryAddressNumber,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-plc-adr/StreetSuffix,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasStreetSuffix,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/AddressComponent
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/PredirectionalSymbol,
                       :owl/onProperty :fibo-fnd-plc-adr/hasPredirectionalSymbol,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-plc-adr/hasStreetName,
-                      :owl/someValuesFrom :fibo-fnd-plc-adr/StreetName,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-plc-adr/PrimaryAddressNumber,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasPrimaryAddressNumber,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-plc-adr/PostdirectionalSymbol,
                       :owl/onProperty
                       :fibo-fnd-plc-adr/hasPostdirectionalSymbol,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-plc-adr/hasStreetName,
+                      :owl/someValuesFrom :fibo-fnd-plc-adr/StreetName,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "index to a location that consists of a primary address number, predirectional, street name, suffix, postdirectional, and an optional secondary unit"})
 
@@ -721,9 +712,9 @@
 
 (def StreetSuffix
   "classifier for a street or other delivery location, such as a dwelling located along a waterway"
-  {:db/ident :fibo-fnd-plc-adr/StreetSuffix,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The suffix may provide some insight into the size or length of the street, though not necessarily consistently. In some cities, the suffix differentiates the street from another in the same context, such as 19th Street vs. 19th Avenue in San Francisco.",
+   :db/ident :fibo-fnd-plc-adr/StreetSuffix,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
@@ -763,9 +754,9 @@
 
 (def SupplementalAddressComponent
   "address component that provides additional information that is important to ensuring proper delivery of communications"
-  {:db/ident :fibo-fnd-plc-adr/SupplementalAddressComponent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Supplemental components include post office box information, rural route and highway contract route information, private mailboxes, and so forth, that are not part of a conventional street address.",
+   :db/ident :fibo-fnd-plc-adr/SupplementalAddressComponent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
@@ -883,9 +874,9 @@
 
 (def hasAddressLine1
   "the first line of the street address"
-  {:db/ident :fibo-fnd-plc-adr/hasAddressLine1,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   :db/ident :fibo-fnd-plc-adr/hasAddressLine1,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fnd-plc-adr/PhysicalAddress,
    :rdfs/isDefinedBy
@@ -895,9 +886,9 @@
 
 (def hasAddressLine2
   "the second line of the street address"
-  {:db/ident :fibo-fnd-plc-adr/hasAddressLine2,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   :db/ident :fibo-fnd-plc-adr/hasAddressLine2,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fnd-plc-adr/PhysicalAddress,
    :rdfs/isDefinedBy
@@ -907,11 +898,11 @@
 
 (def hasAddressLine3
   "the third line of the street address"
-  {:db/ident :fibo-fnd-plc-adr/hasAddressLine3,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
-   :fibo-fnd-utl-av/usageNote
+   :cmns-av/usageNote
    "This element SHALL be omitted if address line 2 is omitted.",
+   :db/ident :fibo-fnd-plc-adr/hasAddressLine3,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fnd-plc-adr/PhysicalAddress,
    :rdfs/isDefinedBy
@@ -932,9 +923,9 @@
 
 (def hasIndividualPostcode
   "indicates the local or international postcode element of a delivery address as specified by the local postal service"
-  {:db/ident :fibo-fnd-plc-adr/hasIndividualPostcode,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   :db/ident :fibo-fnd-plc-adr/hasIndividualPostcode,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-plc-adr/PhysicalAddress,
    :rdfs/isDefinedBy
@@ -947,9 +938,9 @@
 
 (def hasMailRouting
   "an optional, free text address line containing explicit routing information (this elements's presence indicates that this address is a routing / 'care of' address)"
-  {:db/ident :fibo-fnd-plc-adr/hasMailRouting,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   :db/ident :fibo-fnd-plc-adr/hasMailRouting,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fnd-plc-adr/PhysicalAddress,
    :rdfs/isDefinedBy
@@ -960,9 +951,9 @@
 
 (def hasPostalCode
   "the postal code of this address as specified by the local postal service"
-  {:db/ident :fibo-fnd-plc-adr/hasPostalCode,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   :db/ident :fibo-fnd-plc-adr/hasPostalCode,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fnd-plc-adr/PhysicalAddress,
    :rdfs/isDefinedBy
@@ -1076,9 +1067,9 @@
 
 (def hasTransliteratedAddress
   "identifies a transliterated (i.e., in Latin or Romanized ASCII) address for the registered entity"
-  {:db/ident :fibo-fnd-plc-adr/hasTransliteratedAddress,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   :db/ident :fibo-fnd-plc-adr/hasTransliteratedAddress,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
@@ -1090,14 +1081,14 @@
 
 (def requiresSecondaryUnitRange
   "if true, indicates that an additional qualifier is needed to complete the delivery point description, such as an apartment number"
-  {:db/ident :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Note that in some cases, such as for lobby or office, if there are multiple secondary units then a range may be needed to differentiate between them, even if the range is not always required.",
+   :db/ident :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "requires secondary unit range",
    :rdfs/range :xsd/boolean,
-   :rdfs/seeAlso "https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf",
+   :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"],
    :skos/definition
    "if true, indicates that an additional qualifier is needed to complete the delivery point description, such as an apartment number"})

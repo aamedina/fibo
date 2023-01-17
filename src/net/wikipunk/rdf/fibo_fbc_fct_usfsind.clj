@@ -209,7 +209,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Bloomberg Finance L.P. US-DE",
-   :rdfs/seeAlso "http://www.bloomberg.com/",
+   :rdfs/seeAlso ["http://www.bloomberg.com/"],
    :skos/definition
    "Bloomberg Finance L.P. legal entity that is a Delaware Limited Partnership"})
 
@@ -285,7 +285,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Bloomberg LEI registry",
-   :rdfs/seeAlso "https://lei.bloomberg.com",
+   :rdfs/seeAlso ["https://lei.bloomberg.com"],
    :skos/definition "Bloomberg LEI registry"})
 
 (def BloombergLP
@@ -316,7 +316,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Bloomberg L.P. US-DE",
-   :rdfs/seeAlso "http://www.bloomberg.com/",
+   :rdfs/seeAlso ["http://www.bloomberg.com/"],
    :skos/definition
    "Bloomberg L.P. legal entity that is a Delaware Limited Partnership"})
 
@@ -569,7 +569,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdfs/label "The Depository Trust & Clearing Corporation",
-   :rdfs/seeAlso "http://www.dtcc.com/about/businesses-and-subsidiaries",
+   :rdfs/seeAlso ["http://www.dtcc.com/about/businesses-and-subsidiaries"],
    :skos/definition "Depository Trust & Clearing Corporation"})
 
 (def DepositoryTrustCompany
@@ -591,7 +591,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Depository Trust Company",
    :rdfs/seeAlso
-   "http://www.dtcc.com/about/businesses-and-subsidiaries/dtc.aspx",
+   ["http://www.dtcc.com/about/businesses-and-subsidiaries/dtc.aspx"],
    :skos/definition
    "central counterparty clearing house (CCP), securities depository, and registration authority (RA) functional entity for The Depository Trust Company"})
 
@@ -641,7 +641,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Global LEI Index",
-   :rdfs/seeAlso "https://www.gleif.org/en/lei-data/global-lei-index",
+   :rdfs/seeAlso ["https://www.gleif.org/en/lei-data/global-lei-index"],
    :skos/definition
    "Global LEI Index registry, which contains historical and current LEI records including related reference data in one authoritative, central repository"})
 
@@ -654,7 +654,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Global Markets Entity Identifier registry",
-   :rdfs/seeAlso "https://www.gmeiutility.org/",
+   :rdfs/seeAlso ["https://www.gmeiutility.org/"],
    :skos/definition
    "Global Markets Entity Identifier (GMEI) registry. The GMEI utility is a pre-Local Operating Unit of the Global Legal Entity Identifier System (GLEIS)."})
 
@@ -681,7 +681,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Intercontinental Exchange",
-   :rdfs/seeAlso "http://www.theice.com/",
+   :rdfs/seeAlso ["http://www.theice.com/"],
    :skos/definition
    "Intercontinental Exchange functional entity, which owns exchanges for financial and commodity markets, and operates 23 regulated exchanges and marketplaces"})
 
@@ -750,7 +750,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Intercontinental Exchange, Inc. US-DE",
-   :rdfs/seeAlso "http://www.theice.com/",
+   :rdfs/seeAlso ["http://www.theice.com/"],
    :skos/definition
    "Intercontinental Exchange legal entity that is a Delaware Corporation"})
 
@@ -843,7 +843,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdfs/label "S&P Global Inc. US-NY",
-   :rdfs/seeAlso "http://www.spglobal.com/",
+   :rdfs/seeAlso ["http://www.spglobal.com/"],
    :skos/definition
    "S&P Global legal entity that is a New York Domestic Business Corporation"})
 
@@ -896,7 +896,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Thomson Reuters Corporation",
-   :rdfs/seeAlso "https://www.thomsonreuters.com/en.html",
+   :rdfs/seeAlso ["https://www.thomsonreuters.com/en.html"],
    :skos/definition
    "Thomson Reuters legal entity, founded in Toronto with operating headquarters in New York that is both a Canadian and U.S. entity listed on both the Toronto Stock Exchange and New York Stock Exchange"})
 

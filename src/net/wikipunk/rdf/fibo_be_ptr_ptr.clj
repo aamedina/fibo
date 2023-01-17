@@ -192,13 +192,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "limited partnership",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-be-ptr-ptr/hasLimitedPartner,
+   :rdfs/subClassOf [:fibo-be-ptr-ptr/Partnership
+                     {:owl/onProperty     :fibo-be-ptr-ptr/hasLimitedPartner,
                       :owl/someValuesFrom :fibo-be-ptr-ptr/LimitedPartner,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
                       :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-be-ptr-ptr/Partnership],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "partnership that has at least one general partner and at least one limited partner",
    :skos/example
@@ -253,10 +253,10 @@
                           :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-be-le-lp/BusinessEntity
     {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
      :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-be-le-lp/BusinessEntity],
    :skos/definition
    "association of two or more legal persons to carry on as co-owners a business for profit"})
 

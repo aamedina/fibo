@@ -235,6 +235,7 @@
    "amortizing bond that returns principal to investors over the life of the security"})
 
 (def HomeEquityLineOfCreditPool
+  "home equity line of credit pool"
   {:db/ident :fibo-sec-dbt-abs/HomeEquityLineOfCreditPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -283,6 +284,7 @@
    "Might also be referred to as Index Linked, but more commonly the term Index Linked refers to principal. So this term has a made up name for this kind of bond, following OTPP review in which we dealt with the distinction between index linked interest and index linked principal amounts. ."})
 
 (def IndexLinkedCoupon
+  "index linked coupon"
   {:db/ident :fibo-sec-dbt-abs/IndexLinkedCoupon,
    :owl/disjointWith [:fibo-sec-dbt-abs/WACBondCoupon
                       :fibo-sec-dbt-abs/InflationBondVariableCoupon],
@@ -293,6 +295,7 @@
    :rdfs/subClassOf :fibo-sec-dbt-bnd/BondVariableCoupon})
 
 (def IndexLinkedCouponTerms
+  "index-linked coupon terms"
   {:db/ident :fibo-sec-dbt-abs/IndexLinkedCouponTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -356,6 +359,7 @@
    "terms specifying how the principal amount on an inflation bond is to be paid down"})
 
 (def InflationBondVariableCoupon
+  "inflation bond variable coupon"
   {:db/ident :fibo-sec-dbt-abs/InflationBondVariableCoupon,
    :owl/disjointWith :fibo-sec-dbt-abs/WACBondCoupon,
    :rdf/type :owl/Class,
@@ -365,6 +369,7 @@
    :rdfs/subClassOf :fibo-sec-dbt-bnd/BondVariableCoupon})
 
 (def InflationBondVariableCouponTerms
+  "inflation bond variable coupon terms"
   {:db/ident :fibo-sec-dbt-abs/InflationBondVariableCouponTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -427,6 +432,7 @@
     "An asset which takes the form of some promised future cashflow. This may be securitized."}})
 
 (def WACBondCoupon
+  "w a c bond coupon"
   {:db/ident :fibo-sec-dbt-abs/WACBondCoupon,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -450,6 +456,7 @@
     "The ABS has an underlying pool asset which is either a loan pool or a credit card pool. This is actually defined as being any kind of pool asset that is not a mortgage pool, so any other types of pool should be added. This is more satisfactory that modeling it with a \"not\" relationship to Mortgage Pool, though that may be more correct."}})
 
 (def hasUnderlyingCashflow
+  "has underlying cashflow"
   {:db/ident :fibo-sec-dbt-abs/hasUnderlyingCashflow,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-abs/EsotericAssetBackedSecurity,

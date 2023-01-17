@@ -148,6 +148,7 @@
     "[no definition] Further Review This is typically part of mortgagte servicing. THere would typically be a whole department dealing with this. Dealing with default, helping borrowers make payment Collections Default admin Foreclosure Reselling All dealt with by several sub departments. This requires subject matter experts in this area. 1. scoping Identify default as a possible state. This hands off to other business processes. Once you get into the default scenario we are talking about a proces that is going to fall into place over a period of time. The bank works out what to do with the default scenario, e.g. whether it restructures, forecloses, seeks restitution from the security (collateral). It does nto help us to understand the structure of the loan, rather tha consequences of the loan. If we were to further explore the default detail we would bring in other SMEs. And we would have to model a process flow. 1.1 impact on the pool of an MBS Loan Default Proceeding (special ase of legal thing) is an aspect of Default Management / Administratoin. there is also the State of the Loan. Sale / something / fulfilment / fiunduing / approved = servicing mode. Something happens (non payment) =&gt; Default Grace Period followed by negotiation. Some threshold whereby after a given amount of delinquency it needs to go into some other process moving towards foreclosure. Do State Diagram. Stages of loan."}})
 
 (def LoanPaidInFull
+  "loan paid in full"
   {:db/ident :fibo-loan-ln-ev/LoanPaidInFull,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -157,6 +158,7 @@
    :rdfs/subClassOf :fibo-loan-ln-ev/LoanPhase})
 
 (def LoanPhase
+  "loan phase"
   {:db/ident :fibo-loan-ln-ev/LoanPhase,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -166,6 +168,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStage})
 
 (def Prepayment
+  "prepayment"
   {:db/ident :fibo-loan-ln-ev/Prepayment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -175,6 +178,7 @@
    :rdfs/subClassOf :fibo-fnd-pas-psch/Payment})
 
 (def RepaymentPhase
+  "repayment phase"
   {:db/ident :fibo-loan-ln-ev/RepaymentPhase,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -204,6 +208,7 @@
     "amount before the application of sale proceeds and recoveries"}})
 
 (def hasDisbursementDate
+  "disbursement date"
   {:db/ident :fibo-loan-ln-ev/hasDisbursementDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-loan-ln-ln/Loan,
@@ -244,6 +249,7 @@
                      :rdf/value    "Whether the loan is in default."}})
 
 (def isAgainst
+  "is against"
   {:db/ident :fibo-loan-ln-ev/isAgainst,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-loan-ln-ev/LegalProceeding,
@@ -254,6 +260,7 @@
    :rdfs/range :fibo-be-le-lp/LegalPerson})
 
 (def isDeferred
+  "is deferred"
   {:db/ident :fibo-loan-ln-ev/isDeferred,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-loan-ln-ln/Loan,
@@ -264,6 +271,7 @@
    :rdfs/range :xsd/boolean})
 
 (def isDeliveredBy
+  "is delivered by"
   {:db/ident :fibo-loan-ln-ev/isDeliveredBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-loan-ln-ev/CourtJudgment,

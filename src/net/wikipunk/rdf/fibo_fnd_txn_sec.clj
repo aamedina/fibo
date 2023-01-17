@@ -1,21 +1,25 @@
 (ns net.wikipunk.rdf.fibo-fnd-txn-sec
   "Describes the basic concepts for securities transactions, as an extension of market transactions more generally. Incudes types of securities transactions, parties to the transaction, settlement and the covering contract for the transaction. This ontology would form the basis for more detailed securities transaction concepts that would ideally be derived from the FIX standard."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
    :dcterms/abstract
-   "Describes the basic concepts for securities transactions, as an extension of market transactions more generally. Incudes types of securities transactions, parties to the transaction, settlement and the covering contract for the transaction.\n\t\tThis ontology would form the basis for more detailed securities transaction concepts that would ideally be derived from the FIX standard.",
+   "Describes the basic concepts for securities transactions, as an extension of market transactions more generally. Incudes types of securities transactions, parties to the transaction, settlement and the covering contract for the transaction. This ontology would form the basis for more detailed securities transaction concepts that would ideally be derived from the FIX standard.",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Informative,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/TransactionsExt/MarketTransactions/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/TransactionsExt/REATransactions/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/TransactionsExt/SecuritiesTransactions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
     "fibo-fnd-agr-ctr"
@@ -34,7 +38,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -43,10 +46,10 @@
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "SecuritiesTransactions"},
-   :sm/fileAbbreviation "fibo-fnd-txn-sec"})
+                :rdf/value    "Securities Transactions Ontology"}})
 
 (def FinancialPrimaryMarketTransaction
+  "financial primary market transaction"
   {:db/ident :fibo-fnd-txn-sec/FinancialPrimaryMarketTransaction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -71,17 +74,17 @@
    [{:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
      :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionPrincipal,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-txn-sec/embodies,
+     :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionContract,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-txn-mkt/MarketTransaction
+    {:owl/onProperty     :fibo-fnd-txn-rea/subject,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-txn-mkt/consideration,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-acc-cur/AmountOfMoney
                                         :fibo-fbc-fi-fi/Security],
                           :rdf/type    :owl/Class},
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-txn-mkt/MarketTransaction
-    {:owl/onProperty     :fibo-fnd-txn-sec/embodies,
-     :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionContract,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-txn-rea/subject,
-     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
      :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionCounterparty,
@@ -116,6 +119,7 @@
     "This is in line with the REA Ontology in which all Transactions are embodied in some Contract, whether written or implied. forms part of future \"Transaction\" model to be reviewed, but is ancestral to Options contract and transactions model."}})
 
 (def SecuritiesTransactionCounterparty
+  "securities transaction counterparty"
   {:db/ident :fibo-fnd-txn-sec/SecuritiesTransactionCounterparty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -125,6 +129,7 @@
    :rdfs/subClassOf :fibo-fnd-txn-mkt/TransactionCounterparty})
 
 (def SecuritiesTransactionPrincipal
+  "securities transaction principal"
   {:db/ident :fibo-fnd-txn-sec/SecuritiesTransactionPrincipal,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -134,6 +139,7 @@
    :rdfs/subClassOf :fibo-fnd-txn-mkt/TransactionPrincipal})
 
 (def SettlementProcess
+  "settlement process"
   {:db/ident :fibo-fnd-txn-sec/SettlementProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -156,6 +162,7 @@
                      "Trading in securities ahead of them being traded."}})
 
 (def embodies
+  "embodies"
   {:db/ident :fibo-fnd-txn-sec/embodies,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-txn-sec/FinancialSecuritiesSecondaryMarketTransaction,
@@ -167,6 +174,7 @@
    :rdfs/subPropertyOf :fibo-fnd-txn-rea/transactionEmbodiesEconomicAgreement})
 
 (def follows
+  "follows"
   {:db/ident :fibo-fnd-txn-sec/follows,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-txn-sec/FinancialPrimaryMarketTransaction,
@@ -179,6 +187,7 @@
    :fibo-fnd-txn-rea/transactionEventFollowsBusinessProcess})
 
 (def governs
+  "governs"
   {:db/ident :fibo-fnd-txn-sec/governs,
    :owl/inverseOf :fibo-fnd-txn-sec/embodies,
    :rdf/type :owl/ObjectProperty,

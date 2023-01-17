@@ -126,7 +126,7 @@
                  :rdf/value    "Government of the Federal Republic of Germany"}
                 {:rdf/language "de",
                  :rdf/value    "Bundesrepublik Deutschland"}],
-   :rdfs/seeAlso "https://www.bundesregierung.de/breg-en",
+   :rdfs/seeAlso ["https://www.bundesregierung.de/breg-en"],
    :skos/definition
    "democratic, federal parliamentary republic led by a chancellor, where federal legislative power is vested in the parliament, consisting of the Bundestag and the Bundesrat"})
 
@@ -142,7 +142,7 @@
                  :rdf/value    "Government of the French Republic"}
                 {:rdf/language "fr",
                  :rdf/value    "Gouvernement de la République française"}],
-   :rdfs/seeAlso "https://www.gouvernement.fr/en/news",
+   :rdfs/seeAlso ["https://www.gouvernement.fr/en/news"],
    :skos/definition
    "unitary semi-presidential constitutional republic, built on strong representative democratic roots, based on the Constitution of the Fifth Republic which was approved in 1958"})
 
@@ -155,7 +155,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "Government of the Grand Duchy of Luxembourg",
-   :rdfs/seeAlso "https://gouvernement.lu/en.html",
+   :rdfs/seeAlso ["https://gouvernement.lu/en.html"],
    :skos/definition
    "representative democracy that is a unitary, parliamentary constitutional monarchy, headed by the Grand Duke, which is the world's only remaining sovereign grand duchy"})
 
@@ -169,7 +169,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Government of the Kingdom of Belgium"},
-   :rdfs/seeAlso "https://www.belgium.be/en/about_belgium/government",
+   :rdfs/seeAlso ["https://www.belgium.be/en/about_belgium/government"],
    :skos/definition
    "federal parliamentary constitutional monarchy, whose head of state is the king, though with limited prerogatives"})
 
@@ -185,7 +185,7 @@
                  :rdf/value    "Rijksoverheid"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Netherlands"}],
-   :rdfs/seeAlso "https://www.government.nl/",
+   :rdfs/seeAlso ["https://www.government.nl/"],
    :skos/definition
    "parliamentary constitutional monarchy with a unitary structure, with its monarch as head of state"})
 
@@ -199,7 +199,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "Government of the Principality of Liechtenstein",
    :rdfs/seeAlso
-   "https://www.liechtenstein.li/en/country-and-people/state/government/",
+   ["https://www.liechtenstein.li/en/country-and-people/state/government/"],
    :skos/definition
    "semi-constitutional monarchy headed by the Prince of Liechtenstein, with an elected parliament that enacts the law, as well as being a direct democracy, where voters can propose and enact constitutional amendments and legislation independently of the legislature"})
 
@@ -212,7 +212,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "Government of the Principality of Monaco",
-   :rdfs/seeAlso "https://en.gouv.mc/",
+   :rdfs/seeAlso ["https://en.gouv.mc/"],
    :skos/definition
    "constitutional monarchy with the Sovereign Prince of Monaco as head of state, and a Minister of State as the head of government, who presides over a five-member Council of Government"})
 
@@ -226,7 +226,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Government of the Republic of Austria"},
-   :rdfs/seeAlso "https://www.bundeskanzleramt.gv.at/en.html",
+   :rdfs/seeAlso ["https://www.bundeskanzleramt.gv.at/en.html"],
    :skos/definition
    "federal, representative democratic republic, with nine states, whose head of state is the Federal President (Bundespräsident), and head of the federal government is the Federal Chancellor (Bundeskanzler)"})
 
@@ -239,7 +239,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "Government of the Swiss Confederation",
-   :rdfs/seeAlso "https://www.admin.ch/gov/en/start.html/",
+   :rdfs/seeAlso ["https://www.admin.ch/gov/en/start.html/"],
    :skos/definition
    "federal semi-direct democracy under a multi-party presidential directorial republic, which represents a confederation of 26 cantons and communes with executive, legislative and judiciary branches"})
 
@@ -292,7 +292,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "German jurisdiction",
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/Judiciary_of_Germany/",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Judiciary_of_Germany/"],
    :skos/definition
    "jurisdiction of the judiciary of Germany, whose civil law system is based on Roman law with some references to early Germanic law, headed by the Bundesverfassungsgericht (German supreme court) responsible for constitutional matters"})
 
@@ -320,7 +320,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of Luxembourg",
    :rdfs/seeAlso
-   "https://gouvernement.lu/en/systeme-politique/cours-tribunaux.html",
+   ["https://gouvernement.lu/en/systeme-politique/cours-tribunaux.html"],
    :skos/definition
    "jurisdiction of the judiciary of Luxembourg, the system of courts and tribunals which interpret and apply the law in Luxembourg, including three lower tribunals (justices de paix; in Esch-sur-Alzette, the city of Luxembourg, and Diekirch), two district tribunals (Luxembourg and Diekirch), and a Superior Court of Justice (Luxembourg), which includes the Court of Appeal and the Court of Cassation"})
 
@@ -348,7 +348,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of Switzerland",
    :rdfs/seeAlso
-   "https://www.ch.ch/en/demokratie/federalism/separation-of-powers/switzerlands-courts/",
+   ["https://www.ch.ch/en/demokratie/federalism/separation-of-powers/switzerlands-courts/"],
    :skos/definition
    "jurisdiction of the Federal Supreme Court, Federal Criminal Court, Federal Administrative Court, and the Federal Patent Court representing the judiciary branch at the federal level in Switzerland"})
 
@@ -361,7 +361,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of the Netherlands",
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/Judiciary_of_the_Netherlands",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Judiciary_of_the_Netherlands"],
    :skos/definition
    "jurisdiction of the judiciary of the Netherlands, the system of courts which interprets and applies the law in the Netherlands"})
 

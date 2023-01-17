@@ -48,7 +48,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/",
    :rdfs/label "FIBO LOAN Real Estate Loans Module",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/contributor ["Thematix Partners LLC"
                     "Federated Knowledge LLC"
                     "Wells Fargo"

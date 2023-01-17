@@ -47,7 +47,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MetadataINDInterestRates/",
    :rdfs/label "FIBO IND Interest Rates Module",
-   :rdfs/seeAlso "https://www.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"],
    :sm/contributor
    ["Bureau of Labor Statistics (BLS, US Department of Commerce)"
     "Thematix Partners LLC"

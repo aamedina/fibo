@@ -104,17 +104,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
    :rdfs/label "international securities identification number",
-   :rdfs/seeAlso "http://www.iso.org/iso/catalogue_detail?csnumber=44811",
-   :rdfs/subClassOf [{:owl/onClass    :lcc-cr/Alpha2Code,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-sec-sec-id/SecurityIdentifier
-                     {:owl/onClass
+   :rdfs/seeAlso ["http://www.iso.org/iso/catalogue_detail?csnumber=44811"],
+   :rdfs/subClassOf [{:owl/onClass
                       :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
+                     {:owl/onClass    :lcc-cr/Alpha2Code,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-sec-id/SecurityIdentifier
                      :fibo-fnd-arr-id/CompositeIdentifier],
    :skos/definition
    "security identifier that is defined as specified in ISO 6166, Securities and related financial instruments -- International securities identification numbering system (ISIN)"})
@@ -128,7 +128,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
    :rdfs/label "international securities identification numbering scheme",
-   :rdfs/seeAlso "http://www.iso.org/iso/catalogue_detail?csnumber=44811",
+   :rdfs/seeAlso ["http://www.iso.org/iso/catalogue_detail?csnumber=44811"],
    :rdfs/subClassOf
    [{:owl/onProperty :fibo-fnd-rel-rel/defines,
      :owl/someValuesFrom
@@ -171,16 +171,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
    :rdfs/label "national numbering agency",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/issues,
+   [{:owl/onProperty     :fibo-fnd-plc-loc/hasCoverageArea,
+     :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/issues,
      :owl/someValuesFrom :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-ra/registers,
      :owl/someValuesFrom :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-ra/RegistrationAuthority
-    {:owl/onProperty     :fibo-fnd-plc-loc/hasCoverageArea,
-     :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty :fibo-fnd-rel-rel/manages,
      :owl/someValuesFrom
      :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumberRegistry,
@@ -381,7 +381,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
    :rdfs/label "ticker symbol",
-   :rdfs/seeAlso "https://www.investopedia.com/terms/t/tickersymbol.asp",
+   :rdfs/seeAlso ["https://www.investopedia.com/terms/t/tickersymbol.asp"],
    :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/identifies,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-sec-sec-lst/ListedSecurity

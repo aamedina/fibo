@@ -62,7 +62,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/",
    :rdfs/label "Securities",
-   :rdfs/seeAlso "https://www.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"],
    :sm/contributor ["Deutsche Bank"
                     "agnos.ai UK Ltd."
                     "Office of Financial Research (US Dept of the Treasury)"

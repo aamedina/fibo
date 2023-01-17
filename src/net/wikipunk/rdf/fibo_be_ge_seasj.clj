@@ -181,7 +181,7 @@
                  :rdf/value    "Republika ng Pilipinas"}
                 {:rdf/language "en",
                  :rdf/value "Government of the Republic of the Philippines"}],
-   :rdfs/seeAlso "https://www.gov.ph/",
+   :rdfs/seeAlso ["https://www.gov.ph/"],
    :skos/definition
    "unitary presidential constitutional republic in Southeastern Asia, an archipelagic country bordered by the South China Sea to the west, the Philippine Sea to the east, and the Celebes Sea to the southwest, and shares maritime borders with Taiwan to the north, Japan to the northeast, Palau to the east and southeast, Indonesia to the south, Malaysia and Brunei to the southwest, Vietnam to the west, and China to the northwest"})
 
@@ -266,7 +266,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of Malaysia",
-   :rdfs/seeAlso "http://www.kehakiman.gov.my/",
+   :rdfs/seeAlso ["http://www.kehakiman.gov.my/"],
    :skos/definition
    "jurisdiction of the judiciary of Malaysia, which is the system of courts, including the Federal Court of Malaysia, that interprets and applies the law in Malaysia"})
 
@@ -306,7 +306,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of the Republic of Singapore",
-   :rdfs/seeAlso "http://www.supremecourt.gov.sg/",
+   :rdfs/seeAlso ["http://www.supremecourt.gov.sg/"],
    :skos/definition
    "jurisdiction of the judiciary of Singapore, which is the system of courts, including the Supreme Court and State Courts, that interprets and applies the law in Singapore"})
 
@@ -320,7 +320,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of the Republic of the Philippines",
-   :rdfs/seeAlso "http://sc.judiciary.gov.ph/",
+   :rdfs/seeAlso ["http://sc.judiciary.gov.ph/"],
    :skos/definition
    "jurisdiction of the judiciary of the Philippines, which is the system of courts, including the Supreme Court of the Philippines, that interprets and applies the law in the Philippines"})
 
@@ -359,7 +359,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of the Socialist Republic of Viet Nam",
-   :rdfs/seeAlso "http://www.toaan.gov.vn/",
+   :rdfs/seeAlso ["http://www.toaan.gov.vn/"],
    :skos/definition
    "jurisdiction of the judiciary of Viet Nam, which is the system of courts, including the Supreme People's Court of Viet Nam, that interprets and applies the law in the Viet Nam"})
 

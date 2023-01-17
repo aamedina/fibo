@@ -85,6 +85,7 @@
    :sm/filename "DebtIssuance.rdf"})
 
 (def ABSSecuritizationProcess
+  "a b s securitization process"
   {:db/ident :fibo-bp-iss-dbti/ABSSecuritizationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -112,6 +113,7 @@
     "refunding in which bond issuance in which new bonds are sold at a lower rate than outstanding ones"}})
 
 (def AssetPoolCreationProcess
+  "asset pool creation process"
   {:db/ident :fibo-bp-iss-dbti/AssetPoolCreationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -176,6 +178,7 @@
     "a bond offering where the issue includes a warrant; Further notes: ISO 10962 CFI definition is A bond that is issued together with one or more warrant(s) attached as part of the offer, the warrant(s) granting the holder the right to purchase a designated security, often the common stock of the issuer of the debt, at a specified price. Review notes: This need not be any specific type of bond. The warrant is used as a sweetener to encourage people to subscribe to a new bond issue. The Bond and the Warrant trade together as a unit (called \"Bond Unit\")."}})
 
 (def CDOSecuritizationProcess
+  "c d o securitization process"
   {:db/ident :fibo-bp-iss-dbti/CDOSecuritizationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -185,6 +188,7 @@
    :rdfs/subClassOf :fibo-bp-iss-dbti/DebtSecuritizationProcess})
 
 (def CompletedDebtsPool
+  "completed debts pool"
   {:db/ident :fibo-bp-iss-dbti/CompletedDebtsPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -197,6 +201,7 @@
                      :fibo-sec-sec-pls/DebtPool]})
 
 (def CreditCardPoolCreationProcess
+  "credit card pool creation process"
   {:db/ident :fibo-bp-iss-dbti/CreditCardPoolCreationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -206,6 +211,7 @@
    :rdfs/subClassOf :fibo-bp-iss-dbti/RetailAssetPoolCreationProcess})
 
 (def DebtInstrumentPoolCreationProcess
+  "debt instrument pool creation process"
   {:db/ident :fibo-bp-iss-dbti/DebtInstrumentPoolCreationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -262,6 +268,7 @@
     "purpose for the issuance of a debt security; also defines processes to be followed in some instances"}})
 
 (def DebtSecuritizationProcess
+  "debt securitization process"
   {:db/ident :fibo-bp-iss-dbti/DebtSecuritizationProcess,
    :owl/disjointWith [:fibo-bp-iss-muni/SecuritiesUnderwritingIssuanceProcess
                       :fibo-bp-iss-muni/DebtAuctionProcess],
@@ -273,6 +280,7 @@
    :rdfs/subClassOf :fibo-bp-iss-prc/SecuritiesIssuanceProcess})
 
 (def HomeEquityLineOfCreditPoolCreationProcess
+  "home equity line of credit pool creation process"
   {:db/ident :fibo-bp-iss-dbti/HomeEquityLineOfCreditPoolCreationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -282,6 +290,7 @@
    :rdfs/subClassOf :fibo-bp-iss-dbti/RetailAssetPoolCreationProcess})
 
 (def InAssembly
+  "in assembly"
   {:db/ident :fibo-bp-iss-dbti/InAssembly,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -291,6 +300,7 @@
    :rdfs/subClassOf :fibo-bp-iss-pmbs/PoolLifecycleStateSelection})
 
 (def InAssemblyDebtsPool
+  "in assembly debts pool"
   {:db/ident :fibo-bp-iss-dbti/InAssemblyDebtsPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -303,6 +313,7 @@
                      :fibo-sec-sec-pls/DebtPool]})
 
 (def InIssuance
+  "in issuance"
   {:db/ident :fibo-bp-iss-dbti/InIssuance,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -324,6 +335,7 @@
                      "An activity within the process of securities issuance."}})
 
 (def Issued
+  "issued"
   {:db/ident :fibo-bp-iss-dbti/Issued,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -333,6 +345,7 @@
    :rdfs/subClassOf :fibo-bp-iss-pmbs/PoolLifecycleStateSelection})
 
 (def LoanPoolCreationProcess
+  "loan pool creation process"
   {:db/ident :fibo-bp-iss-dbti/LoanPoolCreationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -342,6 +355,7 @@
    :rdfs/subClassOf :fibo-bp-iss-dbti/RetailAssetPoolCreationProcess})
 
 (def MTNRegistration
+  "m t n registration"
   {:db/ident :fibo-bp-iss-dbti/MTNRegistration,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -373,6 +387,7 @@
     "a program of offerings of medium term notes; a set of issues where the maturity is defined after the rest of the terms have been registered with some authority; these are registered up front so that then the company wants to borrow more money they don't have to go through the registration period but have the facility up front to issue another security."}})
 
 (def MediumTermNoteOffering
+  "medium term note offering"
   {:db/ident :fibo-bp-iss-dbti/MediumTermNoteOffering,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -410,6 +425,7 @@
     "securities issued to raise funds for a new project or purpose"}})
 
 (def NotYetIssued
+  "not yet issued"
   {:db/ident :fibo-bp-iss-dbti/NotYetIssued,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -419,6 +435,7 @@
    :rdfs/subClassOf :fibo-bp-iss-pmbs/PoolLifecycleStateSelection})
 
 (def NotYetIssuedDebtsPool
+  "not yet issued debts pool"
   {:db/ident :fibo-bp-iss-dbti/NotYetIssuedDebtsPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -431,6 +448,7 @@
                      :fibo-sec-sec-pls/DebtPool]})
 
 (def PoolBackedSecuritySecuritizationProcess
+  "pool backed security securitization process"
   {:db/ident :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -440,6 +458,7 @@
    :rdfs/subClassOf :fibo-bp-iss-dbti/DebtSecuritizationProcess})
 
 (def PoolBackedSecuritySecuritizationProcessActor
+  "pool backed security securitization process actor"
   {:db/ident :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcessActor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -502,6 +521,7 @@
     "The process by which pools of assets are created. These may then be used in the issue of securities based on those asset pools as underlying."}})
 
 (def SecuritizationProcessActor
+  "securitization process actor"
   {:db/ident :fibo-bp-iss-dbti/SecuritizationProcessActor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -538,6 +558,7 @@
     "The issue of one or more securities that the announcement pertains to."}})
 
 (def hasDebtIssuancePurpose
+  "has debt issuance purpose"
   {:db/ident :fibo-bp-iss-dbti/hasDebtIssuancePurpose,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-dbti/DebtIssuanceProcessInformation,
@@ -582,6 +603,7 @@
     "designation given to a public purpose bond offering by the issuer if it reasonably expects to issue in the calendar year of such offering no more than $10 million par amount of bonds of the type required to be included in making such calculation under the Internal Revenue Code.  When purchased by a commercial bank for its portfolio, the bank may receive an 80% tax deduction for the interest cost of carry for the issue.  A bond that is bank qualified is also known as a qualified tax-exempt obligation."}})
 
 (def resultsIn
+  "results in"
   {:db/ident :fibo-bp-iss-dbti/resultsIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy

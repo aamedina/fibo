@@ -124,19 +124,19 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "bill of exchange"},
    :rdfs/subClassOf [:fibo-sec-dbt-tstd/MoneyMarketInstrument
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawer,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-fct-fse/FinancialInstitution,
-                      :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-pas-psch/Payee,
                       :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
                       :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-fct-fse/FinancialInstitution,
+                      :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawee,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawer,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",

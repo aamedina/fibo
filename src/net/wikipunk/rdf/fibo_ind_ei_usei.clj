@@ -111,7 +111,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "Bureau of Labor Statistics",
-   :rdfs/seeAlso "http://www.bls.gov/",
+   :rdfs/seeAlso ["http://www.bls.gov/"],
    :skos/definition
    "the Bureau of Labor Statistics, the principal Federal agency responsible for measuring labor market activity, working conditions, and price changes in the economy"})
 
@@ -164,7 +164,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "employment situation establishment survey",
-   :rdfs/seeAlso "https://www.bls.gov/news.release/empsit.tn.htm",
+   :rdfs/seeAlso ["https://www.bls.gov/news.release/empsit.tn.htm"],
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasContext,
                       :owl/someValuesFrom :fibo-ind-ei-ei/Establishment,
                       :rdf/type           :owl/Restriction}
@@ -181,7 +181,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "employment situation household survey",
-   :rdfs/seeAlso "https://www.bls.gov/news.release/empsit.tn.htm",
+   :rdfs/seeAlso ["https://www.bls.gov/news.release/empsit.tn.htm"],
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasContext,
                       :owl/someValuesFrom :fibo-ind-ei-ei/Household,
                       :rdf/type           :owl/Restriction}
@@ -249,7 +249,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "United States Department of Labor",
-   :rdfs/seeAlso "https://www.dol.gov/",
+   :rdfs/seeAlso ["https://www.dol.gov/"],
    :skos/definition
    "individual representing the U.S. Department of Labor, a government department whose mission is to foster, promote, and develop the welfare of the wage earners, job seekers, and retirees of the United States; improve working conditions; advance opportunities for profitable employment; and assure work-related benefits and rights"})
 
@@ -263,22 +263,22 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "urban consumer price index",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-     :owl/someValuesFrom :fibo-fbc-pas-fpas/Basket,
-     :rdf/type           :owl/Restriction}
-    {:owl/hasValue   :fibo-ind-ei-usei/BureauOfLaborStatistics,
-     :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-     :owl/someValuesFrom :fibo-ind-ei-usei/UrbanConsumersUniverse,
-     :rdf/type           :owl/Restriction}
-    :fibo-ind-ei-ei/ConsumerPriceIndex
-    {:owl/onClass    :fibo-ind-ei-usei/UrbanConsumersUniverse,
+   [{:owl/onClass    :fibo-ind-ei-usei/UrbanConsumersUniverse,
      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
+    {:owl/hasValue   :fibo-ind-ei-usei/BureauOfLaborStatistics,
+     :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+     :owl/someValuesFrom :fibo-fbc-pas-fpas/Basket,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-be-fct-pub/hasPublisher,
      :owl/someValuesFrom :fibo-ind-ei-usei/AmericanStatisticsPublisher,
+     :rdf/type           :owl/Restriction}
+    :fibo-ind-ei-ei/ConsumerPriceIndex
+    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+     :owl/someValuesFrom :fibo-ind-ei-usei/UrbanConsumersUniverse,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "an economic indicator representing a measure of the average change over time in the prices paid by urban consumers for a market basket of consumer goods and services"})
@@ -295,17 +295,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "urban consumers universe",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/hasContext,
+   [:fibo-ind-ei-ei/CivilianNonInstitutionalPopulation
+    {:owl/onProperty     :fibo-fnd-rel-rel/hasContext,
+     :owl/someValuesFrom :fibo-ind-ei-usei/ConsumerExpenditureSurvey,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/hasContext,
      :owl/someValuesFrom :fibo-ind-ei-usei/PointOfPurchaseSurvey,
      :rdf/type           :owl/Restriction}
-    :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation
     {:owl/onProperty     :lcc-lr/hasMember,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom :fibo-ind-ei-ei/UltimateConsumer,
                           :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/hasContext,
-     :owl/someValuesFrom :fibo-ind-ei-usei/ConsumerExpenditureSurvey,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "a statistical universe for consumer expenditure surveys consisting of people within a household that make joint expenditure decisions"})

@@ -92,7 +92,7 @@
                  :rdf/value    "Government of Guernsey"}
                 {:rdf/language "fr",
                  :rdf/value    "Gouvèrnément d'Guernési"}],
-   :rdfs/seeAlso "https://www.gov.gg/",
+   :rdfs/seeAlso ["https://www.gov.gg/"],
    :skos/definition
    "parliamentary representative democracy that is the central government of the Bailiwick of Guernsey, a self-governing dependency of the United Kingdom and one of the British Channel Islands off the coast of Normandy"})
 
@@ -108,7 +108,7 @@
                  :rdf/value    "Government of Jersey"}
                 {:rdf/language "fr",
                  :rdf/value    "Gouvèrnément d'Jèrri"}],
-   :rdfs/seeAlso "https://www.gov.je/Pages/default.aspx",
+   :rdfs/seeAlso ["https://www.gov.je/Pages/default.aspx"],
    :skos/definition
    "central government of the Bailiwick of Jersey, a self-governing dependency of the United Kingdom that is the largest of the Channel Islands between England and France"})
 
@@ -143,7 +143,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Government of the Isle of Man"},
-   :rdfs/seeAlso "https://www.gov.im/",
+   :rdfs/seeAlso ["https://www.gov.im/"],
    :skos/definition
    "central government of the Isle of Man, a self-governing British Crown dependency in the Irish Sea between England and Ireland"})
 
@@ -210,7 +210,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of Guernsey",
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/Guernsey#Politics",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Guernsey#Politics"],
    :skos/definition
    "jurisdiction of the bailiwick judiciary of Guernsey, headed by its Bailiff, which is derived from a combination of Norman Customary Law and principles taken from English common law and Equity, as well as from statute law enacted by the competent legislature(s)"})
 
@@ -223,7 +223,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of Jersey",
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/Law_of_Jersey#Judiciary",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Law_of_Jersey#Judiciary"],
    :skos/definition
    "jurisdiction of the judiciary of Jersey, headed by is the Bailiff, who as well as performing the judicial functions of a chief justice is also the President (presiding officer) of the States of Jersey and has certain civic, ceremonial and executive functions"})
 
@@ -236,7 +236,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of the Isle of Man",
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/Judiciary_of_the_Isle_of_Man",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Judiciary_of_the_Isle_of_Man"],
    :skos/definition
    "jurisdiction of the judiciary of the Isle of Man, including the High Court of Justice of the Isle of Man, consisting of a Civil Division and an appeal division, called the Staff of Government Division"})
 
@@ -291,7 +291,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Northern Ireland entity"},
-   :rdfs/seeAlso "http://www.niassembly.gov.uk/",
+   :rdfs/seeAlso ["http://www.niassembly.gov.uk/"],
    :skos/definition "regional devolved sovereignty that is Northern Ireland"})
 
 (def NorthernIrelandJurisdiction
@@ -383,5 +383,5 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Welsh entity"},
-   :rdfs/seeAlso "http://www.assembly.wales/en/Pages/Home.aspx",
+   :rdfs/seeAlso ["http://www.assembly.wales/en/Pages/Home.aspx"],
    :skos/definition "regional devolved sovereignty that is Wales"})

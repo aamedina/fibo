@@ -83,6 +83,7 @@
     "A written contract, also known as a \"Deed of Trust\", under which bonds and debentures are issued, setting forth maturity date, interest rate, redemption rights, call privileges and other terms. Under the rules of the Trust Indenture Act of 1939, the contract is executed by the issuer and a trustee who acts on behalf of the bondholders."}})
 
 (def IssuanceTrustAgreement
+  "issuance trust agreement"
   {:db/ident :fibo-bp-iss-doc/IssuanceTrustAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy

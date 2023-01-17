@@ -147,7 +147,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "District of Columbia government",
-   :rdfs/seeAlso "http://dc.gov/page/government-resource-center",
+   :rdfs/seeAlso ["http://dc.gov/page/government-resource-center"],
    :skos/definition
    "individual representing the government of the US District of Columbia, also known as Washington, D.C."})
 
@@ -162,7 +162,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "District of Columbia jurisdiction",
-   :rdfs/seeAlso "http://www.dccourts.gov/internet/",
+   :rdfs/seeAlso ["http://www.dccourts.gov/internet/"],
    :skos/definition
    "individual representing the jurisdiction of the US District of Columbia, also known as Washington, D.C."})
 
@@ -301,7 +301,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Alabama entity",
-   :rdfs/seeAlso "http://www.alabama.gov/",
+   :rdfs/seeAlso ["http://www.alabama.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Alabama"})
 
@@ -314,7 +314,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Alabama government",
-   :rdfs/seeAlso "http://www.alabama.gov/#government",
+   :rdfs/seeAlso ["http://www.alabama.gov/#government"],
    :skos/definition
    "individual representing the regional government of the State of Alabama"})
 
@@ -327,7 +327,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Alabama jurisdiction",
-   :rdfs/seeAlso "http://judicial.alabama.gov/",
+   :rdfs/seeAlso ["http://judicial.alabama.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Alabama, i.e., that of the Supreme Court of Alabama and Alabama's Unified Judicial System"})
 
@@ -340,7 +340,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Alaska entity",
-   :rdfs/seeAlso "http://alaska.gov/",
+   :rdfs/seeAlso ["http://alaska.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Alaska"})
 
@@ -353,7 +353,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Alaska government",
-   :rdfs/seeAlso "http://alaska.gov/akdir1.html",
+   :rdfs/seeAlso ["http://alaska.gov/akdir1.html"],
    :skos/definition
    "individual representing the regional government of the State of Alaska"})
 
@@ -366,7 +366,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Alaska jurisdiction",
-   :rdfs/seeAlso "http://www.courts.alaska.gov/ctinfo.htm",
+   :rdfs/seeAlso ["http://www.courts.alaska.gov/ctinfo.htm"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Alaska, i.e., that of the Alaska Supreme Court and Alaska Court System"})
 
@@ -379,7 +379,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Arizona entity",
-   :rdfs/seeAlso "https://az.gov/",
+   :rdfs/seeAlso ["https://az.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Arizona"})
 
@@ -392,7 +392,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Arizona government",
-   :rdfs/seeAlso "https://az.gov/government",
+   :rdfs/seeAlso ["https://az.gov/government"],
    :skos/definition
    "individual representing the regional government of the State of Arizona"})
 
@@ -405,7 +405,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Arizona jurisdiction",
-   :rdfs/seeAlso "http://www.azcourts.gov/",
+   :rdfs/seeAlso ["http://www.azcourts.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Arizona, i.e., that of the Arizona Supreme Court and Arizona Judicial System"})
 
@@ -418,7 +418,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Arkansas entity",
-   :rdfs/seeAlso "http://www.arkansas.gov/",
+   :rdfs/seeAlso ["http://www.arkansas.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Arkansas"})
 
@@ -431,7 +431,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Arkansas government",
-   :rdfs/seeAlso "http://www.arkansas.gov/government/",
+   :rdfs/seeAlso ["http://www.arkansas.gov/government/"],
    :skos/definition
    "individual representing the regional government of the State of Arkansas"})
 
@@ -444,7 +444,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Arkansas jurisdiction",
-   :rdfs/seeAlso "https://courts.arkansas.gov/",
+   :rdfs/seeAlso ["https://courts.arkansas.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Arkansas, i.e., that of the Arkansas Supreme Court and Judiciary System"})
 
@@ -457,7 +457,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of California entity",
-   :rdfs/seeAlso "http://www.ca.gov/",
+   :rdfs/seeAlso ["http://www.ca.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of California"})
 
@@ -470,7 +470,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of California government",
-   :rdfs/seeAlso "http://www.ca.gov/Government",
+   :rdfs/seeAlso ["http://www.ca.gov/Government"],
    :skos/definition
    "individual representing the regional government of the State of California"})
 
@@ -483,7 +483,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of California jurisdiction",
-   :rdfs/seeAlso "http://www.ca.gov/Agencies/Courts-California",
+   :rdfs/seeAlso ["http://www.ca.gov/Agencies/Courts-California"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of California, i.e., that of the California Supreme Court and Judiciary of California"})
 
@@ -496,7 +496,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Colorado entity",
-   :rdfs/seeAlso "https://www.colorado.gov/",
+   :rdfs/seeAlso ["https://www.colorado.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Colorado"})
 
@@ -509,7 +509,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Colorado government",
-   :rdfs/seeAlso "https://www.colorado.gov/cogov-now",
+   :rdfs/seeAlso ["https://www.colorado.gov/cogov-now"],
    :skos/definition
    "individual representing the regional government of the State of Colorado"})
 
@@ -522,7 +522,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Colorado jurisdiction",
-   :rdfs/seeAlso "https://www.courts.state.co.us/Courts/Index.cfm",
+   :rdfs/seeAlso ["https://www.courts.state.co.us/Courts/Index.cfm"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Colorado, i.e., that of the Colorado Supreme Court and Colorado Judicial System"})
 
@@ -535,7 +535,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Connecticut entity",
-   :rdfs/seeAlso "https://www.colorado.gov/",
+   :rdfs/seeAlso ["https://www.colorado.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Connecticut"})
 
@@ -549,7 +549,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Connecticut government",
-   :rdfs/seeAlso "http://portal.ct.gov/government/",
+   :rdfs/seeAlso ["http://portal.ct.gov/government/"],
    :skos/definition
    "individual representing the regional government of the State of Connecticut"})
 
@@ -562,7 +562,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Connecticut jurisdiction",
-   :rdfs/seeAlso "http://www.jud.ct.gov/",
+   :rdfs/seeAlso ["http://www.jud.ct.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Connecticut, i.e., that of the Connecticut Supreme Court and State of Connecticut Judicial System"})
 
@@ -575,7 +575,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Delaware entity",
-   :rdfs/seeAlso "http://delaware.gov/",
+   :rdfs/seeAlso ["http://delaware.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Delaware"})
 
@@ -588,7 +588,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Delaware government",
-   :rdfs/seeAlso "http://delaware.gov/",
+   :rdfs/seeAlso ["http://delaware.gov/"],
    :skos/definition
    "individual representing the regional government of the State of Delaware"})
 
@@ -601,7 +601,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Delaware jurisdiction",
-   :rdfs/seeAlso "http://courts.delaware.gov/",
+   :rdfs/seeAlso ["http://courts.delaware.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Delaware, i.e., that of the Delaware Supreme Court, Court of Chancery, and Judiciary System"})
 
@@ -614,7 +614,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Florida entity",
-   :rdfs/seeAlso "http://www.myflorida.com/",
+   :rdfs/seeAlso ["http://www.myflorida.com/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Florida"})
 
@@ -627,7 +627,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Florida government",
-   :rdfs/seeAlso "http://www.myflorida.com/taxonomy/government/",
+   :rdfs/seeAlso ["http://www.myflorida.com/taxonomy/government/"],
    :skos/definition
    "individual representing the regional government of the State of Florida"})
 
@@ -640,7 +640,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Florida jurisdiction",
-   :rdfs/seeAlso "http://www.flcourts.org/",
+   :rdfs/seeAlso ["http://www.flcourts.org/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Florida, i.e., that of the Florida Supreme Court and State Courts System of Florida"})
 
@@ -653,7 +653,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Georgia entity",
-   :rdfs/seeAlso "http://georgia.gov/",
+   :rdfs/seeAlso ["http://georgia.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Georgia"})
 
@@ -666,7 +666,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Georgia government",
-   :rdfs/seeAlso "http://georgia.gov/georgia-government",
+   :rdfs/seeAlso ["http://georgia.gov/georgia-government"],
    :skos/definition
    "individual representing the regional government of the State of Georgia"})
 
@@ -679,7 +679,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Georgia jurisdiction",
-   :rdfs/seeAlso "http://www.gasupreme.us/",
+   :rdfs/seeAlso ["http://www.gasupreme.us/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Georgia, i.e., that of the Supreme Court of Georgia and Judiciary System"})
 
@@ -692,7 +692,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Hawai'i entity",
-   :rdfs/seeAlso "https://portal.ehawaii.gov/",
+   :rdfs/seeAlso ["https://portal.ehawaii.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Hawai'i"})
 
@@ -705,7 +705,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Hawai'i government",
-   :rdfs/seeAlso "https://portal.ehawaii.gov/government/",
+   :rdfs/seeAlso ["https://portal.ehawaii.gov/government/"],
    :skos/definition
    "individual representing the regional government of the State of Hawai'i"})
 
@@ -718,7 +718,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Hawai'i jurisdiction",
-   :rdfs/seeAlso "http://www.courts.state.hi.us/",
+   :rdfs/seeAlso ["http://www.courts.state.hi.us/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Hawai'i, i.e., that of the Hawai'i Supreme Court and Hawai'i State Judiciary"})
 
@@ -731,7 +731,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Idaho entity",
-   :rdfs/seeAlso "http://www.idaho.gov/",
+   :rdfs/seeAlso ["http://www.idaho.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Idaho"})
 
@@ -744,7 +744,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Idaho government",
-   :rdfs/seeAlso "http://www.idaho.gov/government/index.html",
+   :rdfs/seeAlso ["http://www.idaho.gov/government/index.html"],
    :skos/definition
    "individual representing the regional government of the State of Idaho"})
 
@@ -757,7 +757,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Idaho jurisdiction",
-   :rdfs/seeAlso "http://www.idaho.gov/government/judicial.html",
+   :rdfs/seeAlso ["http://www.idaho.gov/government/judicial.html"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Idaho, i.e., that of the Idaho Supreme Court and Judiciary"})
 
@@ -770,7 +770,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Illinois entity",
-   :rdfs/seeAlso "http://www.illinois.gov/Pages/default.aspx",
+   :rdfs/seeAlso ["http://www.illinois.gov/Pages/default.aspx"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Illinois"})
 
@@ -783,7 +783,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Illinois government",
-   :rdfs/seeAlso "http://www.illinois.gov/government/Pages/default.aspx",
+   :rdfs/seeAlso ["http://www.illinois.gov/government/Pages/default.aspx"],
    :skos/definition
    "individual representing the regional government of the State of Illinois"})
 
@@ -796,7 +796,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Illinois jurisdiction",
-   :rdfs/seeAlso "http://www.illinois.gov/Government/Pages/JudicialBranch.aspx",
+   :rdfs/seeAlso
+   ["http://www.illinois.gov/Government/Pages/JudicialBranch.aspx"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Illinois, i.e., that of the Illinois Supreme Court and Judiciary"})
 
@@ -809,7 +810,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Indiana entity",
-   :rdfs/seeAlso "http://www.in.gov/core/",
+   :rdfs/seeAlso ["http://www.in.gov/core/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Indiana"})
 
@@ -822,7 +823,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Indiana government",
-   :rdfs/seeAlso "http://www.in.gov/core/",
+   :rdfs/seeAlso ["http://www.in.gov/core/"],
    :skos/definition
    "individual representing the regional government of the State of Indiana"})
 
@@ -835,7 +836,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Indiana jurisdiction",
-   :rdfs/seeAlso "http://www.in.gov/judiciary/",
+   :rdfs/seeAlso ["http://www.in.gov/judiciary/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Indiana, i.e., that of the Indiana Supreme Court and Judiciary"})
 
@@ -848,7 +849,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Iowa entity",
-   :rdfs/seeAlso "https://www.iowa.gov/",
+   :rdfs/seeAlso ["https://www.iowa.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Iowa"})
 
@@ -861,7 +862,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Iowa government",
-   :rdfs/seeAlso "https://www.iowa.gov/",
+   :rdfs/seeAlso ["https://www.iowa.gov/"],
    :skos/definition
    "individual representing the regional government of the State of Iowa"})
 
@@ -874,7 +875,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Iowa jurisdiction",
-   :rdfs/seeAlso "http://www.iowacourts.gov/",
+   :rdfs/seeAlso ["http://www.iowacourts.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Iowa, i.e., that of the Iowa Supreme Court and Judiciary"})
 
@@ -887,7 +888,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Kansas entity",
-   :rdfs/seeAlso "http://www.kansas.gov/",
+   :rdfs/seeAlso ["http://www.kansas.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Kansas"})
 
@@ -900,7 +901,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Kansas government",
-   :rdfs/seeAlso "http://www.kansas.gov/government",
+   :rdfs/seeAlso ["http://www.kansas.gov/government"],
    :skos/definition
    "individual representing the regional government of the State of Kansas"})
 
@@ -913,7 +914,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Kansas jurisdiction",
-   :rdfs/seeAlso "http://www.kansas.gov/government/judicial.html",
+   :rdfs/seeAlso ["http://www.kansas.gov/government/judicial.html"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Kansas, i.e., that of the Kansas Supreme Court and Judiciary"})
 
@@ -926,7 +927,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Kentucky entity",
-   :rdfs/seeAlso "http://kentucky.gov/Pages/home.aspx",
+   :rdfs/seeAlso ["http://kentucky.gov/Pages/home.aspx"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Kentucky"})
 
@@ -939,7 +940,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Kentucky government",
-   :rdfs/seeAlso "http://kentucky.gov/government/Pages/default.aspx",
+   :rdfs/seeAlso ["http://kentucky.gov/government/Pages/default.aspx"],
    :skos/definition
    "individual representing the regional government of the State of Kentucky"})
 
@@ -952,7 +953,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Kentucky jurisdiction",
-   :rdfs/seeAlso "http://kentucky.gov/government/Pages/default.aspx#courts",
+   :rdfs/seeAlso ["http://kentucky.gov/government/Pages/default.aspx#courts"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Kansas, i.e., that of the Kentucky Supreme Court and Judiciary"})
 
@@ -965,7 +966,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Louisiana entity",
-   :rdfs/seeAlso "http://louisiana.gov/",
+   :rdfs/seeAlso ["http://louisiana.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Louisiana"})
 
@@ -978,7 +979,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Louisiana government",
-   :rdfs/seeAlso "http://louisiana.gov/Government/",
+   :rdfs/seeAlso ["http://louisiana.gov/Government/"],
    :skos/definition
    "individual representing the regional government of the State of Louisiana"})
 
@@ -991,7 +992,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Louisiana jurisdiction",
-   :rdfs/seeAlso "http://louisiana.gov/Government/Judicial_Branch/",
+   :rdfs/seeAlso ["http://louisiana.gov/Government/Judicial_Branch/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Louisiana, i.e., that of the Louisiana Supreme Court and Judiciary"})
 
@@ -1004,7 +1005,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Maine entity",
-   :rdfs/seeAlso "http://www.maine.gov/portal/index.html",
+   :rdfs/seeAlso ["http://www.maine.gov/portal/index.html"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Maine"})
 
@@ -1017,7 +1018,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Maine government",
-   :rdfs/seeAlso "http://www.maine.gov/portal/government/",
+   :rdfs/seeAlso ["http://www.maine.gov/portal/government/"],
    :skos/definition
    "individual representing the regional government of the State of Maine"})
 
@@ -1030,7 +1031,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Maine jurisdiction",
-   :rdfs/seeAlso "http://www.courts.maine.gov/",
+   :rdfs/seeAlso ["http://www.courts.maine.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Maine, i.e., that of the Maine Supreme Court and Judiciary"})
 
@@ -1043,7 +1044,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Maryland entity",
-   :rdfs/seeAlso "http://www.maryland.gov/Pages/default.aspx",
+   :rdfs/seeAlso ["http://www.maryland.gov/Pages/default.aspx"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Maryland"})
 
@@ -1056,7 +1057,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Maryland government",
-   :rdfs/seeAlso "http://www.maryland.gov/pages/government.aspx",
+   :rdfs/seeAlso ["http://www.maryland.gov/pages/government.aspx"],
    :skos/definition
    "individual representing the regional government of the State of Maryland"})
 
@@ -1069,7 +1070,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Maryland jurisdiction",
-   :rdfs/seeAlso "http://www.courts.state.md.us/",
+   :rdfs/seeAlso ["http://www.courts.state.md.us/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Maryland, i.e., that of the Maryland Court of Appeals and Judiciary"})
 
@@ -1083,7 +1084,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Massachusetts entity",
-   :rdfs/seeAlso "http://www.mass.gov/portal/",
+   :rdfs/seeAlso ["http://www.mass.gov/portal/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of (Commonwealth of) Massachusetts"})
 
@@ -1097,7 +1098,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Massachusetts government",
-   :rdfs/seeAlso "http://www.mass.gov/portal/government/",
+   :rdfs/seeAlso ["http://www.mass.gov/portal/government/"],
    :skos/definition
    "individual representing the regional government of the Commonwealth of Massachusetts"})
 
@@ -1111,7 +1112,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Massachusetts jurisdiction",
-   :rdfs/seeAlso "http://www.mass.gov/courts/",
+   :rdfs/seeAlso ["http://www.mass.gov/courts/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of (Commonwealth of) Massachusetts, i.e., that of the Massachusetts Supreme Judicial Court and Judiciary"})
 
@@ -1124,7 +1125,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Michigan entity",
-   :rdfs/seeAlso "http://www.michigan.gov/",
+   :rdfs/seeAlso ["http://www.michigan.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Michigan"})
 
@@ -1137,7 +1138,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Michigan government",
-   :rdfs/seeAlso "http://www.michigan.gov/som/0,4669,7-192-29701---,00.html",
+   :rdfs/seeAlso ["http://www.michigan.gov/som/0,4669,7-192-29701---,00.html"],
    :skos/definition
    "individual representing the regional government of the US State of Michigan"})
 
@@ -1151,7 +1152,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Michigan jurisdiction",
    :rdfs/seeAlso
-   "http://www.michigan.gov/som/0,4669,7-192-29701_29703---,00.html",
+   ["http://www.michigan.gov/som/0,4669,7-192-29701_29703---,00.html"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Michigan, i.e., that of the Michigan Supreme Court and Judiciary"})
 
@@ -1164,7 +1165,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Minnesota entity",
-   :rdfs/seeAlso "http://mn.gov/portal/",
+   :rdfs/seeAlso ["http://mn.gov/portal/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Minnesota"})
 
@@ -1177,7 +1178,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Minnesota government",
-   :rdfs/seeAlso "http://mn.gov/portal/government/",
+   :rdfs/seeAlso ["http://mn.gov/portal/government/"],
    :skos/definition
    "individual representing the regional government of the US State of Minnesota"})
 
@@ -1204,7 +1205,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Mississippi entity",
-   :rdfs/seeAlso "http://www.mississippi.gov/Pages/default.aspx",
+   :rdfs/seeAlso ["http://www.mississippi.gov/Pages/default.aspx"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Mississippi"})
 
@@ -1218,7 +1219,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Mississippi government",
-   :rdfs/seeAlso "http://www.mississippi.gov/content/pages/government.aspx",
+   :rdfs/seeAlso ["http://www.mississippi.gov/content/pages/government.aspx"],
    :skos/definition
    "individual representing the regional government of the US State of Mississippi"})
 
@@ -1246,7 +1247,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Missouri entity",
-   :rdfs/seeAlso "http://www.mo.gov/",
+   :rdfs/seeAlso ["http://www.mo.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Missouri"})
 
@@ -1259,7 +1260,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Missouri government",
-   :rdfs/seeAlso "http://www.mo.gov/government",
+   :rdfs/seeAlso ["http://www.mo.gov/government"],
    :skos/definition
    "individual representing the regional government of the US State of Missouri"})
 
@@ -1272,7 +1273,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Missouri jurisdiction",
-   :rdfs/seeAlso "http://www.mo.gov/government/judicial-branch/",
+   :rdfs/seeAlso ["http://www.mo.gov/government/judicial-branch/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Missouri, i.e., that of the Missouri Supreme Court and Judiciary"})
 
@@ -1285,7 +1286,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Montana entity",
-   :rdfs/seeAlso "http://mt.gov/",
+   :rdfs/seeAlso ["http://mt.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Montana"})
 
@@ -1298,7 +1299,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Montana government",
-   :rdfs/seeAlso "http://mt.gov/government/default.aspx",
+   :rdfs/seeAlso ["http://mt.gov/government/default.aspx"],
    :skos/definition
    "individual representing the regional government of the US State of Montana"})
 
@@ -1311,7 +1312,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Montana jurisdiction",
-   :rdfs/seeAlso "http://courts.mt.gov/",
+   :rdfs/seeAlso ["http://courts.mt.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Montana, i.e., that of the Montana Supreme Court and Judiciary"})
 
@@ -1324,7 +1325,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Nebraska entity",
-   :rdfs/seeAlso "http://www.nebraska.gov/",
+   :rdfs/seeAlso ["http://www.nebraska.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Nebraska"})
 
@@ -1337,7 +1338,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Nebraska government",
-   :rdfs/seeAlso "http://www.nebraska.gov/#government",
+   :rdfs/seeAlso ["http://www.nebraska.gov/#government"],
    :skos/definition
    "individual representing the regional government of the US State of Nebraska"})
 
@@ -1364,7 +1365,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Nevada entity",
-   :rdfs/seeAlso "http://nv.gov/",
+   :rdfs/seeAlso ["http://nv.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Nevada"})
 
@@ -1377,7 +1378,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Nevada government",
-   :rdfs/seeAlso "http://nv.gov/government/",
+   :rdfs/seeAlso ["http://nv.gov/government/"],
    :skos/definition
    "individual representing the regional government of the US State of Nevada"})
 
@@ -1390,7 +1391,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Nevada jurisdiction",
-   :rdfs/seeAlso "http://nv.gov/government/judicial/",
+   :rdfs/seeAlso ["http://nv.gov/government/judicial/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Nevada, i.e., that of the Nevada Supreme Court and Judiciary"})
 
@@ -1403,7 +1404,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of New Hampshire entity",
-   :rdfs/seeAlso "http://www.nh.gov/",
+   :rdfs/seeAlso ["http://www.nh.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of New Hampshire"})
 
@@ -1417,7 +1418,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of New Hampshire government",
-   :rdfs/seeAlso "http://www.nh.gov/government/index.html",
+   :rdfs/seeAlso ["http://www.nh.gov/government/index.html"],
    :skos/definition
    "individual representing the regional government of the US State of New Hampshire"})
 
@@ -1431,7 +1432,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of New Hampshire jurisdiction",
-   :rdfs/seeAlso "http://www.courts.state.nh.us/",
+   :rdfs/seeAlso ["http://www.courts.state.nh.us/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of New Hampshire, i.e., that of the New Hampshire Supreme Court and Judiciary"})
 
@@ -1444,7 +1445,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of New Jersey entity",
-   :rdfs/seeAlso "http://www.state.nj.us/",
+   :rdfs/seeAlso ["http://www.state.nj.us/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of New Jersey"})
 
@@ -1457,7 +1458,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of New Jersey government",
-   :rdfs/seeAlso "http://www.state.nj.us/nj/gov/",
+   :rdfs/seeAlso ["http://www.state.nj.us/nj/gov/"],
    :skos/definition
    "individual representing the regional government of the US State of New Jersey"})
 
@@ -1470,7 +1471,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of New Jersey jurisdiction",
-   :rdfs/seeAlso "http://www.judiciary.state.nj.us/",
+   :rdfs/seeAlso ["http://www.judiciary.state.nj.us/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of New Jersey, i.e., that of the New Jersey Supreme Court and Judiciary"})
 
@@ -1483,7 +1484,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of New Mexico entity",
-   :rdfs/seeAlso "http://www.newmexico.gov/",
+   :rdfs/seeAlso ["http://www.newmexico.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of New Mexico"})
 
@@ -1496,7 +1497,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of New Mexico government",
-   :rdfs/seeAlso "http://www.newmexico.gov/government/",
+   :rdfs/seeAlso ["http://www.newmexico.gov/government/"],
    :skos/definition
    "individual representing the regional government of the US State of New Mexico"})
 
@@ -1524,7 +1525,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of New York entity",
-   :rdfs/seeAlso "http://www.ny.gov/",
+   :rdfs/seeAlso ["http://www.ny.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of New York"})
 
@@ -1537,7 +1538,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of New York government",
-   :rdfs/seeAlso "http://www.ny.gov/agencies",
+   :rdfs/seeAlso ["http://www.ny.gov/agencies"],
    :skos/definition
    "individual representing the regional government of the US State of New York"})
 
@@ -1550,7 +1551,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of New York jurisdiction",
-   :rdfs/seeAlso "http://www.nycourts.gov/",
+   :rdfs/seeAlso ["http://www.nycourts.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of New York, i.e., that of the New York Supreme Court and Judiciary"})
 
@@ -1564,7 +1565,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of North Carolina entity",
-   :rdfs/seeAlso "http://www.nc.gov/",
+   :rdfs/seeAlso ["http://www.nc.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of North Carolina"})
 
@@ -1578,7 +1579,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of North Carolina government",
-   :rdfs/seeAlso "http://www.nc.gov/government",
+   :rdfs/seeAlso ["http://www.nc.gov/government"],
    :skos/definition
    "individual representing the regional government of the US State of North Carolina"})
 
@@ -1592,7 +1593,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of North Carolina jurisdiction",
-   :rdfs/seeAlso "http://www.nccourts.org/",
+   :rdfs/seeAlso ["http://www.nccourts.org/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of North Carolina, i.e., that of the North Carolina Supreme Court and Judiciary"})
 
@@ -1605,7 +1606,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of North Dakota entity",
-   :rdfs/seeAlso "http://www.nd.gov/",
+   :rdfs/seeAlso ["http://www.nd.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of North Dakota"})
 
@@ -1619,7 +1620,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of North Dakota government",
-   :rdfs/seeAlso "http://www.nd.gov/category.htm?id=71",
+   :rdfs/seeAlso ["http://www.nd.gov/category.htm?id=71"],
    :skos/definition
    "individual representing the regional government of the US State of North Dakota"})
 
@@ -1632,7 +1633,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of North Dakota jurisdiction",
-   :rdfs/seeAlso "http://www.ndcourts.gov/",
+   :rdfs/seeAlso ["http://www.ndcourts.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of North Dakota, i.e., that of the North Dakota Supreme Court and Judiciary"})
 
@@ -1645,7 +1646,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Ohio entity",
-   :rdfs/seeAlso "http://ohio.gov/",
+   :rdfs/seeAlso ["http://ohio.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Ohio"})
 
@@ -1658,7 +1659,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Ohio government",
-   :rdfs/seeAlso "http://ohio.gov/government/",
+   :rdfs/seeAlso ["http://ohio.gov/government/"],
    :skos/definition
    "individual representing the regional government of the US State of Ohio"})
 
@@ -1671,7 +1672,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Ohio jurisdiction",
-   :rdfs/seeAlso "http://www.supremecourt.ohio.gov/",
+   :rdfs/seeAlso ["http://www.supremecourt.ohio.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Ohio, i.e., that of the Ohio Supreme Court and Judiciary"})
 
@@ -1684,7 +1685,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Oklahoma entity",
-   :rdfs/seeAlso "https://www.ok.gov/",
+   :rdfs/seeAlso ["https://www.ok.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Oklahoma"})
 
@@ -1697,7 +1698,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Oklahoma government",
-   :rdfs/seeAlso "https://www.ok.gov/portal/section.php?sec_id=1",
+   :rdfs/seeAlso ["https://www.ok.gov/portal/section.php?sec_id=1"],
    :skos/definition
    "individual representing the regional government of the US State of Oklahoma"})
 
@@ -1710,7 +1711,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Oklahoma jurisdiction",
-   :rdfs/seeAlso "https://www.ok.gov/portal/section.php?sec_id=67#skipcontent",
+   :rdfs/seeAlso
+   ["https://www.ok.gov/portal/section.php?sec_id=67#skipcontent"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Oklahoma, i.e., that of the Oklahoma Supreme Court and Judiciary"})
 
@@ -1723,7 +1725,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Oregon entity",
-   :rdfs/seeAlso "http://www.oregon.gov/pages/index.aspx",
+   :rdfs/seeAlso ["http://www.oregon.gov/pages/index.aspx"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Oregon"})
 
@@ -1736,7 +1738,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Oregon government",
-   :rdfs/seeAlso "http://bluebook.state.or.us/state/index.htm",
+   :rdfs/seeAlso ["http://bluebook.state.or.us/state/index.htm"],
    :skos/definition
    "individual representing the regional government of the US State of Oregon"})
 
@@ -1749,7 +1751,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Oregon jurisdiction",
-   :rdfs/seeAlso "http://bluebook.state.or.us/state/judicial/judicial.htm",
+   :rdfs/seeAlso ["http://bluebook.state.or.us/state/judicial/judicial.htm"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Oregon, i.e., that of the Oregon Supreme Court and Judiciary"})
 
@@ -1763,7 +1765,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Pennsylvania entity",
-   :rdfs/seeAlso "http://www.pa.gov/",
+   :rdfs/seeAlso ["http://www.pa.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Pennsylvania"})
 
@@ -1778,7 +1780,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Pennsylvania government",
-   :rdfs/seeAlso "http://www.pa.gov/#government",
+   :rdfs/seeAlso ["http://www.pa.gov/#government"],
    :skos/definition
    "individual representing the regional government of the US State of Pennsylvania"})
 
@@ -1793,7 +1795,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Pennsylvania jurisdiction",
-   :rdfs/seeAlso "http://www.pacourts.us/",
+   :rdfs/seeAlso ["http://www.pacourts.us/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Pennsylvania, i.e., that of the Pennsylvania Supreme Court and Judiciary"})
 
@@ -1806,7 +1808,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Rhode Island entity",
-   :rdfs/seeAlso "http://www.ri.gov/",
+   :rdfs/seeAlso ["http://www.ri.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Rhode Island"})
 
@@ -1820,7 +1822,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Rhode Island government",
-   :rdfs/seeAlso "http://www.ri.gov/government/submenu.php",
+   :rdfs/seeAlso ["http://www.ri.gov/government/submenu.php"],
    :skos/definition
    "individual representing the regional government of the US State of Rhode Island"})
 
@@ -1833,7 +1835,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Rhode Island jurisdiction",
-   :rdfs/seeAlso "https://www.courts.ri.gov/Pages/default.aspx",
+   :rdfs/seeAlso ["https://www.courts.ri.gov/Pages/default.aspx"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Rhode Island, i.e., that of the Rhode Island Supreme Court and Judiciary"})
 
@@ -1847,7 +1849,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of South Carolina entity",
-   :rdfs/seeAlso "http://www.sc.gov/Pages/default.aspx",
+   :rdfs/seeAlso ["http://www.sc.gov/Pages/default.aspx"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of South Carolina"})
 
@@ -1861,7 +1863,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of South Carolina government",
-   :rdfs/seeAlso "http://www.sc.gov/Government/Pages/default.aspx",
+   :rdfs/seeAlso ["http://www.sc.gov/Government/Pages/default.aspx"],
    :skos/definition
    "individual representing the regional government of the US State of South Carolina"})
 
@@ -1876,7 +1878,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of South Carolina jurisdiction",
    :rdfs/seeAlso
-   "http://www.sc.gov/Government/Pages/courtsAndLegalServices.aspx",
+   ["http://www.sc.gov/Government/Pages/courtsAndLegalServices.aspx"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of South Carolina, i.e., that of the South Carolina Supreme Court and Judiciary"})
 
@@ -1889,7 +1891,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of South Dakota entity",
-   :rdfs/seeAlso "http://sd.gov/",
+   :rdfs/seeAlso ["http://sd.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of South Dakota"})
 
@@ -1903,7 +1905,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of South Dakota government",
-   :rdfs/seeAlso "http://sd.gov/government.aspx",
+   :rdfs/seeAlso ["http://sd.gov/government.aspx"],
    :skos/definition
    "individual representing the regional government of the US State of South Dakota"})
 
@@ -1916,7 +1918,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of South Dakota jurisdiction",
-   :rdfs/seeAlso "http://ujs.sd.gov/",
+   :rdfs/seeAlso ["http://ujs.sd.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of South Dakota, i.e., that of the South Dakota Supreme Court and Judiciary"})
 
@@ -1929,7 +1931,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Tennessee entity",
-   :rdfs/seeAlso "http://tennessee.gov/",
+   :rdfs/seeAlso ["http://tennessee.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Tennessee"})
 
@@ -1942,7 +1944,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Tennessee government",
-   :rdfs/seeAlso "http://tennessee.gov/main/section/government",
+   :rdfs/seeAlso ["http://tennessee.gov/main/section/government"],
    :skos/definition
    "individual representing the regional government of the US State of Tennessee"})
 
@@ -1955,7 +1957,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Tennessee jurisdiction",
-   :rdfs/seeAlso "http://www.tncourts.gov/",
+   :rdfs/seeAlso ["http://www.tncourts.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Tennessee, i.e., that of the Tennessee Supreme Court and Judiciary"})
 
@@ -1968,7 +1970,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Texas entity",
-   :rdfs/seeAlso "http://www.texas.gov/",
+   :rdfs/seeAlso ["http://www.texas.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Texas"})
 
@@ -1981,7 +1983,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Texas government",
-   :rdfs/seeAlso "http://www.texas.gov/",
+   :rdfs/seeAlso ["http://www.texas.gov/"],
    :skos/definition
    "individual representing the regional government of the US State of Texas"})
 
@@ -1994,7 +1996,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Texas jurisdiction",
-   :rdfs/seeAlso "http://www.txcourts.gov/",
+   :rdfs/seeAlso ["http://www.txcourts.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Texas, i.e., that of the Texas Supreme Court and Judiciary"})
 
@@ -2007,7 +2009,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Utah entity",
-   :rdfs/seeAlso "http://www.utah.gov/index.html",
+   :rdfs/seeAlso ["http://www.utah.gov/index.html"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Utah"})
 
@@ -2020,7 +2022,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Utah government",
-   :rdfs/seeAlso "http://www.utah.gov/index.html",
+   :rdfs/seeAlso ["http://www.utah.gov/index.html"],
    :skos/definition
    "individual representing the regional government of the US State of Utah"})
 
@@ -2033,7 +2035,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Utah jurisdiction",
-   :rdfs/seeAlso "http://www.utah.gov/government/judicial.html",
+   :rdfs/seeAlso ["http://www.utah.gov/government/judicial.html"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Utah, i.e., that of the Utah Supreme Court and Judiciary"})
 
@@ -2046,7 +2048,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Vermont entity",
-   :rdfs/seeAlso "http://www.vermont.gov/portal/",
+   :rdfs/seeAlso ["http://www.vermont.gov/portal/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Vermont"})
 
@@ -2059,7 +2061,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Vermont government",
-   :rdfs/seeAlso "http://www.vermont.gov/portal/government/",
+   :rdfs/seeAlso ["http://www.vermont.gov/portal/government/"],
    :skos/definition
    "individual representing the regional government of the US State of Vermont"})
 
@@ -2072,7 +2074,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Vermont jurisdiction",
-   :rdfs/seeAlso "https://www.vermontjudiciary.org/default.aspx",
+   :rdfs/seeAlso ["https://www.vermontjudiciary.org/default.aspx"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Vermont, i.e., that of the Vermont Supreme Court and Judiciary"})
 
@@ -2086,7 +2088,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Virginia entity",
-   :rdfs/seeAlso "https://www.virginia.gov/",
+   :rdfs/seeAlso ["https://www.virginia.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Virginia"})
 
@@ -2100,7 +2102,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Virginia government",
-   :rdfs/seeAlso "https://www.virginia.gov/government/",
+   :rdfs/seeAlso ["https://www.virginia.gov/government/"],
    :skos/definition
    "individual representing the regional government of the US State of Virginia"})
 
@@ -2114,7 +2116,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Virginia jurisdiction",
-   :rdfs/seeAlso "http://www.courts.state.va.us/courts/home.html",
+   :rdfs/seeAlso ["http://www.courts.state.va.us/courts/home.html"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Virginia, i.e., that of the Virginia Supreme Court and Judiciary"})
 
@@ -2127,7 +2129,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Washington entity",
-   :rdfs/seeAlso "http://access.wa.gov/",
+   :rdfs/seeAlso ["http://access.wa.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Washington"})
 
@@ -2140,7 +2142,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Washington government",
-   :rdfs/seeAlso "http://access.wa.gov/",
+   :rdfs/seeAlso ["http://access.wa.gov/"],
    :skos/definition
    "individual representing the regional government of the US State of Washington"})
 
@@ -2153,7 +2155,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Washington jurisdiction",
-   :rdfs/seeAlso "http://www.courts.wa.gov/",
+   :rdfs/seeAlso ["http://www.courts.wa.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Washington, i.e., that of the Washington Supreme Court and Judiciary"})
 
@@ -2166,7 +2168,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of West Virginia entity",
-   :rdfs/seeAlso "http://www.wv.gov/Pages/default.aspx#home",
+   :rdfs/seeAlso ["http://www.wv.gov/Pages/default.aspx#home"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of West Virginia"})
 
@@ -2180,7 +2182,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of West Virginia government",
-   :rdfs/seeAlso "http://www.wv.gov/Pages/default.aspx#government",
+   :rdfs/seeAlso ["http://www.wv.gov/Pages/default.aspx#government"],
    :skos/definition
    "individual representing the regional government of the US State of West Virginia"})
 
@@ -2194,7 +2196,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of West Virginia jurisdiction",
-   :rdfs/seeAlso "http://www.courtswv.gov/",
+   :rdfs/seeAlso ["http://www.courtswv.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of West Virginia, i.e., that of the West Virginia Supreme Court and Judiciary"})
 
@@ -2207,7 +2209,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Wisconsin entity",
-   :rdfs/seeAlso "http://www.wisconsin.gov/Pages/home.aspx",
+   :rdfs/seeAlso ["http://www.wisconsin.gov/Pages/home.aspx"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Wisconsin"})
 
@@ -2220,7 +2222,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Wisconsin government",
-   :rdfs/seeAlso "http://www.wisconsin.gov/Pages/government.aspx",
+   :rdfs/seeAlso ["http://www.wisconsin.gov/Pages/government.aspx"],
    :skos/definition
    "individual representing the regional government of the US State of Wisconsin"})
 
@@ -2233,7 +2235,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Wisconsin jurisdiction",
-   :rdfs/seeAlso "http://www.wisconsin.gov/Pages/courtsAndLaw.aspx",
+   :rdfs/seeAlso ["http://www.wisconsin.gov/Pages/courtsAndLaw.aspx"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Wisconsin, i.e., that of the Wisconsin Supreme Court and Judiciary"})
 
@@ -2246,7 +2248,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Wyoming entity",
-   :rdfs/seeAlso "http://www.wyo.gov/",
+   :rdfs/seeAlso ["http://www.wyo.gov/"],
    :skos/definition
    "individual representing the regional sovereignty and polity that is the US State of Wyoming"})
 
@@ -2259,7 +2261,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Wyoming government",
-   :rdfs/seeAlso "http://www.wyo.gov/",
+   :rdfs/seeAlso ["http://www.wyo.gov/"],
    :skos/definition
    "individual representing the regional government of the US State of Wyoming"})
 
@@ -2272,7 +2274,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "State of Wyoming jurisdiction",
-   :rdfs/seeAlso "http://www.wyo.gov/",
+   :rdfs/seeAlso ["http://www.wyo.gov/"],
    :skos/definition
    "individual representing the overall jurisdiction for the US State of Wyoming, i.e., that of the Wyoming Supreme Court and Judiciary"})
 
@@ -2343,7 +2345,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "United States entity",
-   :rdfs/seeAlso "https://www.usa.gov/",
+   :rdfs/seeAlso ["https://www.usa.gov/"],
    :skos/definition
    "individual representing the federated sovereignty and polity that is the United States of America"})
 
@@ -2376,7 +2378,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "United States jurisdiction",
-   :rdfs/seeAlso "http://www.uscourts.gov/about-federal-courts",
+   :rdfs/seeAlso ["http://www.uscourts.gov/about-federal-courts"],
    :skos/definition
    "individual representing the federal jurisdiction of the United States of America"})
 

@@ -68,7 +68,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/",
    :rdfs/label "Derivatives Domain",
-   :rdfs/seeAlso "https://www.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"],
    :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
    :sm/contributor ["Tahoe Blue Ltd"
                     "Mizuho Financial Group, Inc."

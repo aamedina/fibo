@@ -136,9 +136,24 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
    :rdfs/label "account",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-pas-caa/hasBalance,
+                      :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-caa/AccountHolder,
+                      :owl/onProperty :fibo-fnd-rel-rel/isHeldBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fbc-pas-caa/AccountProvider,
                       :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-caa/CloseDate,
+                      :owl/onProperty :fibo-fbc-pas-caa/hasCloseDate,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-caa/AccountIdentifier,
+                      :owl/onProperty :lcc-lr/isIdentifiedBy,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-pas-caa/TransactionRecord,
                       :owl/onProperty :fibo-fnd-arr-doc/hasRecord,
@@ -146,21 +161,6 @@
                      {:owl/onClass    :fibo-fbc-pas-caa/OpenDate,
                       :owl/onProperty :fibo-fbc-pas-caa/hasOpenDate,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-caa/AccountIdentifier,
-                      :owl/onProperty :lcc-lr/isIdentifiedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-caa/CloseDate,
-                      :owl/onProperty :fibo-fbc-pas-caa/hasCloseDate,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-pas-caa/hasBalance,
-                      :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-caa/AccountHolder,
-                      :owl/onProperty :fibo-fnd-rel-rel/isHeldBy,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "container for records associated with a business arrangement for regular transactions and services"})
@@ -192,11 +192,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
    :rdfs/label "account holder",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/holds,
-     :owl/someValuesFrom :fibo-fbc-pas-caa/Account,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-oac-own/Owner
-    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
                           :owl/someValuesFrom :fibo-fbc-pas-caa/Account,
                           :rdf/type           :owl/Restriction},
@@ -205,7 +201,11 @@
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-oac-own/owns,
                           :owl/someValuesFrom :fibo-fbc-pas-caa/Account,
                           :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/holds,
+     :owl/someValuesFrom :fibo-fbc-pas-caa/Account,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-oac-own/Owner],
    :skos/definition "party that owns an account"})
 
 (def AccountIdentifier
@@ -289,16 +289,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
    :rdfs/label "account statement",
-   :rdfs/subClassOf [:fibo-fnd-arr-doc/LegalDocument
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fbc-pas-caa/Balance,
+                      :owl/onProperty :fibo-fbc-pas-caa/hasStartingBalance,
+                      :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-dt-fd/ExplicitDatePeriod,
                       :owl/onProperty :fibo-fnd-arr-doc/hasReportingPeriod,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-doc/Record
+                     :fibo-fnd-arr-doc/LegalDocument
                      {:owl/onProperty :fibo-fbc-pas-caa/recordsTransaction,
                       :owl/someValuesFrom
                       :fibo-fbc-pas-caa/IndividualTransaction,
                       :rdf/type :owl/Restriction}
+                     :fibo-fnd-arr-doc/Record
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fbc-pas-caa/Balance,
                       :owl/onProperty :fibo-fbc-pas-caa/hasEndingBalance,
@@ -306,10 +310,6 @@
                      {:owl/onClass    :fibo-fbc-pas-caa/Account,
                       :owl/onProperty :fibo-fbc-pas-caa/appliesToAccount,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fbc-pas-caa/Balance,
-                      :owl/onProperty :fibo-fbc-pas-caa/hasStartingBalance,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "periodic summary of account activity for a given period of time"})
@@ -384,11 +384,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
    :rdfs/label "basic bank account identifier",
-   :rdfs/subClassOf [:fibo-fnd-arr-id/CompositeIdentifier
-                     {:owl/onClass    :fibo-fbc-pas-caa/BankAccountIdentifier,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fbc-pas-caa/BankAccountIdentifier,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-arr-id/CompositeIdentifier
                      {:owl/onClass    :fibo-fbc-pas-caa/BankIdentifier,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
@@ -430,16 +430,16 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "certificate of deposit"},
    :rdfs/subClassOf [:fibo-fbc-fi-fi/CashInstrument
-                     {:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                     {:owl/onClass    :fibo-fnd-dt-fd/Duration,
+                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractDuration,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/InterestRate,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasInterestRate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-dt-fd/Duration,
-                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractDuration,
+                     {:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
@@ -468,14 +468,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
    :rdfs/label "customer account",
    :rdfs/subClassOf
-   [{:owl/onProperty     :lcc-lr/isIdentifiedBy,
-     :owl/someValuesFrom :fibo-fbc-pas-caa/AccountIdentifier,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
      :owl/someValuesFrom {:owl/intersectionOf
                           [:fibo-fbc-pas-caa/AccountProvider
                            :fibo-fbc-pas-fpas/FinancialServiceProvider],
                           :rdf/type :owl/Class},
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
+     :owl/someValuesFrom :fibo-fnd-pas-pas/ServiceAgreement,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isHeldBy,
      :owl/someValuesFrom :fibo-fbc-pas-caa/CustomerAccountHolder,
@@ -485,8 +485,8 @@
                                         :fibo-fbc-pas-fpas/FinancialService],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
-     :owl/someValuesFrom :fibo-fnd-pas-pas/ServiceAgreement,
+    {:owl/onProperty     :lcc-lr/isIdentifiedBy,
+     :owl/someValuesFrom :fibo-fbc-pas-caa/AccountIdentifier,
      :rdf/type           :owl/Restriction}
     :fibo-fbc-pas-caa/Account],
    :skos/definition
@@ -573,52 +573,52 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
    :rdfs/label "individual transaction",
-   :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fbc-pas-caa/TransactionRecord,
-                      :owl/onProperty    :fibo-fbc-fct-ra/isRegisteredIn,
-                      :rdf/type          :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-caa/TransactionCategory,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pas-pas/TransactionEvent,
-                      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-fd/DatedCollectionConstituent
-                     {:owl/onClass    :fibo-fbc-pas-caa/PostingDate,
-                      :owl/onProperty :fibo-fbc-pas-caa/hasPostingDate,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fbc-pas-caa/TransactionDate,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fbc-pas-caa/TransactionDate,
                       :owl/onProperty :fibo-fbc-pas-caa/hasTransactionDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-be-fct-fct/Merchant,
-                      :owl/onProperty :fibo-fbc-pas-caa/involvesMerchant,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fct-ra/RegistryEntry
-                     {:owl/onClass    :fibo-fbc-pas-caa/Account,
-                      :owl/onProperty :fibo-fbc-pas-caa/appliesToAccount,
+                     {:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fnd-acc-cur/hasMonetaryAmount,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-caa/TransactionSubcategory,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty
                       :fibo-fbc-pas-caa/hasTransactionDescription,
                       :rdf/type :owl/Restriction}
+                     :fibo-fnd-dt-fd/DatedCollectionConstituent
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fbc-pas-caa/TransactionIdentifier,
                       :owl/onProperty :lcc-lr/isIdentifiedBy,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fct-ra/RegistryEntry
+                     {:owl/allValuesFrom :fibo-fbc-pas-caa/TransactionRecord,
+                      :owl/onProperty    :fibo-fbc-fct-ra/isRegisteredIn,
+                      :rdf/type          :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pas-pas/TransactionEvent,
+                      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+                      :rdf/type       :owl/Restriction}
                      :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-fnd-acc-cur/hasMonetaryAmount,
+                     {:owl/onClass    :fibo-fbc-pas-caa/Account,
+                      :owl/onProperty :fibo-fbc-pas-caa/appliesToAccount,
                       :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-be-fct-fct/Merchant,
+                      :owl/onProperty :fibo-fbc-pas-caa/involvesMerchant,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-caa/TransactionSubcategory,
+                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fbc-pas-caa/PostingDate,
+                      :owl/onProperty :fibo-fbc-pas-caa/hasPostingDate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-caa/TransactionCategory,
+                      :owl/onProperty :lcc-cr/isClassifiedBy,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "event that has a monetary impact and is documented in the records associated with an account"})
@@ -637,15 +637,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
    :rdfs/label "international bank account identifier",
-   :rdfs/subClassOf [{:owl/onClass    :lcc-cr/Alpha2Code,
+   :rdfs/subClassOf [{:owl/onClass :fibo-fbc-pas-caa/BasicBankAccountIdentifier,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onClass    :lcc-cr/Alpha2Code,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-arr-id/CompositeIdentifier
-                     {:owl/onClass :fibo-fbc-pas-caa/BasicBankAccountIdentifier,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
                      :fibo-fbc-pas-caa/BankAccountIdentifier],
    :skos/definition
    "identifier for a bank account that is an expanded version of the basic bank account number (BBAN), intended for use internationally",
@@ -889,23 +889,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
    :rdfs/label "transaction record",
    :rdfs/subClassOf
-   [{:owl/onClass    :fibo-fbc-pas-caa/AccountProvider,
-     :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/onClass    :fibo-fbc-pas-caa/Account,
-     :owl/onProperty :fibo-fbc-pas-caa/appliesToAccount,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-arr-doc/Record
-    {:owl/maxQualifiedCardinality 1,
-     :owl/onClass    :fibo-fbc-pas-caa/TransactionRecordIdentifier,
-     :owl/onProperty :lcc-lr/isIdentifiedBy,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-ra/Registry
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-caa/IndividualTransaction,
-     :owl/onProperty :fibo-fbc-fct-ra/hasRegistryEntry,
+   [{:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-pas-caa/OpenDate,
+     :owl/onProperty :fibo-fbc-pas-caa/hasOpenDate,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onDataRange :xsd/string,
@@ -915,10 +901,24 @@
      :owl/onClass    :fibo-fbc-pas-caa/CloseDate,
      :owl/onProperty :fibo-fbc-pas-caa/hasCloseDate,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-dt-fd/DatedStructuredCollection
+    :fibo-fnd-arr-doc/Record
+    :fibo-fbc-fct-ra/Registry
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-caa/OpenDate,
-     :owl/onProperty :fibo-fbc-pas-caa/hasOpenDate,
+     :owl/onClass    :fibo-fbc-pas-caa/IndividualTransaction,
+     :owl/onProperty :fibo-fbc-fct-ra/hasRegistryEntry,
+     :rdf/type       :owl/Restriction}
+    {:owl/onClass    :fibo-fbc-pas-caa/AccountProvider,
+     :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/maxQualifiedCardinality 1,
+     :owl/onClass    :fibo-fbc-pas-caa/TransactionRecordIdentifier,
+     :owl/onProperty :lcc-lr/isIdentifiedBy,
+     :rdf/type       :owl/Restriction}
+    :fibo-fnd-dt-fd/DatedStructuredCollection
+    {:owl/onClass    :fibo-fbc-pas-caa/Account,
+     :owl/onProperty :fibo-fbc-pas-caa/appliesToAccount,
+     :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}],
    :skos/definition "record of transactions associated with an account"})
 

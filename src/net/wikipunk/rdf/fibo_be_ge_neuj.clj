@@ -71,7 +71,7 @@
                  :rdf/value    "Aland Islands jurisdiction"}
                 {:rdf/language "fi",
                  :rdf/value    "Ahvenanmaan lainkäyttöalue"}],
-   :rdfs/seeAlso "https://www.lexadin.nl/wlg/courts/nofr/eur/lxctfin.htm/",
+   :rdfs/seeAlso ["https://www.lexadin.nl/wlg/courts/nofr/eur/lxctfin.htm/"],
    :skos/definition
    "jurisdiction of the Aland District Court, which deals with criminal cases, civil cases and petitionary matters in first instance, with escalation to the appellate level in Finland as needed"})
 
@@ -155,7 +155,7 @@
                  :rdf/value    "Ahvenanmaan hallitus"}
                 {:rdf/language "en",
                  :rdf/value    "Government of Aland"}],
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/%C3%85land_Islands/",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/%C3%85land_Islands/"],
    :skos/definition
    "regional government of the Aland Islands, an archipelago province at the entrance to the Gulf of Bothnia in the Baltic Sea belonging to Finland"})
 
@@ -171,7 +171,7 @@
                  :rdf/value    "Ríkisstjórn Íslands"}
                 {:rdf/language "en",
                  :rdf/value    "Government of Iceland"}],
-   :rdfs/seeAlso "https://www.government.is/",
+   :rdfs/seeAlso ["https://www.government.is/"],
    :skos/definition
    "unitary parliamentary republic and representative democracy, that is a Nordic island country in the North Atlantic"})
 
@@ -192,7 +192,7 @@
                 {:rdf/language "da",
                  :rdf/value    "Kongeriget Danmarks regering"}],
    :rdfs/seeAlso
-   "https://denmark.dk/society-and-business/government-and-politics/",
+   ["https://denmark.dk/society-and-business/government-and-politics/"],
    :skos/definition
    "unitary constitutional monarchy and parliamentary democracy, with the monarch as the official head of government, that includes the southernmost of the Scandinavian countries, consisting of a peninsula, Jutland, and an archipelago of 443 named islands"})
 
@@ -208,7 +208,7 @@
                  :rdf/value    "Kongeriket Norges regjering"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Kingdom of Norway"}],
-   :rdfs/seeAlso "https://www.regjeringen.no/en/the-government/id443314/",
+   :rdfs/seeAlso ["https://www.regjeringen.no/en/the-government/id443314/"],
    :skos/definition
    "unitary constitutional monarchy and parliamentary democracy, wherein the monarch is the head of state and the prime minister is the head of government, whose mainland comprises the western and northernmost portion of the Scandinavian Peninsula and includes the remote island of Jan Mayen as well as the archipelago of Svalbard"})
 
@@ -224,7 +224,7 @@
                  :rdf/value    "Konungariket Sveriges regering"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Kingdom of Sweden"}],
-   :rdfs/seeAlso "https://www.government.se/government-of-sweden/",
+   :rdfs/seeAlso ["https://www.government.se/government-of-sweden/"],
    :skos/definition
    "constitutional monarchy and parliamentary democracy, with a largely ceremonial and representative monarch as head of state, located in Scandinavia between the North Atlantic, the Baltic Sea and Eurasian Russia"})
 
@@ -240,7 +240,7 @@
                  :rdf/value    "Government of the Republic of Estonia"}
                 {:rdf/language "et",
                  :rdf/value    "Eesti Vabariigi valitsus"}],
-   :rdfs/seeAlso "https://www.valitsus.ee/en/",
+   :rdfs/seeAlso ["https://www.valitsus.ee/en/"],
    :skos/definition
    "democratic unitary parliamentary republic divided into fifteen counties, located on the eastern coast of the Baltic Sea in Northern Europe"})
 
@@ -256,7 +256,7 @@
                  :rdf/value    "Suomen tasavallan hallitus"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of Finland"}],
-   :rdfs/seeAlso "https://valtioneuvosto.fi/en/government",
+   :rdfs/seeAlso ["https://valtioneuvosto.fi/en/government"],
    :skos/definition
    "parliamentary republic within the framework of a representative democracy comprised of 19 regions and 310 municipalities, located in the Nordic region of Europe"})
 
@@ -272,7 +272,7 @@
                  :rdf/value    "Rialtas Phoblacht na hÉireann"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of Ireland"}],
-   :rdfs/seeAlso "https://www.gov.ie/",
+   :rdfs/seeAlso ["https://www.gov.ie/"],
    :skos/definition
    "parliamentary, representative democratic republic, based on the British model, that is an independent state and member of the European Union, which covers five-sixths of the island of Ireland in the North Atlantic"})
 
@@ -288,7 +288,7 @@
                  :rdf/value    "Latvijas Republikas valdība"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of Latvia"}],
-   :rdfs/seeAlso "https://www.mk.gov.lv/en",
+   :rdfs/seeAlso ["https://www.mk.gov.lv/en"],
    :skos/definition
    "unitary, parliamentary, constitutional republic located in the Baltic region of Northern Europe"})
 
@@ -304,7 +304,7 @@
                  :rdf/value    "Lietuvos Respublikos Vyriausybė"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of Lithuania"}],
-   :rdfs/seeAlso "https://lrv.lt/en/",
+   :rdfs/seeAlso ["https://lrv.lt/en/"],
    :skos/definition
    "unitary semi-presidential republic situated along the southeastern shore of the Baltic Sea, to the southeast of Sweden and Denmark"})
 
@@ -350,7 +350,7 @@
                  :rdf/value    "jurisdiction of Denmark"}
                 {:rdf/language "da",
                  :rdf/value    "Danmarks jurisdiktion"}],
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/Courts_of_Denmark/",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Courts_of_Denmark/"],
    :skos/definition
    "jurisdiction of the judiciary of Denmark, a civil law system with some references to Germanic law that was substantially reformed in 2007"})
 
@@ -368,7 +368,7 @@
                 {:rdf/language "et",
                  :rdf/value    "Eesti jurisdiktsioon"}],
    :rdfs/seeAlso
-   "https://www.kohus.ee/en/estonian-courts/estonian-court-system",
+   ["https://www.kohus.ee/en/estonian-courts/estonian-court-system"],
    :skos/definition
    "jurisdiction of the judiciary of Estonia, a civil law legal system based on the Germanic legal model, whose Supreme Court is the court of cassation, which also conducts constitutional review"})
 
@@ -385,7 +385,7 @@
                  :rdf/value    "jurisdiction of Finland"}
                 {:rdf/language "fi",
                  :rdf/value    "Suomen lainkäyttövaltaan"}],
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/Judicial_system_of_Finland",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Judicial_system_of_Finland"],
    :skos/definition
    "jurisdiction of the judiciary of Finland, a civil law system divided between courts with regular civil and criminal jurisdiction and administrative courts with jurisdiction over litigation between individuals and the public administration"})
 
@@ -402,7 +402,7 @@
                 {:rdf/language "en",
                  :rdf/value    "jurisdiction of Iceland"}],
    :rdfs/seeAlso
-   "https://www.government.is/topics/law-and-order/the-judicial-system-in-iceland/",
+   ["https://www.government.is/topics/law-and-order/the-judicial-system-in-iceland/"],
    :skos/definition
    "jurisdiction of the judiciary of Finland, a three-tier civil law system whose highest court is the Supreme Court of Iceland"})
 
@@ -419,7 +419,8 @@
                  :rdf/value    "jurisdiction of Ireland"}
                 {:rdf/language "ga",
                  :rdf/value    "dlínse na hÉireann"}],
-   :rdfs/seeAlso "https://www.citizensinformation.ie/en/justice/courts_system/",
+   :rdfs/seeAlso
+   ["https://www.citizensinformation.ie/en/justice/courts_system/"],
    :skos/definition
    "jurisdiction of the judiciary of Ireland, which is the system of courts that interprets and applies the law in Ireland"})
 
@@ -436,7 +437,7 @@
                  :rdf/value    "jurisdiction of Latvia"}
                 {:rdf/language "lv",
                  :rdf/value    "Latvijas jurisdikcija"}],
-   :rdfs/seeAlso "http://www.satv.tiesa.gov.lv/",
+   :rdfs/seeAlso ["http://www.satv.tiesa.gov.lv/"],
    :skos/definition
    "jurisdiction of the judiciary of Latvia, which is the system of courts that interprets and applies the law in Latvia"})
 
@@ -453,7 +454,7 @@
                  :rdf/value    "jurisdiction of Lithuania"}
                 {:rdf/language "lt",
                  :rdf/value    "Lietuvos jurisdikcija"}],
-   :rdfs/seeAlso "https://www.teismai.lt/en/courts/judicial-system/650",
+   :rdfs/seeAlso ["https://www.teismai.lt/en/courts/judicial-system/650"],
    :skos/definition
    "jurisdiction of the judiciary of Lithuania, whose highest court is the Constitutional Court (Konstitucinis Teismas), but the general jurisdiction dealing with civil and criminal cases includes the Supreme Court of Lithuania, the Court of Appeal of Lithuania, regional courts, and district courts"})
 
@@ -470,7 +471,7 @@
                  :rdf/value    "jurisdiksjon av Norge"}
                 {:rdf/language "en",
                  :rdf/value    "jurisdiction of Norway"}],
-   :rdfs/seeAlso "https://www.domstol.no/en/",
+   :rdfs/seeAlso ["https://www.domstol.no/en/"],
    :skos/definition
    "jurisdiction of the judiciary system in Norway, a civil law system where laws are created and amended in parliament and the system regulated through the Courts of Justice of Norway"})
 
@@ -488,7 +489,7 @@
                 {:rdf/language "sv",
                  :rdf/value    "Sveriges jurisdiktion"}],
    :rdfs/seeAlso
-   "https://www.government.se/information-material/2019/03/organisation-and-responsibilities-of-the-ministry-of-justice/",
+   ["https://www.government.se/information-material/2019/03/organisation-and-responsibilities-of-the-ministry-of-justice/"],
    :skos/definition
    "jurisdiction of the judiciary system in Sweden, which is part of the Ministry of Justice, whose courts are divided into two parallel and separate systems - general courts (allmänna domstolar) for criminal and civil cases, and general administrative courts (allmänna förvaltningsdomstolar) for cases relating to disputes between private persons and the authorities"})
 

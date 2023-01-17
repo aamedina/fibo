@@ -56,7 +56,7 @@
    :rdf/type [:sm/Module :owl/NamedIndividual],
    :rdfs/isDefinedBy "https://spec.edmcouncil.org/fibo/ontology/MD/MetadataMD/",
    :rdfs/label "Market Data Domain",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright "Copyright (c) 2013-2020 EDM Council, Inc.",
    :sm/dependsOn [:fibo-sec-mod/SECDomain
                   :fibo-loan-mod/LOANDomain

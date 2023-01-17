@@ -375,7 +375,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "California banking regulator",
-   :rdfs/seeAlso "http://dbo.ca.gov/",
+   :rdfs/seeAlso ["http://dbo.ca.gov/"],
    :skos/definition
    "regulatory agency, registration authority, and oversight role of the State of California's Department of Business Oversight"})
 
@@ -391,7 +391,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "California business entities registry",
-   :rdfs/seeAlso "http://www.sos.ca.gov/business-programs/business-entities/",
+   :rdfs/seeAlso ["http://www.sos.ca.gov/business-programs/business-entities/"],
    :skos/definition
    "registry of business entities for businesses that have registered with the State of California Business Programs Division"})
 
@@ -451,7 +451,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "California business registration service",
    :rdfs/seeAlso
-   "http://www.sos.ca.gov/business-programs/business-entities/service-options",
+   ["http://www.sos.ca.gov/business-programs/business-entities/service-options"],
    :skos/definition
    "State of California, Secretary of State, service for the registration of business entities"})
 
@@ -482,7 +482,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "California registration authority code",
    :rdfs/seeAlso
-   "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list",
+   ["https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"],
    :skos/definition
    "GLEIF Registration Authority List identifier for the California Business Entities Registry"})
 
@@ -557,7 +557,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "Corporation Service Company",
-   :rdfs/seeAlso "https://www.cscglobal.com/cscglobal/home/",
+   :rdfs/seeAlso ["https://www.cscglobal.com/cscglobal/home/"],
    :skos/definition
    "registration and legal agency role of the Corporation Service Company"})
 
@@ -623,7 +623,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "Corporation Trust Company",
-   :rdfs/seeAlso "https://ct.wolterskluwer.com/",
+   :rdfs/seeAlso ["https://ct.wolterskluwer.com/"],
    :skos/definition
    "registration and legal agency role of the The Corporation Trust Company, a wholly-owned subsidiary of Wolters Kluwer"})
 
@@ -714,7 +714,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "Delaware business registration service",
-   :rdfs/seeAlso "http://corp.delaware.gov/",
+   :rdfs/seeAlso ["http://corp.delaware.gov/"],
    :skos/definition
    "State of Delaware, Division of Corporations, service for the registration of business entities"})
 
@@ -733,7 +733,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "Delaware corporations regulator",
-   :rdfs/seeAlso "http://corp.delaware.gov/aboutagency.shtml",
+   :rdfs/seeAlso ["http://corp.delaware.gov/aboutagency.shtml"],
    :skos/definition
    "regulatory agency and registration authority role of the State of Delaware's Division of Corporations"})
 
@@ -761,7 +761,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "Delaware registration authority code",
    :rdfs/seeAlso
-   "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list",
+   ["https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"],
    :skos/definition
    "GLEIF Registration Authority List identifier for the Delaware Business Entities Registry"})
 
@@ -960,7 +960,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "farm credit regulator",
-   :rdfs/seeAlso "http://fca.gov/",
+   :rdfs/seeAlso ["http://fca.gov/"],
    :skos/definition
    "regulatory agency and registration authority role of the Farm Credit Administration (FCA)"})
 
@@ -995,7 +995,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "federal deposit insurer and regulator",
-   :rdfs/seeAlso "https://www.fdic.gov/",
+   :rdfs/seeAlso ["https://www.fdic.gov/"],
    :skos/definition
    "regulatory agency and registration authority role of the Federal Deposit Insurance Corporation (FDIC)"})
 
@@ -1554,7 +1554,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "Federal Reserve regulatory agency and central bank",
-   :rdfs/seeAlso "http://www.federalreserve.gov/",
+   :rdfs/seeAlso ["http://www.federalreserve.gov/"],
    :skos/definition
    "regulatory agency and registration authority role of the Federal Reserve System"})
 
@@ -1850,23 +1850,23 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "issuer identification number",
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/ISO/IEC_7812",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/ISO/IEC_7812"],
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-fbc-fct-usjrga/ABAIINRegistry,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
-     :rdf/type       :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
-     :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
-     :rdf/type :owl/Restriction}
-    :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
-    {:owl/hasValue
+   [{:owl/hasValue
      :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
      :rdf/type :owl/Restriction}
     {:owl/onClass    :fibo-fbc-fct-fse/FinancialInstitution,
      :owl/onProperty :lcc-lr/identifies,
      :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
+     :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
+     :rdf/type :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
+    {:owl/hasValue   :fibo-fbc-fct-usjrga/ABAIINRegistry,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-ra/RegistryIdentifier],
    :skos/definition
@@ -1887,7 +1887,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "Massachusetts business registrar",
-   :rdfs/seeAlso "http://www.sec.state.ma.us/cor/coridx.htm",
+   :rdfs/seeAlso ["http://www.sec.state.ma.us/cor/coridx.htm"],
    :skos/definition
    "regulatory agency and registration authority role of the Commonwealth of Massachusetts's Corporations Division"})
 
@@ -1914,7 +1914,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "Massachusetts business registration service",
-   :rdfs/seeAlso "http://www.sec.state.ma.us/cor/corservices.htm",
+   :rdfs/seeAlso ["http://www.sec.state.ma.us/cor/corservices.htm"],
    :skos/definition
    "Commonwealth of Massachusetts, Secretary of State, Corporations Division, service for the registration of business entities"})
 
@@ -1960,7 +1960,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "Massachusetts Registration Authority Code",
    :rdfs/seeAlso
-   "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list",
+   ["https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"],
    :skos/definition
    "GLEIF Registration Authority List identifier for the Massachusetts Corporation Registry"})
 
@@ -2001,7 +2001,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "national banking regulator",
-   :rdfs/seeAlso "http://www.occ.gov/",
+   :rdfs/seeAlso ["http://www.occ.gov/"],
    :skos/definition
    "regulatory agency and registration authority role of the Office of the Comptroller of the Currency (OCC)"})
 
@@ -2036,7 +2036,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "national credit union insurer and regulator",
-   :rdfs/seeAlso "http://www.ncua.gov/Pages/default.aspx",
+   :rdfs/seeAlso ["http://www.ncua.gov/Pages/default.aspx"],
    :skos/definition
    "regulatory agency and registration authority role of the National Credit Union Administration (NCUA)"})
 
@@ -2093,7 +2093,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "State of New York business registration service",
-   :rdfs/seeAlso "https://www.dos.ny.gov/about/corps-licensing.html",
+   :rdfs/seeAlso ["https://www.dos.ny.gov/about/corps-licensing.html"],
    :skos/definition
    "New York State (NYS) Department of State, Division of Corporations service for the registration of business entities"})
 
@@ -2112,7 +2112,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "State of New York corporations regulator",
-   :rdfs/seeAlso "https://www.dos.ny.gov/corps/index.html",
+   :rdfs/seeAlso ["https://www.dos.ny.gov/corps/index.html"],
    :skos/definition
    "regulatory agency and registration authority role of the State of New York's Division of Corporations"})
 
@@ -2142,7 +2142,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "New York Registration Authority Code",
    :rdfs/seeAlso
-   "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list",
+   ["https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"],
    :skos/definition
    "GLEIF Registration Authority List identifier for the New York State (NYS) Department of State, Division of Corporations, State Records and Uniform Commercial Code (UCC) registry of business entities"})
 
@@ -2206,7 +2206,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "Ohio business registrar",
-   :rdfs/seeAlso "https://www.sos.state.oh.us/businesses/",
+   :rdfs/seeAlso ["https://www.sos.state.oh.us/businesses/"],
    :skos/definition
    "regulatory agency and registration authority role of the Ohio Secretary of State, Business Services Division"})
 
@@ -2230,7 +2230,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "Ohio business registration service",
-   :rdfs/seeAlso "https://www.sos.state.oh.us/businesses/",
+   :rdfs/seeAlso ["https://www.sos.state.oh.us/businesses/"],
    :skos/definition
    "Ohio Secretary of State, Business Services Division service for the registration of business entities"})
 
@@ -2258,7 +2258,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "Ohio Registration Authority Code",
    :rdfs/seeAlso
-   "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list",
+   ["https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"],
    :skos/definition
    "GLEIF Registration Authority List identifier for the Ohio Business Filing Portal"})
 
@@ -2303,17 +2303,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label
    "Research, Statistics, Supervision and Regulation, and Discount and Credit identifier",
-   :rdfs/seeAlso "http://www.federalreserve.gov/reportforms/mdrm/pdf/RSSD.PDF",
+   :rdfs/seeAlso
+   ["http://www.federalreserve.gov/reportforms/mdrm/pdf/RSSD.PDF"],
    :rdfs/subClassOf
-   [{:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
-     :rdf/type :owl/Restriction}
+   [{:owl/hasValue   :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
+     :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
     :fibo-fbc-fct-ra/RegistryIdentifier
-    {:owl/hasValue   :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
-     :rdf/type       :owl/Restriction}],
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
+     :rdf/type :owl/Restriction}],
    :skos/definition
    "unique identifier assigned by the Federal Reserve to financial institutions for regulatory and oversight purposes"})
 
@@ -2328,20 +2329,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "routing transit number",
-   :rdfs/seeAlso "http://www.accuity.com/aba-registrar/",
+   :rdfs/seeAlso ["http://www.accuity.com/aba-registrar/"],
    :rdfs/subClassOf
    [:fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
+    :fibo-fbc-fct-ra/RegistryIdentifier
     {:owl/hasValue :fibo-fbc-fct-usjrga/AmericanBankersAssociationRTNRegistrar,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
      :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-fbc-fct-usjrga/ABARTNRegistry,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-ra/RegistryIdentifier
     {:owl/hasValue
      :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
      :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
-     :rdf/type :owl/Restriction}],
+     :rdf/type :owl/Restriction}
+    {:owl/hasValue   :fibo-fbc-fct-usjrga/ABARTNRegistry,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "unique nine digit identifier, used primarily in the United States, to identify a banking or other financial institution for clearing funds, and, as it appears on a check, denotes the banking institution that holds the account from which funds are to be drawn"})
 
@@ -2417,7 +2418,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "South Dakota business registration service",
-   :rdfs/seeAlso "https://sosenterprise.sd.gov/businessservices/",
+   :rdfs/seeAlso ["https://sosenterprise.sd.gov/businessservices/"],
    :skos/definition
    "State of South Dakota, Secretary of State, Corporations Division service for the registration of business entities"})
 
@@ -2450,7 +2451,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "South Dakota corporations regulator",
-   :rdfs/seeAlso "https://sosenterprise.sd.gov/businessservices/",
+   :rdfs/seeAlso ["https://sosenterprise.sd.gov/businessservices/"],
    :skos/definition
    "regulatory agency and registration authority role of the State of South Dakota's Secretary of State, Corporations Division"})
 
@@ -2466,7 +2467,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "South Dakota Registration Authority Code",
    :rdfs/seeAlso
-   "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list",
+   ["https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"],
    :skos/definition
    "GLEIF Registration Authority List identifier for the South Dakota Business Information Registry"})
 

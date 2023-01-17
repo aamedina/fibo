@@ -294,7 +294,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
    :rdfs/label "GLEIF corporate action classification scheme",
    :rdfs/seeAlso
-   "https://www.gleif.org/content/2-about-lei/6-common-data-file-format/1-upcoming-versions/2021-03-04_lei-cdf-v3-1.xsd",
+   ["https://www.gleif.org/content/2-about-lei/6-common-data-file-format/1-upcoming-versions/2021-03-04_lei-cdf-v3-1.xsd"],
    :skos/definition
    "scheme for classifying corporate actions according to the GLEIF LEI Common Data Format (CDF) schema"})
 

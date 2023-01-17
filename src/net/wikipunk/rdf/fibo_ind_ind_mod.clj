@@ -46,7 +46,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/MetadataINDIndicators/",
    :rdfs/label "FIBO IND Indicators Module",
-   :rdfs/seeAlso "https://www.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"],
    :sm/contributor
    ["Bureau of Labor Statistics (BLS, US Department of Commerce)"
     "State Street Bank and Trust"

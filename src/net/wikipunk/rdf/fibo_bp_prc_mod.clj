@@ -44,6 +44,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/MetadataBPProcess/",
    :rdfs/label "Process Module",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright "Copyright (c) 2013-2020 EDM Council, Inc.",
    :sm/moduleAbbreviation "fibo-bp-prc"})

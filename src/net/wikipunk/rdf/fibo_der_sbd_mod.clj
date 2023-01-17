@@ -48,6 +48,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/MetadataDERSecurityBasedDerivatives/",
    :rdfs/label "Security-Based Derivatives",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright "Copyright (c) 2018-2022 EDM Council, Inc.",
    :sm/moduleAbbreviation "fibo-der-sbd"})

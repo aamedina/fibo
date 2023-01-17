@@ -167,17 +167,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
    :rdfs/label "guaranty",
-   :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fbc-dae-gty/Guarantor,
-                      :owl/onProperty    :fibo-fbc-dae-gty/isGuaranteedBy,
+   :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-dt-fd/Date,
+                      :owl/onProperty    :fibo-fnd-arr-doc/hasExpirationDate,
                       :rdf/type          :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty    :fibo-fbc-dae-gty/hasGuaranteedAmount,
                       :rdf/type          :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty    :fibo-fnd-arr-doc/hasExpirationDate,
-                      :rdf/type          :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fbc-dae-gty/PriorityLevel,
                       :owl/onProperty    :fibo-fbc-dae-gty/hasPriorityLevel,
+                      :rdf/type          :owl/Restriction}
+                     {:owl/allValuesFrom :fibo-fbc-dae-gty/Guarantor,
+                      :owl/onProperty    :fibo-fbc-dae-gty/isGuaranteedBy,
                       :rdf/type          :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/DatePeriod,
                       :owl/onProperty    :fibo-fnd-dt-bd/holdsDuring,
@@ -255,10 +255,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
    :rdfs/label "letter of credit",
    :rdfs/subClassOf [:fibo-fnd-acc-aeq/FinancialAsset
+                     :fibo-fbc-dae-dbt/CommittedCreditFacility
                      {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CommittedCreditFacility],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "letter from a bank or other creditworthy institution guaranteeing that a buyer's payment to a seller will be received on time and for the correct amount"})
 

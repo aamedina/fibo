@@ -129,16 +129,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "borrower assessment"},
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass
-                      :fibo-loan-ln-app/IndividualPersonCreditRating,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-arr-asmt/hasDateOfAssessment,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
                       :owl/someValuesFrom :fibo-loan-ln-app/LoanApplication,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-loan-ln-app/IncomeVerificationReport,
+                      :owl/onClass
+                      :fibo-loan-ln-app/IndividualPersonCreditRating,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
@@ -148,8 +147,9 @@
                      {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-arr-asmt/hasDateOfAssessment,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-loan-ln-app/IncomeVerificationReport,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-arr-asmt/AssessmentReport],
    :skos/definition
@@ -181,39 +181,39 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
    :rdfs/label "credit risk assessment",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
-     :owl/someValuesFrom :fibo-loan-ln-app/PreApprovalContract,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
-     :owl/someValuesFrom :fibo-loan-ln-app/TotalDebtExpenseRatio,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+   [{:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-ln-app/AutomaticUnderwriting,
      :owl/onProperty :fibo-fbc-dae-dbt/isBasedOn,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
-     :owl/someValuesFrom :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
      :owl/someValuesFrom :fibo-loan-ln-app/UnderwritingDecision,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReport,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+     :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
      :owl/someValuesFrom :fibo-loan-ln-app/PublicRecord,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
-     :owl/someValuesFrom :fibo-loan-ln-ln/CombinedLoanToValueRatio,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReport,
+     :owl/someValuesFrom :fibo-loan-ln-app/TotalDebtExpenseRatio,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
      :owl/someValuesFrom :fibo-loan-ln-app/PreApprovalRequest,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
+     :owl/someValuesFrom :fibo-loan-ln-ln/CombinedLoanToValueRatio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
      :owl/someValuesFrom :fibo-loan-ln-app/BorrowerMonthlyIncome,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-     :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
+    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
+     :owl/someValuesFrom :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
+     :owl/someValuesFrom :fibo-loan-ln-app/PreApprovalContract,
      :rdf/type           :owl/Restriction}
     :fibo-fnd-arr-asmt/AssessmentActivity],
    :skos/definition
@@ -335,44 +335,45 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
    :rdfs/label "loan application",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-loan-ln-app/TotalDebtExpenseRatio,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-ln-app/isPreApprovalRequested,
-     :owl/someValuesFrom :xsd/boolean,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-loan-ln-app/BorrowerMonthlyIncome,
-     :rdf/type           :owl/Restriction}
-    {:owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
+   [{:owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
      :owl/onProperty :fibo-loan-ln-app/hasApplicationDate,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-rep/isSubmittedBy,
+     :owl/someValuesFrom :fibo-fnd-arr-rep/Requester,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
      :owl/someValuesFrom :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+     :owl/someValuesFrom :fibo-loan-ln-app/TotalDebtExpenseRatio,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
-     :owl/onProperty :fibo-fnd-dt-fd/hasDateReceived,
+     :owl/onClass    :fibo-loan-ln-ln/CombinedLoanToValueRatio,
+     :owl/onProperty :fibo-fnd-rel-rel/comprises,
      :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-loan-ln-app/isPreApprovalRequested,
+     :owl/someValuesFrom :xsd/boolean,
+     :rdf/type           :owl/Restriction}
     :fibo-fnd-arr-doc/Document
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-ln-ln/LoanToValueRatio,
      :owl/onProperty :fibo-fnd-rel-rel/comprises,
      :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+     :owl/someValuesFrom :fibo-loan-ln-app/BorrowerMonthlyIncome,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-ln-ln/CombinedLoanToValueRatio,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-rep/isSubmittedBy,
-     :owl/someValuesFrom :fibo-fnd-arr-rep/Requester,
-     :rdf/type           :owl/Restriction}],
+     :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
+     :owl/onProperty :fibo-fnd-dt-fd/hasDateReceived,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "request by a potential borrower to a potential lender to borrow money containing information used to decide whether to grant the loan",
    :skos/scopeNote
    "The request typicaly includes most, if not all, of the information used to decide whether to grant the loan."})
 
 (def LoanApplicationAtAgreementStage
+  "loan application at agreement stage"
   {:db/ident :fibo-loan-ln-app/LoanApplicationAtAgreementStage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -382,6 +383,7 @@
    :rdfs/subClassOf :fibo-loan-ln-app/LoanApplicationStatus})
 
 (def LoanApplicationAtDisbursementStage
+  "loan application at disbursement stage"
   {:db/ident :fibo-loan-ln-app/LoanApplicationAtDisbursementStage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -391,6 +393,7 @@
    :rdfs/subClassOf :fibo-loan-ln-app/LoanApplicationStatus})
 
 (def LoanApplicationPhase
+  "loan application phase"
   {:db/ident :fibo-loan-ln-app/LoanApplicationPhase,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -400,6 +403,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStage})
 
 (def LoanApplicationStatus
+  "loan application status"
   {:db/ident :fibo-loan-ln-app/LoanApplicationStatus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -409,6 +413,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStatus})
 
 (def LoanAtApplicationStage
+  "loan at application stage"
   {:db/ident :fibo-loan-ln-app/LoanAtApplicationStage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -502,6 +507,7 @@
    "classifier of public records relevant to a loan application, e.g. tax lien, wage garnishment, foreclosure"})
 
 (def PublicRecordCategory-BankruptcyRecord
+  "bankruptcy record"
   {:db/ident :fibo-loan-ln-app/PublicRecordCategory-BankruptcyRecord,
    :rdf/type [:fibo-loan-ln-app/PublicRecordCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -509,6 +515,7 @@
    :rdfs/label "bankruptcy record"})
 
 (def PublicRecordCategory-CivilOrJudgementRecord
+  "civil or judgement record"
   {:db/ident :fibo-loan-ln-app/PublicRecordCategory-CivilOrJudgementRecord,
    :rdf/type [:fibo-loan-ln-app/PublicRecordCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -516,6 +523,7 @@
    :rdfs/label "civil or judgement record"})
 
 (def PublicRecordCategory-ForeclosureRecord
+  "foreclosure record"
   {:db/ident :fibo-loan-ln-app/PublicRecordCategory-ForeclosureRecord,
    :rdf/type [:fibo-loan-ln-app/PublicRecordCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -523,6 +531,7 @@
    :rdfs/label "foreclosure record"})
 
 (def PublicRecordCategory-GarnishmentRecord
+  "garnishment record"
   {:db/ident :fibo-loan-ln-app/PublicRecordCategory-GarnishmentRecord,
    :rdf/type [:fibo-loan-ln-app/PublicRecordCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -530,6 +539,7 @@
    :rdfs/label "garnishment record"})
 
 (def PublicRecordCategory-LienRecord
+  "lien record"
   {:db/ident :fibo-loan-ln-app/PublicRecordCategory-LienRecord,
    :rdf/type [:fibo-loan-ln-app/PublicRecordCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -537,6 +547,7 @@
    :rdfs/label "lien record"})
 
 (def PublicRecordCategory-MaritalRecord
+  "marital record"
   {:db/ident :fibo-loan-ln-app/PublicRecordCategory-MaritalRecord,
    :rdf/type [:fibo-loan-ln-app/PublicRecordCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -544,6 +555,7 @@
    :rdfs/label "marital record"})
 
 (def PublicRecordCategory-PersonalPropertyRecord
+  "personal property record"
   {:db/ident :fibo-loan-ln-app/PublicRecordCategory-PersonalPropertyRecord,
    :rdf/type [:fibo-loan-ln-app/PublicRecordCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -551,6 +563,7 @@
    :rdfs/label "personal property record"})
 
 (def PublicRecordCategory-RealEstate
+  "real estate record"
   {:db/ident :fibo-loan-ln-app/PublicRecordCategory-RealEstate,
    :rdf/type [:fibo-loan-ln-app/PublicRecordCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -593,6 +606,7 @@
    "classifier providing a loan approval recommendation determined either manually or by an automated underwriting system"})
 
 (def UnderwritingDecision-Approve
+  "approve"
   {:db/ident :fibo-loan-ln-app/UnderwritingDecision-Approve,
    :rdf/type [:fibo-loan-ln-app/UnderwritingDecision :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -600,6 +614,7 @@
    :rdfs/label "approve"})
 
 (def UnderwritingDecision-Deny
+  "deny"
   {:db/ident :fibo-loan-ln-app/UnderwritingDecision-Deny,
    :rdf/type [:fibo-loan-ln-app/UnderwritingDecision :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -607,6 +622,7 @@
    :rdfs/label "deny"})
 
 (def UnderwritingDecision-Eligible
+  "eligible"
   {:db/ident :fibo-loan-ln-app/UnderwritingDecision-Eligible,
    :rdf/type [:fibo-loan-ln-app/UnderwritingDecision :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -614,6 +630,7 @@
    :rdfs/label "eligible"})
 
 (def UnderwritingDecision-Ineligible
+  "ineligible"
   {:db/ident :fibo-loan-ln-app/UnderwritingDecision-Ineligible,
    :rdf/type [:fibo-loan-ln-app/UnderwritingDecision :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -621,6 +638,7 @@
    :rdfs/label "ineligible"})
 
 (def UnderwritingDecision-Refer
+  "refer"
   {:db/ident :fibo-loan-ln-app/UnderwritingDecision-Refer,
    :rdf/type [:fibo-loan-ln-app/UnderwritingDecision :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -628,6 +646,7 @@
    :rdfs/label "refer"})
 
 (def UnderwritingDecision-UnableToDetermine
+  "unable to determine"
   {:db/ident :fibo-loan-ln-app/UnderwritingDecision-UnableToDetermine,
    :rdf/type [:fibo-loan-ln-app/UnderwritingDecision :owl/NamedIndividual],
    :rdfs/isDefinedBy

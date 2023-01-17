@@ -1,20 +1,24 @@
 (ns net.wikipunk.rdf.fibo-fnd-agr-agr
-  "This ontology defines concepts for agreements, for use in other ontology elements. Agreements as defined here are the actual agreements between parties, and this ontology is intended to be referred to in conjunction with the contracts ontology which defines the actual contracts which formalize such agreements. The concepts of agreement and contract are intended to be kept distinct in the FIBO ontologies, that is neither is intended to be regarded as a sub type of the other."
-  {:dcat/downloadURL
+  "This ontology defines the concept of an agreement and roles that parties to an agreement play in the context of financial agreements. Agreements represent an understanding between parties, whereas contracts typically formalize such agreements."
+  {:cmns-av/copyright ["Copyright (c) 2013-2023 EDM Council, Inc."
+                       "Copyright (c) 2013-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
    :dcterms/abstract
-   "This ontology defines concepts for agreements, for use in other ontology elements. Agreements as defined here are the actual agreements between parties, and this ontology is intended to be referred to in conjunction with the contracts ontology which defines the actual contracts which formalize such agreements. The concepts of agreement and contract are intended to be kept distinct in the FIBO ontologies, that is neither is intended to be regarded as a sub type of the other.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   "This ontology defines the concept of an agreement and roles that parties to an agreement play in the context of financial agreements. Agreements represent an understanding between parties, whereas contracts typically formalize such agreements.",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-agr-agr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
     "fibo-fnd-pty-pty"
@@ -25,12 +29,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-lr"  "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl"     "http://www.w3.org/2002/07/owl#",
     "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
     "skos"    "http://www.w3.org/2004/02/skos/core#",
-    "sm"      "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -44,21 +46,11 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreement.rdf version of the ontology was modified per the issue resolutions identified in the FIBO FND 1.1 RTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.1/AboutFND-1.1/."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreement.rdf version of the ontology was modified per FIBO 2.0 RFC to add general concepts including obligor, obligee, and beneficiary in support of other FIBO domain areas."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreement.rdf version of the ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/."
-    "The http://www.omg.org/spec/FIBO/Foundations/20130601/Agreements/Agreements.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n   (1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n   (2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n   (3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n   (4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n   (5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations.\n   (6) to revise a few of the definitions based on more formal sources."],
-   :sm/contentLanguage "http://www.w3.org/standards/techs/owl#w3c_all",
-   :sm/copyright ["Copyright (c) 2013-2020 Object Management Group, Inc."
-                  "Copyright (c) 2013-2020 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/"],
-   :sm/fileAbbreviation "fibo-fnd-agr-agr",
-   :sm/filename "Agreements.rdf"})
+    "The http://www.omg.org/spec/FIBO/Foundations/20130601/Agreements/Agreements.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n   (1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n   (2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n   (3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n   (4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n   (5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations.\n   (6) to revise a few of the definitions based on more formal sources."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreement.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, clean up definitions to conform with ISO 704, add a missing restriction to mutual commitment, and eliminate an unnecessary reference to LCC."]})
 
 (def Agreement
-  "a negotiated understanding between two or more parties, reflecting the offer and acceptance of commitments on the part of either party"
+  "negotiated understanding between two or more parties, reflecting the offer and acceptance of commitments on the part of either party"
   {:db/ident :fibo-fnd-agr-agr/Agreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -73,10 +65,10 @@
                       :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
-   "a negotiated understanding between two or more parties, reflecting the offer and acceptance of commitments on the part of either party"})
+   "negotiated understanding between two or more parties, reflecting the offer and acceptance of commitments on the part of either party"})
 
 (def Beneficiary
-  "a party that receives some benefit or advantage or profits from something"
+  "party that receives some benefit or advantage or profits from something"
   {:db/ident :fibo-fnd-agr-agr/Beneficiary,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -91,23 +83,23 @@
      :rdf/type           :owl/Restriction}
     :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition
-   "a party that receives some benefit or advantage or profits from something"})
+   "party that receives some benefit or advantage or profits from something"})
 
 (def Commitment
-  "A legal construct which represents the undertaking on the part of some party to act or refrain from acting in some manner."
-  {:db/ident :fibo-fnd-agr-agr/Commitment,
+  "promise made by some party to act or refrain from acting in some manner"
+  {:cmns-av/explanatoryNote
+   "Such a promise often results a corresponding right or or obligation with respect to another party to the commitment. Thus, obligations and rights are considered as reciprocal aspects of a commitment.",
+   :db/ident :fibo-fnd-agr-agr/Commitment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "commitment"},
    :skos/definition
-   "A legal construct which represents the undertaking on the part of some party to act or refrain from acting in some manner.",
-   :skos/editorialNote
-   "The undertaking by some party to act or refrain from acting results in an obligation on the part of that party, and usually results in the existence of some corresponding right on the party of some other party, in the event that the commitment is to such party. Thus Obligations and Rights are considered as reciprocal aspects of this Commitment concept."})
+   "promise made by some party to act or refrain from acting in some manner"})
 
 (def CommitmentAtLarge
-  "a commitment made by some party without direct involvement from the potential beneficiaries of that commitment"
+  "commitment made by some party without direct involvement from the potential beneficiaries of that commitment"
   {:db/ident :fibo-fnd-agr-agr/CommitmentAtLarge,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -115,12 +107,12 @@
    :rdfs/label "commitment at large",
    :rdfs/subClassOf :fibo-fnd-agr-agr/UnilateralCommitment,
    :skos/definition
-   "a commitment made by some party without direct involvement from the potential beneficiaries of that commitment",
+   "commitment made by some party without direct involvement from the potential beneficiaries of that commitment",
    :skos/scopeNote
-   "Forms the basis for negotiable securities including transferable contracts and potentially other types of agreement such as software licenses."})
+   "A commitment at large forms the basis for negotiable securities including transferable contracts and potentially other kinds of agreements such as software licenses."})
 
 (def IndividualUnilateralCommitment
-  "a commitment made by some party unilaterally to another specific party"
+  "commitment made by some party unilaterally to another specific party"
   {:db/ident :fibo-fnd-agr-agr/IndividualUnilateralCommitment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -128,10 +120,10 @@
    :rdfs/label "individual unilateral commitment",
    :rdfs/subClassOf :fibo-fnd-agr-agr/UnilateralCommitment,
    :skos/definition
-   "a commitment made by some party unilaterally to another specific party"})
+   "commitment made by some party unilaterally to another specific party"})
 
 (def MutualAgreement
-  "an agreement between two or more specific named parties. The rights and obligations pertaining to either party cannot be transferred to another party without prior agreement"
+  "agreement between two or more specific named parties whereby the rights and obligations embodied in the agreement cannot be transferred to another party without prior agreement"
   {:db/ident :fibo-fnd-agr-agr/MutualAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -142,22 +134,26 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-agr-agr/Agreement],
    :skos/definition
-   "an agreement between two or more specific named parties. The rights and obligations pertaining to either party cannot be transferred to another party without prior agreement",
+   "agreement between two or more specific named parties whereby the rights and obligations embodied in the agreement cannot be transferred to another party without prior agreement",
    :skos/scopeNote
    "This may or may not be a contractual agreement - it also forms the basis of REA transaction models which may or may not refer to contractual agreements, since REA is also used to frame transactions internal to an individual organization."})
 
 (def MutualCommitment
-  "A commitment between two or more parties"
+  "commitment between two or more parties"
   {:db/ident :fibo-fnd-agr-agr/MutualCommitment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
    :rdfs/label "mutual commitment",
-   :rdfs/subClassOf :fibo-fnd-agr-agr/Commitment,
-   :skos/definition "A commitment between two or more parties"})
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 2,
+                      :owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
+                      :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-agr/Commitment],
+   :skos/definition "commitment between two or more parties"})
 
 (def Obligee
-  "a party to whom some commitment or obligation is owed, either legally or per the terms of an agreement"
+  "party to whom some commitment or obligation is owed, either legally or per the terms of an agreement"
   {:db/ident :fibo-fnd-agr-agr/Obligee,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -172,12 +168,12 @@
      :rdf/type           :owl/Restriction}
     :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition
-   "a party to whom some commitment or obligation is owed, either legally or per the terms of an agreement"})
+   "party to whom some commitment or obligation is owed, either legally or per the terms of an agreement"})
 
 (def Obligor
-  "a party that is bound legally or by agreement to repay a debt, make a payment, do something, or refrain from doing something"
-  {:db/ident :fibo-fnd-agr-agr/Obligor,
-   :fibo-fnd-utl-av/synonym ["obligator" "obligated party"],
+  "party that is bound legally or by agreement to repay a debt, make a payment, do something, or refrain from doing something"
+  {:cmns-av/synonym ["obligator" "obligated party"],
+   :db/ident :fibo-fnd-agr-agr/Obligor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
@@ -194,10 +190,10 @@
      :rdf/type           :owl/Restriction}
     :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition
-   "a party that is bound legally or by agreement to repay a debt, make a payment, do something, or refrain from doing something"})
+   "party that is bound legally or by agreement to repay a debt, make a payment, do something, or refrain from doing something"})
 
 (def UnilateralCommitment
-  "A commitment made by one party without reference to the party to which the commitment is made."
+  "commitment made by one party without reference any other the party to which the commitment is made"
   {:db/ident :fibo-fnd-agr-agr/UnilateralCommitment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -205,7 +201,7 @@
    :rdfs/label "unilateral commitment",
    :rdfs/subClassOf :fibo-fnd-agr-agr/Commitment,
    :skos/definition
-   "A commitment made by one party without reference to the party to which the commitment is made."})
+   "commitment made by one party without reference any other the party to which the commitment is made"})
 
 (def hasObligation
   "identifies a duty or obligation that a given party has taken on"
@@ -216,7 +212,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
    :rdfs/label "has obligation",
-   :rdfs/subPropertyOf :lcc-lr/has,
    :skos/definition
    "identifies a duty or obligation that a given party has taken on"})
 

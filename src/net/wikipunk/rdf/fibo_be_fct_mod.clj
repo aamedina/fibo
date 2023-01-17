@@ -48,7 +48,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/MetadataBEFunctionalEntities/",
    :rdfs/label "Functional Entities",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright ["Copyright (c) 2015-2018 Object Management Group, Inc."
                   "Copyright (c) 2015-2018 EDM Council, Inc."],
    :sm/moduleAbbreviation "fibo-be-fct"})

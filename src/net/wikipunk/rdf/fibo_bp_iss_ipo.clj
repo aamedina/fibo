@@ -71,6 +71,7 @@
    :sm/fileAbbreviation "fibo-bp-iss-ipo"})
 
 (def AgreeBasisForAllocation
+  "agree basis for allocation"
   {:db/ident :fibo-bp-iss-ipo/AgreeBasisForAllocation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -80,6 +81,7 @@
    :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
 
 (def Allocation
+  "allocation"
   {:db/ident :fibo-bp-iss-ipo/Allocation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -89,6 +91,7 @@
    :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
 
 (def AllocationBasisDetails
+  "allocation basis details"
   {:db/ident :fibo-bp-iss-ipo/AllocationBasisDetails,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -98,6 +101,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
 
 (def AllocationDetails
+  "allocation details"
   {:db/ident :fibo-bp-iss-ipo/AllocationDetails,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -107,6 +111,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
 
 (def AnnounceEquityIssue
+  "announce equity issue"
   {:db/ident :fibo-bp-iss-ipo/AnnounceEquityIssue,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -116,6 +121,7 @@
    :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
 
 (def ApplicationForShares
+  "application for shares"
   {:db/ident :fibo-bp-iss-ipo/ApplicationForShares,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -125,6 +131,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
 
 (def AppointAdvisors
+  "appoint advisors"
   {:db/ident :fibo-bp-iss-ipo/AppointAdvisors,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -145,6 +152,7 @@
                      :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep]})
 
 (def ApproveForFlotation
+  "approve for flotation"
   {:db/ident :fibo-bp-iss-ipo/ApproveForFlotation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -157,6 +165,7 @@
                      :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep]})
 
 (def CorporateBroker
+  "corporate broker"
   {:db/ident :fibo-bp-iss-ipo/CorporateBroker,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -166,6 +175,7 @@
    :rdfs/subClassOf :fibo-fbc-pas-fpas/Broker})
 
 (def EquityAnnouncement
+  "equity announcement"
   {:db/ident :fibo-bp-iss-ipo/EquityAnnouncement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -175,6 +185,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-doc/Notice})
 
 (def FilingDetails
+  "filing details"
   {:db/ident :fibo-bp-iss-ipo/FilingDetails,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -184,6 +195,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
 
 (def FormalApprovalForListingAndTrading
+  "formal approval for listing and trading"
   {:db/ident :fibo-bp-iss-ipo/FormalApprovalForListingAndTrading,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -196,6 +208,7 @@
                      :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep]})
 
 (def IPOFullProspectus
+  "i p o full prospectus"
   {:db/ident :fibo-bp-iss-ipo/IPOFullProspectus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -205,6 +218,7 @@
    :rdfs/subClassOf :fibo-bp-iss-doc/FinalProspectus})
 
 (def IPOPreliminaryProspectus
+  "i p o preliminary prospectus"
   {:db/ident :fibo-bp-iss-ipo/IPOPreliminaryProspectus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -217,6 +231,7 @@
                      :fibo-bp-iss-doc/PreliminaryProspectus]})
 
 (def IPOProcess
+  "i p o process"
   {:db/ident :fibo-bp-iss-ipo/IPOProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -228,6 +243,7 @@
                      :rdf/type           :owl/Restriction}})
 
 (def IPOSettlementDetails
+  "i p o settlement details"
   {:db/ident :fibo-bp-iss-ipo/IPOSettlementDetails,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -237,6 +253,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
 
 (def IndicationOfInterest
+  "indication of interest"
   {:db/ident :fibo-bp-iss-ipo/IndicationOfInterest,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -246,6 +263,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
 
 (def InitialPublicOfferingProcessStep
+  "initial public offering process step"
   {:db/ident :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep,
    :fibo-fnd-utl-av/abbreviation "IPO process step",
    :rdf/type :owl/Class,
@@ -258,6 +276,7 @@
                      :fibo-fnd-dt-oc/OccurrenceKind]})
 
 (def MarketingOfShareIssue
+  "marketing of share issue"
   {:db/ident :fibo-bp-iss-ipo/MarketingOfShareIssue,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -267,6 +286,7 @@
    :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
 
 (def NoticeOfAllocation
+  "notice of allocation"
   {:db/ident :fibo-bp-iss-ipo/NoticeOfAllocation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -276,6 +296,7 @@
    :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
 
 (def PotentialShareUnderwriter
+  "potential share underwriter"
   {:db/ident :fibo-bp-iss-ipo/PotentialShareUnderwriter,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -285,6 +306,7 @@
    :rdfs/subClassOf :fibo-bp-iss-prc/PotentialUnderwriter})
 
 (def PublishInitialProspectus
+  "publish initial prospectus"
   {:db/ident :fibo-bp-iss-ipo/PublishInitialProspectus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -294,6 +316,7 @@
    :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
 
 (def PurchasePrice
+  "purchase price"
   {:db/ident :fibo-bp-iss-ipo/PurchasePrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -303,6 +326,7 @@
    :rdfs/subClassOf :fibo-fnd-acc-cur/MonetaryPrice})
 
 (def PurchaseUnallocatedStock
+  "purchase unallocated stock"
   {:db/ident :fibo-bp-iss-ipo/PurchaseUnallocatedStock,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -312,6 +336,7 @@
    :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
 
 (def ReceiveApplications
+  "receive applications"
   {:db/ident :fibo-bp-iss-ipo/ReceiveApplications,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -321,6 +346,7 @@
    :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
 
 (def RegisterWithRegulatoryAuthority
+  "register with regulatory authority"
   {:db/ident :fibo-bp-iss-ipo/RegisterWithRegulatoryAuthority,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -333,6 +359,7 @@
                      :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep]})
 
 (def RegistrationStatementDocument
+  "registration statement document"
   {:db/ident :fibo-bp-iss-ipo/RegistrationStatementDocument,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -342,6 +369,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
 
 (def ReportingAccountant
+  "reporting accountant"
   {:db/ident :fibo-bp-iss-ipo/ReportingAccountant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -351,6 +379,7 @@
    :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole})
 
 (def SetPrice
+  "set price"
   {:db/ident :fibo-bp-iss-ipo/SetPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -360,6 +389,7 @@
    :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
 
 (def SettlementOfAllocatedShares
+  "settlement of allocated shares"
   {:db/ident :fibo-bp-iss-ipo/SettlementOfAllocatedShares,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -369,6 +399,7 @@
    :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
 
 (def ShareRegister
+  "share register"
   {:db/ident :fibo-bp-iss-ipo/ShareRegister,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -378,6 +409,7 @@
    :rdfs/subClassOf :fibo-fbc-fct-ra/Registry})
 
 (def Sponsor
+  "sponsor"
   {:db/ident :fibo-bp-iss-ipo/Sponsor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -390,6 +422,7 @@
                      :fibo-fnd-pty-pty/PartyInRole]})
 
 (def SyndicateMember
+  "syndicate member"
   {:db/ident :fibo-bp-iss-ipo/SyndicateMember,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -399,6 +432,7 @@
    :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole})
 
 (def Underwriting
+  "underwriting"
   {:db/ident :fibo-bp-iss-ipo/Underwriting,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -414,6 +448,7 @@
                       :rdf/type :owl/Restriction}]})
 
 (def lead
+  "lead"
   {:db/ident :fibo-bp-iss-ipo/lead,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ipo/AppointAdvisors,
@@ -424,6 +459,7 @@
    :rdfs/range :fibo-bp-iss-ipo/Sponsor})
 
 (def mayBe
+  "may be"
   {:db/ident :fibo-bp-iss-ipo/mayBe,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ipo/Sponsor,
@@ -434,6 +470,7 @@
    :rdfs/range :fibo-bp-iss-ipo/CorporateBroker})
 
 (def shareUnderwriter
+  "share underwriter"
   {:db/ident :fibo-bp-iss-ipo/shareUnderwriter,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ipo/Underwriting,
@@ -444,6 +481,7 @@
    :rdfs/range :fibo-bp-iss-ipo/PotentialShareUnderwriter})
 
 (def syndicateMember
+  "syndicate member"
   {:db/ident :fibo-bp-iss-ipo/syndicateMember,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ipo/Underwriting,

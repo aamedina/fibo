@@ -64,7 +64,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/MetadataBEGovernmentEntities/",
    :rdfs/label "Government Entities",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright ["Copyright (c) 2015-2021 Object Management Group, Inc."
                   "Copyright (c) 2015-2021 EDM Council, Inc."],
    :sm/moduleAbbreviation "fibo-be-ge"})

@@ -47,7 +47,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/MetadataSECEquities/",
    :rdfs/label "FIBO SEC Equities Module",
-   :rdfs/seeAlso "https://www.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"],
    :sm/contributor ["BNY Mellon"
                     "Citigroup Inc."
                     "State Street Bank and Trust"

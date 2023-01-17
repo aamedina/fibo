@@ -45,6 +45,6 @@
    :rdf/type [:owl/NamedIndividual :sm/Module],
    :rdfs/isDefinedBy "https://spec.edmcouncil.org/fibo/ontology/BP/MetadataBP/",
    :rdfs/label "Business Process Domain",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright "Copyright (c) 2013-2020 EDM Council, Inc.",
    :sm/moduleAbbreviation "fibo-bp"})

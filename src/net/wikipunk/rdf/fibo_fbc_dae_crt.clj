@@ -92,6 +92,7 @@
    :sm/filename "CreditRatings.rdf"})
 
 (def AlertCreditMessage
+  "alert credit message"
   {:db/ident :fibo-fbc-dae-crt/AlertCreditMessage,
    :rdf/type [:fibo-fbc-dae-crt/CreditMessageType :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -284,17 +285,31 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label "credit report",
    :rdfs/subClassOf
-   [{:owl/onProperty     :lcc-lr/isIdentifiedBy,
+   [{:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-dae-crt/CreditInquiry,
+     :owl/onProperty :fibo-fnd-rel-rel/comprises,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-dae-crt/CreditRating,
+     :owl/onProperty :fibo-fnd-rel-rel/comprises,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-dae-crt/concernsParty,
+     :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :lcc-lr/isIdentifiedBy,
      :owl/someValuesFrom :lcc-lr/Identifier,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportProduct,
+    {:owl/onProperty     :lcc-cr/isClassifiedBy,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportCategory,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-dae-crt/hasCoveragePeriod,
      :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportProduct,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-arr-doc/hasDataSource,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
@@ -302,6 +317,7 @@
                           :fibo-fbc-dae-crt/CreditRatingAgency,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
+    :fibo-fnd-arr-rt/RatingReport
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-dae-crt/CreditTradeline,
      :owl/onProperty :fibo-fnd-rel-rel/comprises,
@@ -309,24 +325,9 @@
     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
      :owl/someValuesFrom :fibo-fbc-dae-crt/CreditMessage,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-dae-crt/CreditRating,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :lcc-cr/isClassifiedBy,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportCategory,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-arr-rt/RatingReport
-    {:owl/onProperty     :fibo-fbc-dae-crt/concernsParty,
-     :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-dae-crt/CreditInquiry,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
-     :rdf/type       :owl/Restriction}],
+    {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "report describing the creditworthiness and related credit attributes of a borrower"})
 
@@ -375,6 +376,7 @@
    "report derived from the transaction history of a credit account"})
 
 (def CreditWatchDirection
+  "credit watch direction"
   {:db/ident :fibo-fbc-dae-crt/CreditWatchDirection,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -384,6 +386,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier})
 
 (def CreditWatchDowngrade
+  "credit watch downgrade"
   {:db/ident :fibo-fbc-dae-crt/CreditWatchDowngrade,
    :rdf/type [:fibo-fbc-dae-crt/CreditWatchDirection :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -396,6 +399,7 @@
     "On April 22, 2022, OppFi (NYSE:OPFI) was downgraded by Zacks Investment Research from a 'hold' rating to a 'sell' rating in a research report issued to clients and investors on Friday, Zacks.com reports."}})
 
 (def CreditWatchOutlook
+  "credit watch outlook"
   {:db/ident :fibo-fbc-dae-crt/CreditWatchOutlook,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -405,6 +409,7 @@
    :rdfs/subClassOf :fibo-fnd-arr-rt/Rating})
 
 (def CreditWatchUpgrade
+  "credit watch upgrade"
   {:db/ident :fibo-fbc-dae-crt/CreditWatchUpgrade,
    :rdf/type [:fibo-fbc-dae-crt/CreditWatchDirection :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -413,6 +418,7 @@
                 :rdf/value    "credit watch upgrade"}})
 
 (def FreezeCreditMessage
+  "freeze credit message"
   {:db/ident :fibo-fbc-dae-crt/FreezeCreditMessage,
    :rdf/type [:fibo-fbc-dae-crt/CreditMessageType :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -420,6 +426,7 @@
    :rdfs/label "freeze credit message"})
 
 (def HardCreditInquiry
+  "hard credit inquiry"
   {:db/ident :fibo-fbc-dae-crt/HardCreditInquiry,
    :rdf/type [:fibo-fbc-dae-crt/CreditInquiryType :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -482,6 +489,7 @@
    "classifier for borrowers, rates, or holdings that have poor quality, such as borrowers with poor credit history due to a short sale, bankruptcy, foreclosure and/or other negative credit events within the last several years"})
 
 (def OnWatchOutlook
+  "on watch outlook"
   {:db/ident :fibo-fbc-dae-crt/OnWatchOutlook,
    :rdf/type [:fibo-fbc-dae-crt/CreditWatchOutlook :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -534,6 +542,7 @@
     "credit rating that provides an opinion of the probability of an individual or organization going into default within a year"}})
 
 (def SoftCreditInquiry
+  "soft credit inquiry"
   {:db/ident :fibo-fbc-dae-crt/SoftCreditInquiry,
    :rdf/type [:fibo-fbc-dae-crt/CreditInquiryType :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -541,6 +550,7 @@
    :rdfs/label "soft credit inquiry"})
 
 (def StableOutlook
+  "stable outlook"
   {:db/ident :fibo-fbc-dae-crt/StableOutlook,
    :rdf/type [:fibo-fbc-dae-crt/CreditWatchOutlook :owl/NamedIndividual],
    :rdfs/isDefinedBy

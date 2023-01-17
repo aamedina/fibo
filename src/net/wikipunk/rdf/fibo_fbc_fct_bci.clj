@@ -249,6 +249,7 @@
    :rdfs/label "AUSY"})
 
 (def Aabenraa
+  "Aabenraa"
   {:db/ident :fibo-fbc-fct-bci/Aabenraa,
    :lcc-cr/isPartOf :lcc-3166-1/Denmark,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -257,6 +258,7 @@
    :rdfs/label "Aabenraa"})
 
 (def Aalborg
+  "Aalborg"
   {:db/ident :fibo-fbc-fct-bci/Aalborg,
    :lcc-cr/isPartOf :lcc-3166-1/Denmark,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -345,6 +347,7 @@
    :rdfs/label "Aden"})
 
 (def Ahmedabad
+  "Ahmedabad"
   {:db/ident :fibo-fbc-fct-bci/Ahmedabad,
    :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -353,6 +356,7 @@
    :rdfs/label "Ahmedabad"})
 
 (def Aichi
+  "Aichi"
   {:db/ident :fibo-fbc-fct-bci/Aichi,
    :lcc-cr/isPartOf :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -361,6 +365,7 @@
    :rdfs/label "Aichi"})
 
 (def Alberta
+  "Alberta"
   {:db/ident :fibo-fbc-fct-bci/Alberta,
    :lcc-cr/isPartOf :lcc-3166-1/Canada,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -379,6 +384,7 @@
    :rdfs/label "Algiers"})
 
 (def Alma-ata
+  "Alma-ata"
   {:db/ident :fibo-fbc-fct-bci/Alma-ata,
    :lcc-cr/isPartOf :lcc-3166-1/Kazakhstan,
    :owl/sameAs :fibo-fbc-fct-bci/Almaty,
@@ -428,6 +434,7 @@
    :rdfs/label "Ankara"})
 
 (def Antananarivo
+  "Antananarivo"
   {:db/ident :fibo-fbc-fct-bci/Antananarivo,
    :lcc-cr/isPartOf :lcc-3166-1/Madagascar,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -436,6 +443,7 @@
    :rdfs/label "Antananarivo"})
 
 (def Antwerpen
+  "Antwerpen"
   {:db/ident :fibo-fbc-fct-bci/Antwerpen,
    :lcc-cr/isPartOf :lcc-3166-1/Belgium,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -444,6 +452,7 @@
    :rdfs/label "Antwerpen"})
 
 (def Astana
+  "Astana"
   {:db/ident :fibo-fbc-fct-bci/Astana,
    :lcc-cr/isPartOf :lcc-3166-1/Kazakhstan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -452,6 +461,7 @@
    :rdfs/label "Astana"})
 
 (def Asti
+  "Asti"
   {:db/ident :fibo-fbc-fct-bci/Asti,
    :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -460,6 +470,7 @@
    :rdfs/label "Asti"})
 
 (def Asuncion
+  "Asuncion"
   {:db/ident :fibo-fbc-fct-bci/Asuncion,
    :lcc-cr/isPartOf :lcc-3166-1/Paraguay,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -478,6 +489,7 @@
    :rdfs/label "Athens"})
 
 (def Atlanta
+  "Atlanta"
   {:db/ident :fibo-fbc-fct-bci/Atlanta,
    :lcc-cr/isPartOf [:lcc-3166-2-us/Georgia :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -496,6 +508,7 @@
    :rdfs/label "Auckland"})
 
 (def Aylesbury
+  "Aylesbury"
   {:db/ident :fibo-fbc-fct-bci/Aylesbury,
    :lcc-cr/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -703,6 +716,7 @@
    :rdfs/label "BYMI"})
 
 (def Baghdad
+  "Baghdad"
   {:db/ident :fibo-fbc-fct-bci/Baghdad,
    :lcc-cr/isPartOf :lcc-3166-1/Iraq,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -711,6 +725,7 @@
    :rdfs/label "Baghdad"})
 
 (def Baku
+  "Baku"
   {:db/ident :fibo-fbc-fct-bci/Baku,
    :lcc-cr/isPartOf :lcc-3166-1/Azerbaijan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -750,6 +765,7 @@
    :rdfs/label "Bangkok"})
 
 (def Banja_Luka
+  "Banja Luka"
   {:db/ident :fibo-fbc-fct-bci/Banja_Luka,
    :lcc-cr/isPartOf :lcc-3166-1/BosniaAndHerzegovina,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -778,6 +794,7 @@
    :rdfs/label "Basel"})
 
 (def Basseterre
+  "Basseterre"
   {:db/ident :fibo-fbc-fct-bci/Basseterre,
    :lcc-cr/isPartOf :lcc-3166-1/SaintKittsAndNevis,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -786,6 +803,7 @@
    :rdfs/label "Basseterre"})
 
 (def Bedminster
+  "Bedminster"
   {:db/ident :fibo-fbc-fct-bci/Bedminster,
    :lcc-cr/isPartOf [:lcc-3166-2-us/NewJersey
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -825,6 +843,7 @@
    :rdfs/label "Belgrade"})
 
 (def Bergamo
+  "Bergamo"
   {:db/ident :fibo-fbc-fct-bci/Bergamo,
    :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -833,6 +852,7 @@
    :rdfs/label "Bergamo"})
 
 (def Bergen
+  "Bergen"
   {:db/ident :fibo-fbc-fct-bci/Bergen,
    :lcc-cr/isPartOf :lcc-3166-1/Norway,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -841,6 +861,7 @@
    :rdfs/label "Bergen"})
 
 (def Berlin
+  "Berlin"
   {:db/ident :fibo-fbc-fct-bci/Berlin,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -849,6 +870,7 @@
    :rdfs/label "Berlin"})
 
 (def Bermuda
+  "Bermuda"
   {:db/ident :fibo-fbc-fct-bci/Bermuda,
    :lcc-cr/isPartOf :lcc-3166-1/Bermuda,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -857,6 +879,7 @@
    :rdfs/label "Bermuda"})
 
 (def Bern
+  "Bern"
   {:db/ident :fibo-fbc-fct-bci/Bern,
    :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -865,6 +888,7 @@
    :rdfs/label "Bern"})
 
 (def Biella
+  "Biella"
   {:db/ident :fibo-fbc-fct-bci/Biella,
    :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -873,6 +897,7 @@
    :rdfs/label "Biella"})
 
 (def Bilbao
+  "Bilbao"
   {:db/ident :fibo-fbc-fct-bci/Bilbao,
    :lcc-cr/isPartOf :lcc-3166-1/Spain,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -881,6 +906,7 @@
    :rdfs/label "Bilbao"})
 
 (def Bishkek
+  "Bishkek"
   {:db/ident :fibo-fbc-fct-bci/Bishkek,
    :lcc-cr/isPartOf :lcc-3166-1/Kyrgyzstan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -889,6 +915,7 @@
    :rdfs/label "Bishkek"})
 
 (def Blantyre
+  "Blantyre"
   {:db/ident :fibo-fbc-fct-bci/Blantyre,
    :lcc-cr/isPartOf :lcc-3166-1/Malawi,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -897,6 +924,7 @@
    :rdfs/label "Blantyre"})
 
 (def BocaRaton
+  "Boca Raton"
   {:db/ident :fibo-fbc-fct-bci/BocaRaton,
    :lcc-cr/isPartOf [:lcc-3166-2-us/Florida :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -915,6 +943,7 @@
    :rdfs/label "Bogota"})
 
 (def Bologna
+  "Bologna"
   {:db/ident :fibo-fbc-fct-bci/Bologna,
    :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -934,6 +963,7 @@
    :rdfs/label "Boston"})
 
 (def Bradford
+  "Bradford"
   {:db/ident :fibo-fbc-fct-bci/Bradford,
    :lcc-cr/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -975,6 +1005,7 @@
    :rdfs/label "Brazil Business Day"})
 
 (def Bremen
+  "Bremen"
   {:db/ident :fibo-fbc-fct-bci/Bremen,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1013,6 +1044,7 @@
    :rdfs/label "Brussels"})
 
 (def BryanstonSandton
+  "Bryanston, Sandton"
   {:db/ident :fibo-fbc-fct-bci/BryanstonSandton,
    :lcc-cr/isPartOf :lcc-3166-1/SouthAfrica,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1031,6 +1063,7 @@
    :rdfs/label "Bucarest"})
 
 (def Bucharest
+  "Bucharest"
   {:db/ident :fibo-fbc-fct-bci/Bucharest,
    :lcc-cr/isPartOf :lcc-3166-1/Romania,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1039,6 +1072,7 @@
    :rdfs/label "Bucharest"})
 
 (def Budaors
+  "Budaors"
   {:db/ident :fibo-fbc-fct-bci/Budaors,
    :lcc-cr/isPartOf :lcc-3166-1/Hungary,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1301,6 +1335,7 @@
    :rdfs/label "Cairo"})
 
 (def Calcutta
+  "Calcutta"
   {:db/ident :fibo-fbc-fct-bci/Calcutta,
    :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1360,6 +1395,7 @@
    :rdfs/label "Charlotte"})
 
 (def Chatham
+  "Chatham"
   {:db/ident :fibo-fbc-fct-bci/Chatham,
    :lcc-cr/isPartOf [:lcc-3166-2-us/Massachusetts
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -1389,6 +1425,7 @@
    :rdfs/label "Chicago"})
 
 (def Chisinau
+  "Chisinau"
   {:db/ident :fibo-fbc-fct-bci/Chisinau,
    :lcc-cr/isPartOf :lcc-3166-1/Moldova,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1397,6 +1434,7 @@
    :rdfs/label "Chisinau"})
 
 (def Chittagong
+  "Chittagong"
   {:db/ident :fibo-fbc-fct-bci/Chittagong,
    :lcc-cr/isPartOf :lcc-3166-1/Bangladesh,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1405,6 +1443,7 @@
    :rdfs/label "Chittagong"})
 
 (def Chiyoda-ku
+  "Chiyoda-ku"
   {:db/ident :fibo-fbc-fct-bci/Chiyoda-ku,
    :lcc-cr/isPartOf :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1413,6 +1452,7 @@
    :rdfs/label "Chiyoda-ku"})
 
 (def ClujNapoca
+  "Cluj Napoca"
   {:db/ident :fibo-fbc-fct-bci/ClujNapoca,
    :lcc-cr/isPartOf :lcc-3166-1/Romania,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1451,6 +1491,7 @@
    :rdfs/label "Copenhagen"})
 
 (def Cordoba
+  "Cordoba"
   {:db/ident :fibo-fbc-fct-bci/Cordoba,
    :lcc-cr/isPartOf :lcc-3166-1/Argentina,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1459,6 +1500,7 @@
    :rdfs/label "Cordoba"})
 
 (def Corrientes
+  "Corrientes"
   {:db/ident :fibo-fbc-fct-bci/Corrientes,
    :lcc-cr/isPartOf :lcc-3166-1/Argentina,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1467,6 +1509,7 @@
    :rdfs/label "Corrientes"})
 
 (def Curitiba
+  "Curitiba"
   {:db/ident :fibo-fbc-fct-bci/Curitiba,
    :lcc-cr/isPartOf :lcc-3166-1/Brazil,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1616,6 +1659,7 @@
    :rdfs/label "Dakar"})
 
 (def Dalian
+  "Dalian"
   {:db/ident :fibo-fbc-fct-bci/Dalian,
    :lcc-cr/isPartOf :lcc-3166-1/China,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1654,6 +1698,7 @@
    :rdfs/label "Darwin"})
 
 (def Davos_Platz
+  "Davos Platz"
   {:db/ident :fibo-fbc-fct-bci/Davos_Platz,
    :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1692,6 +1737,7 @@
    :rdfs/label "Dhaka"})
 
 (def Dnipropetrovsk
+  "Dnipropetrovsk"
   {:db/ident :fibo-fbc-fct-bci/Dnipropetrovsk,
    :lcc-cr/isPartOf :lcc-3166-1/Ukraine,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1720,6 +1766,7 @@
    :rdfs/label "Doha"})
 
 (def Douala
+  "Douala"
   {:db/ident :fibo-fbc-fct-bci/Douala,
    :lcc-cr/isPartOf :lcc-3166-1/Cameroon,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1748,6 +1795,7 @@
    :rdfs/label "Dublin"})
 
 (def Duesseldorf
+  "Duesseldorf"
   {:db/ident :fibo-fbc-fct-bci/Duesseldorf,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1873,6 +1921,7 @@
    :rdfs/label "EUTA"})
 
 (def Ebene
+  "Ebene"
   {:db/ident :fibo-fbc-fct-bci/Ebene,
    :fibo-fnd-utl-av/synonym ["Ebene Cybercity" "Cybercity"],
    :lcc-cr/isPartOf :lcc-3166-1/Mauritius,
@@ -1882,6 +1931,7 @@
    :rdfs/label "Ebene"})
 
 (def Eden_Island
+  "Eden Island"
   {:db/ident :fibo-fbc-fct-bci/Eden_Island,
    :lcc-cr/isPartOf :lcc-3166-1/Seychelles,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1900,6 +1950,7 @@
    :rdfs/label "Edinburgh"})
 
 (def Ekaterinburg
+  "Ekaterinburg"
   {:db/ident :fibo-fbc-fct-bci/Ekaterinburg,
    :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1908,6 +1959,7 @@
    :rdfs/label "Ekaterinburg"})
 
 (def El_Salvador
+  "El Salvador"
   {:db/ident :fibo-fbc-fct-bci/El_Salvador,
    :lcc-cr/isPartOf :lcc-3166-1/ElSalvador,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1916,6 +1968,7 @@
    :rdfs/label "El Salvador"})
 
 (def Esch-sur-alzette
+  "Esch-sur-alzette"
   {:db/ident :fibo-fbc-fct-bci/Esch-sur-alzette,
    :lcc-cr/isPartOf :lcc-3166-1/Luxembourg,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1924,6 +1977,7 @@
    :rdfs/label "Esch-sur-alzette"})
 
 (def Eschborn
+  "Eschborn"
   {:db/ident :fibo-fbc-fct-bci/Eschborn,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1932,6 +1986,7 @@
    :rdfs/label "Eschborn"})
 
 (def Eschenz
+  "Eschenz"
   {:db/ident :fibo-fbc-fct-bci/Eschenz,
    :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1940,6 +1995,7 @@
    :rdfs/label "Eschenz"})
 
 (def Espirito_Santo
+  "Espirito Santo"
   {:db/ident :fibo-fbc-fct-bci/Espirito_Santo,
    :lcc-cr/isPartOf :lcc-3166-1/Brazil,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1948,6 +2004,7 @@
    :rdfs/label "Espirito Santo"})
 
 (def Espoo
+  "Espoo"
   {:db/ident :fibo-fbc-fct-bci/Espoo,
    :lcc-cr/isPartOf :lcc-3166-1/Finland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1982,6 +2039,7 @@
    :rdfs/label "FRPA"})
 
 (def Fiac
+  "Fiac"
   {:db/ident :fibo-fbc-fct-bci/Fiac,
    :lcc-cr/isPartOf :lcc-3166-1/France,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1990,6 +2048,7 @@
    :rdfs/label "Fiac"})
 
 (def Firenze
+  "Firenze"
   {:db/ident :fibo-fbc-fct-bci/Firenze,
    :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -1998,6 +2057,7 @@
    :rdfs/label "Firenze"})
 
 (def Florence
+  "Florence"
   {:db/ident :fibo-fbc-fct-bci/Florence,
    :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2028,6 +2088,7 @@
    :rdfs/label "Frankfurt"})
 
 (def Fukuoka
+  "Fukuoka"
   {:db/ident :fibo-fbc-fct-bci/Fukuoka,
    :lcc-cr/isPartOf :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2103,6 +2164,7 @@
    :rdfs/label "GHAC"})
 
 (def GIFT_City
+  "GIFT City"
   {:db/ident :fibo-fbc-fct-bci/GIFT_City,
    :fibo-fnd-utl-av/synonym "Gujarat International Finance Tec-City",
    :lcc-cr/isPartOf :lcc-3166-1/India,
@@ -2135,6 +2197,7 @@
    :rdfs/label "Gaborone"})
 
 (def Gandhinagar
+  "Gandhinagar"
   {:db/ident :fibo-fbc-fct-bci/Gandhinagar,
    :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2153,6 +2216,7 @@
    :rdfs/label "Geneva"})
 
 (def Genova
+  "Genova"
   {:db/ident :fibo-fbc-fct-bci/Genova,
    :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2171,6 +2235,7 @@
    :rdfs/label "George Town"})
 
 (def Georgetown
+  "Georgetown"
   {:db/ident :fibo-fbc-fct-bci/Georgetown,
    :lcc-cr/isPartOf :lcc-3166-1/Guyana,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2179,6 +2244,7 @@
    :rdfs/label "Georgetown"})
 
 (def Gibraltar
+  "Gibraltar"
   {:db/ident :fibo-fbc-fct-bci/Gibraltar,
    :lcc-cr/isPartOf :lcc-3166-1/Gibraltar,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2187,6 +2253,7 @@
    :rdfs/label "Gibraltar"})
 
 (def Glenview
+  "Glenview"
   {:db/ident :fibo-fbc-fct-bci/Glenview,
    :lcc-cr/isPartOf [:lcc-3166-2-us/Illinois :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2195,6 +2262,7 @@
    :rdfs/label "Glenview"})
 
 (def Great_Neck
+  "Great Neck"
   {:db/ident :fibo-fbc-fct-bci/Great_Neck,
    :lcc-cr/isPartOf [:lcc-3166-2-us/NewYork :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2203,6 +2271,7 @@
    :rdfs/label "Great Neck"})
 
 (def Greenwich
+  "Greenwich"
   {:db/ident :fibo-fbc-fct-bci/Greenwich,
    :lcc-cr/isPartOf [:lcc-3166-2-us/Connecticut
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -2212,6 +2281,7 @@
    :rdfs/label "Greenwich"})
 
 (def Grindsted
+  "Grindsted"
   {:db/ident :fibo-fbc-fct-bci/Grindsted,
    :lcc-cr/isPartOf :lcc-3166-1/Denmark,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2220,6 +2290,7 @@
    :rdfs/label "Grindsted"})
 
 (def Guatemala
+  "Guatemala"
   {:db/ident :fibo-fbc-fct-bci/Guatemala,
    :lcc-cr/isPartOf :lcc-3166-1/Guatemala,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2228,6 +2299,7 @@
    :rdfs/label "Guatemala"})
 
 (def Guayaquil
+  "Guayaquil"
   {:db/ident :fibo-fbc-fct-bci/Guayaquil,
    :lcc-cr/isPartOf :lcc-3166-1/Ecuador,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2236,6 +2308,7 @@
    :rdfs/label "Guayaquil"})
 
 (def Guaynabo
+  "Guaynabo"
   {:db/ident :fibo-fbc-fct-bci/Guaynabo,
    :lcc-cr/isPartOf [:lcc-3166-2-us/PuertoRico
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -2245,6 +2318,7 @@
    :rdfs/label "Guaynabo"})
 
 (def Guildford
+  "Guildford"
   {:db/ident :fibo-fbc-fct-bci/Guildford,
    :lcc-cr/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2308,6 +2382,7 @@
    :rdfs/label "HUBU"})
 
 (def Hamburg
+  "Hamburg"
   {:db/ident :fibo-fbc-fct-bci/Hamburg,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2326,6 +2401,7 @@
    :rdfs/label "Hamilton"})
 
 (def Hannover
+  "Hannover"
   {:db/ident :fibo-fbc-fct-bci/Hannover,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2364,6 +2440,7 @@
    :rdfs/label "Helsinki"})
 
 (def Hiroshima
+  "Hiroshima"
   {:db/ident :fibo-fbc-fct-bci/Hiroshima,
    :lcc-cr/isPartOf :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2383,6 +2460,7 @@
    :rdfs/label "Ho Chi Minh (formerly Saigon)"})
 
 (def Ho_Chi_Minh_City
+  "Ho Chi Minh City"
   {:db/ident :fibo-fbc-fct-bci/Ho_Chi_Minh_City,
    :lcc-cr/isPartOf :lcc-3166-1/VietNam,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2411,6 +2489,7 @@
    :rdfs/label "Honolulu"})
 
 (def Horsens
+  "Horsens"
   {:db/ident :fibo-fbc-fct-bci/Horsens,
    :lcc-cr/isPartOf :lcc-3166-1/Denmark,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2429,6 +2508,7 @@
    :rdfs/label "Houston"})
 
 (def Hove
+  "Hove"
   {:db/ident :fibo-fbc-fct-bci/Hove,
    :lcc-cr/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2642,6 +2722,7 @@
    :rdfs/label "ITTU"})
 
 (def Indore_Madhya_Pradesh
+  "Indore Madhya Pradesh"
   {:db/ident :fibo-fbc-fct-bci/Indore_Madhya_Pradesh,
    :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2650,6 +2731,7 @@
    :rdfs/label "Indore Madhya Pradesh"})
 
 (def Islamabad
+  "Islamabad"
   {:db/ident :fibo-fbc-fct-bci/Islamabad,
    :lcc-cr/isPartOf :lcc-3166-1/Pakistan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2668,6 +2750,7 @@
    :rdfs/label "Istanbul"})
 
 (def Izmir
+  "Izmir"
   {:db/ident :fibo-fbc-fct-bci/Izmir,
    :lcc-cr/isPartOf :lcc-3166-1/Turkey,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2729,6 +2812,7 @@
    :rdfs/label "JPTO"})
 
 (def Jaen
+  "Jaen"
   {:db/ident :fibo-fbc-fct-bci/Jaen,
    :lcc-cr/isPartOf :lcc-3166-1/Spain,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2757,6 +2841,7 @@
    :rdfs/label "Jeddah"})
 
 (def Jersey_City
+  "Jersey City"
   {:db/ident :fibo-fbc-fct-bci/Jersey_City,
    :lcc-cr/isPartOf [:lcc-3166-2-us/NewJersey
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -2863,6 +2948,7 @@
    :rdfs/label "Kampala"})
 
 (def Kansas_City
+  "Kansas City"
   {:db/ident :fibo-fbc-fct-bci/Kansas_City,
    :lcc-cr/isPartOf [:lcc-3166-2-us/Missouri :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2891,6 +2977,7 @@
    :rdfs/label "Kathmandu"})
 
 (def Kharkov
+  "Kharkov"
   {:db/ident :fibo-fbc-fct-bci/Kharkov,
    :lcc-cr/isPartOf :lcc-3166-1/Ukraine,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2899,6 +2986,7 @@
    :rdfs/label "Kharkov"})
 
 (def Khartoum
+  "Khartoum"
   {:db/ident :fibo-fbc-fct-bci/Khartoum,
    :lcc-cr/isPartOf :lcc-3166-1/Sudan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2907,6 +2995,7 @@
    :rdfs/label "Khartoum"})
 
 (def Kiel
+  "Kiel"
   {:db/ident :fibo-fbc-fct-bci/Kiel,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2925,6 +3014,7 @@
    :rdfs/label "Kiev"})
 
 (def Kigali
+  "Kigali"
   {:db/ident :fibo-fbc-fct-bci/Kigali,
    :lcc-cr/isPartOf :lcc-3166-1/Rwanda,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2943,6 +3033,7 @@
    :rdfs/label "Kingston"})
 
 (def Kingstown
+  "Kingstown"
   {:db/ident :fibo-fbc-fct-bci/Kingstown,
    :lcc-cr/isPartOf :lcc-3166-1/SaintVincentAndTheGrenadines,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2951,6 +3042,7 @@
    :rdfs/label "Kingstown"})
 
 (def Klagenfurt_am_Woerthersee
+  "Klagenfurt Am Woerthersee"
   {:db/ident :fibo-fbc-fct-bci/Klagenfurt_am_Woerthersee,
    :lcc-cr/isPartOf :lcc-3166-1/Austria,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2959,6 +3051,7 @@
    :rdfs/label "Klagenfurt Am Woerthersee"})
 
 (def Kobe
+  "Kobe"
   {:db/ident :fibo-fbc-fct-bci/Kobe,
    :lcc-cr/isPartOf :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2977,6 +3070,7 @@
    :rdfs/label "Kolkata"})
 
 (def Kongsvinger
+  "Kongsvinger"
   {:db/ident :fibo-fbc-fct-bci/Kongsvinger,
    :lcc-cr/isPartOf :lcc-3166-1/Norway,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -2985,6 +3079,7 @@
    :rdfs/label "Kongsvinger"})
 
 (def Krakow
+  "Krakow"
   {:db/ident :fibo-fbc-fct-bci/Krakow,
    :lcc-cr/isPartOf :lcc-3166-1/Poland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3013,6 +3108,7 @@
    :rdfs/label "Kuwait City"})
 
 (def Kyoto
+  "Kyoto"
   {:db/ident :fibo-fbc-fct-bci/Kyoto,
    :lcc-cr/isPartOf :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3104,6 +3200,7 @@
    :rdfs/label "Lagos"})
 
 (def Lahore
+  "Lahore"
   {:db/ident :fibo-fbc-fct-bci/Lahore,
    :lcc-cr/isPartOf :lcc-3166-1/Pakistan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3112,6 +3209,7 @@
    :rdfs/label "Lahore"})
 
 (def Lane_Cove
+  "Lane Cove"
   {:db/ident :fibo-fbc-fct-bci/Lane_Cove,
    :lcc-cr/isPartOf :lcc-3166-1/Australia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3120,6 +3218,7 @@
    :rdfs/label "Lane Cove"})
 
 (def Lao
+  "Lao"
   {:db/ident :fibo-fbc-fct-bci/Lao,
    :lcc-cr/isPartOf :lcc-3166-1/LaoPeoplesDemocraticRepublic,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3128,6 +3227,7 @@
    :rdfs/label "Lao"})
 
 (def Larnaca
+  "Larnaca"
   {:db/ident :fibo-fbc-fct-bci/Larnaca,
    :lcc-cr/isPartOf :lcc-3166-1/Cyprus,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3146,6 +3246,7 @@
    :rdfs/label "Leipzig"})
 
 (def Lenexa
+  "Lenexa"
   {:db/ident :fibo-fbc-fct-bci/Lenexa,
    :lcc-cr/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3154,6 +3255,7 @@
    :rdfs/label "Lenexa"})
 
 (def Leuven
+  "Leuven"
   {:db/ident :fibo-fbc-fct-bci/Leuven,
    :lcc-cr/isPartOf :lcc-3166-1/Belgium,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3182,6 +3284,7 @@
    :rdfs/label "Lima"})
 
 (def Limassol
+  "Limassol"
   {:db/ident :fibo-fbc-fct-bci/Limassol,
    :lcc-cr/isPartOf :lcc-3166-1/Cyprus,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3190,6 +3293,7 @@
    :rdfs/label "Limassol"})
 
 (def Linz
+  "Linz"
   {:db/ident :fibo-fbc-fct-bci/Linz,
    :lcc-cr/isPartOf :lcc-3166-1/Austria,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3198,6 +3302,7 @@
    :rdfs/label "Linz"})
 
 (def Lisboa
+  "Lisboa"
   {:db/ident :fibo-fbc-fct-bci/Lisboa,
    :lcc-cr/isPartOf :lcc-3166-1/Portugal,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3257,6 +3362,7 @@
    :rdfs/label "Luanda"})
 
 (def Lugano
+  "Lugano"
   {:db/ident :fibo-fbc-fct-bci/Lugano,
    :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3285,6 +3391,7 @@
    :rdfs/label "Luxembourg"})
 
 (def Luzern
+  "Luzern"
   {:db/ident :fibo-fbc-fct-bci/Luzern,
    :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3448,6 +3555,7 @@
    :rdfs/label "Macau"})
 
 (def Madras
+  "Madras"
   {:db/ident :fibo-fbc-fct-bci/Madras,
    :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3486,6 +3594,7 @@
    :rdfs/label "Makati"})
 
 (def Makati_City
+  "Makati City"
   {:db/ident :fibo-fbc-fct-bci/Makati_City,
    :lcc-cr/isPartOf :lcc-3166-1/Philippines,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3504,6 +3613,7 @@
    :rdfs/label "Male"})
 
 (def Managua
+  "Managua"
   {:db/ident :fibo-fbc-fct-bci/Managua,
    :lcc-cr/isPartOf :lcc-3166-1/Nicaragua,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3532,6 +3642,7 @@
    :rdfs/label "Manila"})
 
 (def Maputo
+  "Maputo"
   {:db/ident :fibo-fbc-fct-bci/Maputo,
    :lcc-cr/isPartOf :lcc-3166-1/Mozambique,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3540,6 +3651,7 @@
    :rdfs/label "Maputo"})
 
 (def Maringa
+  "Maringa"
   {:db/ident :fibo-fbc-fct-bci/Maringa,
    :lcc-cr/isPartOf :lcc-3166-1/Brazil,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3548,6 +3660,7 @@
    :rdfs/label "Maringa"})
 
 (def Mbabane
+  "Mbabane"
   {:db/ident :fibo-fbc-fct-bci/Mbabane,
    :lcc-cr/isPartOf :lcc-3166-1/Eswatini,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3566,6 +3679,7 @@
    :rdfs/label "Melbourne"})
 
 (def Mendoza
+  "Mendoza"
   {:db/ident :fibo-fbc-fct-bci/Mendoza,
    :lcc-cr/isPartOf :lcc-3166-1/Argentina,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3584,6 +3698,7 @@
    :rdfs/label "Mexico City"})
 
 (def Miami
+  "Miami"
   {:db/ident :fibo-fbc-fct-bci/Miami,
    :lcc-cr/isPartOf [:lcc-3166-2-us/Florida :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3633,6 +3748,7 @@
    :rdfs/label "Mobile"})
 
 (def Moka
+  "Moka"
   {:db/ident :fibo-fbc-fct-bci/Moka,
    :lcc-cr/isPartOf :lcc-3166-1/Mauritius,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3651,6 +3767,7 @@
    :rdfs/label "Monaco"})
 
 (def Montenegro
+  "Montenegro"
   {:db/ident :fibo-fbc-fct-bci/Montenegro,
    :lcc-cr/isPartOf :lcc-3166-1/Montenegro,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3679,6 +3796,7 @@
    :rdfs/label "Montreal"})
 
 (def Moorpark
+  "Moorpark"
   {:db/ident :fibo-fbc-fct-bci/Moorpark,
    :lcc-cr/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3697,6 +3815,7 @@
    :rdfs/label "Moscow"})
 
 (def Mount_Pleasant
+  "Mount Pleasant"
   {:db/ident :fibo-fbc-fct-bci/Mount_Pleasant,
    :lcc-cr/isPartOf [:lcc-3166-2-us/SouthCarolina
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -3706,6 +3825,7 @@
    :rdfs/label "Mount Pleasant"})
 
 (def Muenchen
+  "Muenchen"
   {:db/ident :fibo-fbc-fct-bci/Muenchen,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3893,6 +4013,7 @@
    :rdfs/label "NZWE"})
 
 (def Nablus
+  "Nablus"
   {:db/ident :fibo-fbc-fct-bci/Nablus,
    :lcc-cr/isPartOf :lcc-3166-1/Palestine,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3901,6 +4022,7 @@
    :rdfs/label "Nablus"})
 
 (def Nacka
+  "Nacka"
   {:db/ident :fibo-fbc-fct-bci/Nacka,
    :lcc-cr/isPartOf :lcc-3166-1/Sweden,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3909,6 +4031,7 @@
    :rdfs/label "Nacka"})
 
 (def Nagoya
+  "Nagoya"
   {:db/ident :fibo-fbc-fct-bci/Nagoya,
    :lcc-cr/isPartOf :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3927,6 +4050,7 @@
    :rdfs/label "Nairobi"})
 
 (def Narberth
+  "Narberth"
   {:db/ident :fibo-fbc-fct-bci/Narberth,
    :lcc-cr/isPartOf [:lcc-3166-2-us/Pennsylvania
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -3936,6 +4060,7 @@
    :rdfs/label "Narberth"})
 
 (def Nasau
+  "Nasau"
   {:db/ident :fibo-fbc-fct-bci/Nasau,
    :lcc-cr/isPartOf :lcc-3166-1/Bahamas,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -3997,6 +4122,7 @@
    :rdfs/label "New York"})
 
 (def Newcastle
+  "Newcastle"
   {:db/ident :fibo-fbc-fct-bci/Newcastle,
    :lcc-cr/isPartOf :lcc-3166-1/Australia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4015,6 +4141,7 @@
    :rdfs/label "Nicosia"})
 
 (def Nigita
+  "Nigita"
   {:db/ident :fibo-fbc-fct-bci/Nigita,
    :lcc-cr/isPartOf :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4023,6 +4150,7 @@
    :rdfs/label "Nigita"})
 
 (def NizhniyNovgorod
+  "Nizhniy Novgorod"
   {:db/ident :fibo-fbc-fct-bci/NizhniyNovgorod,
    :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4031,6 +4159,7 @@
    :rdfs/label "Nizhniy Novgorod"})
 
 (def North_Bergen
+  "North Bergen"
   {:db/ident :fibo-fbc-fct-bci/North_Bergen,
    :lcc-cr/isPartOf [:lcc-3166-2-us/NewJersey
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -4040,6 +4169,7 @@
    :rdfs/label "North Bergen"})
 
 (def Novosibirsk
+  "Novosibirsk"
   {:db/ident :fibo-fbc-fct-bci/Novosibirsk,
    :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4048,6 +4178,7 @@
    :rdfs/label "Novosibirsk"})
 
 (def Nyon
+  "Nyon"
   {:db/ident :fibo-fbc-fct-bci/Nyon,
    :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4069,6 +4200,7 @@
    :rdfs/label "OMMU"})
 
 (def Odessa
+  "Odessa"
   {:db/ident :fibo-fbc-fct-bci/Odessa,
    :lcc-cr/isPartOf :lcc-3166-1/Ukraine,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4077,6 +4209,7 @@
    :rdfs/label "Odessa"})
 
 (def Oldenburg
+  "Oldenburg"
   {:db/ident :fibo-fbc-fct-bci/Oldenburg,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4085,6 +4218,7 @@
    :rdfs/label "Oldenburg"})
 
 (def Osaka
+  "Osaka"
   {:db/ident :fibo-fbc-fct-bci/Osaka,
    :lcc-cr/isPartOf :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4103,6 +4237,7 @@
    :rdfs/label "Oslo"})
 
 (def Oststeinbek
+  "Oststeinbek"
   {:db/ident :fibo-fbc-fct-bci/Oststeinbek,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4226,6 +4361,7 @@
    :rdfs/label "PTLI"})
 
 (def Padova
+  "Padova"
   {:db/ident :fibo-fbc-fct-bci/Padova,
    :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4234,6 +4370,7 @@
    :rdfs/label "Padova"})
 
 (def PalmaDeMallorca
+  "Palma de Mallorca"
   {:db/ident :fibo-fbc-fct-bci/PalmaDeMallorca,
    :lcc-cr/isPartOf :lcc-3166-1/Spain,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4262,6 +4399,7 @@
    :rdfs/label "Paris"})
 
 (def Pasig_City
+  "Pasig City"
   {:db/ident :fibo-fbc-fct-bci/Pasig_City,
    :lcc-cr/isPartOf :lcc-3166-1/Philippines,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4280,6 +4418,7 @@
    :rdfs/label "Perth"})
 
 (def Pfaffikon_SZ
+  "Pfäffikon SZ"
   {:db/ident :fibo-fbc-fct-bci/Pfaffikon_SZ,
    :lcc-cr/isPartOf [:lcc-3166-2-ch/CH-SZ :lcc-3166-1/Switzerland],
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4288,6 +4427,7 @@
    :rdfs/label "Pfäffikon SZ"})
 
 (def Philadelphia
+  "Philadelphia"
   {:db/ident :fibo-fbc-fct-bci/Philadelphia,
    :lcc-cr/isPartOf [:lcc-3166-2-us/Pennsylvania
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -4297,6 +4437,7 @@
    :rdfs/label "Philadelphia"})
 
 (def Phnom_Penh
+  "Phnom Penh"
   {:db/ident :fibo-fbc-fct-bci/Phnom_Penh,
    :lcc-cr/isPartOf :lcc-3166-1/Cambodia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4305,6 +4446,7 @@
    :rdfs/label "Phnom Penh"})
 
 (def Phoenix
+  "Phoenix"
   {:db/ident :fibo-fbc-fct-bci/Phoenix,
    :lcc-cr/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4323,6 +4465,7 @@
    :rdfs/label "Port Louis"})
 
 (def Port_Moresby
+  "Port Moresby"
   {:db/ident :fibo-fbc-fct-bci/Port_Moresby,
    :lcc-cr/isPartOf :lcc-3166-1/PapuaNewGuinea,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4331,6 +4474,7 @@
    :rdfs/label "Port Moresby"})
 
 (def Port_Vila
+  "Port Vila"
   {:db/ident :fibo-fbc-fct-bci/Port_Vila,
    :lcc-cr/isPartOf :lcc-3166-1/Vanuatu,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4359,6 +4503,7 @@
    :rdfs/label "Portland"})
 
 (def Porto
+  "Porto"
   {:db/ident :fibo-fbc-fct-bci/Porto,
    :lcc-cr/isPartOf :lcc-3166-1/Portugal,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4377,6 +4522,7 @@
    :rdfs/label "Prague"})
 
 (def Praia
+  "Praia"
   {:db/ident :fibo-fbc-fct-bci/Praia,
    :lcc-cr/isPartOf :lcc-3166-1/CaboVerde,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4385,6 +4531,7 @@
    :rdfs/label "Praia"})
 
 (def Princeton
+  "Princeton"
   {:db/ident :fibo-fbc-fct-bci/Princeton,
    :lcc-cr/isPartOf [:lcc-3166-2-us/NewJersey
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -4394,6 +4541,7 @@
    :rdfs/label "Princeton"})
 
 (def Purchase
+  "Purchase"
   {:db/ident :fibo-fbc-fct-bci/Purchase,
    :lcc-cr/isPartOf :lcc-3166-2-us/NewYork,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4415,6 +4563,7 @@
    :rdfs/label "QADO"})
 
 (def Quito
+  "Quito"
   {:db/ident :fibo-fbc-fct-bci/Quito,
    :lcc-cr/isPartOf :lcc-3166-1/Ecuador,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4473,6 +4622,7 @@
    :rdfs/label "Rabat"})
 
 (def Randers
+  "Randers"
   {:db/ident :fibo-fbc-fct-bci/Randers,
    :lcc-cr/isPartOf :lcc-3166-1/Denmark,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4481,6 +4631,7 @@
    :rdfs/label "Randers"})
 
 (def Red_Bank
+  "Red Bank"
   {:db/ident :fibo-fbc-fct-bci/Red_Bank,
    :lcc-cr/isPartOf [:lcc-3166-2-us/NewJersey
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -4490,6 +4641,7 @@
    :rdfs/label "Red Bank"})
 
 (def Regensburg
+  "Regensburg"
   {:db/ident :fibo-fbc-fct-bci/Regensburg,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4498,6 +4650,7 @@
    :rdfs/label "Regensburg"})
 
 (def Reggio_Emilia
+  "Reggio Emilia"
   {:db/ident :fibo-fbc-fct-bci/Reggio_Emilia,
    :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4556,6 +4709,7 @@
    :rdfs/label "Road Town"})
 
 (def Rodgau
+  "Rodgau"
   {:db/ident :fibo-fbc-fct-bci/Rodgau,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4564,6 +4718,7 @@
    :rdfs/label "Rodgau"})
 
 (def Roma
+  "Roma"
   {:db/ident :fibo-fbc-fct-bci/Roma,
    :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4582,6 +4737,7 @@
    :rdfs/label "Rome"})
 
 (def Rosario
+  "Rosario"
   {:db/ident :fibo-fbc-fct-bci/Rosario,
    :lcc-cr/isPartOf :lcc-3166-1/Argentina,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4590,6 +4746,7 @@
    :rdfs/label "Rosario"})
 
 (def Rostov
+  "Rostov"
   {:db/ident :fibo-fbc-fct-bci/Rostov,
    :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4730,6 +4887,7 @@
    :rdfs/label "SVSS"})
 
 (def Sabadell
+  "Sabadell"
   {:db/ident :fibo-fbc-fct-bci/Sabadell,
    :lcc-cr/isPartOf :lcc-3166-1/Spain,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4749,6 +4907,7 @@
    :rdfs/label "Sacramento"})
 
 (def Saint-Petersburg
+  "Saint Petersburg"
   {:db/ident :fibo-fbc-fct-bci/Saint-Petersburg,
    :fibo-fnd-utl-av/synonym "St. Petersburg",
    :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
@@ -4769,6 +4928,7 @@
    :rdfs/label "Saint Peter Port"})
 
 (def Salzburg
+  "Salzburg"
   {:db/ident :fibo-fbc-fct-bci/Salzburg,
    :lcc-cr/isPartOf :lcc-3166-1/Austria,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4777,6 +4937,7 @@
    :rdfs/label "Salzburg"})
 
 (def Samara
+  "Samara"
   {:db/ident :fibo-fbc-fct-bci/Samara,
    :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4785,6 +4946,7 @@
    :rdfs/label "Samara"})
 
 (def SanPedroSula
+  "San Pedro Sula"
   {:db/ident :fibo-fbc-fct-bci/SanPedroSula,
    :lcc-cr/isPartOf :lcc-3166-1/Honduras,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4793,6 +4955,7 @@
    :rdfs/label "San Pedro Sula"})
 
 (def San_Carlos
+  "San Carlos"
   {:db/ident :fibo-fbc-fct-bci/San_Carlos,
    :lcc-cr/isPartOf [:lcc-3166-2-us/California
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -4802,6 +4965,7 @@
    :rdfs/label "San Carlos"})
 
 (def San_Francisco
+  "San Francisco"
   {:db/ident :fibo-fbc-fct-bci/San_Francisco,
    :lcc-cr/isPartOf [:lcc-3166-2-us/California
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -4841,6 +5005,7 @@
    :rdfs/label "San Salvador"})
 
 (def Santa_Fe
+  "Santa Fe"
   {:db/ident :fibo-fbc-fct-bci/Santa_Fe,
    :lcc-cr/isPartOf :lcc-3166-1/Argentina,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4849,6 +5014,7 @@
    :rdfs/label "Santa Fe"})
 
 (def Santander
+  "Santander"
   {:db/ident :fibo-fbc-fct-bci/Santander,
    :lcc-cr/isPartOf :lcc-3166-1/Spain,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4887,6 +5053,7 @@
    :rdfs/label "Sao Paulo"})
 
 (def Sapporo
+  "Sapporo"
   {:db/ident :fibo-fbc-fct-bci/Sapporo,
    :lcc-cr/isPartOf :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4895,6 +5062,7 @@
    :rdfs/label "Sapporo"})
 
 (def Sarajevo
+  "Sarajevo"
   {:db/ident :fibo-fbc-fct-bci/Sarajevo,
    :lcc-cr/isPartOf :lcc-3166-1/BosniaAndHerzegovina,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4903,6 +5071,7 @@
    :rdfs/label "Sarajevo"})
 
 (def Schwerin
+  "Schwerin"
   {:db/ident :fibo-fbc-fct-bci/Schwerin,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4911,6 +5080,7 @@
    :rdfs/label "Schwerin"})
 
 (def SeaGirt
+  "Sea Girt"
   {:db/ident :fibo-fbc-fct-bci/SeaGirt,
    :lcc-cr/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4950,6 +5120,7 @@
    :rdfs/label "Shanghai"})
 
 (def Shenzhen
+  "Shenzhen"
   {:db/ident :fibo-fbc-fct-bci/Shenzhen,
    :lcc-cr/isPartOf :lcc-3166-1/China,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4958,6 +5129,7 @@
    :rdfs/label "Shenzhen"})
 
 (def Shimonoseki
+  "Shimonoseki"
   {:db/ident :fibo-fbc-fct-bci/Shimonoseki,
    :lcc-cr/isPartOf :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4966,6 +5138,7 @@
    :rdfs/label "Shimonoseki"})
 
 (def Sibiu
+  "Sibiu"
   {:db/ident :fibo-fbc-fct-bci/Sibiu,
    :lcc-cr/isPartOf :lcc-3166-1/Romania,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4974,6 +5147,7 @@
    :rdfs/label "Sibiu"})
 
 (def Silkeborg
+  "Silkeborg"
   {:db/ident :fibo-fbc-fct-bci/Silkeborg,
    :lcc-cr/isPartOf :lcc-3166-1/Denmark,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -4992,6 +5166,7 @@
    :rdfs/label "Singapore"})
 
 (def Skopje
+  "Skopje"
   {:db/ident :fibo-fbc-fct-bci/Skopje,
    :lcc-cr/isPartOf :lcc-3166-1/Macedonia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5000,6 +5175,7 @@
    :rdfs/label "Skopje"})
 
 (def Sliema
+  "Sliema"
   {:db/ident :fibo-fbc-fct-bci/Sliema,
    :lcc-cr/isPartOf :lcc-3166-1/Malta,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5018,6 +5194,7 @@
    :rdfs/label "Sofia"})
 
 (def Split
+  "Split"
   {:db/ident :fibo-fbc-fct-bci/Split,
    :lcc-cr/isPartOf :lcc-3166-1/Croatia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5026,6 +5203,7 @@
    :rdfs/label "Split"})
 
 (def St_Albans
+  "St. Albans"
   {:db/ident :fibo-fbc-fct-bci/St_Albans,
    :lcc-cr/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5044,6 +5222,7 @@
    :rdfs/label "St. Helier"})
 
 (def St_John
+  "St. John"
   {:db/ident :fibo-fbc-fct-bci/St_John,
    :lcc-cr/isPartOf :lcc-3166-1/AntiguaAndBarbuda,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5052,6 +5231,7 @@
    :rdfs/label "St. John"})
 
 (def Stamford
+  "Stamford"
   {:db/ident :fibo-fbc-fct-bci/Stamford,
    :lcc-cr/isPartOf [:lcc-3166-2-us/Connecticut
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -5081,6 +5261,7 @@
    :rdfs/label "Stuttgart"})
 
 (def Summit
+  "Summit"
   {:db/ident :fibo-fbc-fct-bci/Summit,
    :lcc-cr/isPartOf [:lcc-3166-2-us/NewJersey
                      :lcc-3166-1/UnitedStatesOfAmerica],
@@ -5090,6 +5271,7 @@
    :rdfs/label "Summit"})
 
 (def Surabaya
+  "Surabaya"
   {:db/ident :fibo-fbc-fct-bci/Surabaya,
    :lcc-cr/isPartOf :lcc-3166-1/Indonesia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5098,6 +5280,7 @@
    :rdfs/label "Surabaya"})
 
 (def Suva
+  "Suva"
   {:db/ident :fibo-fbc-fct-bci/Suva,
    :lcc-cr/isPartOf :lcc-3166-1/Fiji,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5256,6 +5439,7 @@
    :rdfs/label "Taipei"})
 
 (def Taiwan
+  "Taiwan"
   {:db/ident :fibo-fbc-fct-bci/Taiwan,
    :lcc-cr/isPartOf :lcc-3166-1/Taiwan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5274,6 +5458,7 @@
    :rdfs/label "Tallinn"})
 
 (def Tashkent
+  "Tashkent"
   {:db/ident :fibo-fbc-fct-bci/Tashkent,
    :lcc-cr/isPartOf :lcc-3166-1/Uzbekistan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5322,6 +5507,7 @@
    :rdfs/label "Tel Aviv"})
 
 (def TheWoodlands
+  "The Woodlands"
   {:db/ident :fibo-fbc-fct-bci/TheWoodlands,
    :lcc-cr/isPartOf [:lcc-3166-2-us/Texas :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5330,6 +5516,7 @@
    :rdfs/label "The Woodlands"})
 
 (def The_Hague
+  "The Hague"
   {:db/ident :fibo-fbc-fct-bci/The_Hague,
    :lcc-cr/isPartOf :lcc-3166-1/Netherlands,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5338,6 +5525,7 @@
    :rdfs/label "The Hague"})
 
 (def Tirana
+  "Tirana"
   {:db/ident :fibo-fbc-fct-bci/Tirana,
    :lcc-cr/isPartOf :lcc-3166-1/Albania,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5366,6 +5554,7 @@
    :rdfs/label "Toronto"})
 
 (def Torshavn
+  "Torshavn"
   {:db/ident :fibo-fbc-fct-bci/Torshavn,
    :lcc-cr/isPartOf :lcc-3166-1/FaroeIslands,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5374,6 +5563,7 @@
    :rdfs/label "Torshavn"})
 
 (def Triesen
+  "Triesen"
   {:db/ident :fibo-fbc-fct-bci/Triesen,
    :lcc-cr/isPartOf :lcc-3166-1/Liechtenstein,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5382,6 +5572,7 @@
    :rdfs/label "Triesen"})
 
 (def Tripoli
+  "Tripoli"
   {:db/ident :fibo-fbc-fct-bci/Tripoli,
    :lcc-cr/isPartOf :lcc-3166-1/Libya,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5390,6 +5581,7 @@
    :rdfs/label "Tripoli"})
 
 (def Tromso
+  "Tromso"
   {:db/ident :fibo-fbc-fct-bci/Tromso,
    :lcc-cr/isPartOf :lcc-3166-1/Norway,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5398,6 +5590,7 @@
    :rdfs/label "Tromso"})
 
 (def Trondheim
+  "Trondheim"
   {:db/ident :fibo-fbc-fct-bci/Trondheim,
    :lcc-cr/isPartOf :lcc-3166-1/Norway,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5406,6 +5599,7 @@
    :rdfs/label "Trondheim"})
 
 (def Tucuman
+  "Tucuman"
   {:db/ident :fibo-fbc-fct-bci/Tucuman,
    :lcc-cr/isPartOf :lcc-3166-1/Argentina,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5722,6 +5916,7 @@
    :rdfs/label "UYMO"})
 
 (def Ulaan_Baatar
+  "Ulaan Baatar"
   {:db/ident :fibo-fbc-fct-bci/Ulaan_Baatar,
    :lcc-cr/isPartOf :lcc-3166-1/Mongolia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5730,6 +5925,7 @@
    :rdfs/label "Ulaan Baatar"})
 
 (def Unterschleisshem
+  "Unterschleisshem"
   {:db/ident :fibo-fbc-fct-bci/Unterschleisshem,
    :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5738,6 +5934,7 @@
    :rdfs/label "Unterschleisshem"})
 
 (def Utrecht
+  "Utrecht"
   {:db/ident :fibo-fbc-fct-bci/Utrecht,
    :lcc-cr/isPartOf :lcc-3166-1/Netherlands,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5800,6 +5997,7 @@
    :rdfs/label "VNHC"})
 
 (def Vaduz
+  "Vaduz"
   {:db/ident :fibo-fbc-fct-bci/Vaduz,
    :lcc-cr/isPartOf :lcc-3166-1/Liechtenstein,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5808,6 +6006,7 @@
    :rdfs/label "Vaduz"})
 
 (def Valencia
+  "Valencia"
   {:db/ident :fibo-fbc-fct-bci/Valencia,
    :lcc-cr/isPartOf :lcc-3166-1/Spain,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5826,6 +6025,7 @@
    :rdfs/label "Valletta"})
 
 (def Valparaiso
+  "Valparaiso"
   {:db/ident :fibo-fbc-fct-bci/Valparaiso,
    :lcc-cr/isPartOf :lcc-3166-1/Chile,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5844,6 +6044,7 @@
    :rdfs/label "Vancouver"})
 
 (def Varazdin
+  "Varazdin"
   {:db/ident :fibo-fbc-fct-bci/Varazdin,
    :lcc-cr/isPartOf :lcc-3166-1/Croatia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5852,6 +6053,7 @@
    :rdfs/label "Varazdin"})
 
 (def Victoria
+  "Victoria"
   {:db/ident :fibo-fbc-fct-bci/Victoria,
    :lcc-cr/isPartOf :lcc-3166-1/Seychelles,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5860,6 +6062,7 @@
    :rdfs/label "Victoria"})
 
 (def Victoria_Falls
+  "Victoria Falls"
   {:db/ident :fibo-fbc-fct-bci/Victoria_Falls,
    :lcc-cr/isPartOf :lcc-3166-1/Zimbabwe,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5878,6 +6081,7 @@
    :rdfs/label "Vienna"})
 
 (def Vilnius
+  "Vilnius"
   {:db/ident :fibo-fbc-fct-bci/Vilnius,
    :lcc-cr/isPartOf :lcc-3166-1/Lithuania,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5886,6 +6090,7 @@
    :rdfs/label "Vilnius"})
 
 (def Vladivostok
+  "Vladivostok"
   {:db/ident :fibo-fbc-fct-bci/Vladivostok,
    :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5904,6 +6109,7 @@
    :rdfs/label "Warsaw"})
 
 (def Warszawa
+  "Warszawa"
   {:db/ident :fibo-fbc-fct-bci/Warszawa,
    :lcc-cr/isPartOf :lcc-3166-1/Poland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5923,6 +6129,7 @@
    :rdfs/label "Washington"})
 
 (def Washington_New_York
+  "Washington, New York"
   {:db/ident :fibo-fbc-fct-bci/Washington_New_York,
    :lcc-cr/isPartOf [:lcc-3166-2-us/NewYork :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5951,6 +6158,7 @@
    :rdfs/label "Wichita"})
 
 (def Willemstad
+  "Willemstad"
   {:db/ident :fibo-fbc-fct-bci/Willemstad,
    :lcc-cr/isPartOf :lcc-3166-1/Curacao,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5959,6 +6167,7 @@
    :rdfs/label "Willemstad"})
 
 (def Wilmington
+  "Wilmington"
   {:db/ident :fibo-fbc-fct-bci/Wilmington,
    :lcc-cr/isPartOf [:lcc-3166-2-us/Delaware :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5987,6 +6196,7 @@
    :rdfs/label "Winnipeg"})
 
 (def WinterPark
+  "Winter Park"
   {:db/ident :fibo-fbc-fct-bci/WinterPark,
    :lcc-cr/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -5995,6 +6205,7 @@
    :rdfs/label "Winter Park"})
 
 (def Wroclaw
+  "Wroclaw"
   {:db/ident :fibo-fbc-fct-bci/Wroclaw,
    :lcc-cr/isPartOf :lcc-3166-1/Poland,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -6003,6 +6214,7 @@
    :rdfs/label "Wroclaw"})
 
 (def Wuxi
+  "Wuxi"
   {:db/ident :fibo-fbc-fct-bci/Wuxi,
    :lcc-cr/isPartOf :lcc-3166-1/China,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -6084,6 +6296,7 @@
    :rdfs/label "Zagreb"})
 
 (def Zaragoza
+  "Zaragoza"
   {:db/ident :fibo-fbc-fct-bci/Zaragoza,
    :lcc-cr/isPartOf :lcc-3166-1/Spain,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -6092,6 +6305,7 @@
    :rdfs/label "Zaragoza"})
 
 (def Zhengzhou
+  "Zhengzhou"
   {:db/ident :fibo-fbc-fct-bci/Zhengzhou,
    :lcc-cr/isPartOf :lcc-3166-1/China,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -6100,6 +6314,7 @@
    :rdfs/label "Zhengzhou"})
 
 (def Zilina
+  "Zilina"
   {:db/ident :fibo-fbc-fct-bci/Zilina,
    :lcc-cr/isPartOf :lcc-3166-1/Slovakia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
@@ -6118,6 +6333,7 @@
    :rdfs/label "Zurich"})
 
 (def s-Hertogenbosch
+  "s'-Hertogenbosch"
   {:db/ident :fibo-fbc-fct-bci/s-Hertogenbosch,
    :lcc-cr/isPartOf :lcc-3166-1/Netherlands,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],

@@ -54,7 +54,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/MetadataLOAN/",
    :rdfs/label "Loans",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/contributor ["Wells Fargo"
                     "Thematix Partners LLC"
                     "Federated Knowledge LLC"

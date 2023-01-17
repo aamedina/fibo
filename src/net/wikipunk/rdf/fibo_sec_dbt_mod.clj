@@ -53,7 +53,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MetadataSECDebt/",
    :rdfs/label "FIBO SEC Debt Module",
-   :rdfs/seeAlso "https://www.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"],
    :sm/contributor ["State Street Bank and Trust"
                     "John F. Tierney"
                     "Adaptive, Inc."

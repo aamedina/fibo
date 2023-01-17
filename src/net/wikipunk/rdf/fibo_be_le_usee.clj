@@ -133,7 +133,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
    :rdfs/label "Apple Inc. business entity identifier",
-   :rdfs/seeAlso "https://bizfileonline.sos.ca.gov/search/business",
+   :rdfs/seeAlso ["https://bizfileonline.sos.ca.gov/search/business"],
    :skos/definition
    "registration identifier assigned by the California Department of Corporations for Apple Inc."})
 

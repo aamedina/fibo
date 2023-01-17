@@ -54,7 +54,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/MetadataSECSecurities/",
    :rdfs/label "FIBO SEC Securities Module",
-   :rdfs/seeAlso "https://www.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"],
    :sm/contributor ["HP Enterprise / Mphasis"
                     "Tahoe Blue Ltd"
                     "Statistics Canada"

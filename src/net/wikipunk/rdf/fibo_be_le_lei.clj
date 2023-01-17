@@ -158,20 +158,12 @@
    :rdfs/label "entity legal form",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-aap-agt/Text,
-                      :owl/onProperty  :fibo-be-le-lei/hasTransliteratedName,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/classifies,
-                      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
                       :owl/onProperty  :fibo-be-le-lei/hasLegalFormAbbreviation,
                       :rdf/type        :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-aap-agt/Text,
-                      :owl/onProperty
-                      :fibo-be-le-lei/hasTransliteratedLegalFormAbbreviation,
-                      :rdf/type :owl/Restriction}
+                      :owl/onProperty  :fibo-be-le-lei/hasTransliteratedName,
+                      :rdf/type        :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-aap-agt/Text,
                       :owl/onProperty  :lcc-lr/hasName,
@@ -179,10 +171,18 @@
                      {:owl/onProperty     :fibo-fnd-law-jur/appliesIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-cls/Classifier
+                     {:owl/onProperty     :lcc-cr/classifies,
+                      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
                       :owl/someValuesFrom :fibo-be-le-lei/EntityLegalFormScheme,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
+                      :owl/onProperty
+                      :fibo-be-le-lei/hasTransliteratedLegalFormAbbreviation,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "a classifier for a legal entity that indicates the nature of that entity as defined from a legal or regulatory perspective, in the jurisdiction in which it was established"})
 
@@ -236,7 +236,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "Generally Accepted Accounting Principles",
-   :rdfs/seeAlso "https://www.fasb.org/home",
+   :rdfs/seeAlso ["https://www.fasb.org/home"],
    :skos/definition
    "an accounting framework developed by the US Financial Accounting Standards Board (FASB)"})
 
@@ -273,7 +273,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "International Financial Reporting Standard",
-   :rdfs/seeAlso "https://www.ifrs.org/",
+   :rdfs/seeAlso ["https://www.ifrs.org/"],
    :skos/definition
    "an accounting framework developed by the International Accounting Standards Board (IASB)"})
 
@@ -342,7 +342,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "other accounting framework",
-   :rdfs/seeAlso "https://www.ifrs.org/",
+   :rdfs/seeAlso ["https://www.ifrs.org/"],
    :skos/definition
    "an accounting framework of unstated origin (other than IFRS or US GAAP)"})
 

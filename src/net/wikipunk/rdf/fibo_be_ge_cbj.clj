@@ -193,7 +193,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Government of Bermuda"},
-   :rdfs/seeAlso "https://www.gov.bm/",
+   :rdfs/seeAlso ["https://www.gov.bm/"],
    :skos/definition
    "parliamentary representative democratic dependency and a British island territory in the North Atlantic Ocean"})
 
@@ -261,7 +261,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Government of the Cayman Islands"},
-   :rdfs/seeAlso "http://www.gov.ky/",
+   :rdfs/seeAlso ["http://www.gov.ky/"],
    :skos/definition
    "parliamentary democracy with judicial, executive and legislative branches, and a British Overseas Territory, encompassing 3 islands in the western Caribbean Sea"})
 
@@ -334,7 +334,7 @@
                  :rdf/value    "Government of the Republic of Cuba"}
                 {:rdf/language "es",
                  :rdf/value    "Gobierno de la República de Cuba"}],
-   :rdfs/seeAlso "https://www.presidencia.gob.cu/en/government/",
+   :rdfs/seeAlso ["https://www.presidencia.gob.cu/en/government/"],
    :skos/definition
    "unitary Marxist-Leninist, one party socialist republic that includes the island of Cuba as well as Isla de la Juventud and several minor archipelagos"})
 

@@ -274,7 +274,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "U.S. bank",
-   :rdfs/seeAlso "https://www.sec.gov/about/laws/ica40.pdf",
+   :rdfs/seeAlso ["https://www.sec.gov/about/laws/ica40.pdf"],
    :rdfs/subClassOf :fibo-fbc-fct-fse/Bank,
    :skos/definition
    "a bank that is licensed to conduct business in the United States"})

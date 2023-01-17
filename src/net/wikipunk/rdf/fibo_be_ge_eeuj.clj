@@ -115,7 +115,7 @@
                  :rdf/value    "Magyarország kormánya"}
                 {:rdf/language "en",
                  :rdf/value    "Government of Hungary"}],
-   :rdfs/seeAlso "https://www.kormany.hu/en/",
+   :rdfs/seeAlso ["https://www.kormany.hu/en/"],
    :skos/definition
    "unitary, dominant-party, parliamentary republic, bordering Slovakia to the north, Ukraine to the northeast, Romania to the east and southeast, Serbia to the south, Croatia and Slovenia to the southwest, and Austria to the west"})
 
@@ -131,7 +131,7 @@
                  :rdf/value    "Guvernul României"}
                 {:rdf/language "en",
                  :rdf/value    "Government of Romania"}],
-   :rdfs/seeAlso "https://www.gov.ro/en/",
+   :rdfs/seeAlso ["https://www.gov.ro/en/"],
    :skos/definition
    "unitary, semi-presidential republic at the crossroads of Central, Eastern, and Southeastern Europe, bordering Bulgaria to the south, Ukraine to the north, Hungary to the west, Serbia to the southwest, and Moldova to the east"})
 
@@ -147,7 +147,7 @@
                  :rdf/value    "Vláda České republiky"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Czech Republic"}],
-   :rdfs/seeAlso "https://www.vlada.cz/en/",
+   :rdfs/seeAlso ["https://www.vlada.cz/en/"],
    :skos/definition
    "unitary, parliamentary, constitutional republic and multi-party, representative democracy, with the president as head of state and prime minister as head of government, that is a landlocked country in Central Europe bordered by Austria to the south, Germany to the west, Poland to the northeast and Slovakia to the southeast"})
 
@@ -165,7 +165,7 @@
                  :rdf/value    "Government of the Republic of Belarus"}
                 {:rdf/language "ru",
                  :rdf/value    "Правительство Республики Беларусь"}],
-   :rdfs/seeAlso "https://www.bundeskanzleramt.gv.at/en.html",
+   :rdfs/seeAlso ["https://www.bundeskanzleramt.gv.at/en.html"],
    :skos/definition
    "unitary presidential republic, a landlocked country in Eastern Europe bordered by Russia to the northeast, Ukraine to the south, Poland to the west, and Lithuania and Latvia to the northwest"})
 
@@ -181,7 +181,7 @@
                  :rdf/value    "Правителство на Република България"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of Bulgaria"}],
-   :rdfs/seeAlso "https://gov.bg/",
+   :rdfs/seeAlso ["https://gov.bg/"],
    :skos/definition
    "unitary parliamentary democracy where the prime minister is the head of government, located in Southeastern Europe bordered by Romania to the north, Serbia and North Macedonia to the west, Greece and Turkey to the south, and the Black Sea to the east"})
 
@@ -197,7 +197,7 @@
                  :rdf/value    "Guvernul Republicii Moldova"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of Moldova"}],
-   :rdfs/seeAlso "https://gov.md/en/",
+   :rdfs/seeAlso ["https://gov.md/en/"],
    :skos/definition
    "unitary parliamentary constitutional republic that is a landlocked country in Eastern Europe, bordered by Romania to the west and Ukraine to the north, east, and south"})
 
@@ -213,7 +213,7 @@
                  :rdf/value    "Rząd Rzeczpospolita Polska"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of Poland"}],
-   :rdfs/seeAlso "https://www.gov.pl/",
+   :rdfs/seeAlso ["https://www.gov.pl/"],
    :skos/definition
    "unitary, semi-presidential, constitutional, and representative democratic republic located in Central Europe and bordered by the Baltic Sea, Lithuania, and Russia's Kaliningrad Oblast to the north, Belarus and Ukraine to the east, Slovakia and the Czech Republic to the south, and Germany to the west"})
 
@@ -230,7 +230,7 @@
                  :rdf/value    "Правительство Российской Федерации"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Russian Federation"}],
-   :rdfs/seeAlso "http://government.ru/en/",
+   :rdfs/seeAlso ["http://government.ru/en/"],
    :skos/definition
    "federal, dominant-party and semi-presidential constitutional republic located in Eastern Europe and Northern Asia"})
 
@@ -246,7 +246,8 @@
                  :rdf/value    "Vláda Slovenskej republiky"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Slovak Republic"}],
-   :rdfs/seeAlso "https://www.vlada.gov.sk/government-of-the-slovak-republic/",
+   :rdfs/seeAlso
+   ["https://www.vlada.gov.sk/government-of-the-slovak-republic/"],
    :skos/definition
    "unitary, parliamentary democratic republic that is a landlocked country in Central Europe, bordered by Poland to the north, Ukraine to the east, Hungary to the south, Austria to the southwest, and Czech Republic to the northwest"})
 
@@ -262,7 +263,7 @@
                  :rdf/value    "Уряд України"}
                 {:rdf/language "en",
                  :rdf/value    "Government of Ukraine"}],
-   :rdfs/seeAlso "https://www.president.gov.ua/en/",
+   :rdfs/seeAlso ["https://www.president.gov.ua/en/"],
    :skos/definition
    "unitary, mixed semi-parliamentary and semi-presidential, constitutional republic located in Eastern Europe, bordered by Russia to the north-east; Belarus to the north; Poland, Slovakia and Hungary to the west; and Romania, Moldova, and the Black Sea to the south"})
 

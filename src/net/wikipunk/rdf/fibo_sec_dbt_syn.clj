@@ -81,11 +81,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "arbitrage synthetic c d o"},
-   :rdfs/subClassOf [:fibo-sec-dbt-syn/SyntheticCDO
-                     :fibo-sec-dbt-cdo/ArbitrageCDO
-                     {:owl/onProperty     :fibo-sec-dbt-syn/issues,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-syn/issues,
                       :owl/someValuesFrom :fibo-sec-dbt-syn/SyntheticCDOTranche,
                       :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-syn/SyntheticCDO
+                     :fibo-sec-dbt-cdo/ArbitrageCDO
                      {:owl/onProperty     :fibo-sec-dbt-syn/assetsManagedBy,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
                       :rdf/type           :owl/Restriction}],
@@ -112,6 +112,7 @@
     "Synthetic instruments can be created to mimic a wide range of debt instruments. These are not all shown here. This one is shown as an example"}})
 
 (def SyntheticBalanceSheetCDO
+  "synthetic balance sheet c d o"
   {:db/ident :fibo-sec-dbt-syn/SyntheticBalanceSheetCDO,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -125,6 +126,7 @@
                      :fibo-sec-dbt-cdo/BalanceSheetCDO]})
 
 (def SyntheticCDO
+  "synthetic c d o"
   {:db/ident :fibo-sec-dbt-syn/SyntheticCDO,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -137,6 +139,7 @@
                      :fibo-sec-dbt-cdo/CDODeal]})
 
 (def SyntheticCDOPortfolio
+  "synthetic c d o portfolio"
   {:db/ident :fibo-sec-dbt-syn/SyntheticCDOPortfolio,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -166,6 +169,7 @@
     "An instrument which is defined as a constituent of a synthetic pool of instruments. These are not holdings because they are not held, but in all other respects they are the constituents of the portfolio."}})
 
 (def SyntheticCDOTranche
+  "synthetic c d o tranche"
   {:db/ident :fibo-sec-dbt-syn/SyntheticCDOTranche,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -246,6 +250,7 @@
     "REVIEW: Whether this is (or is ever) a separate SPV for Synthetics, as it is for Cash CDO and other Cash structured finance. If not, how to define the facts at the level of SPV without contradictions. Moving stuff off the balance sheet is involved in putting it into the SPV. So talking a bout balance sheet or off balanc sheet, this is about creating the pool which is going to be sold off. This applies whether hte pool is cash (real holdings) or synthetics. Either way ,the instruments are transferred into the CPV to sell them off. conclusion: applies to cash and non cash. In the old days there were all sorts of guarantees added to that SPOV. Now if you provide support to that =SPV it is no longer \"Off balance sheet\" froma regulatory point of view. Accounting rules refer."}})
 
 (def SyntheticPoolAsset
+  "synthetic pool asset"
   {:db/ident :fibo-sec-dbt-syn/SyntheticPoolAsset,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -258,6 +263,7 @@
                      :fibo-fnd-acc-aeq/FinancialAsset]})
 
 (def SyntheticStructuredFinanceInstrument
+  "synthetic structured finance instrument"
   {:db/ident :fibo-sec-dbt-syn/SyntheticStructuredFinanceInstrument,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -270,6 +276,7 @@
                      :fibo-sec-dbt-pbs/StructuredFinanceInstrument]})
 
 (def assetsManagedBy
+  "assets managed by"
   {:db/ident :fibo-sec-dbt-syn/assetsManagedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-syn/ArbitrageSyntheticCDO,
@@ -280,6 +287,7 @@
    :rdfs/range :fibo-sec-dbt-cdo/CDOPortfolioManager})
 
 (def fundedBy
+  "funded by"
   {:db/ident :fibo-sec-dbt-syn/fundedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-syn/SyntheticDebtInstrumentPool,
@@ -290,6 +298,7 @@
    :rdfs/range :fibo-sec-dbt-syn/SyntheticDebtInstrumentPoolFundingAsset})
 
 (def hasInvestmentGrade
+  "has investment grade"
   {:db/ident :fibo-sec-dbt-syn/hasInvestmentGrade,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-syn/SyntheticDebtInstrumentPoolFundingAsset,
@@ -315,6 +324,7 @@
     "The underlying CDS which is created to mechanise the cash flows in the synthetic portfolio."}})
 
 (def holds
+  "holds"
   {:db/ident :fibo-sec-dbt-syn/holds,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-syn/SyntheticDebtSPV,
@@ -340,6 +350,7 @@
     "Whether the CDO has an underlying pool of real assets. This is No: the CDO has a synthetic pool of underlying assets."}})
 
 (def isTrancheOf
+  "is tranche of"
   {:db/ident :fibo-sec-dbt-syn/isTrancheOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-syn/SyntheticCDOTranche,
@@ -350,6 +361,7 @@
    :rdfs/range :fibo-sec-dbt-syn/SyntheticDebtInstrumentPool})
 
 (def issues
+  "issues"
   {:db/ident :fibo-sec-dbt-syn/issues,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-syn/SyntheticCDO,
@@ -360,6 +372,7 @@
    :rdfs/range :fibo-sec-dbt-syn/SyntheticCDOTranche})
 
 (def makesReferenceTo
+  "makes reference to"
   {:db/ident :fibo-sec-dbt-syn/makesReferenceTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-syn/SyntheticDebtInstrumentPool,
@@ -370,6 +383,7 @@
    :rdfs/range :fibo-sec-dbt-syn/SyntheticCDOPortfolio})
 
 (def notionallyHolds
+  "notionally holds"
   {:db/ident :fibo-sec-dbt-syn/notionallyHolds,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-syn/SyntheticCDOPortfolio,
@@ -410,6 +424,7 @@
     "The underlying CDS which is created to mechanise the cash flows in the synthetic portfolio."}})
 
 (def simulates
+  "simulates"
   {:db/ident :fibo-sec-dbt-syn/simulates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-syn/SyntheticPoolAsset,
@@ -419,6 +434,7 @@
                 :rdf/value    "simulates"}})
 
 (def simulates.1
+  "simulates"
   {:db/ident :fibo-sec-dbt-syn/simulates.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-syn/SyntheticDebtInstrumentPool,
@@ -428,6 +444,7 @@
                 :rdf/value    "simulates"}})
 
 (def trancheType
+  "tranche type"
   {:db/ident :fibo-sec-dbt-syn/trancheType,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-syn/SyntheticCDOTranche,

@@ -66,6 +66,7 @@
    :sm/filename "CommonInterestRates.rdf"})
 
 (def AED-EIBOR
+  "AED-EIBOR"
   {:db/ident :fibo-ind-ir-cm/AED-EIBOR,
    :fibo-fnd-utl-av/abbreviation "AED-EIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -77,6 +78,7 @@
    :rdfs/label "AED-EIBOR"})
 
 (def AUD-AONIA
+  "AUD-AONIA"
   {:db/ident :fibo-ind-ir-cm/AUD-AONIA,
    :fibo-fnd-utl-av/abbreviation "AUD-AONIA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -88,6 +90,7 @@
    :rdfs/label "AUD-AONIA"})
 
 (def AUD-AONIA-OIS_Compound
+  "AUD-AONIA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/AUD-AONIA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "AUD-AONIA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -99,6 +102,7 @@
    :rdfs/label "AUD-AONIA-OIS Compound"})
 
 (def AUD-BBR-ISDC
+  "AUD-BBR-ISDC"
   {:db/ident :fibo-ind-ir-cm/AUD-BBR-ISDC,
    :fibo-fnd-utl-av/abbreviation "AUD-BBR-ISDC",
    :fibo-fnd-utl-av/explanatoryNote
@@ -110,6 +114,7 @@
    :rdfs/label "AUD-BBR-ISDC"})
 
 (def AUD-BBSW
+  "AUD-BBSW"
   {:db/ident :fibo-ind-ir-cm/AUD-BBSW,
    :fibo-fnd-utl-av/abbreviation "AUD-BBSW",
    :fibo-fnd-utl-av/explanatoryNote
@@ -121,6 +126,7 @@
    :rdfs/label "AUD-BBSW"})
 
 (def AUD-BBSW_Quarterly_Swap_Rate_ICAP
+  "AUD-BBSW Quarterly Swap Rate ICAP"
   {:db/ident :fibo-ind-ir-cm/AUD-BBSW_Quarterly_Swap_Rate_ICAP,
    :fibo-fnd-utl-av/abbreviation "AUD-BBSW Quarterly Swap Rate ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -132,6 +138,7 @@
    :rdfs/label "AUD-BBSW Quarterly Swap Rate ICAP"})
 
 (def AUD-BBSW_Semi_Annual_Swap_Rate_ICAP
+  "AUD-BBSW Semi Annual Swap Rate ICAP"
   {:db/ident :fibo-ind-ir-cm/AUD-BBSW_Semi_Annual_Swap_Rate_ICAP,
    :fibo-fnd-utl-av/abbreviation "AUD-BBSW Semi Annual Swap Rate ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -144,6 +151,7 @@
    :rdfs/label "AUD-BBSW Semi Annual Swap Rate ICAP"})
 
 (def AUD-BBSY_Bid
+  "AUD-BBSY Bid"
   {:db/ident :fibo-ind-ir-cm/AUD-BBSY_Bid,
    :fibo-fnd-utl-av/abbreviation "AUD-BBSY Bid",
    :fibo-fnd-utl-av/explanatoryNote
@@ -155,6 +163,7 @@
    :rdfs/label "AUD-BBSY Bid"})
 
 (def AUD-LIBOR-BBA
+  "AUD-LIBOR-BBA"
   {:db/ident :fibo-ind-ir-cm/AUD-LIBOR-BBA,
    :fibo-fnd-utl-av/abbreviation "AUD-LIBOR-BBA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -166,6 +175,7 @@
    :rdfs/label "AUD-LIBOR-BBA"})
 
 (def AUD-LIBOR-BBA-Bloomberg
+  "AUD-LIBOR-BBA-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/AUD-LIBOR-BBA-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation "AUD-LIBOR-BBA-Bloomberg",
@@ -178,6 +188,7 @@
    :rdfs/label "AUD-LIBOR-BBA-Bloomberg"})
 
 (def AUD-LIBOR-Reference_Banks
+  "AUD-LIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/AUD-LIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "AUD-LIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -189,6 +200,7 @@
    :rdfs/label "AUD-LIBOR-Reference Banks"})
 
 (def AUD-Quarterly_Swap_Rate-ICAP-Reference_Banks
+  "AUD-Quarterly Swap Rate-ICAP-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/AUD-Quarterly_Swap_Rate-ICAP-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "AUD-Quarterly Swap Rate-ICAP-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -201,6 +213,7 @@
    :rdfs/label "AUD-Quarterly Swap Rate-ICAP-Reference Banks"})
 
 (def AUD-Semi-Annual_Swap_Rate-11_00-BGCANTOR
+  "AUD-Semi-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/AUD-Semi-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "AUD-Semi-Annual Swap Rate-11:00-BGCANTOR",
@@ -214,6 +227,7 @@
    :rdfs/label "AUD-Semi-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def AUD-Semi-Annual_Swap_Rate-BGCANTOR-Reference_Banks
+  "AUD-Semi-Annual Swap Rate-BGCANTOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/AUD-Semi-Annual_Swap_Rate-BGCANTOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
    "AUD-Semi-Annual Swap Rate-BGCANTOR-Reference Banks",
@@ -227,6 +241,7 @@
    :rdfs/label "AUD-Semi-Annual Swap Rate-BGCANTOR-Reference Banks"})
 
 (def AUD-Semi-Annual_Swap_Rate-ICAP-Reference_Banks
+  "AUD-Semi-Annual Swap Rate-ICAP-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/AUD-Semi-Annual_Swap_Rate-ICAP-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
    "AUD-Semi-Annual Swap Rate-ICAP-Reference Banks",
@@ -240,6 +255,7 @@
    :rdfs/label "AUD-Semi-Annual Swap Rate-ICAP-Reference Banks"})
 
 (def AUD-Swap_Rate-Reuters
+  "AUD-Swap Rate-Reuters"
   {:db/ident :fibo-ind-ir-cm/AUD-Swap_Rate-Reuters,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "AUD-Swap Rate-Reuters",
@@ -252,6 +268,7 @@
    :rdfs/label "AUD-Swap Rate-Reuters"})
 
 (def BRL-CDI
+  "BRL-CDI"
   {:db/ident :fibo-ind-ir-cm/BRL-CDI,
    :fibo-fnd-utl-av/abbreviation "BRL-CDI",
    :fibo-fnd-utl-av/explanatoryNote
@@ -263,6 +280,7 @@
    :rdfs/label "BRL-CDI"})
 
 (def CAD-BA-ISDD
+  "CAD-BA-ISDD"
   {:db/ident :fibo-ind-ir-cm/CAD-BA-ISDD,
    :fibo-fnd-utl-av/abbreviation "CAD-BA-ISDD",
    :fibo-fnd-utl-av/explanatoryNote
@@ -274,6 +292,7 @@
    :rdfs/label "CAD-BA-ISDD"})
 
 (def CAD-BA-Reference_Banks
+  "CAD-BA-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/CAD-BA-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "CAD-BA-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -285,6 +304,7 @@
    :rdfs/label "CAD-BA-Reference Banks"})
 
 (def CAD-BA-Telerate
+  "CAD-BA-Telerate"
   {:db/ident :fibo-ind-ir-cm/CAD-BA-Telerate,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "CAD-BA-Telerate",
@@ -297,6 +317,7 @@
    :rdfs/label "CAD-BA-Telerate"})
 
 (def CAD-CDOR
+  "CAD-CDOR"
   {:db/ident :fibo-ind-ir-cm/CAD-CDOR,
    :fibo-fnd-utl-av/abbreviation "CAD-CDOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -308,6 +329,7 @@
    :rdfs/label "CAD-CDOR"})
 
 (def CAD-CORRA
+  "CAD-CORRA"
   {:db/ident :fibo-ind-ir-cm/CAD-CORRA,
    :fibo-fnd-utl-av/abbreviation "CAD-CORRA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -319,6 +341,7 @@
    :rdfs/label "CAD-CORRA"})
 
 (def CAD-CORRA-OIS_Compound
+  "CAD-CORRA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/CAD-CORRA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "CAD-CORRA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -330,6 +353,7 @@
    :rdfs/label "CAD-CORRA-OIS Compound"})
 
 (def CAD-ISDA-Swap_Rate
+  "CAD-ISDA-Swap Rate"
   {:db/ident :fibo-ind-ir-cm/CAD-ISDA-Swap_Rate,
    :fibo-fnd-utl-av/abbreviation "CAD-ISDA-Swap Rate",
    :fibo-fnd-utl-av/explanatoryNote
@@ -341,6 +365,7 @@
    :rdfs/label "CAD-ISDA-Swap Rate"})
 
 (def CAD-LIBOR-BBA
+  "CAD-LIBOR-BBA"
   {:db/ident :fibo-ind-ir-cm/CAD-LIBOR-BBA,
    :fibo-fnd-utl-av/abbreviation "CAD-LIBOR-BBA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -352,6 +377,7 @@
    :rdfs/label "CAD-LIBOR-BBA"})
 
 (def CAD-LIBOR-BBA-Bloomberg
+  "CAD-LIBOR-BBA-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/CAD-LIBOR-BBA-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation "CAD-LIBOR-BBA-Bloomberg",
@@ -364,6 +390,7 @@
    :rdfs/label "CAD-LIBOR-BBA-Bloomberg"})
 
 (def CAD-LIBOR-BBA-SwapMarker
+  "CAD-LIBOR-BBA-SwapMarker"
   {:db/ident :fibo-ind-ir-cm/CAD-LIBOR-BBA-SwapMarker,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/SwapMarker,
    :fibo-fnd-utl-av/abbreviation "CAD-LIBOR-BBA-SwapMarker",
@@ -376,6 +403,7 @@
    :rdfs/label "CAD-LIBOR-BBA-SwapMarker"})
 
 (def CAD-LIBOR-Reference_Banks
+  "CAD-LIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/CAD-LIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "CAD-LIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -387,6 +415,7 @@
    :rdfs/label "CAD-LIBOR-Reference Banks"})
 
 (def CAD-REPO-CORRA
+  "CAD-REPO-CORRA"
   {:db/ident :fibo-ind-ir-cm/CAD-REPO-CORRA,
    :fibo-fnd-utl-av/abbreviation "CAD-REPO-CORRA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -398,6 +427,7 @@
    :rdfs/label "CAD-REPO-CORRA"})
 
 (def CAD-TBILL-ISDD
+  "CAD-TBILL-ISDD"
   {:db/ident :fibo-ind-ir-cm/CAD-TBILL-ISDD,
    :fibo-fnd-utl-av/abbreviation "CAD-TBILL-ISDD",
    :fibo-fnd-utl-av/explanatoryNote
@@ -409,6 +439,7 @@
    :rdfs/label "CAD-TBILL-ISDD"})
 
 (def CAD-TBILL-Reference_Banks
+  "CAD-TBILL-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/CAD-TBILL-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "CAD-TBILL-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -420,6 +451,7 @@
    :rdfs/label "CAD-TBILL-Reference Banks"})
 
 (def CAD-TBILL-Reuters
+  "CAD-TBILL-Reuters"
   {:db/ident :fibo-ind-ir-cm/CAD-TBILL-Reuters,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "CAD-TBILL-Reuters",
@@ -432,6 +464,7 @@
    :rdfs/label "CAD-TBILL-Reuters"})
 
 (def CAD-TBILL-Telerate
+  "CAD-TBILL-Telerate"
   {:db/ident :fibo-ind-ir-cm/CAD-TBILL-Telerate,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "CAD-TBILL-Telerate",
@@ -444,6 +477,7 @@
    :rdfs/label "CAD-TBILL-Telerate"})
 
 (def CHF-3M_LIBOR_SWAP-CME_vs_LCH-ICAP
+  "CHF-3M LIBOR SWAP-CME vs LCH-ICAP"
   {:db/ident :fibo-ind-ir-cm/CHF-3M_LIBOR_SWAP-CME_vs_LCH-ICAP,
    :fibo-fnd-utl-av/abbreviation "CHF-3M LIBOR SWAP-CME vs LCH-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -456,6 +490,7 @@
    :rdfs/label "CHF-3M LIBOR SWAP-CME vs LCH-ICAP"})
 
 (def CHF-3M_LIBOR_SWAP-CME_vs_LCH-ICAP-Bloomberg
+  "CHF-3M LIBOR SWAP-CME vs LCH-ICAP-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/CHF-3M_LIBOR_SWAP-CME_vs_LCH-ICAP-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation "CHF-3M LIBOR SWAP-CME vs LCH-ICAP-Bloomberg",
@@ -469,6 +504,7 @@
    :rdfs/label "CHF-3M LIBOR SWAP-CME vs LCH-ICAP-Bloomberg"})
 
 (def CHF-3M_LIBOR_SWAP-EUREX_vs_LCH-ICAP
+  "CHF-3M LIBOR SWAP-EUREX vs LCH-ICAP"
   {:db/ident :fibo-ind-ir-cm/CHF-3M_LIBOR_SWAP-EUREX_vs_LCH-ICAP,
    :fibo-fnd-utl-av/abbreviation "CHF-3M LIBOR SWAP-EUREX vs LCH-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -481,6 +517,7 @@
    :rdfs/label "CHF-3M LIBOR SWAP-EUREX vs LCH-ICAP"})
 
 (def CHF-3M_LIBOR_SWAP-EUREX_vs_LCH-ICAP-Bloomberg
+  "CHF-3M LIBOR SWAP-EUREX vs LCH-ICAP-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/CHF-3M_LIBOR_SWAP-EUREX_vs_LCH-ICAP-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation
@@ -495,6 +532,7 @@
    :rdfs/label "CHF-3M LIBOR SWAP-EUREX vs LCH-ICAP-Bloomberg"})
 
 (def CHF-6M_LIBORSWAP-CME_vs_LCH-ICAP-Bloomberg
+  "CHF-6M LIBORSWAP-CME vs LCH-ICAP-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/CHF-6M_LIBORSWAP-CME_vs_LCH-ICAP-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation "CHF-6M LIBORSWAP-CME vs LCH-ICAP-Bloomberg",
@@ -508,6 +546,7 @@
    :rdfs/label "CHF-6M LIBORSWAP-CME vs LCH-ICAP-Bloomberg"})
 
 (def CHF-6M_LIBOR_SWAP-CME_vs_LCH-ICAP
+  "CHF-6M LIBOR SWAP-CME vs LCH-ICAP"
   {:db/ident :fibo-ind-ir-cm/CHF-6M_LIBOR_SWAP-CME_vs_LCH-ICAP,
    :fibo-fnd-utl-av/abbreviation "CHF-6M LIBOR SWAP-CME vs LCH-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -520,6 +559,7 @@
    :rdfs/label "CHF-6M LIBOR SWAP-CME vs LCH-ICAP"})
 
 (def CHF-6M_LIBOR_SWAP-EUREX_vs_LCH-ICAP
+  "CHF-6M LIBOR SWAP-EUREX vs LCH-ICAP"
   {:db/ident :fibo-ind-ir-cm/CHF-6M_LIBOR_SWAP-EUREX_vs_LCH-ICAP,
    :fibo-fnd-utl-av/abbreviation "CHF-6M LIBOR SWAP-EUREX vs LCH-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -532,6 +572,7 @@
    :rdfs/label "CHF-6M LIBOR SWAP-EUREX vs LCH-ICAP"})
 
 (def CHF-6M_LIBOR_SWAP-EUREX_vs_LCH-ICAP-Bloomberg
+  "CHF-6M LIBOR SWAP-EUREX vs LCH-ICAP-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/CHF-6M_LIBOR_SWAP-EUREX_vs_LCH-ICAP-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation
@@ -546,6 +587,7 @@
    :rdfs/label "CHF-6M LIBOR SWAP-EUREX vs LCH-ICAP-Bloomberg"})
 
 (def CHF-Annual_Swap_Rate
+  "CHF-Annual Swap Rate"
   {:db/ident :fibo-ind-ir-cm/CHF-Annual_Swap_Rate,
    :fibo-fnd-utl-av/abbreviation "CHF-Annual Swap Rate",
    :fibo-fnd-utl-av/explanatoryNote
@@ -558,6 +600,7 @@
    :rdfs/label "CHF-Annual Swap Rate"})
 
 (def CHF-Annual_Swap_Rate-11_00-ICAP
+  "CHF-Annual Swap Rate-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/CHF-Annual_Swap_Rate-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "CHF-Annual Swap Rate-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -570,6 +613,7 @@
    :rdfs/label "CHF-Annual Swap Rate-11:00-ICAP"})
 
 (def CHF-Annual_Swap_Rate-Reference_Banks
+  "CHF-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/CHF-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "CHF-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -582,6 +626,7 @@
    :rdfs/label "CHF-Annual Swap Rate-Reference Banks"})
 
 (def CHF-Basis_Swap-3m_vs_6m-LIBOR-11_00-ICAP
+  "CHF-Basis Swap-3m vs 6m-LIBOR-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/CHF-Basis_Swap-3m_vs_6m-LIBOR-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "CHF-Basis Swap-3m vs 6m-LIBOR-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -593,6 +638,7 @@
    :rdfs/label "CHF-Basis Swap-3m vs 6m-LIBOR-11:00-ICAP"})
 
 (def CHF-ISDAFIX-Swap_Rate
+  "CHF-ISDAFIX-Swap Rate"
   {:db/ident :fibo-ind-ir-cm/CHF-ISDAFIX-Swap_Rate,
    :fibo-fnd-utl-av/abbreviation "CHF-ISDAFIX-Swap Rate",
    :fibo-fnd-utl-av/explanatoryNote
@@ -604,6 +650,7 @@
    :rdfs/label "CHF-ISDAFIX-Swap Rate"})
 
 (def CHF-LIBOR
+  "CHF-LIBOR"
   {:db/ident :fibo-ind-ir-cm/CHF-LIBOR,
    :fibo-fnd-utl-av/abbreviation "CHF-LIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -615,6 +662,7 @@
    :rdfs/label "CHF-LIBOR"})
 
 (def CHF-LIBOR-ISDA
+  "CHF-LIBOR-ISDA"
   {:db/ident :fibo-ind-ir-cm/CHF-LIBOR-ISDA,
    :fibo-fnd-utl-av/abbreviation "CHF-LIBOR-ISDA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -626,6 +674,7 @@
    :rdfs/label "CHF-LIBOR-ISDA"})
 
 (def CHF-LIBOR-Reference_Banks
+  "CHF-LIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/CHF-LIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "CHF-LIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -637,6 +686,7 @@
    :rdfs/label "CHF-LIBOR-Reference Banks"})
 
 (def CHF-OIS-11_00-ICAP
+  "CHF-OIS-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/CHF-OIS-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "CHF-OIS-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -648,6 +698,7 @@
    :rdfs/label "CHF-OIS-11:00-ICAP"})
 
 (def CHF-SARON
+  "CHF-SARON"
   {:db/ident :fibo-ind-ir-cm/CHF-SARON,
    :fibo-fnd-utl-av/abbreviation "CHF-SARON",
    :fibo-fnd-utl-av/explanatoryNote
@@ -659,6 +710,7 @@
    :rdfs/label "CHF-SARON"})
 
 (def CHF-SARON-OIS_Compound
+  "CHF-SARON-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/CHF-SARON-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "CHF-SARON-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -670,6 +722,7 @@
    :rdfs/label "CHF-SARON-OIS Compound"})
 
 (def CHF-TOIS-OIS-COMPOUND
+  "CHF-TOIS-OIS-COMPOUND"
   {:db/ident :fibo-ind-ir-cm/CHF-TOIS-OIS-COMPOUND,
    :fibo-fnd-utl-av/abbreviation "CHF-TOIS-OIS-COMPOUND",
    :fibo-fnd-utl-av/explanatoryNote
@@ -681,6 +734,7 @@
    :rdfs/label "CHF-TOIS-OIS-COMPOUND"})
 
 (def CHF_USD-Basis_Swaps-11_00-ICAP
+  "CHF USD-Basis Swaps-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/CHF_USD-Basis_Swaps-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "CHF USD-Basis Swaps-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -692,6 +746,7 @@
    :rdfs/label "CHF USD-Basis Swaps-11:00-ICAP"})
 
 (def CLP-ICP
+  "CLP-ICP"
   {:db/ident :fibo-ind-ir-cm/CLP-ICP,
    :fibo-fnd-utl-av/abbreviation "CLP-ICP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -703,6 +758,7 @@
    :rdfs/label "CLP-ICP"})
 
 (def CLP-TNA
+  "CLP-TNA"
   {:db/ident :fibo-ind-ir-cm/CLP-TNA,
    :fibo-fnd-utl-av/abbreviation "CLP-TNA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -714,6 +770,7 @@
    :rdfs/label "CLP-TNA"})
 
 (def CNH-HIBOR
+  "CNH-HIBOR"
   {:db/ident :fibo-ind-ir-cm/CNH-HIBOR,
    :fibo-fnd-utl-av/abbreviation "CNH-HIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -725,6 +782,7 @@
    :rdfs/label "CNH-HIBOR"})
 
 (def CNH-HIBOR-Reference_Banks
+  "CNH-HIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/CNH-HIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "CNH-HIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -736,6 +794,7 @@
    :rdfs/label "CNH-HIBOR-Reference Banks"})
 
 (def CNY-Deposit_Rate
+  "CNY-Deposit Rate"
   {:db/ident :fibo-ind-ir-cm/CNY-Deposit_Rate,
    :fibo-fnd-utl-av/abbreviation "CNY-Deposit Rate",
    :fibo-fnd-utl-av/explanatoryNote
@@ -747,6 +806,7 @@
    :rdfs/label "CNY-Deposit Rate"})
 
 (def CNY-Fixing_Repo_Rate
+  "CNY-Fixing Repo Rate"
   {:db/ident :fibo-ind-ir-cm/CNY-Fixing_Repo_Rate,
    :fibo-fnd-utl-av/abbreviation "CNY-Fixing Repo Rate",
    :fibo-fnd-utl-av/explanatoryNote
@@ -758,6 +818,7 @@
    :rdfs/label "CNY-Fixing Repo Rate"})
 
 (def CNY-LPR
+  "CNY-LPR"
   {:db/ident :fibo-ind-ir-cm/CNY-LPR,
    :fibo-fnd-utl-av/abbreviation "CNY-LPR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -769,6 +830,7 @@
    :rdfs/label "CNY-LPR"})
 
 (def CNY-Quarterly_7D_Repo_NDS_Rate_Tradition
+  "CNY-Quarterly 7D Repo NDS Rate Tradition"
   {:db/ident :fibo-ind-ir-cm/CNY-Quarterly_7D_Repo_NDS_Rate_Tradition,
    :fibo-fnd-utl-av/abbreviation "CNY-Quarterly 7D Repo NDS Rate Tradition",
    :fibo-fnd-utl-av/explanatoryNote
@@ -782,6 +844,7 @@
 
 (def
   CNY-Quarterly_7_day_Repo_Non_Deliverable_Swap_Rate-TRADITION-Reference_Banks
+  "CNY-Quarterly 7 day Repo Non Deliverable Swap Rate-TRADITION-Reference Banks"
   {:db/ident
    :fibo-ind-ir-cm/CNY-Quarterly_7_day_Repo_Non_Deliverable_Swap_Rate-TRADITION-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
@@ -797,6 +860,7 @@
    "CNY-Quarterly 7 day Repo Non Deliverable Swap Rate-TRADITION-Reference Banks"})
 
 (def CNY-SHIBOR
+  "CNY-SHIBOR"
   {:db/ident :fibo-ind-ir-cm/CNY-SHIBOR,
    :fibo-fnd-utl-av/abbreviation "CNY-SHIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -808,6 +872,7 @@
    :rdfs/label "CNY-SHIBOR"})
 
 (def CNY-SHIBOR-OIS_Compound
+  "CNY-SHIBOR-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/CNY-SHIBOR-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "CNY-SHIBOR-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -819,6 +884,7 @@
    :rdfs/label "CNY-SHIBOR-OIS Compound"})
 
 (def CNY-Semi-Annual_Swap_Rate-11_00-BGCANTOR
+  "CNY-Semi-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/CNY-Semi-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "CNY-Semi-Annual Swap Rate-11:00-BGCANTOR",
@@ -832,6 +898,7 @@
    :rdfs/label "CNY-Semi-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def CNY-Semi-Annual_Swap_Rate-Reference_Banks
+  "CNY-Semi-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/CNY-Semi-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "CNY-Semi-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -844,6 +911,7 @@
    :rdfs/label "CNY-Semi-Annual Swap Rate-Reference Banks"})
 
 (def CNY_7-Repo_Compounding_Date
+  "CNY 7-Repo Compounding Date"
   {:db/ident :fibo-ind-ir-cm/CNY_7-Repo_Compounding_Date,
    :fibo-fnd-utl-av/abbreviation "CNY 7-Repo Compounding Date",
    :fibo-fnd-utl-av/explanatoryNote
@@ -857,6 +925,7 @@
    :rdfs/label "CNY 7-Repo Compounding Date"})
 
 (def COP-IBR-OIS_Compound
+  "COP-IBR-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/COP-IBR-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "COP-IBR-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -868,6 +937,7 @@
    :rdfs/label "COP-IBR-OIS Compound"})
 
 (def CZK-Annual_Swap_Rate-11_00-BGCANTOR
+  "CZK-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/CZK-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "CZK-Annual Swap Rate-11:00-BGCANTOR",
@@ -881,6 +951,7 @@
    :rdfs/label "CZK-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def CZK-Annual_Swap_Rate-Reference_Banks
+  "CZK-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/CZK-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "CZK-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -893,6 +964,7 @@
    :rdfs/label "CZK-Annual Swap Rate-Reference Banks"})
 
 (def CZK-CZEONIA
+  "CZK-CZEONIA"
   {:db/ident :fibo-ind-ir-cm/CZK-CZEONIA,
    :fibo-fnd-utl-av/abbreviation "CZK-CZEONIA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -904,6 +976,7 @@
    :rdfs/label "CZK-CZEONIA"})
 
 (def CZK-CZEONIA-OIS_Compound
+  "CZK-CZEONIA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/CZK-CZEONIA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "CZK-CZEONIA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -915,6 +988,7 @@
    :rdfs/label "CZK-CZEONIA-OIS Compound"})
 
 (def CZK-PRIBOR
+  "CZK-PRIBOR"
   {:db/ident :fibo-ind-ir-cm/CZK-PRIBOR,
    :fibo-fnd-utl-av/abbreviation "CZK-PRIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -926,6 +1000,7 @@
    :rdfs/label "CZK-PRIBOR"})
 
 (def CZK-PRIBOR-Reference_Banks
+  "CZK-PRIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/CZK-PRIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "CZK-PRIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -937,6 +1012,7 @@
    :rdfs/label "CZK-PRIBOR-Reference Banks"})
 
 (def DKK-CIBOR
+  "DKK-CIBOR"
   {:db/ident :fibo-ind-ir-cm/DKK-CIBOR,
    :fibo-fnd-utl-av/abbreviation "DKK-CIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -948,6 +1024,7 @@
    :rdfs/label "DKK-CIBOR"})
 
 (def DKK-CIBOR-Reference_Banks
+  "DKK-CIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/DKK-CIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "DKK-CIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -959,6 +1036,7 @@
    :rdfs/label "DKK-CIBOR-Reference Banks"})
 
 (def DKK-CIBOR2
+  "DKK-CIBOR2"
   {:db/ident :fibo-ind-ir-cm/DKK-CIBOR2,
    :fibo-fnd-utl-av/abbreviation "DKK-CIBOR2",
    :fibo-fnd-utl-av/explanatoryNote
@@ -970,6 +1048,7 @@
    :rdfs/label "DKK-CIBOR2"})
 
 (def DKK-CITA
+  "DKK-CITA"
   {:db/ident :fibo-ind-ir-cm/DKK-CITA,
    :fibo-fnd-utl-av/abbreviation "DKK-CITA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -981,6 +1060,7 @@
    :rdfs/label "DKK-CITA"})
 
 (def DKK-Tom_Next-OIS_Compound
+  "DKK-Tom Next-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/DKK-Tom_Next-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "DKK-Tom Next-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -992,6 +1072,7 @@
    :rdfs/label "DKK-Tom Next-OIS Compound"})
 
 (def EUR-3M_EURIBOR_SWAP-CME_vs_LCH-ICAP
+  "EUR-3M EURIBOR SWAP-CME vs LCH-ICAP"
   {:db/ident :fibo-ind-ir-cm/EUR-3M_EURIBOR_SWAP-CME_vs_LCH-ICAP,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1006,6 +1087,7 @@
    :rdfs/label "EUR-3M EURIBOR SWAP-CME vs LCH-ICAP"})
 
 (def EUR-3M_EURIBOR_SWAP-CME_vs_LCH-ICAP-Bloomberg
+  "EUR-3M EURIBOR SWAP-CME vs LCH-ICAP-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/EUR-3M_EURIBOR_SWAP-CME_vs_LCH-ICAP-Bloomberg,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1022,6 +1104,7 @@
    :rdfs/label "EUR-3M EURIBOR SWAP-CME vs LCH-ICAP-Bloomberg"})
 
 (def EUR-3M_EURIBOR_SWAP-EUREX_vs_LCH-ICAP
+  "EUR-3M EURIBOR SWAP-EUREX vs LCH-ICAP"
   {:db/ident :fibo-ind-ir-cm/EUR-3M_EURIBOR_SWAP-EUREX_vs_LCH-ICAP,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1036,6 +1119,7 @@
    :rdfs/label "EUR-3M EURIBOR SWAP-EUREX vs LCH-ICAP"})
 
 (def EUR-3M_EURIBOR_SWAP-EUREX_vs_LCH-ICAP-Bloomberg
+  "EUR-3M EURIBOR SWAP-EUREX vs LCH-ICAP-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/EUR-3M_EURIBOR_SWAP-EUREX_vs_LCH-ICAP-Bloomberg,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1052,6 +1136,7 @@
    :rdfs/label "EUR-3M EURIBOR SWAP-EUREX vs LCH-ICAP-Bloomberg"})
 
 (def EUR-6M_EURIBOR_SWAP-CME_vs_LCH-ICAP
+  "EUR-6M EURIBOR SWAP-CME vs LCH-ICAP"
   {:db/ident :fibo-ind-ir-cm/EUR-6M_EURIBOR_SWAP-CME_vs_LCH-ICAP,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1066,6 +1151,7 @@
    :rdfs/label "EUR-6M EURIBOR SWAP-CME vs LCH-ICAP"})
 
 (def EUR-6M_EURIBOR_SWAP-CME_vs_LCH-ICAP-Bloomberg
+  "EUR-6M EURIBOR SWAP-CME vs LCH-ICAP-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/EUR-6M_EURIBOR_SWAP-CME_vs_LCH-ICAP-Bloomberg,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1082,6 +1168,7 @@
    :rdfs/label "EUR-6M EURIBOR SWAP-CME vs LCH-ICAP-Bloomberg"})
 
 (def EUR-6M_EURIBOR_SWAP-EUREX_vs_LCH-ICAP
+  "EUR-6M EURIBOR SWAP-EUREX vs LCH-ICAP"
   {:db/ident :fibo-ind-ir-cm/EUR-6M_EURIBOR_SWAP-EUREX_vs_LCH-ICAP,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1096,6 +1183,7 @@
    :rdfs/label "EUR-6M EURIBOR SWAP-EUREX vs LCH-ICAP"})
 
 (def EUR-6M_EURIBOR_SWAP-EUREX_vs_LCH-ICAP-Bloomberg
+  "EUR-6M EURIBOR SWAP-EUREX vs LCH-ICAP-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/EUR-6M_EURIBOR_SWAP-EUREX_vs_LCH-ICAP-Bloomberg,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1112,6 +1200,7 @@
    :rdfs/label "EUR-6M EURIBOR SWAP-EUREX vs LCH-ICAP-Bloomberg"})
 
 (def EUR-Annual_Swap_Rate-10_00
+  "EUR-Annual Swap Rate-10:00"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-10_00,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-10:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1124,6 +1213,7 @@
    :rdfs/label "EUR-Annual Swap Rate-10:00"})
 
 (def EUR-Annual_Swap_Rate-10_00-BGCANTOR
+  "EUR-Annual Swap Rate-10:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-10_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-10:00-BGCANTOR",
@@ -1137,6 +1227,7 @@
    :rdfs/label "EUR-Annual Swap Rate-10:00-BGCANTOR"})
 
 (def EUR-Annual_Swap_Rate-10_00-Bloomberg
+  "EUR-Annual Swap Rate-10:00-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-10_00-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-10:00-Bloomberg",
@@ -1150,6 +1241,7 @@
    :rdfs/label "EUR-Annual Swap Rate-10:00-Bloomberg"})
 
 (def EUR-Annual_Swap_Rate-10_00-ICAP
+  "EUR-Annual Swap Rate-10:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-10_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-10:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1162,6 +1254,7 @@
    :rdfs/label "EUR-Annual Swap Rate-10:00-ICAP"})
 
 (def EUR-Annual_Swap_Rate-10_00-SwapMarker
+  "EUR-Annual Swap Rate-10:00-SwapMarker"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-10_00-SwapMarker,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/SwapMarker,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-10:00-SwapMarker",
@@ -1175,6 +1268,7 @@
    :rdfs/label "EUR-Annual Swap Rate-10:00-SwapMarker"})
 
 (def EUR-Annual_Swap_Rate-10_00-TRADITION
+  "EUR-Annual Swap Rate-10:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-10_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-10:00-TRADITION",
@@ -1188,6 +1282,7 @@
    :rdfs/label "EUR-Annual Swap Rate-10:00-TRADITION"})
 
 (def EUR-Annual_Swap_Rate-11_00
+  "EUR-Annual Swap Rate-11:00"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-11_00,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-11:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1200,6 +1295,7 @@
    :rdfs/label "EUR-Annual Swap Rate-11:00"})
 
 (def EUR-Annual_Swap_Rate-11_00-Bloomberg
+  "EUR-Annual Swap Rate-11:00-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-11_00-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-11:00-Bloomberg",
@@ -1213,6 +1309,7 @@
    :rdfs/label "EUR-Annual Swap Rate-11:00-Bloomberg"})
 
 (def EUR-Annual_Swap_Rate-11_00-ICAP
+  "EUR-Annual Swap Rate-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1225,6 +1322,7 @@
    :rdfs/label "EUR-Annual Swap Rate-11:00-ICAP"})
 
 (def EUR-Annual_Swap_Rate-11_00-SwapMarker
+  "EUR-Annual Swap Rate-11:00-SwapMarker"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-11_00-SwapMarker,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/SwapMarker,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-11:00-SwapMarker",
@@ -1238,6 +1336,7 @@
    :rdfs/label "EUR-Annual Swap Rate-11:00-SwapMarker"})
 
 (def EUR-Annual_Swap_Rate-3_Month
+  "EUR-Annual Swap Rate-3 Month"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-3_Month,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-3 Month",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1250,6 +1349,7 @@
    :rdfs/label "EUR-Annual Swap Rate-3 Month"})
 
 (def EUR-Annual_Swap_Rate-3_Month-SwapMarker
+  "EUR-Annual Swap Rate-3 Month-SwapMarker"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-3_Month-SwapMarker,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/SwapMarker,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-3 Month-SwapMarker",
@@ -1263,6 +1363,7 @@
    :rdfs/label "EUR-Annual Swap Rate-3 Month-SwapMarker"})
 
 (def EUR-Annual_Swap_Rate-4_15-TRADITION
+  "EUR-Annual Swap Rate-4:15-TRADITION"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-4_15-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-4:15-TRADITION",
@@ -1276,6 +1377,7 @@
    :rdfs/label "EUR-Annual Swap Rate-4:15-TRADITION"})
 
 (def EUR-Annual_Swap_Rate-Reference_Banks
+  "EUR-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/EUR-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "EUR-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1288,6 +1390,7 @@
    :rdfs/label "EUR-Annual Swap Rate-Reference Banks"})
 
 (def EUR-CNO_TEC10
+  "EUR-CNO TEC10"
   {:db/ident :fibo-ind-ir-cm/EUR-CNO_TEC10,
    :fibo-fnd-utl-av/abbreviation "EUR-CNO TEC10",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1299,6 +1402,7 @@
    :rdfs/label "EUR-CNO TEC10"})
 
 (def EUR-EONIA
+  "EUR-EONIA"
   {:db/ident :fibo-ind-ir-cm/EUR-EONIA,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1312,6 +1416,7 @@
    :rdfs/label "EUR-EONIA"})
 
 (def EUR-EONIA-Average
+  "EUR-EONIA-Average"
   {:db/ident :fibo-ind-ir-cm/EUR-EONIA-Average,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1325,6 +1430,7 @@
    :rdfs/label "EUR-EONIA-Average"})
 
 (def EUR-EONIA-OIS-10_00-BGCANTOR
+  "EUR-EONIA-OIS-10:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/EUR-EONIA-OIS-10_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1339,6 +1445,7 @@
    :rdfs/label "EUR-EONIA-OIS-10:00-BGCANTOR"})
 
 (def EUR-EONIA-OIS-10_00-ICAP
+  "EUR-EONIA-OIS-10:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/EUR-EONIA-OIS-10_00-ICAP,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1352,6 +1459,7 @@
    :rdfs/label "EUR-EONIA-OIS-10:00-ICAP"})
 
 (def EUR-EONIA-OIS-10_00-TRADITION
+  "EUR-EONIA-OIS-10:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/EUR-EONIA-OIS-10_00-TRADITION,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1366,6 +1474,7 @@
    :rdfs/label "EUR-EONIA-OIS-10:00-TRADITION"})
 
 (def EUR-EONIA-OIS-11_00-ICAP
+  "EUR-EONIA-OIS-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/EUR-EONIA-OIS-11_00-ICAP,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1379,6 +1488,7 @@
    :rdfs/label "EUR-EONIA-OIS-11:00-ICAP"})
 
 (def EUR-EONIA-OIS-4_15-TRADITION
+  "EUR-EONIA-OIS-4:15-TRADITION"
   {:db/ident :fibo-ind-ir-cm/EUR-EONIA-OIS-4_15-TRADITION,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1393,6 +1503,7 @@
    :rdfs/label "EUR-EONIA-OIS-4:15-TRADITION"})
 
 (def EUR-EONIA-OIS_Compound
+  "EUR-EONIA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/EUR-EONIA-OIS_Compound,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1406,6 +1517,7 @@
    :rdfs/label "EUR-EONIA-OIS Compound"})
 
 (def EUR-EONIA-Swap-Index
+  "EUR-EONIA-Swap-Index"
   {:db/ident :fibo-ind-ir-cm/EUR-EONIA-Swap-Index,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1419,6 +1531,7 @@
    :rdfs/label "EUR-EONIA-Swap-Index"})
 
 (def EUR-EURIBOR
+  "EUR-EURIBOR"
   {:db/ident :fibo-ind-ir-cm/EUR-EURIBOR,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1432,6 +1545,7 @@
    :rdfs/label "EUR-EURIBOR"})
 
 (def EUR-EURIBOR-Act_365
+  "EUR-EURIBOR-Act/365"
   {:db/ident :fibo-ind-ir-cm/EUR-EURIBOR-Act_365,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1445,6 +1559,7 @@
    :rdfs/label "EUR-EURIBOR-Act/365"})
 
 (def EUR-EURIBOR-Act_365-Bloomberg
+  "EUR-EURIBOR-Act/365-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/EUR-EURIBOR-Act_365-Bloomberg,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1459,6 +1574,7 @@
    :rdfs/label "EUR-EURIBOR-Act/365-Bloomberg"})
 
 (def EUR-EURIBOR-Reference_Banks
+  "EUR-EURIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/EUR-EURIBOR-Reference_Banks,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1472,6 +1588,7 @@
    :rdfs/label "EUR-EURIBOR-Reference Banks"})
 
 (def EUR-EURIBOR-Telerate
+  "EUR-EURIBOR-Telerate"
   {:db/ident :fibo-ind-ir-cm/EUR-EURIBOR-Telerate,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1486,6 +1603,7 @@
    :rdfs/label "EUR-EURIBOR-Telerate"})
 
 (def EUR-EURIBOR_ICE_Swap_Rate-11_00
+  "EUR-EURIBOR ICE Swap Rate-11:00"
   {:db/ident :fibo-ind-ir-cm/EUR-EURIBOR_ICE_Swap_Rate-11_00,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1499,6 +1617,7 @@
    :rdfs/label "EUR-EURIBOR ICE Swap Rate-11:00"})
 
 (def EUR-EURIBOR_ICE_Swap_Rate-12_00
+  "EUR-EURIBOR ICE Swap Rate-12:00"
   {:db/ident :fibo-ind-ir-cm/EUR-EURIBOR_ICE_Swap_Rate-12_00,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1512,6 +1631,7 @@
    :rdfs/label "EUR-EURIBOR ICE Swap Rate-12:00"})
 
 (def EUR-EURONIA-OIS_Compound
+  "EUR-EURONIA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/EUR-EURONIA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "EUR-EURONIA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1523,6 +1643,7 @@
    :rdfs/label "EUR-EURONIA-OIS Compound"})
 
 (def EUR-EuroSTR
+  "EUR-EuroSTR"
   {:db/ident :fibo-ind-ir-cm/EUR-EuroSTR,
    :fibo-fnd-utl-av/abbreviation "EUR-EuroSTR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1534,6 +1655,7 @@
    :rdfs/label "EUR-EuroSTR"})
 
 (def EUR-EuroSTR-OIS_Compound
+  "EUR-EuroSTR-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/EUR-EuroSTR-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "EUR-EuroSTR-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1545,6 +1667,7 @@
    :rdfs/label "EUR-EuroSTR-OIS Compound"})
 
 (def EUR-EuroSTR_Average_12M
+  "EUR-EuroSTR Average 12M"
   {:db/ident :fibo-ind-ir-cm/EUR-EuroSTR_Average_12M,
    :fibo-fnd-utl-av/abbreviation "EUR-EuroSTR Average 12M",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1556,6 +1679,7 @@
    :rdfs/label "EUR-EuroSTR Average 12M"})
 
 (def EUR-EuroSTR_Average_1M
+  "EUR-EuroSTR Average 1M"
   {:db/ident :fibo-ind-ir-cm/EUR-EuroSTR_Average_1M,
    :fibo-fnd-utl-av/abbreviation "EUR-EuroSTR Average 1M",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1567,6 +1691,7 @@
    :rdfs/label "EUR-EuroSTR Average 1M"})
 
 (def EUR-EuroSTR_Average_1W
+  "EUR-EuroSTR Average 1W"
   {:db/ident :fibo-ind-ir-cm/EUR-EuroSTR_Average_1W,
    :fibo-fnd-utl-av/abbreviation "EUR-EuroSTR Average 1W",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1578,6 +1703,7 @@
    :rdfs/label "EUR-EuroSTR Average 1W"})
 
 (def EUR-EuroSTR_Average_3M
+  "EUR-EuroSTR Average 3M"
   {:db/ident :fibo-ind-ir-cm/EUR-EuroSTR_Average_3M,
    :fibo-fnd-utl-av/abbreviation "EUR-EuroSTR Average 3M",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1589,6 +1715,7 @@
    :rdfs/label "EUR-EuroSTR Average 3M"})
 
 (def EUR-EuroSTR_Average_6M
+  "EUR-EuroSTR Average 6M"
   {:db/ident :fibo-ind-ir-cm/EUR-EuroSTR_Average_6M,
    :fibo-fnd-utl-av/abbreviation "EUR-EuroSTR Average 6M",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1600,6 +1727,7 @@
    :rdfs/label "EUR-EuroSTR Average 6M"})
 
 (def EUR-EuroSTR_Compounded_Index
+  "EUR-EuroSTR Compounded Index"
   {:db/ident :fibo-ind-ir-cm/EUR-EuroSTR_Compounded_Index,
    :fibo-fnd-utl-av/abbreviation "EUR-EuroSTR Compounded Index",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1611,6 +1739,7 @@
    :rdfs/label "EUR-EuroSTR Compounded Index"})
 
 (def EUR-ISDA-LIBOR_Swap_Rate-10_00
+  "EUR-ISDA-LIBOR Swap Rate-10:00"
   {:db/ident :fibo-ind-ir-cm/EUR-ISDA-LIBOR_Swap_Rate-10_00,
    :fibo-fnd-utl-av/abbreviation "EUR-ISDA-LIBOR Swap Rate-10:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1622,6 +1751,7 @@
    :rdfs/label "EUR-ISDA-LIBOR Swap Rate-10:00"})
 
 (def EUR-ISDA-LIBOR_Swap_Rate-11_00
+  "EUR-ISDA-LIBOR Swap Rate-11:00"
   {:db/ident :fibo-ind-ir-cm/EUR-ISDA-LIBOR_Swap_Rate-11_00,
    :fibo-fnd-utl-av/abbreviation "EUR-ISDA-LIBOR Swap Rate-11:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1633,6 +1763,7 @@
    :rdfs/label "EUR-ISDA-LIBOR Swap Rate-11:00"})
 
 (def EUR-LIBOR
+  "EUR-LIBOR"
   {:db/ident :fibo-ind-ir-cm/EUR-LIBOR,
    :fibo-fnd-utl-av/abbreviation "EUR-LIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1644,6 +1775,7 @@
    :rdfs/label "EUR-LIBOR"})
 
 (def EUR-LIBOR-Reference_Banks
+  "EUR-LIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/EUR-LIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "EUR-LIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1655,6 +1787,7 @@
    :rdfs/label "EUR-LIBOR-Reference Banks"})
 
 (def EUR-TAM-CDC
+  "EUR-TAM-CDC"
   {:db/ident :fibo-ind-ir-cm/EUR-TAM-CDC,
    :fibo-fnd-utl-av/abbreviation "EUR-TAM-CDC",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1666,6 +1799,7 @@
    :rdfs/label "EUR-TAM-CDC"})
 
 (def EUR-TEC10-Reference_Banks
+  "EUR-TEC10-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/EUR-TEC10-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "EUR-TEC10-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1677,6 +1811,7 @@
    :rdfs/label "EUR-TEC10-Reference Banks"})
 
 (def EUR-TEC5-CNO
+  "EUR-TEC5-CNO"
   {:db/ident :fibo-ind-ir-cm/EUR-TEC5-CNO,
    :fibo-fnd-utl-av/abbreviation "EUR-TEC5-CNO",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1688,6 +1823,7 @@
    :rdfs/label "EUR-TEC5-CNO"})
 
 (def EUR-TEC5-CNO-SwapMarker
+  "EUR-TEC5-CNO-SwapMarker"
   {:db/ident :fibo-ind-ir-cm/EUR-TEC5-CNO-SwapMarker,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/SwapMarker,
    :fibo-fnd-utl-av/abbreviation "EUR-TEC5-CNO-SwapMarker",
@@ -1700,6 +1836,7 @@
    :rdfs/label "EUR-TEC5-CNO-SwapMarker"})
 
 (def EUR-TEC5-Reference_Banks
+  "EUR-TEC5-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/EUR-TEC5-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "EUR-TEC5-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1711,6 +1848,7 @@
    :rdfs/label "EUR-TEC5-Reference Banks"})
 
 (def EUR-TMM-CDC-COMPOUND
+  "EUR-TMM-CDC-COMPOUND"
   {:db/ident :fibo-ind-ir-cm/EUR-TMM-CDC-COMPOUND,
    :fibo-fnd-utl-av/abbreviation "EUR-TMM-CDC-COMPOUND",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1722,6 +1860,7 @@
    :rdfs/label "EUR-TMM-CDC-COMPOUND"})
 
 (def EUR_Basis_Swap-EONIA_vs_3m_EUR_IBOR_Swap_Rates-A_360-10_00-ICAP
+  "EUR Basis Swap-EONIA vs 3m EUR+IBOR Swap Rates-A/360-10:00-ICAP"
   {:db/ident
    :fibo-ind-ir-cm/EUR_Basis_Swap-EONIA_vs_3m_EUR_IBOR_Swap_Rates-A_360-10_00-ICAP,
    :fibo-fnd-rel-rel/isProducedBy
@@ -1738,6 +1877,7 @@
    "EUR Basis Swap-EONIA vs 3m EUR+IBOR Swap Rates-A/360-10:00-ICAP"})
 
 (def EUR_EURIBOR-Annual_Bond_Swap_vs_1m-11_00-ICAP
+  "EUR EURIBOR-Annual Bond Swap vs 1m-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/EUR_EURIBOR-Annual_Bond_Swap_vs_1m-11_00-ICAP,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1753,6 +1893,7 @@
    :rdfs/label "EUR EURIBOR-Annual Bond Swap vs 1m-11:00-ICAP"})
 
 (def EUR_EURIBOR-Basis_Swap-1m_vs_3m-Euribor-11_00-ICAP
+  "EUR EURIBOR-Basis Swap-1m vs 3m-Euribor-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/EUR_EURIBOR-Basis_Swap-1m_vs_3m-Euribor-11_00-ICAP,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1767,6 +1908,7 @@
    :rdfs/label "EUR EURIBOR-Basis Swap-1m vs 3m-Euribor-11:00-ICAP"})
 
 (def EUR_EURIBOR-Basis_Swap-3m_vs_6m-11_00-ICAP
+  "EUR EURIBOR-Basis Swap-3m vs 6m-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/EUR_EURIBOR-Basis_Swap-3m_vs_6m-11_00-ICAP,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
@@ -1780,6 +1922,7 @@
    :rdfs/label "EUR EURIBOR-Basis Swap-3m vs 6m-11:00-ICAP"})
 
 (def EUR_USD-Basis_Swaps-11_00-ICAP
+  "EUR USD-Basis Swaps-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/EUR_USD-Basis_Swaps-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "EUR USD-Basis Swaps-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1791,6 +1934,7 @@
    :rdfs/label "EUR USD-Basis Swaps-11:00-ICAP"})
 
 (def GBP-6M_LIBOR_SWAP-CME_vs_LCH-ICAP
+  "GBP-6M LIBOR SWAP-CME vs LCH-ICAP"
   {:db/ident :fibo-ind-ir-cm/GBP-6M_LIBOR_SWAP-CME_vs_LCH-ICAP,
    :fibo-fnd-utl-av/abbreviation "GBP-6M LIBOR SWAP-CME vs LCH-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1803,6 +1947,7 @@
    :rdfs/label "GBP-6M LIBOR SWAP-CME vs LCH-ICAP"})
 
 (def GBP-6M_LIBOR_SWAP-CME_vs_LCH-ICAP-Bloomberg
+  "GBP-6M LIBOR SWAP-CME vs LCH-ICAP-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/GBP-6M_LIBOR_SWAP-CME_vs_LCH-ICAP-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation "GBP-6M LIBOR SWAP-CME vs LCH-ICAP-Bloomberg",
@@ -1816,6 +1961,7 @@
    :rdfs/label "GBP-6M LIBOR SWAP-CME vs LCH-ICAP-Bloomberg"})
 
 (def GBP-6M_LIBOR_SWAP-EUREX_vs_LCH-ICAP
+  "GBP-6M LIBOR SWAP-EUREX vs LCH-ICAP"
   {:db/ident :fibo-ind-ir-cm/GBP-6M_LIBOR_SWAP-EUREX_vs_LCH-ICAP,
    :fibo-fnd-utl-av/abbreviation "GBP-6M LIBOR SWAP-EUREX vs LCH-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1828,6 +1974,7 @@
    :rdfs/label "GBP-6M LIBOR SWAP-EUREX vs LCH-ICAP"})
 
 (def GBP-6M_LIBOR_SWAP-EUREX_vs_LCH-ICAP-Bloomberg
+  "GBP-6M LIBOR SWAP-EUREX vs LCH-ICAP-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/GBP-6M_LIBOR_SWAP-EUREX_vs_LCH-ICAP-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation
@@ -1842,6 +1989,7 @@
    :rdfs/label "GBP-6M LIBOR SWAP-EUREX vs LCH-ICAP-Bloomberg"})
 
 (def GBP-LIBOR
+  "GBP-LIBOR"
   {:db/ident :fibo-ind-ir-cm/GBP-LIBOR,
    :fibo-fnd-utl-av/abbreviation "GBP-LIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1853,6 +2001,7 @@
    :rdfs/label "GBP-LIBOR"})
 
 (def GBP-LIBOR-ISDA
+  "GBP-LIBOR-ISDA"
   {:db/ident :fibo-ind-ir-cm/GBP-LIBOR-ISDA,
    :fibo-fnd-utl-av/abbreviation "GBP-LIBOR-ISDA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1864,6 +2013,7 @@
    :rdfs/label "GBP-LIBOR-ISDA"})
 
 (def GBP-LIBOR-Reference_Banks
+  "GBP-LIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/GBP-LIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "GBP-LIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1875,6 +2025,7 @@
    :rdfs/label "GBP-LIBOR-Reference Banks"})
 
 (def GBP-LIBOR_ICE_Swap_Rate
+  "GBP-LIBOR ICE Swap Rate"
   {:db/ident :fibo-ind-ir-cm/GBP-LIBOR_ICE_Swap_Rate,
    :fibo-fnd-utl-av/abbreviation "GBP-LIBOR ICE Swap Rate",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1886,6 +2037,7 @@
    :rdfs/label "GBP-LIBOR ICE Swap Rate"})
 
 (def GBP-RONIA
+  "GBP-RONIA"
   {:db/ident :fibo-ind-ir-cm/GBP-RONIA,
    :fibo-fnd-utl-av/abbreviation "GBP-RONIA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1897,6 +2049,7 @@
    :rdfs/label "GBP-RONIA"})
 
 (def GBP-RONIA-OIS_Compound
+  "GBP-RONIA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/GBP-RONIA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "GBP-RONIA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1908,6 +2061,7 @@
    :rdfs/label "GBP-RONIA-OIS Compound"})
 
 (def GBP-SONIA
+  "GBP-SONIA"
   {:db/ident :fibo-ind-ir-cm/GBP-SONIA,
    :fibo-fnd-utl-av/abbreviation "GBP-SONIA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1919,6 +2073,7 @@
    :rdfs/label "GBP-SONIA"})
 
 (def GBP-SONIA-OIS-11_00-ICAP
+  "GBP-SONIA-OIS-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/GBP-SONIA-OIS-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "GBP-SONIA-OIS-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1930,6 +2085,7 @@
    :rdfs/label "GBP-SONIA-OIS-11:00-ICAP"})
 
 (def GBP-SONIA-OIS-11_00-TRADITION
+  "GBP-SONIA-OIS-11:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/GBP-SONIA-OIS-11_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "GBP-SONIA-OIS-11:00-TRADITION",
@@ -1942,6 +2098,7 @@
    :rdfs/label "GBP-SONIA-OIS-11:00-TRADITION"})
 
 (def GBP-SONIA-OIS-4_15-TRADITION
+  "GBP-SONIA-OIS-4:15-TRADITION"
   {:db/ident :fibo-ind-ir-cm/GBP-SONIA-OIS-4_15-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "GBP-SONIA-OIS-4:15-TRADITION",
@@ -1954,6 +2111,7 @@
    :rdfs/label "GBP-SONIA-OIS-4:15-TRADITION"})
 
 (def GBP-SONIA-OIS_Compound
+  "GBP-SONIA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/GBP-SONIA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "GBP-SONIA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1965,6 +2123,7 @@
    :rdfs/label "GBP-SONIA-OIS Compound"})
 
 (def GBP-SONIA_Compounded_Index
+  "GBP-SONIA Compounded Index"
   {:db/ident :fibo-ind-ir-cm/GBP-SONIA_Compounded_Index,
    :fibo-fnd-utl-av/abbreviation "GBP-SONIA Compounded Index",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1976,6 +2135,7 @@
    :rdfs/label "GBP-SONIA Compounded Index"})
 
 (def GBP-SONIA_ICE_Swap_Rate
+  "GBP-SONIA ICE Swap Rate"
   {:db/ident :fibo-ind-ir-cm/GBP-SONIA_ICE_Swap_Rate,
    :fibo-fnd-utl-av/abbreviation "GBP-SONIA ICE Swap Rate",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1987,6 +2147,7 @@
    :rdfs/label "GBP-SONIA ICE Swap Rate"})
 
 (def GBP-SONIA_ICE_Term
+  "GBP-SONIA ICE Term"
   {:db/ident :fibo-ind-ir-cm/GBP-SONIA_ICE_Term,
    :fibo-fnd-utl-av/abbreviation "GBP-SONIA ICE Term",
    :fibo-fnd-utl-av/explanatoryNote
@@ -1998,6 +2159,7 @@
    :rdfs/label "GBP-SONIA ICE Term"})
 
 (def GBP-SONIA_Refinitiv_Term
+  "GBP-SONIA Refinitiv Term"
   {:db/ident :fibo-ind-ir-cm/GBP-SONIA_Refinitiv_Term,
    :fibo-fnd-utl-av/abbreviation "GBP-SONIA Refinitiv Term",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2009,6 +2171,7 @@
    :rdfs/label "GBP-SONIA Refinitiv Term"})
 
 (def GBP-Semi-Annual_Swap_Rate
+  "GBP-Semi-Annual Swap Rate"
   {:db/ident :fibo-ind-ir-cm/GBP-Semi-Annual_Swap_Rate,
    :fibo-fnd-utl-av/abbreviation "GBP-Semi-Annual Swap Rate",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2021,6 +2184,7 @@
    :rdfs/label "GBP-Semi-Annual Swap Rate"})
 
 (def GBP-Semi-Annual_Swap_Rate-11_00-ICAP
+  "GBP-Semi-Annual Swap Rate-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/GBP-Semi-Annual_Swap_Rate-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "GBP-Semi-Annual Swap Rate-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2033,6 +2197,7 @@
    :rdfs/label "GBP-Semi-Annual Swap Rate-11:00-ICAP"})
 
 (def GBP-Semi-Annual_Swap_Rate-Reference_Banks
+  "GBP-Semi-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/GBP-Semi-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "GBP-Semi-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2045,6 +2210,7 @@
    :rdfs/label "GBP-Semi-Annual Swap Rate-Reference Banks"})
 
 (def GBP-Semi-Annual_Swap_Rate-SwapMarker26
+  "GBP-Semi-Annual Swap Rate-SwapMarker26"
   {:db/ident :fibo-ind-ir-cm/GBP-Semi-Annual_Swap_Rate-SwapMarker26,
    :fibo-fnd-utl-av/abbreviation "GBP-Semi-Annual Swap Rate-SwapMarker26",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2057,6 +2223,7 @@
    :rdfs/label "GBP-Semi-Annual Swap Rate-SwapMarker26"})
 
 (def GBP-Semi_Annual_Swap_Rate-11_00-TRADITION
+  "GBP-Semi Annual Swap Rate-11:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/GBP-Semi_Annual_Swap_Rate-11_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "GBP-Semi Annual Swap Rate-11:00-TRADITION",
@@ -2070,6 +2237,7 @@
    :rdfs/label "GBP-Semi Annual Swap Rate-11:00-TRADITION"})
 
 (def GBP-Semi_Annual_Swap_Rate-4_15-TRADITION
+  "GBP-Semi Annual Swap Rate-4:15-TRADITION"
   {:db/ident :fibo-ind-ir-cm/GBP-Semi_Annual_Swap_Rate-4_15-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "GBP-Semi Annual Swap Rate-4:15-TRADITION",
@@ -2083,6 +2251,7 @@
    :rdfs/label "GBP-Semi Annual Swap Rate-4:15-TRADITION"})
 
 (def GBP-UK_Base_Rate
+  "GBP-UK Base Rate"
   {:db/ident :fibo-ind-ir-cm/GBP-UK_Base_Rate,
    :fibo-fnd-utl-av/abbreviation "GBP-UK Base Rate",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2094,6 +2263,7 @@
    :rdfs/label "GBP-UK Base Rate"})
 
 (def GBP_USD-Basis_Swaps-11_00-ICAP
+  "GBP USD-Basis Swaps-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/GBP_USD-Basis_Swaps-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "GBP USD-Basis Swaps-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2105,6 +2275,7 @@
    :rdfs/label "GBP USD-Basis Swaps-11:00-ICAP"})
 
 (def GRD-ATHIBOR-ATHIBOR
+  "GRD-ATHIBOR-ATHIBOR"
   {:db/ident :fibo-ind-ir-cm/GRD-ATHIBOR-ATHIBOR,
    :fibo-fnd-utl-av/abbreviation "GRD-ATHIBOR-ATHIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2116,6 +2287,7 @@
    :rdfs/label "GRD-ATHIBOR-ATHIBOR"})
 
 (def GRD-ATHIBOR-Reference_Banks
+  "GRD-ATHIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/GRD-ATHIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "GRD-ATHIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2127,6 +2299,7 @@
    :rdfs/label "GRD-ATHIBOR-Reference Banks"})
 
 (def GRD-ATHIBOR-Telerate
+  "GRD-ATHIBOR-Telerate"
   {:db/ident :fibo-ind-ir-cm/GRD-ATHIBOR-Telerate,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "GRD-ATHIBOR-Telerate",
@@ -2139,6 +2312,7 @@
    :rdfs/label "GRD-ATHIBOR-Telerate"})
 
 (def GRD-ATHIMID-Reference_Banks
+  "GRD-ATHIMID-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/GRD-ATHIMID-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "GRD-ATHIMID-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2150,6 +2324,7 @@
    :rdfs/label "GRD-ATHIMID-Reference Banks"})
 
 (def GRD-ATHIMID-Reuters
+  "GRD-ATHIMID-Reuters"
   {:db/ident :fibo-ind-ir-cm/GRD-ATHIMID-Reuters,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "GRD-ATHIMID-Reuters",
@@ -2162,6 +2337,7 @@
    :rdfs/label "GRD-ATHIMID-Reuters"})
 
 (def HKD-HIBOR
+  "HKD-HIBOR"
   {:db/ident :fibo-ind-ir-cm/HKD-HIBOR,
    :fibo-fnd-utl-av/abbreviation "HKD-HIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2173,6 +2349,7 @@
    :rdfs/label "HKD-HIBOR"})
 
 (def HKD-HIBOR-HIBOR-Bloomberg
+  "HKD-HIBOR-HIBOR-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/HKD-HIBOR-HIBOR-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation "HKD-HIBOR-HIBOR-Bloomberg",
@@ -2187,6 +2364,7 @@
    :rdfs/label "HKD-HIBOR-HIBOR-Bloomberg"})
 
 (def HKD-HIBOR-HIBOR_
+  "HKD-HIBOR-HIBOR="
   {:db/ident :fibo-ind-ir-cm/HKD-HIBOR-HIBOR_,
    :fibo-fnd-utl-av/abbreviation "HKD-HIBOR-HIBOR=",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2200,6 +2378,7 @@
    :rdfs/label "HKD-HIBOR-HIBOR="})
 
 (def HKD-HIBOR-ISDC
+  "HKD-HIBOR-ISDC"
   {:db/ident :fibo-ind-ir-cm/HKD-HIBOR-ISDC,
    :fibo-fnd-utl-av/abbreviation "HKD-HIBOR-ISDC",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2211,6 +2390,7 @@
    :rdfs/label "HKD-HIBOR-ISDC"})
 
 (def HKD-HIBOR-Reference_Banks
+  "HKD-HIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/HKD-HIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "HKD-HIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2222,6 +2402,7 @@
    :rdfs/label "HKD-HIBOR-Reference Banks"})
 
 (def HKD-HONIA
+  "HKD-HONIA"
   {:db/ident :fibo-ind-ir-cm/HKD-HONIA,
    :fibo-fnd-utl-av/abbreviation "HKD-HONIA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2233,6 +2414,7 @@
    :rdfs/label "HKD-HONIA"})
 
 (def HKD-HONIA-OIS_Compound
+  "HKD-HONIA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/HKD-HONIA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "HKD-HONIA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2244,6 +2426,7 @@
    :rdfs/label "HKD-HONIA-OIS Compound"})
 
 (def HKD-ISDA-Swap_Rate-11_00
+  "HKD-ISDA-Swap Rate-11:00"
   {:db/ident :fibo-ind-ir-cm/HKD-ISDA-Swap_Rate-11_00,
    :fibo-fnd-utl-av/abbreviation "HKD-ISDA-Swap Rate-11:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2255,6 +2438,7 @@
    :rdfs/label "HKD-ISDA-Swap Rate-11:00"})
 
 (def HKD-ISDA-Swap_Rate-4_00
+  "HKD-ISDA-Swap Rate-4:00"
   {:db/ident :fibo-ind-ir-cm/HKD-ISDA-Swap_Rate-4_00,
    :fibo-fnd-utl-av/abbreviation "HKD-ISDA-Swap Rate-4:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2266,6 +2450,7 @@
    :rdfs/label "HKD-ISDA-Swap Rate-4:00"})
 
 (def HKD-Quarterly-Annual_Swap_Rate-11_00-BGCANTOR
+  "HKD-Quarterly-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/HKD-Quarterly-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation
@@ -2282,6 +2467,7 @@
    :rdfs/label "HKD-Quarterly-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def HKD-Quarterly-Annual_Swap_Rate-11_00-TRADITION
+  "HKD-Quarterly-Annual Swap Rate-11:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/HKD-Quarterly-Annual_Swap_Rate-11_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation
@@ -2298,6 +2484,7 @@
    :rdfs/label "HKD-Quarterly-Annual Swap Rate-11:00-TRADITION"})
 
 (def HKD-Quarterly-Annual_Swap_Rate-4_00-BGCANTOR
+  "HKD-Quarterly-Annual Swap Rate-4:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/HKD-Quarterly-Annual_Swap_Rate-4_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "HKD-Quarterly-Annual Swap Rate-4:00-BGCANTOR",
@@ -2313,6 +2500,7 @@
    :rdfs/label "HKD-Quarterly-Annual Swap Rate-4:00-BGCANTOR"})
 
 (def HKD-Quarterly-Annual_Swap_Rate-Reference_Banks
+  "HKD-Quarterly-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/HKD-Quarterly-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
    "HKD-Quarterly-Annual Swap Rate-Reference Banks",
@@ -2328,6 +2516,7 @@
    :rdfs/label "HKD-Quarterly-Annual Swap Rate-Reference Banks"})
 
 (def HKD-Quarterly-Quarterly_Swap_Rate-11_00-ICAP
+  "HKD-Quarterly-Quarterly Swap Rate-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/HKD-Quarterly-Quarterly_Swap_Rate-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "HKD-Quarterly-Quarterly Swap Rate-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2342,6 +2531,7 @@
    :rdfs/label "HKD-Quarterly-Quarterly Swap Rate-11:00-ICAP"})
 
 (def HKD-Quarterly-Quarterly_Swap_Rate-4_00-ICAP
+  "HKD-Quarterly-Quarterly Swap Rate-4:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/HKD-Quarterly-Quarterly_Swap_Rate-4_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "HKD-Quarterly-Quarterly Swap Rate-4:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2356,6 +2546,7 @@
    :rdfs/label "HKD-Quarterly-Quarterly Swap Rate-4:00-ICAP"})
 
 (def HKD-Quarterly-Quarterly_Swap_Rate-Reference_Banks
+  "HKD-Quarterly-Quarterly Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/HKD-Quarterly-Quarterly_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
    "HKD-Quarterly-Quarterly Swap Rate-Reference Banks",
@@ -2371,6 +2562,7 @@
    :rdfs/label "HKD-Quarterly-Quarterly Swap Rate-Reference Banks"})
 
 (def HUF-BUBOR
+  "HUF-BUBOR"
   {:db/ident :fibo-ind-ir-cm/HUF-BUBOR,
    :fibo-fnd-utl-av/abbreviation "HUF-BUBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2382,6 +2574,7 @@
    :rdfs/label "HUF-BUBOR"})
 
 (def HUF-BUBOR-Reference_Banks
+  "HUF-BUBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/HUF-BUBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "HUF-BUBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2393,6 +2586,7 @@
    :rdfs/label "HUF-BUBOR-Reference Banks"})
 
 (def HUF-HUFONIA
+  "HUF-HUFONIA"
   {:db/ident :fibo-ind-ir-cm/HUF-HUFONIA,
    :fibo-fnd-utl-av/abbreviation "HUF-HUFONIA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2404,6 +2598,7 @@
    :rdfs/label "HUF-HUFONIA"})
 
 (def IDR-IDMA-Bloomberg
+  "IDR-IDMA-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/IDR-IDMA-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation "IDR-IDMA-Bloomberg",
@@ -2416,6 +2611,7 @@
    :rdfs/label "IDR-IDMA-Bloomberg"})
 
 (def IDR-IDRFIX
+  "IDR-IDRFIX"
   {:db/ident :fibo-ind-ir-cm/IDR-IDRFIX,
    :fibo-fnd-utl-av/abbreviation "IDR-IDRFIX",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2427,6 +2623,7 @@
    :rdfs/label "IDR-IDRFIX"})
 
 (def IDR-JIBOR
+  "IDR-JIBOR"
   {:db/ident :fibo-ind-ir-cm/IDR-JIBOR,
    :fibo-fnd-utl-av/abbreviation "IDR-JIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2438,6 +2635,7 @@
    :rdfs/label "IDR-JIBOR"})
 
 (def IDR-SBI-Reuters
+  "IDR-SBI-Reuters"
   {:db/ident :fibo-ind-ir-cm/IDR-SBI-Reuters,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "IDR-SBI-Reuters",
@@ -2450,6 +2648,7 @@
    :rdfs/label "IDR-SBI-Reuters"})
 
 (def IDR-SOR-Reference_Banks
+  "IDR-SOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/IDR-SOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "IDR-SOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2461,6 +2660,7 @@
    :rdfs/label "IDR-SOR-Reference Banks"})
 
 (def IDR-SOR-Reuters
+  "IDR-SOR-Reuters"
   {:db/ident :fibo-ind-ir-cm/IDR-SOR-Reuters,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "IDR-SOR-Reuters",
@@ -2475,6 +2675,7 @@
    :rdfs/label "IDR-SOR-Reuters"})
 
 (def IDR-SOR-Telerate
+  "IDR-SOR-Telerate"
   {:db/ident :fibo-ind-ir-cm/IDR-SOR-Telerate,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "IDR-SOR-Telerate",
@@ -2487,6 +2688,7 @@
    :rdfs/label "IDR-SOR-Telerate"})
 
 (def IDR-Semi-Annual_Swap_Rate-11_00-BGCANTOR
+  "IDR-Semi-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/IDR-Semi-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "IDR-Semi-Annual Swap Rate-11:00-BGCANTOR",
@@ -2500,6 +2702,7 @@
    :rdfs/label "IDR-Semi-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def IDR-Semi-Annual_Swap_Rate-Reference_Banks
+  "IDR-Semi-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/IDR-Semi-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "IDR-Semi-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2512,6 +2715,7 @@
    :rdfs/label "IDR-Semi-Annual Swap Rate-Reference Banks"})
 
 (def IDR-Semi_Annual_Swap_Rate-Non-deliverable-16_00-Tullett_Prebon
+  "IDR-Semi Annual Swap Rate-Non-deliverable-16:00-Tullett Prebon"
   {:db/ident
    :fibo-ind-ir-cm/IDR-Semi_Annual_Swap_Rate-Non-deliverable-16_00-Tullett_Prebon,
    :fibo-fnd-utl-av/abbreviation
@@ -2527,6 +2731,7 @@
    "IDR-Semi Annual Swap Rate-Non-deliverable-16:00-Tullett Prebon"})
 
 (def ILS-TELBOR
+  "ILS-TELBOR"
   {:db/ident :fibo-ind-ir-cm/ILS-TELBOR,
    :fibo-fnd-utl-av/abbreviation "ILS-TELBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2538,6 +2743,7 @@
    :rdfs/label "ILS-TELBOR"})
 
 (def ILS-TELBOR-Reference_Banks
+  "ILS-TELBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/ILS-TELBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "ILS-TELBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2549,6 +2755,7 @@
    :rdfs/label "ILS-TELBOR-Reference Banks"})
 
 (def INR-BMK
+  "INR-BMK"
   {:db/ident :fibo-ind-ir-cm/INR-BMK,
    :fibo-fnd-utl-av/abbreviation "INR-BMK",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2562,6 +2769,7 @@
    :rdfs/label "INR-BMK"})
 
 (def INR-CMT
+  "INR-CMT"
   {:db/ident :fibo-ind-ir-cm/INR-CMT,
    :fibo-fnd-utl-av/abbreviation "INR-CMT",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2575,6 +2783,7 @@
    :rdfs/label "INR-CMT"})
 
 (def INR-INBMK-REUTERS
+  "INR-INBMK-REUTERS"
   {:db/ident :fibo-ind-ir-cm/INR-INBMK-REUTERS,
    :fibo-fnd-utl-av/abbreviation "INR-INBMK-REUTERS",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2588,6 +2797,7 @@
    :rdfs/label "INR-INBMK-REUTERS"})
 
 (def INR-MIBOR-OIS-COMPOUND
+  "INR-MIBOR-OIS-COMPOUND"
   {:db/ident :fibo-ind-ir-cm/INR-MIBOR-OIS-COMPOUND,
    :fibo-fnd-utl-av/abbreviation "INR-MIBOR-OIS-COMPOUND",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2599,6 +2809,7 @@
    :rdfs/label "INR-MIBOR-OIS-COMPOUND"})
 
 (def INR-MIBOR-OIS_Compound
+  "INR-MIBOR-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/INR-MIBOR-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "INR-MIBOR-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2610,6 +2821,7 @@
    :rdfs/label "INR-MIBOR-OIS Compound"})
 
 (def INR-MIBOR_OIS
+  "INR-MIBOR OIS"
   {:db/ident :fibo-ind-ir-cm/INR-MIBOR_OIS,
    :fibo-fnd-utl-av/abbreviation "INR-MIBOR OIS",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2621,6 +2833,7 @@
    :rdfs/label "INR-MIBOR OIS"})
 
 (def INR-MIFOR
+  "INR-MIFOR"
   {:db/ident :fibo-ind-ir-cm/INR-MIFOR,
    :fibo-fnd-utl-av/abbreviation "INR-MIFOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2632,6 +2845,7 @@
    :rdfs/label "INR-MIFOR"})
 
 (def INR-MITOR-OIS-COMPOUND
+  "INR-MITOR-OIS-COMPOUND"
   {:db/ident :fibo-ind-ir-cm/INR-MITOR-OIS-COMPOUND,
    :fibo-fnd-utl-av/abbreviation "INR-MITOR-OIS-COMPOUND",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2645,6 +2859,7 @@
    :rdfs/label "INR-MITOR-OIS-COMPOUND"})
 
 (def INR-Modified_MIFOR
+  "INR-Modified MIFOR"
   {:db/ident :fibo-ind-ir-cm/INR-Modified_MIFOR,
    :fibo-fnd-utl-av/abbreviation "INR-Modified MIFOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2656,6 +2871,7 @@
    :rdfs/label "INR-Modified MIFOR"})
 
 (def INR-Reference_Banks
+  "INR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/INR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "INR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2667,6 +2883,7 @@
    :rdfs/label "INR-Reference Banks"})
 
 (def INR-Semi-Annual_Swap_Rate-11_30-BGCANTOR
+  "INR-Semi-Annual Swap Rate-11:30-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/INR-Semi-Annual_Swap_Rate-11_30-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "INR-Semi-Annual Swap Rate-11:30-BGCANTOR",
@@ -2680,6 +2897,7 @@
    :rdfs/label "INR-Semi-Annual Swap Rate-11:30-BGCANTOR"})
 
 (def INR-Semi-Annual_Swap_Rate-Reference_Banks
+  "INR-Semi-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/INR-Semi-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "INR-Semi-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2692,6 +2910,7 @@
    :rdfs/label "INR-Semi-Annual Swap Rate-Reference Banks"})
 
 (def INR-Semi_Annual_Swap_Rate-Non-deliverable-16_00-Tullett_Prebon
+  "INR-Semi Annual Swap Rate-Non-deliverable-16:00-Tullett Prebon"
   {:db/ident
    :fibo-ind-ir-cm/INR-Semi_Annual_Swap_Rate-Non-deliverable-16_00-Tullett_Prebon,
    :fibo-fnd-utl-av/abbreviation
@@ -2707,6 +2926,7 @@
    "INR-Semi Annual Swap Rate-Non-deliverable-16:00-Tullett Prebon"})
 
 (def ISK-REIBOR
+  "ISK-REIBOR"
   {:db/ident :fibo-ind-ir-cm/ISK-REIBOR,
    :fibo-fnd-utl-av/abbreviation "ISK-REIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2718,6 +2938,7 @@
    :rdfs/label "ISK-REIBOR"})
 
 (def ISK-REIBOR-Reference_Banks
+  "ISK-REIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/ISK-REIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "ISK-REIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2729,6 +2950,7 @@
    :rdfs/label "ISK-REIBOR-Reference Banks"})
 
 (def JPY-Annual_Swap_Rate-11_00-TRADITION
+  "JPY-Annual Swap Rate-11:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/JPY-Annual_Swap_Rate-11_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "JPY-Annual Swap Rate-11:00-TRADITION",
@@ -2742,6 +2964,7 @@
    :rdfs/label "JPY-Annual Swap Rate-11:00-TRADITION"})
 
 (def JPY-Annual_Swap_Rate-3_00-TRADITION
+  "JPY-Annual Swap Rate-3:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/JPY-Annual_Swap_Rate-3_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "JPY-Annual Swap Rate-3:00-TRADITION",
@@ -2755,6 +2978,7 @@
    :rdfs/label "JPY-Annual Swap Rate-3:00-TRADITION"})
 
 (def JPY-BBSF-Bloomberg-10_00
+  "JPY-BBSF-Bloomberg-10:00"
   {:db/ident :fibo-ind-ir-cm/JPY-BBSF-Bloomberg-10_00,
    :fibo-fnd-utl-av/abbreviation "JPY-BBSF-Bloomberg-10:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2766,6 +2990,7 @@
    :rdfs/label "JPY-BBSF-Bloomberg-10:00"})
 
 (def JPY-BBSF-Bloomberg-15_00
+  "JPY-BBSF-Bloomberg-15:00"
   {:db/ident :fibo-ind-ir-cm/JPY-BBSF-Bloomberg-15_00,
    :fibo-fnd-utl-av/abbreviation "JPY-BBSF-Bloomberg-15:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2777,6 +3002,7 @@
    :rdfs/label "JPY-BBSF-Bloomberg-15:00"})
 
 (def JPY-Euroyen_TIBOR
+  "JPY-Euroyen TIBOR"
   {:db/ident :fibo-ind-ir-cm/JPY-Euroyen_TIBOR,
    :fibo-fnd-utl-av/abbreviation "JPY-Euroyen TIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2788,6 +3014,7 @@
    :rdfs/label "JPY-Euroyen TIBOR"})
 
 (def JPY-ISDA-Swap_Rate-10_00
+  "JPY-ISDA-Swap Rate-10:00"
   {:db/ident :fibo-ind-ir-cm/JPY-ISDA-Swap_Rate-10_00,
    :fibo-fnd-utl-av/abbreviation "JPY-ISDA-Swap Rate-10:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2799,6 +3026,7 @@
    :rdfs/label "JPY-ISDA-Swap Rate-10:00"})
 
 (def JPY-ISDA-Swap_Rate-15_00
+  "JPY-ISDA-Swap Rate-15:00"
   {:db/ident :fibo-ind-ir-cm/JPY-ISDA-Swap_Rate-15_00,
    :fibo-fnd-utl-av/abbreviation "JPY-ISDA-Swap Rate-15:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2810,6 +3038,7 @@
    :rdfs/label "JPY-ISDA-Swap Rate-15:00"})
 
 (def JPY-LIBOR
+  "JPY-LIBOR"
   {:db/ident :fibo-ind-ir-cm/JPY-LIBOR,
    :fibo-fnd-utl-av/abbreviation "JPY-LIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2821,6 +3050,7 @@
    :rdfs/label "JPY-LIBOR"})
 
 (def JPY-LIBOR-ISDA
+  "JPY-LIBOR-ISDA"
   {:db/ident :fibo-ind-ir-cm/JPY-LIBOR-ISDA,
    :fibo-fnd-utl-av/abbreviation "JPY-LIBOR-ISDA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2832,6 +3062,7 @@
    :rdfs/label "JPY-LIBOR-ISDA"})
 
 (def JPY-LIBOR-Reference_Banks
+  "JPY-LIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/JPY-LIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "JPY-LIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2843,6 +3074,7 @@
    :rdfs/label "JPY-LIBOR-Reference Banks"})
 
 (def JPY-LIBOR_TSR-10_00
+  "JPY-LIBOR TSR-10:00"
   {:db/ident :fibo-ind-ir-cm/JPY-LIBOR_TSR-10_00,
    :fibo-fnd-utl-av/abbreviation "JPY-LIBOR TSR-10:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2854,6 +3086,7 @@
    :rdfs/label "JPY-LIBOR TSR-10:00"})
 
 (def JPY-LIBOR_TSR-15_00
+  "JPY-LIBOR TSR-15:00"
   {:db/ident :fibo-ind-ir-cm/JPY-LIBOR_TSR-15_00,
    :fibo-fnd-utl-av/abbreviation "JPY-LIBOR TSR-15:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2865,6 +3098,7 @@
    :rdfs/label "JPY-LIBOR TSR-15:00"})
 
 (def JPY-LTPR-TBC
+  "JPY-LTPR-TBC"
   {:db/ident :fibo-ind-ir-cm/JPY-LTPR-TBC,
    :fibo-fnd-utl-av/abbreviation "JPY-LTPR-TBC",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2876,6 +3110,7 @@
    :rdfs/label "JPY-LTPR-TBC"})
 
 (def JPY-LTPR_MHBK
+  "JPY-LTPR MHBK"
   {:db/ident :fibo-ind-ir-cm/JPY-LTPR_MHBK,
    :fibo-fnd-utl-av/abbreviation "JPY-LTPR MHBK",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2887,6 +3122,7 @@
    :rdfs/label "JPY-LTPR MHBK"})
 
 (def JPY-MUTANCALL-TONAR
+  "JPY-MUTANCALL-TONAR"
   {:db/ident :fibo-ind-ir-cm/JPY-MUTANCALL-TONAR,
    :fibo-fnd-utl-av/abbreviation "JPY-MUTANCALL-TONAR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2898,6 +3134,7 @@
    :rdfs/label "JPY-MUTANCALL-TONAR"})
 
 (def JPY-OIS-11_00-ICAP
+  "JPY-OIS-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/JPY-OIS-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "JPY-OIS-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2909,6 +3146,7 @@
    :rdfs/label "JPY-OIS-11:00-ICAP"})
 
 (def JPY-OIS-11_00-TRADITION
+  "JPY-OIS-11:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/JPY-OIS-11_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "JPY-OIS-11:00-TRADITION",
@@ -2921,6 +3159,7 @@
    :rdfs/label "JPY-OIS-11:00-TRADITION"})
 
 (def JPY-OIS-3_00-TRADITION
+  "JPY-OIS-3:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/JPY-OIS-3_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "JPY-OIS-3:00-TRADITION",
@@ -2933,6 +3172,7 @@
    :rdfs/label "JPY-OIS-3:00-TRADITION"})
 
 (def JPY-Quoting_Banks-LIBOR
+  "JPY-Quoting Banks-LIBOR"
   {:db/ident :fibo-ind-ir-cm/JPY-Quoting_Banks-LIBOR,
    :fibo-fnd-utl-av/abbreviation "JPY-Quoting Banks-LIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2944,6 +3184,7 @@
    :rdfs/label "JPY-Quoting Banks-LIBOR"})
 
 (def JPY-STPR-Quoting_Banks
+  "JPY-STPR-Quoting Banks"
   {:db/ident :fibo-ind-ir-cm/JPY-STPR-Quoting_Banks,
    :fibo-fnd-utl-av/abbreviation "JPY-STPR-Quoting Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2955,6 +3196,7 @@
    :rdfs/label "JPY-STPR-Quoting Banks"})
 
 (def JPY-TIBOR
+  "JPY-TIBOR"
   {:db/ident :fibo-ind-ir-cm/JPY-TIBOR,
    :fibo-fnd-utl-av/abbreviation "JPY-TIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2966,6 +3208,7 @@
    :rdfs/label "JPY-TIBOR"})
 
 (def JPY-TIBOR-17096
+  "JPY-TIBOR-17096"
   {:db/ident :fibo-ind-ir-cm/JPY-TIBOR-17096,
    :fibo-fnd-utl-av/abbreviation "JPY-TIBOR-17096",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2977,6 +3220,7 @@
    :rdfs/label "JPY-TIBOR-17096"})
 
 (def JPY-TIBOR-DTIBOR01
+  "JPY-TIBOR-DTIBOR01"
   {:db/ident :fibo-ind-ir-cm/JPY-TIBOR-DTIBOR01,
    :fibo-fnd-utl-av/abbreviation "JPY-TIBOR-DTIBOR01",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2988,6 +3232,7 @@
    :rdfs/label "JPY-TIBOR-DTIBOR01"})
 
 (def JPY-TIBOR-TIBM
+  "JPY-TIBOR-TIBM"
   {:db/ident :fibo-ind-ir-cm/JPY-TIBOR-TIBM,
    :fibo-fnd-utl-av/abbreviation "JPY-TIBOR-TIBM",
    :fibo-fnd-utl-av/explanatoryNote
@@ -2999,6 +3244,7 @@
    :rdfs/label "JPY-TIBOR-TIBM"})
 
 (def JPY-TIBOR-TIBM-Reference_Banks
+  "JPY-TIBOR-TIBM-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/JPY-TIBOR-TIBM-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "JPY-TIBOR-TIBM-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3010,6 +3256,7 @@
    :rdfs/label "JPY-TIBOR-TIBM-Reference Banks"})
 
 (def JPY-TIBOR-TIBM_10_Banks
+  "JPY-TIBOR-TIBM (10 Banks)"
   {:db/ident :fibo-ind-ir-cm/JPY-TIBOR-TIBM_10_Banks,
    :fibo-fnd-utl-av/abbreviation "JPY-TIBOR-TIBM (10 Banks)",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3023,6 +3270,7 @@
    :rdfs/label "JPY-TIBOR-TIBM (10 Banks)"})
 
 (def JPY-TIBOR-TIBM_5_Banks
+  "JPY-TIBOR-TIBM (5 Banks)"
   {:db/ident :fibo-ind-ir-cm/JPY-TIBOR-TIBM_5_Banks,
    :fibo-fnd-utl-av/abbreviation "JPY-TIBOR-TIBM (5 Banks)",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3036,6 +3284,7 @@
    :rdfs/label "JPY-TIBOR-TIBM (5 Banks)"})
 
 (def JPY-TIBOR-TIBM_All_Banks
+  "JPY-TIBOR-TIBM (All Banks)"
   {:db/ident :fibo-ind-ir-cm/JPY-TIBOR-TIBM_All_Banks,
    :fibo-fnd-utl-av/abbreviation "JPY-TIBOR-TIBM (All Banks)",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3049,6 +3298,7 @@
    :rdfs/label "JPY-TIBOR-TIBM (All Banks)"})
 
 (def JPY-TONA
+  "JPY-TONA"
   {:db/ident :fibo-ind-ir-cm/JPY-TONA,
    :fibo-fnd-utl-av/abbreviation "JPY-TONA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3060,6 +3310,7 @@
    :rdfs/label "JPY-TONA"})
 
 (def JPY-TONA-OIS_Compound
+  "JPY-TONA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/JPY-TONA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "JPY-TONA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3071,6 +3322,7 @@
    :rdfs/label "JPY-TONA-OIS Compound"})
 
 (def JPY-TONA_Average_180D
+  "JPY-TONA Average 180D"
   {:db/ident :fibo-ind-ir-cm/JPY-TONA_Average_180D,
    :fibo-fnd-utl-av/abbreviation "JPY-TONA Average 180D",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3082,6 +3334,7 @@
    :rdfs/label "JPY-TONA Average 180D"})
 
 (def JPY-TONA_Average_30D
+  "JPY-TONA Average 30D"
   {:db/ident :fibo-ind-ir-cm/JPY-TONA_Average_30D,
    :fibo-fnd-utl-av/abbreviation "JPY-TONA Average 30D",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3093,6 +3346,7 @@
    :rdfs/label "JPY-TONA Average 30D"})
 
 (def JPY-TONA_Average_90D
+  "JPY-TONA Average 90D"
   {:db/ident :fibo-ind-ir-cm/JPY-TONA_Average_90D,
    :fibo-fnd-utl-av/abbreviation "JPY-TONA Average 90D",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3104,6 +3358,7 @@
    :rdfs/label "JPY-TONA Average 90D"})
 
 (def JPY-TONA_Compounded_Index
+  "JPY-TONA Compounded Index"
   {:db/ident :fibo-ind-ir-cm/JPY-TONA_Compounded_Index,
    :fibo-fnd-utl-av/abbreviation "JPY-TONA Compounded Index",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3115,6 +3370,7 @@
    :rdfs/label "JPY-TONA Compounded Index"})
 
 (def JPY-TONA_TSR-10_00
+  "JPY-TONA TSR-10:00"
   {:db/ident :fibo-ind-ir-cm/JPY-TONA_TSR-10_00,
    :fibo-fnd-utl-av/abbreviation "JPY-TONA TSR-10:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3126,6 +3382,7 @@
    :rdfs/label "JPY-TONA TSR-10:00"})
 
 (def JPY-TONA_TSR-15_00
+  "JPY-TONA TSR-15:00"
   {:db/ident :fibo-ind-ir-cm/JPY-TONA_TSR-15_00,
    :fibo-fnd-utl-av/abbreviation "JPY-TONA TSR-15:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3137,6 +3394,7 @@
    :rdfs/label "JPY-TONA TSR-15:00"})
 
 (def JPY-TORF_QUICK
+  "JPY-TORF QUICK"
   {:db/ident :fibo-ind-ir-cm/JPY-TORF_QUICK,
    :fibo-fnd-utl-av/abbreviation "JPY-TORF QUICK",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3148,6 +3406,7 @@
    :rdfs/label "JPY-TORF QUICK"})
 
 (def JPY-TSR-Reference_Banks
+  "JPY-TSR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/JPY-TSR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "JPY-TSR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3159,6 +3418,7 @@
    :rdfs/label "JPY-TSR-Reference Banks"})
 
 (def JPY-TSR-Telerate-10_00
+  "JPY-TSR-Telerate-10:00"
   {:db/ident :fibo-ind-ir-cm/JPY-TSR-Telerate-10_00,
    :fibo-fnd-utl-av/abbreviation "JPY-TSR-Telerate-10:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3170,6 +3430,7 @@
    :rdfs/label "JPY-TSR-Telerate-10:00"})
 
 (def JPY-TSR-Telerate-15_00
+  "JPY-TSR-Telerate-15:00"
   {:db/ident :fibo-ind-ir-cm/JPY-TSR-Telerate-15_00,
    :fibo-fnd-utl-av/abbreviation "JPY-TSR-Telerate-15:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3181,6 +3442,7 @@
    :rdfs/label "JPY-TSR-Telerate-15:00"})
 
 (def JPY_USD-Basis_Swaps-11_00-ICAP
+  "JPY USD-Basis Swaps-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/JPY_USD-Basis_Swaps-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "JPY USD-Basis Swaps-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3192,6 +3454,7 @@
    :rdfs/label "JPY USD-Basis Swaps-11:00-ICAP"})
 
 (def KRW-Bond-3222
+  "KRW-Bond-3222"
   {:db/ident :fibo-ind-ir-cm/KRW-Bond-3222,
    :fibo-fnd-utl-av/abbreviation "KRW-Bond-3222",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3203,6 +3466,7 @@
    :rdfs/label "KRW-Bond-3222"})
 
 (def KRW-CD_91D
+  "KRW-CD 91D"
   {:db/ident :fibo-ind-ir-cm/KRW-CD_91D,
    :fibo-fnd-utl-av/abbreviation "KRW-CD 91D",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3214,6 +3478,7 @@
    :rdfs/label "KRW-CD 91D"})
 
 (def KRW-Quarterly_Annual_Swap_Rate-3_30-ICAP
+  "KRW-Quarterly Annual Swap Rate-3:30-ICAP"
   {:db/ident :fibo-ind-ir-cm/KRW-Quarterly_Annual_Swap_Rate-3_30-ICAP,
    :fibo-fnd-utl-av/abbreviation "KRW-Quarterly Annual Swap Rate-3:30-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3226,6 +3491,7 @@
    :rdfs/label "KRW-Quarterly Annual Swap Rate-3:30-ICAP"})
 
 (def MXN-TIIE
+  "MXN-TIIE"
   {:db/ident :fibo-ind-ir-cm/MXN-TIIE,
    :fibo-fnd-utl-av/abbreviation "MXN-TIIE",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3237,6 +3503,7 @@
    :rdfs/label "MXN-TIIE"})
 
 (def MXN-TIIE-Banxico-Reference_Banks
+  "MXN-TIIE-Banxico-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/MXN-TIIE-Banxico-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "MXN-TIIE-Banxico-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3250,6 +3517,7 @@
    :rdfs/label "MXN-TIIE-Banxico-Reference Banks"})
 
 (def MXN-TIIE-Reference_Banks
+  "MXN-TIIE-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/MXN-TIIE-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "MXN-TIIE-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3261,6 +3529,7 @@
    :rdfs/label "MXN-TIIE-Reference Banks"})
 
 (def MYR-KLIBOR
+  "MYR-KLIBOR"
   {:db/ident :fibo-ind-ir-cm/MYR-KLIBOR,
    :fibo-fnd-utl-av/abbreviation "MYR-KLIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3272,6 +3541,7 @@
    :rdfs/label "MYR-KLIBOR"})
 
 (def MYR-KLIBOR-Reference_Banks
+  "MYR-KLIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/MYR-KLIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "MYR-KLIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3283,6 +3553,7 @@
    :rdfs/label "MYR-KLIBOR-Reference Banks"})
 
 (def MYR-Quarterly_Swap_Rate-11_00-TRADITION
+  "MYR-Quarterly Swap Rate-11:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/MYR-Quarterly_Swap_Rate-11_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "MYR-Quarterly Swap Rate-11:00-TRADITION",
@@ -3296,6 +3567,7 @@
    :rdfs/label "MYR-Quarterly Swap Rate-11:00-TRADITION"})
 
 (def MYR-Quarterly_Swap_Rate-TRADITION-Reference_Banks
+  "MYR-Quarterly Swap Rate-TRADITION-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/MYR-Quarterly_Swap_Rate-TRADITION-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
    "MYR-Quarterly Swap Rate-TRADITION-Reference Banks",
@@ -3309,6 +3581,7 @@
    :rdfs/label "MYR-Quarterly Swap Rate-TRADITION-Reference Banks"})
 
 (def NOK-NIBOR
+  "NOK-NIBOR"
   {:db/ident :fibo-ind-ir-cm/NOK-NIBOR,
    :fibo-fnd-utl-av/abbreviation "NOK-NIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3320,6 +3593,7 @@
    :rdfs/label "NOK-NIBOR"})
 
 (def NOK-NIBOR-NIBR
+  "NOK-NIBOR-NIBR"
   {:db/ident :fibo-ind-ir-cm/NOK-NIBOR-NIBR,
    :fibo-fnd-utl-av/abbreviation "NOK-NIBOR-NIBR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3333,6 +3607,7 @@
    :rdfs/label "NOK-NIBOR-NIBR"})
 
 (def NOK-NIBOR-NIBR-Reference_Banks
+  "NOK-NIBOR-NIBR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/NOK-NIBOR-NIBR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "NOK-NIBOR-NIBR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3346,6 +3621,7 @@
    :rdfs/label "NOK-NIBOR-NIBR-Reference Banks"})
 
 (def NOK-NIBOR-Reference_Banks
+  "NOK-NIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/NOK-NIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "NOK-NIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3357,6 +3633,7 @@
    :rdfs/label "NOK-NIBOR-Reference Banks"})
 
 (def NOK-NOWA
+  "NOK-NOWA"
   {:db/ident :fibo-ind-ir-cm/NOK-NOWA,
    :fibo-fnd-utl-av/abbreviation "NOK-NOWA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3368,6 +3645,7 @@
    :rdfs/label "NOK-NOWA"})
 
 (def NOK-NOWA-OIS_Compound
+  "NOK-NOWA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/NOK-NOWA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "NOK-NOWA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3379,6 +3657,7 @@
    :rdfs/label "NOK-NOWA-OIS Compound"})
 
 (def NZD-BBR-ISDC
+  "NZD-BBR-ISDC"
   {:db/ident :fibo-ind-ir-cm/NZD-BBR-ISDC,
    :fibo-fnd-utl-av/abbreviation "NZD-BBR-ISDC",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3390,6 +3669,7 @@
    :rdfs/label "NZD-BBR-ISDC"})
 
 (def NZD-BBR-Reference_Banks
+  "NZD-BBR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/NZD-BBR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "NZD-BBR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3401,6 +3681,7 @@
    :rdfs/label "NZD-BBR-Reference Banks"})
 
 (def NZD-BBR-Telerate
+  "NZD-BBR-Telerate"
   {:db/ident :fibo-ind-ir-cm/NZD-BBR-Telerate,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "NZD-BBR-Telerate",
@@ -3413,6 +3694,7 @@
    :rdfs/label "NZD-BBR-Telerate"})
 
 (def NZD-BKBM_Bid
+  "NZD-BKBM Bid"
   {:db/ident :fibo-ind-ir-cm/NZD-BKBM_Bid,
    :fibo-fnd-utl-av/abbreviation "NZD-BKBM Bid",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3424,6 +3706,7 @@
    :rdfs/label "NZD-BKBM Bid"})
 
 (def NZD-BKBM_FRA
+  "NZD-BKBM FRA"
   {:db/ident :fibo-ind-ir-cm/NZD-BKBM_FRA,
    :fibo-fnd-utl-av/abbreviation "NZD-BKBM FRA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3435,6 +3718,7 @@
    :rdfs/label "NZD-BKBM FRA"})
 
 (def NZD-BKBM_FRA_Swap_Rate_ICAP
+  "NZD-BKBM FRA Swap Rate ICAP"
   {:db/ident :fibo-ind-ir-cm/NZD-BKBM_FRA_Swap_Rate_ICAP,
    :fibo-fnd-utl-av/abbreviation "NZD-BKBM FRA Swap Rate ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3446,6 +3730,7 @@
    :rdfs/label "NZD-BKBM FRA Swap Rate ICAP"})
 
 (def NZD-NZIONA
+  "NZD-NZIONA"
   {:db/ident :fibo-ind-ir-cm/NZD-NZIONA,
    :fibo-fnd-utl-av/abbreviation "NZD-NZIONA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3457,6 +3742,7 @@
    :rdfs/label "NZD-NZIONA"})
 
 (def NZD-NZIONA-OIS_Compound
+  "NZD-NZIONA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/NZD-NZIONA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "NZD-NZIONA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3468,6 +3754,7 @@
    :rdfs/label "NZD-NZIONA-OIS Compound"})
 
 (def NZD-Semi-Annual_Swap_Rate-11_00-BGCANTOR
+  "NZD-Semi-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/NZD-Semi-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "NZD-Semi-Annual Swap Rate-11:00-BGCANTOR",
@@ -3481,6 +3768,7 @@
    :rdfs/label "NZD-Semi-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def NZD-Semi-Annual_Swap_Rate-BGCANTOR-Reference_Banks
+  "NZD-Semi-Annual Swap Rate-BGCANTOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/NZD-Semi-Annual_Swap_Rate-BGCANTOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
    "NZD-Semi-Annual Swap Rate-BGCANTOR-Reference Banks",
@@ -3494,6 +3782,7 @@
    :rdfs/label "NZD-Semi-Annual Swap Rate-BGCANTOR-Reference Banks"})
 
 (def NZD-Swap_Rate-ICAP-Reference_Banks
+  "NZD-Swap Rate-ICAP-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/NZD-Swap_Rate-ICAP-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "NZD-Swap Rate-ICAP-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3505,6 +3794,7 @@
    :rdfs/label "NZD-Swap Rate-ICAP-Reference Banks"})
 
 (def PHP-PHIREF
+  "PHP-PHIREF"
   {:db/ident :fibo-ind-ir-cm/PHP-PHIREF,
    :fibo-fnd-utl-av/abbreviation "PHP-PHIREF",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3516,6 +3806,7 @@
    :rdfs/label "PHP-PHIREF"})
 
 (def PHP-PHIREF-BAP
+  "PHP-PHIREF-BAP"
   {:db/ident :fibo-ind-ir-cm/PHP-PHIREF-BAP,
    :fibo-fnd-utl-av/abbreviation "PHP-PHIREF-BAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3529,6 +3820,7 @@
    :rdfs/label "PHP-PHIREF-BAP"})
 
 (def PHP-PHIREF-Reference_Banks
+  "PHP-PHIREF-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/PHP-PHIREF-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "PHP-PHIREF-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3540,6 +3832,7 @@
    :rdfs/label "PHP-PHIREF-Reference Banks"})
 
 (def PHP-Semi-Annual_Swap_Rate-11_00-BGCANTOR
+  "PHP-Semi-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/PHP-Semi-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "PHP-Semi-Annual Swap Rate-11:00-BGCANTOR",
@@ -3553,6 +3846,7 @@
    :rdfs/label "PHP-Semi-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def PHP-Semi-Annual_Swap_Rate-Reference_Banks
+  "PHP-Semi-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/PHP-Semi-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "PHP-Semi-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3565,6 +3859,7 @@
    :rdfs/label "PHP-Semi-Annual Swap Rate-Reference Banks"})
 
 (def PLN-POLONIA
+  "PLN-POLONIA"
   {:db/ident :fibo-ind-ir-cm/PLN-POLONIA,
    :fibo-fnd-utl-av/abbreviation "PLN-POLONIA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3576,6 +3871,7 @@
    :rdfs/label "PLN-POLONIA"})
 
 (def PLN-POLONIA-OIS_Compound
+  "PLN-POLONIA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/PLN-POLONIA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "PLN-POLONIA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3587,6 +3883,7 @@
    :rdfs/label "PLN-POLONIA-OIS Compound"})
 
 (def PLN-WIBID
+  "PLN-WIBID"
   {:db/ident :fibo-ind-ir-cm/PLN-WIBID,
    :fibo-fnd-utl-av/abbreviation "PLN-WIBID",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3598,6 +3895,7 @@
    :rdfs/label "PLN-WIBID"})
 
 (def PLN-WIBOR
+  "PLN-WIBOR"
   {:db/ident :fibo-ind-ir-cm/PLN-WIBOR,
    :fibo-fnd-utl-av/abbreviation "PLN-WIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3609,6 +3907,7 @@
    :rdfs/label "PLN-WIBOR"})
 
 (def PLN-WIBOR-Reference_Banks
+  "PLN-WIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/PLN-WIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "PLN-WIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3620,6 +3919,7 @@
    :rdfs/label "PLN-WIBOR-Reference Banks"})
 
 (def PLZ-WIBOR-Reference_Banks
+  "PLZ-WIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/PLZ-WIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "PLZ-WIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3631,6 +3931,7 @@
    :rdfs/label "PLZ-WIBOR-Reference Banks"})
 
 (def PLZ-WIBOR-WIBO
+  "PLZ-WIBOR-WIBO"
   {:db/ident :fibo-ind-ir-cm/PLZ-WIBOR-WIBO,
    :fibo-fnd-utl-av/abbreviation "PLZ-WIBOR-WIBO",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3642,6 +3943,7 @@
    :rdfs/label "PLZ-WIBOR-WIBO"})
 
 (def REPOFUNDS_RATE-FRANCE-OIS-COMPOUND
+  "REPOFUNDS RATE-FRANCE-OIS-COMPOUND"
   {:db/ident :fibo-ind-ir-cm/REPOFUNDS_RATE-FRANCE-OIS-COMPOUND,
    :fibo-fnd-utl-av/abbreviation "REPOFUNDS RATE-FRANCE-OIS-COMPOUND",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3653,6 +3955,7 @@
    :rdfs/label "REPOFUNDS RATE-FRANCE-OIS-COMPOUND"})
 
 (def REPOFUNDS_RATE-GERMANY-OIS-COMPOUND
+  "REPOFUNDS RATE-GERMANY-OIS-COMPOUND"
   {:db/ident :fibo-ind-ir-cm/REPOFUNDS_RATE-GERMANY-OIS-COMPOUND,
    :fibo-fnd-utl-av/abbreviation "REPOFUNDS RATE-GERMANY-OIS-COMPOUND",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3664,6 +3967,7 @@
    :rdfs/label "REPOFUNDS RATE-GERMANY-OIS-COMPOUND"})
 
 (def REPOFUNDS_RATE-ITALY-OIS-COMPOUND
+  "REPOFUNDS RATE-ITALY-OIS-COMPOUND"
   {:db/ident :fibo-ind-ir-cm/REPOFUNDS_RATE-ITALY-OIS-COMPOUND,
    :fibo-fnd-utl-av/abbreviation "REPOFUNDS RATE-ITALY-OIS-COMPOUND",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3675,6 +3979,7 @@
    :rdfs/label "REPOFUNDS RATE-ITALY-OIS-COMPOUND"})
 
 (def RON-Annual_Swap_Rate-11_00-BGCANTOR
+  "RON-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/RON-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "RON-Annual Swap Rate-11:00-BGCANTOR",
@@ -3688,6 +3993,7 @@
    :rdfs/label "RON-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def RON-Annual_Swap_Rate-Reference_Banks
+  "RON-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/RON-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "RON-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3700,6 +4006,7 @@
    :rdfs/label "RON-Annual Swap Rate-Reference Banks"})
 
 (def RON-ROBID
+  "RON-ROBID"
   {:db/ident :fibo-ind-ir-cm/RON-ROBID,
    :fibo-fnd-utl-av/abbreviation "RON-ROBID",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3711,6 +4018,7 @@
    :rdfs/label "RON-ROBID"})
 
 (def RON-ROBOR
+  "RON-ROBOR"
   {:db/ident :fibo-ind-ir-cm/RON-ROBOR,
    :fibo-fnd-utl-av/abbreviation "RON-ROBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3722,6 +4030,7 @@
    :rdfs/label "RON-ROBOR"})
 
 (def RUB-Annual_Swap_Rate-11_00-BGCANTOR
+  "RUB-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/RUB-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "RUB-Annual Swap Rate-11:00-BGCANTOR",
@@ -3735,6 +4044,7 @@
    :rdfs/label "RUB-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def RUB-Annual_Swap_Rate-12_45-TRADITION
+  "RUB-Annual Swap Rate-12:45-TRADITION"
   {:db/ident :fibo-ind-ir-cm/RUB-Annual_Swap_Rate-12_45-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "RUB-Annual Swap Rate-12:45-TRADITION",
@@ -3748,6 +4058,7 @@
    :rdfs/label "RUB-Annual Swap Rate-12:45-TRADITION"})
 
 (def RUB-Annual_Swap_Rate-4_15-TRADITION
+  "RUB-Annual Swap Rate-4:15-TRADITION"
   {:db/ident :fibo-ind-ir-cm/RUB-Annual_Swap_Rate-4_15-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "RUB-Annual Swap Rate-4:15-TRADITION",
@@ -3761,6 +4072,7 @@
    :rdfs/label "RUB-Annual Swap Rate-4:15-TRADITION"})
 
 (def RUB-Annual_Swap_Rate-Reference_Banks
+  "RUB-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/RUB-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "RUB-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3773,6 +4085,7 @@
    :rdfs/label "RUB-Annual Swap Rate-Reference Banks"})
 
 (def RUB-Annual_Swap_Rate-TRADITION-Reference_Banks
+  "RUB-Annual Swap Rate-TRADITION-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/RUB-Annual_Swap_Rate-TRADITION-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
    "RUB-Annual Swap Rate-TRADITION-Reference Banks",
@@ -3786,6 +4099,7 @@
    :rdfs/label "RUB-Annual Swap Rate-TRADITION-Reference Banks"})
 
 (def RUB-Key_Rate_CBRF
+  "RUB-Key Rate CBRF"
   {:db/ident :fibo-ind-ir-cm/RUB-Key_Rate_CBRF,
    :fibo-fnd-utl-av/abbreviation "RUB-Key Rate CBRF",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3797,6 +4111,7 @@
    :rdfs/label "RUB-Key Rate CBRF"})
 
 (def RUB-MOSPRIME-Reference_Banks
+  "RUB-MOSPRIME-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/RUB-MOSPRIME-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "RUB-MOSPRIME-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3808,6 +4123,7 @@
    :rdfs/label "RUB-MOSPRIME-Reference Banks"})
 
 (def RUB-MosPrime
+  "RUB-MosPrime"
   {:db/ident :fibo-ind-ir-cm/RUB-MosPrime,
    :fibo-fnd-utl-av/abbreviation "RUB-MosPrime",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3819,6 +4135,7 @@
    :rdfs/label "RUB-MosPrime"})
 
 (def RUB-RUONIA
+  "RUB-RUONIA"
   {:db/ident :fibo-ind-ir-cm/RUB-RUONIA,
    :fibo-fnd-utl-av/abbreviation "RUB-RUONIA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3830,6 +4147,7 @@
    :rdfs/label "RUB-RUONIA"})
 
 (def RUB-RUONIA-OIS_Compound
+  "RUB-RUONIA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/RUB-RUONIA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "RUB-RUONIA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3841,6 +4159,7 @@
    :rdfs/label "RUB-RUONIA-OIS Compound"})
 
 (def SAR-SAIBOR
+  "SAR-SAIBOR"
   {:db/ident :fibo-ind-ir-cm/SAR-SAIBOR,
    :fibo-fnd-utl-av/abbreviation "SAR-SAIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3852,6 +4171,7 @@
    :rdfs/label "SAR-SAIBOR"})
 
 (def SAR-SRIOR-Reference_Banks
+  "SAR-SRIOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/SAR-SRIOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "SAR-SRIOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3863,6 +4183,7 @@
    :rdfs/label "SAR-SRIOR-Reference Banks"})
 
 (def SEK-Annual_Swap_Rate
+  "SEK-Annual Swap Rate"
   {:db/ident :fibo-ind-ir-cm/SEK-Annual_Swap_Rate,
    :fibo-fnd-utl-av/abbreviation "SEK-Annual Swap Rate",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3875,6 +4196,7 @@
    :rdfs/label "SEK-Annual Swap Rate"})
 
 (def SEK-Annual_Swap_Rate-SESWFI
+  "SEK-Annual Swap Rate-SESWFI"
   {:db/ident :fibo-ind-ir-cm/SEK-Annual_Swap_Rate-SESWFI,
    :fibo-fnd-utl-av/abbreviation "SEK-Annual Swap Rate-SESWFI",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3887,6 +4209,7 @@
    :rdfs/label "SEK-Annual Swap Rate-SESWFI"})
 
 (def SEK-STIBOR
+  "SEK-STIBOR"
   {:db/ident :fibo-ind-ir-cm/SEK-STIBOR,
    :fibo-fnd-utl-av/abbreviation "SEK-STIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3898,6 +4221,7 @@
    :rdfs/label "SEK-STIBOR"})
 
 (def SEK-STIBOR-OIS_Compound
+  "SEK-STIBOR-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/SEK-STIBOR-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "SEK-STIBOR-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3909,6 +4233,7 @@
    :rdfs/label "SEK-STIBOR-OIS Compound"})
 
 (def SEK-STIBOR-Reference_Banks
+  "SEK-STIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/SEK-STIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "SEK-STIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3920,6 +4245,7 @@
    :rdfs/label "SEK-STIBOR-Reference Banks"})
 
 (def SGD-SIBOR
+  "SGD-SIBOR"
   {:db/ident :fibo-ind-ir-cm/SGD-SIBOR,
    :fibo-fnd-utl-av/abbreviation "SGD-SIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3931,6 +4257,7 @@
    :rdfs/label "SGD-SIBOR"})
 
 (def SGD-SIBOR-Reference_Banks
+  "SGD-SIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/SGD-SIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "SGD-SIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3942,6 +4269,7 @@
    :rdfs/label "SGD-SIBOR-Reference Banks"})
 
 (def SGD-SIBOR-Telerate
+  "SGD-SIBOR-Telerate"
   {:db/ident :fibo-ind-ir-cm/SGD-SIBOR-Telerate,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "SGD-SIBOR-Telerate",
@@ -3954,6 +4282,7 @@
    :rdfs/label "SGD-SIBOR-Telerate"})
 
 (def SGD-SONAR-OIS-COMPOUND
+  "SGD-SONAR-OIS-COMPOUND"
   {:db/ident :fibo-ind-ir-cm/SGD-SONAR-OIS-COMPOUND,
    :fibo-fnd-utl-av/abbreviation "SGD-SONAR-OIS-COMPOUND",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3967,6 +4296,7 @@
    :rdfs/label "SGD-SONAR-OIS-COMPOUND"})
 
 (def SGD-SOR
+  "SGD-SOR"
   {:db/ident :fibo-ind-ir-cm/SGD-SOR,
    :fibo-fnd-utl-av/abbreviation "SGD-SOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3978,6 +4308,7 @@
    :rdfs/label "SGD-SOR"})
 
 (def SGD-SOR-Reference_Banks
+  "SGD-SOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/SGD-SOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "SGD-SOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -3991,6 +4322,7 @@
    :rdfs/label "SGD-SOR-Reference Banks"})
 
 (def SGD-SOR-Telerate
+  "SGD-SOR-Telerate"
   {:db/ident :fibo-ind-ir-cm/SGD-SOR-Telerate,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "SGD-SOR-Telerate",
@@ -4003,6 +4335,7 @@
    :rdfs/label "SGD-SOR-Telerate"})
 
 (def SGD-SOR-VWAP-Reference_Banks
+  "SGD-SOR-VWAP-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/SGD-SOR-VWAP-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "SGD-SOR-VWAP-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4014,6 +4347,7 @@
    :rdfs/label "SGD-SOR-VWAP-Reference Banks"})
 
 (def SGD-SORA
+  "SGD-SORA"
   {:db/ident :fibo-ind-ir-cm/SGD-SORA,
    :fibo-fnd-utl-av/abbreviation "SGD-SORA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4025,6 +4359,7 @@
    :rdfs/label "SGD-SORA"})
 
 (def SGD-SORA-OIS_Compound
+  "SGD-SORA-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/SGD-SORA-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "SGD-SORA-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4036,6 +4371,7 @@
    :rdfs/label "SGD-SORA-OIS Compound"})
 
 (def SGD-Semi-Annual_Currency_Basis_Swap_Rate-11_00-Tullett_Prebon
+  "SGD-Semi-Annual Currency Basis Swap Rate-11:00-Tullett Prebon"
   {:db/ident
    :fibo-ind-ir-cm/SGD-Semi-Annual_Currency_Basis_Swap_Rate-11_00-Tullett_Prebon,
    :fibo-fnd-utl-av/abbreviation
@@ -4050,6 +4386,7 @@
    :rdfs/label "SGD-Semi-Annual Currency Basis Swap Rate-11:00-Tullett Prebon"})
 
 (def SGD-Semi-Annual_Currency_Basis_Swap_Rate-16_00-Tullett_Prebon
+  "SGD-Semi-Annual Currency Basis Swap Rate-16:00-Tullett Prebon"
   {:db/ident
    :fibo-ind-ir-cm/SGD-Semi-Annual_Currency_Basis_Swap_Rate-16_00-Tullett_Prebon,
    :fibo-fnd-utl-av/abbreviation
@@ -4064,6 +4401,7 @@
    :rdfs/label "SGD-Semi-Annual Currency Basis Swap Rate-16:00-Tullett Prebon"})
 
 (def SGD-Semi-Annual_Swap_Rate-11.00-TRADITION
+  "SGD-Semi-Annual Swap Rate-11.00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/SGD-Semi-Annual_Swap_Rate-11.00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "SGD-Semi-Annual Swap Rate-11.00-TRADITION",
@@ -4077,6 +4415,7 @@
    :rdfs/label "SGD-Semi-Annual Swap Rate-11.00-TRADITION"})
 
 (def SGD-Semi-Annual_Swap_Rate-11_00-BGCANTOR
+  "SGD-Semi-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/SGD-Semi-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "SGD-Semi-Annual Swap Rate-11:00-BGCANTOR",
@@ -4090,6 +4429,7 @@
    :rdfs/label "SGD-Semi-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def SGD-Semi-Annual_Swap_Rate-11_00-Tullett_Prebon
+  "SGD-Semi-Annual Swap Rate-11:00-Tullett Prebon"
   {:db/ident :fibo-ind-ir-cm/SGD-Semi-Annual_Swap_Rate-11_00-Tullett_Prebon,
    :fibo-fnd-utl-av/abbreviation
    "SGD-Semi-Annual Swap Rate-11:00-Tullett Prebon",
@@ -4103,6 +4443,7 @@
    :rdfs/label "SGD-Semi-Annual Swap Rate-11:00-Tullett Prebon"})
 
 (def SGD-Semi-Annual_Swap_Rate-16_00-Tullett_Prebon
+  "SGD-Semi-Annual Swap Rate-16:00-Tullett Prebon"
   {:db/ident :fibo-ind-ir-cm/SGD-Semi-Annual_Swap_Rate-16_00-Tullett_Prebon,
    :fibo-fnd-utl-av/abbreviation
    "SGD-Semi-Annual Swap Rate-16:00-Tullett Prebon",
@@ -4116,6 +4457,7 @@
    :rdfs/label "SGD-Semi-Annual Swap Rate-16:00-Tullett Prebon"})
 
 (def SGD-Semi-Annual_Swap_Rate-ICAP
+  "SGD-Semi-Annual Swap Rate-ICAP"
   {:db/ident :fibo-ind-ir-cm/SGD-Semi-Annual_Swap_Rate-ICAP,
    :fibo-fnd-utl-av/abbreviation "SGD-Semi-Annual Swap Rate-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4128,6 +4470,7 @@
    :rdfs/label "SGD-Semi-Annual Swap Rate-ICAP"})
 
 (def SGD-Semi-Annual_Swap_Rate-ICAP-Reference_Banks
+  "SGD-Semi-Annual Swap Rate-ICAP-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/SGD-Semi-Annual_Swap_Rate-ICAP-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
    "SGD-Semi-Annual Swap Rate-ICAP-Reference Banks",
@@ -4141,6 +4484,7 @@
    :rdfs/label "SGD-Semi-Annual Swap Rate-ICAP-Reference Banks"})
 
 (def SGD-Semi-Annual_Swap_Rate-Reference_Banks
+  "SGD-Semi-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/SGD-Semi-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "SGD-Semi-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4153,6 +4497,7 @@
    :rdfs/label "SGD-Semi-Annual Swap Rate-Reference Banks"})
 
 (def SGD-Semi-Annual_Swap_Rate-TRADITION-Reference_Banks
+  "SGD-Semi-Annual Swap Rate-TRADITION-Reference Banks"
   {:db/ident
    :fibo-ind-ir-cm/SGD-Semi-Annual_Swap_Rate-TRADITION-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
@@ -4167,6 +4512,7 @@
    :rdfs/label "SGD-Semi-Annual Swap Rate-TRADITION-Reference Banks"})
 
 (def SKK-BRIBOR-BRBO
+  "SKK-BRIBOR-BRBO"
   {:db/ident :fibo-ind-ir-cm/SKK-BRIBOR-BRBO,
    :fibo-fnd-utl-av/abbreviation "SKK-BRIBOR-BRBO",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4178,6 +4524,7 @@
    :rdfs/label "SKK-BRIBOR-BRBO"})
 
 (def SKK-BRIBOR-Bloomberg
+  "SKK-BRIBOR-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/SKK-BRIBOR-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation "SKK-BRIBOR-Bloomberg",
@@ -4190,6 +4537,7 @@
    :rdfs/label "SKK-BRIBOR-Bloomberg"})
 
 (def SKK-BRIBOR-NBSK07
+  "SKK-BRIBOR-NBSK07"
   {:db/ident :fibo-ind-ir-cm/SKK-BRIBOR-NBSK07,
    :fibo-fnd-utl-av/abbreviation "SKK-BRIBOR-NBSK07",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4201,6 +4549,7 @@
    :rdfs/label "SKK-BRIBOR-NBSK07"})
 
 (def SKK-BRIBOR-Reference_Banks
+  "SKK-BRIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/SKK-BRIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "SKK-BRIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4212,6 +4561,7 @@
    :rdfs/label "SKK-BRIBOR-Reference Banks"})
 
 (def THB-SOR-Reference_Banks
+  "THB-SOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/THB-SOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "THB-SOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4225,6 +4575,7 @@
    :rdfs/label "THB-SOR-Reference Banks"})
 
 (def THB-SOR-Reuters
+  "THB-SOR-Reuters"
   {:db/ident :fibo-ind-ir-cm/THB-SOR-Reuters,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "THB-SOR-Reuters",
@@ -4239,6 +4590,7 @@
    :rdfs/label "THB-SOR-Reuters"})
 
 (def THB-SOR-Telerate
+  "THB-SOR-Telerate"
   {:db/ident :fibo-ind-ir-cm/THB-SOR-Telerate,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "THB-SOR-Telerate",
@@ -4251,6 +4603,7 @@
    :rdfs/label "THB-SOR-Telerate"})
 
 (def THB-Semi-Annual_Swap_Rate-11_00-BGCANTOR
+  "THB-Semi-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/THB-Semi-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "THB-Semi-Annual Swap Rate-11:00-BGCANTOR",
@@ -4266,6 +4619,7 @@
    :rdfs/label "THB-Semi-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def THB-Semi-Annual_Swap_Rate-Reference_Banks
+  "THB-Semi-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/THB-Semi-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "THB-Semi-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4280,6 +4634,7 @@
    :rdfs/label "THB-Semi-Annual Swap Rate-Reference Banks"})
 
 (def THB-THBFIX
+  "THB-THBFIX"
   {:db/ident :fibo-ind-ir-cm/THB-THBFIX,
    :fibo-fnd-utl-av/abbreviation "THB-THBFIX",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4291,6 +4646,7 @@
    :rdfs/label "THB-THBFIX"})
 
 (def THB-THBFIX-Reference_Banks
+  "THB-THBFIX-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/THB-THBFIX-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "THB-THBFIX-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4302,6 +4658,7 @@
    :rdfs/label "THB-THBFIX-Reference Banks"})
 
 (def THB-THOR
+  "THB-THOR"
   {:db/ident :fibo-ind-ir-cm/THB-THOR,
    :fibo-fnd-utl-av/abbreviation "THB-THOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4313,6 +4670,7 @@
    :rdfs/label "THB-THOR"})
 
 (def THB-THOR-OIS_Compound
+  "THB-THOR-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/THB-THOR-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "THB-THOR-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4324,6 +4682,7 @@
    :rdfs/label "THB-THOR-OIS Compound"})
 
 (def TRY-Annual_Swap_Rate-11_15-BGCANTOR
+  "TRY-Annual Swap Rate-11:15-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/TRY-Annual_Swap_Rate-11_15-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "TRY-Annual Swap Rate-11:15-BGCANTOR",
@@ -4337,6 +4696,7 @@
    :rdfs/label "TRY-Annual Swap Rate-11:15-BGCANTOR"})
 
 (def TRY-Annual_Swap_Rate-Reference_Banks
+  "TRY-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/TRY-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "TRY-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4349,6 +4709,7 @@
    :rdfs/label "TRY-Annual Swap Rate-Reference Banks"})
 
 (def TRY-Semi-Annual_Swap_Rate-TRADITION-Reference_Banks
+  "TRY-Semi-Annual Swap Rate-TRADITION-Reference Banks"
   {:db/ident
    :fibo-ind-ir-cm/TRY-Semi-Annual_Swap_Rate-TRADITION-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
@@ -4363,6 +4724,7 @@
    :rdfs/label "TRY-Semi-Annual Swap Rate-TRADITION-Reference Banks"})
 
 (def TRY-TLREF-OIS_Compound
+  "TRY-TLREF-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/TRY-TLREF-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "TRY-TLREF-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4374,6 +4736,7 @@
    :rdfs/label "TRY-TLREF-OIS Compound"})
 
 (def TRY-TRLIBOR
+  "TRY-TRLIBOR"
   {:db/ident :fibo-ind-ir-cm/TRY-TRLIBOR,
    :fibo-fnd-utl-av/abbreviation "TRY-TRLIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4385,6 +4748,7 @@
    :rdfs/label "TRY-TRLIBOR"})
 
 (def TRY-TRYIBOR-Reference_Banks
+  "TRY-TRYIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/TRY-TRYIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "TRY-TRYIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4396,6 +4760,7 @@
    :rdfs/label "TRY-TRYIBOR-Reference Banks"})
 
 (def TRY_Annual_Swap_Rate-11_00-TRADITION
+  "TRY Annual Swap Rate-11:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/TRY_Annual_Swap_Rate-11_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "TRY Annual Swap Rate-11:00-TRADITION",
@@ -4409,6 +4774,7 @@
    :rdfs/label "TRY Annual Swap Rate-11:00-TRADITION"})
 
 (def TWD-Quarterly-Annual_Swap_Rate-11_00-BGCANTOR
+  "TWD-Quarterly-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/TWD-Quarterly-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation
@@ -4423,6 +4789,7 @@
    :rdfs/label "TWD-Quarterly-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def TWD-Quarterly-Annual_Swap_Rate-Reference_Banks
+  "TWD-Quarterly-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/TWD-Quarterly-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
    "TWD-Quarterly-Annual Swap Rate-Reference Banks",
@@ -4436,6 +4803,7 @@
    :rdfs/label "TWD-Quarterly-Annual Swap Rate-Reference Banks"})
 
 (def TWD-Reference_Dealers
+  "TWD-Reference Dealers"
   {:db/ident :fibo-ind-ir-cm/TWD-Reference_Dealers,
    :fibo-fnd-utl-av/abbreviation "TWD-Reference Dealers",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4447,6 +4815,7 @@
    :rdfs/label "TWD-Reference Dealers"})
 
 (def TWD-Reuters-6165
+  "TWD-Reuters-6165"
   {:db/ident :fibo-ind-ir-cm/TWD-Reuters-6165,
    :fibo-fnd-utl-av/abbreviation "TWD-Reuters-6165",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4458,6 +4827,7 @@
    :rdfs/label "TWD-Reuters-6165"})
 
 (def TWD-TAIBIR01
+  "TWD-TAIBIR01"
   {:db/ident :fibo-ind-ir-cm/TWD-TAIBIR01,
    :fibo-fnd-utl-av/abbreviation "TWD-TAIBIR01",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4469,6 +4839,7 @@
    :rdfs/label "TWD-TAIBIR01"})
 
 (def TWD-TAIBIR02
+  "TWD-TAIBIR02"
   {:db/ident :fibo-ind-ir-cm/TWD-TAIBIR02,
    :fibo-fnd-utl-av/abbreviation "TWD-TAIBIR02",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4480,6 +4851,7 @@
    :rdfs/label "TWD-TAIBIR02"})
 
 (def TWD-TAIBOR
+  "TWD-TAIBOR"
   {:db/ident :fibo-ind-ir-cm/TWD-TAIBOR,
    :fibo-fnd-utl-av/abbreviation "TWD-TAIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4491,6 +4863,7 @@
    :rdfs/label "TWD-TAIBOR"})
 
 (def TWD-TWCPBA
+  "TWD-TWCPBA"
   {:db/ident :fibo-ind-ir-cm/TWD-TWCPBA,
    :fibo-fnd-utl-av/abbreviation "TWD-TWCPBA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4502,6 +4875,7 @@
    :rdfs/label "TWD-TWCPBA"})
 
 (def TWD-Telerate-6165
+  "TWD-Telerate-6165"
   {:db/ident :fibo-ind-ir-cm/TWD-Telerate-6165,
    :fibo-fnd-utl-av/abbreviation "TWD-Telerate-6165",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4513,6 +4887,7 @@
    :rdfs/label "TWD-Telerate-6165"})
 
 (def USD-3M_LIBOR_SWAP-CME_vs_LCH-ICAP
+  "USD-3M LIBOR SWAP-CME vs LCH-ICAP"
   {:db/ident :fibo-ind-ir-cm/USD-3M_LIBOR_SWAP-CME_vs_LCH-ICAP,
    :fibo-fnd-utl-av/abbreviation "USD-3M LIBOR SWAP-CME vs LCH-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4525,6 +4900,7 @@
    :rdfs/label "USD-3M LIBOR SWAP-CME vs LCH-ICAP"})
 
 (def USD-3M_LIBOR_SWAP-CME_vs_LCH-ICAP-Bloomberg
+  "USD-3M LIBOR SWAP-CME vs LCH-ICAP-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/USD-3M_LIBOR_SWAP-CME_vs_LCH-ICAP-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation "USD-3M LIBOR SWAP-CME vs LCH-ICAP-Bloomberg",
@@ -4538,6 +4914,7 @@
    :rdfs/label "USD-3M LIBOR SWAP-CME vs LCH-ICAP-Bloomberg"})
 
 (def USD-6M_LIBOR_SWAP-CME_vs_LCH-ICAP
+  "USD-6M LIBOR SWAP-CME vs LCH-ICAP"
   {:db/ident :fibo-ind-ir-cm/USD-6M_LIBOR_SWAP-CME_vs_LCH-ICAP,
    :fibo-fnd-utl-av/abbreviation "USD-6M LIBOR SWAP-CME vs LCH-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4550,6 +4927,7 @@
    :rdfs/label "USD-6M LIBOR SWAP-CME vs LCH-ICAP"})
 
 (def USD-6M_LIBOR_SWAP-CME_vs_LCH-ICAP-Bloomberg
+  "USD-6M LIBOR SWAP-CME vs LCH-ICAP-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/USD-6M_LIBOR_SWAP-CME_vs_LCH-ICAP-Bloomberg,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/BloombergLP,
    :fibo-fnd-utl-av/abbreviation "USD-6M LIBOR SWAP-CME vs LCH-ICAP-Bloomberg",
@@ -4563,6 +4941,7 @@
    :rdfs/label "USD-6M LIBOR SWAP-CME vs LCH-ICAP-Bloomberg"})
 
 (def USD-AMERIBOR
+  "USD-AMERIBOR"
   {:db/ident :fibo-ind-ir-cm/USD-AMERIBOR,
    :fibo-fnd-utl-av/abbreviation "USD-AMERIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4574,6 +4953,7 @@
    :rdfs/label "USD-AMERIBOR"})
 
 (def USD-AMERIBOR_Average_30D
+  "USD-AMERIBOR Average 30D"
   {:db/ident :fibo-ind-ir-cm/USD-AMERIBOR_Average_30D,
    :fibo-fnd-utl-av/abbreviation "USD-AMERIBOR Average 30D",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4585,6 +4965,7 @@
    :rdfs/label "USD-AMERIBOR Average 30D"})
 
 (def USD-AMERIBOR_Average_90D
+  "USD-AMERIBOR Average 90D"
   {:db/ident :fibo-ind-ir-cm/USD-AMERIBOR_Average_90D,
    :fibo-fnd-utl-av/abbreviation "USD-AMERIBOR Average 90D",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4596,6 +4977,7 @@
    :rdfs/label "USD-AMERIBOR Average 90D"})
 
 (def USD-AMERIBOR_Term
+  "USD-AMERIBOR Term"
   {:db/ident :fibo-ind-ir-cm/USD-AMERIBOR_Term,
    :fibo-fnd-utl-av/abbreviation "USD-AMERIBOR Term",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4607,6 +4989,7 @@
    :rdfs/label "USD-AMERIBOR Term"})
 
 (def USD-AMERIBOR_Term_Structure
+  "USD-AMERIBOR Term Structure"
   {:db/ident :fibo-ind-ir-cm/USD-AMERIBOR_Term_Structure,
    :fibo-fnd-utl-av/abbreviation "USD-AMERIBOR Term Structure",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4618,6 +5001,7 @@
    :rdfs/label "USD-AMERIBOR Term Structure"})
 
 (def USD-Annual_Swap_Rate-11_00-BGCANTOR
+  "USD-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/USD-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "USD-Annual Swap Rate-11:00-BGCANTOR",
@@ -4631,6 +5015,7 @@
    :rdfs/label "USD-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def USD-Annual_Swap_Rate-11_00-TRADITION
+  "USD-Annual Swap Rate-11:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/USD-Annual_Swap_Rate-11_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "USD-Annual Swap Rate-11:00-TRADITION",
@@ -4644,6 +5029,7 @@
    :rdfs/label "USD-Annual Swap Rate-11:00-TRADITION"})
 
 (def USD-Annual_Swap_Rate-4_00-TRADITION
+  "USD-Annual Swap Rate-4:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/USD-Annual_Swap_Rate-4_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "USD-Annual Swap Rate-4:00-TRADITION",
@@ -4657,6 +5043,7 @@
    :rdfs/label "USD-Annual Swap Rate-4:00-TRADITION"})
 
 (def USD-BA-H.15
+  "USD-BA-H.15"
   {:db/ident :fibo-ind-ir-cm/USD-BA-H.15,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
@@ -4670,6 +5057,7 @@
    :rdfs/label "USD-BA-H.15"})
 
 (def USD-BA-Reference_Dealers
+  "USD-BA-Reference Dealers"
   {:db/ident :fibo-ind-ir-cm/USD-BA-Reference_Dealers,
    :fibo-fnd-utl-av/abbreviation "USD-BA-Reference Dealers",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4681,6 +5069,7 @@
    :rdfs/label "USD-BA-Reference Dealers"})
 
 (def USD-BMA_Municipal_Swap_Index
+  "USD-BMA Municipal Swap Index"
   {:db/ident :fibo-ind-ir-cm/USD-BMA_Municipal_Swap_Index,
    :fibo-fnd-utl-av/abbreviation "USD-BMA Municipal Swap Index",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4692,6 +5081,7 @@
    :rdfs/label "USD-BMA Municipal Swap Index"})
 
 (def USD-BSBY
+  "USD-BSBY"
   {:db/ident :fibo-ind-ir-cm/USD-BSBY,
    :fibo-fnd-utl-av/abbreviation "USD-BSBY",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4703,6 +5093,7 @@
    :rdfs/label "USD-BSBY"})
 
 (def USD-CD-H.15
+  "USD-CD-H.15"
   {:db/ident :fibo-ind-ir-cm/USD-CD-H.15,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
@@ -4716,6 +5107,7 @@
    :rdfs/label "USD-CD-H.15"})
 
 (def USD-CD-Reference_Dealers
+  "USD-CD-Reference Dealers"
   {:db/ident :fibo-ind-ir-cm/USD-CD-Reference_Dealers,
    :fibo-fnd-utl-av/abbreviation "USD-CD-Reference Dealers",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4727,6 +5119,7 @@
    :rdfs/label "USD-CD-Reference Dealers"})
 
 (def USD-CMS-Reference_Banks
+  "USD-CMS-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/USD-CMS-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "USD-CMS-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4738,6 +5131,7 @@
    :rdfs/label "USD-CMS-Reference Banks"})
 
 (def USD-CMS-Reference_Banks-ICAP_SwapPX
+  "USD-CMS-Reference Banks-ICAP SwapPX"
   {:db/ident :fibo-ind-ir-cm/USD-CMS-Reference_Banks-ICAP_SwapPX,
    :fibo-fnd-utl-av/abbreviation "USD-CMS-Reference Banks-ICAP SwapPX",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4749,6 +5143,7 @@
    :rdfs/label "USD-CMS-Reference Banks-ICAP SwapPX"})
 
 (def USD-CMS-Reuters
+  "USD-CMS-Reuters"
   {:db/ident :fibo-ind-ir-cm/USD-CMS-Reuters,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "USD-CMS-Reuters",
@@ -4761,6 +5156,7 @@
    :rdfs/label "USD-CMS-Reuters"})
 
 (def USD-CMS-Telerate
+  "USD-CMS-Telerate"
   {:db/ident :fibo-ind-ir-cm/USD-CMS-Telerate,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "USD-CMS-Telerate",
@@ -4773,6 +5169,7 @@
    :rdfs/label "USD-CMS-Telerate"})
 
 (def USD-CMT
+  "USD-CMT"
   {:db/ident :fibo-ind-ir-cm/USD-CMT,
    :fibo-fnd-utl-av/abbreviation "USD-CMT",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4784,6 +5181,7 @@
    :rdfs/label "USD-CMT"})
 
 (def USD-CMT_Average_1W
+  "USD-CMT Average 1W"
   {:db/ident :fibo-ind-ir-cm/USD-CMT_Average_1W,
    :fibo-fnd-utl-av/abbreviation "USD-CMT Average 1W",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4795,6 +5193,7 @@
    :rdfs/label "USD-CMT Average 1W"})
 
 (def USD-COF11-Telerate
+  "USD-COF11-Telerate"
   {:db/ident :fibo-ind-ir-cm/USD-COF11-Telerate,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usfsind/ThomsonReuters,
    :fibo-fnd-utl-av/abbreviation "USD-COF11-Telerate",
@@ -4807,6 +5206,7 @@
    :rdfs/label "USD-COF11-Telerate"})
 
 (def USD-COFI
+  "USD-COFI"
   {:db/ident :fibo-ind-ir-cm/USD-COFI,
    :fibo-fnd-utl-av/abbreviation "USD-COFI",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4818,6 +5218,7 @@
    :rdfs/label "USD-COFI"})
 
 (def USD-CP-Money_Market_Yield
+  "USD-CP-Money Market Yield"
   {:db/ident :fibo-ind-ir-cm/USD-CP-Money_Market_Yield,
    :fibo-fnd-utl-av/abbreviation "USD-CP-Money Market Yield",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4829,6 +5230,7 @@
    :rdfs/label "USD-CP-Money Market Yield"})
 
 (def USD-CP-Reference_Dealers
+  "USD-CP-Reference Dealers"
   {:db/ident :fibo-ind-ir-cm/USD-CP-Reference_Dealers,
    :fibo-fnd-utl-av/abbreviation "USD-CP-Reference Dealers",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4840,6 +5242,7 @@
    :rdfs/label "USD-CP-Reference Dealers"})
 
 (def USD-CRITR
+  "USD-CRITR"
   {:db/ident :fibo-ind-ir-cm/USD-CRITR,
    :fibo-fnd-utl-av/abbreviation "USD-CRITR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4851,6 +5254,7 @@
    :rdfs/label "USD-CRITR"})
 
 (def USD-FFCB-DISCO
+  "USD-FFCB-DISCO"
   {:db/ident :fibo-ind-ir-cm/USD-FFCB-DISCO,
    :fibo-fnd-utl-av/abbreviation "USD-FFCB-DISCO",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4862,6 +5266,7 @@
    :rdfs/label "USD-FFCB-DISCO"})
 
 (def USD-Federal_Funds
+  "USD-Federal Funds"
   {:db/ident :fibo-ind-ir-cm/USD-Federal_Funds,
    :fibo-fnd-utl-av/abbreviation "USD-Federal Funds",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4873,6 +5278,7 @@
    :rdfs/label "USD-Federal Funds"})
 
 (def USD-Federal_Funds-OIS_Compound
+  "USD-Federal Funds-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/USD-Federal_Funds-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "USD-Federal Funds-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4884,6 +5290,7 @@
    :rdfs/label "USD-Federal Funds-OIS Compound"})
 
 (def USD-Federal_Funds-Reference_Dealers
+  "USD-Federal Funds-Reference Dealers"
   {:db/ident :fibo-ind-ir-cm/USD-Federal_Funds-Reference_Dealers,
    :fibo-fnd-utl-av/abbreviation "USD-Federal Funds-Reference Dealers",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4895,6 +5302,7 @@
    :rdfs/label "USD-Federal Funds-Reference Dealers"})
 
 (def USD-LIBOR
+  "USD-LIBOR"
   {:db/ident :fibo-ind-ir-cm/USD-LIBOR,
    :fibo-fnd-utl-av/abbreviation "USD-LIBOR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4906,6 +5314,7 @@
    :rdfs/label "USD-LIBOR"})
 
 (def USD-LIBOR-ISDA
+  "USD-LIBOR-ISDA"
   {:db/ident :fibo-ind-ir-cm/USD-LIBOR-ISDA,
    :fibo-fnd-utl-av/abbreviation "USD-LIBOR-ISDA",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4917,6 +5326,7 @@
    :rdfs/label "USD-LIBOR-ISDA"})
 
 (def USD-LIBOR-LIBO
+  "USD-LIBOR-LIBO"
   {:db/ident :fibo-ind-ir-cm/USD-LIBOR-LIBO,
    :fibo-fnd-utl-av/abbreviation "USD-LIBOR-LIBO",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4928,6 +5338,7 @@
    :rdfs/label "USD-LIBOR-LIBO"})
 
 (def USD-LIBOR-Reference_Banks
+  "USD-LIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/USD-LIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "USD-LIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4939,6 +5350,7 @@
    :rdfs/label "USD-LIBOR-Reference Banks"})
 
 (def USD-LIBOR_ICE_Swap_Rate-11_00
+  "USD-LIBOR ICE Swap Rate-11:00"
   {:db/ident :fibo-ind-ir-cm/USD-LIBOR_ICE_Swap_Rate-11_00,
    :fibo-fnd-utl-av/abbreviation "USD-LIBOR ICE Swap Rate-11:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4950,6 +5362,7 @@
    :rdfs/label "USD-LIBOR ICE Swap Rate-11:00"})
 
 (def USD-LIBOR_ICE_Swap_Rate-15_00
+  "USD-LIBOR ICE Swap Rate-15:00"
   {:db/ident :fibo-ind-ir-cm/USD-LIBOR_ICE_Swap_Rate-15_00,
    :fibo-fnd-utl-av/abbreviation "USD-LIBOR ICE Swap Rate-15:00",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4961,6 +5374,7 @@
    :rdfs/label "USD-LIBOR ICE Swap Rate-15:00"})
 
 (def USD-Municipal_Swap_Index
+  "USD-Municipal Swap Index"
   {:db/ident :fibo-ind-ir-cm/USD-Municipal_Swap_Index,
    :fibo-fnd-utl-av/abbreviation "USD-Municipal Swap Index",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4972,6 +5386,7 @@
    :rdfs/label "USD-Municipal Swap Index"})
 
 (def USD-Municipal_Swap_Libor_Ratio-11_00-ICAP
+  "USD-Municipal Swap Libor Ratio-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/USD-Municipal_Swap_Libor_Ratio-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "USD-Municipal Swap Libor Ratio-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4983,6 +5398,7 @@
    :rdfs/label "USD-Municipal Swap Libor Ratio-11:00-ICAP"})
 
 (def USD-Municipal_Swap_Rate-11_00-ICAP
+  "USD-Municipal Swap Rate-11:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/USD-Municipal_Swap_Rate-11_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "USD-Municipal Swap Rate-11:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -4994,6 +5410,7 @@
    :rdfs/label "USD-Municipal Swap Rate-11:00-ICAP"})
 
 (def USD-OIS-11_00-BGCANTOR
+  "USD-OIS-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/USD-OIS-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "USD-OIS-11:00-BGCANTOR",
@@ -5006,6 +5423,7 @@
    :rdfs/label "USD-OIS-11:00-BGCANTOR"})
 
 (def USD-OIS-11_00-LON-ICAP
+  "USD-OIS-11:00-LON-ICAP"
   {:db/ident :fibo-ind-ir-cm/USD-OIS-11_00-LON-ICAP,
    :fibo-fnd-utl-av/abbreviation "USD-OIS-11:00-LON-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5017,6 +5435,7 @@
    :rdfs/label "USD-OIS-11:00-LON-ICAP"})
 
 (def USD-OIS-11_00-NY-ICAP
+  "USD-OIS-11:00-NY-ICAP"
   {:db/ident :fibo-ind-ir-cm/USD-OIS-11_00-NY-ICAP,
    :fibo-fnd-utl-av/abbreviation "USD-OIS-11:00-NY-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5028,6 +5447,7 @@
    :rdfs/label "USD-OIS-11:00-NY-ICAP"})
 
 (def USD-OIS-11_00-TRADITION
+  "USD-OIS-11:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/USD-OIS-11_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "USD-OIS-11:00-TRADITION",
@@ -5040,6 +5460,7 @@
    :rdfs/label "USD-OIS-11:00-TRADITION"})
 
 (def USD-OIS-3_00-BGCANTOR
+  "USD-OIS-3:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/USD-OIS-3_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "USD-OIS-3:00-BGCANTOR",
@@ -5052,6 +5473,7 @@
    :rdfs/label "USD-OIS-3:00-BGCANTOR"})
 
 (def USD-OIS-3_00-NY-ICAP
+  "USD-OIS-3:00-NY-ICAP"
   {:db/ident :fibo-ind-ir-cm/USD-OIS-3_00-NY-ICAP,
    :fibo-fnd-utl-av/abbreviation "USD-OIS-3:00-NY-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5063,6 +5485,7 @@
    :rdfs/label "USD-OIS-3:00-NY-ICAP"})
 
 (def USD-OIS-4_00-TRADITION
+  "USD-OIS-4:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/USD-OIS-4_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "USD-OIS-4:00-TRADITION",
@@ -5075,6 +5498,7 @@
    :rdfs/label "USD-OIS-4:00-TRADITION"})
 
 (def USD-Overnight_Bank_Funding_Rate
+  "USD-Overnight Bank Funding Rate"
   {:db/ident :fibo-ind-ir-cm/USD-Overnight_Bank_Funding_Rate,
    :fibo-fnd-utl-av/abbreviation "USD-Overnight Bank Funding Rate",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5086,6 +5510,7 @@
    :rdfs/label "USD-Overnight Bank Funding Rate"})
 
 (def USD-Prime
+  "USD-Prime"
   {:db/ident :fibo-ind-ir-cm/USD-Prime,
    :fibo-fnd-utl-av/abbreviation "USD-Prime",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5097,6 +5522,7 @@
    :rdfs/label "USD-Prime"})
 
 (def USD-Prime-Reference_Banks
+  "USD-Prime-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/USD-Prime-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "USD-Prime-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5108,6 +5534,7 @@
    :rdfs/label "USD-Prime-Reference Banks"})
 
 (def USD-SIBOR-Reference_Banks
+  "USD-SIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/USD-SIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "USD-SIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5119,6 +5546,7 @@
    :rdfs/label "USD-SIBOR-Reference Banks"})
 
 (def USD-SIBOR-SIBO
+  "USD-SIBOR-SIBO"
   {:db/ident :fibo-ind-ir-cm/USD-SIBOR-SIBO,
    :fibo-fnd-utl-av/abbreviation "USD-SIBOR-SIBO",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5132,6 +5560,7 @@
    :rdfs/label "USD-SIBOR-SIBO"})
 
 (def USD-SOFR
+  "USD-SOFR"
   {:db/ident :fibo-ind-ir-cm/USD-SOFR,
    :fibo-fnd-utl-av/abbreviation "USD-SOFR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5143,6 +5572,7 @@
    :rdfs/label "USD-SOFR"})
 
 (def USD-SOFR-OIS_Compound
+  "USD-SOFR-OIS Compound"
   {:db/ident :fibo-ind-ir-cm/USD-SOFR-OIS_Compound,
    :fibo-fnd-utl-av/abbreviation "USD-SOFR-OIS Compound",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5154,6 +5584,7 @@
    :rdfs/label "USD-SOFR-OIS Compound"})
 
 (def USD-SOFR_Average_180D
+  "USD-SOFR Average 180D"
   {:db/ident :fibo-ind-ir-cm/USD-SOFR_Average_180D,
    :fibo-fnd-utl-av/abbreviation "USD-SOFR Average 180D",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5165,6 +5596,7 @@
    :rdfs/label "USD-SOFR Average 180D"})
 
 (def USD-SOFR_Average_30D
+  "USD-SOFR Average 30D"
   {:db/ident :fibo-ind-ir-cm/USD-SOFR_Average_30D,
    :fibo-fnd-utl-av/abbreviation "USD-SOFR Average 30D",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5176,6 +5608,7 @@
    :rdfs/label "USD-SOFR Average 30D"})
 
 (def USD-SOFR_Average_90D
+  "USD-SOFR Average 90D"
   {:db/ident :fibo-ind-ir-cm/USD-SOFR_Average_90D,
    :fibo-fnd-utl-av/abbreviation "USD-SOFR Average 90D",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5187,6 +5620,7 @@
    :rdfs/label "USD-SOFR Average 90D"})
 
 (def USD-SOFR_CME_Term
+  "USD-SOFR CME Term"
   {:db/ident :fibo-ind-ir-cm/USD-SOFR_CME_Term,
    :fibo-fnd-utl-av/abbreviation "USD-SOFR CME Term",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5198,6 +5632,7 @@
    :rdfs/label "USD-SOFR CME Term"})
 
 (def USD-SOFR_Compounded_Index
+  "USD-SOFR Compounded Index"
   {:db/ident :fibo-ind-ir-cm/USD-SOFR_Compounded_Index,
    :fibo-fnd-utl-av/abbreviation "USD-SOFR Compounded Index",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5209,6 +5644,7 @@
    :rdfs/label "USD-SOFR Compounded Index"})
 
 (def USD-SOFR_ICE_Swap_Rate
+  "USD-SOFR ICE Swap Rate"
   {:db/ident :fibo-ind-ir-cm/USD-SOFR_ICE_Swap_Rate,
    :fibo-fnd-utl-av/abbreviation "USD-SOFR ICE Swap Rate",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5220,6 +5656,7 @@
    :rdfs/label "USD-SOFR ICE Swap Rate"})
 
 (def USD-SandP_Index_High_Grade
+  "USD-SandP Index High Grade"
   {:db/ident :fibo-ind-ir-cm/USD-SandP_Index_High_Grade,
    :fibo-fnd-utl-av/abbreviation "USD-SandP Index High Grade",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5231,6 +5668,7 @@
    :rdfs/label "USD-SandP Index High Grade"})
 
 (def USD-TBILL-H.15
+  "USD-TBILL-H.15"
   {:db/ident :fibo-ind-ir-cm/USD-TBILL-H.15,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
@@ -5244,6 +5682,7 @@
    :rdfs/label "USD-TBILL-H.15"})
 
 (def USD-TBILL-H.15-Bloomberg
+  "USD-TBILL-H.15-Bloomberg"
   {:db/ident :fibo-ind-ir-cm/USD-TBILL-H.15-Bloomberg,
    :fibo-fnd-rel-rel/isProducedBy
    :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
@@ -5258,6 +5697,7 @@
    :rdfs/label "USD-TBILL-H.15-Bloomberg"})
 
 (def USD-TBILL_Secondary_Market-Bond_Equivalent_Yield
+  "USD-TBILL Secondary Market-Bond Equivalent Yield"
   {:db/ident :fibo-ind-ir-cm/USD-TBILL_Secondary_Market-Bond_Equivalent_Yield,
    :fibo-fnd-utl-av/abbreviation
    "USD-TBILL Secondary Market-Bond Equivalent Yield",
@@ -5270,6 +5710,7 @@
    :rdfs/label "USD-TBILL Secondary Market-Bond Equivalent Yield"})
 
 (def USD-TIBOR-ISDC
+  "USD-TIBOR-ISDC"
   {:db/ident :fibo-ind-ir-cm/USD-TIBOR-ISDC,
    :fibo-fnd-utl-av/abbreviation "USD-TIBOR-ISDC",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5281,6 +5722,7 @@
    :rdfs/label "USD-TIBOR-ISDC"})
 
 (def USD-TIBOR-Reference_Banks
+  "USD-TIBOR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/USD-TIBOR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "USD-TIBOR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5292,6 +5734,7 @@
    :rdfs/label "USD-TIBOR-Reference Banks"})
 
 (def USD-Treasury-19901-3_00-ICAP
+  "USD-Treasury-19901-3:00-ICAP"
   {:db/ident :fibo-ind-ir-cm/USD-Treasury-19901-3_00-ICAP,
    :fibo-fnd-utl-av/abbreviation "USD-Treasury-19901-3:00-ICAP",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5303,6 +5746,7 @@
    :rdfs/label "USD-Treasury-19901-3:00-ICAP"})
 
 (def USD-Treasury_Rate-ICAP_BrokerTec
+  "USD-Treasury Rate-ICAP BrokerTec"
   {:db/ident :fibo-ind-ir-cm/USD-Treasury_Rate-ICAP_BrokerTec,
    :fibo-fnd-utl-av/abbreviation "USD-Treasury Rate-ICAP BrokerTec",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5314,6 +5758,7 @@
    :rdfs/label "USD-Treasury Rate-ICAP BrokerTec"})
 
 (def USD-Treasury_Rate-SwapMarker100
+  "USD-Treasury Rate-SwapMarker100"
   {:db/ident :fibo-ind-ir-cm/USD-Treasury_Rate-SwapMarker100,
    :fibo-fnd-utl-av/abbreviation "USD-Treasury Rate-SwapMarker100",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5325,6 +5770,7 @@
    :rdfs/label "USD-Treasury Rate-SwapMarker100"})
 
 (def USD-Treasury_Rate-SwapMarker99
+  "USD-Treasury Rate-SwapMarker99"
   {:db/ident :fibo-ind-ir-cm/USD-Treasury_Rate-SwapMarker99,
    :fibo-fnd-utl-av/abbreviation "USD-Treasury Rate-SwapMarker99",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5336,6 +5782,7 @@
    :rdfs/label "USD-Treasury Rate-SwapMarker99"})
 
 (def USD-Treasury_Rate-T19901
+  "USD-Treasury Rate-T19901"
   {:db/ident :fibo-ind-ir-cm/USD-Treasury_Rate-T19901,
    :fibo-fnd-utl-av/abbreviation "USD-Treasury Rate-T19901",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5347,6 +5794,7 @@
    :rdfs/label "USD-Treasury Rate-T19901"})
 
 (def USD-Treasury_Rate-T500
+  "USD-Treasury Rate-T500"
   {:db/ident :fibo-ind-ir-cm/USD-Treasury_Rate-T500,
    :fibo-fnd-utl-av/abbreviation "USD-Treasury Rate-T500",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5358,6 +5806,7 @@
    :rdfs/label "USD-Treasury Rate-T500"})
 
 (def USD_Swap_Rate-BCMP1
+  "USD Swap Rate-BCMP1"
   {:db/ident :fibo-ind-ir-cm/USD_Swap_Rate-BCMP1,
    :fibo-fnd-utl-av/abbreviation "USD Swap Rate-BCMP1",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5369,6 +5818,7 @@
    :rdfs/label "USD Swap Rate-BCMP1"})
 
 (def USD_Treasury_Rate-BCMP1
+  "USD Treasury Rate-BCMP1"
   {:db/ident :fibo-ind-ir-cm/USD_Treasury_Rate-BCMP1,
    :fibo-fnd-utl-av/abbreviation "USD Treasury Rate-BCMP1",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5380,6 +5830,7 @@
    :rdfs/label "USD Treasury Rate-BCMP1"})
 
 (def VND-Semi-Annual_Swap_Rate-11_00-BGCANTOR
+  "VND-Semi-Annual Swap Rate-11:00-BGCANTOR"
   {:db/ident :fibo-ind-ir-cm/VND-Semi-Annual_Swap_Rate-11_00-BGCANTOR,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-utl-av/abbreviation "VND-Semi-Annual Swap Rate-11:00-BGCANTOR",
@@ -5393,6 +5844,7 @@
    :rdfs/label "VND-Semi-Annual Swap Rate-11:00-BGCANTOR"})
 
 (def VND-Semi-Annual_Swap_Rate-Reference_Banks
+  "VND-Semi-Annual Swap Rate-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/VND-Semi-Annual_Swap_Rate-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "VND-Semi-Annual Swap Rate-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5405,6 +5857,7 @@
    :rdfs/label "VND-Semi-Annual Swap Rate-Reference Banks"})
 
 (def ZAR-DEPOSIT-Reference_Banks
+  "ZAR-DEPOSIT-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/ZAR-DEPOSIT-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "ZAR-DEPOSIT-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5416,6 +5869,7 @@
    :rdfs/label "ZAR-DEPOSIT-Reference Banks"})
 
 (def ZAR-DEPOSIT-SAFEX
+  "ZAR-DEPOSIT-SAFEX"
   {:db/ident :fibo-ind-ir-cm/ZAR-DEPOSIT-SAFEX,
    :fibo-fnd-utl-av/abbreviation "ZAR-DEPOSIT-SAFEX",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5427,6 +5881,7 @@
    :rdfs/label "ZAR-DEPOSIT-SAFEX"})
 
 (def ZAR-JIBAR
+  "ZAR-JIBAR"
   {:db/ident :fibo-ind-ir-cm/ZAR-JIBAR,
    :fibo-fnd-utl-av/abbreviation "ZAR-JIBAR",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5438,6 +5893,7 @@
    :rdfs/label "ZAR-JIBAR"})
 
 (def ZAR-JIBAR-Reference_Banks
+  "ZAR-JIBAR-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/ZAR-JIBAR-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "ZAR-JIBAR-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5449,6 +5905,7 @@
    :rdfs/label "ZAR-JIBAR-Reference Banks"})
 
 (def ZAR-PRIME-AVERAGE-Reference_Banks
+  "ZAR-PRIME-AVERAGE-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/ZAR-PRIME-AVERAGE-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation "ZAR-PRIME-AVERAGE-Reference Banks",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5460,6 +5917,7 @@
    :rdfs/label "ZAR-PRIME-AVERAGE-Reference Banks"})
 
 (def ZAR-Prime_Average
+  "ZAR-Prime Average"
   {:db/ident :fibo-ind-ir-cm/ZAR-Prime_Average,
    :fibo-fnd-utl-av/abbreviation "ZAR-Prime Average",
    :fibo-fnd-utl-av/explanatoryNote
@@ -5471,6 +5929,7 @@
    :rdfs/label "ZAR-Prime Average"})
 
 (def ZAR-Quarterly_Swap_Rate-1_00-TRADITION
+  "ZAR-Quarterly Swap Rate-1:00-TRADITION"
   {:db/ident :fibo-ind-ir-cm/ZAR-Quarterly_Swap_Rate-1_00-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "ZAR-Quarterly Swap Rate-1:00-TRADITION",
@@ -5484,6 +5943,7 @@
    :rdfs/label "ZAR-Quarterly Swap Rate-1:00-TRADITION"})
 
 (def ZAR-Quarterly_Swap_Rate-5_30-TRADITION
+  "ZAR-Quarterly Swap Rate-5:30-TRADITION"
   {:db/ident :fibo-ind-ir-cm/ZAR-Quarterly_Swap_Rate-5_30-TRADITION,
    :fibo-fnd-rel-rel/isProvidedBy :fibo-ind-ir-mdp/Tradition,
    :fibo-fnd-utl-av/abbreviation "ZAR-Quarterly Swap Rate-5:30-TRADITION",
@@ -5497,6 +5957,7 @@
    :rdfs/label "ZAR-Quarterly Swap Rate-5:30-TRADITION"})
 
 (def ZAR-Quarterly_Swap_Rate-TRADITION-Reference_Banks
+  "ZAR-Quarterly Swap Rate-TRADITION-Reference Banks"
   {:db/ident :fibo-ind-ir-cm/ZAR-Quarterly_Swap_Rate-TRADITION-Reference_Banks,
    :fibo-fnd-utl-av/abbreviation
    "ZAR-Quarterly Swap Rate-TRADITION-Reference Banks",

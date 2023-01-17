@@ -44,6 +44,7 @@
    :sm/fileAbbreviation "fibo-md-civx-fun"})
 
 (def AccruedFees
+  "accrued fees"
   {:db/ident :fibo-md-civx-fun/AccruedFees,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -52,6 +53,7 @@
                 :rdf/value    "accrued fees"}})
 
 (def AccruedIncome
+  "accrued income"
   {:db/ident :fibo-md-civx-fun/AccruedIncome,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -60,6 +62,7 @@
                 :rdf/value    "accrued income"}})
 
 (def AccruedTaxes
+  "accrued taxes"
   {:db/ident :fibo-md-civx-fun/AccruedTaxes,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -68,6 +71,7 @@
                 :rdf/value    "accrued taxes"}})
 
 (def BidPrice
+  "bid price"
   {:db/ident :fibo-md-civx-fun/BidPrice,
    :owl/disjointWith :fibo-md-civx-fun/mutuallyExclusive,
    :rdf/type :owl/Class,
@@ -78,6 +82,7 @@
    :rdfs/subClassOf :fibo-md-civx-fun/FundPrice})
 
 (def FeePayable
+  "fee payable"
   {:db/ident :fibo-md-civx-fun/FeePayable,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -86,6 +91,7 @@
                 :rdf/value    "fee payable"}})
 
 (def FundPrice
+  "fund price"
   {:db/ident :fibo-md-civx-fun/FundPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -94,6 +100,7 @@
                 :rdf/value    "fund price"}})
 
 (def FundUnitPerformance
+  "fund unit performance"
   {:db/ident :fibo-md-civx-fun/FundUnitPerformance,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -102,6 +109,7 @@
                 :rdf/value    "fund unit performance"}})
 
 (def FundsTax
+  "funds tax"
   {:db/ident :fibo-md-civx-fun/FundsTax,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -113,6 +121,7 @@
                      :rdf/type           :owl/Restriction}})
 
 (def NetAssetValue
+  "net asset value"
   {:db/ident :fibo-md-civx-fun/NetAssetValue,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -122,6 +131,7 @@
    :rdfs/subClassOf :fibo-md-civx-fun/FundPrice})
 
 (def RedemptionPrice
+  "redemption price"
   {:db/ident :fibo-md-civx-fun/RedemptionPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -131,6 +141,7 @@
    :rdfs/subClassOf :fibo-md-civx-fun/FundPrice})
 
 (def SigmaValueOfHoldings
+  "sigma value of holdings"
   {:db/ident :fibo-md-civx-fun/SigmaValueOfHoldings,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -139,6 +150,7 @@
                 :rdf/value    "sigma value of holdings"}})
 
 (def Swing
+  "swing"
   {:db/ident :fibo-md-civx-fun/Swing,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -147,6 +159,7 @@
                 :rdf/value    "swing"}})
 
 (def SwingPrice
+  "swing price"
   {:db/ident :fibo-md-civx-fun/SwingPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -156,6 +169,7 @@
    :rdfs/subClassOf :fibo-md-civx-fun/FundPrice})
 
 (def appliesTo
+  "applies to"
   {:db/ident :fibo-md-civx-fun/appliesTo,
    :owl/inverseOf :fibo-md-civx-fun/incursTax,
    :rdf/type :owl/ObjectProperty,
@@ -196,6 +210,7 @@
                      "The date when the price is determined. and time."}})
 
 (def determinationDate.1
+  "determination date"
   {:db/ident :fibo-md-civx-fun/determinationDate.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-md-civx-fun/FundUnitPerformance,
@@ -220,6 +235,7 @@
                      "THe period for which the performance is determined"}})
 
 (def determines
+  "determines"
   {:db/ident :fibo-md-civx-fun/determines,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -230,6 +246,7 @@
    :rdfs/range :fibo-md-civx-fun/FeePayable})
 
 (def hasPerformance
+  "has performance"
   {:db/ident :fibo-md-civx-fun/hasPerformance,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/FundUnit,
@@ -240,6 +257,7 @@
    :rdfs/range :fibo-md-civx-fun/FundUnitPerformance})
 
 (def hasPrice
+  "has price"
   {:db/ident :fibo-md-civx-fun/hasPrice,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/FundUnit,
@@ -250,6 +268,7 @@
    :rdfs/range :fibo-md-civx-fun/FundPrice})
 
 (def incurs
+  "incurs"
   {:db/ident :fibo-md-civx-fun/incurs,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundPortfolio,
@@ -260,6 +279,7 @@
    :rdfs/range :fibo-md-civx-fun/FundsTax})
 
 (def incursFees
+  "incurs fees"
   {:db/ident :fibo-md-civx-fun/incursFees,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-oac-opty/Investor,
@@ -270,6 +290,7 @@
    :rdfs/range :fibo-md-civx-fun/FeePayable})
 
 (def incursFees.1
+  "incurs fees"
   {:db/ident :fibo-md-civx-fun/incursFees.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/FundUnit,
@@ -280,6 +301,7 @@
    :rdfs/range :fibo-md-civx-fun/FeePayable})
 
 (def incursTax
+  "incurs tax"
   {:db/ident :fibo-md-civx-fun/incursTax,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-oac-opty/Investor,
@@ -290,6 +312,7 @@
    :rdfs/range :fibo-md-civx-fun/FundsTax})
 
 (def incursTax.1
+  "incurs tax"
   {:db/ident :fibo-md-civx-fun/incursTax.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/FundUnit,
@@ -300,6 +323,7 @@
    :rdfs/range :fibo-md-civx-fun/FundsTax})
 
 (def incursTransactionFee
+  "incurs transaction fee"
   {:db/ident :fibo-md-civx-fun/incursTransactionFee,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundPortfolio,
@@ -310,6 +334,7 @@
    :rdfs/range :fibo-md-civx-fun/FeePayable})
 
 (def mutuallyExclusive
+  "offer price"
   {:db/ident :fibo-md-civx-fun/mutuallyExclusive,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -319,6 +344,7 @@
    :rdfs/subClassOf :fibo-md-civx-fun/FundPrice})
 
 (def netOrGrossOfFees
+  "net or gross of fees"
   {:db/ident :fibo-md-civx-fun/netOrGrossOfFees,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-md-civx-fun/FundUnitPerformance,

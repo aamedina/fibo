@@ -167,7 +167,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
    :rdfs/label "BSDR LLC US-DE",
-   :rdfs/seeAlso "http://www.bloombergsdr.com/",
+   :rdfs/seeAlso ["http://www.bloombergsdr.com/"],
    :skos/definition
    "BSDR LLC legal entity that is a Delaware Limited Liability Company"})
 
@@ -259,7 +259,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
    :rdfs/label "Chicago Mercantile Exchange, Inc. US-DE",
-   :rdfs/seeAlso "http://www.cmegroup.com/company/cme.html",
+   :rdfs/seeAlso ["http://www.cmegroup.com/company/cme.html"],
    :skos/definition
    "Chicago Mercantile Exchange legal entity that is a Delaware Corporation"})
 
@@ -334,7 +334,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
    :rdfs/label "DTCC Data Repository (U.S) LLC US-NY",
-   :rdfs/seeAlso "http://www.dtcc.com/about/businesses-and-subsidiaries/ddr-us",
+   :rdfs/seeAlso
+   ["http://www.dtcc.com/about/businesses-and-subsidiaries/ddr-us"],
    :skos/definition
    "DTCC Data Repository (U.S) LLC legal entity that is a New York Limited Liability Company"})
 
@@ -367,7 +368,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
    :rdfs/label "ICE Trade Vault, LLC US-DE",
-   :rdfs/seeAlso "https://www.icetradevault.com/",
+   :rdfs/seeAlso ["https://www.icetradevault.com/"],
    :skos/definition
    "ICE Trade Vault, LLC legal entity that is a Delaware Limited Liability Company"})
 

@@ -103,10 +103,10 @@
                       :fibo-sec-eq-dr/AmericanDepositaryReceiptLevel,
                       :owl/onProperty :lcc-cr/isClassifiedBy,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt
                      {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-eq-dr/DepositaryReceipt],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -298,7 +298,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Indian depositary receipt"},
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/Indian_Depository_Receipt",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Indian_Depository_Receipt"],
    :rdfs/subClassOf [{:owl/hasValue   :fibo-be-ge-sasj/JurisdictionOfIndia,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
                       :rdf/type       :owl/Restriction}

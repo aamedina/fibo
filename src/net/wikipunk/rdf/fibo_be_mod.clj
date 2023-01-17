@@ -80,7 +80,7 @@
    :rdf/type [:sm/Module :owl/NamedIndividual],
    :rdfs/isDefinedBy "https://spec.edmcouncil.org/fibo/ontology/BE/MetadataBE/",
    :rdfs/label "Business Entities",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/contributor ["Thematix Partners LLC"
                     "Tahoe Blue Ltd"
                     "Pinnacle Bank (Morgan Hill, California)"

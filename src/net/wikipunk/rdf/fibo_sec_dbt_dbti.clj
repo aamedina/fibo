@@ -326,18 +326,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
    :rdfs/label "non-tradable debt instrument",
    :rdfs/subClassOf
-   [:fibo-fbc-fi-fi/DebtInstrument
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
-     :owl/someValuesFrom :fibo-sec-dbt-dbti/RelativePrice,
-     :rdf/type           :owl/Restriction}
+   [{:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-fi-fi/RedemptionProvision,
+     :owl/onProperty :fibo-fbc-fi-fi/hasRedemptionProvision,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-fnd-agr-ctr/MutualContractualAgreement
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasRelativePriceAtRedemption,
      :owl/someValuesFrom :fibo-sec-dbt-dbti/RelativePrice,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-ctr/MutualContractualAgreement
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-fi-fi/RedemptionProvision,
-     :owl/onProperty :fibo-fbc-fi-fi/hasRedemptionProvision,
-     :rdf/type       :owl/Restriction}],
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
+     :owl/someValuesFrom :fibo-sec-dbt-dbti/RelativePrice,
+     :rdf/type           :owl/Restriction}],
    :skos/definition "a debt instrument that may not be bought or sold",
    :skos/example
    "Low-risk instruments such as savings bonds are examples of nonnegotiable debt instruments."})
@@ -428,15 +428,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
    :rdfs/label "put feature",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/DebtTerms
-                     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-                      :owl/someValuesFrom :fibo-sec-dbt-dbti/PutSchedule,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fbc-fi-fi/RedemptionProvision
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-sec-dbt-dbti/PutNotificationProvision,
                       :owl/onProperty
                       :fibo-sec-dbt-dbti/hasNotificationProvision,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-dbti/PutSchedule,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "redemption provision giving the holder the right, but not the obligation, to sell a specified amount of the debt instrument (i.e., redeem it), prior to maturity",
    :skos/editorialNote

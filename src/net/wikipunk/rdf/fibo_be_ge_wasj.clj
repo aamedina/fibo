@@ -576,7 +576,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of the United Arab Emirates",
-   :rdfs/seeAlso "http://ejustice.gov.ae/",
+   :rdfs/seeAlso ["http://ejustice.gov.ae/"],
    :skos/definition
    "jurisdiction of the judiciary of United Arab Emirates, which is the system of courts, including the Federal Supreme Court of the United Arab Emirates and other lower courts, that interprets and applies the law in United Arab Emirates"})
 

@@ -48,7 +48,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/",
    :rdfs/label "FIBO LOAN Loans General Module",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/contributor ["Tahoe Blue Ltd"
                     "John F. Gemski"
                     "Office of Financial Research (US Dept of the Treasury)"

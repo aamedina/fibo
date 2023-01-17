@@ -92,7 +92,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "European Union entity",
-   :rdfs/seeAlso "https://europa.eu/european-union/about-eu/countries_en",
+   :rdfs/seeAlso ["https://europa.eu/european-union/about-eu/countries_en"],
    :skos/definition
    "individual representing the federated sovereignty and polity that is the European Union"})
 

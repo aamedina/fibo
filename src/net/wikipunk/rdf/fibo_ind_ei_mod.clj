@@ -47,7 +47,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/MetadataINDEconomicIndicators/",
    :rdfs/label "FIBO IND Economic Indicators",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/contributor
    ["Pinnacle Bank (Morgan Hill, California)"
     "Bureau of Labor Statistics (BLS, US Department of Commerce)"

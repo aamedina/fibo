@@ -158,7 +158,7 @@
    {:rdf/language "en",
     :rdf/value
     "Bank for International Settlements as banking services provider"},
-   :rdfs/seeAlso "https://www.bis.org/",
+   :rdfs/seeAlso ["https://www.bis.org/"],
    :skos/definition
    "Bank for International Settlements role as a banking services provider to central banks and other monetary authorities"})
 
@@ -210,12 +210,12 @@
    [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
      :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCode,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fct-breg/isSelfMaintained,
-     :owl/someValuesFrom :xsd/string,
-     :rdf/type           :owl/Restriction}
     {:owl/hasValue   :fibo-fbc-fct-ireg/BusinessIdentifierCodeRegistry,
      :owl/onProperty :fibo-fnd-rel-rel/isIncludedIn,
      :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-breg/isSelfMaintained,
+     :owl/someValuesFrom :xsd/string,
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-breg/BusinessRegistryEntry],
    :skos/definition
    "entry in a registry that conforms to ISO 9362 for the management of BIC codes and related registration information"})
@@ -395,24 +395,24 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities/",
    :rdfs/label "market identifier code registry entry",
    :rdfs/subClassOf
-   [{:owl/maxQualifiedCardinality 1,
-     :owl/onDataRange :xsd/string,
-     :owl/onProperty  :fibo-fbc-fct-breg/hasRegistrationRevisionDate,
+   [{:owl/onDataRange :xsd/string,
+     :owl/onProperty  :fibo-fbc-fct-breg/hasInitialRegistrationDate,
+     :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+     :owl/someValuesFrom :fibo-fbc-fct-mkt/MarketIdentifier,
+     :rdf/type           :owl/Restriction}
     {:owl/hasValue   :fibo-fbc-fct-ireg/MarketIdentifierCodeRegistry,
      :owl/onProperty :fibo-fnd-rel-rel/isIncludedIn,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-ra/RegistryEntry
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-fbc-fct-mkt/MarketIdentifier,
-     :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifierCodeStatus,
      :owl/onProperty :fibo-fbc-fct-mkt/hasMarketIdentifierCodeStatus,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    {:owl/onDataRange :xsd/string,
-     :owl/onProperty  :fibo-fbc-fct-breg/hasInitialRegistrationDate,
-     :owl/qualifiedCardinality 1,
+    {:owl/maxQualifiedCardinality 1,
+     :owl/onDataRange :xsd/string,
+     :owl/onProperty  :fibo-fbc-fct-breg/hasRegistrationRevisionDate,
      :rdf/type        :owl/Restriction}],
    :skos/definition
    "entry in a market identifier code registry that conforms to ISO 10383"})

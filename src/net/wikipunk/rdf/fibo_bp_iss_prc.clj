@@ -98,6 +98,7 @@
     "Information about the allotment of quantities of the issue to different subscribers. This relates a single instrument allotment against the subscription amounts allotted to each Subscriber."}})
 
 (def Announcement
+  "announcement"
   {:db/ident :fibo-bp-iss-prc/Announcement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -122,6 +123,7 @@
                      :rdf/value    "No definition"}})
 
 (def IssuanceProcessActivity
+  "issuance process activity"
   {:db/ident :fibo-bp-iss-prc/IssuanceProcessActivity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -208,25 +210,26 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "offering"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-bp-iss-muni/givesRiseTo,
-     :owl/someValuesFrom :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-prc/hasSaleMethod,
+   [{:owl/onProperty     :fibo-bp-iss-prc/hasSaleMethod,
      :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingSaleMethod,
+     :rdf/type           :owl/Restriction}
+    :fibo-bp-iss-dbti/IssuanceProcessActivity
+    {:owl/onProperty     :fibo-bp-iss-prc/requiredToMakeEligible,
+     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-prc/hasDistributionType,
      :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingDistributionMethod,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-prc/requiredToMakeEligible,
-     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
-     :rdf/type           :owl/Restriction}
-    :fibo-bp-iss-dbti/IssuanceProcessActivity],
+    {:owl/onProperty     :fibo-bp-iss-muni/givesRiseTo,
+     :owl/someValuesFrom :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
     "The process step of offering a security for issue. This is the making available of a new securities issue through an underwriting."}})
 
 (def PotentialIssuer
+  "potential issuer"
   {:db/ident :fibo-bp-iss-prc/PotentialIssuer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -335,6 +338,7 @@
                      "The process by which a financial security is issued."}})
 
 (def SecuritiesIssuanceProcessActor
+  "securities issuance process actor"
   {:db/ident :fibo-bp-iss-prc/SecuritiesIssuanceProcessActor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -344,6 +348,7 @@
    :rdfs/subClassOf :fibo-fnd-pty-rl/AgentInRole})
 
 (def SecurityIssuanceGuarantor
+  "security issuance guarantor"
   {:db/ident :fibo-bp-iss-prc/SecurityIssuanceGuarantor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -382,6 +387,7 @@
                      :rdf/value "Method for sale of a new security offering."}})
 
 (def Subscriber
+  "subscriber"
   {:db/ident :fibo-bp-iss-prc/Subscriber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -395,6 +401,7 @@
                      :fibo-fnd-pty-rl/AgentInRole]})
 
 (def SubscriptionClosingInformation
+  "subscription closing information"
   {:db/ident :fibo-bp-iss-prc/SubscriptionClosingInformation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -494,6 +501,7 @@
     "Date/time, as announced by the issuer, at which the securities were to be issued and subsequently were issued."}})
 
 (def describesAllotmentOf
+  "describes allotment of"
   {:db/ident :fibo-bp-iss-prc/describesAllotmentOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/AllotmentInformation,
@@ -520,6 +528,7 @@
     "The date on which the transfer of positions to underwriters is expected to take place. This date is provided by underwriters as part of an announcement."}})
 
 (def finalStateDescribedIn
+  "final state described in"
   {:db/ident :fibo-bp-iss-prc/finalStateDescribedIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-sec-iss/SecuritiesOffering,
@@ -590,6 +599,7 @@
     "Date and time the issuer formally accepts a bid for Competitive Issues or, the Date and Time the Bond Purchase Agreement is executed for Negotiated Issues. Time Zone: Include in date/time data or add a term for it?"}})
 
 (def hasDistributionType
+  "has distribution type"
   {:db/ident :fibo-bp-iss-prc/hasDistributionType,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
@@ -625,6 +635,7 @@
                      :rdf/value    "Sale Method of the security."}})
 
 (def isIssuanceGuarantor
+  "is issuance guarantor"
   {:db/ident :fibo-bp-iss-prc/isIssuanceGuarantor,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/SecurityIssuanceGuarantor,
@@ -635,6 +646,7 @@
    :rdfs/range :fibo-bp-iss-prc/SecuritiesIssuanceProcess})
 
 (def isPotentialIssuer
+  "is potential issuer"
   {:db/ident :fibo-bp-iss-prc/isPotentialIssuer,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/PotentialIssuer,
@@ -719,6 +731,7 @@
     "Whether the subscriber has been over-alloted the requested number of units. REVIEW: Not seen in data terms but implied elsewhere."}})
 
 (def requiredToMakeEligible
+  "required to make eligible"
   {:db/ident :fibo-bp-iss-prc/requiredToMakeEligible,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/OfferingProcess,
@@ -773,6 +786,7 @@
                      "Period during which the security can be subscribed to."}})
 
 (def takenDownBy
+  "taken down by"
   {:db/ident :fibo-bp-iss-prc/takenDownBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/UnderwriterTakedown,

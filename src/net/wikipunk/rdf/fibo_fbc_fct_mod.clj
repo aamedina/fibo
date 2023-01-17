@@ -63,7 +63,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/MetadataFBCFunctionalEntities/",
    :rdfs/label "FIBO FBC Functional Entities Module",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright ["Copyright (c) 2015-2022 EDM Council, Inc."
                   "Copyright (c) 2015-2022 Object Management Group, Inc."],
    :sm/moduleAbbreviation "FIBO-FBC-FCT"})

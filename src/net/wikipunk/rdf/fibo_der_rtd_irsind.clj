@@ -153,6 +153,7 @@
    "contract IY7VKEUR45886 swap leg 1 that is a fixed interest rate leg"})
 
 (def ContractLeg1-IY7VKEUR45886-EffectiveDate
+  "contract leg 1 IY7VKEUR45886 effective date"
   {:db/ident :fibo-der-rtd-irsind/ContractLeg1-IY7VKEUR45886-EffectiveDate,
    :fibo-fnd-dt-fd/hasDateValue "2015-12-12",
    :rdf/type [:fibo-fnd-dt-fd/ExplicitDate :owl/NamedIndividual],
@@ -179,6 +180,7 @@
    "interest payment terms for contract IY7VKEUR45886 swap leg 1 that is a fixed interest rate leg"})
 
 (def ContractLeg1-IY7VKEUR45886-InterestRate
+  "contract leg 1 IY7VKEUR45886 fixed interest rate"
   {:db/ident :fibo-der-rtd-irsind/ContractLeg1-IY7VKEUR45886-InterestRate,
    :fibo-fnd-acc-cur/hasRateValue 1.0579M,
    :rdf/type [:fibo-fbc-dae-dbt/FixedInterestRate :owl/NamedIndividual],
@@ -187,6 +189,7 @@
    :rdfs/label "contract leg 1 IY7VKEUR45886 fixed interest rate"})
 
 (def ContractLeg1-IY7VKEUR45886-NotionalAmount
+  "contract leg 1 IY7VKEUR45886 notional amount"
   {:db/ident :fibo-der-rtd-irsind/ContractLeg1-IY7VKEUR45886-NotionalAmount,
    :fibo-fnd-acc-cur/hasAmount 1286805,
    :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/Euro,
@@ -196,6 +199,7 @@
    :rdfs/label "contract leg 1 IY7VKEUR45886 notional amount"})
 
 (def ContractLeg1-IY7VKEUR45886-TerminationDate
+  "contract leg 1 IY7VKEUR45886 termination date"
   {:db/ident :fibo-der-rtd-irsind/ContractLeg1-IY7VKEUR45886-TerminationDate,
    :fibo-fnd-dt-fd/hasDateValue "2025-08-17",
    :rdf/type [:fibo-fnd-dt-fd/ExplicitDate :owl/NamedIndividual],
@@ -230,6 +234,7 @@
    "contract IY7VKEUR45886 swap leg 2 that is a floating interest rate leg"})
 
 (def ContractLeg2-IY7VKEUR45886-EffectiveDate
+  "contract leg 2 IY7VKEUR45886 effective date"
   {:db/ident :fibo-der-rtd-irsind/ContractLeg2-IY7VKEUR45886-EffectiveDate,
    :fibo-fnd-dt-fd/hasDateValue "2015-12-12",
    :rdf/type [:fibo-fnd-dt-fd/ExplicitDate :owl/NamedIndividual],
@@ -256,6 +261,7 @@
    "interest payment terms for contract IY7VKEUR45886 swap leg 2 that is a floating interest rate leg"})
 
 (def ContractLeg2-IY7VKEUR45886-InterestRate
+  "contract leg 2 IY7VKEUR45886 floating interest rate"
   {:db/ident :fibo-der-rtd-irsind/ContractLeg2-IY7VKEUR45886-InterestRate,
    :fibo-fnd-acc-cur/hasRateValue 0.309M,
    :rdf/type [:fibo-fbc-dae-dbt/FloatingInterestRate :owl/NamedIndividual],
@@ -264,6 +270,7 @@
    :rdfs/label "contract leg 2 IY7VKEUR45886 floating interest rate"})
 
 (def ContractLeg2-IY7VKEUR45886-NotionalAmount
+  "contract leg 2 IY7VKEUR45886 notional amount"
   {:db/ident :fibo-der-rtd-irsind/ContractLeg2-IY7VKEUR45886-NotionalAmount,
    :fibo-fnd-acc-cur/hasAmount 1286805,
    :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/Euro,
@@ -273,6 +280,7 @@
    :rdfs/label "contract leg 2 IY7VKEUR45886 notional amount"})
 
 (def ContractLeg2-IY7VKEUR45886-TerminationDate
+  "contract leg 2 IY7VKEUR45886 termination date"
   {:db/ident :fibo-der-rtd-irsind/ContractLeg2-IY7VKEUR45886-TerminationDate,
    :fibo-fnd-dt-fd/hasDateValue "2025-08-17",
    :rdf/type [:fibo-fnd-dt-fd/ExplicitDate :owl/NamedIndividual],
@@ -387,6 +395,7 @@
    :skos/definition "swap contract party ZZZWWK96TRQY0F2IY7VK"})
 
 (def Trader-J_Adams
+  "trader J. Adams"
   {:db/ident :fibo-der-rtd-irsind/Trader-J_Adams,
    :rdf/type [:fibo-fbc-pas-fpas/Trader :owl/NamedIndividual],
    :rdfs/isDefinedBy

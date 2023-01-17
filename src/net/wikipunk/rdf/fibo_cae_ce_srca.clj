@@ -313,6 +313,7 @@
                      "An obligation related to the holding of a Security."}})
 
 (def CorporateActionPaymentObligation
+  "corporate action payment obligation"
   {:db/ident :fibo-cae-ce-srca/CorporateActionPaymentObligation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -895,10 +896,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "tender offer"},
-   :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom :fibo-sec-eq-eq/Share,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-cae-ce-act/VoluntaryCorporateAction],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -986,6 +987,7 @@
     "corporate action that involves booking out of valueless securities"}})
 
 (def convertsFrom
+  "converts from"
   {:db/ident :fibo-cae-ce-srca/convertsFrom,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-cae-ce-act/CorporateAction,
@@ -996,6 +998,7 @@
    :rdfs/range :fibo-fbc-fi-fi/Security})
 
 (def convertsTo
+  "converts to"
   {:db/ident :fibo-cae-ce-srca/convertsTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-cae-ce-act/CorporateAction,

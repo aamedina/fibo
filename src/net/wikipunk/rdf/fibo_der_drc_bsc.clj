@@ -290,7 +290,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label "observable value",
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/Fair_value",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Fair_value"],
    :rdfs/subClassOf :fibo-fnd-acc-cur/MonetaryAmount,
    :skos/definition
    "value for something discernible and for which evidence can be obtained"})

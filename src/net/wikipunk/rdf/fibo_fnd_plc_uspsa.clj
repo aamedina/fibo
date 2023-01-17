@@ -1,14 +1,18 @@
 (ns net.wikipunk.rdf.fibo-fnd-plc-uspsa
   "This ontology augments the Addresses ontology in FND with concepts that conform to the USPS Pub 28. The USPS provides automated address verification services that use the concepts defined herein for that purpose, and which many financial services entities use for data quality purposes."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2019-2023 EDM Council, Inc."
+                       "Copyright (c) 2019-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :dcterms/abstract
    "This ontology augments the Addresses ontology in FND with concepts that conform to the USPS Pub 28. The USPS provides automated address verification services that use the concepts defined herein for that purpose, and which many financial services entities use for data quality purposes.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/contributor "Thematix Partners LLC",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
@@ -16,7 +20,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-plc-adr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
     "fibo-fnd-plc-loc"
@@ -33,7 +38,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -46,25 +50,14 @@
                   "https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"],
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here, and correct a duplicate label."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/contributor "Thematix Partners LLC",
-   :sm/copyright ["Copyright (c) 2019-2022 EDM Council, Inc."
-                  "Copyright (c) 2019-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"],
-   :sm/fileAbbreviation "fibo-fnd-plc-uspsa",
-   :sm/filename "USPostalServiceAddresses.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def CompleteAddress
   "delivery address that has all the address elements necessary to allow an exact match with the current Postal Service ZIP+4 and City State files to obtain the finest level of ZIP+4 and delivery point codes for the delivery address"
-  {:db/ident :fibo-fnd-plc-uspsa/CompleteAddress,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A complete address may be required on mail at some automation rates.",
+   :db/ident :fibo-fnd-plc-uspsa/CompleteAddress,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
@@ -80,7 +73,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "delivery address code set",
-   :rdfs/seeAlso "https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf",
+   :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"],
    :rdfs/subClassOf [{:owl/onProperty :lcc-lr/hasMember,
                       :owl/someValuesFrom
                       :fibo-fnd-plc-uspsa/USPostalServiceAddressIdentifier,
@@ -92,14 +85,14 @@
 
 (def DeliveryPointCode
   "specific set of digits between 00 and 99 assigned to a delivery point"
-  {:db/ident :fibo-fnd-plc-uspsa/DeliveryPointCode,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "When combined with the ZIP + 4 code, the delivery point code provides a unique identifier for every deliverable address served by the USPS. The delivery point digits are almost never printed on mail in human-readable form; instead they are encoded in the POSTNET delivery point barcode (DPBC) or as part of the newer Intelligent Mail Barcode (IMB).",
+   :db/ident :fibo-fnd-plc-uspsa/DeliveryPointCode,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "delivery point code",
-   :rdfs/seeAlso "https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf",
+   :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"],
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :lcc-lr/hasTag,
                       :owl/qualifiedCardinality 1,
@@ -119,7 +112,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "delivery point code set",
-   :rdfs/seeAlso "https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf",
+   :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"],
    :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasMember,
                       :owl/someValuesFrom :fibo-fnd-plc-uspsa/DeliveryPointCode,
                       :rdf/type           :owl/Restriction}
@@ -144,7 +137,7 @@
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     {:owl/hasValue   {:xsd/string "DPO"},
+                     {:owl/hasValue   "DPO",
                       :owl/onProperty :fibo-fnd-plc-loc/hasCityName,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/PhysicalAddress],
@@ -181,15 +174,15 @@
 
 (def GeneralDeliveryAddress
   "delivery address that uses the words 'GENERAL DELIVERY', uppercase preferred, spelled out (no abbreviation), in place of a street address"
-  {:db/ident :fibo-fnd-plc-uspsa/GeneralDeliveryAddress,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The value of the +4 component of a ZIP+4 code should be '9999'.",
+   :db/ident :fibo-fnd-plc-uspsa/GeneralDeliveryAddress,
    :owl/disjointWith :fibo-fnd-plc-adr/ConventionalStreetAddress,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "general delivery address",
-   :rdfs/subClassOf [{:owl/hasValue   {:rdf/value "GENERAL DELIVERY"},
+   :rdfs/subClassOf [{:owl/hasValue   "GENERAL DELIVERY",
                       :owl/onProperty :fibo-fnd-plc-adr/hasAddressLine1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/PhysicalAddress],
@@ -333,7 +326,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "overseas military address",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-plc-loc/hasCityName,
-                      :owl/someValuesFrom {:owl/oneOf [{:xsd/string "APO"} {:xsd/string "FPO"}],
+                      :owl/someValuesFrom {:owl/oneOf ["APO" "FPO"],
                                            :rdf/type  :rdfs/Datatype},
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-plc-adr/hasAddressLine1,
@@ -480,9 +473,9 @@
 
 (def USPostalServiceAddressIdentifier
   "combined with the ZIP + 4 code, the delivery point code provides a unique identifier for every deliverable address served by the USPS"
-  {:db/ident :fibo-fnd-plc-uspsa/USPostalServiceAddressIdentifier,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The delivery point digits are almost never printed on mail in human-readable form; instead they are encoded in the POSTNET delivery point barcode (DPBC) or as part of the newer Intelligent Mail Barcode (IMB).",
+   :db/ident :fibo-fnd-plc-uspsa/USPostalServiceAddressIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
@@ -501,9 +494,9 @@
 
 (def Urbanization
   "an area, sector, or development within a larger geographic area"
-  {:db/ident :fibo-fnd-plc-uspsa/Urbanization,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This URB descriptor, commonly used in urban areas of Puerto Rico, is an important part of the addressing format, as it describes the location of a given street.",
+   :db/ident :fibo-fnd-plc-uspsa/Urbanization,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
@@ -539,9 +532,9 @@
 
 (def ZIPPlus4Code
   "nine-digit number consisting of five digits, a hyphen, and four digits, which the USPS describes by its trademark ZIP+4"
-  {:db/ident :fibo-fnd-plc-uspsa/ZIPPlus4Code,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The correct format for a numeric ZIP+4 code is five digits, a hyphen, and four digits. The first five digits represent the 5-digit ZIP Code; the sixth and seventh digits (the first two after the hyphen) identify an area known as a sector; the eighth and ninth digits identify a smaller area known as a segment. Together, the final four digits identify geographic units such as a side of a street between intersections, both sides of a street between intersections, a building, a floor or group of floors in a building, a firm within a building, a span of boxes on a rural route, or a group of Post Office boxes to which a single USPS employee makes delivery.",
+   :db/ident :fibo-fnd-plc-uspsa/ZIPPlus4Code,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
@@ -557,7 +550,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "zip code scheme",
-   :rdfs/seeAlso "https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf",
+   :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"],
    :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasMember,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-plc-uspsa/ZIPCode

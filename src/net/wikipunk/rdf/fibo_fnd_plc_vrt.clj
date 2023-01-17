@@ -1,22 +1,26 @@
 (ns net.wikipunk.rdf.fibo-fnd-plc-vrt
   "This ontology provides scaffolding for use in describing virtual location-oriented concepts."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2013-2023 EDM Council, Inc."
+                       "Copyright (c) 2013-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
    :dcterms/abstract
    "This ontology provides scaffolding for use in describing virtual location-oriented concepts.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-plc-adr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
     "fibo-fnd-plc-vrt"
@@ -29,7 +33,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -41,26 +44,16 @@
    :skos/changeNote
    ["This ontology was added to Foundations in advance of the December 2014 Long Beach meeting in support of the SEC specification."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces.rdf version of this ontology was modified to address hygiene issues with respect to text formatting."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces.rdf version of this ontology was modified to eliminate duplication of concepts in LCC and email address and telephone number."
-    "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Places/VirtualPlaces.rdf version of this ontology was modified for the FIBO 2.0 RFC to integrate it with LCC."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2013-2022 Object Management Group, Inc."
-                  "Copyright (c) 2013-2022 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"],
-   :sm/fileAbbreviation "fibo-fnd-plc-vrt",
-   :sm/filename "VirtualPlaces.rdf"})
+    "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Places/VirtualPlaces.rdf version of this ontology was modified for the FIBO 2.0 RFC to integrate it with LCC."]})
 
 (def ElectronicMailAddress
   "virtual address that defines an electronic messaging endpoint to which email messages can be delivered, typically via an Simple Mail Transfer Protocol (SMTP) based communications system"
-  {:db/ident :fibo-fnd-plc-vrt/ElectronicMailAddress,
-   :fibo-fnd-utl-av/abbreviation ["email address" "e-mail address"],
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation ["email address" "e-mail address"],
+   :cmns-av/explanatoryNote
    "Electronic mail, abbreviated e-mail or email, is a method of composing, sending, and receiving messages over electronic communication systems. The term e-mail applies both to the Internet e-mail system based on the Simple Mail Transfer Protocol (SMTP) and to intranet systems allowing users within one company or organization to send messages to each other. Often these workgroup collaboration systems natively use non-standard protocols but have some form of gateway to allow them to send and receive Internet e-mail. Some organizations may use the Internet protocols for internal e-mail service.",
+   :db/ident :fibo-fnd-plc-vrt/ElectronicMailAddress,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
@@ -97,10 +90,10 @@
 
 (def TelephoneNumber
   "virtual address that may be assigned to a fixed-line telephone subscriber station connected to a telephone line or to a wireless electronic telephony device, such as a radio telephone or a mobile telephone, or to other devices or services for data transmission via the public switched telephone network (PSTN) or other public and private networks"
-  {:db/ident :fibo-fnd-plc-vrt/TelephoneNumber,
-   :fibo-fnd-utl-av/abbreviation "phone number",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "phone number",
+   :cmns-av/explanatoryNote
    "Telephone numbers are assigned within the framework of a national or regional telephone numbering plan to subscribers by telephone service operators, which may be commercial entities, state-controlled administrations, or other telecommunication industry associations.",
+   :db/ident :fibo-fnd-plc-vrt/TelephoneNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
@@ -123,8 +116,8 @@
 
 (def hasElectronicMailAddress
   "specifies an electronic messaging endpoint at which some entity may be located or contacted or may receive correspondence"
-  {:db/ident :fibo-fnd-plc-vrt/hasElectronicMailAddress,
-   :fibo-fnd-utl-av/abbreviation ["has email address" "has e-mail address"],
+  {:cmns-av/abbreviation ["has email address" "has e-mail address"],
+   :db/ident :fibo-fnd-plc-vrt/hasElectronicMailAddress,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
@@ -148,8 +141,8 @@
 
 (def hasURL
   "links something to a web resource that specifies its location on a computer network and a method for retrieving it"
-  {:db/ident :fibo-fnd-plc-vrt/hasURL,
-   :fibo-fnd-utl-av/synonym "has uniform resource locator",
+  {:cmns-av/synonym "has uniform resource locator",
+   :db/ident :fibo-fnd-plc-vrt/hasURL,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
@@ -160,15 +153,15 @@
 
 (def hasWebsite
   "links something to a page or set of related web pages located under a single domain name, typically produced by a single person or organization"
-  {:db/ident :fibo-fnd-plc-vrt/hasWebsite,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Web Design and Applications involve the standards for building and Rendering Web pages, including HTML, CSS, SVG, device APIs, and other technologies for Web Applications ('WebApps'). HTML (the Hypertext Markup Language) and CSS (Cascading Style Sheets) are two of the core technologies for building Web pages. HTML provides the structure of the page, CSS the (visual and aural) layout, for a variety of devices and services.",
+   :db/ident :fibo-fnd-plc-vrt/hasWebsite,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
    :rdfs/label "has website",
    :rdfs/range :xsd/anyURI,
-   :rdfs/seeAlso "https://www.w3.org/standards/webdesign/",
+   :rdfs/seeAlso ["https://www.w3.org/standards/webdesign/"],
    :rdfs/subPropertyOf :fibo-fnd-plc-vrt/hasURL,
    :skos/definition
    "links something to a page or set of related web pages located under a single domain name, typically produced by a single person or organization"})

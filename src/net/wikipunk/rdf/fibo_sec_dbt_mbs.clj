@@ -186,6 +186,7 @@
                      :rdf/value    "A pool of agency mortgages."}})
 
 (def CommercialMBS
+  "commercial m b s"
   {:db/ident :fibo-sec-dbt-mbs/CommercialMBS,
    :owl/disjointWith :fibo-sec-dbt-mbs/ResidentialMBS,
    :rdf/type :owl/Class,
@@ -196,6 +197,7 @@
    :rdfs/subClassOf :fibo-sec-dbt-mbs/MortgageBackedSecurity})
 
 (def FHLMC-GoldPool
+  "FHLMC Gold pool"
   {:db/ident :fibo-sec-dbt-mbs/FHLMC-GoldPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -205,6 +207,7 @@
    :rdfs/subClassOf :fibo-sec-dbt-mbs/AgencyMortgagePool})
 
 (def FHLMC-Pool
+  "FHLMC pool"
   {:db/ident :fibo-sec-dbt-mbs/FHLMC-Pool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -214,6 +217,7 @@
    :rdfs/subClassOf :fibo-sec-dbt-mbs/AgencyMortgagePool})
 
 (def FNMA-Pool
+  "FNMA pool"
   {:db/ident :fibo-sec-dbt-mbs/FNMA-Pool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -244,6 +248,7 @@
     "A floater tranche is a tranche that is keyed to an index and a spread."}})
 
 (def GNMA-IIPool
+  "GNMA-II pool"
   {:db/ident :fibo-sec-dbt-mbs/GNMA-IIPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -253,6 +258,7 @@
    :rdfs/subClassOf :fibo-sec-dbt-mbs/AgencyMortgagePool})
 
 (def GNMA-PlatinumPool
+  "GNMA Platinum pool"
   {:db/ident :fibo-sec-dbt-mbs/GNMA-PlatinumPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -262,6 +268,7 @@
    :rdfs/subClassOf :fibo-sec-dbt-mbs/AgencyMortgagePool})
 
 (def GNMA-iPool
+  "GNMA-i pool"
   {:db/ident :fibo-sec-dbt-mbs/GNMA-iPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -296,6 +303,7 @@
     "These exist in the USA and may also exist now or in future in other countries. There are three such agencies in thr USA: FNMA, GNMA and FHLMC (Fannie Mae, Ginnie Mae and Freddie Mac respectively)."}})
 
 (def InverseFloaterTranche
+  "inverse floater tranche"
   {:db/ident :fibo-sec-dbt-mbs/InverseFloaterTranche,
    :owl/disjointWith [:fibo-sec-dbt-mbs/SuperFloaterTranche
                       :fibo-sec-dbt-mbs/RegularFloaterTranche],
@@ -424,13 +432,13 @@
                 :rdf/value    "mortgage-backed security"},
    :rdfs/subClassOf
    [:fibo-sec-dbt-pbs/PoolBackedSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty :fibo-fnd-rel-rel/isCharacterizedBy,
      :owl/someValuesFrom
      :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}],
+     :rdf/type :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -538,6 +546,7 @@
     "A party which is a non agency issuer of MBS securities. The identity of this party may be a bank or a specialist (non agency) mortgage company. Term origin:MBS PoC Reviews"}})
 
 (def NonAgencyMortgagePool
+  "non agency mortgage pool"
   {:db/ident :fibo-sec-dbt-mbs/NonAgencyMortgagePool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -611,6 +620,7 @@
     "These tranches are credited for interest that would have been received and that interest is accrued to the Z tranche. Once all other tranches have been paid, the holders of the Z tranche receive payments. Types of Z Tranche: A Jump Z tranche is like a Z tranche but if there is some sort of trigger event reached then the holders of the Jump Z tranche will begin to receive payments. \"Sticky\" Jump Z tranches maintain this payment priority until they are retired, while regular, non-Sticky Jump Z tranches maintain their changed status only while the trigger event is in effect, and revert to their old payment status once the trigger event has passed. Review note: These are currently separate entries - they should be entries for types of Z Tranche. Add new list and move these to there."}})
 
 (def Pass-throughPool
+  "pass-through pool"
   {:db/ident :fibo-sec-dbt-mbs/Pass-throughPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -707,6 +717,7 @@
     "The party which agrees to buy any certificates that are not bought by investors Term origin:MBS PoC Reviews"}})
 
 (def PayingAgent
+  "paying agent"
   {:db/ident :fibo-sec-dbt-mbs/PayingAgent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -718,6 +729,7 @@
                      :rdf/type           :owl/Restriction}})
 
 (def PrivateLabelMBSDeal
+  "private label m b s deal"
   {:db/ident :fibo-sec-dbt-mbs/PrivateLabelMBSDeal,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -741,7 +753,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "real estate mortgage investment conduit"},
    :rdfs/seeAlso
-   "https://www.investopedia.com/terms/r/real-estate-mortgage-investment-conduit-remic.asp",
+   ["https://www.investopedia.com/terms/r/real-estate-mortgage-investment-conduit-remic.asp"],
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-dbt-mbs/MortgagePool,
                       :owl/onProperty :fibo-fnd-oac-own/owns,
@@ -804,6 +816,7 @@
     "Unknown Further notes: Verify whether Residual Tranche and Support Tranche are meant to be in the same list of types as PAC etc. i.e. can a tranche not be PAC and Residual? this looks suspicioulsy like two semantics."}})
 
 (def SBA-Pool
+  "SBA pool"
   {:db/ident :fibo-sec-dbt-mbs/SBA-Pool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -866,6 +879,7 @@
     "Specific kinds of tranche are modeled for example and investigation only and have been removed from the diagrams. These will be removed from the final model."}})
 
 (def SuperFloaterTranche
+  "super floater tranche"
   {:db/ident :fibo-sec-dbt-mbs/SuperFloaterTranche,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -904,6 +918,7 @@
                      "the type of tranche in a tranched MBS security"}})
 
 (def TranchedMBSDeal
+  "tranched m b s deal"
   {:db/ident :fibo-sec-dbt-mbs/TranchedMBSDeal,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -916,6 +931,7 @@
                      :fibo-sec-dbt-dbti/DebtOffering]})
 
 (def TranchedMBSDealProspectus
+  "tranched m b s deal prospectus"
   {:db/ident :fibo-sec-dbt-mbs/TranchedMBSDealProspectus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -925,6 +941,7 @@
    :rdfs/subClassOf :fibo-sec-dbt-mbs/MortgageBackedSecurityOfferingProspectus})
 
 (def TranchedMBSInstrument
+  "tranched m b s instrument"
   {:db/ident :fibo-sec-dbt-mbs/TranchedMBSInstrument,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -958,6 +975,7 @@
     "The party which agrees to buy any certificates that are not bought by investors Term origin:MBS PoC Reviews"}})
 
 (def cashflowPrecedence
+  "cashflow precedence"
   {:db/ident :fibo-sec-dbt-mbs/cashflowPrecedence,
    :owl/inverseOf :fibo-sec-dbt-mbs/providesCreditSupportTo,
    :rdf/type :owl/ObjectProperty,
@@ -999,6 +1017,7 @@
     "The currency amount in which the Note is denominated, for example $500 notes. This term added by symmettry with MBS Tranche Note. needs to be reviewed and validated."}})
 
 (def hasNote
+  "has note"
   {:db/ident :fibo-sec-dbt-mbs/hasNote,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/MortgageBackedSecurity,
@@ -1010,6 +1029,7 @@
    :rdfs/subPropertyOf :lcc-cr/hasPart})
 
 (def hasTrancheType
+  "has tranche type"
   {:db/ident :fibo-sec-dbt-mbs/hasTrancheType,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-pbs/StructuredFinanceInstrument,
@@ -1020,6 +1040,7 @@
    :rdfs/range :fibo-sec-dbt-mbs/TrancheType})
 
 (def isAlso
+  "is also"
   {:db/ident :fibo-sec-dbt-mbs/isAlso,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/PassThroughMBSDeal,
@@ -1030,6 +1051,7 @@
    :rdfs/range :fibo-sec-dbt-mbs/AgencyMBSDeal})
 
 (def isAlso.1
+  "is also"
   {:db/ident :fibo-sec-dbt-mbs/isAlso.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/TranchedMBSDeal,
@@ -1040,6 +1062,7 @@
    :rdfs/range :fibo-sec-dbt-mbs/PrivateLabelMBSDeal})
 
 (def isSliceOf
+  "is slice of"
   {:db/ident :fibo-sec-dbt-mbs/isSliceOf,
    :owl/inverseOf :fibo-sec-dbt-mbs/hasNote,
    :rdf/type :owl/ObjectProperty,
@@ -1066,6 +1089,7 @@
     :rdf/value    "Whether the mortage pool is identified as Prime or not."}})
 
 (def providesCreditSupportTo
+  "provides credit support to"
   {:db/ident :fibo-sec-dbt-mbs/providesCreditSupportTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/TranchedMBSInstrument,
@@ -1077,6 +1101,7 @@
    :rdfs/subPropertyOf :fibo-sec-dbt-dbti/isSubordinatedTo})
 
 (def responsibleFor
+  "responsible for"
   {:db/ident :fibo-sec-dbt-mbs/responsibleFor,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/PayingAgent,
@@ -1087,6 +1112,7 @@
    :rdfs/range :fibo-fnd-pas-psch/Payment})
 
 (def reverts
+  "reverts"
   {:db/ident :fibo-sec-dbt-mbs/reverts,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/NonAgencyRegularJumpZTranche,

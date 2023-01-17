@@ -77,7 +77,7 @@
                  :rdf/value    "Federal Government of Mexico"}
                 {:rdf/language "es-MX",
                  :rdf/value    "Gobierno Federal de México"}],
-   :rdfs/seeAlso "http://www.gob.mx/",
+   :rdfs/seeAlso ["http://www.gob.mx/"],
    :skos/definition
    "federal presidential constitutional republic with shared sovereignty over the republic with the governments of the 31 individual Mexican states, which functions per the Constitution of the United Mexican States"})
 
@@ -123,7 +123,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "Mexican entity",
-   :rdfs/seeAlso "http://www.gob.mx/",
+   :rdfs/seeAlso ["http://www.gob.mx/"],
    :skos/definition "federated sovereignty and polity that is Mexico"})
 
 (def MexicanJurisdiction
@@ -137,6 +137,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "Mexican jurisdiction",
-   :rdfs/seeAlso "https://www.scjn.gob.mx/",
+   :rdfs/seeAlso ["https://www.scjn.gob.mx/"],
    :skos/definition
    "jurisdiction of the Supreme Court of Justice of the Nation, including the system of courts that interprets and applies the law at the federal level in Mexico"})

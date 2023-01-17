@@ -69,7 +69,7 @@
     {:rdf/language "en",
      :rdf/value
      "Government of the Democratic Socialist Republic of Sri Lanka"}],
-   :rdfs/seeAlso "http://www.gov.lk/",
+   :rdfs/seeAlso ["http://www.gov.lk/"],
    :skos/definition
    "unitary semi-presidential constitutional republic in Southern Asia that is an island country situated on the Indian Ocean, southwest of the Bay of Bengal, and southeast of the Arabian Sea"})
 
@@ -101,7 +101,7 @@
                  :rdf/value "Government of the Islamic Republic of Afghanistan"}
                 {:rdf/language "ps",
                  :rdf/value    "Da Afġānistān Islāmī Jumhoryat"}],
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/Politics_of_Afghanistan",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Politics_of_Afghanistan"],
    :skos/definition
    "unitary presidential Islamic republic in Southern Asia, bordered by Pakistan to the east and south, Iran to the west, Turkmenistan, Uzbekistan, and Tajikistan to the north, and China to the northeast"})
 
@@ -117,7 +117,7 @@
                  :rdf/value    "جمهوری اسلامی ایران"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Islamic Republic of Iran"}],
-   :rdfs/seeAlso "http://www.icana.ir/",
+   :rdfs/seeAlso ["http://www.icana.ir/"],
    :skos/definition
    "unitary Khomeinist presidential Islamic republic in Southern Asia, bordered to the northwest by Armenia and Azerbaijan, to the north by the Caspian Sea, to the northeast by Turkmenistan, to the east by Afghanistan, to the southeast by Pakistan, to the south by the Persian Gulf and the Gulf of Oman, and to the west by Turkey and Iraq"})
 
@@ -133,7 +133,7 @@
                  :rdf/value    "اِسلامی جمہوریہ پاكِستان"}
                 {:rdf/language "en",
                  :rdf/value "Government of the Islamic Republic of Pakistan"}],
-   :rdfs/seeAlso "http://www.pakistan.gov.pk/",
+   :rdfs/seeAlso ["http://www.pakistan.gov.pk/"],
    :skos/definition
    "federal parliamentary constitutional republic in Southern Asia, bordered by India to the east, Afghanistan to the west, Iran to the southwest, and China to the northeast"})
 
@@ -165,7 +165,7 @@
                 {:rdf/language "en",
                  :rdf/value
                  "Government of the People's Republic of Bangladesh"}],
-   :rdfs/seeAlso "http://bangladesh.gov.bd/",
+   :rdfs/seeAlso ["http://bangladesh.gov.bd/"],
    :skos/definition
    "unitary dominant-party parliamentary constitutional republic in Southern Asia, bordered by India to the west, north, and east, Myanmar to the southeast, and the Bay of Bengal to the south"})
 
@@ -181,7 +181,7 @@
                  :rdf/value    "Government of the Republic of India"}
                 {:rdf/language "hi",
                  :rdf/value    "Bhārat Gaṇarājya"}],
-   :rdfs/seeAlso "http://parliamentofindia.nic.in/",
+   :rdfs/seeAlso ["http://parliamentofindia.nic.in/"],
    :skos/definition
    "federal parliamentary constitutional and democratic republic in Southern Asia, bordered by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the northwest; China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar to the east"})
 
@@ -210,7 +210,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of Afghanistan",
-   :rdfs/seeAlso "http://supremecourt.gov.af/en",
+   :rdfs/seeAlso ["http://supremecourt.gov.af/en"],
    :skos/definition
    "jurisdiction of the judiciary of Afghanistan, which is the system of courts, including its Supreme Court or Stera Mahkama, that interprets and applies the law in Afghanistan"})
 
@@ -224,7 +224,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "jurisdiction of Bangladesh",
-   :rdfs/seeAlso "http://supremecourt.gov.bd/",
+   :rdfs/seeAlso ["http://supremecourt.gov.bd/"],
    :skos/definition
    "jurisdiction of the judiciary of Bangladesh, which is the system of courts, including its Supreme Court, High Court, and Appellate Divisions, that interprets and applies the law in Bangladesh"})
 

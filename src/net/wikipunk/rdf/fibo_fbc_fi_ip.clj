@@ -355,20 +355,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "mid price"},
-   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-acc-cur/Currency,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-fi-ip/SecurityPrice
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-ip/SecurityPrice
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fbc-fi-ip/OfferPrice,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/ArithmeticMean
-                     {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
-                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fbc-fi-ip/BidPrice,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fbc-fi-ip/OfferPrice,
                       :rdf/type           :owl/Restriction}],
    :skos/definition {:rdf/language "en",
                      :rdf/value
@@ -584,18 +584,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "trading day"},
-   :rdfs/subClassOf [{:owl/hasValue   :fibo-fnd-dt-fd/Day,
-                      :owl/onProperty :fibo-fnd-dt-fd/hasDuration,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
+   :rdfs/subClassOf [{:owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasOpeningDateTime,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-dt-fd/ExplicitDatePeriod
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasClosingDateTime,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-dt-fd/ExplicitDatePeriod
+                     {:owl/hasValue   :fibo-fnd-dt-fd/Day,
+                      :owl/onProperty :fibo-fnd-dt-fd/hasDuration,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "time span that a particular trading venue is open"}})
@@ -675,17 +675,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "yield"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/Percentage
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-utl-alx/Percentage
                      {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition {:rdf/language "en",
                      :rdf/value "return on the investor's capital investment"}})
 

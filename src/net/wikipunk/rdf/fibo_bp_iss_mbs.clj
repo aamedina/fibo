@@ -38,6 +38,7 @@
    :sm/fileAbbreviation "fibo-bp-iss-mbs"})
 
 (def MBSSecuritizationProcess
+  "m b s securitization process"
   {:db/ident :fibo-bp-iss-mbs/MBSSecuritizationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -59,6 +60,7 @@
    "A part or section of a prospectus for a securities issue."})
 
 (def includesDetailsAbout
+  "includes details about"
   {:db/ident :fibo-bp-iss-mbs/includesDetailsAbout,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy

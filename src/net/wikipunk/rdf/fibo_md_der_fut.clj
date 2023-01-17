@@ -44,6 +44,7 @@
    :sm/fileAbbreviation "fibo-md-der-fut"})
 
 (def ExchangeFuturesPrice
+  "exchange futures price"
   {:db/ident :fibo-md-der-fut/ExchangeFuturesPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -53,6 +54,7 @@
    :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice})
 
 (def FuturesClosingPrice
+  "futures closing price"
   {:db/ident :fibo-md-der-fut/FuturesClosingPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -88,6 +90,7 @@
     "quantity representing the sensitivity of the price of a future or futures to a change in underlying parameters on which the value depends"}})
 
 (def FuturesTheta
+  "futures theta"
   {:db/ident :fibo-md-der-fut/FuturesTheta,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -110,6 +113,7 @@
     "A party who has an account for futures trading at a derivatives exchange. Further notes: The trader opens an account with a given amount known as a margin."}})
 
 (def FuturesVega
+  "futures vega"
   {:db/ident :fibo-md-der-fut/FuturesVega,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy

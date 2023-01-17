@@ -88,6 +88,7 @@
     "Specialize this for preferred stocks, debt tranches and so on."}})
 
 (def SecurityCreditStatus
+  "security credit status"
   {:db/ident :fibo-md-temx-crs/SecurityCreditStatus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -100,6 +101,7 @@
                      :fibo-fnd-arr-lif/LifecycleStatus]})
 
 (def acceleratedPrincipalPaymentsExpected
+  "accelerated principal payments expected"
   {:db/ident :fibo-md-temx-crs/acceleratedPrincipalPaymentsExpected,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-md-temx-crs/SecurityCashflowStatus,
@@ -110,6 +112,7 @@
    :rdfs/range :xsd/boolean})
 
 (def interestPaymentsExpected
+  "interest payments expected"
   {:db/ident :fibo-md-temx-crs/interestPaymentsExpected,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-md-temx-crs/SecurityCashflowStatus,
@@ -120,6 +123,7 @@
    :rdfs/range :xsd/boolean})
 
 (def principalPaymentsExpected
+  "principal payments expected"
   {:db/ident :fibo-md-temx-crs/principalPaymentsExpected,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-md-temx-crs/SecurityCashflowStatus,

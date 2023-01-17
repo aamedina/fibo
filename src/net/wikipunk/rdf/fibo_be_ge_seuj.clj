@@ -132,7 +132,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Government of Montenegro"},
-   :rdfs/seeAlso "http://www.gov.me/en/homepage/",
+   :rdfs/seeAlso ["http://www.gov.me/en/homepage/"],
    :skos/definition
    "unitary, dominant-party, parliamentary constitutional republic that is located in South and Southeast Europe on the coast of the Balkans"})
 
@@ -154,7 +154,7 @@
                  :rdf/value    "Влада Федерације Босне и Херцеговине"}
                 {:rdf/language "bs",
                  :rdf/value    "Vlada Federacije Bosne i Hercegovine"}],
-   :rdfs/seeAlso "http://fbihvlada.gov.ba/english/",
+   :rdfs/seeAlso ["http://fbihvlada.gov.ba/english/"],
    :skos/definition
    "federal parliamentary constitutional republic that is a representative democracy, located in South and Southeast Europe, within the Balkans"})
 
@@ -171,7 +171,7 @@
                 {:rdf/language "en",
                  :rdf/value    "Government of the Hellenic Republic"}],
    :rdfs/seeAlso
-   "https://www.mfa.gr/missionsabroad/en/about-greece/government-and-politics/",
+   ["https://www.mfa.gr/missionsabroad/en/about-greece/government-and-politics/"],
    :skos/definition
    "unitary parliamentary republic, located on the Balkan Peninsula in Southeast Europe"})
 
@@ -190,7 +190,7 @@
                  :rdf/value    "Government of the Holy See"}
                 {:rdf/language "it",
                  :rdf/value    "Governo della Santa Sede"}],
-   :rdfs/seeAlso "http://www.vatican.va/content/vatican/en.html",
+   :rdfs/seeAlso ["http://www.vatican.va/content/vatican/en.html"],
    :skos/definition
    "unitary Christian absolute monarchy (under an ecclesiastical and elective theocracy), headquartered in, operates from, and exercises 'exclusive dominion' over the independent Vatican City State enclave in Rome, of which the pope is sovereign, administered by the Roman Curia"})
 
@@ -206,7 +206,7 @@
                  :rdf/value    "Government of the Kingdom of Spain"}
                 {:rdf/language "es",
                  :rdf/value    "Gobierno del Reino de España"}],
-   :rdfs/seeAlso "https://www.lamoncloa.gob.es/lang/en/Paginas/index.aspx",
+   :rdfs/seeAlso ["https://www.lamoncloa.gob.es/lang/en/Paginas/index.aspx"],
    :skos/definition
    "unitary parliamentary constitutional monarchy, whose monarch is the head of state and prime minister is the head of government, located in Southwestern Europe with some pockets of territory across the Strait of Gibraltar and the Atlantic Ocean"})
 
@@ -222,7 +222,7 @@
                  :rdf/value    "Governo da República Portuguesa"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Portuguese Republic"}],
-   :rdfs/seeAlso "https://www.portugal.gov.pt/en/gc21",
+   :rdfs/seeAlso ["https://www.portugal.gov.pt/en/gc21"],
    :skos/definition
    "unitary, semi-presidential, constitutional, representative democratic republic, located mostly on the Iberian Peninsula, in southwestern Europe"})
 
@@ -238,7 +238,7 @@
                  :rdf/value    "Government of the Principality of Andorra"}
                 {:rdf/language "ca",
                  :rdf/value    "Govern del Principat d’Andorra"}],
-   :rdfs/seeAlso "https://www.govern.ad/",
+   :rdfs/seeAlso ["https://www.govern.ad/"],
    :skos/definition
    "unitary parliamentary semi-elective diarchy, a sovereign landlocked microstate on the Iberian Peninsula, in the eastern Pyrenees, bordered by France to the north and Spain to the south"})
 
@@ -254,7 +254,7 @@
                  :rdf/value    "Qeveria e Republikës së Shqipërisë"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of Albania"}],
-   :rdfs/seeAlso "http://parlament.al/",
+   :rdfs/seeAlso ["http://parlament.al/"],
    :skos/definition
    "unitary parliamentary constitutional republic, located in Southeast Europe on the Adriatic and Ionian Sea within the Mediterranean Sea"})
 
@@ -270,7 +270,7 @@
                  :rdf/value    "Vlada Republike Hrvatske"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of Croatia"}],
-   :rdfs/seeAlso "https://vlada.gov.hr/",
+   :rdfs/seeAlso ["https://vlada.gov.hr/"],
    :skos/definition
    "unitary parliamentary constitutional republic, located in Southeast Europe, bordering Slovenia to the northwest, Hungary to the northeast, Serbia to the east, Bosnia and Herzegovina, and Montenegro to the southeast, sharing a maritime border with Italy"})
 
@@ -286,7 +286,7 @@
                  :rdf/value    "Governo della Repubblica Italiana"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of Italy"}],
-   :rdfs/seeAlso "http://www.governo.it/",
+   :rdfs/seeAlso ["http://www.governo.it/"],
    :skos/definition
    "unitary parliamentary, constitutional, democratic republic, consisting of a peninsula bordering the Alps and surrounded by several islands, located in south-central Europe"})
 
@@ -300,7 +300,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Government of the Republic of Malta"},
-   :rdfs/seeAlso "https://www.gov.mt/",
+   :rdfs/seeAlso ["https://www.gov.mt/"],
    :skos/definition
    "unitary parliamentary constitutional republic modelled on the Westminster system that is a Southern European island country consisting of an archipelago in the Mediterranean Sea"})
 
@@ -316,7 +316,7 @@
                  :rdf/value    "Влада на Република Северна Македонија"}
                 {:rdf/language "en",
                  :rdf/value "Government of the Republic of North Macedonia"}],
-   :rdfs/seeAlso "https://vlada.mk/",
+   :rdfs/seeAlso ["https://vlada.mk/"],
    :skos/definition
    "unitary parliamentary, constitutional, democratic republic, located in the Balkan Peninsula in Southeast Europe"})
 
@@ -332,7 +332,7 @@
                  :rdf/value    "Governo della Repubblica di San Marino"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of San Marino"}],
-   :rdfs/seeAlso "http://www.sanmarino.sm/on-line/en/home.html",
+   :rdfs/seeAlso ["http://www.sanmarino.sm/on-line/en/home.html"],
    :skos/definition
    "unitary parliamentary, diarchic, directorial republic that is a microstate in Southern Europe, completely surrounded by Italy, located on the northeastern side of the Apennine Mountains"})
 
@@ -348,7 +348,7 @@
                  :rdf/value    "Влада Републике Србије"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of Serbia"}],
-   :rdfs/seeAlso "https://www.srbija.gov.rs/",
+   :rdfs/seeAlso ["https://www.srbija.gov.rs/"],
    :skos/definition
    "unitary, dominant-party, parliamentary constitutional republic that is situated at the crossroads of Central and Southeast Europe in the southern Pannonian Plain and the central Balkans"})
 
@@ -364,7 +364,7 @@
                  :rdf/value    "Vlada Republike Slovenije"}
                 {:rdf/language "en",
                  :rdf/value    "Government of the Republic of Slovenia"}],
-   :rdfs/seeAlso "https://www.gov.si/",
+   :rdfs/seeAlso ["https://www.gov.si/"],
    :skos/definition
    "unitary, parliamentary constitutional republic bordered by Italy to the west, Austria to the north, Hungary to the northeast, Croatia to the southeast, and the Adriatic Sea to the southwest"})
 
@@ -425,7 +425,7 @@
                  :rdf/value    "jurisdiction of Albania"}
                 {:rdf/language "sq",
                  :rdf/value    "juridiksioni i Shqipërisë"}],
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/Supreme_Court_of_Albania",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Supreme_Court_of_Albania"],
    :skos/definition
    "jurisdiction of the judiciary of Albania, a system of courts that includes the supreme court, constitutional court, appeal court and administrative court, and whose Supreme Court of the Republic of Albania is the highest court and is the final court of appeal"})
 
@@ -463,7 +463,7 @@
                 {:rdf/language "en",
                  :rdf/value    "jurisdiction of Bosnia and Herzegovina"}],
    :rdfs/seeAlso
-   "http://www.mpr.gov.ba/organizacija_nadleznosti/pravosudje/Default.aspx",
+   ["http://www.mpr.gov.ba/organizacija_nadleznosti/pravosudje/Default.aspx"],
    :skos/definition
    "jurisdiction of the judiciary of Bosnia and Herzegovina, whose Constitutional Court of Bosnia and Herzegovina is the supreme, final arbiter of legal matters"})
 
@@ -480,7 +480,7 @@
                  :rdf/value    "nadležnost Hrvatske"}
                 {:rdf/language "en",
                  :rdf/value    "jurisdiction of Croatia"}],
-   :rdfs/seeAlso "https://www.usud.hr/",
+   :rdfs/seeAlso ["https://www.usud.hr/"],
    :skos/definition
    "jurisdiction of the judiciary of Croatia, a civil law legal system in which law arises primarily from written statutes, influenced by German and Austrian legal systems, whose national courts include the Constitutional Court, which oversees violations of the Constitution, and the Supreme Court, which is the highest court of appeal"})
 
@@ -498,7 +498,7 @@
                 {:rdf/language "en",
                  :rdf/value    "jurisdiction of Greece"}],
    :rdfs/seeAlso
-   "https://www.mfa.gr/missionsabroad/en/about-greece/government-and-politics/judicial-power.html",
+   ["https://www.mfa.gr/missionsabroad/en/about-greece/government-and-politics/judicial-power.html"],
    :skos/definition
    "jurisdiction of the judiciary of the Hellenic Republic, whose supreme courts include the Court of Cassation, the Council of State and the Court of Auditors"})
 
@@ -530,7 +530,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "jurisdiction of Malta"},
    :rdfs/seeAlso
-   "https://justice.gov.mt/en/justice/Pages/The-Judiciary-in-Malta.aspx",
+   ["https://justice.gov.mt/en/justice/Pages/The-Judiciary-in-Malta.aspx"],
    :skos/definition
    "jurisdiction of the judiciary of Malta, which is based partially on English law and partly on Continental law, that interprets and applies the laws of Malta to ensure equal justice under law, and to provide a mechanism for dispute resolution"})
 
@@ -561,7 +561,7 @@
                 {:rdf/language "en",
                  :rdf/value    "jurisdiction of North Macedonia"}],
    :rdfs/seeAlso
-   "https://www.sobranie.mk/the-constitution-of-the-republic-of-macedonia-ns_article-constitution-of-the-republic-of-north-macedonia.nspx",
+   ["https://www.sobranie.mk/the-constitution-of-the-republic-of-macedonia-ns_article-constitution-of-the-republic-of-north-macedonia.nspx"],
    :skos/definition
    "jurisdiction of the judiciary of North Macedonia, an independent judicial branch that includes a constitutional court"})
 
@@ -578,7 +578,7 @@
                  :rdf/value    "jurisdição de portugal"}
                 {:rdf/language "en",
                  :rdf/value    "jurisdiction of Portugal"}],
-   :rdfs/seeAlso "https://en.wikipedia.org/wiki/Judiciary_of_Portugal",
+   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Judiciary_of_Portugal"],
    :skos/definition
    "jurisdiction of the judiciary of Portugal, a system of courts that together constitute one of the four organs of Sovereignty as defined by the Portuguese Constitution"})
 
@@ -627,7 +627,7 @@
                  :rdf/value    "pristojnost Slovenije"}
                 {:rdf/language "en",
                  :rdf/value    "jurisdiction of Slovenia"}],
-   :rdfs/seeAlso "http://www.sodisce.si/",
+   :rdfs/seeAlso ["http://www.sodisce.si/"],
    :skos/definition
    "jurisdiction of the judiciary of Slovenia, a system of courts with general responsibilities and specialised courts that deal with matters relating to specific legal areas, including a Constitutional Court at the highest level"})
 
@@ -644,7 +644,7 @@
                  :rdf/value    "jurisdiction of Spain"}
                 {:rdf/language "es",
                  :rdf/value    "jurisdicción de España"}],
-   :rdfs/seeAlso "http://www.poderjudicial.es/cgpj/es/Poder_Judicial",
+   :rdfs/seeAlso ["http://www.poderjudicial.es/cgpj/es/Poder_Judicial"],
    :skos/definition
    "jurisdiction of judiciary of Spain, a system of courts that includes senior judges - the President and judges of the Constitutional Court (the highest tribunal in the Kingdom) - that interprets and applies the law in Spain"})
 

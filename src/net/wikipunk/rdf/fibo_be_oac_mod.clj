@@ -51,7 +51,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/MetadataBEOwnershipAndControl/",
    :rdfs/label "Ownership and Control",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright ["Copyright (c) 2015-2022 Object Management Group, Inc."
                   "Copyright (c) 2015-2022 EDM Council, Inc."],
    :sm/moduleAbbreviation "fibo-be-oac"})

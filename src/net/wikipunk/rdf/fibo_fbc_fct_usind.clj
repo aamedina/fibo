@@ -306,6 +306,7 @@
    "business identifier code (BIC) for BNY Mellon, National Association"})
 
 (def BNYMellonNationalAssociationBusinessPartyPrefix
+  "BNY Mellon, National Association business party prefix"
   {:db/ident
    :fibo-fbc-fct-usind/BNYMellonNationalAssociationBusinessPartyPrefix,
    :fibo-fnd-rel-rel/isIncludedIn
@@ -317,6 +318,7 @@
    :rdfs/label "BNY Mellon, National Association business party prefix"})
 
 (def BNYMellonNationalAssociationBusinessPartySuffix
+  "BNY Mellon, National Association business party suffix"
   {:db/ident
    :fibo-fbc-fct-usind/BNYMellonNationalAssociationBusinessPartySuffix,
    :fibo-fnd-rel-rel/isIncludedIn

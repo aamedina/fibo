@@ -60,6 +60,7 @@
    :sm/fileAbbreviation "fibo-loan-ln-reg"})
 
 (def BorrowerDataProtectionRequirement
+  "borrower data protection requirement"
   {:db/ident :fibo-loan-ln-reg/BorrowerDataProtectionRequirement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -73,6 +74,7 @@
                      :fibo-loan-ln-reg/DataProtectionRequirement]})
 
 (def BorrowerDisclosureRequirement
+  "borrower disclosure requirement"
   {:db/ident :fibo-loan-ln-reg/BorrowerDisclosureRequirement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -89,6 +91,7 @@
                      :fibo-loan-ln-reg/DisclosureRequirement]})
 
 (def BorrowerRight
+  "borrower right"
   {:db/ident :fibo-loan-ln-reg/BorrowerRight,
    :fibo-fnd-utl-av/explanatoryNote
    {:rdf/language "en",
@@ -102,6 +105,7 @@
    :rdfs/subClassOf :fibo-loan-ln-reg/ConsumerRight})
 
 (def ConsumerCreditEqualTreatmentRequirement
+  "consumer credit equal treatment requirement"
   {:db/ident :fibo-loan-ln-reg/ConsumerCreditEqualTreatmentRequirement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -114,6 +118,7 @@
                      :fibo-loan-ln-reg/ConsumerCreditRequirement]})
 
 (def ConsumerCreditProtectionLaw
+  "consumer credit protection law"
   {:db/ident :fibo-loan-ln-reg/ConsumerCreditProtectionLaw,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -180,6 +185,7 @@
     "Some agency tasked with regulating consumer protection in some jurisdiction."}})
 
 (def ConsumerProtectionLaw
+  "consumer protection law"
   {:db/ident :fibo-loan-ln-reg/ConsumerProtectionLaw,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -189,6 +195,7 @@
    :rdfs/subClassOf :fibo-fnd-law-jur/StatuteLaw})
 
 (def ConsumerRight
+  "consumer right"
   {:db/ident :fibo-loan-ln-reg/ConsumerRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -439,6 +446,7 @@
                      "The right to have a credit record corrected."}})
 
 (def administeredBy
+  "administered by"
   {:db/ident :fibo-loan-ln-reg/administeredBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-loan-ln-reg/LoanRegulatoryRequirement,
@@ -449,6 +457,7 @@
    :rdfs/range :fibo-fbc-fct-rga/RegulatoryAgency})
 
 (def overseenBy
+  "overseen by"
   {:db/ident :fibo-loan-ln-reg/overseenBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-loan-ln-reg/ConsumerCreditRequirement,
@@ -459,6 +468,7 @@
    :rdfs/range :fibo-loan-ln-reg/ConsumerProtectionAgency})
 
 (def requirementActReference
+  "requirement act reference"
   {:db/ident :fibo-loan-ln-reg/requirementActReference,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-loan-ln-reg/LoanRegulatoryRequirement,
@@ -469,6 +479,7 @@
    :rdfs/range :xsd/string})
 
 (def requirementSectionAndParagraph
+  "requirement section and paragraph"
   {:db/ident :fibo-loan-ln-reg/requirementSectionAndParagraph,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-loan-ln-reg/LoanRegulatoryRequirement,

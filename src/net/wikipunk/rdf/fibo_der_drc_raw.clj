@@ -413,7 +413,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "company warrant"},
-   :rdfs/seeAlso "https://www.lawinsider.com/dictionary/company-warrant",
+   :rdfs/seeAlso ["https://www.lawinsider.com/dictionary/company-warrant"],
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/allValuesFrom :fibo-be-le-cb/StockCorporation,

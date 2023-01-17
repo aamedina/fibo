@@ -1,10 +1,13 @@
 (ns net.wikipunk.rdf.fibo-fnd-plc-uspsai
   "This ontology augments the U.S. Postal Service Address ontology with individuals for various street suffixes, military and U.S. Department of State specific individuals, and preferred designations for state and territory codes."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2019-2022 EDM Council, Inc."
+                       "Copyright (c) 2019-2022 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
    :dcterms/abstract
    "This ontology augments the U.S. Postal Service Address ontology with individuals for various street suffixes, military and U.S. Department of State specific individuals, and preferred designations for state and territory codes.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/contributor "Thematix Partners LLC",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
@@ -12,13 +15,15 @@
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-plc-adr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
     "fibo-fnd-plc-uspsai"
@@ -37,7 +42,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -49,17 +53,8 @@
    :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"
                   "https://about.usps.com/who/profile/"],
    :skos/changeNote
-   "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals.rdf version of this ontology was revised to update a dead link.",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/contributor "Thematix Partners LLC",
-   :sm/copyright ["Copyright (c) 2019-2022 EDM Council, Inc."
-                  "Copyright (c) 2019-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/"
-    "https://www.omg.org/spec/LCC/"],
-   :sm/fileAbbreviation "fibo-fnd-plc-uspsai",
-   :sm/filename "USPostalServiceAddressIndividuals.rdf"})
+   ["The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals.rdf version of this ontology was revised to update a dead link."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def AA
   "US-specific code for the state designation for Armed Forces Americas, excluding Canada"
@@ -500,6 +495,7 @@
    :skos/definition "US-specific code for the designation for Connecticut"})
 
 (def Camp
+  "camp"
   {:db/ident :fibo-fnd-plc-uspsai/Camp,
    :fibo-fnd-utl-av/commonDesignation ["CP" "CMP" "CAMP"],
    :fibo-fnd-utl-av/preferredDesignation "CP",
@@ -509,6 +505,7 @@
    :rdfs/label "camp"})
 
 (def Canyon
+  "canyon"
   {:db/ident :fibo-fnd-plc-uspsai/Canyon,
    :fibo-fnd-utl-av/commonDesignation ["CNYN" "CANYON" "CANYN"],
    :fibo-fnd-utl-av/preferredDesignation "CYN",
@@ -518,6 +515,7 @@
    :rdfs/label "canyon"})
 
 (def Cape
+  "cape"
   {:db/ident :fibo-fnd-plc-uspsai/Cape,
    :fibo-fnd-utl-av/commonDesignation ["CPE" "CAPE"],
    :fibo-fnd-utl-av/preferredDesignation "CPE",
@@ -527,6 +525,7 @@
    :rdfs/label "cape"})
 
 (def Causeway
+  "causeway"
   {:db/ident :fibo-fnd-plc-uspsai/Causeway,
    :fibo-fnd-utl-av/commonDesignation ["CSWY" "CAUSWA" "CAUSEWAY"],
    :fibo-fnd-utl-av/preferredDesignation "CSWY",
@@ -536,6 +535,7 @@
    :rdfs/label "causeway"})
 
 (def Center
+  "center"
   {:db/ident :fibo-fnd-plc-uspsai/Center,
    :fibo-fnd-utl-av/commonDesignation
    ["CENTRE" "CNTER" "CENT" "CENTER" "CENTR" "CTR" "CNTR" "CEN"],
@@ -546,6 +546,7 @@
    :rdfs/label "center"})
 
 (def Centers
+  "centers"
   {:db/ident :fibo-fnd-plc-uspsai/Centers,
    :fibo-fnd-utl-av/commonDesignation "CENTERS",
    :fibo-fnd-utl-av/preferredDesignation "CTRS",
@@ -555,6 +556,7 @@
    :rdfs/label "centers"})
 
 (def Circle
+  "circle"
   {:db/ident :fibo-fnd-plc-uspsai/Circle,
    :fibo-fnd-utl-av/commonDesignation
    ["CRCLE" "CIRC" "CIRCL" "CRCL" "CIR" "CIRCLE"],
@@ -565,6 +567,7 @@
    :rdfs/label "circle"})
 
 (def Circles
+  "circles"
   {:db/ident :fibo-fnd-plc-uspsai/Circles,
    :fibo-fnd-utl-av/commonDesignation "CIRCLES",
    :fibo-fnd-utl-av/preferredDesignation "CIRS",
@@ -574,6 +577,7 @@
    :rdfs/label "circles"})
 
 (def Cliff
+  "cliff"
   {:db/ident :fibo-fnd-plc-uspsai/Cliff,
    :fibo-fnd-utl-av/commonDesignation ["CLIFF" "CLF"],
    :fibo-fnd-utl-av/preferredDesignation "CLF",
@@ -583,6 +587,7 @@
    :rdfs/label "cliff"})
 
 (def Cliffs
+  "cliffs"
   {:db/ident :fibo-fnd-plc-uspsai/Cliffs,
    :fibo-fnd-utl-av/commonDesignation ["CLIFFS" "CLFS"],
    :fibo-fnd-utl-av/preferredDesignation "CLFS",
@@ -592,6 +597,7 @@
    :rdfs/label "cliffs"})
 
 (def Club
+  "club"
   {:db/ident :fibo-fnd-plc-uspsai/Club,
    :fibo-fnd-utl-av/commonDesignation ["CLUB" "CLB"],
    :fibo-fnd-utl-av/preferredDesignation "CLB",
@@ -601,6 +607,7 @@
    :rdfs/label "club"})
 
 (def Common
+  "common"
   {:db/ident :fibo-fnd-plc-uspsai/Common,
    :fibo-fnd-utl-av/commonDesignation "COMMON",
    :fibo-fnd-utl-av/preferredDesignation "CMN",
@@ -610,6 +617,7 @@
    :rdfs/label "common"})
 
 (def Commons
+  "commons"
   {:db/ident :fibo-fnd-plc-uspsai/Commons,
    :fibo-fnd-utl-av/commonDesignation "COMMONS",
    :fibo-fnd-utl-av/preferredDesignation "CMNS",
@@ -619,6 +627,7 @@
    :rdfs/label "commons"})
 
 (def Corner
+  "corner"
   {:db/ident :fibo-fnd-plc-uspsai/Corner,
    :fibo-fnd-utl-av/commonDesignation ["CORNER" "COR"],
    :fibo-fnd-utl-av/preferredDesignation "COR",
@@ -628,6 +637,7 @@
    :rdfs/label "corner"})
 
 (def Corners
+  "corners"
   {:db/ident :fibo-fnd-plc-uspsai/Corners,
    :fibo-fnd-utl-av/commonDesignation ["CORS" "CORNERS"],
    :fibo-fnd-utl-av/preferredDesignation "CORS",
@@ -637,6 +647,7 @@
    :rdfs/label "corners"})
 
 (def Course
+  "course"
   {:db/ident :fibo-fnd-plc-uspsai/Course,
    :fibo-fnd-utl-av/commonDesignation ["CRSE" "COURSE"],
    :fibo-fnd-utl-av/preferredDesignation "CRSE",
@@ -646,6 +657,7 @@
    :rdfs/label "course"})
 
 (def Court
+  "court"
   {:db/ident :fibo-fnd-plc-uspsai/Court,
    :fibo-fnd-utl-av/commonDesignation ["CT" "COURT"],
    :fibo-fnd-utl-av/preferredDesignation "CT",
@@ -655,6 +667,7 @@
    :rdfs/label "court"})
 
 (def Courts
+  "courts"
   {:db/ident :fibo-fnd-plc-uspsai/Courts,
    :fibo-fnd-utl-av/commonDesignation ["CTS" "COURTS"],
    :fibo-fnd-utl-av/preferredDesignation "CTS",
@@ -664,6 +677,7 @@
    :rdfs/label "courts"})
 
 (def Cove
+  "cove"
   {:db/ident :fibo-fnd-plc-uspsai/Cove,
    :fibo-fnd-utl-av/commonDesignation ["CV" "COVE"],
    :fibo-fnd-utl-av/preferredDesignation "CV",
@@ -673,6 +687,7 @@
    :rdfs/label "cove"})
 
 (def Coves
+  "coves"
   {:db/ident :fibo-fnd-plc-uspsai/Coves,
    :fibo-fnd-utl-av/commonDesignation "COVES",
    :fibo-fnd-utl-av/preferredDesignation "CVS",
@@ -682,6 +697,7 @@
    :rdfs/label "coves"})
 
 (def Creek
+  "creek"
   {:db/ident :fibo-fnd-plc-uspsai/Creek,
    :fibo-fnd-utl-av/commonDesignation ["CRK" "CREEK"],
    :fibo-fnd-utl-av/preferredDesignation "CRK",
@@ -691,6 +707,7 @@
    :rdfs/label "creek"})
 
 (def Crescent
+  "crescent"
   {:db/ident :fibo-fnd-plc-uspsai/Crescent,
    :fibo-fnd-utl-av/commonDesignation ["CRSNT" "CRSENT" "CRESCENT" "CRES"],
    :fibo-fnd-utl-av/preferredDesignation "CRES",
@@ -700,6 +717,7 @@
    :rdfs/label "crescent"})
 
 (def Crest
+  "crest"
   {:db/ident :fibo-fnd-plc-uspsai/Crest,
    :fibo-fnd-utl-av/commonDesignation "CREST",
    :fibo-fnd-utl-av/preferredDesignation "CRST",
@@ -709,6 +727,7 @@
    :rdfs/label "crest"})
 
 (def Crossing
+  "crossing"
   {:db/ident :fibo-fnd-plc-uspsai/Crossing,
    :fibo-fnd-utl-av/commonDesignation ["XING" "CRSSNG" "CROSSING"],
    :fibo-fnd-utl-av/preferredDesignation "XING",
@@ -718,6 +737,7 @@
    :rdfs/label "crossing"})
 
 (def Crossroad
+  "crossroad"
   {:db/ident :fibo-fnd-plc-uspsai/Crossroad,
    :fibo-fnd-utl-av/commonDesignation "CROSSROAD",
    :fibo-fnd-utl-av/preferredDesignation "XRD",
@@ -727,6 +747,7 @@
    :rdfs/label "crossroad"})
 
 (def Crossroads
+  "crossroads"
   {:db/ident :fibo-fnd-plc-uspsai/Crossroads,
    :fibo-fnd-utl-av/commonDesignation "CROSSROADS",
    :fibo-fnd-utl-av/preferredDesignation "XRDS",
@@ -736,6 +757,7 @@
    :rdfs/label "crossroads"})
 
 (def Curve
+  "curve"
   {:db/ident :fibo-fnd-plc-uspsai/Curve,
    :fibo-fnd-utl-av/commonDesignation "CURVE",
    :fibo-fnd-utl-av/preferredDesignation "CURV",
@@ -774,6 +796,7 @@
    :skos/definition "US-specific code for the designation for Delaware"})
 
 (def Dale
+  "dale"
   {:db/ident :fibo-fnd-plc-uspsai/Dale,
    :fibo-fnd-utl-av/commonDesignation ["DL" "DALE"],
    :fibo-fnd-utl-av/preferredDesignation "DL",
@@ -783,6 +806,7 @@
    :rdfs/label "dale"})
 
 (def Dam
+  "dam"
   {:db/ident :fibo-fnd-plc-uspsai/Dam,
    :fibo-fnd-utl-av/commonDesignation ["DM" "DAM"],
    :fibo-fnd-utl-av/preferredDesignation "DM",
@@ -792,6 +816,7 @@
    :rdfs/label "dam"})
 
 (def Divide
+  "divide"
   {:db/ident :fibo-fnd-plc-uspsai/Divide,
    :fibo-fnd-utl-av/commonDesignation ["DVD" "DV" "DIVIDE" "DIV"],
    :fibo-fnd-utl-av/preferredDesignation "DV",
@@ -801,6 +826,7 @@
    :rdfs/label "divide"})
 
 (def Drive
+  "drive"
   {:db/ident :fibo-fnd-plc-uspsai/Drive,
    :fibo-fnd-utl-av/commonDesignation ["DRV" "DRIVE" "DRIV" "DR"],
    :fibo-fnd-utl-av/preferredDesignation "DR",
@@ -810,6 +836,7 @@
    :rdfs/label "drive"})
 
 (def Drives
+  "drives"
   {:db/ident :fibo-fnd-plc-uspsai/Drives,
    :fibo-fnd-utl-av/commonDesignation "DRIVES",
    :fibo-fnd-utl-av/preferredDesignation "DRS",
@@ -819,6 +846,7 @@
    :rdfs/label "drives"})
 
 (def Estate
+  "estate"
   {:db/ident :fibo-fnd-plc-uspsai/Estate,
    :fibo-fnd-utl-av/commonDesignation ["ESTATE" "EST"],
    :fibo-fnd-utl-av/preferredDesignation "EST",
@@ -828,6 +856,7 @@
    :rdfs/label "estate"})
 
 (def Estates
+  "estates"
   {:db/ident :fibo-fnd-plc-uspsai/Estates,
    :fibo-fnd-utl-av/commonDesignation ["ESTS" "ESTATES"],
    :fibo-fnd-utl-av/preferredDesignation "ESTS",
@@ -837,6 +866,7 @@
    :rdfs/label "estates"})
 
 (def Expressway
+  "expressway"
   {:db/ident :fibo-fnd-plc-uspsai/Expressway,
    :fibo-fnd-utl-av/commonDesignation
    ["EXPY" "EXPW" "EXPRESS" "EXPRESSWAY" "EXP" "EXPR"],
@@ -847,6 +877,7 @@
    :rdfs/label "expressway"})
 
 (def Extension
+  "extension"
   {:db/ident :fibo-fnd-plc-uspsai/Extension,
    :fibo-fnd-utl-av/commonDesignation ["EXTNSN" "EXTN" "EXTENSION" "EXT"],
    :fibo-fnd-utl-av/preferredDesignation "EXT",
@@ -856,6 +887,7 @@
    :rdfs/label "extension"})
 
 (def Extensions
+  "extensions"
   {:db/ident :fibo-fnd-plc-uspsai/Extensions,
    :fibo-fnd-utl-av/commonDesignation "EXTS",
    :fibo-fnd-utl-av/preferredDesignation "EXTS",
@@ -879,6 +911,7 @@
    :skos/definition "US-specific code for the designation for Florida"})
 
 (def Fall
+  "fall"
   {:db/ident :fibo-fnd-plc-uspsai/Fall,
    :fibo-fnd-utl-av/commonDesignation "FALL",
    :fibo-fnd-utl-av/preferredDesignation "FALL",
@@ -888,6 +921,7 @@
    :rdfs/label "fall"})
 
 (def Falls
+  "falls"
   {:db/ident :fibo-fnd-plc-uspsai/Falls,
    :fibo-fnd-utl-av/commonDesignation ["FLS" "FALLS"],
    :fibo-fnd-utl-av/preferredDesignation "FLS",
@@ -897,6 +931,7 @@
    :rdfs/label "falls"})
 
 (def Ferry
+  "ferry"
   {:db/ident :fibo-fnd-plc-uspsai/Ferry,
    :fibo-fnd-utl-av/commonDesignation ["FRY" "FRRY" "FERRY"],
    :fibo-fnd-utl-av/preferredDesignation "FRY",
@@ -906,6 +941,7 @@
    :rdfs/label "ferry"})
 
 (def Field
+  "field"
   {:db/ident :fibo-fnd-plc-uspsai/Field,
    :fibo-fnd-utl-av/commonDesignation ["FLD" "FIELD"],
    :fibo-fnd-utl-av/preferredDesignation "FLD",
@@ -915,6 +951,7 @@
    :rdfs/label "field"})
 
 (def Fields
+  "fields"
   {:db/ident :fibo-fnd-plc-uspsai/Fields,
    :fibo-fnd-utl-av/commonDesignation ["FLDS" "FIELDS"],
    :fibo-fnd-utl-av/preferredDesignation "FLDS",
@@ -924,6 +961,7 @@
    :rdfs/label "fields"})
 
 (def Flat
+  "flat"
   {:db/ident :fibo-fnd-plc-uspsai/Flat,
    :fibo-fnd-utl-av/commonDesignation ["FLT" "FLAT"],
    :fibo-fnd-utl-av/preferredDesignation "FLT",
@@ -933,6 +971,7 @@
    :rdfs/label "flat"})
 
 (def Flats
+  "flats"
   {:db/ident :fibo-fnd-plc-uspsai/Flats,
    :fibo-fnd-utl-av/commonDesignation ["FLTS" "FLATS"],
    :fibo-fnd-utl-av/preferredDesignation "FLTS",
@@ -942,6 +981,7 @@
    :rdfs/label "flats"})
 
 (def Ford
+  "ford"
   {:db/ident :fibo-fnd-plc-uspsai/Ford,
    :fibo-fnd-utl-av/commonDesignation ["FRD" "FORD"],
    :fibo-fnd-utl-av/preferredDesignation "FRD",
@@ -951,6 +991,7 @@
    :rdfs/label "ford"})
 
 (def Fords
+  "fords"
   {:db/ident :fibo-fnd-plc-uspsai/Fords,
    :fibo-fnd-utl-av/commonDesignation "FORDS",
    :fibo-fnd-utl-av/preferredDesignation "FRDS",
@@ -960,6 +1001,7 @@
    :rdfs/label "fords"})
 
 (def Forest
+  "forest"
   {:db/ident :fibo-fnd-plc-uspsai/Forest,
    :fibo-fnd-utl-av/commonDesignation ["FRST" "FORESTS" "FOREST"],
    :fibo-fnd-utl-av/preferredDesignation "FRST",
@@ -969,6 +1011,7 @@
    :rdfs/label "forest"})
 
 (def Forge
+  "forge"
   {:db/ident :fibo-fnd-plc-uspsai/Forge,
    :fibo-fnd-utl-av/commonDesignation ["FRG" "FORGE" "FORG"],
    :fibo-fnd-utl-av/preferredDesignation "FRG",
@@ -978,6 +1021,7 @@
    :rdfs/label "forge"})
 
 (def Forges
+  "forges"
   {:db/ident :fibo-fnd-plc-uspsai/Forges,
    :fibo-fnd-utl-av/commonDesignation "FORGES",
    :fibo-fnd-utl-av/preferredDesignation "FRGS",
@@ -987,6 +1031,7 @@
    :rdfs/label "forges"})
 
 (def Fork
+  "fork"
   {:db/ident :fibo-fnd-plc-uspsai/Fork,
    :fibo-fnd-utl-av/commonDesignation ["FRK" "FORK"],
    :fibo-fnd-utl-av/preferredDesignation "FRK",
@@ -996,6 +1041,7 @@
    :rdfs/label "fork"})
 
 (def Forks
+  "forks"
   {:db/ident :fibo-fnd-plc-uspsai/Forks,
    :fibo-fnd-utl-av/commonDesignation ["FRKS" "FORKS"],
    :fibo-fnd-utl-av/preferredDesignation "FRKS",
@@ -1005,6 +1051,7 @@
    :rdfs/label "forks"})
 
 (def Fort
+  "fort"
   {:db/ident :fibo-fnd-plc-uspsai/Fort,
    :fibo-fnd-utl-av/commonDesignation ["FT" "FRT" "FORT"],
    :fibo-fnd-utl-av/preferredDesignation "FT",
@@ -1014,6 +1061,7 @@
    :rdfs/label "fort"})
 
 (def Freeway
+  "freeway"
   {:db/ident :fibo-fnd-plc-uspsai/Freeway,
    :fibo-fnd-utl-av/commonDesignation ["FWY" "FRWY" "FRWAY" "FREEWY" "FREEWAY"],
    :fibo-fnd-utl-av/preferredDesignation "FWY",
@@ -1051,6 +1099,7 @@
    :skos/definition "US-specific code for the designation for Guam"})
 
 (def Garden
+  "garden"
   {:db/ident :fibo-fnd-plc-uspsai/Garden,
    :fibo-fnd-utl-av/commonDesignation ["GRDN" "GRDEN" "GARDN" "GARDEN"],
    :fibo-fnd-utl-av/preferredDesignation "GDN",
@@ -1060,6 +1109,7 @@
    :rdfs/label "garden"})
 
 (def Gardens
+  "gardens"
   {:db/ident :fibo-fnd-plc-uspsai/Gardens,
    :fibo-fnd-utl-av/commonDesignation ["GRDNS" "GDNS" "GARDENS"],
    :fibo-fnd-utl-av/preferredDesignation "GDNS",
@@ -1069,6 +1119,7 @@
    :rdfs/label "gardens"})
 
 (def Gateway
+  "gateway"
   {:db/ident :fibo-fnd-plc-uspsai/Gateway,
    :fibo-fnd-utl-av/commonDesignation
    ["GTWAY" "GATWAY" "GATEWY" "GTWY" "GATEWAY"],
@@ -1079,6 +1130,7 @@
    :rdfs/label "gateway"})
 
 (def Glen
+  "glen"
   {:db/ident :fibo-fnd-plc-uspsai/Glen,
    :fibo-fnd-utl-av/commonDesignation ["GLN" "GLEN"],
    :fibo-fnd-utl-av/preferredDesignation "GLN",
@@ -1088,6 +1140,7 @@
    :rdfs/label "glen"})
 
 (def Glens
+  "glens"
   {:db/ident :fibo-fnd-plc-uspsai/Glens,
    :fibo-fnd-utl-av/commonDesignation "GLENS",
    :fibo-fnd-utl-av/preferredDesignation "GLNS",
@@ -1097,6 +1150,7 @@
    :rdfs/label "glens"})
 
 (def Green
+  "green"
   {:db/ident :fibo-fnd-plc-uspsai/Green,
    :fibo-fnd-utl-av/commonDesignation ["GRN" "GREEN"],
    :fibo-fnd-utl-av/preferredDesignation "GRN",
@@ -1106,6 +1160,7 @@
    :rdfs/label "green"})
 
 (def Greens
+  "greens"
   {:db/ident :fibo-fnd-plc-uspsai/Greens,
    :fibo-fnd-utl-av/commonDesignation "GREENS",
    :fibo-fnd-utl-av/preferredDesignation "GRNS",
@@ -1115,6 +1170,7 @@
    :rdfs/label "greens"})
 
 (def Grove
+  "grove"
   {:db/ident :fibo-fnd-plc-uspsai/Grove,
    :fibo-fnd-utl-av/commonDesignation ["GRV" "GROVE" "GROV"],
    :fibo-fnd-utl-av/preferredDesignation "GRV",
@@ -1124,6 +1180,7 @@
    :rdfs/label "grove"})
 
 (def Groves
+  "groves"
   {:db/ident :fibo-fnd-plc-uspsai/Groves,
    :fibo-fnd-utl-av/commonDesignation "GROVES",
    :fibo-fnd-utl-av/preferredDesignation "GRVS",
@@ -1147,6 +1204,7 @@
    :skos/definition "US-specific code for the designation for Hawaii"})
 
 (def Harbor
+  "harbor"
   {:db/ident :fibo-fnd-plc-uspsai/Harbor,
    :fibo-fnd-utl-av/commonDesignation ["HARBOR" "HRBOR" "HARBR" "HARB" "HBR"],
    :fibo-fnd-utl-av/preferredDesignation "HBR",
@@ -1156,6 +1214,7 @@
    :rdfs/label "harbor"})
 
 (def Harbors
+  "harbors"
   {:db/ident :fibo-fnd-plc-uspsai/Harbors,
    :fibo-fnd-utl-av/commonDesignation "HARBORS",
    :fibo-fnd-utl-av/preferredDesignation "HBRS",
@@ -1165,6 +1224,7 @@
    :rdfs/label "harbors"})
 
 (def Haven
+  "haven"
   {:db/ident :fibo-fnd-plc-uspsai/Haven,
    :fibo-fnd-utl-av/commonDesignation ["HVN" "HAVEN"],
    :fibo-fnd-utl-av/preferredDesignation "HVN",
@@ -1174,6 +1234,7 @@
    :rdfs/label "haven"})
 
 (def Heights
+  "heights"
   {:db/ident :fibo-fnd-plc-uspsai/Heights,
    :fibo-fnd-utl-av/commonDesignation ["HTS" "HT"],
    :fibo-fnd-utl-av/preferredDesignation "HTS",
@@ -1183,6 +1244,7 @@
    :rdfs/label "heights"})
 
 (def Highway
+  "highway"
   {:db/ident :fibo-fnd-plc-uspsai/Highway,
    :fibo-fnd-utl-av/commonDesignation
    ["HIGHWAY" "HWAY" "HIWAY" "HWY" "HIGHWY" "HIWY"],
@@ -1193,6 +1255,7 @@
    :rdfs/label "highway"})
 
 (def Hill
+  "hill"
   {:db/ident :fibo-fnd-plc-uspsai/Hill,
    :fibo-fnd-utl-av/commonDesignation ["HL" "HILL"],
    :fibo-fnd-utl-av/preferredDesignation "HL",
@@ -1202,6 +1265,7 @@
    :rdfs/label "hill"})
 
 (def Hills
+  "hills"
   {:db/ident :fibo-fnd-plc-uspsai/Hills,
    :fibo-fnd-utl-av/commonDesignation ["HLS" "HILLS"],
    :fibo-fnd-utl-av/preferredDesignation "HLS",
@@ -1211,6 +1275,7 @@
    :rdfs/label "hills"})
 
 (def Hollow
+  "hollow"
   {:db/ident :fibo-fnd-plc-uspsai/Hollow,
    :fibo-fnd-utl-av/commonDesignation
    ["HOLLOW" "HOLLOWS" "HLLW" "HOLW" "HOLWS"],
@@ -1277,6 +1342,7 @@
    :skos/definition "US-specific code for the designation for Indiana"})
 
 (def Inlet
+  "inlet"
   {:db/ident :fibo-fnd-plc-uspsai/Inlet,
    :fibo-fnd-utl-av/commonDesignation "INLT",
    :fibo-fnd-utl-av/preferredDesignation "INLT",
@@ -1286,6 +1352,7 @@
    :rdfs/label "inlet"})
 
 (def Island
+  "island"
   {:db/ident :fibo-fnd-plc-uspsai/Island,
    :fibo-fnd-utl-av/commonDesignation ["ISLND" "ISLAND" "IS"],
    :fibo-fnd-utl-av/preferredDesignation "IS",
@@ -1295,6 +1362,7 @@
    :rdfs/label "island"})
 
 (def Islands
+  "islands"
   {:db/ident :fibo-fnd-plc-uspsai/Islands,
    :fibo-fnd-utl-av/commonDesignation ["ISS" "ISLNDS" "ISLANDS"],
    :fibo-fnd-utl-av/preferredDesignation "ISS",
@@ -1304,6 +1372,7 @@
    :rdfs/label "islands"})
 
 (def Isle
+  "isle"
   {:db/ident :fibo-fnd-plc-uspsai/Isle,
    :fibo-fnd-utl-av/commonDesignation ["ISLES" "ISLE"],
    :fibo-fnd-utl-av/preferredDesignation "ISLE",
@@ -1313,6 +1382,7 @@
    :rdfs/label "isle"})
 
 (def Junction
+  "junction"
   {:db/ident :fibo-fnd-plc-uspsai/Junction,
    :fibo-fnd-utl-av/commonDesignation
    ["JCTION" "JCT" "JCTN" "JUNCTION" "JUNCTON" "JUNCTN"],
@@ -1323,6 +1393,7 @@
    :rdfs/label "junction"})
 
 (def Junctions
+  "junctions"
   {:db/ident :fibo-fnd-plc-uspsai/Junctions,
    :fibo-fnd-utl-av/commonDesignation ["JUNCTIONS" "JCTS" "JCTNS"],
    :fibo-fnd-utl-av/preferredDesignation "JCTS",
@@ -1360,6 +1431,7 @@
    :skos/definition "US-specific code for the designation for Kentucky"})
 
 (def Key
+  "key"
   {:db/ident :fibo-fnd-plc-uspsai/Key,
    :fibo-fnd-utl-av/commonDesignation ["KY" "KEY"],
    :fibo-fnd-utl-av/preferredDesignation "KY",
@@ -1369,6 +1441,7 @@
    :rdfs/label "key"})
 
 (def Keys
+  "keys"
   {:db/ident :fibo-fnd-plc-uspsai/Keys,
    :fibo-fnd-utl-av/commonDesignation ["KYS" "KEYS"],
    :fibo-fnd-utl-av/preferredDesignation "KYS",
@@ -1378,6 +1451,7 @@
    :rdfs/label "keys"})
 
 (def Knoll
+  "knoll"
   {:db/ident :fibo-fnd-plc-uspsai/Knoll,
    :fibo-fnd-utl-av/commonDesignation ["KNOLL" "KNOL" "KNL"],
    :fibo-fnd-utl-av/preferredDesignation "KNL",
@@ -1387,6 +1461,7 @@
    :rdfs/label "knoll"})
 
 (def Knolls
+  "knolls"
   {:db/ident :fibo-fnd-plc-uspsai/Knolls,
    :fibo-fnd-utl-av/commonDesignation ["KNOLLS" "KNLS"],
    :fibo-fnd-utl-av/preferredDesignation "KNLS",
@@ -1410,6 +1485,7 @@
    :skos/definition "US-specific code for the designation for Louisiana"})
 
 (def Lake
+  "lake"
   {:db/ident :fibo-fnd-plc-uspsai/Lake,
    :fibo-fnd-utl-av/commonDesignation ["LK" "LAKE"],
    :fibo-fnd-utl-av/preferredDesignation "LK",
@@ -1419,6 +1495,7 @@
    :rdfs/label "lake"})
 
 (def Lakes
+  "lakes"
   {:db/ident :fibo-fnd-plc-uspsai/Lakes,
    :fibo-fnd-utl-av/commonDesignation ["LKS" "LAKES"],
    :fibo-fnd-utl-av/preferredDesignation "LKS",
@@ -1428,6 +1505,7 @@
    :rdfs/label "lakes"})
 
 (def Land
+  "land"
   {:db/ident :fibo-fnd-plc-uspsai/Land,
    :fibo-fnd-utl-av/commonDesignation "LAND",
    :fibo-fnd-utl-av/preferredDesignation "LAND",
@@ -1437,6 +1515,7 @@
    :rdfs/label "land"})
 
 (def Landing
+  "landing"
   {:db/ident :fibo-fnd-plc-uspsai/Landing,
    :fibo-fnd-utl-av/commonDesignation ["LNDNG" "LNDG" "LANDING"],
    :fibo-fnd-utl-av/preferredDesignation "LNDG",
@@ -1446,6 +1525,7 @@
    :rdfs/label "landing"})
 
 (def Lane
+  "lane"
   {:db/ident :fibo-fnd-plc-uspsai/Lane,
    :fibo-fnd-utl-av/commonDesignation ["LN" "LANE"],
    :fibo-fnd-utl-av/preferredDesignation "LN",
@@ -1455,6 +1535,7 @@
    :rdfs/label "lane"})
 
 (def Light
+  "light"
   {:db/ident :fibo-fnd-plc-uspsai/Light,
    :fibo-fnd-utl-av/commonDesignation ["LIGHT" "LGT"],
    :fibo-fnd-utl-av/preferredDesignation "LGT",
@@ -1464,6 +1545,7 @@
    :rdfs/label "light"})
 
 (def Lights
+  "lights"
   {:db/ident :fibo-fnd-plc-uspsai/Lights,
    :fibo-fnd-utl-av/commonDesignation "LIGHTS",
    :fibo-fnd-utl-av/preferredDesignation "LGTS",
@@ -1473,6 +1555,7 @@
    :rdfs/label "lights"})
 
 (def Loaf
+  "loaf"
   {:db/ident :fibo-fnd-plc-uspsai/Loaf,
    :fibo-fnd-utl-av/commonDesignation ["LOAF" "LF"],
    :fibo-fnd-utl-av/preferredDesignation "LF",
@@ -1482,6 +1565,7 @@
    :rdfs/label "loaf"})
 
 (def Lock
+  "lock"
   {:db/ident :fibo-fnd-plc-uspsai/Lock,
    :fibo-fnd-utl-av/commonDesignation ["LOCK" "LCK"],
    :fibo-fnd-utl-av/preferredDesignation "LCK",
@@ -1491,6 +1575,7 @@
    :rdfs/label "lock"})
 
 (def Locks
+  "locks"
   {:db/ident :fibo-fnd-plc-uspsai/Locks,
    :fibo-fnd-utl-av/commonDesignation ["LOCKS" "LCKS"],
    :fibo-fnd-utl-av/preferredDesignation "LCKS",
@@ -1500,6 +1585,7 @@
    :rdfs/label "locks"})
 
 (def Lodge
+  "lodge"
   {:db/ident :fibo-fnd-plc-uspsai/Lodge,
    :fibo-fnd-utl-av/commonDesignation ["LODGE" "LODG" "LDGE" "LDG"],
    :fibo-fnd-utl-av/preferredDesignation "LDG",
@@ -1509,6 +1595,7 @@
    :rdfs/label "lodge"})
 
 (def Loop
+  "loop"
   {:db/ident :fibo-fnd-plc-uspsai/Loop,
    :fibo-fnd-utl-av/commonDesignation ["LOOPS" "LOOP"],
    :fibo-fnd-utl-av/preferredDesignation "LOOP",
@@ -1660,6 +1747,7 @@
    :skos/definition "US-specific code for the designation for Montana"})
 
 (def Mall
+  "mall"
   {:db/ident :fibo-fnd-plc-uspsai/Mall,
    :fibo-fnd-utl-av/commonDesignation "MALL",
    :fibo-fnd-utl-av/preferredDesignation "MALL",
@@ -1669,6 +1757,7 @@
    :rdfs/label "mall"})
 
 (def Manor
+  "manor"
   {:db/ident :fibo-fnd-plc-uspsai/Manor,
    :fibo-fnd-utl-av/commonDesignation ["MNR" "MANOR"],
    :fibo-fnd-utl-av/preferredDesignation "MNR",
@@ -1678,6 +1767,7 @@
    :rdfs/label "manor"})
 
 (def Manors
+  "manors"
   {:db/ident :fibo-fnd-plc-uspsai/Manors,
    :fibo-fnd-utl-av/commonDesignation ["MNRS" "MANORS"],
    :fibo-fnd-utl-av/preferredDesignation "MNRS",
@@ -1687,6 +1777,7 @@
    :rdfs/label "manors"})
 
 (def Meadow
+  "meadow"
   {:db/ident :fibo-fnd-plc-uspsai/Meadow,
    :fibo-fnd-utl-av/commonDesignation "MEADOW",
    :fibo-fnd-utl-av/preferredDesignation "MDW",
@@ -1696,6 +1787,7 @@
    :rdfs/label "meadow"})
 
 (def Meadows
+  "meadows"
   {:db/ident :fibo-fnd-plc-uspsai/Meadows,
    :fibo-fnd-utl-av/commonDesignation ["MEDOWS" "MEADOWS" "MDWS" "MDW"],
    :fibo-fnd-utl-av/preferredDesignation "MDWS",
@@ -1705,6 +1797,7 @@
    :rdfs/label "meadows"})
 
 (def Mews
+  "mews"
   {:db/ident :fibo-fnd-plc-uspsai/Mews,
    :fibo-fnd-utl-av/commonDesignation "MEWS",
    :fibo-fnd-utl-av/preferredDesignation "MEWS",
@@ -1714,6 +1807,7 @@
    :rdfs/label "mews"})
 
 (def Mill
+  "mill"
   {:db/ident :fibo-fnd-plc-uspsai/Mill,
    :fibo-fnd-utl-av/commonDesignation "MILL",
    :fibo-fnd-utl-av/preferredDesignation "ML",
@@ -1723,6 +1817,7 @@
    :rdfs/label "mill"})
 
 (def Mills
+  "mills"
   {:db/ident :fibo-fnd-plc-uspsai/Mills,
    :fibo-fnd-utl-av/commonDesignation "MILLS",
    :fibo-fnd-utl-av/preferredDesignation "MLS",
@@ -1732,6 +1827,7 @@
    :rdfs/label "mills"})
 
 (def Mission
+  "mission"
   {:db/ident :fibo-fnd-plc-uspsai/Mission,
    :fibo-fnd-utl-av/commonDesignation ["MSSN" "MISSN"],
    :fibo-fnd-utl-av/preferredDesignation "MSN",
@@ -1741,6 +1837,7 @@
    :rdfs/label "mission"})
 
 (def Motorway
+  "motorway"
   {:db/ident :fibo-fnd-plc-uspsai/Motorway,
    :fibo-fnd-utl-av/commonDesignation "MOTORWAY",
    :fibo-fnd-utl-av/preferredDesignation "MTWY",
@@ -1750,6 +1847,7 @@
    :rdfs/label "motorway"})
 
 (def Mount
+  "mount"
   {:db/ident :fibo-fnd-plc-uspsai/Mount,
    :fibo-fnd-utl-av/commonDesignation ["MT" "MOUNT" "MNT"],
    :fibo-fnd-utl-av/preferredDesignation "MT",
@@ -1759,6 +1857,7 @@
    :rdfs/label "mount"})
 
 (def Mountain
+  "mountain"
   {:db/ident :fibo-fnd-plc-uspsai/Mountain,
    :fibo-fnd-utl-av/commonDesignation
    ["MOUNTIN" "MNTN" "MNTAIN" "MTIN" "MTN" "MOUNTAIN"],
@@ -1769,6 +1868,7 @@
    :rdfs/label "mountain"})
 
 (def Mountains
+  "mountains"
   {:db/ident :fibo-fnd-plc-uspsai/Mountains,
    :fibo-fnd-utl-av/commonDesignation ["MOUNTAINS" "MNTNS"],
    :fibo-fnd-utl-av/preferredDesignation "MTNS",
@@ -1965,6 +2065,7 @@
    :skos/definition "US-specific code for the designation for New York"})
 
 (def Neck
+  "neck"
   {:db/ident :fibo-fnd-plc-uspsai/Neck,
    :fibo-fnd-utl-av/commonDesignation ["NECK" "NCK"],
    :fibo-fnd-utl-av/preferredDesignation "NCK",
@@ -2031,6 +2132,7 @@
    :skos/definition "US-specific code for the designation for Oregon"})
 
 (def Orchard
+  "orchard"
   {:db/ident :fibo-fnd-plc-uspsai/Orchard,
    :fibo-fnd-utl-av/commonDesignation ["ORCHRD" "ORCHARD" "ORCH"],
    :fibo-fnd-utl-av/preferredDesignation "ORCH",
@@ -2040,6 +2142,7 @@
    :rdfs/label "orchard"})
 
 (def Oval
+  "oval"
   {:db/ident :fibo-fnd-plc-uspsai/Oval,
    :fibo-fnd-utl-av/commonDesignation ["OVL" "OVAL"],
    :fibo-fnd-utl-av/preferredDesignation "OVAL",
@@ -2049,6 +2152,7 @@
    :rdfs/label "oval"})
 
 (def Overpass
+  "overpass"
   {:db/ident :fibo-fnd-plc-uspsai/Overpass,
    :fibo-fnd-utl-av/commonDesignation "OVERPASS",
    :fibo-fnd-utl-av/preferredDesignation "OPAS",
@@ -2101,6 +2205,7 @@
    :skos/definition "US-specific code for the designation for Puerto Rico"})
 
 (def Park
+  "park"
   {:db/ident :fibo-fnd-plc-uspsai/Park,
    :fibo-fnd-utl-av/commonDesignation ["PRK" "PARK"],
    :fibo-fnd-utl-av/preferredDesignation "PARK",
@@ -2110,6 +2215,7 @@
    :rdfs/label "park"})
 
 (def Parks
+  "parks"
   {:db/ident :fibo-fnd-plc-uspsai/Parks,
    :fibo-fnd-utl-av/commonDesignation "PARKS",
    :fibo-fnd-utl-av/preferredDesignation "PARK",
@@ -2119,6 +2225,7 @@
    :rdfs/label "parks"})
 
 (def Parkway
+  "parkway"
   {:db/ident :fibo-fnd-plc-uspsai/Parkway,
    :fibo-fnd-utl-av/commonDesignation ["PKWY" "PARKWY" "PKWAY" "PARKWAY" "PKY"],
    :fibo-fnd-utl-av/preferredDesignation "PKWY",
@@ -2128,6 +2235,7 @@
    :rdfs/label "parkway"})
 
 (def Parkways
+  "parkways"
   {:db/ident :fibo-fnd-plc-uspsai/Parkways,
    :fibo-fnd-utl-av/commonDesignation ["PKWYS" "PARKWAYS"],
    :fibo-fnd-utl-av/preferredDesignation "PKWY",
@@ -2137,6 +2245,7 @@
    :rdfs/label "parkways"})
 
 (def Pass
+  "pass"
   {:db/ident :fibo-fnd-plc-uspsai/Pass,
    :fibo-fnd-utl-av/commonDesignation "PASS",
    :fibo-fnd-utl-av/preferredDesignation "PASS",
@@ -2146,6 +2255,7 @@
    :rdfs/label "pass"})
 
 (def Passage
+  "passage"
   {:db/ident :fibo-fnd-plc-uspsai/Passage,
    :fibo-fnd-utl-av/commonDesignation "PASSAGE",
    :fibo-fnd-utl-av/preferredDesignation "PSGE",
@@ -2155,6 +2265,7 @@
    :rdfs/label "passage"})
 
 (def Path
+  "path"
   {:db/ident :fibo-fnd-plc-uspsai/Path,
    :fibo-fnd-utl-av/commonDesignation ["PATHS" "PATH"],
    :fibo-fnd-utl-av/preferredDesignation "PATH",
@@ -2164,6 +2275,7 @@
    :rdfs/label "path"})
 
 (def Pike
+  "pike"
   {:db/ident :fibo-fnd-plc-uspsai/Pike,
    :fibo-fnd-utl-av/commonDesignation ["PIKES" "PIKE"],
    :fibo-fnd-utl-av/preferredDesignation "PIKE",
@@ -2173,6 +2285,7 @@
    :rdfs/label "pike"})
 
 (def Pine
+  "pine"
   {:db/ident :fibo-fnd-plc-uspsai/Pine,
    :fibo-fnd-utl-av/commonDesignation "PINE",
    :fibo-fnd-utl-av/preferredDesignation "PNE",
@@ -2182,6 +2295,7 @@
    :rdfs/label "pine"})
 
 (def Pines
+  "pines"
   {:db/ident :fibo-fnd-plc-uspsai/Pines,
    :fibo-fnd-utl-av/commonDesignation ["PNES" "PINES"],
    :fibo-fnd-utl-av/preferredDesignation "PNES",
@@ -2191,6 +2305,7 @@
    :rdfs/label "pines"})
 
 (def Place
+  "place"
   {:db/ident :fibo-fnd-plc-uspsai/Place,
    :fibo-fnd-utl-av/commonDesignation "PL",
    :fibo-fnd-utl-av/preferredDesignation "PL",
@@ -2200,6 +2315,7 @@
    :rdfs/label "place"})
 
 (def Plain
+  "plain"
   {:db/ident :fibo-fnd-plc-uspsai/Plain,
    :fibo-fnd-utl-av/commonDesignation ["PLN" "PLAIN"],
    :fibo-fnd-utl-av/preferredDesignation "PLN",
@@ -2209,6 +2325,7 @@
    :rdfs/label "plain"})
 
 (def Plains
+  "plains"
   {:db/ident :fibo-fnd-plc-uspsai/Plains,
    :fibo-fnd-utl-av/commonDesignation ["PLNS" "PLAINS"],
    :fibo-fnd-utl-av/preferredDesignation "PLNS",
@@ -2218,6 +2335,7 @@
    :rdfs/label "plains"})
 
 (def Plaza
+  "plaza"
   {:db/ident :fibo-fnd-plc-uspsai/Plaza,
    :fibo-fnd-utl-av/commonDesignation ["PLZA" "PLZ" "PLAZA"],
    :fibo-fnd-utl-av/preferredDesignation "PLZ",
@@ -2227,6 +2345,7 @@
    :rdfs/label "plaza"})
 
 (def Point
+  "point"
   {:db/ident :fibo-fnd-plc-uspsai/Point,
    :fibo-fnd-utl-av/commonDesignation ["PT" "POINT"],
    :fibo-fnd-utl-av/preferredDesignation "PT",
@@ -2236,6 +2355,7 @@
    :rdfs/label "point"})
 
 (def Points
+  "points"
   {:db/ident :fibo-fnd-plc-uspsai/Points,
    :fibo-fnd-utl-av/commonDesignation ["PTS" "POINTS"],
    :fibo-fnd-utl-av/preferredDesignation "PTS",
@@ -2245,6 +2365,7 @@
    :rdfs/label "points"})
 
 (def Port
+  "port"
   {:db/ident :fibo-fnd-plc-uspsai/Port,
    :fibo-fnd-utl-av/commonDesignation ["PRT" "PORT"],
    :fibo-fnd-utl-av/preferredDesignation "PRT",
@@ -2254,6 +2375,7 @@
    :rdfs/label "port"})
 
 (def Ports
+  "ports"
   {:db/ident :fibo-fnd-plc-uspsai/Ports,
    :fibo-fnd-utl-av/commonDesignation ["PRTS" "PORTS"],
    :fibo-fnd-utl-av/preferredDesignation "PRTS",
@@ -2263,6 +2385,7 @@
    :rdfs/label "ports"})
 
 (def Prairie
+  "prairie"
   {:db/ident :fibo-fnd-plc-uspsai/Prairie,
    :fibo-fnd-utl-av/commonDesignation ["PRR" "PRAIRIE" "PR"],
    :fibo-fnd-utl-av/preferredDesignation "PR",
@@ -2301,6 +2424,7 @@
    :skos/definition "US-specific code for the designation for Rhode Island"})
 
 (def Radial
+  "radial"
   {:db/ident :fibo-fnd-plc-uspsai/Radial,
    :fibo-fnd-utl-av/commonDesignation ["RADL" "RADIEL" "RADIAL" "RAD"],
    :fibo-fnd-utl-av/preferredDesignation "RADL",
@@ -2310,6 +2434,7 @@
    :rdfs/label "radial"})
 
 (def Ramp
+  "ramp"
   {:db/ident :fibo-fnd-plc-uspsai/Ramp,
    :fibo-fnd-utl-av/commonDesignation "RAMP",
    :fibo-fnd-utl-av/preferredDesignation "RAMP",
@@ -2319,6 +2444,7 @@
    :rdfs/label "ramp"})
 
 (def Ranch
+  "ranch"
   {:db/ident :fibo-fnd-plc-uspsai/Ranch,
    :fibo-fnd-utl-av/commonDesignation ["RNCHS" "RNCH" "RANCHES" "RANCH"],
    :fibo-fnd-utl-av/preferredDesignation "RNCH",
@@ -2328,6 +2454,7 @@
    :rdfs/label "ranch"})
 
 (def Rapid
+  "rapid"
   {:db/ident :fibo-fnd-plc-uspsai/Rapid,
    :fibo-fnd-utl-av/commonDesignation ["RPD" "RAPID"],
    :fibo-fnd-utl-av/preferredDesignation "RPD",
@@ -2337,6 +2464,7 @@
    :rdfs/label "rapid"})
 
 (def Rapids
+  "rapids"
   {:db/ident :fibo-fnd-plc-uspsai/Rapids,
    :fibo-fnd-utl-av/commonDesignation ["RPDS" "RAPIDS"],
    :fibo-fnd-utl-av/preferredDesignation "RPDS",
@@ -2346,6 +2474,7 @@
    :rdfs/label "rapids"})
 
 (def Rest
+  "rest"
   {:db/ident :fibo-fnd-plc-uspsai/Rest,
    :fibo-fnd-utl-av/commonDesignation ["RST" "REST"],
    :fibo-fnd-utl-av/preferredDesignation "RST",
@@ -2355,6 +2484,7 @@
    :rdfs/label "rest"})
 
 (def Ridge
+  "ridge"
   {:db/ident :fibo-fnd-plc-uspsai/Ridge,
    :fibo-fnd-utl-av/commonDesignation ["RIDGE" "RDGE" "RDG"],
    :fibo-fnd-utl-av/preferredDesignation "RDG",
@@ -2364,6 +2494,7 @@
    :rdfs/label "ridge"})
 
 (def Ridges
+  "ridges"
   {:db/ident :fibo-fnd-plc-uspsai/Ridges,
    :fibo-fnd-utl-av/commonDesignation ["RIDGES" "RDGS"],
    :fibo-fnd-utl-av/preferredDesignation "RDGS",
@@ -2373,6 +2504,7 @@
    :rdfs/label "ridges"})
 
 (def River
+  "river"
   {:db/ident :fibo-fnd-plc-uspsai/River,
    :fibo-fnd-utl-av/commonDesignation ["RVR" "RIVR" "RIVER" "RIV"],
    :fibo-fnd-utl-av/preferredDesignation "RIV",
@@ -2382,6 +2514,7 @@
    :rdfs/label "river"})
 
 (def Road
+  "road"
   {:db/ident :fibo-fnd-plc-uspsai/Road,
    :fibo-fnd-utl-av/commonDesignation ["ROAD" "RD"],
    :fibo-fnd-utl-av/preferredDesignation "RD",
@@ -2391,6 +2524,7 @@
    :rdfs/label "road"})
 
 (def Roads
+  "roads"
   {:db/ident :fibo-fnd-plc-uspsai/Roads,
    :fibo-fnd-utl-av/commonDesignation ["ROADS" "RDS"],
    :fibo-fnd-utl-av/preferredDesignation "RDS",
@@ -2400,6 +2534,7 @@
    :rdfs/label "roads"})
 
 (def Route
+  "route"
   {:db/ident :fibo-fnd-plc-uspsai/Route,
    :fibo-fnd-utl-av/commonDesignation "ROUTE",
    :fibo-fnd-utl-av/preferredDesignation "RTE",
@@ -2409,6 +2544,7 @@
    :rdfs/label "route"})
 
 (def Row
+  "row"
   {:db/ident :fibo-fnd-plc-uspsai/Row,
    :fibo-fnd-utl-av/commonDesignation "ROW",
    :fibo-fnd-utl-av/preferredDesignation "ROW",
@@ -2418,6 +2554,7 @@
    :rdfs/label "row"})
 
 (def Rue
+  "rue"
   {:db/ident :fibo-fnd-plc-uspsai/Rue,
    :fibo-fnd-utl-av/commonDesignation "RUE",
    :fibo-fnd-utl-av/preferredDesignation "RUE",
@@ -2427,6 +2564,7 @@
    :rdfs/label "rue"})
 
 (def Run
+  "run"
   {:db/ident :fibo-fnd-plc-uspsai/Run,
    :fibo-fnd-utl-av/commonDesignation "RUN",
    :fibo-fnd-utl-av/preferredDesignation "RUN",
@@ -2479,6 +2617,7 @@
    "Canadian and US-specific code for the designation for Saskatchewan"})
 
 (def Shoal
+  "shoal"
   {:db/ident :fibo-fnd-plc-uspsai/Shoal,
    :fibo-fnd-utl-av/commonDesignation ["SHOAL" "SHL"],
    :fibo-fnd-utl-av/preferredDesignation "SHL",
@@ -2488,6 +2627,7 @@
    :rdfs/label "shoal"})
 
 (def Shoals
+  "shoals"
   {:db/ident :fibo-fnd-plc-uspsai/Shoals,
    :fibo-fnd-utl-av/commonDesignation ["SHOALS" "SHLS"],
    :fibo-fnd-utl-av/preferredDesignation "SHLS",
@@ -2497,6 +2637,7 @@
    :rdfs/label "shoals"})
 
 (def Shore
+  "shore"
   {:db/ident :fibo-fnd-plc-uspsai/Shore,
    :fibo-fnd-utl-av/commonDesignation ["SHR" "SHORE" "SHOAR"],
    :fibo-fnd-utl-av/preferredDesignation "SHR",
@@ -2506,6 +2647,7 @@
    :rdfs/label "shore"})
 
 (def Shores
+  "shores"
   {:db/ident :fibo-fnd-plc-uspsai/Shores,
    :fibo-fnd-utl-av/commonDesignation ["SHRS" "SHORES" "SHOARS"],
    :fibo-fnd-utl-av/preferredDesignation "SHRS",
@@ -2515,6 +2657,7 @@
    :rdfs/label "shores"})
 
 (def Skyway
+  "skyway"
   {:db/ident :fibo-fnd-plc-uspsai/Skyway,
    :fibo-fnd-utl-av/commonDesignation "SKYWAY",
    :fibo-fnd-utl-av/preferredDesignation "SKWY",
@@ -2524,6 +2667,7 @@
    :rdfs/label "skyway"})
 
 (def Spring
+  "spring"
   {:db/ident :fibo-fnd-plc-uspsai/Spring,
    :fibo-fnd-utl-av/commonDesignation ["SPRNG" "SPRING" "SPNG" "SPG"],
    :fibo-fnd-utl-av/preferredDesignation "SPG",
@@ -2533,6 +2677,7 @@
    :rdfs/label "spring"})
 
 (def Springs
+  "springs"
   {:db/ident :fibo-fnd-plc-uspsai/Springs,
    :fibo-fnd-utl-av/commonDesignation ["SPRNGS" "SPRINGS" "SPNGS" "SPGS"],
    :fibo-fnd-utl-av/preferredDesignation "SPGS",
@@ -2542,6 +2687,7 @@
    :rdfs/label "springs"})
 
 (def Spur
+  "spur"
   {:db/ident :fibo-fnd-plc-uspsai/Spur,
    :fibo-fnd-utl-av/commonDesignation "SPUR",
    :fibo-fnd-utl-av/preferredDesignation "SPUR",
@@ -2551,6 +2697,7 @@
    :rdfs/label "spur"})
 
 (def Spurs
+  "spurs"
   {:db/ident :fibo-fnd-plc-uspsai/Spurs,
    :fibo-fnd-utl-av/commonDesignation "SPURS",
    :fibo-fnd-utl-av/preferredDesignation "SPUR",
@@ -2560,6 +2707,7 @@
    :rdfs/label "spurs"})
 
 (def Square
+  "square"
   {:db/ident :fibo-fnd-plc-uspsai/Square,
    :fibo-fnd-utl-av/commonDesignation ["SQRE" "SQUARE" "SQR" "SQU" "SQ"],
    :fibo-fnd-utl-av/preferredDesignation "SQ",
@@ -2569,6 +2717,7 @@
    :rdfs/label "square"})
 
 (def Squares
+  "squares"
   {:db/ident :fibo-fnd-plc-uspsai/Squares,
    :fibo-fnd-utl-av/commonDesignation ["SQUARES" "SQRS"],
    :fibo-fnd-utl-av/preferredDesignation "SQS",
@@ -2578,6 +2727,7 @@
    :rdfs/label "squares"})
 
 (def Station
+  "station"
   {:db/ident :fibo-fnd-plc-uspsai/Station,
    :fibo-fnd-utl-av/commonDesignation ["STN" "STATN" "STATION" "STA"],
    :fibo-fnd-utl-av/preferredDesignation "STA",
@@ -2587,6 +2737,7 @@
    :rdfs/label "station"})
 
 (def Stravenue
+  "stravenue"
   {:db/ident :fibo-fnd-plc-uspsai/Stravenue,
    :fibo-fnd-utl-av/commonDesignation
    ["STRAV" "STRA" "STRAVENUE" "STRAVEN" "STRAVN" "STRVN" "STRVNUE"],
@@ -2597,6 +2748,7 @@
    :rdfs/label "stravenue"})
 
 (def Stream
+  "stream"
   {:db/ident :fibo-fnd-plc-uspsai/Stream,
    :fibo-fnd-utl-av/commonDesignation ["STRM" "STREME" "STREAM"],
    :fibo-fnd-utl-av/preferredDesignation "STRM",
@@ -2606,6 +2758,7 @@
    :rdfs/label "stream"})
 
 (def Street
+  "street"
   {:db/ident :fibo-fnd-plc-uspsai/Street,
    :fibo-fnd-utl-av/commonDesignation ["STRT" "STREET" "STR" "ST"],
    :fibo-fnd-utl-av/preferredDesignation "ST",
@@ -2615,6 +2768,7 @@
    :rdfs/label "street"})
 
 (def Streets
+  "streets"
   {:db/ident :fibo-fnd-plc-uspsai/Streets,
    :fibo-fnd-utl-av/commonDesignation "STREETS",
    :fibo-fnd-utl-av/preferredDesignation "STS",
@@ -2624,6 +2778,7 @@
    :rdfs/label "streets"})
 
 (def Summit
+  "summit"
   {:db/ident :fibo-fnd-plc-uspsai/Summit,
    :fibo-fnd-utl-av/commonDesignation ["SUMMIT" "SUMITT" "SUMIT" "SMT"],
    :fibo-fnd-utl-av/preferredDesignation "SMT",
@@ -2661,6 +2816,7 @@
    :skos/definition "US-specific code for the designation for Texas"})
 
 (def Terrace
+  "terrace"
   {:db/ident :fibo-fnd-plc-uspsai/Terrace,
    :fibo-fnd-utl-av/commonDesignation ["TERRACE" "TERR" "TER"],
    :fibo-fnd-utl-av/preferredDesignation "TER",
@@ -2670,6 +2826,7 @@
    :rdfs/label "terrace"})
 
 (def Throughway
+  "throughway"
   {:db/ident :fibo-fnd-plc-uspsai/Throughway,
    :fibo-fnd-utl-av/commonDesignation "THROUGHWAY",
    :fibo-fnd-utl-av/preferredDesignation "TRWY",
@@ -2679,6 +2836,7 @@
    :rdfs/label "throughway"})
 
 (def Trace
+  "trace"
   {:db/ident :fibo-fnd-plc-uspsai/Trace,
    :fibo-fnd-utl-av/commonDesignation ["TRCE" "TRACES" "TRACE"],
    :fibo-fnd-utl-av/preferredDesignation "TRCE",
@@ -2688,6 +2846,7 @@
    :rdfs/label "trace"})
 
 (def Track
+  "track"
   {:db/ident :fibo-fnd-plc-uspsai/Track,
    :fibo-fnd-utl-av/commonDesignation ["TRACKS" "TRKS" "TRACK" "TRK" "TRAK"],
    :fibo-fnd-utl-av/preferredDesignation "TRAK",
@@ -2697,6 +2856,7 @@
    :rdfs/label "track"})
 
 (def Trafficway
+  "trafficway"
   {:db/ident :fibo-fnd-plc-uspsai/Trafficway,
    :fibo-fnd-utl-av/commonDesignation "TRAFFICWAY",
    :fibo-fnd-utl-av/preferredDesignation "TRFY",
@@ -2706,6 +2866,7 @@
    :rdfs/label "trafficway"})
 
 (def Trail
+  "trail"
   {:db/ident :fibo-fnd-plc-uspsai/Trail,
    :fibo-fnd-utl-av/commonDesignation ["TRLS" "TRL" "TRAILS" "TRAIL"],
    :fibo-fnd-utl-av/preferredDesignation "TRL",
@@ -2715,6 +2876,7 @@
    :rdfs/label "trail"})
 
 (def Trailer
+  "trailer"
   {:db/ident :fibo-fnd-plc-uspsai/Trailer,
    :fibo-fnd-utl-av/commonDesignation ["TRLRS" "TRLR" "TRAILER"],
    :fibo-fnd-utl-av/preferredDesignation "TRLR",
@@ -2724,6 +2886,7 @@
    :rdfs/label "trailer"})
 
 (def Tunnel
+  "tunnel"
   {:db/ident :fibo-fnd-plc-uspsai/Tunnel,
    :fibo-fnd-utl-av/commonDesignation
    ["TUNL" "TUNNEL" "TUNNELS" "TUNLS" "TUNNL" "TUNEL"],
@@ -2734,6 +2897,7 @@
    :rdfs/label "tunnel"})
 
 (def Turnpike
+  "turnpike"
   {:db/ident :fibo-fnd-plc-uspsai/Turnpike,
    :fibo-fnd-utl-av/commonDesignation ["TURNPK" "TURNPIKE" "TRNPK"],
    :fibo-fnd-utl-av/preferredDesignation "TPKE",
@@ -2814,6 +2978,7 @@
    :skos/definition "US-specific code for the designation for Utah"})
 
 (def Underpass
+  "underpass"
   {:db/ident :fibo-fnd-plc-uspsai/Underpass,
    :fibo-fnd-utl-av/commonDesignation "UNDERPASS",
    :fibo-fnd-utl-av/preferredDesignation "UPAS",
@@ -2823,6 +2988,7 @@
    :rdfs/label "underpass"})
 
 (def Union
+  "union"
   {:db/ident :fibo-fnd-plc-uspsai/Union,
    :fibo-fnd-utl-av/commonDesignation ["UNION" "UN"],
    :fibo-fnd-utl-av/preferredDesignation "UN",
@@ -2832,6 +2998,7 @@
    :rdfs/label "union"})
 
 (def Unions
+  "unions"
   {:db/ident :fibo-fnd-plc-uspsai/Unions,
    :fibo-fnd-utl-av/commonDesignation "UNIONS",
    :fibo-fnd-utl-av/preferredDesignation "UNS",
@@ -2884,6 +3051,7 @@
    :skos/definition "US-specific code for the designation for Vermont"})
 
 (def Valley
+  "valley"
   {:db/ident :fibo-fnd-plc-uspsai/Valley,
    :fibo-fnd-utl-av/commonDesignation ["VLY" "VLLY" "VALLY" "VALLEY"],
    :fibo-fnd-utl-av/preferredDesignation "VLY",
@@ -2893,6 +3061,7 @@
    :rdfs/label "valley"})
 
 (def Valleys
+  "valleys"
   {:db/ident :fibo-fnd-plc-uspsai/Valleys,
    :fibo-fnd-utl-av/commonDesignation ["VLYS" "VALLEYS"],
    :fibo-fnd-utl-av/preferredDesignation "VLYS",
@@ -2902,6 +3071,7 @@
    :rdfs/label "valleys"})
 
 (def Viaduct
+  "viaduct"
   {:db/ident :fibo-fnd-plc-uspsai/Viaduct,
    :fibo-fnd-utl-av/commonDesignation ["VIADUCT" "VIADCT" "VIA" "VDCT"],
    :fibo-fnd-utl-av/preferredDesignation "VIA",
@@ -2911,6 +3081,7 @@
    :rdfs/label "viaduct"})
 
 (def View
+  "view"
   {:db/ident :fibo-fnd-plc-uspsai/View,
    :fibo-fnd-utl-av/commonDesignation ["VW" "VIEW"],
    :fibo-fnd-utl-av/preferredDesignation "VW",
@@ -2920,6 +3091,7 @@
    :rdfs/label "view"})
 
 (def Views
+  "views"
   {:db/ident :fibo-fnd-plc-uspsai/Views,
    :fibo-fnd-utl-av/commonDesignation ["VWS" "VIEWS"],
    :fibo-fnd-utl-av/preferredDesignation "VWS",
@@ -2929,6 +3101,7 @@
    :rdfs/label "views"})
 
 (def Village
+  "village"
   {:db/ident :fibo-fnd-plc-uspsai/Village,
    :fibo-fnd-utl-av/commonDesignation
    ["VILLAG" "VILLG" "VILLIAGE" "VLG" "VILL" "VILLAGE"],
@@ -2939,6 +3112,7 @@
    :rdfs/label "village"})
 
 (def Villages
+  "villages"
   {:db/ident :fibo-fnd-plc-uspsai/Villages,
    :fibo-fnd-utl-av/commonDesignation ["VLGS" "VILLAGES"],
    :fibo-fnd-utl-av/preferredDesignation "VLGS",
@@ -2948,6 +3122,7 @@
    :rdfs/label "villages"})
 
 (def Ville
+  "ville"
   {:db/ident :fibo-fnd-plc-uspsai/Ville,
    :fibo-fnd-utl-av/commonDesignation ["VL" "VILLE"],
    :fibo-fnd-utl-av/preferredDesignation "VL",
@@ -2957,6 +3132,7 @@
    :rdfs/label "ville"})
 
 (def Vista
+  "vista"
   {:db/ident :fibo-fnd-plc-uspsai/Vista,
    :fibo-fnd-utl-av/commonDesignation ["VISTA" "VSTA" "VIST" "VIS" "VST"],
    :fibo-fnd-utl-av/preferredDesignation "VIS",
@@ -3022,6 +3198,7 @@
    :skos/definition "US-specific code for the designation for Wyoming"})
 
 (def Walk
+  "walk"
   {:db/ident :fibo-fnd-plc-uspsai/Walk,
    :fibo-fnd-utl-av/commonDesignation "WALK",
    :fibo-fnd-utl-av/preferredDesignation "WALK",
@@ -3031,6 +3208,7 @@
    :rdfs/label "walk"})
 
 (def Walks
+  "walks"
   {:db/ident :fibo-fnd-plc-uspsai/Walks,
    :fibo-fnd-utl-av/commonDesignation "WALKS",
    :fibo-fnd-utl-av/preferredDesignation "WALK",
@@ -3040,6 +3218,7 @@
    :rdfs/label "walks"})
 
 (def Wall
+  "wall"
   {:db/ident :fibo-fnd-plc-uspsai/Wall,
    :fibo-fnd-utl-av/commonDesignation "WALL",
    :fibo-fnd-utl-av/preferredDesignation "WALL",
@@ -3049,6 +3228,7 @@
    :rdfs/label "wall"})
 
 (def Way
+  "way"
   {:db/ident :fibo-fnd-plc-uspsai/Way,
    :fibo-fnd-utl-av/commonDesignation ["WY" "WAY"],
    :fibo-fnd-utl-av/preferredDesignation "WAY",
@@ -3058,6 +3238,7 @@
    :rdfs/label "way"})
 
 (def Ways
+  "ways"
   {:db/ident :fibo-fnd-plc-uspsai/Ways,
    :fibo-fnd-utl-av/commonDesignation "WAYS",
    :fibo-fnd-utl-av/preferredDesignation "WAYS",
@@ -3067,6 +3248,7 @@
    :rdfs/label "ways"})
 
 (def Well
+  "well"
   {:db/ident :fibo-fnd-plc-uspsai/Well,
    :fibo-fnd-utl-av/commonDesignation "WELL",
    :fibo-fnd-utl-av/preferredDesignation "WL",
@@ -3076,6 +3258,7 @@
    :rdfs/label "well"})
 
 (def Wells
+  "wells"
   {:db/ident :fibo-fnd-plc-uspsai/Wells,
    :fibo-fnd-utl-av/commonDesignation ["WLS" "WELLS"],
    :fibo-fnd-utl-av/preferredDesignation "WLS",

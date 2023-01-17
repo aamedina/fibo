@@ -85,6 +85,7 @@
    :sm/fileAbbreviation "fibo-loan-spc-prod"})
 
 (def AutoLoanPurpose
+  "auto loan purpose"
   {:db/ident :fibo-loan-spc-prod/AutoLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -94,6 +95,7 @@
    :rdfs/subClassOf :fibo-loan-spc-prod/LoanPurpose})
 
 (def BridgingLoanPurpose
+  "bridging loan purpose"
   {:db/ident :fibo-loan-spc-prod/BridgingLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -103,6 +105,7 @@
    :rdfs/subClassOf :fibo-loan-spc-prod/LoanPurpose})
 
 (def ConstructionLoanPurpose
+  "construction loan purpose"
   {:db/ident :fibo-loan-spc-prod/ConstructionLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -112,6 +115,7 @@
    :rdfs/subClassOf :fibo-loan-spc-prod/LoanPurpose})
 
 (def CreditCardReceivablePurpose
+  "credit card receivable purpose"
   {:db/ident :fibo-loan-spc-prod/CreditCardReceivablePurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -121,6 +125,7 @@
    :rdfs/subClassOf :fibo-loan-spc-prod/LoanPurpose})
 
 (def HomeEquityLoanPurpose
+  "home equity loan purpose"
   {:db/ident :fibo-loan-spc-prod/HomeEquityLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -136,24 +141,24 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
    :rdfs/label "line item",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-loan-ln-ln/hasCost,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-loan-spc-prod/hasUnitCost,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-arr-arr/CollectionConstituent
+                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-pas-pas/Product
                                             :fibo-loan-reln-mtg/ChargeCategory],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-arr/CollectionConstituent
-                     {:owl/onProperty     :fibo-loan-ln-ln/hasCost,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-qt-qtu/hasNumericValue,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-loan-spc-prod/hasUnitCost,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "description of a product or service including its unit cost, number of units and total cost",
    :skos/editorialNote
@@ -171,6 +176,7 @@
    "category indicating the market domain in which the loan product is offered"})
 
 (def LoanMarketCategory-Automobile
+  "auto loan"
   {:db/ident :fibo-loan-spc-prod/LoanMarketCategory-Automobile,
    :rdf/type [:fibo-loan-spc-prod/LoanMarketCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -178,6 +184,7 @@
    :rdfs/label "auto loan"})
 
 (def LoanMarketCategory-Commercial
+  "commercial loan"
   {:db/ident :fibo-loan-spc-prod/LoanMarketCategory-Commercial,
    :rdf/type [:fibo-loan-spc-prod/LoanMarketCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -185,6 +192,7 @@
    :rdfs/label "commercial loan"})
 
 (def LoanMarketCategory-Construction
+  "construction loan"
   {:db/ident :fibo-loan-spc-prod/LoanMarketCategory-Construction,
    :rdf/type [:fibo-loan-spc-prod/LoanMarketCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -192,6 +200,7 @@
    :rdfs/label "construction loan"})
 
 (def LoanMarketCategory-Education
+  "education loan"
   {:db/ident :fibo-loan-spc-prod/LoanMarketCategory-Education,
    :rdf/type [:fibo-loan-spc-prod/LoanMarketCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -199,6 +208,7 @@
    :rdfs/label "education loan"})
 
 (def LoanMarketCategory-Mortgage
+  "mortgage loan"
   {:db/ident :fibo-loan-spc-prod/LoanMarketCategory-Mortgage,
    :rdf/type [:fibo-loan-spc-prod/LoanMarketCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -206,6 +216,7 @@
    :rdfs/label "mortgage loan"})
 
 (def LoanMarketCategory-Personal
+  "personal loan"
   {:db/ident :fibo-loan-spc-prod/LoanMarketCategory-Personal,
    :rdf/type [:fibo-loan-spc-prod/LoanMarketCategory :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -213,6 +224,7 @@
    :rdfs/label "personal loan"})
 
 (def LoanMarketCategory-SmallBusiness
+  "small business loan"
   {:db/ident :fibo-loan-spc-prod/LoanMarketCategory-SmallBusiness,
    :fibo-fnd-utl-av/explanatoryNote
    "This is related to the mortgage loan purpose: 'business or commercial'.",
@@ -292,6 +304,7 @@
     "A selection of different types of loan purpose, being the purpose for which and manner in which loan (credit) draw-down amounts are to be used. This shows the purpose for which credit is to be used, and implies certain kinds of fact that relate to that specific type of loan e.g. mortgages. These are also identified as tranche types in tranches of a credit facility."}})
 
 (def MortgageProduct
+  "mortgage product"
   {:db/ident :fibo-loan-spc-prod/MortgageProduct,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -305,6 +318,7 @@
                      :fibo-loan-spc-prod/LoanProduct]})
 
 (def MotorhomeLoanPurpose
+  "motorhome loan purpose"
   {:db/ident :fibo-loan-spc-prod/MotorhomeLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -314,6 +328,7 @@
    :rdfs/subClassOf :fibo-loan-spc-prod/LoanPurpose})
 
 (def OrdinaryLoanPurpose
+  "ordinary loan purpose"
   {:db/ident :fibo-loan-spc-prod/OrdinaryLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -323,6 +338,7 @@
    :rdfs/subClassOf :fibo-loan-spc-prod/LoanPurpose})
 
 (def OverdraftFacilityPurpose
+  "overdraft facility purpose"
   {:db/ident :fibo-loan-spc-prod/OverdraftFacilityPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -332,6 +348,7 @@
    :rdfs/subClassOf :fibo-loan-spc-prod/LoanPurpose})
 
 (def ResidentialHouseboatLoanPurpose
+  "residential houseboat loan purpose"
   {:db/ident :fibo-loan-spc-prod/ResidentialHouseboatLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -341,6 +358,7 @@
    :rdfs/subClassOf :fibo-loan-spc-prod/LoanPurpose})
 
 (def StudentLoanPurpose
+  "student loan purpose"
   {:db/ident :fibo-loan-spc-prod/StudentLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -350,6 +368,7 @@
    :rdfs/subClassOf :fibo-loan-spc-prod/LoanPurpose})
 
 (def WorkingCapitalPurpose
+  "working capital purpose"
   {:db/ident :fibo-loan-spc-prod/WorkingCapitalPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -359,6 +378,7 @@
    :rdfs/subClassOf :fibo-loan-spc-prod/LoanPurpose})
 
 (def hasPreconditions
+  "has preconditions"
   {:db/ident :fibo-loan-spc-prod/hasPreconditions,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-loan-spc-prod/LoanProduct,

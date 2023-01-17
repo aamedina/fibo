@@ -48,7 +48,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/MetadataDERCreditDerivatives/",
    :rdfs/label "Credit Derivatives",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright ["Copyright (c) 2018-2022 EDM Council, Inc."
                   "Copyright (c) 2018-2022 Object Management Group, Inc."],
    :sm/moduleAbbreviation "fibo-der-cr"})

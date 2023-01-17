@@ -116,7 +116,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Business Entity Data (BED) B.V.",
-   :rdfs/seeAlso "https://www.gmeiutility.org/",
+   :rdfs/seeAlso ["https://www.gmeiutility.org/"],
    :skos/definition "individual representing Business Entity Data (BED) B.V."})
 
 (def BusinessEntityData-NL
@@ -196,7 +196,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Clearstream Banking",
-   :rdfs/seeAlso "http://www.clearstream.com/clearstream-en/about-clearstream",
+   :rdfs/seeAlso
+   ["http://www.clearstream.com/clearstream-en/about-clearstream"],
    :skos/definition
    "Clearstream functional entity, which is an international central securities depository (ICSD) based in Luxembourg, providing post-trade infrastructure and securities services for the international market and 56 domestic markets worldwide"})
 
@@ -267,7 +268,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Clearstream Banking S.A.",
    :rdfs/seeAlso
-   "https://www.euroclear.com/about/en/ourgovernancestructure.html",
+   ["https://www.euroclear.com/about/en/ourgovernancestructure.html"],
    :skos/definition
    "Euroclear legal entity that provides post-trade infrastructure and securities services in Europe and internationally"})
 
@@ -281,7 +282,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Euroclear",
-   :rdfs/seeAlso "https://www.euroclear.com/en.html",
+   :rdfs/seeAlso ["https://www.euroclear.com/en.html"],
    :skos/definition
    "Euroclear functional entity, which is a global clearing house, central securities depository, and custodian that specializes in the settlement of securities transactions as well as the safekeeping and asset servicing of these securities"})
 
@@ -348,7 +349,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Euroclear SA/NV",
-   :rdfs/seeAlso "https://www.euroclear.com/en/about/our-structure.html",
+   :rdfs/seeAlso ["https://www.euroclear.com/en/about/our-structure.html"],
    :skos/definition
    "Euroclear legal entity that is the parent company of the international and national central securities depositories ((I)CSDs) of the Euroclear group of companies; it owns the group's shared securities processing platforms and delivers a range of services to the group's depositories"})
 
@@ -391,7 +392,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label
    "Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann",
-   :rdfs/seeAlso "https://www.wm-leiportal.org/?lang=en",
+   :rdfs/seeAlso ["https://www.wm-leiportal.org/?lang=en"],
    :skos/definition
    "subdivision of Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann that operates the WM Datenservice, Europe's largest registry for the Legal Entity Identifier (LEI)"})
 
@@ -413,7 +414,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label
    "Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG",
-   :rdfs/seeAlso "https://www.wmgruppe.de/index.php",
+   :rdfs/seeAlso ["https://www.wmgruppe.de/index.php"],
    :skos/definition
    "Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG legal entity that is a privately held company in Germany"})
 
@@ -428,7 +429,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "London Stock Exchange",
-   :rdfs/seeAlso "http://www.londonstockexchange.com/home/homepage.htm",
+   :rdfs/seeAlso ["http://www.londonstockexchange.com/home/homepage.htm"],
    :skos/definition
    "London Stock Exchange functional entity, which is a global business and financial information services and news provider, a securities exchange, and the SEDOL code issuer and registration authority"})
 
@@ -442,7 +443,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "London Stock Exchange as local operating unit",
-   :rdfs/seeAlso "http://www.londonstockexchange.com/home/homepage.htm",
+   :rdfs/seeAlso ["http://www.londonstockexchange.com/home/homepage.htm"],
    :skos/definition
    "London Stock Exchange functional entity that is an LEI Local Operating Unit (LOU) registrar"})
 
@@ -510,7 +511,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "London Stock Exchange plc.",
-   :rdfs/seeAlso "http://www.londonstockexchange.com/home/homepage.htm",
+   :rdfs/seeAlso ["http://www.londonstockexchange.com/home/homepage.htm"],
    :skos/definition "London Stock Exchange plc. legal entity"})
 
 (def LondonStockExchangeUnaVistaRegistry
@@ -521,7 +522,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "London Stock Exchange UnaVista Registry",
-   :rdfs/seeAlso "https://www.lseg.com/LEI",
+   :rdfs/seeAlso ["https://www.lseg.com/LEI"],
    :skos/definition
    "UnaVista registry service provided by the London Stock Exchange supporting LEI registration"})
 
@@ -534,7 +535,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Lux CSD",
-   :rdfs/seeAlso "http://www.luxcsd.com/luxcsd-en/",
+   :rdfs/seeAlso ["http://www.luxcsd.com/luxcsd-en/"],
    :skos/definition
    "Lux CSD functional entity, which provides Luxembourg's financial community with issuing and central bank settlement as well as custody services for a wide range of securities including investment funds"})
 
@@ -547,7 +548,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Lux CSD",
-   :rdfs/seeAlso "http://www.luxcsd.com/luxcsd-en/",
+   :rdfs/seeAlso ["http://www.luxcsd.com/luxcsd-en/"],
    :skos/definition
    "Lux CSD functional entity that is an LEI Local Operating Unit (LOU) registrar"})
 
@@ -560,7 +561,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "Lux CSD LEI Registry",
    :rdfs/seeAlso
-   "http://www.luxcsd.com/luxcsd-en/products-and-services/luxembourg-lei-service",
+   ["http://www.luxcsd.com/luxcsd-en/products-and-services/luxembourg-lei-service"],
    :skos/definition
    "LuxCDS LEI registry; LuxCSD has been issuing ISO 17442:2012 compliant LEIs with the prefix 2221 since September 2014"})
 
@@ -600,7 +601,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "LuxCSD S.A.",
-   :rdfs/seeAlso "http://www.luxcsd.com/luxcsd-en/",
+   :rdfs/seeAlso ["http://www.luxcsd.com/luxcsd-en/"],
    :skos/definition "Lux CSD legal entity"})
 
 (def NasdaqOMXGroup
@@ -649,7 +650,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "SIX Financial Information AG",
-   :rdfs/seeAlso "https://www.six-group.com/en/home.html",
+   :rdfs/seeAlso ["https://www.six-group.com/en/home.html"],
    :skos/definition "SIX Financial Information AG legal entity"})
 
 (def SIXFinancialInformationAGLegalEntityIdentifierRegistryEntry
@@ -716,7 +717,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "SIX Group AG",
-   :rdfs/seeAlso "https://www.six-group.com/en/home.html",
+   :rdfs/seeAlso ["https://www.six-group.com/en/home.html"],
    :skos/definition "SIX Group AG legal entity"})
 
 (def SIXGroupAGHeadquartersAddress

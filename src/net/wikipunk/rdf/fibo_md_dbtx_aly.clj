@@ -539,6 +539,7 @@
     "price that stems from another source or calculation rather than being quoted or based on actual trading data"}})
 
 (def DirtyPrice
+  "dirty price"
   {:db/ident :fibo-md-dbtx-aly/DirtyPrice,
    :owl/disjointWith :fibo-ind-ind-ind/QuotedPrice,
    :rdf/type :owl/Class,
@@ -589,6 +590,7 @@
     "Duration in general is a measure of % price change for a given change in yield. See definition from BMB The duration on a traditional bond will be much shorter than the duration relative to the maturity. Duration is the first derivative of the curve between Price and Yield. There are multiple types of duration, all of which are variants of this. So Duration is the first derivative and the different type of duration measure are different ways of measuring this, for example a \"quick and dirty\" measure of duration or one which."}})
 
 (def EffectiveDuration
+  "effective duration"
   {:db/ident :fibo-md-dbtx-aly/EffectiveDuration,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -598,6 +600,7 @@
    :rdfs/subClassOf :fibo-md-dbtx-aly/DurationAnalytic})
 
 (def EffectiveYield
+  "effective yield"
   {:db/ident :fibo-md-dbtx-aly/EffectiveYield,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -611,6 +614,7 @@
     "The difference between this and Native yield is as per note: Native yield relates to price quotation context; Effective Yild is in relation to portfolio analytics. Recall: every analytic formula relates to the set of cash flows, so there are assumptions underlying each of these, For example the assumption that Y is constant, which it isn't (because there is a curve, which may be convex not linear (is that right?). So you can compare rate or return between what I see and what the market has out there. In the US market: a Y which is calculated using Monto Carlo method simulation. relationship facts to add: Relation to method / formula (e.g. Monte Carlo), and the method used to determine the actual figure for the MC method. eff Y for single instrument: E Y for bonds without calls and stuff. Variation in this: whether we look at a whole set of bonds YTM quoted by Bmb would be the YTM quoted according to whatever the market is - = the NAtive Yield. SO: Publicly quoted more: choose another adjective."}})
 
 (def EquivalentLifeAnalytic
+  "equivalent life analytic"
   {:db/ident :fibo-md-dbtx-aly/EquivalentLifeAnalytic,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -627,6 +631,7 @@
                      :fibo-md-dbtx-aly/LifeAnalytic]})
 
 (def EquivalentYieldCalculationMethod
+  "equivalent yield calculation method"
   {:db/ident :fibo-md-dbtx-aly/EquivalentYieldCalculationMethod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -636,6 +641,7 @@
    :rdfs/subClassOf :fibo-md-dbtx-aly/RelativeYieldCalculationMethod})
 
 (def ExchangeTradedBondPrice
+  "exchange traded bond price"
   {:db/ident :fibo-md-dbtx-aly/ExchangeTradedBondPrice,
    :owl/disjointWith :fibo-md-dbtx-aly/OTCBondMarketPrice,
    :rdf/type :owl/Class,
@@ -700,6 +706,7 @@
     "The calculation method specified by ICMA (formerly ISMA) for determination of yield for fixed-rate bonds."}})
 
 (def ImpliedForwardRate
+  "implied forward rate"
   {:db/ident :fibo-md-dbtx-aly/ImpliedForwardRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -807,6 +814,7 @@
     "No definition.Term put here from memory. 02 Dec changed from Japanese Yield to Japanese Simple Yield. note hat Japanese Compound yield also here (from FIBIM or anothe rlist, added 25 nov with the rest)."}})
 
 (def KeyRateDuration
+  "key rate duration"
   {:db/ident :fibo-md-dbtx-aly/KeyRateDuration,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -870,6 +878,7 @@
     "From SMER sessions: This is a model. Includes other factors such as homogeniety. To model this more completely we need to identify the parameters that go in to this formula. Among these is the above homogeneity measure - need to know how that is measured and in what terms it is expressed, e.g. as a percentage, with reference to some mean or standard deviation and so on. Also some of the parameters used in this model would presumably make reference to standard mathematical model constructs such as normal distribution, variaous deviation measures, Chi squared and so on. These are not presently in the semantics model, but can be modeled semantically if required. This would not however be a mathematical model - we only need to identify these and show meaningful relationships (not mathematical relationships) between them."}})
 
 (def MacCaulaysDurationAnalytic
+  "MacCaulays Duration Analytic"
   {:db/ident :fibo-md-dbtx-aly/MacCaulaysDurationAnalytic,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -1192,6 +1201,7 @@
     "Sensitivity of the price for one basis point change in yield, defined as the difference in price given 1 bp change in yield."}})
 
 (def RelativeYieldCalculationMethod
+  "relative yield calculation method"
   {:db/ident :fibo-md-dbtx-aly/RelativeYieldCalculationMethod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -1201,6 +1211,7 @@
    :rdfs/subClassOf :fibo-md-dbtx-aly/YieldCalculationMethod})
 
 (def RelativelyDefinedDebtInstrumentYield
+  "relatively defined debt instrument yield"
   {:db/ident :fibo-md-dbtx-aly/RelativelyDefinedDebtInstrumentYield,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -1292,6 +1303,7 @@
                      "This has 30/360 and semi-annual compounding."}})
 
 (def USTreasuryYieldCalculationMethod
+  "u s treasury yield calculation method"
   {:db/ident :fibo-md-dbtx-aly/USTreasuryYieldCalculationMethod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -1423,6 +1435,7 @@
     "Initial reviewer notes 18 Nov: this uses the combination of the day count and the compounding gives you the name of the yield calculation method. Names are associated with algorithms. What yield you use to determining the present value. These are typically defined in a prospectus (for exchange traded) or Info Memorandum if it's traded in an OTC market. where it also defines the method itself. Action: look at some prospecti or get this from a vendor. Additional features 25 nov: Question - maybe Holiday calendar? Also date roll rules and roll back rules. These all apply. YC feeds in to Yield itself."}})
 
 (def YieldToNextPut
+  "yield to next put"
   {:db/ident :fibo-md-dbtx-aly/YieldToNextPut,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -1435,6 +1448,7 @@
                      :fibo-md-dbtx-aly/DebtInstrumentYield]})
 
 (def aggregateOf
+  "aggregate of"
   {:db/ident :fibo-md-dbtx-aly/aggregateOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-md-dbtx-aly/InstrumentWeightedAverageLoanAge,
@@ -1446,6 +1460,7 @@
    :rdfs/subPropertyOf :fibo-md-dbtx-aly/isAggregateOf})
 
 (def aggregateOf.1
+  "aggregate of"
   {:db/ident :fibo-md-dbtx-aly/aggregateOf.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-md-dbtx-aly/InstrumentWeightedAverageRemainingMaturity,
@@ -1457,6 +1472,7 @@
    :rdfs/subPropertyOf :fibo-md-dbtx-aly/isAggregateOf})
 
 (def calculationFollowing
+  "calculation following"
   {:db/ident :fibo-md-dbtx-aly/calculationFollowing,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-md-dbtx-aly/DebtInstrumentYield,
@@ -1497,6 +1513,7 @@
     "The number of decimal places used in the publication of the factor value."}})
 
 (def defaultRateValue
+  "default rate value"
   {:db/ident :fibo-md-dbtx-aly/defaultRateValue,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-md-dbtx-aly/DefaultRate,
@@ -1507,6 +1524,7 @@
    :rdfs/range :fibo-fnd-utl-alx/Percentage})
 
 (def determinesMarketPriceForDebt
+  "determines market price for debt"
   {:db/ident :fibo-md-dbtx-aly/determinesMarketPriceForDebt,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-md-dbtx-aly/DebtSecuritiesMarketMaker,
@@ -1544,6 +1562,7 @@
                      :rdf/value    "ABS = (100 * SMM)/100 + (SMM X (Age- 1)"}})
 
 (def hasAnalytic
+  "has analytic"
   {:db/ident :fibo-md-dbtx-aly/hasAnalytic,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-sec-pls/DebtPool,
@@ -1554,6 +1573,7 @@
    :rdfs/range :fibo-md-dbtx-aly/DebtPoolAnalyticalParameter})
 
 (def hasDefaultRate
+  "has default rate"
   {:db/ident :fibo-md-dbtx-aly/hasDefaultRate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-sec-pls/DebtPool,
@@ -1564,6 +1584,7 @@
    :rdfs/range :fibo-md-dbtx-aly/DefaultRate})
 
 (def hasFactor
+  "has factor"
   {:db/ident :fibo-md-dbtx-aly/hasFactor,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-sec-pls/DebtPool,
@@ -1574,6 +1595,7 @@
    :rdfs/range :fibo-md-dbtx-aly/PoolFactor})
 
 (def hasMeasure
+  "has measure"
   {:db/ident :fibo-md-dbtx-aly/hasMeasure,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-sec-pls/DebtPool,
@@ -1584,6 +1606,7 @@
    :rdfs/range :fibo-md-dbtx-aly/PrepaymentSpeed})
 
 (def hasOutlookPeriod
+  "has outlook period"
   {:db/ident :fibo-md-dbtx-aly/hasOutlookPeriod,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-md-dbtx-aly/DebtInstrumentYield,
@@ -1601,6 +1624,7 @@
     :rdf/type    :owl/Class}})
 
 (def hasWac
+  "has wac"
   {:db/ident :fibo-md-dbtx-aly/hasWac,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/MortgageBackedSecurity,
@@ -1611,6 +1635,7 @@
    :rdfs/range :fibo-md-dbtx-aly/WeightedAverageCoupon})
 
 (def hasYield
+  "has yield"
   {:db/ident :fibo-md-dbtx-aly/hasYield,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-dbti/TradableDebtInstrument,
@@ -1621,6 +1646,7 @@
    :rdfs/range :fibo-md-dbtx-aly/DebtInstrumentYield})
 
 (def isAggregateOf
+  "is aggregate of"
   {:db/ident :fibo-md-dbtx-aly/isAggregateOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-md-dbtx-aly/DebtPoolAnalyticalParameter,
@@ -1646,6 +1672,7 @@
     "Definition needed Moved from Yield - assume this can only be about debt instrument or loan / debt yields i..e where the income relates to interest payments. ."}})
 
 (def isDefaultMethodFor
+  "is default method for"
   {:db/ident :fibo-md-dbtx-aly/isDefaultMethodFor,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-md-dbtx-aly/NativeYieldCalculationMethod,
@@ -1656,6 +1683,7 @@
    :rdfs/range :fibo-sec-dbt-dbti/TradableDebtInstrument})
 
 (def isRateOfChangeOf
+  "is rate of change of"
   {:db/ident :fibo-md-dbtx-aly/isRateOfChangeOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-md-dbtx-aly/DebtConvexityAnalytic,

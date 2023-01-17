@@ -1,14 +1,17 @@
 (ns net.wikipunk.rdf.fibo-fnd-org-fm
-  "This ontology defines the high level concept of formal organization for use in other FIBO ontology elements. It is purposefully underspecified to facilitate mapping to other formal organization ontologies, such as the emerging W3C formal organization ontology, or others defined for specific business and financial services standards. The concepts in this ontology extend those in the Organizations ontology."
-  {:dcat/downloadURL
+  "This ontology defines the high level concept of a formal organization, which is purposefully underspecified to facilitate mapping to other organization ontologies, such as the W3C organization ontology, or others defined for specific business and financial services standards. It also defines general concepts related to employment by a formal organization."
+  {:cmns-av/copyright ["Copyright (c) 2013-2023 Object Management Group, Inc."
+                       "Copyright (c) 2013-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :dcterms/abstract
-   "This ontology defines the high level concept of formal organization for use in other FIBO ontology elements. It is purposefully underspecified to facilitate mapping to other formal organization ontologies, such as the emerging W3C formal organization ontology, or others defined for specific business and financial services standards. The concepts in this ontology extend those in the Organizations ontology.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   "This ontology defines the high level concept of a formal organization, which is purposefully underspecified to facilitate mapping to other organization ontologies, such as the W3C organization ontology, or others defined for specific business and financial services standards. It also defines general concepts related to employment by a formal organization.",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
@@ -19,7 +22,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-aap-agt"
     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
     "fibo-fnd-aap-ppl"
@@ -40,7 +44,6 @@
     "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
     "skos"    "http://www.w3.org/2004/02/skos/core#",
-    "sm"      "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -55,21 +58,8 @@
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Organizations/FormalOrganizations.rdf version of this ontology was modified per the FIBO 2.0 RFC to integrate concepts from LCC."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/Organizations/FormalOrganizations.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in http://www.omg.org/spec/EDMC-FIBO/FND/1.0/AboutFND-1.0/. It was further revised in the FTF in advance of the Long Beach meeting, resulting in http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Organizations/FormalOrganizations/."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was revised to incorporate the concept of employment, required to support regulatory reporting."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was revised to loosen the constraints on the range of isDomiciledIn, allow for multiple values, update definitions to be ISO 704 compliant, and eliminate duplication with concepts in LCC."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2013-2022 EDM Council, Inc."
-                  "Copyright (c) 2013-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"],
-   :sm/fileAbbreviation "fibo-fnd-org-fm",
-   :sm/filename "FormalOrganizations.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was revised to loosen the constraints on the range of isDomiciledIn, allow for multiple values, update definitions to be ISO 704 compliant, and eliminate duplication with concepts in LCC."]})
 
 (def Employee
   "person in the service of another under any contract of hire, express or implied, oral or written, where the employer has the right to control and direct that person in the material details of how the work is to be performed"
@@ -78,7 +68,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "employee",
-   :rdfs/seeAlso "https://www.bls.gov/opub/mlr/2002/01/art1full.pdf",
+   :rdfs/seeAlso ["https://www.bls.gov/opub/mlr/2002/01/art1full.pdf"],
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom :fibo-fnd-aap-ppl/Person,
                       :rdf/type           :owl/Restriction}
@@ -111,9 +101,9 @@
 
 (def Employment
   "situation representing the state of being employed, i.e., the relationship that holds between an employer and employee for some period of time"
-  {:db/ident :fibo-fnd-org-fm/Employment,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "In the broadest sense, employment is the situation in which someone is fully engaged in doing something that they want to do. From a FIBO perspective, however, employment is understood to be more specific. It is the relationship between two parties, evidenced by an implicit or explicit contract, in which work is compensated and in which one party, a legal person, typically a formal organization, acts as the employer and the other, typically a legally capable natural person, as the employee.",
+   :db/ident :fibo-fnd-org-fm/Employment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
@@ -133,9 +123,9 @@
 
 (def FormalOrganization
   "organization that is recognized in some legal jurisdiction, with associated rights and responsibilities"
-  {:db/ident :fibo-fnd-org-fm/FormalOrganization,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://www.w3.org/TR/vocab-org/#class-formalorganization",
+   :db/ident :fibo-fnd-org-fm/FormalOrganization,
    :owl/disjointWith :fibo-fnd-org-fm/InformalOrganization,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -227,9 +217,9 @@
 
 (def isDomiciledIn
   "indicates the principal place where an entity conducts business, such as where its headquarters is located"
-  {:db/ident :fibo-fnd-org-fm/isDomiciledIn,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Corporate domicile refers to a place where a company's affairs are discharged. It is also typically the legal home of a corporation because the place is considered by law as the center of corporate affairs. In cases where a business has incorporated in one location for convenience, such as for taxation, legal, or regulatory purposes, but operates primarily in one or more other locations, domicile in FIBO refers to the operational location(s) rather than legal location. Many companies in the US have incorporated in the State of Delaware, for example, but do not have operational facilities in Delaware (or only have small offices there).",
+   :db/ident :fibo-fnd-org-fm/isDomiciledIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-fm/FormalOrganization,
    :rdfs/isDefinedBy

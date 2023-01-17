@@ -135,16 +135,16 @@
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-le-lp/LegalEntity
+                     {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/TrustBeneficiary,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
                      :fibo-be-le-lp/BusinessEntity],
    :skos/definition
    "fiduciary relationship and legal entity in which one party, known as a trustor, gives another party, the trustee, the right to hold title to and manage assets for the benefit of a third party, the beneficiary"})
@@ -162,10 +162,10 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/TrustBeneficiary,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-fbo/OrganizationCoveringAgreement
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
                       :rdf/type           :owl/Restriction}
+                     :fibo-be-le-fbo/OrganizationCoveringAgreement
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
                       :rdf/type           :owl/Restriction}],

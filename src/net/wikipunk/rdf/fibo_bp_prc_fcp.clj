@@ -74,6 +74,7 @@
     "REVIEW: Ther precise definition above defines the Scope of this model."}})
 
 (def FinancialMarketsRegulation
+  "financial markets regulation"
   {:db/ident :fibo-bp-prc-fcp/FinancialMarketsRegulation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -83,6 +84,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext})
 
 (def InvestmentManagement
+  "investment management"
   {:db/ident :fibo-bp-prc-fcp/InvestmentManagement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -92,6 +94,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext})
 
 (def MarketDataProvision
+  "market data provision"
   {:db/ident :fibo-bp-prc-fcp/MarketDataProvision,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -101,6 +104,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/PreTrade})
 
 (def PortfolioManagement
+  "portfolio management"
   {:db/ident :fibo-bp-prc-fcp/PortfolioManagement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -110,6 +114,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/InvestmentManagement})
 
 (def PreTrade
+  "pre trade"
   {:db/ident :fibo-bp-prc-fcp/PreTrade,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -119,6 +124,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/InvestmentManagement})
 
 (def PretradeQuotes
+  "pretrade quotes"
   {:db/ident :fibo-bp-prc-fcp/PretradeQuotes,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -128,6 +134,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/PreTrade})
 
 (def PretradeReferenceDataProvision
+  "pretrade reference data provision"
   {:db/ident :fibo-bp-prc-fcp/PretradeReferenceDataProvision,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -151,6 +158,7 @@
     "Issuance and primary market trading of new Traded Financial Instruments"}})
 
 (def PrimaryMarketClosing
+  "primary market closing"
   {:db/ident :fibo-bp-prc-fcp/PrimaryMarketClosing,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -160,6 +168,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/PrimaryMarket})
 
 (def PrimaryMarketIndicationsOfInterest
+  "primary market indications of interest"
   {:db/ident :fibo-bp-prc-fcp/PrimaryMarketIndicationsOfInterest,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -169,6 +178,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/PreTrade})
 
 (def SecondaryMarketTradingContext
+  "secondary market trading context"
   {:db/ident :fibo-bp-prc-fcp/SecondaryMarketTradingContext,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -178,6 +188,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext})
 
 (def SecuritiesCustody
+  "securities custody"
   {:db/ident :fibo-bp-prc-fcp/SecuritiesCustody,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -187,6 +198,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext})
 
 (def SecuritiesPostTrade
+  "securities post trade"
   {:db/ident :fibo-bp-prc-fcp/SecuritiesPostTrade,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -196,6 +208,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext})
 
 (def SecuritiesPostTradePositionManagement
+  "securities post trade position management"
   {:db/ident :fibo-bp-prc-fcp/SecuritiesPostTradePositionManagement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -205,6 +218,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesPostTrade})
 
 (def SecuritiesTrade
+  "securities trade"
   {:db/ident :fibo-bp-prc-fcp/SecuritiesTrade,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -214,6 +228,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext})
 
 (def SecuritiesTradeAllocation
+  "securities trade allocation"
   {:db/ident :fibo-bp-prc-fcp/SecuritiesTradeAllocation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -223,6 +238,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesPostTrade})
 
 (def SecuritiesTradeCaptureAndValidation
+  "securities trade capture and validation"
   {:db/ident :fibo-bp-prc-fcp/SecuritiesTradeCaptureAndValidation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -232,6 +248,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesPostTrade})
 
 (def SecuritiesTradeConfirmationAffirmation
+  "securities trade confirmation affirmation"
   {:db/ident :fibo-bp-prc-fcp/SecuritiesTradeConfirmationAffirmation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -241,6 +258,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesPostTrade})
 
 (def SecuritiesTradeDatePositionReporting
+  "securities trade date position reporting"
   {:db/ident :fibo-bp-prc-fcp/SecuritiesTradeDatePositionReporting,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -250,6 +268,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesTrade})
 
 (def SecuritiesTradeExecution
+  "securities trade execution"
   {:db/ident :fibo-bp-prc-fcp/SecuritiesTradeExecution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -259,6 +278,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesTrade})
 
 (def SecuritiesTradeOrderRouting
+  "securities trade order routing"
   {:db/ident :fibo-bp-prc-fcp/SecuritiesTradeOrderRouting,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -282,6 +302,7 @@
     "Matching of trade allegations to identify confirmed trades, on an Over the Counter market in Traded Securities."}})
 
 (def SecuritiesTradesReporting
+  "securities trades reporting"
   {:db/ident :fibo-bp-prc-fcp/SecuritiesTradesReporting,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -291,6 +312,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesPostTrade})
 
 (def SecurityRetirement
+  "security retirement"
   {:db/ident :fibo-bp-prc-fcp/SecurityRetirement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -317,6 +339,7 @@
                      "The process by which securities trades are settled."}})
 
 (def ShortSaleLocate
+  "short sale locate"
   {:db/ident :fibo-bp-prc-fcp/ShortSaleLocate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -326,6 +349,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/PreTrade})
 
 (def TradeAdvertisements
+  "trade advertisements"
   {:db/ident :fibo-bp-prc-fcp/TradeAdvertisements,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -335,6 +359,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/PreTrade})
 
 (def TradedSecurityLifecycle
+  "traded security lifecycle"
   {:db/ident :fibo-bp-prc-fcp/TradedSecurityLifecycle,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -343,6 +368,7 @@
                 :rdf/value    "traded security lifecycle"}})
 
 (def TradesReferenceDataProvision
+  "trades reference data provision"
   {:db/ident :fibo-bp-prc-fcp/TradesReferenceDataProvision,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -352,6 +378,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesTrade})
 
 (def WhenIssuedTrading
+  "when issued trading"
   {:db/ident :fibo-bp-prc-fcp/WhenIssuedTrading,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -361,6 +388,7 @@
    :rdfs/subClassOf :fibo-bp-prc-fcp/PrimaryMarket})
 
 (def context
+  "context"
   {:db/ident :fibo-bp-prc-fcp/context,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
@@ -369,6 +397,7 @@
                 :rdf/value    "context"}})
 
 (def isRetirementOf
+  "is retirement of"
   {:db/ident :fibo-bp-prc-fcp/isRetirementOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-prc-fcp/SecurityRetirement,

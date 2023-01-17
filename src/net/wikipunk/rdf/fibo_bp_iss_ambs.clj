@@ -82,6 +82,7 @@
    :sm/fileAbbreviation "fibo-bp-iss-ambs"})
 
 (def AcquireMortgage
+  "acquire mortgage"
   {:db/ident :fibo-bp-iss-ambs/AcquireMortgage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -94,6 +95,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def AddMortgageToPool
+  "add mortgage to pool"
   {:db/ident :fibo-bp-iss-ambs/AddMortgageToPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -106,6 +108,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def AgencyMortgagePoolCreationProcess
+  "agency mortgage pool creation process"
   {:db/ident :fibo-bp-iss-ambs/AgencyMortgagePoolCreationProcess,
    :owl/disjointWith :fibo-bp-iss-pmbs/NonAgencyPoolCreationProcess,
    :rdf/type :owl/Class,
@@ -126,6 +129,7 @@
                      :fibo-bp-iss-dbti/RetailAssetPoolCreationProcess]})
 
 (def AllocatePrimaryIdentifier
+  "allocate primary identifier"
   {:db/ident :fibo-bp-iss-ambs/AllocatePrimaryIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -135,6 +139,7 @@
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def AssessPoolSuitablilityForIssuance
+  "assess pool suitablility for issuance"
   {:db/ident :fibo-bp-iss-ambs/AssessPoolSuitablilityForIssuance,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -144,6 +149,7 @@
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def ClassifyMortgage
+  "classify mortgage"
   {:db/ident :fibo-bp-iss-ambs/ClassifyMortgage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -156,6 +162,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def DefineMortgagePool
+  "define mortgage pool"
   {:db/ident :fibo-bp-iss-ambs/DefineMortgagePool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -183,6 +190,7 @@
     "Draft of set of information defining the pass thorugh security terms. These will eventually become the contractual terms of the instrument. Term origin:MBS PoC Reviews"}})
 
 (def DrawUpOfferingMemorandum
+  "draw up offering memorandum"
   {:db/ident :fibo-bp-iss-ambs/DrawUpOfferingMemorandum,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -192,6 +200,7 @@
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def DrawUpTermsheet
+  "draw up termsheet"
   {:db/ident :fibo-bp-iss-ambs/DrawUpTermsheet,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -201,6 +210,7 @@
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def FinalizePoolContent
+  "finalize pool content"
   {:db/ident :fibo-bp-iss-ambs/FinalizePoolContent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -210,6 +220,7 @@
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def FinalizeProspectus
+  "finalize prospectus"
   {:db/ident :fibo-bp-iss-ambs/FinalizeProspectus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -240,6 +251,7 @@
     "Identify mortgage conforming to overall requirements for this issuer."}})
 
 (def IdentifyUnderwriter
+  "identify underwriter"
   {:db/ident :fibo-bp-iss-ambs/IdentifyUnderwriter,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -253,6 +265,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def InAssemblyAgencyMortgagePool
+  "in assembly agency mortgage pool"
   {:db/ident :fibo-bp-iss-ambs/InAssemblyAgencyMortgagePool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -265,6 +278,7 @@
                      :fibo-sec-dbt-mbs/AgencyMortgagePool]})
 
 (def InIssuanceAgencyMortgagePool
+  "in issuance agency mortgage pool"
   {:db/ident :fibo-bp-iss-ambs/InIssuanceAgencyMortgagePool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -277,6 +291,7 @@
                      :fibo-sec-dbt-mbs/AgencyMortgagePool]})
 
 (def MakeSecuritiesAvailabeInMarket
+  "make securities availabe in market"
   {:db/ident :fibo-bp-iss-ambs/MakeSecuritiesAvailabeInMarket,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -286,6 +301,7 @@
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def MarketIssue
+  "market issue"
   {:db/ident :fibo-bp-iss-ambs/MarketIssue,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -299,6 +315,7 @@
                      :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def NotYetIssuedAgencyMortgagePool
+  "not yet issued agency mortgage pool"
   {:db/ident :fibo-bp-iss-ambs/NotYetIssuedAgencyMortgagePool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -377,6 +394,7 @@
     "The final termsheet for the pass through MBS issue. This defines the terms for the MBS contract itself. Term origin:MBS PoC Reviews"}})
 
 (def PassThroughMBSSecuritizationProcess
+  "pass through m b s securitization process"
   {:db/ident :fibo-bp-iss-ambs/PassThroughMBSSecuritizationProcess,
    :owl/disjointWith :fibo-bp-iss-pmbs/TranchedMBSSecuritizationProcess,
    :rdf/type :owl/Class,
@@ -411,6 +429,7 @@
     "The offering memorandum for a pass through MBS issue, setting out basic information about a future issue, for the information of prospective investors and their agents. Term origin:MBS PoC Reviews"}})
 
 (def PoolConformanceCriteria
+  "pool conformance criteria"
   {:db/ident :fibo-bp-iss-ambs/PoolConformanceCriteria,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -431,27 +450,27 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "potential agency m b s issuer"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-bp-iss-ambs/purchases,
+   [{:owl/onProperty     :fibo-bp-iss-ambs/adds,
+     :owl/someValuesFrom :fibo-bp-iss-ambs/AddMortgageToPool,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-ambs/identifies,
+     :owl/someValuesFrom :fibo-bp-iss-ambs/IdentifyConformingMortgage,
+     :rdf/type           :owl/Restriction}
+    :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcessActor
+    {:owl/onProperty     :fibo-bp-iss-ambs/purchases,
      :owl/someValuesFrom :fibo-bp-iss-ambs/AcquireMortgage,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-ambs/adds,
-     :owl/someValuesFrom :fibo-bp-iss-ambs/AddMortgageToPool,
+    {:owl/onProperty     :fibo-bp-iss-ambs/validates,
+     :owl/someValuesFrom :fibo-bp-iss-ambs/ValidateConformance,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-ambs/finalizes,
      :owl/someValuesFrom :fibo-bp-iss-ambs/FinalizePoolContent,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
-     :owl/someValuesFrom :fibo-bp-iss-ambs/ClassifyMortgage,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-ambs/validates,
-     :owl/someValuesFrom :fibo-bp-iss-ambs/ValidateConformance,
-     :rdf/type           :owl/Restriction}
-    :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcessActor
-    {:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
      :owl/someValuesFrom :fibo-bp-iss-ambs/AssessPoolSuitablilityForIssuance,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-ambs/identifies,
-     :owl/someValuesFrom :fibo-bp-iss-ambs/IdentifyConformingMortgage,
+    {:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
+     :owl/someValuesFrom :fibo-bp-iss-ambs/ClassifyMortgage,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
@@ -473,6 +492,7 @@
     "The entity which will become the underwriter for the pass through MBS issue. Term origin:MBS PoC Reviews"}})
 
 (def RegisterSecurity
+  "register security"
   {:db/ident :fibo-bp-iss-ambs/RegisterSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -482,6 +502,7 @@
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def SuitableForIssue
+  "suitable for issue"
   {:db/ident :fibo-bp-iss-ambs/SuitableForIssue,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -512,6 +533,7 @@
     "From review comment 6 Oct: box called validate conformance automatic eg max loan balance"}})
 
 (def adds
+  "adds"
   {:db/ident :fibo-bp-iss-ambs/adds,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/PotentialAgencyMBSIssuer,
@@ -522,6 +544,7 @@
    :rdfs/range :fibo-bp-iss-ambs/AddMortgageToPool})
 
 (def addsToPool
+  "adds to pool"
   {:db/ident :fibo-bp-iss-ambs/addsToPool,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/AddMortgageToPool,
@@ -532,6 +555,7 @@
    :rdfs/range :fibo-loan-reln-mtg/Mortgage})
 
 (def allocatesIdentifier
+  "allocates identifier"
   {:db/ident :fibo-bp-iss-ambs/allocatesIdentifier,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
@@ -539,6 +563,7 @@
    :rdfs/label "allocates identifier"})
 
 (def definesCriteriaFor
+  "defines criteria for"
   {:db/ident :fibo-bp-iss-ambs/definesCriteriaFor,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/PoolConformanceCriteria,
@@ -549,6 +574,7 @@
    :rdfs/range :fibo-bp-iss-ambs/NotYetIssuedAgencyMortgagePool})
 
 (def finalizes
+  "finalizes"
   {:db/ident :fibo-bp-iss-ambs/finalizes,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/PotentialAgencyMBSIssuer,
@@ -559,6 +585,7 @@
    :rdfs/range :fibo-bp-iss-ambs/FinalizePoolContent})
 
 (def hasResource
+  "has resource"
   {:db/ident :fibo-bp-iss-ambs/hasResource,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/MarketIssue,
@@ -569,6 +596,7 @@
    :rdfs/range :fibo-bp-iss-ambs/PassThroughMBSDraftProspectus})
 
 (def identifies
+  "identifies"
   {:db/ident :fibo-bp-iss-ambs/identifies,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/PotentialAgencyMBSIssuer,
@@ -579,6 +607,7 @@
    :rdfs/range :fibo-bp-iss-ambs/IdentifyConformingMortgage})
 
 (def isAssessmentOf
+  "is assessment of"
   {:db/ident :fibo-bp-iss-ambs/isAssessmentOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/ClassifyMortgage,
@@ -589,6 +618,7 @@
    :rdfs/range :fibo-loan-reln-mtg/Mortgage})
 
 (def isDefiningOf
+  "is defining of"
   {:db/ident :fibo-bp-iss-ambs/isDefiningOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/DefineMortgagePool,
@@ -599,6 +629,7 @@
    :rdfs/range :fibo-bp-iss-ambs/NotYetIssuedAgencyMortgagePool})
 
 (def maximumLoanBalance
+  "maximum loan balance"
   {:db/ident :fibo-bp-iss-ambs/maximumLoanBalance,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/PoolConformanceCriteria,
@@ -609,6 +640,7 @@
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount})
 
 (def minimumRating
+  "minimum rating"
   {:db/ident :fibo-bp-iss-ambs/minimumRating,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/PoolConformanceCriteria,
@@ -619,6 +651,7 @@
    :rdfs/range :fibo-fbc-dae-crt/InvestmentCreditRating})
 
 (def purchase
+  "purchase"
   {:db/ident :fibo-bp-iss-ambs/purchase,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/AcquireMortgage,
@@ -629,6 +662,7 @@
    :rdfs/range :fibo-loan-reln-mtg/Mortgage})
 
 (def purchases
+  "purchases"
   {:db/ident :fibo-bp-iss-ambs/purchases,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/PotentialAgencyMBSIssuer,
@@ -639,6 +673,7 @@
    :rdfs/range :fibo-bp-iss-ambs/AcquireMortgage})
 
 (def resultsInAppointmentOf
+  "results in appointment of"
   {:db/ident :fibo-bp-iss-ambs/resultsInAppointmentOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/IdentifyUnderwriter,
@@ -649,6 +684,7 @@
    :rdfs/range :fibo-bp-iss-ambs/PotentialPassThroughIssuanceUnderwriter})
 
 (def validates
+  "validates"
   {:db/ident :fibo-bp-iss-ambs/validates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-ambs/PotentialAgencyMBSIssuer,

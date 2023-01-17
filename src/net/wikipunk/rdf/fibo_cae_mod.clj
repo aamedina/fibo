@@ -43,7 +43,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/MetadataCAE/",
    :rdfs/label "Corporate Actions and Events Domain",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/copyright "Copyright (c) 2013-2020 EDM Council, Inc.",
    :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/FND/"
                   "https://spec.edmcouncil.org/fibo/ontology/SEC/"

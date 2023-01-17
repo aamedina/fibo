@@ -60,7 +60,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/MetadataFBC/",
    :rdfs/label "Financial Business and Commerce",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/contributor ["agnos.ai UK Ltd."
                     "Citigroup"
                     "State Street Bank and Trust"

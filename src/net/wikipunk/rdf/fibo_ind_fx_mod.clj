@@ -45,7 +45,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/MetadataINDForeignExchange/",
    :rdfs/label "FIBO IND Foreign Exchange Module",
-   :rdfs/seeAlso "https://www.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"],
    :sm/contributor
    ["Thematix Partners LLC"
     "Bureau of Labor Statistics (BLS, US Department of Commerce)"

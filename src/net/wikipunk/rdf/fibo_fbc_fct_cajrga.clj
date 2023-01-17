@@ -192,14 +192,14 @@
    :rdfs/label "business number",
    :rdfs/subClassOf
    [:fibo-fnd-org-org/OrganizationIdentifier
-    {:owl/hasValue
-     :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
-     :owl/onProperty :lcc-lr/isMemberOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-pty-pty/TaxIdentifier
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :fibo-fnd-law-jur/appliesIn,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-pty-pty/TaxIdentifier],
+    {:owl/hasValue
+     :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
+     :owl/onProperty :lcc-lr/isMemberOf,
+     :rdf/type :owl/Restriction}],
    :skos/definition
    "unique, 9-digit number that is the standard identifier for legal entities in Canada which are typically a business",
    :skos/example "000000000"})
@@ -229,7 +229,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :rdfs/label "Canada Revenue Agency business number registration service",
    :rdfs/seeAlso
-   "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/you-need-a-business-number-a-program-account.html",
+   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/you-need-a-business-number-a-program-account.html"],
    :skos/definition
    "Canada Revenue Agency service for the registration of business entities"})
 
@@ -328,13 +328,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :rdfs/label "corporation income tax number",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
-     :owl/onProperty :lcc-lr/identifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-cajrga/BusinessNumber
+   [:fibo-fbc-fct-cajrga/BusinessNumber
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :fibo-fnd-law-jur/appliesIn,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
+     :owl/onProperty :lcc-lr/identifies,
      :rdf/type       :owl/Restriction}
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/CorporationIncomeTaxNumberIdentifierScheme,
@@ -371,7 +371,7 @@
    :rdfs/label
    "Canada Revenue Agency corporation income tax number registration service",
    :rdfs/seeAlso
-   "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/account-register.html",
+   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/account-register.html"],
    :skos/definition
    "Canada Revenue Agency service for the registration of corporation income tax accounts"})
 
@@ -404,7 +404,7 @@
    :rdfs/label
    "Canada Revenue Agency Goods and Services Tax / Harmonized Sales Tax number registry",
    :rdfs/seeAlso
-   "https://www.canada.ca/en/revenue-agency/services/e-services/e-services-businesses/confirming-a-gst-hst-account-number/terms-conditions-use.html",
+   ["https://www.canada.ca/en/revenue-agency/services/e-services/e-services-businesses/confirming-a-gst-hst-account-number/terms-conditions-use.html"],
    :skos/definition
    "registry that records and tracks individual GST/HST numbers for the Canada Revenue Agency"})
 
@@ -444,15 +444,15 @@
      :fibo-fbc-fct-cajrga/GoodsServicesTaxHarmonizedSalesTaxRegistrationIdentifierScheme,
      :owl/onProperty :lcc-lr/isMemberOf,
      :rdf/type :owl/Restriction}
-    :fibo-fbc-fct-cajrga/BusinessNumber
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :lcc-lr/identifies,
      :rdf/type       :owl/Restriction}
-    :fibo-be-le-fbo/ValueAddedTaxIdentificationNumber
+    :fibo-fbc-fct-cajrga/BusinessNumber
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :fibo-fnd-law-jur/appliesIn,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-be-le-fbo/ValueAddedTaxIdentificationNumber],
    :skos/definition
    "concatenation of an entity's business number, the 'RT' abbreviation and a 4-digit subaccount number used for reporting GST/HST",
    :skos/example "000000000RT0001"})
@@ -470,7 +470,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :rdfs/label "Canada Revenue Agency GST/HST number registration service",
    :rdfs/seeAlso
-   "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/account-register.html",
+   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/account-register.html"],
    :skos/definition
    "Canada Revenue Agency service for the registration of GST/HST accounts"})
 
@@ -529,7 +529,7 @@
    :rdfs/label
    "Canada Revenue Agency import export program number registration service",
    :rdfs/seeAlso
-   "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/register.html",
+   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/register.html"],
    :skos/definition
    "Canada Revenue Agency service for the registration of import export program number accounts"})
 
@@ -572,13 +572,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :rdfs/label "information return program number",
-   :rdfs/subClassOf [:fibo-fbc-fct-cajrga/BusinessNumber
+   :rdfs/subClassOf [{:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+                      :owl/onProperty :fibo-fnd-law-jur/appliesIn,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fct-cajrga/BusinessNumber
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
                       :owl/onProperty :lcc-lr/identifies,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-                      :owl/onProperty :fibo-fnd-law-jur/appliesIn,
                       :rdf/type       :owl/Restriction}
                      {:owl/hasValue
                       :fibo-fbc-fct-cajrga/InformationReturnsIdentifierScheme,
@@ -602,7 +602,7 @@
    :rdfs/label
    "Canada Revenue Agency information return program number registration service",
    :rdfs/seeAlso
-   "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/register.html",
+   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/register.html"],
    :skos/definition
    "Canada Revenue Agency service for the registration of an information return program number accounts"})
 
@@ -635,7 +635,7 @@
    :rdfs/label
    "Canada Revenue Agency payroll deductions program number registration service",
    :rdfs/seeAlso
-   "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/How-open-payroll-account.html",
+   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/How-open-payroll-account.html"],
    :skos/definition
    "Canada Revenue Agency service for the registration of payroll deductions program number accounts"})
 
@@ -665,17 +665,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :rdfs/label "payroll deductions program number",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
-     :owl/onProperty :lcc-lr/identifies,
-     :rdf/type       :owl/Restriction}
-    {:owl/hasValue
+   [{:owl/hasValue
      :fibo-fbc-fct-cajrga/PayrollDeductionsProgramIdentifierRegistrationService,
      :owl/onProperty :lcc-lr/isMemberOf,
      :rdf/type :owl/Restriction}
-    :fibo-fbc-fct-cajrga/BusinessNumber
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :fibo-fnd-law-jur/appliesIn,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-cajrga/BusinessNumber
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
+     :owl/onProperty :lcc-lr/identifies,
      :rdf/type       :owl/Restriction}],
    :skos/definition
    "concatenation of an entity's business number, the 'RP' abbreviation and a 4-digit subaccount number used for reporting payroll deductions",
@@ -708,6 +708,9 @@
    :rdfs/label "registered charity program number",
    :rdfs/subClassOf
    [:fibo-fbc-fct-cajrga/BusinessNumber
+    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :fibo-fnd-law-jur/appliesIn,
+     :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :lcc-lr/identifies,
@@ -715,10 +718,7 @@
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/RegisteredCharityProgramNumberIdentifierScheme,
      :owl/onProperty :lcc-lr/isMemberOf,
-     :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :fibo-fnd-law-jur/appliesIn,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type :owl/Restriction}],
    :skos/definition
    "concatenation of an entity's business number, the 'RR' abbreviation and a 4-digit subaccount number used for registered charity contribution",
    :skos/example "000000000RR0001"})
@@ -752,7 +752,7 @@
    :rdfs/label
    "Canada Revenue Agency registered charity program number registration service",
    :rdfs/seeAlso
-   "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/register.html",
+   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/register.html"],
    :skos/definition
    "Canada Revenue Agency service for the registration of a registered charity program number accounts"})
 
@@ -769,6 +769,6 @@
    :rdfs/label
    "Canada Revenue Agency import registered charity program number registry",
    :rdfs/seeAlso
-   "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyBscSrch?request_locale=en",
+   ["https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyBscSrch?request_locale=en"],
    :skos/definition
    "Canada Revenue Agency registered charity program number registry"})

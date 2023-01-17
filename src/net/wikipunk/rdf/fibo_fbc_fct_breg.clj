@@ -474,7 +474,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "legal entity identifier registry entry",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fbc-fct-breg/hasRegistrationStatus,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+     :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-breg/hasRegistrationStatus,
      :owl/someValuesFrom :fibo-fbc-fct-breg/RegistrationStatus,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
@@ -483,9 +486,6 @@
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-breg/hasValidationLevel,
      :owl/someValuesFrom :fibo-fbc-fct-breg/EntityValidationLevel,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-breg/BusinessRegistryEntry],
    :skos/definition
@@ -503,13 +503,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "local operating unit",
-   :rdfs/subClassOf [:fibo-fbc-fct-ra/Registrar
-                     {:owl/onProperty     :fibo-fbc-fct-ra/registers,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-ra/registers,
                       :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/issues,
                       :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fct-ra/Registrar],
    :skos/definition
    "registrar that is authorized by the Global LEI Foundation to issue legal entity identifiers"})
 
@@ -535,20 +535,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "North American Industry Classification System code",
    :rdfs/subClassOf
-   [{:owl/onProperty     :lcc-cr/classifies,
-     :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
-     :rdf/type           :owl/Restriction}
+   [{:owl/onClass
+     :fibo-fbc-fct-breg/NorthAmericanIndustryClassificationSystemScheme,
+     :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+     :owl/qualifiedCardinality 1,
+     :rdf/type :owl/Restriction}
     :lcc-lr/CodeElement
     {:owl/onDataRange :xsd/string,
      :owl/onProperty  :lcc-lr/hasTag,
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
     :fibo-fnd-arr-cls/IndustrySectorClassifier
-    {:owl/onClass
-     :fibo-fbc-fct-breg/NorthAmericanIndustryClassificationSystemScheme,
-     :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
-     :owl/qualifiedCardinality 1,
-     :rdf/type :owl/Restriction}],
+    {:owl/onProperty     :lcc-cr/classifies,
+     :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "the North American Industry Classification System (NAICS) code representing an industry"})
 
@@ -561,7 +561,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "North American Industry Classification System scheme",
-   :rdfs/seeAlso "https://www.census.gov/naics/",
+   :rdfs/seeAlso ["https://www.census.gov/naics/"],
    :rdfs/subClassOf
    [{:owl/onProperty :fibo-fnd-rel-rel/defines,
      :owl/someValuesFrom
@@ -666,19 +666,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "standard industrial classification code",
    :rdfs/subClassOf [:fibo-fnd-arr-cls/IndustrySectorClassifier
-                     {:owl/onClass
-                      :fibo-fbc-fct-breg/StandardIndustrialClassificationScheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :lcc-cr/classifies,
+                      :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onDataRange :xsd/string,
                       :owl/onProperty  :lcc-lr/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/classifies,
-                      :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
-                      :rdf/type           :owl/Restriction}
-                     :lcc-lr/CodeElement],
+                     :lcc-lr/CodeElement
+                     {:owl/onClass
+                      :fibo-fbc-fct-breg/StandardIndustrialClassificationScheme,
+                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}],
    :skos/definition "the SIC code representing an industry"})
 
 (def StandardIndustrialClassificationScheme
@@ -690,7 +690,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "standard industrial classification scheme",
-   :rdfs/seeAlso "https://www.osha.gov/pls/imis/sic_manual.html/",
+   :rdfs/seeAlso ["https://www.osha.gov/pls/imis/sic_manual.html/"],
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/defines,
                       :owl/someValuesFrom
                       :fibo-fbc-fct-breg/StandardIndustrialClassificationCode,

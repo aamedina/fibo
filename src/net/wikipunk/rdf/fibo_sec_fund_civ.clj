@@ -280,6 +280,7 @@
                      "A stake held in a fund by way of a Bond Unit."}})
 
 (def DistributingShareClass
+  "distributing share class"
   {:db/ident :fibo-sec-fund-civ/DistributingShareClass,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -781,11 +782,11 @@
     {:owl/onProperty     :fibo-sec-fund-civ/hasInvestmentStrategy,
      :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasLiquidity,
-     :owl/someValuesFrom :fibo-sec-fund-civ/Liquidity,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
      :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioBenchmark,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasLiquidity,
+     :owl/someValuesFrom :fibo-sec-fund-civ/Liquidity,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
      :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
@@ -942,6 +943,7 @@
     "EFAMA Review description for this: The fund is issued with a prospectus; there is material in the prospectus that is binding; material that is expected but not binding, and information that may or may not be in the prospectus or a given fund."}})
 
 (def FundRedemptionRestriction
+  "fund redemption restriction"
   {:db/ident :fibo-sec-fund-civ/FundRedemptionRestriction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -1519,6 +1521,7 @@
    "person or entity responsible for day to day investment decisions for a fund or asset"})
 
 (def PreferredShareInFund
+  "preferred share in fund"
   {:db/ident :fibo-sec-fund-civ/PreferredShareInFund,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -1578,6 +1581,7 @@
     "This could theoretically be defined in terms of a Frequency (reciprocal of time), but since this kind of reporting in accounting is always either annual or semi-annual these are defined as policies for the provision of such reports"}})
 
 (def RiskLevel
+  "risk level"
   {:db/ident :fibo-sec-fund-civ/RiskLevel,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -1737,6 +1741,7 @@
     "Other restrictions or treatment information in respect of this strategy and the organization to which it refers."}})
 
 (def administeredBy
+  "administered by"
   {:db/ident :fibo-sec-fund-civ/administeredBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -1748,6 +1753,7 @@
    :rdfs/subPropertyOf :fibo-sec-fund-civ/fundHasRelatedParty})
 
 (def advisedBy
+  "advised by"
   {:db/ident :fibo-sec-fund-civ/advisedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -1759,6 +1765,7 @@
    :rdfs/subPropertyOf :fibo-sec-fund-civ/fundHasRelatedParty})
 
 (def anticipatedVolatility
+  "anticipated volatility"
   {:db/ident :fibo-sec-fund-civ/anticipatedVolatility,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundProspectus,
@@ -1769,6 +1776,7 @@
    :rdfs/range :fibo-fnd-utl-alx/Percentage})
 
 (def anticipates
+  "anticipates"
   {:db/ident :fibo-sec-fund-civ/anticipates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundProspectus,
@@ -1779,6 +1787,7 @@
    :rdfs/range :fibo-ind-ind-ind/MarketRate})
 
 (def assessedAgainst
+  "assessed against"
   {:db/ident :fibo-sec-fund-civ/assessedAgainst,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundPortfolio,
@@ -1921,6 +1930,7 @@
     :rdf/value "Means of the net asset value publication, eg, a newspaper."}})
 
 (def definedInRelationTo
+  "defined in relation to"
   {:db/ident :fibo-sec-fund-civ/definedInRelationTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/OrganizationStrategy,
@@ -1931,6 +1941,7 @@
    :rdfs/range :fibo-be-le-cb/Corporation})
 
 (def definesAllocations
+  "defines allocations"
   {:db/ident :fibo-sec-fund-civ/definesAllocations,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
@@ -1942,6 +1953,7 @@
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/defines})
 
 (def definesBenchmark
+  "defines benchmark"
   {:db/ident :fibo-sec-fund-civ/definesBenchmark,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/PortfolioBenchmark,
@@ -1952,6 +1964,7 @@
    :rdfs/range :fibo-ind-ind-ind/MarketRate})
 
 (def definesMainFundOrderDeskAccount
+  "defines main fund order desk account"
   {:db/ident :fibo-sec-fund-civ/definesMainFundOrderDeskAccount,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundProcessingTerms,
@@ -1962,6 +1975,7 @@
    :rdfs/range :fibo-sec-fund-civ/FundsProcessingAccount})
 
 (def denominatedIn
+  "denominated in"
   {:db/ident :fibo-sec-fund-civ/denominatedIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/Liquidity,
@@ -1987,6 +2001,7 @@
     "Denomination Currency of the fund - Currency in which the fund unit is issued or redenominated and the currency of the NAV calculation."}})
 
 (def denominationCurrency
+  "denomination currency"
   {:db/ident :fibo-sec-fund-civ/denominationCurrency,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/FundUnit,
@@ -1997,6 +2012,7 @@
    :rdfs/range :fibo-fnd-acc-cur/Currency})
 
 (def describedIn
+  "described in"
   {:db/ident :fibo-sec-fund-civ/describedIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2037,6 +2053,7 @@
     "Description of the benchmark used to determine the performance of a portfolio."}})
 
 (def distributedBy
+  "distributed by"
   {:db/ident :fibo-sec-fund-civ/distributedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2161,6 +2178,7 @@
     "A textual identification of the class of fund units. This is used to uniquely identify a particular class of fund units, and thereby identify features of this type of unit within the fund."}})
 
 (def fundHasRelatedParty
+  "fund has related party"
   {:db/ident :fibo-sec-fund-civ/fundHasRelatedParty,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2171,6 +2189,7 @@
    :rdfs/range :fibo-sec-fund-civ/FundsProcessingParty})
 
 (def givesOwnershipOf
+  "gives ownership of"
   {:db/ident :fibo-sec-fund-civ/givesOwnershipOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/StakeInFund,
@@ -2181,6 +2200,7 @@
    :rdfs/range :fibo-sec-fund-fund/CollectiveInvestmentVehicle})
 
 (def hasAccountant
+  "has accountant"
   {:db/ident :fibo-sec-fund-civ/hasAccountant,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2192,6 +2212,7 @@
    :rdfs/subPropertyOf :fibo-sec-fund-civ/fundHasRelatedParty})
 
 (def hasAccountingInformation
+  "has accounting information"
   {:db/ident :fibo-sec-fund-civ/hasAccountingInformation,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2202,6 +2223,7 @@
    :rdfs/range :fibo-sec-fund-civ/FundReportingTerms})
 
 (def hasAccountingReportingFrequency
+  "has accounting reporting frequency"
   {:db/ident :fibo-sec-fund-civ/hasAccountingReportingFrequency,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundReportingTerms,
@@ -2212,6 +2234,7 @@
    :rdfs/range :fibo-sec-fund-civ/ReportingFrequencyPolicy})
 
 (def hasAdditionalInformation
+  "has additional information"
   {:db/ident :fibo-sec-fund-civ/hasAdditionalInformation,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2222,6 +2245,7 @@
    :rdfs/range :fibo-sec-fund-civ/OtherInvestmentFundInformation})
 
 (def hasAdditionalRedemptionRestrictions
+  "has additional redemption restrictions"
   {:db/ident :fibo-sec-fund-civ/hasAdditionalRedemptionRestrictions,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundRedemptionTerms,
@@ -2232,6 +2256,7 @@
    :rdfs/range :fibo-sec-fund-civ/ReferToFundOrderDesk})
 
 (def hasAuditor
+  "has auditor"
   {:db/ident :fibo-sec-fund-civ/hasAuditor,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2243,6 +2268,7 @@
    :rdfs/subPropertyOf :fibo-sec-fund-civ/fundHasRelatedParty})
 
 (def hasContactDetails
+  "has contact details"
   {:db/ident :fibo-sec-fund-civ/hasContactDetails,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/PortfolioManager,
@@ -2268,6 +2294,7 @@
     "has an organization which is the data provider and is legally responsible for the information provided"}})
 
 (def hasDefaultSettlementConvention
+  "has default settlement convention"
   {:db/ident :fibo-sec-fund-civ/hasDefaultSettlementConvention,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundProcessingTerms,
@@ -2278,6 +2305,7 @@
    :rdfs/range :fibo-fbc-fi-stl/SettlementConvention})
 
 (def hasDepository
+  "has depository"
   {:db/ident :fibo-sec-fund-civ/hasDepository,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2304,6 +2332,7 @@
     "Information on the net asset value calculation of the investment fund component."}})
 
 (def hasDistributiojnPolicy
+  "has distributiojn policy"
   {:db/ident :fibo-sec-fund-civ/hasDistributiojnPolicy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundBondClassUnit,
@@ -2314,6 +2343,7 @@
    :rdfs/range :fibo-sec-fund-civ/FundUnitDistributionPolicy})
 
 (def hasDistributionPolicy
+  "has distribution policy"
   {:db/ident :fibo-sec-fund-civ/hasDistributionPolicy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundShareClassUnit,
@@ -2358,6 +2388,7 @@
     "Income policy relating to a class type, ie, if income is paid out or retained in the fund."}})
 
 (def hasExpectedCoupon
+  "has expected coupon"
   {:db/ident :fibo-sec-fund-civ/hasExpectedCoupon,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundBondClassUnit,
@@ -2383,6 +2414,7 @@
     "Overall policy for amounts invested, limitations etc. Not the same as the detailed Portfolio policy."}})
 
 (def hasFundProcessingTerms
+  "has fund processing terms"
   {:db/ident :fibo-sec-fund-civ/hasFundProcessingTerms,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/FundUnit,
@@ -2394,6 +2426,7 @@
    :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement})
 
 (def hasInformationAbout
+  "has information about"
   {:db/ident :fibo-sec-fund-civ/hasInformationAbout,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundsProcessingPassport,
@@ -2404,6 +2437,7 @@
    :rdfs/range :fibo-sec-fund-fund/FundUnit})
 
 (def hasIntendedRiskLevel
+  "has intended risk level"
   {:db/ident :fibo-sec-fund-civ/hasIntendedRiskLevel,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundInvestmentObjective,
@@ -2414,6 +2448,7 @@
    :rdfs/range :fibo-sec-fund-civ/RiskLevel})
 
 (def hasInvestmentStrategy
+  "strategy"
   {:db/ident :fibo-sec-fund-civ/hasInvestmentStrategy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-sec-ast/Portfolio,
@@ -2439,6 +2474,7 @@
     "Date of first NAV calculation and start of performance calculations (same as launch date)"}})
 
 (def hasLiquidity
+  "has liquidity"
   {:db/ident :fibo-sec-fund-civ/hasLiquidity,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundPortfolio,
@@ -2449,6 +2485,7 @@
    :rdfs/range :fibo-sec-fund-civ/Liquidity})
 
 (def hasManagementCompany
+  "has management company"
   {:db/ident :fibo-sec-fund-civ/hasManagementCompany,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2460,6 +2497,7 @@
    :rdfs/subPropertyOf :fibo-sec-fund-civ/fundHasRelatedParty})
 
 (def hasPerformanceDeterminationMethod
+  "has performance determination method"
   {:db/ident :fibo-sec-fund-civ/hasPerformanceDeterminationMethod,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2470,6 +2508,7 @@
    :rdfs/range :fibo-sec-fund-civ/PerformanceDeterminationMethod})
 
 (def hasPolicyTerms
+  "has policy terms"
   {:db/ident :fibo-sec-fund-civ/hasPolicyTerms,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundBondUnitCoupon,
@@ -2480,6 +2519,7 @@
    :rdfs/range :fibo-sec-fund-civ/FundCouponPolicy})
 
 (def hasPortfolio
+  "has portfolio"
   {:db/ident :fibo-sec-fund-civ/hasPortfolio,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2490,6 +2530,7 @@
    :rdfs/range :fibo-sec-fund-civ/FundPortfolio})
 
 (def hasRelatedFundTerms
+  "has related fund terms"
   {:db/ident :fibo-sec-fund-civ/hasRelatedFundTerms,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2501,6 +2542,7 @@
    :rdfs/subPropertyOf :fibo-sec-fund-civ/hasRelatedTerms})
 
 (def hasRelatedTerms
+  "has related terms"
   {:db/ident :fibo-sec-fund-civ/hasRelatedTerms,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
@@ -2510,6 +2552,7 @@
    :rdfs/range :fibo-fnd-agr-ctr/ContractualElement})
 
 (def hasSubscriptionTerms
+  "has subscription terms"
   {:db/ident :fibo-sec-fund-civ/hasSubscriptionTerms,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2521,6 +2564,7 @@
    :rdfs/subPropertyOf :fibo-sec-fund-civ/hasRelatedFundTerms})
 
 (def hasTradableUnit
+  "has tradable unit"
   {:db/ident :fibo-sec-fund-civ/hasTradableUnit,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2531,6 +2575,7 @@
    :rdfs/range :fibo-sec-fund-fund/FundUnit})
 
 (def hasTransferAgent
+  "has transfer agent"
   {:db/ident :fibo-sec-fund-civ/hasTransferAgent,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2542,6 +2587,7 @@
    :rdfs/subPropertyOf :fibo-sec-fund-civ/fundHasRelatedParty})
 
 (def hasUnitIssuer
+  "has unit issuer"
   {:db/ident :fibo-sec-fund-civ/hasUnitIssuer,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -2611,6 +2657,7 @@
                      "The Funds Special Purpose Vehicle holds this Fund."}})
 
 (def identifiedAs.5
+  "identified as"
   {:db/ident :fibo-sec-fund-civ/identifiedAs.5,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/StakeInFund,
@@ -2636,6 +2683,7 @@
     "Jurisdiction (country, county, state, province, city) of the investment."}})
 
 (def identifiesAssetTypesBy
+  "identifies asset types by"
   {:db/ident :fibo-sec-fund-civ/identifiesAssetTypesBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/AssetClassStrategy,
@@ -2646,6 +2694,7 @@
    :rdfs/range :fibo-sec-sec-cls/FinancialInstrumentClassifier})
 
 (def implementsFundPolicy
+  "implements fund policy"
   {:db/ident :fibo-sec-fund-civ/implementsFundPolicy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundPortfolio,
@@ -2700,6 +2749,7 @@
     "Whether or not the strategy includes firms which are related in some way to the referenced organization."}})
 
 (def includes
+  "includes"
   {:db/ident :fibo-sec-fund-civ/includes,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
@@ -2770,6 +2820,7 @@
     "The information about the area the fund is mostly invested into (for example stock market in Germany)."}})
 
 (def isCalculatedIn
+  "is calculated in"
   {:db/ident :fibo-sec-fund-civ/isCalculatedIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/NetAssetValueCalculationMethod,
@@ -2780,6 +2831,7 @@
    :rdfs/range :fibo-fnd-acc-cur/Currency})
 
 (def isSetUpFor
+  "is set up for"
   {:db/ident :fibo-sec-fund-civ/isSetUpFor,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-le-lp/SpecialPurposeVehicle,
@@ -2790,6 +2842,7 @@
    :rdfs/range :fibo-sec-fund-civ/SPVPurpose})
 
 (def isUnitHolder
+  "is unit holder"
   {:db/ident :fibo-sec-fund-civ/isUnitHolder,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-oac-opty/Investor,
@@ -2814,6 +2867,7 @@
                      "The price at which the Fund Unit was first issued."}})
 
 (def issues
+  "issues"
   {:db/ident :fibo-sec-fund-civ/issues,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/UnitIssuer,
@@ -3017,6 +3071,7 @@
     "The unit issuer would be the fund administrator (except when it is a Bond)."}})
 
 (def mayBe.1
+  "may be"
   {:db/ident :fibo-sec-fund-civ/mayBe.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundProcessingForm,
@@ -3027,6 +3082,7 @@
    :rdfs/range :fibo-sec-fund-civ/FundOrderDeskPhysicalFormDocument})
 
 (def mayBeDefinedIn
+  "may be defined in"
   {:db/ident :fibo-sec-fund-civ/mayBeDefinedIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundsProcessingPassport,
@@ -3223,6 +3279,7 @@
                      :rdf/value    "Name given to the defined strategy."}})
 
 (def outlines
+  "outlines"
   {:db/ident :fibo-sec-fund-civ/outlines,
    :owl/inverseOf :fibo-sec-fund-civ/statedIn,
    :rdf/type :owl/ObjectProperty,
@@ -3338,6 +3395,7 @@
                      "Company specific description of a group of funds."}})
 
 (def promotedBy
+  "promoted by"
   {:db/ident :fibo-sec-fund-civ/promotedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -3349,6 +3407,7 @@
    :rdfs/subPropertyOf :fibo-sec-fund-civ/fundHasRelatedParty})
 
 (def providerHasIdentity
+  "provider has identity"
   {:db/ident :fibo-sec-fund-civ/providerHasIdentity,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-pas-caa/AccountProvider,
@@ -3360,6 +3419,7 @@
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasIdentity})
 
 (def providesDepositaryServiceFor
+  "provides depositary service for"
   {:db/ident :fibo-sec-fund-civ/providesDepositaryServiceFor,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundDepositary,
@@ -3530,6 +3590,7 @@
     "Whether a phsyical form with the investor's written signature is required through the main fund order desk. Yes:A phsyical form with the investor's written signature is required through the main fund order desk."}})
 
 (def statedDistributionFee
+  "stated distribution fee"
   {:db/ident :fibo-sec-fund-civ/statedDistributionFee,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundProspectus,
@@ -3540,6 +3601,7 @@
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount})
 
 (def statedIn
+  "stated in"
   {:db/ident :fibo-sec-fund-civ/statedIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundInvestmentObjective,
@@ -3593,6 +3655,7 @@
                      :rdf/value "The stated objective of the fund, in words."}})
 
 (def stipulatesBenchmark
+  "stipulates benchmark"
   {:db/ident :fibo-sec-fund-civ/stipulatesBenchmark,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/FundInvestmentPolicy,
@@ -3675,6 +3738,7 @@
     "Physical application form for subsequent investments by the same investor."}})
 
 (def supervisedBy
+  "supervised by"
   {:db/ident :fibo-sec-fund-civ/supervisedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
@@ -3715,6 +3779,7 @@
     "Actual percentage or fixed amount of money due when switching to another fund. Definition origin:EFAMA DD"}})
 
 (def takesFormOf
+  "takes form of"
   {:db/ident :fibo-sec-fund-civ/takesFormOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-civ/BricksAndMortarHolding,

@@ -52,7 +52,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/MetadataSECFunds/",
    :rdfs/label "Funds Module",
-   :rdfs/seeAlso "https://spec.edmcouncil.org/fibo/",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
    :sm/contributor ["Wells Fargo Bank, N.A." "Thematix Partners LLC"],
    :sm/copyright ["Copyright (c) 2020-2021 EDM Council, Inc."
                   "Copyright (c) 2020-2021 Object Management Group, Inc."],

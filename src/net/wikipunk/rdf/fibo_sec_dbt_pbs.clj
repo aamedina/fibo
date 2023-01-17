@@ -149,7 +149,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "structured finance instrument"},
-   :rdfs/seeAlso "https://www.bis.org/publ/cgfs23mitchell.pdf",
+   :rdfs/seeAlso ["https://www.bis.org/publ/cgfs23mitchell.pdf"],
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/PoolBackedSecurity
                      {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom {:owl/onProperty
