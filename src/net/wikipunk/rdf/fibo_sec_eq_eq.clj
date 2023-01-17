@@ -447,7 +447,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value
                 "equity redemption provision with extendable redemption date"},
-   :rdfs/subClassOf [{:owl/hasValue true,
+   :rdfs/subClassOf [{:owl/hasValue {:xsd/boolean true},
                       :owl/onProperty
                       :fibo-sec-eq-eq/hasExtendableRedemptionDate,
                       :rdf/type :owl/Restriction}
@@ -623,7 +623,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "non-voting share"},
-   :rdfs/subClassOf [{:owl/hasValue 0,
+   :rdfs/subClassOf [{:owl/hasValue {:xsd/long 0},
                       :owl/onProperty
                       :fibo-sec-eq-eq/confersNumberOfVotesPerShare,
                       :rdf/type :owl/Restriction}
@@ -892,7 +892,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
    :rdfs/label "redeemable preferred share with extendable maturity date",
-   :rdfs/subClassOf [{:owl/hasValue   true,
+   :rdfs/subClassOf [{:owl/hasValue   {:xsd/boolean true},
                       :owl/onProperty :fibo-sec-eq-eq/hasExtendableMaturityDate,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/RedeemablePreferredShare
@@ -980,10 +980,10 @@
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-agr-ctr/hasExtensionProvision,
                       :owl/someValuesFrom :fibo-fnd-agr-ctr/ExtensionProvision,
                       :rdf/type :owl/Restriction}
-                     {:owl/hasValue   true,
+                     {:owl/hasValue   {:xsd/boolean true},
                       :owl/onProperty :fibo-sec-eq-eq/hasExtendableMaturityDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/hasValue   true,
+                     {:owl/hasValue   {:xsd/boolean true},
                       :owl/onProperty :fibo-sec-eq-eq/hasExtendableMaturityDate,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/RetractablePreferredShare
@@ -1124,7 +1124,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "single voting share"},
-   :rdfs/subClassOf [{:owl/hasValue 1,
+   :rdfs/subClassOf [{:owl/hasValue {:xsd/long 1},
                       :owl/onProperty
                       :fibo-sec-eq-eq/confersNumberOfVotesPerShare,
                       :rdf/type :owl/Restriction}

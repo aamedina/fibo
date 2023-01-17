@@ -144,7 +144,7 @@
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     {:owl/hasValue   "DPO",
+                     {:owl/hasValue   {:xsd/string "DPO"},
                       :owl/onProperty :fibo-fnd-plc-loc/hasCityName,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/PhysicalAddress],
@@ -189,7 +189,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "general delivery address",
-   :rdfs/subClassOf [{:owl/hasValue   "GENERAL DELIVERY",
+   :rdfs/subClassOf [{:owl/hasValue   {:rdf/value "GENERAL DELIVERY"},
                       :owl/onProperty :fibo-fnd-plc-adr/hasAddressLine1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/PhysicalAddress],
@@ -333,7 +333,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "overseas military address",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-plc-loc/hasCityName,
-                      :owl/someValuesFrom {:owl/oneOf ["APO" "FPO"],
+                      :owl/someValuesFrom {:owl/oneOf [{:xsd/string "APO"} {:xsd/string "FPO"}],
                                            :rdf/type  :rdfs/Datatype},
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-plc-adr/hasAddressLine1,
