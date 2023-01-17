@@ -234,31 +234,31 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "financial instrument",
-   :rdfs/subClassOf [:fibo-fnd-agr-ctr/WrittenContract
+   :rdfs/subClassOf [{:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass
                       :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
                       :owl/onProperty :lcc-lr/isIdentifiedBy,
                       :rdf/type :owl/Restriction}
-                     {:owl/onDataRange :xsd/boolean,
-                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
-                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
-                      :rdf/type       :owl/Restriction}],
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "written contract that gives rise to both a financial asset of one entity and a financial liability of another entity",
    :skos/example
@@ -324,7 +324,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "negotiable security",
-   :rdfs/subClassOf [{:owl/hasValue   true,
+   :rdfs/subClassOf [{:owl/hasValue   {:xsd/boolean true},
                       :owl/onProperty :fibo-fbc-fi-fi/isNegotiable,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-agr-ctr/TransferableContract

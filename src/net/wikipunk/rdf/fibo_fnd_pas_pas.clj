@@ -316,20 +316,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "sale",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-                      :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
-                      :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf [:fibo-fnd-pas-pas/TransactionEvent
+                     :fibo-fnd-pty-pty/Situation
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasPrice,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
+                      :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Buyer,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pas-pas/TransactionEvent
-                     {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
-                      :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/Situation],
+                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition "exchange of goods or services for money"})
 
 (def Seller

@@ -468,14 +468,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "mortgage",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-reln-mtg/MortgageIndemnityGuarantor,
-     :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-reln-mtg/Mortgage,
-     :owl/onProperty :fibo-loan-reln-mtg/assumes,
-     :rdf/type       :owl/Restriction}
+   [{:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatorPerson,
+     :owl/someValuesFrom {:owl/intersectionOf
+                          [:fibo-be-le-lp/LegallyCompetentNaturalPerson
+                           {:owl/onProperty     :lcc-lr/has,
+                            :owl/someValuesFrom :fibo-loan-reln-mtg/NMLSR-ID,
+                            :rdf/type           :owl/Restriction}],
+                          :rdf/type :owl/Class},
+     :rdf/type           :owl/Restriction}
+    :fibo-loan-ln-ln/CollateralizedLoan
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-ln-ln/Servicer,
      :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
@@ -491,19 +492,18 @@
     {:owl/onProperty     :fibo-loan-reln-mtg/hasClosingDate,
      :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
      :rdf/type           :owl/Restriction}
-    :fibo-loan-ln-ln/CollateralizedLoan
-    {:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatorPerson,
-     :owl/someValuesFrom {:owl/intersectionOf
-                          [:fibo-be-le-lp/LegallyCompetentNaturalPerson
-                           {:owl/onProperty     :lcc-lr/has,
-                            :owl/someValuesFrom :fibo-loan-reln-mtg/NMLSR-ID,
-                            :rdf/type           :owl/Restriction}],
-                          :rdf/type :owl/Class},
-     :rdf/type           :owl/Restriction}
-    :fibo-loan-ln-ln/ClosedEndCredit
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-reln-mtg/UniversalLoanIdentifier,
      :owl/onProperty :lcc-lr/isIdentifiedBy,
+     :rdf/type       :owl/Restriction}
+    :fibo-loan-ln-ln/ClosedEndCredit
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-reln-mtg/Mortgage,
+     :owl/onProperty :fibo-loan-reln-mtg/assumes,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-reln-mtg/MortgageIndemnityGuarantor,
+     :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
      :rdf/type       :owl/Restriction}],
    :skos/definition "a loan contract that is secured by real property",
    :skos/editorialNote
@@ -713,14 +713,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "real property appraisal",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-loan-reln-mtg/hasAppraisedValue,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-asmt/ValueAssessment
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-loan-reln-mtg/PropertyInspection,
                       :owl/onProperty :fibo-fnd-dt-oc/hasInput,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-loan-reln-mtg/hasAppraisedValue,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-asmt/ValueAssessment
                      {:owl/onProperty     :fibo-fnd-arr-asmt/hasAppraiser,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraiser,
                       :rdf/type           :owl/Restriction}],

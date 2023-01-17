@@ -370,7 +370,7 @@
      :owl/onClass    :fibo-sec-dbt-bnd/ExtraordinaryRedemptionProvision,
      :owl/onProperty :fibo-sec-dbt-bnd/hasExtraordinaryRedemptionProvision,
      :rdf/type       :owl/Restriction}
-    {:owl/hasValue   true,
+    {:owl/hasValue   {:xsd/boolean true},
      :owl/onProperty :fibo-sec-dbt-dbti/isCallable,
      :rdf/type       :owl/Restriction}
     :fibo-sec-dbt-bnd/Bond],
@@ -872,12 +872,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "municipal security",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
+   [:fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
@@ -1315,10 +1315,10 @@
     {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-bnd/USTreasurySecurity
     {:owl/hasValue   :fibo-sec-dbt-dbti/AtADiscount,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-sec-dbt-bnd/USTreasurySecurity],
    :skos/definition
    "short-term zero coupon treasury obligation with a maturity ranging from one to twelve months"})
 
@@ -1548,18 +1548,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "zero coupon bond",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-     :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/ZeroCouponTerms,
-     :rdf/type           :owl/Restriction}
+   [:fibo-sec-dbt-bnd/Bond
     :fibo-sec-dbt-dbti/FixedIncomeSecurity
     {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+     :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/ZeroCouponTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond issued with a coupon rate of zero and that trades at a deep discount to face value"})
 

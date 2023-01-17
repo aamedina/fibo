@@ -91,7 +91,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "assignable contract",
-   :rdfs/subClassOf [{:owl/hasValue   true,
+   :rdfs/subClassOf [{:owl/hasValue   {:xsd/boolean true},
                       :owl/onProperty :fibo-fnd-agr-ctr/isAssignable,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-agr-ctr/TransferableContract],
@@ -181,11 +181,11 @@
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-agr/Agreement
                      {:owl/minQualifiedCardinality 2,
                       :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-agr-agr/Agreement],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "voluntary, deliberate agreement between competent parties to which the parties agree to be legally bound, and for which the parties provide valuable consideration"})
 
@@ -493,13 +493,16 @@
      :owl/onClass    :fibo-fnd-dt-fd/DateTimeStamp,
      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
-     :rdf/type           :owl/Restriction}
     {:owl/onDataRange :xsd/boolean,
      :owl/onProperty  :fibo-fnd-agr-ctr/isAssignable,
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-dt-fd/DateTimeStamp,
      :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
@@ -510,9 +513,6 @@
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
      :rdf/type           :owl/Restriction}
     :fibo-fnd-agr-ctr/Contract],
    :skos/definition

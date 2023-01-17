@@ -92,11 +92,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
    :rdfs/label "beneficial owner",
-   :rdfs/subClassOf [{:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
+   :rdfs/subClassOf [:fibo-fnd-oac-ctl/ControllingParty
+                     {:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-oac-ctl/ControllingParty
                      :fibo-fnd-agr-agr/Beneficiary
                      {:owl/onProperty     :fibo-be-oac-cown/isBeneficialOwnerOf,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,

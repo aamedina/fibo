@@ -142,24 +142,24 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "assessment event",
-   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
-                      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-arr-asmt/AssessmentReport,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
-                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minCardinality 0,
                       :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
+                     {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
+                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
+                      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence],
    :skos/definition
    "event involving the evaluation or estimation of the nature, quality, or ability of someone or something"})
 

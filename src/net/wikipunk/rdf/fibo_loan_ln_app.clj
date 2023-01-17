@@ -129,29 +129,29 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "borrower assessment"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-arr-asmt/hasDateOfAssessment,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
-                      :owl/someValuesFrom :fibo-loan-ln-app/LoanApplication,
-                      :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-loan-ln-ln/PaymentHistory,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass
                       :fibo-loan-ln-app/IndividualPersonCreditRating,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-loan-ln-ln/PaymentHistory,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
+                      :owl/someValuesFrom :fibo-loan-ln-app/LoanApplication,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-loan-ln-app/IncomeVerificationReport,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-asmt/AssessmentReport],
+                     :fibo-fnd-arr-asmt/AssessmentReport
+                     {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-arr-asmt/hasDateOfAssessment,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -185,14 +185,11 @@
      :owl/onClass    :fibo-loan-ln-app/AutomaticUnderwriting,
      :owl/onProperty :fibo-fbc-dae-dbt/isBasedOn,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
-     :owl/someValuesFrom :fibo-loan-ln-app/UnderwritingDecision,
+    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
+     :owl/someValuesFrom :fibo-loan-ln-app/BorrowerMonthlyIncome,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReport,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-     :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
+    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
+     :owl/someValuesFrom :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
      :owl/someValuesFrom :fibo-loan-ln-app/PublicRecord,
@@ -201,19 +198,22 @@
      :owl/someValuesFrom :fibo-loan-ln-app/TotalDebtExpenseRatio,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
-     :owl/someValuesFrom :fibo-loan-ln-app/PreApprovalRequest,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReport,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
      :owl/someValuesFrom :fibo-loan-ln-ln/CombinedLoanToValueRatio,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
-     :owl/someValuesFrom :fibo-loan-ln-app/BorrowerMonthlyIncome,
+    {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
+     :owl/someValuesFrom :fibo-loan-ln-app/PreApprovalRequest,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
-     :owl/someValuesFrom :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
+    {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
+     :owl/someValuesFrom :fibo-loan-ln-app/UnderwritingDecision,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
      :owl/someValuesFrom :fibo-loan-ln-app/PreApprovalContract,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+     :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
      :rdf/type           :owl/Restriction}
     :fibo-fnd-arr-asmt/AssessmentActivity],
    :skos/definition
@@ -335,38 +335,38 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
    :rdfs/label "loan application",
    :rdfs/subClassOf
-   [{:owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
-     :owl/onProperty :fibo-loan-ln-app/hasApplicationDate,
-     :owl/qualifiedCardinality 1,
+   [{:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-ln-ln/LoanToValueRatio,
+     :owl/onProperty :fibo-fnd-rel-rel/comprises,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-rep/isSubmittedBy,
-     :owl/someValuesFrom :fibo-fnd-arr-rep/Requester,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-loan-ln-app/TotalDebtExpenseRatio,
-     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-ln-ln/CombinedLoanToValueRatio,
      :owl/onProperty :fibo-fnd-rel-rel/comprises,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-ln-app/isPreApprovalRequested,
-     :owl/someValuesFrom :xsd/boolean,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-arr-doc/Document
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-ln-ln/LoanToValueRatio,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
-     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-loan-ln-app/BorrowerMonthlyIncome,
+     :owl/someValuesFrom :fibo-loan-ln-app/TotalDebtExpenseRatio,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
      :owl/onProperty :fibo-fnd-dt-fd/hasDateReceived,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+     :owl/someValuesFrom :fibo-loan-ln-app/BorrowerMonthlyIncome,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+     :owl/someValuesFrom :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-arr-doc/Document
+    {:owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
+     :owl/onProperty :fibo-loan-ln-app/hasApplicationDate,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-loan-ln-app/isPreApprovalRequested,
+     :owl/someValuesFrom :xsd/boolean,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-rep/isSubmittedBy,
+     :owl/someValuesFrom :fibo-fnd-arr-rep/Requester,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "request by a potential borrower to a potential lender to borrow money containing information used to decide whether to grant the loan",
    :skos/scopeNote

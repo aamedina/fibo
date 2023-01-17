@@ -107,12 +107,7 @@
    :rdfs/subClassOf
    [:fibo-be-oac-cpty/DeJureControllingInterestParty
     :fibo-fnd-org-org/OrganizationMember
-    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom {:owl/onProperty :lcc-lr/isMemberOf,
-                          :owl/someValuesFrom
-                          :fibo-be-plc-plc/LimitedLiabilityCompany,
-                          :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
+    :fibo-be-oac-cpty/EntityControllingParty
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -120,12 +115,17 @@
                       :rdf/type :owl/Restriction},
      :owl/onProperty :fibo-be-oac-cpty/isControllingMemberOf,
      :rdf/type       :owl/Restriction}
-    :fibo-be-oac-cpty/EntityControllingParty
-    :fibo-be-oac-opty/EntityOwner
     {:owl/onClass    :fibo-be-le-lp/LegallyCompetentNaturalPerson,
      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
      :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-be-oac-opty/EntityOwner
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     :owl/someValuesFrom {:owl/onProperty :lcc-lr/isMemberOf,
+                          :owl/someValuesFrom
+                          :fibo-be-plc-plc/LimitedLiabilityCompany,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}],
    :skos/definition "owner of an interest in a limited liability company"})
 
 (def LimitedLiabilityCompanyTaxedAsACorporation

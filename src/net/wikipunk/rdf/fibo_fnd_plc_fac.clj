@@ -101,7 +101,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
    :rdfs/label "site",
-   :rdfs/subClassOf [:fibo-fnd-pty-rl/ThingInRole
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                      :owl/someValuesFrom {:owl/onProperty
+                                           :fibo-fnd-plc-fac/situates,
+                                           :owl/someValuesFrom :owl/Thing,
+                                           :rdf/type :owl/Restriction},
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-rl/ThingInRole
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/Address,
                       :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
@@ -109,13 +115,7 @@
                      {:owl/onClass    :lcc-cr/Location,
                       :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                      :owl/someValuesFrom {:owl/onProperty
-                                           :fibo-fnd-plc-fac/situates,
-                                           :owl/someValuesFrom :owl/Thing,
-                                           :rdf/type :owl/Restriction},
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "place, setting, or context in which something, such as a facility, is situated",
    :skos/example

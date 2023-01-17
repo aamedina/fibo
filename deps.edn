@@ -2,7 +2,7 @@
  {com.stuartsierra/component
   {:mvn/version "1.1.0"}
   io.github.aamedina/rdf
-  {:git/sha "5228be8dd4695a7d8527a4c94a29a60caac99329"}
+  {:git/sha "375e7ad8c189f1043656484b357d013671660625"}
   org.clojure/clojure
   {:mvn/version "1.11.1"}}
  :paths ["src" "classes"]

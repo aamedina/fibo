@@ -288,7 +288,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "open-end investment"},
-   :rdfs/subClassOf [{:owl/hasValue   true,
+   :rdfs/subClassOf [{:owl/hasValue   {:xsd/boolean true},
                       :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-sec-pls/ManagedInvestment],

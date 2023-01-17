@@ -171,16 +171,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
    :rdfs/label "national numbering agency",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-plc-loc/hasCoverageArea,
-     :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/issues,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/issues,
      :owl/someValuesFrom :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-plc-loc/hasCoverageArea,
+     :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fct-ra/RegistrationAuthority
     {:owl/onProperty     :fibo-fbc-fct-ra/registers,
      :owl/someValuesFrom :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-ra/RegistrationAuthority
     {:owl/onProperty :fibo-fnd-rel-rel/manages,
      :owl/someValuesFrom
      :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumberRegistry,

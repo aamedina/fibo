@@ -114,6 +114,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
    :rdfs/label "registration authority",
    :rdfs/subClassOf [:fibo-fnd-pas-pas/ServiceProvider
+                     {:owl/onClass    :fibo-be-le-lp/LegalEntity,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-fct-ra/Registry,
                       :owl/onProperty :fibo-fnd-rel-rel/manages,
@@ -122,17 +126,13 @@
                       :fibo-fbc-fct-ra/isRegistrationAuthorityFor,
                       :owl/someValuesFrom :owl/Thing,
                       :rdf/type :owl/Restriction}
-                     {:owl/minCardinality 0,
-                      :owl/onProperty     :fibo-fbc-fct-ra/registers,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-fct-ra/RegistrationService,
                       :owl/onProperty :fibo-fnd-rel-rel/provides,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-be-le-lp/LegalEntity,
-                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                     {:owl/minCardinality 0,
+                      :owl/onProperty     :fibo-fbc-fct-ra/registers,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "service provider that is responsible for maintaining a registry and provides registration services"})
 
@@ -192,13 +192,13 @@
                       :owl/someValuesFrom :fibo-fbc-fct-ra/RegistryEntry,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-arr/StructuredCollection
+                     :fibo-fnd-arr-doc/Record
                      {:owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-fbc-fct-ra/RegistrationAuthority
                                      :fibo-fbc-fct-ra/Registrar],
                        :rdf/type    :owl/Class},
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-doc/Record],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "authoritative record or collection of records relating to something"})
 

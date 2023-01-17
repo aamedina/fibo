@@ -210,18 +210,18 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "offering"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-bp-iss-prc/hasSaleMethod,
+   [{:owl/onProperty     :fibo-bp-iss-prc/hasDistributionType,
+     :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingDistributionMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/givesRiseTo,
+     :owl/someValuesFrom :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-prc/hasSaleMethod,
      :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingSaleMethod,
      :rdf/type           :owl/Restriction}
     :fibo-bp-iss-dbti/IssuanceProcessActivity
     {:owl/onProperty     :fibo-bp-iss-prc/requiredToMakeEligible,
      :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-prc/hasDistributionType,
-     :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingDistributionMethod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/givesRiseTo,
-     :owl/someValuesFrom :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",

@@ -110,18 +110,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "corporation"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
-                      :owl/someValuesFrom :xsd/string,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-be-le-lp/LegalEntity
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-be-le-cb/InstrumentOfIncorporation,
+                      :owl/onProperty :fibo-be-le-cb/isConstitutedBy,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-be-le-cb/InstrumentOfIncorporation,
-                      :owl/onProperty :fibo-be-le-cb/isConstitutedBy,
-                      :rdf/type       :owl/Restriction}],
+                     :fibo-be-le-lp/LegalEntity
+                     {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
+                      :owl/someValuesFrom :xsd/string,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "formal organization that is a legal entity (artificial person) distinct from its owners, created under the jurisdiction of the laws of a state or nation"})
 

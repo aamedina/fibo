@@ -113,21 +113,21 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "organization"},
    :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:Organization"],
-   :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty    :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-org-org/Organization,
+                      :owl/onProperty    :lcc-cr/hasPart,
                       :rdf/type          :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-gao-obj/Goal,
-                      :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-pty/IndependentParty
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-org-org/OrganizationName,
                       :owl/onProperty :fibo-fnd-aap-agt/hasStructuredName,
                       :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-org-org/Organization,
-                      :owl/onProperty    :lcc-cr/hasPart,
-                      :rdf/type          :owl/Restriction}],
+                     {:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty    :lcc-lr/hasMember,
+                      :rdf/type          :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-gao-obj/Goal,
+                      :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "collection of one or more people, or groups of people formed together into a community or other social, commercial or political structure to act, or that is designated to act, towards some purpose, such as to meet a need or pursue collective goals on a continuing basis",
    :skos/example

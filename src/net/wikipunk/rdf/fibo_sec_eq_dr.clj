@@ -206,11 +206,11 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Security
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

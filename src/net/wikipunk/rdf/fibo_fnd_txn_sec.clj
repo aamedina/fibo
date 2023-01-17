@@ -71,15 +71,16 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value "financial securities secondary market transaction"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
-     :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionPrincipal,
-     :rdf/type           :owl/Restriction}
+   [:fibo-fnd-txn-mkt/MarketTransaction
     {:owl/onProperty     :fibo-fnd-txn-sec/embodies,
      :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionContract,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-txn-mkt/MarketTransaction
     {:owl/onProperty     :fibo-fnd-txn-rea/subject,
      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-txn-rea/ContractualTransaction
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
+     :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionPrincipal,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-txn-mkt/consideration,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-acc-cur/AmountOfMoney
@@ -88,8 +89,7 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
      :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionCounterparty,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-txn-rea/ContractualTransaction],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

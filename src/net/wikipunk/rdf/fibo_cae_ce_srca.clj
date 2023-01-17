@@ -896,10 +896,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "tender offer"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
+                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom :fibo-sec-eq-eq/Share,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-cae-ce-act/VoluntaryCorporateAction],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

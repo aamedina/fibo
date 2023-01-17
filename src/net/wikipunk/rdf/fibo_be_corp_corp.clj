@@ -143,19 +143,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
    :rdfs/label "registration identifier",
-   :rdfs/subClassOf [:fibo-fnd-org-org/OrganizationIdentifier
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :rdf/type       :owl/Restriction}
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/someValuesFrom
+                      :fibo-be-corp-corp/RegistrationIdentifierScheme,
+                      :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :lcc-lr/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
-                      :owl/someValuesFrom
-                      :fibo-be-corp-corp/RegistrationIdentifierScheme,
-                      :rdf/type :owl/Restriction}],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-org-org/OrganizationIdentifier],
    :skos/definition
    "an identifier that is officially allocated to an organization at the time of registration, typically in a jurisdiction in which said organization is organized or registered and used in that jurisdiction to identify the organization",
    :skos/scopeNote

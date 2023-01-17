@@ -122,16 +122,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Bermudan exercise terms"},
-   :rdfs/subClassOf [{:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
-                      :owl/onProperty :lcc-cr/uses,
-                      :rdf/type :owl/Restriction}
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseDate,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-ex/ExerciseTerms
-                     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseDate,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
+                      :owl/onProperty :lcc-cr/uses,
+                      :rdf/type :owl/Restriction}
+                     :fibo-sec-dbt-ex/ExerciseTerms],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

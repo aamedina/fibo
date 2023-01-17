@@ -59,13 +59,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
    :rdfs/label "composite identifier",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :lcc-lr/Identifier,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :rdf/type       :owl/Restriction}
-                     :lcc-lr/Identifier
+   :rdfs/subClassOf [:lcc-lr/Identifier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :lcc-lr/CodeElement,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :lcc-lr/Identifier,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :rdf/type       :owl/Restriction}],
    :skos/definition

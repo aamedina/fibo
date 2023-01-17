@@ -1856,6 +1856,9 @@
      :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
      :rdf/type :owl/Restriction}
+    {:owl/hasValue   :fibo-fbc-fct-usjrga/ABAIINRegistry,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
+     :rdf/type       :owl/Restriction}
     {:owl/onClass    :fibo-fbc-fct-fse/FinancialInstitution,
      :owl/onProperty :lcc-lr/identifies,
      :owl/qualifiedCardinality 1,
@@ -1865,9 +1868,6 @@
      :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
      :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
-    {:owl/hasValue   :fibo-fbc-fct-usjrga/ABAIINRegistry,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
-     :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-ra/RegistryIdentifier],
    :skos/definition
    "a numbering system that allows a credit, debit, or other card to be identified as having been issued by a particular financial institution"})
@@ -2306,11 +2306,11 @@
    :rdfs/seeAlso
    ["http://www.federalreserve.gov/reportforms/mdrm/pdf/RSSD.PDF"],
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
+   [:fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
+    :fibo-fbc-fct-ra/RegistryIdentifier
+    {:owl/hasValue   :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
-    :fibo-fbc-fct-ra/RegistryIdentifier
     {:owl/hasValue
      :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
@@ -2332,7 +2332,6 @@
    :rdfs/seeAlso ["http://www.accuity.com/aba-registrar/"],
    :rdfs/subClassOf
    [:fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
-    :fibo-fbc-fct-ra/RegistryIdentifier
     {:owl/hasValue :fibo-fbc-fct-usjrga/AmericanBankersAssociationRTNRegistrar,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
      :rdf/type :owl/Restriction}
@@ -2340,6 +2339,7 @@
      :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
      :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
      :rdf/type :owl/Restriction}
+    :fibo-fbc-fct-ra/RegistryIdentifier
     {:owl/hasValue   :fibo-fbc-fct-usjrga/ABARTNRegistry,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
      :rdf/type       :owl/Restriction}],

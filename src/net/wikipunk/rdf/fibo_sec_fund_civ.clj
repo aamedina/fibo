@@ -772,27 +772,27 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund portfolio"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioManager,
+   [{:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
+     :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-ast/Portfolio
     {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
      :owl/someValuesFrom :fibo-sec-sec-ast/PortfolioHolding,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasInvestmentStrategy,
      :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
-     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioBenchmark,
-     :rdf/type           :owl/Restriction}
+    :fibo-sec-sec-ast/Portfolio
     {:owl/onProperty     :fibo-sec-fund-civ/hasLiquidity,
      :owl/someValuesFrom :fibo-sec-fund-civ/Liquidity,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
-     :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/implementsFundPolicy,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
+     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioBenchmark,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioManager,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",

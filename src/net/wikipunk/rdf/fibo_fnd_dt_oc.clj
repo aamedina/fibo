@@ -77,6 +77,10 @@
      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :lcc-cr/Location,
+     :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
+     :rdf/type       :owl/Restriction}
     {:owl/unionOf [{:owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
                     :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
                     :owl/qualifiedCardinality 1,
@@ -89,11 +93,7 @@
                     :owl/onProperty  :fibo-fnd-dt-oc/hasEventDateValue,
                     :owl/qualifiedCardinality 1,
                     :rdf/type        :owl/Restriction}],
-     :rdf/type    :owl/Class}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :lcc-cr/Location,
-     :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type    :owl/Class}],
    :skos/definition "happening of an OccurrenceKind, i.e., an event"})
 
 (def OccurrenceBasedDate
