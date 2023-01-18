@@ -141,24 +141,24 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
    :rdfs/label "line item",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+   :rdfs/subClassOf [:fibo-fnd-arr-arr/CollectionConstituent
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :xsd/decimal,
+                      :owl/onProperty  :fibo-fnd-qt-qtu/hasNumericValue,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-pas-pas/Product
                                             :fibo-loan-reln-mtg/ChargeCategory],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-arr/CollectionConstituent
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-loan-spc-prod/hasUnitCost,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-loan-ln-ln/hasCost,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :xsd/decimal,
-                      :owl/onProperty  :fibo-fnd-qt-qtu/hasNumericValue,
-                      :rdf/type        :owl/Restriction}],
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-loan-spc-prod/hasUnitCost,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "description of a product or service including its unit cost, number of units and total cost",
    :skos/editorialNote

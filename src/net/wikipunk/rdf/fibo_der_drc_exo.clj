@@ -115,28 +115,28 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Asian option"},
-   :rdfs/subClassOf [{:owl/onClass    :fibo-der-drc-exo/AsianOptionClassifier,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
-                      :owl/onProperty :fibo-sec-dbt-ex/hasExerciseDate,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
                       :owl/onProperty :fibo-der-drc-exo/hasAsianTailPeriod,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-der-drc-opt/ExoticOption
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-der-drc-exo/usesCurrencyInAveraging,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onDataRange :xsd/boolean,
                       :owl/onProperty  :fibo-der-drc-exo/usesWeightedAverage,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-der-drc-exo/usesCurrencyInAveraging,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-der-drc-opt/ExoticOption
+                     {:owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
+                      :owl/onProperty :fibo-sec-dbt-ex/hasExerciseDate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-exo/AveragingStrategy,
+                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-der-drc-exo/AsianOptionClassifier,
                       :owl/onProperty :lcc-cr/isClassifiedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}],
@@ -223,16 +223,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "barrier option"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-der-drc-exo/hasMonitoringFrequency,
-                      :owl/someValuesFrom :xsd/positiveInteger,
-                      :rdf/type :owl/Restriction}
-                     :fibo-der-drc-opt/ExoticOption
-                     {:owl/onProperty     :fibo-der-drc-exo/isAboveStrikePrice,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-exo/isAboveStrikePrice,
                       :owl/someValuesFrom :xsd/boolean,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-der-drc-exo/hasMonitoringPeriod,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-der-drc-opt/ExoticOption
+                     {:owl/onProperty :fibo-der-drc-exo/hasMonitoringFrequency,
+                      :owl/someValuesFrom :xsd/positiveInteger,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -262,13 +262,13 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "chooser option"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-exo/hasOptionTypeElectionDate,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
      :owl/someValuesFrom {:owl/unionOf [:fibo-der-drc-opt/CallOption
                                         :fibo-der-drc-opt/PutOption],
                           :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-exo/hasOptionTypeElectionDate,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-opt/ExoticOption],
    :skos/definition
@@ -400,18 +400,18 @@
                 :rdf/value    "double barrier option"},
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/PercentageMonetaryAmount,
-                      :owl/onProperty :fibo-der-drc-exo/hasFirstRebateAmount,
+                      :owl/onProperty :fibo-der-drc-exo/hasSecondRebateAmount,
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-exo/BarrierOption
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-acc-cur/PercentageMonetaryAmount,
-                      :owl/onProperty :fibo-der-drc-exo/hasSecondRebateAmount,
+                     {:owl/onProperty :fibo-der-drc-exo/hasFirstBarrierPrice,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty :fibo-der-drc-exo/hasSecondBarrierPrice,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty :fibo-der-drc-exo/hasFirstBarrierPrice,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fnd-acc-cur/PercentageMonetaryAmount,
+                      :owl/onProperty :fibo-der-drc-exo/hasFirstRebateAmount,
                       :rdf/type :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",

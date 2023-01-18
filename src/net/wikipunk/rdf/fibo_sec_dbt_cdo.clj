@@ -353,21 +353,21 @@
                 :rdf/value    "c d o deal"},
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
-    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
@@ -612,10 +612,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "collateralized bond obligation"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+   :rdfs/subClassOf [:fibo-sec-dbt-cdo/CashCDOTranche
+                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/BondPool,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-cdo/CashCDOTranche],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

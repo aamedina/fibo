@@ -199,12 +199,12 @@
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :lcc-cr/hasPart,
+                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentDepartment,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :lcc-cr/hasPart,
                       :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-fct-fct/FunctionalEntity
-                     {:owl/onProperty     :lcc-cr/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentDepartment,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-be-fct-fct/FunctionalEntity],
    :skos/definition "the system by which a state or community is controlled"})
 
 (def GovernmentAgency
@@ -490,14 +490,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
    :rdfs/label "supranational entity",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
-                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentBody,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-be-ge-ge/Polity
-                     {:owl/minQualifiedCardinality 2,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 2,
                       :owl/onClass    :lcc-cr/Country,
                       :owl/onProperty :fibo-be-ge-ge/hasSharedSovereigntyOver,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
+                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentBody,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-be-ge-ge/Polity],
    :skos/definition
    "governmental or non-governmental entity that is established by international law or treaty or incorporated at an international level"})
 

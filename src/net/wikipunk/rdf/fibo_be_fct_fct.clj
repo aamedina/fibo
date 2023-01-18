@@ -182,22 +182,22 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
    :rdfs/label "merchant category code",
-   :rdfs/subClassOf [{:owl/onClass :fibo-be-fct-fct/MerchantCategoryCodeScheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+   :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :lcc-lr/hasTag,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-arr-cls/IndustrySectorClassifier
                      {:owl/onProperty
                       :fibo-be-fct-fct/hasMerchantCategoryDescription,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-cls/IndustrySectorClassifier
+                     {:owl/onClass :fibo-be-fct-fct/MerchantCategoryCodeScheme,
+                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :lcc-cr/classifies,
                       :owl/someValuesFrom :fibo-be-fct-fct/Merchant,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
                      :lcc-lr/CodeElement],
    :skos/definition "code used internationally to classify a merchant"})
 

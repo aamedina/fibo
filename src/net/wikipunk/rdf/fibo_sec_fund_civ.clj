@@ -772,24 +772,24 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund portfolio"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
+   [{:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
+     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioBenchmark,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
      :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-sec-ast/Portfolio
+    {:owl/onProperty     :fibo-sec-fund-civ/implementsFundPolicy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
      :owl/someValuesFrom :fibo-sec-sec-ast/PortfolioHolding,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasInvestmentStrategy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-ast/Portfolio
     {:owl/onProperty     :fibo-sec-fund-civ/hasLiquidity,
      :owl/someValuesFrom :fibo-sec-fund-civ/Liquidity,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/implementsFundPolicy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
-     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioBenchmark,
+    {:owl/onProperty     :fibo-sec-fund-civ/hasInvestmentStrategy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioManager,
@@ -1329,13 +1329,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
    :rdfs/label "key investor information document",
-   :rdfs/subClassOf [{:owl/hasValue   :fibo-be-ge-euj/EuropeanUnionJurisdiction,
-                      :owl/onProperty :fibo-fnd-law-jur/appliesIn,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-sec-sec-iss/OfferingDocument
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-iss/OfferingDocument
+                     {:owl/hasValue   :fibo-be-ge-euj/EuropeanUnionJurisdiction,
+                      :owl/onProperty :fibo-fnd-law-jur/appliesIn,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "short document that provides critical information for investors, summarizing content derived from a prospectus such that it can be understood by investors without reference to other documents, as required by law in the European Union"})
 

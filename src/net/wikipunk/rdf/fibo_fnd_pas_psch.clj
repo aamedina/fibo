@@ -147,14 +147,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
    :rdfs/label "payment obligation",
-   :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-agr-ctr/Contract,
-                      :owl/onProperty    :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type          :owl/Restriction}
+   :rdfs/subClassOf [:fibo-fnd-agr-agr/Commitment
                      {:owl/onProperty     :fibo-fnd-agr-agr/isObligationOf,
                       :owl/someValuesFrom :fibo-fnd-pas-psch/Payer,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-agr/Commitment
                      :fibo-fnd-law-lcap/Duty
+                     {:owl/allValuesFrom :fibo-fnd-agr-ctr/Contract,
+                      :owl/onProperty    :fibo-fnd-rel-rel/isConferredBy,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-fnd-pas-psch/Payee,
                       :rdf/type           :owl/Restriction}],

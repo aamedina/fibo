@@ -93,14 +93,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "contextual name",
-   :rdfs/subClassOf [:fibo-fnd-aap-agt/Name
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-aap-agt/isStructuredNameOf,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-aap-agt/Name
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
                       :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-aap-agt/isStructuredNameOf,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "designation by which someone, some place, or something is known in some context"})

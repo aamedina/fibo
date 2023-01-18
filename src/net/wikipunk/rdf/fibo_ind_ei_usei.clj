@@ -266,20 +266,20 @@
    [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-pas-fpas/Basket,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-be-fct-pub/hasPublisher,
-     :owl/someValuesFrom :fibo-ind-ei-usei/AmericanStatisticsPublisher,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
      :owl/someValuesFrom :fibo-ind-ei-usei/UrbanConsumersUniverse,
      :rdf/type           :owl/Restriction}
     {:owl/hasValue   :fibo-ind-ei-usei/BureauOfLaborStatistics,
      :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
      :rdf/type       :owl/Restriction}
-    :fibo-ind-ei-ei/ConsumerPriceIndex
+    {:owl/onProperty     :fibo-be-fct-pub/hasPublisher,
+     :owl/someValuesFrom :fibo-ind-ei-usei/AmericanStatisticsPublisher,
+     :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-ind-ei-usei/UrbanConsumersUniverse,
      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
      :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-ind-ei-ei/ConsumerPriceIndex],
    :skos/definition
    "an economic indicator representing a measure of the average change over time in the prices paid by urban consumers for a market basket of consumer goods and services"})
 

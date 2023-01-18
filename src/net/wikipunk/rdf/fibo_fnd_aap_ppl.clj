@@ -320,14 +320,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "identity document",
-   :rdfs/subClassOf [:fibo-fnd-arr-doc/LegalDocument
+   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/identifies,
+                      :owl/someValuesFrom :fibo-fnd-aap-ppl/Person,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-doc/LegalDocument
                      {:owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-arr-doc/hasExpirationDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :lcc-lr/identifies,
-                      :owl/someValuesFrom :fibo-fnd-aap-ppl/Person,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
                       :owl/qualifiedCardinality 1,
@@ -433,12 +433,12 @@
                       :owl/onProperty :lcc-lr/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
+                     :lcc-lr/Identifier
                      {:owl/onClass
                       :fibo-fnd-aap-ppl/NationalIdentificationNumberScheme,
                       :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
-                     :lcc-lr/Identifier],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "number or text which appears on an identity document issued by a country or jurisdiction"})
 
@@ -517,39 +517,39 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "person"},
-   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-aap-ppl/DateOfBirth,
-                      :owl/onProperty :fibo-fnd-aap-ppl/hasDateOfBirth,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :xsd/string,
+   :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-aap-ppl/hasGender,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-aap-ppl/PersonName,
-                      :owl/onProperty :fibo-fnd-aap-agt/hasStructuredName,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :lcc-cr/Country,
                       :owl/onProperty :fibo-fnd-aap-ppl/hasCitizenship,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/Age,
-                      :owl/onProperty :fibo-fnd-dt-fd/hasAge,
-                      :rdf/type       :owl/Restriction}
+                      :owl/onClass :fibo-fnd-plc-adr/ConventionalStreetAddress,
+                      :owl/onProperty :fibo-fnd-aap-ppl/hasResidence,
+                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-aap-ppl/DateOfDeath,
                       :owl/onProperty :fibo-fnd-aap-ppl/hasDateOfDeath,
                       :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-aap-ppl/PersonName,
+                      :owl/onProperty :fibo-fnd-aap-agt/hasStructuredName,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-dt-fd/Age,
+                      :owl/onProperty :fibo-fnd-dt-fd/hasAge,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty
                      {:owl/onClass    :fibo-fnd-aap-ppl/PlaceOfBirth,
                       :owl/onProperty :fibo-fnd-aap-ppl/hasPlaceOfBirth,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-plc-adr/ConventionalStreetAddress,
-                      :owl/onProperty :fibo-fnd-aap-ppl/hasResidence,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-pty-pty/IndependentParty],
+                     {:owl/onClass    :fibo-fnd-aap-ppl/DateOfBirth,
+                      :owl/onProperty :fibo-fnd-aap-ppl/hasDateOfBirth,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition "individual human being, with consciousness of self"})
 
 (def PersonName
@@ -561,25 +561,25 @@
    :rdfs/label "person name",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-aap-agt/Text,
-                      :owl/onProperty  :fibo-fnd-aap-ppl/hasNamePrefix,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
                       :owl/onProperty  :fibo-fnd-aap-ppl/hasNameSuffix,
                       :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-aap-ppl/Person,
-                      :owl/onProperty :fibo-fnd-aap-agt/isStructuredNameOf,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-pty/ContextualName
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-aap-agt/Text,
                       :owl/onProperty  :fibo-fnd-aap-ppl/hasFullLegalName,
                       :rdf/type        :owl/Restriction}
+                     :fibo-fnd-pty-pty/ContextualName
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-aap-agt/Text,
                       :owl/onProperty  :fibo-fnd-aap-ppl/hasSurname,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
+                      :owl/onProperty  :fibo-fnd-aap-ppl/hasNamePrefix,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-aap-ppl/Person,
+                      :owl/onProperty :fibo-fnd-aap-agt/isStructuredNameOf,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition "designation by which someone is known in some context"})
 
 (def PlaceOfBirth

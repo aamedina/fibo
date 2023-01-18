@@ -151,11 +151,11 @@
                       :owl/onProperty :lcc-lr/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-org-org/OrganizationIdentifier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-org-org/OrganizationIdentifier],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "an identifier that is officially allocated to an organization at the time of registration, typically in a jurisdiction in which said organization is organized or registered and used in that jurisdiction to identify the organization",
    :skos/scopeNote

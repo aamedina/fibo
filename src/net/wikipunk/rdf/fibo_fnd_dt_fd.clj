@@ -160,15 +160,15 @@
                       :owl/onProperty :fibo-fnd-dt-fd/hasCalendarPeriod,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/integer,
+                      :owl/onProperty  :fibo-fnd-dt-fd/hasOrdinalNumber,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-dt-fd/TimeDirection,
                       :owl/onProperty :fibo-fnd-dt-fd/hasTimeDirection,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-fd/RecurrenceInterval
-                     {:owl/onDataRange :xsd/integer,
-                      :owl/onProperty  :fibo-fnd-dt-fd/hasOrdinalNumber,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}],
+                     :fibo-fnd-dt-fd/RecurrenceInterval],
    :skos/definition
    "recurrence interval that is defined as the nth day of some calendar period (such as a calendar month), and a time direction (forward from the beginning of the month, or backwards from the end)",
    :skos/example
@@ -248,12 +248,12 @@
                       :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty :fibo-fnd-dt-fd/hasEndDate,
+                      :owl/onProperty :fibo-fnd-dt-fd/hasStartDate,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-dt-fd/TimeInterval
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty :fibo-fnd-dt-fd/hasStartDate,
+                      :owl/onProperty :fibo-fnd-dt-fd/hasEndDate,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "time span over one or more calendar days, defined by at least two of three properties: (1) a start date, (2) an end date, and (3) a duration"})
@@ -495,19 +495,19 @@
                       :owl/onClass    :fibo-fnd-dt-fd/ScheduleStub,
                       :owl/onProperty :fibo-fnd-dt-fd/hasFinalStub,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-dt-fd/hasRecurrenceStartDate,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-dt-fd/Schedule
-                     {:owl/onProperty     :fibo-fnd-dt-fd/hasCount,
-                      :owl/someValuesFrom :xsd/positiveInteger,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/ScheduleStub,
                       :owl/onProperty :fibo-fnd-dt-fd/hasInitialStub,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-dt-fd/Schedule
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasRecurrenceInterval,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-dt-fd/hasRecurrenceStartDate,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-dt-fd/hasCount,
+                      :owl/someValuesFrom :xsd/positiveInteger,
                       :rdf/type           :owl/Restriction}],
    :skos/definition "schedule whose time intervals recur regularly",
    :skos/editorialNote
@@ -526,15 +526,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "relative date",
-   :rdfs/subClassOf [:fibo-fnd-dt-fd/CalculatedDate
+   :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-dt-fd/hasRelativeDuration,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-dt-fd/CalculatedDate
                      {:owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-dt-fd/isRelativeTo,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-dt-fd/hasRelativeDuration,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "calculated date that is some duration before or after another date",
    :skos/example

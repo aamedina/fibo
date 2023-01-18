@@ -131,14 +131,14 @@
                       :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :lcc-cr/classifies,
+                      :owl/someValuesFrom :fibo-cae-ce-act/Action,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
                       :owl/onProperty :lcc-lr/isMemberOf,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-dt-oc/OccurrenceKind
-                     {:owl/onProperty     :lcc-cr/classifies,
-                      :owl/someValuesFrom :fibo-cae-ce-act/Action,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-cls/Classifier],
    :skos/definition
    {:rdf/language "en",

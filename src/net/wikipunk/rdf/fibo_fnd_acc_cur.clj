@@ -110,19 +110,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "currency",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-acc-cur/hasNumericCode,
+   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :lcc-lr/hasName,
-                      :owl/someValuesFrom :xsd/string,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-qt-qtu/MeasurementUnit
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-acc-cur/hasMinorUnit,
                       :rdf/type        :owl/Restriction}
+                     :fibo-fnd-qt-qtu/MeasurementUnit
                      {:owl/onProperty     :lcc-cr/isUsedBy,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-acc-cur/hasNumericCode,
+                      :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "medium of exchange value, defined by reference to the geographical location of the monetary authorities responsible for it"})
@@ -156,16 +156,16 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "currency identifier",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/identifies,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onDataRange :xsd/string,
+   :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :lcc-lr/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      :lcc-lr/Identifier
                      :lcc-lr/CodeElement
                      {:owl/onProperty     :lcc-lr/denotes,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :lcc-lr/identifies,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
                       :rdf/type           :owl/Restriction}],
    :skos/definition "sequence of characters representing some currency"})
@@ -224,10 +224,10 @@
                       :owl/onProperty  :lcc-lr/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
+                     :lcc-lr/Identifier
                      {:owl/onProperty     :lcc-lr/denotes,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Funds,
                       :rdf/type           :owl/Restriction}
-                     :lcc-lr/Identifier
                      {:owl/onProperty     :lcc-lr/identifies,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Funds,
                       :rdf/type           :owl/Restriction}

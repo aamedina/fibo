@@ -153,11 +153,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "legal entity",
    :rdfs/subClassOf [:fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/LegalPerson
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalPerson],
    :skos/definition
    "legal person that is a partnership, corporation, or other organization having the capacity to negotiate contracts, assume financial obligations, and pay off debts, organized under the laws of some jurisdiction",
    :skos/example

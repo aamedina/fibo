@@ -858,17 +858,17 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "standardized options terms"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-be-fct-pub/hasPublisher,
-     :owl/someValuesFrom {:owl/unionOf
-                          [:fibo-fbc-fct-mkt/Exchange
-                           :fibo-der-drc-bsc/DerivativesClearingOrganization],
-                          :rdf/type :owl/Class},
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
      :owl/someValuesFrom :fibo-der-drc-opt/VanillaOption,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
      :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-be-fct-pub/hasPublisher,
+     :owl/someValuesFrom {:owl/unionOf
+                          [:fibo-fbc-fct-mkt/Exchange
+                           :fibo-der-drc-bsc/DerivativesClearingOrganization],
+                          :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fi-fi/StandardizedTerms],
    :skos/definition

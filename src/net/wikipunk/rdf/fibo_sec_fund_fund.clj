@@ -104,7 +104,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "closed-end investment"},
-   :rdfs/subClassOf [{:owl/hasValue   false,
+   :rdfs/subClassOf [{:owl/hasValue   {:xsd/boolean false},
                       :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-sec-pls/ManagedInvestment],

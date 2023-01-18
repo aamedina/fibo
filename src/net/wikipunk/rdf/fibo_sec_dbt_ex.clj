@@ -125,13 +125,13 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseDate,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
                       :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-ex/ExerciseTerms
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
                       :rdf/type           :owl/Restriction}
                      {:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
                       :owl/onProperty :lcc-cr/uses,
-                      :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-ex/ExerciseTerms],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

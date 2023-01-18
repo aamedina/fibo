@@ -182,10 +182,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
    :rdfs/label "HMDA report",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasNumberOfEntries,
-                      :owl/someValuesFrom :xsd/positiveInteger,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-rep/isSubmittedTo,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-rep/isSubmittedTo,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
@@ -199,6 +196,9 @@
                                        :rdf/type :owl/Restriction},
                       :owl/onProperty :fibo-fnd-arr-rep/isSubmittedBy,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasNumberOfEntries,
+                      :owl/someValuesFrom :xsd/positiveInteger,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-rep/Report],
    :skos/definition
    "a report prepared to satisfy HMDA regulatory reporting requirements as described US section 1003.3(c) of the Revised Home Mortgage Disclosure Act of 2015",

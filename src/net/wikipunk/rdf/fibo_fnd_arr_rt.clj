@@ -116,23 +116,23 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "rating",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-rt/hasRatingScore,
-                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-asmt/Opinion
+   :rdfs/subClassOf [:fibo-fnd-arr-asmt/Opinion
+                     {:owl/onClass    :fibo-fnd-dt-fd/Date,
+                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/cardinality 1,
                       :owl/onProperty  :fibo-fnd-arr-rt/rates,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-arr-rt/RatingParty,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-arr-rt/hasRatingScore,
+                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
+                      :rdf/type           :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
+                     {:owl/onClass    :fibo-fnd-arr-rt/RatingParty,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingIssuer,

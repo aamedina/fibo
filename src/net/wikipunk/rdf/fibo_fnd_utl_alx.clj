@@ -177,19 +177,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "dispersion",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-                      :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/StatisticalMeasure
-                     {:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :xsd/nonNegativeInteger,
                       :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/StatisticalMeasure
                      {:owl/onProperty :fibo-fnd-utl-alx/hasObservedValue,
                       :owl/someValuesFrom
                       :fibo-fnd-arr-arr/StructuredCollection,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition "degree of scatter or variability shown by observations",
    :skos/example
    "Common examples of measures of statistical dispersion are the variance, standard deviation, and interquartile range. The collection size argument, above, represents the number of elements in the set, if known. The collection of values under consideration is represented as a structured collection in FIBO, typically a sample set derived from a finite population."})

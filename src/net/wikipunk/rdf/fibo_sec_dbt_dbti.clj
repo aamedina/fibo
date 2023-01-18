@@ -326,14 +326,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
    :rdfs/label "non-tradable debt instrument",
    :rdfs/subClassOf
-   [:fibo-fbc-fi-fi/DebtInstrument
+   [{:owl/onProperty     :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
+     :owl/someValuesFrom :fibo-sec-dbt-dbti/RelativePrice,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/DebtInstrument
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-fi-fi/RedemptionProvision,
      :owl/onProperty :fibo-fbc-fi-fi/hasRedemptionProvision,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
-     :owl/someValuesFrom :fibo-sec-dbt-dbti/RelativePrice,
-     :rdf/type           :owl/Restriction}
     :fibo-fnd-agr-ctr/MutualContractualAgreement
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasRelativePriceAtRedemption,
      :owl/someValuesFrom :fibo-sec-dbt-dbti/RelativePrice,
@@ -427,13 +427,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
    :rdfs/label "put feature",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [:fibo-fbc-dae-dbt/DebtTerms
+                     :fibo-fbc-fi-fi/RedemptionProvision
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-sec-dbt-dbti/PutNotificationProvision,
                       :owl/onProperty
                       :fibo-sec-dbt-dbti/hasNotificationProvision,
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-dae-dbt/DebtTerms
-                     :fibo-fbc-fi-fi/RedemptionProvision
                      {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/PutSchedule,
                       :rdf/type           :owl/Restriction}],

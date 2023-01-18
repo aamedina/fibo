@@ -246,10 +246,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "equity forward"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-ff/hasMethodOfAdjustment,
-     :owl/someValuesFrom :fibo-der-drc-ff/ForwardContractAdjustmentMethod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
      :owl/someValuesFrom {:owl/unionOf [:fibo-ind-mkt-bas/BasketOfEquities
                                         :fibo-sec-eq-eq/ListedShare
                                         :fibo-ind-mkt-bas/EquityIndex
@@ -257,12 +254,15 @@
                                         :fibo-der-drc-opt/EquityOption],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
+     :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-der-drc-ff/Forward
     {:owl/onProperty     :fibo-der-drc-ff/hasDividendAdjustmentPeriod,
      :owl/someValuesFrom :fibo-der-drc-ff/DividendAdjustmentPeriod,
      :rdf/type           :owl/Restriction}
-    :fibo-der-drc-ff/Forward
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
-     :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
+    {:owl/onProperty     :fibo-der-drc-ff/hasMethodOfAdjustment,
+     :owl/someValuesFrom :fibo-der-drc-ff/ForwardContractAdjustmentMethod,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",

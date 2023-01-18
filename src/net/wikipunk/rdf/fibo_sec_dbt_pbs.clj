@@ -150,14 +150,14 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "structured finance instrument"},
    :rdfs/seeAlso ["https://www.bis.org/publ/cgfs23mitchell.pdf"],
-   :rdfs/subClassOf [:fibo-sec-dbt-pbs/PoolBackedSecurity
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom {:owl/onProperty
                                            :fibo-fnd-pty-rl/isPlayedBy,
                                            :owl/someValuesFrom
                                            :fibo-be-le-lp/SpecialPurposeVehicle,
                                            :rdf/type :owl/Restriction},
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-pbs/PoolBackedSecurity],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
