@@ -85,20 +85,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "currency derivative"},
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-der-drc-cur/hasBuyingCurrency,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/CurrencyInstrument
+   :rdfs/subClassOf [:fibo-fbc-fi-fi/CurrencyInstrument
                      :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
                      {:owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
                       :owl/someValuesFrom
                       :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-der-drc-cur/hasBuyingCurrency,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -143,13 +143,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "currency forward outright"},
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/hasPart,
-                      :owl/someValuesFrom :fibo-der-drc-cur/CurrencySwap,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :lcc-cr/hasPart,
+   :rdfs/subClassOf [{:owl/onProperty :lcc-cr/hasPart,
                       :owl/someValuesFrom
                       :fibo-der-drc-cur/CurrencySpotContract,
                       :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :lcc-cr/hasPart,
+                      :owl/someValuesFrom :fibo-der-drc-cur/CurrencySwap,
+                      :rdf/type           :owl/Restriction}
                      :fibo-der-drc-cur/CurrencyForward],
    :skos/definition
    {:rdf/language "en",
@@ -174,15 +174,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "currency option"},
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-ind-fx-fx/CurrencySpotBuyRate,
-                      :owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasStrikeRate,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-opt/hasStrikeRate,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/ExchangeRate,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-opt/VanillaOption
-                     :fibo-der-drc-cur/CurrencyDerivative],
+                     :fibo-der-drc-cur/CurrencyDerivative
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-ind-fx-fx/CurrencySpotBuyRate,
+                      :owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -348,3 +348,8 @@
    {:rdf/language "en",
     :rdf/value
     "rate of exchange between two currencies as specified in a spot contract"}})
+
+(def ^{:private true} CurrencyFuture
+  {:db/ident        :fibo-der-drc-ff/CurrencyFuture,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-der-drc-cur/CurrencyDerivative})

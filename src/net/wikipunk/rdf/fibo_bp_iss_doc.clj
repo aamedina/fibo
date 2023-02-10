@@ -142,3 +142,10 @@
    {:rdf/language "en",
     :rdf/value
     "A formal agreement, deed or contract in respect of some intended securities issuance."}})
+
+(def ^{:private true} OfferingDocument
+  {:db/ident        :fibo-sec-sec-iss/OfferingDocument,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                     :owl/someValuesFrom :fibo-bp-iss-doc/OfferingDocumentTerms,
+                     :rdf/type :owl/Restriction}})

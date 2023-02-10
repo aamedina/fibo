@@ -113,11 +113,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "allotment right"},
-   :rdfs/subClassOf [:fibo-der-sbd-sbd/EquityDerivative
-                     {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-der-drc-raw/AllotmentRightFormula,
                       :rdf/type :owl/Restriction}
+                     :fibo-der-sbd-sbd/EquityDerivative
                      :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    {:rdf/language "en",
@@ -861,3 +861,11 @@
    {:rdf/language "en",
     :rdf/value
     "indicates whether the holders of the rights instrument may get securities in the event that other right holders choose not to subscribe"}})
+
+(def ^{:private true} Entitlement
+  {:db/ident        :fibo-fbc-fi-fi/Entitlement,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/minQualifiedCardinality 0,
+                     :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
+                     :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
+                     :rdf/type       :owl/Restriction}})

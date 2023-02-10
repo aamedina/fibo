@@ -618,3 +618,23 @@
    :rdfs/subPropertyOf [:lcc-lr/hasName :fibo-fnd-aap-agt/hasTextValue],
    :skos/definition
    "indicates a name by which something was known in the past"})
+
+(def ^{:private true} Name
+  {:db/ident        :fibo-fnd-aap-agt/Name,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-fnd-rel-rel/Reference})
+
+(def ^{:private true} classifies
+  {:db/ident :lcc-cr/classifies,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo})
+
+(def ^{:private true} denotes
+  {:db/ident :lcc-lr/denotes,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/represents})
+
+(def ^{:private true} hasDenotation
+  {:db/ident :lcc-lr/hasDenotation,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasRepresentation})

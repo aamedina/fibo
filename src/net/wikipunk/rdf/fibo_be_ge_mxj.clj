@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-be-ge-mxj
   "This ontology provides the set of basic federal government, provincial, and territory level entities and jurisdictions for use in other Mexico-specific FIBO ontologies."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2020-2023 EDM Council, Inc."
+                       "Copyright (c) 2020-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides the set of basic federal government, provincial, and territory level entities and jurisdictions for use in other Mexico-specific FIBO ontologies.",
@@ -8,11 +10,12 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
@@ -20,7 +23,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-ge"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
     "fibo-be-ge-mxj"
@@ -40,7 +44,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -50,26 +53,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "Mexican Government Entities and Jurisdictions Ontology",
    :skos/changeNote
-   "The http://www.omg.org/spec/EDMC-FIBO/BE/20200701/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to replace 'hasPartialSovereigntyOver' with 'hasSharedSovereigntyOver'.",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2020-2021 Object Management Group, Inc."
-                  "Copyright (c) 2020-2021 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"],
-   :sm/fileAbbreviation "fibo-be-ge-mxj",
-   :sm/filename "MXGovernmentEntitiesAndJurisdictions.rdf"})
+   ["The http://www.omg.org/spec/EDMC-FIBO/BE/20200701/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to replace 'hasPartialSovereigntyOver' with 'hasSharedSovereigntyOver'."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def FederalGovernmentOfMexico
   "federal presidential constitutional republic with shared sovereignty over the republic with the governments of the 31 individual Mexican states, which functions per the Constitution of the United Mexican States"
-  {:db/ident :fibo-be-ge-mxj/FederalGovernmentOfMexico,
+  {:cmns-av/synonym {:rdf/language "es-MX",
+                     :rdf/value    "Gobierno de la República"},
+   :db/ident :fibo-be-ge-mxj/FederalGovernmentOfMexico,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-mxj/MexicanJurisdiction,
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Mexico,
-   :fibo-fnd-utl-av/synonym {:rdf/language "es-MX",
-                             :rdf/value    "Gobierno de la República"},
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/FederalGovernment],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
@@ -128,11 +121,11 @@
 
 (def MexicanJurisdiction
   "jurisdiction of the Supreme Court of Justice of the Nation, including the system of courts that interprets and applies the law at the federal level in Mexico"
-  {:db/ident :fibo-be-ge-mxj/MexicanJurisdiction,
+  {:cmns-av/explanatoryNote
+   "The Supreme Court of Justice of the Nation (SCJN) is the Mexican institution serving as the country's federal high court and the spearhead organisation for the judiciary of the Mexican Federal Government. It consists of eleven magistrates, known as ministers of the court, one of whom is designated the court's president.",
+   :db/ident :fibo-be-ge-mxj/MexicanJurisdiction,
    :fibo-be-ge-ge/isJurisdictionOf :fibo-be-ge-mxj/FederalGovernmentOfMexico,
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Mexico,
-   :fibo-fnd-utl-av/explanatoryNote
-   "The Supreme Court of Justice of the Nation (SCJN) is the Mexican institution serving as the country's federal high court and the spearhead organisation for the judiciary of the Mexican Federal Government. It consists of eleven magistrates, known as ministers of the court, one of whom is designated the court's president.",
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",

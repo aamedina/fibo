@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-be-ge-cbj
   "This ontology provides the set of basic government-level entities and jurisdictions for independent countries and British Commonwealth regional sovereignties identified as part of the Caribbean in the U.N. M49 classification."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2020-2023 Object Management Group, Inc."
+                       "Copyright (c) 2020-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides the set of basic government-level entities and jurisdictions for independent countries and British Commonwealth regional sovereignties identified as part of the Caribbean in the U.N. M49 classification.",
@@ -8,18 +10,20 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-cbj"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
     "fibo-be-ge-ge"
@@ -37,7 +41,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -48,20 +51,10 @@
    :rdfs/label "Caribbean Government Entities and Jurisdictions Ontology",
    :skos/changeNote
    ["The http://www.omg.org/spec/EDMC-FIBO/BE/20200701/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to correct the ontology prefix and address language-specific diacritical marks."
-    "The http://www.omg.org/spec/EDMC-FIBO/BE/20210201/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to correct spelling issues."],
+    "The http://www.omg.org/spec/EDMC-FIBO/BE/20210201/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to correct spelling issues."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."],
    :skos/scopeNote
-   "The initial version of this ontology reflects the highest national or regional level (for British Commonwealth members) only.",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2020-2021 EDM Council, Inc."
-                  "Copyright (c) 2020-2021 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"],
-   :sm/fileAbbreviation "fibo-be-ge-cbj",
-   :sm/filename "CaribbeanGovernmentEntitiesAndJurisdictions.rdf"})
+   "The initial version of this ontology reflects the highest national or regional level (for British Commonwealth members) only."})
 
 (def AntiguaAndBarbudaEntity
   "sovereign state and polity that consists of two major islands, Antigua and Barbuda (separated by 39 miles), and a number of smaller islands in the middle of the Leeward Islands, that is part of the Lesser Antilles"

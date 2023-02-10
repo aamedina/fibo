@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-rga
   "This ontology defines general purpose concepts for representation of regulatory agencies, also known as regulatory authorities or regulators. Examples of financial industry regulatory agencies in the US include the Securities Exchange Commission, FINRA, and the FDIC, among others. The SEC and FINRA are both registration authorities and regulatory agencies. The FDIC is a regulatory agency and an insurer, and may be a registration authority for certain state-chartered banks in the US without bank holding companies."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 Object Management Group, Inc."
+                       "Copyright (c) 2015-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
    :dcterms/abstract
    "This ontology defines general purpose concepts for representation of regulatory agencies, also known as regulatory authorities or regulators. Examples of financial industry regulatory agencies in the US include the Securities Exchange Commission, FINRA, and the FDIC, among others. The SEC and FINRA are both registration authorities and regulatory agencies. The FDIC is a regulatory agency and an insurer, and may be a registration authority for certain state-chartered banks in the US without bank holding companies.",
@@ -10,12 +12,13 @@
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
@@ -29,7 +32,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-ge"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
     "fibo-be-le-lp"
@@ -65,7 +69,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -79,23 +82,16 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies.rdf version of this ontology was modified as a part of organizational hierarchy simplification."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies.rdf version of this ontology was modified to eliminate deprecated elements and duplication of concepts with LCC, and remove a redundant superclass declaration on GovernmentIssuedLicense."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies.rdf version of this ontology was modified per the FIBO 2.0 RFC, including deprecation of the hasJurisdiction property that was duplicated in BE via the BE 1.1 RTF."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies.rdf version of this ontology was modified to clean up the definition of regulatory agency."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies.rdf version of this ontology was modified to add the concept of a tax authority."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2015-2022 Object Management Group, Inc."
-                  "Copyright (c) 2015-2022 EDM Council, Inc."],
-   :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/BE/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FND/"
-                  "https://www.omg.org/spec/LCC/"],
-   :sm/fileAbbreviation "fibo-fbc-fct-rga",
-   :sm/filename "RegulatoryAgencies.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies.rdf version of this ontology was modified to add the concept of a tax authority."]})
 
 (def Examiner
   "a party empowered as an official representative by a regulatory agency to investigate and review specified documents for accuracy and truthfulness"
-  {:db/ident :fibo-fbc-fct-rga/Examiner,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    ["EDM Council"
     "Black's Law Dictionary, see http://thelawdictionary.org/examiner/"],
+   :db/ident :fibo-fbc-fct-rga/Examiner,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
@@ -123,9 +119,9 @@
 
 (def GovernmentIssuedLicense
   "grant of permission needed to legally perform some task, provide some service, exercise a certain privilege, or pursue some business or occupation"
-  {:db/ident :fibo-fbc-fct-rga/GovernmentIssuedLicense,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "Barron's Dictionary of Business and Economics Terms, Fifth Edition, 2012",
+   :db/ident :fibo-fbc-fct-rga/GovernmentIssuedLicense,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
@@ -173,28 +169,26 @@
 
 (def RegulatoryAgency
   "public authority or government agency responsible for exercising authority over something in a regulatory or supervisory capacity"
-  {:db/ident :fibo-fbc-fct-rga/RegulatoryAgency,
-   :fibo-fnd-utl-av/adaptedFrom
-   ["http://www.thefreedictionary.com/regulatory+agency"
-    "http://en.wikipedia.org/wiki/Regulatory_agency"],
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/adaptedFrom ["http://en.wikipedia.org/wiki/Regulatory_agency"
+                         "http://www.thefreedictionary.com/regulatory+agency"],
+   :cmns-av/explanatoryNote
    "Typically, a regulatory agency is chartered to protect some constituancy, (e.g., investors in the financial industry), to ensure the fairness and integrity of some market (e.g., the securities market), and fair and safe business practices among the service providers in that market.",
-   :fibo-fnd-utl-av/synonym
-   ["regulatory authority" "regulatory body" "regulator"],
+   :cmns-av/synonym ["regulator" "regulatory authority" "regulatory body"],
+   :db/ident :fibo-fbc-fct-rga/RegulatoryAgency,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
    :rdfs/label "regulatory agency",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
-                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pas-pas/ServiceProvider
+   :rdfs/subClassOf [:fibo-fnd-pas-pas/ServiceProvider
                      {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryService,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-fct-rga/GovernmentIssuedLicense,
@@ -218,9 +212,9 @@
 
 (def RegulatoryReport
   "a report required to support operational transparency that demonstrates compliance with some specification, law, policy, restriction, or other rule specified by a regulatory agency"
-  {:db/ident :fibo-fbc-fct-rga/RegulatoryReport,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Such a report may be needed for licensing, monitoring, taxation, or for other purposes that demonstrate the integrity, fairness, safety, or other capacity of a given industry, organization, or product",
+   :db/ident :fibo-fbc-fct-rga/RegulatoryReport,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
@@ -253,18 +247,15 @@
 
 (def TaxAuthority
   "regulatory agency that has jurisdiction over the assessment, determination, collection, imposition and other aspects of any tax"
-  {:db/ident :fibo-fbc-fct-rga/TaxAuthority,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    ["https://www.collinsdictionary.com/dictionary/english/tax-authority"
     "https://www.lawinsider.com/dictionary/tax-authority"],
+   :db/ident :fibo-fbc-fct-rga/TaxAuthority,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
    :rdfs/label "tax authority",
    :rdfs/subClassOf [:fibo-fbc-fct-rga/RegulatoryAgency
-                     {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
-                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-rel-rel/manages,
                       :owl/someValuesFrom
                       :fibo-fnd-pty-pty/TaxIdentificationScheme,
@@ -272,7 +263,10 @@
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-pty-pty/TaxIdentifier,
                       :owl/onProperty :fibo-fnd-rel-rel/issues,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "regulatory agency that has jurisdiction over the assessment, determination, collection, imposition and other aspects of any tax"})
 
@@ -289,9 +283,8 @@
 
 (def regulates
   "has regulatory authority over or directs according to rule or law, typically an industry, organization, or product"
-  {:db/ident :fibo-fbc-fct-rga/regulates,
-   :fibo-fnd-utl-av/adaptedFrom
-   "http://www.merriam-webster.com/dictionary/regulate",
+  {:cmns-av/adaptedFrom "http://www.merriam-webster.com/dictionary/regulate",
+   :db/ident :fibo-fbc-fct-rga/regulates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-fct-rga/RegulatoryAgency,
    :rdfs/isDefinedBy
@@ -299,3 +292,11 @@
    :rdfs/label "regulates",
    :skos/definition
    "has regulatory authority over or directs according to rule or law, typically an industry, organization, or product"})
+
+(def ^{:private true} Regulation
+  {:db/ident        :fibo-fnd-law-lcap/Regulation,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onClass    :fibo-fbc-fct-rga/RegulatoryAgency,
+                     :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+                     :owl/qualifiedCardinality 1,
+                     :rdf/type       :owl/Restriction}})

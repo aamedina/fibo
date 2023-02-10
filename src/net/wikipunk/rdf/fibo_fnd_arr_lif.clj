@@ -237,3 +237,8 @@
    :rdfs/subPropertyOf :lcc-cr/isPartOf,
    :skos/definition
    "relates a stage in a product or trade lifecycle or process to the lifecycle or process that it is a stage of"})
+
+(def ^{:private true} MaturityLevel
+  {:db/ident        :fibo-fnd-utl-av/MaturityLevel,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStage})

@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-sec-dbt-bnd
   "This ontology defines the basic concept of a bond and a number of bond variants including convertible and callable bonds. Medium term notes (MTNs) and debentures are also defined."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2018-2023 Object Management Group, Inc."
+                       "Copyright (c) 2016-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :dcterms/abstract
    "This ontology defines the basic concept of a bond and a number of bond variants including convertible and callable bonds. Medium term notes (MTNs) and debentures are also defined.",
@@ -12,14 +14,15 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Trusts/Trusts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/PaymentsAndSchedules/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
@@ -45,7 +48,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-ge"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
     "fibo-be-le-lp"
@@ -111,7 +115,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -122,27 +125,12 @@
    ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to reflect the refactored definition of a listing and improve the definition of corporate bond."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate duplication of concepts in LCC and eliminate a redundant superclass from RegularCouponSchedule."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate references to the exercise conventions ontology, which are not needed for bonds."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate false positives in hygiene tests due to concept names containing words, such as 'and', which might indicate that the concept actually reflects more than one thing, including distinguishing zero coupon from original issue discount bonds, and replace the use of call price and put price, which are overly constrained, with monetary price."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to incorporate the concept of a credit agreement repaid at maturity, which is a component assumed to be part of the definition of a bond, and to add an explanatory note to the definition of Treasury Bill."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to allow for variation in index-linked bonds, such as those whose interest payments vary with an index in addition to those that have a variable principal linked to an index and to make a number of corrections to the class hierarchy."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate a duplicate 'isBasedOn' property and replace it with the property of the same name in the debt ontology, to revise the inheritance hierarchy for bond conversion terms to reflect changes in the representation of redemption more generally, to reflect the move of redemption provision from debt to financial instruments, and eliminate circular and ambiguous definitions."
-    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to address text formatting hygiene issues."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2018-2022 Object Management Group, Inc."
-                  "Copyright (c) 2016-2022 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/"
-    "https://spec.edmcouncil.org/fibo/ontology/IND/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/"],
-   :sm/fileAbbreviation "fibo-sec-dbt-bnd",
-   :sm/filename "Bonds.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to address text formatting hygiene issues."]})
 
 (def AmortizingBond
   "bond that regularly pays down the principal (face value) on the debt along with its interest expense over the life of the bond"
@@ -162,9 +150,9 @@
 
 (def Bond
   "tradable debt instrument representing a loan in which the issuer owes the holder(s) a debt"
-  {:db/ident :fibo-sec-dbt-bnd/Bond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Depending on the terms of the contract, the issuer is obliged to pay interest (the coupon) and/or to repay the principal at maturity. The most common bonds are corporate or governmental, typically used to finance specific projects or operations.",
+   :db/ident :fibo-sec-dbt-bnd/Bond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -213,9 +201,8 @@
 
 (def BondCoupon
   "interest rate on a debt security that the issuer promises to pay to the holder until maturity, expressed as an annual percentage of the face value"
-  {:db/ident :fibo-sec-dbt-bnd/BondCoupon,
-   :fibo-fnd-utl-av/synonym
-   ["nominal yield" "coupon rate" "coupon percent rate"],
+  {:cmns-av/synonym ["nominal yield" "coupon rate" "coupon percent rate"],
+   :db/ident :fibo-sec-dbt-bnd/BondCoupon,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -251,9 +238,9 @@
 
 (def BondRegistrar
   "party responsible for maintaining records on behalf of the issuer that identify the owners of a registered bond issue"
-  {:db/ident :fibo-sec-dbt-bnd/BondRegistrar,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The trustee under a bond contract often also acts as registrar.",
+   :db/ident :fibo-sec-dbt-bnd/BondRegistrar,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -316,9 +303,9 @@
 
 (def BuildAmericaBond
   "taxable municipal bond issued through December 31, 2010 under the American Recovery and Reinvestment Act of 2009 (ARRA)"
-  {:db/ident :fibo-sec-dbt-bnd/BuildAmericaBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "BABs may be direct pay subsidy bonds or tax credit bonds.",
+   :db/ident :fibo-sec-dbt-bnd/BuildAmericaBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -390,11 +377,11 @@
 
 (def CertificateOfObligation
   "municipal security available to governing councils in case of emergency, such as a natural disaster, that needs immediate action without time for voter referendum"
-  {:db/ident :fibo-sec-dbt-bnd/CertificateOfObligation,
-   :fibo-fnd-utl-av/abbreviation "CO",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "CO",
+   :cmns-av/explanatoryNote
    ["For example, when a hurricane destroys the police and emergency services building, there is no time to go through the process of voter referendum. The local council must be able to borrow the money to set up provisional buildings and necessary equipment for police and emergency services so that the community is served in continuity."
     "CO's are similar to GO bonds, except that they do not require voter approval before they are issued. The CO's are also guaranteed by the City's taxation power and are counted in the calculation of the tax rate that is needed to support debt payments."],
+   :db/ident :fibo-sec-dbt-bnd/CertificateOfObligation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -405,10 +392,10 @@
 
 (def CertificateOfParticipation
   "debt instrument evidencing a pro rata share in a specific pledged revenue stream, usually lease payments by the issuer that are typically subject to annual appropriation"
-  {:db/ident :fibo-sec-dbt-bnd/CertificateOfParticipation,
-   :fibo-fnd-utl-av/abbreviation "COP",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "COP",
+   :cmns-av/explanatoryNote
    "A certificate of participation (COP) is a type of financing where an investor purchases a share of the lease revenues of a program rather than the bond being secured by those revenues. The certificate generally entitles the holder to receive a share, or participation, in the payments from a particular project. The payments are passed through the lessor to the certificate holders. The lessor typically assigns the lease and the payments to a trustee, which then distributes the payments to the certificate holders.",
+   :db/ident :fibo-sec-dbt-bnd/CertificateOfParticipation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -419,9 +406,9 @@
 
 (def ConventionalGilt
   "fixed coupon bond issued by HM Treasury that guarantees to pay the holder of the gilt a fixed cash payment (coupon) every six months until the maturity date, at which point the holder receives the final coupon payment and the return of the principal"
-  {:db/ident :fibo-sec-dbt-bnd/ConventionalGilt,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Conventional gilts are the simplest form of government bond and constitute around 75 percent of the gilt portfolio.",
+   :db/ident :fibo-sec-dbt-bnd/ConventionalGilt,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -435,9 +422,9 @@
 
 (def ConvertibleBond
   "bond that gives the holder the right to convert the bond into a fixed number of shares (conversion ratio) if the equity price rises above a specified level (strike price)"
-  {:db/ident :fibo-sec-dbt-bnd/ConvertibleBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "If the equity price remains below the strike price throughout the term of the bond it matures and is redeemed like a regular bond. The conversion ratio and strike price are usually set when the convertible bond is issued.",
+   :db/ident :fibo-sec-dbt-bnd/ConvertibleBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -453,10 +440,10 @@
 
 (def CorporateBond
   "bond issued by a company in order to raise financing"
-  {:db/ident :fibo-sec-dbt-bnd/CorporateBond,
-   :fibo-fnd-utl-av/explanatoryNote
-   ["Note that some classification schemes consider any bond except those issued by a government in its own currency to be a corporate bond, for example, a bond issued by Canada in US dollars might be classified as a corporate bond. Bonds issued by multinational / supranational organizations such as the European Bank for Reconstruction and Development (EBRD) may also be considered corporate bonds rather than government bonds."
-    "Corporate bonds are issued for purposes such as mergers and acquisitions, business expansion, or to cover ongoing operational needs, and are typically longer-term debt instruments that have a maturity of at least one year. Corporate debt instruments with maturity shorter than one year are referred to as commercial paper."],
+  {:cmns-av/explanatoryNote
+   ["Corporate bonds are issued for purposes such as mergers and acquisitions, business expansion, or to cover ongoing operational needs, and are typically longer-term debt instruments that have a maturity of at least one year. Corporate debt instruments with maturity shorter than one year are referred to as commercial paper."
+    "Note that some classification schemes consider any bond except those issued by a government in its own currency to be a corporate bond, for example, a bond issued by Canada in US dollars might be classified as a corporate bond. Bonds issued by multinational / supranational organizations such as the European Bank for Reconstruction and Development (EBRD) may also be considered corporate bonds rather than government bonds."],
+   :db/ident :fibo-sec-dbt-bnd/CorporateBond,
    :owl/disjointWith [:fibo-sec-dbt-bnd/GovernmentBond
                       :fibo-sec-dbt-bnd/MunicipalBond],
    :rdf/type :owl/Class,
@@ -529,9 +516,9 @@
 
 (def ExtraordinaryRedemptionProvision
   "provision that gives a bond issuer the right to call its bonds due to an unusual one-time occurrence, as specified in the offering statement"
-  {:db/ident :fibo-sec-dbt-bnd/ExtraordinaryRedemptionProvision,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Such redemptions may occur when bond proceeds are not spent according to schedule; when bond proceeds are used in a way that makes nontaxable bond interest taxable; or when a catastrophe destroys the project being financed, among other reasons.",
+   :db/ident :fibo-sec-dbt-bnd/ExtraordinaryRedemptionProvision,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -585,9 +572,9 @@
 
 (def FloatingRateNote
   "bond with a variable interest rate based on a published reference interest rate"
-  {:db/ident :fibo-sec-dbt-bnd/FloatingRateNote,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The adjustments to the interest rate (coupon) are made periodically, usually on a quarterly or monthly basis, and are tied to a certain money-market index. Also known as a \"floater\". For example six months USD LIBOR + 0.20%.",
+   :db/ident :fibo-sec-dbt-bnd/FloatingRateNote,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -601,10 +588,10 @@
 
 (def FullFaithCreditBond
   "bond secured by an unconditional promise to pay by another entity"
-  {:db/ident :fibo-sec-dbt-bnd/FullFaithCreditBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Full faith and credit bonds are typically backed by a government entity and are considered low risk.",
-   :fibo-fnd-utl-av/synonym "full faith and credit bond",
+   :cmns-av/synonym "full faith and credit bond",
+   :db/ident :fibo-sec-dbt-bnd/FullFaithCreditBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -615,8 +602,8 @@
 
 (def GeneralObligationMunicipalBond
   "municipal bond that is backed by the full faith and credit and general resources of the issuing municipality, including its general taxing authority"
-  {:db/ident :fibo-sec-dbt-bnd/GeneralObligationMunicipalBond,
-   :fibo-fnd-utl-av/abbreviation "GO bond",
+  {:cmns-av/abbreviation "GO bond",
+   :db/ident :fibo-sec-dbt-bnd/GeneralObligationMunicipalBond,
    :owl/disjointWith :fibo-sec-dbt-bnd/RevenueBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -629,8 +616,8 @@
 
 (def GovernmentBond
   "debt security issued by a government to fund government spending"
-  {:db/ident :fibo-sec-dbt-bnd/GovernmentBond,
-   :fibo-fnd-utl-av/synonym "government-issued bond",
+  {:cmns-av/synonym "government-issued bond",
+   :db/ident :fibo-sec-dbt-bnd/GovernmentBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -659,9 +646,9 @@
 
 (def GreenBond
   "bond issued specifically to fund climate or environmental projects"
-  {:db/ident :fibo-sec-dbt-bnd/GreenBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "These bonds are typically asset-linked and backed by the issuer's balance sheet. Green bonds finance projects aimed at energy efficiency, pollution prevention, sustainable agriculture, fishery and forestry, the protection of aquatic and terrestrial ecosystems, clean transportation, sustainable water management and the cultivation of environmentally friendly technologies, and often include incentives such as tax exemption.",
+   :db/ident :fibo-sec-dbt-bnd/GreenBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -672,10 +659,10 @@
 
 (def ImplicitFullFaithCreditBond
   "bond issued by a government sponsored agency or corporation rather than by the government directly"
-  {:db/ident :fibo-sec-dbt-bnd/ImplicitFullFaithCreditBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "It doesn't carry an explicit full faith and credit guarantee but the market believes the government wouldn't let it default or fail.",
-   :fibo-fnd-utl-av/synonym "implicit full faith and credit bond",
+   :cmns-av/synonym "implicit full faith and credit bond",
+   :db/ident :fibo-sec-dbt-bnd/ImplicitFullFaithCreditBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -703,11 +690,11 @@
 
 (def InflationLinkedBond
   "bond indexed to inflation so that the principal or interest payments rise and fall with the rate of inflation"
-  {:db/ident :fibo-sec-dbt-bnd/InflationLinkedBond,
-   :fibo-fnd-utl-av/abbreviation "ILB",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "ILB",
+   :cmns-av/explanatoryNote
    "Inflation-linked bonds are primarily issued by sovereign governments, such as the U.S. and the UK.",
-   :fibo-fnd-utl-av/synonym "inflation-indexed bond",
+   :cmns-av/synonym "inflation-indexed bond",
+   :db/ident :fibo-sec-dbt-bnd/InflationLinkedBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -732,9 +719,9 @@
 
 (def ListedBond
   "bond that may be traded on an exchange"
-  {:db/ident :fibo-sec-dbt-bnd/ListedBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Most exchange traded bonds are corporate bonds (but most corporate bonds are not exchange traded bonds).",
+   :db/ident :fibo-sec-dbt-bnd/ListedBond,
    :owl/disjointWith :fibo-sec-dbt-bnd/UnlistedBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -756,9 +743,9 @@
 
 (def MakeWholeCall
   "call allowing the issuer to pay off remaining debt early"
-  {:db/ident :fibo-sec-dbt-bnd/MakeWholeCall,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The issuer typically has to make a lump sum payment to the investor(s) derived from a formula based on the net present value (NPV) of future coupon payments that will not be paid incrementally because of the call combined with the principal payment the investor would have received at maturity.",
+   :db/ident :fibo-sec-dbt-bnd/MakeWholeCall,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -768,9 +755,9 @@
 
 (def MandatoryConvertibleBond
   "convertible bond that converts into shares at maturity regardless of the equity price"
-  {:db/ident :fibo-sec-dbt-bnd/MandatoryConvertibleBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The conversion ratio at maturity reflects the equity price and par value of the bond when issued. There is also typically a second higher conversion ratio if the equity price rises above the strike during the term of the bond.",
+   :db/ident :fibo-sec-dbt-bnd/MandatoryConvertibleBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -784,11 +771,11 @@
 
 (def MediumTermNote
   "bond issued over time under a shelf registration program, where each issue may have a different coupon and maturity typically ranging from one to ten years"
-  {:db/ident :fibo-sec-dbt-bnd/MediumTermNote,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    ["Medium term notes are typically issued by corporations and financial institutions, although GSEs also have MTN programs. MTNs may be issued under a shelf registration program which allows the company to issue bonds over time with varying maturities and coupons. Companies issue MTNs to have a more flexible source of funding. They may also issue MTN in response to 'reverse inquiry' by investors looking for bonds with specific maturities, issue size and coupon."
     "By shelf registration we mean the security registration process where an issuer registers in advance, and can issue lots of securities for up to three years."
     "A medium-term note (MTN) is a debt note that usually matures (is paid back) in 5 to 10 years, but the term may be less than one year or as long as 100 years. They can be issued on a fixed or floating coupon basis."],
+   :db/ident :fibo-sec-dbt-bnd/MediumTermNote,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -799,10 +786,10 @@
 
 (def MunicipalBond
   "government bond that may be issued by a regional, rather than national, authority"
-  {:db/ident :fibo-sec-dbt-bnd/MunicipalBond,
-   :fibo-fnd-utl-av/abbreviation "muni",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "muni",
+   :cmns-av/explanatoryNote
    "Municipal bonds may be issued by states, cities, counties, special tax districts or special agencies or authorities of state or local governments.",
+   :db/ident :fibo-sec-dbt-bnd/MunicipalBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -825,9 +812,9 @@
 
 (def MunicipalDebtRemarketingAgent
   "municipal securities dealer responsible for reselling to investors securities (such as variable rate demand obligations and other tender option bonds) that have been tendered for purchase by their owner"
-  {:db/ident :fibo-sec-dbt-bnd/MunicipalDebtRemarketingAgent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The remarketing agent also typically is responsible for resetting the interest rate for a variable rate issue and may act as tender agent.",
+   :db/ident :fibo-sec-dbt-bnd/MunicipalDebtRemarketingAgent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -850,9 +837,9 @@
 
 (def MunicipalNote
   "short-term obligation to repay a specified principal amount on a certain date, together with interest at a stated rate, usually payable from a defined source of anticipated revenues"
-  {:db/ident :fibo-sec-dbt-bnd/MunicipalNote,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Notes usually mature in one year or less, although notes of longer maturities are also issued.",
+   :db/ident :fibo-sec-dbt-bnd/MunicipalNote,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -863,22 +850,16 @@
 
 (def MunicipalSecurity
   "debt obligation issued by a regional governmental entity"
-  {:db/ident :fibo-sec-dbt-bnd/MunicipalSecurity,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A municipal security is typically a bond, note, warrant, certificate or other similar obligation issued by a state or local government or their agencies or authorities (such as cities, towns, villages, counties or special districts or authorities). A prime feature of most municipal securities is that interest or other investment earnings on them are generally excluded from gross income of the bondholder for federal income tax purposes. Some municipal securities are subject to federal income tax, although the issuers or bondholders may receive other federal tax advantages for certain types of taxable municipal securities. Some examples include Build America Bonds, municipal fund securities and direct pay subsidy bonds.",
+   :db/ident :fibo-sec-dbt-bnd/MunicipalSecurity,
    :owl/disjointWith :fibo-sec-dbt-bnd/SovereignDebtInstrument,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "municipal security",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
-     :rdf/type           :owl/Restriction}
+   [:fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -886,14 +867,20 @@
                                          :fibo-be-ge-ge/RegionalSovereignty],
                            :rdf/type    :owl/Class},
                           :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
      :rdf/type           :owl/Restriction}],
    :skos/definition "debt obligation issued by a regional governmental entity"})
 
 (def MunicipalTrustee
   "financial institution with trust powers, designated by the issuer, that acts, pursuant to a bond contract, in a fiduciary capacity for the benefit of the bondholders in enforcing the terms of the bond contract"
-  {:db/ident :fibo-sec-dbt-bnd/MunicipalTrustee,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "In many cases, the trustee also acts as custodian, paying agent, registrar and/or transfer agent for the bonds.",
+   :db/ident :fibo-sec-dbt-bnd/MunicipalTrustee,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -905,23 +892,23 @@
 
 (def OriginalIssueDiscountBond
   "interest-bearing bond issued at a deep discount to face value"
-  {:db/ident :fibo-sec-dbt-bnd/OriginalIssueDiscountBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    ["An original issue discount (OID) is the discount in price from a bond's face value at the time a bond or other debt instrument is first issued. The OID is the amount of discount or the difference between the original face value and the price paid for the bond."
     "The principal amount accretes over time at a constant accrual rate and is redeemed at full face value at maturity."],
-   :fibo-fnd-utl-av/synonym "OID bond",
+   :cmns-av/synonym "OID bond",
+   :db/ident :fibo-sec-dbt-bnd/OriginalIssueDiscountBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "original issue discount bond",
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
-     :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
+   [:fibo-sec-dbt-bnd/Bond
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
      :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
+     :rdf/type       :owl/Restriction}
+    {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
+     :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
      :rdf/type       :owl/Restriction}],
    :skos/definition
    "interest-bearing bond issued at a deep discount to face value"})
@@ -969,8 +956,8 @@
 
 (def PercentageCumulativeAverageValue
   "rate basis calculated as a percentage of cumulative average value"
-  {:db/ident :fibo-sec-dbt-bnd/PercentageCumulativeAverageValue,
-   :fibo-fnd-utl-av/abbreviation "percentage CAV",
+  {:cmns-av/abbreviation "percentage CAV",
+   :db/ident :fibo-sec-dbt-bnd/PercentageCumulativeAverageValue,
    :rdf/type [:fibo-sec-dbt-bnd/RateBasisConvention :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -989,10 +976,10 @@
 
 (def PerpetualBond
   "bond that has no maturity date, i.e., one that pays interest in perpetuity"
-  {:db/ident :fibo-sec-dbt-bnd/PerpetualBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Perpetual bonds function much like dividend-paying stocks or certain preferred securities. Just as the owner of the stock receives a dividend payment as long as the stock is held, the perpetual bond owner receives an interest payment as long as the bond is held.",
-   :fibo-fnd-utl-av/synonym "consul",
+   :cmns-av/synonym "consul",
+   :db/ident :fibo-sec-dbt-bnd/PerpetualBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1055,9 +1042,9 @@
 
 (def RegularCouponSchedule
   "schedule including an interval of regular coupon payment dates"
-  {:db/ident :fibo-sec-dbt-bnd/RegularCouponSchedule,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A regular schedule may include an initial and/or final stub period.",
+   :db/ident :fibo-sec-dbt-bnd/RegularCouponSchedule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1078,9 +1065,9 @@
 
 (def RemarketableBond
   "corporate bond program where the coupon rate on outstanding bonds is periodically reset through an auction process"
-  {:db/ident :fibo-sec-dbt-bnd/RemarketableBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A remarketing agent (dealer or underwriter) periodically surveys bond holders to identify those who want to sell bonds. The agent surveys market (or holds an auction) to determine interest rate at which the bonds can be resold. The rate on all outstanding bonds resets at the new rate. These programs are perpetual in the sense they often don't have a fixed maturity date, but the company can redeem them. If an auction fails, i.e., the agent can't place all the bonds then.",
+   :db/ident :fibo-sec-dbt-bnd/RemarketableBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1092,9 +1079,9 @@
 
 (def RevenueBond
   "municipal bond supported by the revenue from a specific project"
-  {:db/ident :fibo-sec-dbt-bnd/RevenueBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Revenue bonds are municipal bonds that finance income-producing projects, such as toll bridges, highways, or local stadiums, and are secured by a specified revenue source. Typically, revenue bonds can be issued by any government agency or fund that is managed in the manner of a business, such as entities having both operating revenues and expenses.",
+   :db/ident :fibo-sec-dbt-bnd/RevenueBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1106,9 +1093,9 @@
 
 (def SecuredBond
   "bond that is backed by collateral, such as a tangible asset or income stream, in addition to a general promise to pay"
-  {:db/ident :fibo-sec-dbt-bnd/SecuredBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A secured bond may be collateralized by a claim on real assets, such as a factory or auto fleet; or by a claim on a revenue stream. A secured bond differs from a mortgage in that proceeds of the bond sale aren't used to acquire the asset.",
+   :db/ident :fibo-sec-dbt-bnd/SecuredBond,
    :owl/disjointWith :fibo-sec-dbt-bnd/UnsecuredBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -1137,9 +1124,9 @@
 
 (def SovereignBond
   "bond issued by the government of a country"
-  {:db/ident :fibo-sec-dbt-bnd/SovereignBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Sovereign bonds issued by G20 developed countries are generally full faith and credit obligations. Sovereign bonds issued by emerging and developing countries may be issued in local currency or a G7 currency, and may either be full faith and credit (unsecured) or secured.",
+   :db/ident :fibo-sec-dbt-bnd/SovereignBond,
    :owl/disjointWith :fibo-sec-dbt-bnd/MunicipalBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -1167,9 +1154,9 @@
 
 (def SpecialAssessmentBond
   "municipal bond used to fund a development project that is payable from the revenues of an assessment (tax) on the community that is intended to benefit from the project"
-  {:db/ident :fibo-sec-dbt-bnd/SpecialAssessmentBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A special assessment is a charge imposed against a property in a particular locality because that property receives a special benefit by virtue of some public improvement, separate and apart from the general benefit accruing to the public at large. Special assessments may be apportioned according to the value of the benefit received, rather than merely the cost of the improvement.",
+   :db/ident :fibo-sec-dbt-bnd/SpecialAssessmentBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1234,10 +1221,10 @@
 
 (def StepUpBond
   "bond with a coupon that increases (steps up) while the bond is outstanding"
-  {:db/ident :fibo-sec-dbt-bnd/StepUpBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The step change may be one time, or occur according to a schedule or at regular intervals.",
-   :fibo-fnd-utl-av/synonym "step down bond",
+   :cmns-av/synonym "step down bond",
+   :db/ident :fibo-sec-dbt-bnd/StepUpBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1282,9 +1269,9 @@
 
 (def TaxAllocationBond
   "bond payable from the incremental increase in tax revenues realized from any increase in property value and other economic activity, often designed to capture the economic benefit resulting from a bond financing"
-  {:db/ident :fibo-sec-dbt-bnd/TaxAllocationBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Tax increment bonds, also known as tax allocation bonds, often are used to finance the redevelopment of blighted areas.",
+   :db/ident :fibo-sec-dbt-bnd/TaxAllocationBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1296,10 +1283,10 @@
 
 (def TreasuryBill
   "short-term zero coupon treasury obligation with a maturity ranging from one to twelve months"
-  {:db/ident :fibo-sec-dbt-bnd/TreasuryBill,
-   :fibo-fnd-utl-av/abbreviation "T-bill",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "T-bill",
+   :cmns-av/explanatoryNote
    "The pricing of T-bills is unique among U.S. government debt issues. Treasury bills are offered in multiples of $100 and in terms ranging from a few days to 52 weeks. Rather than providing interest payments as Treasury Bonds or Notes do, T-bills are sold at a discount, and the entire return is realized upon maturity. The price of a bill is determined at auction. The annualized interest rate earned on T-bills is equal to the difference between the purchase price and maturity value, divided by the maturity value.",
+   :db/ident :fibo-sec-dbt-bnd/TreasuryBill,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1308,16 +1295,16 @@
    ["https://www.treasurydirect.gov/indiv/research/indepth/tbills/res_tbill_rates.htm"
     "https://www.treasurydirect.gov/indiv/research/indepth/tbills/res_tbill.htm"],
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-sec-dbt-dbti/AtADiscount,
+   [{:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
+     :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-tstd/MoneyMarketInstrument
+    {:owl/hasValue   :fibo-sec-dbt-dbti/AtADiscount,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-tstd/MoneyMarketInstrument
     {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
-     :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/USTreasurySecurity],
    :skos/definition
    "short-term zero coupon treasury obligation with a maturity ranging from one to twelve months"})
@@ -1338,10 +1325,10 @@
 
 (def TreasuryInflationProtectedSecurity
   "variable income bond whose principal is indexed to inflation or deflation and thus changes over the life of the security"
-  {:db/ident :fibo-sec-dbt-bnd/TreasuryInflationProtectedSecurity,
-   :fibo-fnd-utl-av/abbreviation "TIPS",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "TIPS",
+   :cmns-av/explanatoryNote
    "Treasury Inflation-Protected Securities, or TIPS, provide protection against inflation. The principal of a TIPS increases with inflation and decreases with deflation, as measured by the Consumer Price Index. When a TIPS matures, you are paid the adjusted principal or original principal, whichever is greater.",
+   :db/ident :fibo-sec-dbt-bnd/TreasuryInflationProtectedSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1368,11 +1355,11 @@
 
 (def UKGovernmentSecurity
   "debt instrument issued by HM Treasury and listed on the London Stock Exchange"
-  {:db/ident :fibo-sec-dbt-bnd/UKGovernmentSecurity,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    ["The term 'gilt' or 'gilt-edged security' is a reference to the primary characteristic of gilts as an investment: their security. This is a reflection of the fact that the British Government has never failed to make interest or principal payments on gilts as they fall due."
     "If a private investor wishes to purchase gilts the secondary market can be accessed through a stockbroker, bank or the DMO's Purchase and Sale Service."],
-   :fibo-fnd-utl-av/synonym ["gilt" "gilt-edged security"],
+   :cmns-av/synonym ["gilt-edged security" "gilt"],
+   :db/ident :fibo-sec-dbt-bnd/UKGovernmentSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1399,8 +1386,8 @@
 
 (def UnlistedBond
   "bond that is traded over the counter rather than via an exchange or other listing facility"
-  {:db/ident :fibo-sec-dbt-bnd/UnlistedBond,
-   :fibo-fnd-utl-av/synonym "OTC Bond",
+  {:cmns-av/synonym "OTC Bond",
+   :db/ident :fibo-sec-dbt-bnd/UnlistedBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1411,10 +1398,10 @@
 
 (def UnsecuredBond
   "bond that is only secured by the bond issuer's good credit standing"
-  {:db/ident :fibo-sec-dbt-bnd/UnsecuredBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Most unsecured bonds pose limited risk of default, as the organizations that issue them are typically financially sound.",
-   :fibo-fnd-utl-av/synonym "debenture",
+   :cmns-av/synonym "debenture",
+   :db/ident :fibo-sec-dbt-bnd/UnsecuredBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1425,9 +1412,9 @@
 
 (def VariableCouponBond
   "bond that has a floating interest rate"
-  {:db/ident :fibo-sec-dbt-bnd/VariableCouponBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The rate adjusts according to a predetermined formula outlined in the bond's prospectus or official statement.",
+   :db/ident :fibo-sec-dbt-bnd/VariableCouponBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1458,11 +1445,11 @@
 
 (def VariableDebtPrincipal
   "principal that is defined in relation to some variable and so varies over time, as principal"
-  {:db/ident :fibo-sec-dbt-bnd/VariableDebtPrincipal,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Not the same as principal paydown. This is when the principal itself varies over time, usually as a result of being defined in relation to some index such as an inflation index. Forms the debt principal in instruments such as inflation bonds."},
+   :db/ident :fibo-sec-dbt-bnd/VariableDebtPrincipal,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1521,9 +1508,9 @@
 
 (def VariablePrincipalBond
   "bond whose principal adjusts over time with changes in an index"
-  {:db/ident :fibo-sec-dbt-bnd/VariablePrincipalBond,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The principal on variable principal bonds adjusts line with an index such as inflation or GDP. For example, for a bond linked to the CPI, if inflation rises two percent the principal increases by 2 percent. The coupon rate is typically fixed. The best-known example is TIPS or Treasury Inflation Protected Bonds, which are linked to the CPI. TIPs offer a real or inflation adjusted rate of return.",
+   :db/ident :fibo-sec-dbt-bnd/VariablePrincipalBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
@@ -1538,28 +1525,28 @@
 
 (def ZeroCouponBond
   "bond issued with a coupon rate of zero and that trades at a deep discount to face value"
-  {:db/ident :fibo-sec-dbt-bnd/ZeroCouponBond,
-   :fibo-fnd-utl-av/explanatoryNote
-   ["The principal amount accretes over time at a constant accrual rate and is redeemed at full face value at maturity. In effect, the accrual rate is the coupon rate or yield which is added to the outstanding principal rather than being paid out to investors."
-    "Fannie Mae also issues zero-coupon callable debt securities. Zero-coupon notes are debt securities on which no coupon interest is paid to the investor. Rather, the security is purchased at a discounted dollar price and matures at par. If the option on a callable zero-coupon security is exercised, it is redeemed at a higher dollar price than the original issue price. The yield for a callable zero-coupon security is based on the difference between the original discounted price and the principal payment at the call date."],
-   :fibo-fnd-utl-av/synonym "z-bond",
+  {:cmns-av/explanatoryNote
+   ["Fannie Mae also issues zero-coupon callable debt securities. Zero-coupon notes are debt securities on which no coupon interest is paid to the investor. Rather, the security is purchased at a discounted dollar price and matures at par. If the option on a callable zero-coupon security is exercised, it is redeemed at a higher dollar price than the original issue price. The yield for a callable zero-coupon security is based on the difference between the original discounted price and the principal payment at the call date."
+    "The principal amount accretes over time at a constant accrual rate and is redeemed at full face value at maturity. In effect, the accrual rate is the coupon rate or yield which is added to the outstanding principal rather than being paid out to investors."],
+   :cmns-av/synonym "z-bond",
+   :db/ident :fibo-sec-dbt-bnd/ZeroCouponBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "zero coupon bond",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
+   [{:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
+     :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
+     :rdf/type       :owl/Restriction}
+    :fibo-sec-dbt-bnd/Bond
+    :fibo-sec-dbt-dbti/FixedIncomeSecurity
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
      :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/ZeroCouponTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/FixedIncomeSecurity
-    {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
-     :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond issued with a coupon rate of zero and that trades at a deep discount to face value"})
 
@@ -1589,8 +1576,8 @@
 
 (def hasAwardDate
   "specifies the date on which bonds are awarded to the lead manager or syndicate on negotiated deals, or the date of bidding on competitive deals"
-  {:db/ident :fibo-sec-dbt-bnd/hasAwardDate,
-   :fibo-fnd-utl-av/synonym "has sale date",
+  {:cmns-av/synonym "has sale date",
+   :db/ident :fibo-sec-dbt-bnd/hasAwardDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-bnd/MunicipalBond,
    :rdfs/isDefinedBy
@@ -1603,10 +1590,10 @@
 
 (def hasCallPrice
   "indicates the amount of the call on the specified call date, typically the sum of par value and the call premium, as specified in the contract"
-  {:db/ident :fibo-sec-dbt-bnd/hasCallPrice,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This is the price a bond issuer or preferred stock issuer must pay investors to buy back, or call, all or part of an issue before the maturity date.",
-   :fibo-fnd-utl-av/synonym "has redemption price",
+   :cmns-av/synonym "has redemption price",
+   :db/ident :fibo-sec-dbt-bnd/hasCallPrice,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-dbti/CallFeature,
    :rdfs/isDefinedBy
@@ -1619,9 +1606,9 @@
 
 (def hasCallRateBasis
   "for each call event on the schedule, indicates whether the rate is expressed as a percentage of par or percentage of percentage of cumulative average value (CAV)"
-  {:db/ident :fibo-sec-dbt-bnd/hasCallRateBasis,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Zero coupon bonds and OID bonds are callable at an accreted value.",
+   :db/ident :fibo-sec-dbt-bnd/hasCallRateBasis,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-dbti/CallEvent,
    :rdfs/isDefinedBy
@@ -1697,14 +1684,14 @@
 
 (def hasFirstCouponPaymentDate
   "specifies the first date on which the issuer or its agent expects or commits to make a coupon payment"
-  {:db/ident :fibo-sec-dbt-bnd/hasFirstCouponPaymentDate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
-     "The first coupon date sometimes occurs at an irregular time; that is, if the bond pays coupons every six months, the first coupon period may be longer or shorter than six months."}
+     "The first coupon payment period can be long or short when this date doesn't coincide with the start of a normal coupon payment period."}
     {:rdf/language "en",
      :rdf/value
-     "The first coupon payment period can be long or short when this date doesn't coincide with the start of a normal coupon payment period."}],
+     "The first coupon date sometimes occurs at an irregular time; that is, if the bond pays coupons every six months, the first coupon period may be longer or shorter than six months."}],
+   :db/ident :fibo-sec-dbt-bnd/hasFirstCouponPaymentDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-bnd/CouponPaymentTerms,
    :rdfs/isDefinedBy
@@ -1824,11 +1811,11 @@
 
 (def hasLastCouponPaymentDate
   "specifies the final date on which the issuer expects to make a final coupon payment"
-  {:db/ident :fibo-sec-dbt-bnd/hasLastCouponPaymentDate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The last coupon date sometimes occurs at an irregular time; that is, if the bond pays coupons every six months, the last coupon period may be longer or shorter than six months."},
+   :db/ident :fibo-sec-dbt-bnd/hasLastCouponPaymentDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-bnd/CouponPaymentTerms,
    :rdfs/isDefinedBy
@@ -1895,11 +1882,11 @@
 
 (def hasPenultimateCouponPaymentDate
   "specifies the last coupon payment prior to maturity"
-  {:db/ident :fibo-sec-dbt-bnd/hasPenultimateCouponPaymentDate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This is important since the securities processing area needs to start its procedures in anticipation of maturity. For zero coupon bonds, it is the last compounding date prior to maturity."},
+   :db/ident :fibo-sec-dbt-bnd/hasPenultimateCouponPaymentDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-bnd/CouponPaymentTerms,
    :rdfs/isDefinedBy
@@ -1989,9 +1976,9 @@
 
 (def isBankQualified
   "indicates whether or not a given municipal bond conforms with section 265(b)(3) of the IRS tax code; when purchased by a commercial bank for its portfolio, such designation allows the bank to deduct a portion of the interest cost of carry for the position"
-  {:db/ident :fibo-sec-dbt-bnd/isBankQualified,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A bond that is bank qualified is also known as a qualified tax-exempt obligation.",
+   :db/ident :fibo-sec-dbt-bnd/isBankQualified,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-sec-dbt-bnd/MunicipalBond,
    :rdfs/isDefinedBy
@@ -2015,9 +2002,9 @@
 
 (def isLinkedToFallback
   "relates an index-linked instrument to a government bond that may be selected by a calculation agent"
-  {:db/ident :fibo-sec-dbt-bnd/isLinkedToFallback,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Fallback Bond means, in relation to an Inflation Index applicable to an Inflation Linked Note, a bond selected by the Calculation Agent and issued by the government or one of the governments (but not any government agency) of the country (or countries) to whose level of inflation the Inflation Index relates and which pays a coupon and/or redemption amount which is calculated by reference to the Inflation Index, with a maturity date which falls on the same day as the Maturity Date of the Inflation Linked Notes, or such other date as the Calculation Agent shall select if there is no such bond maturing on the Maturity Date of the Inflation Linked Notes. If any bond so selected is redeemed, the Calculation Agent will select a new Fallback Bond on the same basis, but selected from all eligible bonds in issue at the time the original Fallback Bond is redeemed (including any bond for which the redeemed bond is exchanged). Note the rate of the fallback bond is used as a substitute for the inflation index if, for example, it is no longer published.",
+   :db/ident :fibo-sec-dbt-bnd/isLinkedToFallback,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-fi-fi/FinancialInstrument,
    :rdfs/isDefinedBy
@@ -2052,9 +2039,9 @@
 
 (def isSuperSinker
   "indicates that the bond has a long-term coupon but short potential short maturity"
-  {:db/ident :fibo-sec-dbt-bnd/isSuperSinker,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Super-sinker is a colloquial term for a term maturity, usually from a single family mortgage revenue issue with several term maturities, that will be the first to be called from a sinking fund into which all proceeds from prepayments of mortgages financed by the issue are deposited. The maturity's priority status under the call provisions means that it is likely to be redeemed in its entirety well before the stated maturity date.",
+   :db/ident :fibo-sec-dbt-bnd/isSuperSinker,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-sec-dbt-bnd/SinkingFundAmortizationTerms,
    :rdfs/isDefinedBy
@@ -2063,3 +2050,11 @@
    :rdfs/range :xsd/boolean,
    :skos/definition
    "indicates that the bond has a long-term coupon but short potential short maturity"})
+
+(def ^{:private true} PutFeature
+  {:db/ident        :fibo-sec-dbt-dbti/PutFeature,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onDataRange :xsd/boolean,
+                     :owl/onProperty  :fibo-sec-dbt-bnd/isMandatory,
+                     :owl/qualifiedCardinality 1,
+                     :rdf/type        :owl/Restriction}})

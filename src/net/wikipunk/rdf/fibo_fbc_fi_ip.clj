@@ -1,33 +1,37 @@
 (ns net.wikipunk.rdf.fibo-fbc-fi-ip
   "This ontology provides a basic set of definitions related to pricing, yield, and spread that are extended in other instrument-specific ontologies."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2020-2023 Object Management Group, Inc."
+                       "Copyright (c) 2020-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
    :dcterms/abstract
    "This ontology provides a basic set of definitions related to pricing, yield, and spread that are extended in other instrument-specific ontologies.",
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
+   ["https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
+    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-pub"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
     "fibo-fbc-fct-mkt"
@@ -60,7 +64,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -72,31 +75,20 @@
                 :rdf/value    "Instrument Pricing Ontology"},
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to address text formatting issues uncovered by hygiene testing."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to replace a redundant concept, calculation formula with formula, add a general price determination class needed for options, add a restriction on SecurityPrice to point to the security, and add hasRoundLotSize."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to add trading day and trading session, to address ambiguity in some definitions, to add adjusted price and to create a more general hasLotSize property that can be used in various contexts."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to reflect the move of dated collection from arrangements to financial dates."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to eliminate a redundant restriction on CollectionOfSecurityPrices, better integrate pricing methods, loosen the domain restriction on hasPricingSource and add dealer to the set of possible sources for prices."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to replace a redundant concept, calculation formula with formula, add a general price determination class needed for options, add a restriction on SecurityPrice to point to the security, and add hasRoundLotSize."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to change one of the subclasses of price determination method to a named individual and correct the definition of mean price determination. Note that there may be multiple individuals of type 'closing price determination method', depending on the exchange and other factors. Also revised the lot size properties to have a range of xsd:decimal to allow for fractional shares or number of elements, revised the explanatory note, and added examples."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to eliminate a redundant restriction on CollectionOfSecurityPrices, better integrate pricing methods, loosen the domain restriction on hasPricingSource and add dealer to the set of possible sources for prices."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2020-2022 Object Management Group, Inc."
-                  "Copyright (c) 2020-2022 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/"
-    "https://www.omg.org/spec/LCC/"],
-   :sm/fileAbbreviation "fibo-fbc-fi-ip",
-   :sm/filename "InstrumentPricing.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def AdjustedClosingPrice
   "amended closing price to reflect a security's value after accounting for any corporate actions, such as stock splits, dividends, and rights offerings"
-  {:db/ident :fibo-fbc-fi-ip/AdjustedClosingPrice,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "A particularly dramatic change in price occurs when a company announces a stock split. When the change is made, the price displayed will immediately reflect the split. For example, if a company splits its stock 2-for-1, the last closing price will be cut in half. That's the adjusted closing price."},
+   :db/ident :fibo-fbc-fi-ip/AdjustedClosingPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -163,11 +155,11 @@
 
 (def BidPrice
   "price a prospective buyer is willing to pay"
-  {:db/ident :fibo-fbc-fi-ip/BidPrice,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The term 'bid price' is used by traders / market makers with respect to a given security, and that are prepared to buy or sell round lots at publicly quoted prices, and by specialists in certain instruments that perform similar functions on an exchange."},
+   :db/ident :fibo-fbc-fi-ip/BidPrice,
    :owl/disjointWith :fibo-fbc-fi-ip/OfferPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -194,11 +186,11 @@
 
 (def ClosingPriceDeterminationMethod
   "strategy for calculating or otherwise determining an official closing price"
-  {:db/ident :fibo-fbc-fi-ip/ClosingPriceDeterminationMethod,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The official closing price is typically the final price at which something trades during regular market hours on an exchange or trading venue. Because of the evolving nature of online trading in a 24 hour world, every exchange has a method of calculating its official closing price, although that methodology changes from time to time. They may also publish an adjusted closing price, which reflects changes to the price that reflect corporate actions and after hours trading that occur before the opening of the exchange on the following day. Understanding how the closing price is determined is important to ensure price comparability for a given security across exchanges."},
+   :db/ident :fibo-fbc-fi-ip/ClosingPriceDeterminationMethod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -212,11 +204,11 @@
 
 (def CollectionOfSecurityPrices
   "collection consisting of a series of prices, each of which has a specific date and time associated with it, for some security"
-  {:db/ident :fibo-fbc-fi-ip/CollectionOfSecurityPrices,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Note that such a collection is of prices that may be quoted or may be established through analysis, such as an average over a number of markets (composite market) or developed via some pricing model (e.g., matrix pricing)."},
+   :db/ident :fibo-fbc-fi-ip/CollectionOfSecurityPrices,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -266,11 +258,11 @@
 
 (def InternalRateOfReturn
   "discount rate that results in a net present value (NPV) of zero for a series of future cash flows"
-  {:db/ident :fibo-fbc-fi-ip/InternalRateOfReturn,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This concept is central to many definitions of debt instrument analytics, and is the inverse of net present value."},
+   :db/ident :fibo-fbc-fi-ip/InternalRateOfReturn,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -355,34 +347,34 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "mid price"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fbc-fi-ip/BidPrice,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-ip/SecurityPrice
                      :fibo-fnd-utl-alx/ArithmeticMean
                      {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
                       :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fbc-fi-ip/OfferPrice,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fbc-fi-ip/OfferPrice,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "arithmetic mean between bid and offer prices"}})
 
 (def OfferPrice
   "price suggested by a prospective seller at a particular time for a given security"
-  {:db/ident :fibo-fbc-fi-ip/OfferPrice,
-   :fibo-fnd-utl-av/synonym [{:rdf/language "en",
-                              :rdf/value    "offering price"}
-                             {:rdf/language "en",
-                              :rdf/value    "asking price"}
-                             {:rdf/language "en",
-                              :rdf/value    "ask price"}],
+  {:cmns-av/synonym [{:rdf/language "en",
+                      :rdf/value    "offering price"}
+                     {:rdf/language "en",
+                      :rdf/value    "asking price"}
+                     {:rdf/language "en",
+                      :rdf/value    "ask price"}],
+   :db/ident :fibo-fbc-fi-ip/OfferPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -396,13 +388,13 @@
 
 (def OfficialClosingPrice
   "price of the final trade of a security at the end of a trading day on a given exchange"
-  {:db/ident :fibo-fbc-fi-ip/OfficialClosingPrice,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "A stock's closing price is the standard benchmark used by investors to track its performance over time."},
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "end-of-day price"},
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "end-of-day price"},
+   :db/ident :fibo-fbc-fi-ip/OfficialClosingPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -420,11 +412,11 @@
 
 (def OpeningPrice
   "price at which something first trades at the start of a trading day"
-  {:db/ident :fibo-fbc-fi-ip/OpeningPrice,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Investors that want to buy or sell as soon as the market opens will put in an order at the opening price. Depending on how the closing price for the prior day is determined, and if there is no after hours trading (AFT), the opening price will be the same as the prior trading day's closing price. Otherwise, the opening price may differ from the prior trading day's official closing price."},
+   :db/ident :fibo-fbc-fi-ip/OpeningPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -506,9 +498,9 @@
 
 (def RateOfReturn
   "net gain or loss on an investment over a specified time period, expressed as a percentage of the investment's initial cost or value as of a specific point in time"
-  {:db/ident :fibo-fbc-fi-ip/RateOfReturn,
-   :fibo-fnd-utl-av/abbreviation {:rdf/language "en",
-                                  :rdf/value    "RoR"},
+  {:cmns-av/abbreviation {:rdf/language "en",
+                          :rdf/value    "RoR"},
+   :db/ident :fibo-fbc-fi-ip/RateOfReturn,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -528,11 +520,11 @@
 
 (def SecurityPrice
   "monetary price for a financial instrument at some point in time"
-  {:db/ident :fibo-fbc-fi-ip/SecurityPrice,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "A security price may be the price that some party is willing to pay, has recently paid, or would like to be paid, depending on the circumstances."},
+   :db/ident :fibo-fbc-fi-ip/SecurityPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -564,21 +556,20 @@
 
 (def TradingDay
   "time span that a particular trading venue is open"
-  {:db/ident :fibo-fbc-fi-ip/TradingDay,
-   :fibo-fnd-utl-av/abbreviation {:rdf/language "en",
-                                  :rdf/value    "RTH"},
-   :fibo-fnd-utl-av/adaptedFrom
-   "https://www.lawinsider.com/dictionary/trading-day",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation {:rdf/language "en",
+                          :rdf/value    "RTH"},
+   :cmns-av/adaptedFrom "https://www.lawinsider.com/dictionary/trading-day",
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "In the United States, and with respect to common stock in particular, trading day means any day on which the stock is traded on the principal market, or, if the principal market is not the principal trading market for the common stock, then on the principal securities exchange or securities market on which the common stock is then traded, provided that 'Trading Day' shall not include any day on which the common stock is scheduled to trade on such exchange or market for less than 4.5 hours or any day that the common stock is suspended from trading during the final hour of trading on such exchange or market (or if such exchange or market does not designate in advance the closing time of trading on such exchange or market, then during the hour ending at 4:00:00 p.m., New York time) unless such day is otherwise designated as a trading day in writing by the holder."},
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "regular trading hours"},
-   :fibo-fnd-utl-av/usageNote
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "regular trading hours"},
+   :cmns-av/usageNote
    {:rdf/language "en",
     :rdf/value
     "By convention it is sufficient to provide a value for hasOpeningDateTime, with hasClosingDateTime being optional."},
+   :db/ident :fibo-fbc-fi-ip/TradingDay,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -589,26 +580,26 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-dt-fd/ExplicitDatePeriod
-                     {:owl/hasValue   :fibo-fnd-dt-fd/Day,
-                      :owl/onProperty :fibo-fnd-dt-fd/hasDuration,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasClosingDateTime,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     {:owl/hasValue   :fibo-fnd-dt-fd/Day,
+                      :owl/onProperty :fibo-fnd-dt-fd/hasDuration,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "time span that a particular trading venue is open"}})
 
 (def TradingSession
   "window of time within a trading day in which orders may be placed and filled"
-  {:db/ident :fibo-fbc-fi-ip/TradingSession,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://financial-dictionary.thefreedictionary.com/Trading+Sessions",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "An exchange may have several trading sessions during a day. For example, the exchange may be open from 9 a.m. until 10:30 a.m., from 11:30 a.m. until 1 p.m., and from 2 p.m. to 3:30 p.m. Holding several trading sessions gives the market more time to digest information rationally without having to respond immediately."},
+   :db/ident :fibo-fbc-fi-ip/TradingSession,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -630,9 +621,9 @@
 
 (def VolumeWeightedAveragePrice
   "average price at which a given security has traded throughout a trading day, determined by multiplying each trade by its volume, adding the results, then dividing by the volume traded for the day"
-  {:db/ident :fibo-fbc-fi-ip/VolumeWeightedAveragePrice,
-   :fibo-fnd-utl-av/abbreviation {:rdf/language "en",
-                                  :rdf/value    "VWAP"},
+  {:cmns-av/abbreviation {:rdf/language "en",
+                          :rdf/value    "VWAP"},
+   :db/ident :fibo-fbc-fi-ip/VolumeWeightedAveragePrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -646,9 +637,9 @@
 
 (def VolumeWeightedOpenPrice
   "price determined by multiplying each trade by its volume, adding the results, then dividing by the volume over a certain period during the trading day (rather than over the course of the entire day)"
-  {:db/ident :fibo-fbc-fi-ip/VolumeWeightedOpenPrice,
-   :fibo-fnd-utl-av/abbreviation {:rdf/language "en",
-                                  :rdf/value    "VWOP"},
+  {:cmns-av/abbreviation {:rdf/language "en",
+                          :rdf/value    "VWOP"},
+   :db/ident :fibo-fbc-fi-ip/VolumeWeightedOpenPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -662,14 +653,14 @@
 
 (def Yield
   "return on the investor's capital investment"
-  {:db/ident :fibo-fbc-fi-ip/Yield,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
      "Yield reflects income over some period of time which is then annualized, and typically projected into the future, assuming that conditions and rates remain the same, whereas return on investment is retrospective."}
     {:rdf/language "en",
      :rdf/value
      "A Yield must be based on a price, and must be in reference to some event or duration of time. It has a calculation method, and may have other qualifying terms such as for compounded yield."}],
+   :db/ident :fibo-fbc-fi-ip/Yield,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -678,14 +669,14 @@
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/Percentage
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Percentage],
    :skos/definition {:rdf/language "en",
                      :rdf/value "return on the investor's capital investment"}})
 
@@ -706,11 +697,11 @@
 
 (def hasBookDepth
   "indicates depth of the order book to which the price refers"
-  {:db/ident :fibo-fbc-fi-ip/hasBookDepth,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "An order book is the list of orders (manual or electronic) that a trading venue (in particular stock exchanges) uses to record the interest of buyers and sellers in a particular financial instrument. The book depth refers to the number of price levels available at a particular time in the book. Sometimes the book is represented to a fixed depth, and orders beyond that depth are ignored or rejected, and in other cases the book can contain unlimited levels."},
+   :db/ident :fibo-fbc-fi-ip/hasBookDepth,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fbc-fi-ip/SecurityPrice,
    :rdfs/isDefinedBy
@@ -724,11 +715,11 @@
 
 (def hasClosingPriceDeterminationMethod
   "indicates a strategy by which the official closing price is determined"
-  {:db/ident :fibo-fbc-fi-ip/hasClosingPriceDeterminationMethod,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This method itself changes quite frequently i.e. the exchange may change the way it computes closing prices."},
+   :db/ident :fibo-fbc-fi-ip/hasClosingPriceDeterminationMethod,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -743,11 +734,11 @@
 
 (def hasLotSize
   "magnitude of an item (i.e., total quantity)"
-  {:db/ident :fibo-fbc-fi-ip/hasLotSize,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The lot size, referenced in offerings, listings, orders, and trades, typically refers to the number of shares or units in a single contract."},
+   :db/ident :fibo-fbc-fi-ip/hasLotSize,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -823,15 +814,15 @@
 
 (def hasRoundLotSize
   "standard number of securities traded on an exchange"
-  {:db/ident :fibo-fbc-fi-ip/hasRoundLotSize,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "In stocks, a round lot is considered 100 shares or a larger number that can be evenly divided by 100. In bonds, a round lot is usually $100,000 worth. Odd lots and smaller lots have become increasingly common due to technology advances and small investor demand."},
-   :fibo-fnd-utl-av/synonym [{:rdf/language "en",
-                              :rdf/value    "unit of trading"}
-                             {:rdf/language "en",
-                              :rdf/value    "normal trading unit"}],
+   :cmns-av/synonym [{:rdf/language "en",
+                      :rdf/value    "unit of trading"}
+                     {:rdf/language "en",
+                      :rdf/value    "normal trading unit"}],
+   :db/ident :fibo-fbc-fi-ip/hasRoundLotSize,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
@@ -873,3 +864,11 @@
    {:rdf/language "en",
     :rdf/value
     "indicates the number of shares/units traded on a given trading day"}})
+
+(def ^{:private true} CalculatedPrice
+  {:db/ident        :fibo-fnd-acc-cur/CalculatedPrice,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/minQualifiedCardinality 0,
+                     :owl/onClass    :fibo-fbc-fi-ip/PricingModel,
+                     :owl/onProperty :lcc-cr/uses,
+                     :rdf/type       :owl/Restriction}})

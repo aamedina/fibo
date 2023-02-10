@@ -186,10 +186,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/CreditDefaultSwaps/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "credit default swap"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-cr-cds/hasContractPrice,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/Swap
+   :rdfs/subClassOf [:fibo-der-drc-swp/Swap
                      {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
                       :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
                       :rdf/type           :owl/Restriction}
@@ -201,7 +198,10 @@
                       :owl/someValuesFrom
                       :fibo-der-cr-cds/CreditProtectionTerms,
                       :rdf/type :owl/Restriction}
-                     :fibo-der-drc-bsc/CreditDerivative],
+                     :fibo-der-drc-bsc/CreditDerivative
+                     {:owl/onProperty     :fibo-der-cr-cds/hasContractPrice,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -253,19 +253,19 @@
     {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
      :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligationBuyer,
      :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onDataRange :xsd/boolean,
+     :owl/onProperty  :fibo-der-cr-cds/allowsSubstitution,
+     :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligation,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
      :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligationSeller,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-     :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligation,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onDataRange :xsd/boolean,
-     :owl/onProperty  :fibo-der-cr-cds/allowsSubstitution,
-     :rdf/type        :owl/Restriction}
     :fibo-der-drc-bsc/DerivativeTerms],
    :skos/definition
    {:rdf/language "en",
@@ -570,3 +570,58 @@
    {:rdf/language "en",
     :rdf/value
     "date on which credit protection is due to expire as agreed by both parties"}})
+
+(def ^{:private true} ObligationSpecificCreditEvent
+  {:db/ident        :fibo-fbc-dae-cre/ObligationSpecificCreditEvent,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-der-cr-cds/TriggeringEvent})
+
+(def ^{:private true} AuctionMethod
+  "method for determining a price that represents use of an independently administered synthetic auction in order to set a price"
+  {:db/ident :fibo-fbc-fi-ip/AuctionMethod,
+   :rdf/type [:fibo-fbc-fi-ip/PriceDeterminationMethod :owl/NamedIndividual],
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "auction method"},
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "method for determining a price that represents use of an independently administered synthetic auction in order to set a price"}})
+
+(def ^{:private true} CashSettlementTerms
+  {:db/ident        :fibo-fbc-fi-stl/CashSettlementTerms,
+   :fibo-fnd-utl-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "Note that the valuation determined via the appraisal of the underlying asset may include a quotation that is either an upper limit to the outstanding principal balance of the reference obligation for which the quote should be obtained, or a floating rate payer calculation amount."},
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
+                      :owl/someValuesFrom
+                      {:owl/unionOf [:fibo-be-fct-pub/Publisher
+                                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                                     :fibo-fbc-pas-fpas/Dealer
+                                     :fibo-fbc-fi-ip/PricingModel
+                                     :fibo-fbc-fct-mkt/Exchange
+                                     :fibo-fbc-fi-ip/CompositeMarket],
+                       :rdf/type    :owl/Class},
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty
+                      :fibo-der-cr-cds/hasMinimumQuotationAmount,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-der-drc-bsc/ValuationTerms,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-der-cr-cds/CashSettlementMethod,
+                      :owl/onProperty :fibo-der-cr-cds/hasQuotationMethod,
+                      :rdf/type       :owl/Restriction}]})
+
+(def ^{:private true} PhysicalSettlementTerms
+  {:db/ident        :fibo-fbc-fi-stl/PhysicalSettlementTerms,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/minQualifiedCardinality 0,
+                     :owl/onClass    :fibo-der-cr-cds/EscrowAgent,
+                     :owl/onProperty :fibo-fbc-fct-ra/specifies,
+                     :rdf/type       :owl/Restriction}})

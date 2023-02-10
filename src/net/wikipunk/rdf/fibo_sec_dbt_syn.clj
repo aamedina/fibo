@@ -1,6 +1,7 @@
 (ns net.wikipunk.rdf.fibo-sec-dbt-syn
   "Synthetic collateralized debt obligations are instruments designed to provide the same kind of structure and returns as a CDO, but these are not backed by an actual pool of debt assets."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
    :dcterms/abstract
    "Synthetic collateralized debt obligations are instruments designed to provide the same kind of structure and returns as a CDO, but these are not backed by an actual pool of debt assets.",
@@ -13,6 +14,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/CollateralizedDebtObligations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/CreditRatings/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"
@@ -21,7 +23,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/SyntheticCDOs/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
     "fibo-der-cr-cds"
@@ -48,7 +51,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
@@ -56,39 +58,29 @@
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "SyntheticCDOs"},
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright "Copyright (c) 2015-2022 EDM Council, Inc.",
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FBC/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"],
-   :sm/fileAbbreviation "fibo-sec-dbt-syn",
-   :sm/filename "SyntheticCDOs.rdf"})
+                :rdf/value    "SyntheticCDOs"}})
 
 (def ArbitrageSyntheticCDO
   "Arbitrage synthetic CDO deals are motivated by regulatory or practical considerations that might make a bank want to retain ownership of debt while achieving capital relief through CDSs. In this case, the sponsoring bank has a portfolio of obligations, called the reference portfolio. It retains that portfolio, but offloads its credit risk by transacting CDSs with the CDO."
-  {:db/ident :fibo-sec-dbt-syn/ArbitrageSyntheticCDO,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "For arbitrage synthetic deals, two advantages are - an abbreviated ramp-up period (for managed deals), and - the possibility that selling protection through CDSs can be less expensive than directly buying the underlying bonds. This is often true at the lower end of the credit spectrum."},
+   :db/ident :fibo-sec-dbt-syn/ArbitrageSyntheticCDO,
    :owl/disjointWith :fibo-sec-dbt-syn/SyntheticBalanceSheetCDO,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "arbitrage synthetic c d o"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-syn/assetsManagedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-syn/issues,
+                      :owl/someValuesFrom :fibo-sec-dbt-syn/SyntheticCDOTranche,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-sec-dbt-syn/assetsManagedBy,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-syn/SyntheticCDO
-                     :fibo-sec-dbt-cdo/ArbitrageCDO
-                     {:owl/onProperty     :fibo-sec-dbt-syn/issues,
-                      :owl/someValuesFrom :fibo-sec-dbt-syn/SyntheticCDOTranche,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-sec-dbt-cdo/ArbitrageCDO],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -453,3 +445,8 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "tranche type"},
    :rdfs/range :fibo-sec-dbt-cdo/CDOTrancheSenioritySelection})
+
+(def ^{:private true} CashCDOTranche
+  {:db/ident         :fibo-sec-dbt-cdo/CashCDOTranche,
+   :owl/disjointWith :fibo-sec-dbt-syn/SyntheticCDOTranche,
+   :rdf/type         :owl/Class})

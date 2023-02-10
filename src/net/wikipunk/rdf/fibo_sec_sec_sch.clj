@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-sec-sec-sch
   "This ontology defines concepts related to parametric schedules, including how to represent individual schedules as well as related date periods, explicit dates, and other concepts needed for parametric schedule representation."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 EDM Council, Inc."
+                       "Copyright (c) 2018-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :dcterms/abstract
    "This ontology defines concepts related to parametric schedules, including how to represent individual schedules as well as related date periods, explicit dates, and other concepts needed for parametric schedule representation.",
@@ -10,12 +12,14 @@
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/ParametricSchedules/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-dt-bd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
     "fibo-fnd-dt-fd"
@@ -32,7 +36,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -44,13 +47,8 @@
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to rename (migrate) the hasDefinition property to isDefinedIn to clarify intent."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to address text formatting hygiene issues."
-    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to eliminate circular definitions."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2016-2022 EDM Council, Inc."
-                  "Copyright (c) 2018-2022 Object Management Group, Inc."],
-   :sm/dependsOn "https://spec.edmcouncil.org/fibo/ontology/FND/",
-   :sm/fileAbbreviation "fibo-sec-sec-sch",
-   :sm/filename "ParametricSchedules.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules.rdf version of this ontology was modified to eliminate circular definitions."]})
 
 (def AuctionDateRule
   "a business recurrence interval convention that is a published rule for defining the date of some auction event"
@@ -127,8 +125,8 @@
 
 (def FloatingRateNoteDate
   "a calculated date associated with a floating-rate note, also known as a floater or FRN, which is a debt instrument with a variable interest rate"
-  {:db/ident :fibo-sec-sec-sch/FloatingRateNoteDate,
-   :fibo-fnd-utl-av/abbreviation "FRN date",
+  {:cmns-av/abbreviation "FRN date",
+   :db/ident :fibo-sec-sec-sch/FloatingRateNoteDate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
@@ -143,8 +141,8 @@
 
 (def FloatingRateNoteDateRule
   "a business day adjustment rule applied to floating-rate note instruments"
-  {:db/ident :fibo-sec-sec-sch/FloatingRateNoteDateRule,
-   :fibo-fnd-utl-av/abbreviation "FRN date rule",
+  {:cmns-av/abbreviation "FRN date rule",
+   :db/ident :fibo-sec-sec-sch/FloatingRateNoteDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
@@ -155,11 +153,11 @@
 
 (def InternationalMoneyMarketAustralianDollarTradingDateRule
   "a trading date rule defined as the last trading day of an Australian Stock Exchange (ASX) 90-Day Bank Accepted Futures and Options product, one Sydney business day preceding the second Friday of the relevant settlement month"
-  {:db/ident
-   :fibo-sec-sec-sch/InternationalMoneyMarketAustralianDollarTradingDateRule,
-   :fibo-fnd-utl-av/abbreviation "IMM AUD trading date rule",
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/abbreviation "IMM AUD trading date rule",
+   :cmns-av/adaptedFrom
    "http://www.asx.com.au/documents/products/90-Day-bank-bill-futures-factsheet.pdf",
+   :db/ident
+   :fibo-sec-sec-sch/InternationalMoneyMarketAustralianDollarTradingDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
@@ -171,9 +169,9 @@
 
 (def InternationalMoneyMarketCanadianDollarTradingDateRule
   "a trading date rule defined as the last trading day / expiration day of the Canadian Derivatives Exchange (Bourse do Montreal Inc.), three month Bankers' Acceptance Futures (Ticker symbol BAX), the second London banking day prior to the third Wednesday of the contract month"
-  {:db/ident
+  {:cmns-av/abbreviation "IMM CAD trading date rule",
+   :db/ident
    :fibo-sec-sec-sch/InternationalMoneyMarketCanadianDollarTradingDateRule,
-   :fibo-fnd-utl-av/abbreviation "IMM CAD trading date rule",
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
@@ -190,9 +188,9 @@
 
 (def InternationalMoneyMarketNewZealandDollarTradingDateRule
   "a trading date rule defined as the last trading day of an Australian Stock Exchange (ASX) New Zealand (NZ) 90-Day Bank Accepted Futures and Options product, the first Wednesday after the ninth day of the relevant settlement month"
-  {:db/ident
+  {:cmns-av/abbreviation "IMM NZD trading date rule",
+   :db/ident
    :fibo-sec-sec-sch/InternationalMoneyMarketNewZealandDollarTradingDateRule,
-   :fibo-fnd-utl-av/abbreviation "IMM NZD trading date rule",
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
@@ -204,10 +202,10 @@
 
 (def InternationalMoneyMarketSettlementDateRule
   "a settlement date rule as defined in the International Money Market (IMM) settlement dates calendar"
-  {:db/ident :fibo-sec-sec-sch/InternationalMoneyMarketSettlementDateRule,
-   :fibo-fnd-utl-av/abbreviation "IMM settlement date rule",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "IMM settlement date rule",
+   :cmns-av/explanatoryNote
    "The International Money Market (IMM) is a division of the Chicago Mercantile Exchange (CME) that deals with the trading of currency and interest rate futures and options.",
+   :db/ident :fibo-sec-sec-sch/InternationalMoneyMarketSettlementDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
@@ -273,9 +271,9 @@
 
 (def ScheduledCalculationPeriodEndEvent
   "the end date of a specific calculation period"
-  {:db/ident :fibo-sec-sec-sch/ScheduledCalculationPeriodEndEvent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Note that this is not necessarily the same as the day before the next period's start date. Calculation schedules specify periods of time, with a start and an end as well as a duration, with the end date being determined by some convention or published list of dates. FpML for CalculationPeriod 'A type defining the parameters used in the calculation of a fixed or floating rate calculation period amount. This type forms part of cashflows representation of a swap stream.'",
+   :db/ident :fibo-sec-sec-sch/ScheduledCalculationPeriodEndEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
@@ -285,9 +283,9 @@
 
 (def ScheduledCalculationPeriodStartEvent
   "the start of a specific calculation period"
-  {:db/ident :fibo-sec-sec-sch/ScheduledCalculationPeriodStartEvent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "FpML for CalculationPeriod 'A type defining the parameters used in the calculation of a fixed or floating rate calculation period amount. This type forms part of cashflows representation of a swap stream.'",
+   :db/ident :fibo-sec-sec-sch/ScheduledCalculationPeriodStartEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
@@ -321,11 +319,11 @@
 
 (def USTreasuryBillAuctionDateRule
   "a rule for setting auction dates for US Treasury bills"
-  {:db/ident :fibo-sec-sec-sch/USTreasuryBillAuctionDateRule,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://www.treasurydirect.gov/instit/auctfund/work/work.htm",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "To finance the public debt, the U.S. Treasury sells bills, notes, bonds, Floating Rate Notes (FRNs), and Treasury Inflation-Protected Securities (TIPS) to institutional and individual investors through public auctions. Treasury auctions occur regularly and have a set schedule. Rules and other information are available via announcements of pending auctions.",
+   :db/ident :fibo-sec-sec-sch/USTreasuryBillAuctionDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",

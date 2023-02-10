@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-sec-sec-id
   "This ontology defines concepts required to identify securities, including a number of well-known securities identifiers and related schemes, registries, and registration authorities."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2018-2023 Object Management Group, Inc."
+                       "Copyright (c) 2016-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
    :dcterms/abstract
    "This ontology defines concepts required to identify securities, including a number of well-known securities identifiers and related schemes, registries, and registration authorities.",
@@ -13,6 +15,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesListings/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"
@@ -24,7 +27,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIdentification/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-fct-mkt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
     "fibo-fbc-fct-ra"
@@ -49,7 +53,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -64,20 +67,10 @@
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification.rdf version of this ontology was revised to eliminate confusion between listed security and listing (which caused reasoning issues)."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/ version of this ontology was modified to restructure the concept of a listing and augment it with a number of relevant characteristics."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/ version of this ontology was modified to add the concept of a ticker symbol and rename (migrate) the hasDefinition property to isDefinedIn to clarify intent."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/ version of this ontology was modified to correct the target of a ticker symbol, which identifies a listing not a listed security, refine the restriction on financial instrument identifier to say that it identifies an instrument or listing, normalize definitions to be ISO 704 compliant, eliminate duplication of concepts in LCC, and merge countries with locations in FND."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/ version of this ontology was modified to correct several logic issues."
-    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification.rdf version of this ontology was revised to leverage the notion of a composite identifier and address text formatting hygiene issues."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference",
-   :sm/copyright ["Copyright (c) 2018-2022 Object Management Group, Inc."
-                  "Copyright (c) 2016-2022 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/BE/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/"],
-   :sm/fileAbbreviation "fibo-sec-sec-id",
-   :sm/filename "SecuritiesIdentification.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification.rdf version of this ontology was revised to leverage the notion of a composite identifier and address text formatting hygiene issues."]})
 
 (def FinancialInstrumentIdentificationScheme
   "formal definition of the structure and application of a particular set of financial instrument identifiers"
@@ -96,10 +89,10 @@
 
 (def InternationalSecuritiesIdentificationNumber
   "security identifier that is defined as specified in ISO 6166, Securities and related financial instruments -- International securities identification numbering system (ISIN)"
-  {:db/ident :fibo-sec-sec-id/InternationalSecuritiesIdentificationNumber,
-   :fibo-fnd-utl-av/abbreviation "ISIN",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "ISIN",
+   :cmns-av/explanatoryNote
    "ISINs consist of two alphabetic characters, which are the ISO 3166-1 alpha-2 code for the issuing country, nine alpha-numeric characters (the National Securities Identifying Number, or NSIN, which identifies the security, padded as necessary with leading zeros), and one numerical check digit. The ISIN is specified as a class of identifiers because although there is a scheme associated with the structure of an ISIN, there are many country-specific variations issued by national numbering agencies.",
+   :db/ident :fibo-sec-sec-id/InternationalSecuritiesIdentificationNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
@@ -121,9 +114,9 @@
 
 (def InternationalSecuritiesIdentificationNumberingScheme
   "formal definition of the structure and application of a ISINs as defined in ISO 6166"
-  {:db/ident
+  {:cmns-av/abbreviation "ISIN scheme",
+   :db/ident
    :fibo-sec-sec-id/InternationalSecuritiesIdentificationNumberingScheme,
-   :fibo-fnd-utl-av/abbreviation "ISIN scheme",
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
@@ -164,8 +157,8 @@
 
 (def NationalNumberingAgency
   "registration authority responsible for issuing and managing National Securities Identifying Numbers for securities in accordance with the ISO 6166 standard in some jurisdiction (typically that of a country)"
-  {:db/ident :fibo-sec-sec-id/NationalNumberingAgency,
-   :fibo-fnd-utl-av/abbreviation "NNA",
+  {:cmns-av/abbreviation "NNA",
+   :db/ident :fibo-sec-sec-id/NationalNumberingAgency,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
@@ -190,8 +183,8 @@
 
 (def NationalSecuritiesIdentifyingNumber
   "generic, nine-digit alpha numeric code which identifies a fungible security, assigned by a national numbering agency under the ISO 6166 standard"
-  {:db/ident :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
-   :fibo-fnd-utl-av/abbreviation "NSIN",
+  {:cmns-av/abbreviation "NSIN",
+   :db/ident :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
@@ -209,8 +202,8 @@
 
 (def NationalSecuritiesIdentifyingNumberRegistry
   "registry used by a national numbering agency to manage the financial instrument identifiers and related information that it registers"
-  {:db/ident :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumberRegistry,
-   :fibo-fnd-utl-av/abbreviation "NSIN registry",
+  {:cmns-av/abbreviation "NSIN registry",
+   :db/ident :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumberRegistry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
@@ -248,9 +241,9 @@
 
 (def NationalSecurityIdentificationScheme
   "security identification scheme, defining the format and structure of a National Securities Identifying Number (NSIN), published nationally on behalf of a country"
-  {:db/ident :fibo-sec-sec-id/NationalSecurityIdentificationScheme,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "generally incorporated into the ISIN scheme as well",
+   :db/ident :fibo-sec-sec-id/NationalSecurityIdentificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
@@ -268,9 +261,9 @@
 
 (def ProprietarySecurityIdentificationScheme
   "security identification scheme published by a commercial entity"
-  {:db/ident :fibo-sec-sec-id/ProprietarySecurityIdentificationScheme,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Proprietary schemes may be unique to an exchange or data provider, for example.",
+   :db/ident :fibo-sec-sec-id/ProprietarySecurityIdentificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
@@ -332,9 +325,9 @@
 
 (def SecurityRegistry
   "registry used to manage security identifiers and related information"
-  {:db/ident :fibo-sec-sec-id/SecurityRegistry,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Securities registries may be managed by an exchange, clearing house, custodian, bank, or other financial services provider.",
+   :db/ident :fibo-sec-sec-id/SecurityRegistry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
@@ -372,11 +365,11 @@
 
 (def TickerSymbol
   "exchange-specific identifier for a particular security or listing for that security, depending on the country"
-  {:db/ident :fibo-sec-sec-id/TickerSymbol,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Every listed security has at least one unique ticker symbol, facilitating the vast array of trade orders that flow through the financial markets every day. However, in some countries this relationship may be indirect, through the listing, rather than direct, as is the case in the United States. In the US, the relationship between a ticker symbol and the listed security is one-to-one. This is not, however, the case in Singapore, where there may be unique ticker symbols for the same security based on the lot size.",
-   :fibo-fnd-utl-av/usageNote
+   :cmns-av/usageNote
    "Ticker symbols are reusable, assigned to a given instrument by an exchange for some period of time.",
+   :db/ident :fibo-sec-sec-id/TickerSymbol,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
@@ -391,3 +384,8 @@
                      :fibo-fnd-arr-id/ReassignableIdentifier],
    :skos/definition
    "exchange-specific identifier for a particular security or listing for that security, depending on the country"})
+
+(def ^{:private true} Listing
+  {:db/ident        :fibo-sec-sec-lst/Listing,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-sec-sec-id/SecurityRegistryEntry})

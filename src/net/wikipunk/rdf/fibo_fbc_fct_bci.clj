@@ -1,9 +1,12 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-bci
   "This ontology includes individuals representing the set of international business centers corresponding to those identified in FpML as well as additional municipalities called out in the ISO 10383 Codes for exchanges and market identification (MIC) standard. This set of business centers is current with respect to the FpML published XML data as of Q2 2022. Note that we have deviated from the standard FIBO naming convention of strict use of camel case to add underscores in certain city names for readability purposes."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2018-2023 EDM Council, Inc."
+                       "Copyright (c) 2018-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
    :dcterms/abstract
    "This ontology includes individuals representing the set of international business centers corresponding to those identified in FpML as well as additional municipalities called out in the ISO 10383 Codes for exchanges and market identification (MIC) standard.\n\t\tThis set of business centers is current with respect to the FpML published XML data as of Q2 2022. Note that we have deviated from the standard FIBO naming convention of strict use of camel case to add underscores in certain city names for readability purposes.",
+   :dcterms/contributor ["Thematix Partners LLC" "agnos.ai UK Ltd."],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
@@ -12,6 +15,7 @@
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CH/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
@@ -20,7 +24,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-fct-bc"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCenters/",
     "fibo-fbc-fct-bci"
@@ -45,7 +50,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -55,10 +59,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
    :rdfs/label "Business Centers Individuals",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of September 2019."
+   ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add a number of new municipalities that were included in the December 2022 MIC codes."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of September 2019."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to replace Swaziland with Eswatini, which was revised by the LCC 1.1 RTF to reflect the change to the country name per the U.N."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of September 2021."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of November 2020, and add Municipalities for 4 important Swiss financial cities."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to address text formatting issues uncovered by hygiene testing."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of March 2022."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of March 2021."
@@ -66,14 +72,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to equate Almaty and Alma-ata, which are the same city (Alma-ata is the old name, no longer in use)."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of June 2020, replace the relations hasTag property with the equivalent lcc-lr version, and replace skos:definition on reference individuals with dct:description."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to merge countries with locations in FND."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to support revisions of the MIC codes as of December 2018."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add a number of new municipalities that were included in the December 2022 MIC codes."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/contributor ["Thematix Partners LLC" "agnos.ai UK Ltd."],
-   :sm/copyright ["Copyright (c) 2018-2022 Object Management Group, Inc."
-                  "Copyright (c) 2018-2022 EDM Council, Inc."],
-   :sm/fileAbbreviation "fibo-fbc-fct-bci",
-   :sm/filename "BusinessCentersIndividuals.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to support revisions of the MIC codes as of December 2018."]})
 
 (def AEAD
   "the FpML business center code for Abu Dhabi, United Arab Emirates"
@@ -1855,12 +1854,12 @@
 
 (def ESASSettlementDay
   "the business day adjustment convention for the ESAS Settlement Day (as defined in 2006 ISDA Definitions Section 7.1 and Supplement Number 15 to the 2000 ISDA Definitions)"
-  {:db/ident :fibo-fbc-fct-bci/ESASSettlementDay,
+  {:cmns-av/explanatoryNote
+   "ESAS is the Reserve Bank of New Zealand's Exchange Settlement Account System which is used by banks and other approved financial institutions to settle their obligations on a Real-Time Gross Settlement (RTGS) basis.",
+   :db/ident :fibo-fbc-fct-bci/ESASSettlementDay,
    :dcterms/description
    "the business day adjustment convention for the ESAS Settlement Day (as defined in 2006 ISDA Definitions Section 7.1 and Supplement Number 15 to the 2000 ISDA Definitions)",
    :fibo-fnd-plc-loc/hasBusinessCenter :fibo-fbc-fct-bci/Wellington,
-   :fibo-fnd-utl-av/explanatoryNote
-   "ESAS is the Reserve Bank of New Zealand's Exchange Settlement Account System which is used by banks and other approved financial institutions to settle their obligations on a Real-Time Gross Settlement (RTGS) basis.",
    :rdf/type [:fibo-fnd-dt-bd/BusinessDayAdjustment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1922,8 +1921,8 @@
 
 (def Ebene
   "Ebene"
-  {:db/ident :fibo-fbc-fct-bci/Ebene,
-   :fibo-fnd-utl-av/synonym ["Ebene Cybercity" "Cybercity"],
+  {:cmns-av/synonym ["Ebene Cybercity" "Cybercity"],
+   :db/ident :fibo-fbc-fct-bci/Ebene,
    :lcc-cr/isPartOf :lcc-3166-1/Mauritius,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -2067,11 +2066,10 @@
 
 (def FpMLBusinessCenterCodeScheme
   "the coding scheme used to define a set of codes for municipalities, or business centers, or business day adjustments for FpML"
-  {:db/ident :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+  {:cmns-av/adaptedFrom "http://www.fpml.org/coding-scheme/business-center",
+   :db/ident :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
    :dcterms/description
    "the coding scheme used to define a set of codes for municipalities, or business centers, or business day adjustments for FpML",
-   :fibo-fnd-utl-av/adaptedFrom
-   "http://www.fpml.org/coding-scheme/business-center",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCodeScheme :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2165,8 +2163,8 @@
 
 (def GIFT_City
   "GIFT City"
-  {:db/ident :fibo-fbc-fct-bci/GIFT_City,
-   :fibo-fnd-utl-av/synonym "Gujarat International Finance Tec-City",
+  {:cmns-av/synonym "Gujarat International Finance Tec-City",
+   :db/ident :fibo-fbc-fct-bci/GIFT_City,
    :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -4112,9 +4110,9 @@
 
 (def New_York
   "the international business center of New York"
-  {:db/ident :fibo-fbc-fct-bci/New_York,
+  {:cmns-av/synonym "New York City",
+   :db/ident :fibo-fbc-fct-bci/New_York,
    :dcterms/description "the international business center of New York",
-   :fibo-fnd-utl-av/synonym "New York City",
    :lcc-cr/isPartOf [:lcc-3166-2-us/NewYork :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -4908,8 +4906,8 @@
 
 (def Saint-Petersburg
   "Saint Petersburg"
-  {:db/ident :fibo-fbc-fct-bci/Saint-Petersburg,
-   :fibo-fnd-utl-av/synonym "St. Petersburg",
+  {:cmns-av/synonym "St. Petersburg",
+   :db/ident :fibo-fbc-fct-bci/Saint-Petersburg,
    :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -4918,9 +4916,9 @@
 
 (def Saint_Peter_Port
   "the international business center of Saint Peter Port"
-  {:db/ident :fibo-fbc-fct-bci/Saint_Peter_Port,
+  {:cmns-av/synonym "St. Peter Port",
+   :db/ident :fibo-fbc-fct-bci/Saint_Peter_Port,
    :dcterms/description "the international business center of Saint Peter Port",
-   :fibo-fnd-utl-av/synonym "St. Peter Port",
    :lcc-cr/isPartOf :lcc-3166-1/Guernsey,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -5300,7 +5298,9 @@
 
 (def TARGETSettlementDay
   "the business day adjustment convention for the TARGET (euro 'Business Center')"
-  {:db/ident :fibo-fbc-fct-bci/TARGETSettlementDay,
+  {:cmns-av/explanatoryNote
+   "TARGET, which stands for the Trans-European Automated Real-time Gross settlement adjustment Express Transfer system, is the real-time gross settlement (RTGS) system for the euro. TARGET operating days are the settlement days for the financial markets in euro, as well as foreign exchange transactions involving the euro.",
+   :db/ident :fibo-fbc-fct-bci/TARGETSettlementDay,
    :dcterms/description
    "the business day adjustment convention for the TARGET (euro 'Business Center')",
    :fibo-fnd-plc-loc/hasBusinessCenter [:fibo-fbc-fct-bci/Rome
@@ -5315,8 +5315,6 @@
                                         :fibo-fbc-fct-bci/Athens
                                         :fibo-fbc-fct-bci/Frankfurt
                                         :fibo-fbc-fct-bci/Helsinki],
-   :fibo-fnd-utl-av/explanatoryNote
-   "TARGET, which stands for the Trans-European Automated Real-time Gross settlement adjustment Express Transfer system, is the real-time gross settlement (RTGS) system for the euro. TARGET operating days are the settlement days for the financial markets in euro, as well as foreign exchange transactions involving the euro.",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-dt-bd/BusinessDayAdjustment],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",

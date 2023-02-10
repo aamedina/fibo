@@ -124,3 +124,8 @@
    :rdfs/range :lcc-lr/Collection,
    :skos/definition
    "identifies the collection that something is an element of"})
+
+(def ^{:private true} CodeSet
+  {:db/ident        :lcc-lr/CodeSet,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-fnd-arr-arr/Scheme})

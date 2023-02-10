@@ -1,15 +1,18 @@
 (ns net.wikipunk.rdf.fibo-sec-dbt-lpn
-  "Contracts which give the holder some formal participation in some loan."
-  {:dcat/downloadURL
+  "This ontology defines contracts which give the holder some formal participation in some loan."
+  {:cmns-av/copyright "Copyright (c) 2016-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/LoanParticipationNotes/",
    :dcterms/abstract
-   "Contracts which give the holder some formal participation in some loan.",
+   "This ontology defines contracts which give the holder some formal participation in some loan.",
+   :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
@@ -18,7 +21,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/LoanParticipationNotes/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-oac-exec"
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
     "fibo-fbc-dae-dbt"
@@ -37,8 +41,7 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-    "xs" "http://www.w3.org/2001/XMLSchema#"},
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/LoanParticipationNotes/",
@@ -46,8 +49,7 @@
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/LoanParticipationNotes/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "LoanParticipationNotes"},
-   :sm/fileAbbreviation "fibo-sec-dbt-lpn"})
+                :rdf/value    "Loan Participation Notes Ontology"}})
 
 (def LeadManager
   "the party that organizes the potential lenders into a syndicate and arranges the details of the or any potential loan"

@@ -1,13 +1,16 @@
 (ns net.wikipunk.rdf.fibo-ge-ge-ctlaj
   "This ontology provides the set of basic government-level entities and jurisdictions for independent countries identified as part of Central America in the U.N. M49 classification."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2020-2023 EDM Council, Inc."
+                       "Copyright (c) 2020-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/CentralAmericanGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides the set of basic government-level entities and jurisdictions for independent countries identified as part of Central America in the U.N. M49 classification.",
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
+   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
@@ -19,7 +22,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/LatinAmericanJurisdiction/CentralAmericanGovernmentEntitiesAndJurisdictions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-ge"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
     "fibo-fnd-law-jur"
@@ -37,7 +41,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -47,19 +50,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/CentralAmericanGovernmentEntitiesAndJurisdictions/",
    :rdfs/label
    "Central American Government Entities and Jurisdictions Ontology",
+   :skos/changeNote
+   "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/CentralAmericanGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary.",
    :skos/scopeNote
-   "The initial version of this ontology reflects the highest national level only.",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2020 Object Management Group, Inc."
-                  "Copyright (c) 2020 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"],
-   :sm/fileAbbreviation "fibo-ge-ge-ctlaj",
-   :sm/filename "CentralAmericanGovernmentEntitiesAndJurisdictions.rdf"})
+   "The initial version of this ontology reflects the highest national level only."})
 
 (def BelizeanEntity
   "sovereign state and polity that is a Caribbean country located on the northeastern coast of Central America"

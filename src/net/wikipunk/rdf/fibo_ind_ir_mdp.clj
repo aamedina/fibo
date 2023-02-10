@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-ind-ir-mdp
   "This ontology provides reference data for a number of international market data providers, including, but not limited to, those that publish interest rate benchmarks referenced in the published FpML benchmark reference."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2020-2023 EDM Council, Inc."
+                       "Copyright (c) 2020-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
    :dcterms/abstract
    "This ontology provides reference data for a number of international market data providers, including, but not limited to, those that publish interest rate benchmarks referenced in the published FpML benchmark reference.",
@@ -10,8 +12,8 @@
    ["https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/EuropeanEntities/EURegulatoryAgencies/"
@@ -20,6 +22,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"
@@ -37,7 +40,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/MarketDataProviders/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
     "fibo-be-fct-pub"
@@ -95,7 +99,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -106,21 +109,11 @@
    :rdfs/label "Market Data Providers Ontology",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders.rdf version of this ontology was revised to update the LEI URIs to the new form published by the GLEIF on data.world."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/IND/20221001/InterestRates/MarketDataProviders.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders.rdf version of this ontology was revised to reflect the move of market data provider from interest rates in IND to publishers in BE."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders.rdf version of this ontology was revised to clean up the LEI data."
-    "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders.rdf version of this ontology was revised to replace references to the legacy LCC UnitedStates country representation with UnitedStatesOfAmerica."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2020-2022 EDM Council, Inc."
-                  "Copyright (c) 2020-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/BE/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/"
-    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"
-    "https://www.omg.org/spec/LCC/"],
-   :sm/fileAbbreviation "fibo-ind-ir-mdp",
-   :sm/filename "MarketDataProviders.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders.rdf version of this ontology was revised to replace references to the legacy LCC UnitedStates country representation with UnitedStatesOfAmerica."]})
 
 (def BGCPartnersInc-US-DE
   "legal entity that is a Delaware Corporation"
@@ -202,31 +195,16 @@
 
 (def EuropeanMoneyMarketsInstituteBenchmarkPublisher
   "individual representing the European Money Markets Institute (EMMI) functional entity that is an international financial information publisher, responsible for the publication of euro-based benchmarks, including Euribor"
-  {:db/ident :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
+  {:cmns-av/adaptedFrom "http://www.emmi-benchmarks.eu/",
+   :db/ident :fibo-ind-ir-mdp/EuropeanMoneyMarketsInstituteBenchmarkPublisher,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-eufseind/EuropeanMoneyMarketsInstitute,
-   :fibo-fnd-utl-av/adaptedFrom "http://www.emmi-benchmarks.eu/",
    :rdf/type [:fibo-ind-ir-ir/InterestRateAuthority :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
    :rdfs/label "European Money Markets Institute (EMMI) benchmark publisher",
    :skos/definition
    "individual representing the European Money Markets Institute (EMMI) functional entity that is an international financial information publisher, responsible for the publication of euro-based benchmarks, including Euribor"})
-
-(def FederalReserveBoardH.15RateResetTimeOfDay
-  "the time of day that the Federal Reserve Board publishes Selected Interest Rates (Daily) in Schedule H.15"
-  {:db/ident :fibo-ind-ir-mdp/FederalReserveBoardH.15RateResetTimeOfDay,
-   :fibo-fnd-dt-bd/hasBusinessDayAdjustment
-   :fibo-fbc-fct-bci/NewYorkFederalReserveBusinessDay,
-   :fibo-fnd-dt-fd/hasTimeValue "T16:15:00",
-   :fibo-fnd-plc-loc/hasBusinessCenter :fibo-fbc-fct-bci/New_York,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.federalreserve.gov/releases/h15/",
-   :rdf/type [:fibo-fbc-dae-dbt/RateResetTimeOfDay :owl/NamedIndividual],
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
-   :rdfs/label "Federal Reserve Board H.15 rate reset time of day",
-   :skos/definition
-   "the time of day that the Federal Reserve Board publishes Selected Interest Rates (Daily) in Schedule H.15"})
 
 (def FenicsMarketData
   "Fenics Market Data functional entity that is a financial service and market data provider and division of BGC Partners"
@@ -242,10 +220,10 @@
 
 (def ICEBenchmarkPublisher
   "the ICE Benchmark Administration functional entity that is an international financial information publisher, responsible for the publication of ICE LIBOR, ICE Swap Rate, LBMA Gold Price and ISDA SIMM benchmarks"
-  {:db/ident :fibo-ind-ir-mdp/ICEBenchmarkPublisher,
+  {:cmns-av/adaptedFrom "https://www.theice.com/index",
+   :db/ident :fibo-ind-ir-mdp/ICEBenchmarkPublisher,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usfsind/ICEBenchmarkAdministration,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.theice.com/index",
    :rdf/type [:fibo-ind-ir-ir/InterestRateAuthority :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
@@ -255,9 +233,9 @@
 
 (def ReferenceBanks
   "market data provider of interest rate benchmarks representing a group of one or more banks that either individually, or in aggregate, provide quoted rates that contribute to the benchmark"
-  {:db/ident :fibo-ind-ir-mdp/ReferenceBanks,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "With respect to LIBOR, for example, the Bank of England will request the principal London office of each of the Reference Banks to provide a quotation of its rate. If at least two such quotations are provided, the rate for such date will be the arithmetic mean of the quotations. If fewer than two quotations are provided as requested, the rate for such date will be the arithmetic mean of the rates quoted by major banks in New York City selected by the Bank, at approximately 11:00 a.m. New York City time for loans in U.S. Dollars to leading European banks for such Interest Period and in an amount approximately equal to the amount requested LIBOR-Reference Banks Loan.",
+   :db/ident :fibo-ind-ir-mdp/ReferenceBanks,
    :rdf/type [:lcc-lr/Collection
               :fibo-be-fct-pub/MarketDataProvider
               :owl/NamedIndividual],
@@ -299,3 +277,23 @@
    :rdfs/label "Tradition",
    :skos/definition
    "Tradition functional entity that is a financial service and market data provider and division of Compagnie Financiere Tradition"})
+
+(def ^{:private true} CanadianBankingRegulatoryAgencyAndCentralBank
+  {:db/ident :fibo-fbc-fct-cajrga/CanadianBankingRegulatoryAgencyAndCentralBank,
+   :rdf/type [:fibo-ind-ir-ir/InterestRateAuthority :owl/NamedIndividual]})
+
+(def ^{:private true} EuropeanBankingRegulatoryAgencyAndCentralBank
+  {:db/ident :fibo-fbc-fct-eurga/EuropeanBankingRegulatoryAgencyAndCentralBank,
+   :rdf/type [:fibo-ind-ir-ir/InterestRateAuthority :owl/NamedIndividual]})
+
+(def ^{:private true} BloombergLP
+  {:db/ident :fibo-fbc-fct-usfsind/BloombergLP,
+   :rdf/type [:fibo-be-fct-pub/MarketDataProvider :owl/NamedIndividual]})
+
+(def ^{:private true} ThomsonReuters
+  {:db/ident :fibo-fbc-fct-usfsind/ThomsonReuters,
+   :rdf/type [:fibo-be-fct-pub/MarketDataProvider :owl/NamedIndividual]})
+
+(def ^{:private true} BoardOfGovernorsOfTheFederalReserveSystem
+  {:db/ident :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
+   :rdf/type [:fibo-ind-ir-ir/InterestRateAuthority :owl/NamedIndividual]})

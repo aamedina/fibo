@@ -143,22 +143,22 @@
    :rdfs/label "line item",
    :rdfs/subClassOf [:fibo-fnd-arr-arr/CollectionConstituent
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-loan-spc-prod/hasUnitCost,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-qt-qtu/hasNumericValue,
                       :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :fibo-loan-ln-ln/hasCost,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-pas-pas/Product
                                             :fibo-loan-reln-mtg/ChargeCategory],
                                            :rdf/type :owl/Class},
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-loan-ln-ln/hasCost,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-loan-spc-prod/hasUnitCost,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "description of a product or service including its unit cost, number of units and total cost",
    :skos/editorialNote
@@ -399,3 +399,22 @@
    :skos/definition "relates an item to its unit cost",
    :skos/editorialNote
    "Future consideration: move this property to ProductsAndServices ontology (fibo-fnd-pas-pas)."})
+
+(def ^{:private true} Loan
+  {:db/ident        :fibo-loan-ln-ln/Loan,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onProperty     :lcc-cr/isClassifiedBy,
+                     :owl/someValuesFrom :fibo-loan-spc-prod/LoanMarketCategory,
+                     :rdf/type           :owl/Restriction}})
+
+(def ^{:private true} LoanProductRepresentations
+  {:db/ident        :fibo-loan-ln-reg/LoanProductRepresentations,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
+                     :owl/someValuesFrom :fibo-loan-spc-prod/LoanProduct,
+                     :rdf/type           :owl/Restriction}})
+
+(def ^{:private true} MortgageLoanPurpose
+  {:db/ident        :fibo-loan-reln-mtg/MortgageLoanPurpose,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-loan-spc-prod/LoanPurpose})

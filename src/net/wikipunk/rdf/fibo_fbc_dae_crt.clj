@@ -1,6 +1,7 @@
 (ns net.wikipunk.rdf.fibo-fbc-dae-crt
   "This ontology defines the concept of a credit rating, along with credit watch and outlook qualifying terms. There are credit ratings for individuals, for organizations and for instruments. These are referenced extensively in the securities models but are also applicable to business entities generally and in the context of lending and account maintenance."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2018-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :dcterms/abstract
    "This ontology defines the concept of a credit rating, along with credit watch and outlook qualifying terms. There are credit ratings for individuals, for organizations and for instruments. \n\t\tThese are referenced extensively in the securities models but are also applicable to business entities generally and in the context of lending and account maintenance.",
@@ -8,6 +9,7 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
@@ -31,7 +33,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/CreditRatings/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-crt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
     "fibo-fbc-fi-fi"
@@ -72,7 +75,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -81,15 +83,7 @@
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "Credit Ratings Ontology"},
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright "Copyright (c) 2018-2022 EDM Council, Inc.",
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://www.omg.org/spec/LCC/"],
-   :sm/fileAbbreviation "fibo-fbc-dae-crt",
-   :sm/filename "CreditRatings.rdf"})
+                :rdf/value    "Credit Ratings Ontology"}})
 
 (def AlertCreditMessage
   "alert credit message"
@@ -101,11 +95,11 @@
 
 (def AlternativeAQuality
   "classifier for mortgages that are considered to be riskier than prime quality but less risky than subprime quality"
-  {:db/ident :fibo-fbc-dae-crt/AlternativeAQuality,
-   :fibo-fnd-utl-av/abbreviation "Alt-A",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "Alt-A",
+   :cmns-av/explanatoryNote
    "Typically Alt-A mortgages are characterized by borrowers with less than full documentation, average credit scores, higher loan-to-values, and more investment properties and secondary homes.",
-   :fibo-fnd-utl-av/synonym "Alternative A-paper",
+   :cmns-av/synonym "Alternative A-paper",
+   :db/ident :fibo-fbc-dae-crt/AlternativeAQuality,
    :rdf/type [:fibo-fbc-dae-crt/CreditQuality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
@@ -181,11 +175,11 @@
 
 (def CreditRating
   "assessment of creditworthiness of a borrower generally or with respect to a particular debt or financial obligation"
-  {:db/ident :fibo-fbc-dae-crt/CreditRating,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Typically, a credit rating is provided as a detailed report based on the financial history of borrowing or lending and creditworthiness of the entity or person derived from income statements, historical records related to borrowing, etc. with an aim to determine their ability to meet debt obligations."},
+   :db/ident :fibo-fbc-dae-crt/CreditRating,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
@@ -227,9 +221,9 @@
 
 (def CreditRatingModel
   "algorithm for computing a credit rating"
-  {:db/ident :fibo-fbc-dae-crt/CreditRatingModel,
-   :fibo-fnd-utl-av/usageNote
+  {:cmns-av/usageNote
    "Use dct:hasVersion to specify a version for the credit score model.",
+   :db/ident :fibo-fbc-dae-crt/CreditRatingModel,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
@@ -277,46 +271,19 @@
 
 (def CreditReport
   "report describing the creditworthiness and related credit attributes of a borrower"
-  {:db/ident :fibo-fbc-dae-crt/CreditReport,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This is typically provided by a credit rating agency but could be produced by an internal proprietary model as well.",
+   :db/ident :fibo-fbc-dae-crt/CreditReport,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label "credit report",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
+   [{:owl/onProperty     :fibo-fbc-dae-crt/hasCoveragePeriod,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-dae-crt/CreditInquiry,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-dae-crt/CreditRating,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
-     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
      :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportProduct,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditMessage,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-dae-crt/concernsParty,
-     :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-arr-rt/RatingReport
-    {:owl/onProperty     :fibo-fnd-arr-doc/hasDataSource,
-     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
-                          :owl/someValuesFrom
-                          :fibo-fbc-dae-crt/CreditRatingAgency,
-                          :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :lcc-lr/isIdentifiedBy,
-     :owl/someValuesFrom :lcc-lr/Identifier,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-dae-crt/CreditTradeline,
@@ -325,8 +292,35 @@
     {:owl/onProperty     :lcc-cr/isClassifiedBy,
      :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportCategory,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-dae-crt/hasCoveragePeriod,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
+    {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :lcc-lr/isIdentifiedBy,
+     :owl/someValuesFrom :lcc-lr/Identifier,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-dae-crt/CreditInquiry,
+     :owl/onProperty :fibo-fnd-rel-rel/comprises,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-dae-crt/concernsParty,
+     :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditMessage,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-arr-rt/RatingReport
+    {:owl/onProperty     :fibo-fnd-arr-doc/hasDataSource,
+     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom
+                          :fibo-fbc-dae-crt/CreditRatingAgency,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-dae-crt/CreditRating,
+     :owl/onProperty :fibo-fnd-rel-rel/comprises,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "report describing the creditworthiness and related credit attributes of a borrower"})
@@ -358,9 +352,9 @@
 
 (def CreditTradeline
   "report derived from the transaction history of a credit account"
-  {:db/ident :fibo-fbc-dae-crt/CreditTradeline,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A tradeline on a credit report refers to a specific credit account. Tradelines report snapshot details derived from a combination of account features and payment history, and are used by credit reporting agencies as inputs to the analysis process that determines a party's credit rating.",
+   :db/ident :fibo-fbc-dae-crt/CreditTradeline,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
@@ -466,9 +460,9 @@
 
 (def InvestmentGradeQuality
   "classifier for debt instruments that are considered to be of high quality and have a low risk of default"
-  {:db/ident :fibo-fbc-dae-crt/InvestmentGradeQuality,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Bond rating firms use different designations, often consisting of the upper- and lower-case letters to identify a bond's credit quality rating. 'AAA' and 'AA' (high credit quality) and 'A' and 'BBB' (medium credit quality) are considered investment grade. Credit ratings for bonds below these designations ('BB,' 'B,' 'CCC,' etc.) are considered low credit quality, and are commonly referred to as 'junk bonds.'",
+   :db/ident :fibo-fbc-dae-crt/InvestmentGradeQuality,
    :rdf/type [:fibo-fbc-dae-crt/CreditQuality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
@@ -478,9 +472,9 @@
 
 (def NonprimeQuality
   "classifier for borrowers, rates, or holdings that have poor quality, such as borrowers with poor credit history due to a short sale, bankruptcy, foreclosure and/or other negative credit events within the last several years"
-  {:db/ident :fibo-fbc-dae-crt/NonprimeQuality,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Nonprime loans may be offered to individuals who are unable to qualify for a conventional loan.",
+   :db/ident :fibo-fbc-dae-crt/NonprimeQuality,
    :rdf/type [:fibo-fbc-dae-crt/CreditQuality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
@@ -516,10 +510,10 @@
 
 (def PrimeQuality
   "classifier for borrowers, rates, or holdings that are considered to be of high quality"
-  {:db/ident :fibo-fbc-dae-crt/PrimeQuality,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This classification often refers to loans made to high-quality borrowers that are offered prime or relatively low interest rates. Prime loans have low default risk.",
-   :fibo-fnd-utl-av/synonym "A-paper",
+   :cmns-av/synonym "A-paper",
+   :db/ident :fibo-fbc-dae-crt/PrimeQuality,
    :rdf/type [:fibo-fbc-dae-crt/CreditQuality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
@@ -560,9 +554,9 @@
 
 (def SubprimeQuality
   "classifier for borrowers, rates, or holdings that are considered below-average quality, such as borrowers with a tarnished or limited credit history, and may be subject to higher than average interest rates"
-  {:db/ident :fibo-fbc-dae-crt/SubprimeQuality,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Subprime refers to borrowers or loans, usually offered at rates well above the prime rate. Subprime lending is higher risk, given the lower credit rating of borrowers.",
+   :db/ident :fibo-fbc-dae-crt/SubprimeQuality,
    :rdf/type [:fibo-fbc-dae-crt/CreditQuality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",

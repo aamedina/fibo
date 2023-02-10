@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-pas-fpas
   "This ontology defines concepts that extend the Foundations (FND) Products and Services concepts specifically for the financial industry, including financial product, financial service, and financial service provider."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
+                       "Copyright (c) 2015-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :dcterms/abstract
    "This ontology defines concepts that extend the Foundations (FND) Products and Services concepts specifically for the financial industry, including financial product, financial service, and financial service provider.",
@@ -31,6 +33,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
@@ -39,7 +42,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-fct"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
     "fibo-be-fct-pub"
@@ -92,7 +96,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -109,22 +112,13 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified as a part of organizational hierarchy simplification and to correct a logical inconsistency with respect to the representation of baskets."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to eliminate duplication with concepts in LCC and eliminated a redundant superclass on FinancialServiceProvider."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to eliminate references to external dictionary sites that no longer resolve, eliminate circular and ambiguous definitions, and revise definitions that referenced 'face value' improperly."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to reflect issue resolutions detailed in the FIBO FBC 1.0 FTF report."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to revise the definition of a unique transaction identifier to align with ISO 23897 and to address text formatting issues."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to eliminate deprecated elements."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to add the notion of a weighted basket, whose consituents are weighted."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to replace hasDefinition with isDefinedIn to clarify intent."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to add a property to describe the criteria for including something in a basket, if that criteria is known, and to point to a party that is responsible for determining that criteria."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2015-2022 Object Management Group, Inc."
-                  "Copyright (c) 2015-2022 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/"
-    "https://www.omg.org/spec/LCC/"],
-   :sm/fileAbbreviation "fibo-fbc-pas-fpas",
-   :sm/filename "FinancialProductsAndServices.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/ version of this ontology was modified to add a property to describe the criteria for including something in a basket, if that criteria is known, and to point to a party that is responsible for determining that criteria."]})
 
 (def AgencyAgreement
   "an agreement that designates a party as a registered agent to represent and act on behalf of another party in some, typically legal, financial, or medical capacity"
@@ -143,9 +137,9 @@
 
 (def AgentForServiceOfProcess
   "a registered agent (person or organization) designated by a business entity, such as a corporation, to receive legal correspondence on behalf of the business entity in the jurisdiction in which the agent's address is located"
-  {:db/ident :fibo-fbc-pas-fpas/AgentForServiceOfProcess,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The person may be an officer of the corporation or a third party, such as the corporation's attorney, or a company providing such agency services.",
+   :db/ident :fibo-fbc-pas-fpas/AgentForServiceOfProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -169,26 +163,26 @@
 
 (def Basket
   "collection of goods, services, or other things (e.g., financial contracts) that can be purchased and sold in some marketplace"
-  {:db/ident :fibo-fbc-pas-fpas/Basket,
-   :fibo-fnd-utl-av/explanatoryNote
-   ["From a securities perspective, a basket is a collection of products or securities that are designated to mimic the performance of a market. For investors, the market basket is the principal idea behind index funds, which are essentially a broad sample of stocks, bonds or other securities in the market; this provides investors with a benchmark against which to compare their investment returns."
-    "A basket may be associated with a specific market sector, and may be delineated for the purposes of statistical analysis, such as for calculating CPI. According to the US Bureau of Labor Statistics (BLS), with respect to the CPI, a market basket is a package of goods and services that consumers purchase for day-to-day living. The weight of each item is based on the amount of expenditure reported by a sample of households."],
+  {:cmns-av/explanatoryNote
+   ["A basket may be associated with a specific market sector, and may be delineated for the purposes of statistical analysis, such as for calculating CPI. According to the US Bureau of Labor Statistics (BLS), with respect to the CPI, a market basket is a package of goods and services that consumers purchase for day-to-day living. The weight of each item is based on the amount of expenditure reported by a sample of households."
+    "From a securities perspective, a basket is a collection of products or securities that are designated to mimic the performance of a market. For investors, the market basket is the principal idea behind index funds, which are essentially a broad sample of stocks, bonds or other securities in the market; this provides investors with a benchmark against which to compare their investment returns."],
+   :db/ident :fibo-fbc-pas-fpas/Basket,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "basket",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fbc-pas-fpas/hasSelectingParty,
+                      :rdf/type       :owl/Restriction}
+                     :lcc-lr/Collection
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fbc-pas-fpas/hasSelectionCriteria,
                       :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/BasketConstituent,
-                      :rdf/type           :owl/Restriction}
-                     :lcc-lr/Collection
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fbc-pas-fpas/hasSelectingParty,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "collection of goods, services, or other things (e.g., financial contracts) that can be purchased and sold in some marketplace"})
 
@@ -207,11 +201,11 @@
 
 (def Broker
   "any party that acts as an intermediary between a buyer and a seller, usually charging a commission"
-  {:db/ident :fibo-fbc-pas-fpas/Broker,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "17 CFR 45.1, Definitions - see the definition of agent",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "A broker that specializes in stocks, bonds, commodities, or certain derivatives must be registered with the exchange in which the securities are traded.",
+   :db/ident :fibo-fbc-pas-fpas/Broker,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -225,9 +219,9 @@
 
 (def BrokerDealer
   "any party in the business of buying and selling securities, operating as both a broker and a dealer, depending on the transaction"
-  {:db/ident :fibo-fbc-pas-fpas/BrokerDealer,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "Office of Financial Research (OFR) Annual Report, 2012, Glossary",
+   :db/ident :fibo-fbc-pas-fpas/BrokerDealer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -258,9 +252,9 @@
 
 (def ClearedTrade
   "stage in the lifecycle of a trade indicating that a third-party clearing house, acting as an intermediary, has reconciled the orders involved in the trade"
-  {:db/ident :fibo-fbc-pas-fpas/ClearedTrade,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Clearing validates the availability of funds, records the transfer, and in the case of securities ensures the delivery of the security to the buyer.",
+   :db/ident :fibo-fbc-pas-fpas/ClearedTrade,
    :rdf/type [:fibo-fbc-pas-fpas/TradeLifecycleStage :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -280,9 +274,9 @@
 
 (def Dealer
   "any party that purchases goods or services for resale and acts on their own behalf in a transaction"
-  {:db/ident :fibo-fbc-pas-fpas/Dealer,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A dealer is a counterparty or principal in the transaction with the customer.",
+   :db/ident :fibo-fbc-pas-fpas/Dealer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -324,11 +318,11 @@
 
 (def FinancialIntermediationService
   "any financial service in which a third party (the intermediary) matches lenders and investors with entrepreneurs and other borrowers in need of capital"
-  {:db/ident :fibo-fbc-pas-fpas/FinancialIntermediationService,
+  {:cmns-av/explanatoryNote
+   "Often investors and borrowers do not have precisely matching needs, and the intermediary's capital is put at risk to transform the credit risk and maturity of the liabilities to meet the needs of investors.",
+   :db/ident :fibo-fbc-pas-fpas/FinancialIntermediationService,
    :fibo-fnd-utl-av/definitionOrigin
    "Office of Financial Research (OFR) Annual Report, 2012, Glossary",
-   :fibo-fnd-utl-av/explanatoryNote
-   "Often investors and borrowers do not have precisely matching needs, and the intermediary's capital is put at risk to transform the credit risk and maturity of the liabilities to meet the needs of investors.",
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -354,8 +348,8 @@
 
 (def FinancialProductCatalog
   "a catalog of financial products and/or services available for sale with their description and other product details"
-  {:db/ident :fibo-fbc-pas-fpas/FinancialProductCatalog,
-   :fibo-fnd-utl-av/adaptedFrom "Nordea Bank",
+  {:cmns-av/adaptedFrom "Nordea Bank",
+   :db/ident :fibo-fbc-pas-fpas/FinancialProductCatalog,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -402,9 +396,9 @@
 
 (def Holding
   "real or personal property (assets), including but not limited to financial assets, to which one holds title and of which one has possession"
-  {:db/ident :fibo-fbc-pas-fpas/Holding,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Note that a holding may refer to a single asset, such as a piece of real estate, a portfolio of assets, multiple portfolios, and so forth, and is frequently aggregated over multiple assets.",
+   :db/ident :fibo-fbc-pas-fpas/Holding,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -418,9 +412,9 @@
 
 (def LegalAgent
   "any party that has been legally empowered to act on behalf of another party"
-  {:db/ident :fibo-fbc-pas-fpas/LegalAgent,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "17 CFR 45.1, Definitions - see the definition of agent",
+   :db/ident :fibo-fbc-pas-fpas/LegalAgent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -438,9 +432,9 @@
 
 (def LicensedAgent
   "any individual who is licensed to perform a legally binding function, and who has been legally empowered to act on behalf of another party"
-  {:db/ident :fibo-fbc-pas-fpas/LicensedAgent,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "17 CFR 45.1, Definitions - see the definition of agent",
+   :db/ident :fibo-fbc-pas-fpas/LicensedAgent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -482,9 +476,9 @@
 
 (def Offering
   "expression of interest in providing something to someone that is contingent upon acceptance, forbearance, or some other consideration, as might be desired by an offeree(s)"
-  {:db/ident :fibo-fbc-pas-fpas/Offering,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The making of an offer is the first of three steps in the traditional process of forming a valid contract: an offer, an acceptance of the offer, and an exchange of consideration. (Consideration is the act of doing something or promising to do something that a person is not legally required to do, or the forbearance or the promise to forbear from doing something that he or she has the legal right to do.)",
+   :db/ident :fibo-fbc-pas-fpas/Offering,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -537,9 +531,9 @@
 
 (def Position
   "an investor's stake, i.e., a holding, in a particular asset (such as an individual security)"
-  {:db/ident :fibo-fbc-pas-fpas/Position,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A position can be long or short, and it can be in any asset class, such as stocks, bonds, futures, or options. A position can be open (current) or closed (past), but in general use, unless a position is specifically referred to as closed, the assumption is that it references an open position.",
+   :db/ident :fibo-fbc-pas-fpas/Position,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -635,20 +629,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "product lifecycle stage",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
-                      :owl/someValuesFrom :fibo-fbc-pas-fpas/ProductLifecycle,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/someValuesFrom
                       :fibo-fbc-pas-fpas/ProductLifecycleEvent,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/classifies,
-                      :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/someValuesFrom :fibo-fbc-pas-fpas/ProductLifecycle,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/ProductLifecycle,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStage],
+                     :fibo-fnd-arr-lif/LifecycleStage
+                     {:owl/onProperty     :lcc-cr/classifies,
+                      :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition "a phase in a product lifecycle",
    :skos/example
    "a research and development phase of a product lifecycle, the introduction phase in a marketing lifecycle, a growth stage in an economic lifecycle, or the origination phase in the lifecycle of a loan"})
@@ -677,10 +671,10 @@
 
 (def RegisteredAgent
   "a legal agent designated by another party (person or organization), to represent and acts on their behalf under a formal agency agreement"
-  {:db/ident :fibo-fbc-pas-fpas/RegisteredAgent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Agency capacity, as specified in an agency agreement, may include power of attorney, the ability to act as an agent in certain kinds of transactions such as real estate, tax, audit or other financial or legal transactions, as a fiduciary, including as a trustee or legal guardian, for service of process, and so forth.",
-   :fibo-fnd-utl-av/synonym ["resident agent" "statutory agent"],
+   :cmns-av/synonym ["resident agent" "statutory agent"],
+   :db/ident :fibo-fbc-pas-fpas/RegisteredAgent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -688,9 +682,7 @@
    :rdfs/seeAlso ["https://thelawdictionary.org/agent/"
                   "http://www.sos.state.tx.us/corp/registeredagents.shtml"],
    :rdfs/subClassOf
-   [:fibo-fbc-pas-fpas/LegalAgent
-    :fibo-fnd-agr-ctr/ContractParty
-    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/intersectionOf
                           [{:owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
                             :owl/someValuesFrom
@@ -700,15 +692,17 @@
                             :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                             :rdf/type           :owl/Restriction}],
                           :rdf/type :owl/Class},
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-pas-fpas/LegalAgent
+    :fibo-fnd-agr-ctr/ContractParty],
    :skos/definition
    "a legal agent designated by another party (person or organization), to represent and acts on their behalf under a formal agency agreement"})
 
 (def RegulatedCommodity
   "a commodity under the jurisdiction of the regulatory agency, such as the Commodities Futures Trading Commission (CFTF), which includes any commodity traded in an organized contracts market"
-  {:db/ident :fibo-fbc-pas-fpas/RegulatedCommodity,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The CFTC polices matters of information and disclosure, fair trading practices, registration of firms and individuals, protection of customer funds, record keeping, and maintenance of orderly options and futures markets in the United States.",
+   :db/ident :fibo-fbc-pas-fpas/RegulatedCommodity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -725,9 +719,9 @@
 
 (def SettlementTerms
   "contract terms that define the commitment to and mechanism for settling one or more sides of a transaction"
-  {:db/ident :fibo-fbc-pas-fpas/SettlementTerms,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "In general, settlement involves arrangement of disposition of property, typically for legal reasons. With respect to financial transactions, it involves completion of a trade, either between brokers or agents, or between a broker and client. This may include settlement in cash, either for the entire transaction or for the cash leg of a transaction, either now or at some specified time in the future.",
+   :db/ident :fibo-fbc-pas-fpas/SettlementTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -741,9 +735,9 @@
 
 (def TerminatedTrade
   "stage in the trade lifecycle in which the trade has been terminated early, i.e., prior to maturity"
-  {:db/ident :fibo-fbc-pas-fpas/TerminatedTrade,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Early termination may be triggered by a position sell or early termination provision, such as auto call/cancel, knock-out, etc.",
+   :db/ident :fibo-fbc-pas-fpas/TerminatedTrade,
    :rdf/type [:fibo-fbc-pas-fpas/TradeLifecycleStage :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -753,11 +747,11 @@
 
 (def ThirdPartyAgent
   "any service provider that is licensed to perform a legally binding function and has been legally empowered to act on behalf of another party"
-  {:db/ident :fibo-fbc-pas-fpas/ThirdPartyAgent,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "17 CFR 45.1, Definitions - see the definition of agent",
-   :fibo-fnd-utl-av/usageNote
+   :cmns-av/usageNote
    "Note that third-party agent is defined as a service provider (organization) acting in an agency capacity, such as a law firm, accountancy, or investment bank. This is distinct from the concept of an individual (licensed agent), for example one who works for a broker-dealer, that is a registered agent licensed to sell securities.",
+   :db/ident :fibo-fbc-pas-fpas/ThirdPartyAgent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -770,30 +764,18 @@
 
 (def Trade
   "agreement between parties participating in a voluntary action of buying and selling goods and services"
-  {:db/ident :fibo-fbc-pas-fpas/Trade,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "Deutsche Bank Presentation on the Lifecycle of a Trade, available at http://www.slideshare.net/ahaline/23512555-tradelifecycle",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    ["Trading activities typically include (a) regularly underwriting or dealing in securities; interest rate, foreign exchange rate, commodity, equity, and credit derivative contracts; other financial instruments; and other assets for resale, (b) acquiring or taking positions in such items principally for the purpose of selling in the near term or otherwise with the intent to resell in order to profit from short-term price movements, and (c) acquiring or taking positions in such items as an accommodation to customers or for other trading purposes. (Source: Instructions for Preparation of Consolidated Reports of Condition and Income (FFIEC 031 and 041), Schedule RC-D - Trading Assets and Liabilities, 2013."
     "The advent of money as a medium of exchange has allowed trade to be conducted in a manner that is much simpler and effective compared to earlier forms of trade, such as bartering. In financial markets, trading also can mean performing a transaction that involves the selling and purchasing of a security."
     "The seller must deliver the commodity sold to the buyer; the buyer must pay the agreed purchase price, which could be in the form of other goods or services, on the agreed date."],
+   :db/ident :fibo-fbc-pas-fpas/Trade,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "trade",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-fpas/TradeIdentifier,
-                      :owl/onProperty :lcc-lr/isIdentifiedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-pas-fpas/isEmbodiedIn,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-fpas/Trade,
-                      :owl/onProperty :fibo-fbc-pas-fpas/succeeds,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pas-pas/TransactionEvent
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycle,
                       :owl/onProperty :fibo-fnd-rel-rel/isCharacterizedBy,
                       :rdf/type       :owl/Restriction}
@@ -801,12 +783,24 @@
                       :owl/onClass    :fibo-fbc-pas-fpas/Trader,
                       :owl/onProperty :fibo-fbc-pas-fpas/isFacilitatedBy,
                       :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-fpas/TradeIdentifier,
+                      :owl/onProperty :lcc-lr/isIdentifiedBy,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/involves,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-pas-pas/Good
                                             :fibo-fnd-pas-pas/Service
                                             :fibo-fnd-agr-ctr/Contract],
                                            :rdf/type :owl/Class},
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-fpas/Trade,
+                      :owl/onProperty :fibo-fbc-pas-fpas/succeeds,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pas-pas/TransactionEvent
+                     {:owl/onProperty     :fibo-fbc-pas-fpas/isEmbodiedIn,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "agreement between parties participating in a voluntary action of buying and selling goods and services"})
@@ -917,24 +911,24 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "trade lifecycle stage",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-lif/LifecycleStage
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycleStage,
                       :owl/onProperty :fibo-fbc-pas-fpas/succeeds,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStage
                      {:owl/onProperty     :lcc-cr/classifies,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/someValuesFrom
                       :fibo-fbc-pas-fpas/TradeLifecycleEvent,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
-                      :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type :owl/Restriction}],
    :skos/definition "a phase in the lifecycle of a trade"})
 
 (def TradeLifecycleStageOccurrence
@@ -986,9 +980,9 @@
 
 (def TradingStrategy
   "approach used for buying and selling in the securities markets"
-  {:db/ident :fibo-fbc-pas-fpas/TradingStrategy,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A trading strategy is a plan whose aim is to make a profit or hedge against risk, based on rules and other criteria used when making trading decisions. A trading strategy may be simple or complex, and involve considerations such as investment style (e.g., value vs. growth), market cap, technical indicators, fundamental analysis, industry sector, level of portfolio diversification, time horizon or holding period, risk tolerance, leverage, tax considerations, and so on.",
+   :db/ident :fibo-fbc-pas-fpas/TradingStrategy,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -999,21 +993,21 @@
 
 (def UniqueTransactionIdentifier
   "sequence of characters identifying a financial transaction uniquely whenever useful and agreed by the parties or community involved in the transaction"
-  {:db/ident :fibo-fbc-pas-fpas/UniqueTransactionIdentifier,
-   :fibo-fnd-utl-av/abbreviation "UTI",
-   :fibo-fnd-utl-av/adaptedFrom
-   ["ISO 23897:2020, Financial services - Unique transaction identifier (UTI)"
-    "Harmonization of the Unique Transaction Identifier - Technical Guidance, 20 Feb 2017, described in https://www.bis.org/cpmi/publ/d158.pdf"],
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "UTI",
+   :cmns-av/adaptedFrom
+   ["Harmonization of the Unique Transaction Identifier - Technical Guidance, 20 Feb 2017, described in https://www.bis.org/cpmi/publ/d158.pdf"
+    "ISO 23897:2020, Financial services - Unique transaction identifier (UTI)"],
+   :cmns-av/explanatoryNote
    "In particular, a UTI will help to ensure the consistent aggregation of OTC derivatives and other securities transactions by minimising the likelihood that the same transaction will be counted more than once (for instance, because it is reported by more than one counterparty to a transaction, or to more than one trade repository (TR)).",
+   :db/ident :fibo-fbc-pas-fpas/UniqueTransactionIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "unique transaction identifier",
-   :rdfs/subClassOf [:fibo-fbc-pas-fpas/TradeIdentifier
-                     {:owl/onProperty :fibo-fbc-pas-fpas/hasGeneratingEntity,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-pas-fpas/hasGeneratingEntity,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-pas-fpas/TradeIdentifier],
    :skos/definition
    "sequence of characters identifying a financial transaction uniquely whenever useful and agreed by the parties or community involved in the transaction"})
 
@@ -1074,9 +1068,9 @@
 
 (def hasGeneratingEntityIdentifier
   "specifies an identifier for the entity that generated something"
-  {:db/ident :fibo-fbc-pas-fpas/hasGeneratingEntityIdentifier,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Note that the range of is identified by must be that entity's LEI in the context of a UTI",
+   :db/ident :fibo-fbc-pas-fpas/hasGeneratingEntityIdentifier,
    :owl/propertyChainAxiom [:fibo-fbc-pas-fpas/hasGeneratingEntity
                             :lcc-lr/isIdentifiedBy],
    :rdf/type :owl/ObjectProperty,
@@ -1186,9 +1180,9 @@
 
 (def hasSettlementDate
   "indicates the date by which an executed order or transaction must be settled"
-  {:db/ident :fibo-fbc-pas-fpas/hasSettlementDate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Settlement might involve either a buyer paying in cash or a seller delivering the relevant instrument(s) and receiving the proceeds as specified by the terms of a given transaction.",
+   :db/ident :fibo-fbc-pas-fpas/hasSettlementDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
@@ -1274,3 +1268,15 @@
    :rdfs/subPropertyOf :fibo-fbc-pas-fpas/relatesTo,
    :skos/definition
    "relates a product, organization, stage in a lifecycle, an event, or occurrence, such as a trade, to one that follows it"})
+
+(def ^{:private true} Product
+  {:db/ident        :fibo-fnd-pas-pas/Product,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-fpas/ProductLifecycle,
+                      :owl/onProperty :fibo-fnd-arr-lif/hasLifecycle,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-fpas/Catalog,
+                      :owl/onProperty :fibo-fnd-rel-rel/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}]})

@@ -1,14 +1,15 @@
 (ns net.wikipunk.rdf.fibo-sec-fund-civ
   "Reference data terms and non time dependent facts about funds and CIVs."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
    :dcterms/abstract
    "Reference data terms and non time dependent facts about funds and CIVs.",
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
@@ -25,14 +26,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/ClientsAndAccounts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Ratings/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/ClientsAndAccounts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesClassification/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/Funds/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/Funds/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
@@ -48,11 +49,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/CollectiveInvestmentVehicles/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-fct"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
     "fibo-be-ge-euj"
@@ -133,7 +136,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -142,25 +144,16 @@
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "Collective Investment Vehicles Ontology"},
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright "Copyright (c) 2013-2021 EDM Council, Inc.",
-   :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/FBC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/SEC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/BE/"
-                  "https://www.omg.org/spec/LCC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FND/"],
-   :sm/fileAbbreviation "fibo-sec-fund-civ",
-   :sm/filename "CollectiveInvestmentVehicles.rdf"}
+                :rdf/value    "Collective Investment Vehicles Ontology"}}
   (:refer-clojure :exclude [name]))
 
 (def AccumulatingShareClass
   "A share class in which there is no option to reinvest."
-  {:db/ident :fibo-sec-fund-civ/AccumulatingShareClass,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This fact would be determined by the fund unit having a specific Fund Distribution Policy of Accumulating."},
+   :db/ident :fibo-sec-fund-civ/AccumulatingShareClass,
    :owl/disjointWith :fibo-sec-fund-civ/DistributingShareClass,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -198,11 +191,11 @@
 
 (def AssetClassStrategy
   "Strategy which is asset class based."
-  {:db/ident :fibo-sec-fund-civ/AssetClassStrategy,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "EFAMA: The type of securities or other holdings that may be invested in. FIBIM: Strategy which is asset class based. Can implement this in terms of a classification of those things. Wording implies this is a policy."},
+   :db/ident :fibo-sec-fund-civ/AssetClassStrategy,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -233,11 +226,11 @@
 
 (def CommonShareInFund
   "A share unit in a fund, which is classified as a Common Share class."
-  {:db/ident :fibo-sec-fund-civ/CommonShareInFund,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "SR Review session notes: US: Closed and open ended funds may have common and preferred shares."},
+   :db/ident :fibo-sec-fund-civ/CommonShareInFund,
    :owl/disjointWith :fibo-sec-fund-civ/PreferredShareInFund,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -264,11 +257,11 @@
 
 (def DebtStakeInFund
   "A stake held in a fund by way of a Bond Unit."
-  {:db/ident :fibo-sec-fund-civ/DebtStakeInFund,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Note that you cannot buy fractional amounts in a bond. Review Session Note: Similar to what happens in a CDO where the collaterial manager and the issuer are two different entities. So model this along the same lines as the SPV in the structured finance model. Therefore: further modeling and review required"},
+   :db/ident :fibo-sec-fund-civ/DebtStakeInFund,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -336,11 +329,11 @@
 
 (def EquityStakeInFund
   "A stake held in a fund by way of a Share Class Unit."
-  {:db/ident :fibo-sec-fund-civ/EquityStakeInFund,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Theoretically you can buy a fraction of a share in a fund. This would depend on the legal structure of the fund, e.g. a minimum investment. There is always a distribution plan."},
+   :db/ident :fibo-sec-fund-civ/EquityStakeInFund,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -381,11 +374,11 @@
 
 (def FundAdministrator
   "Entity that has to fulfil the legal and supervisory requirements of the fund. Responsible for all the business purposes around the investment pool, and so is reponsible for the issuing of the shares."
-  {:db/ident :fibo-sec-fund-civ/FundAdministrator,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "If the unit is a bond, then the issuer is separate from the Fund Administrator. WG11 text: The party in charge of financial accounting, NAV calculation, management and performance fee calculation. Can also be in charge of orders centralisation and registration. Definition origin:EFAMA DD"},
+   :db/ident :fibo-sec-fund-civ/FundAdministrator,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -420,11 +413,11 @@
 
 (def FundBondClassUnit
   "A fund unit which takes the form of debt in that fund."
-  {:db/ident :fibo-sec-fund-civ/FundBondClassUnit,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "From EFAMA Review: called denominations e.g. issued in $5000 pieces. You cannot buy fractional amounts in a bond."},
+   :db/ident :fibo-sec-fund-civ/FundBondClassUnit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -542,11 +535,11 @@
 
 (def FundDebt
   "Debt issued by a Fund."
-  {:db/ident :fibo-sec-fund-civ/FundDebt,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This would normally be held by participants in that pool. in this case the pool is a fund which is formed by each of the participants extending credit to that pool and holding bond units in the pool representing that debt."},
+   :db/ident :fibo-sec-fund-civ/FundDebt,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -558,11 +551,11 @@
 
 (def FundDepositary
   "The party that holds and safeguards holdings owned by a fund. It is also responsible for compliance of the portfolio with legal ratios etc."
-  {:db/ident :fibo-sec-fund-civ/FundDepositary,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The depository may delegate custody to another entity (custodian). Definition origin:EFAMA DD"},
+   :db/ident :fibo-sec-fund-civ/FundDepositary,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -580,11 +573,11 @@
 
 (def FundDistributionPolicy
   "policy indicating the overall strategy or limitations on distribution for the fund"
-  {:db/ident :fibo-sec-fund-civ/FundDistributionPolicy,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Note that individual classes of Fund Unit also have specific distribution polcies as they effect that class of unit. This class is for terms with wording of the form: \" ... whether or not it is possible to hold shares ...\" for a given parameter."},
+   :db/ident :fibo-sec-fund-civ/FundDistributionPolicy,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -648,11 +641,11 @@
 
 (def FundInvestmentPolicy
   "policy that the fund implements in order to achieve the stated fund objectives"
-  {:db/ident :fibo-sec-fund-civ/FundInvestmentPolicy,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "EFAMA Note: Model distinguishes between strategy (what you intend to invest in) and portfolio structure (what is held). This semantics matches the EFAMA DD \"Fund Investment Policy\" No stated definition in EFAMA DD (\"Further discussion required\")."},
+   :db/ident :fibo-sec-fund-civ/FundInvestmentPolicy,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -677,11 +670,11 @@
 
 (def FundLegalFormDocumentation
   "For a fund which is constituted under the law of contract, the constitution or articles that define the fund. These are embodied in a Contract."
-  {:db/ident :fibo-sec-fund-civ/FundLegalFormDocumentation,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "From ISO FIBIM \"Umbrella Fund\" narrative: In securities, a collective investment scheme that has a contractual or a corporate form. When it has a contractual form, a fund is constituted under either the law of contract or under the trust law and thus it is not a legal entity. In its corporate form, a fund is a legal entity and is structured as a company."},
+   :db/ident :fibo-sec-fund-civ/FundLegalFormDocumentation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -695,11 +688,11 @@
 
 (def FundManagementCompany
   "The party that sets up the fund, decides the investment strategy, appoints the agents, and is responsible for the promotion and the marketing of the fund. It makes all of the important decisions related to the fund. Also called fund promotor or fund sponsor or fund manager."
-  {:db/ident :fibo-sec-fund-civ/FundManagementCompany,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "In the US: operates on a percentage of the Portfolio assets under management."},
+   :db/ident :fibo-sec-fund-civ/FundManagementCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -772,24 +765,24 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund portfolio"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
-     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioBenchmark,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
-     :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-ast/Portfolio
-    {:owl/onProperty     :fibo-sec-fund-civ/implementsFundPolicy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-sec-ast/PortfolioHolding,
+   [{:owl/onProperty     :fibo-sec-fund-civ/hasInvestmentStrategy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasLiquidity,
      :owl/someValuesFrom :fibo-sec-fund-civ/Liquidity,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasInvestmentStrategy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
+    {:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
+     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioBenchmark,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-sec-ast/Portfolio
+    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-sec-ast/PortfolioHolding,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/implementsFundPolicy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
+     :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioManager,
@@ -801,11 +794,11 @@
 
 (def FundPortfolioInvestmentLimitations
   "Detailed Policy on approximately how the portfolio is to be allocated to achieve the stated investment goals. This underpins the detailed strategy of how to achieve this."
-  {:db/ident :fibo-sec-fund-civ/FundPortfolioInvestmentLimitations,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Defined as \"Strategy\" in FIBIM and elsewhere. WG11: Rough allocation of the portfolio."},
+   :db/ident :fibo-sec-fund-civ/FundPortfolioInvestmentLimitations,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -819,10 +812,10 @@
 
 (def FundPortfolioInvestmentPolicy
   "policy with respect to allocation of the portfolio that is designed to meet the stated investment strategy and goals"
-  {:db/ident :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
-   :fibo-fnd-utl-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value    "ISO FIBIM: Rough allocation of the portfolio."},
+  {:cmns-av/explanatoryNote {:rdf/language "en",
+                             :rdf/value
+                             "ISO FIBIM: Rough allocation of the portfolio."},
+   :db/ident :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -843,11 +836,11 @@
 
 (def FundProcessingForm
   "The form of documentation or control mechanism required for some funds processing activity."
-  {:db/ident :fibo-sec-fund-civ/FundProcessingForm,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Equates to the \"Physical Form\" in SIO FIBIM for certain activities in funds processing. May or may not be a written physical document. ISO FIBIM Definition: Specifies whether a physical form is required."},
+   :db/ident :fibo-sec-fund-civ/FundProcessingForm,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -880,11 +873,11 @@
 
 (def FundProcessingTerms
   "Formal terms for processing of the fund. These set out what the investor and the fund may or may not do. These include terms for redemption and subscription processing as well as general processing terms. ISO FIBIM definition: Processing characteristics linked to the instrument, ie, not to the market."
-  {:db/ident :fibo-sec-fund-civ/FundProcessingTerms,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "These include Fund Subscription Terms, Fund Redemption Terms. and terms which relate to general processing and restrictions or otherwise on the holder. FPP notes: FPP presentation identifies many of these terms under the heading of Valuation Dealing characteristics. May need to revise which goes where in line with FPP. See also terms under NAV Valuation Calculation Method. Others of these terms appear in FPP under Instrument Restrictions. These cover the subscription, redemption and holding amounts and units and minimum holding period."},
+   :db/ident :fibo-sec-fund-civ/FundProcessingTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -1004,11 +997,11 @@
 
 (def FundShareClassUnit
   "The legal structure in which you can purchase part of an investment pool, defined by a variety of characteristics like investor type, minimum size of investment, distribution type, fee and currency. A fund unit which gives the holder an equity stake in the fund."
-  {:db/ident :fibo-sec-fund-civ/FundShareClassUnit,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "From review sessions: Theoretically you can buy a fraction of a share in a fund. This would depend on the legal structure of the fund, e.g. a minimum investment. There is always a distribution plan."},
+   :db/ident :fibo-sec-fund-civ/FundShareClassUnit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -1158,11 +1151,11 @@
 
 (def FundsProcessingAccount
   "An account used specifically in the processing of funds. Like all accounts this is (per FIBIM definition) a business relationship between two entities; one entity is the account owner, the other entity is the account servicer. Please refer to Financial global model for treatment of accounts relationships in this model."
-  {:db/ident :fibo-sec-fund-civ/FundsProcessingAccount,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Derived from FIBIM definition for \"Account\", which is: \"Business relationship between two entities; one entity is the account owner, the other entity is the account servicer.\" this corresponds to the Global Terms definition for Account."},
+   :db/ident :fibo-sec-fund-civ/FundsProcessingAccount,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -1266,11 +1259,11 @@
 
 (def InvestmentRestriction
   "Limitations that apply to the fund as a whole, such as risk factors. these are used to determine whether the fund is appropriate for a given type of investor to invest in."
-  {:db/ident :fibo-sec-fund-civ/InvestmentRestriction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "These are defined by the overall Fund investment policy. Not the same as the detailed policies for investing in percentages of this or that."},
+   :db/ident :fibo-sec-fund-civ/InvestmentRestriction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -1319,23 +1312,22 @@
 
 (def KeyInvestorInformationDocument
   "short document that provides critical information for investors, summarizing content derived from a prospectus such that it can be understood by investors without reference to other documents, as required by law in the European Union"
-  {:db/ident :fibo-sec-fund-civ/KeyInvestorInformationDocument,
-   :fibo-fnd-utl-av/abbreviation "KIID",
-   :fibo-fnd-utl-av/adaptedFrom
-   "https://eur-lex.europa.eu/eli/dir/2009/65/2020-01-07",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "KIID",
+   :cmns-av/adaptedFrom "https://eur-lex.europa.eu/eli/dir/2009/65/2020-01-07",
+   :cmns-av/explanatoryNote
    "Key investor information shall include appropriate information about the essential characteristics of the UCITS concerned, which is to be provided to investors so that they are reasonably able to understand the nature and the risks of the investment product that is being offered to them and, consequently, to take investment decisions on an informed basis.",
+   :db/ident :fibo-sec-fund-civ/KeyInvestorInformationDocument,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
    :rdfs/label "key investor information document",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-iss/OfferingDocument
-                     {:owl/hasValue   :fibo-be-ge-euj/EuropeanUnionJurisdiction,
+   :rdfs/subClassOf [{:owl/hasValue   :fibo-be-ge-euj/EuropeanUnionJurisdiction,
                       :owl/onProperty :fibo-fnd-law-jur/appliesIn,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-sec-iss/OfferingDocument
+                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "short document that provides critical information for investors, summarizing content derived from a prospectus such that it can be understood by investors without reference to other documents, as required by law in the European Union"})
 
@@ -1479,11 +1471,11 @@
 
 (def PortfolioInvestmentStrategy
   "The manner in which the portfolio manager tries to reach the funds objectives."
-  {:db/ident :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Describes how you get there. E.g fully invested v not fully invested. MB Note: The terms labeled \"Strategy\" in EFAMA and in FIBIM are more like dictionary definition of policy, while \"How you get there\" is a dictionary definition of Strategy. Therefore original labels may be reversed from dictionary definition of the global semantics these are derived from."},
+   :db/ident :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
@@ -2355,11 +2347,11 @@
 
 (def hasDistributionPolicy.1
   "Income policy relating to a class type, ie, if income is paid out or retained in the fund."
-  {:db/ident :fibo-sec-fund-civ/hasDistributionPolicy.1,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This is a fact about each individual type of Fund Unit. Additional facts may apply to the Fund as a whole - to be reviewed. Need to determine if there is an overall distribution policy term applicable to the Fund. Kept as a place holder in case there is."},
+   :db/ident :fibo-sec-fund-civ/hasDistributionPolicy.1,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
    :rdfs/isDefinedBy
@@ -3861,3 +3853,128 @@
    {:rdf/language "en",
     :rdf/value
     "See RiskClassification_NameOf in EFAMA DD Applies to Fund not Portfolio."}})
+
+(def ^{:private true} SpecialPurposeVehicle
+  {:cmns-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "A Special Purpose Vehicle (SPV) set up specifically to issue a security or securities. It is set up by a company or a group of companies for some purpose such as to create instruments that are off the company's balance sheet or to issue Participation Notes for investors in another jurisdiction. The SPV is formed for a specific reason and exists for a specific period of time and is then disbanded. Further notes: Special Purpose Vehicles are also referred to as bankruptcy remote entities, as they isolate financial risk. For Participation Notes: slightly different purpose but the same kind of vehicle. The only investment made by the SPV is that they buy in the stock. These are the same kind of entity in all of the contexts in which they exist."},
+   :db/ident        :fibo-be-le-lp/SpecialPurposeVehicle,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-fund-civ/isSetUpFor,
+                      :owl/someValuesFrom :fibo-sec-fund-civ/SPVPurpose,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-sec-fund-civ/isSetUpFor,
+                      :owl/someValuesFrom :fibo-sec-fund-civ/FundsCreation,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-sec-fund-civ/holds,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
+                      :rdf/type :owl/Restriction}]})
+
+(def ^{:private true} CollectiveInvestmentVehicle
+  {:cmns-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "From EFAMA DD: The word fund can refer to either an investment pool, umbrella or share class, and is commonly refered to as a collective investment vehicle (can have ISIN or not). The meaning here is for the investment pool (of which an Umbrella fund is also one such) and not to the share class."},
+   :db/ident :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
+   :rdf/type :owl/Class,
+   :rdfs/subClassOf
+   [{:owl/onProperty     :fibo-sec-fund-civ/hasSubscriptionTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundSubscriptionTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasManagementCompany,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundManager,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/distributedBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundDistributor,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDataProvider,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundDataProvider,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/administeredBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundAdministrator,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDepository,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundDepositary,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/supervisedBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundSupervisoryAuthority,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasFundPolicy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundInvestmentPolicy,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasAdditionalInformation,
+     :owl/someValuesFrom :fibo-sec-fund-civ/OtherInvestmentFundInformation,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/promotedBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundPromoter,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasTransferAgent,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundTransferAgent,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy.1,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasAccountant,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundAccountant,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasPerformanceDeterminationMethod,
+     :owl/someValuesFrom :fibo-sec-fund-civ/PerformanceDeterminationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/legallyRecordedIn,
+     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasAccountingInformation,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundReportingTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasUnitIssuer,
+     :owl/someValuesFrom :fibo-sec-fund-civ/UnitIssuer,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasRelatedFundTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundProcessingTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/fundHasRelatedParty,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundsProcessingParty,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasAuditor,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundAuditor,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/advisedBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/InvestmentAdvisor,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/describedIn,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundProspectus,
+     :rdf/type           :owl/Restriction}]})
+
+(def ^{:private true} FundContract
+  {:cmns-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "From ISO FIBIM \"Umbrella Fund\" narrative: In securities, a collective investment scheme that has a contractual or a corporate form. When it has a contractual form, a fund is constituted under either the law of contract or under the trust law and thus it is not a legal entity. In its corporate form, a fund is a legal entity and is structured as a company."},
+   :db/ident        :fibo-sec-fund-fund/FundContract,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onProperty :fibo-fnd-agr-ctr/isEvidencedBy,
+                     :owl/someValuesFrom
+                     :fibo-sec-fund-civ/FundLegalFormDocumentation,
+                     :rdf/type :owl/Restriction}})
+
+(def ^{:private true} FundUnit
+  {:cmns-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "If it is a closed fund, you can still trade the units. You trade back with the fund. Not with a counterparty. Therefore this is a tradable contract, though it may not necessarily be a transferable contract."},
+   :db/ident        :fibo-sec-fund-fund/FundUnit,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-sec-fund-civ/hasFundProcessingTerms,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-civ/FundRedemptionTerms,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty :fibo-sec-fund-civ/hasFundProcessingTerms,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-civ/FundProcessingGeneralTerms,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty :fibo-sec-fund-civ/hasDetails,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-civ/NetAssetValueCalculationMethod,
+                      :rdf/type :owl/Restriction}]})

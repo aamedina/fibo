@@ -174,7 +174,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "contract",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
@@ -182,10 +185,7 @@
                       :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-agr-agr/Agreement
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
-                      :rdf/type :owl/Restriction}],
+                     :fibo-fnd-agr-agr/Agreement],
    :skos/definition
    "voluntary, deliberate agreement between competent parties to which the parties agree to be legally bound, and for which the parties provide valuable consideration"})
 
@@ -489,23 +489,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "written contract",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
-     :rdf/type           :owl/Restriction}
+   [{:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-dt-fd/DateTimeStamp,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
+     :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-dt-fd/Date,
      :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDate,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-dt-fd/DateTimeStamp,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
-     :rdf/type       :owl/Restriction}
-    {:owl/onDataRange :xsd/boolean,
-     :owl/onProperty  :fibo-fnd-agr-ctr/isAssignable,
-     :owl/qualifiedCardinality 1,
-     :rdf/type        :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-dt-fd/DateTimeStamp,
@@ -513,6 +506,13 @@
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onDataRange :xsd/boolean,
+     :owl/onProperty  :fibo-fnd-agr-ctr/isAssignable,
+     :owl/qualifiedCardinality 1,
+     :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
      :rdf/type           :owl/Restriction}
     :fibo-fnd-agr-ctr/Contract],
    :skos/definition
@@ -802,3 +802,35 @@
    :rdfs/range :fibo-fnd-agr-ctr/Contract,
    :skos/definition
    "indicates a contract that was executed prior to and is replaced by this contract"})
+
+(def ^{:private true} BirthCertificate
+  {:db/ident        :fibo-fnd-aap-ppl/BirthCertificate,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onClass    :fibo-fnd-aap-ppl/PlaceOfBirth,
+                     :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
+                     :owl/qualifiedCardinality 1,
+                     :rdf/type       :owl/Restriction}})
+
+(def ^{:private true} DeathCertificate
+  {:db/ident        :fibo-fnd-aap-ppl/DeathCertificate,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onClass    :fibo-fnd-aap-ppl/DateOfDeath,
+                     :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
+                     :owl/qualifiedCardinality 1,
+                     :rdf/type       :owl/Restriction}})
+
+(def ^{:private true} IdentityDocument
+  {:db/ident        :fibo-fnd-aap-ppl/IdentityDocument,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-aap-ppl/DateOfBirth,
+                      :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-aap-ppl/PlaceOfBirth,
+                      :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-plc-adr/PhysicalAddress,
+                      :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
+                      :rdf/type       :owl/Restriction}]})

@@ -62,32 +62,32 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
    :rdfs/label "report",
-   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
-                     {:owl/onProperty     :fibo-fnd-arr-rep/isReportedTo,
-                      :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
-                      :owl/onProperty :fibo-fnd-arr-doc/hasReportingPeriod,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
+                      :owl/onProperty :fibo-fnd-arr-rep/hasReportDate,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fnd-arr-rep/ReportingParty,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-arr-rep/isReportedTo,
+                      :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-doc/Document
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/DateTime,
-                      :owl/onProperty :fibo-fnd-arr-rep/hasReportDateTime,
+                      :owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
+                      :owl/onProperty :fibo-fnd-arr-rep/isSubmittedTo,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-arr-rep/Submitter,
                       :owl/onProperty :fibo-fnd-arr-rep/isSubmittedBy,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
-                      :owl/onProperty :fibo-fnd-arr-rep/hasReportDate,
+                      :owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
+                      :owl/onProperty :fibo-fnd-arr-doc/hasReportingPeriod,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
-                      :owl/onProperty :fibo-fnd-arr-rep/isSubmittedTo,
+                      :owl/onClass    :fibo-fnd-dt-fd/DateTime,
+                      :owl/onProperty :fibo-fnd-arr-rep/hasReportDateTime,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "document that provides a structured description of something, prepared on ad hoc, periodic, recurring, regular, or as required basis"})
@@ -117,19 +117,19 @@
                       :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
                       :owl/onProperty :fibo-fnd-arr-rep/hasRequestDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-rep/isRequestedOf,
-                      :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/DateTime,
                       :owl/onProperty :fibo-fnd-arr-rep/hasRequestDateTime,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-rep/isRequestedBy,
-                      :owl/someValuesFrom :fibo-fnd-arr-rep/Requester,
+                     {:owl/onProperty     :fibo-fnd-arr-rep/isRequestedOf,
+                      :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-dt-oc/exemplifies,
                       :owl/someValuesFrom :fibo-fnd-arr-rep/RequestActivity,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-arr-rep/isRequestedBy,
+                      :owl/someValuesFrom :fibo-fnd-arr-rep/Requester,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "event in which some party asks another party for something at some point in time"})

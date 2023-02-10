@@ -1,24 +1,30 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-mod
   "The functional entities module includes ontologies that define business entities according to their function as opposed to their form. They include service providers such as financial institutions (e.g., banks, investment companies, and insurance companies), government regulatory and registration agencies, as well as entities described in terms of their function in some process, such as clearing houses."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
+                       "Copyright (c) 2015-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/MetadataFBCFunctionalEntities/FunctionalEntitiesModule",
    :dcterms/abstract
    "The functional entities module includes ontologies that define business entities according to their function as opposed to their form. They include service providers such as financial institutions (e.g., banks, investment companies, and insurance companies), government regulatory and registration agencies, as well as entities described in terms of their function in some process, such as clearing houses.",
-   :dcterms/issued #inst "2022-08-13T22:00:00.000-00:00",
+   :dcterms/issued #inst "2015-08-13T22:00:00.000-00:00",
    :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/modified #inst "2023-01-30T23:00:00.000-00:00",
    :owl/imports
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/",
+   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/MetadataFBCFunctionalEntities/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-fct-mod"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/MetadataFBCFunctionalEntities/",
-    "owl"     "http://www.w3.org/2002/07/owl#",
-    "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
-    "sm"      "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-    "xsd"     "http://www.w3.org/2001/XMLSchema#"},
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/MetadataFBCFunctionalEntities/",
@@ -26,16 +32,13 @@
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/MetadataFBCFunctionalEntities/",
    :rdfs/label
-   "Metadata about the EDMC-FIBO Financial Business and Commerce(FBC) Functional Entities Module",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2015-2022 Object Management Group, Inc."
-                  "Copyright (c) 2015-2022 EDM Council, Inc."],
-   :sm/fileAbbreviation "fibo-fbc-fct-mod",
-   :sm/filename "MetadataFBCFunctionalEntities.rdf"})
+   "Metadata about the EDMC-FIBO Financial Business and Commerce(FBC) Functional Entities Module"})
 
 (def FunctionalEntitiesModule
   "The functional entities module includes ontologies that define business entities according to their function as opposed to their form. They include service providers such as financial institutions (e.g., banks, investment companies, and insurance companies), government regulatory and registration agencies, as well as entities described in terms of their function in some process, such as clearing houses."
-  {:db/ident :fibo-fbc-fct-mod/FunctionalEntitiesModule,
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 Object Management Group, Inc."
+                       "Copyright (c) 2015-2023 EDM Council, Inc."],
+   :db/ident :fibo-fbc-fct-mod/FunctionalEntitiesModule,
    :dcterms/abstract
    "The functional entities module includes ontologies that define business entities according to their function as opposed to their form. They include service providers such as financial institutions (e.g., banks, investment companies, and insurance companies), government regulatory and registration agencies, as well as entities described in terms of their function in some process, such as clearing houses.",
    :dcterms/hasPart
@@ -59,11 +62,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/"],
    :dcterms/license "http://opensource.org/licenses/MIT",
-   :rdf/type [:sm/Module :owl/NamedIndividual],
+   :dcterms/title
+   ["FIBO FBC Functional Entities Module"
+    "Financial Industry Business Ontology (FIBO) Financial Business and Commerce (FBC) Functional Entities Module"],
+   :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/MetadataFBCFunctionalEntities/",
-   :rdfs/label "FIBO FBC Functional Entities Module",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
-   :sm/copyright ["Copyright (c) 2015-2022 EDM Council, Inc."
-                  "Copyright (c) 2015-2022 Object Management Group, Inc."],
-   :sm/moduleAbbreviation "FIBO-FBC-FCT"})
+   :rdfs/label "functional entities module",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})

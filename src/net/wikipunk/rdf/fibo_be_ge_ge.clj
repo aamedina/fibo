@@ -1,31 +1,35 @@
 (ns net.wikipunk.rdf.fibo-be-ge-ge
   "This ontology defines the fundamental concepts for representing polities and government entities and their relations."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 EDM Council, Inc."
+                       "Copyright (c) 2016-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for representing polities and government entities and their relations.",
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
+    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
+    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-fct"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
     "fibo-be-ge-ge"
@@ -58,7 +62,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -68,32 +71,21 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
    :rdfs/label "Government Entities Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to address text formatting hygiene issues."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to eliminate duplication of concepts in LCC and merge the countries ontology with locations."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to to rationalize natural person and legally capable person in a new concept, competent natural person, simplify / merge the legal person and formal organization class hierarchies, and revise certain definitions, such as for supranational entity, to correspond to ISO definitions."
+   ["The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to replace isAppointedBy with isDesignatedBy due to a name change in Relations, and to add a class for devolved government."
     "The http://www.omg.org/spec/EDMC-FIBO/BE/20160801/GovernmentEntities/GovernmentEntities.rdf version of this ontology was added to Business Entities, per the issue resolutions identified in the FIBO BE 1.1 RTF report."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to replace isAppointedBy with isDesignatedBy due to a name change in Relations, and to add a class for devolved government."
-    "The http://www.omg.org/spec/EDMC-FIBO/BE/20160801/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.2 RTF report."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to reflect the move of hasObjective to FND to enable higher level reuse and eliminate a reasoning error."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to fix spelling errors."
+    "The http://www.omg.org/spec/EDMC-FIBO/BE/20170201/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified per the FIBO 2.0 RFC to integrate LCC."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to eliminate references to external dictionary sites that no longer resolve, revise circular or ambiguous definitions, and to eliminate 'hasPartialSovereigntyOver' in favor of 'hasSharedSovereigntyOver'."
-    "The http://www.omg.org/spec/EDMC-FIBO/BE/20170201/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified per the FIBO 2.0 RFC to integrate LCC."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2016-2022 EDM Council, Inc."
-                  "Copyright (c) 2016-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/"
-    "https://www.omg.org/spec/LCC/"],
-   :sm/fileAbbreviation "fibo-be-ge-ge",
-   :sm/filename "GovernmentEntities.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to reflect the move of hasObjective to FND to enable higher level reuse and eliminate a reasoning error."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to to rationalize natural person and legally capable person in a new concept, competent natural person, simplify / merge the legal person and formal organization class hierarchies, and revise certain definitions, such as for supranational entity, to correspond to ISO definitions."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to address text formatting hygiene issues and to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to fix spelling errors."
+    "The http://www.omg.org/spec/EDMC-FIBO/BE/20160801/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.2 RTF report."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities.rdf version of this ontology was modified to eliminate duplication of concepts in LCC and merge the countries ontology with locations."]})
 
 (def BranchOfGovernment
   "division of the government of a state, with separate and independent powers and areas of responsibility so that the powers of one branch are not in conflict with the powers associated with the other branches"
-  {:db/ident :fibo-be-ge-ge/BranchOfGovernment,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.usa.gov/branches-of-government",
+  {:cmns-av/adaptedFrom "https://www.usa.gov/branches-of-government",
+   :db/ident :fibo-be-ge-ge/BranchOfGovernment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -115,10 +107,10 @@
 
 (def ExecutiveBranch
   "the branch of government that is authorized and responsible for the daily administration of the government"
-  {:db/ident :fibo-be-ge-ge/ExecutiveBranch,
-   :fibo-fnd-utl-av/adaptedFrom "https://www.usa.gov/branches-of-government",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/adaptedFrom "https://www.usa.gov/branches-of-government",
+   :cmns-av/explanatoryNote
    "The executive branch executes and enforces the law.",
+   :db/ident :fibo-be-ge-ge/ExecutiveBranch,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -129,9 +121,9 @@
 
 (def FederalGovernment
   "union of states under a central government distinct from the individual governments of the separate states"
-  {:db/ident :fibo-be-ge-ge/FederalGovernment,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A federation is a political entity characterized by a union of partially self-governing states or regions under a central (federal) government. In a federation, the self-governing status of the component states, as well as the division of power between them and the central government, are typically constitutionally entrenched and may not be altered by a unilateral decision of either party, the states or the federal political body.",
+   :db/ident :fibo-be-ge-ge/FederalGovernment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -152,9 +144,9 @@
 
 (def FederatedSovereignty
   "polity characterized by a union of partially self-governing states or regions under a central (federal) government"
-  {:db/ident :fibo-be-ge-ge/FederatedSovereignty,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The federated sovereignty is the legal entity that can incur debt for a federal government, as distinct from the Federal government.",
+   :db/ident :fibo-be-ge-ge/FederatedSovereignty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -184,9 +176,9 @@
 
 (def Government
   "the system by which a state or community is controlled"
-  {:db/ident :fibo-be-ge-ge/Government,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "In the Commonwealth of Nations, the word government is also used more narrowly to refer to the collective group of people that exercises executive authority in a state. This usage is analogous to what is called an 'administration' in American English. Furthermore, especially in American English, the concepts of the state and the government may be used synonymously to refer to the person or group of people exercising authority over a politically organized territory.",
+   :db/ident :fibo-be-ge-ge/Government,
    :owl/disjointWith :fibo-be-ge-ge/Instrumentality,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -195,6 +187,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/hasPart,
                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
                       :rdf/type           :owl/Restriction}
+                     :fibo-be-fct-fct/FunctionalEntity
                      {:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
@@ -203,15 +196,14 @@
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :lcc-cr/hasPart,
                       :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-be-fct-fct/FunctionalEntity],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition "the system by which a state or community is controlled"})
 
 (def GovernmentAgency
   "permanent or semi-permanent organization, often an appointed commission, in the machinery of government that is responsible for the oversight and administration of specific functions"
-  {:db/ident :fibo-be-ge-ge/GovernmentAgency,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "There is a notable variety of agency types. Although usage differs, a government agency is normally distinct both from a department or ministry, and other types of public body established by government. The functions of an agency are normally executive in character, since different types of organizations (such as commissions) are most often constituted in an advisory role; this distinction is often blurred in practice however.",
+   :db/ident :fibo-be-ge-ge/GovernmentAgency,
    :owl/disjointWith :fibo-be-ge-ge/GovernmentDepartment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -244,9 +236,9 @@
 
 (def GovernmentBody
   "formal organization that is an agency, instrumentality, or other body of a supranational, national, federal, state, or local government, including certain multijurisdictional agencies and departments that carry out the business of government"
-  {:db/ident :fibo-be-ge-ge/GovernmentBody,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Identifying government bodies is a pre-requisite for identifying government officials. This information is needed to help ensure compliance with applicable laws relating to bribery or corruption, including the U.S. Foreign Corrupt Practices Act (FCPA), the UK Bribery Act 2010 (UKBA), the U.S. Bank Bribery Act (Bribery Act), and other anti-bribery and corruption laws in the jurisdictions where financial institutions conduct business.",
+   :db/ident :fibo-be-ge-ge/GovernmentBody,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -309,9 +301,9 @@
 
 (def Instrumentality
   "organization that serves a public purpose and is closely tied to a government, but is not a government agency"
-  {:db/ident :fibo-be-ge-ge/Instrumentality,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Many instrumentalities are private companies, and some are chartered directly by state or federal government. Instrumentalities are subject to a unique set of laws that shape their activities.",
+   :db/ident :fibo-be-ge-ge/Instrumentality,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -329,9 +321,9 @@
 
 (def Judiciary
   "branch of government that comprises the system of courts that interprets and applies the law in the name of the supranational, national, federal, or regional government, depending on its jurisdiction"
-  {:db/ident :fibo-be-ge-ge/Judiciary,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The judiciary also provides a mechanism for the resolution of disputes. Under the doctrine of the separation of powers, the judiciary generally does not make law (that is, in a plenary fashion, which is the responsibility of the legislature) or enforce law (which is the responsibility of the executive), but rather interprets law and applies it to the facts of each case.",
+   :db/ident :fibo-be-ge-ge/Judiciary,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -345,9 +337,9 @@
 
 (def Legislature
   "the law-making body of a political unit, usually a national government, that has power to enact, amend, and repeal public policy"
-  {:db/ident :fibo-be-ge-ge/Legislature,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Laws enacted by legislatures are known as legislation. Legislatures observe and steer governing actions and usually have exclusive authority to amend the budget or budgets involved in the process.",
+   :db/ident :fibo-be-ge-ge/Legislature,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -358,10 +350,10 @@
 
 (def MunicipalEntity
   "polity that typically represents a city, township, or other administrative subdivision having corporate status and powers of self-government or jurisdiction"
-  {:db/ident :fibo-be-ge-ge/MunicipalEntity,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Municipal entity in the sense of a legal entity, that is, what it is that incurs debt for a municipality, as distinct from the Municipal government. A municipal entity has a Government which sets laws applicable within the geographical area corresponding to its jurisdiction.",
-   :fibo-fnd-utl-av/synonym "municipality",
+   :cmns-av/synonym "municipality",
+   :db/ident :fibo-be-ge-ge/MunicipalEntity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -424,10 +416,10 @@
 
 (def RegionalGovernment
   "administrative body for a geographic area, such as a county, smaller town, or other similar community"
-  {:db/ident :fibo-be-ge-ge/RegionalGovernment,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A local government will typically only have control over their specific geographical region, and cannot pass or enforce laws that will affect a wider area. Local governments can elect officials, enact taxes, and do many other things that a national government would do, just on a smaller scale.",
-   :fibo-fnd-utl-av/synonym "local government",
+   :cmns-av/synonym "local government",
+   :db/ident :fibo-be-ge-ge/RegionalGovernment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -461,9 +453,9 @@
 
 (def SovereignState
   "non-physical juridical entity that is represented by one centralized government that has sovereignty over a geographic area"
-  {:db/ident :fibo-be-ge-ge/SovereignState,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A legal entity that is represented by one centralized government, has a permanent population, defined territory, and the capacity to enter into relations with other sovereign states.",
+   :db/ident :fibo-be-ge-ge/SovereignState,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -480,24 +472,24 @@
 
 (def SupranationalEntity
   "governmental or non-governmental entity that is established by international law or treaty or incorporated at an international level"
-  {:db/ident :fibo-be-ge-ge/SupranationalEntity,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    ["ISO 20275:2017, Financial services - Entity legal forms (ELF), First Edition, July 2017."
     "Kiljunen, Kimmo (2004). The European Constitution in the Making. Centre for European Policy Studies. pp. 21-26. ISBN 978-92-9079-493-6"],
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "A supranational union is a supranational polity which lies somewhere between a confederation that is an association of states and a federation that is a state. Unlike states in a federal super-state, member states retain ultimate sovereignty, although some sovereignty is shared with, or ceded to, the supranational body.",
+   :db/ident :fibo-be-ge-ge/SupranationalEntity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
    :rdfs/label "supranational entity",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 2,
-                      :owl/onClass    :lcc-cr/Country,
-                      :owl/onProperty :fibo-be-ge-ge/hasSharedSovereigntyOver,
-                      :rdf/type       :owl/Restriction}
+   :rdfs/subClassOf [:fibo-be-ge-ge/Polity
                      {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentBody,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-ge-ge/Polity],
+                     {:owl/minQualifiedCardinality 2,
+                      :owl/onClass    :lcc-cr/Country,
+                      :owl/onProperty :fibo-be-ge-ge/hasSharedSovereigntyOver,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "governmental or non-governmental entity that is established by international law or treaty or incorporated at an international level"})
 
@@ -514,9 +506,9 @@
 
 (def TribalEntity
   "legal entity that represents fundamental unit of sovereign tribal (indigenous) government"
-  {:db/ident :fibo-be-ge-ge/TribalEntity,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Any indigenous group or community which is recognized as having rights and obligations independent of the central government.",
+   :db/ident :fibo-be-ge-ge/TribalEntity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -636,3 +628,19 @@
    :rdfs/label "is represented by",
    :skos/definition
    "relates a system of governance to its chosen representatives"})
+
+(def ^{:private true} IdentityDocument
+  {:db/ident        :fibo-fnd-aap-ppl/IdentityDocument,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onClass    :fibo-be-ge-ge/Government,
+                     :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+                     :owl/qualifiedCardinality 1,
+                     :rdf/type       :owl/Restriction}})
+
+(def ^{:private true} NationalIdentificationNumber
+  {:db/ident        :fibo-fnd-aap-ppl/NationalIdentificationNumber,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onClass    :fibo-be-ge-ge/Government,
+                     :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+                     :owl/qualifiedCardinality 1,
+                     :rdf/type       :owl/Restriction}})

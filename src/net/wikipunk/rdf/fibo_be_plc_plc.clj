@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-be-plc-plc
   "This ontology defines the fundamental concepts for representing private limited companies -- i.e., companies that have characteristics of corporations and of partnerships but are neither."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 EDM Council, Inc."
+                       "Copyright (c) 2016-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for representing private limited companies -- i.e., companies that have characteristics of corporations and of partnerships but are neither.",
@@ -13,6 +15,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/"
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
@@ -20,7 +23,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
     "fibo-be-oac-cpty"
@@ -44,7 +48,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -57,24 +60,13 @@
    ["The https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies.rdf version of this ontology was modified to eliminate a smart quote in an explanatory note on manager-managed limited liability company, and to reflect the move of OrganizationMember from Parties to Organizations in FND"
     "The https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies.rdf version of this ontology was modified to simplify / merge the legal person and formal organization class hierarchies, and add limited liability company, limited liability company taxed as a corporation, managing member, and private limited company."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies.rdf version of this ontology was modified to fix spelling errors."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies.rdf version of this ontology was modified per the FIBO 2.0 RFC."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2016-2021 EDM Council, Inc."
-                  "Copyright (c) 2016-2021 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/"],
-   :sm/fileAbbreviation "fibo-be-plc-plc",
-   :sm/filename "PrivateLimitedCompanies.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies.rdf version of this ontology was modified per the FIBO 2.0 RFC."]})
 
 (def LimitedLiabilityCompany
   "private limited company that combines the pass through taxation of a sole proprietorship or partnership with the limited liability of a corporation"
-  {:db/ident :fibo-be-plc-plc/LimitedLiabilityCompany,
-   :fibo-fnd-utl-av/abbreviation "LLC",
+  {:cmns-av/abbreviation "LLC",
+   :db/ident :fibo-be-plc-plc/LimitedLiabilityCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
@@ -107,10 +99,6 @@
    :rdfs/subClassOf
    [:fibo-be-oac-cpty/DeJureControllingInterestParty
     :fibo-fnd-org-org/OrganizationMember
-    {:owl/onClass    :fibo-be-le-lp/LegallyCompetentNaturalPerson,
-     :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
     :fibo-be-oac-cpty/EntityControllingParty
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onProperty :lcc-lr/isMemberOf,
@@ -118,22 +106,26 @@
                           :fibo-be-plc-plc/LimitedLiabilityCompany,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-be-oac-opty/EntityOwner
+    {:owl/onClass    :fibo-be-le-lp/LegallyCompetentNaturalPerson,
+     :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
                       :fibo-be-plc-plc/LimitedLiabilityCompany,
                       :rdf/type :owl/Restriction},
      :owl/onProperty :fibo-be-oac-cpty/isControllingMemberOf,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-be-oac-opty/EntityOwner],
    :skos/definition "owner of an interest in a limited liability company"})
 
 (def LimitedLiabilityCompanyTaxedAsACorporation
   "limited liability company that has elected to have corporate tax status"
-  {:db/ident :fibo-be-plc-plc/LimitedLiabilityCompanyTaxedAsACorporation,
-   :fibo-fnd-utl-av/abbreviation "C-LLC",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "C-LLC",
+   :cmns-av/explanatoryNote
    "In the United States, LLCs that elect to be taxed as a corporation do so by filing an IRS Form 8832.",
+   :db/ident :fibo-be-plc-plc/LimitedLiabilityCompanyTaxedAsACorporation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
@@ -144,9 +136,9 @@
 
 (def ManagerManagedLimitedLiabilityCompany
   "limited liability company in which the members appoint one or more managers to handle the daily operations and administrative responsibilities of the organization"
-  {:db/ident :fibo-be-plc-plc/ManagerManagedLimitedLiabilityCompany,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "If no members are interested in managing the LLC, an external manager (someone who doesn't own any portion of the LLC) can be hired to run the business operations, including, in some jurisdictions, a third-party entity, such as another company.",
+   :db/ident :fibo-be-plc-plc/ManagerManagedLimitedLiabilityCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
@@ -176,11 +168,11 @@
 
 (def PrivateCompanyWithLimitedLiability
   "hybrid business entity having characteristics of both a corporation and a partnership or sole proprietorship (depending on how many owners there are)"
-  {:db/ident :fibo-be-plc-plc/PrivateCompanyWithLimitedLiability,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://en.wikipedia.org/wiki/Limited_liability_company#Overview",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "A private company with limited liability, although a business entity, is not a corporation. The primary characteristic this legal form shares with a corporation is limited liability, and the primary characteristic it shares with a partnership is the availability of pass-through income taxation. It is often more flexible than a corporation, and it is well-suited for companies with a single owner.",
+   :db/ident :fibo-be-plc-plc/PrivateCompanyWithLimitedLiability,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
@@ -191,10 +183,10 @@
 
 (def PrivateLimitedCompany
   "private limited company whose shareholders' liability is limited to the capital they originally invested"
-  {:db/ident :fibo-be-plc-plc/PrivateLimitedCompany,
-   :fibo-fnd-utl-av/abbreviation "Ltd.",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "Ltd.",
+   :cmns-av/explanatoryNote
    "Private limited companies are common in countries including the U.K., Ireland, and Canada. They have one or more members, also called shareholders or owners, who buy in through private sales. Directors are company employees who keep up with all administrative tasks and tax filings but do not need to be shareholders.",
+   :db/ident :fibo-be-plc-plc/PrivateLimitedCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",

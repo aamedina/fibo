@@ -1,18 +1,21 @@
 (ns net.wikipunk.rdf.fibo-ind-mkt-bas
   "This ontology defines market indices as hypothetical portfolios of investment holdings that correspond to some segment of the financial market, whose value is determined by the prices of the underlying holdings. Coverage includes credit indices, security-based indices, economic indicator based indices, and combinations thereof."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2014-2023 Object Management Group, Inc."
+                       "Copyright (c) 2014-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :dcterms/abstract
    "This ontology defines market indices as hypothetical portfolios of investment holdings that correspond to some segment of the financial market, whose value is determined by the prices of the underlying holdings. Coverage includes credit indices, security-based indices, economic indicator based indices, and combinations thereof.",
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesClassification/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesClassification/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/"
@@ -28,7 +31,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/BasketIndices/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-cre"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
     "fibo-fbc-dae-dbt"
@@ -66,7 +70,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -80,26 +83,18 @@
    ["The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of this ontology was revised to add the details needed to calculate market cap for a capitalization-based weighting function."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of this ontology was revised to remedy an illegal property chain (replacing it with an existing non-chained property) in the definition of market capitalization."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of this ontology was revised to reflect the move of hasTerm from FinancialInstruments to Contracts."
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of this ontology was revised to loosen the restriction on a reference index to simply reference any weighted basket so that one could include commodity indices, for example."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of this ontology was revised to address text processing hygiene issues."
-    "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of this ontology was revised to eliminate the restriction on reference index that it has an index value - the restriction should be on the quantity value such that the value refers to the indicator it represents."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2014-2022 EDM Council, Inc."
-                  "Copyright (c) 2014-2022 Object Management Group, Inc."],
-   :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-                  "https://www.omg.org/spec/LCC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FBC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/SEC/"],
-   :sm/fileAbbreviation "fibo-ind-mkt-bas",
-   :sm/filename "BasketIndices.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of this ontology was revised to eliminate the restriction on reference index that it has an index value - the restriction should be on the quantity value such that the value refers to the indicator it represents."]})
 
 (def BasketOfCreditRisks
   "basket of instruments, legal entities, or a combination thereof collected for the purpose of analyzing risk"
-  {:db/ident :fibo-ind-mkt-bas/BasketOfCreditRisks,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Note that the risk related to a given constituent may be calculated based on either (1) the overall credit risk associated with the entity or, (2) the combined risk associated with an entity and the specific instrument identified, or (3) risk associated with the instrument on its own. Criteria for constituents is based on sectors (emerging market, financial, sovereign, etc), spread range (investment grade, non-investment grade), or asset type (loan, bond, mortgage-backed, asset-backed), second criteria is based on maturity of protection (2,3,5,7,10 yrs). Markit manages over 2000 CDS indexes, for example."},
+   :db/ident :fibo-ind-mkt-bas/BasketOfCreditRisks,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
@@ -158,11 +153,11 @@
 
 (def CreditIndex
   "reference index that is a function of credit events that change the value of an underlying portfolio"
-  {:db/ident :fibo-ind-mkt-bas/CreditIndex,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Such an index does not necessarily reference a static portfolio, as there may be provisions for replacing defaulted securities on which the index depends."},
+   :db/ident :fibo-ind-mkt-bas/CreditIndex,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
@@ -219,34 +214,34 @@
 
 (def MarketCapitalization
   "expression representing the perceived value of a company as determined by the stock market at a specific point in time"
-  {:db/ident :fibo-ind-mkt-bas/MarketCapitalization,
+  {:cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "market cap"},
+   :db/ident :fibo-ind-mkt-bas/MarketCapitalization,
    :fibo-fnd-utl-alx/actualExpression
    {:rdf/language "en",
     :rdf/value    "number of shares outstanding x price per share"},
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "market cap"},
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "market capitalization"},
-   :rdfs/subClassOf [{:owl/onProperty
-                      :fibo-ind-mkt-bas/hasMarketCapitalizationValue,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-dt-fd/hasObservedDateTime,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/CombinedDateTime,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-sec-eq-eq/PricePerShare,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
                      {:owl/onProperty     :fibo-sec-eq-eq/hasSharesOutstanding,
                       :owl/someValuesFrom :xsd/nonNegativeInteger,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom :fibo-sec-eq-eq/ShareIssuer,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-dt-fd/hasObservedDateTime,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/CombinedDateTime,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/onProperty
+                      :fibo-ind-mkt-bas/hasMarketCapitalizationValue,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -254,31 +249,19 @@
 
 (def ReferenceIndex
   "measure of change in the value of the contents of a basket over a given period of time"
-  {:db/ident :fibo-ind-mkt-bas/ReferenceIndex,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "An index is a function based on a set of structured calculations with respect to a basket of credit risks, financial instruments or other indices over time. Analysis may be computed based on historical values, projected values, etc."},
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "benchmark"},
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "benchmark"},
+   :db/ident :fibo-ind-mkt-bas/ReferenceIndex,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "reference index"},
    :rdfs/subClassOf [:fibo-fnd-utl-alx/ScopedMeasure
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
-                      :owl/onProperty  :fibo-fnd-utl-alx/hasReleaseDateTime,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-sec-sec-cls/AssetClass,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-dt-fd/ExplicitDatePeriod,
                       :owl/onProperty :fibo-fnd-arr-doc/hasReportingPeriod,
                       :owl/qualifiedCardinality 1,
@@ -290,6 +273,18 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty    :fibo-fnd-utl-alx/hasPeriodicity,
                       :rdf/type          :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
+                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-sec-sec-cls/AssetClass,
+                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
+                      :owl/onProperty  :fibo-fnd-utl-alx/hasReleaseDateTime,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/WeightedBasket,
                       :rdf/type           :owl/Restriction}],

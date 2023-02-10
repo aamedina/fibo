@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-dae-gty
   "This ontology defines concepts related to contractual guaranty."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 Object Management Group, Inc."
+                       "Copyright (c) 2016-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
    :dcterms/abstract
    "This ontology defines concepts related to contractual guaranty.",
@@ -21,6 +23,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
@@ -29,7 +32,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Guaranty/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-ge"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
     "fibo-be-le-lp"
@@ -73,7 +77,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -86,23 +89,17 @@
    ["The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to eliminate duplication of concepts in LCC."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to address text formatting issues uncovered by hygiene testing."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to incorporate refinement of the concept of a guaranty as needed for debt securities and loans."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to make letter of credit a subclass of committed credit facility, and to differentiate financial collateral from physical collateral."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to simplify the contract party hierarchy, add properties linking controlled parties to their guarantor, and clean up definitions to eliminate ambiguity, etc."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology was added to the FBC domain via the FIBO 2.0 RFC in support of several FIBO debt-oriented initiatives."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to add financial asset as a parent of letter of credit."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2016-2022 EDM Council, Inc."
-                  "Copyright (c) 2016-2022 Object Management Group, Inc."],
-   :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/BE/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FND/"],
-   :sm/fileAbbreviation "fibo-fbc-dae-gty",
-   :sm/filename "Guaranty.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/ version of this ontology revised to add financial asset as a parent of letter of credit."]})
 
 (def CollateralizedGuaranty
   "guaranty that takes the form of some asset that is pledged by a borrower to a lender (usually in return for a loan)"
-  {:db/ident :fibo-fbc-dae-gty/CollateralizedGuaranty,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "In some cases, the lender may require the borrower to place pledged assets such as cash or securities in a separate account that the lender controls.",
+   :db/ident :fibo-fbc-dae-gty/CollateralizedGuaranty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
@@ -133,22 +130,22 @@
 
 (def Guarantor
   "party that guarantees, endorses, or provides indemnity for some obligation on behalf of some other party"
-  {:db/ident :fibo-fbc-dae-gty/Guarantor,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "Barron's Dictionary of Business and Economics Terms, Fifth Edition, 2012",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "In some cases, the party acting as guarantor may also be a party to the contract, such as in the case of Fannie Mae or Freddie Mac. In such cases, the same individual would be modeled as having both roles.",
+   :db/ident :fibo-fbc-dae-gty/Guarantor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
    :rdfs/label "guarantor",
    :rdfs/subClassOf
-   [:fibo-fnd-agr-ctr/ContractThirdParty
-    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
                           :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
+    :fibo-fnd-agr-ctr/ContractThirdParty
     :fibo-be-oac-cpty/DeJureControllingInterestParty
     {:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
      :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
@@ -158,11 +155,11 @@
 
 (def Guaranty
   "commitment whereby something is formally assured if a party with primary liability fails to perform"
-  {:db/ident :fibo-fbc-dae-gty/Guaranty,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "Barron's Dictionary of Business and Economics Terms, Fifth Edition, 2012",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "The commitment may cover a debt, cash flows on a debt instrument (such as interest payments), or performance of some obligation.",
+   :db/ident :fibo-fbc-dae-gty/Guaranty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
@@ -170,18 +167,18 @@
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-dt-fd/DatePeriod,
                       :owl/onProperty    :fibo-fnd-dt-bd/holdsDuring,
                       :rdf/type          :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty    :fibo-fnd-arr-doc/hasExpirationDate,
+                     {:owl/allValuesFrom :fibo-fbc-dae-gty/Guarantor,
+                      :owl/onProperty    :fibo-fbc-dae-gty/isGuaranteedBy,
                       :rdf/type          :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fbc-dae-gty/PriorityLevel,
                       :owl/onProperty    :fibo-fbc-dae-gty/hasPriorityLevel,
                       :rdf/type          :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fbc-dae-gty/Guarantor,
-                      :owl/onProperty    :fibo-fbc-dae-gty/isGuaranteedBy,
-                      :rdf/type          :owl/Restriction}
-                     :fibo-fnd-agr-agr/Commitment
                      {:owl/allValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty    :fibo-fbc-dae-gty/hasGuaranteedAmount,
+                      :rdf/type          :owl/Restriction}
+                     :fibo-fnd-agr-agr/Commitment
+                     {:owl/allValuesFrom :fibo-fnd-dt-fd/Date,
+                      :owl/onProperty    :fibo-fnd-arr-doc/hasExpirationDate,
                       :rdf/type          :owl/Restriction}],
    :skos/definition
    "commitment whereby something is formally assured if a party with primary liability fails to perform"})
@@ -245,19 +242,19 @@
 
 (def LetterOfCredit
   "letter from a bank or other creditworthy institution guaranteeing that a buyer's payment to a seller will be received on time and for the correct amount"
-  {:db/ident :fibo-fbc-dae-gty/LetterOfCredit,
-   :fibo-fnd-utl-av/abbreviation "L/C",
-   :fibo-fnd-utl-av/explanatoryNote
-   ["In the event that the buyer is unable to make payment, the bank or other issuer is required to cover the full or remaining amount."
-    "In some states in the U.S., the issuer is not limited to financial institutions -- it is simply a written instrument, addressed by one person to another, requesting the latter to give credit to the person in whose favor it is drawn."],
+  {:cmns-av/abbreviation "L/C",
+   :cmns-av/explanatoryNote
+   ["In some states in the U.S., the issuer is not limited to financial institutions -- it is simply a written instrument, addressed by one person to another, requesting the latter to give credit to the person in whose favor it is drawn."
+    "In the event that the buyer is unable to make payment, the bank or other issuer is required to cover the full or remaining amount."],
+   :db/ident :fibo-fbc-dae-gty/LetterOfCredit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
    :rdfs/label "letter of credit",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+   :rdfs/subClassOf [:fibo-fnd-acc-aeq/FinancialAsset
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
                      :fibo-fbc-dae-dbt/CommittedCreditFacility],
    :skos/definition
    "letter from a bank or other creditworthy institution guaranteeing that a buyer's payment to a seller will be received on time and for the correct amount"})
@@ -289,8 +286,8 @@
 
 (def Policyholder
   "counterparty to and typically owner of an insurance policy"
-  {:db/ident :fibo-fbc-dae-gty/Policyholder,
-   :fibo-fnd-utl-av/synonym "insured party",
+  {:cmns-av/synonym "insured party",
+   :db/ident :fibo-fbc-dae-gty/Policyholder,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",

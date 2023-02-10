@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-be-le-usex
   "This ontology includes example corporate executives and other people to demonstrate how to begin to model those entities in FIBO."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2022-2023 EDM Council, Inc."
+                       "Copyright (c) 2022-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
    :dcterms/abstract
    "This ontology includes example corporate executives and other people to demonstrate how to begin to model those entities in FIBO.",
@@ -20,11 +22,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-usee"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
     "fibo-be-le-usex"
@@ -56,7 +60,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -64,12 +67,7 @@
    :rdfa/prefix "fibo-be-le-usex",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
-   :rdfs/label "US Example Executives",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2022 Object Management Group, Inc."
-                  "Copyright (c) 2022 EDM Council, Inc."],
-   :sm/fileAbbreviation "fibo-be-le-usex",
-   :sm/filename "USExampleExecutives.rdf"})
+   :rdfs/label "US Example Executives"})
 
 (def AppleIncAsControlledParty
   "Apple Inc. in its role as a corporation that is controlled to some degree by its corporate officers"

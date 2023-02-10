@@ -177,15 +177,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "dispersion",
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
-                      :owl/onDataRange :xsd/nonNegativeInteger,
-                      :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fnd-utl-alx/StatisticalMeasure
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/StatisticalMeasure
                      {:owl/onProperty :fibo-fnd-utl-alx/hasObservedValue,
                       :owl/someValuesFrom
                       :fibo-fnd-arr-arr/StructuredCollection,
                       :rdf/type :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :xsd/nonNegativeInteger,
+                      :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
+                      :rdf/type        :owl/Restriction}
                      :fibo-fnd-utl-alx/Expression
                      {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
@@ -552,12 +552,12 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isCharacterizedBy,
                       :owl/someValuesFrom :fibo-fnd-utl-alx/StatisticalArea,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isCharacterizedBy,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDatePeriod,
-                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom :xsd/nonNegativeInteger,
                       :owl/onProperty    :fibo-fnd-utl-alx/hasPopulationSize,
                       :rdf/type          :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isCharacterizedBy,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDatePeriod,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/FinitePopulation
                      :fibo-fnd-utl-alx/StatisticalUniverse],
    :skos/definition "statistical universe filtered by time and region"})
@@ -958,3 +958,23 @@
    :rdfs/label "is value of",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/appliesTo,
    :skos/definition "is the measure that the value represents"})
+
+(def ^{:private true} Classifier
+  {:db/ident        :fibo-fnd-arr-cls/Classifier,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-fnd-utl-alx/Aspect})
+
+(def ^{:private true} Quantity
+  {:db/ident        :fibo-fnd-qt-qtu/Quantity,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-fnd-utl-alx/Measure})
+
+(def ^{:private true} characterizes
+  {:db/ident    :fibo-fnd-rel-rel/characterizes,
+   :rdf/type    :owl/ObjectProperty,
+   :rdfs/domain :fibo-fnd-utl-alx/Aspect})
+
+(def ^{:private true} isCharacterizedBy
+  {:db/ident   :fibo-fnd-rel-rel/isCharacterizedBy,
+   :rdf/type   :owl/ObjectProperty,
+   :rdfs/range :fibo-fnd-utl-alx/Aspect})

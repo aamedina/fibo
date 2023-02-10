@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-usmkt
   "This ontology includes extended individuals (examples that are more complete) for a sampling of markets operating in the US corresponding to the ISO 10383 Codes for exchanges and market identification (MIC)."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2018-2023 EDM Council, Inc."
+                       "Copyright (c) 2018-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
    :dcterms/abstract
    "This ontology includes extended individuals (examples that are more complete) for a sampling of markets operating in the US corresponding to the ISO 10383 Codes for exchanges and market identification (MIC).",
@@ -18,6 +20,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
@@ -37,7 +40,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
     "fibo-be-ge-usj"
@@ -94,7 +98,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -107,13 +110,9 @@
    ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/ version of this ontology was modified to support revisions of the MIC codes as of 11 January 2019, including the new URI strategy, and to move the registry definitions to a new international financial organizations ontology."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals.rdf version of this ontology was revised to replace references to the legacy LCC UnitedStates country representation with UnitedStatesOfAmerica."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/ version of this ontology was modified to eliminate duplication of concepts in LCC, to simplify addresses, and to merge countries with locations in FND."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals.rdf version of this ontology was revised to restructure the various markets individuals per the changes to the markets ontology and replace references to revised individuals in the markets individuals ontology where appropriate."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2018-2022 Object Management Group, Inc."
-                  "Copyright (c) 2018-2022 EDM Council, Inc."],
-   :sm/fileAbbreviation "fibo-fbc-fct-usmkt",
-   :sm/filename "USMarketsAndExchangesIndividuals.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals.rdf version of this ontology was revised to restructure the various markets individuals per the changes to the markets ontology and replace references to revised individuals in the markets individuals ontology where appropriate."]})
 
 (def CBOEGlobalMarketsBusinessEntityIdentifier
   "Delaware Division of Corporations business entity identifier for CBOE Global Markets, Inc."
@@ -221,10 +220,10 @@
 
 (def IntercontinentalExchangeHoldings
   "Intercontinental Exchange holding company and financial service provider that owns exchanges for financial and commodity markets, and operates 23 regulated exchanges and marketplaces"
-  {:db/ident :fibo-fbc-fct-usmkt/IntercontinentalExchangeHoldings,
+  {:cmns-av/abbreviation "ICE",
+   :db/ident :fibo-fbc-fct-usmkt/IntercontinentalExchangeHoldings,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usfsind/IntercontinentalExchangeInc-US-DE,
-   :fibo-fnd-utl-av/abbreviation "ICE",
    :rdf/type [:fibo-fbc-pas-fpas/FinancialServiceProvider
               :fibo-fbc-fct-fse/HoldingCompany
               :owl/NamedIndividual],
@@ -612,7 +611,9 @@
 
 (def NewYorkStockExchange
   "New York Stock Exchange operating-level market founded in 1792 that is a market place for trading of common stock and other securities"
-  {:db/ident :fibo-fbc-fct-usmkt/NewYorkStockExchange,
+  {:cmns-av/explanatoryNote
+   "The New York Stock Exchange is a leading global cash equity exchange. It is the leading equity exchange for initial public offerings, or IPOs, globally, and enables companies seeking to raise capital to become publicly listed through the IPO process upon meeting exchange listing standards. In addition to common stocks, preferred stocks and warrants, the NYSE lists structured products, such as capital securities and mandatory convertible securities. In addition, NYSE operates NYSE Bonds, an electronic trading platform with transparent pricing for debt securities, including corporate bonds.",
+   :db/ident :fibo-fbc-fct-usmkt/NewYorkStockExchange,
    :fibo-fbc-fct-fse/hasDateEstablished
    :fibo-fbc-fct-usmkt/NewYorkStockExchangeDateEstablished,
    :fibo-fbc-fct-mkt/hasFacilityAcronym "NYSE",
@@ -622,8 +623,6 @@
    :fibo-fnd-rel-rel/hasFormalName "New York Stock Exchange",
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usmkt/NewYorkStockExchangeAsServiceProvider,
-   :fibo-fnd-utl-av/explanatoryNote
-   "The New York Stock Exchange is a leading global cash equity exchange. It is the leading equity exchange for initial public offerings, or IPOs, globally, and enables companies seeking to raise capital to become publicly listed through the IPO process upon meeting exchange listing standards. In addition to common stocks, preferred stocks and warrants, the NYSE lists structured products, such as capital securities and mandatory convertible securities. In addition, NYSE operates NYSE Bonds, an electronic trading platform with transparent pricing for debt securities, including corporate bonds.",
    :owl/sameAs :fibo-fbc-fct-mkti/Facility-XNYS,
    :rdf/type [:owl/NamedIndividual :fibo-fbc-fct-mkt/OperatingLevelMarket],
    :rdfs/isDefinedBy

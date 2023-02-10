@@ -1,14 +1,16 @@
 (ns net.wikipunk.rdf.fibo-be-oac-cpty
   "This ontology defines concepts relating to types of controlling parties. The concepts defined here are party in role concepts, which define the nature of some entity such as an organization or a legal person, in some role such as that of owning a controlling interest in the entity or of controlling that entity. These roles are defined in terms of the types of control enjoyed by the party, for example de facto or de jure control. An important feature of this ontology is the distinction between the holding of a controlling interest (such as voting shares), and the de facto existence of control of one body by another as asserted in company filings or as a conclusion drawn from computational analysis of controlling interests."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2013-2023 EDM Council, Inc."
+                       "Copyright (c) 2013-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
    :dcterms/abstract
    "This ontology defines concepts relating to types of controlling parties. The concepts defined here are party in role concepts, which define the nature of some entity such as an organization or a legal person, in some role such as that of owning a controlling interest in the entity or of controlling that entity. These roles are defined in terms of the types of control enjoyed by the party, for example de facto or de jure control. An important feature of this ontology is the distinction between the holding of a controlling interest (such as voting shares), and the de facto existence of control of one body by another as asserted in company filings or as a conclusion drawn from computational analysis of controlling interests.",
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
@@ -17,13 +19,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
     "fibo-be-oac-cpty"
@@ -46,12 +48,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -65,19 +65,10 @@
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties.rdf version of this ontology was modified as a part of a simplification strategy for the organizational class hierarchy and to correct reasoning anomalies."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties.rdf version of the ontology was modified to simplify control concepts and relations, eliminate ambiguity in definitions, restate definitions to be ISO 704 compliant, and add properties relating control parties to control situations."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties.rdf version of this ontology was modified to integrate the concept of a situation, situational roles, and corresponding relations with the definition of control and eliminate an unused and logically inconsistent property."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties.rdf version of the ontology was modified to correct the label on hasControllingOrganizationMember and reflect the move of OrganizationMember from Parties to Organizations in FND, and to incorporate the latest insights into how control relations should integrate with the control situation."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties.rdf version of this ontology was modified per the FIBO 2.0 RFC to add missing labels and definitions, eliminate references to BusinessFacingTypes, etc."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties.rdf version of this ontology was modified to eliminate duplication of concepts with LCC."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2013-2021 Object Management Group, Inc."
-                  "Copyright (c) 2013-2021 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"],
-   :sm/fileAbbreviation "fibo-be-oac-cpty",
-   :sm/filename "ControlParties.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties.rdf version of this ontology was modified to eliminate duplication of concepts with LCC."]})
 
 (def ContractualControl
   "control established through the terms of some contract"
@@ -265,9 +256,9 @@
 
 (def MajorityControllingParty
   "controlling party that possesses, either directly or indirectly, the power to direct or cause the direction of the management and policies of a legal person, whether through the ownership of a majority of voting securities, by contract, or otherwise"
-  {:db/ident :fibo-be-oac-cpty/MajorityControllingParty,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "Electronic Code of Federal Regulations, Title 17, Chapter 1, Section 49.2",
+   :db/ident :fibo-be-oac-cpty/MajorityControllingParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",

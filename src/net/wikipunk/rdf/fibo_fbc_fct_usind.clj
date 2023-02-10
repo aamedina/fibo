@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-usind
   "This ontology includes example individuals for US national banks, state chartered banks, and other institutions, as well as details related to some of the larger corporations that issue stock and are represented in the Dow Jones Industrial Average and S&P 500."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
+                       "Copyright (c) 2015-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
    :dcterms/abstract
    "This ontology includes example individuals for US national banks, state chartered banks, and other institutions, as well as details related to some of the larger corporations that issue stock and are represented in the Dow Jones Industrial Average and S&P 500.",
@@ -28,6 +30,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Trusts/Trusts/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"
@@ -47,7 +50,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
     "fibo-be-ge-usj"
@@ -117,7 +121,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -132,14 +135,10 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals.rdf version of this ontology was revised to make incorporation and registration dates explicit and to replace references to the legacy LCC UnitedStates country representation with UnitedStatesOfAmerica."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals.rdf version of this ontology was revised to update the LEI URIs to the new form published by the GLEIF on data.world."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USExampleIndividuals.rdf version of this ontology was modified to add information about the example corporations included in FIBO use cases for securities instrument data and various indices such as the DJIA, update LEI records generally, eliminate duplication of concepts in LCC, simplify addresses, and merge countries with locations in FND."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USExampleIndividuals.rdf version of this ontology was modified to reflect revisions to the GLEIF LEI representation for validation level and entity ownership relations."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USExampleIndividuals.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FBC 1.0 FTF report."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2015-2021 EDM Council, Inc."
-                  "Copyright (c) 2015-2021 Object Management Group, Inc."],
-   :sm/fileAbbreviation "fibo-fbc-fct-usind",
-   :sm/filename "USExampleIndividuals.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USExampleIndividuals.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FBC 1.0 FTF report."]})
 
 (def AlphabetIncCorporateAddress
   "registration address for Alphabet Inc."
@@ -746,9 +745,9 @@
 
 (def CitibankNAFDICCertificateNumber
   "FDIC Certificate number for Citibank, N.A."
-  {:db/ident :fibo-fbc-fct-usind/CitibankNAFDICCertificateNumber,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "From the NIC and FDIC records, it appears that Citibank, National Association (with RSSD of 112855 and FDIC certificate of 16100) and Citibank, N.A. have been merged into a single national bank, with the surviving FDIC certificate and RSSD as defined herein.",
+   :db/ident :fibo-fbc-fct-usind/CitibankNAFDICCertificateNumber,
    :lcc-lr/hasTag "7213",
    :lcc-lr/identifies :fibo-fbc-fct-usind/CitibankNA,
    :rdf/type [:fibo-fbc-fct-usjrga/FDICCertificateNumber :owl/NamedIndividual],
@@ -836,11 +835,11 @@
 
 (def CitibankNARSSDIdentifier
   "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to Citibank, N.A."
-  {:db/ident :fibo-fbc-fct-usind/CitibankNARSSDIdentifier,
+  {:cmns-av/explanatoryNote
+   "From the NIC and FDIC records, it appears that Citibank, National Association (with RSSD of 112855 and FDIC certificate of 16100) and Citibank, N.A. have been merged into a single national bank, with the surviving FDIC certificate and RSSD as defined herein.",
+   :db/ident :fibo-fbc-fct-usind/CitibankNARSSDIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
-   :fibo-fnd-utl-av/explanatoryNote
-   "From the NIC and FDIC records, it appears that Citibank, National Association (with RSSD of 112855 and FDIC certificate of 16100) and Citibank, N.A. have been merged into a single national bank, with the surviving FDIC certificate and RSSD as defined herein.",
    :lcc-lr/hasTag "476810",
    :lcc-lr/identifies :fibo-fbc-fct-usind/CitibankNA,
    :rdf/type
@@ -2550,10 +2549,10 @@
 
 (def WellsFargoAndCompanyIncorporationDate
   "date that Wells Fargo & Company was first registered as a corporation in the State of Delaware"
-  {:db/ident :fibo-fbc-fct-usind/WellsFargoAndCompanyIncorporationDate,
-   :fibo-fnd-dt-fd/hasDateValue "1966-03-02",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Note that one of its predecessor companies was registered was first registered in Delaware in 1929, and the bank itself was founded in 1870.",
+   :db/ident :fibo-fbc-fct-usind/WellsFargoAndCompanyIncorporationDate,
+   :fibo-fnd-dt-fd/hasDateValue "1966-03-02",
    :rdf/type [:fibo-fnd-dt-fd/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
@@ -2819,3 +2818,132 @@
    :rdfs/label "Wells Fargo Bank, National Association RTN",
    :skos/definition
    "routing transit number (RTN) for Wells Fargo Bank, National Association"})
+
+(def ^{:private true} AlphabetInc-US-CA
+  {:db/ident :fibo-be-le-usee/AlphabetInc-US-CA,
+   :fibo-be-le-fbo/hasHeadquartersAddress
+   :fibo-fbc-fct-usind/AlphabetIncCorporateAddress,
+   :fibo-fbc-fct-breg/hasTradingOrOperationalName "Alphabet",
+   :fibo-fbc-pas-fpas/hasLegalAgent
+   :fibo-fbc-fct-usjrga/CorporationServiceCompany,
+   :fibo-fnd-plc-vrt/hasWebsite "https://abc.xyz/",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} AlphabetIncBusinessEntityIdentifier
+  {:db/ident :fibo-be-le-usee/AlphabetIncBusinessEntityIdentifier,
+   :fibo-fbc-fct-breg/hasEntityStatus :fibo-fbc-fct-breg/ActiveStatus,
+   :fibo-fbc-fct-breg/hasInitialRegistrationDate "2015-07-23",
+   :fibo-fbc-fct-ra/isRegisteredIn
+   :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
+   :fibo-fnd-rel-rel/isDefinedIn
+   :fibo-fbc-fct-usjrga/DelawareBusinessRegistrationIdentifierScheme,
+   :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} AppleInc-US-CA
+  {:db/ident :fibo-be-le-usee/AppleInc-US-CA,
+   :fibo-be-le-fbo/hasHeadquartersAddress
+   :fibo-fbc-fct-usind/AppleIncCorporateAddress,
+   :fibo-be-le-lei/hasLegalAddress :fibo-fbc-fct-usind/AppleIncCorporateAddress,
+   :fibo-fbc-fct-breg/hasPriorLegalName "Apple Computer, Inc.",
+   :fibo-fbc-fct-breg/hasTradingOrOperationalName "Apple",
+   :fibo-fnd-plc-vrt/hasWebsite "https://www.apple.com/",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} AppleIncBusinessEntityIdentifier
+  {:db/ident :fibo-be-le-usee/AppleIncBusinessEntityIdentifier,
+   :fibo-fbc-fct-breg/hasEntityStatus :fibo-fbc-fct-breg/ActiveStatus,
+   :fibo-fbc-fct-breg/hasInitialRegistrationDate "1977-01-03",
+   :fibo-fbc-fct-ra/isRegisteredIn
+   :fibo-fbc-fct-usjrga/CaliforniaBusinessEntitiesRegistry,
+   :fibo-fnd-rel-rel/isDefinedIn
+   :fibo-fbc-fct-usjrga/CaliforniaBusinessRegistrationIdentifierScheme,
+   :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfCaliforniaJurisdiction,
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} InternationalBusinessMachinesCorporation-US-NY
+  {:db/ident :fibo-be-le-usee/InternationalBusinessMachinesCorporation-US-NY,
+   :fibo-be-le-fbo/hasHeadquartersAddress
+   :fibo-fbc-fct-usind/InternationalBusinessMachinesCorporationAddress,
+   :fibo-be-le-lei/hasLegalAddress
+   :fibo-fbc-fct-usind/InternationalBusinessMachinesCorporationAddress,
+   :fibo-fbc-fct-breg/hasPriorLegalName "COMPUTING-TABULATING-RECORDING-CO.",
+   :fibo-fbc-fct-breg/hasTradingOrOperationalName "IBM",
+   :fibo-fnd-plc-vrt/hasWebsite "https://www.ibm.com/",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true}
+     InternationalBusinessMachinesCorporationBusinessEntityIdentifier
+  {:db/ident
+   :fibo-be-le-usee/InternationalBusinessMachinesCorporationBusinessEntityIdentifier,
+   :fibo-fbc-fct-breg/hasEntityStatus :fibo-fbc-fct-breg/ActiveStatus,
+   :fibo-fbc-fct-breg/hasInitialRegistrationDate "1924-02-14",
+   :fibo-fbc-fct-ra/isRegisteredIn
+   :fibo-fbc-fct-usjrga/NewYorkBusinessEntitiesRegistry,
+   :fibo-fnd-rel-rel/isDefinedIn
+   :fibo-fbc-fct-usjrga/NewYorkBusinessRegistrationIdentifierScheme,
+   :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfNewYorkJurisdiction,
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} TheCoca-ColaCompany-US-DE
+  {:db/ident :fibo-be-le-usee/TheCoca-ColaCompany-US-DE,
+   :fibo-be-le-fbo/hasHeadquartersAddress
+   :fibo-fbc-fct-usind/TheCoca-ColaCompanyCorporateAddress,
+   :fibo-be-le-lei/hasLegalAddress
+   :fibo-fbc-fct-usind/TheCoca-ColaCompanyCorporateAddress,
+   :fibo-fbc-pas-fpas/hasLegalAgent
+   :fibo-fbc-fct-usjrga/CorporationTrustCompany,
+   :fibo-fnd-plc-vrt/hasWebsite "https://www.coca-colacompany.com/",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} TheCoca-ColaCompanyBusinessEntityIdentifier
+  {:db/ident :fibo-be-le-usee/TheCoca-ColaCompanyBusinessEntityIdentifier,
+   :fibo-fbc-fct-breg/hasEntityStatus :fibo-fbc-fct-breg/ActiveStatus,
+   :fibo-fbc-fct-breg/hasInitialRegistrationDate "1919-09-05",
+   :fibo-fbc-fct-ra/isRegisteredIn
+   :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
+   :fibo-fnd-rel-rel/isDefinedIn
+   :fibo-fbc-fct-usjrga/DelawareBusinessRegistrationIdentifierScheme,
+   :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} TheHomeDepotBusinessEntityIdentifier
+  {:db/ident :fibo-be-le-usee/TheHomeDepotBusinessEntityIdentifier,
+   :fibo-fbc-fct-breg/hasEntityStatus :fibo-fbc-fct-breg/ActiveStatus,
+   :fibo-fbc-fct-breg/hasInitialRegistrationDate "1978-06-29",
+   :fibo-fbc-fct-ra/isRegisteredIn
+   :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
+   :fibo-fnd-rel-rel/isDefinedIn
+   :fibo-fbc-fct-usjrga/DelawareBusinessRegistrationIdentifierScheme,
+   :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} TheHomeDepotInc-US-DE
+  {:db/ident :fibo-be-le-usee/TheHomeDepotInc-US-DE,
+   :fibo-be-le-fbo/hasHeadquartersAddress
+   :fibo-fbc-fct-usind/TheHomeDepotIncCorporateAddress,
+   :fibo-be-le-lei/hasLegalAddress
+   :fibo-fbc-fct-usind/TheHomeDepotIncCorporateAddress,
+   :fibo-fbc-pas-fpas/hasLegalAgent
+   :fibo-fbc-fct-usjrga/CorporationServiceCompany,
+   :fibo-fnd-plc-vrt/hasWebsite "https://www.homedepot.com/",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} TheProctorAndGambleCompany-US-OH
+  {:db/ident :fibo-be-le-usee/TheProctorAndGambleCompany-US-OH,
+   :fibo-be-le-fbo/hasHeadquartersAddress
+   :fibo-fbc-fct-usind/TheProctorAndGambleCompanyCorporateAddress,
+   :fibo-fnd-plc-vrt/hasWebsite "https://us.pg.com/",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} TheProctorAndGambleCompanyBusinessEntityIdentifier
+  {:db/ident
+   :fibo-be-le-usee/TheProctorAndGambleCompanyBusinessEntityIdentifier,
+   :fibo-fbc-fct-breg/hasEntityStatus :fibo-fbc-fct-breg/ActiveStatus,
+   :fibo-fbc-fct-breg/hasInitialRegistrationDate "1905-05-05",
+   :fibo-fbc-fct-ra/isRegisteredIn
+   :fibo-fbc-fct-usjrga/OhioBusinessFilingPortal,
+   :fibo-fnd-rel-rel/isDefinedIn
+   :fibo-fbc-fct-usjrga/OhioBusinessRegistrationIdentifierScheme,
+   :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfOhioJurisdiction,
+   :rdf/type :owl/NamedIndividual})

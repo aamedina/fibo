@@ -265,3 +265,19 @@
    :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasDatePeriod,
    :skos/definition
    "specifies that some condition or state is true (holds) during a specified date period"})
+
+(def ^{:private true} CalculatedDate
+  {:db/ident        :fibo-fnd-dt-fd/CalculatedDate,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/maxQualifiedCardinality 1,
+                     :owl/onClass    :fibo-fnd-dt-bd/BusinessDayAdjustment,
+                     :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayAdjustment,
+                     :rdf/type       :owl/Restriction}})
+
+(def ^{:private true} RegularSchedule
+  {:db/ident        :fibo-fnd-dt-fd/RegularSchedule,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/maxQualifiedCardinality 1,
+                     :owl/onClass    :fibo-fnd-dt-bd/BusinessDayAdjustment,
+                     :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayAdjustment,
+                     :rdf/type       :owl/Restriction}})

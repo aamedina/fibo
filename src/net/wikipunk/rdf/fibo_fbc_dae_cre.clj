@@ -1,13 +1,16 @@
 (ns net.wikipunk.rdf.fibo-fbc-dae-cre
   "This ontology defines a range of credit events, that is events in which some payment or payments are not made. These include credit events relating to a specific debt obligation and events relating to the business entity as a whole. Note: the events defined herein are primarily business rather than consumer oriented, and are specified fairly generally. Many credit events are jurisdiction-specific, such as Chapter 11 restructuring and Chapter 7 bankruptcy in the United States. This ontology is designed to facilitate jurisdiction and instrument-specific extensions as needed."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2020-2023 Object Management Group, Inc."
+                       "Copyright (c) 2018-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :dcterms/abstract
    "This ontology defines a range of credit events, that is events in which some payment or payments are not made. These include credit events relating to a specific debt obligation and events relating to the business entity as a whole. \n\t\tNote: the events defined herein are primarily business rather than consumer oriented, and are specified fairly generally. Many credit events are jurisdiction-specific, such as Chapter 11 restructuring and Chapter 7 bankruptcy in the United States. This ontology is designed to facilitate jurisdiction and instrument-specific extensions as needed.",
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
+   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
@@ -17,7 +20,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/CreditEvents/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
     "fibo-fbc-dae-cre"
@@ -40,7 +44,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -52,24 +55,16 @@
                 :rdf/value    "Credit Events Ontology"},
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents.rdf version of this ontology was revised to augment the definition of obligation-specific event with an optional default threshold to better support credit default swaps."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents.rdf version of this ontology was revised to move a restriction involving breach of covenant from credit event, since not all credit events involve breaches, to default event, and loosen the constraint since a breach depends on the contract."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents.rdf version of this ontology was revised to address text formatting issues uncovered by hygiene testing."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2018-2022 EDM Council, Inc."
-                  "Copyright (c) 2020-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/"],
-   :sm/fileAbbreviation "fibo-fbc-dae-cre",
-   :sm/filename "CreditEvents.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents.rdf version of this ontology was revised to address text formatting issues uncovered by hygiene testing."]})
 
 (def Bankruptcy
   "credit event involving a change in state or condition in which a party becomes insolvent"
-  {:db/ident :fibo-fbc-dae-cre/Bankruptcy,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    ["https://thelawdictionary.org/bankruptcy/"
     "Barron's Dictionary of Banking Terms, Sixth Edition, 2012"],
+   :db/ident :fibo-fbc-dae-cre/Bankruptcy,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
@@ -97,11 +92,11 @@
 
 (def DefaultEvent
   "credit event representing a failure to meet a contractual obligation, such as failure to repay a debt including interest or principal on a loan or security"
-  {:db/ident :fibo-fbc-dae-cre/DefaultEvent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "A default can occur when a borrower is unable to make timely payments, misses payments, or avoids or stops making payments, typically with respect to a single transaction. A default has adverse effects on the borrower's credit and ability to borrow in the future, and allows the creditor to demand immediate repayment of the obligation in full."},
+   :db/ident :fibo-fbc-dae-cre/DefaultEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
@@ -213,11 +208,11 @@
 
 (def FilingForBankruptcy
   "credit event that involves a request to a court to be recognized as bankrupt"
-  {:db/ident :fibo-fbc-dae-cre/FilingForBankruptcy,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The bankruptcy process is initiated via a petition filed by the debtor or on behalf of creditors. The debtor's assets may be used to repay a portion of outstanding debt as specified by the court or a court-appointed individual."},
+   :db/ident :fibo-fbc-dae-cre/FilingForBankruptcy,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
@@ -243,11 +238,11 @@
 
 (def InstallmentDefault
   "default event involving non-payment of several installment payments as scheduled in the terms of the agreement, or non-payment of a call by the beneficial owner"
-  {:db/ident :fibo-fbc-dae-cre/InstallmentDefault,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The latter may result in a court action by the issuer or the sale of the securities to recover costs and/or a forfeit of partially paid securities."},
+   :db/ident :fibo-fbc-dae-cre/InstallmentDefault,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
@@ -261,11 +256,11 @@
 
 (def MaturityExtension
   "credit event involving extension of payments beyond the original maturity date of the obligation"
-  {:db/ident :fibo-fbc-dae-cre/MaturityExtension,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "As stipulated in the terms and conditions for a bond, for example, the issuer or the bondholder may prolong the maturity date. After extension, the security may differ from original issue (new rate or maturity date). May be subject to bondholder's approval."},
+   :db/ident :fibo-fbc-dae-cre/MaturityExtension,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
@@ -279,11 +274,11 @@
 
 (def Moratorium
   "entity-specific credit event involving a temporary suspension of payments until related issues are resolved"
-  {:db/ident :fibo-fbc-dae-cre/Moratorium,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "A moratorium may be a legally-mandated hiatus in debt collection as a part of a bankruptcy process."},
+   :db/ident :fibo-fbc-dae-cre/Moratorium,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
@@ -376,11 +371,11 @@
 
 (def SoftCreditEvent
   "default event that is repairable"
-  {:db/ident :fibo-fbc-dae-cre/SoftCreditEvent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "If the default is not repaired within a grace period, then a failure to repair (failure to pay) credit event is triggered, potentially as a hard default."},
+   :db/ident :fibo-fbc-dae-cre/SoftCreditEvent,
    :owl/disjointWith :fibo-fbc-dae-cre/HardCreditEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -422,11 +417,11 @@
 
 (def hasGracePeriod
   "window following any payment due date during which a party must fulfill its obligations before a failure to pay credit event occurs"
-  {:db/ident :fibo-fbc-dae-cre/hasGracePeriod,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Note that this may be a period denominated in business days or calendar days."},
+   :db/ident :fibo-fbc-dae-cre/hasGracePeriod,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",

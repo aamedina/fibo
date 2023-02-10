@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-sec-sec-rst
   "This ontology defines the concepts related to restrictions on finanicial instruments, securities and listings."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 EDM Council, Inc."
+                       "Copyright (c) 2018-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/",
    :dcterms/abstract
    "This ontology defines the concepts related to restrictions on finanicial instruments, securities and listings.",
@@ -20,14 +22,16 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesListings/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesRestrictions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-usj"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
     "fibo-be-le-lp"
@@ -60,7 +64,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -70,26 +73,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/",
    :rdfs/label "Securities Restrictions Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to fix spelling errors."
+   ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to fix spelling errors."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to reflect the change in representation of a listing."
-    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to simplify the hierarchy with respect to regulatory requirements and eliminate deprecated elements."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to eliminate duplication of concepts in LCC."
-    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to eliminate an unused ontology import and to augment the information associated with references needed to define depositary receipts."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2016-2021 EDM Council, Inc."
-                  "Copyright (c) 2018-2021 Object Management Group, Inc."],
-   :sm/dependsOn ["https://www.omg.org/spec/LCC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FND/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FBC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/BE/"],
-   :sm/fileAbbreviation "fibo-sec-sec-rst",
-   :sm/filename "SecuritiesRestrictions.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to simplify the hierarchy with respect to regulatory requirements and eliminate deprecated elements."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions.rdf version of the ontology was modified to eliminate an unused ontology import and to augment the information associated with references needed to define depositary receipts."]})
 
 (def BlueSkyLaw
   "securities regulation passed by various states, designed to protect investors against securities fraud by requiring sellers of new issues to register their offerings and provide financial details"
-  {:db/ident :fibo-sec-sec-rst/BlueSkyLaw,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This allows investors to base their judgments on trustworthy data.",
+   :db/ident :fibo-sec-sec-rst/BlueSkyLaw,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/",
@@ -130,9 +125,9 @@
 
 (def InstitutionalInvestor
   "investor that is an organization that trades large volumes of securities"
-  {:db/ident :fibo-sec-sec-rst/InstitutionalInvestor,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Typically more than 70 percent of the daily trading on the New York Stock Exchange is conducted on behalf of institutional investors.",
+   :db/ident :fibo-sec-sec-rst/InstitutionalInvestor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/",
@@ -169,9 +164,9 @@
 
 (def QualifiedInvestorRestriction
   "legal holding restriction that defines the concept of a qualified investor for a given purpose and specifies that only such qualified investors may hold the security"
-  {:db/ident :fibo-sec-sec-rst/QualifiedInvestorRestriction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "If a holding period is not defined, then the period for which the restriction applies is indefinite.",
+   :db/ident :fibo-sec-sec-rst/QualifiedInvestorRestriction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/",
@@ -185,9 +180,9 @@
 
 (def RegulationS
   "securities regulation defining an exemption through which corporations can issue unregistered securities to qualified foreign investors and foreign institutions"
-  {:db/ident :fibo-sec-sec-rst/RegulationS,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Regulation S covers rules governing offers and sales made outside the United States without registration under the Securities Act of 1933. Created in 1990, this regulation was intended to encourage foreign investors to purchase American stocks in order to increase the liquidity of American markets.",
+   :db/ident :fibo-sec-sec-rst/RegulationS,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/",
@@ -311,3 +306,19 @@
    "identifies a country subdivision, such as a US state or territory, where an issue is NOT cleared under Blue Sky Restrictions",
    :skos/editorialNote
    "This requires review -- shouldn't this be a ternary relation between the regulation, the security and the location?"})
+
+(def ^{:private true} FinancialInstrument
+  {:db/ident        :fibo-fbc-fi-fi/FinancialInstrument,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/minQualifiedCardinality 0,
+                     :owl/onClass    :fibo-sec-sec-rst/SecuritiesRestriction,
+                     :owl/onProperty :fibo-sec-sec-rst/hasRestriction,
+                     :rdf/type       :owl/Restriction}})
+
+(def ^{:private true} Listing
+  {:db/ident        :fibo-sec-sec-lst/Listing,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/minQualifiedCardinality 0,
+                     :owl/onClass    :fibo-sec-sec-rst/SecuritiesRestriction,
+                     :owl/onProperty :fibo-sec-sec-rst/hasRestriction,
+                     :rdf/type       :owl/Restriction}})

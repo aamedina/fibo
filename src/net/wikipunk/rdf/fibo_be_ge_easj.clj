@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-be-ge-easj
   "This ontology provides government entities and jurisdictions for countries that are defined as being part of Eastern Asia in the U.N. M49 codes, primarily those that are considered independent countries in ISO 3166, or are important from a banking perspective."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2020-2023 EDM Council, Inc."
+                       "Copyright (c) 2020-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides government entities and jurisdictions for countries that are defined as being part of Eastern Asia in the U.N. M49 codes, primarily those that are considered independent countries in ISO 3166, or are important from a banking perspective.",
@@ -10,13 +12,15 @@
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-easj"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
     "fibo-be-ge-ge"
@@ -33,7 +37,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -43,18 +46,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "Eastern Asia Government Entities and Jurisdictions Ontology",
    :skos/changeNote
-   "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to address text formatting hygiene issues.",
+   ["The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to address text formatting hygiene issues."],
    :skos/scopeNote
-   "The initial version of this ontology reflects the national level only.",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2020-2022 EDM Council, Inc."
-                  "Copyright (c) 2020-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"],
-   :sm/fileAbbreviation "fibo-be-ge-easj",
-   :sm/filename "EasternAsiaGovernmentEntitiesAndJurisdictions.rdf"})
+   "The initial version of this ontology reflects the national level only."})
 
 (def GovernmentOfJapan
   "unitary parliamentary constitutional monarchy with a bicameral legislature in Eastern Asia, bordered on the west by the Sea of Japan, and extending from the Sea of Okhotsk in the north toward the East China Sea and Taiwan in the south"

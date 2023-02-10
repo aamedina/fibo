@@ -60,14 +60,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
    :rdfs/label "composite identifier",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :lcc-lr/Identifier,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :lcc-lr/CodeElement,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/Identifier],
+                     :lcc-lr/Identifier
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :lcc-lr/Identifier,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "identifier that is constructed from at least one other identifier and potentially from one or more codes",
    :skos/example
@@ -189,3 +189,13 @@
    :rdfs/range :xsd/string,
    :skos/definition
    "indicates how to deconstruct the supplied character string into its components"})
+
+(def ^{:private true} IdentificationScheme
+  {:db/ident        :lcc-lr/IdentificationScheme,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-fnd-arr-arr/Scheme})
+
+(def ^{:private true} Identifier
+  {:db/ident        :lcc-lr/Identifier,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-fnd-rel-rel/Reference})

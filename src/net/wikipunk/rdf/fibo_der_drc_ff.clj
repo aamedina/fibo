@@ -246,23 +246,23 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "equity forward"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   [{:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
+     :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-der-drc-ff/Forward
+    {:owl/onProperty     :fibo-der-drc-ff/hasMethodOfAdjustment,
+     :owl/someValuesFrom :fibo-der-drc-ff/ForwardContractAdjustmentMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-ff/hasDividendAdjustmentPeriod,
+     :owl/someValuesFrom :fibo-der-drc-ff/DividendAdjustmentPeriod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
      :owl/someValuesFrom {:owl/unionOf [:fibo-ind-mkt-bas/BasketOfEquities
                                         :fibo-sec-eq-eq/ListedShare
                                         :fibo-ind-mkt-bas/EquityIndex
                                         :fibo-der-drc-ff/EquityFuture
                                         :fibo-der-drc-opt/EquityOption],
                           :rdf/type    :owl/Class},
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
-     :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-der-drc-ff/Forward
-    {:owl/onProperty     :fibo-der-drc-ff/hasDividendAdjustmentPeriod,
-     :owl/someValuesFrom :fibo-der-drc-ff/DividendAdjustmentPeriod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-ff/hasMethodOfAdjustment,
-     :owl/someValuesFrom :fibo-der-drc-ff/ForwardContractAdjustmentMethod,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
@@ -599,3 +599,16 @@
    {:rdf/language "en",
     :rdf/value
     "indicates the multiple for determining the price of the futures contract in relation to the underlying index rate"}})
+
+(def ^{:private true} Future
+  {:db/ident        :fibo-fbc-fi-fi/Future,
+   :fibo-fnd-utl-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "A futures contract obligates the buyer to pay the seller a predetermined price based on the market value of the underlier, unless the contract is sold before settlement date which may happen if a trader waits to take a profit or cut a loss. This contrasts with options trading in which the option buyer may choose whether or not to exercise the option. Futures are distinguished from generic forward contracts in that they contain standardized terms, trade on a formal exchange, are regulated by overseeing agencies, and are guaranteed by clearing houses. Also, in order to insure that payment will occur, futures have a margin requirement that must be settled daily. Finally, by making an offsetting trade, taking delivery of goods, or arranging for an exchange of goods, futures contracts can be closed. Hedgers often trade futures for the purpose of keeping price risk in check."},
+   :fibo-fnd-utl-av/synonym {:rdf/language "en",
+                             :rdf/value    "futures contract"},
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+                     :owl/someValuesFrom :xsd/decimal,
+                     :rdf/type           :owl/Restriction}})

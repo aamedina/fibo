@@ -210,11 +210,11 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "offering"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-bp-iss-prc/requiredToMakeEligible,
-     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-prc/hasSaleMethod,
+   [{:owl/onProperty     :fibo-bp-iss-prc/hasSaleMethod,
      :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingSaleMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-prc/requiredToMakeEligible,
+     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-prc/hasDistributionType,
      :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingDistributionMethod,
@@ -810,3 +810,17 @@
    {:rdf/language "en",
     :rdf/value
     "Takedown quantity of the security handled by the underwriter (that will be brought into DTC)."}})
+
+(def ^{:private true} SecuritiesOffering
+  {:db/ident        :fibo-sec-sec-iss/SecuritiesOffering,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/onProperty :lcc-lr/isIdentifiedBy,
+                      :owl/someValuesFrom
+                      :fibo-sec-sec-id/ListedSecurityIdentifier,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-bp-iss-prc/offerIssueSeries,
+                      :owl/someValuesFrom :xsd/string,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-bp-iss-prc/finalStateDescribedIn,
+                      :owl/someValuesFrom :fibo-bp-iss-doc/FinalProspectus,
+                      :rdf/type :owl/Restriction}]})

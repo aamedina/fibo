@@ -1,34 +1,38 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-eufseind
   "This ontology extends the primary financial services entities ontology in FBC with additional kinds of entities that provide services internationally, such as international market data providers, organizations that provide exchanges in multiple countries, etc."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2017-2023 EDM Council, Inc."
+                       "Copyright (c) 2017-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :dcterms/abstract
    "This ontology extends the primary financial services entities ontology in FBC with additional kinds of entities that provide services internationally, such as international market data providers, organizations that provide exchanges in multiple countries, etc.",
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateControl/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateControl/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
     "fibo-be-le-cb"
@@ -70,7 +74,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -80,38 +83,24 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdfs/label "International Financial Services Entities Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to eliminate duplication of concepts in LCC, simplify addresses and merge countries with locations in FND."
+   ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to clean up dead links."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to eliminate usage of deprecated elements."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to eliminate duplication of concepts in LCC, simplify addresses and merge countries with locations in FND."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to reflect revisions to the GLEIF LEI representation for validation level."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to clarify the definitions of various LOUs as well as to update the LEI data for all LEIs to correspond to the content published by the GLEIF and clean up individual definitions as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to add the SIX Group and SIX Financial Information, which owns and operates a number of exchanges and issues the valoren, which is a commonly used financial instrument identifier, as well as to update the LEI data for all LEIs to correspond to the content published by the GLEIF on data.world."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to clean up dead links."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was added via the FIBO 2.0 RFC."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to reflect revisions to the GLEIF LEI representation for validation level."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to eliminate usage of deprecated elements."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2017-2022 EDM Council, Inc."
-                  "Copyright (c) 2017-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/"],
-   :sm/fileAbbreviation "fibo-fbc-fct-eufseind",
-   :sm/filename "EuropeanFinancialServicesEntitiesIndividuals.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was added via the FIBO 2.0 RFC."]})
 
 (def BusinessEntityData
   "individual representing Business Entity Data (BED) B.V."
-  {:db/ident :fibo-fbc-fct-eufseind/BusinessEntityData,
+  {:cmns-av/explanatoryNote
+   "wholly-owned subsidiary of DTCC that owns and operates the Global Market Entity Identifier Utility (GMEI) legal entity identifier (LEI) solution in the federated Global LEI system (GLEIS)",
+   :db/ident :fibo-fbc-fct-eufseind/BusinessEntityData,
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-eufseind/BusinessEntityData-NL,
    :fibo-fnd-rel-rel/manages
    :fibo-fbc-fct-usfsind/GlobalMarketsEntityIdentifierRegistry,
-   :fibo-fnd-utl-av/explanatoryNote
-   "wholly-owned subsidiary of DTCC that owns and operates the Global Market Entity Identifier Utility (GMEI) legal entity identifier (LEI) solution in the federated Global LEI system (GLEIS)",
    :rdf/type [:fibo-fbc-fct-breg/LocalOperatingUnit :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
@@ -252,7 +241,9 @@
 
 (def ClearstreamBankingSA
   "Euroclear legal entity that provides post-trade infrastructure and securities services in Europe and internationally"
-  {:db/ident :fibo-fbc-fct-eufseind/ClearstreamBankingSA,
+  {:cmns-av/explanatoryNote
+   "The company offers asset services, cash and banking services, connectivity, global securities financing, investment fund services, issuance, IT solutions, settlement, and market coverage services. It also provides post-trade infrastructure services for the German securities industry; and manages, safe keeps, and administers the securities that it holds on behalf of its customers. Clearstream Banking S.A was formerly known as Cedel Bank S.A. and changed its name to Clearstream Banking S.A. in March 2002. The company was founded in 1970 and is based in Luxembourg.",
+   :db/ident :fibo-fbc-fct-eufseind/ClearstreamBankingSA,
    :fibo-be-le-fbo/hasHeadquartersAddress
    :fibo-fbc-fct-eufseind/ClearstreamBankingHeadquartersAddress,
    :fibo-be-le-lei/hasLegalAddress
@@ -261,8 +252,6 @@
    :fibo-be-oac-cctl/hasSubsidiary :fibo-fbc-fct-eufseind/LuxCSD,
    :fibo-fbc-fct-breg/hasPriorLegalName "Cedel Bank S.A.",
    :fibo-fnd-rel-rel/hasLegalName "Clearstream Banking S.A.",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The company offers asset services, cash and banking services, connectivity, global securities financing, investment fund services, issuance, IT solutions, settlement, and market coverage services. It also provides post-trade infrastructure services for the German securities industry; and manages, safe keeps, and administers the securities that it holds on behalf of its customers. Clearstream Banking S.A was formerly known as Cedel Bank S.A. and changed its name to Clearstream Banking S.A. in March 2002. The company was founded in 1970 and is based in Luxembourg.",
    :rdf/type [:fibo-be-le-cb/StockCorporation :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
@@ -355,9 +344,9 @@
 
 (def EuropeanBankingFederation
   "international non-profit association founded in 1960 that is the voice of the European banking sector, uniting 32 national banking associations in Europe that together represent some 4,500 banks - large and small, wholesale and retail, local and international - employing about 2.1 million people"
-  {:db/ident :fibo-fbc-fct-eufseind/EuropeanBankingFederation,
-   :fibo-fnd-utl-av/abbreviation "EBF",
-   :fibo-fnd-utl-av/adaptedFrom "http://www.ebf.eu/about-us/",
+  {:cmns-av/abbreviation "EBF",
+   :cmns-av/adaptedFrom "http://www.ebf.eu/about-us/",
+   :db/ident :fibo-fbc-fct-eufseind/EuropeanBankingFederation,
    :rdf/type [:fibo-be-le-fbo/NotForProfitOrganization :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
@@ -367,11 +356,11 @@
 
 (def EuropeanMoneyMarketsInstitute
   "international non-profit association under Belgian law founded in 1999 with the launch of the Euro and based in Brussels (56, Ave des Arts, 1000 Brussels)"
-  {:db/ident :fibo-fbc-fct-eufseind/EuropeanMoneyMarketsInstitute,
-   :fibo-fnd-utl-av/abbreviation "EMMI",
-   :fibo-fnd-utl-av/adaptedFrom "http://www.emmi-benchmarks.eu/",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "EMMI",
+   :cmns-av/adaptedFrom "http://www.emmi-benchmarks.eu/",
+   :cmns-av/explanatoryNote
    "Its members are national banking associations in the Member States of the European Union which are involved in the Eurozone.",
+   :db/ident :fibo-fbc-fct-eufseind/EuropeanMoneyMarketsInstitute,
    :rdf/type [:fibo-be-le-fbo/NotForProfitOrganization :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
@@ -420,9 +409,9 @@
 
 (def LondonStockExchange
   "London Stock Exchange functional entity, which is a global business and financial information services and news provider, a securities exchange, and the SEDOL code issuer and registration authority"
-  {:db/ident :fibo-fbc-fct-eufseind/LondonStockExchange,
+  {:cmns-av/abbreviation "LSE",
+   :db/ident :fibo-fbc-fct-eufseind/LondonStockExchange,
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-eufseind/LondonStockExchangePlc,
-   :fibo-fnd-utl-av/abbreviation "LSE",
    :rdf/type [:fibo-fbc-pas-fpas/FinancialServiceProvider
               :fibo-fbc-fct-ra/RegistrationAuthority
               :owl/NamedIndividual],
@@ -588,15 +577,15 @@
 
 (def LuxCSDSA
   "Lux CSD legal entity"
-  {:db/ident :fibo-fbc-fct-eufseind/LuxCSDSA,
+  {:cmns-av/explanatoryNote
+   "The European Central Bank (ECB) approved LuxCSD for its Securities Settlement System (SSS).",
+   :db/ident :fibo-fbc-fct-eufseind/LuxCSDSA,
    :fibo-be-le-fbo/hasHeadquartersAddress
    :fibo-fbc-fct-eufseind/ClearstreamBankingHeadquartersAddress,
    :fibo-be-le-lei/hasLegalAddress
    :fibo-fbc-fct-eufseind/ClearstreamBankingLegalAddress,
    :fibo-be-le-lei/hasLegalFormAbbreviation "Societe Anonyme",
    :fibo-fnd-rel-rel/hasLegalName "LuxCSD S.A.",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The European Central Bank (ECB) approved LuxCSD for its Securities Settlement System (SSS).",
    :rdf/type [:fibo-be-le-cb/StockCorporation :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
@@ -630,7 +619,9 @@
 
 (def SIXFinancialInformationAG
   "SIX Financial Information AG legal entity"
-  {:db/ident :fibo-fbc-fct-eufseind/SIXFinancialInformationAG,
+  {:cmns-av/explanatoryNote
+   "The company name SIX is an abbreviation and stands for Swiss Infrastructure and Exchange.",
+   :db/ident :fibo-fbc-fct-eufseind/SIXFinancialInformationAG,
    :fibo-be-le-fbo/hasHeadquartersAddress
    :fibo-fbc-fct-eufseind/SIXGroupAGHeadquartersAddress,
    :fibo-be-le-lei/hasLegalFormAbbreviation "Public Limited Company",
@@ -644,8 +635,6 @@
    :fibo-fbc-fct-breg/hasTradingOrOperationalName
    ["SIX Financial Information Ltd" "SIX SIX Financial Information SA"],
    :fibo-fnd-rel-rel/hasLegalName "SIX Financial Information AG",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The company name SIX is an abbreviation and stands for Swiss Infrastructure and Exchange.",
    :rdf/type [:owl/NamedIndividual :fibo-be-le-cb/Corporation],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
@@ -690,9 +679,9 @@
 
 (def SIXGroup
   "SIX Group functional entity, which offers exchange services, financial information and banking services with the aim of increasing efficiency, quality and innovative capacity along the entire Swiss banking value chain"
-  {:db/ident :fibo-fbc-fct-eufseind/SIXGroup,
+  {:cmns-av/abbreviation "SIX",
+   :db/ident :fibo-fbc-fct-eufseind/SIXGroup,
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-eufseind/SIXGroupAG,
-   :fibo-fnd-utl-av/abbreviation "SIX",
    :rdf/type [:fibo-fbc-pas-fpas/FinancialServiceProvider :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
@@ -702,7 +691,9 @@
 
 (def SIXGroupAG
   "SIX Group AG legal entity"
-  {:db/ident :fibo-fbc-fct-eufseind/SIXGroupAG,
+  {:cmns-av/explanatoryNote
+   "The company name SIX is an abbreviation and stands for Swiss Infrastructure and Exchange.",
+   :db/ident :fibo-fbc-fct-eufseind/SIXGroupAG,
    :fibo-be-le-fbo/hasHeadquartersAddress
    :fibo-fbc-fct-eufseind/SIXGroupAGHeadquartersAddress,
    :fibo-be-le-lei/hasLegalFormAbbreviation "Public Limited Company",
@@ -711,8 +702,6 @@
    :fibo-fbc-fct-breg/hasTradingOrOperationalName ["SIX Group SA"
                                                    "SIX Group Ltd"],
    :fibo-fnd-rel-rel/hasLegalName "SIX Group AG",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The company name SIX is an abbreviation and stands for Swiss Infrastructure and Exchange.",
    :rdf/type [:fibo-be-le-cb/Corporation :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
@@ -756,9 +745,9 @@
 
 (def SwedishBankersAssociation
   "association that represents banks and financial institutions established in Sweden that contributes to a sound and efficient regulatory framework that facilitates for banks to help create economic wealth for customers and society"
-  {:db/ident :fibo-fbc-fct-eufseind/SwedishBankersAssociation,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://www.swedishbankers.se/en-us/about/about-us/about-us/",
+   :db/ident :fibo-fbc-fct-eufseind/SwedishBankersAssociation,
    :lcc-lr/isMemberOf :fibo-fbc-fct-eufseind/EuropeanBankingFederation,
    :rdf/type [:fibo-fnd-org-fm/FormalOrganization :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -813,3 +802,8 @@
    "Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG legal entity identifier registry entry",
    :skos/definition
    "legal entity identifier registry entry for Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG"})
+
+(def ^{:private true} DTCC-US-DE
+  {:db/ident :fibo-fbc-fct-usfsind/DTCC-US-DE,
+   :fibo-be-oac-cctl/hasSubsidiary :fibo-fbc-fct-eufseind/BusinessEntityData,
+   :rdf/type :owl/NamedIndividual})

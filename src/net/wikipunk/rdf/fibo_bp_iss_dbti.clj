@@ -626,3 +626,21 @@
    {:rdf/language "en",
     :rdf/value
     "Takedown amount of the security handled by the underwriter(that will be brought into DTC)."}})
+
+(def ^{:private true} DebtOffering
+  {:db/ident        :fibo-sec-dbt-dbti/DebtOffering,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
+                      :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-rel-rel/appliesTo,
+                      :owl/someValuesFrom
+                      :fibo-sec-dbt-dbti/TradableDebtInstrument,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+                      :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingAmount,
+                      :rdf/type       :owl/Restriction}]})

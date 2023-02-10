@@ -257,3 +257,15 @@
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
    :skos/definition
    "indicates something controlled that a controlling party has some amount of authority or influence over"})
+
+(def ^{:private true} controls
+  {:db/ident           :fibo-fnd-rel-rel/controls,
+   :rdf/type           :owl/ObjectProperty,
+   :rdfs/domain        :fibo-fnd-pty-pty/IndependentParty,
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/playsActiveRoleThatDirectlyAffects})
+
+(def ^{:private true} isControlledBy
+  {:db/ident           :fibo-fnd-rel-rel/isControlledBy,
+   :rdf/type           :owl/ObjectProperty,
+   :rdfs/range         :fibo-fnd-pty-pty/IndependentParty,
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/experiencesDirectly})

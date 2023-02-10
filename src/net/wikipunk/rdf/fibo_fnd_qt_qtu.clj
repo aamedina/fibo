@@ -94,16 +94,16 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label "derived quantity",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-qt-qtu/isDerivedFrom,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-qt-qtu/hasFactor,
+                      :owl/someValuesFrom :fibo-fnd-qt-qtu/QuantityKindFactor,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/isDerivedFrom,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-qt-qtu/BaseQuantity
                                             :fibo-fnd-qt-qtu/DerivedQuantity],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-qt-qtu/QuantityKind
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasFactor,
-                      :owl/someValuesFrom :fibo-fnd-qt-qtu/QuantityKindFactor,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-fnd-qt-qtu/QuantityKind],
    :skos/definition
    "quantity kind that may be defined as a product of powers of one or more other kinds of quantity",
    :skos/example "velocity (length/time), mass density (mass/length3)"})
@@ -118,12 +118,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label "derived unit",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-qt-qtu/isDerivedFrom,
-                      :owl/someValuesFrom :fibo-fnd-qt-qtu/BaseUnit,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-qt-qtu/hasFactor,
+                      :owl/someValuesFrom :fibo-fnd-qt-qtu/UnitFactor,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-qt-qtu/MeasurementUnit
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasFactor,
-                      :owl/someValuesFrom :fibo-fnd-qt-qtu/UnitFactor,
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/isDerivedFrom,
+                      :owl/someValuesFrom :fibo-fnd-qt-qtu/BaseUnit,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "measurement unit that is defined with respect to one or more base units, such as as a product of powers of one or more other measurement units",
@@ -161,14 +161,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label "measurement unit",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
-                      :owl/someValuesFrom :fibo-fnd-qt-qtu/SystemOfUnits,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-qt-qtu/Quantity
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/MeasurementUnit,
                       :owl/onProperty :fibo-fnd-qt-qtu/specializes,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/someValuesFrom :fibo-fnd-qt-qtu/SystemOfUnits,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-qt-qtu/Quantity],
    :skos/definition
    "quantity, defined and adopted by convention, with which any other quantity of the same kind can be compared to express the ratio of the two quantities as a number",
    :skos/example "week, day, hour, minute, second, kilogram, joule, meter"})
@@ -205,12 +205,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label "quantity kind",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-qt-qtu/QuantityKind,
-                      :owl/onProperty :fibo-fnd-qt-qtu/specializes,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/MeasurementUnit,
                       :owl/onProperty :fibo-fnd-qt-qtu/hasMeasurementUnit,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-qt-qtu/QuantityKind,
+                      :owl/onProperty :fibo-fnd-qt-qtu/specializes,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-arr-cls/Classifier],
    :skos/definition
@@ -268,15 +268,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "system of quantities"},
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :rdf/type       :owl/Restriction}
+   :rdfs/subClassOf [:fibo-fnd-arr-cls/ClassificationScheme
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
                       :owl/onProperty :lcc-cr/uses,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-cls/ClassificationScheme
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/defines,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-qt-qtu/BaseQuantity
@@ -297,21 +297,21 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label "system of units",
    :rdfs/subClassOf [:fibo-fnd-arr-cls/ClassificationScheme
-                     {:owl/onProperty     :fibo-fnd-rel-rel/defines,
-                      :owl/someValuesFrom :fibo-fnd-qt-qtu/MeasurementUnit,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/SystemOfUnits,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-qt-qtu/SystemOfUnits,
+                      :owl/onProperty :lcc-cr/uses,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
                       :owl/onProperty :fibo-fnd-rel-rel/appliesTo,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-qt-qtu/SystemOfUnits,
-                      :owl/onProperty :lcc-cr/uses,
-                      :rdf/type       :owl/Restriction}],
+                     {:owl/onProperty     :fibo-fnd-rel-rel/defines,
+                      :owl/someValuesFrom :fibo-fnd-qt-qtu/MeasurementUnit,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "set of measurement units associated with a system of quantities, together with a set of rules that assign one measurement unit to be the base unit for each base quantity in the system of quantities and a set of rules for the derivation of other units from the base units",
    :skos/example

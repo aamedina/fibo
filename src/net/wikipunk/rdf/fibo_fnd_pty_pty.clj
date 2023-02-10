@@ -93,11 +93,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "contextual name",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [:fibo-fnd-aap-agt/Name
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-aap-agt/isStructuredNameOf,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-aap-agt/Name
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
                       :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
@@ -133,14 +133,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "party in role",
-   :rdfs/subClassOf [:fibo-fnd-pty-rl/AgentInRole
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-dt-fd/Date,
+                      :owl/onProperty :fibo-fnd-pty-pty/hasCommencementDate,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-rl/AgentInRole
                      {:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty :fibo-fnd-pty-pty/hasCommencementDate,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "relative concept that ties a person or organization to a specific role they stand in",
@@ -557,3 +557,13 @@
    :rdfs/label "undergoes",
    :rdfs/range :fibo-fnd-pty-pty/Situation,
    :skos/definition "indicates a situation that the undergoer experiences"})
+
+(def ^{:private true} holds
+  {:db/ident :fibo-fnd-rel-rel/holds,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/directlyAffects})
+
+(def ^{:private true} isHeldBy
+  {:db/ident :fibo-fnd-rel-rel/isHeldBy,
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/experiencesWith})

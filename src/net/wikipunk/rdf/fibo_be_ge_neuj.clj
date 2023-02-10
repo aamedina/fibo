@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-be-ge-neuj
   "This ontology provides government entities and jurisdictions for countries that are defined as being part of Northern Europe in the U.N. M49 codes, primarily those that are considered independent countries in ISO 3166, or are important from a banking perspective."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2010-2023 EDM Council, Inc."
+                       "Copyright (c) 2010-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides government entities and jurisdictions for countries that are defined as being part of Northern Europe in the U.N. M49 codes, primarily those that are considered independent countries in ISO 3166, or are important from a banking perspective.",
@@ -10,12 +12,14 @@
    ["https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-ge"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
     "fibo-be-ge-neuj"
@@ -32,7 +36,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -42,26 +45,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "Northern Europe Government Entities and Jurisdictions Ontology",
    :skos/changeNote
-   "The http://www.omg.org/spec/EDMC-FIBO/BE/20200801/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to address hygiene issues with diacritical marks that are language-specific.",
+   ["The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The http://www.omg.org/spec/EDMC-FIBO/BE/20200801/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to address hygiene issues with diacritical marks that are language-specific."],
    :skos/scopeNote
-   "The initial version of this ontology reflects the national level only.",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2010-2021 EDM Council, Inc."
-                  "Copyright (c) 2010-2021 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"
-    "https://www.omg.org/spec/LCC/"],
-   :sm/fileAbbreviation "fibo-be-ge-neuj",
-   :sm/filename "NorthernEuropeGovernmentEntitiesAndJurisdictions.rdf"})
+   "The initial version of this ontology reflects the national level only."})
 
 (def AlandIslandsJurisdiction
   "jurisdiction of the Aland District Court, which deals with criminal cases, civil cases and petitionary matters in first instance, with escalation to the appellate level in Finland as needed"
-  {:db/ident :fibo-be-ge-neuj/AlandIslandsJurisdiction,
+  {:cmns-av/synonym {:rdf/language "fi",
+                     :rdf/value    "Ålands tingsrätt"},
+   :db/ident :fibo-be-ge-neuj/AlandIslandsJurisdiction,
    :fibo-be-ge-ge/isJurisdictionOf :fibo-be-ge-neuj/GovernmentOfAland,
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/AlandIslands,
-   :fibo-fnd-utl-av/synonym {:rdf/language "fi",
-                             :rdf/value    "Ålands tingsrätt"},
    :rdf/type [:owl/NamedIndividual :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
@@ -141,11 +136,11 @@
 
 (def GovernmentOfAland
   "regional government of the Aland Islands, an archipelago province at the entrance to the Gulf of Bothnia in the Baltic Sea belonging to Finland"
-  {:db/ident :fibo-be-ge-neuj/GovernmentOfAland,
+  {:cmns-av/explanatoryNote
+   "The Aland Islands are governed according to the Act on the Autonomy of Aland and international treaties. These laws guarantee the islands' autonomy from Finland, which has ultimate sovereignty over them, as well as a demilitarised status. The Government of Aland answers to the Parliament of Aland, in accordance with the principles of parliamentarism.",
+   :db/ident :fibo-be-ge-neuj/GovernmentOfAland,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-neuj/AlandIslandsJurisdiction,
    :fibo-fnd-rel-rel/governs :lcc-3166-1/AlandIslands,
-   :fibo-fnd-utl-av/explanatoryNote
-   "The Aland Islands are governed according to the Act on the Autonomy of Aland and international treaties. These laws guarantee the islands' autonomy from Finland, which has ultimate sovereignty over them, as well as a demilitarised status. The Government of Aland answers to the Parliament of Aland, in accordance with the principles of parliamentarism.",
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/RegionalGovernment],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
@@ -177,13 +172,13 @@
 
 (def GovernmentOfTheKingdomOfDenmark
   "unitary constitutional monarchy and parliamentary democracy, with the monarch as the official head of government, that includes the southernmost of the Scandinavian countries, consisting of a peninsula, Jutland, and an archipelago of 443 named islands"
-  {:db/ident :fibo-be-ge-neuj/GovernmentOfTheKingdomOfDenmark,
+  {:cmns-av/synonym [{:rdf/language "en",
+                      :rdf/value    "Danish government"}
+                     {:rdf/language "da",
+                      :rdf/value    "Danmarks regering"}],
+   :db/ident :fibo-be-ge-neuj/GovernmentOfTheKingdomOfDenmark,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-neuj/JurisdictionOfDenmark,
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Denmark,
-   :fibo-fnd-utl-av/synonym [{:rdf/language "da",
-                              :rdf/value    "Danmarks regering"}
-                             {:rdf/language "en",
-                              :rdf/value    "Danish government"}],
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/NationalGovernment],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",

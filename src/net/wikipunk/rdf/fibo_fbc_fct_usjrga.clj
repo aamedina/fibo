@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-usjrga
   "This ontology extends the primary regulatory agencies ontology in FBC with additional regulators that are specific to the United States and augments certain U.S. financial services entities based on who regulates them."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
+                       "Copyright (c) 2015-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :dcterms/abstract
    "This ontology extends the primary regulatory agencies ontology in FBC with additional regulators that are specific to the United States and augments certain U.S. financial services entities based on who regulates them.",
@@ -19,14 +21,15 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
@@ -43,7 +46,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
     "fibo-be-ge-ge"
@@ -100,7 +104,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -113,28 +116,14 @@
    ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to reflect the move of certain organization-specific concepts from BE to FND."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USRegulatoryAgencies.rdf version of this ontology was modified to integrate a financial services provider identifier for certain banking identifiers, add a property for secondary federal regulator, add individual registration schemes for state-specific business registries, improve on some definitions, normalize some of the labels, eliminate duplication of concepts in LCC, to simplify addresses, merge countries with locations in FND, eliminte the redundant notion of an InstitutionType, which can be determined using a SPARQL query or classification and results in a very large disjunction, and correct a couple of improperly defined annotations."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USRegulatoryAgencies.rdf version of this ontology was modified per the FIBO 2.0 RFC."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to correct a restriction defining state government entities and to make federal reserve district identifier a subclass of geographic region identifier and fix spelling errors."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to eliminate dead links and address text formatting issues identified by hygiene testing."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to add tax identification number, employer identification number, federal government entity and state government entity."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to eliminate references to external dictionary sites that no longer resolve and clean up circular and ambiguous definitions."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies.rdf version of this ontology was revised to add a restriction on PrimaryFederalRegulator to say that it must be a government body."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USRegulatoryAgencies.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FBC 1.0 FTF report."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2015-2022 Object Management Group, Inc."
-                  "Copyright (c) 2015-2022 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"],
-   :sm/fileAbbreviation "fibo-fbc-fct-usjrga",
-   :sm/filename "USRegulatoryAgencies.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/USJurisdiction/USRegulatoryAgencies.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FBC 1.0 FTF report."]})
 
 (def ABABusinessEntityIdentifier
   "Delaware Department of Corporations business entity identifier for the American Bankers Association (ABA)"
@@ -285,7 +274,8 @@
 
 (def AmericanBankersAssociation
   "American Bankers Association (ABA) legal entity, which is a trade association whose membership comprises financial institutions of all sizes"
-  {:db/ident :fibo-fbc-fct-usjrga/AmericanBankersAssociation,
+  {:cmns-av/abbreviation "ABA",
+   :db/ident :fibo-fbc-fct-usjrga/AmericanBankersAssociation,
    :fibo-be-le-cb/isIncorporatedIn :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :fibo-be-le-fbo/hasHeadquartersAddress
    :fibo-fbc-fct-usjrga/ABAHeadquartersAddress,
@@ -293,7 +283,6 @@
    :fibo-fbc-fct-usjrga/CorporationServiceCompany,
    :fibo-fnd-plc-vrt/hasWebsite "https://www.aba.com/Pages/default.aspx",
    :fibo-fnd-rel-rel/hasLegalName "American Bankers Association",
-   :fibo-fnd-utl-av/abbreviation "ABA",
    :rdf/type [:fibo-be-le-cb/Corporation :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -303,10 +292,10 @@
 
 (def AmericanBankersAssociationRTNRegistrar
   "American Bankers Association (ABA) Routing Transit Number (RTN) Registrar, which is a delegated capability currently provided by Accuity"
-  {:db/ident :fibo-fbc-fct-usjrga/AmericanBankersAssociationRTNRegistrar,
+  {:cmns-av/abbreviation "ABA RTN Registrar",
+   :db/ident :fibo-fbc-fct-usjrga/AmericanBankersAssociationRTNRegistrar,
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/AccuityInc-US-DE,
    :fibo-fnd-rel-rel/manages :fibo-fbc-fct-usjrga/ABARTNRegistry,
-   :fibo-fnd-utl-av/abbreviation "ABA RTN Registrar",
    :rdf/type [:fibo-fbc-pas-fpas/FinancialServiceProvider
               :fibo-fbc-fct-ra/Registrar
               :owl/NamedIndividual],
@@ -318,12 +307,12 @@
 
 (def AmericanBankersAssociationRegistrationAuthority
   "American Bankers Association (ABA) Registration Authority (RA), which is a function of the ABA for registration of issuer identification numbers in the US"
-  {:db/ident
+  {:cmns-av/abbreviation "ABA RA",
+   :db/ident
    :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/AmericanBankersAssociation,
    :fibo-fnd-rel-rel/manages :fibo-fbc-fct-usjrga/ABAIINRegistry,
-   :fibo-fnd-utl-av/abbreviation "ABA RA",
    :rdf/type [:fibo-fbc-pas-fpas/FinancialServiceProvider
               :fibo-fbc-fct-ra/RegistrationAuthority
               :owl/NamedIndividual],
@@ -335,10 +324,9 @@
 
 (def BoardOfGovernorsOfTheFederalReserveSystem
   "regulatory agency and registration authority for the overall Federal Reserve System"
-  {:db/ident :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
+  {:cmns-av/adaptedFrom "http://www.federalreserve.gov/faqs/about_12591.htm",
+   :db/ident :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/FederalReserveBoard,
-   :fibo-fnd-utl-av/adaptedFrom
-   "http://www.federalreserve.gov/faqs/about_12591.htm",
    :lcc-cr/isPartOf
    :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
    :rdf/type [:fibo-fbc-fct-rga/RegulatoryAgency
@@ -352,11 +340,11 @@
 
 (def CFTCIndustryFilingsRepository
   "CFTC Industry Filings repository, a repository of organizational characteristics and financial data for Designated Contract Markets (DCM), Swap Execution Facilities (SEF), Derivatives Clearing Organizations (DCO), Swap Data Repositories (SDR), and Lists of Foreign Boards of Trade (FBOT) Registered with the Commission"
-  {:db/ident :fibo-fbc-fct-usjrga/CFTCIndustryFilingsRepository,
+  {:cmns-av/adaptedFrom
+   "http://www.cftc.gov/IndustryOversight/IndustryFilings/index.htm",
+   :db/ident :fibo-fbc-fct-usjrga/CFTCIndustryFilingsRepository,
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/CommoditiesFuturesAndDerivativesRegulator,
-   :fibo-fnd-utl-av/adaptedFrom
-   "http://www.cftc.gov/IndustryOversight/IndustryFilings/index.htm",
    :rdf/type [:fibo-fbc-fct-ra/Registry :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -457,11 +445,11 @@
 
 (def CaliforniaDepartmentOfBusinessOversight
   "State of California's Department of Business Oversight"
-  {:db/ident :fibo-fbc-fct-usjrga/CaliforniaDepartmentOfBusinessOversight,
+  {:cmns-av/explanatoryNote
+   "The Department of Business Oversight (DBO) protects consumers and oversees financial service providers and products. The DBO supervises the operations of state-licensed financial institutions, including banks, credit unions and money transmitters. Additionally, the DBO licenses and regulates a variety of financial service providers, including securities brokers and dealers, investment advisers, payday lenders and other consumer finance lenders.",
+   :db/ident :fibo-fbc-fct-usjrga/CaliforniaDepartmentOfBusinessOversight,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/StateOfCaliforniaJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite "http://dbo.ca.gov/",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The Department of Business Oversight (DBO) protects consumers and oversees financial service providers and products. The DBO supervises the operations of state-licensed financial institutions, including banks, credit unions and money transmitters. Additionally, the DBO licenses and regulates a variety of financial service providers, including securities brokers and dealers, investment advisers, payday lenders and other consumer finance lenders.",
    :lcc-cr/isPartOf :fibo-be-ge-usj/StateOfCaliforniaGovernment,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-usjrga/StateGovernmentEntity
@@ -503,10 +491,10 @@
 
 (def CommodityFuturesTradingCommission
   "Commodity Futures Trading Commission (CFTC), an independent Federal agency whose mission is to foster open, transparent, competitive, and financially sound markets, to avoid systemic risk, and to protect the market users and their funds, consumers, and the public from fraud, manipulation, and abusive practices related to derivatives and other products that are subject to the Commodity Exchange Act"
-  {:db/ident :fibo-fbc-fct-usjrga/CommodityFuturesTradingCommission,
+  {:cmns-av/abbreviation "CFTC",
+   :db/ident :fibo-fbc-fct-usjrga/CommodityFuturesTradingCommission,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite "http://www.cftc.gov/index.htm",
-   :fibo-fnd-utl-av/abbreviation "CFTC",
    :lcc-cr/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :rdf/type [:fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :fibo-be-ge-ge/GovernmentAgency
@@ -519,10 +507,10 @@
 
 (def ConsumerFinanceRegulator
   "regulatory agency and registration authority role of the Consumer Financial Protection Bureau (CFPB)"
-  {:db/ident :fibo-fbc-fct-usjrga/ConsumerFinanceRegulator,
+  {:cmns-av/adaptedFrom "http://www.consumerfinance.gov/the-bureau/",
+   :db/ident :fibo-fbc-fct-usjrga/ConsumerFinanceRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/ConsumerFinancialProtectionBureau,
-   :fibo-fnd-utl-av/adaptedFrom "http://www.consumerfinance.gov/the-bureau/",
    :rdf/type [:fibo-fbc-fct-rga/RegulatoryAgency :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -532,10 +520,10 @@
 
 (def ConsumerFinancialProtectionBureau
   "Consumer Financial Protection Bureau (CFPB), an independent Federal agency that helps consumer finance markets work by making rules more effective, by consistently and fairly enforcing those rules, and by empowering consumers to take more control over their economic lives"
-  {:db/ident :fibo-fbc-fct-usjrga/ConsumerFinancialProtectionBureau,
+  {:cmns-av/abbreviation "CFPB",
+   :db/ident :fibo-fbc-fct-usjrga/ConsumerFinancialProtectionBureau,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite "https://www.consumerfinance.gov/",
-   :fibo-fnd-utl-av/abbreviation "CFPB",
    :lcc-cr/isPartOf :fibo-fbc-fct-usjrga/USDepartmentOfTheTreasury,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-usjrga/FederalGovernmentEntity
@@ -563,7 +551,8 @@
 
 (def CorporationServiceCompany-US-DE
   "Corporation Service Company (CSC) legal entity, which was founded in 1899, and provides registered agent, corporate governance, corporate compliance, and intellectual property management for businesses worldwide"
-  {:db/ident :fibo-fbc-fct-usjrga/CorporationServiceCompany-US-DE,
+  {:cmns-av/abbreviation "CSC",
+   :db/ident :fibo-fbc-fct-usjrga/CorporationServiceCompany-US-DE,
    :fibo-be-le-cb/isIncorporatedIn :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :fibo-be-le-fbo/hasHeadquartersAddress
    :fibo-fbc-fct-usjrga/CorporationServiceCompanyAddress,
@@ -571,7 +560,6 @@
    :fibo-fbc-fct-usjrga/CorporationServiceCompany,
    :fibo-fnd-plc-vrt/hasWebsite "https://www.cscglobal.com/cscglobal/home/",
    :fibo-fnd-rel-rel/hasLegalName "Corporation Service Company",
-   :fibo-fnd-utl-av/abbreviation "CSC",
    :rdf/type [:owl/NamedIndividual :fibo-be-le-cb/Corporation],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -629,13 +617,13 @@
 
 (def CorporationTrustCompany-US-DE
   "The Corporation Trust Company (CT Corporation) legal entity, which provides registered agent and incorporation services"
-  {:db/ident :fibo-fbc-fct-usjrga/CorporationTrustCompany-US-DE,
+  {:cmns-av/abbreviation "CT",
+   :db/ident :fibo-fbc-fct-usjrga/CorporationTrustCompany-US-DE,
    :fibo-be-le-cb/isIncorporatedIn :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :fibo-be-le-fbo/hasHeadquartersAddress
    :fibo-fbc-fct-usjrga/CorporationTrustCompanyHeadquartersAddress,
    :fibo-fnd-plc-vrt/hasWebsite "https://ct.wolterskluwer.com/",
    :fibo-fnd-rel-rel/hasLegalName "CT Corporation",
-   :fibo-fnd-utl-av/abbreviation "CT",
    :rdf/type [:fibo-be-le-cb/Corporation :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -767,12 +755,12 @@
 
 (def EDGARRepository
   "EDGAR repository, a repository of financial information about securities and their issuers, including but not limited to corporate quarterly and annual filings, collected by the SEC"
-  {:db/ident :fibo-fbc-fct-usjrga/EDGARRepository,
+  {:cmns-av/adaptedFrom "http://www.sec.gov/edgar/aboutedgar.htm",
+   :cmns-av/explanatoryNote
+   "EDGAR, the Electronic Data Gathering, Analysis, and Retrieval system, performs automated collection, validation, indexing, acceptance, and forwarding of submissions by companies and others who are required by law to file forms with the U.S. Securities and Exchange Commission (SEC). Its primary purpose is to increase the efficiency and fairness of the securities market for the benefit of investors, corporations, and the economy by accelerating the receipt, acceptance, dissemination, and analysis of time-sensitive corporate information filed with the agency.",
+   :db/ident :fibo-fbc-fct-usjrga/EDGARRepository,
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/SecuritiesAndExchangeRegulator,
-   :fibo-fnd-utl-av/adaptedFrom "http://www.sec.gov/edgar/aboutedgar.htm",
-   :fibo-fnd-utl-av/explanatoryNote
-   "EDGAR, the Electronic Data Gathering, Analysis, and Retrieval system, performs automated collection, validation, indexing, acceptance, and forwarding of submissions by companies and others who are required by law to file forms with the U.S. Securities and Exchange Commission (SEC). Its primary purpose is to increase the efficiency and fairness of the securities market for the benefit of investors, corporations, and the economy by accelerating the receipt, acceptance, dissemination, and analysis of time-sensitive corporate information filed with the agency.",
    :rdf/type [:fibo-fbc-fct-ra/Registry :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -782,14 +770,14 @@
 
 (def EmployerIdentificationNumber
   "unique nine-digit number assigned by the Internal Revenue Service (IRS) to business entities operating in the United States for the purposes of identification"
-  {:db/ident :fibo-fbc-fct-usjrga/EmployerIdentificationNumber,
-   :fibo-fnd-utl-av/abbreviation ["EIN" "FEIN"],
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/abbreviation ["FEIN" "EIN"],
+   :cmns-av/adaptedFrom
    "https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "Note that despite the name, the business may not necessarily employ anyone.",
-   :fibo-fnd-utl-av/synonym ["Federal Tax Identification Number"
-                             "Federal Employer Identification Number"],
+   :cmns-av/synonym ["Federal Employer Identification Number"
+                     "Federal Tax Identification Number"],
+   :db/ident :fibo-fbc-fct-usjrga/EmployerIdentificationNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -806,9 +794,9 @@
 
 (def EmployerIdentificationNumberingScheme
   "taxpayer identification numbering scheme used in the United States to identify business entities"
-  {:db/ident :fibo-fbc-fct-usjrga/EmployerIdentificationNumberingScheme,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers",
+   :db/ident :fibo-fbc-fct-usjrga/EmployerIdentificationNumberingScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -834,8 +822,8 @@
 
 (def FDICCertificateNumber
   "identifier issued to a depository institution by the FDIC on approval of that institution's application for insurance"
-  {:db/ident :fibo-fbc-fct-usjrga/FDICCertificateNumber,
-   :fibo-fnd-utl-av/adaptedFrom "http://www.fdic.gov/",
+  {:cmns-av/adaptedFrom "http://www.fdic.gov/",
+   :db/ident :fibo-fbc-fct-usjrga/FDICCertificateNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -854,10 +842,10 @@
 
 (def FDICInstitutionDirectory
   "Federal Deposit Insurance Corporation's (FDIC) institution directory, a repository of financial data and institution characteristics for covered institutions collected by the FDIC"
-  {:db/ident :fibo-fbc-fct-usjrga/FDICInstitutionDirectory,
+  {:cmns-av/adaptedFrom "https://www7.fdic.gov/idasp/index.asp",
+   :db/ident :fibo-fbc-fct-usjrga/FDICInstitutionDirectory,
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/FederalDepositInsurerAndRegulator,
-   :fibo-fnd-utl-av/adaptedFrom "https://www7.fdic.gov/idasp/index.asp",
    :rdf/type [:fibo-fbc-fct-ra/Registry :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -867,8 +855,8 @@
 
 (def FDICRegistryEntry
   "an entry in the FDIC institution directory, a repository of financial institution characteristics collected by the FDIC related to the institutions they insure"
-  {:db/ident :fibo-fbc-fct-usjrga/FDICRegistryEntry,
-   :fibo-fnd-utl-av/adaptedFrom "https://www7.fdic.gov/idasp/index.asp",
+  {:cmns-av/adaptedFrom "https://www7.fdic.gov/idasp/index.asp",
+   :db/ident :fibo-fbc-fct-usjrga/FDICRegistryEntry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -889,8 +877,8 @@
 
 (def FRSMemberBank
   "financial institution that is a member of the Federal Reserve System (FRS)"
-  {:db/ident :fibo-fbc-fct-usjrga/FRSMemberBank,
-   :fibo-fnd-utl-av/adaptedFrom "http://federalreserve.gov/",
+  {:cmns-av/adaptedFrom "http://federalreserve.gov/",
+   :db/ident :fibo-fbc-fct-usjrga/FRSMemberBank,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -906,8 +894,8 @@
 
 (def FRSNonMemberBank
   "financial institution that is not a member of the Federal Reserve System (FRS)"
-  {:db/ident :fibo-fbc-fct-usjrga/FRSNonMemberBank,
-   :fibo-fnd-utl-av/adaptedFrom "http://federalreserve.gov/",
+  {:cmns-av/adaptedFrom "http://federalreserve.gov/",
+   :db/ident :fibo-fbc-fct-usjrga/FRSNonMemberBank,
    :owl/disjointWith :fibo-fbc-fct-usjrga/FRSMemberBank,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -919,9 +907,9 @@
 
 (def FRSStateMemberBank
   "state-chartered bank that is a member of the Federal Reserve System (FRS)"
-  {:db/ident :fibo-fbc-fct-usjrga/FRSStateMemberBank,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "http://www.ffiec.gov/nicpubweb/Content/HELP/Institution%20Type%20Description.htm",
+   :db/ident :fibo-fbc-fct-usjrga/FRSStateMemberBank,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -933,12 +921,12 @@
 
 (def FarmCreditAdministration
   "Farm Credit Administration (FCA), an independent Federal agency that regulates and examines the banks, associations, and related entities of the Farm Credit System (FCS), including the Federal Agricultural Mortgage Corporation (Farmer Mac)"
-  {:db/ident :fibo-fbc-fct-usjrga/FarmCreditAdministration,
+  {:cmns-av/abbreviation "FCA",
+   :cmns-av/explanatoryNote
+   "The FCS is the largest agricultural lender in the United States. It is a nationwide network of lending institutions that are owned by their borrowers. It serves all 50 States and Puerto Rico.",
+   :db/ident :fibo-fbc-fct-usjrga/FarmCreditAdministration,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite "http://fca.gov/",
-   :fibo-fnd-utl-av/abbreviation "FCA",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The FCS is the largest agricultural lender in the United States. It is a nationwide network of lending institutions that are owned by their borrowers. It serves all 50 States and Puerto Rico.",
    :lcc-cr/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :rdf/type [:fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :fibo-be-ge-ge/GovernmentAgency
@@ -951,9 +939,9 @@
 
 (def FarmCreditRegulator
   "regulatory agency and registration authority role of the Farm Credit Administration (FCA)"
-  {:db/ident :fibo-fbc-fct-usjrga/FarmCreditRegulator,
+  {:cmns-av/adaptedFrom "http://fca.gov/about/fca_in_brief.html",
+   :db/ident :fibo-fbc-fct-usjrga/FarmCreditRegulator,
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/FarmCreditAdministration,
-   :fibo-fnd-utl-av/adaptedFrom "http://fca.gov/about/fca_in_brief.html",
    :rdf/type [:fibo-fbc-pas-fpas/FinancialServiceProvider
               :fibo-fbc-fct-usjrga/PrimaryFederalRegulator
               :owl/NamedIndividual],
@@ -966,12 +954,12 @@
 
 (def FederalDepositInsuranceCorporation
   "Federal Deposit Insurance Corporation (FDIC), which preserves and promotes public confidence in the U.S. financial system by insuring deposits in banks and thrift institutions for at least $250,000; by identifying, monitoring and addressing risks to the deposit insurance funds; and by limiting the effect on the economy and the financial system when a bank or thrift institution fails."
-  {:db/ident :fibo-fbc-fct-usjrga/FederalDepositInsuranceCorporation,
+  {:cmns-av/abbreviation "FDIC",
+   :cmns-av/explanatoryNote
+   "An independent agency of the federal government, the FDIC was created in 1933 in response to the thousands of bank failures that occurred in the 1920s and early 1930s. Since the start of FDIC insurance on January 1, 1934, no depositor has lost a single cent of insured funds as a result of a failure.",
+   :db/ident :fibo-fbc-fct-usjrga/FederalDepositInsuranceCorporation,
    :fibo-be-ge-ge/isInstrumentOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :fibo-fnd-plc-vrt/hasWebsite "https://www.fdic.gov/",
-   :fibo-fnd-utl-av/abbreviation "FDIC",
-   :fibo-fnd-utl-av/explanatoryNote
-   "An independent agency of the federal government, the FDIC was created in 1933 in response to the thousands of bank failures that occurred in the 1920s and early 1930s. Since the start of FDIC insurance on January 1, 1934, no depositor has lost a single cent of insured funds as a result of a failure.",
    :rdf/type [:fibo-be-ge-ge/Instrumentality
               :fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :owl/NamedIndividual
@@ -1001,13 +989,13 @@
 
 (def FederalFinancialInstitutionsExaminationCouncil
   "FFIEC, a formal interagency body empowered to prescribe uniform principles, standards, and report forms for the federal examination of financial institutions by the Board of Governors of the Federal Reserve System (FRB), the Federal Deposit Insurance Corporation (FDIC), the National Credit Union Administration (NCUA), the Office of the Comptroller of the Currency (OCC), and the Consumer Financial Protection Bureau (CFPB), and to make recommendations to promote uniformity in the supervision of financial institutions"
-  {:db/ident
+  {:cmns-av/abbreviation "FFIEC",
+   :cmns-av/explanatoryNote
+   "The Federal Financial Institutions Examination Council (FFIEC) was established on March 10, 1979, pursuant to title X of the Financial Institutions Regulatory and Interest Rate Control Act of 1978 (FIRA), Public Law 95-630. In 1989, title XI of the Financial Institutions Reform, Recovery and Enforcement Act of 1989 (FIRREA) established The Appraisal Subcommittee (ASC) within the Examination Council.",
+   :db/ident
    :fibo-fbc-fct-usjrga/FederalFinancialInstitutionsExaminationCouncil,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite "http://www.ffiec.gov/",
-   :fibo-fnd-utl-av/abbreviation "FFIEC",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The Federal Financial Institutions Examination Council (FFIEC) was established on March 10, 1979, pursuant to title X of the Financial Institutions Regulatory and Interest Rate Control Act of 1978 (FIRA), Public Law 95-630. In 1989, title XI of the Financial Institutions Reform, Recovery and Enforcement Act of 1989 (FIRREA) established The Appraisal Subcommittee (ASC) within the Examination Council.",
    :lcc-cr/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :lcc-lr/hasMember [:fibo-fbc-fct-usjrga/OfficeOfTheComptrollerOfTheCurrency
                       :fibo-fbc-fct-usjrga/FederalReserveBoard
@@ -1025,13 +1013,13 @@
 
 (def FederalFinancialInstitutionsExaminationRegulator
   "regulatory agency and registration authority role of the Federal Financial Institutions Examination Council (FFIEC)"
-  {:db/ident
+  {:cmns-av/adaptedFrom "http://www.ffiec.gov/about.htm",
+   :db/ident
    :fibo-fbc-fct-usjrga/FederalFinancialInstitutionsExaminationRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/FederalFinancialInstitutionsExaminationCouncil,
    :fibo-fnd-rel-rel/manages
    :fibo-fbc-fct-usjrga/UniformBankPerformanceReportRepository,
-   :fibo-fnd-utl-av/adaptedFrom "http://www.ffiec.gov/about.htm",
    :rdf/type [:fibo-fbc-fct-rga/RegulatoryAgency
               :fibo-fbc-fct-ra/RegistrationAuthority
               :owl/NamedIndividual],
@@ -1062,12 +1050,12 @@
 
 (def FederalHousingFinanceAgency
   "Federal Housing Finance Agency (FHFA), responsible for strengthening and securing the United States secondary mortgage markets by providing effective supervision, sound research, reliable data, and relevant policies"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalHousingFinanceAgency,
+  {:cmns-av/abbreviation "FHFA",
+   :cmns-av/explanatoryNote
+   "The FHFA is an independent regulatory agency responsible for the oversight of vital components of the secondary mortgage markets - the housing government sponsored enterprises of Fannie Mae, Freddie Mac and the Federal Home Loan Bank System. Combined these entities provide more than $5.5 trillion in funding for the U.S. mortgage markets and financial institutions. Additionally, FHFA is the conservator of Fannie Mae and Freddie Mac.",
+   :db/ident :fibo-fbc-fct-usjrga/FederalHousingFinanceAgency,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite "http://www.fhfa.gov/",
-   :fibo-fnd-utl-av/abbreviation "FHFA",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The FHFA is an independent regulatory agency responsible for the oversight of vital components of the secondary mortgage markets - the housing government sponsored enterprises of Fannie Mae, Freddie Mac and the Federal Home Loan Bank System. Combined these entities provide more than $5.5 trillion in funding for the U.S. mortgage markets and financial institutions. Additionally, FHFA is the conservator of Fannie Mae and Freddie Mac.",
    :lcc-cr/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :rdf/type [:fibo-be-ge-ge/GovernmentAgency
               :owl/NamedIndividual
@@ -1080,10 +1068,10 @@
 
 (def FederalHousingFinanceRegulator
   "regulatory agency and registration authority role of the Federal Housing Finance Agency (FHFA)"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalHousingFinanceRegulator,
+  {:cmns-av/adaptedFrom "http://www.fhfa.gov/AboutUs",
+   :db/ident :fibo-fbc-fct-usjrga/FederalHousingFinanceRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/FederalHousingFinanceAgency,
-   :fibo-fnd-utl-av/adaptedFrom "http://www.fhfa.gov/AboutUs",
    :rdf/type [:fibo-fbc-fct-ra/RegistrationAuthority
               :fibo-fbc-fct-usjrga/PrimaryFederalRegulator
               :owl/NamedIndividual],
@@ -1295,12 +1283,12 @@
 
 (def FederalReserveBoard
   "Federal Reserve Board (FRB)"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBoard,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.federalreserve.gov/",
-   :fibo-fnd-utl-av/abbreviation "FRB",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "FRB",
+   :cmns-av/explanatoryNote
    "The members of the Board of Governors are nominated by the President of the United States and confirmed by the U.S. Senate. By law, the appointments must yield a 'fair representation of the financial, agricultural, industrial, and commercial interests and geographical divisions of the country,' and no two Governors may come from the same Federal Reserve District.\n\nThe full term of a Governor is 14 years; appointments are staggered so that one term expires on January 31 of each even-numbered year. A Governor who has served a full term may not be reappointed, but a Governor who was appointed to complete the balance of an unexpired term may be reappointed to a full 14-year term.\n\nOnce appointed, Governors may not be removed from office for their policy views. The lengthy terms and staggered appointments are intended to contribute to the insulation of the Board--and the Federal Reserve System as a whole--from day-to-day political pressures to which it might otherwise be subject.\n\nIn addition to serving as members of the Board, the Chairman and Vice Chairman of the Board serve terms of four years, and they may be reappointed to those roles and serve until their terms as Governors expire. The Chairman serves as public spokesperson and representative of the Board and manager of the Board's staff. The Chairman also presides at Board meetings. Affirming the apolitical nature of the Board, recent Presidents of both major political parties have selected the same person as Board Chairman.",
-   :fibo-fnd-utl-av/synonym "Federal Reserve Board of Governors",
+   :cmns-av/synonym "Federal Reserve Board of Governors",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveBoard,
+   :fibo-fnd-plc-vrt/hasWebsite "https://www.federalreserve.gov/",
    :lcc-cr/isPartOf :fibo-fbc-fct-usjrga/FederalReserveSystem,
    :rdf/type [:fibo-be-ge-ge/GovernmentDepartment
               :fibo-fbc-fct-usjrga/FederalGovernmentEntity
@@ -1312,10 +1300,10 @@
 
 (def FederalReserveDistrict
   "a region of the US identifying the jurisdiction of a Federal Reserve Bank, numbered and named for the city in which that reserve bank is located"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-   :fibo-fnd-utl-av/adaptedFrom "http://federalreserve.gov/otherfrb.htm",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/adaptedFrom "http://federalreserve.gov/otherfrb.htm",
+   :cmns-av/explanatoryNote
    "The Federal Reserve officially identifies Districts by number and Reserve Bank city. In the 12th District, the Seattle Branch serves Alaska, and the San Francisco Bank serves Hawaii. The System serves commonwealths and territories as follows: the New York Bank serves the Commonwealth of Puerto Rico and the U.S. Virgin Islands; the San Francisco Bank serves American Samoa, Guam, and the Commonwealth of the Northern Mariana Islands. The Board of Governors revised the branch boundaries of the System in February 1996.",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveDistrict,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1326,8 +1314,8 @@
 
 (def FederalReserveDistrictBank
   "Federal Reserve district and member bank, with jurisdiction over a specific region of the US, named for the city in which the reserve bank is located"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveDistrictBank,
-   :fibo-fnd-utl-av/adaptedFrom "http://federalreserve.gov/",
+  {:cmns-av/adaptedFrom "http://federalreserve.gov/",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveDistrictBank,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1362,7 +1350,8 @@
 
 (def FederalReserveEighthDistrict
   "jurisdiction of the Eighth District of the Federal Reserve, which covers all of Arkansas, eastern Missouri, western Kentucky, western Tennessee, southern Illinois, southern Indiana and northern Mississippi"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveEighthDistrict,
+  {:cmns-av/adaptedFrom "https://www.stlouisfed.org/about-us/what-we-do",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveEighthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/Indiana
                                :lcc-3166-2-us/Missouri
                                :lcc-3166-2-us/Arkansas
@@ -1370,8 +1359,6 @@
                                :lcc-3166-2-us/Tennessee
                                :lcc-3166-2-us/Mississippi
                                :lcc-3166-2-us/Illinois],
-   :fibo-fnd-utl-av/adaptedFrom
-   "https://www.stlouisfed.org/about-us/what-we-do",
    :rdf/type [:owl/NamedIndividual :fibo-fbc-fct-usjrga/FederalReserveDistrict],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1395,10 +1382,10 @@
 
 (def FederalReserveEleventhDistrict
   "jurisdiction of the Eleventh District of the Federal Reserve, which covers Texas, northern Louisiana and southern New Mexico"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveEleventhDistrict,
+  {:cmns-av/adaptedFrom "https://www.dallasfed.org/fed",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveEleventhDistrict,
    :fibo-fnd-law-jur/hasReach
    [:lcc-3166-2-us/Texas :lcc-3166-2-us/NewMexico :lcc-3166-2-us/Louisiana],
-   :fibo-fnd-utl-av/adaptedFrom "https://www.dallasfed.org/fed",
    :rdf/type [:fibo-fbc-fct-usjrga/FederalReserveDistrict :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1422,14 +1409,14 @@
 
 (def FederalReserveFifthDistrict
   "jurisdiction of the Fifth District of the Federal Reserve, which covers Maryland, North Carolina, South Carolina, Washington, D.C., and most of West Virginia"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveFifthDistrict,
+  {:cmns-av/adaptedFrom
+   "https://www.richmondfed.org/about_us/who_we_are_what_we_do",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveFifthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/NorthCarolina
                                :lcc-3166-2-us/Maryland
                                :lcc-3166-2-us/SouthCarolina
                                :lcc-3166-2-us/WestVirginia
                                :lcc-3166-2-us/DistrictOfColumbia],
-   :fibo-fnd-utl-av/adaptedFrom
-   "https://www.richmondfed.org/about_us/who_we_are_what_we_do",
    :rdf/type [:fibo-fbc-fct-usjrga/FederalReserveDistrict :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1453,12 +1440,12 @@
 
 (def FederalReserveFirstDistrict
   "jurisdiction of the First District of the Federal Reserve, which covers the New England states of Maine, New Hampshire, Vermont, and Massachusetts"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveFirstDistrict,
+  {:cmns-av/adaptedFrom
+   "http://federalreserve.gov/aboutthefed/directors/map-of-districts.htm",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveFirstDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/NewHampshire
                                :lcc-3166-2-us/Massachusetts
                                :lcc-3166-2-us/Maine],
-   :fibo-fnd-utl-av/adaptedFrom
-   "http://federalreserve.gov/aboutthefed/directors/map-of-districts.htm",
    :rdf/type [:fibo-fbc-fct-usjrga/FederalReserveDistrict :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1482,13 +1469,13 @@
 
 (def FederalReserveFourthDistrict
   "jurisdiction of the Fourth District of the Federal Reserve, which covers Ohio, western Pennsylvania, the northern panhandle of West Virginia, and eastern Kentucky"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveFourthDistrict,
+  {:cmns-av/adaptedFrom
+   "https://www.clevelandfed.org/en/about-us/the-cleveland-fed.aspx",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveFourthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/Ohio
                                :lcc-3166-2-us/Pennsylvania
                                :lcc-3166-2-us/WestVirginia
                                :lcc-3166-2-us/Kentucky],
-   :fibo-fnd-utl-av/adaptedFrom
-   "https://www.clevelandfed.org/en/about-us/the-cleveland-fed.aspx",
    :rdf/type [:owl/NamedIndividual :fibo-fbc-fct-usjrga/FederalReserveDistrict],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1512,14 +1499,14 @@
 
 (def FederalReserveNinthDistrict
   "jurisdiction of the Ninth District of the Federal Reserve, which covers Minnesota, Montana, North and South Dakota, 26 counties in northwestern Wisconsin and the Upper Peninsula of Michigan"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveNinthDistrict,
+  {:cmns-av/adaptedFrom "https://www.minneapolisfed.org/",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveNinthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/NorthDakota
                                :lcc-3166-2-us/Montana
                                :lcc-3166-2-us/Michigan
                                :lcc-3166-2-us/Minnesota
                                :lcc-3166-2-us/Wisconsin
                                :lcc-3166-2-us/SouthDakota],
-   :fibo-fnd-utl-av/adaptedFrom "https://www.minneapolisfed.org/",
    :rdf/type [:fibo-fbc-fct-usjrga/FederalReserveDistrict :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1560,14 +1547,13 @@
 
 (def FederalReserveSecondDistrict
   "jurisdiction of the Second District of the Federal Reserve, which covers New York state, the 12 northern counties of New Jersey, Fairfield County in Connecticut, Puerto Rico and the U.S. Virgin Islands"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveSecondDistrict,
+  {:cmns-av/adaptedFrom "http://www.newyorkfed.org/aboutthefed/whatwedo.html",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveSecondDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/NewJersey
                                :lcc-3166-2-us/NewYork
                                :lcc-3166-2-us/Connecticut
                                :lcc-3166-1/PuertoRico
                                :lcc-3166-1/VirginIslandsUS],
-   :fibo-fnd-utl-av/adaptedFrom
-   "http://www.newyorkfed.org/aboutthefed/whatwedo.html",
    :rdf/type [:fibo-fbc-fct-usjrga/FederalReserveDistrict :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1591,14 +1577,13 @@
 
 (def FederalReserveSeventhDistrict
   "jurisdiction of the Seventh District of the Federal Reserve, which covers all of Iowa and most of Illinois, Indiana, Michigan and Wisconsin"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveSeventhDistrict,
+  {:cmns-av/adaptedFrom "https://www.chicagofed.org/utilities/about-us/index",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveSeventhDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/Iowa
                                :lcc-3166-2-us/Michigan
                                :lcc-3166-2-us/Wisconsin
                                :lcc-3166-2-us/Illinois
                                :lcc-3166-2-us/Indiana],
-   :fibo-fnd-utl-av/adaptedFrom
-   "https://www.chicagofed.org/utilities/about-us/index",
    :rdf/type [:owl/NamedIndividual :fibo-fbc-fct-usjrga/FederalReserveDistrict],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1622,15 +1607,14 @@
 
 (def FederalReserveSixthDistrict
   "jurisdiction of the Sixth District of the Federal Reserve, which covers Alabama, Florida, and Georgia, and portions of Louisiana, Mississippi, and Tennessee"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveSixthDistrict,
+  {:cmns-av/adaptedFrom "https://www.frbatlanta.org/about/atlantafed.aspx",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveSixthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/Tennessee
                                :lcc-3166-2-us/Alabama
                                :lcc-3166-2-us/Louisiana
                                :lcc-3166-2-us/Florida
                                :lcc-3166-2-us/Mississippi
                                :lcc-3166-2-us/Georgia],
-   :fibo-fnd-utl-av/adaptedFrom
-   "https://www.frbatlanta.org/about/atlantafed.aspx",
    :rdf/type [:owl/NamedIndividual :fibo-fbc-fct-usjrga/FederalReserveDistrict],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1654,13 +1638,13 @@
 
 (def FederalReserveSystem
   "central banking system of the U.S., comprised of the Federal Reserve Board, the 12 Federal Reserve Banks, the Federal Open Market Committee, and the national and state member banks"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveSystem,
+  {:cmns-av/abbreviation "FRS",
+   :cmns-av/explanatoryNote
+   "The Federal Reserve, the central bank of the United States, provides the nation with a safe, flexible, and stable monetary and financial system.",
+   :cmns-av/synonym ["Federal Reserve" "Fed"],
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveSystem,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite "https://www.federalreserve.gov/",
-   :fibo-fnd-utl-av/abbreviation "FRS",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The Federal Reserve, the central bank of the United States, provides the nation with a safe, flexible, and stable monetary and financial system.",
-   :fibo-fnd-utl-av/synonym ["Fed" "Federal Reserve"],
    :lcc-cr/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :rdf/type [:owl/NamedIndividual
               :fibo-be-ge-ge/GovernmentAgency
@@ -1673,7 +1657,9 @@
 
 (def FederalReserveTenthDistrict
   "jurisdiction of the Tenth District of the Federal Reserve, which covers western Missouri, Nebraska, Kansas, Oklahoma, Wyoming, Colorado and northern New Mexico"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveTenthDistrict,
+  {:cmns-av/adaptedFrom
+   "https://www.kansascityfed.org/aboutus/kcfedinformation",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveTenthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/Kansas
                                :lcc-3166-2-us/Missouri
                                :lcc-3166-2-us/Nebraska
@@ -1681,8 +1667,6 @@
                                :lcc-3166-2-us/Oklahoma
                                :lcc-3166-2-us/NewMexico
                                :lcc-3166-2-us/Colorado],
-   :fibo-fnd-utl-av/adaptedFrom
-   "https://www.kansascityfed.org/aboutus/kcfedinformation",
    :rdf/type [:fibo-fbc-fct-usjrga/FederalReserveDistrict :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1706,12 +1690,11 @@
 
 (def FederalReserveThirdDistrict
   "jurisdiction of the Third District of the Federal Reserve, which covers eastern Pennsylvania, southern New Jersey, and Delaware"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveThirdDistrict,
+  {:cmns-av/adaptedFrom "https://www.philadelphiafed.org/about-the-fed/",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveThirdDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/Pennsylvania
                                :lcc-3166-2-us/NewJersey
                                :lcc-3166-2-us/Delaware],
-   :fibo-fnd-utl-av/adaptedFrom
-   "https://www.philadelphiafed.org/about-the-fed/",
    :rdf/type [:fibo-fbc-fct-usjrga/FederalReserveDistrict :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1735,7 +1718,8 @@
 
 (def FederalReserveTwelfthDistrict
   "jurisdiction of the Twelfth District of the Federal Reserve, which covers Arizona, California, Idaho, Nevada, Oregon, Utah, and Washington, as well as Alaska, Hawaii, American Samoa, Guam, and the Commonwealth of the Northern Mariana Islands"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalReserveTwelfthDistrict,
+  {:cmns-av/adaptedFrom "http://www.frbsf.org/our-district/about/our-history/",
+   :db/ident :fibo-fbc-fct-usjrga/FederalReserveTwelfthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/California
                                :lcc-3166-2-us/Arizona
                                :lcc-3166-2-us/Hawaii
@@ -1748,8 +1732,6 @@
                                :lcc-3166-2-us/Oregon
                                :lcc-3166-1/AmericanSamoa
                                :lcc-3166-2-us/Nevada],
-   :fibo-fnd-utl-av/adaptedFrom
-   "http://www.frbsf.org/our-district/about/our-history/",
    :rdf/type [:owl/NamedIndividual :fibo-fbc-fct-usjrga/FederalReserveDistrict],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1773,11 +1755,11 @@
 
 (def FederalStabilityMonitorAndRegulator
   "regulatory agency role of the Federal Stability Oversight Council (FSOC)"
-  {:db/ident :fibo-fbc-fct-usjrga/FederalStabilityMonitorAndRegulator,
+  {:cmns-av/adaptedFrom
+   "http://www.treasury.gov/initiatives/fsoc/Pages/home.aspx",
+   :db/ident :fibo-fbc-fct-usjrga/FederalStabilityMonitorAndRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/FinancialStabilityOversightCouncil,
-   :fibo-fnd-utl-av/adaptedFrom
-   "http://www.treasury.gov/initiatives/fsoc/Pages/home.aspx",
    :rdf/type [:fibo-fbc-fct-rga/RegulatoryAgency :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1787,10 +1769,10 @@
 
 (def FinancialIndustryRegulator
   "regulatory agency and self-regulatory organizational role of the Financial Industry Regulatory Authority (FINRA)"
-  {:db/ident :fibo-fbc-fct-usjrga/FinancialIndustryRegulator,
+  {:cmns-av/adaptedFrom "http://www.finra.org/about/what-we-do",
+   :db/ident :fibo-fbc-fct-usjrga/FinancialIndustryRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/FinancialIndustryRegulatoryAuthority,
-   :fibo-fnd-utl-av/adaptedFrom "http://www.finra.org/about/what-we-do",
    :rdf/type [:fibo-fbc-fct-fse/SelfRegulatingOrganization
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -1801,10 +1783,10 @@
 
 (def FinancialIndustryRegulatoryAuthority
   "largest non-governmental regulator of securities firms in the United States, namely, the Financial Industry Regulatory Authority (FINRA)"
-  {:db/ident :fibo-fbc-fct-usjrga/FinancialIndustryRegulatoryAuthority,
+  {:cmns-av/abbreviation "FINRA",
+   :cmns-av/adaptedFrom "http://www.finra.org/about/what-we-do",
+   :db/ident :fibo-fbc-fct-usjrga/FinancialIndustryRegulatoryAuthority,
    :fibo-fnd-plc-vrt/hasWebsite "http://www.finra.org/",
-   :fibo-fnd-utl-av/abbreviation "FINRA",
-   :fibo-fnd-utl-av/adaptedFrom "http://www.finra.org/about/what-we-do",
    :rdf/type [:fibo-be-le-fbo/NonGovernmentalOrganization :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1814,13 +1796,13 @@
 
 (def FinancialStabilityOversightCouncil
   "Financial Stability Oversight Council (FSOC), which provides comprehensive monitoring of the stability of our nation's financial system, as established under the Dodd-Frank Wall Street Reform and Consumer Protection Act"
-  {:db/ident :fibo-fbc-fct-usjrga/FinancialStabilityOversightCouncil,
+  {:cmns-av/abbreviation "FSOC",
+   :cmns-av/explanatoryNote
+   "The Council is charged with identifying risks to the financial stability of the United States; promoting market discipline; and responding to emerging risks to the stability of the United States' financial system. The Council consists of 10 voting members and 5 nonvoting members and brings together the expertise of federal financial regulators, state regulators, and an independent insurance expert appointed by the President.",
+   :db/ident :fibo-fbc-fct-usjrga/FinancialStabilityOversightCouncil,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite
    "https://www.treasury.gov/initiatives/fsoc/Pages/home.aspx",
-   :fibo-fnd-utl-av/abbreviation "FSOC",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The Council is charged with identifying risks to the financial stability of the United States; promoting market discipline; and responding to emerging risks to the stability of the United States' financial system. The Council consists of 10 voting members and 5 nonvoting members and brings together the expertise of federal financial regulators, state regulators, and an independent insurance expert appointed by the President.",
    :lcc-cr/isPartOf :fibo-fbc-fct-usjrga/USDepartmentOfTheTreasury,
    :lcc-lr/hasMember [:fibo-fbc-fct-usjrga/SecuritiesAndExchangeCommission
                       :fibo-fbc-fct-usjrga/CommodityFuturesTradingCommission
@@ -1841,20 +1823,25 @@
 
 (def IssuerIdentificationNumber
   "a numbering system that allows a credit, debit, or other card to be identified as having been issued by a particular financial institution"
-  {:db/ident :fibo-fbc-fct-usjrga/IssuerIdentificationNumber,
-   :fibo-fnd-utl-av/abbreviation "IIN",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "IIN",
+   :cmns-av/explanatoryNote
    ["The issuer identification number (IIN) is a six digit number that is unique to a single card issuer. The number is only used to identify the card issuer, and is not used to identify a particular product, service, or region associated with the card issuer."
     "IINs are issued directly by the American Banker's Association (ABA) in the US. The ABA is the Registration Authority (RA) for ISO/IEC 7812, which defines the IIN, in other words."],
+   :db/ident :fibo-fbc-fct-usjrga/IssuerIdentificationNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "issuer identification number",
    :rdfs/seeAlso ["https://en.wikipedia.org/wiki/ISO/IEC_7812"],
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-fbc-fct-usjrga/ABAIINRegistry,
+   [{:owl/hasValue
+     :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
+     :rdf/type :owl/Restriction}
+    {:owl/hasValue   :fibo-fbc-fct-usjrga/ABAIINRegistry,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
      :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
     {:owl/onClass    :fibo-fbc-fct-fse/FinancialInstitution,
      :owl/onProperty :lcc-lr/identifies,
      :owl/qualifiedCardinality 1,
@@ -1863,11 +1850,6 @@
      :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
      :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
      :rdf/type :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
-     :rdf/type :owl/Restriction}
-    :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
     :fibo-fbc-fct-ra/RegistryIdentifier],
    :skos/definition
    "a numbering system that allows a credit, debit, or other card to be identified as having been issued by a particular financial institution"})
@@ -1966,9 +1948,8 @@
 
 (def NICRegistryEntry
   "an entry in the the National Information Center (NIC) repository, a repository of financial data and institution characteristics collected by the Federal Reserve System"
-  {:db/ident :fibo-fbc-fct-usjrga/NICRegistryEntry,
-   :fibo-fnd-utl-av/adaptedFrom
-   "http://www.ffiec.gov/nicpubweb/nicweb/NicHome.aspx",
+  {:cmns-av/adaptedFrom "http://www.ffiec.gov/nicpubweb/nicweb/NicHome.aspx",
+   :db/ident :fibo-fbc-fct-usjrga/NICRegistryEntry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -1990,11 +1971,11 @@
 
 (def NationalBankingRegulator
   "regulatory agency and registration authority role of the Office of the Comptroller of the Currency (OCC)"
-  {:db/ident :fibo-fbc-fct-usjrga/NationalBankingRegulator,
+  {:cmns-av/adaptedFrom
+   "http://www.occ.gov/about/what-we-do/mission/index-about.html",
+   :db/ident :fibo-fbc-fct-usjrga/NationalBankingRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/OfficeOfTheComptrollerOfTheCurrency,
-   :fibo-fnd-utl-av/adaptedFrom
-   "http://www.occ.gov/about/what-we-do/mission/index-about.html",
    :rdf/type [:fibo-fbc-fct-ra/RegistrationAuthority
               :fibo-fbc-fct-usjrga/PrimaryFederalRegulator
               :owl/NamedIndividual],
@@ -2007,12 +1988,12 @@
 
 (def NationalCreditUnionAdministration
   "National Credit Union Administration (NCUA), the independent federal agency that regulates, charters and supervises federal credit unions"
-  {:db/ident :fibo-fbc-fct-usjrga/NationalCreditUnionAdministration,
+  {:cmns-av/abbreviation "NCUA",
+   :cmns-av/explanatoryNote
+   "An independent agency of the federal government, the NCUA operates and manages the National Credit Union Share Insurance Fund (NCUSIF), insuring the deposits of more than 98 million account holders in all federal credit unions and the overwhelming majority of state-chartered credit unions.",
+   :db/ident :fibo-fbc-fct-usjrga/NationalCreditUnionAdministration,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite "http://www.ncua.gov/Pages/default.aspx",
-   :fibo-fnd-utl-av/abbreviation "NCUA",
-   :fibo-fnd-utl-av/explanatoryNote
-   "An independent agency of the federal government, the NCUA operates and manages the National Credit Union Share Insurance Fund (NCUSIF), insuring the deposits of more than 98 million account holders in all federal credit unions and the overwhelming majority of state-chartered credit unions.",
    :lcc-cr/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :rdf/type [:fibo-be-ge-ge/GovernmentAgency
               :owl/NamedIndividual
@@ -2025,10 +2006,10 @@
 
 (def NationalCreditUnionInsurerAndRegulator
   "regulatory agency and registration authority role of the National Credit Union Administration (NCUA)"
-  {:db/ident :fibo-fbc-fct-usjrga/NationalCreditUnionInsurerAndRegulator,
+  {:cmns-av/adaptedFrom "http://www.ncua.gov/about/Pages/default.aspx",
+   :db/ident :fibo-fbc-fct-usjrga/NationalCreditUnionInsurerAndRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/NationalCreditUnionAdministration,
-   :fibo-fnd-utl-av/adaptedFrom "http://www.ncua.gov/about/Pages/default.aspx",
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-ra/RegistrationAuthority
               :fibo-fbc-pas-fpas/FinancialServiceProvider
@@ -2042,13 +2023,13 @@
 
 (def NationalInformationCenterRepository
   "National Information Center (NIC) repository, a repository of financial data and institution characteristics collected by the Federal Reserve System"
-  {:db/ident :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
+  {:cmns-av/explanatoryNote
+   "The National Information Center (NIC)repository provides comprehensive information on banks and other institutions for which the Federal Reserve has a supervisory, regulatory, or research interest including both domestic and foreign banking organizations operating in the U.S.",
+   :db/ident :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
    :fibo-fnd-plc-vrt/hasWebsite
    "http://www.ffiec.gov/nicpubweb/nicweb/NicHome.aspx",
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-   :fibo-fnd-utl-av/explanatoryNote
-   "The National Information Center (NIC)repository provides comprehensive information on banks and other institutions for which the Federal Reserve has a supervisory, regulatory, or research interest including both domestic and foreign banking organizations operating in the U.S.",
    :rdf/type [:fibo-fbc-fct-ra/Registry :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -2148,12 +2129,12 @@
 
 (def OfficeOfTheComptrollerOfTheCurrency
   "OCC, which charters, regulates, and supervises all national banks and federal savings associations as well as federal branches and agencies of foreign banks. The OCC is an independent bureau of the U.S. Department of the Treasury."
-  {:db/ident :fibo-fbc-fct-usjrga/OfficeOfTheComptrollerOfTheCurrency,
+  {:cmns-av/abbreviation "OCC",
+   :cmns-av/explanatoryNote
+   "The mission of the OCC is to ensure that national banks and federal savings associations operate in a safe and sound manner, provide fair access to financial services, treat customers fairly, and comply with applicable laws and regulations.",
+   :db/ident :fibo-fbc-fct-usjrga/OfficeOfTheComptrollerOfTheCurrency,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite "http://www.occ.gov/",
-   :fibo-fnd-utl-av/abbreviation "OCC",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The mission of the OCC is to ensure that national banks and federal savings associations operate in a safe and sound manner, provide fair access to financial services, treat customers fairly, and comply with applicable laws and regulations.",
    :lcc-cr/isPartOf :fibo-fbc-fct-usjrga/USDepartmentOfTheTreasury,
    :rdf/type [:fibo-be-ge-ge/GovernmentDepartment :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -2164,10 +2145,10 @@
 
 (def OfficeOfThriftSupervision
   "OTS, which is a part of the OCC, responsible for chartering, regulating, and supervising all federal savings associations"
-  {:db/ident :fibo-fbc-fct-usjrga/OfficeOfThriftSupervision,
+  {:cmns-av/abbreviation "OTS",
+   :db/ident :fibo-fbc-fct-usjrga/OfficeOfThriftSupervision,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite "http://www.occ.gov/",
-   :fibo-fnd-utl-av/abbreviation "OTS",
    :lcc-cr/isPartOf :fibo-fbc-fct-usjrga/OfficeOfTheComptrollerOfTheCurrency,
    :rdf/type [:owl/NamedIndividual
               :fibo-be-ge-ge/GovernmentDepartment
@@ -2264,9 +2245,8 @@
 
 (def PrimaryFederalRegulator
   "federal regulatory agency that is designated as the main agency responsible for oversight of a given institution for an institution"
-  {:db/ident :fibo-fbc-fct-usjrga/PrimaryFederalRegulator,
-   :fibo-fnd-utl-av/adaptedFrom
-   "http://www.ffiec.gov/nicpubweb/nicweb/NicHome.aspx",
+  {:cmns-av/adaptedFrom "http://www.ffiec.gov/nicpubweb/nicweb/NicHome.aspx",
+   :db/ident :fibo-fbc-fct-usjrga/PrimaryFederalRegulator,
    :owl/equivalentClass
    {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
     :owl/someValuesFrom
@@ -2293,11 +2273,11 @@
 
 (def ResearchStatisticsSupervisionDiscountIdentifier
   "unique identifier assigned by the Federal Reserve to financial institutions for regulatory and oversight purposes"
-  {:db/ident
-   :fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier,
-   :fibo-fnd-utl-av/abbreviation "RSSD ID",
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/abbreviation "RSSD ID",
+   :cmns-av/adaptedFrom
    "https://cdr.ffiec.gov/CDR/Public/CDRHelp/FAQs1205.htm#FAQ16",
+   :db/ident
+   :fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -2306,11 +2286,11 @@
    :rdfs/seeAlso
    ["http://www.federalreserve.gov/reportforms/mdrm/pdf/RSSD.PDF"],
    :rdfs/subClassOf
-   [:fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
-    {:owl/hasValue
+   [{:owl/hasValue
      :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
      :rdf/type :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
     :fibo-fbc-fct-ra/RegistryIdentifier
     {:owl/hasValue   :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
@@ -2320,11 +2300,11 @@
 
 (def RoutingTransitNumber
   "unique nine digit identifier, used primarily in the United States, to identify a banking or other financial institution for clearing funds, and, as it appears on a check, denotes the banking institution that holds the account from which funds are to be drawn"
-  {:db/ident :fibo-fbc-fct-usjrga/RoutingTransitNumber,
-   :fibo-fnd-utl-av/abbreviation "RTN",
-   :fibo-fnd-utl-av/explanatoryNote
-   ["The ABA RTN was originally designed to facilitate the sorting, bundling, and shipment of paper checks back to the drawer's (check writer's) account. As new payment methods were developed (ACH and Wire), the system was expanded to accommodate these payment methods.\n\nThe ABA RTN is necessary for the Federal Reserve Banks to process Fedwire funds transfers, and by the Automated Clearing House to process direct deposits, bill payments, and other such automated transfers."
-    "Routing transit numbers are issued by Accuity on behalf of the American Bankers Association (ABA)."],
+  {:cmns-av/abbreviation "RTN",
+   :cmns-av/explanatoryNote
+   ["Routing transit numbers are issued by Accuity on behalf of the American Bankers Association (ABA)."
+    "The ABA RTN was originally designed to facilitate the sorting, bundling, and shipment of paper checks back to the drawer's (check writer's) account. As new payment methods were developed (ACH and Wire), the system was expanded to accommodate these payment methods.\n\nThe ABA RTN is necessary for the Federal Reserve Banks to process Fedwire funds transfers, and by the Automated Clearing House to process direct deposits, bill payments, and other such automated transfers."],
+   :db/ident :fibo-fbc-fct-usjrga/RoutingTransitNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -2332,28 +2312,28 @@
    :rdfs/seeAlso ["http://www.accuity.com/aba-registrar/"],
    :rdfs/subClassOf
    [:fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
-    {:owl/hasValue :fibo-fbc-fct-usjrga/AmericanBankersAssociationRTNRegistrar,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
+     :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
      :rdf/type :owl/Restriction}
     :fibo-fbc-fct-ra/RegistryIdentifier
     {:owl/hasValue   :fibo-fbc-fct-usjrga/ABARTNRegistry,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
      :rdf/type       :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
-     :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
+    {:owl/hasValue :fibo-fbc-fct-usjrga/AmericanBankersAssociationRTNRegistrar,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
      :rdf/type :owl/Restriction}],
    :skos/definition
    "unique nine digit identifier, used primarily in the United States, to identify a banking or other financial institution for clearing funds, and, as it appears on a check, denotes the banking institution that holds the account from which funds are to be drawn"})
 
 (def SecuritiesAndExchangeCommission
   "independent commission established by the Securities Act of 1933 and Securities Exchange Act of 1934 whose mission is to protect investors, maintain fair, orderly, and efficient markets, and facilitate capital formation"
-  {:db/ident :fibo-fbc-fct-usjrga/SecuritiesAndExchangeCommission,
+  {:cmns-av/abbreviation "SEC",
+   :cmns-av/explanatoryNote
+   "The SEC oversees the key participants in the securities world, including securities exchanges, securities brokers and dealers, investment advisors, and mutual funds. Here the SEC is concerned primarily with promoting the disclosure of important market-related information, maintaining fair dealing, and protecting against fraud.\n Crucial to the SEC's effectiveness in each of these areas is its enforcement authority. Each year the SEC brings hundreds of civil enforcement actions against individuals and companies for violation of the securities laws. Typical infractions include insider trading, accounting fraud, and providing false or misleading information about securities and the companies that issue them.\n One of the major sources of information on which the SEC relies to bring enforcement action is investors themselves - another reason that educated and careful investors are so critical to the functioning of efficient markets. To help support investor education, the SEC offers the public a wealth of educational information on this Internet website, which also includes the EDGAR database of disclosure documents that public companies are required to file with the Commission.\n Though it is the primary overseer and regulator of the U.S. securities markets, the SEC works closely with many other institutions, including Congress, other federal departments and agencies, the self-regulatory organizations (e.g. the stock exchanges), state securities regulators, and various private sector organizations. In particular, the Chairman of the SEC, together with the Chairman of the Federal Reserve, the Secretary of the Treasury, and the Chairman of the Commodity Futures Trading Commission, serves as a member of the President's Working Group on Financial Markets.",
+   :db/ident :fibo-fbc-fct-usjrga/SecuritiesAndExchangeCommission,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite "http://www.sec.gov/",
-   :fibo-fnd-utl-av/abbreviation "SEC",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The SEC oversees the key participants in the securities world, including securities exchanges, securities brokers and dealers, investment advisors, and mutual funds. Here the SEC is concerned primarily with promoting the disclosure of important market-related information, maintaining fair dealing, and protecting against fraud.\n Crucial to the SEC's effectiveness in each of these areas is its enforcement authority. Each year the SEC brings hundreds of civil enforcement actions against individuals and companies for violation of the securities laws. Typical infractions include insider trading, accounting fraud, and providing false or misleading information about securities and the companies that issue them.\n One of the major sources of information on which the SEC relies to bring enforcement action is investors themselves - another reason that educated and careful investors are so critical to the functioning of efficient markets. To help support investor education, the SEC offers the public a wealth of educational information on this Internet website, which also includes the EDGAR database of disclosure documents that public companies are required to file with the Commission.\n Though it is the primary overseer and regulator of the U.S. securities markets, the SEC works closely with many other institutions, including Congress, other federal departments and agencies, the self-regulatory organizations (e.g. the stock exchanges), state securities regulators, and various private sector organizations. In particular, the Chairman of the SEC, together with the Chairman of the Federal Reserve, the Secretary of the Treasury, and the Chairman of the Commodity Futures Trading Commission, serves as a member of the President's Working Group on Financial Markets.",
    :lcc-cr/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :rdf/type [:fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :fibo-be-ge-ge/GovernmentAgency
@@ -2366,11 +2346,11 @@
 
 (def SecuritiesAndExchangeRegulator
   "regulatory agency and registration authority role of the Securities and Exchange Commission (SEC)"
-  {:db/ident :fibo-fbc-fct-usjrga/SecuritiesAndExchangeRegulator,
+  {:cmns-av/adaptedFrom "http://www.sec.gov/about/whatwedo.shtml",
+   :db/ident :fibo-fbc-fct-usjrga/SecuritiesAndExchangeRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/SecuritiesAndExchangeCommission,
    :fibo-fnd-rel-rel/manages :fibo-fbc-fct-usjrga/EDGARRepository,
-   :fibo-fnd-utl-av/adaptedFrom "http://www.sec.gov/about/whatwedo.shtml",
    :rdf/type [:fibo-fbc-fct-ra/RegistrationAuthority
               :fibo-fbc-fct-usjrga/PrimaryFederalRegulator
               :owl/NamedIndividual],
@@ -2501,22 +2481,22 @@
 
 (def TaxpayerIdentificationNumber
   "identification number used by the Internal Revenue Service (IRS) in the administration of tax laws in the United States"
-  {:db/ident :fibo-fbc-fct-usjrga/TaxpayerIdentificationNumber,
-   :fibo-fnd-utl-av/abbreviation "TIN",
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/abbreviation "TIN",
+   :cmns-av/adaptedFrom
    "https://www.irs.gov/individuals/international-taxpayers/taxpayer-identification-numbers-tin",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "A TIN must be furnished on returns, statements, and other tax related documents. For example a number must be furnished:\n- When filing tax returns.\n- When claiming treaty benefits.\n\nA TIN must be on a withholding certificate if the beneficial owner is claiming any of the following:\n- Tax treaty benefits (other than for income from marketable securities)\n- Exemption for effectively connected income\n- Exemption for certain annuities.",
+   :db/ident :fibo-fbc-fct-usjrga/TaxpayerIdentificationNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfs/label "taxpayer identification number",
    :rdfs/subClassOf
-   [{:owl/onClass    :fibo-fbc-fct-usjrga/TaxpayerIdentificationNumberingScheme,
+   [:fibo-fnd-pty-pty/TaxIdentifier
+    {:owl/onClass    :fibo-fbc-fct-usjrga/TaxpayerIdentificationNumberingScheme,
      :owl/onProperty :lcc-lr/isMemberOf,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-pty-pty/TaxIdentifier
     {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
      :owl/onProperty :fibo-fnd-law-jur/appliesIn,
      :rdf/type       :owl/Restriction}],
@@ -2525,9 +2505,9 @@
 
 (def TaxpayerIdentificationNumberingScheme
   "tax identification scheme used in the United States"
-  {:db/ident :fibo-fbc-fct-usjrga/TaxpayerIdentificationNumberingScheme,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "https://www.irs.gov/individuals/international-taxpayers/taxpayer-identification-numbers-tin",
+   :db/ident :fibo-fbc-fct-usjrga/TaxpayerIdentificationNumberingScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -2540,10 +2520,10 @@
 
 (def ThriftRegulator
   "regulatory agency and registration authority role of the Office of Thrift Supervision (OTS)"
-  {:db/ident :fibo-fbc-fct-usjrga/ThriftRegulator,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/OfficeOfThriftSupervision,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "http://www.occ.gov/about/what-we-do/mission/index-about.html",
+   :db/ident :fibo-fbc-fct-usjrga/ThriftRegulator,
+   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/OfficeOfThriftSupervision,
    :rdf/type [:fibo-fbc-fct-usjrga/PrimaryFederalRegulator
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -2554,12 +2534,12 @@
 
 (def USDepartmentOfTheTreasury
   "U.S. Department of the Treasury, the executive agency responsible for promoting economic prosperity and ensuring the financial security of the United States"
-  {:db/ident :fibo-fbc-fct-usjrga/USDepartmentOfTheTreasury,
+  {:cmns-av/explanatoryNote
+   "The Department is responsible for a wide range of activities such as advising the President on economic and financial issues, encouraging sustainable economic growth, and fostering improved governance in financial institutions. The Department of the Treasury operates and maintains systems that are critical to the nation's financial infrastructure, such as the production of coin and currency, the disbursement of payments to the American public, revenue collection, and the borrowing of funds necessary to run the federal government. The Department works with other federal agencies, foreign governments, and international financial institutions to encourage global economic growth, raise standards of living, and to the extent possible, predict and prevent economic and financial crises. The Treasury Department also performs a critical and far-reaching role in enhancing national security by implementing economic sanctions against foreign threats to the U.S., identifying and targeting the financial support networks of national security threats, and improving the safeguards of our financial systems.",
+   :cmns-av/synonym "Treasury Department",
+   :db/ident :fibo-fbc-fct-usjrga/USDepartmentOfTheTreasury,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite "http://www.treasury.gov/Pages/default.aspx",
-   :fibo-fnd-utl-av/explanatoryNote
-   "The Department is responsible for a wide range of activities such as advising the President on economic and financial issues, encouraging sustainable economic growth, and fostering improved governance in financial institutions. The Department of the Treasury operates and maintains systems that are critical to the nation's financial infrastructure, such as the production of coin and currency, the disbursement of payments to the American public, revenue collection, and the borrowing of funds necessary to run the federal government. The Department works with other federal agencies, foreign governments, and international financial institutions to encourage global economic growth, raise standards of living, and to the extent possible, predict and prevent economic and financial crises. The Treasury Department also performs a critical and far-reaching role in enhancing national security by implementing economic sanctions against foreign threats to the U.S., identifying and targeting the financial support networks of national security threats, and improving the safeguards of our financial systems.",
-   :fibo-fnd-utl-av/synonym "Treasury Department",
    :lcc-cr/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :rdf/type [:fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :fibo-be-ge-ge/GovernmentAgency
@@ -2572,11 +2552,11 @@
 
 (def UniformBankPerformanceReportRepository
   "Federal Financial Institutions Examination Council (FFIEC)'s Uniform Bank Performance Report (UBPR) Repository, a repository of institution characteristics and analytical tool created for bank supervisory, examination, and management purposes"
-  {:db/ident :fibo-fbc-fct-usjrga/UniformBankPerformanceReportRepository,
+  {:cmns-av/explanatoryNote
+   "In a concise format, it shows the impact of management decisions and economic conditions on a bank's performance and balance-sheet composition. The performance and composition data contained in the report can be used as an aid in evaluating the adequacy of earnings, liquidity, capital, asset and liability management, and growth management. Bankers and examiners alike can use this report to further their understanding of a bank's financial condition, and through such understanding, perform their duties more effectively.",
+   :db/ident :fibo-fbc-fct-usjrga/UniformBankPerformanceReportRepository,
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/FederalFinancialInstitutionsExaminationRegulator,
-   :fibo-fnd-utl-av/explanatoryNote
-   "In a concise format, it shows the impact of management decisions and economic conditions on a bank's performance and balance-sheet composition. The performance and composition data contained in the report can be used as an aid in evaluating the adequacy of earnings, liquidity, capital, asset and liability management, and growth management. Bankers and examiners alike can use this report to further their understanding of a bank's financial condition, and through such understanding, perform their duties more effectively.",
    :rdf/type [:fibo-fbc-fct-ra/Registry :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
@@ -2609,3 +2589,22 @@
    :rdfs/subPropertyOf :fibo-fbc-fct-rga/isRegulatedBy,
    :skos/definition
    "identifies an additional federal regulator, over and above the primary federal regulator, for an institution"})
+
+(def ^{:private true} FinancialHoldingCompany
+  {:db/ident :fibo-fbc-fct-usfse/FinancialHoldingCompany,
+   :rdf/type :owl/Class,
+   :rdfs/subClassOf
+   {:owl/hasValue
+    :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
+    :owl/onProperty :fibo-fbc-fct-usjrga/hasPrimaryFederalRegulator,
+    :rdf/type :owl/Restriction}})
+
+(def ^{:private true} NationalBank
+  {:db/ident        :fibo-fbc-fct-usfse/NationalBank,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/hasValue
+                      :fibo-fbc-fct-usjrga/NationalBankingRegulator,
+                      :owl/onProperty
+                      :fibo-fbc-fct-usjrga/hasPrimaryFederalRegulator,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-fct-usjrga/FRSMemberBank]})

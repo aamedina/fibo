@@ -117,16 +117,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "rating",
    :rdfs/subClassOf [:fibo-fnd-arr-asmt/Opinion
+                     {:owl/cardinality 1,
+                      :owl/onProperty  :fibo-fnd-arr-rt/rates,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/cardinality 1,
-                      :owl/onProperty  :fibo-fnd-arr-rt/rates,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-rt/hasRatingScore,
-                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
-                      :rdf/type           :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
@@ -138,7 +135,10 @@
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingIssuer,
                       :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-arr-rt/hasRatingScore,
+                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "standing of something at a particular time, indicated by at least one scores with respect to some scale, based on an assessment by some party"})
 

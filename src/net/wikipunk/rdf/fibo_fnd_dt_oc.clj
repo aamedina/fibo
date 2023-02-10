@@ -73,7 +73,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
    :rdfs/label "occurrence",
    :rdfs/subClassOf
-   [{:owl/unionOf [{:owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
+   [{:owl/minQualifiedCardinality 0,
+     :owl/onClass    :lcc-cr/Location,
+     :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
+     :rdf/type       :owl/Restriction}
+    {:owl/unionOf [{:owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
                     :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
                     :owl/qualifiedCardinality 1,
                     :rdf/type       :owl/Restriction}
@@ -89,10 +93,6 @@
     {:owl/onClass    :fibo-fnd-dt-oc/OccurrenceKind,
      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
      :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :lcc-cr/Location,
-     :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
      :rdf/type       :owl/Restriction}],
    :skos/definition "happening of an OccurrenceKind, i.e., an event"})
 
@@ -243,3 +243,45 @@
    :rdfs/label "is triggered by",
    :rdfs/range :fibo-fnd-dt-oc/OccurrenceKind,
    :skos/definition "is activated or initiated by"})
+
+(def ^{:private true} AdHocScheduleEntry
+  {:db/ident        :fibo-fnd-dt-fd/AdHocScheduleEntry,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/minQualifiedCardinality 0,
+                     :owl/onClass    :fibo-fnd-dt-oc/Occurrence,
+                     :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
+                     :rdf/type       :owl/Restriction}})
+
+(def ^{:private true} RegularSchedule
+  {:db/ident        :fibo-fnd-dt-fd/RegularSchedule,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-dt-oc/OccurrenceKind,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-dt-oc/Occurrence,
+                      :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
+                      :rdf/type       :owl/Restriction}]})
+
+(def ^{:private true} RelativeDate
+  {:db/ident         :fibo-fnd-dt-fd/RelativeDate,
+   :owl/disjointWith :fibo-fnd-dt-oc/OccurrenceBasedDate,
+   :rdf/type         :owl/Class})
+
+(def ^{:private true} ScheduleStub
+  {:db/ident        :fibo-fnd-dt-fd/ScheduleStub,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-dt-oc/OccurrenceKind,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-dt-oc/Occurrence,
+                      :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
+                      :rdf/type       :owl/Restriction}]})
+
+(def ^{:private true} SpecifiedDate
+  {:db/ident         :fibo-fnd-dt-fd/SpecifiedDate,
+   :owl/disjointWith :fibo-fnd-dt-oc/OccurrenceBasedDate,
+   :rdf/type         :owl/Class})

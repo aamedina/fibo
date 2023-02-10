@@ -1,13 +1,16 @@
 (ns net.wikipunk.rdf.fibo-sec-sec-bsk
   "This ontology defines the concept of a tradable container of securities, indices, and/or market rates, and identifies the elements that can be constituents of a such a basket."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 EDM Council, Inc."
+                       "Copyright (c) 2018-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
    :dcterms/abstract
    "This ontology defines the concept of a tradable container of securities, indices, and/or market rates, and identifies the elements that can be constituents of a such a basket.",
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
+   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
@@ -18,7 +21,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-fi-fi"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
     "fibo-fbc-pas-fpas"
@@ -41,7 +45,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
@@ -52,15 +55,8 @@
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets.rdf version of this ontology was revised to augment the definitions of various baskets to include weighting and to be dated, as needed to represent various benchmarks and funds based on these baskets."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets.rdf version of this ontology was revised to reflect the move of dated collections from arrangements to financial dates, and replace 'involves' with 'comprises' for consistency across basket definitions."
-    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets.rdf version of this ontology was revised to add the date a given constituent is added to a basket, and use involves rather than hasIdentity to link a security or index to the basket constituent it is referenced by."],
-   :sm/contentLanguage "http://www.w3.org/standards/techs/owl#w3c_all",
-   :sm/copyright ["Copyright (c) 2018-2020 Object Management Group, Inc."
-                  "Copyright (c) 2016-2020 EDM Council, Inc."],
-   :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/IND/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FBC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FND/"],
-   :sm/fileAbbreviation "fibo-sec-sec-bsk",
-   :sm/filename "Baskets.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets.rdf version of this ontology was revised to add the date a given constituent is added to a basket, and use involves rather than hasIdentity to link a security or index to the basket constituent it is referenced by."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def BasketOfIndices
   "basket composed of market indices"

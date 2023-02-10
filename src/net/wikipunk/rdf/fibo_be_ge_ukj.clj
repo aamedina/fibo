@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-be-ge-ukj
   "This ontology provides government entities and jurisdictions for the United Kingdom of Great Britain and Northern Ireland use in other FIBO ontologies."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 EDM Council, Inc."
+                       "Copyright (c) 2016-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides government entities and jurisdictions for the United Kingdom of Great Britain and Northern Ireland use in other FIBO ontologies.",
@@ -21,7 +23,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-ge"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
     "fibo-be-ge-ukj"
@@ -43,7 +46,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -54,18 +56,8 @@
    :rdfs/label
    "Government Entities and Jurisdictions for the United Kingdom of Great Britain and Northern Ireland Ontology",
    :skos/changeNote
-   "The http://www.omg.org/spec/EDMC-FIBO/BE/20200201/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to add devolved government entities for Scotland, Wales, and Northern Ireland.",
-   :sm/contentLanguage "http://www.w3.org/standards/techs/owl#w3c_all",
-   :sm/copyright ["Copyright (c) 2016-2020 Object Management Group, Inc."
-                  "Copyright (c) 2016-2020 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"],
-   :sm/fileAbbreviation "fibo-be-ge-ukj",
-   :sm/filename "UKGovernmentEntitiesAndJurisdictions.rdf"})
+   ["The http://www.omg.org/spec/EDMC-FIBO/BE/20200201/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to add devolved government entities for Scotland, Wales, and Northern Ireland."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def EnglandAndWalesJurisdiction
   "jurisdiction of the Courts of England and Wales"
@@ -114,10 +106,10 @@
 
 (def GovernmentOfScotland
   "devolved government of Scotland"
-  {:db/ident :fibo-be-ge-ukj/GovernmentOfScotland,
+  {:cmns-av/synonym "Scottish government",
+   :db/ident :fibo-be-ge-ukj/GovernmentOfScotland,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-ukj/ScotlandJurisdiction,
    :fibo-fnd-rel-rel/governs :lcc-3166-2-gb/Scotland,
-   :fibo-fnd-utl-av/synonym "Scottish government",
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment
               :owl/NamedIndividual
               :fibo-be-ge-ge/DevolvedGovernment],
@@ -134,10 +126,10 @@
 
 (def GovernmentOfTheIsleOfMan
   "central government of the Isle of Man, a self-governing British Crown dependency in the Irish Sea between England and Ireland"
-  {:db/ident :fibo-be-ge-ukj/GovernmentOfTheIsleOfMan,
+  {:cmns-av/synonym "Manx Government",
+   :db/ident :fibo-be-ge-ukj/GovernmentOfTheIsleOfMan,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-ukj/JurisdictionOfTheIsleOfMan,
    :fibo-fnd-rel-rel/governs :lcc-3166-1/IsleOfMan,
-   :fibo-fnd-utl-av/synonym "Manx Government",
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
@@ -149,11 +141,11 @@
 
 (def GovernmentOfTheUnitedKingdom
   "constitutional monarchy that is the government of the United Kingdom of Great Britain and Northern Ireland, including the monarch, who is the head of state and sovereign, prime minister, who is the head of government, and cabinet, parliament (House of Lords and House of Commons), and other agencies and institutions that comprise the government"
-  {:db/ident :fibo-be-ge-ukj/GovernmentOfTheUnitedKingdom,
+  {:cmns-av/synonym "British government",
+   :db/ident :fibo-be-ge-ukj/GovernmentOfTheUnitedKingdom,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-ukj/UnitedKingdomJurisdiction,
    :fibo-fnd-rel-rel/governs
    :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
-   :fibo-fnd-utl-av/synonym "British government",
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
@@ -179,10 +171,10 @@
 
 (def IsleOfManEntity
   "regional sovereignty and polity that is the Isle of Man"
-  {:db/ident :fibo-be-ge-ukj/IsleOfManEntity,
+  {:cmns-av/synonym "Manx entity",
+   :db/ident :fibo-be-ge-ukj/IsleOfManEntity,
    :fibo-be-ge-ge/hasSharedSovereigntyOver :lcc-3166-1/IsleOfMan,
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-ukj/GovernmentOfTheIsleOfMan,
-   :fibo-fnd-utl-av/synonym "Manx entity",
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
@@ -242,13 +234,13 @@
 
 (def NationalAssemblyForWales
   "devolved government of Wales"
-  {:db/ident :fibo-be-ge-ukj/NationalAssemblyForWales,
+  {:cmns-av/synonym [{:rdf/language "en",
+                      :rdf/value    "Welsh Assembly"}
+                     {:rdf/language "cy",
+                      :rdf/value    "Senedd"}],
+   :db/ident :fibo-be-ge-ukj/NationalAssemblyForWales,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-ukj/EnglandAndWalesJurisdiction,
    :fibo-fnd-rel-rel/governs :lcc-3166-2-gb/Wales,
-   :fibo-fnd-utl-av/synonym [{:rdf/language "en",
-                              :rdf/value    "Welsh Assembly"}
-                             {:rdf/language "cy",
-                              :rdf/value    "Senedd"}],
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment
               :owl/NamedIndividual
               :fibo-be-ge-ge/DevolvedGovernment],

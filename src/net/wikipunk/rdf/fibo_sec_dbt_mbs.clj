@@ -1,6 +1,7 @@
 (ns net.wikipunk.rdf.fibo-sec-dbt-mbs
   "Mortgage backed securities are like asset backed securities except that the underlying loan pool is a pool of mortgage loans."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
    :dcterms/abstract
    "Mortgage backed securities are like asset backed securities except that the underlying loan pool is a pool of mortgage loans.",
@@ -8,36 +9,38 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/CollateralizedDebtObligations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/DebtTemporal/DebtAnalytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MortgageLoans/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/PoolBackedSecurities/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/PaymentsAndSchedules/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/AssetBackedSecurities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/Funds/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/PoolBackedSecurities/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/AssetBackedSecurities/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/DebtIssuance/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/DebtTemporal/DebtAnalytics/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MortgageLoans/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/Funds/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"
+    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/MortgageBackedSecurities/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-fct"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
     "fibo-be-le-lp"
@@ -91,7 +94,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -100,33 +102,15 @@
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "Mortgage-backed Securities Ontology"},
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright "Copyright (c) 2015-2022 EDM Council, Inc.",
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FBC/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/"
-    "https://spec.edmcouncil.org/fibo/ontology/MD/"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/"
-    "https://spec.edmcouncil.org/fibo/ontology/BP/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/"],
-   :sm/fileAbbreviation "fibo-sec-dbt-mbs",
-   :sm/filename "MortgageBackedSecurities.rdf"})
+                :rdf/value    "Mortgage-backed Securities Ontology"}})
 
 (def AgencyMBSDeal
   "An issue of securities backed by pools of mortgages held by government agencies."
-  {:db/ident :fibo-sec-dbt-mbs/AgencyMBSDeal,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "These are Ginnie Mae, Freddie Mac and Fannie Mae (for the US). Of these agencies, GNMA (Ginnie Mae) issues mortgages in its own right (Investorwords differs on this). Fannie Mae and Freddie Mac purchase mortgages. Those mortgages are issued by banks. Before one of these agencies purchases a mortgage, there are certain criteria that have to be met. These are specified in terms of, for example, the balance of the mortgage, limits to credit ratings."},
+   :db/ident :fibo-sec-dbt-mbs/AgencyMBSDeal,
    :owl/disjointWith :fibo-sec-dbt-mbs/PrivateLabelMBSDeal,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -156,11 +140,11 @@
 
 (def AgencyMBSPool
   "A pool investment consisting of a collection of Agency MBS instruments."
-  {:db/ident :fibo-sec-dbt-mbs/AgencyMBSPool,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This pool may be used as the underlying for an agency CMO. Non agency CMOs do not exist."},
+   :db/ident :fibo-sec-dbt-mbs/AgencyMBSPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
@@ -228,11 +212,11 @@
 
 (def FloaterTranche
   "A floater tranche is a tranche that is keyed to an index and a spread."
-  {:db/ident :fibo-sec-dbt-mbs/FloaterTranche,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "For example, 3 month LIBOR +50 -- meaning that the coupon would be whatever the 3 month LIBOR is plus 50 basis points. This is not a continuously updated number, rather it resets at specified intervals."},
+   :db/ident :fibo-sec-dbt-mbs/FloaterTranche,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
@@ -350,11 +334,11 @@
 
 (def MBSIssuer
   "The issuer of a Mortgage Backed Security."
-  {:db/ident :fibo-sec-dbt-mbs/MBSIssuer,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This can be an agency that exists for this purpose or it may be the issuer of the original mortgages in the pool."},
+   :db/ident :fibo-sec-dbt-mbs/MBSIssuer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
@@ -384,11 +368,11 @@
 
 (def MBSTrancheNote
   "An individual note of a tranche."
-  {:db/ident :fibo-sec-dbt-mbs/MBSTrancheNote,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "A Tranche is made up of e.g. $500m in notes and so on. These may be in different notes, with different denominations. Analytics that would apply to the Tranche would by implication apply to each slice of the tranche."},
+   :db/ident :fibo-sec-dbt-mbs/MBSTrancheNote,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
@@ -418,13 +402,13 @@
 
 (def MortgageBackedSecurity
   "debt obligations that represent claims to the cash flows from pools of mortgage loans, most commonly on residential property"
-  {:db/ident :fibo-sec-dbt-mbs/MortgageBackedSecurity,
-   :fibo-fnd-utl-av/abbreviation {:rdf/language "en",
-                                  :rdf/value    "MBS"},
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/abbreviation {:rdf/language "en",
+                          :rdf/value    "MBS"},
+   :cmns-av/adaptedFrom
    "ISO 10962, Securities and related financial instruments - Classification of Financial Instruments (CFI code), Fourth edition, 2019-10-01.",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "Mortgage loans are purchased from banks, mortgage companies and other originators, and then assembled into pools by a governmental, quasigovernmental or private entity. The entity then issues securities that represent claims on the principal and interest payments made by borrowers on the loans in the pool, a process known as securitization.",
+   :db/ident :fibo-sec-dbt-mbs/MortgageBackedSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
@@ -740,13 +724,13 @@
 
 (def RealEstateMortgageInvestmentConduit
   "special purpose vehicle that pools mortgage loans together and issues mortgage-backed securities"
-  {:db/ident :fibo-sec-dbt-mbs/RealEstateMortgageInvestmentConduit,
-   :fibo-fnd-utl-av/abbreviation {:rdf/language "en",
-                                  :rdf/value    "REMIC"},
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation {:rdf/language "en",
+                          :rdf/value    "REMIC"},
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "A real estate mortgage investment conduit may be organized as a partnership, a trust, a corporation, or an association and is exempt from federal taxes."},
+   :db/ident :fibo-sec-dbt-mbs/RealEstateMortgageInvestmentConduit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
@@ -766,11 +750,11 @@
 
 (def RegularFloaterTranche
   "A floater tranche is a tranche that is keyed to an index and a spread. The spread is added to the index."
-  {:db/ident :fibo-sec-dbt-mbs/RegularFloaterTranche,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "For example, 3 month LIBOR +50 -- meaning that the coupon would be whatever the 3 month LIBOR is plus 50 basis points. This is not a continuously updated number, rather it resets at specified intervals."},
+   :db/ident :fibo-sec-dbt-mbs/RegularFloaterTranche,
    :owl/disjointWith :fibo-sec-dbt-mbs/SuperFloaterTranche,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -785,11 +769,11 @@
 
 (def ResidentialMBS
   "Residential Mortgage-Backed Securities, which are trust certificates (bonds) backed by a pool of residential mortgage loans."
-  {:db/ident :fibo-sec-dbt-mbs/ResidentialMBS,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Notes from CESR: They are issued by banks and backed by an underlying pool of residential mortgages. There can be some distinctions between prime RMBS and sub-prime/non-conforming RMBS although there is no consensus about what constitutes a sub-prime/non-conforming mortgage in Europe."},
+   :db/ident :fibo-sec-dbt-mbs/ResidentialMBS,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
@@ -1154,3 +1138,16 @@
    {:rdf/language "en",
     :rdf/value
     "The event which, when it takes place, causes the Jump Z holders to begin receiving payments."}})
+
+(def ^{:private true} HomeEquityLineOfCreditPool
+  {:db/ident         :fibo-sec-dbt-abs/HomeEquityLineOfCreditPool,
+   :owl/disjointWith :fibo-sec-dbt-mbs/MortgagePool,
+   :rdf/type         :owl/Class})
+
+(def ^{:private true} AssetBackedSecurity
+  {:db/ident         :fibo-sec-dbt-pbs/AssetBackedSecurity,
+   :owl/disjointWith :fibo-sec-dbt-mbs/MortgageBackedSecurity,
+   :rdf/type         :owl/Class,
+   :rdfs/subClassOf  {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
+                      :rdf/type           :owl/Restriction}})

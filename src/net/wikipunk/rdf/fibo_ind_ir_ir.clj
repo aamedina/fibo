@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-ind-ir-ir
   "This ontology provides the basic types of interest rate which are recognized in the financial markets, and the relationships between these where applicable. These include bank base rates, inter-bank offer rates, overnight rates of interest and the US Federal Funds rate which is widely used as a rate of reference. It also includes the concept of a market rate spread between two interest rates."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2014-2023 EDM Council, Inc."
+                       "Copyright (c) 2014-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
    :dcterms/abstract
    "This ontology provides the basic types of interest rate which are recognized in the financial markets, and the relationships between these where applicable. These include bank base rates, inter-bank offer rates, overnight rates of interest and the US Federal Funds rate which is widely used as a rate of reference. It also includes the concept of a market rate spread between two interest rates.",
@@ -18,12 +20,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-pub"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
     "fibo-fbc-dae-dbt"
@@ -52,7 +56,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -67,26 +70,16 @@
     "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified to replace 'financial information publisher' with publisher for simplification purposes."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified to eliminate deprecated elements."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified per the issue resolutions identified in the FIBO IND 1.0 FTF 1 report."
-    "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified per the FIBO 2.0 RFC, including adding support for reference rates from FpML."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2014-2022 Object Management Group, Inc."
-                  "Copyright (c) 2014-2022 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"],
-   :sm/fileAbbreviation "fibo-ind-ir-ir",
-   :sm/filename "InterestRates.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified per the FIBO 2.0 RFC, including adding support for reference rates from FpML."
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def BaseRate
   "basic rate of interest on which the actual rate a bank charges on loans to its customers is calculated"
-  {:db/ident :fibo-ind-ir-ir/BaseRate,
-   :fibo-fnd-utl-av/abbreviation "BBR",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "BBR",
+   :cmns-av/explanatoryNote
    "Typically, the bank base rate is a reference rate set by a central bank. Banks that are regulated by a given central bank cannot lend below the base rate to their customers. The bank base rate is determined on an ongoing basis and represents the central bank's judgement of the price of short-term funds on their interbank market.",
-   :fibo-fnd-utl-av/synonym "bank base rate",
+   :cmns-av/synonym "bank base rate",
+   :db/ident :fibo-ind-ir-ir/BaseRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
@@ -149,9 +142,9 @@
 
 (def InterbankBidRate
   "interbank rate that is the interest rate at which participating banks are willing to borrow deposits from other banks"
-  {:db/ident :fibo-ind-ir-ir/InterbankBidRate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Unlike an interbank offered rate, which is the rate at which banks lend money, an interbank bid rate is the rate at which banks ask to borrow.",
+   :db/ident :fibo-ind-ir-ir/InterbankBidRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
@@ -184,9 +177,9 @@
 
 (def InterbankRate
   "reference rate that is the rate of interest charged on short-term loans between banks"
-  {:db/ident :fibo-ind-ir-ir/InterbankRate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Banks borrow and lend money in the interbank market in order to manage liquidity and meet the requirements placed on them. The interest rate charged depends on the availability of money in the market, on prevailing rates and on the specific terms of the contract, such as term length.",
+   :db/ident :fibo-ind-ir-ir/InterbankRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
@@ -214,20 +207,16 @@
 
 (def InterestRateBenchmark
   "classifier for regularly updated interest rates that are publicly accessible, typically set by a central bank or group of financial institutions"
-  {:db/ident :fibo-ind-ir-ir/InterestRateBenchmark,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Benchmark rates, such as EURIBOR, the Fed Funds rate, and many others including those identified as FpML rates, are used as benchmarks for a variety of debt instruments.",
+   :db/ident :fibo-ind-ir-ir/InterestRateBenchmark,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
    :rdfs/label "interest rate benchmark",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-be-fct-pub/MarketDataProvider,
-                      :owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-dt-fd/Duration,
+                      :owl/onProperty :fibo-ind-ir-ir/hasTenor,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-qt-qtu/QuantityKind
                      {:owl/minQualifiedCardinality 0,
@@ -235,12 +224,16 @@
                       :owl/onProperty :fibo-fnd-rel-rel/isProducedBy,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/Duration,
-                      :owl/onProperty :fibo-ind-ir-ir/hasTenor,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-be-fct-pub/MarketDataProvider,
+                      :owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :lcc-cr/classifies,
                       :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
@@ -336,9 +329,9 @@
 
 (def OvernightRate
   "reference rate that is an interest rate at which a depository institution lends funds to another depository institution (short-term), or the interest rate the central bank charges a financial institution to borrow money overnight"
-  {:db/ident :fibo-ind-ir-ir/OvernightRate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The overnight rate is the lowest available interest rate, and as such, it is only available to the most creditworthy institutions. It is the underlying rate for Overnight Interest Rate Swaps (IOS).",
+   :db/ident :fibo-ind-ir-ir/OvernightRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
@@ -352,29 +345,29 @@
 
 (def ReferenceInterestRate
   "market rate that is a rate of interest paid by or agreed among some bank or set of banks"
-  {:db/ident :fibo-ind-ir-ir/ReferenceInterestRate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The reference rate is a moving index such as EURIBOR, the prime rate or the rate on benchmark U.S. Treasuries.",
+   :db/ident :fibo-ind-ir-ir/ReferenceInterestRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
    :rdfs/label "reference interest rate",
-   :rdfs/subClassOf [:fibo-ind-ind-ind/MarketRate
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-ind-ind-ind/MarketRate
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-acc-cur/InterestRate
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/Duration,
                       :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-acc-cur/InterestRate
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "market rate that is a rate of interest paid by or agreed among some bank or set of banks"})
 
@@ -402,9 +395,9 @@
 
 (def SpecificProviderInterestRateBenchmark
   "interest rate benchmark that is made available by a specific market data provider for reference purposes"
-  {:db/ident :fibo-ind-ir-ir/SpecificProviderInterestRateBenchmark,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Benchmarks, such as those published by Bloomberg, Thomson-Reuters, and others, are usually quoted as of a specific date and time of day.",
+   :db/ident :fibo-ind-ir-ir/SpecificProviderInterestRateBenchmark,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
@@ -558,9 +551,9 @@
 
 (def hasTenor
   "indicates the length of time for which a given rate, such as an interbank rate, exchange rate, other market rate is quoted, or a debt instrument has remaining prior to maturity or expiration"
-  {:db/ident :fibo-ind-ir-ir/hasTenor,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The tenor of most financial instruments declines over time, while the maturity remains constant. Risk associated with a given asset tends to decline with the reduction of the time remaining to maturity. The tenor of an interest rate swap can also refer to the frequency with which coupon payments are exchanged.",
+   :db/ident :fibo-ind-ir-ir/hasTenor,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
@@ -569,3 +562,11 @@
    :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasDuration,
    :skos/definition
    "indicates the length of time for which a given rate, such as an interbank rate, exchange rate, other market rate is quoted, or a debt instrument has remaining prior to maturity or expiration"})
+
+(def ^{:private true} FloatingInterestRate
+  {:db/ident        :fibo-fbc-dae-dbt/FloatingInterestRate,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onClass    :fibo-ind-ir-ir/ReferenceInterestRate,
+                     :owl/onProperty :fibo-fbc-dae-dbt/isBasedOn,
+                     :owl/qualifiedCardinality 1,
+                     :rdf/type       :owl/Restriction}})

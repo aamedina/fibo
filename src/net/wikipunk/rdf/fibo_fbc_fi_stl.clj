@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-fi-stl
   "This ontology defines high-level concepts for settlement that are applicable across FIBO domain areas, such as for loans, securities, and derivatives."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2018-2023 EDM Council, Inc."
+                       "Copyright (c) 2018-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
    :dcterms/abstract
    "This ontology defines high-level concepts for settlement that are applicable across FIBO domain areas, such as for loans, securities, and derivatives.",
@@ -11,8 +13,9 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
@@ -21,7 +24,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/Settlement/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-fct-ra"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
     "fibo-fbc-fi-ip"
@@ -52,7 +56,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -63,23 +66,14 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Settlement Ontology"},
    :skos/changeNote
-   "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement.rdf version of this ontology was revised to integrate the notion of a value assessment with a settlement event.",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2018-2022 Object Management Group, Inc."
-                  "Copyright (c) 2018-2022 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"],
-   :sm/fileAbbreviation "fibo-fbc-fi-stl",
-   :sm/filename "Settlement.rdf"})
+   ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement.rdf version of this ontology was revised to integrate the notion of a value assessment with a settlement event."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def CashSettlementTerms
   "contractual commitment to settle in cash"
-  {:db/ident :fibo-fbc-fi-stl/CashSettlementTerms,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Note that the security price represents a price per share or per lot, whereas the settlement amount represents a total.",
+   :db/ident :fibo-fbc-fi-stl/CashSettlementTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
@@ -100,11 +94,11 @@
 
 (def DeliveryInCash
   "commitment to deliver an amount of money at the earliest available date as per settlement convention"
-  {:db/ident :fibo-fbc-fi-stl/DeliveryInCash,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-fbc-fi-stl/DeliveryInCash,
    :rdf/type [:fibo-fbc-fi-stl/DeliveryMethod :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
@@ -126,11 +120,11 @@
 
 (def ElectAtExerciseMethod
   "commitment to determine the delivery strategy at the time of exercise"
-  {:db/ident :fibo-fbc-fi-stl/ElectAtExerciseMethod,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-fbc-fi-stl/ElectAtExerciseMethod,
    :rdf/type [:fibo-fbc-fi-stl/DeliveryMethod :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
@@ -143,11 +137,11 @@
 
 (def NonDeliverableMethod
   "commitment with respect to synthetic options on foreign exchange forwards that are based on non-convertible or thinly traded currencies"
-  {:db/ident :fibo-fbc-fi-stl/NonDeliverableMethod,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-fbc-fi-stl/NonDeliverableMethod,
    :rdf/type [:fibo-fbc-fi-stl/DeliveryMethod :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
@@ -160,11 +154,11 @@
 
 (def PhysicalDeliveryMethod
   "commitment to settle an obligation through the receipt or delivery of the actual underlying instrument(s) or other asset, such as a commodity, instead of through cash settlement"
-  {:db/ident :fibo-fbc-fi-stl/PhysicalDeliveryMethod,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-fbc-fi-stl/PhysicalDeliveryMethod,
    :rdf/type [:fibo-fbc-fi-stl/DeliveryMethod :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
@@ -177,15 +171,15 @@
 
 (def PhysicalSettlementTerms
   "commitment to deliver the actual underlying asset on the specified delivery date, rather than cash"
-  {:db/ident :fibo-fbc-fi-stl/PhysicalSettlementTerms,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "If you sell a gold futures contract of say 100 troy ounces then you have to deliver real gold to the buyer on the mutually agreed date. Most derivatives are not actually exercised, but are traded out before their delivery date. However, physical delivery still occurs with some trades: it is most common with commodities, but can also occur with other financial instruments."},
+   :db/ident :fibo-fbc-fi-stl/PhysicalSettlementTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
@@ -214,9 +208,9 @@
 
 (def SettlementConvention
   "convention employed to determine the closing date (from the stated settlement date) in the process of settling a transaction on which securities or interests in securities are delivered, usually against (in simultaneous exchange for) payment of some consideration"
-  {:db/ident :fibo-fbc-fi-stl/SettlementConvention,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This is often stated in the form 'T+n' where n is the number of business days from the specified settlement date (T).",
+   :db/ident :fibo-fbc-fi-stl/SettlementConvention,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
@@ -268,9 +262,9 @@
 
 (def hasPreferredSettlementCurrency
   "indicates the preferred currency for settlement purposes"
-  {:db/ident :fibo-fbc-fi-stl/hasPreferredSettlementCurrency,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This property should only be used in cases where the settlement currency is distinct from the currency in which the instrument is denominated.",
+   :db/ident :fibo-fbc-fi-stl/hasPreferredSettlementCurrency,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-pas-fpas/SettlementTerms,
    :rdfs/isDefinedBy
@@ -308,10 +302,10 @@
 
 (def isFullyAutomatedSecuritiesTransferApplicable
   "indicates whether the security is to be held at the transfer agent as part of the FAST (Fully Automated Securities Transfer) program"
-  {:db/ident :fibo-fbc-fi-stl/isFullyAutomatedSecuritiesTransferApplicable,
-   :fibo-fnd-utl-av/abbreviation "is FAST applicable",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "is FAST applicable",
+   :cmns-av/explanatoryNote
    "The Fast Automated Securities Transfer Program (FAST) is a contract between DTC (and its subsidiaries) and transfer agents whereby FAST agents act as custodians for DTC.",
+   :db/ident :fibo-fbc-fi-stl/isFullyAutomatedSecuritiesTransferApplicable,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fbc-pas-fpas/SettlementTerms,
    :rdfs/isDefinedBy
@@ -320,3 +314,16 @@
    :rdfs/range :xsd/boolean,
    :skos/definition
    "indicates whether the security is to be held at the transfer agent as part of the FAST (Fully Automated Securities Transfer) program"})
+
+(def ^{:private true} SettlementTerms
+  {:db/ident        :fibo-fbc-pas-fpas/SettlementTerms,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+                      :owl/someValuesFrom :fibo-fbc-fi-stl/Settlement,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fi-stl/hasDeliveryMethod,
+                      :owl/someValuesFrom :fibo-fbc-fi-stl/DeliveryMethod,
+                      :rdf/type           :owl/Restriction}]})

@@ -574,3 +574,142 @@
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
    :skos/definition
    "indicates area, sector, or development within a geographic area relevant to a delivery address"})
+
+(def ^{:private true} Apartment
+  "apartmento"
+  {:db/ident   :fibo-fnd-plc-adr/Apartment,
+   :fibo-fnd-utl-av/preferredDesignation "APT",
+   :rdf/type   :owl/NamedIndividual,
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "apartmento"}})
+
+(def ^{:private true} Basement
+  {:db/ident :fibo-fnd-plc-adr/Basement,
+   :fibo-fnd-utl-av/preferredDesignation "BSMT",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Building
+  {:db/ident :fibo-fnd-plc-adr/Building,
+   :fibo-fnd-utl-av/preferredDesignation "BLDG",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Department
+  "departamento"
+  {:db/ident   :fibo-fnd-plc-adr/Department,
+   :fibo-fnd-utl-av/preferredDesignation "DEPT",
+   :rdf/type   :owl/NamedIndividual,
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "departamento"}})
+
+(def ^{:private true} Floor
+  {:db/ident :fibo-fnd-plc-adr/Floor,
+   :fibo-fnd-utl-av/preferredDesignation "FL",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Front
+  {:db/ident :fibo-fnd-plc-adr/Front,
+   :fibo-fnd-utl-av/preferredDesignation "FRNT",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} GeographicDirectionalSymbol
+  {:db/ident :fibo-fnd-plc-adr/GeographicDirectionalSymbol,
+   :owl/equivalentClass {:owl/oneOf [:fibo-fnd-plc-uspsa/East
+                                     :fibo-fnd-plc-uspsa/North
+                                     :fibo-fnd-plc-uspsa/Northeast
+                                     :fibo-fnd-plc-uspsa/Northwest
+                                     :fibo-fnd-plc-uspsa/South
+                                     :fibo-fnd-plc-uspsa/Southeast
+                                     :fibo-fnd-plc-uspsa/Southwest
+                                     :fibo-fnd-plc-uspsa/West],
+                         :rdf/type  :owl/Class},
+   :rdf/type :owl/Class})
+
+(def ^{:private true} Hangar
+  {:db/ident :fibo-fnd-plc-adr/Hangar,
+   :fibo-fnd-utl-av/preferredDesignation "HNGR",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Key
+  {:db/ident :fibo-fnd-plc-adr/Key,
+   :fibo-fnd-utl-av/preferredDesignation "KEY",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Lobby
+  {:db/ident :fibo-fnd-plc-adr/Lobby,
+   :fibo-fnd-utl-av/preferredDesignation "LBBY",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Lot
+  {:db/ident :fibo-fnd-plc-adr/Lot,
+   :fibo-fnd-utl-av/preferredDesignation "LOT",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Lower
+  {:db/ident :fibo-fnd-plc-adr/Lower,
+   :fibo-fnd-utl-av/preferredDesignation "LOWR",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Office
+  {:db/ident :fibo-fnd-plc-adr/Office,
+   :fibo-fnd-utl-av/preferredDesignation "OFC",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Penthouse
+  {:db/ident :fibo-fnd-plc-adr/Penthouse,
+   :fibo-fnd-utl-av/preferredDesignation "PH",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Pier
+  {:db/ident :fibo-fnd-plc-adr/Pier,
+   :fibo-fnd-utl-av/preferredDesignation "PIER",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Rear
+  {:db/ident :fibo-fnd-plc-adr/Rear,
+   :fibo-fnd-utl-av/preferredDesignation "REAR",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Room
+  {:db/ident :fibo-fnd-plc-adr/Room,
+   :fibo-fnd-utl-av/preferredDesignation "RM",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Side
+  {:db/ident :fibo-fnd-plc-adr/Side,
+   :fibo-fnd-utl-av/preferredDesignation "SIDE",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Slip
+  {:db/ident :fibo-fnd-plc-adr/Slip,
+   :fibo-fnd-utl-av/preferredDesignation "SLP",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Space
+  {:db/ident :fibo-fnd-plc-adr/Space,
+   :fibo-fnd-utl-av/preferredDesignation "SPC",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Stop
+  {:db/ident :fibo-fnd-plc-adr/Stop,
+   :fibo-fnd-utl-av/preferredDesignation "STOP",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Suite
+  {:db/ident :fibo-fnd-plc-adr/Suite,
+   :fibo-fnd-utl-av/preferredDesignation "STE",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Trailer
+  {:db/ident :fibo-fnd-plc-adr/Trailer,
+   :fibo-fnd-utl-av/preferredDesignation "TRLR",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Unit
+  {:db/ident :fibo-fnd-plc-adr/Unit,
+   :fibo-fnd-utl-av/preferredDesignation "UNIT",
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} Upper
+  {:db/ident :fibo-fnd-plc-adr/Upper,
+   :fibo-fnd-utl-av/preferredDesignation "UPPR",
+   :rdf/type :owl/NamedIndividual})

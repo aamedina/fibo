@@ -577,3 +577,19 @@
    :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement,
    :skos/definition
    "relates a derivative to contractual terms specific to valuation of the underlying asset(s)"})
+
+(def ^{:private true} DerivativeInstrument
+  {:db/ident        :fibo-fbc-fi-fi/DerivativeInstrument,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-der-drc-bsc/DerivativeTerms,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-bsc/hasValuationTerms,
+                      :owl/someValuesFrom :fibo-der-drc-bsc/ValuationTerms,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+                      :owl/someValuesFrom :fibo-der-drc-bsc/Underlier,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-bsc/hasSettlementTerms,
+                      :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
+                      :rdf/type           :owl/Restriction}]})

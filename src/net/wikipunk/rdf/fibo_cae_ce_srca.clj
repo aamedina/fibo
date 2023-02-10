@@ -1007,3 +1007,8 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "converts to"},
    :rdfs/range :fibo-fbc-fi-fi/Security})
+
+(def ^{:private true} MaturityExtension
+  {:db/ident        :fibo-fbc-dae-cre/MaturityExtension,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-cae-ce-act/CorporateAction})

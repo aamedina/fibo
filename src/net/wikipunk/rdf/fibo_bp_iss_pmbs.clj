@@ -1260,3 +1260,14 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "results in publication of"},
    :rdfs/range :fibo-bp-iss-pmbs/RemittanceReport})
+
+(def ^{:private true} NonAgencyMortgagePool
+  {:db/ident        :fibo-sec-dbt-mbs/NonAgencyMortgagePool,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onProperty     :fibo-bp-iss-pmbs/hasTrustee,
+                     :owl/someValuesFrom :fibo-bp-iss-pmbs/PoolTrustee,
+                     :rdf/type           :owl/Restriction}})
+
+(def ^{:private true} TranchedMBSInstrument
+  {:db/ident :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+   :rdf/type :owl/Class})

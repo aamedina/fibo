@@ -1,14 +1,17 @@
 (ns net.wikipunk.rdf.fibo-be-ge-caj
   "This ontology provides the set of basic federal government, provincial, and territory level entities and jurisdictions for use in other Canada-specific FIBO ontologies."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 EDM Council, Inc."
+                       "Copyright (c) 2016-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides the set of basic federal government, provincial, and territory level entities and jurisdictions for use in other Canada-specific FIBO ontologies.",
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"
@@ -20,7 +23,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-caj"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
     "fibo-be-ge-ge"
@@ -40,7 +44,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -50,18 +53,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "Canadian Government Entities and Jurisdictions Ontology",
    :skos/changeNote
-   "The http://www.omg.org/spec/EDMC-FIBO/BE/20200201/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to replace 'hasPartialSovereigntyOver' with 'hasSharedSovereigntyOver'.",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2016-2021 EDM Council, Inc."
-                  "Copyright (c) 2016-2021 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"],
-   :sm/fileAbbreviation "fibo-be-ge-caj",
-   :sm/filename "CAGovernmentEntitiesAndJurisdictions.rdf"})
+   ["The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The http://www.omg.org/spec/EDMC-FIBO/BE/20200201/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to replace 'hasPartialSovereigntyOver' with 'hasSharedSovereigntyOver'."]})
 
 (def CanadianEntity
   "individual representing the federated sovereignty and polity that is Canada"
@@ -92,11 +85,11 @@
 
 (def CanadianJurisdiction
   "individual representing the overall jurisdiction for Canada"
-  {:db/ident :fibo-be-ge-caj/CanadianJurisdiction,
+  {:cmns-av/explanatoryNote
+   "Canada's federal structure divides government responsibilities between the federal government and the ten provinces. Provincial legislatures are unicameral and operate in parliamentary fashion similar to the House of Commons. Canada's three territories also have legislatures, but these are not sovereign and have fewer constitutional responsibilities than the provinces. The territorial legislatures also differ structurally from their provincial counterparts.",
+   :db/ident :fibo-be-ge-caj/CanadianJurisdiction,
    :fibo-be-ge-ge/isJurisdictionOf :fibo-be-ge-caj/GovernmentOfCanada,
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Canada,
-   :fibo-fnd-utl-av/explanatoryNote
-   "Canada's federal structure divides government responsibilities between the federal government and the ten provinces. Provincial legislatures are unicameral and operate in parliamentary fashion similar to the House of Commons. Canada's three territories also have legislatures, but these are not sovereign and have fewer constitutional responsibilities than the provinces. The territorial legislatures also differ structurally from their provincial counterparts.",
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
@@ -134,11 +127,11 @@
 
 (def GovernmentOfCanada
   "individual representing the federal parliamentary democracy and constitutional monarchy of Canada"
-  {:db/ident :fibo-be-ge-caj/GovernmentOfCanada,
+  {:cmns-av/explanatoryNote
+   "Canada is a federal parliamentary democracy and a constitutional monarchy, with Queen Elizabeth II being the head of state. The country is officially bilingual at the federal level. It is one of the world's most ethnically diverse and multicultural nations, the product of large-scale immigration from many countries. Its advanced economy is the eleventh largest in the world, relying chiefly upon its abundant natural resources and well-developed international trade networks.",
+   :db/ident :fibo-be-ge-caj/GovernmentOfCanada,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-caj/CanadianJurisdiction,
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Canada,
-   :fibo-fnd-utl-av/explanatoryNote
-   "Canada is a federal parliamentary democracy and a constitutional monarchy, with Queen Elizabeth II being the head of state. The country is officially bilingual at the federal level. It is one of the world's most ethnically diverse and multicultural nations, the product of large-scale immigration from many countries. Its advanced economy is the eleventh largest in the world, relying chiefly upon its abundant natural resources and well-developed international trade networks.",
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",

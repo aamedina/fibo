@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-ind-fx-fx
   "This ontology provides the parameters for foreign exchange rates, covering spot and forward rates, as well as foreign exchange spot rate volatilities."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2014-2023 Object Management Group, Inc."
+                       "Copyright (c) 2014-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
    :dcterms/abstract
    "This ontology provides the parameters for foreign exchange rates, covering spot and forward rates, as well as foreign exchange spot rate volatilities.",
@@ -15,11 +17,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/ForeignExchange/ForeignExchange/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-fct-fse"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
     "fibo-fbc-pas-fpas"
@@ -42,7 +46,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -54,24 +57,16 @@
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified per the issue resolutions identified in the FIBO IND 1.0 FTF 2 report, namely, to take advantage of content added via the FIBO FND 1.1 with respect to higher-level concepts of Rate, ExchangeRate, and InterestRate."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified per the FIBO 2.0 RFC."
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified to eliminate deprecated elements."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified to eliminate unnecessary references, some of which had incorrect datatypes, rename FxSpotVolatility to CurrencySpotVolatility and improve its definition and related volatility definitions more generally."
-    "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified per the issue resolutions identified in the FIBO IND 1.0 FTF 1 report."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2014-2021 EDM Council, Inc."
-                  "Copyright (c) 2014-2021 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/Indicators/Indicators/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"],
-   :sm/fileAbbreviation "fibo-ind-fx-fx",
-   :sm/filename "ForeignExchange.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange.rdf version of this ontology was modified per the issue resolutions identified in the FIBO IND 1.0 FTF 1 report."]})
 
 (def CurrencyConversionService
   "foreign exchange service involving the conversion of currency of one country or group of countries for another, typically, but not always, as a counter transaction"
-  {:db/ident :fibo-ind-fx-fx/CurrencyConversionService,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A currency exchange service may be provided by a stand-alone business or may be part of the services offered by a bank or other financial institution. The currency exchange profits from its services either through adjusting the exchange rate or taking a commission.",
+   :db/ident :fibo-ind-fx-fx/CurrencyConversionService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
@@ -133,9 +128,9 @@
 
 (def CurrencySpotRate
   "rate at which one currency may be exchanged for another for immediate delivery"
-  {:db/ident :fibo-ind-fx-fx/CurrencySpotRate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Spot rates represent the prices buyers pay in one currency to purchase a second currency. Although the spot exchange rate is for delivery on the earliest value date, the standard settlement date for most spot transactions is two business days after the transaction date.",
+   :db/ident :fibo-ind-fx-fx/CurrencySpotRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
@@ -186,9 +181,9 @@
 
 (def ExchangeRateVolatility
   "statistical measure of the rate of change in the rate at which one currency can be exchanged for another"
-  {:db/ident :fibo-ind-fx-fx/ExchangeRateVolatility,
-   :fibo-fnd-utl-av/usageNote
+  {:cmns-av/usageNote
    "Volatility is modeled here using a structured collection, comprised of a series of individual exchange rates (either projected or prior quoted rates), dates, and the source for those rates for some overall period of time",
+   :db/ident :fibo-ind-fx-fx/ExchangeRateVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
@@ -213,8 +208,8 @@
 
 (def InternationalElectronicFundsTransferService
   "electronic funds transfer (EFT) service involving the transfer of funds across national borders, that may also involve currency conversion"
-  {:db/ident :fibo-ind-fx-fx/InternationalElectronicFundsTransferService,
-   :fibo-fnd-utl-av/synonym "international wire transfer",
+  {:cmns-av/synonym "international wire transfer",
+   :db/ident :fibo-ind-fx-fx/InternationalElectronicFundsTransferService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
@@ -226,9 +221,9 @@
 
 (def QuotedExchangeRate
   "exchange rate quoted at a specific point in time, for a given block amount of currency as quoted against another (base) currency"
-  {:db/ident :fibo-ind-fx-fx/QuotedExchangeRate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "An exchange rate of R represents a rate of R units of the quoted currency to 1 unit of the base currency.",
+   :db/ident :fibo-ind-fx-fx/QuotedExchangeRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",

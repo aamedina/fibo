@@ -251,3 +251,10 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has milestone term"},
    :rdfs/range :fibo-loan-reln-cnst/ConstructionLoanMilestoneTermsSet})
+
+(def ^{:private true} RealEstate
+  {:db/ident        :fibo-fnd-plc-loc/RealEstate,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onProperty     :lcc-cr/isClassifiedBy,
+                     :owl/someValuesFrom :fibo-loan-reln-cnst/ConstructionType,
+                     :rdf/type           :owl/Restriction}})

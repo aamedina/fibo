@@ -77,16 +77,10 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Exotic Options Ontology"},
    :skos/changeNote
-   "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/ version of this ontology was modified to rephrase definitions on knock-in and knock-out options.",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2015-2022 Object Management Group, Inc."
-                  "Copyright (c) 2015-2022 EDM Council, Inc."],
-   :sm/dependsOn ["https://www.omg.org/spec/LCC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FBC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/SEC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FND/"],
-   :sm/fileAbbreviation "fibo-der-drc-exo",
-   :sm/filename "ExoticOptions.rdf"})
+   ["The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/ version of this ontology was modified to rephrase definitions on knock-in and knock-out options."
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/ version of this ontology was modified to add a definition for European options, such as LEPOs."],
+   :sm/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
+                  "Copyright (c) 2015-2023 Object Management Group, Inc."]})
 
 (def ArithmeticCalculationStrategy
   "strategy that uses an arithmetic mean calculation"
@@ -115,14 +109,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Asian option"},
-   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
-                      :owl/onProperty :fibo-der-drc-exo/hasAsianTailPeriod,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-der-drc-exo/AveragingStrategy,
+                      :owl/onProperty :lcc-cr/isClassifiedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :xsd/boolean,
-                      :owl/onProperty  :fibo-der-drc-exo/usesWeightedAverage,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-der-drc-exo/usesCurrencyInAveraging,
                       :owl/qualifiedCardinality 1,
@@ -132,8 +122,12 @@
                       :owl/onProperty :fibo-sec-dbt-ex/hasExerciseDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-der-drc-exo/AveragingStrategy,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-der-drc-exo/usesWeightedAverage,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
+                      :owl/onProperty :fibo-der-drc-exo/hasAsianTailPeriod,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-exo/AsianOptionClassifier,
@@ -223,13 +217,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "barrier option"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-exo/isAboveStrikePrice,
-                      :owl/someValuesFrom :xsd/boolean,
-                      :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf [:fibo-der-drc-opt/ExoticOption
                      {:owl/onProperty     :fibo-der-drc-exo/hasMonitoringPeriod,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-opt/ExoticOption
+                     {:owl/onProperty     :fibo-der-drc-exo/isAboveStrikePrice,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-der-drc-exo/hasMonitoringFrequency,
                       :owl/someValuesFrom :xsd/positiveInteger,
                       :rdf/type :owl/Restriction}],
@@ -262,13 +256,13 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "chooser option"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   [{:owl/onProperty     :fibo-der-drc-exo/hasOptionTypeElectionDate,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
      :owl/someValuesFrom {:owl/unionOf [:fibo-der-drc-opt/CallOption
                                         :fibo-der-drc-opt/PutOption],
                           :rdf/type    :owl/Class},
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-exo/hasOptionTypeElectionDate,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-opt/ExoticOption],
    :skos/definition
@@ -400,18 +394,18 @@
                 :rdf/value    "double barrier option"},
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/PercentageMonetaryAmount,
-                      :owl/onProperty :fibo-der-drc-exo/hasSecondRebateAmount,
+                      :owl/onProperty :fibo-der-drc-exo/hasFirstRebateAmount,
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-exo/BarrierOption
-                     {:owl/onProperty :fibo-der-drc-exo/hasFirstBarrierPrice,
+                     {:owl/onProperty :fibo-der-drc-exo/hasSecondBarrierPrice,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty :fibo-der-drc-exo/hasSecondBarrierPrice,
+                     {:owl/onProperty :fibo-der-drc-exo/hasFirstBarrierPrice,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/PercentageMonetaryAmount,
-                      :owl/onProperty :fibo-der-drc-exo/hasFirstRebateAmount,
+                      :owl/onProperty :fibo-der-drc-exo/hasSecondRebateAmount,
                       :rdf/type :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
@@ -644,11 +638,10 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "lookback strike terms"},
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-der-drc-exo/FixedLookbackStrikeExpression,
-     :owl/onProperty :fibo-fnd-utl-alx/hasExpression,
-     :rdf/type       :owl/Restriction}
-    :fibo-der-drc-bsc/DerivativeTerms
+   [:fibo-der-drc-bsc/DerivativeTerms
+    {:owl/onProperty     :fibo-der-drc-exo/hasLookbackPeriod,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-exo/FloatingLookbackStrikeExpression,
      :owl/onProperty :fibo-fnd-utl-alx/hasExpression,
@@ -656,13 +649,38 @@
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-ind-ind-ind/PriceStructure,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-exo/hasLookbackPeriod,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
-     :rdf/type           :owl/Restriction}],
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-drc-exo/FixedLookbackStrikeExpression,
+     :owl/onProperty :fibo-fnd-utl-alx/hasExpression,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
     "terms specifying the value of the underlying asset based on analysis during a specific period, typically ending in the maturity of the option, whereby the payoff is determined by comparing the strike price with the value of the selected price"}})
+
+(def LowExercisePriceOption
+  "exotic option that is a European-style call option with an exercise price of one cent that mimics a futures contract"
+  {:db/ident :fibo-der-drc-exo/LowExercisePriceOption,
+   :fibo-fnd-utl-av/abbreviation {:rdf/language "en",
+                                  :rdf/value    "LEPO"},
+   :fibo-fnd-utl-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "LEPOs function as deep-in-the-money options similar to the stock itself. Both buyer and seller of a LEPO operate on margin. LEPO options are not available on any U.S. exchanges.  Since the strike price is so close to zero, the investor purchasing the LEPO gains most of the features of owning the share directly with the major exceptions of dividends and voting rights. They are only available with European style expirations."},
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "low exercise price option"},
+   :rdfs/subClassOf [{:owl/hasValue :fibo-sec-dbt-ex/EuropeanExerciseConvention,
+                      :owl/onProperty :fibo-der-drc-opt/hasExerciseStyle,
+                      :rdf/type :owl/Restriction}
+                     :fibo-der-drc-opt/ExoticOption
+                     :fibo-der-drc-opt/CallOption],
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "exotic option that is a European-style call option with an exercise price of one cent that mimics a futures contract"}})
 
 (def MountainRangeOption
   "exotic option based on multiple underlying securities"

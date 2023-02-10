@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-be-fct-fct
   "This ontology defines the fundamental concepts for entities defined by their function, such as the relationship to the various forms which one or another functionally-defined entity may take. It also includes a number of basic types of entity defined by function, such as business and non-profit. The concepts in this ontology are intended to be extensible in other ontologies which may be dedicated to specific kinds of functionally-defined business entity or organization."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2013-2023 Object Management Group, Inc."
+                       "Copyright (c) 2013-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for entities defined by their function, such as the relationship to the various forms which one or another functionally-defined entity may take. It also includes a number of basic types of entity defined by function, such as business and non-profit. The concepts in this ontology are intended to be extensible in other ontologies which may be dedicated to specific kinds of functionally-defined business entity or organization.",
@@ -14,14 +16,16 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-fct"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
     "fibo-be-le-fbo"
@@ -48,7 +52,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -59,6 +62,7 @@
    :rdfs/label "Functional Entities Ontology",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities.rdf version of this ontology was modified to eliminate duplication of concepts in LCC."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.0 FTF report."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities.rdf version of this ontology was modified to reflect the move of some organization-specific concepts from BE to FND."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities.rdf version of this ontology was modified to address a circular definition on association."
@@ -68,23 +72,13 @@
     "The https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities.rdf version of this ontology was modified to add the concept of an association."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities.rdf version of this ontology was modified to eliminate deprecated elements."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities.rdf version of this ontology was modified to revise and extend the definition of merchant, to support merchant category codes as needed for representation of credit card transactions, merge business and functional business entity and eliminate commerce and commercial activity (which are not used anywhere in FIBO), and to clean up definitions and make them ISO 704 compliant."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities.rdf version of this ontology was modified to address text formatting hygiene issues."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2013-2022 EDM Council, Inc."
-                  "Copyright (c) 2013-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"],
-   :sm/fileAbbreviation "fibo-be-fct-fct",
-   :sm/filename "FunctionalEntities.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities.rdf version of this ontology was modified to address text formatting hygiene issues."]})
 
 (def Association
   "not-for-profit organization that is owned by and acts on behalf of its members"
-  {:db/ident :fibo-be-fct-fct/Association,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Associations include trade or business associations, industry sector-specific groups, and professional associations, among others. They also commonly include cooperative farms and markets.",
+   :db/ident :fibo-be-fct-fct/Association,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
@@ -98,8 +92,8 @@
 
 (def CooperativeSociety
   "organization owned by and operated for the benefit of those using its services"
-  {:db/ident :fibo-be-fct-fct/CooperativeSociety,
-   :fibo-fnd-utl-av/synonym "cooperative",
+  {:cmns-av/synonym "cooperative",
+   :db/ident :fibo-be-fct-fct/CooperativeSociety,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
@@ -112,9 +106,9 @@
 
 (def FamilyOffice
   "organization that assumes the day-to-day administration and management of a family's affairs"
-  {:db/ident :fibo-be-fct-fct/FamilyOffice,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Family offices are often privately held companies set up to handle investment and wealth management for wealthy families.",
+   :db/ident :fibo-be-fct-fct/FamilyOffice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
@@ -171,22 +165,18 @@
 
 (def MerchantCategoryCode
   "code used internationally to classify a merchant"
-  {:db/ident :fibo-be-fct-fct/MerchantCategoryCode,
-   :fibo-fnd-utl-av/abbreviation "MCC",
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/abbreviation "MCC",
+   :cmns-av/adaptedFrom
    "ISO 18245:2003 Retail financial services - Merchant category codes",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    ["Merchant categories are organized by the type of business, trade or services supplied. Certain category codes including those for very large businesses, such as airlines and some hotel chains, may be delineated to the point of identifying the business. Merchant category codes and/or the descriptions of the service categories are frequently used in credit card and other banking transactions for analysis, transaction classification, such as for use in promotional rewards, and sometimes tax-related purposes."
     "Values are specified only for those merchant categories that are generally expected to originate retail financial transactions. Criteria for establishing a new category code includes (a) the merchant category is reasonable and substantially different from all other merchant categories currently represented in the list of code values; (b) the merchant category is separate and distinct from all other industries currently represented in the list of code values; (c) the proposal describes a merchant category or industry, and not a process; (d) the minimum annual sales volume of merchants included in the merchant category, taken as a whole, is USD 10 million; and (e) sufficient justification for the addition of a new code value is found."],
+   :db/ident :fibo-be-fct-fct/MerchantCategoryCode,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
    :rdfs/label "merchant category code",
-   :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fnd-arr-cls/IndustrySectorClassifier
+   :rdfs/subClassOf [:fibo-fnd-arr-cls/IndustrySectorClassifier
                      {:owl/onProperty
                       :fibo-be-fct-fct/hasMerchantCategoryDescription,
                       :owl/someValuesFrom :xsd/string,
@@ -195,19 +185,23 @@
                       :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
+                     :lcc-lr/CodeElement
+                     {:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :lcc-cr/classifies,
                       :owl/someValuesFrom :fibo-be-fct-fct/Merchant,
-                      :rdf/type           :owl/Restriction}
-                     :lcc-lr/CodeElement],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition "code used internationally to classify a merchant"})
 
 (def MerchantCategoryCodeScheme
   "scheme defining a set of codes for classifying merchant services"
-  {:db/ident :fibo-be-fct-fct/MerchantCategoryCodeScheme,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "ISO 18245:2003 Retail financial services - Merchant category codes",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "ISO 18245 provides a set of merchant category codes that are used internationally. Some countries, regional governments, banks, and other large organizations extend the basic codes with custom additions to fit business needs.",
+   :db/ident :fibo-be-fct-fct/MerchantCategoryCodeScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
@@ -245,3 +239,19 @@
    :rdfs/range :xsd/string,
    :skos/definition
    "provides a text description of the sector to which the code applies"})
+
+(def ^{:private true} OrganizationIdentifier
+  {:db/ident        :fibo-fnd-org-org/OrganizationIdentifier,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onClass    {:owl/unionOf
+                                      [:fibo-be-fct-fct/FunctionalEntity
+                                       :fibo-fnd-pty-rl/AgentInRole],
+                                      :rdf/type :owl/Class},
+                     :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+                     :owl/qualifiedCardinality 1,
+                     :rdf/type       :owl/Restriction}})
+
+(def ^{:private true} ServiceProvider
+  {:db/ident        :fibo-fnd-pas-pas/ServiceProvider,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf :fibo-be-fct-fct/FunctionalEntity})

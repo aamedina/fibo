@@ -1,6 +1,7 @@
 (ns net.wikipunk.rdf.fibo-sec-dbt-abs
   "Debt securities backed by a pool of assets, including loans of various kinds, credit card pools and home equity lines of credit, as well as esoteric assets."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
    :dcterms/abstract
    "Debt securities backed by a pool of assets, including loans of various kinds, credit card pools and home equity lines of credit, as well as esoteric assets.",
@@ -11,6 +12,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/ConsumerLoans/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/Funds/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"
@@ -28,7 +30,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/AssetBackedSecurities/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-dbt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
     "fibo-fnd-arr-arr"
@@ -59,7 +62,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -68,22 +70,7 @@
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "Asset-backed Securities Ontology"},
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright "Copyright (c) 2015-2021 EDM Council, Inc.",
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FBC/"
-    "https://spec.edmcouncil.org/fibo/ontology/IND/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"],
-   :sm/fileAbbreviation "fibo-sec-dbt-abs",
-   :sm/filename "AssetBackedSecurities.rdf"})
+                :rdf/value    "Asset-backed Securities Ontology"}})
 
 (def AutoLoanAssetBackedSecurity
   "asset-backed security issued by an auto finance company that is backed by an underlying pool of auto-related loans or leases"
@@ -123,11 +110,11 @@
 
 (def ControlledAmortizationBond
   "bond that is securitized using a controlled amortization structure"
-  {:db/ident :fibo-sec-dbt-abs/ControlledAmortizationBond,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "http://www.investinginbonds.com/learnmore.asp?catid=11&subcatid=57&id=15",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "Revolving debt (primarily credit card receivables, but also HELOCs, trade receivables, dealer floor-plan loans and some leases) may be securitized using a controlled amortization structure. This is a method of providing investors with a relatively predictable repayment schedule, even though the underlying assets are nonamortizing. Controlled-amortization ABS resemble corporate bonds with a sinking fund. After a predetermined 'revolving' period during which only interest payments are made, these securities attempt to return principal to investors in a series of defined periodic payments that usually occur over less than a year. A risk inherent in this kind of ABS is an early amortization event. (See 'Early-Amortization Risk', on page 20.)",
+   :db/ident :fibo-sec-dbt-abs/ControlledAmortizationBond,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
@@ -153,15 +140,15 @@
 
 (def CreditCardAssetBackedSecurity
   "asset-backed security based on credit card receivables"
-  {:db/ident :fibo-sec-dbt-abs/CreditCardAssetBackedSecurity,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "Federal Deposit Insurance Corporation (FDIC) Credit Card Securitization Manual, available at https://www.fdic.gov/regulations/examinations/credit_card_securitization/ch2.html"},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Credit card securitizations currently represent the primary funding vehicle for unsecured revolving consumer credit. Similar to mortgage and other asset securitizations, the financial institution that originates the credit card receivables sells a group of these receivables to a trust. The trust then creates and sells certificates backed by the credit card receivables to investors, which are predominately institutional investors. Very few credit card ABS are marketed to retail customers, primarily due to the complex nature of the transactions and the need to continually monitor various performance indices on the underlying receivables. The underlying credit card receivables generate income to support the interest payments on the certificates."},
+   :db/ident :fibo-sec-dbt-abs/CreditCardAssetBackedSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
@@ -177,15 +164,15 @@
 
 (def CreditCardPool
   "pool of outstanding balances on designated accounts"
-  {:db/ident :fibo-sec-dbt-abs/CreditCardPool,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "Federal Deposit Insurance Corporation (FDIC) Credit Card Securitization Manual, available at https://www.fdic.gov/regulations/examinations/credit_card_securitization/ch2.html"},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "In a credit card securitization transaction only the receivables are sold, not the accounts that generate the receivables. The financial institution retains legal ownership of the credit card accounts and can continue to change the terms on the accounts. Accounts corresponding to securitized loans are typically referred to as the designated accounts (or sometimes trust accounts). The initial outstanding balances on the designated accounts are sold to the trust as are the rights to any new charges on the designated accounts. Subsequently, as cardholder purchase activity generates more receivables on the designated accounts, these new receivables are purchased by the trust from the originating institution/seller/transferor. The trust uses the monthly principal payments received from the cardholders to acquire these new charges or receivables. When the securitization is initially set up, the originating institution/seller adds sufficient receivables to support the principal balance of the certificates plus an additional amount (seller's interest) that serves to absorb fluctuations in the outstanding balance of the receivables. The originating institution/seller will make subsequent additions to the trust in order to keep the seller's interest at the required level."},
+   :db/ident :fibo-sec-dbt-abs/CreditCardPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
@@ -198,11 +185,11 @@
 
 (def EsotericAssetBackedSecurity
   "asset-backed security based on some underlying promised future cashflow"
-  {:db/ident :fibo-sec-dbt-abs/EsotericAssetBackedSecurity,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Esoteric asset-backed securities have been built based on cash flows from movie revenues, royalty payments, aircraft landing slots, toll roads, and solar photovoltaics."},
+   :db/ident :fibo-sec-dbt-abs/EsotericAssetBackedSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
@@ -220,12 +207,12 @@
 
 (def FullyAmortizingBond
   "amortizing bond that returns principal to investors over the life of the security"
-  {:db/ident :fibo-sec-dbt-abs/FullyAmortizingBond,
-   :fibo-fnd-utl-av/definitionOrigin
-   "http://www.investinginbonds.com/learnmore.asp?catid=11&subcatid=57&id=15",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    ["These are typically backed by HELs, auto loans, manufactured-housing contracts and other fully amortizing assets. Prepayment risk is a key consideration with such ABS, although the rate of prepayment may vary considerably by the type of underlying asset."
     "Fully amortizing bonds are designed to closely reflect the full repayment of the underlying loans through scheduled interest and principal payments."],
+   :db/ident :fibo-sec-dbt-abs/FullyAmortizingBond,
+   :fibo-fnd-utl-av/definitionOrigin
+   "http://www.investinginbonds.com/learnmore.asp?catid=11&subcatid=57&id=15",
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
@@ -331,9 +318,9 @@
 
 (def InflationBondInterestPaymentTerms
   "terms for the payment of interest on an inflation bond"
-  {:db/ident :fibo-sec-dbt-abs/InflationBondInterestPaymentTerms,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "These may for example specify that the interest payments are by way of coupone calculated with reference to the inflation rate that is referenced for that bond, or they may not (for example they may specify a fixed coupon amount). Therefore these terms may specify any potential interest payment arrangement used on bonds.",
+   :db/ident :fibo-sec-dbt-abs/InflationBondInterestPaymentTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
@@ -343,9 +330,9 @@
 
 (def InflationBondPrincipalRepaymentTerms
   "terms specifying how the principal amount on an inflation bond is to be paid down"
-  {:db/ident :fibo-sec-dbt-abs/InflationBondPrincipalRepaymentTerms,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Further notes: This is typically but not necessarily with reference to the Inflation rate that is referred to for this bond. Further model action: identify and model terms for the case where the bond principal repayments are not pegged to an inflation rate.",
+   :db/ident :fibo-sec-dbt-abs/InflationBondPrincipalRepaymentTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
@@ -415,11 +402,11 @@
 
 (def PromisedCashFlowAsset
   "An asset which takes the form of some promised future cashflow. This may be securitized."
-  {:db/ident :fibo-sec-dbt-abs/PromisedCashFlowAsset,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "For example, exotic Cash ABS instruments may be created where the underlying asset is not a pool of securities or debt but a promised cash flow. People have securitized the cash flows of businesses, artists, mobile phone tower income, airplane leases, lotto receivables, etc."},
+   :db/ident :fibo-sec-dbt-abs/PromisedCashFlowAsset,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
@@ -478,3 +465,28 @@
    :rdfs/range :fibo-ind-ei-ei/InflationRate,
    :skos/definition
    "indicates the index specified in the formula for determination of principal paydown amounts"})
+
+(def ^{:private true} InflationLinkedBond
+  {:cmns-av/explanatoryNote
+   "The inflation rate is used to define the factor or multiplier for the bond, that is the factor that you multiply the bond by. How this works is that you take the inflation rate when the security was issued, and the inflation rate at the present. The difference between these becomes the Factor, e.g. 100% -&gt; 101% gives 1% so for example for a $1000 issue - calculate the principal on which the interest is paid AND the principal from the point of view of how the principal is repaid. Some inflation bonds only do this on interest, some only on interest, but most apply it to the principal and interest. Coupon interest calculated based on the adjusted amount of the bond. so a fixed coupon rate is multiplied by e.g. 1010 in the example above. Variations e.g. Italy - daily published factor published for that bond, whereas other calculate based on underlying index. Typically a CPI or a statistical number generated by the govt. typically a lagging three month index. See UK bonds on this. US and Japanese ones - look at inflation rate 3 months prior. Unlike an Amortizing Security this principal value of the bond is increasing, whereas for and Amortizing, the principal is decreasing. In Canada, these are also referred to as \"real return bonds\". \nFurther Notes:Additional review with OTPP May 05 2010 indicates that this is part of a classification of bonds where the principal amount itself varies according to some index, a point which was not understood at the original review session. Terms and labels revised to fit this picture.",
+   :db/ident        :fibo-sec-dbt-bnd/InflationLinkedBond,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-sec-dbt-dbti/hasRepaymentTerms,
+                      :owl/someValuesFrom
+                      :fibo-sec-dbt-abs/InflationBondPrincipalRepaymentTerms,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty
+                      :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+                      :owl/someValuesFrom
+                      :fibo-sec-dbt-abs/InflationBondVariableCouponTerms,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty
+                      :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+                      :owl/someValuesFrom
+                      :fibo-sec-dbt-abs/InflationBondInterestPaymentTerms,
+                      :rdf/type :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass
+                      :fibo-sec-dbt-abs/IndexLinkedPrincipalDeterminationTerms,
+                      :owl/onProperty :fibo-sec-dbt-dbti/hasRepaymentTerms,
+                      :rdf/type :owl/Restriction}]})

@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-usfsind
   "This ontology extends the financial services entities ontology in FBC with individual American entities that provide broad based services required by other FIBO domains, such as market data providers, instrument identifier issuers, organizations that provide exchanges in multiple countries, and so forth."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2017-2023 EDM Council, Inc."
+                       "Copyright (c) 2017-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :dcterms/abstract
    "This ontology extends the financial services entities ontology in FBC with individual American entities that provide broad based services required by other FIBO domains, such as market data providers, instrument identifier issuers, organizations that provide exchanges in multiple countries, and so forth.",
@@ -40,11 +42,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Trusts/Trusts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
     "fibo-be-ge-ge"
@@ -101,7 +105,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -116,19 +119,9 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was added via the FIBO 2.0 RFC."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to make incorporation and registration dates explicit and to replace references to the legacy LCC UnitedStates country representation with UnitedStatesOfAmerica."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to reflect revisions to the GLEIF LEI representation for validation level."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to normalize a few labels and definitions, revise GLEIF LEI registration data, eliminate duplication of concepts in LCC, simplify addresses, and merge countries with locations in FND."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2017-2021 EDM Council, Inc."
-                  "Copyright (c) 2017-2021 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://www.omg.org/spec/LCC/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/"],
-   :sm/fileAbbreviation "fibo-fbc-fct-usfsind",
-   :sm/filename "USFinancialServicesEntitiesIndividuals.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to normalize a few labels and definitions, revise GLEIF LEI registration data, eliminate duplication of concepts in LCC, simplify addresses, and merge countries with locations in FND."]})
 
 (def BloombergBusinessEntityIdentifier
   "Delaware Division of Corporations business entity identifier for Bloomberg L.P."
@@ -560,11 +553,11 @@
 
 (def DepositoryTrustAndClearingCorporation
   "Depository Trust & Clearing Corporation"
-  {:db/ident :fibo-fbc-fct-usfsind/DepositoryTrustAndClearingCorporation,
-   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usfsind/DTCC-US-DE,
-   :fibo-fnd-utl-av/abbreviation "DTCC",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "DTCC",
+   :cmns-av/explanatoryNote
    "DTCC is a global financial services organization focused on developing solutions to secure today's marketplace, while shaping the future of our industry, whose mission includes risk mitigation, creation of market efficiencies, and cost reduction. They are a large financial services holding company, developing trade repositories and building global capabilities across the spectrum of asset classes.",
+   :db/ident :fibo-fbc-fct-usfsind/DepositoryTrustAndClearingCorporation,
+   :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usfsind/DTCC-US-DE,
    :rdf/type [:fibo-fbc-pas-fpas/FinancialServiceProvider :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
@@ -574,15 +567,15 @@
 
 (def DepositoryTrustCompany
   "central counterparty clearing house (CCP), securities depository, and registration authority (RA) functional entity for The Depository Trust Company"
-  {:db/ident :fibo-fbc-fct-usfsind/DepositoryTrustCompany,
+  {:cmns-av/abbreviation "DTC",
+   :cmns-av/explanatoryNote
+   "DTCC's subsidiary, The Depository Trust Company (DTC), established in 1973, was created to reduce costs and provide clearing and settlement efficiencies by immobilizing securities and making 'book-entry' changes to ownership of the securities.\n\nDTC brings efficiency to the securities industry by retaining custody of more than 3.5 million securities issues valued at US$37.2 trillion, including securities issued in the US and more than 131 countries and territories.",
+   :db/ident :fibo-fbc-fct-usfsind/DepositoryTrustCompany,
    :fibo-fbc-fct-ra/isRegisteredBy
    :fibo-fbc-fct-usjrga/SecuritiesAndExchangeRegulator,
    :fibo-fbc-fct-usjrga/hasPrimaryFederalRegulator
    :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usfsind/DTC-US-NY,
-   :fibo-fnd-utl-av/abbreviation "DTC",
-   :fibo-fnd-utl-av/explanatoryNote
-   "DTCC's subsidiary, The Depository Trust Company (DTC), established in 1973, was created to reduce costs and provide clearing and settlement efficiencies by immobilizing securities and making 'book-entry' changes to ownership of the securities.\n\nDTC brings efficiency to the securities industry by retaining custody of more than 3.5 million securities issues valued at US$37.2 trillion, including securities issued in the US and more than 131 countries and territories.",
    :rdf/type [:fibo-fbc-fct-fse/CentralSecuritiesDepository
               :owl/NamedIndividual
               :fibo-fbc-fct-fse/CentralCounterpartyClearingHouse
@@ -647,8 +640,8 @@
 
 (def GlobalMarketsEntityIdentifierRegistry
   "Global Markets Entity Identifier (GMEI) registry. The GMEI utility is a pre-Local Operating Unit of the Global Legal Entity Identifier System (GLEIS)."
-  {:db/ident :fibo-fbc-fct-usfsind/GlobalMarketsEntityIdentifierRegistry,
-   :fibo-fnd-utl-av/abbreviation "GMEI registry",
+  {:cmns-av/abbreviation "GMEI registry",
+   :db/ident :fibo-fbc-fct-usfsind/GlobalMarketsEntityIdentifierRegistry,
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -660,9 +653,9 @@
 
 (def ICEBenchmarkAdministration
   "ICE Benchmark Administration Limited (IBA) was established in July 2013 following an announcement by the Hogg Tendering Advisory Committee, an independent committee set up by the UK government to select the new administrator for the London Interbank Offered Rate (LIBOR)."
-  {:db/ident :fibo-fbc-fct-usfsind/ICEBenchmarkAdministration,
+  {:cmns-av/abbreviation "IBA",
+   :db/ident :fibo-fbc-fct-usfsind/ICEBenchmarkAdministration,
    :fibo-fnd-rel-rel/isManagedBy :fibo-fbc-fct-usfsind/IntercontinentalExchange,
-   :fibo-fnd-utl-av/abbreviation "IBA",
    :fibo-fnd-utl-av/definitionOrigin "https://www.theice.com/iba.jhtml",
    :rdf/type [:fibo-be-ge-ge/Instrumentality :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -673,10 +666,10 @@
 
 (def IntercontinentalExchange
   "Intercontinental Exchange functional entity, which owns exchanges for financial and commodity markets, and operates 23 regulated exchanges and marketplaces"
-  {:db/ident :fibo-fbc-fct-usfsind/IntercontinentalExchange,
+  {:cmns-av/abbreviation "ICE",
+   :db/ident :fibo-fbc-fct-usfsind/IntercontinentalExchange,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usfsind/IntercontinentalExchangeInc-US-DE,
-   :fibo-fnd-utl-av/abbreviation "ICE",
    :rdf/type [:fibo-fbc-pas-fpas/FinancialServiceProvider :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
@@ -804,10 +797,10 @@
 
 (def SPGlobalDateEstablished
   "date that S&P Global was established"
-  {:db/ident :fibo-fbc-fct-usfsind/SPGlobalDateEstablished,
-   :fibo-fnd-dt-fd/hasDateValue "1925-12-29",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The data established reflects the historical establishment of McGraw-Hill Publishing Company, Inc., including intermediate name and ownership changes.",
+   :db/ident :fibo-fbc-fct-usfsind/SPGlobalDateEstablished,
+   :fibo-fnd-dt-fd/hasDateValue "1925-12-29",
    :rdf/type [:fibo-fnd-dt-fd/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
@@ -902,10 +895,10 @@
 
 (def ThomsonReutersDateEstablished
   "date that Thomson Reuters was established"
-  {:db/ident :fibo-fbc-fct-usfsind/ThomsonReutersDateEstablished,
-   :fibo-fnd-dt-fd/hasDateValue "2008-04-17",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The data established reflects the date that the Thomson Corporation merged with (purchased) the Reuters Group",
+   :db/ident :fibo-fbc-fct-usfsind/ThomsonReutersDateEstablished,
+   :fibo-fnd-dt-fd/hasDateValue "2008-04-17",
    :rdf/type [:fibo-fnd-dt-fd/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",

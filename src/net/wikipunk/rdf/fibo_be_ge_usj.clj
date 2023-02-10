@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-be-ge-usj
   "This ontology provides the set of basic federal government, state, and territory level entities and jurisdictions for use in other US-specific FIBO ontologies."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 EDM Council, Inc."
+                       "Copyright (c) 2016-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides the set of basic federal government, state, and territory level entities and jurisdictions for use in other US-specific FIBO ontologies.",
@@ -13,13 +15,15 @@
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-ge"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
     "fibo-be-ge-usj"
@@ -38,7 +42,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -48,27 +51,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "US Government Entities and Jurisdictions Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to address text formatting hygiene issues."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to replace references to the legacy LCC UnitedStates country representation with UnitedStatesOfAmerica."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2016-2022 Object Management Group, Inc."
-                  "Copyright (c) 2016-2022 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/"
-    "https://www.omg.org/spec/LCC/"],
-   :sm/fileAbbreviation "fibo-be-ge-usj",
-   :sm/filename "USGovernmentEntitiesAndJurisdictions.rdf"})
+   ["The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to address text formatting hygiene issues."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions.rdf version of the ontology was modified to replace references to the legacy LCC UnitedStates country representation with UnitedStatesOfAmerica."]})
 
 (def AmericanSamoaEntity
   "individual representing the unincorporated territory and polity of the United States located in the South Pacific Ocean, known as American Samoa"
-  {:db/ident :fibo-be-ge-usj/AmericanSamoaEntity,
+  {:cmns-av/explanatoryNote
+   "American Samoa consists of five main islands and two coral atolls. The largest and most populous island is Tutuila, with the Manu'a Islands, Rose Atoll, and Swains Island also included in the territory. American Samoa is part of the Samoan Islands chain, located west of the Cook Islands, north of Tonga, and some 300 miles (500 km) south of Tokelau.",
+   :db/ident :fibo-be-ge-usj/AmericanSamoaEntity,
    :fibo-be-ge-ge/hasSharedSovereigntyOver :lcc-3166-2-us/AmericanSamoa,
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-usj/GovernmentOfAmericanSamoa,
-   :fibo-fnd-utl-av/explanatoryNote
-   "American Samoa consists of five main islands and two coral atolls. The largest and most populous island is Tutuila, with the Manu'a Islands, Rose Atoll, and Swains Island also included in the territory. American Samoa is part of the Samoan Islands chain, located west of the Cook Islands, north of Tonga, and some 300 miles (500 km) south of Tokelau.",
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
@@ -108,12 +101,12 @@
 
 (def CommonwealthOfTheNorthernMarianaIslandsEntity
   "individual representing the unincorporated territory and polity for the Commonwealth of the Northern Mariana Islands"
-  {:db/ident :fibo-be-ge-usj/CommonwealthOfTheNorthernMarianaIslandsEntity,
+  {:cmns-av/abbreviation "CMNI",
+   :db/ident :fibo-be-ge-usj/CommonwealthOfTheNorthernMarianaIslandsEntity,
    :fibo-be-ge-ge/hasSharedSovereigntyOver
    :lcc-3166-2-us/NorthernMarianaIslands,
    :fibo-be-ge-ge/isRepresentedBy
    :fibo-be-ge-usj/GovernmentOfNorthernMarianaIslands,
-   :fibo-fnd-utl-av/abbreviation "CMNI",
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/RegionalSovereignty],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
@@ -124,10 +117,10 @@
 
 (def DistrictOfColumbiaEntity
   "individual representing the federal district and polity that is the US District of Columbia, also known as 'Washington, D.C.', 'Washington', 'the District', and 'D.C.', that is, the capital of the United States"
-  {:db/ident :fibo-be-ge-usj/DistrictOfColumbiaEntity,
+  {:cmns-av/synonym "Washington, D.C. entity",
+   :db/ident :fibo-be-ge-usj/DistrictOfColumbiaEntity,
    :fibo-be-ge-ge/hasSharedSovereigntyOver :lcc-3166-2-us/DistrictOfColumbia,
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-usj/DistrictOfColumbiaGovernment,
-   :fibo-fnd-utl-av/synonym "Washington, D.C. entity",
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
@@ -153,11 +146,11 @@
 
 (def DistrictOfColumbiaJurisdiction
   "individual representing the jurisdiction of the US District of Columbia, also known as Washington, D.C."
-  {:db/ident :fibo-be-ge-usj/DistrictOfColumbiaJurisdiction,
+  {:cmns-av/explanatoryNote
+   "Article One, Section Eight of the United States Constitution grants the U.S. Congress 'exclusive jurisdiction' over the city. The District did not have an elected local government until the passage of the 1973 Home Rule Act. The Act devolved certain Congressional powers to an elected mayor and the thirteen-member Council of the District of Columbia. However, Congress retains the right to review and overturn laws created by the council and intervene in local affairs. Jurisdiction is shared among numerous federal agencies, the attorney general for the District, and Congress today. Actions requiring litigation in court may be addressed in the District of Columbia Superior Court or Court of Appeals, or in Federal Court, depending on the issue.",
+   :db/ident :fibo-be-ge-usj/DistrictOfColumbiaJurisdiction,
    :fibo-be-ge-ge/isJurisdictionOf :fibo-be-ge-usj/DistrictOfColumbiaGovernment,
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-us/DistrictOfColumbia,
-   :fibo-fnd-utl-av/explanatoryNote
-   "Article One, Section Eight of the United States Constitution grants the U.S. Congress 'exclusive jurisdiction' over the city. The District did not have an elected local government until the passage of the 1973 Home Rule Act. The Act devolved certain Congressional powers to an elected mayor and the thirteen-member Council of the District of Columbia. However, Congress retains the right to review and overturn laws created by the council and intervene in local affairs. Jurisdiction is shared among numerous federal agencies, the attorney general for the District, and Congress today. Actions requiring litigation in court may be addressed in the District of Columbia Superior Court or Court of Appeals, or in Federal Court, depending on the issue.",
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
@@ -1757,10 +1750,10 @@
 
 (def StateOfPennsylvaniaEntity
   "individual representing the regional sovereignty and polity that is the US State of Pennsylvania"
-  {:db/ident :fibo-be-ge-usj/StateOfPennsylvaniaEntity,
+  {:cmns-av/synonym "Commonwealth of Pennsylvania entity",
+   :db/ident :fibo-be-ge-usj/StateOfPennsylvaniaEntity,
    :fibo-be-ge-ge/hasSharedSovereigntyOver :lcc-3166-2-us/Pennsylvania,
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-usj/StateOfPennsylvaniaGovernment,
-   :fibo-fnd-utl-av/synonym "Commonwealth of Pennsylvania entity",
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
@@ -1771,11 +1764,11 @@
 
 (def StateOfPennsylvaniaGovernment
   "individual representing the regional government of the US State of Pennsylvania"
-  {:db/ident :fibo-be-ge-usj/StateOfPennsylvaniaGovernment,
+  {:cmns-av/synonym "Commonwealth of Pennsylvania government",
+   :db/ident :fibo-be-ge-usj/StateOfPennsylvaniaGovernment,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-be-ge-usj/StateOfPennsylvaniaJurisdiction,
    :fibo-fnd-rel-rel/governs :lcc-3166-2-us/Pennsylvania,
-   :fibo-fnd-utl-av/synonym "Commonwealth of Pennsylvania government",
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
@@ -1786,11 +1779,11 @@
 
 (def StateOfPennsylvaniaJurisdiction
   "individual representing the overall jurisdiction for the US State of Pennsylvania, i.e., that of the Pennsylvania Supreme Court and Judiciary"
-  {:db/ident :fibo-be-ge-usj/StateOfPennsylvaniaJurisdiction,
+  {:cmns-av/synonym "Commonwealth of Pennsylvania jurisdiction",
+   :db/ident :fibo-be-ge-usj/StateOfPennsylvaniaJurisdiction,
    :fibo-be-ge-ge/isJurisdictionOf
    :fibo-be-ge-usj/StateOfPennsylvaniaGovernment,
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-us/Pennsylvania,
-   :fibo-fnd-utl-av/synonym "Commonwealth of Pennsylvania jurisdiction",
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
@@ -2080,10 +2073,10 @@
 
 (def StateOfVirginiaEntity
   "individual representing the regional sovereignty and polity that is the US State of Virginia"
-  {:db/ident :fibo-be-ge-usj/StateOfVirginiaEntity,
+  {:cmns-av/synonym "Commonwealth of Virginia entity",
+   :db/ident :fibo-be-ge-usj/StateOfVirginiaEntity,
    :fibo-be-ge-ge/hasSharedSovereigntyOver :lcc-3166-2-us/Virginia,
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-usj/StateOfVirginiaGovernment,
-   :fibo-fnd-utl-av/synonym "Commonwealth of Virginia entity",
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
@@ -2094,10 +2087,10 @@
 
 (def StateOfVirginiaGovernment
   "individual representing the regional government of the US State of Virginia"
-  {:db/ident :fibo-be-ge-usj/StateOfVirginiaGovernment,
+  {:cmns-av/synonym "Commonwealth of Virginia government",
+   :db/ident :fibo-be-ge-usj/StateOfVirginiaGovernment,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/StateOfVirginiaJurisdiction,
    :fibo-fnd-rel-rel/governs :lcc-3166-2-us/Virginia,
-   :fibo-fnd-utl-av/synonym "Commonwealth of Virginia government",
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
@@ -2108,10 +2101,10 @@
 
 (def StateOfVirginiaJurisdiction
   "individual representing the overall jurisdiction for the US State of Virginia, i.e., that of the Virginia Supreme Court and Judiciary"
-  {:db/ident :fibo-be-ge-usj/StateOfVirginiaJurisdiction,
+  {:cmns-av/synonym "Commonwealth of Virginia jurisdiction",
+   :db/ident :fibo-be-ge-usj/StateOfVirginiaJurisdiction,
    :fibo-be-ge-ge/isJurisdictionOf :fibo-be-ge-usj/StateOfVirginiaGovernment,
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-us/Virginia,
-   :fibo-fnd-utl-av/synonym "Commonwealth of Virginia jurisdiction",
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
@@ -2366,14 +2359,14 @@
 
 (def UnitedStatesJurisdiction
   "individual representing the federal jurisdiction of the United States of America"
-  {:db/ident :fibo-be-ge-usj/UnitedStatesJurisdiction,
-   :fibo-be-ge-ge/isJurisdictionOf :fibo-be-ge-usj/UnitedStatesGovernment,
-   :fibo-fnd-law-jur/hasReach :lcc-3166-1/UnitedStatesOfAmerica,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    ["http://en.wikipedia.org/wiki/Federal_jurisdiction_(United_States)"
     "http://www.uscourts.gov/about-federal-courts"],
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "The United States of America is a federal republic governed by the U.S. Constitution containing fifty states and a federal district which elect the president, and having other territories and possessions in its national jurisdiction. This government is known as the Union, the United States, or the federal government. Federal jurisdiction refers to the legal scope of the government's powers. Under the Constitution and various treaties, the legal jurisdiction of the United States includes territories and territorial waters.",
+   :db/ident :fibo-be-ge-usj/UnitedStatesJurisdiction,
+   :fibo-be-ge-ge/isJurisdictionOf :fibo-be-ge-usj/UnitedStatesGovernment,
+   :fibo-fnd-law-jur/hasReach :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",

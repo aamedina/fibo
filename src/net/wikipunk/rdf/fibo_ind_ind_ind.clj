@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-ind-ind-ind
   "This ontology provides the concepts common to all market rates, indices and indicators; that is concepts descriptive of the numeric parameters themselves. These are modeled independently of the values they may take over time."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2014-2023 EDM Council, Inc."
+                       "Copyright (c) 2014-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
    :dcterms/abstract
    "This ontology provides the concepts common to all market rates, indices and indicators; that is concepts descriptive of the numeric parameters themselves. These are modeled independently of the values they may take over time.",
@@ -8,18 +10,20 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-pub"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
     "fibo-fnd-acc-cur"
@@ -40,7 +44,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -55,24 +58,17 @@
     "The https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators.rdf version of this ontology was modified per the FIBO 2.0 RFC, namely, to integrate concepts recently added to the FND domain including Rate, ExchangeRate, InterestRate and StructuredCollection and revise definitions of TermStructure and Volatility to better support concepts such as yield curves and analysis of market rates generally."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators.rdf version of this ontology was modified to integrate the composite date value and reflect migration of statistical measures to Analytics."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators.rdf version of this ontology was modified to eliminate deprecated elements."
-    "The https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators.rdf version of this ontology was modified to loosen the nature of a price in a price structure to include any price, not limited to a quoted price from a specific source, to allow for calculated prices to be included in the structure and to deprecate redundant terms including financial information publisher, and published financial information."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators.rdf version of this ontology was modified per the issue resolutions identified in the FIBO IND 1.0 FTF 1 report."
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators.rdf version of this ontology was modified to loosen the nature of a price in a price structure to include any price, not limited to a quoted price from a specific source, to allow for calculated prices to be included in the structure and to deprecate redundant terms including financial information publisher, and published financial information."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators.rdf version of this ontology was modified to extend the definition of price structure to include a synonym of price history and state that it is intended to be used for any sort of analysis of historic prices."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators.rdf version of this ontology was modified to add definitions for historical and implied volatility, and differentiate price volatility accordingly."
-    "The https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators.rdf version of this ontology was modified to eliminate a redundant superclass declaration on MarketSpread, introduced by refactoring of FND analytics."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2014-2022 EDM Council, Inc."
-                  "Copyright (c) 2014-2022 Object Management Group, Inc."],
-   :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-                  "https://spec.edmcouncil.org/fibo/ontology/BE/"],
-   :sm/fileAbbreviation "fibo-ind-ind-ind",
-   :sm/filename "Indicators.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators.rdf version of this ontology was modified to eliminate a redundant superclass declaration on MarketSpread, introduced by refactoring of FND analytics."
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def DailyAverageMarketRate
   "overall level of a given rate, calculated as the sum of some selected observed values of the rates for a particular reference rate, foreign exchange rate, lending rate, or other market rate divided by the number of samples collected over the course of a twenty-four (24) hour period for a specific date"
-  {:db/ident :fibo-ind-ind-ind/DailyAverageMarketRate,
-   :fibo-fnd-utl-av/adaptedFrom
-   "http://www.investopedia.com/terms/m/marketaverage.asp",
+  {:cmns-av/adaptedFrom "http://www.investopedia.com/terms/m/marketaverage.asp",
+   :db/ident :fibo-ind-ind-ind/DailyAverageMarketRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
@@ -110,9 +106,9 @@
 
 (def HistoricalPriceVolatility
   "historical volatility measure of past trading ranges of prices of underlying securities and indexes"
-  {:db/ident :fibo-ind-ind-ind/HistoricalPriceVolatility,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Calculations for historical volatility are generally based on the change from one closing price to the next.",
+   :db/ident :fibo-ind-ind-ind/HistoricalPriceVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
@@ -124,8 +120,8 @@
 
 (def HistoricalVolatility
   "measure of volatility that uses actual values for pricing, rates, and other measurements calculated over some prior period"
-  {:db/ident :fibo-ind-ind-ind/HistoricalVolatility,
-   :fibo-fnd-utl-av/synonym "realized volatility",
+  {:cmns-av/synonym "realized volatility",
+   :db/ident :fibo-ind-ind-ind/HistoricalVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
@@ -148,8 +144,8 @@
 
 (def ImpliedVolatility
   "measure of volatility that is a forward-looking metric used to calculate probability"
-  {:db/ident :fibo-ind-ind-ind/ImpliedVolatility,
-   :fibo-fnd-utl-av/synonym "projected volatility",
+  {:cmns-av/synonym "projected volatility",
+   :db/ident :fibo-ind-ind-ind/ImpliedVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
@@ -165,19 +161,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
    :rdfs/label "market rate",
-   :rdfs/subClassOf [{:owl/onDataRange :xsd/decimal,
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/RatioValue
+                     {:owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-utl-alx/RatioValue
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
-                      :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
                       :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
+                      :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "value of a rate established in the marketplace for a set of instruments or that describes the economic climate for an industry and/or political region (e.g., SOFR, Prime)",
    :skos/example
@@ -203,10 +199,10 @@
 
 (def PriceStructure
   "structured collection of prices, such as market prices for some index or security, such that volatility or other analyses may be performed over the structure"
-  {:db/ident :fibo-ind-ind-ind/PriceStructure,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Historical prices are needed not only for various statistical analyses but for determining best prices for certain kinds of options, for example. Note that prices may be quoted or calculated.",
-   :fibo-fnd-utl-av/synonym "price history",
+   :cmns-av/synonym "price history",
+   :db/ident :fibo-ind-ind-ind/PriceStructure,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
@@ -220,9 +216,9 @@
 
 (def PriceVolatility
   "statistical measure of the rate of change in pricing for a given security or market index"
-  {:db/ident :fibo-ind-ind-ind/PriceVolatility,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Volatility can be determined using the standard deviation or variance among prices for the security or market index over some period of time. For a specific security, volatility may measure the amount and frequency in rapid price fluctuation. It is computed as the annualized standard deviation of the percentage change in a security's daily price.",
+   :db/ident :fibo-ind-ind-ind/PriceVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
@@ -261,9 +257,9 @@
 
 (def TermStructure
   "structured collection of rates, such as interest rates, or bond yields with different terms to maturity, such that a yield curve may be constructed for the structure"
-  {:db/ident :fibo-ind-ind-ind/TermStructure,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Term structure refers to a set of discrete points; elements are ordered by time. Restrictions on the rate (see above) and a point in time, paired together, and then ordered in a structured collection is how this should ultimately be modeled. Then the concept of yield curve would be a child of term structure, for calculation of net present value, for example. Term structures consist of two or more observed or projected values, typically related to debt instruments or interest rates. assessment of monetary policy conditions, and so forth.",
+   :db/ident :fibo-ind-ind-ind/TermStructure,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
@@ -298,11 +294,11 @@
 
 (def hasQuotationDate
   "indicates the quotation date for a given market rate or indicator"
-  {:db/ident :fibo-ind-ind-ind/hasQuotationDate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Typically this property reflects a daily average or end of day quote.",
-   :fibo-fnd-utl-av/usageNote
+   :cmns-av/usageNote
    "Note that this property requires a reified date value, if used.",
+   :db/ident :fibo-ind-ind-ind/hasQuotationDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",

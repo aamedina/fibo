@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-be-oac-exec
   "This ontology defines concepts relating to executives and their formal capacities. The concepts defined in this ontology cover types of corporate officers, board members and the like, along with the capacities in terms of which those party roles are defined, and the kinds of entity (principally natural persons) that are able to perform in those roles."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2013-2023 Object Management Group, Inc."
+                       "Copyright (c) 2013-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
    :dcterms/abstract
    "This ontology defines concepts relating to executives and their formal capacities. The concepts defined in this ontology cover types of corporate officers, board members and the like, along with the capacities in terms of which those party roles are defined, and the kinds of entity (principally natural persons) that are able to perform in those roles.",
@@ -20,15 +22,16 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
     "fibo-be-le-cb"
@@ -68,7 +71,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -85,30 +87,18 @@
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of the ontology was modified to fix spelling errors."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified to correct the label on hasAuthorizedParty."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.0 FTF report."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified to adjust the hierarchy to better support regulatory requirements."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified to integrate concepts related to authorization, including board membership and the concept of a signatory (moved from legal persons) to improve semantics; simplify the ontology, and normalize definitions to be ISO 704 compliant."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified to add PrincipalParty as the parent of CEO and others."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified per the FIBO 2.0 RFC to fix reasoning issues."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified to eliminate references to external dictionary sites that no longer resolve, add the concept of corporate bylaws and restriction on authorized shares (moved from SEC)."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified to eliminate duplication with concepts in LCC."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2013-2022 EDM Council, Inc."
-                  "Copyright (c) 2013-2022 Object Management Group, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/"],
-   :sm/fileAbbreviation "fibo-be-oac-exec",
-   :sm/filename "Executives.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives.rdf version of this ontology was modified to eliminate duplication with concepts in LCC."]})
 
 (def ArticlesOfIncorporation
   "contract that establishes a new corporation or, when amended, adjusts the legal basis for the corporation, and outlines basic information about the corporation, including the type of business, and a description of the business' operational characteristics"
-  {:db/ident :fibo-be-oac-exec/ArticlesOfIncorporation,
-   :fibo-fnd-utl-av/synonym "articles of association",
+  {:cmns-av/synonym "articles of association",
+   :db/ident :fibo-be-oac-exec/ArticlesOfIncorporation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
@@ -119,10 +109,10 @@
 
 (def Auditor
   "party qualified and authorized to review and verify the accuracy of financial records and ensure that companies comply with tax laws"
-  {:db/ident :fibo-be-oac-exec/Auditor,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    ["An auditor may be an internal auditor - an individual whose primary job function is to audit his or her own company, or an external auditor - an individual from outside the company, who typically is employed by an auditing firm who handles many different clients."
     "An auditor is authorized to audit one or more specific organizations, i.e., by the authorizing party indicated by the situation."],
+   :db/ident :fibo-be-oac-exec/Auditor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
@@ -279,9 +269,9 @@
 
 (def BoardOfDirectors
   "group of people comprising the governing body of an organization that has the authority to set organizational strategy and policies as well as to select and, to some degree manage, leadership"
-  {:db/ident :fibo-be-oac-exec/BoardOfDirectors,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "For a public, for profit organization, its members (directors) are elected normally by the subscribers (stockholders) of the firm (generally at an annual general meeting) to govern the firm and look after the subscribers' interests. In the case of a not-for-profit organization, the board ensures the organization is acting in line with its mission. The board has the ultimate decision-making authority and, in general, is empowered to (1) set the company's policy, objectives, and overall direction, (2) adopt bylaws, (3) name members of the advisory, executive, finance, and other committees, (4) hire, monitor, evaluate, and fire the managing director and senior executives, (5) determine and pay the dividend, and (6) issue additional shares. Though all its members might not be engaged in the company's day-to-day operations, the entire board is held liable (under the doctrine of collective responsibility) for the consequences of the firm's policies, actions, and failures to act. Members of the board usually include senior-most executives (called inside directors or executive directors) as well as experts or respected persons chosen from the wider community (called outside directors or non-executive directors).",
+   :db/ident :fibo-be-oac-exec/BoardOfDirectors,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
@@ -310,8 +300,8 @@
 
 (def Bylaws
   "written rules for conduct of a corporation, association, partnership or any organization"
-  {:db/ident :fibo-be-oac-exec/Bylaws,
-   :fibo-fnd-utl-av/synonym ["membership agreement" "byelaws"],
+  {:cmns-av/synonym ["membership agreement" "byelaws"],
+   :db/ident :fibo-be-oac-exec/Bylaws,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
@@ -322,15 +312,16 @@
 
 (def ChiefExecutiveOfficer
   "top corporate officer responsible for an organization's overall operations and performance"
-  {:db/ident :fibo-be-oac-exec/ChiefExecutiveOfficer,
-   :fibo-fnd-utl-av/abbreviation "CEO",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "CEO",
+   :cmns-av/explanatoryNote
    "He or she is the leader of the firm, serves as the main link between the board of directors (the board) and the firm's various parts or levels, and is held solely responsible for the firm's success or failure. One of the major duties of a CEO is to maintain and implement corporate policy, as established by the board. Also called President or managing director, he or she may also be the chairman (or chairperson) of the board.",
+   :db/ident :fibo-be-oac-exec/ChiefExecutiveOfficer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
    :rdfs/label "chief executive officer",
    :rdfs/subClassOf [:fibo-be-oac-exec/ExecutiveBoardMember
+                     :fibo-be-oac-exec/PrincipalParty
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
                       {:owl/onProperty :fibo-fnd-rel-rel/manages,
@@ -340,17 +331,16 @@
                         :rdf/type    :owl/Class},
                        :rdf/type :owl/Restriction},
                       :rdf/type :owl/Restriction}
-                     :fibo-be-oac-exec/PrincipalParty
                      :fibo-be-oac-exec/CorporateOfficer],
    :skos/definition
    "top corporate officer responsible for an organization's overall operations and performance"})
 
 (def ChiefFinancialOfficer
   "senior-most corporate officer responsible for financial control and planning for an organization or project"
-  {:db/ident :fibo-be-oac-exec/ChiefFinancialOfficer,
-   :fibo-fnd-utl-av/abbreviation "CFO",
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation "CFO",
+   :cmns-av/explanatoryNote
    "He or she is in charge of all accounting functions including (1) credit control, (2) preparing budgets and financial statements, (3) coordinating financing and fund raising, (4) monitoring expenditure and liquidity, (5) managing investment and taxation issues, (6) reporting financial performance to the board, and (7) providing timely financial data to the CEO. Also called chief finance officer, comptroller, controller, or finance controller.",
+   :db/ident :fibo-be-oac-exec/ChiefFinancialOfficer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
@@ -361,8 +351,8 @@
 
 (def CompanyLaw
   "legislation under which the formation, registration or incorporation, governance, and dissolution of a firm is administered and controlled"
-  {:db/ident :fibo-be-oac-exec/CompanyLaw,
-   :fibo-fnd-utl-av/synonym "corporate law",
+  {:cmns-av/synonym "corporate law",
+   :db/ident :fibo-be-oac-exec/CompanyLaw,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
@@ -373,10 +363,10 @@
 
 (def CompanySecretary
   "corporate officer appointed by the directors of an organization, responsible for ensuring compliance with legal obligations related to corporate governance"
-  {:db/ident :fibo-be-oac-exec/CompanySecretary,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "His or her formal duties include (1) calling meetings, (2) recording minutes of the meetings, (3) keeping statutory record books, (4) proper payment of dividend and interest payments, and (5) proper drafting and execution of agreements, contracts, and resolutions.",
-   :fibo-fnd-utl-av/synonym "corporate secretary",
+   :cmns-av/synonym "corporate secretary",
+   :db/ident :fibo-be-oac-exec/CompanySecretary,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
@@ -387,9 +377,9 @@
 
 (def CorporateBylaws
   "written rules for conduct of a corporation, adopted by the board of directors"
-  {:db/ident :fibo-be-oac-exec/CorporateBylaws,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Corporate bylaws may contain any provision, not inconsistent with law or with the certificate of incorporation, relating to the business of the corporation, the conduct of its affairs, and its rights or powers or the rights or powers of its stockholders, directors, officers or employees. Changes to the bylaws of a corporation require a board-level resolution and may require a vote of the shareholders.",
+   :db/ident :fibo-be-oac-exec/CorporateBylaws,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
@@ -403,10 +393,10 @@
 
 (def CorporateOfficer
   "high-level management executive of a corporation or other organization, hired by the board of directors or the business owner(s), charged with certain operational responsibilities, and who has the authority to act on behalf of the organization, including the authority to enter into contracts on behalf of the organization"
-  {:db/ident :fibo-be-oac-exec/CorporateOfficer,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    ["In banking, corporate officers have the legal capacity to execute some documents and make certain decisions on behalf of the institution due to the nature of the business. The level of authority varies depending on the role the officer plays, however, and based on bank policy. In large institutions, corporate officers may include loan/lending officers, those in certain supervisory roles, and others with varying degrees of authority, and frequently they are given a 'vice president' title, particularly if they are customer facing. Hiring and other decisions related to such corporate officers may be delegated to more operational levels, rather than by the board directly, with respect to such personnel."
     "Note that in most cases in the United States, corporate officers, especially those with signatory capacity and other fiduciary responsibilities must be employees, especially with respect to financial institutions and other highly regulated domains. There are cases, however, when an independent contractor or professional services provider may play the role of a corporate officer, such as a 'CFO for hire', which is a common practice in start-up organizations."],
+   :db/ident :fibo-be-oac-exec/CorporateOfficer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
@@ -436,8 +426,8 @@
 
 (def ExecutiveBoardMember
   "member of a board of directors that is also an employee of the organization"
-  {:db/ident :fibo-be-oac-exec/ExecutiveBoardMember,
-   :fibo-fnd-utl-av/synonym "inside director",
+  {:cmns-av/synonym "inside director",
+   :db/ident :fibo-be-oac-exec/ExecutiveBoardMember,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
@@ -462,8 +452,8 @@
 
 (def NonExecutiveBoardMember
   "member of the board of directors of an organization that has no executive responsibilities towards the running of that organization"
-  {:db/ident :fibo-be-oac-exec/NonExecutiveBoardMember,
-   :fibo-fnd-utl-av/synonym "outside director",
+  {:cmns-av/synonym "outside director",
+   :db/ident :fibo-be-oac-exec/NonExecutiveBoardMember,
    :owl/disjointWith :fibo-be-oac-exec/ExecutiveBoardMember,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -791,9 +781,9 @@
 
 (def nominates
   "appoints or proposes for appointment to an office or place"
-  {:db/ident :fibo-be-oac-exec/nominates,
-   :fibo-fnd-utl-av/usageNote
+  {:cmns-av/usageNote
    "Note that nominates is defined as a relation between two parties-in-role (the range of which could be a corporation or partnership in the case of an auditor), whereas appoints between independent parties.",
+   :db/ident :fibo-be-oac-exec/nominates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pty-pty/PartyInRole,
    :rdfs/isDefinedBy
@@ -802,3 +792,23 @@
    :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
    :skos/definition
    "appoints or proposes for appointment to an office or place"})
+
+(def ^{:private true} VotingShareholder
+  {:cmns-av/explanatoryNote
+   "A voting shareholder may exercise control over board composition by (1) attending a shareholder meeting and voting directly, (2) assigning a proxy to vote on their behalf, either as specified in the recommendations made in the proxy card or as indicated in a manner that deviates from those recommendations but is detailed on the proxy card, (3) by rejection of the proxy, either implicitly or explicitly, or (4) through a direct ballot that they create themselves.",
+   :db/ident        :fibo-be-oac-cctl/VotingShareholder,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/minQualifiedCardinality 0,
+                     :owl/onClass    :fibo-be-oac-exec/BoardMember,
+                     :owl/onProperty :fibo-be-oac-exec/elects,
+                     :rdf/type       :owl/Restriction}})
+
+(def ^{:private true} DeFactoControllingInterestParty
+  {:cmns-av/explanatoryNote
+   "A control owner (i.e., control person, per SEC regulations) may have some means or right that allows them to exercise control over board composition, other than through proxy assignment or vote. Not all control persons have this facility, as it is not inherent to having a significant (for example, 20 percent or more) ownership stake.",
+   :db/ident        :fibo-be-oac-cpty/DeFactoControllingInterestParty,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/minQualifiedCardinality 0,
+                     :owl/onClass    :fibo-be-oac-exec/BoardMember,
+                     :owl/onProperty :fibo-be-oac-exec/nominates,
+                     :rdf/type       :owl/Restriction}})

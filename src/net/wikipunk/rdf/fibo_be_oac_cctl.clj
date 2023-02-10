@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-be-oac-cctl
   "This ontology defines concepts relating to corporation-specific control. These concepts are based on the general types of control (both de facto control and controlling interests), as defined in the ControlParties ontology, and are the specific examples of these concepts as they apply to companies incorporated by the issuance of shares."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2013-2023 EDM Council, Inc."
+                       "Copyright (c) 2013-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
    :dcterms/abstract
    "This ontology defines concepts relating to corporation-specific control. These concepts are based on the general types of control (both de facto control and controlling interests), as defined in the ControlParties ontology, and are the specific examples of these concepts as they apply to companies incorporated by the issuance of shares.",
@@ -9,6 +11,7 @@
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateOwnership/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
@@ -20,7 +23,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateControl/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-fbo"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
     "fibo-be-le-lp"
@@ -45,7 +49,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -55,26 +58,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
    :rdfs/label "Corporate Control Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl.rdf version of the ontology was modified to incorporate the latest insights into how control relations should integrate with the control situation."
+   ["The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl.rdf version of the ontology was modified to address text formatting hygiene issues."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl.rdf version of the ontology was modified to incorporate the latest insights into how control relations should integrate with the control situation."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl.rdf version of this ontology was revised to further clean up definitions related to control via ownership of shares, which only applies to corporations and some partnerships, and revise and extend the definition of affiliation."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl.rdf version of this ontology was modified per the FIBO 2.0 RFC to add missing definitions and labels, eliminate references to BusinessFacingTypes, replace min 1 QCRs with someValuesFrom, address other hygiene issues, and limit the burden of certain restrictions, such as those on stock corporation, for typical applications."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl.rdf version of this ontology was modified as a part of a simplification strategy for the organizational class hierarchy and to correct reasoning anomalies."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl.rdf version of this ontology was revised to allow any legal entity to participate in control relations rather than limiting control to a stock corporation, and simplifying others such that any party can be a significant shareholder, for example, rather than limiting this role to a legal entity."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl.rdf version of the ontology was modified to simplify control concepts and relations."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.0 FTF report."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl.rdf version of the ontology was modified to address text formatting hygiene issues."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2013-2022 Object Management Group, Inc."
-                  "Copyright (c) 2013-2022 EDM Council, Inc."],
-   :sm/dependsOn
-   ["https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/"],
-   :sm/fileAbbreviation "fibo-be-oac-cctl",
-   :sm/filename "CorporateControl.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.0 FTF report."]})
 
 (def Affiliate
   "party that is related to a legal entity, directly, or indirectly through one or more intermediaries, and controls, or is controlled by, or is under common control with that entity, typically determined by the degree of ownership"
@@ -175,9 +167,9 @@
 
 (def SignificantShareholder
   "party that owns a significant voting stake in an organization that is less than 50 percent but greater than some threshold"
-  {:db/ident :fibo-be-oac-cctl/SignificantShareholder,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Note that the concept of significance varies depending on the jurisdiction, and particularly with respect to reporting requirements. For example, in some cases, three (3) percent ownership of any class or series of shares is considered significant, and in others it means more than five or ten percent of the total combined voting power across all classes of securities.",
+   :db/ident :fibo-be-oac-cctl/SignificantShareholder,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
@@ -188,9 +180,9 @@
 
 (def Subsidiary
   "legal entity that is entirely or majority owned and controlled by another legal entity"
-  {:db/ident :fibo-be-oac-cctl/Subsidiary,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A subsidiary is a separate, distinct legal entity from its parent company(ies) for the purposes of taxation, regulatory compliance, and with respect to liability.",
+   :db/ident :fibo-be-oac-cctl/Subsidiary,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
@@ -201,10 +193,10 @@
 
 (def TotalControllingInterestParty
   "voting shareholder that owns 100 percent of the voting shares in some legal entity"
-  {:db/ident :fibo-be-oac-cctl/TotalControllingInterestParty,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "By virtue of holding 100 percent of the share ownership, the total controlling interest company also holds 100 percent of the controlling equity, if there is a difference. Therefore, it is both a total owner and a total controlling party.",
-   :fibo-fnd-utl-av/synonym "parent company",
+   :cmns-av/synonym "parent company",
+   :db/ident :fibo-be-oac-cctl/TotalControllingInterestParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
@@ -255,9 +247,9 @@
 
 (def hasDomesticUltimateParent
   "relates an organization to another recognized as its ultimate parent, within its country or jurisdiction of incorporation, if it has one"
-  {:db/ident :fibo-be-oac-cctl/hasDomesticUltimateParent,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "consensus definition of ultimate parent, with the split between domestic and global parent",
+   :db/ident :fibo-be-oac-cctl/hasDomesticUltimateParent,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
@@ -271,9 +263,9 @@
 
 (def hasGlobalUltimateParent
   "relates an organization to another recognized as its ultimate parent, if it has one"
-  {:db/ident :fibo-be-oac-cctl/hasGlobalUltimateParent,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "consensus definition of ultimate parent, with the split between domestic and global parent",
+   :db/ident :fibo-be-oac-cctl/hasGlobalUltimateParent,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",

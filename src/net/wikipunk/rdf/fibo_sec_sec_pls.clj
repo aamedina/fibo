@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-sec-sec-pls
   "This ontology defines concepts related to high-level securities pools."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 EDM Council, Inc."
+                       "Copyright (c) 2018-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
    :dcterms/abstract
    "This ontology defines concepts related to high-level securities pools.",
@@ -10,6 +12,7 @@
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"
@@ -21,7 +24,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
     "fibo-fbc-fct-fse"
@@ -49,7 +53,6 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
@@ -58,20 +61,12 @@
    :rdfs/label "Securities Pools Ontology",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/ version of this ontology was modified to correct a logical inconsistency with respect to the representation of baskets."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/ version of this ontology was modified to replace equity with owners equity in the definition of pool equity."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/ version of this ontology was modified to deprecate the concept of 'pool equity' which was not used elsewhere and was poorly defined and eliminate an improper restriction on managed investment."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/ version of this ontology was modified to eliminate the deprecated concept for pool equity."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/ version of this ontology was modified to eliminate duplication with concepts in LCC."
-    "The https://spec.edmcouncil.org/fibo/ontology/Securities/Pools.rdf version of this ontology was modified to move the definition of SpecialPurposeVehicle to this ontology to make it available for use more generally and augment the definition of an instrument pool with ownership."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2016-2022 EDM Council, Inc."
-                  "Copyright (c) 2018-2022 Object Management Group, Inc."],
-   :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FBC/"
-                  "https://www.omg.org/spec/LCC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/BE/"],
-   :sm/fileAbbreviation "fibo-sec-sec-pls",
-   :sm/filename "Pools.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/Securities/Pools.rdf version of this ontology was modified to move the definition of SpecialPurposeVehicle to this ontology to make it available for use more generally and augment the definition of an instrument pool with ownership."]})
 
 (def DebtPool
   "a pool consisting of debt instruments, such as bonds, loans or mortgages"
@@ -144,8 +139,8 @@
 
 (def ManagedInvestment
   "investment pool that is controlled by a professional investment manager who invests the pool in various financial instruments and assets that align with their investment objectives and is overseen by a board of directors"
-  {:db/ident :fibo-sec-sec-pls/ManagedInvestment,
-   :fibo-fnd-utl-av/adaptedFrom "Bloomberg LP",
+  {:cmns-av/adaptedFrom "Bloomberg LP",
+   :db/ident :fibo-sec-sec-pls/ManagedInvestment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
@@ -160,9 +155,9 @@
 
 (def Pool
   "a combination of resources for a common purpose or benefit"
-  {:db/ident :fibo-sec-sec-pls/Pool,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   :db/ident :fibo-sec-sec-pls/Pool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
@@ -176,9 +171,9 @@
 
 (def PoolConstituent
   "component of a pool"
-  {:db/ident :fibo-sec-sec-pls/PoolConstituent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The pool may be a pool of almost anything, brought together for some purpose. It differs from a less formal collection in that there are facts defined about the constituents and the proportions of these in the pool. Modeling note: A constituent of a pool may have facts which vary over time (such as balances) but the basic nature of the thing as a member of the pool remains the same, along with some facts which vary over time but which have a value as of the time they become members of the pool.",
+   :db/ident :fibo-sec-sec-pls/PoolConstituent,
    :owl/equivalentClass {:owl/onProperty     :fibo-fnd-arr-arr/isConstituentOf,
                          :owl/someValuesFrom :fibo-sec-sec-pls/Pool,
                          :rdf/type           :owl/Restriction},
@@ -222,9 +217,9 @@
 
 (def SecuritiesPoolConstituent
   "security that is included in a securities pool"
-  {:db/ident :fibo-sec-sec-pls/SecuritiesPoolConstituent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This is a pool of any kind of security, and not therefore necessarily a pool of debt, though usually it is debt securities which are pooled.",
+   :db/ident :fibo-sec-sec-pls/SecuritiesPoolConstituent,
    :owl/equivalentClass {:owl/onProperty     :fibo-fnd-arr-arr/isConstituentOf,
                          :owl/someValuesFrom :fibo-sec-sec-pls/SecuritiesPool,
                          :rdf/type           :owl/Restriction},

@@ -76,13 +76,13 @@
    :rdfs/seeAlso ["http://www.jamesodell.com/WhyShouldWeCareAboutAgents.pdf"
                   "http://www.jamesodell.com/WhatIsAnAgent.pdf"],
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-aap-agt/Name,
-                      :owl/onProperty :fibo-fnd-aap-agt/hasStructuredName,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-aap-agt/Text,
                       :owl/onProperty  :lcc-lr/hasName,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-aap-agt/Name,
+                      :owl/onProperty :fibo-fnd-aap-agt/hasStructuredName,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "something autonomous that can adapt to and interact with its environment"})
 

@@ -450,17 +450,14 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "potential agency m b s issuer"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-bp-iss-ambs/identifies,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
+     :owl/someValuesFrom :fibo-bp-iss-ambs/AssessPoolSuitablilityForIssuance,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-ambs/identifies,
      :owl/someValuesFrom :fibo-bp-iss-ambs/IdentifyConformingMortgage,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-ambs/adds,
-     :owl/someValuesFrom :fibo-bp-iss-ambs/AddMortgageToPool,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
-     :owl/someValuesFrom :fibo-bp-iss-ambs/ClassifyMortgage,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
-     :owl/someValuesFrom :fibo-bp-iss-ambs/AssessPoolSuitablilityForIssuance,
+    {:owl/onProperty     :fibo-bp-iss-ambs/purchases,
+     :owl/someValuesFrom :fibo-bp-iss-ambs/AcquireMortgage,
      :rdf/type           :owl/Restriction}
     :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcessActor
     {:owl/onProperty     :fibo-bp-iss-ambs/finalizes,
@@ -469,8 +466,11 @@
     {:owl/onProperty     :fibo-bp-iss-ambs/validates,
      :owl/someValuesFrom :fibo-bp-iss-ambs/ValidateConformance,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-ambs/purchases,
-     :owl/someValuesFrom :fibo-bp-iss-ambs/AcquireMortgage,
+    {:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
+     :owl/someValuesFrom :fibo-bp-iss-ambs/ClassifyMortgage,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-ambs/adds,
+     :owl/someValuesFrom :fibo-bp-iss-ambs/AddMortgageToPool,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",

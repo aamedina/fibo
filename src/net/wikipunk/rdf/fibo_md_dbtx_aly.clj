@@ -1764,3 +1764,47 @@
    :skos/definition
    {:rdf/language "en",
     :rdf/value    "The rounding convention used in the calculation method."}})
+
+(def ^{:private true} TradableDebtInstrument
+  {:db/ident        :fibo-sec-dbt-dbti/TradableDebtInstrument,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onProperty     :fibo-md-dbtx-aly/hasYield,
+                     :owl/someValuesFrom :fibo-md-dbtx-aly/DebtInstrumentYield,
+                     :rdf/type           :owl/Restriction}})
+
+(def ^{:private true} MortgageBackedSecurity
+  {:db/ident        :fibo-sec-dbt-mbs/MortgageBackedSecurity,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onProperty :fibo-md-dbtx-aly/hasWac,
+                     :owl/someValuesFrom
+                     :fibo-md-dbtx-aly/WeightedAverageCoupon,
+                     :rdf/type :owl/Restriction}})
+
+(def ^{:private true} PoolBackedSecurity
+  {:db/ident :fibo-sec-dbt-pbs/PoolBackedSecurity,
+   :rdf/type :owl/Class,
+   :rdfs/subClassOf
+   [{:owl/onProperty :fibo-fnd-rel-rel/isCharacterizedBy,
+     :owl/someValuesFrom
+     :fibo-md-dbtx-aly/InstrumentWeightedAverageRemainingMaturity,
+     :rdf/type :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-md-dbtx-aly/InstrumentWeightedAverageLoanAge,
+     :rdf/type           :owl/Restriction}]})
+
+(def ^{:private true} DebtPool
+  {:db/ident        :fibo-sec-sec-pls/DebtPool,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-md-dbtx-aly/hasMeasure,
+                      :owl/someValuesFrom :fibo-md-dbtx-aly/PrepaymentSpeed,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-md-dbtx-aly/hasFactor,
+                      :owl/someValuesFrom :fibo-md-dbtx-aly/PoolFactor,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-md-dbtx-aly/hasDefaultRate,
+                      :owl/someValuesFrom :fibo-md-dbtx-aly/DefaultRate,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-md-dbtx-aly/hasAnalytic,
+                      :owl/someValuesFrom
+                      :fibo-md-dbtx-aly/DebtPoolAnalyticalParameter,
+                      :rdf/type :owl/Restriction}]})

@@ -79,10 +79,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "statute law"},
-   :rdfs/subClassOf [:fibo-fnd-law-cor/Law
-                     {:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-law-cor/Law],
    :skos/altLabel "statutory law",
    :skos/definition "law enacted by a legislature"})
 
@@ -107,3 +107,24 @@
    :rdfs/range :lcc-cr/GeographicRegion,
    :skos/definition
    "indicates the geopolitical area covered by the jurisdiction"})
+
+(def ^{:private true} LegalAge
+  {:db/ident        :fibo-fnd-aap-ppl/LegalAge,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-law-jur/appliesIn,
+                     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                     :rdf/type           :owl/Restriction}})
+
+(def ^{:private true} TaxIdentificationScheme
+  {:db/ident        :fibo-fnd-pty-pty/TaxIdentificationScheme,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-law-jur/appliesIn,
+                     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                     :rdf/type           :owl/Restriction}})
+
+(def ^{:private true} TaxIdentifier
+  {:db/ident        :fibo-fnd-pty-pty/TaxIdentifier,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-law-jur/appliesIn,
+                     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                     :rdf/type           :owl/Restriction}})

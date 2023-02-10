@@ -858,10 +858,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "standardized options terms"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-     :owl/someValuesFrom :fibo-der-drc-opt/VanillaOption,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
+   [{:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
      :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-be-fct-pub/hasPublisher,
@@ -870,7 +867,10 @@
                            :fibo-der-drc-bsc/DerivativesClearingOrganization],
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/StandardizedTerms],
+    :fibo-fbc-fi-fi/StandardizedTerms
+    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+     :owl/someValuesFrom :fibo-der-drc-opt/VanillaOption,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1186,3 +1186,42 @@
    :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasQuantityValue,
    :skos/definition {:rdf/language "en",
                      :rdf/value "rate at which the contract may be exercised"}})
+
+(def ^{:private true} DerivativesClearingOrganization
+  {:db/ident :fibo-der-drc-bsc/DerivativesClearingOrganization,
+   :fibo-fnd-utl-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "For options, the derivatives clearing organization is responsible for clearing transactions for put and call options on common stocks and other equity issues, stock indexes, foreign currencies, interest rate composites and single-stock futures."},
+   :rdf/type :owl/Class})
+
+(def ^{:private true} Option
+  {:db/ident        :fibo-fbc-fi-fi/Option,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+                      :owl/someValuesFrom :xsd/decimal,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+                      :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+                      :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-der-drc-opt/OptionPremium,
+                      :owl/onProperty
+                      :fibo-der-drc-opt/hasCalculatedMarketValue,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-der-drc-opt/OptionHolder,
+                      :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
+                      :rdf/type       :owl/Restriction}]})

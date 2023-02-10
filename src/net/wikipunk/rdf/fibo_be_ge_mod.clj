@@ -1,23 +1,29 @@
 (ns net.wikipunk.rdf.fibo-be-ge-mod
   "The government entities module includes ontologies describing polities, government entities and their relations."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2021-2023 Object Management Group, Inc."
+                       "Copyright (c) 2021-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/MetadataBEGovernmentEntities/GovernmentEntitiesModule",
    :dcterms/abstract
    "The government entities module includes ontologies describing polities, government entities and their relations.",
    :dcterms/issued #inst "2021-06-28T22:00:00.000-00:00",
    :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/modified #inst "2023-01-27T23:00:00.000-00:00",
    :owl/imports
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/",
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/MetadataBEGovernmentEntities/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-mod"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/MetadataBEGovernmentEntities/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdf/uri
@@ -26,16 +32,13 @@
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/MetadataBEGovernmentEntities/",
    :rdfs/label
-   "Metadata about the EDMC-FIBO Business Entities (BE) Government Entities Module",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2015-2021 EDM Council, Inc."
-                  "Copyright (c) 2015-2021 Object Management Group, Inc."],
-   :sm/fileAbbreviation "fibo-be-ge-mod",
-   :sm/filename "MetadataBEGovernmentEntities.rdf"})
+   "Metadata about the EDMC-FIBO Business Entities (BE) Government Entities Module"})
 
 (def GovernmentEntitiesModule
   "The government entities module includes ontologies describing polities, government entities and their relations."
-  {:db/ident :fibo-be-ge-mod/GovernmentEntitiesModule,
+  {:cmns-av/copyright ["Copyright (c) 2021-2023 Object Management Group, Inc."
+                       "Copyright (c) 2021-2023 EDM Council, Inc."],
+   :db/ident :fibo-be-ge-mod/GovernmentEntitiesModule,
    :dcterms/abstract
    "The government entities module includes ontologies describing polities, government entities and their relations.",
    :dcterms/hasPart
@@ -59,12 +62,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
-   "Financial Industry Business Ontology (FIBO) Business Entities (BE) Government Entities Module",
-   :rdf/type [:owl/NamedIndividual :sm/Module],
+   ["Financial Industry Business Ontology (FIBO) Business Entities (BE) Government Entities Module"
+    "FIBO BE Government Entities Module"],
+   :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/MetadataBEGovernmentEntities/",
-   :rdfs/label "Government Entities",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"],
-   :sm/copyright ["Copyright (c) 2015-2021 Object Management Group, Inc."
-                  "Copyright (c) 2015-2021 EDM Council, Inc."],
-   :sm/moduleAbbreviation "fibo-be-ge"})
+   :rdfs/label "government entities module",
+   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})
