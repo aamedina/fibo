@@ -77,8 +77,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfa/prefix "fibo-fbc-dae-crt",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
@@ -282,33 +280,12 @@
    [{:owl/onProperty     :fibo-fbc-dae-crt/hasCoveragePeriod,
      :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportProduct,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-dae-crt/CreditTradeline,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :lcc-cr/isClassifiedBy,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportCategory,
+    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditMessage,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
      :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :lcc-lr/isIdentifiedBy,
-     :owl/someValuesFrom :lcc-lr/Identifier,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-dae-crt/CreditInquiry,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-dae-crt/concernsParty,
-     :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditMessage,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-arr-rt/RatingReport
     {:owl/onProperty     :fibo-fnd-arr-doc/hasDataSource,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom
@@ -316,11 +293,32 @@
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-dae-crt/CreditTradeline,
+     :owl/onProperty :fibo-fnd-rel-rel/comprises,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportProduct,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :lcc-cr/isClassifiedBy,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportCategory,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :lcc-lr/isIdentifiedBy,
+     :owl/someValuesFrom :lcc-lr/Identifier,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-dae-crt/CreditRating,
      :owl/onProperty :fibo-fnd-rel-rel/comprises,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
+    :fibo-fnd-arr-rt/RatingReport
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-dae-crt/CreditInquiry,
+     :owl/onProperty :fibo-fnd-rel-rel/comprises,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-dae-crt/concernsParty,
+     :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "report describing the creditworthiness and related credit attributes of a borrower"})

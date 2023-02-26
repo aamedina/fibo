@@ -47,7 +47,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfa/prefix "fibo-fnd-pty-pty",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "Parties Ontology",
@@ -133,14 +132,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "party in role",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty :fibo-fnd-pty-pty/hasCommencementDate,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-rl/AgentInRole
-                     {:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-rl/AgentInRole
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-dt-fd/Date,
+                      :owl/onProperty :fibo-fnd-pty-pty/hasCommencementDate,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "relative concept that ties a person or organization to a specific role they stand in",

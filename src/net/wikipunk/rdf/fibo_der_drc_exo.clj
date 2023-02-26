@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-der-drc-exo
   "This ontology covers exotic options, a category of options contracts that differ from traditional options in their payment structures, expiration dates, and strike prices. The underlying asset or security can vary with exotic options allowing for more investment alternatives. Exotic options are hybrid securities that are often customizable to the needs of the investor, and most are traded over the counter (OTC)."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 Object Management Group, Inc."
+                       "Copyright (c) 2015-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
    :dcterms/abstract
    "This ontology covers exotic options, a category of options contracts that differ from traditional options in their payment structures, expiration dates, and strike prices. The underlying asset or security can vary with exotic options allowing for more investment alternatives. Exotic options are hybrid securities that are often customizable to the needs of the investor, and most are traded over the counter (OTC).",
@@ -20,13 +22,15 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Options/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/ExoticOptions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-der-drc-bsc"
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
     "fibo-der-drc-exo"
@@ -66,21 +70,16 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
    :rdfa/prefix "fibo-der-drc-exo",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Exotic Options Ontology"},
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/ version of this ontology was modified to rephrase definitions on knock-in and knock-out options."
-    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/ version of this ontology was modified to add a definition for European options, such as LEPOs."],
-   :sm/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
-                  "Copyright (c) 2015-2023 Object Management Group, Inc."]})
+   ["The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/ version of this ontology was modified to add a definition for European options, such as LEPOs, and to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/ version of this ontology was modified to rephrase definitions on knock-in and knock-out options."]})
 
 (def ArithmeticCalculationStrategy
   "strategy that uses an arithmetic mean calculation"
@@ -95,43 +94,43 @@
 
 (def AsianOption
   "option whose exercise terms involve a payoff determined by the average underlying price (either the strike price or the settlement price) of the underlying asset over a predetermined period"
-  {:db/ident :fibo-der-drc-exo/AsianOption,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, 2019."},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "These options allow the buyer to purchase (or sell) the underlying asset at the average price instead of the spot price. There are various ways to interpret the word 'average,' and that needs to be specified in the options contract. Typically, the average price is a geometric or arithmetic average of the price of the underlying asset at discreet intervals, which are also specified in the options contract. Because of the averaging feature, Asian options reduce the volatility inherent in the option; therefore, Asian options are typically cheaper than European or American options. They are used by traders who are exposed to the underlying asset over some time, such as consumers and suppliers of commodities, etc."},
+   :db/ident :fibo-der-drc-exo/AsianOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Asian option"},
-   :rdfs/subClassOf [{:owl/onClass    :fibo-der-drc-exo/AveragingStrategy,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+   :rdfs/subClassOf [{:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-der-drc-exo/usesWeightedAverage,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-der-drc-exo/usesCurrencyInAveraging,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-der-drc-opt/ExoticOption
+                      :rdf/type        :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
                       :owl/onProperty :fibo-sec-dbt-ex/hasExerciseDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :xsd/boolean,
-                      :owl/onProperty  :fibo-der-drc-exo/usesWeightedAverage,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
-                      :owl/onProperty :fibo-der-drc-exo/hasAsianTailPeriod,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-exo/AsianOptionClassifier,
                       :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-der-drc-opt/ExoticOption
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-der-drc-exo/usesCurrencyInAveraging,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-der-drc-exo/AveragingStrategy,
+                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
+                      :owl/onProperty :fibo-der-drc-exo/hasAsianTailPeriod,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
@@ -200,33 +199,33 @@
 
 (def BarrierOption
   "option whose final exercise depends upon the path taken by the price of an underlying instrument, i.e., whose payoff depends on whether or not the underlying asset has reached or exceeded a predetermined price"
-  {:db/ident :fibo-der-drc-exo/BarrierOption,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, 2019."},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
-     "Barrier features include any terms related to exercising the option ahead of the expiry date."}
+     "A barrier option can be a knock-out, meaning it expires worthless if the underlying exceeds a certain price, limiting profits for the holder and limiting losses for the writer. It can also be a knock-in, meaning it has no value until the underlying reaches a certain price. Barrier options can be puts or calls. Barrier options typically have cheaper premiums than traditional vanilla options, primarily because the barrier increases the chances of the option expiring worthless. A trader may choose the cheaper (relative to a comparable vanilla) barrier option if they feel it is quite likely the underlying will hit the barrier."}
     {:rdf/language "en",
      :rdf/value
-     "A barrier option can be a knock-out, meaning it expires worthless if the underlying exceeds a certain price, limiting profits for the holder and limiting losses for the writer. It can also be a knock-in, meaning it has no value until the underlying reaches a certain price. Barrier options can be puts or calls. Barrier options typically have cheaper premiums than traditional vanilla options, primarily because the barrier increases the chances of the option expiring worthless. A trader may choose the cheaper (relative to a comparable vanilla) barrier option if they feel it is quite likely the underlying will hit the barrier."}],
+     "Barrier features include any terms related to exercising the option ahead of the expiry date."}],
+   :db/ident :fibo-der-drc-exo/BarrierOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "barrier option"},
-   :rdfs/subClassOf [:fibo-der-drc-opt/ExoticOption
-                     {:owl/onProperty     :fibo-der-drc-exo/hasMonitoringPeriod,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-exo/hasMonitoringPeriod,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-exo/isAboveStrikePrice,
-                      :owl/someValuesFrom :xsd/boolean,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-der-drc-exo/hasMonitoringFrequency,
                       :owl/someValuesFrom :xsd/positiveInteger,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-der-drc-opt/ExoticOption
+                     {:owl/onProperty     :fibo-der-drc-exo/isAboveStrikePrice,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -238,33 +237,33 @@
 
 (def ChooserOption
   "exotic option that allows its holder (buyer) to exercise the right to buy (call) or sell (put) specified assets at a fixed price whereby the buyer does not have to decide whether the contract will be a put or a call until an agreed future date, prior to expiration"
-  {:db/ident :fibo-der-drc-exo/ChooserOption,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    [{:rdf/language "en",
      :rdf/value
      "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, 2019."}
     {:rdf/language "en",
      :rdf/value
      "Commodity Futures Trading Commission (CFTC) glossary, https://www.cftc.gov/LearnAndProtect/EducationCenter/CFTCGlossary/glossary_c.html"}],
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "A chooser option is an option contract that allows the holder to decide whether it is a call or put prior to the expiration date. Chooser options usually have the same strike price and expiration date regardless of what decision the holder makes. Because the option could benefit from upside or downside movement, chooser options provide investors a great deal of flexibility and thus may cost more than comparable vanilla options. Chooser options are typically European style, and have one strike price and one expiration date regardless of whether the option is exercised as a call or put."},
+   :db/ident :fibo-der-drc-exo/ChooserOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "chooser option"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-exo/hasOptionTypeElectionDate,
+   [:fibo-der-drc-opt/ExoticOption
+    {:owl/onProperty     :fibo-der-drc-exo/hasOptionTypeElectionDate,
      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
      :owl/someValuesFrom {:owl/unionOf [:fibo-der-drc-opt/CallOption
                                         :fibo-der-drc-opt/PutOption],
                           :rdf/type    :owl/Class},
-     :rdf/type           :owl/Restriction}
-    :fibo-der-drc-opt/ExoticOption],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -276,16 +275,16 @@
 
 (def CliquetOption
   "exotic option that is a series of at-the-money (ATM) options, either puts or calls, where each successive option becomes active when the previous one expires"
-  {:db/ident :fibo-der-drc-exo/CliquetOption,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
      "A cliquet is a series of forward start options, all related to each other. Each forward start option represents the advance purchase of a put, or call, option with an at-the-money (ATM) strike price to be determined at a later date, typically when the option becomes active. A forward start option becomes active at a specified date in the future. The premium is paid in advance, while the time to expiration and the underlying security are established at the time the forward start option is purchased. If at the first settlement date the underlying security trades below the strike price of the option (for a call), then it expires worthless and resets to the price of the underlying security at the time of settlement. If at the end of the next settlement the underlying security trades above the new strike, the holder may elect to receive the difference between the market price of the underlying security and the strike price. Alternatively, the holder can let it ride to receive the sum of all payouts at maturity. The main advantage of initiating a cliquet is, if an investor expects volatility to rise, they can lock in their profits at predetermined levels and thus maximize their overall portfolio return."}
     {:rdf/language "en",
      :rdf/value
      "A cliquet is a cash-settled, exotic option that settles at predetermined dates and then resets its strike price based on the price of the underlying security at the time of settlement. Each new option within the cliquet enters into force when the previous option expires. The total premium and the exact reset dates are known at the time of transacting a cliquet. Investors can opt to receive their payout when each option expires or wait until the entire series plays out."}],
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "rachet option"},
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "rachet option"},
+   :db/ident :fibo-der-drc-exo/CliquetOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -302,11 +301,11 @@
 
 (def CommodoreOption
   "exotic option consisting of a number of digital barrier options that pay a coupon if a pre-determined level of the underlying or basket of underlyings is reached"
-  {:db/ident :fibo-der-drc-exo/CommodoreOption,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Sometimes the digital barrier increases with the number of years since the trade began. All of the options are active from the start of the trade."},
+   :db/ident :fibo-der-drc-exo/CommodoreOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -327,13 +326,13 @@
 
 (def CompoundOption
   "exotic option for which the underlying asset is another option"
-  {:db/ident :fibo-der-drc-exo/CompoundOption,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Therefore, there are two strike prices and two exercise dates. They are available for any combination of calls and puts. For example, a put where the underlying is a call option or a call where the underlying is a put option. The underlying is the second option, while the initial option is called the overlying. If the compound option is exercised, there are two premiums."},
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "split-fee options"},
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "split-fee options"},
+   :db/ident :fibo-der-drc-exo/CompoundOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -354,17 +353,17 @@
 
 (def DigitalOption
   "exotic option that has a pre-determined payout if the option is in-the-money and the payoff condition is satisfied"
-  {:db/ident :fibo-der-drc-exo/DigitalOption,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, 2019."},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "There is an upfront fee called the premium for digital options, which is the maximum loss for the option. Unlike traditional options, digital options don't convert or exercise to the underlying asset's shares. Instead, they pay out a fixed reward if the asset's price is above or below the option's strike price."},
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "binary option"},
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "binary option"},
+   :db/ident :fibo-der-drc-exo/DigitalOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -382,11 +381,11 @@
 
 (def DoubleBarrierOption
   "barrier option applied to currencies or over the counter stocks that works as a binary, or digital option in that it pays out only under defined circumstances, or it is worthless, at expiration"
-  {:db/ident :fibo-der-drc-exo/DoubleBarrierOption,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Considered an exotic option, a double barrier option is a combination of two single barrier options, with one barrier above and one barrier below the current price of the underlying. It is a bet by the holder that the underlying asset will move significantly, in the case of a knock-in barrier option, or will move by a very small amount, in the case of a knock-out barrier option, over the life of the contract. Traders use these options when they have an opinion on volatility but not on the direction of the underlying asset's next price move. A barrier option is a type of option where the payoff, and the very existence of the option, depends on whether or not the underlying asset reaches a predetermined price."},
+   :db/ident :fibo-der-drc-exo/DoubleBarrierOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -394,18 +393,18 @@
                 :rdf/value    "double barrier option"},
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/PercentageMonetaryAmount,
-                      :owl/onProperty :fibo-der-drc-exo/hasFirstRebateAmount,
+                      :owl/onProperty :fibo-der-drc-exo/hasSecondRebateAmount,
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-exo/BarrierOption
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fnd-acc-cur/PercentageMonetaryAmount,
+                      :owl/onProperty :fibo-der-drc-exo/hasFirstRebateAmount,
+                      :rdf/type :owl/Restriction}
                      {:owl/onProperty :fibo-der-drc-exo/hasSecondBarrierPrice,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty :fibo-der-drc-exo/hasFirstBarrierPrice,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
-                      :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-acc-cur/PercentageMonetaryAmount,
-                      :owl/onProperty :fibo-der-drc-exo/hasSecondRebateAmount,
                       :rdf/type :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
@@ -455,14 +454,14 @@
 
 (def ForwardStartOption
   "exotic option that is fully specified with respect to a set expiry date, underlying asset and other parameters, purchased and paid for on initiation, but that becomes active at a set activation date with a strike price determined at the time of activation"
-  {:db/ident :fibo-der-drc-exo/ForwardStartOption,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
      "The only unknown for the contract is the strike price. In terms of pricing the contract, the future price of the underlying asset is also unknown. The contract typically stipulates some parameters for where the strike price will be in relation to the underlying asset's price."}
     {:rdf/language "en",
      :rdf/value
      "Forward start options typically attempt to keep future strike prices at the money or near the money. In this way, the holder will have the right, but not the obligation, to buy (call) or sell (put) the underlying asset in the future at or near the then-current market price. Knowing where the strike price will be in relation to the underlying's price makes it easier to come up with the premium (cost) of the option, which is also typically determined and paid at the initiation of the contract prior to the activation date. If, at the expiration date, the underlying trades below the strike price of the option (for a call), then it expires worthless. If the underlying is above the strike (for a call), then the holder exercises it and owns the underlying at the strike price. For a put option, if the underlying is below the strike price, the option has value and will be sold or exercised to realize a gain. If the underlying is above the strike price, the option will expire worthless. Typically, as with most options, the holder may sell the option if it is in the money and take the cash instead of exercising the option. Since it is an exotic option, the seller and buyer of the option may also agree to settle the option with cash instead of delivering the underlying. Once a forward start option becomes active (strike price is set), then the option is valued like a vanilla option."}],
+   :db/ident :fibo-der-drc-exo/ForwardStartOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -500,11 +499,11 @@
 
 (def InterestRateCapOption
   "interest rate derivative in which the buyer receives payments at the end of each period in which the interest rate exceeds the agreed strike price"
-  {:db/ident :fibo-der-drc-exo/InterestRateCapOption,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The interest in each period is effectively capped by the strike rate. That is, the rate of interest may not go above the strike rate because the holder is expected to exercise the option to take the strike as the rate of interest instead."},
+   :db/ident :fibo-der-drc-exo/InterestRateCapOption,
    :owl/disjointWith :fibo-der-drc-exo/InterestRateFloorOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -538,11 +537,11 @@
 
 (def KnockInOption
   "barrier option that is not triggered until a certain price threshold is met"
-  {:db/ident :fibo-der-drc-exo/KnockInOption,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "If the price is never reached, it is as if the contract never existed. However, if the underlying asset reaches a specified barrier, the knock-in option comes into existence. The difference between a knock-in and knock-out option is that a knock-in option comes into existence only when the underlying security reaches a barrier, while a knock-out option ceases to exist when the underlying security reaches a barrier."},
+   :db/ident :fibo-der-drc-exo/KnockInOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -567,11 +566,11 @@
 
 (def KnockOutOption
   "barrier option with a built-in mechanism to expire as worthless if a specified price level in the underlying asset is reached"
-  {:db/ident :fibo-der-drc-exo/KnockOutOption,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "A knock-out option sets a cap on the level an option can reach in the holder's favor. As knock-out options limit the profit potential for the option buyer, they can be purchased for a smaller premium than an equivalent option without a knock-out stipulation."},
+   :db/ident :fibo-der-drc-exo/KnockOutOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -596,18 +595,18 @@
 
 (def LookbackOption
   "exotic option that minimizes the uncertainties related to the timing of market entry, providing the holder the advantage of knowing history when determining when to exercise their option"
-  {:db/ident :fibo-der-drc-exo/LookbackOption,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, 2019."},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
      "Lookback options are cash settled options, which means the holder receives a cash settlement at execution based on the most advantageous differential between high and low prices during the purchase period. Sellers of lookback options would price the option at or near the widest expected distance of price differential based on past volatility and demand for the options. The cost to purchase this option would be taken up front. The settlement will equate to the profits they could have made from buying or selling the underlying asset. If the settlement was greater than the initial cost of the option, then the option buyer would have profit at settlement, otherwise loss."}
     {:rdf/language "en",
      :rdf/value
      "As a type of exotic option, the lookback allows the user to 'look back,' or review, the prices of an underlying asset over the lifespan of the option after it has been purchased. The holder may then exercise the option based on the most beneficial price of the underlying asset. The holder can take advantage of the widest differential between the strike price and the price of the underlying asset. Lookback options do not trade on major exchanges. Instead, they are unlisted and trade over-the-counter (OTC). This type of option reduces uncertainties associated with the timing of market entry and reduces the chances the option will expire worthlessly. Lookback options are expensive to execute, so these advantages come at a cost."}],
+   :db/ident :fibo-der-drc-exo/LookbackOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -624,14 +623,14 @@
 
 (def LookbackStrikeTerms
   "terms specifying the value of the underlying asset based on analysis during a specific period, typically ending in the maturity of the option, whereby the payoff is determined by comparing the strike price with the value of the selected price"
-  {:db/ident :fibo-der-drc-exo/LookbackStrikeTerms,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
      "In the case of a fixed strike, the terms depend on whether the option is a call or put. If it is a call, the calculated payout reflects the difference between a running maximum value of the observable during the lookback period, and the pre-agreed strike."}
     {:rdf/language "en",
      :rdf/value
      "The payoff may either be the difference between a fixed, pre-agreed Strike Price and the observable, or the difference between the best or worst valuable of the observable and the value of that same observable at maturity of the contract (these are the Fixed and Floating lookback terms respectively). This (per review at Nordea) is not mutually exclusive with the terms for Fixed Strike and Resettable Strike, that is, either of those kinds of strike terms may apply, and Lookback strike terms may also apply."}],
+   :db/ident :fibo-der-drc-exo/LookbackStrikeTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -639,20 +638,20 @@
                 :rdf/value    "lookback strike terms"},
    :rdfs/subClassOf
    [:fibo-der-drc-bsc/DerivativeTerms
-    {:owl/onProperty     :fibo-der-drc-exo/hasLookbackPeriod,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
-     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-exo/FloatingLookbackStrikeExpression,
      :owl/onProperty :fibo-fnd-utl-alx/hasExpression,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-     :owl/someValuesFrom :fibo-ind-ind-ind/PriceStructure,
+    {:owl/onProperty     :fibo-der-drc-exo/hasLookbackPeriod,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-exo/FixedLookbackStrikeExpression,
      :owl/onProperty :fibo-fnd-utl-alx/hasExpression,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+     :owl/someValuesFrom :fibo-ind-ind-ind/PriceStructure,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -660,13 +659,13 @@
 
 (def LowExercisePriceOption
   "exotic option that is a European-style call option with an exercise price of one cent that mimics a futures contract"
-  {:db/ident :fibo-der-drc-exo/LowExercisePriceOption,
-   :fibo-fnd-utl-av/abbreviation {:rdf/language "en",
-                                  :rdf/value    "LEPO"},
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation {:rdf/language "en",
+                          :rdf/value    "LEPO"},
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "LEPOs function as deep-in-the-money options similar to the stock itself. Both buyer and seller of a LEPO operate on margin. LEPO options are not available on any U.S. exchanges.  Since the strike price is so close to zero, the investor purchasing the LEPO gains most of the features of owning the share directly with the major exceptions of dividends and voting rights. They are only available with European style expirations."},
+   :db/ident :fibo-der-drc-exo/LowExercisePriceOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -684,14 +683,14 @@
 
 (def MountainRangeOption
   "exotic option based on multiple underlying securities"
-  {:db/ident :fibo-der-drc-exo/MountainRangeOption,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
      "These options blend some of the key characteristics of basket-style or rainbow options—both of which have more than one underlying security or asset—and range options with multiyear time ranges. Prices are based on multiple variables - notably the correlations between the individual securities in the basket."}
     {:rdf/language "en",
      :rdf/value
      "The price of a mountain range option is based on multiple variables, the most important of which are the correlations between the individual securities in the basket. Some options have discrete payout levels, such as double the investment or triple the investment, if certain performance metrics are hit by the underlying securities while the option is in effect. Mountain range options cannot be priced with standard closed-form approaches. These exotic instruments instead require Monte Carlo simulation methods. Effects such as volatility skew, which is found in most options, can be even more pronounced within mountain range options."}],
+   :db/ident :fibo-der-drc-exo/MountainRangeOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -745,23 +744,23 @@
 
 (def RainbowOption
   "exotic option linked to the performances of two or more underlying assets"
-  {:db/ident :fibo-der-drc-exo/RainbowOption,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
-     "Rainbbow options can speculate on the best performer in the group or minimum performances of all the underlying assets at one time. Each underlying may be called a color so the sum of all of these factors makes up a rainbow. These structures can be rather exotic and made for institutional clients when referring to financial assets. Rainbow options can be structured in many ways depending on how the performances of each underlying asset are considered. Some pay off based on the best or worst performance among the underlying assets. In other words, it looks at the top or bottom performance and pays off based on that single asset. These are sometimes called 'best of' or 'worst of' rainbow options."}
+     "Rainbow options are usually calls or puts on the best or worst of n underlying assets. Like a basket option, which is written on a group of assets and pays out on a weighted-average gain on the basket as a whole, a rainbow option also considers a group of assets, but usually pays out on the level of one of them. A simple example is a call rainbow option written on FTSE 100, Nikkei and S&P 500 which will pay out the difference between the strike price and the level of the index that has risen by the largest amount of the three."}
     {:rdf/language "en",
      :rdf/value
-     "Rainbow options are usually calls or puts on the best or worst of n underlying assets. Like a basket option, which is written on a group of assets and pays out on a weighted-average gain on the basket as a whole, a rainbow option also considers a group of assets, but usually pays out on the level of one of them. A simple example is a call rainbow option written on FTSE 100, Nikkei and S&P 500 which will pay out the difference between the strike price and the level of the index that has risen by the largest amount of the three."}],
+     "Rainbbow options can speculate on the best performer in the group or minimum performances of all the underlying assets at one time. Each underlying may be called a color so the sum of all of these factors makes up a rainbow. These structures can be rather exotic and made for institutional clients when referring to financial assets. Rainbow options can be structured in many ways depending on how the performances of each underlying asset are considered. Some pay off based on the best or worst performance among the underlying assets. In other words, it looks at the top or bottom performance and pays off based on that single asset. These are sometimes called 'best of' or 'worst of' rainbow options."}],
+   :db/ident :fibo-der-drc-exo/RainbowOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "rainbow option"},
-   :rdfs/subClassOf [:fibo-der-drc-opt/ExoticOption
-                     {:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
                       :owl/someValuesFrom :fibo-sec-sec-bsk/MixedBasket,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-der-drc-opt/ExoticOption],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -779,13 +778,13 @@
 
 (def Swaption
   "over-the-counter option that confers the right but not the obligation, to enter into a swap transaction at some time in the future"
-  {:db/ident :fibo-der-drc-exo/Swaption,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "A swaption, also known as a swap option, refers to an option to enter into an interest rate swap or some other type of swap. In exchange for an options premium, the buyer gains the right but not the obligation to enter into a specified swap agreement with the issuer on a specified future date."},
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "swap option"},
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "swap option"},
+   :db/ident :fibo-der-drc-exo/Swaption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -818,11 +817,11 @@
 
 (def hasFirstBarrierPrice
   "has price (or level) that activates or deactivates the option"
-  {:db/ident :fibo-der-drc-exo/hasFirstBarrierPrice,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "For a double barrier option, this is the level of the first barrier. Otherwise it is the only barrier price."},
+   :db/ident :fibo-der-drc-exo/hasFirstBarrierPrice,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
@@ -837,11 +836,11 @@
 
 (def hasFirstRebateAmount
   "indicates the percentage of the premium paid by the holder for the option"
-  {:db/ident :fibo-der-drc-exo/hasFirstRebateAmount,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Both knock-out and knock-in barrier options can contain a provision to provide rebates to holders, if the option does not reach the barrier price and becomes worthless."},
+   :db/ident :fibo-der-drc-exo/hasFirstRebateAmount,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",

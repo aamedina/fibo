@@ -46,8 +46,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
    :rdfa/prefix "fibo-ind-ir-cm",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
@@ -5011,6 +5009,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
    :rdfs/label "USD-Annual Swap Rate-4:00-TRADITION"})
 
+(def USD-BA-H.15
+  "USD-BA-H.15"
+  {:cmns-av/abbreviation "USD-BA-H.15",
+   :cmns-av/explanatoryNote
+   "Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
+   :db/ident :fibo-ind-ir-cm/USD-BA-H.15,
+   :fibo-fnd-rel-rel/isProducedBy
+   :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/USDollar,
+   :rdf/type [:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual],
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
+   :rdfs/label "USD-BA-H.15"})
+
 (def USD-BA-Reference_Dealers
   "USD-BA-Reference Dealers"
   {:cmns-av/abbreviation "USD-BA-Reference Dealers",
@@ -5046,6 +5058,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
    :rdfs/label "USD-BSBY"})
+
+(def USD-CD-H.15
+  "USD-CD-H.15"
+  {:cmns-av/abbreviation "USD-CD-H.15",
+   :cmns-av/explanatoryNote
+   "Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
+   :db/ident :fibo-ind-ir-cm/USD-CD-H.15,
+   :fibo-fnd-rel-rel/isProducedBy
+   :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/USDollar,
+   :rdf/type [:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual],
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
+   :rdfs/label "USD-CD-H.15"})
 
 (def USD-CD-Reference_Dealers
   "USD-CD-Reference Dealers"
@@ -5607,6 +5633,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
    :rdfs/label "USD-SandP Index High Grade"})
+
+(def USD-TBILL-H.15
+  "USD-TBILL-H.15"
+  {:cmns-av/abbreviation "USD-TBILL-H.15",
+   :cmns-av/explanatoryNote
+   "Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
+   :db/ident :fibo-ind-ir-cm/USD-TBILL-H.15,
+   :fibo-fnd-rel-rel/isProducedBy
+   :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/USDollar,
+   :rdf/type [:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual],
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
+   :rdfs/label "USD-TBILL-H.15"})
 
 (def USD-TBILL-H.15-Bloomberg
   "USD-TBILL-H.15-Bloomberg"

@@ -1,14 +1,17 @@
 (ns net.wikipunk.rdf.fibo-bp-iss-ipo
   "Issuance process for equity instruments that are issued via an Initial Public Offering (IPO)."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
    :dcterms/abstract
    "Issuance process for equity instruments that are issued via an Initial Public Offering (IPO).",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesListings/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceProcess/"
@@ -24,7 +27,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-bp-iss-doc"
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceDocuments/",
     "fibo-bp-iss-ipo"
@@ -58,17 +62,13 @@
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-    "xs" "http://www.w3.org/2001/XMLSchema#"},
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
    :rdfa/prefix "fibo-bp-iss-ipo",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "EquitiesIPOIssuance"},
-   :sm/fileAbbreviation "fibo-bp-iss-ipo"})
+                :rdf/value    "EquitiesIPOIssuance"}})
 
 (def AgreeBasisForAllocation
   "agree basis for allocation"
@@ -264,8 +264,8 @@
 
 (def InitialPublicOfferingProcessStep
   "initial public offering process step"
-  {:db/ident :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep,
-   :fibo-fnd-utl-av/abbreviation "IPO process step",
+  {:cmns-av/abbreviation "IPO process step",
+   :db/ident :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",

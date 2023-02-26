@@ -101,8 +101,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
    :rdfa/prefix "fibo-ind-ir-mdp",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
@@ -205,6 +203,21 @@
    :rdfs/label "European Money Markets Institute (EMMI) benchmark publisher",
    :skos/definition
    "individual representing the European Money Markets Institute (EMMI) functional entity that is an international financial information publisher, responsible for the publication of euro-based benchmarks, including Euribor"})
+
+(def FederalReserveBoardH.15RateResetTimeOfDay
+  "the time of day that the Federal Reserve Board publishes Selected Interest Rates (Daily) in Schedule H.15"
+  {:cmns-av/adaptedFrom "https://www.federalreserve.gov/releases/h15/",
+   :db/ident :fibo-ind-ir-mdp/FederalReserveBoardH.15RateResetTimeOfDay,
+   :fibo-fnd-dt-bd/hasBusinessDayAdjustment
+   :fibo-fbc-fct-bci/NewYorkFederalReserveBusinessDay,
+   :fibo-fnd-dt-fd/hasTimeValue "T16:15:00",
+   :fibo-fnd-plc-loc/hasBusinessCenter :fibo-fbc-fct-bci/New_York,
+   :rdf/type [:fibo-fbc-dae-dbt/RateResetTimeOfDay :owl/NamedIndividual],
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
+   :rdfs/label "Federal Reserve Board H.15 rate reset time of day",
+   :skos/definition
+   "the time of day that the Federal Reserve Board publishes Selected Interest Rates (Daily) in Schedule H.15"})
 
 (def FenicsMarketData
   "Fenics Market Data functional entity that is a financial service and market data provider and division of BGC Partners"

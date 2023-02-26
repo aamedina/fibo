@@ -58,8 +58,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfa/prefix "fibo-be-ptr-ptr",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
@@ -147,10 +145,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "limited liability partnership",
-   :rdfs/subClassOf [:fibo-be-ptr-ptr/Partnership
-                     {:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
                       :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-be-ptr-ptr/Partnership],
    :skos/definition
    "partnership that has general partners but provides its individual partners some level of protection against personal liability for certain partnership liabilities",
    :skos/example
@@ -179,11 +177,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "limited partnership",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-be-ptr-ptr/hasLimitedPartner,
-                      :owl/someValuesFrom :fibo-be-ptr-ptr/LimitedPartner,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
                       :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ptr-ptr/hasLimitedPartner,
+                      :owl/someValuesFrom :fibo-be-ptr-ptr/LimitedPartner,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-ptr-ptr/Partnership],
    :skos/definition
@@ -231,25 +229,25 @@
    :rdfs/label "partnership",
    :rdfs/subClassOf
    [:fibo-be-le-lp/LegalEntity
+    {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
+     :rdf/type           :owl/Restriction}
+    :fibo-be-le-lp/BusinessEntity
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-be-le-lp/ProfitObjective,
      :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
-     :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :lcc-lr/hasMember,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
                           :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-be-le-lp/BusinessEntity],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "association of two or more legal persons to carry on as co-owners a business for profit"})
 
 (def PartnershipAgreement
   "contract between partners in a partnership that establishes the terms and conditions of the relationship between the partners"
-  {:cmns-av/aynonym "articles of partnership",
+  {:cmns-av/synonym "articles of partnership",
    :db/ident :fibo-be-ptr-ptr/PartnershipAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy

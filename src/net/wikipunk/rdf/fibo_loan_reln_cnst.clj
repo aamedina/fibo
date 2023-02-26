@@ -1,9 +1,11 @@
 (ns net.wikipunk.rdf.fibo-loan-reln-cnst
   "Construction loans are loans in name only, in that the concept referred to as a construction loan is effectively a credit facility, with separate draw-downs (loans as defined in these ontologies) being enabled upon evidence of completion of agreed stages of the construction project. Note that for completion this ontology will need to be extended with a number of project management concepts describing the parameters of the construction project that are referred to in the contract for this facility. Some basic project management terms such as milestones are already included but will need framing within more foundational concepts for project management."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2016-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :dcterms/abstract
    "Construction loans are loans in name only, in that the concept referred to as a construction loan is effectively a credit facility, with separate draw-downs (loans as defined in these ontologies) being enabled upon evidence of completion of agreed stages of the construction project. Note that for completion this ontology will need to be extended with a number of project management concepts describing the parameters of the construction project that are referred to in the contract for this facility. Some basic project management terms such as milestones are already included but will need framing within more foundational concepts for project management.",
+   :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"
@@ -15,11 +17,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/LoanEvents/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"],
+    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-dbt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
     "fibo-fnd-acc-cur"
@@ -43,23 +47,19 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfa/prefix "fibo-loan-reln-cnst",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "Construction Loans Ontology"},
-   :sm/fileAbbreviation "fibo-loan-reln-cnst"})
+                :rdf/value    "Construction Loans Ontology"}})
 
 (def ConstructionLoan
   "loan covering construction and development costs, secured by a mortgage on the property financed"
-  {:db/ident :fibo-loan-reln-cnst/ConstructionLoan,
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "construction mortgage"},
+  {:cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "construction mortgage"},
+   :db/ident :fibo-loan-reln-cnst/ConstructionLoan,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
@@ -143,8 +143,8 @@
 
 (def ConstructionType_MobileHome
   "a dwelling unit constructed on a base frame which features wheels and axles to be used in transporting home from place to place"
-  {:db/ident :fibo-loan-reln-cnst/ConstructionType_MobileHome,
-   :fibo-fnd-utl-av/explanatoryNote "It does not meet HUD code.",
+  {:cmns-av/explanatoryNote "It does not meet HUD code.",
+   :db/ident :fibo-loan-reln-cnst/ConstructionType_MobileHome,
    :rdf/type [:fibo-loan-reln-cnst/ConstructionType :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",

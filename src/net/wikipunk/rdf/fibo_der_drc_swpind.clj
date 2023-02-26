@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-der-drc-swpind
   "This ontology defines indiividuals that represent swaps repositories and intermediaries, including and related schemes, registries, and authorities."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2018-2023 Object Management Group, Inc."
+                       "Copyright (c) 2018-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
    :dcterms/abstract
    "This ontology defines indiividuals that represent swaps repositories and intermediaries, including and related schemes, registries, and authorities.",
@@ -13,6 +15,7 @@
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
@@ -35,7 +38,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/SwapsIndividuals/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
     "fibo-be-le-cb"
@@ -84,32 +88,19 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
    :rdfa/prefix "fibo-der-drc-swpind",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
    :rdfs/label "Swaps Individuals Ontology",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals.rdf version of this ontology was revised to update the LEI URIs to the new form published by the GLEIF on data.world."
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals.rdf version of this ontology was revised to replace references to the legacy LCC UnitedStates country representation with UnitedStatesOfAmerica."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals.rdf version of this ontology was revised to move designated contract market to the markets ontology in FBC."
-    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals.rdf version of this ontology was revised to clean up the LEI data and individual definitions."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2018-2021 Object Management Group, Inc."
-                  "Copyright (c) 2018-2021 EDM Council, Inc."],
-   :sm/dependsOn ["https://www.omg.org/spec/LCC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FBC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/BE/"
-                  "https://spec.edmcouncil.org/fibo/ontology/SEC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/IND/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FND/"],
-   :sm/fileAbbreviation "fibo-der-drc-swpind",
-   :sm/filename "SwapsIndividuals.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals.rdf version of this ontology was revised to clean up the LEI data and individual definitions."]})
 
 (def BSDRBusinessEntityIdentifier
   "Delaware Division of Corporations business entity identifier for BSDR LLC"
@@ -173,11 +164,11 @@
 
 (def BloombergSDR
   "BSDR swap data repository"
-  {:db/ident :fibo-der-drc-swpind/BloombergSDR,
+  {:cmns-av/abbreviation "BSDR",
+   :db/ident :fibo-der-drc-swpind/BloombergSDR,
    :fibo-fbc-fct-ra/isRegisteredBy
    :fibo-fbc-fct-usjrga/CommoditiesFuturesAndDerivativesRegulator,
    :fibo-fnd-rel-rel/hasIdentity :fibo-der-drc-swpind/BSDRLLC-US-DE,
-   :fibo-fnd-utl-av/abbreviation "BSDR",
    :rdf/type [:fibo-der-drc-swp/SwapDataRepository :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
@@ -186,12 +177,12 @@
 
 (def ChicagoMercantileExchange
   "Chicago Mercantile Exchange, established in 1848 as the world's first futures exchange based in Chicago"
-  {:db/ident :fibo-der-drc-swpind/ChicagoMercantileExchange,
+  {:cmns-av/abbreviation "CME",
+   :db/ident :fibo-der-drc-swpind/ChicagoMercantileExchange,
    :fibo-fbc-fct-ra/isRegisteredBy
    :fibo-fbc-fct-usjrga/CommoditiesFuturesAndDerivativesRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-der-drc-swpind/ChicagoMercantileExchangeInc-US-DE,
-   :fibo-fnd-utl-av/abbreviation "CME",
    :rdf/type [:fibo-der-drc-swp/SwapDataRepository
               :fibo-fbc-fct-mkt/DesignatedContractMarket
               :fibo-fbc-fct-fse/SelfRegulatingOrganization
@@ -265,12 +256,12 @@
 
 (def DTCCDataRepository
   "DTCC Data Repository"
-  {:db/ident :fibo-der-drc-swpind/DTCCDataRepository,
+  {:cmns-av/abbreviation "DDR",
+   :db/ident :fibo-der-drc-swpind/DTCCDataRepository,
    :fibo-fbc-fct-ra/isRegisteredBy
    :fibo-fbc-fct-usjrga/CommoditiesFuturesAndDerivativesRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-der-drc-swpind/DTCCDataRepositoryLLC-US-NY,
-   :fibo-fnd-utl-av/abbreviation "DDR",
    :rdf/type [:fibo-der-drc-swp/SwapDataRepository :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",

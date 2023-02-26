@@ -79,8 +79,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
    :rdfa/prefix "fibo-fbc-dae-gty",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
@@ -140,12 +138,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
    :rdfs/label "guarantor",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   [:fibo-fnd-agr-ctr/ContractThirdParty
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
                           :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-ctr/ContractThirdParty
     :fibo-be-oac-cpty/DeJureControllingInterestParty
     {:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
      :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
@@ -167,19 +165,19 @@
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-dt-fd/DatePeriod,
                       :owl/onProperty    :fibo-fnd-dt-bd/holdsDuring,
                       :rdf/type          :owl/Restriction}
+                     {:owl/allValuesFrom :fibo-fnd-dt-fd/Date,
+                      :owl/onProperty    :fibo-fnd-arr-doc/hasExpirationDate,
+                      :rdf/type          :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fbc-dae-gty/Guarantor,
                       :owl/onProperty    :fibo-fbc-dae-gty/isGuaranteedBy,
-                      :rdf/type          :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fbc-dae-gty/PriorityLevel,
-                      :owl/onProperty    :fibo-fbc-dae-gty/hasPriorityLevel,
                       :rdf/type          :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty    :fibo-fbc-dae-gty/hasGuaranteedAmount,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-agr-agr/Commitment
-                     {:owl/allValuesFrom :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty    :fibo-fnd-arr-doc/hasExpirationDate,
-                      :rdf/type          :owl/Restriction}],
+                     {:owl/allValuesFrom :fibo-fbc-dae-gty/PriorityLevel,
+                      :owl/onProperty    :fibo-fbc-dae-gty/hasPriorityLevel,
+                      :rdf/type          :owl/Restriction}
+                     :fibo-fnd-agr-agr/Commitment],
    :skos/definition
    "commitment whereby something is formally assured if a party with primary liability fails to perform"})
 
@@ -251,10 +249,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
    :rdfs/label "letter of credit",
-   :rdfs/subClassOf [:fibo-fnd-acc-aeq/FinancialAsset
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
                      :fibo-fbc-dae-dbt/CommittedCreditFacility],
    :skos/definition
    "letter from a bank or other creditworthy institution guaranteeing that a buyer's payment to a seller will be received on time and for the correct amount"})

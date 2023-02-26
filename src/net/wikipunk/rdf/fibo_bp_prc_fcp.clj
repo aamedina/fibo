@@ -1,33 +1,40 @@
 (ns net.wikipunk.rdf.fibo-bp-prc-fcp
-  "Core ontology defining process concepts in general for refinement and re-use elsewhere in this domain."
-  {:dcat/downloadURL
+  "This ontology defines process concepts in general for refinement and re-use elsewhere in the FIBO business process domain."
+  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
    :dcterms/abstract
-   "Core ontology defining process concepts in general for refinement and re-use elsewhere in this domain.",
+   "This ontology defines process concepts in general for refinement and re-use elsewhere in the FIBO business process domain.",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :owl/imports
+   ["https://www.omg.org/spec/Commons/ContextualDesignators/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/Process/FinancialContextAndProcess/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-bp-prc-fcp"
     "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
+    "fibo-fbc-fi-fi"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "owl"     "http://www.w3.org/2002/07/owl#",
-    "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
-    "skos"    "http://www.w3.org/2004/02/skos/core#",
-    "sm"      "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-    "xs"      "http://www.w3.org/2001/XMLSchema#"},
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
    :rdfa/prefix "fibo-bp-prc-fcp",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "FinancialContextAndProcess"},
-   :sm/fileAbbreviation "fibo-bp-prc-fcp"})
+                :rdf/value    "Financial Context and Process Ontology"}})
 
 (def Clearing
   "The process by which securities trades are cleared."
@@ -64,6 +71,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "financial industry context"},
+   :rdfs/subClassOf :cmns-cxtdsg/Context,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -323,21 +331,6 @@
                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                      :rdf/type           :owl/Restriction}})
 
-(def Settlement
-  "The process by which securities trades are settled."
-  {:db/ident :fibo-bp-prc-fcp/Settlement,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "settlement"},
-   :rdfs/subClassOf [:fibo-bp-prc-fcp/WhenIssuedTrading
-                     :fibo-bp-prc-fcp/PrimaryMarketClosing
-                     :fibo-bp-prc-fcp/ClearingAndSettlement],
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "The process by which securities trades are settled."}})
-
 (def ShortSaleLocate
   "short sale locate"
   {:db/ident :fibo-bp-prc-fcp/ShortSaleLocate,
@@ -386,15 +379,6 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "when issued trading"},
    :rdfs/subClassOf :fibo-bp-prc-fcp/PrimaryMarket})
-
-(def context
-  "context"
-  {:db/ident :fibo-bp-prc-fcp/context,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "context"}})
 
 (def isRetirementOf
   "is retirement of"

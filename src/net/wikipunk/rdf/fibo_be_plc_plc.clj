@@ -50,8 +50,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
    :rdfa/prefix "fibo-be-plc-plc",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
@@ -97,15 +95,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
    :rdfs/label "limited liability company member",
    :rdfs/subClassOf
-   [:fibo-be-oac-cpty/DeJureControllingInterestParty
-    :fibo-fnd-org-org/OrganizationMember
-    :fibo-be-oac-cpty/EntityControllingParty
-    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onProperty :lcc-lr/isMemberOf,
                           :owl/someValuesFrom
                           :fibo-be-plc-plc/LimitedLiabilityCompany,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
+    :fibo-be-oac-cpty/DeJureControllingInterestParty
+    :fibo-fnd-org-org/OrganizationMember
+    :fibo-be-oac-cpty/EntityControllingParty
     {:owl/onClass    :fibo-be-le-lp/LegallyCompetentNaturalPerson,
      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
      :owl/qualifiedCardinality 1,

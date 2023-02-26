@@ -37,7 +37,6 @@
     "rdfs"         "http://www.w3.org/2000/01/rdf-schema#",
     "xsd"          "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/",
    :rdfa/prefix "fibo-sec-mod",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/",
    :rdfs/label "Metadata about the EDMC-FIBO Securities (SEC) Domain"})

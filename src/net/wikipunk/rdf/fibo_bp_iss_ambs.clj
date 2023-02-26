@@ -1,9 +1,11 @@
 (ns net.wikipunk.rdf.fibo-bp-iss-ambs
   "Process ontology for the process of issuance (securitization) of mortgage backed securities by government agencies. Based on US government agency MBS issuance process."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/AgencyMBSIssuance/",
    :dcterms/abstract
    "Process ontology for the process of issuance (securitization) of mortgage backed securities by government agencies. Based on US government agency MBS issuance process.",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/MBSIssuance/"
@@ -16,6 +18,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceDocuments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/DebtIssuance/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceProcess/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
@@ -28,7 +31,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/AgencyMBSIssuance/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-bp-iss-ambs"
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/AgencyMBSIssuance/",
     "fibo-bp-iss-dbti"
@@ -69,17 +73,13 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-    "xs" "http://www.w3.org/2001/XMLSchema#"},
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/AgencyMBSIssuance/",
    :rdfa/prefix "fibo-bp-iss-ambs",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/AgencyMBSIssuance/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "AgencyMBSIssuance"},
-   :sm/fileAbbreviation "fibo-bp-iss-ambs"})
+                :rdf/value    "AgencyMBSIssuance"}})
 
 (def AcquireMortgage
   "acquire mortgage"
@@ -231,11 +231,11 @@
 
 (def IdentifyConformingMortgage
   "Identify mortgage conforming to overall requirements for this issuer."
-  {:db/ident :fibo-bp-iss-ambs/IdentifyConformingMortgage,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This does not relate to the criteria for belonging to an individual, defined mortgage pool but conforms to the requirements of the issuing organization overall. This is for Agency pools. For non-agency, the equivalent of this step is carried out at pool level with a clause to reject the mortgage."},
+   :db/ident :fibo-bp-iss-ambs/IdentifyConformingMortgage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/AgencyMBSIssuance/",
@@ -450,8 +450,8 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "potential agency m b s issuer"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
-     :owl/someValuesFrom :fibo-bp-iss-ambs/AssessPoolSuitablilityForIssuance,
+   [{:owl/onProperty     :fibo-bp-iss-ambs/validates,
+     :owl/someValuesFrom :fibo-bp-iss-ambs/ValidateConformance,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-ambs/identifies,
      :owl/someValuesFrom :fibo-bp-iss-ambs/IdentifyConformingMortgage,
@@ -463,14 +463,14 @@
     {:owl/onProperty     :fibo-bp-iss-ambs/finalizes,
      :owl/someValuesFrom :fibo-bp-iss-ambs/FinalizePoolContent,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-ambs/validates,
-     :owl/someValuesFrom :fibo-bp-iss-ambs/ValidateConformance,
+    {:owl/onProperty     :fibo-bp-iss-ambs/adds,
+     :owl/someValuesFrom :fibo-bp-iss-ambs/AddMortgageToPool,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
      :owl/someValuesFrom :fibo-bp-iss-ambs/ClassifyMortgage,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-ambs/adds,
-     :owl/someValuesFrom :fibo-bp-iss-ambs/AddMortgageToPool,
+    {:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
+     :owl/someValuesFrom :fibo-bp-iss-ambs/AssessPoolSuitablilityForIssuance,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",

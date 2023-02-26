@@ -44,8 +44,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships/",
    :rdfa/prefix "fibo-be-sps-sps",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships/",
@@ -60,18 +58,15 @@
 
 (def SoleProprietor
   "party that owns a business, has the rights to all profits from that business and is considered a single entity (unincorporated) together with that business for tax and liability purposes"
-  {:cmns-av/aynonym ["sole owner" "sole trader"],
-   :cmns-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A sole proprietor has unlimited liability with respect to any business debts.",
+   :cmns-av/synonym ["sole owner" "sole trader"],
    :db/ident :fibo-be-sps-sps/SoleProprietor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships/",
    :rdfs/label "sole proprietor",
-   :rdfs/subClassOf [{:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
-                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
+   :rdfs/subClassOf [:fibo-be-oac-opty/EntityOwner
                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/onProperty
                                            :fibo-fnd-oac-oac/ownsAndControls,
@@ -79,7 +74,10 @@
                                            :fibo-be-sps-sps/SoleProprietorship,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-oac-opty/EntityOwner
+                     {:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-be-oac-opty/hasInvestmentEntity,
                       :owl/someValuesFrom :fibo-be-sps-sps/SoleProprietorship,
                       :rdf/type           :owl/Restriction}],

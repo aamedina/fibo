@@ -38,7 +38,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
    :rdfa/prefix "fibo-fnd-law-jur",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
    :rdfs/label "Jurisdiction Ontology",
@@ -79,10 +78,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "statute law"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
+   :rdfs/subClassOf [:fibo-fnd-law-cor/Law
+                     {:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-law-cor/Law],
+                      :rdf/type           :owl/Restriction}],
    :skos/altLabel "statutory law",
    :skos/definition "law enacted by a legislature"})
 

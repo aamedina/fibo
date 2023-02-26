@@ -58,8 +58,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfa/prefix "fibo-fnd-agr-ctr",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
@@ -174,17 +172,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "contract",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
-                      :rdf/type :owl/Restriction}
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 2,
+                      :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
+                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 2,
-                      :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
-                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
-                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
+                      :rdf/type :owl/Restriction}
                      :fibo-fnd-agr-agr/Agreement],
    :skos/definition
    "voluntary, deliberate agreement between competent parties to which the parties agree to be legally bound, and for which the parties provide valuable consideration"})
@@ -489,17 +487,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "written contract",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-dt-fd/DateTimeStamp,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-dt-fd/Date,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDate,
-     :rdf/type       :owl/Restriction}
+   [{:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
      :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
      :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-dt-fd/DateTimeStamp,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
+     :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-dt-fd/DateTimeStamp,
      :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
@@ -507,13 +504,14 @@
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
      :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-dt-fd/Date,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDate,
+     :rdf/type       :owl/Restriction}
     {:owl/onDataRange :xsd/boolean,
      :owl/onProperty  :fibo-fnd-agr-ctr/isAssignable,
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
-     :rdf/type           :owl/Restriction}
     :fibo-fnd-agr-ctr/Contract],
    :skos/definition
    "formal contract that is written and signed by the parties thereto"})

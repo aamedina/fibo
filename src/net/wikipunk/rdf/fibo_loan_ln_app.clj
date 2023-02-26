@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-loan-ln-app
   "This ontology defines concepts for the loan application process, along with kinds of loan application and the parties thereto. Another major thread of this ontology is credit risk assessment at the highest level, which includes security agreements, pre-approvals, and credit reports."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 EDM Council, Inc."
+                       "Copyright (c) 2016-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
    :dcterms/abstract
    "This ontology defines concepts for the loan application process, along with kinds of loan application and the parties thereto. Another major thread of this ontology is credit risk assessment at the highest level, which includes security agreements, pre-approvals, and credit reports.",
@@ -13,6 +15,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Assessments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
@@ -28,7 +31,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/LoanApplications/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-crt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
     "fibo-fbc-dae-dbt"
@@ -70,30 +74,19 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
    :rdfa/prefix "fibo-loan-ln-app",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "Loan Applications Ontology"},
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2016-2022 EDM Council, Inc."
-                  "Copyright (c) 2016-2022 Object Management Group, Inc."],
-   :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-                  "https://www.omg.org/spec/LCC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FBC/"],
-   :sm/fileAbbreviation "fibo-loan-ln-app",
-   :sm/filename "LoanApplications.rdf"})
+                :rdf/value    "Loan Applications Ontology"}})
 
 (def AllBorrowersMonthlyIncome
   "total monthly qualifying income for all borrowers on the loan"
-  {:db/ident :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
-   :fibo-fnd-utl-av/usageNote
+  {:cmns-av/usageNote
    "This should be computed from the income of the individual borrowers.",
+   :db/ident :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
@@ -119,38 +112,38 @@
 
 (def BorrowerAssessment
   "assessment report detailing information about the borrower and their credit history that may be relevant to the loan application"
-  {:db/ident :fibo-loan-ln-app/BorrowerAssessment,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Includes credit rating information. Ongoing assessment reports both good and bad credit rating information. In the US, by regulation, lender is required to respot person's payment history on a monthly basis. This is the basis on which peope's score is changed. So the lender's reporting to the credit bureau may affect that person's credit rating. this may give rise to credit disputes. Also there is a scenario where the borrower may contact the lender and ask for some change. For student loans, they can apply for a deferment payment based on change in circumstances e.g. if losing job, or becoming disabled, then there are specific programs which they can apply for. can defer paymen for a time, and if proven eligible (e.g. also if in military, being deployed), then if they subbut the relevant document, they approve and change their repayment term, perhaps temporarily and then revert to the previously agreed terms. This results from the borrower contacting the lender."},
+   :db/ident :fibo-loan-ln-app/BorrowerAssessment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "borrower assessment"},
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-loan-ln-app/IncomeVerificationReport,
+                      :owl/onClass
+                      :fibo-loan-ln-app/IndividualPersonCreditRating,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-arr-asmt/hasDateOfAssessment,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
-                      :owl/someValuesFrom :fibo-loan-ln-app/LoanApplication,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass
-                      :fibo-loan-ln-app/IndividualPersonCreditRating,
+                      :owl/onClass :fibo-loan-ln-app/IncomeVerificationReport,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-loan-ln-ln/PaymentHistory,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
+                      :owl/someValuesFrom :fibo-loan-ln-app/LoanApplication,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-asmt/AssessmentReport],
    :skos/definition
    {:rdf/language "en",
@@ -173,9 +166,9 @@
 
 (def CreditRiskAssessment
   "risk assessment that focuses on determining the likelihood of a potential borrower repaying a loan"
-  {:db/ident :fibo-loan-ln-app/CreditRiskAssessment,
-   :fibo-fnd-utl-av/usageNote
+  {:cmns-av/usageNote
    "If the risk assessment is based on one of the automated underwriting sytems, then the underwriting automation category is 'automated'. This dependency could be automated (as it were).",
+   :db/ident :fibo-loan-ln-app/CreditRiskAssessment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
@@ -184,37 +177,37 @@
    [{:owl/onProperty     :fibo-loan-ln-app/usesFactor,
      :owl/someValuesFrom :fibo-loan-ln-app/TotalDebtExpenseRatio,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
-     :owl/someValuesFrom :fibo-loan-ln-app/UnderwritingDecision,
+    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
+     :owl/someValuesFrom :fibo-loan-ln-app/BorrowerMonthlyIncome,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
      :owl/someValuesFrom :fibo-loan-ln-app/PreApprovalContract,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
+     :owl/someValuesFrom :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
+     :owl/someValuesFrom :fibo-loan-ln-ln/CombinedLoanToValueRatio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
+     :owl/someValuesFrom :fibo-loan-ln-app/UnderwritingDecision,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
      :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReport,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
-     :owl/someValuesFrom :fibo-loan-ln-app/BorrowerMonthlyIncome,
+    {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
+     :owl/someValuesFrom :fibo-loan-ln-app/PreApprovalRequest,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
+     :owl/someValuesFrom :fibo-loan-ln-app/PublicRecord,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-ln-app/AutomaticUnderwriting,
      :owl/onProperty :fibo-fbc-dae-dbt/isBasedOn,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
-     :owl/someValuesFrom :fibo-loan-ln-ln/CombinedLoanToValueRatio,
-     :rdf/type           :owl/Restriction}
+    :fibo-fnd-arr-asmt/AssessmentActivity
     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
      :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-ln-app/usesFactor,
-     :owl/someValuesFrom :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
-     :owl/someValuesFrom :fibo-loan-ln-app/PreApprovalRequest,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-arr-asmt/AssessmentActivity
-    {:owl/onProperty     :fibo-fnd-dt-oc/hasInput,
-     :owl/someValuesFrom :fibo-loan-ln-app/PublicRecord,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "risk assessment that focuses on determining the likelihood of a potential borrower repaying a loan"})
@@ -335,38 +328,38 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
    :rdfs/label "loan application",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+     :owl/someValuesFrom :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-rep/isSubmittedBy,
+     :owl/someValuesFrom :fibo-fnd-arr-rep/Requester,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-loan-ln-app/isPreApprovalRequested,
+     :owl/someValuesFrom :xsd/boolean,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
      :owl/onProperty :fibo-fnd-dt-fd/hasDateReceived,
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
      :owl/someValuesFrom :fibo-loan-ln-app/TotalDebtExpenseRatio,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-ln-app/isPreApprovalRequested,
-     :owl/someValuesFrom :xsd/boolean,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-ln-ln/CombinedLoanToValueRatio,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-rep/isSubmittedBy,
-     :owl/someValuesFrom :fibo-fnd-arr-rep/Requester,
-     :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
      :owl/onProperty :fibo-loan-ln-app/hasApplicationDate,
      :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-ln-ln/LoanToValueRatio,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
      :rdf/type       :owl/Restriction}
     :fibo-fnd-arr-doc/Document
     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
      :owl/someValuesFrom :fibo-loan-ln-app/BorrowerMonthlyIncome,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-loan-ln-app/AllBorrowersMonthlyIncome,
-     :rdf/type           :owl/Restriction}],
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-ln-ln/LoanToValueRatio,
+     :owl/onProperty :fibo-fnd-rel-rel/comprises,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-ln-ln/CombinedLoanToValueRatio,
+     :owl/onProperty :fibo-fnd-rel-rel/comprises,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "request by a potential borrower to a potential lender to borrow money containing information used to decide whether to grant the loan",
    :skos/scopeNote
@@ -433,10 +426,10 @@
 
 (def PreApprovalContract
   "written commitment to lend when specified conditions are met, such as finding suitable property, and unchanged creditworthiness"
-  {:db/ident :fibo-loan-ln-app/PreApprovalContract,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    ["This may also include limits on the region where to purchase."
     "A commitment from a lender to a borrower to extend a home purchase loan up to a certain amount, and subject to certain non-credit related conditions.  This commitment is entered into after a comprehensive analysis of the credit worthiness of the borrower is carried out."],
+   :db/ident :fibo-loan-ln-app/PreApprovalContract,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
@@ -453,9 +446,9 @@
 
 (def PreApprovalRequest
   "request from a potential borrower that a lender commit to pre-approving the borrower for a loan of up to a specified amount of money"
-  {:db/ident :fibo-loan-ln-app/PreApprovalRequest,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This may also include limits on the region where to purchase.",
+   :db/ident :fibo-loan-ln-app/PreApprovalRequest,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
@@ -472,9 +465,9 @@
 
 (def PublicRecord
   "record about an action involving a party that is publicly available from a court or other government agency"
-  {:db/ident :fibo-loan-ln-app/PublicRecord,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This can include court actions such as bankruptcy and foreclosure, as well as liens and other events that have been recorded.",
+   :db/ident :fibo-loan-ln-app/PublicRecord,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
@@ -572,8 +565,8 @@
 
 (def TotalDebtExpenseRatio
   "ratio of all monthly debt payments of all borrowers, including proposed expenses, with respect to the income of the borrowers as relied upon to make a credit decision"
-  {:db/ident :fibo-loan-ln-app/TotalDebtExpenseRatio,
-   :fibo-fnd-utl-av/synonym "back end ratio",
+  {:cmns-av/synonym "back end ratio",
+   :db/ident :fibo-loan-ln-app/TotalDebtExpenseRatio,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
@@ -595,8 +588,8 @@
 
 (def UnderwritingDecision
   "classifier providing a loan approval recommendation determined either manually or by an automated underwriting system"
-  {:db/ident :fibo-loan-ln-app/UnderwritingDecision,
-   :fibo-fnd-utl-av/adaptedFrom "the 2015 Revised HMDA regulation.",
+  {:cmns-av/adaptedFrom "the 2015 Revised HMDA regulation.",
+   :db/ident :fibo-loan-ln-app/UnderwritingDecision,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
@@ -767,9 +760,9 @@
 
 (def usesFactor
   "relates e.g. a risk assessment to something used as a factor to make the assessment"
-  {:db/ident :fibo-loan-ln-app/usesFactor,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "There is intentionally no range for this property, so as not to limit what can be used as a factor. Often it will be a measure such as borrower monthly income. Thus, having a class called Factor seems unhelpful.",
+   :db/ident :fibo-loan-ln-app/usesFactor,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",

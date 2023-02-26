@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-der-drc-bsc
   "This ontology defines basic terminology common to derivative and over-the-counter (OTC) contracts."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
+                       "Copyright (c) 2015-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :dcterms/abstract
    "This ontology defines basic terminology common to derivative and over-the-counter (OTC) contracts.",
@@ -16,6 +18,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesListings/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Assessments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
@@ -37,7 +40,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/DerivativesBasics/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-der-drc-bsc"
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
     "fibo-fbc-dae-dbt"
@@ -81,11 +85,8 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfa/prefix "fibo-der-drc-bsc",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
@@ -95,27 +96,18 @@
     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics.rdf version of this ontology was modified to move designated contract market to the markets ontology in FBC and eliminate the notion of NonPhysicalUnderlier, which was determined to add unnecessary overhead."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics.rdf version of this ontology was modified to address text formatting issues identified via hygiene testing."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics.rdf version of this ontology was modified to eliminate duplication with concepts in LCC and eliminate a redundant subclass declaration in observable value."
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics.rdf version of this ontology was modified to loosen the domain of the hasUnderlier property, which could be either an instrument or leg, refine the definition of Underlier and hasUnderlier based on recent work on swaps, add the definition of a contract for difference (CFD), simplify the contract party hierarchy where the subclasses of contract party do not add semantics, add the concepts of underlying asset valuation and calculation agent, which are needed for various derivatives (moved from forwards) and eliminate the language related to transactions as well as the distinction between an OTC contract and exchange-traded contract / listed security, given how blurry the lines are today, across derivatives."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics.rdf version of this ontology was modified to add the concept of a credit derivative, modify the notion of an underlying asset valuation to be a kind of value assessment, and modify the concept of valuation terms to be a subclass of derivative terms."
-    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics.rdf version of this ontology was modified to replace hasContractSize with hasLotSize."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2015-2022 Object Management Group, Inc."
-                  "Copyright (c) 2015-2022 EDM Council, Inc."],
-   :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/FBC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FND/"
-                  "https://spec.edmcouncil.org/fibo/ontology/IND/"
-                  "https://spec.edmcouncil.org/fibo/ontology/SEC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/BE/"],
-   :sm/fileAbbreviation "fibo-der-drc-bsc",
-   :sm/filename "DerivativesBasics.rdf"})
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics.rdf version of this ontology was modified to replace hasContractSize with hasLotSize."]})
 
 (def CalculationAgent
   "party that is responsible for determining the value of a derivative and in some cases, determines how much the parties owe one another"
-  {:db/ident :fibo-der-drc-bsc/CalculationAgent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The calculation agent can also establish the price for a structured product and may act as its guarantor and issuer. If the counterparty in a derivative transaction is a broker-dealer, then they will often act as the calculation agent."},
+   :db/ident :fibo-der-drc-bsc/CalculationAgent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
@@ -168,18 +160,18 @@
 
 (def ContractForDifference
   "cash-settled derivative where the parties agree to exchange on the maturity of the contract the difference between the current value of the underlying asset and the initial value of that asset when the contract is initiated"
-  {:db/ident :fibo-der-drc-bsc/ContractForDifference,
-   :fibo-fnd-utl-av/abbreviation {:rdf/language "en",
-                                  :rdf/value    "CFD"},
-   :fibo-fnd-utl-av/adaptedFrom
-   ["https://www.nasdaq.com/glossary/c/contract-for-difference"
-    "ISO 10962:2019, Securities and related financial instruments - Classification of financial instruments (CFI) code"],
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation {:rdf/language "en",
+                          :rdf/value    "CFD"},
+   :cmns-av/adaptedFrom
+   ["ISO 10962:2019, Securities and related financial instruments - Classification of financial instruments (CFI) code"
+    "https://www.nasdaq.com/glossary/c/contract-for-difference"],
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "These contracts can also be on the difference of two assets' prices. They can also be on the difference of a single asset of different maturities (like a bond or futures contracts)."},
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "spread trading"},
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "spread trading"},
+   :db/ident :fibo-der-drc-bsc/ContractForDifference,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
@@ -197,11 +189,11 @@
 
 (def CreditDerivative
   "derivative instrument that is a privately held, negotiable bilateral contract traded over-the-counter (OTC) between two parties in a creditor/debtor relationship, enabling the creditor to effectively transfer some or all of the risk of a debtor defaulting to a third party"
-  {:db/ident :fibo-der-drc-bsc/CreditDerivative,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The third party accepts the risk in return for payment, known as the premium."},
+   :db/ident :fibo-der-drc-bsc/CreditDerivative,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
@@ -250,12 +242,12 @@
 
 (def DerivativesClearingOrganization
   "clearing house that enables parties to substitute the credit of the DCO for the credit of the parties"
-  {:db/ident :fibo-der-drc-bsc/DerivativesClearingOrganization,
-   :fibo-fnd-utl-av/abbreviation "DCO",
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/abbreviation "DCO",
+   :cmns-av/adaptedFrom
    "http://www.cftc.gov/IndustryOversight/ClearingOrganizations/index.htm",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "Substitution may be done through contract novation, for example. A derivatives clearing organization (DCO) also arranges or provides, on a multilateral basis, for the settlement or netting of obligations, or otherwise provides clearing services or arrangements that mutualize or transfer credit risk among participants.",
+   :db/ident :fibo-der-drc-bsc/DerivativesClearingOrganization,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
@@ -266,12 +258,12 @@
 
 (def IntroducingBroker
   "broker that solicits or accepts orders for derivatives that are traded on or subject to the rules of an exchange"
-  {:db/ident :fibo-der-drc-bsc/IntroducingBroker,
-   :fibo-fnd-utl-av/abbreviation "IB",
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/abbreviation "IB",
+   :cmns-av/adaptedFrom
    "http://www.cftc.gov/IndustryOversight/Intermediaries/index.htm",
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    "Introducing brokers do not accept money, securities, or property (or extend credit in lieu thereof) to margin, guarantee, or secure any trades or contracts that result or may result.",
+   :db/ident :fibo-der-drc-bsc/IntroducingBroker,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
@@ -283,9 +275,9 @@
 
 (def ObservableValue
   "value for something discernible and for which evidence can be obtained"
-  {:db/ident :fibo-der-drc-bsc/ObservableValue,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Derivatives, such as certain exotics, can be based on values ascribed to virtually anything, including weather. Typically, however, an observable value refers to something that can be readily observed in the marketplace, such as a quoted rate (e.g., interest rate, exchange rate), index value, commodity price, stock price, economic indicator, or something similar as of some point in time.",
+   :db/ident :fibo-der-drc-bsc/ObservableValue,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
@@ -297,8 +289,8 @@
 
 (def OverTheCounterInstrument
   "financial instrument and bilateral contract that is not listed on an organized exchange"
-  {:db/ident :fibo-der-drc-bsc/OverTheCounterInstrument,
-   :fibo-fnd-utl-av/abbreviation "OTC instrument",
+  {:cmns-av/abbreviation "OTC instrument",
+   :db/ident :fibo-der-drc-bsc/OverTheCounterInstrument,
    :owl/disjointWith :fibo-sec-sec-lst/ListedSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -351,9 +343,9 @@
 
 (def Underlier
   "something that can be assigned a value in the marketplace that forms the basis for a derivative instrument"
-  {:db/ident :fibo-der-drc-bsc/Underlier,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Underlier means any rate (including interest and foreign exchange rates), currency, commodity, security, instrument of indebtedness, index, quantitative measure, occurrence or non-occurrence of an event, or other financial or economic interest, or property of any kind, or any interest therein or based on the value thereof, in or by reference to which any payment or delivery under a transaction is to be made or determined.",
+   :db/ident :fibo-der-drc-bsc/Underlier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
@@ -540,9 +532,9 @@
 
 (def hasUnderlier
   "relates a derivative to something on which the contract is based"
-  {:db/ident :fibo-der-drc-bsc/hasUnderlier,
-   :fibo-fnd-utl-av/usageNote
+  {:cmns-av/usageNote
    "The domain of this property can be either a derivative instrument or, in the case of a swap contract, one leg of the swap.",
+   :db/ident :fibo-der-drc-bsc/hasUnderlier,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",

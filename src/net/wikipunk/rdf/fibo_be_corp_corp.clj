@@ -58,8 +58,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
    :rdfa/prefix "fibo-be-corp-corp",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
@@ -134,18 +132,18 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
    :rdfs/label "registration identifier",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-org-org/OrganizationIdentifier
-                     {:owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
                       :owl/someValuesFrom
                       :fibo-be-corp-corp/RegistrationIdentifierScheme,
                       :rdf/type :owl/Restriction}
+                     :fibo-fnd-org-org/OrganizationIdentifier
                      {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :lcc-lr/identifies,
                       :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "identifier that is officially allocated to an organization at the time of registration, typically in a jurisdiction in which said organization is organized or registered and used in that jurisdiction to identify the organization",

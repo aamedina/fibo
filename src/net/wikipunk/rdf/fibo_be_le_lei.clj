@@ -66,8 +66,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfa/prefix "fibo-be-le-lei",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
@@ -149,33 +147,33 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "entity legal form",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/someValuesFrom :fibo-be-le-lei/EntityLegalFormScheme,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-aap-agt/Text,
                       :owl/onProperty  :lcc-lr/hasName,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
+                      :owl/onProperty  :fibo-be-le-lei/hasTransliteratedName,
                       :rdf/type        :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-aap-agt/Text,
                       :owl/onProperty
                       :fibo-be-le-lei/hasTransliteratedLegalFormAbbreviation,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-law-jur/appliesIn,
-                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
-                      :owl/onProperty  :fibo-be-le-lei/hasTransliteratedName,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/classifies,
-                      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-aap-agt/Text,
                       :owl/onProperty  :fibo-be-le-lei/hasLegalFormAbbreviation,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
-                      :owl/someValuesFrom :fibo-be-le-lei/EntityLegalFormScheme,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty     :fibo-fnd-law-jur/appliesIn,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :lcc-cr/classifies,
+                      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-cls/Classifier],
    :skos/definition
    "a classifier for a legal entity that indicates the nature of that entity as defined from a legal or regulatory perspective, in the jurisdiction in which it was established"})
 

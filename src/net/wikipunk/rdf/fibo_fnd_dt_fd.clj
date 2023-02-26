@@ -31,8 +31,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfa/prefix "fibo-fnd-dt-fd",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
@@ -156,16 +154,16 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "calendar-specified interval",
-   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-dt-fd/TimeDirection,
-                      :owl/onProperty :fibo-fnd-dt-fd/hasTimeDirection,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :xsd/integer,
+   :rdfs/subClassOf [{:owl/onDataRange :xsd/integer,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasOrdinalNumber,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-dt-fd/CalendarPeriod,
                       :owl/onProperty :fibo-fnd-dt-fd/hasCalendarPeriod,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-dt-fd/TimeDirection,
+                      :owl/onProperty :fibo-fnd-dt-fd/hasTimeDirection,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-dt-fd/RecurrenceInterval],
@@ -244,7 +242,7 @@
    :rdfs/label "date period",
    :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty :fibo-fnd-dt-fd/hasEndDate,
+                      :owl/onProperty :fibo-fnd-dt-fd/hasStartDate,
                       :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-dt-fd/Duration,
@@ -253,7 +251,7 @@
                      :fibo-fnd-dt-fd/TimeInterval
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty :fibo-fnd-dt-fd/hasStartDate,
+                      :owl/onProperty :fibo-fnd-dt-fd/hasEndDate,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "time span over one or more calendar days, defined by at least two of three properties: (1) a start date, (2) an end date, and (3) a duration"})
@@ -491,24 +489,24 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "regular schedule",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/ScheduleStub,
-                      :owl/onProperty :fibo-fnd-dt-fd/hasInitialStub,
-                      :rdf/type       :owl/Restriction}
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-dt-fd/hasRecurrenceInterval,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/ScheduleStub,
                       :owl/onProperty :fibo-fnd-dt-fd/hasFinalStub,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-dt-fd/hasRecurrenceStartDate,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
-                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasCount,
                       :owl/someValuesFrom :xsd/positiveInteger,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-dt-fd/hasRecurrenceInterval,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-fd/Schedule],
+                     :fibo-fnd-dt-fd/Schedule
+                     {:owl/onProperty :fibo-fnd-dt-fd/hasRecurrenceStartDate,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-dt-fd/ScheduleStub,
+                      :owl/onProperty :fibo-fnd-dt-fd/hasInitialStub,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition "schedule whose time intervals recur regularly",
    :skos/editorialNote
    "The BusinessDates ontology extends 'RegularSchedule' with an optional BusinessDayAdjustment that specifies what should happen if a scheduled date falls on a weekend or a holiday.",
@@ -526,15 +524,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "relative date",
-   :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-dt-fd/hasRelativeDuration,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
+   :rdfs/subClassOf [:fibo-fnd-dt-fd/CalculatedDate
                      {:owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-dt-fd/isRelativeTo,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-fd/CalculatedDate],
+                     {:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-dt-fd/hasRelativeDuration,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "calculated date that is some duration before or after another date",
    :skos/example

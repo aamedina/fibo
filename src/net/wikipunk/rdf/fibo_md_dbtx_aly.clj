@@ -1,9 +1,11 @@
 (ns net.wikipunk.rdf.fibo-md-dbtx-aly
   "This ontology covers an extensive range of analytical measures for debt instruments and pools of debt instruments. These cover the well-known concepts of convexity, duration and life, as well as weighted average loan ages and maturities, prepayments speeds etc. for debt pools. Most of the widely referenced variants of these are included, for example modified duration. Some yield related concepts (e.g. for equivalent yield) are also included. Debt pricing and yields are intimately related, and this ontology sets out the basic concepts of debt price, including different ways in which debt and bod prices are described and calculated, as well as a range of different kinds of yield (simple yield, Wall Street Yield, Japanese Yield and so on). The pricing terms are supported by a range of trading and exchange related concepts that are used to differentiate different kinds of debt price, for example last, high and low exchange prices."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :dcterms/abstract
    "This ontology covers an extensive range of analytical measures for debt instruments and pools of debt instruments. These cover the well-known concepts of convexity, duration and life, as well as weighted average loan ages and maturities, prepayments speeds etc. for debt pools. Most of the widely referenced variants of these are included, for example modified duration. Some yield related concepts (e.g. for equivalent yield) are also included. Debt pricing and yields are intimately related, and this ontology sets out the basic concepts of debt price, including different ways in which debt and bod prices are described and calculated, as well as a range of different kinds of yield (simple yield, Wall Street Yield, Japanese Yield and so on). The pricing terms are supported by a range of trading and exchange related concepts that are used to differentiate different kinds of debt price, for example last, high and low exchange prices.",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
@@ -13,6 +15,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/"
@@ -24,7 +27,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/DebtTemporal/DebtAnalytics/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-dbt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
     "fibo-fbc-fi-ip"
@@ -61,25 +65,21 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfa/prefix "fibo-md-dbtx-aly",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "Debt Analytics Ontology"},
-   :sm/fileAbbreviation "fibo-md-dbtx-aly"})
+                :rdf/value    "Debt Analytics Ontology"}})
 
 (def AbsolutePrepaymentRate
   "The absolute prepayment rate (for ABS) is the standard measure of prepayment rates in the auto-loan sector. ABS measures the monthly rate of loan prepayments as a percentage of the original pool balance. ABS is defined by the following formula where SMM refers to Single Monthly Mortality, which measures the percentage of dollars prepaid in a given month expressed as a percentage of the scheduled loan balance. ABS = (100 * SMM)/100 + (SMM X (Age- 1)"
-  {:db/ident :fibo-md-dbtx-aly/AbsolutePrepaymentRate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The ABS measurement differs from conditional prepayment rate (CPR) used in the mortgage industry, which measures prepayment as an annualized percentage of the current pool balance."},
+   :db/ident :fibo-md-dbtx-aly/AbsolutePrepaymentRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -125,11 +125,11 @@
 
 (def AverageLife
   "An estimate of the number of terms to maturity, taking the possibility of early payments into account. Average life is calculated using the weighted average time to the receipt of all future cash flows."
-  {:db/ident :fibo-md-dbtx-aly/AverageLife,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Where it refers to pre-payment above, if the bond does not include prepayment then this is not included. However, analytics that refer to this e.g. Yield to Average Life, then this figure is relevant. It is not relevant for other types of bond where e.g. you would use yield to next call, yield to worst etc. Average Life used in place of Maturity for Yield Calculation. This is not only used for Yield calculations though. It is referred to as an analytic figure in its own right. Average Life uses one of a number of standard pre-payment models (for structured finance at least). For MBS, the average life includes some calculations to take account of pre-payments on the underlying mortgages. This takes account of the possibillity of borrowers paying early. This has to be modeled or forecast (not given) as it's a function of market conditions and interest rate. You would not see this in a market data feed. When you model MBS you calculate Average Life as part of the model i.e. you estimate the percentage of prepayment in the next x length of time and factor this into the Average Life. Refers to Weighted Average Time to receipt of future cash flows. For MBS, early payments will shorten the Average Life. For Student Loans, Credit Card, Loan etc, i.e. all Pool Backed (any bond that has securitized debt). Other bonds: Sinking Funds etc., also Early Payment - partial Call for a corporate / regular bond. Early Payment for pass through has the same effect. Sinking Fund: Each payment is part principal and part interest, this is implicit in the overall definition of \"Early payment\"."},
+   :db/ident :fibo-md-dbtx-aly/AverageLife,
    :owl/disjointWith :fibo-md-dbtx-aly/EquivalentLifeAnalytic,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -161,11 +161,11 @@
 
 (def BondEquivalentYield
   "Yield determined on an equivalent basis to the yield of another bond. This is used to be able to realistically compare prices between debt instruments across different markets."
-  {:db/ident :fibo-md-dbtx-aly/BondEquivalentYield,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "For example when comparing Treasury with Corp it's called a Corp Bond Equivalent Yield; when comparing other kinds of yields this would be labelled differently. Treasury bills typically in discount rates - that's one of the ways you would compare TB or MM or RePo to BEQ - by changing the day count. Detailed implementation of this: This term refers to the type of bond that it is equivalent to, that is the type of bond whose yield is normally determined according to the yield calculation method that is used in determining this Bond Equivalent Yield figure. The type of bond in this instance is defined in relation to the market on which that bond trades, for example the US Corporate Bond Market."},
+   :db/ident :fibo-md-dbtx-aly/BondEquivalentYield,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -183,11 +183,11 @@
 
 (def CashStructuredFinanceInstrumentPrice
   "When the price is above a certain level (70), you get a quote in reference to an index e.g. LIBOR+50bp i.e. the yield. When you get below a certain price you get a quote such as 65c to a dollar. Percentage? not seen. Would be a whole number, interpreted as c/$"
-  {:db/ident :fibo-md-dbtx-aly/CashStructuredFinanceInstrumentPrice,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This might be a Price, a Spread or a Yield, i.e. \"here's the price., the current Yield is this, and here's the Spread\"."},
+   :db/ident :fibo-md-dbtx-aly/CashStructuredFinanceInstrumentPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -232,11 +232,11 @@
 
 (def CreditSpread
   "yield spread that reflects the additional net yield an investor can earn from a security with more credit risk relative to one with less credit risk"
-  {:db/ident :fibo-md-dbtx-aly/CreditSpread,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The credit spread of a particular security is often quoted in relation to the yield on a credit risk-free benchmark security or reference rate. Further Notes There are several measures of credit spread, including Z-spread and option-adjusted spread. Old definition (Algo) The spread between the credit rating of something and its maturity. THis is now defined as a different term pending further review with Algorithmics. Update from SMER. difference between risk free price (price of govt bond) and the price of this security. (matches Wikipedia definition above) i.e. price of this credit versus the price of a (near) risk free credit. The latter is a reference security with low risk such as a Treasury Bond. Is this between prices or between yields? can be expressed as either wrt price or yield, and this is detemined by context for different markets. Try and get a list. This is more generic - the meaning is not that it is speciufically wrt yield as such. Debt Price Spread is in context of price, whereas this is more generic."},
+   :db/ident :fibo-md-dbtx-aly/CreditSpread,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -253,11 +253,11 @@
 
 (def CurrentYieldCalculationMethod
   "The ratio of the interest payment amount to the clean price."
-  {:db/ident :fibo-md-dbtx-aly/CurrentYieldCalculationMethod,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This is a kind of yield that applies to debt instruments only as it relates to the clean price. It differs from the simple yield in that simple yield relates to the actual price paid for the bond, which on will differ from the clean price by the amount of accrued interest."},
+   :db/ident :fibo-md-dbtx-aly/CurrentYieldCalculationMethod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -316,10 +316,10 @@
 
 (def DebtInstrumentYield
   "The return on the debt instrument at the stated price."
-  {:db/ident :fibo-md-dbtx-aly/DebtInstrumentYield,
-   :fibo-fnd-utl-av/explanatoryNote {:rdf/language "en",
-                                     :rdf/value
-                                     "Yield has a relationship to the price."},
+  {:cmns-av/explanatoryNote {:rdf/language "en",
+                             :rdf/value
+                             "Yield has a relationship to the price."},
+   :db/ident :fibo-md-dbtx-aly/DebtInstrumentYield,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -522,11 +522,11 @@
 
 (def DerivedPrice
   "price that stems from another source or calculation rather than being quoted or based on actual trading data"
-  {:db/ident :fibo-md-dbtx-aly/DerivedPrice,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "There are evaluated prices in which an independent source evaluates a price they have derived, and there are prices which are derived within a firm, from supplied, published end of day price spreads or other market data."},
+   :db/ident :fibo-md-dbtx-aly/DerivedPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -555,9 +555,9 @@
 
 (def DiscountedInstrumentYield
   "Yield quoted for a discount instrument. This is the ratio of the discount to the face value, divided by the period to maturity as a fraction of a year."
-  {:db/ident :fibo-md-dbtx-aly/DiscountedInstrumentYield,
-   :fibo-fnd-utl-av/usageNote {:rdf/language "en",
-                               :rdf/value    "Applies to Debt only."},
+  {:cmns-av/usageNote {:rdf/language "en",
+                       :rdf/value    "Applies to Debt only."},
+   :db/ident :fibo-md-dbtx-aly/DiscountedInstrumentYield,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -689,11 +689,11 @@
 
 (def ICMAYieldFormula
   "The calculation method specified by ICMA (formerly ISMA) for determination of yield for fixed-rate bonds."
-  {:db/ident :fibo-md-dbtx-aly/ICMAYieldFormula,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This basic formula is used across many markets, including the US and most of Europe. While individual markets may have different flavors (French round their bonds to 5 decimals, UK Gilts have ex-div), the formula is still the same. This would be the formula used by \"Wall Street Yield\", \"US Treasury Yield\", \"Corporate Bond Yield\" etc. Notes Origin:Fidessa"},
+   :db/ident :fibo-md-dbtx-aly/ICMAYieldFormula,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -717,11 +717,11 @@
 
 (def InstrumentWeightedAverageLoanAge
   "A dollar-weighted average measuring the age of the individual loans in a mortgage pass-through or pooled security, such as Ginnie Mae or a Freddie Mac security. The WALA is measured as the time in months since the origination of the loans, with the weighting based on each loan's size in proportion to the aggregate total of the pool."
-  {:db/ident :fibo-md-dbtx-aly/InstrumentWeightedAverageLoanAge,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This is defined by the issuer. WALA is more official, not an analysis from a vendor. This changes but the values are relayed by the issuer on an ongoing basis. Investopedia explains Weighted Average Loan Age - WALA The weighted average age will change over time as some mortgages get paid off faster than others. Based on the issuer of the mortgage-backed securities (MBS), the WALA may be weighted on the remaining principal balance dollar figure, or the beginning notional value of the loan. The flip side of the WALA is the weighted average maturity (WAM), which is a dollar-weighted measure of the months remaining until the principal amounts are completely repaid on each loan in the pool."},
+   :db/ident :fibo-md-dbtx-aly/InstrumentWeightedAverageLoanAge,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -771,11 +771,11 @@
 
 (def InterpolatedPrice
   "A price determined by interpolation between available price figures, using some algorithm or curve."
-  {:db/ident :fibo-md-dbtx-aly/InterpolatedPrice,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Uses an algorithm to interpolate a price from two observed prices. Examples include price derived by interpolation between prices e.g. between Bid and Offer (among others). also includes Yield Curves and implied forward curves. That is, interpolation may either be linear (straight line interpolation between two values) or may be expressed as a non linear curve such as a yield curve or an implied forward curve."},
+   :db/ident :fibo-md-dbtx-aly/InterpolatedPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -839,11 +839,11 @@
 
 (def LoanPoolPrepaymentModel
   "Model of the prepayments of loans in a pool of individual loans, such as a mortgage pool or loan pool."
-  {:db/ident :fibo-md-dbtx-aly/LoanPoolPrepaymentModel,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This model captures the parameters that may influence the prepayment of loans or mortgages and relates these mathematically."},
+   :db/ident :fibo-md-dbtx-aly/LoanPoolPrepaymentModel,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -910,11 +910,11 @@
 
 (def ModifiedDurationAnalytic
   "The percentage price change of a security for a given change in yield. The higher the modified duration of a security, the higher its risk. Ad/ModDuration = [duration / {1 + (IRR/M)}]; where IRR is the internal rate of return and M is the number of compounding periods per year."
-  {:db/ident :fibo-md-dbtx-aly/ModifiedDurationAnalytic,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The higher the MD the greater the change in price for a given change in yield."},
+   :db/ident :fibo-md-dbtx-aly/ModifiedDurationAnalytic,
    :owl/disjointWith :fibo-md-dbtx-aly/MacCaulaysDurationAnalytic,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -954,11 +954,11 @@
 
 (def NativeYield
   "The yield of the security as determined using the Yield Calculation Method that is the default for the market that the security is traded in."
-  {:db/ident :fibo-md-dbtx-aly/NativeYield,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "conventional yield for that security type and geo location, ie. would be in relation too"},
+   :db/ident :fibo-md-dbtx-aly/NativeYield,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -1086,11 +1086,11 @@
 
 (def PoolFactor
   "How much of the original pool is still outstanding. This is a number below one. Expressed as percentage."
-  {:db/ident :fibo-md-dbtx-aly/PoolFactor,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Would multiply the factor by the starting value of the pool. This determines how much it is paying down. Would take the form of a 10 digit decimal factor showing how much of the pool is outstanding. You get Factor information every month or so which includes the WAM figure (and the WALA and WAC). The rate can be derived from this. that would be the rate at which the pool is paying down. These all come from the issuer."},
+   :db/ident :fibo-md-dbtx-aly/PoolFactor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -1179,13 +1179,13 @@
 
 (def PriceValueOfBasisPoint
   "Sensitivity of the price for one basis point change in yield, defined as the difference in price given 1 bp change in yield."
-  {:db/ident :fibo-md-dbtx-aly/PriceValueOfBasisPoint,
-   :fibo-fnd-utl-av/abbreviation {:rdf/language "en",
-                                  :rdf/value    "PVBP"},
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/abbreviation {:rdf/language "en",
+                          :rdf/value    "PVBP"},
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Price value of Basis Point Definition: The difference in price given 1 bp change in yield. This is like Duration but normalized to 1 basis point. Synonym DV01"},
+   :db/ident :fibo-md-dbtx-aly/PriceValueOfBasisPoint,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -1253,11 +1253,11 @@
 
 (def SimpleYieldCalculationMethod
   "The annual rate of return expressed as a percentage. This is the return divided by the outlay and multiplied by 100 to express the figure as a percentage."
-  {:db/ident :fibo-md-dbtx-aly/SimpleYieldCalculationMethod,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This is yield in its simplest sense, expressed as a percentage of return to outlay. As such, this is the same way that yield is determined for any investments, not just financial instruments or debt investments."},
+   :db/ident :fibo-md-dbtx-aly/SimpleYieldCalculationMethod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
@@ -1389,11 +1389,11 @@
 
 (def YieldCalculationFormula
   "The formula used in determining the Yield."
-  {:db/ident :fibo-md-dbtx-aly/YieldCalculationFormula,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The subject of this Formula is the Yield. The formula has an expression which can be defined either in tectual terms or by further local extension of the term \"Formula Expression\" to define the parameters used."},
+   :db/ident :fibo-md-dbtx-aly/YieldCalculationFormula,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",

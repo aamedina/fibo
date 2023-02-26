@@ -60,8 +60,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
    :rdfa/prefix "fibo-ind-ei-caei",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
@@ -90,20 +88,20 @@
    [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
      :owl/someValuesFrom :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
      :rdf/type           :owl/Restriction}
+    :fibo-ind-ei-ei/ConsumerPriceIndex
     {:owl/onClass    :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    :fibo-ind-ei-ei/ConsumerPriceIndex
     {:owl/hasValue   :fibo-ind-ei-caei/StatisticsCanada,
      :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
      :rdf/type       :owl/Restriction}
-    {:owl/hasValue   :fibo-ind-ei-caei/CanadianStatisticsPublisher,
-     :owl/onProperty :fibo-be-fct-pub/hasPublisher,
-     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-ind-ei-ei/FixedBasket,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    {:owl/hasValue   :fibo-ind-ei-caei/CanadianStatisticsPublisher,
+     :owl/onProperty :fibo-be-fct-pub/hasPublisher,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "economic indicator representing a measure of changes over time in the prices of a fixed basket of consumer goods and services that Canadian private households consume"})
 
@@ -140,20 +138,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
    :rdfs/label "Canadian producer price index",
-   :rdfs/subClassOf [{:owl/hasValue
-                      :fibo-ind-ei-caei/CanadianStatisticsPublisher,
-                      :owl/onProperty :fibo-be-fct-pub/hasPublisher,
-                      :rdf/type :owl/Restriction}
-                     :fibo-ind-ei-ei/ProducerPriceIndex
-                     {:owl/hasValue   :fibo-ind-ei-caei/StatisticsCanada,
-                      :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-ind-ei-caei/IndustrialProductsSector
                                      :fibo-ind-ei-caei/NewHousingSector
                                      :fibo-ind-ei-caei/RawMaterialsSector],
                        :rdf/type    :owl/Class},
+                      :rdf/type :owl/Restriction}
+                     :fibo-ind-ei-ei/ProducerPriceIndex
+                     {:owl/hasValue   :fibo-ind-ei-caei/StatisticsCanada,
+                      :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/hasValue
+                      :fibo-ind-ei-caei/CanadianStatisticsPublisher,
+                      :owl/onProperty :fibo-be-fct-pub/hasPublisher,
                       :rdf/type :owl/Restriction}],
    :skos/definition
    "an economic indicator representing a measure of the change over time in the prices of a fixed-basket of domestic producer goods and services"})

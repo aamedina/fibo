@@ -58,8 +58,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfa/prefix "fibo-fnd-pas-pas",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
@@ -317,12 +315,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "sale",
    :rdfs/subClassOf [:fibo-fnd-pas-pas/TransactionEvent
-                     {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
-                      :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/Situation
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasPrice,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/Situation
+                     {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
+                      :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Product,

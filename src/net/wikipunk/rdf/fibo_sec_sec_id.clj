@@ -55,8 +55,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
    :rdfa/prefix "fibo-sec-sec-id",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
@@ -103,11 +101,11 @@
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
+                     :fibo-sec-sec-id/SecurityIdentifier
                      {:owl/onClass    :lcc-cr/Alpha2Code,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-sec-sec-id/SecurityIdentifier
                      :fibo-fnd-arr-id/CompositeIdentifier],
    :skos/definition
    "security identifier that is defined as specified in ISO 6166, Securities and related financial instruments -- International securities identification numbering system (ISIN)"})
@@ -164,16 +162,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
    :rdfs/label "national numbering agency",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fbc-fct-ra/registers,
+   [{:owl/onProperty :fibo-fnd-rel-rel/manages,
+     :owl/someValuesFrom
+     :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumberRegistry,
+     :rdf/type :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/registers,
      :owl/someValuesFrom :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-plc-loc/hasCoverageArea,
      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty :fibo-fnd-rel-rel/manages,
-     :owl/someValuesFrom
-     :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumberRegistry,
-     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-ra/RegistrationAuthority
     {:owl/onProperty     :fibo-fnd-rel-rel/issues,
      :owl/someValuesFrom :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,

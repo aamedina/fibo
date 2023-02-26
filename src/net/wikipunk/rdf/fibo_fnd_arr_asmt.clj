@@ -56,8 +56,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfa/prefix "fibo-fnd-arr-asmt",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
@@ -142,24 +140,24 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "assessment event",
-   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
-                      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minCardinality 0,
+   :rdfs/subClassOf [{:owl/minCardinality 0,
                       :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
-                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-arr-asmt/AssessmentReport,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence],
+                     {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
+                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
+                     {:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
+                      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "event involving the evaluation or estimation of the nature, quality, or ability of someone or something"})
 

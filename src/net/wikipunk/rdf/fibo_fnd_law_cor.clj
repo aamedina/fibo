@@ -34,7 +34,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
    :rdfa/prefix "fibo-fnd-law-cor",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
    :rdfs/label "Legal Core Ontology",

@@ -72,8 +72,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfa/prefix "fibo-fbc-fct-breg",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
@@ -466,19 +464,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "legal entity identifier registry entry",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fbc-fct-breg/hasRegistrationStatus,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+     :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-breg/hasRegistrationStatus,
      :owl/someValuesFrom :fibo-fbc-fct-breg/RegistrationStatus,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fct-breg/hasValidationLevel,
-     :owl/someValuesFrom :fibo-fbc-fct-breg/EntityValidationLevel,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-breg/BusinessRegistryEntry
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-fct-breg/BusinessRegistrationAuthority,
      :owl/onProperty :fibo-fbc-fct-breg/hasValidationAuthority,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
+    :fibo-fbc-fct-breg/BusinessRegistryEntry
+    {:owl/onProperty     :fibo-fbc-fct-breg/hasValidationLevel,
+     :owl/someValuesFrom :fibo-fbc-fct-breg/EntityValidationLevel,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "entry in a legal entity identifier registry that conforms to ISO 17442 and the Global Legal Entity Identifier Foundation (GLEIF) Common Data Format (CDF)"})
@@ -495,13 +493,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "local operating unit",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/issues,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-ra/registers,
                       :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fct-ra/Registrar
-                     {:owl/onProperty     :fibo-fbc-fct-ra/registers,
+                     {:owl/onProperty     :fibo-fnd-rel-rel/issues,
                       :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fct-ra/Registrar],
    :skos/definition
    "registrar that is authorized by the Global LEI Foundation to issue legal entity identifiers"})
 
@@ -530,16 +528,16 @@
    [{:owl/onProperty     :lcc-cr/classifies,
      :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
      :rdf/type           :owl/Restriction}
-    {:owl/onDataRange :xsd/string,
-     :owl/onProperty  :lcc-lr/hasTag,
-     :owl/qualifiedCardinality 1,
-     :rdf/type        :owl/Restriction}
-    :lcc-lr/CodeElement
     {:owl/onClass
      :fibo-fbc-fct-breg/NorthAmericanIndustryClassificationSystemScheme,
      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
      :owl/qualifiedCardinality 1,
      :rdf/type :owl/Restriction}
+    {:owl/onDataRange :xsd/string,
+     :owl/onProperty  :lcc-lr/hasTag,
+     :owl/qualifiedCardinality 1,
+     :rdf/type        :owl/Restriction}
+    :lcc-lr/CodeElement
     :fibo-fnd-arr-cls/IndustrySectorClassifier],
    :skos/definition
    "the North American Industry Classification System (NAICS) code representing an industry"})

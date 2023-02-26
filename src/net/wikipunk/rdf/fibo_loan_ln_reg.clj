@@ -1,6 +1,7 @@
 (ns net.wikipunk.rdf.fibo-loan-ln-reg
   "This ontology contains concepts relating to regulatory requirements around loans, including disclosure rights and a small number of regulation-specific concepts. These include definitions of rights conferred on borrowers under consumer protection law, rights to equal treatment and the like."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :dcterms/abstract
    "This ontology contains concepts relating to regulatory requirements around loans, including disclosure rights and a small number of regulation-specific concepts. These include definitions of rights conferred on borrowers under consumer protection law, rights to equal treatment and the like.",
@@ -16,11 +17,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/LoansRegulatory/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-fct-rga"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
     "fibo-fnd-agr-ctr"
@@ -45,19 +48,13 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfa/prefix "fibo-loan-ln-reg",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "LoansRegulatory"},
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright "Copyright (c) 2013-2022 EDM Council, Inc.",
-   :sm/fileAbbreviation "fibo-loan-ln-reg"})
+                :rdf/value    "LoansRegulatory"}})
 
 (def BorrowerDataProtectionRequirement
   "borrower data protection requirement"
@@ -92,11 +89,11 @@
 
 (def BorrowerRight
   "borrower right"
-  {:db/ident :fibo-loan-ln-reg/BorrowerRight,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "example the right not to have a home reposessed. Example: RESPA Real Estate Setetlement Procedures Act (promulgated by HUD to govern real estate practices and disclosures Provisions of good faith estimate (GFE) of loan settlement costs. GFE would be when you apply - you get a GFE back from the lender telling you what it would cost if you close the loan."},
+   :db/ident :fibo-loan-ln-reg/BorrowerRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
@@ -143,11 +140,11 @@
 
 (def ConsumerCreditRequirement
   "Requirement set out on the lender about how they must treat the appliction to a loan"
-  {:db/ident :fibo-loan-ln-reg/ConsumerCreditRequirement,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "e..g being able to see and challenge information about them held by the credit agency or lender. e.g. can't publish opinions only facts, etc."},
+   :db/ident :fibo-loan-ln-reg/ConsumerCreditRequirement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
@@ -168,11 +165,11 @@
 
 (def ConsumerProtectionAgency
   "Some agency tasked with regulating consumer protection in some jurisdiction."
-  {:db/ident :fibo-loan-ln-reg/ConsumerProtectionAgency,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Note that this is consumer protection, and not other regulatory requirements such as systemic risk. an instance of this is the Consumer Financial Protection Bureau in the US. This is wide rthan just lending, but also covers lender rights."},
+   :db/ident :fibo-loan-ln-reg/ConsumerProtectionAgency,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
@@ -263,11 +260,11 @@
 
 (def GoodFaithEstimate
   "GFE - representation by the lender on the costs and implications of settlement (early termination) of the loan."
-  {:db/ident :fibo-loan-ln-reg/GoodFaithEstimate,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Provided in a timely way. Also associated with cooling off periods"},
+   :db/ident :fibo-loan-ln-reg/GoodFaithEstimate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
@@ -309,11 +306,11 @@
 
 (def LoanProductRepresentations
   "Representations about the loan product and the appropriateness of this for the borrower."
-  {:db/ident :fibo-loan-ln-reg/LoanProductRepresentations,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Covers responsible lending, consumer credit laws. See Aus Consumer Creti; US Reg Z and so on. In detail, this will include things like the representations about rates of interest, what people can or can't say when offering a product to a customer. Reg Z: Promoting the informed use of consumer credit by .. implictions and cost Also right to cancel a lien on a consumer's dwelling."},
+   :db/ident :fibo-loan-ln-reg/LoanProductRepresentations,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
@@ -327,11 +324,11 @@
 
 (def LoanRegulatoryRequirement
   "A regulatory requirement defined in regulations by a comsumer credit act or other legislation."
-  {:db/ident :fibo-loan-ln-reg/LoanRegulatoryRequirement,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Presence of a loan regulatory requirement associated with a loan indicates that the loan is regulated by the UK Consumer credit act or the equivalent in continental Europe."},
+   :db/ident :fibo-loan-ln-reg/LoanRegulatoryRequirement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
@@ -355,11 +352,11 @@
 
 (def ProductDisclosureRequirement
   "A requirement governing what representations can be made about a product, as it affects the consumer."
-  {:db/ident :fibo-loan-ln-reg/ProductDisclosureRequirement,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "There are also rules which encompass limitations on how you might attach loans and liens to principle dwellings, e.g. when or whether you can foreclose on someone's principal dwelling with impunity; what rights the consumer has - this last will be a separate kind of regulation."},
+   :db/ident :fibo-loan-ln-reg/ProductDisclosureRequirement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
@@ -380,10 +377,10 @@
 
 (def ProductDisclosureRight
   "The right to information about products at the point of purchasing these."
-  {:db/ident :fibo-loan-ln-reg/ProductDisclosureRight,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value "Includes retail, insurance and financial product disclosures"},
+   :db/ident :fibo-loan-ln-reg/ProductDisclosureRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
@@ -397,11 +394,11 @@
 
 (def RegB
   "US regulation concerning \"Equal credit opportunity act\" Electronic delivery of disclosures"
-  {:db/ident :fibo-loan-ln-reg/RegB,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Timing and delivery of electronic disclosures. Applications must have equal opportunity to follow. All applications for credit to be evaluated equally and not discriminiated against. This is disclosures about the Borrower."},
+   :db/ident :fibo-loan-ln-reg/RegB,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
@@ -416,11 +413,11 @@
 
 (def RegZ
   "US Fed regulation \"Truth in Lending Act\" uniform standards for electronic delivery of disclosures"
-  {:db/ident :fibo-loan-ln-reg/RegZ,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Creditors may delivery disclosures electronic if they obtain consumer's consent. Also relate to international, and foreign languages. This is disclosures about the Product."},
+   :db/ident :fibo-loan-ln-reg/RegZ,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",

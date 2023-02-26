@@ -1,13 +1,16 @@
 (ns net.wikipunk.rdf.fibo-cae-ce-act
   "This ontology provides a high level overview of actions including corporate, market, and regulatory actions, ranging from business oriented events such as address and name changes, to those that are more specific to securities."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 Object Management Group, Inc."
+                       "Copyright (c) 2016-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :dcterms/abstract
    "This ontology provides a high level overview of actions including corporate, market, and regulatory actions, ranging from business oriented events such as address and name changes, to those that are more specific to securities.",
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
@@ -19,7 +22,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/CorporateActions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
     "fibo-cae-ce-act"
@@ -42,32 +46,23 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfa/prefix "fibo-cae-ce-act",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Corporate Actions Ontology"},
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright "Copyright (c) 2016-2022 EDM Council, Inc.",
-   :sm/dependsOn ["https://www.omg.org/spec/LCC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FND/"
-                  "https://spec.edmcouncil.org/fibo/ontology/BE/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FBC/"],
-   :sm/fileAbbreviation "fibo-cae-ce-act",
-   :sm/filename "CorporateActions.rdf"})
+   :skos/changeNote
+   "The https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."})
 
 (def Action
   "event announced, initiated or carried out by an organization that affects a legal entity or the securities it issues and may have a material impact on that entity's stakeholders, such as shareholders and creditors"
-  {:db/ident :fibo-cae-ce-act/Action,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Actions initiated by an issuer are typically approved by that company's board of directors and authorized by their shareholders."},
+   :db/ident :fibo-cae-ce-act/Action,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -94,9 +89,9 @@
 
 (def ActionClassificationScheme
   "scheme for classifying the kinds of actions and events that may be announced, initiated or carried out by an organization that affects a legal entity or the securities it issues"
-  {:db/ident :fibo-cae-ce-act/ActionClassificationScheme,
-   :fibo-fnd-utl-av/usageNote
+  {:cmns-av/usageNote
    "The set of corporate actions and income events included herein are a subset of those specified in a combination of ISO 15022 Securities - Scheme for Messages (Data Field Dictionary) and the GLEIF LEI-related corporate actions. Other schemes that are specific to a custodian, depository, or regulatory agency may also be important, and should take a similar approach with respect to classification.",
+   :db/ident :fibo-cae-ce-act/ActionClassificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -114,11 +109,11 @@
 
 (def ActionClassifier
   "classifier that distinguishes the kinds of actions and events that may be announced, initiated or carried out by an organization that affects a legal entity or the securities it issues, such as income-oriented events"
-  {:db/ident :fibo-cae-ce-act/ActionClassifier,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "ISO 15022 classifies events as impacting income vs. others. Other classification schemes distinguish between actions that return profits to shareholders, actions that are designed to influence the share price, and actions involving a change in structure to the issuer organization."},
+   :db/ident :fibo-cae-ce-act/ActionClassifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -131,14 +126,14 @@
                      {:owl/onProperty     :lcc-cr/classifies,
                       :owl/someValuesFrom :fibo-cae-ce-act/Action,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :lcc-lr/hasTag,
-                      :owl/someValuesFrom :xsd/string,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-oc/OccurrenceKind
                      {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
                       :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :lcc-lr/hasTag,
+                      :owl/someValuesFrom :xsd/string,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-cls/Classifier],
    :skos/definition
    {:rdf/language "en",
@@ -179,11 +174,11 @@
 
 (def ChangeAction
   "corporate action to disseminate information regarding a change further described in the corporate action details"
-  {:db/ident :fibo-cae-ce-act/ChangeAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Generic changes may include a change in the terms of an issue, change in the identification of a security, change of board lot, change from global to definitive, etc."},
+   :db/ident :fibo-cae-ce-act/ChangeAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -197,13 +192,13 @@
 
 (def ClassAction
   "corporate action involving a situation where interested parties seek restitution for financial loss"
-  {:db/ident :fibo-cae-ce-act/ClassAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The security holder may be offered the opportunity to join a class action proceeding and would need to respond with an instruction."},
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "proposed settlement"},
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "proposed settlement"},
+   :db/ident :fibo-cae-ce-act/ClassAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -234,11 +229,11 @@
 
 (def CorporateAction
   "action carried out by or specifically relating to a legal entity that may affect the securities it issues and may have a material impact on its stakeholders, such as shareholders and creditors"
-  {:db/ident :fibo-cae-ce-act/CorporateAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Corporate actions are typically approved by a company's board of directors and authorized by the shareholders."},
+   :db/ident :fibo-cae-ce-act/CorporateAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -288,11 +283,11 @@
 
 (def IncomeOrientedClassifier
   "classifier of corporate actions that impacts income to shareholders"
-  {:db/ident :fibo-cae-ce-act/IncomeOrientedClassifier,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Cash dividends are a classic example where a public company declares a dividend to be paid on each outstanding share. Bonus is another case where the shareholder is rewarded. In a stricter sense, the bonus issue should not impact the share price but in reality, in rare cases, it does and results in an overall increase in value."},
+   :db/ident :fibo-cae-ce-act/IncomeOrientedClassifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -320,15 +315,15 @@
    :skos/example
    {:rdf/language "en",
     :rdf/value
-    "In the United States it is common for companies established as Subchapter S Corporations (S-Corp), typically early stage companies, to modify their structure to become full-fledged Subchapter C Corporations (C-Corp) to facilitate outside fundraising, mergers, acquisitions, and public offerings.  Other common form changes include migration from sole proprietorships to more formally registered organizations (e.g., LLC, S-Corp, C-Corp, etc.)"}})
+    "In the United States it is common for companies established as Subchapter S Corporations (S-Corp), typically early stage companies, to modify their structure to become full-fledged Subchapter C Corporations (C-Corp) to facilitate outside fundraising, mergers, acquisitions, and public offerings. Other common form changes include migration from sole proprietorships to more formally registered organizations (e.g., LLC, S-Corp, C-Corp, etc.)"}})
 
 (def Liquidation
   "corporate action related to winding up a business, including but not limited to distribution of cash, assets, or both"
-  {:db/ident :fibo-cae-ce-act/Liquidation,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Debt may be paid in order of priority based on preferred claims to assets specified by a security, for example."},
+   :db/ident :fibo-cae-ce-act/Liquidation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -342,11 +337,11 @@
 
 (def MandatoryCorporateAction
   "action initiated by the board of directors of a corporation that affects all shareholders"
-  {:db/ident :fibo-cae-ce-act/MandatoryCorporateAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Mandatory means mandatory participation by all shareholders, however the shareholder is not required to do anything."},
+   :db/ident :fibo-cae-ce-act/MandatoryCorporateAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -364,11 +359,11 @@
 
 (def MandatoryWithChoiceCorporateAction
   "mandatory corporate action where shareholders are given an opportunity to choose among several options"
-  {:db/ident :fibo-cae-ce-act/MandatoryWithChoiceCorporateAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "In case a shareholder does not submit the election, the default option will be applied."},
+   :db/ident :fibo-cae-ce-act/MandatoryWithChoiceCorporateAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -396,11 +391,11 @@
 
 (def MergerAcquisition
   "corporate action involving the consolidation of legal entities or assets"
-  {:db/ident :fibo-cae-ce-act/MergerAcquisition,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Such consolidation may be accomplished via financial transactions such as mergers, acquisitions, consolidations, tender offers, purchase of assets, and management acquisitions."},
+   :db/ident :fibo-cae-ce-act/MergerAcquisition,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -492,11 +487,11 @@
 
 (def SpinOff
   "corporate action involving the distribution of subsidiary stock to the shareholders of the parent company without a surrender of shares"
-  {:db/ident :fibo-cae-ce-act/SpinOff,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Spin-off represents a form of divestiture usually resulting in an independent company or in an existing company. Examples include demerger, distribution, and unbundling."},
+   :db/ident :fibo-cae-ce-act/SpinOff,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -510,11 +505,11 @@
 
 (def VoluntaryCorporateAction
   "event in which the shareholders elect to participate and must respond in order for the issuer to process the action"
-  {:db/ident :fibo-cae-ce-act/VoluntaryCorporateAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Shareholders send responses to the issuer's agents, and the issuer will send the proceeds of the action to those shareholders who elect to participate."},
+   :db/ident :fibo-cae-ce-act/VoluntaryCorporateAction,
    :owl/disjointWith :fibo-cae-ce-act/MandatoryCorporateAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy

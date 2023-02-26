@@ -52,7 +52,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
    :rdfa/prefix "fibo-be-tr-tr",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
    :rdfs/label "Trusts Ontology",
@@ -125,16 +124,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
    :rdfs/label "trust",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
                       :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/TrustBeneficiary,
                       :rdf/type           :owl/Restriction}
@@ -144,24 +143,24 @@
 
 (def TrustAgreement
   "formal agreement that establishes a trust, whereby the trustor(s) gives the trustee(s) the responsibility to hold and manage assets for the beneficiary(ies)"
-  {:cmns-av/aynonym ["trust document" "trust instrument" "trust deed"],
-   :cmns-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "A trust agreement typically states the (1) purpose for which the trust was established and fulfillment of which will terminate the trust, (2) details of the assets placed in the trust, (3) powers and limitations of the trustees, their reporting requirements, and other associated provisions, and (4) may also specify the trustees' compensation, if any. A trust agreement involving real estate requires its exact description and the trustor's express, written consent to create the trust to be valid.",
+   :cmns-av/synonym ["trust deed" "trust document" "trust instrument"],
    :db/ident :fibo-be-tr-tr/TrustAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
    :rdfs/label "trust agreement",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-be-le-fbo/OrganizationCoveringAgreement
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/TrustBeneficiary,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-be-le-fbo/OrganizationCoveringAgreement],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "formal agreement that establishes a trust, whereby the trustor(s) gives the trustee(s) the responsibility to hold and manage assets for the beneficiary(ies)"})
 
@@ -211,9 +210,10 @@
    :rdfs/subClassOf
    [:fibo-fnd-org-org/OrganizationMember
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom {:owl/allValuesFrom :fibo-be-tr-tr/Trust,
-                          :owl/onProperty    :lcc-lr/isMemberOf,
-                          :rdf/type          :owl/Restriction},
+     :owl/someValuesFrom {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
+                          :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
+                          :owl/qualifiedCardinality 1,
+                          :rdf/type       :owl/Restriction},
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/allValuesFrom :fibo-be-tr-tr/Trust,
@@ -221,10 +221,9 @@
                           :rdf/type          :owl/Restriction},
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
-                          :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
-                          :owl/qualifiedCardinality 1,
-                          :rdf/type       :owl/Restriction},
+     :owl/someValuesFrom {:owl/allValuesFrom :fibo-be-tr-tr/Trust,
+                          :owl/onProperty    :lcc-lr/isMemberOf,
+                          :rdf/type          :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-be-oac-exec/LegallyDelegatedAuthority],
    :skos/definition
@@ -232,25 +231,25 @@
 
 (def Trustor
   "party that establishes a trust and places property under the protection and management of one or more trustees for the benefit of at least one beneficiary"
-  {:cmns-av/aynonym ["grantor" "settlor"],
-   :cmns-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "It is not always necessary to identify the trustor who may be also be a trustee and/or one of the beneficiaries. In legal parlance, a trustor is called a settlor in the UK and a grantor in the US, whereas in common usage he or she may also be called a creator, donor, initiator, owner, or trust maker.",
+   :cmns-av/synonym ["grantor" "settlor"],
    :db/ident :fibo-be-tr-tr/Trustor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
    :rdfs/label "trustor",
    :rdfs/subClassOf
-   [:fibo-fnd-org-org/OrganizationMember
+   [{:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
+     :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
+     :rdf/type          :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
                           :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
                           :owl/qualifiedCardinality 1,
                           :rdf/type       :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    {:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
-     :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
-     :rdf/type          :owl/Restriction}],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "party that establishes a trust and places property under the protection and management of one or more trustees for the benefit of at least one beneficiary"})
 

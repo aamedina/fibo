@@ -59,8 +59,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
    :rdfa/prefix "fibo-be-oac-opty",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
@@ -143,13 +141,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
    :rdfs/label "entity ownership",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
-     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
+   [{:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
      :owl/onProperty :lcc-cr/isClassifiedBy,
      :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwnedEntity,
+     :owl/someValuesFrom {:owl/unionOf [:fibo-be-le-fbo/NotForProfitOrganization
+                                        :fibo-be-le-lp/BusinessEntity
+                                        :fibo-be-le-lp/LegalEntity],
+                          :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
+     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-acc-aeq/OwnersEquity
@@ -157,16 +161,10 @@
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-oac-own/Ownership
     {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-be-oac-opty/hasOwnedEntity,
-     :owl/someValuesFrom {:owl/unionOf [:fibo-be-le-fbo/NotForProfitOrganization
-                                        :fibo-be-le-lp/BusinessEntity
-                                        :fibo-be-le-lp/LegalEntity],
-                          :rdf/type    :owl/Class},
-     :rdf/type           :owl/Restriction}
+    :fibo-fnd-oac-own/Ownership
     {:owl/minQualifiedCardinality 0,
      :owl/onDataRange :xsd/decimal,
      :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,

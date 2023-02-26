@@ -54,8 +54,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
    :rdfa/prefix "fibo-be-fct-fct",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
@@ -176,23 +174,23 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
    :rdfs/label "merchant category code",
-   :rdfs/subClassOf [:fibo-fnd-arr-cls/IndustrySectorClassifier
+   :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty
                       :fibo-be-fct-fct/hasMerchantCategoryDescription,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type :owl/Restriction}
+                     :fibo-fnd-arr-cls/IndustrySectorClassifier
+                     {:owl/onProperty     :lcc-cr/classifies,
+                      :owl/someValuesFrom :fibo-be-fct-fct/Merchant,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onClass :fibo-be-fct-fct/MerchantCategoryCodeScheme,
                       :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :lcc-lr/CodeElement
-                     {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/classifies,
-                      :owl/someValuesFrom :fibo-be-fct-fct/Merchant,
-                      :rdf/type           :owl/Restriction}],
+                     :lcc-lr/CodeElement],
    :skos/definition "code used internationally to classify a merchant"})
 
 (def MerchantCategoryCodeScheme

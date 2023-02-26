@@ -34,8 +34,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfa/prefix "fibo-fnd-arr-doc",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",

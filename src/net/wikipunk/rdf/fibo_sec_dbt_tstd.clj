@@ -60,8 +60,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/",
    :rdfa/prefix "fibo-sec-dbt-tstd",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/",
@@ -117,14 +115,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "bill of exchange"},
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pas-psch/Payee,
-                      :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawer,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-tstd/MoneyMarketInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pas-psch/Payee,
+                      :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawee,
                       :rdf/type           :owl/Restriction}

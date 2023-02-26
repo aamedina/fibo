@@ -61,8 +61,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts/",
    :rdfa/prefix "fibo-sec-eq-dr",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts/",
@@ -92,12 +90,12 @@
    :rdfs/subClassOf [{:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
                       :rdf/type       :owl/Restriction}
+                     :fibo-sec-eq-dr/DepositaryReceipt
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass
                       :fibo-sec-eq-dr/AmericanDepositaryReceiptLevel,
                       :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -197,11 +195,11 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

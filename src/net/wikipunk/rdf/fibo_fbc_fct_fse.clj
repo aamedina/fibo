@@ -91,8 +91,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfa/prefix "fibo-fbc-fct-fse",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
@@ -209,21 +207,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfs/label "business identifier code",
-   :rdfs/subClassOf [{:owl/onClass    :fibo-fbc-fct-fse/BusinessPartySuffix,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-id/CompositeIdentifier
-                     {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
-                      :owl/onProperty :lcc-lr/denotes,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :lcc-lr/CodeElement
+   :rdfs/subClassOf [:fibo-fnd-arr-id/CompositeIdentifier
                      {:owl/onClass    :lcc-cr/Alpha2Code,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fbc-fct-fse/BusinessPartyPrefix,
+                     {:owl/onClass    :fibo-fbc-fct-fse/BusinessPartySuffix,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
@@ -231,11 +220,20 @@
                       :owl/someValuesFrom
                       :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
                       :rdf/type :owl/Restriction}
+                     :lcc-lr/CodeElement
+                     {:owl/onClass    :fibo-fbc-fct-fse/BusinessPartyPrefix,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-org-org/OrganizationPartIdentifier,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-org-org/OrganizationIdentifier],
+                     :fibo-fnd-org-org/OrganizationIdentifier
+                     {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :lcc-lr/denotes,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "international identifier for financial and non-financial institutions used to facilitate automated processing of information for financial services"})
 
@@ -272,15 +270,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfs/label "business party prefix",
    :rdfs/subClassOf [:lcc-lr/CodeElement
-                     {:owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
-                      :owl/someValuesFrom
-                      :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
-                      :rdf/type :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fbc-fct-fse/BusinessIdentifierCode,
                       :owl/onProperty :fibo-fnd-rel-rel/isIncludedIn,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-org-org/OrganizationIdentifier],
+                     :fibo-fnd-org-org/OrganizationIdentifier
+                     {:owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/someValuesFrom
+                      :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "a four-character (4 alphanumeric) code associated with the organization"})
 
@@ -297,11 +295,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfs/label "business party suffix",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
-     :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIncludedIn,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/isIncludedIn,
      :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCode,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
+     :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
      :rdf/type           :owl/Restriction}
     :lcc-lr/CodeElement],
    :skos/definition
@@ -579,12 +577,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfs/label "financial institution",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/provides,
-                      :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
+                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
-                     {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
-                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
+                     {:owl/onProperty     :fibo-fnd-rel-rel/provides,
+                      :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "a financial service provider identified as either a government agency or privately owned entity that collects funds from the public and from other institutions, and invests those funds in financial assets, such as loans, securities, bank deposits, and income-generating property"})

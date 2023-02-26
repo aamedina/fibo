@@ -40,7 +40,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
    :rdfa/prefix "fibo-fnd-plc-fac",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
    :rdfs/label "Facilities Ontology",
@@ -101,13 +100,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
    :rdfs/label "site",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   :rdfs/subClassOf [:fibo-fnd-pty-rl/ThingInRole
+                     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/onProperty
                                            :fibo-fnd-plc-fac/situates,
                                            :owl/someValuesFrom :owl/Thing,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-rl/ThingInRole
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/Address,
                       :owl/onProperty :fibo-fnd-plc-adr/hasAddress,

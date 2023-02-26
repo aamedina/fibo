@@ -1,20 +1,22 @@
 (ns net.wikipunk.rdf.fibo-cae-ce-srca
   "This ontology defines the kinds of income and corporate action events covered by ISO 15022 and other standards, including recent extensions to those standards. Scope has been limited to security-related events and actions, and excludes most notification and meetings related events."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2016-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :dcterms/abstract
    "This ontology defines the kinds of income and corporate action events covered by ISO 15022 and other standards, including recent extensions to those standards. Scope has been limited to security-related events and actions, and excludes most notification and meetings related events.",
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/CorporateActions/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/TemporalCore/SecurityTradingStatuses/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/CreditEvents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
@@ -22,7 +24,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-cae-ce-act"
     "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
     "fibo-cae-ce-srca"
@@ -53,23 +56,13 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfa/prefix "fibo-cae-ce-srca",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "Security-related Corporate Actions Ontology"},
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright "Copyright (c) 2016-2022 EDM Council, Inc.",
-   :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-                  "https://spec.edmcouncil.org/fibo/ontology/SEC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FBC/"],
-   :sm/fileAbbreviation "fibo-cae-ce-srca",
-   :sm/filename "SecurityRelatedCorporateActions.rdf"})
+                :rdf/value    "Security-related Corporate Actions Ontology"}})
 
 (def BondDefaultAction
   "corporate action which indicates a failure by the issuer to perform obligations defined as default events under the bond agreement and that have not been remedied"
@@ -91,15 +84,15 @@
 
 (def BonusIssue
   "corporate action in which security holders are awarded additional assets free of payment from the issuer in proportion to their holding"
-  {:db/ident :fibo-cae-ce-srca/BonusIssue,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "There are different taxation rules for the bonus issue compared to the dividend. There could also be a difference in the ranking of the shares that are given to what the holder already holds. Dividends are paid from current profits and bonus may be from accumulated reserves of the company. A scrip issue is the issue of new shares at no charge pro rata to the holder of existing shares."},
-   :fibo-fnd-utl-av/synonym [{:rdf/language "en",
-                              :rdf/value    "scrip issue"}
-                             {:rdf/language "en",
-                              :rdf/value    "capitalisation issue"}],
+   :cmns-av/synonym [{:rdf/language "en",
+                      :rdf/value    "scrip issue"}
+                     {:rdf/language "en",
+                      :rdf/value    "capitalisation issue"}],
+   :db/ident :fibo-cae-ce-srca/BonusIssue,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -113,11 +106,11 @@
 
 (def BonusRightsIssue
   "A Rights Issue in which the rights are given to the holders of the referenced shares for free."
-  {:db/ident :fibo-cae-ce-srca/BonusRightsIssue,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Rights = right to buy shares at a specified price. May be given the right for nothing (Bonus Rights Issue) or you may be offered to purchase that right at a subscription price (which you take up or don't). Bonus Rights Issue: given the option for free. May exercise at the Exercise Price."},
+   :db/ident :fibo-cae-ce-srca/BonusRightsIssue,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -145,11 +138,11 @@
 
 (def CallOnIntermediateSecurities
   "corporate action that involves a call or exercise on nil paid securities or intermediate securities resulting from an intermediate securities distribution (RHDI)"
-  {:db/ident :fibo-cae-ce-srca/CallOnIntermediateSecurities,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This code is used for the second event, when an intermediate securities' issue (rights/coupons) is composed of two events, the first event being the distribution of intermediate securities."},
+   :db/ident :fibo-cae-ce-srca/CallOnIntermediateSecurities,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -177,11 +170,11 @@
 
 (def CapitalDistribution
   "corporate action that pays shareholders an amount in cash issued from the issuer's capital account"
-  {:db/ident :fibo-cae-ce-srca/CapitalDistribution,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This action does not result in a reduction of the face value of a share or in a change to the number of shares in circulation."},
+   :db/ident :fibo-cae-ce-srca/CapitalDistribution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -213,11 +206,11 @@
 
 (def CashDividendAction
   "corporate action that distributes cash to shareholders in proportion to their equity holding"
-  {:db/ident :fibo-cae-ce-srca/CashDividendAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
-    "Ordinary dividends are typically recurring and regular.  The shareholder must take cash, and may be offered a choice of currency."},
+    "Ordinary dividends are typically recurring and regular. The shareholder must take cash, and may be offered a choice of currency."},
+   :db/ident :fibo-cae-ce-srca/CashDividendAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -297,11 +290,11 @@
 
 (def CorporateActionObligation
   "An obligation related to the holding of a Security."
-  {:db/ident :fibo-cae-ce-srca/CorporateActionObligation,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Delivery of a security. Not defining direction at this level of the model - one party may have an obligation to deliver security or to pay; other party may have an obligation to deliver or to pay. Or there may be just one."},
+   :db/ident :fibo-cae-ce-srca/CorporateActionObligation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -338,11 +331,11 @@
 
 (def CorporateChangeOfStatusEvent
   "Some change to the status of some security."
-  {:db/ident :fibo-cae-ce-srca/CorporateChangeOfStatusEvent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This is generally described by a corporate event message. For example, change in trading status, listing status."},
+   :db/ident :fibo-cae-ce-srca/CorporateChangeOfStatusEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -372,11 +365,11 @@
 
 (def DecreaseInValueAction
   "corporate action resulting in a reduction of face value of a share or the value of fund assets"
-  {:db/ident :fibo-cae-ce-srca/DecreaseInValueAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The number of circulating shares/units remains unchanged. This event may include a cash pay out to holders."},
+   :db/ident :fibo-cae-ce-srca/DecreaseInValueAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -390,11 +383,11 @@
 
 (def DividendOptionAction
   "corporate action that involves distribution of a dividend to shareholders with a choice of benefit to receive"
-  {:db/ident :fibo-cae-ce-srca/DividendOptionAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Shareholders may choose to receive shares or cash. A dividend option action is distinguished from reinvestment (DRIP) as, like a cash dividend, the company creates new share capital in exchange for the dividend rather than investing the dividend in the market."},
+   :db/ident :fibo-cae-ce-srca/DividendOptionAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -408,11 +401,11 @@
 
 (def DividendReinvestmentAction
   "corporate action that involves a dividend payment whereby holders can keep cash or have the cash reinvested into additional shares in the issuing company"
-  {:db/ident :fibo-cae-ce-srca/DividendReinvestmentAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Dividend reinvestment is distinguished from a cash dividend in that the issuer invests the dividend in the market rather than creating new share capital in exchange for the dividend."},
+   :db/ident :fibo-cae-ce-srca/DividendReinvestmentAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -426,10 +419,10 @@
 
 (def Drawing
   "Redemption in part before the scheduled final maturity date of a security."
-  {:db/ident :fibo-cae-ce-srca/Drawing,
-   :fibo-fnd-utl-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value    "Notification in advance of this happening."},
+  {:cmns-av/explanatoryNote {:rdf/language "en",
+                             :rdf/value
+                             "Notification in advance of this happening."},
+   :db/ident :fibo-cae-ce-srca/Drawing,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -443,11 +436,11 @@
 
 (def DutchAuction
   "corporate action by a party wishing to acquire a security"
-  {:db/ident :fibo-cae-ce-srca/DutchAuction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Holders of the security are invited to make an offer to sell, within a specific price range. The acquiring party will buy from the holder with lowest offer."},
+   :db/ident :fibo-cae-ce-srca/DutchAuction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -460,11 +453,11 @@
 
 (def ExchangeAction
   "corporate action that reflects an exchange of holdings for other securities and/or cash"
-  {:db/ident :fibo-cae-ce-srca/ExchangeAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The exchange can be either mandatory or voluntary involving the exchange of outstanding securities for different securities and/or cash. For example, 'exchange offer', 'capital reorganisation' or 'funds separation'."},
+   :db/ident :fibo-cae-ce-srca/ExchangeAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -561,11 +554,11 @@
 
 (def InterestRateAdjustment
   "Scheduled change to the coupon rate for a floating or adjustable rate security."
-  {:db/ident :fibo-cae-ce-srca/InterestRateAdjustment,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The SWIFT definition as given defines the notification of the interest rate change, not the adjustment. Adjusted to describe the event. REVIEW: Is this really an action? Usually consider that it's expected. Given definition was for the announcement. SWIFT full definition \"Announcement of the current coupon rate for a floating or adjustable rate security.\""},
+   :db/ident :fibo-cae-ce-srca/InterestRateAdjustment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -582,9 +575,9 @@
 
 (def IntermediateSecuritiesDistribution
   "corporate action involving the distribution of intermediate securities or privilege that gives the holder the right to take part in a future event"
-  {:db/ident :fibo-cae-ce-srca/IntermediateSecuritiesDistribution,
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "rights distribution"},
+  {:cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "rights distribution"},
+   :db/ident :fibo-cae-ce-srca/IntermediateSecuritiesDistribution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -626,16 +619,16 @@
 
 (def PariPassuAction
   "corporate action that occurs when securities with different characteristics become identical in all respects"
-  {:db/ident :fibo-cae-ce-srca/PariPassuAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
      "The term, pari-passu, means 'at the same rate or on an equal footing', and in finance is used to describe situations where two or more assets, securities, creditors, or obligations are equally managed without preference. An example of pari-passu occurs during bankruptcy proceedings: When the court reaches a verdict, the court regards all creditors equally, and the trustee will repay them the same fractional amount as other creditors and at the same time."}
     {:rdf/language "en",
      :rdf/value
      "A pari-passu event includes cases, for example, when shares with different entitlements to dividend or voting rights become equivalent through assimilation or pari-passu. Such an event may be scheduled in advance, for example, when shares resulting from a bonus may become fungible after a pre-set period of time, or may result from outside events, for example, merger, reorganisation, issue of supplementary tranches, etc."}],
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "assimilation"},
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "assimilation"},
+   :db/ident :fibo-cae-ce-srca/PariPassuAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -649,12 +642,12 @@
 
 (def PartialRedemptionWithReductionOfNominalValueAction
   "corporate action that involves redemption of securities in part before their scheduled final maturity date with reduction of the nominal value of the securities"
-  {:db/ident
-   :fibo-cae-ce-srca/PartialRedemptionWithReductionOfNominalValueAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The outstanding amount of securities will be reduced proportionally. May be mandatory or voluntary."},
+   :db/ident
+   :fibo-cae-ce-srca/PartialRedemptionWithReductionOfNominalValueAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -669,12 +662,12 @@
 
 (def PartialRedemptionWithoutReductionOfNominalValueAction
   "corporate action that involves redemption of securities in part before their scheduled final maturity date with no reduction in nominal value"
-  {:db/ident
-   :fibo-cae-ce-srca/PartialRedemptionWithoutReductionOfNominalValueAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This is commonly done by pool factor reduction. May be mandatory or voluntary."},
+   :db/ident
+   :fibo-cae-ce-srca/PartialRedemptionWithoutReductionOfNominalValueAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -689,11 +682,11 @@
 
 (def PostMergerSecuritiesExchange
   "corporate action that involves the exchange of outstanding securities, initiated by the issuer which may include options, as the result of two or more companies combining assets, that is, an external, third party company"
-  {:db/ident :fibo-cae-ce-srca/PostMergerSecuritiesExchange,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This is an action as a result of the merger, not the merger itself, and may be mandatory or voluntary. Cash payments may accompany share exchange."},
+   :db/ident :fibo-cae-ce-srca/PostMergerSecuritiesExchange,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -745,11 +738,11 @@
 
 (def RedenominationAction
   "corporate action by which the unit (currency and/or nominal) of a security is restated"
-  {:db/ident :fibo-cae-ce-srca/RedenominationAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "For example, the nominal/par value of security in a national currency is restated in another currency."},
+   :db/ident :fibo-cae-ce-srca/RedenominationAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -763,15 +756,15 @@
 
 (def RepurchaseOffer
   "corporate action in which an offer is made to existing shareholders by the issuing company to repurchase equity or other securities convertible into equity"
-  {:db/ident :fibo-cae-ce-srca/RepurchaseOffer,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The objective of the offer is to reduce the number of outstanding equities."},
-   :fibo-fnd-utl-av/synonym [{:rdf/language "en",
-                              :rdf/value    "reverse rights"}
-                             {:rdf/language "en",
-                              :rdf/value    "issuer bid"}],
+   :cmns-av/synonym [{:rdf/language "en",
+                      :rdf/value    "reverse rights"}
+                     {:rdf/language "en",
+                      :rdf/value    "issuer bid"}],
+   :db/ident :fibo-cae-ce-srca/RepurchaseOffer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -785,12 +778,12 @@
 
 (def ReverseStockSplit
   "corporate action involving a decrease in a company's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split"
-  {:db/ident :fibo-cae-ce-srca/ReverseStockSplit,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value    "Equity price and nominal value are increased accordingly."},
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "change in nominal value"},
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "change in nominal value"},
+   :db/ident :fibo-cae-ce-srca/ReverseStockSplit,
    :owl/disjointWith :fibo-cae-ce-srca/StockSplit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -808,11 +801,11 @@
 
 (def RightsExerciseEvent
   "Exercising the right to purchase the shares. Furhter Notes: This is an action on the part of the holder. SWIFT: Call/exercise on nil-paid securities/rights resulting from a rights distribution (RHDI) (To be used for the second event in case rights issue is dealt with in 2 events, first event being the RHDI)."
-  {:db/ident :fibo-cae-ce-srca/RightsExerciseEvent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "There is a rights trading period overlaps with rights subscriptiuon period (you can trade the rights) Rights exercise period - expiry date. Some time after the expiry the new shares are distributed. This is the distribution."},
+   :db/ident :fibo-cae-ce-srca/RightsExerciseEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -826,11 +819,11 @@
 
 (def SharesPremiumDividendAction
   "corporate action that pays shareholders an amount in cash issued from the shares premium reserve"
-  {:db/ident :fibo-cae-ce-srca/SharesPremiumDividendAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "It is similar to a dividend but with different tax implications."},
+   :db/ident :fibo-cae-ce-srca/SharesPremiumDividendAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -858,14 +851,14 @@
 
 (def StockSplit
   "corporate action involving an increase in a corporation's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split"
-  {:db/ident :fibo-cae-ce-srca/StockSplit,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value    "Equity price and nominal value are reduced accordingly."},
-   :fibo-fnd-utl-av/synonym [{:rdf/language "en",
-                              :rdf/value    "subdivision"}
-                             {:rdf/language "en",
-                              :rdf/value    "change in nominal value"}],
+   :cmns-av/synonym [{:rdf/language "en",
+                      :rdf/value    "subdivision"}
+                     {:rdf/language "en",
+                      :rdf/value    "change in nominal value"}],
+   :db/ident :fibo-cae-ce-srca/StockSplit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -882,15 +875,15 @@
 
 (def TenderOffer
   "corporate action involving an offer made to shareholders, normally by a third party, requesting them to sell (tender) or exchange their equities"
-  {:db/ident :fibo-cae-ce-srca/TenderOffer,
-   :fibo-fnd-utl-av/synonym [{:rdf/language "en",
-                              :rdf/value    "purchase offer"}
-                             {:rdf/language "en",
-                              :rdf/value    "acquisition"}
-                             {:rdf/language "en",
-                              :rdf/value    "takeover"}
-                             {:rdf/language "en",
-                              :rdf/value    "buyback"}],
+  {:cmns-av/synonym [{:rdf/language "en",
+                      :rdf/value    "buyback"}
+                     {:rdf/language "en",
+                      :rdf/value    "purchase offer"}
+                     {:rdf/language "en",
+                      :rdf/value    "acquisition"}
+                     {:rdf/language "en",
+                      :rdf/value    "takeover"}],
+   :db/ident :fibo-cae-ce-srca/TenderOffer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -921,11 +914,11 @@
 
 (def TradingStatusMessage
   "A message about trading status."
-  {:db/ident :fibo-cae-ce-srca/TradingStatusMessage,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "There are a number of such messages. Events v Status: See e.g. Active: this relates to one state OR two transitions (transition from pre-issuance to Trading, or from Suspended to Trading)."},
+   :db/ident :fibo-cae-ce-srca/TradingStatusMessage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
@@ -956,11 +949,11 @@
 
 (def WarrantExerciseAction
   "corporate action that offers holders the option to buy (call warrant) or to sell (put warrant) a specific amount of stock, cash, or commodity, at a predetermined price, during a predetermined period of time (which usually corresponds to the life of the issue)"
-  {:db/ident :fibo-cae-ce-srca/WarrantExerciseAction,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Note that participation by the warrant holder may be mandatory or voluntary and may involve a choice in the mandatory case."},
+   :db/ident :fibo-cae-ce-srca/WarrantExerciseAction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",

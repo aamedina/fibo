@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-der-drc-raw
   "The Rights and Warrants ontology covers a range of financial instruments providing the holder with the privilege to subscribe to or receive specific assets on terms specified. These include rights (privileges) extended to existing security holders to make new securities available to them at reduced prices or for free, and warrants whereby the holder can purchase or sell back a given quantity of the instrument, commodity or currency during a specified period at a pre-defined price."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 Object Management Group, Inc."
+                       "Copyright (c) 2015-2023 EDM Council, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :dcterms/abstract
    "The Rights and Warrants ontology covers a range of financial instruments providing the holder with the privilege to subscribe to or receive specific assets on terms specified. These include rights (privileges) extended to existing security holders to make new securities available to them at reduced prices or for free, and warrants whereby the holder can purchase or sell back a given quantity of the instrument, commodity or currency during a specified period at a pre-defined price.",
@@ -14,8 +16,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/CommoditiesContracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/DerivativesBasics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
@@ -25,11 +27,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/BasketIndices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/CurrencyContracts/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/CurrencyContracts/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/RightsAndWarrants/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-cb"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
     "fibo-der-drc-bsc"
@@ -74,51 +78,40 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfa/prefix "fibo-der-drc-raw",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Rights and Warrants Ontology"},
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2015-2021 Object Management Group, Inc."
-                  "Copyright (c) 2015-2021 EDM Council, Inc."],
-   :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/SEC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FND/"
-                  "https://spec.edmcouncil.org/fibo/ontology/BE/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FBC/"
-                  "https://spec.edmcouncil.org/fibo/ontology/IND/"],
-   :sm/fileAbbreviation "fibo-der-drc-raw",
-   :sm/filename "RightsAndWarrants.rdf"})
+   :skos/changeNote
+   "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."})
 
 (def AllotmentRight
   "privileges allotted to existing security holders, entitling them to receive new securities free of charge"
-  {:db/ident :fibo-der-drc-raw/AllotmentRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Allotment generally means the distribution of equity, particularly shares granted to a participating underwriting firm during an initial public offering (IPO)."},
-   :fibo-fnd-utl-av/synonym {:rdf/language "en",
-                             :rdf/value    "bonus right"},
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "bonus right"},
+   :db/ident :fibo-der-drc-raw/AllotmentRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "allotment right"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
+   :rdfs/subClassOf [:fibo-der-sbd-sbd/EquityDerivative
+                     :fibo-fbc-fi-fi/Entitlement
+                     {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-der-drc-raw/AllotmentRightFormula,
-                      :rdf/type :owl/Restriction}
-                     :fibo-der-sbd-sbd/EquityDerivative
-                     :fibo-fbc-fi-fi/Entitlement],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -126,11 +119,11 @@
 
 (def AllotmentRightFormula
   "rule applied to calculate the number of securities for an allotment right, typically based on the number of these instruments that the holder holds"
-  {:db/ident :fibo-der-drc-raw/AllotmentRightFormula,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Note that there may be a combination of a rule expressed in text as well as an expression or more complex formula embedded in a contract for making this determination."},
+   :db/ident :fibo-der-drc-raw/AllotmentRightFormula,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -144,11 +137,11 @@
 
 (def BasketWarrant
   "warrant that permits the holder to acquire a package or group of assets at a specified price during a specified period"
-  {:db/ident :fibo-der-drc-raw/BasketWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/BasketWarrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -165,11 +158,11 @@
 
 (def BondPurchaseRight
   "purchase right that gives a prospective acquiree's bondholders the right to buy bonds of the firm or bonds of anyone who acquires the firm at a deep discount to their fair market value"
-  {:db/ident :fibo-der-drc-raw/BondPurchaseRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/BondPurchaseRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -189,11 +182,11 @@
 
 (def BondSubscriptionRight
   "subscription right entitling existing bond holders to subscribe to new securities at a price normally lower than the prevailing market price"
-  {:db/ident :fibo-der-drc-raw/BondSubscriptionRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/BondSubscriptionRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -213,11 +206,11 @@
 
 (def CallPutWarrant
   "warrant that either does not specify call or put features, or that explicitly includes both a call and put feature"
-  {:db/ident :fibo-der-drc-raw/CallPutWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, 2019."},
+   :db/ident :fibo-der-drc-raw/CallPutWarrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -232,11 +225,11 @@
 
 (def CallWarrant
   "warrant giving the buyer (holder) the right, but not the obligation, to acquire specific underlying assets during a specified period at a specified price"
-  {:db/ident :fibo-der-drc-raw/CallWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, 2019."},
+   :db/ident :fibo-der-drc-raw/CallWarrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -250,11 +243,11 @@
 
 (def CombinedInstrumentsPurchaseRight
   "purchase right that gives a prospective acquiree's holders of multiple securities the right to buy securities of the firm or securities of anyone who acquires the firm at a deep discount to their fair market value"
-  {:db/ident :fibo-der-drc-raw/CombinedInstrumentsPurchaseRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/CombinedInstrumentsPurchaseRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -268,11 +261,11 @@
 
 (def CombinedInstrumentsSubscriptionRight
   "subscription right entitling existing holders of multiple securities to subscribe to new securities at a price normally lower than the prevailing market price"
-  {:db/ident :fibo-der-drc-raw/CombinedInstrumentsSubscriptionRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/CombinedInstrumentsSubscriptionRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -286,11 +279,11 @@
 
 (def CommodityWarrant
   "warrant that permits the holder to acquire a specified amount of a commodity during a specified period at a specified price"
-  {:db/ident :fibo-der-drc-raw/CommodityWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/CommodityWarrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -309,11 +302,11 @@
 
 (def CommonConvertibleSharePurchaseRight
   "purchase right that gives a prospective acquiree's common, convertible shareholders the right to buy common, convertible shares of the firm or common, convertible shares of anyone who acquires the firm at a deep discount to their fair market value"
-  {:db/ident :fibo-der-drc-raw/CommonConvertibleSharePurchaseRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/CommonConvertibleSharePurchaseRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -334,11 +327,11 @@
 
 (def CommonConvertibleShareSubscriptionRight
   "subscription right entitling existing common convertible shareholders to subscribe to new securities at a price normally lower than the prevailing market price"
-  {:db/ident :fibo-der-drc-raw/CommonConvertibleShareSubscriptionRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/CommonConvertibleShareSubscriptionRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -359,11 +352,11 @@
 
 (def CommonSharePurchaseRight
   "purchase right that gives a prospective acquiree's common shareholders the right to buy common shares of the firm or common shares of anyone who acquires the firm at a deep discount to their fair market value"
-  {:db/ident :fibo-der-drc-raw/CommonSharePurchaseRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/CommonSharePurchaseRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -383,11 +376,11 @@
 
 (def CommonShareSubscriptionRight
   "subscription right entitling existing common shareholders to subscribe to new securities at a price normally lower than the prevailing market price"
-  {:db/ident :fibo-der-drc-raw/CommonShareSubscriptionRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/CommonShareSubscriptionRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -429,18 +422,18 @@
 
 (def CoveredWarrant
   "warrant that gives the holder the right, but not the obligation, to buy (call warrant) or to sell (put warrant) an underlying asset at a specified price (the strike or exercise price) by a predetermined date, issued without an accompanying security by a third party that holds as many securities as would be required if all the warrants are exercised"
-  {:db/ident :fibo-der-drc-raw/CoveredWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
      "In contrast to traditional equity warrants, with covered warrants, no new issuance of common stock occurs if the warrant is exercised. The underlying shares of common stock are usually either owned by the issuer of the covered warrants or the issuer has a mechanism, such as owning equity warrants for the underlying shares, through which they can obtain the shares."}
     {:rdf/language "en",
      :rdf/value
      "Covered warrants are very similar to options in that they can be created to allow holders to benefit from either rising prices or falling prices, by having both put and call warrants. They can also be created on a wide variety of underlying instruments, not just equities and they are fairly standardised and are mostly traded on exchanges. The main difference is that warrants tend to have longer maturity dates, typically measured in years instead of months (as with options), and are easier to access for individuals as they can be bought and sold in the same way as shares in the stock exchange."}],
+   :db/ident :fibo-der-drc-raw/CoveredWarrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -458,11 +451,11 @@
 
 (def CurrencyWarrant
   "warrant that permits the holder to acquire a specified amount in a certain currency at a specified exchange rate during a specified period"
-  {:db/ident :fibo-der-drc-raw/CurrencyWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/CurrencyWarrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -477,11 +470,11 @@
 
 (def DebtWarrant
   "warrant that permits the holder to acquire a specified amount of a debt instrument or related debt observable a specified period at a specified price"
-  {:db/ident :fibo-der-drc-raw/DebtWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/DebtWarrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -496,11 +489,11 @@
 
 (def EquityWarrant
   "warrant that permits the holder to acquire a specified amount of an equity instrument during a specified period at a specified price"
-  {:db/ident :fibo-der-drc-raw/EquityWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/EquityWarrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -529,11 +522,11 @@
 
 (def IndexWarrant
   "warrant that permits the holder to acquire a specified amount based on the performance of an index during a specified period at a specified price"
-  {:db/ident :fibo-der-drc-raw/IndexWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/IndexWarrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -557,11 +550,11 @@
 
 (def NakedWarrant
   "warrant that gives the holder the right, but not the obligation, to buy (call warrant) or to sell (put warrant) an underlying asset at a specified price (the strike or exercise price) by a predetermined date, issued without an accompanying security by a third party that does not hold as many securities as would be required if all the warrants are exercised"
-  {:db/ident :fibo-der-drc-raw/NakedWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/NakedWarrant,
    :owl/disjointWith :fibo-der-drc-raw/CoveredWarrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -580,15 +573,15 @@
 
 (def PerpetualWarrant
   "warrant without an expiration date, giving the holder the right, but not the obligation, to buy (call warrant) or to sell (put warrant) an underlying asset at a certain strike price"
-  {:db/ident :fibo-der-drc-raw/PerpetualWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The strike price, in the case of a perpetual warrant, is usually higher than the market value of the underlying asset at the time of issue."},
+   :db/ident :fibo-der-drc-raw/PerpetualWarrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -599,11 +592,11 @@
 
 (def PreferredConvertibleSharePurchaseRight
   "purchase right that gives a prospective acquiree's preferred, convertible shareholders the right to buy preferred, convertible shares of the firm or preferred, convertible shares of anyone who acquires the firm at a deep discount to their fair market value"
-  {:db/ident :fibo-der-drc-raw/PreferredConvertibleSharePurchaseRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/PreferredConvertibleSharePurchaseRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -624,11 +617,11 @@
 
 (def PreferredConvertibleShareSubscriptionRight
   "subscription right entitling existing preferred, convertible shareholders to subscribe to new securities at a price normally lower than the prevailing market price"
-  {:db/ident :fibo-der-drc-raw/PreferredConvertibleShareSubscriptionRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/PreferredConvertibleShareSubscriptionRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -649,11 +642,11 @@
 
 (def PreferredSharePurchaseRight
   "purchase right that gives a prospective acquiree's preferred shareholders the right to buy preferred shares of the firm or preferred shares of anyone who acquires the firm at a deep discount to their fair market value"
-  {:db/ident :fibo-der-drc-raw/PreferredSharePurchaseRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/PreferredSharePurchaseRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -673,11 +666,11 @@
 
 (def PreferredShareSubscriptionRight
   "subscription right entitling existing preferred shareholders to subscribe to new securities at a price normally lower than the prevailing market price"
-  {:db/ident :fibo-der-drc-raw/PreferredShareSubscriptionRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/PreferredShareSubscriptionRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -720,15 +713,15 @@
 
 (def PurchaseRight
   "anti-takeover device that gives a prospective acquiree's shareholders the right to buy shares of the firm or shares of anyone who acquires the firm at a deep discount to their fair market value"
-  {:db/ident :fibo-der-drc-raw/PurchaseRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "The underlying is usually shares but this not necessarily the case. Also known as \"Poison Pill\"."},
+   :db/ident :fibo-der-drc-raw/PurchaseRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -742,11 +735,11 @@
 
 (def PutWarrant
   "warrant giving the buyer (holder) the right, but not the obligation, to sell the assets specified (i.e., acquire cash in exchange for the underlying assets) back to the issuer at a fixed price or formula, on or before a specified date"
-  {:db/ident :fibo-der-drc-raw/PutWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, 2019."},
+   :db/ident :fibo-der-drc-raw/PutWarrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -760,21 +753,21 @@
 
 (def SubscriptionRight
   "privileges allotted to existing security holders, entitling them to subscribe to new securities at a price normally lower than the prevailing market price"
-  {:db/ident :fibo-der-drc-raw/SubscriptionRight,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "A subscription rights issue increases the number of shares in the market, thus leading to a dilution in each share's value."},
-   :fibo-fnd-utl-av/synonym [{:rdf/language "en",
-                              :rdf/value    "subscription privilege"}
-                             {:rdf/language "en",
-                              :rdf/value    "anti-dilution right"}
-                             {:rdf/language "en",
-                              :rdf/value    "preemptive right"}],
+   :cmns-av/synonym [{:rdf/language "en",
+                      :rdf/value    "preemptive right"}
+                     {:rdf/language "en",
+                      :rdf/value    "anti-dilution right"}
+                     {:rdf/language "en",
+                      :rdf/value    "subscription privilege"}],
+   :db/ident :fibo-der-drc-raw/SubscriptionRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
@@ -788,11 +781,11 @@
 
 (def TraditionalWarrant
   "warrant that gives the holder the right, but not the obligation, to buy (call warrant) or to sell (put warrant) an underlying asset at a specified price (the strike or exercise price) by a predetermined date, issued by the issuer of the underlying instrument"
-  {:db/ident :fibo-der-drc-raw/TraditionalWarrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
+   :db/ident :fibo-der-drc-raw/TraditionalWarrant,
    :owl/disjointWith [:fibo-der-drc-raw/NakedWarrant
                       :fibo-der-drc-raw/CoveredWarrant],
    :rdf/type :owl/Class,
@@ -808,15 +801,15 @@
 
 (def Warrant
   "entitlement that permits the holder to purchase a specified amount of a financial instrument, commodity, currency or other asset during a specified period at a specified price"
-  {:db/ident :fibo-der-drc-raw/Warrant,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019"},
-   :fibo-fnd-utl-av/explanatoryNote
+   :cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Warrants are for any kind of instrument. Warrants may be privately issued and may not necessarily be traded on an exchange."},
+   :db/ident :fibo-der-drc-raw/Warrant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",

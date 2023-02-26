@@ -1,24 +1,34 @@
 (ns net.wikipunk.rdf.fibo-md-civx-fun
   "Terms which have a time component (either real time, intra-day or dated terms). These include Net Present Value (NPV) and related analytics."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
    :dcterms/abstract
    "Terms which have a time component (either real time, intra-day or dated terms). These include Net Present Value (NPV) and related analytics.",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/CollectiveInvestmentVehicles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/Funds/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/CIVTemporal/FundsTemporal/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-oac-opty"
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
+    "fibo-fbc-fi-ip"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
     "fibo-fnd-dt-fd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-md-civx-fun"
@@ -31,17 +41,13 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
    :rdfa/prefix "fibo-md-civx-fun",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "FundsTemporal"},
-   :sm/fileAbbreviation "fibo-md-civx-fun"})
+                :rdf/value    "FundsTemporal"}})
 
 (def AccruedFees
   "accrued fees"
@@ -70,17 +76,6 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "accrued taxes"}})
 
-(def BidPrice
-  "bid price"
-  {:db/ident :fibo-md-civx-fun/BidPrice,
-   :owl/disjointWith :fibo-md-civx-fun/mutuallyExclusive,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "bid price"},
-   :rdfs/subClassOf :fibo-md-civx-fun/FundPrice})
-
 (def FeePayable
   "fee payable"
   {:db/ident :fibo-md-civx-fun/FeePayable,
@@ -97,7 +92,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "fund price"}})
+                :rdf/value    "fund price"},
+   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice})
 
 (def FundUnitPerformance
   "fund unit performance"
@@ -116,29 +112,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "funds tax"},
-   :rdfs/subClassOf {:owl/onProperty     :fibo-md-civx-fun/appliesTo,
+   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                      :owl/someValuesFrom :fibo-be-oac-opty/Investor,
                      :rdf/type           :owl/Restriction}})
-
-(def NetAssetValue
-  "net asset value"
-  {:db/ident :fibo-md-civx-fun/NetAssetValue,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "net asset value"},
-   :rdfs/subClassOf :fibo-md-civx-fun/FundPrice})
-
-(def RedemptionPrice
-  "redemption price"
-  {:db/ident :fibo-md-civx-fun/RedemptionPrice,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "redemption price"},
-   :rdfs/subClassOf :fibo-md-civx-fun/FundPrice})
 
 (def SigmaValueOfHoldings
   "sigma value of holdings"
@@ -167,47 +143,6 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "swing price"},
    :rdfs/subClassOf :fibo-md-civx-fun/FundPrice})
-
-(def appliesTo
-  "applies to"
-  {:db/ident :fibo-md-civx-fun/appliesTo,
-   :owl/inverseOf :fibo-md-civx-fun/incursTax,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-md-civx-fun/FundsTax,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "applies to"},
-   :rdfs/range :fibo-be-oac-opty/Investor})
-
-(def declarationTime
-  "Time of the net asset value publication. Further Notes REVIEW: time of day, year or what?"
-  {:db/ident :fibo-md-civx-fun/declarationTime,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/domain :fibo-md-civx-fun/NetAssetValue,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "declaration time"},
-   :rdfs/range :xsd/dateTime,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Time of the net asset value publication. Further Notes REVIEW: time of day, year or what?"}})
-
-(def determinationDate
-  "The date when the price is determined. and time."
-  {:db/ident :fibo-md-civx-fun/determinationDate,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-md-civx-fun/FundPrice,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "determination date"},
-   :rdfs/range :fibo-fnd-dt-fd/Date,
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "The date when the price is determined. and time."}})
 
 (def determinationDate.1
   "determination date"
@@ -255,17 +190,6 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has performance"},
    :rdfs/range :fibo-md-civx-fun/FundUnitPerformance})
-
-(def hasPrice
-  "has price"
-  {:db/ident :fibo-md-civx-fun/hasPrice,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-fund-fund/FundUnit,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has price"},
-   :rdfs/range :fibo-md-civx-fun/FundPrice})
 
 (def incurs
   "incurs"
@@ -333,16 +257,6 @@
                 :rdf/value    "incurs transaction fee"},
    :rdfs/range :fibo-md-civx-fun/FeePayable})
 
-(def mutuallyExclusive
-  "offer price"
-  {:db/ident :fibo-md-civx-fun/mutuallyExclusive,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "offer price"},
-   :rdfs/subClassOf :fibo-md-civx-fun/FundPrice})
-
 (def netOrGrossOfFees
   "net or gross of fees"
   {:db/ident :fibo-md-civx-fun/netOrGrossOfFees,
@@ -353,18 +267,3 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "net or gross of fees"},
    :rdfs/range :xsd/string})
-
-(def valuationTime
-  "Time of the price valuation for the investment fund/fund class."
-  {:db/ident :fibo-md-civx-fun/valuationTime,
-   :rdf/type :owl/DatatypeProperty,
-   :rdfs/domain :fibo-md-civx-fun/NetAssetValue,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "valuation time"},
-   :rdfs/range :xsd/dateTime,
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Time of the price valuation for the investment fund/fund class."}})

@@ -53,8 +53,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
    :rdfa/prefix "fibo-be-oac-cown",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
@@ -86,15 +84,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
    :rdfs/label "beneficial owner",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-be-oac-cown/isBeneficialOwnerOf,
+   :rdfs/subClassOf [:fibo-fnd-oac-ctl/ControllingParty
+                     {:owl/onProperty     :fibo-be-oac-cown/isBeneficialOwnerOf,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-oac-ctl/ControllingParty
-                     :fibo-fnd-agr-agr/Beneficiary
                      {:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-agr-agr/Beneficiary],
    :skos/definition
    "party that enjoys the benefits of ownership (such as receipt of income) of something even though its ownership (title) may be in the name of another party (called a nominee or registered owner)"})
 

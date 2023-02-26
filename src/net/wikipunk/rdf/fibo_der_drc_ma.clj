@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-der-drc-ma
   "Terms that make up the OTC Derivatives Master agreement as defined in the ISDA literature. This is an experimental ontology and needs considerable re-work if it is to be considered for release."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
+                       "Copyright (c) 2015-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :dcterms/abstract
    "Terms that make up the OTC Derivatives Master agreement as defined in the ISDA literature. This is an experimental ontology and needs considerable re-work if it is to be considered for release.",
@@ -8,6 +10,7 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/TransactionsExt/REATransactions/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
@@ -23,7 +26,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-der-drc-ma"
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
     "fibo-fbc-dae-cre"
@@ -52,20 +56,13 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfa/prefix "fibo-der-drc-ma",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "Derivatives Master Agreements Ontology"},
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2015-2021 EDM Council, Inc."
-                  "Copyright (c) 2015-2021 Object Management Group, Inc."],
-   :sm/fileAbbreviation "fibo-der-drc-ma"})
+                :rdf/value    "Derivatives Master Agreements Ontology"}})
 
 (def CreditEventDefinition
   "contract definition for a credit event as it pertains to the master agreement"
@@ -114,11 +111,11 @@
 
 (def CreditSupportDefaultEvent
   "Failure of some Credit Support Agreement."
-  {:db/ident :fibo-der-drc-ma/CreditSupportDefaultEvent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Per ISDA Master Agreement exmple, this may take one of the following forms (there may be others not in this example): - Failure to comply with some obligation under the Credit Support Agreement (after a suitable grace period has elapsed) - Expiration or Termination of Credit Support Agreement while it is still needed for the transactions it covers (i.e. not normal termination); - Disavowal or repudiation of the Credit Suport Agreement by one or other party to it. Note that these three all relate to the state of the Credit Support Agreement, and have the effect that the Credit Support Agreement is no longer in effect, during a time when there is some Transaction in play which was intended to be covered by that Agreement. ISDA original terms from Master Agreement example, in full: Credit Support Default. (1) Failure by the party or any Credit Support Provider of such party to comply with or perform any agreement or obligation to be complied with or performed by it in accordance with any Credit Support Document if such failure is continuing after any applicable grace period has elapsed; (2) the expiration or termination of such Credit Support Document or the failing or ceasing of such Credit Support Document to be in full force and effect for the purpose of this Agreement (in either case other than in accordance with its terms) prior to the satisfaction of all obligations of such party under each Transaction to which such Credit Support Document relates without the written consent of the other party; or (3) the party or such Credit Support Provider disaffirms, disclaims, repudiates or rejects, in whole or in part, or challenges the validity of, such Credit Support Document Definition Agreement: SR Draft. Details from ISDA above."},
+   :db/ident :fibo-der-drc-ma/CreditSupportDefaultEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
@@ -180,11 +177,11 @@
 
 (def DeliveryObligation
   "Obligation to make deliveries on transactions transacted under the Master Agreement, as specified in any Confirmation made by that party."
-  {:db/ident :fibo-der-drc-ma/DeliveryObligation,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This and the Payment Obligation may be set out in one clause of the Master Agreement. This is the clause which obligates the parties to make the payments or deliveries in accordance with those Confirmations, which are generally messages. May be subject to other provisions in the Master Agreement. Example text: \"Each party will make each payment or delivery specified in each Confirmation to be made by it, subject to the other provisions of this Agreement. \""},
+   :db/ident :fibo-der-drc-ma/DeliveryObligation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
@@ -220,9 +217,9 @@
 
 (def EarlyTermination
   "termination of an agreement for any reason prior to its expiration date"
-  {:db/ident :fibo-der-drc-ma/EarlyTermination,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Early termination may be automatically triggered by an event of default with respect to any contract obligation, due to corporate action, or for other reasons.  An early termination date may be calculated per the terms of the agreement or specified explicitly at the time the termination event occurs.",
+   :db/ident :fibo-der-drc-ma/EarlyTermination,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
@@ -260,10 +257,10 @@
 
 (def MasterAgreementChangeNotificationObligation
   "The obligtaion to notify the counterparty to this agreement, of any changes in details."
-  {:db/ident :fibo-der-drc-ma/MasterAgreementChangeNotificationObligation,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value    "General term of which Change of Account is an example."},
+   :db/ident :fibo-der-drc-ma/MasterAgreementChangeNotificationObligation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
@@ -313,11 +310,11 @@
 
 (def MasterAgreementEarlyTerminationProvisions
   "Terms and Conditions around early termination of the Master Agreement."
-  {:db/ident :fibo-der-drc-ma/MasterAgreementEarlyTerminationProvisions,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Terms here include: Additional Terminaton Event Affected Parties"},
+   :db/ident :fibo-der-drc-ma/MasterAgreementEarlyTerminationProvisions,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
@@ -335,11 +332,11 @@
 
 (def MasterAgreementEarlyTerminationRight
   "a contractual right of a party to the master agreement to terminate the agreement early"
-  {:db/ident :fibo-der-drc-ma/MasterAgreementEarlyTerminationRight,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This generally arises from some Default Event on the part of the other party."},
+   :db/ident :fibo-der-drc-ma/MasterAgreementEarlyTerminationRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
@@ -393,11 +390,11 @@
 
 (def MasterAgreementRepresentation
   "a representation made by one of the parties included in the master agreement"
-  {:db/ident :fibo-der-drc-ma/MasterAgreementRepresentation,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "These typically include: Basic Representations - Status of the organization - Powers of the organization - Absence of conflicts - Existence of the relevant consents - Binding nature of the Agreement. Absence of default and similar events Absence of litigation Accuracy of information Tax representations (withholding; notifications) - Payer - Payee Representations as to the Credit Support Agreement Representations as to regulatory matters"},
+   :db/ident :fibo-der-drc-ma/MasterAgreementRepresentation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
@@ -412,12 +409,12 @@
 
 (def MasterAgreementRightToTerminationFollowingDefaultEvent
   "the right to terminate a master agreement following an event of default"
-  {:db/ident
-   :fibo-der-drc-ma/MasterAgreementRightToTerminationFollowingDefaultEvent,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This is a right which may be invoked by either party to the Master Agreement; in so doing they acome the \"Non Defaulting Party\" with respect to this Right. ISDA Definition in full: Right to Terminate Following Event of Default. If at any time an Event of Default with respect to a party (the \"Defaulting Party\") has occurred and is then continuing, the other party (the \"Non-defaulting Party\") may, by not more than 20 days notice to the Defaulting Party specifying the relevant Event of Default, designate a day not earlier than the day such notice is effective as an Early Termination Date in respect of all outstanding Transactions. If, however, \"Automatic Early Termination\" is specified in the Schedule as applying to a party, then an Early Termination Date in respect of all outstanding Transactions will occur immediately upon the occurrence with respect to such party of an Event of Default specified in Section 5(a)(vii)(1), (3), (5), (6) or, to the extent analogous thereto, (8), and as of the time immediately preceding the institution of the relevant proceeding or the presentation of the relevant petition upon the occurrence with respect to such party of an Event of Default specified in Section 5(a)(vii)(4) or, to the extent analogous thereto, (8)."},
+   :db/ident
+   :fibo-der-drc-ma/MasterAgreementRightToTerminationFollowingDefaultEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
@@ -474,11 +471,11 @@
 
 (def MasterAgreementTerminationProvision
   "a provision in the master agreement, setting out the conditions, consequences etc. of termination of the agreement"
-  {:db/ident :fibo-der-drc-ma/MasterAgreementTerminationProvision,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Early Termination is a specific set of terms within this, that are specific to this kind of Master Agreement."},
+   :db/ident :fibo-der-drc-ma/MasterAgreementTerminationProvision,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
@@ -551,11 +548,11 @@
 
 (def PaymentObligation
   "Obligation to make payments on transactions transacted under the Master Agreement, as specified in any Confirmation made by that party."
-  {:db/ident :fibo-der-drc-ma/PaymentObligation,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "This and the Delivery Obligation may be set out in one clause of the Master Agreement. This is the clause which obligates the parties to make the payments or deliveries in accordance with those Confirmations, which are generally messages. May be subject to other provisions in the Master Agreement. Example text: \"Each party will make each payment or delivery specified in each Confirmation to be made by it, subject to the other provisions of this Agreement. \" Additional terms in the clause which follows the above, deal with more specific terms about payments."},
+   :db/ident :fibo-der-drc-ma/PaymentObligation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",

@@ -71,8 +71,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
    :rdfa/prefix "fibo-fbc-fct-rga",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
@@ -169,8 +167,8 @@
 
 (def RegulatoryAgency
   "public authority or government agency responsible for exercising authority over something in a regulatory or supervisory capacity"
-  {:cmns-av/adaptedFrom ["http://en.wikipedia.org/wiki/Regulatory_agency"
-                         "http://www.thefreedictionary.com/regulatory+agency"],
+  {:cmns-av/adaptedFrom ["http://www.thefreedictionary.com/regulatory+agency"
+                         "http://en.wikipedia.org/wiki/Regulatory_agency"],
    :cmns-av/explanatoryNote
    "Typically, a regulatory agency is chartered to protect some constituancy, (e.g., investors in the financial industry), to ensure the fairness and integrity of some market (e.g., the securities market), and fair and safe business practices among the service providers in that market.",
    :cmns-av/synonym ["regulator" "regulatory authority" "regulatory body"],
@@ -179,14 +177,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
    :rdfs/label "regulatory agency",
-   :rdfs/subClassOf [:fibo-fnd-pas-pas/ServiceProvider
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/provides,
+                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryService,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/provides,
-                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryService,
-                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pas-pas/ServiceProvider
                      {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}

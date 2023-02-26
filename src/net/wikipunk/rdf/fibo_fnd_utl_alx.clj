@@ -51,8 +51,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfa/prefix "fibo-fnd-utl-alx",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
@@ -186,10 +184,10 @@
                       :owl/onDataRange :xsd/nonNegativeInteger,
                       :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
                      {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression],
    :skos/definition "degree of scatter or variability shown by observations",
    :skos/example
    "Common examples of measures of statistical dispersion are the variance, standard deviation, and interquartile range. The collection size argument, above, represents the number of elements in the set, if known. The collection of values under consideration is represented as a structured collection in FIBO, typically a sample set derived from a finite population."})
@@ -550,15 +548,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "statistical population",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isCharacterizedBy,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDatePeriod,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isCharacterizedBy,
                       :owl/someValuesFrom :fibo-fnd-utl-alx/StatisticalArea,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/FinitePopulation
                      {:owl/allValuesFrom :xsd/nonNegativeInteger,
                       :owl/onProperty    :fibo-fnd-utl-alx/hasPopulationSize,
                       :rdf/type          :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isCharacterizedBy,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDatePeriod,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/FinitePopulation
                      :fibo-fnd-utl-alx/StatisticalUniverse],
    :skos/definition "statistical universe filtered by time and region"})
 
@@ -635,10 +633,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "variance",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/Dispersion
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fnd-utl-alx/Mean,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Dispersion],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "measure of spread, calculated as the average squared deviation of each number from the mean of a data set"})
 

@@ -53,7 +53,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
    :rdfa/prefix "fibo-sec-dbt-syn",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
@@ -73,14 +72,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "arbitrage synthetic c d o"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-syn/issues,
+   :rdfs/subClassOf [:fibo-sec-dbt-syn/SyntheticCDO
+                     {:owl/onProperty     :fibo-sec-dbt-syn/issues,
                       :owl/someValuesFrom :fibo-sec-dbt-syn/SyntheticCDOTranche,
                       :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-cdo/ArbitrageCDO
                      {:owl/onProperty     :fibo-sec-dbt-syn/assetsManagedBy,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-syn/SyntheticCDO
-                     :fibo-sec-dbt-cdo/ArbitrageCDO],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

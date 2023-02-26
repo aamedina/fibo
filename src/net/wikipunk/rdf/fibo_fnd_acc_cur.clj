@@ -45,8 +45,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfa/prefix "fibo-fnd-acc-cur",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
@@ -114,16 +112,16 @@
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-acc-cur/hasMinorUnit,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/isUsedBy,
-                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-qt-qtu/MeasurementUnit
                      {:owl/onProperty     :lcc-lr/hasName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasNumericCode,
                       :owl/someValuesFrom :xsd/string,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :lcc-cr/isUsedBy,
+                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-qt-qtu/MeasurementUnit],
    :skos/definition
    "medium of exchange value, defined by reference to the geographical location of the monetary authorities responsible for it"})
 
@@ -156,18 +154,18 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "currency identifier",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/denotes,
+   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/identifies,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
                       :rdf/type           :owl/Restriction}
                      {:owl/onDataRange :xsd/string,
                       :owl/onProperty  :lcc-lr/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :lcc-lr/Identifier
-                     :lcc-lr/CodeElement
-                     {:owl/onProperty     :lcc-lr/identifies,
+                     {:owl/onProperty     :lcc-lr/denotes,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :lcc-lr/Identifier
+                     :lcc-lr/CodeElement],
    :skos/definition "sequence of characters representing some currency"})
 
 (def ExchangeRate
@@ -220,17 +218,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "funds identifier",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/identifies,
+   :rdfs/subClassOf [:lcc-lr/Identifier
+                     {:owl/onProperty     :lcc-lr/identifies,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Funds,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :lcc-lr/denotes,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/Funds,
-                      :rdf/type           :owl/Restriction}
-                     :lcc-lr/Identifier
                      {:owl/onDataRange :xsd/string,
                       :owl/onProperty  :lcc-lr/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :lcc-lr/denotes,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/Funds,
+                      :rdf/type           :owl/Restriction}
                      :lcc-lr/CodeElement],
    :skos/definition
    "sequence of characters that can be used to uniquely identify funds"})

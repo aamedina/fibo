@@ -1,6 +1,8 @@
 (ns net.wikipunk.rdf.fibo-loan-ln-ln
   "This ontology is the top-level, and most fundamental ontology for the LOAN module, extending the Debt ontology to define concepts common to all loans. It includes the primary obligations to fund the loan and to pay it back according to payment schedules. Kinds of loans covered in this ontology include open and closed end, secured and unsecured."
-  {:dcat/downloadURL
+  {:cmns-av/copyright ["Copyright (c) 2016-2023 EDM Council, Inc."
+                       "Copyright (c) 2016-2023 Object Management Group, Inc."],
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
    :dcterms/abstract
    "This ontology is the top-level, and most fundamental ontology for the LOAN module, extending the Debt ontology to define concepts common to all loans. It includes the primary obligations to fund the loan and to pay it back according to payment schedules. Kinds of loans covered in this ontology include open and closed end, secured and unsecured.",
@@ -11,6 +13,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Guaranty/"
@@ -18,8 +21,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/ClientsAndAccounts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
+    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
@@ -33,7 +36,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-dbt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
     "fibo-fbc-dae-gty"
@@ -78,29 +82,20 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
    :rdfa/prefix "fibo-loan-ln-ln",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
    :rdfs/label "Loans Ontology",
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
-   :sm/copyright ["Copyright (c) 2016-2022 Object Management Group, Inc."
-                  "Copyright (c) 2016-2022 EDM Council, Inc."],
-   :sm/dependsOn ["https://spec.edmcouncil.org/fibo/ontology/FND/"
-                  "https://spec.edmcouncil.org/fibo/ontology/FBC/"
-                  "https://www.omg.org/spec/LCC/"],
-   :sm/fileAbbreviation "fibo-loan-ln-ln",
-   :sm/filename "Loans.rdf"})
+   :skos/changeNote
+   "The https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."})
 
 (def ClosedEndCredit
   "credit agreement in which the loan principal cannot be increased after funds are dispersed in full when the loan closes"
-  {:db/ident :fibo-loan-ln-ln/ClosedEndCredit,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "The loan may require regular payments that pay down principal periodically, or it may require the full payment of principal at maturity.",
+   :db/ident :fibo-loan-ln-ln/ClosedEndCredit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -111,11 +106,11 @@
 
 (def CollateralizedLoan
   "secured loan that is secured with cash or other acceptable collateral (real property, securities or other assets) provided by the borrower as specified in the collateral agreement"
-  {:db/ident :fibo-loan-ln-ln/CollateralizedLoan,
-   :fibo-fnd-utl-av/adaptedFrom
+  {:cmns-av/adaptedFrom
    {:rdf/language "en",
     :rdf/value
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, 2019."},
+   :db/ident :fibo-loan-ln-ln/CollateralizedLoan,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -135,11 +130,11 @@
 
 (def Comaker
   "party that signs a borrower's promissory note, providing additional security and potentially improving the quality of the debt"
-  {:db/ident :fibo-loan-ln-ln/Comaker,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    ["The co-maker's liability is similar to that of an endorser or guarantor, but with additional risk/exposure, as they can be compelled to honor the debt much sooner and regardless of whether certain conditions are met."
     "Differences between a co-maker and co-borrower include: (1) a co-maker is not listed on the title of the asset to which the loan applies, (2) a co-maker does not have any legal ownership rights to the asset, and (3) the co-maker does not make regular payments on the loan unless the primary borrower(s) fails to do so."],
-   :fibo-fnd-utl-av/synonym ["cosigner" "comaker"],
+   :cmns-av/synonym ["cosigner" "comaker"],
+   :db/ident :fibo-loan-ln-ln/Comaker,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -150,36 +145,36 @@
 
 (def CombinedLoanToValueRatio
   "ratio of the total amount of debt that is secured by the asset(s) and the appraised value of the asset(s) securing the financing"
-  {:db/ident :fibo-loan-ln-ln/CombinedLoanToValueRatio,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This is particularly important for secondary loans, or for refinancing that combines outstanding loans against a given asset.",
+   :db/ident :fibo-loan-ln-ln/CombinedLoanToValueRatio,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
    :rdfs/label "combined loan-to-value ratio",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-oac-own/Asset,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraisal,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-                      :owl/someValuesFrom :fibo-fnd-oac-own/Asset,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/AppraisedValue,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-cur/PercentageMonetaryAmount],
+                     :fibo-fnd-acc-cur/PercentageMonetaryAmount
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "ratio of the total amount of debt that is secured by the asset(s) and the appraised value of the asset(s) securing the financing"})
 
 (def FeeSimpleOwnershipInterest
   "classification indicating the most common type of ownership, covering an indefinite ownership period and the freedom to transfer said ownership as desired"
-  {:db/ident :fibo-loan-ln-ln/FeeSimpleOwnershipInterest,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    ["The asset may still be subject to government regulations such as property taxes, and the owner can place voluntary encumbrances on the real estate including its use as collateral for a loan. In the case of a mortgage, fee simple can be contrasted with lease ownership, in which case the owners have complete access to the land, but they do not own it. Owners of single-family residences typically have fee simple ownership, but condo and many townhouse owners do not, as they own their individual unit but not the land on which the development is built."
     "Fee simple is the term used to represent the maximum ownership interest in real property that is allowed under the law. It can be referred to as 'complete ownership'."],
-   :fibo-fnd-utl-av/synonym "complete ownership",
+   :cmns-av/synonym "complete ownership",
+   :db/ident :fibo-loan-ln-ln/FeeSimpleOwnershipInterest,
    :rdf/type [:fibo-loan-ln-ln/OwnershipInterest :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -199,14 +194,14 @@
 
 (def GuaranteedLoan
   "loan that is secured with respect to repayment of principal and interest by guaranty"
-  {:db/ident :fibo-loan-ln-ln/GuaranteedLoan,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
      "In the U.S., the term 'guaranteed loan' typically refers to a loan that is backed by a federal agency, such as the Department of Veterans Affairs or the Small Business Administration. Student loans may be guaranteed by the Student Loan Marketing Association."}
     {:rdf/language "en",
      :rdf/value
      "A loan guarantee is a promise by one party to assume the debt obligation of a borrower if that borrower defaults. A guarantee can be limited or unlimited, making the guarantor liable for only a portion or all of the debt."}],
+   :db/ident :fibo-loan-ln-ln/GuaranteedLoan,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -259,24 +254,32 @@
    :rdfs/label "loan",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/DebtInstrument
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-loan-ln-ln/LenderLienPosition,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onClass    :fibo-fbc-dae-gty/Guarantor,
+                      :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-loan-ln-ln/Servicer,
+                      :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/boolean,
                       :owl/onProperty  :fibo-loan-ln-ln/hasNegativeAmortization,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-loan-ln-ln/hasPrincipalAmount,
-                      :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-loan-ln-ln/hasTotalPointsAndFees,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-loan-ln-ln/LenderLienPosition,
+                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-loan-ln-ln/hasPrincipalAmount,
+                      :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-agr-ctr/ContractThirdParty,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasThirdParty,
@@ -286,21 +289,13 @@
                       :owl/onProperty  :fibo-loan-ln-ln/isInterestOnly,
                       :rdf/type        :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-dae-gty/Guarantor,
-                      :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-loan-ln-ln/hasTotalClosingCosts,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-loan-ln-ln/LoanSpecificCustomerAccount,
                       :owl/onProperty :fibo-fbc-pas-caa/hasCorrespondingAccount,
                       :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-loan-ln-ln/Servicer,
-                      :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-loan-ln-ln/hasTotalClosingCosts,
-                      :rdf/type       :owl/Restriction}
                      :fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically],
    :skos/definition
    "debt instrument whereby one party extends money or credit to another party (or parties) with the understanding that the borrowed money will be repaid according to the terms of the contract"})
@@ -346,11 +341,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
    :rdfs/label "loan-specific customer account",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-pas-fpas/relatesTo,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-caa/Balance,
+                      :owl/onProperty :fibo-loan-ln-ln/hasLoanBalance,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-pas-caa/CustomerAccount
+                     {:owl/onProperty     :fibo-fbc-pas-fpas/relatesTo,
                       :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isHeldBy,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom {:owl/unionOf
@@ -358,7 +355,9 @@
                                             :fibo-loan-ln-ln/Servicer],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-caa/CustomerAccount
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isHeldBy,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-loan-ln-ln/PaymentHistory,
                       :owl/onProperty :fibo-loan-ln-ln/hasPaymentHistory,
@@ -367,18 +366,14 @@
                       :owl/onClass    :fibo-loan-ln-ln/LoanPaymentSchedule,
                       :owl/onProperty :fibo-fnd-pas-psch/hasPaymentSchedule,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-caa/Balance,
-                      :owl/onProperty :fibo-loan-ln-ln/hasLoanBalance,
-                      :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-caa/LoanOrCreditAccount],
    :skos/definition
    "account held by the borrower associated with a specific loan"})
 
 (def LoanToValueRatio
   "ratio, expressed as a percentage, between the principal amount of the loan and the appraised value of the asset securing the financing"
-  {:db/ident :fibo-loan-ln-ln/LoanToValueRatio,
-   :fibo-fnd-utl-av/abbreviation "LTV",
+  {:cmns-av/abbreviation "LTV",
+   :db/ident :fibo-loan-ln-ln/LoanToValueRatio,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -386,35 +381,35 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-                      :owl/someValuesFrom :fibo-fnd-oac-own/Asset,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/AppraisedValue,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-oac-own/Asset,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-cur/PercentageMonetaryAmount
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraisal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-cur/PercentageMonetaryAmount],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "ratio, expressed as a percentage, between the principal amount of the loan and the appraised value of the asset securing the financing"})
 
 (def OpenEndCredit
   "credit agreement that may be extended up to an agreed credit limit and paid down at any time within the period of the line, if any, and on which interest is charged only on the outstanding balance"
-  {:db/ident :fibo-loan-ln-ln/OpenEndCredit,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "There is a credit limit most of the time, with exceptions including reverse mortgages with tenure payment. The borrower has the option of paying off the outstanding balance, without penalty, or making installment payments.",
-   :fibo-fnd-utl-av/synonym ["revolving credit" "charge account credit"],
+   :cmns-av/synonym ["charge account credit" "revolving credit"],
+   :db/ident :fibo-loan-ln-ln/OpenEndCredit,
    :owl/disjointWith :fibo-loan-ln-ln/ClosedEndCredit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
    :rdfs/label "open-end credit",
-   :rdfs/subClassOf [:fibo-fbc-dae-dbt/CreditAgreement
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-loan-ln-ln/hasCreditLimit,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CreditAgreement],
    :skos/definition
    "credit agreement that may be extended up to an agreed credit limit and paid down at any time within the period of the line, if any, and on which interest is charged only on the outstanding balance",
    :skos/example
@@ -422,9 +417,9 @@
 
 (def OwnershipInterest
   "classifier indicating the nature of the applicant's or borrower's ownership or leasehold interest in an asset used as collateral for the loan"
-  {:db/ident :fibo-loan-ln-ln/OwnershipInterest,
-   :fibo-fnd-utl-av/usageNote
+  {:cmns-av/usageNote
    "Note that there are a number of variations for ownership interest that represent 'corner cases', including jurisdiction-specific variants, which can be added as needed for specific applications.",
+   :db/ident :fibo-loan-ln-ln/OwnershipInterest,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -456,11 +451,11 @@
 
 (def PrepaymentTerms
   "principal repayment terms related to payment of the loan prior to maturity"
-  {:db/ident :fibo-loan-ln-ln/PrepaymentTerms,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Prepayment may or may not involve refinancing with the same lender. Prepayment terms include any prepayment penalty period, penalty amount and whether or not there is provision for waiver of the penalty, and any conditions related to making additional payments or payments over and above the expected installment payment over the lifetime of the loan."},
+   :db/ident :fibo-loan-ln-ln/PrepaymentTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -477,8 +472,8 @@
 
 (def PrimaryLienPosition
   "first position in the order of seniority in which the law recognizes lenders' claims against a property"
-  {:db/ident :fibo-loan-ln-ln/PrimaryLienPosition,
-   :fibo-fnd-utl-av/synonym "primary lien priority",
+  {:cmns-av/synonym "primary lien priority",
+   :db/ident :fibo-loan-ln-ln/PrimaryLienPosition,
    :rdf/type [:fibo-loan-ln-ln/LenderLienPosition :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -509,21 +504,21 @@
 
 (def SecurityAgreement
   "agreement between parties that contains information about their relative duties and rights regarding the disposition of a specified asset used as collateral"
-  {:db/ident :fibo-loan-ln-ln/SecurityAgreement,
-   :fibo-fnd-utl-av/adaptedFrom "ISO 20022",
+  {:cmns-av/adaptedFrom "ISO 20022",
+   :db/ident :fibo-loan-ln-ln/SecurityAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
    :rdfs/label "security agreement",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-loan-ln-ln/LenderLienPosition,
+   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/isPartOf,
+                      :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-dae-dbt/CollateralAgreement
                      {:owl/onProperty     :fibo-fnd-arr-asmt/hasEstimatedValue,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/isPartOf,
-                      :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
+                     {:owl/onProperty     :lcc-cr/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-loan-ln-ln/LenderLienPosition,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :lcc-cr/isClassifiedBy,
                       :owl/someValuesFrom :fibo-loan-ln-ln/OwnershipInterest,
@@ -533,9 +528,9 @@
 
 (def Servicer
   "party that collects principal and interest payments on behalf of the lender"
-  {:db/ident :fibo-loan-ln-ln/Servicer,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "In cases where a loan has been securitized, the servicer is also responsible for forwarding payments to investors, filing reports with credit-rating agencies and investors, and so forth.",
+   :db/ident :fibo-loan-ln-ln/Servicer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -597,9 +592,9 @@
 
 (def hasCost
   "has amount payable for principal, interest, fees or other expenses"
-  {:db/ident :fibo-loan-ln-ln/hasCost,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "This can entail adding up other prices and/or fees (e.g. 4 units * a unit price)",
+   :db/ident :fibo-loan-ln-ln/hasCost,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -621,9 +616,9 @@
 
 (def hasFirstRateChangeTerm
   "specifies a period of time in months after origination during which the interest rate cannot change"
-  {:db/ident :fibo-loan-ln-ln/hasFirstRateChangeTerm,
-   :fibo-fnd-utl-av/usageNote
+  {:cmns-av/usageNote
    "This normally applies to a variable rate loan. It may also apply to step up/step down loans that are fixed rate but whose rate changes after a pre-determined number of months.",
+   :db/ident :fibo-loan-ln-ln/hasFirstRateChangeTerm,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -685,9 +680,9 @@
 
 (def hasPrePaymentPenaltyTerm
   "relates a loan to a period of time in months after which there is no prepayment penalty"
-  {:db/ident :fibo-loan-ln-ln/hasPrePaymentPenaltyTerm,
-   :fibo-fnd-utl-av/usageNote
+  {:cmns-av/usageNote
    "A value of zero means no prepayment penalty; this avoids need for a separate boolean property about whether there is a prepayment penalty",
+   :db/ident :fibo-loan-ln-ln/hasPrePaymentPenaltyTerm,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -725,9 +720,9 @@
 
 (def hasTotalClosingCosts
   "indicates the total the amount paid at the closing of a real estate transaction, i.e., at the time when the title to the property is conveyed (transferred) to the buyer"
-  {:db/ident :fibo-loan-ln-ln/hasTotalClosingCosts,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "Closing costs may be incurred by either the buyer or the seller, and may include fees paid by either or both parties for the preparation and recording of documents, title service costs, such as for title search and insurance (typically paid by the seller, depending on the jurisdiction), other recording costs, other document or transaction stamps or taxes, brokerage commissions, survey, appraisal, inspection and other such fees, home warranties, private mortgage insurance (PMI), and so forth.",
+   :db/ident :fibo-loan-ln-ln/hasTotalClosingCosts,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
@@ -738,9 +733,9 @@
 
 (def hasTotalPointsAndFees
   "indicates a form of pre-paid interest, charged by the lender as an alternative to charging a higher rate of interest on the mortgage loan"
-  {:db/ident :fibo-loan-ln-ln/hasTotalPointsAndFees,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    "One point equals one percent of the loan principal, and usually reduces the interest rate by 1/8 percent (0.125)",
+   :db/ident :fibo-loan-ln-ln/hasTotalPointsAndFees,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",

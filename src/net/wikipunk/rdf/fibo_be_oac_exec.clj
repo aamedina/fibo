@@ -73,8 +73,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
    :rdfa/prefix "fibo-be-oac-exec",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
@@ -320,9 +318,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
    :rdfs/label "chief executive officer",
-   :rdfs/subClassOf [:fibo-be-oac-exec/ExecutiveBoardMember
-                     :fibo-be-oac-exec/PrincipalParty
-                     {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
                       {:owl/onProperty :fibo-fnd-rel-rel/manages,
                        :owl/someValuesFrom
@@ -331,6 +327,8 @@
                         :rdf/type    :owl/Class},
                        :rdf/type :owl/Restriction},
                       :rdf/type :owl/Restriction}
+                     :fibo-be-oac-exec/ExecutiveBoardMember
+                     :fibo-be-oac-exec/PrincipalParty
                      :fibo-be-oac-exec/CorporateOfficer],
    :skos/definition
    "top corporate officer responsible for an organization's overall operations and performance"})

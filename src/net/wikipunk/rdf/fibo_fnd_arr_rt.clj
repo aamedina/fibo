@@ -61,8 +61,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfa/prefix "fibo-fnd-arr-rt",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
@@ -124,13 +122,13 @@
                       :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingParty,
                       :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
                       :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-dt-fd/Date,
+                      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingIssuer,
                       :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,

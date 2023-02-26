@@ -46,8 +46,6 @@
     "skos" "http://www.w3.org/2004/02/skos/core#",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
    :rdfa/prefix "fibo-ind-ind-ind",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
@@ -161,19 +159,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
    :rdfs/label "market rate",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/RatioValue
-                     {:owl/onDataRange :xsd/decimal,
-                      :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
+                      :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
                       :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
                       :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
-                      :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
-                      :rdf/type       :owl/Restriction}],
+                     :fibo-fnd-utl-alx/RatioValue
+                     {:owl/onDataRange :xsd/decimal,
+                      :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "value of a rate established in the marketplace for a set of instruments or that describes the economic climate for an industry and/or political region (e.g., SOFR, Prime)",
    :skos/example

@@ -1,9 +1,11 @@
 (ns net.wikipunk.rdf.fibo-bp-iss-muni
   "Ontology for the process in which municipal bonds are issued."
-  {:dcat/downloadURL
+  {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MuniIssuance/",
    :dcterms/abstract
    "Ontology for the process in which municipal bonds are issued.",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
@@ -17,6 +19,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/Process/FinancialContextAndProcess/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
@@ -24,7 +27,8 @@
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/MuniIssuance/",
    :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
     "fibo-bp-iss-dbti"
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
     "fibo-bp-iss-doc"
@@ -57,17 +61,13 @@
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
     "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
     "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdf/uri
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MuniIssuance/",
    :rdfa/prefix "fibo-bp-iss-muni",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MuniIssuance/",
    :rdfs/label {:rdf/language "en",
-                :rdf/value    "MuniIssuance"},
-   :sm/fileAbbreviation "fibo-bp-iss-muni"})
+                :rdf/value    "MuniIssuance"}})
 
 (def AnnounceSecuritiesIssue
   "announce securities issue"
@@ -329,11 +329,11 @@
 
 (def IssueOverAllotmentTerms
   "Terms for Change to an Issue Amount. A provision in an underwriting agreement, which allows members of the underwriting syndicate to purchase additional shares at the original price."
-  {:db/ident :fibo-bp-iss-muni/IssueOverAllotmentTerms,
-   :fibo-fnd-utl-av/explanatoryNote
+  {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
     "Also known as a green shoe. Note that this set of terms does not refer to over-allotment as change to a the total issue amount issued to an individual investor. That would require separate but similar terms. FIBIM has \"Over Allotment Amount\" as an individual term."},
+   :db/ident :fibo-bp-iss-muni/IssueOverAllotmentTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MuniIssuance/",
@@ -528,11 +528,24 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "securities underwriting issuance process"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-bp-iss-muni/produces,
-     :owl/someValuesFrom :fibo-bp-iss-prc/UnderwritingProcessDetails,
+   [{:owl/onProperty     :fibo-bp-iss-muni/hasIssuerCounsel,
+     :owl/someValuesFrom :fibo-bp-iss-muni/IssuerCounsel,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-muni/hasPrinter,
      :owl/someValuesFrom :fibo-bp-iss-muni/IssuancePrinter,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/hasTrustee,
+     :owl/someValuesFrom :fibo-bp-iss-muni/Trustee,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/hasSubscriber,
+     :owl/someValuesFrom :fibo-bp-iss-prc/Subscriber,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/requestedBy,
+     :owl/someValuesFrom :fibo-bp-iss-muni/UnderwritingIssuanceRequestor,
+     :rdf/type           :owl/Restriction}
+    :fibo-bp-iss-prc/SecuritiesIssuanceProcess
+    {:owl/onProperty     :fibo-bp-iss-muni/produces,
+     :owl/someValuesFrom :fibo-bp-iss-prc/UnderwritingProcessDetails,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-muni/underwrittenBy,
      :owl/someValuesFrom :fibo-bp-iss-muni/PotentialMuniUnderwriter,
@@ -540,36 +553,23 @@
     {:owl/onProperty     :fibo-bp-iss-muni/hasServicer,
      :owl/someValuesFrom :fibo-bp-iss-muni/Servicer,
      :rdf/type           :owl/Restriction}
-    :fibo-bp-iss-prc/SecuritiesIssuanceProcess
-    {:owl/onProperty     :fibo-bp-iss-muni/hasSubscriber,
-     :owl/someValuesFrom :fibo-bp-iss-prc/Subscriber,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/hasFinancialAdvisor,
-     :owl/someValuesFrom :fibo-bp-iss-muni/IssuanceFinancialAdvisor,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/hasObligor,
-     :owl/someValuesFrom :fibo-bp-iss-muni/Obligor,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/hasPayingAgent,
-     :owl/someValuesFrom :fibo-bp-iss-muni/PayingAgent,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/requestedBy,
-     :owl/someValuesFrom :fibo-bp-iss-muni/UnderwritingIssuanceRequestor,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/hasIssuerCounsel,
-     :owl/someValuesFrom :fibo-bp-iss-muni/IssuerCounsel,
+    {:owl/onProperty     :fibo-bp-iss-muni/hasTransferAgent,
+     :owl/someValuesFrom :fibo-bp-iss-muni/TransferAgent,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-muni/hasAgent,
      :owl/someValuesFrom :fibo-bp-iss-muni/IssuanceAgent,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/hasTransferAgent,
-     :owl/someValuesFrom :fibo-bp-iss-muni/TransferAgent,
+    {:owl/onProperty     :fibo-bp-iss-muni/hasFinancialAdvisor,
+     :owl/someValuesFrom :fibo-bp-iss-muni/IssuanceFinancialAdvisor,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-muni/hasRemarketingAgent,
      :owl/someValuesFrom :fibo-bp-iss-muni/RemarketingAgent,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/hasTrustee,
-     :owl/someValuesFrom :fibo-bp-iss-muni/Trustee,
+    {:owl/onProperty     :fibo-bp-iss-muni/hasPayingAgent,
+     :owl/someValuesFrom :fibo-bp-iss-muni/PayingAgent,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/hasObligor,
+     :owl/someValuesFrom :fibo-bp-iss-muni/Obligor,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
