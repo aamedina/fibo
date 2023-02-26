@@ -26,7 +26,7 @@
    [net.wikipunk.fibo.boot :as boot]
    [net.wikipunk.rdf :as rdf :refer [doc]]
    [net.wikipunk.mop :as mop :refer [isa? descendants ancestors parents]]
-   [net.wikipunk.temple :as temple]
+   [net.wikipunk.temple :as temple]   
    [zprint.core :as zprint])
   (:refer-clojure :exclude [isa? descendants ancestors parents]))
 

@@ -1,5 +1,7 @@
 (ns net.wikipunk.fibo.boot
-  {:rdf/type :jsonld/Context})
+  {:rdf/type :jsonld/Context}
+  (:require
+   [net.wikipunk.rdf.schema]))
 
 (def spec
   {:dcat/downloadURL "https://raw.githubusercontent.com/edmcouncil/fibo/master/MetadataFIBO.rdf"

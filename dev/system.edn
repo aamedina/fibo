@@ -2,19 +2,7 @@
           :sc/refs      [:fibo]
           :init-ns      net.wikipunk.temple.init
           :boot         [net.wikipunk.fibo.boot/spec]
-          :config       {:xtdb/index-store
-                         {:kv-store
-                          {:xtdb/module xtdb.lmdb/->kv-store
-                           :db-dir      ".vocab/index-store"}}
-                         :xtdb/tx-log
-                         {:kv-store
-                          {:xtdb/module xtdb.lmdb/->kv-store
-                           :db-dir      ".vocab/tx-log"}}
-                         :xtdb/document-store
-                         {:kv-store
-                          {:xtdb/module xtdb.lmdb/->kv-store
-                           :db-dir      ".vocab/document-store"}}
-                         :xtdb.lucene/lucene-store
+          :config       {:xtdb.lucene/lucene-store
                          {:db-dir ".vocab/lucene"}}}
  :fibo   {:sc/create-fn net.wikipunk.fibo/map->FIBO
           :domains      [net.wikipunk.fibo.boot/fibo-fbc-mod
