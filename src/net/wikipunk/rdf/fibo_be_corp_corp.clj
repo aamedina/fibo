@@ -136,11 +136,11 @@
                       :owl/someValuesFrom
                       :fibo-be-corp-corp/RegistrationIdentifierScheme,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-org-org/OrganizationIdentifier
                      {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :lcc-lr/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-org-org/OrganizationIdentifier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,

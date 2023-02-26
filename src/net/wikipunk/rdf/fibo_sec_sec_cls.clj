@@ -63,10 +63,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
    :rdfs/label "asset class",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/classifies,
+   :rdfs/subClassOf [:fibo-sec-sec-cls/FinancialInstrumentClassifier
+                     {:owl/onProperty     :lcc-cr/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-cls/FinancialInstrumentClassifier],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "a financial instrument classifier for a group of securities that exhibit similar characteristics, behave similarly in the marketplace and are subject to the same laws and regulations"})
 

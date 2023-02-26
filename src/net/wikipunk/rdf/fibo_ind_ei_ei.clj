@@ -278,18 +278,18 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "civilian labor force participation rate",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-ind-ei-ei/CivilianLaborForce,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom
                       :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-utl-alx/Expression
+                     :fibo-ind-ei-ei/EconomicIndicator
                      {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom :fibo-ind-ei-ei/CivilianLaborForce,
                       :rdf/type           :owl/Restriction}
-                     :fibo-ind-ei-ei/EconomicIndicator],
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-ind-ei-ei/CivilianLaborForce,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "economic indicator representing the rate of participation the labor force of a given economy for some specified period"})
 
@@ -372,7 +372,7 @@
    :rdfs/label "consumer price index",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-     :owl/someValuesFrom :fibo-ind-ei-ei/FixedBasket,
+     :owl/someValuesFrom :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
      :rdf/type           :owl/Restriction}
     :fibo-fnd-utl-alx/Expression
     :fibo-ind-ei-ei/EconomicIndicator
@@ -380,7 +380,7 @@
      :owl/someValuesFrom :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-     :owl/someValuesFrom :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
+     :owl/someValuesFrom :fibo-ind-ei-ei/FixedBasket,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "economic indicator representing a measure of the change over time in the prices of consumer goods and services that households consume"})
@@ -418,28 +418,28 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "economic indicator",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-plc-loc/hasCoverageArea,
+                      :owl/someValuesFrom
+                      :fibo-ind-ei-ei/GovernmentSpecifiedStatisticalArea,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-utl-alx/hasReleaseDate,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-utl-alx/ScopedMeasure
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/Date,
                       :owl/onProperty    :fibo-ind-ei-ei/hasSeriesOrigin,
                       :rdf/type          :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-arr-doc/hasReportingPeriod,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDatePeriod,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-plc-loc/hasCoverageArea,
-                      :owl/someValuesFrom
-                      :fibo-ind-ei-ei/GovernmentSpecifiedStatisticalArea,
-                      :rdf/type :owl/Restriction}
-                     {:owl/allValuesFrom :xsd/boolean,
-                      :owl/onProperty    :fibo-ind-ei-ei/isSeasonallyAdjusted,
-                      :rdf/type          :owl/Restriction}
+                     :fibo-fnd-utl-alx/ScopedMeasure
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-utl-alx/hasReleaseDateTime,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     {:owl/allValuesFrom :xsd/boolean,
+                      :owl/onProperty    :fibo-ind-ei-ei/isSeasonallyAdjusted,
+                      :rdf/type          :owl/Restriction}],
    :skos/definition
    "statistical measure of economic activity that is regular and comparable in the context of a statistical area (region), used for analysis of economic performance and predictions of future performance",
    :skos/example
@@ -533,18 +533,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "employment-population ratio",
    :rdfs/seeAlso ["http://www.bls.gov/news.release/pdf/empsit.pdf"],
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-                      :owl/someValuesFrom :fibo-ind-ei-ei/EmployedPopulation,
-                      :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom
+                      :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
+                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-ind-ei-ei/EmployedPopulation,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+                      :owl/someValuesFrom :fibo-ind-ei-ei/EmployedPopulation,
+                      :rdf/type           :owl/Restriction}
                      :fibo-ind-ei-ei/EconomicIndicator
-                     :fibo-fnd-utl-alx/Expression
-                     {:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom
-                      :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
-                      :rdf/type :owl/Restriction}],
+                     :fibo-fnd-utl-alx/Expression],
    :skos/definition
    "economic indicator representing the ratio of the employed population with respect to the overall civilian non-institutional population of a given economy for some specified period"})
 
@@ -559,23 +559,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "enterprise",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom :fibo-ind-ei-ei/Establishment,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
+     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-pas-pas/Good
                                         :fibo-fnd-pas-pas/Service],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
-    :fibo-be-fct-fct/FunctionalBusinessEntity
     {:owl/unionOf [:fibo-fnd-pas-pas/Producer
                    :fibo-fnd-pas-pas/ServiceProvider],
      :rdf/type    :owl/Class}
+    :fibo-be-fct-fct/FunctionalBusinessEntity
     {:owl/onProperty     :lcc-cr/isClassifiedBy,
      :owl/someValuesFrom :fibo-fnd-arr-cls/IndustrySectorClassifier,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
-     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
+    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+     :owl/someValuesFrom :fibo-ind-ei-ei/Establishment,
      :rdf/type           :owl/Restriction}
     :fibo-ind-ei-ei/InstitutionalUnit],
    :skos/definition
@@ -632,13 +632,13 @@
    :rdfs/label "establishment employment",
    :rdfs/subClassOf
    [:fibo-fnd-utl-alx/Expression
+    :fibo-ind-ei-ei/EconomicIndicator
     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
      :owl/someValuesFrom :fibo-ind-ei-ei/EstablishmentPopulation,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-ind-ei-ei/EstablishmentPopulation,
-     :rdf/type           :owl/Restriction}
-    :fibo-ind-ei-ei/EconomicIndicator],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "economic indicator representing the total number of persons who work in or for the establishment including working proprietors, active business partners and unpaid family workers, as well as persons working outside the establishment when paid by and under the control of the establishment, for example, sales representatives, outside service engineers and repair and maintenance personnel"})
 
@@ -1020,13 +1020,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "producer price index",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom {:owl/unionOf [:fibo-ind-ei-ei/EnterprisePopulation
                                         :fibo-ind-ei-ei/EstablishmentPopulation
                                         :fibo-ind-ei-ei/FixedBasketPopulation],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
      :owl/someValuesFrom {:owl/unionOf [:fibo-ind-ei-ei/EnterprisePopulation
                                         :fibo-ind-ei-ei/EstablishmentPopulation
                                         :fibo-ind-ei-ei/FixedBasketPopulation],

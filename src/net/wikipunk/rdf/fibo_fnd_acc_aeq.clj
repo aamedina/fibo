@@ -122,14 +122,14 @@
                 :rdf/value    "owners' equity"},
    :rdfs/subClassOf [:fibo-fnd-utl-alx/Expression
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :fibo-fnd-rel-rel/appliesTo,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
                       :rdf/type           :owl/Restriction}],
    :skos/definition "owners' share in a business plus operating profit"})
 

@@ -312,11 +312,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CommoditiesContracts/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "commodity swap"},
-   :rdfs/subClassOf [:fibo-der-drc-swp/ReturnSwap
-                     :fibo-der-drc-comm/CommodityDerivative
-                     {:owl/onProperty     :fibo-der-drc-swp/hasReturnLeg,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-swp/hasReturnLeg,
                       :owl/someValuesFrom :fibo-der-drc-comm/CommodityReturnLeg,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-der-drc-swp/ReturnSwap
+                     :fibo-der-drc-comm/CommodityDerivative],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

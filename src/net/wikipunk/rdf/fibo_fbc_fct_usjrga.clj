@@ -1836,19 +1836,19 @@
      :owl/onProperty :lcc-lr/identifies,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
+    {:owl/hasValue   :fibo-fbc-fct-usjrga/ABAIINRegistry,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
+     :rdf/type       :owl/Restriction}
     {:owl/hasValue
      :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
      :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
      :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
+    :fibo-fbc-fct-ra/RegistryIdentifier
     {:owl/hasValue
      :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
-     :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-fbc-fct-usjrga/ABAIINRegistry,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-ra/RegistryIdentifier],
+     :rdf/type :owl/Restriction}],
    :skos/definition
    "a numbering system that allows a credit, debit, or other card to be identified as having been issued by a particular financial institution"})
 
@@ -2286,13 +2286,13 @@
    :rdfs/subClassOf
    [:fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
     :fibo-fbc-fct-ra/RegistryIdentifier
+    {:owl/hasValue   :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
+     :rdf/type       :owl/Restriction}
     {:owl/hasValue
      :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
-     :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type :owl/Restriction}],
    :skos/definition
    "unique identifier assigned by the Federal Reserve to financial institutions for regulatory and oversight purposes"})
 
@@ -2310,17 +2310,17 @@
    :rdfs/seeAlso ["http://www.accuity.com/aba-registrar/"],
    :rdfs/subClassOf
    [:fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
+    {:owl/hasValue :fibo-fbc-fct-usjrga/AmericanBankersAssociationRTNRegistrar,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
+     :rdf/type :owl/Restriction}
     {:owl/hasValue
      :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
      :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
      :rdf/type :owl/Restriction}
+    :fibo-fbc-fct-ra/RegistryIdentifier
     {:owl/hasValue   :fibo-fbc-fct-usjrga/ABARTNRegistry,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-ra/RegistryIdentifier
-    {:owl/hasValue :fibo-fbc-fct-usjrga/AmericanBankersAssociationRTNRegistrar,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
-     :rdf/type :owl/Restriction}],
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "unique nine digit identifier, used primarily in the United States, to identify a banking or other financial institution for clearing funds, and, as it appears on a check, denotes the banking institution that holds the account from which funds are to be drawn"})
 

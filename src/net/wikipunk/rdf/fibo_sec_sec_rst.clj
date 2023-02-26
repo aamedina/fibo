@@ -189,10 +189,10 @@
                   "https://www.law.cornell.edu/cfr/text/17/230.902"],
    :rdfs/subClassOf [:fibo-sec-sec-rst/SecuritiesRegulation
                      :fibo-sec-sec-rst/InvestorsDomicileRestriction
+                     :fibo-sec-sec-rst/QualifiedInvestorRestriction
                      {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
                       :owl/onProperty :fibo-fnd-law-jur/appliesIn,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-sec-sec-rst/QualifiedInvestorRestriction],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "securities regulation defining an exemption through which corporations can issue unregistered securities to qualified foreign investors and foreign institutions"})
 

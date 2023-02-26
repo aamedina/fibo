@@ -85,20 +85,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
    :rdfs/label "Canadian consumer price index",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-     :owl/someValuesFrom :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
-     :rdf/type           :owl/Restriction}
-    :fibo-ind-ei-ei/ConsumerPriceIndex
-    {:owl/onClass    :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
-     :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/hasValue   :fibo-ind-ei-caei/StatisticsCanada,
+   [{:owl/hasValue   :fibo-ind-ei-caei/StatisticsCanada,
      :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-ind-ei-ei/FixedBasket,
      :rdf/type           :owl/Restriction}
+    :fibo-ind-ei-ei/ConsumerPriceIndex
+    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+     :owl/someValuesFrom :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
+     :rdf/type           :owl/Restriction}
+    {:owl/onClass    :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
+     :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
     {:owl/hasValue   :fibo-ind-ei-caei/CanadianStatisticsPublisher,
      :owl/onProperty :fibo-be-fct-pub/hasPublisher,
      :rdf/type       :owl/Restriction}],
@@ -138,17 +138,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
    :rdfs/label "Canadian producer price index",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/hasValue   :fibo-ind-ei-caei/StatisticsCanada,
+                      :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-ind-ei-ei/ProducerPriceIndex
+                     {:owl/onProperty :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-ind-ei-caei/IndustrialProductsSector
                                      :fibo-ind-ei-caei/NewHousingSector
                                      :fibo-ind-ei-caei/RawMaterialsSector],
                        :rdf/type    :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-ind-ei-ei/ProducerPriceIndex
-                     {:owl/hasValue   :fibo-ind-ei-caei/StatisticsCanada,
-                      :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
-                      :rdf/type       :owl/Restriction}
                      {:owl/hasValue
                       :fibo-ind-ei-caei/CanadianStatisticsPublisher,
                       :owl/onProperty :fibo-be-fct-pub/hasPublisher,

@@ -319,11 +319,11 @@
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pty-pty/Situation
-                     {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
-                      :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
+                      :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Buyer,

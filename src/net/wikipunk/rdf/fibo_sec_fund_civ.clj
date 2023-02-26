@@ -763,24 +763,24 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund portfolio"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
+   [{:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
+     :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
      :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioBenchmark,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasLiquidity,
      :owl/someValuesFrom :fibo-sec-fund-civ/Liquidity,
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-ast/Portfolio
-    {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
-     :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasInvestmentStrategy,
      :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioManager,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/implementsFundPolicy,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
      :owl/someValuesFrom :fibo-sec-sec-ast/PortfolioHolding,
@@ -1319,10 +1319,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
    :rdfs/label "key investor information document",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [:fibo-sec-sec-iss/OfferingDocument
+                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-iss/OfferingDocument
                      {:owl/hasValue   :fibo-be-ge-euj/EuropeanUnionJurisdiction,
                       :owl/onProperty :fibo-fnd-law-jur/appliesIn,
                       :rdf/type       :owl/Restriction}],
@@ -3878,50 +3878,38 @@
    :db/ident :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
    :rdf/type :owl/Class,
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-sec-fund-civ/describedIn,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundProspectus,
+   [{:owl/onProperty     :fibo-sec-fund-civ/hasDepository,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundDepositary,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasAdditionalInformation,
-     :owl/someValuesFrom :fibo-sec-fund-civ/OtherInvestmentFundInformation,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/promotedBy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundPromoter,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasAccountant,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundAccountant,
+    {:owl/onProperty     :fibo-sec-fund-civ/supervisedBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundSupervisoryAuthority,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasPerformanceDeterminationMethod,
      :owl/someValuesFrom :fibo-sec-fund-civ/PerformanceDeterminationMethod,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/fundHasRelatedParty,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundsProcessingParty,
+    {:owl/onProperty     :fibo-sec-fund-civ/hasRelatedFundTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundProcessingTerms,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy.1,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionMethod,
+    {:owl/onProperty     :fibo-sec-fund-civ/describedIn,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundProspectus,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasAccountingInformation,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundReportingTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasSubscriptionTerms,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundSubscriptionTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasUnitIssuer,
-     :owl/someValuesFrom :fibo-sec-fund-civ/UnitIssuer,
+    {:owl/onProperty     :fibo-sec-fund-civ/hasAccountant,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundAccountant,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/distributedBy,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundDistributor,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasRelatedFundTerms,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundProcessingTerms,
+    {:owl/onProperty     :fibo-sec-fund-civ/legallyRecordedIn,
+     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasManagementCompany,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundManager,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasAuditor,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundAuditor,
+    {:owl/onProperty     :fibo-sec-fund-civ/administeredBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundAdministrator,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasDepository,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundDepositary,
+    {:owl/onProperty     :fibo-sec-fund-civ/hasTransferAgent,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundTransferAgent,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasFundPolicy,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundInvestmentPolicy,
@@ -3929,20 +3917,32 @@
     {:owl/onProperty     :fibo-sec-fund-civ/hasDataProvider,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundDataProvider,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/fundHasRelatedParty,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundsProcessingParty,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasAccountingInformation,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundReportingTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasSubscriptionTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundSubscriptionTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/promotedBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundPromoter,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasAdditionalInformation,
+     :owl/someValuesFrom :fibo-sec-fund-civ/OtherInvestmentFundInformation,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasUnitIssuer,
+     :owl/someValuesFrom :fibo-sec-fund-civ/UnitIssuer,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasAuditor,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundAuditor,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy.1,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionMethod,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/advisedBy,
      :owl/someValuesFrom :fibo-sec-fund-civ/InvestmentAdvisor,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/supervisedBy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundSupervisoryAuthority,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/legallyRecordedIn,
-     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/administeredBy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundAdministrator,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasTransferAgent,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundTransferAgent,
      :rdf/type           :owl/Restriction}]})
 
 (def ^{:private true} FundContract

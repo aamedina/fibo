@@ -66,11 +66,11 @@
                       :owl/onProperty  :fibo-fnd-dt-fd/hasAcquisitionDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
-                      :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
                       :owl/someValuesFrom :fibo-fnd-oac-own/Ownership,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
+                      :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pty-pty/Undergoer],
    :skos/definition

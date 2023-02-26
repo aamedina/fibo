@@ -120,19 +120,19 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "action classifier"},
    :rdfs/subClassOf [{:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
-                      :owl/onProperty :lcc-lr/isMemberOf,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/classifies,
-                      :owl/someValuesFrom :fibo-cae-ce-act/Action,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/OccurrenceKind
-                     {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
                       :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :lcc-lr/hasTag,
                       :owl/someValuesFrom :xsd/string,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
+                      :owl/onProperty :lcc-lr/isMemberOf,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :lcc-cr/classifies,
+                      :owl/someValuesFrom :fibo-cae-ce-act/Action,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-cls/Classifier],
    :skos/definition

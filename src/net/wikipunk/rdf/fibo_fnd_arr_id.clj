@@ -61,11 +61,11 @@
                       :owl/onClass    :lcc-lr/CodeElement,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/Identifier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :lcc-lr/Identifier,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :lcc-lr/Identifier],
    :skos/definition
    "identifier that is constructed from at least one other identifier and potentially from one or more codes",
    :skos/example

@@ -106,12 +106,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "allotment right"},
-   :rdfs/subClassOf [:fibo-der-sbd-sbd/EquityDerivative
-                     :fibo-fbc-fi-fi/Entitlement
-                     {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-der-drc-raw/AllotmentRightFormula,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-der-sbd-sbd/EquityDerivative
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

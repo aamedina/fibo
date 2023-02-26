@@ -531,45 +531,45 @@
    [{:owl/onProperty     :fibo-bp-iss-muni/hasIssuerCounsel,
      :owl/someValuesFrom :fibo-bp-iss-muni/IssuerCounsel,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/hasPrinter,
-     :owl/someValuesFrom :fibo-bp-iss-muni/IssuancePrinter,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/hasTrustee,
-     :owl/someValuesFrom :fibo-bp-iss-muni/Trustee,
+    {:owl/onProperty     :fibo-bp-iss-muni/hasAgent,
+     :owl/someValuesFrom :fibo-bp-iss-muni/IssuanceAgent,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-muni/hasSubscriber,
      :owl/someValuesFrom :fibo-bp-iss-prc/Subscriber,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/requestedBy,
-     :owl/someValuesFrom :fibo-bp-iss-muni/UnderwritingIssuanceRequestor,
-     :rdf/type           :owl/Restriction}
     :fibo-bp-iss-prc/SecuritiesIssuanceProcess
-    {:owl/onProperty     :fibo-bp-iss-muni/produces,
-     :owl/someValuesFrom :fibo-bp-iss-prc/UnderwritingProcessDetails,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/underwrittenBy,
-     :owl/someValuesFrom :fibo-bp-iss-muni/PotentialMuniUnderwriter,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-muni/hasServicer,
      :owl/someValuesFrom :fibo-bp-iss-muni/Servicer,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/hasTransferAgent,
-     :owl/someValuesFrom :fibo-bp-iss-muni/TransferAgent,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/hasAgent,
-     :owl/someValuesFrom :fibo-bp-iss-muni/IssuanceAgent,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/hasFinancialAdvisor,
-     :owl/someValuesFrom :fibo-bp-iss-muni/IssuanceFinancialAdvisor,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-muni/hasRemarketingAgent,
      :owl/someValuesFrom :fibo-bp-iss-muni/RemarketingAgent,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/hasObligor,
+     :owl/someValuesFrom :fibo-bp-iss-muni/Obligor,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/requestedBy,
+     :owl/someValuesFrom :fibo-bp-iss-muni/UnderwritingIssuanceRequestor,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/hasPrinter,
+     :owl/someValuesFrom :fibo-bp-iss-muni/IssuancePrinter,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/hasTransferAgent,
+     :owl/someValuesFrom :fibo-bp-iss-muni/TransferAgent,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/underwrittenBy,
+     :owl/someValuesFrom :fibo-bp-iss-muni/PotentialMuniUnderwriter,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-muni/hasPayingAgent,
      :owl/someValuesFrom :fibo-bp-iss-muni/PayingAgent,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/hasObligor,
-     :owl/someValuesFrom :fibo-bp-iss-muni/Obligor,
+    {:owl/onProperty     :fibo-bp-iss-muni/hasFinancialAdvisor,
+     :owl/someValuesFrom :fibo-bp-iss-muni/IssuanceFinancialAdvisor,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/produces,
+     :owl/someValuesFrom :fibo-bp-iss-prc/UnderwritingProcessDetails,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/hasTrustee,
+     :owl/someValuesFrom :fibo-bp-iss-muni/Trustee,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",

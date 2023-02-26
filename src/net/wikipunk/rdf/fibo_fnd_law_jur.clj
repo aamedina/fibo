@@ -78,10 +78,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "statute law"},
-   :rdfs/subClassOf [:fibo-fnd-law-cor/Law
-                     {:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-law-cor/Law],
    :skos/altLabel "statutory law",
    :skos/definition "law enacted by a legislature"})
 

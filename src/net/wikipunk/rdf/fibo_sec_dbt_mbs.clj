@@ -414,13 +414,13 @@
                 :rdf/value    "mortgage-backed security"},
    :rdfs/subClassOf
    [:fibo-sec-dbt-pbs/PoolBackedSecurity
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty :fibo-fnd-rel-rel/isCharacterizedBy,
      :owl/someValuesFrom
      :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

@@ -80,6 +80,10 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "currency derivative"},
    :rdfs/subClassOf [:fibo-fbc-fi-fi/CurrencyInstrument
+                     {:owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
+                      :owl/someValuesFrom
+                      :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
+                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
@@ -88,11 +92,7 @@
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-der-drc-cur/hasBuyingCurrency,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
-                      :owl/someValuesFrom
-                      :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -167,15 +167,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "currency option"},
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-opt/hasStrikeRate,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/ExchangeRate,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-ind-fx-fx/CurrencySpotBuyRate,
                       :owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/VanillaOption
-                     :fibo-der-drc-cur/CurrencyDerivative
-                     {:owl/onProperty     :fibo-der-drc-opt/hasStrikeRate,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/ExchangeRate,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-der-drc-cur/CurrencyDerivative],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

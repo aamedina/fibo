@@ -326,19 +326,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
    :rdfs/label "license",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-                      :owl/someValuesFrom :fibo-fnd-law-lcap/Licensor,
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/LegalDocument
+                     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
+                      :owl/someValuesFrom :fibo-fnd-law-lcap/LegalCapacity,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-doc/LegalDocument
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-fnd-law-lcap/Licensee,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
                       :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-fnd-law-lcap/Licensee,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
-                      :owl/someValuesFrom :fibo-fnd-law-lcap/LegalCapacity,
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fnd-law-lcap/Licensor,
                       :rdf/type           :owl/Restriction}],
    :skos/definition "grant of permission needed to do something"})
 

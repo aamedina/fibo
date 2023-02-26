@@ -450,12 +450,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "corporate bond",
    :rdfs/subClassOf
-   [:fibo-sec-dbt-bnd/Bond
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
                           :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/Bond],
    :skos/definition "bond issued by a company in order to raise financing"})
 
 (def CouponPayment
@@ -862,9 +862,6 @@
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -872,6 +869,9 @@
                                          :fibo-be-ge-ge/RegionalSovereignty],
                            :rdf/type    :owl/Class},
                           :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
      :rdf/type           :owl/Restriction}],
    :skos/definition "debt obligation issued by a regional governmental entity"})
 
@@ -901,13 +901,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "original issue discount bond",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-     :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
+   [:fibo-sec-dbt-bnd/Bond
     {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+     :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
      :rdf/type       :owl/Restriction}],
    :skos/definition
    "interest-bearing bond issued at a deep discount to face value"})
@@ -1294,17 +1294,17 @@
    ["https://www.treasurydirect.gov/indiv/research/indepth/tbills/res_tbill_rates.htm"
     "https://www.treasurydirect.gov/indiv/research/indepth/tbills/res_tbill.htm"],
    :rdfs/subClassOf
-   [:fibo-sec-dbt-tstd/MoneyMarketInstrument
-    {:owl/hasValue   :fibo-sec-dbt-dbti/AtADiscount,
+   [{:owl/hasValue   :fibo-sec-dbt-dbti/AtADiscount,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
      :rdf/type       :owl/Restriction}
+    :fibo-sec-dbt-tstd/MoneyMarketInstrument
     {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-bnd/USTreasurySecurity
     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
      :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/USTreasurySecurity],
    :skos/definition
    "short-term zero coupon treasury obligation with a maturity ranging from one to twelve months"})
 

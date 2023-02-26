@@ -349,23 +349,23 @@
                 :rdf/value    "c d o deal"},
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/DebtOffering
-    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
+    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-dbti/DebtOffering
+    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,

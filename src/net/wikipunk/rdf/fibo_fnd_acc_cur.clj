@@ -112,6 +112,7 @@
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-acc-cur/hasMinorUnit,
                       :rdf/type        :owl/Restriction}
+                     :fibo-fnd-qt-qtu/MeasurementUnit
                      {:owl/onProperty     :lcc-lr/hasName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
@@ -120,8 +121,7 @@
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :lcc-cr/isUsedBy,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-qt-qtu/MeasurementUnit],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "medium of exchange value, defined by reference to the geographical location of the monetary authorities responsible for it"})
 
@@ -154,14 +154,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "currency identifier",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/identifies,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onDataRange :xsd/string,
+   :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :lcc-lr/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :lcc-lr/denotes,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :lcc-lr/identifies,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
                       :rdf/type           :owl/Restriction}
                      :lcc-lr/Identifier
@@ -218,17 +218,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "funds identifier",
-   :rdfs/subClassOf [:lcc-lr/Identifier
-                     {:owl/onProperty     :lcc-lr/identifies,
+   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/identifies,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Funds,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :lcc-lr/denotes,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/Funds,
+                      :rdf/type           :owl/Restriction}
+                     :lcc-lr/Identifier
                      {:owl/onDataRange :xsd/string,
                       :owl/onProperty  :lcc-lr/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :lcc-lr/denotes,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/Funds,
-                      :rdf/type           :owl/Restriction}
                      :lcc-lr/CodeElement],
    :skos/definition
    "sequence of characters that can be used to uniquely identify funds"})

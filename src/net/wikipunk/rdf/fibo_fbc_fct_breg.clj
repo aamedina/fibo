@@ -464,19 +464,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "legal entity identifier registry entry",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fct-breg/hasRegistrationStatus,
-     :owl/someValuesFrom :fibo-fbc-fct-breg/RegistrationStatus,
+   [{:owl/onProperty     :fibo-fbc-fct-breg/hasValidationLevel,
+     :owl/someValuesFrom :fibo-fbc-fct-breg/EntityValidationLevel,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-fct-breg/BusinessRegistrationAuthority,
      :owl/onProperty :fibo-fbc-fct-breg/hasValidationAuthority,
      :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-breg/hasRegistrationStatus,
+     :owl/someValuesFrom :fibo-fbc-fct-breg/RegistrationStatus,
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-breg/BusinessRegistryEntry
-    {:owl/onProperty     :fibo-fbc-fct-breg/hasValidationLevel,
-     :owl/someValuesFrom :fibo-fbc-fct-breg/EntityValidationLevel,
+    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+     :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "entry in a legal entity identifier registry that conforms to ISO 17442 and the Global Legal Entity Identifier Foundation (GLEIF) Common Data Format (CDF)"})
@@ -525,20 +525,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "North American Industry Classification System code",
    :rdfs/subClassOf
-   [{:owl/onProperty     :lcc-cr/classifies,
-     :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
-     :rdf/type           :owl/Restriction}
-    {:owl/onClass
+   [{:owl/onClass
      :fibo-fbc-fct-breg/NorthAmericanIndustryClassificationSystemScheme,
      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
      :owl/qualifiedCardinality 1,
      :rdf/type :owl/Restriction}
+    :lcc-lr/CodeElement
+    {:owl/onProperty     :lcc-cr/classifies,
+     :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-arr-cls/IndustrySectorClassifier
     {:owl/onDataRange :xsd/string,
      :owl/onProperty  :lcc-lr/hasTag,
      :owl/qualifiedCardinality 1,
-     :rdf/type        :owl/Restriction}
-    :lcc-lr/CodeElement
-    :fibo-fnd-arr-cls/IndustrySectorClassifier],
+     :rdf/type        :owl/Restriction}],
    :skos/definition
    "the North American Industry Classification System (NAICS) code representing an industry"})
 
@@ -661,13 +661,13 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-arr-cls/IndustrySectorClassifier
+                     {:owl/onProperty     :lcc-cr/classifies,
+                      :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onDataRange :xsd/string,
                       :owl/onProperty  :lcc-lr/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/classifies,
-                      :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
-                      :rdf/type           :owl/Restriction}
                      :lcc-lr/CodeElement],
    :skos/definition "the SIC code representing an industry"})
 

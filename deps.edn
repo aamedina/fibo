@@ -2,7 +2,7 @@
  {com.stuartsierra/component
   {:mvn/version "1.1.0"}
   io.github.aamedina/rdf
-  {:git/sha "f68e40e0a8b7874a86ea6b07879a75559aad4685"}
+  {:git/sha "efee0920676d1b6a61cce738d618b65511220dbf"}
   io.github.aamedina/omg
   {:git/sha "74c50aa2eccecc478a828b15b8d36918a4f9de3f"}
   org.clojure/clojure

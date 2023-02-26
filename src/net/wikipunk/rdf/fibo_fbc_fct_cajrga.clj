@@ -180,11 +180,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :rdfs/label "business number",
    :rdfs/subClassOf
-   [:fibo-fnd-org-org/OrganizationIdentifier
-    {:owl/hasValue
+   [{:owl/hasValue
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :lcc-lr/isMemberOf,
      :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationIdentifier
     :fibo-fnd-pty-pty/TaxIdentifier
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :fibo-fnd-law-jur/appliesIn,
@@ -429,18 +429,18 @@
    :rdfs/label
    "Goods and Services Tax / Harmonized Sales Tax registration number",
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :fibo-fnd-law-jur/appliesIn,
+   [{:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
+     :owl/onProperty :lcc-lr/identifies,
      :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-cajrga/BusinessNumber
+    :fibo-be-le-fbo/ValueAddedTaxIdentificationNumber
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/GoodsServicesTaxHarmonizedSalesTaxRegistrationIdentifierScheme,
      :owl/onProperty :lcc-lr/isMemberOf,
      :rdf/type :owl/Restriction}
-    :fibo-fbc-fct-cajrga/BusinessNumber
-    :fibo-be-le-fbo/ValueAddedTaxIdentificationNumber
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
-     :owl/onProperty :lcc-lr/identifies,
+    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :fibo-fnd-law-jur/appliesIn,
      :rdf/type       :owl/Restriction}],
    :skos/definition
    "concatenation of an entity's business number, the 'RT' abbreviation and a 4-digit subaccount number used for reporting GST/HST",
@@ -654,12 +654,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :rdfs/label "payroll deductions program number",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
+   [{:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :fibo-fnd-law-jur/appliesIn,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :lcc-lr/identifies,
-     :rdf/type       :owl/Restriction}
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :fibo-fnd-law-jur/appliesIn,
      :rdf/type       :owl/Restriction}
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/PayrollDeductionsProgramIdentifierRegistrationService,
@@ -696,18 +696,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :rdfs/label "registered charity program number",
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+   [:fibo-fbc-fct-cajrga/BusinessNumber
+    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :fibo-fnd-law-jur/appliesIn,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
-     :owl/onProperty :lcc-lr/identifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-cajrga/BusinessNumber
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/RegisteredCharityProgramNumberIdentifierScheme,
      :owl/onProperty :lcc-lr/isMemberOf,
-     :rdf/type :owl/Restriction}],
+     :rdf/type :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
+     :owl/onProperty :lcc-lr/identifies,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "concatenation of an entity's business number, the 'RR' abbreviation and a 4-digit subaccount number used for registered charity contribution",
    :skos/example "000000000RR0001"})

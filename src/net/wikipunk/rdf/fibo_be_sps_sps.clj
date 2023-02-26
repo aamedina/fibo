@@ -66,7 +66,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships/",
    :rdfs/label "sole proprietor",
-   :rdfs/subClassOf [:fibo-be-oac-opty/EntityOwner
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-be-oac-opty/hasInvestmentEntity,
+                      :owl/someValuesFrom :fibo-be-sps-sps/SoleProprietorship,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-be-oac-opty/EntityOwner
                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/onProperty
                                            :fibo-fnd-oac-oac/ownsAndControls,
@@ -77,10 +80,7 @@
                      {:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-be-oac-opty/hasInvestmentEntity,
-                      :owl/someValuesFrom :fibo-be-sps-sps/SoleProprietorship,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "party that owns a business, has the rights to all profits from that business and is considered a single entity (unincorporated) together with that business for tax and liability purposes"})
 

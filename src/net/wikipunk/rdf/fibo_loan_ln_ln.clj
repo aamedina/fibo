@@ -155,15 +155,15 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom :fibo-fnd-oac-own/Asset,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraisal,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fnd-arr-asmt/AppraisedValue,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-acc-cur/PercentageMonetaryAmount
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
+                      :owl/someValuesFrom :fibo-fnd-arr-asmt/AppraisedValue,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "ratio of the total amount of debt that is secured by the asset(s) and the appraised value of the asset(s) securing the financing"})
@@ -254,12 +254,39 @@
    :rdfs/label "loan",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/DebtInstrument
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-loan-ln-ln/hasTotalClosingCosts,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-loan-ln-ln/hasPrincipalAmount,
+                      :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-gty/Guarantor,
                       :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
+                      :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-loan-ln-ln/LenderLienPosition,
+                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-loan-ln-ln/Servicer,
                       :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-loan-ln-ln/isInterestOnly,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-loan-ln-ln/LoanSpecificCustomerAccount,
+                      :owl/onProperty :fibo-fbc-pas-caa/hasCorrespondingAccount,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-agr-ctr/ContractThirdParty,
+                      :owl/onProperty :fibo-fnd-agr-ctr/hasThirdParty,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/boolean,
@@ -269,33 +296,6 @@
                       :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-loan-ln-ln/hasTotalPointsAndFees,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-loan-ln-ln/LenderLienPosition,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
-                      :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-loan-ln-ln/hasPrincipalAmount,
-                      :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-agr-ctr/ContractThirdParty,
-                      :owl/onProperty :fibo-fnd-agr-ctr/hasThirdParty,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :xsd/boolean,
-                      :owl/onProperty  :fibo-loan-ln-ln/isInterestOnly,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-loan-ln-ln/hasTotalClosingCosts,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-loan-ln-ln/LoanSpecificCustomerAccount,
-                      :owl/onProperty :fibo-fbc-pas-caa/hasCorrespondingAccount,
-                      :rdf/type :owl/Restriction}
                      :fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically],
    :skos/definition
    "debt instrument whereby one party extends money or credit to another party (or parties) with the understanding that the borrowed money will be repaid according to the terms of the contract"})
@@ -342,9 +342,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
    :rdfs/label "loan-specific customer account",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-caa/Balance,
-                      :owl/onProperty :fibo-loan-ln-ln/hasLoanBalance,
+                      :owl/onClass    :fibo-loan-ln-ln/LoanPaymentSchedule,
+                      :owl/onProperty :fibo-fnd-pas-psch/hasPaymentSchedule,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isHeldBy,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-caa/CustomerAccount
                      {:owl/onProperty     :fibo-fbc-pas-fpas/relatesTo,
                       :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
@@ -355,16 +358,13 @@
                                             :fibo-loan-ln-ln/Servicer],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isHeldBy,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
-                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-caa/Balance,
+                      :owl/onProperty :fibo-loan-ln-ln/hasLoanBalance,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-loan-ln-ln/PaymentHistory,
                       :owl/onProperty :fibo-loan-ln-ln/hasPaymentHistory,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-loan-ln-ln/LoanPaymentSchedule,
-                      :owl/onProperty :fibo-fnd-pas-psch/hasPaymentSchedule,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-caa/LoanOrCreditAccount],
    :skos/definition
@@ -379,17 +379,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
    :rdfs/label "loan-to-value ratio",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/AppraisedValue,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-cur/PercentageMonetaryAmount
                      {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
                       :owl/someValuesFrom :fibo-fnd-oac-own/Asset,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-cur/PercentageMonetaryAmount
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraisal,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-loan-ln-ln/LoanPrincipal,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "ratio, expressed as a percentage, between the principal amount of the loan and the appraised value of the asset securing the financing"})
@@ -405,11 +405,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
    :rdfs/label "open-end credit",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [:fibo-fbc-dae-dbt/CreditAgreement
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-loan-ln-ln/hasCreditLimit,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditAgreement],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "credit agreement that may be extended up to an agreed credit limit and paid down at any time within the period of the line, if any, and on which interest is charged only on the outstanding balance",
    :skos/example
@@ -510,15 +510,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
    :rdfs/label "security agreement",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/isPartOf,
-                      :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CollateralAgreement
-                     {:owl/onProperty     :fibo-fnd-arr-asmt/hasEstimatedValue,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-asmt/hasEstimatedValue,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :lcc-cr/isClassifiedBy,
                       :owl/someValuesFrom :fibo-loan-ln-ln/LenderLienPosition,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CollateralAgreement
+                     {:owl/onProperty     :lcc-cr/isPartOf,
+                      :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :lcc-cr/isClassifiedBy,
                       :owl/someValuesFrom :fibo-loan-ln-ln/OwnershipInterest,

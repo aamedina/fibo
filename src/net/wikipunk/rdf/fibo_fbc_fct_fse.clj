@@ -200,19 +200,28 @@
    :cmns-av/synonym ["SWIFT code"
                      "bank identifier code"
                      "business entity identifier"
-                     "SWIFT ID"
-                     "SWIFT-BIC"],
+                     "SWIFT-BIC"
+                     "SWIFT ID"],
    :db/ident :fibo-fbc-fct-fse/BusinessIdentifierCode,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfs/label "business identifier code",
    :rdfs/subClassOf [:fibo-fnd-arr-id/CompositeIdentifier
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fnd-org-org/OrganizationPartIdentifier,
+                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :lcc-lr/denotes,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :lcc-lr/CodeElement
                      {:owl/onClass    :lcc-cr/Alpha2Code,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fbc-fct-fse/BusinessPartySuffix,
+                     {:owl/onClass    :fibo-fbc-fct-fse/BusinessPartyPrefix,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
@@ -220,20 +229,11 @@
                       :owl/someValuesFrom
                       :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
                       :rdf/type :owl/Restriction}
-                     :lcc-lr/CodeElement
-                     {:owl/onClass    :fibo-fbc-fct-fse/BusinessPartyPrefix,
+                     {:owl/onClass    :fibo-fbc-fct-fse/BusinessPartySuffix,
                       :owl/onProperty :fibo-fnd-rel-rel/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-org-org/OrganizationPartIdentifier,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-org-org/OrganizationIdentifier
-                     {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
-                      :owl/onProperty :lcc-lr/denotes,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                     :fibo-fnd-org-org/OrganizationIdentifier],
    :skos/definition
    "international identifier for financial and non-financial institutions used to facilitate automated processing of information for financial services"})
 
@@ -269,11 +269,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfs/label "business party prefix",
-   :rdfs/subClassOf [:lcc-lr/CodeElement
-                     {:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fbc-fct-fse/BusinessIdentifierCode,
                       :owl/onProperty :fibo-fnd-rel-rel/isIncludedIn,
                       :rdf/type       :owl/Restriction}
+                     :lcc-lr/CodeElement
                      :fibo-fnd-org-org/OrganizationIdentifier
                      {:owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
                       :owl/someValuesFrom
@@ -295,13 +295,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfs/label "business party suffix",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/isIncludedIn,
-     :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCode,
-     :rdf/type           :owl/Restriction}
+   [:lcc-lr/CodeElement
     {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
      :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
      :rdf/type           :owl/Restriction}
-    :lcc-lr/CodeElement],
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIncludedIn,
+     :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCode,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "a two-character (2 alphanumeric) code associated with the organization"})
 

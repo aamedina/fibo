@@ -195,11 +195,11 @@
    [{:owl/hasValue   :fibo-fbc-fct-ireg/BusinessIdentifierCodeRegistry,
      :owl/onProperty :fibo-fnd-rel-rel/isIncludedIn,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fct-breg/isSelfMaintained,
-     :owl/someValuesFrom :xsd/string,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
      :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCode,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-breg/isSelfMaintained,
+     :owl/someValuesFrom :xsd/string,
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-breg/BusinessRegistryEntry],
    :skos/definition
@@ -380,21 +380,21 @@
    [{:owl/hasValue   :fibo-fbc-fct-ireg/MarketIdentifierCodeRegistry,
      :owl/onProperty :fibo-fnd-rel-rel/isIncludedIn,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-fbc-fct-mkt/MarketIdentifier,
-     :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifierCodeStatus,
      :owl/onProperty :fibo-fbc-fct-mkt/hasMarketIdentifierCodeStatus,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    {:owl/onDataRange :xsd/string,
-     :owl/onProperty  :fibo-fbc-fct-breg/hasInitialRegistrationDate,
-     :owl/qualifiedCardinality 1,
-     :rdf/type        :owl/Restriction}
     :fibo-fbc-fct-ra/RegistryEntry
     {:owl/maxQualifiedCardinality 1,
      :owl/onDataRange :xsd/string,
      :owl/onProperty  :fibo-fbc-fct-breg/hasRegistrationRevisionDate,
+     :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+     :owl/someValuesFrom :fibo-fbc-fct-mkt/MarketIdentifier,
+     :rdf/type           :owl/Restriction}
+    {:owl/onDataRange :xsd/string,
+     :owl/onProperty  :fibo-fbc-fct-breg/hasInitialRegistrationDate,
+     :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}],
    :skos/definition
    "entry in a market identifier code registry that conforms to ISO 10383"})

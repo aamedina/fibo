@@ -92,11 +92,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "contextual name",
-   :rdfs/subClassOf [:fibo-fnd-aap-agt/Name
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-aap-agt/isStructuredNameOf,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-aap-agt/Name
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
                       :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
@@ -132,14 +132,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "party in role",
-   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-rl/AgentInRole
+   :rdfs/subClassOf [:fibo-fnd-pty-rl/AgentInRole
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-pty-pty/hasCommencementDate,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "relative concept that ties a person or organization to a specific role they stand in",

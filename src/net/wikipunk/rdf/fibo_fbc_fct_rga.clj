@@ -167,8 +167,8 @@
 
 (def RegulatoryAgency
   "public authority or government agency responsible for exercising authority over something in a regulatory or supervisory capacity"
-  {:cmns-av/adaptedFrom ["http://www.thefreedictionary.com/regulatory+agency"
-                         "http://en.wikipedia.org/wiki/Regulatory_agency"],
+  {:cmns-av/adaptedFrom ["http://en.wikipedia.org/wiki/Regulatory_agency"
+                         "http://www.thefreedictionary.com/regulatory+agency"],
    :cmns-av/explanatoryNote
    "Typically, a regulatory agency is chartered to protect some constituancy, (e.g., investors in the financial industry), to ensure the fairness and integrity of some market (e.g., the securities market), and fair and safe business practices among the service providers in that market.",
    :cmns-av/synonym ["regulator" "regulatory authority" "regulatory body"],
@@ -177,20 +177,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
    :rdfs/label "regulatory agency",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/provides,
+   :rdfs/subClassOf [:fibo-fnd-pas-pas/ServiceProvider
+                     {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryService,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
-                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pas-pas/ServiceProvider
                      {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-fct-rga/GovernmentIssuedLicense,
                       :owl/onProperty :fibo-fnd-rel-rel/issues,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "public authority or government agency responsible for exercising authority over something in a regulatory or supervisory capacity",
@@ -254,17 +254,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
    :rdfs/label "tax authority",
    :rdfs/subClassOf [:fibo-fbc-fct-rga/RegulatoryAgency
-                     {:owl/onProperty :fibo-fnd-rel-rel/manages,
-                      :owl/someValuesFrom
-                      :fibo-fnd-pty-pty/TaxIdentificationScheme,
-                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-pty-pty/TaxIdentifier,
                       :owl/onProperty :fibo-fnd-rel-rel/issues,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-rel-rel/manages,
+                      :owl/someValuesFrom
+                      :fibo-fnd-pty-pty/TaxIdentificationScheme,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "regulatory agency that has jurisdiction over the assessment, determination, collection, imposition and other aspects of any tax"})
 

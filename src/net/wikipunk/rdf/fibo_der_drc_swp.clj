@@ -479,18 +479,18 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/",
    :rdfs/label "swap",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-der-drc-swp/SwapTerms,
-                      :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-der-drc-swp/UniqueSwapIdentifier,
                       :owl/onProperty :lcc-lr/isIdentifiedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/DerivativeInstrument
                      {:owl/onClass    :fibo-der-drc-swp/SwapParty,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fi-fi/DerivativeInstrument
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-der-drc-swp/SwapTerms,
+                      :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-swp/SwapLeg,
                       :owl/onProperty :fibo-fnd-rel-rel/exchanges,
                       :owl/qualifiedCardinality 2,
@@ -555,31 +555,31 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/",
    :rdfs/label "swap leg",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty :fibo-fnd-arr-doc/hasTerminationDate,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-der-drc-swp/SwapReceivingParty,
+                      :owl/onProperty :fibo-fnd-pas-pas/hasSeller,
+                      :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-bsc/CashflowTerms
-                     {:owl/onProperty     :fibo-der-drc-swp/isLegOf,
-                      :owl/someValuesFrom :fibo-der-drc-swp/Swap,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-fnd-acc-cur/hasNotionalAmount,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-dt-fd/Date,
+                      :owl/onProperty :fibo-fnd-arr-doc/hasTerminationDate,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-der-drc-swp/SwapPayingParty,
+                      :owl/onProperty :fibo-fnd-pas-pas/hasBuyer,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-swp/isLegOf,
+                      :owl/someValuesFrom :fibo-der-drc-swp/Swap,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-der-drc-swp/SwapReceivingParty,
-                      :owl/onProperty :fibo-fnd-pas-pas/hasSeller,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-der-drc-swp/SwapTerms
-                     {:owl/onClass    :fibo-der-drc-swp/SwapPayingParty,
-                      :owl/onProperty :fibo-fnd-pas-pas/hasBuyer,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                     :fibo-der-drc-swp/SwapTerms],
    :skos/definition
    "terms defining and the commitment to fulfill cashflow requirements (e.g., interest payments, coupon payments, etc.) for one side of a swap",
    :skos/editorialNote
@@ -728,11 +728,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "total return swap"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-swp/hasReturnLeg,
+   :rdfs/subClassOf [:fibo-der-drc-swp/ReturnSwap
+                     :fibo-der-drc-bsc/CreditDerivative
+                     {:owl/onProperty     :fibo-der-drc-swp/hasReturnLeg,
                       :owl/someValuesFrom :fibo-der-drc-swp/TotalReturnLeg,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/ReturnSwap
-                     :fibo-der-drc-bsc/CreditDerivative],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

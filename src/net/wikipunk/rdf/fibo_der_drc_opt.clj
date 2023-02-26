@@ -847,11 +847,11 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "standardized options terms"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
-     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
      :owl/someValuesFrom :fibo-der-drc-opt/VanillaOption,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
+     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-be-fct-pub/hasPublisher,
      :owl/someValuesFrom {:owl/unionOf
