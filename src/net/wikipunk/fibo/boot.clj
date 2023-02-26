@@ -1,6 +1,7 @@
 (ns net.wikipunk.fibo.boot
   {:rdf/type :jsonld/Context}
   (:require
+   [net.wikipunk.omg.boot]
    [net.wikipunk.rdf.schema]))
 
 (def spec
