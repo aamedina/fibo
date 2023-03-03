@@ -17,6 +17,8 @@
     (try
       (binding [*ns* (find-ns (or (:quickstart-ns this) 'dev))]
         (quickstart))
+      (rdf/import-from 'net.wikipunk.rdf.fibo-fbc-fct-mkti
+                       'net.wikipunk.rdf.gleif-L1-data)
       (catch Throwable ex))
     this)
   (stop [this]

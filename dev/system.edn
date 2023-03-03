@@ -1,10 +1,11 @@
 {:vocab  {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
-          :sc/refs      [:fibo]
+          :sc/refs      [:omg :fibo]
           :init-ns      net.wikipunk.temple.init
           :boot         [net.wikipunk.fibo.boot/spec]
           :config       {:xtdb.lucene/lucene-store
                          {:db-dir ".vocab/lucene"}}}
  :fibo   {:sc/create-fn net.wikipunk.fibo/map->FIBO
+          :sc/refs      [:omg]
           :domains      [net.wikipunk.fibo.boot/fibo-fbc-mod
                          net.wikipunk.fibo.boot/fibo-der-mod
                          net.wikipunk.fibo.boot/fibo-bp-mod
@@ -259,4 +260,5 @@
                          net.wikipunk.fibo.boot/fibo-sec-sec-pls
                          net.wikipunk.fibo.boot/fibo-sec-sec-rst
                          net.wikipunk.fibo.boot/fibo-sec-sec-sch]}
- :openai {:sc/create-fn net.wikipunk.openai/map->Client}}
+ :openai {:sc/create-fn net.wikipunk.openai/map->Client}
+ :omg    {:sc/create-fn net.wikipunk.omg/map->OMG}}
