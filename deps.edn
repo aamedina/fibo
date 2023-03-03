@@ -2,7 +2,7 @@
  {com.stuartsierra/component
   {:mvn/version "1.1.0"}
   io.github.aamedina/omg
-  {:git/sha "c68d068d3de12d83500c8bfe4a016a2ee7542ead"}
+  {:git/sha "6f9fc93659b0d4b7276405976aaa77ede9147d65"}
   org.clojure/clojure
   {:mvn/version "1.11.1"}}
  :paths ["src" "classes"]
