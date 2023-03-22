@@ -297,4 +297,13 @@
            '[net.wikipunk.rdf.lcc-3166-2-ca :as lcc-3166-2-ca]
            '[net.wikipunk.rdf.lcc-3166-2-mx :as lcc-3166-2-mx]
            '[net.wikipunk.rdf.lcc-3166-2-gb :as lcc-3166-2-gb]
-           '[net.wikipunk.rdf.lcc-3166-2-us :as lcc-3166-2-us]))
+           '[net.wikipunk.rdf.lcc-3166-2-us :as lcc-3166-2-us]
+           '[net.wikipunk.rdf.lcc-3166-2-ch :as lcc-3166-2-ch]
+           '[net.wikipunk.rdf.cmns-av :as cmns-av]
+           '[net.wikipunk.rdf.cmns-dt :as cmns-dt]
+           '[net.wikipunk.rdf.cmns-cxtdsg :as cmns-cxtdsg]
+           '[net.wikipunk.rdf.cmns-col :as cmns-col]
+           '[net.wikipunk.rdf.cmns-txt :as cmns-txt]
+           '[net.wikipunk.rdf.cmns-dsg :as cmns-dsg]
+           '[net.wikipunk.rdf.cmns-dsg :as cmns-dsg]
+           '[net.wikipunk.rdf.sm :as sm]))
