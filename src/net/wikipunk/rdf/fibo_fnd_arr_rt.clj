@@ -9,15 +9,15 @@
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
+    "https://www.omg.org/spec/Commons/Designators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Assessments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
@@ -28,13 +28,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Ratings/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-agr-ctr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
     "fibo-fnd-arr-asmt"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
-    "fibo-fnd-arr-cls"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-arr-doc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
     "fibo-fnd-arr-rep"
@@ -53,8 +54,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -68,6 +67,7 @@
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was revised to replace hasDefinition with isDefinedIn to clarify intent."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was revised to add properties indicating the 'best' and 'worst' scores on a given scale."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings.rdf version of this ontology was revised to eliminate duplication with LCC."
@@ -84,10 +84,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "qualitative rating score",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :lcc-lr/CodeElement
+                     :cmns-cds/CodeElement
                      :fibo-fnd-arr-rt/RatingScore],
    :skos/definition
    "rating score that is represented as a qualitative code with respect to some rating scale"})
@@ -114,27 +114,27 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "rating",
-   :rdfs/subClassOf [:fibo-fnd-arr-asmt/Opinion
-                     {:owl/onProperty     :fibo-fnd-arr-rt/hasRatingScore,
-                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-arr-rt/RatingParty,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-dt-fd/Date,
+                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-arr-rt/RatingIssuer,
-                      :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-arr-asmt/Opinion
+                     {:owl/cardinality 1,
+                      :owl/onProperty  :fibo-fnd-arr-rt/rates,
+                      :rdf/type        :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/cardinality 1,
-                      :owl/onProperty  :fibo-fnd-arr-rt/rates,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
+                     {:owl/onProperty     :fibo-fnd-arr-rt/hasRatingScore,
+                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-arr-rt/RatingIssuer,
+                      :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-arr-rt/RatingParty,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
@@ -243,7 +243,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "rating scale",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/defines,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingScalePublisher,
@@ -258,7 +258,7 @@
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-arr-rt/hasBestMeasure,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-arr-cls/ClassificationScheme],
+                     :cmns-cls/ClassificationScheme],
    :skos/definition
    "system for assigning a value to something according to some scale with respect to quality, a standard, or ranking"})
 
@@ -288,14 +288,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "rating score",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-arr-rt/RatingScale,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-arr-rt/hasMeasureWithinScale,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier],
+                     :cmns-cls/Classifier],
    :skos/definition
    "grade, classification, or ranking of for something in accordance with some rating scale"})
 
@@ -334,7 +334,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "has rating",
    :rdfs/range :fibo-fnd-arr-rt/Rating,
-   :rdfs/subPropertyOf :lcc-cr/isClassifiedBy,
+   :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
    :skos/definition
    "indicates the rating assigned to a thing based on a grade or score according to a particular rating scale"})
 
@@ -347,7 +347,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "has rating score",
    :rdfs/range :fibo-fnd-arr-rt/RatingScore,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
    :skos/definition
    "indicates the grade or score associated with a rating with respect to a particular rating scale"})
 
@@ -386,7 +386,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "rates",
-   :rdfs/subPropertyOf :lcc-cr/classifies,
+   :rdfs/subPropertyOf :cmns-cls/classifies,
    :skos/definition
    "indicates the instrument, party or something else to which a rating applies"})
 

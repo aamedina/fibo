@@ -6,38 +6,46 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :dcterms/abstract
    "This ontology defines basic financial service providers, such as holding companies, financial institutions (both depository and non-depository institutions), and clearing houses at a relatively general level. Nuances specific to the institutions located in a specific country are defined in jurisdiction specific dependent ontologies.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/PaymentsAndSchedules/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/ContextualIdentifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
+    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
+    "https://www.omg.org/spec/Commons/Designators/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtid" "https://www.omg.org/spec/Commons/ContextualIdentifiers/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-fct"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
@@ -61,8 +69,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
     "fibo-fnd-agr-ctr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-    "fibo-fnd-arr-id"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
     "fibo-fnd-dt-fd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
     "fibo-fnd-law-jur"
@@ -84,7 +90,6 @@
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -103,6 +108,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/FunctionalEntities/FinancialServicesEntities.rdf version of this ontology was revised to move the definition of the Bank for International Settlements (BIS) to the EU Regulatory Agencies ontology and build out the individual details there, and to reflect the move of some organization-specific concepts from BE to FND."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/FunctionalEntities/FinancialServicesEntities.rdf version of this ontology was revised to eliminate references to external dictionary sites that no longer resolve and address additional circular definitions."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/ version of this ontology was modified per the FIBO 2.0 RFC, including, but not limited to, the addition of trade settlement concepts and generalizing the concept of a credit union."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/FunctionalEntities/FinancialServicesEntities.rdf version of this ontology was revised to add missing functional entities and related properties, and eliminate circular or ambiguous definitions where possible."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/ version of this ontology was modified to refine the concept of a credit union and generalize the definition of an underwriter."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/FunctionalEntities/FinancialServicesEntities.rdf version of this ontology was revised to clean up dead links and address text formatting issues uncovered by hygiene testing."
@@ -200,37 +206,37 @@
    :cmns-av/synonym ["SWIFT code"
                      "bank identifier code"
                      "business entity identifier"
-                     "SWIFT-BIC"
-                     "SWIFT ID"],
+                     "SWIFT ID"
+                     "SWIFT-BIC"],
    :db/ident :fibo-fbc-fct-fse/BusinessIdentifierCode,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfs/label "business identifier code",
-   :rdfs/subClassOf [:fibo-fnd-arr-id/CompositeIdentifier
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-org-org/OrganizationPartIdentifier,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
-                      :owl/onProperty :lcc-lr/denotes,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :cmns-dsg/denotes,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/CodeElement
                      {:owl/onClass    :lcc-cr/Alpha2Code,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fbc-fct-fse/BusinessPartyPrefix,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty :lcc-lr/isMemberOf,
+                     :cmns-cds/CodeElement
+                     {:owl/onProperty :cmns-col/isMemberOf,
                       :owl/someValuesFrom
                       :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
                       :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fbc-fct-fse/BusinessPartySuffix,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :cmns-cxtid/StructuredIdentifier
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fnd-org-org/OrganizationPartIdentifier,
+                      :owl/onProperty :cmns-col/comprises,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onClass    :fibo-fbc-fct-fse/BusinessPartyPrefix,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-org-org/OrganizationIdentifier],
@@ -247,11 +253,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfs/label "business identifier code scheme",
-   :rdfs/subClassOf [{:owl/onProperty :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasMember,
                       :owl/someValuesFrom
                       :fibo-fbc-fct-fse/BusinessIdentifierCode,
                       :rdf/type :owl/Restriction}
-                     :lcc-lr/CodeSet
+                     :cmns-cds/CodeSet
                      :fibo-fnd-org-org/OrganizationIdentificationScheme],
    :skos/definition
    "a scheme that specifies the elements of a unique business identifier code (BIC) scheme to identify financial and non-financial institutions used to facilitate automated processing of information for financial services"})
@@ -271,11 +277,11 @@
    :rdfs/label "business party prefix",
    :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fbc-fct-fse/BusinessIdentifierCode,
-                      :owl/onProperty :fibo-fnd-rel-rel/isIncludedIn,
+                      :owl/onProperty :cmns-col/isIncludedIn,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/CodeElement
+                     :cmns-cds/CodeElement
                      :fibo-fnd-org-org/OrganizationIdentifier
-                     {:owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                     {:owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/someValuesFrom
                       :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
                       :rdf/type :owl/Restriction}],
@@ -295,12 +301,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfs/label "business party suffix",
    :rdfs/subClassOf
-   [:lcc-lr/CodeElement
-    {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
-     :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIncludedIn,
+   [{:owl/onProperty     :cmns-col/isIncludedIn,
      :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCode,
+     :rdf/type           :owl/Restriction}
+    :cmns-cds/CodeElement
+    {:owl/onProperty     :cmns-dsg/isDefinedIn,
+     :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "a two-character (2 alphanumeric) code associated with the organization"})
@@ -577,12 +583,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfs/label "financial institution",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
-                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+   :rdfs/subClassOf [:fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
+                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "a financial service provider identified as either a government agency or privately owned entity that collects funds from the public and from other institutions, and invests those funds in financial assets, such as loans, securities, bank deposits, and income-generating property"})
@@ -596,11 +602,11 @@
    :rdfs/label "financial service provider identifier",
    :rdfs/subClassOf
    [{:owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :lcc-lr/identifies,
+     :owl/onProperty :cmns-id/identifies,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
     {:owl/onClass    :fibo-fbc-fct-fse/FinancialServiceProviderIdentifierScheme,
-     :owl/onProperty :lcc-lr/isMemberOf,
+     :owl/onProperty :cmns-col/isMemberOf,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
@@ -618,11 +624,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :rdfs/label "financial service provider identifier scheme",
-   :rdfs/subClassOf [{:owl/onProperty :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasMember,
                       :owl/someValuesFrom
                       :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier,
                       :rdf/type :owl/Restriction}
-                     :lcc-lr/IdentificationScheme],
+                     :cmns-id/IdentificationScheme],
    :skos/definition
    "the scheme that defines the financial service provider identifier per the issuing registration authority or regulatory agency"})
 

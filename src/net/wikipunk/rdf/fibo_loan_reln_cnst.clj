@@ -5,24 +5,25 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :dcterms/abstract
    "Construction loans are loans in name only, in that the concept referred to as a construction loan is effectively a credit facility, with separate draw-downs (loans as defined in these ontologies) being enabled upon evidence of completion of agreed stages of the construction project. Note that for completion this ontology will need to be extended with a number of project management concepts describing the parameters of the construction project that are referred to in the contract for this facility. Some basic project management terms such as milestones are already included but will need framing within more foundational concepts for project management.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/LoanEvents/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-dbt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
@@ -30,10 +31,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
     "fibo-fnd-agr-ctr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
-    "fibo-fnd-arr-cls"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-plc-loc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
     "fibo-fnd-utl-av"
@@ -42,7 +39,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
     "fibo-loan-reln-cnst"
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -85,7 +81,7 @@
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-reln-cnst/ConstructionLoanCreditFacilityTranche,
-     :owl/onProperty :fibo-fnd-arr-arr/hasConstituent,
+     :owl/onProperty :cmns-col/hasConstituent,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-dae-dbt/CreditFacility]})
 
@@ -128,7 +124,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfs/label "construction type",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition "particular kind of construction"})
 
 (def ConstructionType_Manufactured
@@ -255,6 +251,6 @@
 (def ^{:private true} RealEstate
   {:db/ident        :fibo-fnd-plc-loc/RealEstate,
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onProperty     :lcc-cr/isClassifiedBy,
+   :rdfs/subClassOf {:owl/onProperty     :cmns-cls/isClassifiedBy,
                      :owl/someValuesFrom :fibo-loan-reln-cnst/ConstructionType,
                      :rdf/type           :owl/Restriction}})

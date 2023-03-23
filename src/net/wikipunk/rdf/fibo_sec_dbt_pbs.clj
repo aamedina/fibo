@@ -6,29 +6,28 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/",
    :dcterms/abstract
    "This ontology defines concepts that are common to asset-backed and mortgage-backed securities, including pools, as well as structured finance instruments.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/PoolBackedSecurities/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
     "fibo-fbc-dae-dbt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-pty-rl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-rel-rel"
@@ -53,21 +52,22 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Pool-backed Securities Ontology"},
    :skos/changeNote
-   "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."})
+   ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate, and added an explanatory note to ABS."]})
 
 (def AssetBackedSecurity
   "debt instrument backed by receivables other than those arising out of real estate loans or mortgages"
   {:cmns-av/abbreviation {:rdf/language "en",
                           :rdf/value    "ABS"},
    :cmns-av/adaptedFrom
-   "ISO 10962, Securities and related financial instruments - Classification of Financial Instruments (CFI code), Fourth edition, 2019-10-01.",
+   "ISO 10962, Securities and related financial instruments - Classification of Financial Instruments (CFI code), Fourth edition, 2019-10-01",
    :cmns-av/explanatoryNote
    [{:rdf/language "en",
      :rdf/value
-     "One difference between an ABs and a collateralized debt obligation (CDO) is that the CDO issuer is generally a special purpose vehicle (SPV) or trust."}
+     "Asset-backed securities, for example home equity loans (HEL), credit cards, and so forth are backed by receivables [payments] that are either secured (such as HEL) or unsecured (for example, credit cards). They are typically tranched based on default risk."}
     {:rdf/language "en",
      :rdf/value
-     "Asset-backed securities, for example home equity loans (HEL), credit cards, and so forth are backed by receivables [payments] that are either secured (such as HEL) or unsecured (for example, credit cards). They are typically tranched based on default risk."}],
+     "An asset-backed security (ABS) is a type of financial investment that is collateralized by an underlying pool of assets—usually ones that generate a cash flow from debt, such as loans, leases, credit card balances, or receivables. It takes the form of a bond or note, paying income at a fixed rate for a set amount of time, until maturity. ABS are financial securities backed by income-generating assets such as credit card receivables, home equity loans, student loans, and auto loans. Pooling assets into an ABS is a process called securitization. One difference between an ABS and a collateralized debt obligation (CDO) is that the CDO issuer is generally a special purpose vehicle (SPV) or trust."}],
    :db/ident :fibo-sec-dbt-pbs/AssetBackedSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -196,9 +196,9 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "tranche"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   [{:owl/onProperty     :cmns-col/comprises,
      :owl/someValuesFrom {:owl/onClass    :fibo-sec-sec-pls/InstrumentPool,
-                          :owl/onProperty :fibo-fnd-arr-arr/isConstituentOf,
+                          :owl/onProperty :cmns-col/isConstituentOf,
                           :owl/qualifiedCardinality 1,
                           :rdf/type       :owl/Restriction},
      :rdf/type           :owl/Restriction}

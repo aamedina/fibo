@@ -14,6 +14,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
@@ -26,11 +27,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/MuniIssuance/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/RightsAndWarrants/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/RightsAndWarrants/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/DebtIssuance/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-bp-iss-dbti"
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
@@ -129,7 +133,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "bond issuance programme"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-bp-iss-dbti/BondOffering,
                       :rdf/type           :owl/Restriction}
                      :fibo-bp-iss-dbti/DebtIssuanceProgramme],
@@ -161,7 +165,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "bond offering with warrant"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-der-drc-raw/TraditionalWarrant
                                             :fibo-sec-dbt-bnd/Bond],
@@ -241,7 +245,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "debt issuance programme"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/DebtOffering,
                       :rdf/type           :owl/Restriction}
                      :fibo-bp-iss-prc/IssuanceProgramme],
@@ -372,7 +376,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "medium term note issuance programme"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
                       :fibo-bp-iss-dbti/MediumTermNoteOffering,
                       :rdf/type :owl/Restriction}
@@ -626,13 +630,13 @@
 (def ^{:private true} DebtOffering
   {:db/ident        :fibo-sec-dbt-dbti/DebtOffering,
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
-                      :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom
                       :fibo-sec-dbt-dbti/TradableDebtInstrument,
                       :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
+                      :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
                       :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
                       :rdf/type           :owl/Restriction}

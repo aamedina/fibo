@@ -103,11 +103,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "home equity line of credit"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-dae-dbt/isCollateralizedBy,
+   :rdfs/subClassOf [:fibo-loan-ln-ln/CollateralizedLoan
+                     :fibo-loan-spc-cns/ConsumerLoan
+                     {:owl/onProperty     :fibo-fbc-dae-dbt/isCollateralizedBy,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/PhysicalCollateral,
                       :rdf/type           :owl/Restriction}
-                     :fibo-loan-ln-ln/CollateralizedLoan
-                     :fibo-loan-spc-cns/ConsumerLoan
                      :fibo-fbc-dae-dbt/RevolvingLineOfCredit],
    :skos/definition
    {:rdf/language "en",

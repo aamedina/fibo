@@ -12,6 +12,7 @@
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesClassification/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/"
@@ -20,10 +21,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/CreditEvents/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
@@ -32,6 +33,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/BasketIndices/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-cre"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
@@ -41,8 +45,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-arr-cls"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-arr-doc"
@@ -65,7 +67,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
     "fibo-sec-sec-cls"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -78,7 +79,8 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Basket Indices Ontology"},
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of this ontology was revised to add the details needed to calculate market cap for a capitalization-based weighting function."
+   ["The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of this ontology was revised to add the details needed to calculate market cap for a capitalization-based weighting function."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of this ontology was revised to remedy an illegal property chain (replacing it with an existing non-chained property) in the definition of market capitalization."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of this ontology was revised to reflect the move of hasTerm from FinancialInstruments to Contracts."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
@@ -98,7 +100,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "basket of credit risks"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasConstituent,
                       :owl/someValuesFrom
                       :fibo-ind-mkt-bas/CreditIndexConstituent,
                       :rdf/type :owl/Restriction}
@@ -117,12 +119,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "basket of equities"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasConstituent,
                       :owl/someValuesFrom
                       {:owl/unionOf
                        [:fibo-sec-sec-bsk/SecuritiesBasketConstituent
                         {:owl/allValuesFrom :fibo-sec-eq-eq/ListedShare,
-                         :owl/onProperty    :fibo-fnd-rel-rel/comprises,
+                         :owl/onProperty    :cmns-col/comprises,
                          :rdf/type          :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
@@ -173,7 +175,7 @@
 (def CreditIndexConstituent
   "constituent of a basket of credit risks"
   {:db/ident :fibo-ind-mkt-bas/CreditIndexConstituent,
-   :owl/equivalentClass {:owl/onProperty :fibo-fnd-arr-arr/isConstituentOf,
+   :owl/equivalentClass {:owl/onProperty :cmns-col/isConstituentOf,
                          :owl/someValuesFrom
                          :fibo-ind-mkt-bas/BasketOfCreditRisks,
                          :rdf/type :owl/Restriction},
@@ -223,22 +225,22 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "market capitalization"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-dt-fd/hasObservedDateTime,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-eq-eq/hasSharesOutstanding,
+                      :owl/someValuesFrom :xsd/nonNegativeInteger,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-dt-fd/hasObservedDateTime,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/CombinedDateTime,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-sec-eq-eq/PricePerShare,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
                      {:owl/onProperty
                       :fibo-ind-mkt-bas/hasMarketCapitalizationValue,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-sec-eq-eq/hasSharesOutstanding,
-                      :owl/someValuesFrom :xsd/nonNegativeInteger,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-eq-eq/ShareIssuer,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-sec-eq-eq/PricePerShare,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
@@ -260,6 +262,20 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "reference index"},
    :rdfs/subClassOf [:fibo-fnd-utl-alx/ScopedMeasure
+                     {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
+                      :owl/someValuesFrom :fibo-fbc-pas-fpas/WeightedBasket,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-sec-sec-cls/AssetClass,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasPeriodicity,
+                      :rdf/type          :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-utl-alx/hasReleaseDateTime,
@@ -268,23 +284,9 @@
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-utl-alx/hasReleaseDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-dt-fd/ExplicitDatePeriod,
                       :owl/onProperty :fibo-fnd-arr-doc/hasReportingPeriod,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasPeriodicity,
-                      :rdf/type          :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
-                      :owl/someValuesFrom :fibo-fbc-pas-fpas/WeightedBasket,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-sec-sec-cls/AssetClass,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",

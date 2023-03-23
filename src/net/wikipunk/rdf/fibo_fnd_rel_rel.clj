@@ -9,24 +9,27 @@
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
+   ["https://www.omg.org/spec/Commons/TextDatatype/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
+    "https://www.omg.org/spec/Commons/Designators/"
+    "https://www.omg.org/spec/Commons/Collections/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
     "dcterms" "http://purl.org/dc/terms/",
-    "fibo-fnd-aap-agt"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -42,6 +45,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified to add Reference as a superclass of Name and use the hasTextValue property as the superproperty of certain data properties."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified to move the property 'exchanges' to FND given that it could be applied more generally than with respect to swaps only."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was revised to add the appliesTo object property in support of the IND RFC."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified to move the property, 'is conferred on' to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations.rdf version of this ontology was modified to eliminate deprecated elements."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20170201/Relations/Relations.rdf version of this ontology was modified per the FIBO 2.0 RFC to include additional properties and the linkage to LCC."
     "The http://www.omg.org/spec/FIBO/Foundations/20130601/Relations/Relations.owl version of the ontology submitted with the FIBO FND RFC, was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations\n\t(6) to move the ontology from the Utilities module to an independent Relations module\n\t(7) to revise a number of definitions, per discussion with various stakeholders.\n\t(8) to augment the definitions to include entity names from Business Entities."
@@ -79,14 +83,12 @@
    "something that another concept stands for, exemplifies, symbolizes, or otherwise mentions"})
 
 (def appliesTo
-  "is pertinent, suitable, or relevant to"
   {:db/ident :fibo-fnd-rel-rel/appliesTo,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-cxtdsg/appliesTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "applies to",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo,
-   :skos/definition "is pertinent, suitable, or relevant to"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def causes
   "relationship between an event or set of events or factors (the cause) and a second event, phenomenon, situation, or result (the effect), where the second event or outcome is understood as a consequence of the first"
@@ -99,25 +101,20 @@
    "relationship between an event or set of events or factors (the cause) and a second event, phenomenon, situation, or result (the effect), where the second event or outcome is understood as a consequence of the first"})
 
 (def characterizes
-  "specifies a discriminating feature or quality of"
   {:db/ident :fibo-fnd-rel-rel/characterizes,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-cls/characterizes,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "characterizes",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/appliesTo,
-   :skos/definition "specifies a discriminating feature or quality of"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def comprises
-  "includes, especially within a particular scope"
-  {:cmns-av/usageNote
-   "Note that something can be comprised of something(s) that may or may not be understood as separable parts, and thus is not defined as being explicitly transitive.",
-   :db/ident :fibo-fnd-rel-rel/comprises,
+  {:db/ident :fibo-fnd-rel-rel/comprises,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-col/comprises,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "comprises",
-   :skos/definition "includes, especially within a particular scope"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def confers
   "grants or bestows by virtue of some authority"
@@ -141,25 +138,20 @@
    :skos/definition "exercises authority or influence over"})
 
 (def defines
-  "identifies the essential qualities of, specifies the meaning of, fixes the limits of, demarcates"
   {:db/ident :fibo-fnd-rel-rel/defines,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-dsg/defines,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "defines",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/represents,
-   :skos/definition
-   "identifies the essential qualities of, specifies the meaning of, fixes the limits of, demarcates"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def describes
-  "conveys the nature of"
   {:db/ident :fibo-fnd-rel-rel/describes,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-dsg/describes,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "describes",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/appliesTo,
-   :skos/definition "conveys the nature of"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def designates
   "appoints someone officially"
@@ -189,7 +181,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "evaluates",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subPropertyOf :cmns-cxtdsg/appliesTo,
    :skos/definition
    "assesses the nature, quality, or ability of someone or something"})
 
@@ -228,7 +220,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "has alias",
-   :rdfs/subPropertyOf [:lcc-lr/hasName :fibo-fnd-aap-agt/hasTextValue],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasTextualName,
    :skos/definition
    "indicates an alternate name of by which something is known"})
 
@@ -239,26 +231,22 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "has common name",
-   :rdfs/subPropertyOf [:lcc-lr/hasName :fibo-fnd-aap-agt/hasTextValue],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasTextualName,
    :skos/definition
    "indicates a name by which something is frequently referred, without reference to any formal usage or structure"})
 
 (def hasContext
-  "indicates the setting in which something is defined, expressed, or represented"
   {:db/ident :fibo-fnd-rel-rel/hasContext,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-cxtdsg/isApplicableIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "has context",
-   :rdfs/subPropertyOf :lcc-lr/has,
-   :skos/definition
-   "indicates the setting in which something is defined, expressed, or represented"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def hasDesignation
   "relates an individual or organization to a position, role, or other designation"
   {:db/ident :fibo-fnd-rel-rel/hasDesignation,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-fnd-aap-agt/AutonomousAgent,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "has designation",
@@ -272,7 +260,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "has formal name",
-   :rdfs/subPropertyOf [:lcc-lr/hasName :fibo-fnd-aap-agt/hasTextValue],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasTextualName,
    :skos/definition
    "indicates a name by which something is known for some official purpose or context, or which is structured in some way such as to always follow the same format regardless of usage"})
 
@@ -285,7 +273,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "has identity",
-   :rdfs/subPropertyOf :lcc-lr/has,
    :skos/definition
    "provides a means for identifying something that fills a particular role"})
 
@@ -301,15 +288,39 @@
    "specifies the name used to refer to a party in legal communications"})
 
 (def hasRepresentation
-  "relates a concept to some textual or other symbol which is intended to convey the sense of that concept or to some form of words which sets out the meaning of that concept"
   {:db/ident :fibo-fnd-rel-rel/hasRepresentation,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-dsg/isSignifiedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+
+(def hasTag
+  "combination of alphanumeric characters corresponding to a label for something"
+  {:db/ident :fibo-fnd-rel-rel/hasTag,
+   :rdf/type :owl/DatatypeProperty,
+   :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "has representation",
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/label "has tag",
+   :rdfs/range :xsd/string,
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
-   "relates a concept to some textual or other symbol which is intended to convey the sense of that concept or to some form of words which sets out the meaning of that concept"})
+   "combination of alphanumeric characters corresponding to a label for something",
+   :skos/note
+   "Text-valued tags may be useful for automated transformation or encoding systems, such as those used to produce IETF compliant language tags in XML. Such tags are required to be string-valued in FIBO, but not language-tagged strings."})
+
+(def hasTextualName
+  "associates a string-valued name, reference name, or appellation with something"
+  {:cmns-av/usageNote
+   "Note that the hasTextualName property has an implicit range of rdfs:Literal. This is purposeful, so that users can specify any element that has a name with or without a language tag without concern for conflicting datatypes (i.e., xsd:string vs. rdf:langString, which are logically disjoint).",
+   :db/ident :fibo-fnd-rel-rel/hasTextualName,
+   :rdf/type :owl/DatatypeProperty,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   :rdfs/label "has textual name",
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
+   :skos/definition
+   "associates a string-valued name, reference name, or appellation with something"})
 
 (def holds
   "is the relationship between a party and something it possesses, or over which it exercises some ownership or control or has at its discretion the ability to dispose of it as it sees fit"
@@ -343,15 +354,12 @@
    "is the relationship between an event (the effect) and a second event (the cause), where the first event is understood as a consequence of the second; also, the relationship between a set of factors (causes) and a phenomenon (the effect)"})
 
 (def isCharacterizedBy
-  "indicates a quality or feature of something, distinguishing it from something else"
   {:db/ident :fibo-fnd-rel-rel/isCharacterizedBy,
-   :owl/inverseOf :fibo-fnd-rel-rel/characterizes,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-cls/isCharacterizedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "is characterized by",
-   :skos/definition
-   "indicates a quality or feature of something, distinguishing it from something else"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def isConferredBy
   "a relationship between a right or obligation and the vehicle, such as an agreement or contract, that vests (or confers) said right or obligation"
@@ -367,14 +375,13 @@
    "a relationship between a right or obligation and the vehicle, such as an agreement or contract, that vests (or confers) said right or obligation"})
 
 (def isConferredOn
-  "that on which the conferred thing is conferred"
-  {:db/ident :fibo-fnd-rel-rel/isConferredOn,
+  {:cmns-av/explanatoryNote
+   "This property is now in LegalCapacity, but not equivalenced to avoid circular dependencies.",
+   :db/ident :fibo-fnd-rel-rel/isConferredOn,
+   :owl/deprecated true,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "is conferred on",
-   :rdfs/range :fibo-fnd-aap-agt/AutonomousAgent,
-   :skos/definition "that on which the conferred thing is conferred"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def isControlledBy
   "is influenced, managed, or directed by"
@@ -387,28 +394,20 @@
    :skos/definition "is influenced, managed, or directed by"})
 
 (def isDefinedIn
-  "indicates something that specifies the meaning associated with the subject"
-  {:cmns-av/explanatoryNote
-   "Typically, a concept, such as a classifier or identifier, will be defined in terms of a scheme, contract, specification, standard, or other reference.",
-   :db/ident :fibo-fnd-rel-rel/isDefinedIn,
-   :owl/inverseOf :fibo-fnd-rel-rel/defines,
+  {:db/ident :fibo-fnd-rel-rel/isDefinedIn,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-dsg/isDefinedIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "is defined in",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasRepresentation,
-   :skos/definition
-   "indicates something that specifies the meaning associated with the subject"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def isDescribedBy
-  "has general nature or description"
   {:db/ident :fibo-fnd-rel-rel/isDescribedBy,
-   :owl/inverseOf :fibo-fnd-rel-rel/describes,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-dsg/isDescribedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "is described by",
-   :skos/definition "has general nature or description"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def isDesignatedBy
   "indicates the party that has assigned or appointed someone to an office or position"
@@ -467,14 +466,12 @@
    "indicates the party that possesses and has at least partial control of something, regardless of ownership"})
 
 (def isIncludedIn
-  "relates something to something that contains it"
   {:db/ident :fibo-fnd-rel-rel/isIncludedIn,
-   :owl/inverseOf :fibo-fnd-rel-rel/comprises,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-col/isIncludedIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "is included in",
-   :skos/definition "relates something to something that contains it"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def isIssuedBy
   "indicates a functional entity or party responsible for circulating, distributing, or publishing something"
@@ -595,16 +592,12 @@
    :skos/definition "classifies, provides context for, or indicates"})
 
 (def represents
-  "illustrates, symbolizes, exemplifies, stands for, or means"
   {:db/ident :fibo-fnd-rel-rel/represents,
-   :owl/inverseOf :fibo-fnd-rel-rel/hasRepresentation,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-dsg/denotes,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-   :rdfs/label "represents",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo,
-   :skos/definition
-   "illustrates, symbolizes, exemplifies, stands for, or means"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
 
 (def wasFormerlyKnownAs
   "indicates a name by which something was known in the past"
@@ -613,26 +606,23 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "was formerly known as",
-   :rdfs/subPropertyOf [:lcc-lr/hasName :fibo-fnd-aap-agt/hasTextValue],
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "indicates a name by which something was known in the past"})
 
-(def ^{:private true} Name
-  {:db/ident        :fibo-fnd-aap-agt/Name,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf :fibo-fnd-rel-rel/Reference})
-
 (def ^{:private true} classifies
-  {:db/ident :lcc-cr/classifies,
+  {:db/ident :cmns-cls/classifies,
    :rdf/type :owl/ObjectProperty,
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo})
 
-(def ^{:private true} denotes
-  {:db/ident :lcc-lr/denotes,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/represents})
+(def ^{:private true} isApplicableIn
+  {:cmns-av/explanatoryNote
+   "The context may include the setting in which something is defined, expressed, or represented.",
+   :db/ident :cmns-cxtdsg/isApplicableIn,
+   :rdf/type :owl/ObjectProperty})
 
-(def ^{:private true} hasDenotation
-  {:db/ident :lcc-lr/hasDenotation,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasRepresentation})
+(def ^{:private true} isSignifiedBy
+  {:cmns-av/explanatoryNote
+   "'is signified by' relates a concept to some textual or other symbol which is intended to convey the sense of that concept or to some form of words that sets out the meaning of that concept.",
+   :db/ident :cmns-dsg/isSignifiedBy,
+   :rdf/type :owl/ObjectProperty})

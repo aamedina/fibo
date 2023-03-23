@@ -9,7 +9,7 @@
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+   ["https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
@@ -18,6 +18,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-law-cor"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
@@ -27,7 +28,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -43,6 +43,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore.rdf version of the ontology was revised to address hygiene issues with respect to text formatting."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Law/LegalCore.rdf version of the ontology was was modified per the FIBO 2.0 RFC."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/Law/LegalCore.rdf version of the ontology was was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in http://www.omg.org/spec/EDMC-FIBO/FND/1.0/AboutFND-1.0/."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore.rdf version of the ontology was revised to correct the camel case name of hasInForce (was hasInforce)."]})
 
@@ -58,7 +59,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :fibo-fnd-law-cor/Law,
                       :rdf/type           :owl/Restriction}
-                     :lcc-lr/Collection],
+                     :cmns-col/Collection],
    :skos/definition
    "set of basic principles by which an organization is governed, especially in relation to the rights of the people it governs"})
 

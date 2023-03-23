@@ -9,21 +9,22 @@
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
+   ["https://www.omg.org/spec/Commons/Collections/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/",
    :rdf/ns-prefix-map
-   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-    "dcterms" "http://purl.org/dc/terms/",
+   {"cmns-av"  "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "dcterms"  "http://purl.org/dc/terms/",
     "fibo-fnd-aap-agt"
     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
     "fibo-fnd-aap-ppl"
@@ -38,13 +39,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-cr"  "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr"  "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
-    "owl"     "http://www.w3.org/2002/07/owl#",
-    "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
-    "skos"    "http://www.w3.org/2004/02/skos/core#",
-    "xsd"     "http://www.w3.org/2001/XMLSchema#"},
+    "lcc-cr"   "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+    "owl"      "http://www.w3.org/2002/07/owl#",
+    "rdf"      "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs"     "http://www.w3.org/2000/01/rdf-schema#",
+    "skos"     "http://www.w3.org/2004/02/skos/core#",
+    "xsd"      "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-fnd-org-fm",
    :rdfa/uri
@@ -54,6 +54,7 @@
    ["The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."
     "The http://www.omg.org/spec/FIBO/Foundations/20130601/Organizations/FormalOrganizations.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Organizations/FormalOrganizations.rdf version of this ontology was modified per the FIBO 2.0 RFC to integrate concepts from LCC."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/Organizations/FormalOrganizations.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in http://www.omg.org/spec/EDMC-FIBO/FND/1.0/AboutFND-1.0/. It was further revised in the FTF in advance of the Long Beach meeting, resulting in http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Organizations/FormalOrganizations/."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was revised to incorporate the concept of employment, required to support regulatory reporting."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
@@ -146,9 +147,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "group",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-aap-agt/AutonomousAgent,
-                      :owl/onProperty    :lcc-lr/hasMember,
+                      :owl/onProperty    :cmns-col/hasMember,
                       :rdf/type          :owl/Restriction}
-                     :lcc-lr/Collection],
+                     :cmns-col/Collection],
    :skos/definition
    "collection of agents (people, organizations, software agents, etc.) that are considered as a unit"})
 

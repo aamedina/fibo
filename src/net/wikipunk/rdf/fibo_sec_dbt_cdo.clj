@@ -5,15 +5,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :dcterms/abstract
    "Collateralized debt obligations are tranched debt instruments based on pools of debt instruments, and those pools may have different management styles and objectives. Generally includes an equity tranche. This ontology also covers CDO squared.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/Funds/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/Funds/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/SyntheticCDOs/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/MortgageBackedSecurities/"
@@ -29,16 +29,17 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/CreditDerivatives/CreditDefaultSwaps/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/PoolBackedSecurities/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/PoolBackedSecurities/"
+    "https://www.omg.org/spec/Commons/Collections/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/CollateralizedDebtObligations/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-fi-fi"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-gao-obj"
     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
     "fibo-fnd-pty-pty"
@@ -87,7 +88,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "a b s c d o deal"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-sec-dbt-cdo/CDOPool
                                             :fibo-sec-dbt-cdo/CashABSPool],
@@ -118,16 +119,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "agency c m o"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
                       :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty
                       :fibo-sec-dbt-cdo/providesPrepaymentSupport,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
-                      :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-dbti/DebtOffering],
    :skos/editorialNote
    {:rdf/language "en",
@@ -348,27 +349,27 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "c d o deal"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/DebtOffering
-    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-dbti/DebtOffering
+    {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
@@ -424,11 +425,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "c d o portfolio"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
-                      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/MBSInstrumentSlice,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
+                      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-ast/Portfolio],
    :skos/definition
@@ -461,7 +462,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "c d o squared deal"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPool,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-cdo/CDODeal],
@@ -547,7 +548,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "cash c d o tranche"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-arr/isConstituentOf,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/isConstituentOf,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-sec-dbt-cdo/BondPool
                                             :fibo-sec-sec-pls/DebtPool],
@@ -666,7 +667,7 @@
                       {:owl/unionOf [:fibo-sec-dbt-cdo/CashCDOTranche
                                      :fibo-sec-dbt-syn/SyntheticCDOTranche],
                        :rdf/type    :owl/Class},
-                      :owl/onProperty :fibo-fnd-rel-rel/appliesTo,
+                      :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-cdo/CDODeal],
    :skos/definition
@@ -726,7 +727,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "loan pool"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-pls/DebtPool],
@@ -766,16 +767,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "managed c d o"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-sec-dbt-cdo/managementStyle.1,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-dbt-cdo/ManagedCDOPortfolio,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-dbt-cdo/MBSInstrumentSlice,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-sec-dbt-cdo/managementStyle.1,
                       :owl/someValuesFrom
                       :fibo-sec-dbt-cdo/ManagedManagementStyle,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-dbt-cdo/ManagedCDOPortfolio,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-dbt-cdo/MBSInstrumentSlice,
-                      :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-cdo/CDODeal],
    :skos/definition
    {:rdf/language "en",

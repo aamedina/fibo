@@ -1,36 +1,45 @@
 (ns net.wikipunk.rdf.fibo-be-le-lei
   "This ontology defines concepts around contractually capable business entities. The terms defined here are those which are relevant to the Legal Entity Identifier (LEI) work. The term known as legal entity in that work is identified as a formal organization which is recognized in some jurisdiction as being capable of incurring some liability, whether or not is a legal person as understood by the legal community. This is labeled as contractually capable entity, to avoid confusion with the accepted legal term for Legal Entity. Such entities are recognized as requiring an LEI, but the identifier itself is allocated to the formal organization which is recognized as being contractually capable."
-  {:cmns-av/copyright ["Copyright (c) 2013-2023 Object Management Group, Inc."
-                       "Copyright (c) 2013-2023 EDM Council, Inc."],
+  {:cmns-av/copyright ["Copyright (c) 2013-2023 EDM Council, Inc."
+                       "Copyright (c) 2013-2023 Object Management Group, Inc."],
    :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :dcterms/abstract
    "This ontology defines concepts around contractually capable business entities. The terms defined here are those which are relevant to the Legal Entity Identifier (LEI) work. The term known as legal entity in that work is identified as a formal organization which is recognized in some jurisdiction as being capable of incurring some liability, whether or not is a legal person as understood by the legal community. This is labeled as contractually capable entity, to avoid confusion with the accepted legal term for Legal Entity. Such entities are recognized as requiring an LEI, but the identifier itself is allocated to the formal organization which is recognized as being contractually capable.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
+    "https://www.omg.org/spec/Commons/TextDatatype/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"],
+    "https://www.omg.org/spec/Commons/Designators/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-fbo"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
@@ -38,14 +47,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-    "fibo-fnd-aap-agt"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
     "fibo-fnd-agr-ctr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
-    "fibo-fnd-arr-cls"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-law-jur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
     "fibo-fnd-org-org"
@@ -58,8 +61,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -71,18 +72,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "Legal Entity Identifier (LEI) Entities Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to eliminate deprecated elements."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to clean up circular definitions and augment it to incorporate the Text datatype and structure names, including eliminating redundant restrictions on LegalEntity."
+   ["The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to address text formatting hygiene issues."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to change the restriction on EntityLegalForm from identifies to denotes, in line with the definition of a code as opposed to an identifier, given the nature of an entity legal form."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to reflect the move of some organization-specific concepts from BE to FND."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was modified to incorporate LEIEligibleEntity and LEIRegisteredEntity, as well as add restrictions in support of the ISO 17442 LEI effort and related changes to the GLEIF Common Data Format for the FIBO 2.0 RFC."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to eliminate deprecated elements."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.1 RTF report. Changes include deprecation of the MunicipalEntity, Sovereign, and SupranationalEntity classes and making them equivalent to classes in the Government Entities ontology."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to address text formatting hygiene issues."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to replace hasDefinition with isDefinedIn to clarify intent."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.0 FTF report."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to eliminate duplication with concepts in LCC and to correct the parent of relationship record."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to clean up circular definitions and augment it to incorporate the Text datatype and structure names, including eliminating redundant restrictions on LegalEntity."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.0 FTF report."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to reflect the move of some organization-specific concepts from BE to FND."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was modified to deprecate LEIEligibleEntity as a part of a simplification strategy for the organizational class hierarchy, to support GLEIF LEI Level 2 ownership relationships, and eliminate a circular dependency with government entities by removing elements that had been deprecated for the last several FIBO revisions (municipal entity, sovereign, and supranational entity)."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to eliminate duplication with concepts in LCC and to correct the parent of relationship record."]})
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was revised to replace hasDefinition with isDefinedIn to clarify intent."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities.rdf version of this ontology was modified to incorporate LEIEligibleEntity and LEIRegisteredEntity, as well as add restrictions in support of the ISO 17442 LEI effort and related changes to the GLEIF Common Data Format for the FIBO 2.0 RFC."]})
 
 (def AccountingFramework
   "framework, including policies, methods, rules, and processes, used to measure, recognize, present, and disclose the information appearing in an entity's financial statements, and, from a legal ownership perspective, that is applied for accounting consolidation determination"
@@ -147,33 +149,33 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "entity legal form",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
-                      :owl/onProperty  :fibo-be-le-lei/hasTransliteratedName,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
-                      :owl/someValuesFrom :fibo-be-le-lei/EntityLegalFormScheme,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/classifies,
-                      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
-                      :owl/onProperty  :fibo-be-le-lei/hasLegalFormAbbreviation,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
-                      :owl/onProperty  :lcc-lr/hasName,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-law-jur/appliesIn,
+   :rdfs/subClassOf [:cmns-cls/Classifier
+                     {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
+                      :owl/onDataRange :cmns-txt/Text,
+                      :owl/onProperty  :fibo-be-le-lei/hasLegalFormAbbreviation,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :cmns-dsg/isDefinedIn,
+                      :owl/someValuesFrom :fibo-be-le-lei/EntityLegalFormScheme,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :cmns-txt/Text,
+                      :owl/onProperty  :fibo-be-le-lei/hasTransliteratedName,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :cmns-txt/Text,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTextualName,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :cmns-txt/Text,
                       :owl/onProperty
                       :fibo-be-le-lei/hasTransliteratedLegalFormAbbreviation,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :cmns-cls/classifies,
+                      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "a classifier for a legal entity that indicates the nature of that entity as defined from a legal or regulatory perspective, in the jurisdiction in which it was established"})
 
@@ -187,14 +189,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "entity legal form identifier",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/isDefinedIn,
                       :owl/someValuesFrom :fibo-be-le-lei/EntityLegalFormScheme,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-be-le-lei/EntityLegalForm,
-                      :owl/onProperty :lcc-lr/denotes,
+                      :owl/onProperty :cmns-dsg/denotes,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/CodeElement],
+                     :cmns-cds/CodeElement],
    :skos/definition
    "code that denotes an entity legal form as defined in ISO 20275"})
 
@@ -208,12 +210,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "entity legal form scheme",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/defines,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/defines,
                       :owl/someValuesFrom
                       :fibo-be-le-lei/EntityLegalFormIdentifier,
                       :rdf/type :owl/Restriction}
-                     :lcc-lr/CodeSet
-                     :fibo-fnd-arr-cls/ClassificationScheme],
+                     :cmns-cds/CodeSet
+                     :cmns-cls/ClassificationScheme],
    :skos/definition
    "scheme that specifies the elements of the codes for entity legal forms, such as those that are sanctioned in a given jurisdiction as defined in ISO 20725"})
 
@@ -272,7 +274,7 @@
   {:cmns-av/explanatoryNote
    "Note that the GLEIF data includes multiple LEIs for some entities due to corporate actions or other situations. The duplicates are typically archived after some period of time, but in order to reflect the reality in the data, the restriction is modeled as someValuesFrom rather than exactly 1 LEI for a given entity.",
    :db/ident :fibo-be-le-lei/LEIRegisteredEntity,
-   :owl/equivalentClass {:owl/onProperty :lcc-lr/isIdentifiedBy,
+   :owl/equivalentClass {:owl/onProperty :cmns-id/isIdentifiedBy,
                          :owl/someValuesFrom
                          :fibo-be-le-lei/LegalEntityIdentifier,
                          :rdf/type :owl/Restriction},
@@ -294,12 +296,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "legal entity identifier",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/someValuesFrom
                       :fibo-be-le-lei/LegalEntityIdentifierScheme,
                       :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-be-le-lp/LegalPerson,
-                      :owl/onProperty :lcc-lr/identifies,
+                      :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-org-org/OrganizationIdentifier],
@@ -316,7 +318,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "legal entity identifier scheme",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/defines,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-org-org/OrganizationIdentificationScheme],
@@ -345,7 +347,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "relationship period qualifier",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "a classifier that qualifies something about the reporting period specified, such as that the date period reflects an accounting or document filing period"})
 
@@ -358,7 +360,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "relationship qualifier",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "a classifier that qualifies something about the relationship between consolidated entities during the reporting period, such as the accounting framework used"})
 
@@ -379,7 +381,7 @@
                       :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
                       :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-arr/CollectionConstituent],
+                     :cmns-col/Constituent],
    :skos/definition "a record describing relationships between legal entities"})
 
 (def RelationshipStatus
@@ -395,7 +397,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "relationship status",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "a classifier that specifies the status of the relationship between consolidated entities during the reporting period (active or inactive)"})
 
@@ -450,7 +452,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "has legal form",
    :rdfs/range :fibo-be-le-lei/EntityLegalForm,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
    :skos/definition
    "indicates the nature of the entity as defined from a legal or regulatory perspective in a given jurisdiction"})
 
@@ -461,7 +463,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "has legal form abbreviation",
-   :rdfs/subPropertyOf :fibo-fnd-aap-agt/hasTextValue,
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "the precise abbreviation for the entity legal form as defined in the jurisdiction in which it is registered, for example LLC, LLP, Ltd, PLC, Corp."})
 
@@ -486,7 +488,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "has transliterated legal form abbreviation",
-   :rdfs/subPropertyOf :fibo-fnd-aap-agt/hasTextValue,
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "a transliterated (i.e., in Latin or Romanized ASCII) representation of the abbreviation for the entity legal form"})
 
@@ -499,7 +501,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "has transliterated name",
-   :rdfs/subPropertyOf [:lcc-lr/hasName :fibo-fnd-aap-agt/hasTextValue],
+   :rdfs/subPropertyOf [:cmns-txt/hasTextValue
+                        :fibo-fnd-rel-rel/hasTextualName],
    :skos/definition
    "a transliterated (i.e., in Latin or Romanized ASCII) representation of a name for the entity"})
 
@@ -526,7 +529,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "is consolidation of",
    :rdfs/range :fibo-be-le-lp/LegalEntity,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition
    "indicates the entity considered the 'start node' or consolidated entity from an ISO 17442 perspective"})
 
@@ -604,13 +607,13 @@
    :rdf/type        :owl/Class,
    :rdfs/subClassOf {:owl/minQualifiedCardinality 0,
                      :owl/onClass    :fibo-be-le-lei/LegalEntityIdentifier,
-                     :owl/onProperty :lcc-lr/isIdentifiedBy,
+                     :owl/onProperty :cmns-id/isIdentifiedBy,
                      :rdf/type       :owl/Restriction}})
 
 (def ^{:private true} OrganizationName
   {:db/ident        :fibo-fnd-org-org/OrganizationName,
    :rdf/type        :owl/Class,
    :rdfs/subClassOf {:owl/minQualifiedCardinality 0,
-                     :owl/onDataRange :fibo-fnd-aap-agt/Text,
+                     :owl/onDataRange :cmns-txt/Text,
                      :owl/onProperty  :fibo-be-le-lei/hasTransliteratedName,
                      :rdf/type        :owl/Restriction}})

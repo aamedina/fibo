@@ -7,23 +7,27 @@
    :dcterms/abstract
    "This ontology covers the ISO 10962, Fourth edition, 2019-10 classification codes for instruments that represent an ownership interest in an entity or pool of assets. It is intended to cover sections most of the codes included in section 6.2 of the standard, with the exception of structured instruments, section 6.2.8, which will be covered under derivatives.",
    :dcterms/contributor "Thematix Partners LLC",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesListings/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesClassification/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityCFIClassificationIndividuals/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-sec-eq-10962"
@@ -34,8 +38,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
     "fibo-sec-sec-lst"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -50,6 +52,7 @@
    ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityCFIClassificationIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityCFIClassificationIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityCFIClassificationIndividuals.rdf version of this ontology was revised to streamline the representation of voting rights and payment form, eliminate embedded restrictions, and build out additional classes representing the various feature-based descriptions supported by the CFI standard."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityCFIClassificationIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityCFIClassificationIndividuals.rdf version of this ontology was revised to complete the set of possible common share representations corresponding to the CFI standard, complete the set of corresponding codes for common shares (non-convertible), and add the set of possible combinations for preferred shares (non-convertible)."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityCFIClassificationIndividuals.rdf version of this ontology was revised to address text formatting hygiene issues."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityCFIClassificationIndividuals.rdf version of this ontology was revised to simplify the encoding of the individual instrument classifiers to eliminate unnecessary restrictions."]})
@@ -68,11 +71,11 @@
    :rdfs/subClassOf [:fibo-sec-eq-eq/EnhancedVotingShare
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/FullyPaidShare
-                     :fibo-sec-eq-eq/RestrictedShare
-                     :fibo-sec-eq-eq/CommonShare
                      {:owl/hasValue   :fibo-sec-eq-10962/ESETFR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}],
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-eq-eq/RestrictedShare
+                     :fibo-sec-eq-eq/CommonShare],
    :skos/definition
    "common share that confers multiple votes per share, is restricted from a sales / transfer perspective, is fully paid and is registered"})
 
@@ -93,7 +96,7 @@
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/RestrictedShare
                      {:owl/hasValue   :fibo-sec-eq-10962/ESETOR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "common share that confers multiple votes per share, is restricted from a sales / transfer perspective, is nil paid and is registered"})
@@ -109,11 +112,11 @@
    {:rdf/language "en-US",
     :rdf/value
     "common, enhanced voting, restricted, partly paid, registered share"},
-   :rdfs/subClassOf [{:owl/hasValue   :fibo-sec-eq-10962/ESETPR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-sec-eq-eq/PartiallyPaidShare
+   :rdfs/subClassOf [:fibo-sec-eq-eq/PartiallyPaidShare
                      :fibo-sec-eq-eq/RestrictedShare
+                     {:owl/hasValue   :fibo-sec-eq-10962/ESETPR,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/EnhancedVotingShare
                      :fibo-sec-eq-eq/CommonShare],
@@ -131,10 +134,10 @@
    {:rdf/language "en-US",
     :rdf/value
     "common, enhanced voting, unrestricted, fully-paid, registered share"},
-   :rdfs/subClassOf [:fibo-sec-eq-eq/FullyPaidShare
-                     {:owl/hasValue   :fibo-sec-eq-10962/ESEUFR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+   :rdfs/subClassOf [{:owl/hasValue   :fibo-sec-eq-10962/ESEUFR,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type       :owl/Restriction}
+                     :fibo-sec-eq-eq/FullyPaidShare
                      :fibo-sec-eq-eq/EnhancedVotingShare
                      :fibo-sec-eq-eq/CommonShare
                      :fibo-sec-eq-eq/UnrestrictedShare
@@ -159,7 +162,7 @@
                      :fibo-sec-eq-eq/NilPaidShare
                      :fibo-sec-eq-eq/UnrestrictedShare
                      {:owl/hasValue   :fibo-sec-eq-10962/ESEUOR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "common share that confers multiple votes per share, is not restricted from a sales / transfer perspective, is nil paid and is registered"})
@@ -176,12 +179,12 @@
     :rdf/value
     "common, enhanced voting, unrestricted, partly paid, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/PartiallyPaidShare
+                     {:owl/hasValue   :fibo-sec-eq-10962/ESEUPR,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/UnrestrictedShare
                      :fibo-sec-eq-eq/CommonShare
                      :fibo-sec-eq-eq/EnhancedVotingShare
-                     {:owl/hasValue   :fibo-sec-eq-10962/ESEUPR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}
                      :fibo-sec-sec-lst/RegisteredSecurity],
    :skos/definition
    "common share that confers multiple votes per share, is not restricted from a sales / transfer perspective, is partially paid and is registered"})
@@ -197,10 +200,10 @@
                 :rdf/value
                 "common, non-voting, restricted, fully-paid, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/RestrictedShare
-                     {:owl/hasValue   :fibo-sec-eq-10962/ESNTFR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/NonVotingShare
+                     {:owl/hasValue   :fibo-sec-eq-10962/ESNTFR,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/FullyPaidShare
                      :fibo-sec-eq-eq/CommonShare
                      :fibo-sec-sec-lst/RegisteredSecurity],
@@ -217,11 +220,11 @@
                 :rdf/value
                 "common, non-voting, restricted, nil paid, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/NilPaidShare
+                     {:owl/hasValue   :fibo-sec-eq-10962/ESNTOR,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/CommonShare
                      :fibo-sec-eq-eq/NonVotingShare
-                     {:owl/hasValue   :fibo-sec-eq-10962/ESNTOR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/RestrictedShare
                      :fibo-sec-sec-lst/RegisteredSecurity],
    :skos/definition
@@ -239,7 +242,7 @@
     :rdf/value "common, non-voting, restricted, partly paid, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/NonVotingShare
                      {:owl/hasValue   :fibo-sec-eq-10962/ESNTPR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/RestrictedShare
@@ -262,7 +265,7 @@
    :rdfs/subClassOf [:fibo-sec-eq-eq/FullyPaidShare
                      :fibo-sec-eq-eq/NonVotingShare
                      {:owl/hasValue   :fibo-sec-eq-10962/ESNUFR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/UnrestrictedShare
                      :fibo-sec-sec-lst/RegisteredSecurity
@@ -281,13 +284,13 @@
                 :rdf/value
                 "common, non-voting, unrestricted, nil paid, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/UnrestrictedShare
+                     {:owl/hasValue   :fibo-sec-eq-10962/ESNUOR,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/NonVotingShare
                      :fibo-sec-eq-eq/CommonShare
                      :fibo-sec-eq-eq/NilPaidShare
-                     :fibo-sec-sec-lst/RegisteredSecurity
-                     {:owl/hasValue   :fibo-sec-eq-10962/ESNUOR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}],
+                     :fibo-sec-sec-lst/RegisteredSecurity],
    :skos/definition
    "common share that confers exactly 0 votes per share, is unrestricted from a sales perspective, is nil paid and is registered"})
 
@@ -302,14 +305,14 @@
    {:rdf/language "en-US",
     :rdf/value
     "common, non-voting, unrestricted, partly paid, registered share"},
-   :rdfs/subClassOf [:fibo-sec-eq-eq/CommonShare
+   :rdfs/subClassOf [{:owl/hasValue   :fibo-sec-eq-10962/ESNUPR,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-eq-eq/CommonShare
                      :fibo-sec-eq-eq/NonVotingShare
                      :fibo-sec-eq-eq/PartiallyPaidShare
                      :fibo-sec-sec-lst/RegisteredSecurity
-                     :fibo-sec-eq-eq/UnrestrictedShare
-                     {:owl/hasValue   :fibo-sec-eq-10962/ESNUPR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}],
+                     :fibo-sec-eq-eq/UnrestrictedShare],
    :skos/definition
    "common share that confers exactly 0 votes per share, is unrestricted from a sales perspective, is partially paid and is registered"})
 
@@ -329,7 +332,7 @@
                      :fibo-sec-eq-eq/FullyPaidShare
                      :fibo-sec-eq-eq/CommonShare
                      {:owl/hasValue   :fibo-sec-eq-10962/ESRTFR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-sec-lst/RegisteredSecurity],
    :skos/definition
@@ -348,11 +351,11 @@
     "common, restricted voting, restricted, nil paid, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/RestrictedVotingShare
                      :fibo-sec-eq-eq/CommonShare
-                     {:owl/hasValue   :fibo-sec-eq-10962/ESRTOR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/NilPaidShare
                      :fibo-sec-eq-eq/RestrictedShare
+                     {:owl/hasValue   :fibo-sec-eq-10962/ESRTOR,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
                      :fibo-sec-sec-lst/RegisteredSecurity],
    :skos/definition
    "common share that confers less than one vote per share, is restricted from a sales / transfer perspective, is nil paid and is registered"})
@@ -372,10 +375,10 @@
                      :fibo-sec-eq-eq/CommonShare
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/PartiallyPaidShare
-                     :fibo-sec-eq-eq/RestrictedShare
                      {:owl/hasValue   :fibo-sec-eq-10962/ESRTPR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}],
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-eq-eq/RestrictedShare],
    :skos/definition
    "common share that confers less than one vote per share, is restricted from a sales / transfer perspective, is partially paid and is registered"})
 
@@ -394,10 +397,10 @@
                      :fibo-sec-eq-eq/CommonShare
                      :fibo-sec-eq-eq/RestrictedVotingShare
                      :fibo-sec-eq-eq/UnrestrictedShare
+                     :fibo-sec-sec-lst/RegisteredSecurity
                      {:owl/hasValue   :fibo-sec-eq-10962/ESRUFR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-sec-sec-lst/RegisteredSecurity],
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "common share that confers less than one vote per share, is unrestricted from a sales / transfer perspective, is fully paid and is registered"})
 
@@ -412,13 +415,13 @@
    {:rdf/language "en-US",
     :rdf/value
     "common, restricted voting, unrestricted, nil paid, registered share"},
-   :rdfs/subClassOf [:fibo-sec-sec-lst/RegisteredSecurity
+   :rdfs/subClassOf [{:owl/hasValue   :fibo-sec-eq-10962/ESRUOR,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/NilPaidShare
                      :fibo-sec-eq-eq/UnrestrictedShare
                      :fibo-sec-eq-eq/CommonShare
-                     {:owl/hasValue   :fibo-sec-eq-10962/ESRUOR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/RestrictedVotingShare],
    :skos/definition
    "common share that confers less than one vote per share, is unrestricted from a sales / transfer perspective, is nil paid and is registered"})
@@ -437,10 +440,10 @@
    :rdfs/subClassOf [:fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/RestrictedVotingShare
                      :fibo-sec-eq-eq/PartiallyPaidShare
-                     :fibo-sec-eq-eq/CommonShare
                      {:owl/hasValue   :fibo-sec-eq-10962/ESRUPR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type       :owl/Restriction}
+                     :fibo-sec-eq-eq/CommonShare
                      :fibo-sec-eq-eq/UnrestrictedShare],
    :skos/definition
    "common share that confers less than one vote per share, is unrestricted from a sales / transfer perspective, is partially paid and is registered"})
@@ -457,7 +460,7 @@
    :rdfs/subClassOf [:fibo-sec-eq-eq/CommonShare
                      :fibo-sec-sec-lst/RegisteredSecurity
                      {:owl/hasValue   :fibo-sec-eq-10962/ESVTFR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/FullyPaidShare
                      :fibo-sec-eq-eq/RestrictedShare
@@ -477,7 +480,7 @@
    :rdfs/subClassOf [:fibo-sec-eq-eq/CommonShare
                      :fibo-sec-eq-eq/SingleVotingShare
                      {:owl/hasValue   :fibo-sec-eq-10962/ESVTOR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/RestrictedShare
                      :fibo-sec-sec-lst/RegisteredSecurity
@@ -495,7 +498,7 @@
                 :rdf/value
                 "common, voting, restricted, partly paid, registered share"},
    :rdfs/subClassOf [{:owl/hasValue   :fibo-sec-eq-10962/ESVTPR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/CommonShare
@@ -517,10 +520,10 @@
                 "common, voting, unrestricted, fully-paid, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/FullyPaidShare
                      :fibo-sec-eq-eq/UnrestrictedShare
-                     {:owl/hasValue   :fibo-sec-eq-10962/ESVUFR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/CommonShare
+                     {:owl/hasValue   :fibo-sec-eq-10962/ESVUFR,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/SingleVotingShare
                      :fibo-sec-sec-lst/RegisteredSecurity],
    :skos/definition
@@ -535,10 +538,10 @@
    :rdfs/label {:rdf/language "en-US",
                 :rdf/value
                 "common, voting, unrestricted, nil paid, registered share"},
-   :rdfs/subClassOf [{:owl/hasValue   :fibo-sec-eq-10962/ESVUOR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+   :rdfs/subClassOf [:fibo-sec-eq-eq/CommonShare
+                     {:owl/hasValue   :fibo-sec-eq-10962/ESVUOR,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-sec-eq-eq/CommonShare
                      :fibo-sec-eq-eq/UnrestrictedShare
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/NilPaidShare
@@ -562,16 +565,16 @@
                      :fibo-sec-eq-eq/UnrestrictedShare
                      :fibo-sec-sec-lst/RegisteredSecurity
                      {:owl/hasValue   :fibo-sec-eq-10962/ESVUPR,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "common share that confers exactly one vote per share, is unrestricted from a sales perspective, is partially paid and is registered"})
 
 (def ESETFR
   "CFI code for a common, enhanced voting, restricted transfer, fully-paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESETFR,
-   :lcc-lr/hasTag "ESETFR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESETFR,
+   :fibo-fnd-rel-rel/hasTag "ESETFR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -582,9 +585,9 @@
 
 (def ESETOR
   "CFI code for a common, enhanced voting, restricted transfer, nil paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESETOR,
-   :lcc-lr/hasTag "ESETOR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESETOR,
+   :fibo-fnd-rel-rel/hasTag "ESETOR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -595,9 +598,9 @@
 
 (def ESETPR
   "CFI code for a common, enhanced voting, restricted transfer, partly paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESETPR,
-   :lcc-lr/hasTag "ESETPR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESETPR,
+   :fibo-fnd-rel-rel/hasTag "ESETPR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -608,9 +611,9 @@
 
 (def ESEUFR
   "CFI code for a common, enhanced voting, unrestricted transfer, fully-paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESEUFR,
-   :lcc-lr/hasTag "ESEUFR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESEUFR,
+   :fibo-fnd-rel-rel/hasTag "ESEUFR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -621,9 +624,9 @@
 
 (def ESEUOR
   "CFI code for a common, enhanced voting, unrestricted transfer, nil paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESEUOR,
-   :lcc-lr/hasTag "ESEUOR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESEUOR,
+   :fibo-fnd-rel-rel/hasTag "ESEUOR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -634,9 +637,9 @@
 
 (def ESEUPR
   "CFI code for a common, enhanced voting, unrestricted transfer, partially paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESEUPR,
-   :lcc-lr/hasTag "ESEUPR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESEUPR,
+   :fibo-fnd-rel-rel/hasTag "ESEUPR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -647,9 +650,9 @@
 
 (def ESNTFR
   "CFI code for a common, non-voting, restricted transfer, fully-paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESNTFR,
-   :lcc-lr/hasTag "ESNTFR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESNTFR,
+   :fibo-fnd-rel-rel/hasTag "ESNTFR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -660,9 +663,9 @@
 
 (def ESNTOR
   "CFI code for a common, non-voting, restricted transfer, nil paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESNTOR,
-   :lcc-lr/hasTag "ESNTOR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESNTOR,
+   :fibo-fnd-rel-rel/hasTag "ESNTOR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -673,9 +676,9 @@
 
 (def ESNTPR
   "CFI code for a common, non-voting, restricted transfer, partially paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESNTPR,
-   :lcc-lr/hasTag "ESNTPR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESNTPR,
+   :fibo-fnd-rel-rel/hasTag "ESNTPR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -686,9 +689,9 @@
 
 (def ESNUFR
   "CFI code for a common, non-voting, unrestricted transfer, fully-paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESNUFR,
-   :lcc-lr/hasTag "ESNUFR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESNUFR,
+   :fibo-fnd-rel-rel/hasTag "ESNUFR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -699,9 +702,9 @@
 
 (def ESNUOR
   "CFI code for a common, non-voting, unrestricted transfer, nil paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESNUOR,
-   :lcc-lr/hasTag "ESNUOR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESNUOR,
+   :fibo-fnd-rel-rel/hasTag "ESNUOR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -712,9 +715,9 @@
 
 (def ESNUPR
   "CFI code for a common, non-voting, unrestricted transfer, partially paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESNUPR,
-   :lcc-lr/hasTag "ESNUPR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESNUPR,
+   :fibo-fnd-rel-rel/hasTag "ESNUPR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -725,9 +728,9 @@
 
 (def ESRTFR
   "CFI code for a common, restricted voting, restricted transfer, fully-paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESRTFR,
-   :lcc-lr/hasTag "ESRTFR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESRTFR,
+   :fibo-fnd-rel-rel/hasTag "ESRTFR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -738,9 +741,9 @@
 
 (def ESRTOR
   "CFI code for a common, restricted voting, restricted transfer, nil paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESRTOR,
-   :lcc-lr/hasTag "ESRTOR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESRTOR,
+   :fibo-fnd-rel-rel/hasTag "ESRTOR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -751,9 +754,9 @@
 
 (def ESRTPR
   "CFI code for a common, restricted voting, restricted transfer, partly paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESRTPR,
-   :lcc-lr/hasTag "ESRTPR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESRTPR,
+   :fibo-fnd-rel-rel/hasTag "ESRTPR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -764,9 +767,9 @@
 
 (def ESRUFR
   "CFI code for a common, restricted voting, unrestricted transfer, fully-paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESRUFR,
-   :lcc-lr/hasTag "ESRUFR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESRUFR,
+   :fibo-fnd-rel-rel/hasTag "ESRUFR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -777,9 +780,9 @@
 
 (def ESRUOR
   "CFI code for a common, restricted voting, unrestricted transfer, nil paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESRUOR,
-   :lcc-lr/hasTag "ESRUOR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESRUOR,
+   :fibo-fnd-rel-rel/hasTag "ESRUOR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -790,9 +793,9 @@
 
 (def ESRUPR
   "CFI code for a common, restricted voting, unrestricted transfer, partly paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESRUPR,
-   :lcc-lr/hasTag "ESRUPR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESRUPR,
+   :fibo-fnd-rel-rel/hasTag "ESRUPR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -803,9 +806,9 @@
 
 (def ESVTFR
   "CFI code for a common, voting, restricted transfer, fully-paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESVTFR,
-   :lcc-lr/hasTag "ESVTFR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESVTFR,
+   :fibo-fnd-rel-rel/hasTag "ESVTFR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -816,9 +819,9 @@
 
 (def ESVTOR
   "CFI code for a common, voting, restricted transfer, nil paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESVTOR,
-   :lcc-lr/hasTag "ESVTOR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESVTOR,
+   :fibo-fnd-rel-rel/hasTag "ESVTOR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -829,9 +832,9 @@
 
 (def ESVTPR
   "CFI code for a common, voting, restricted transfer, partly paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESVTPR,
-   :lcc-lr/hasTag "ESVTPR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESVTPR,
+   :fibo-fnd-rel-rel/hasTag "ESVTPR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -842,9 +845,9 @@
 
 (def ESVUFR
   "CFI code for a common, voting, unrestricted transfer, fully-paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESVUFR,
-   :lcc-lr/hasTag "ESVUFR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESVUFR,
+   :fibo-fnd-rel-rel/hasTag "ESVUFR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -855,9 +858,9 @@
 
 (def ESVUOR
   "CFI code for a common, voting, unrestricted transfer, nil paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESVUOR,
-   :lcc-lr/hasTag "ESVUOR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESVUOR,
+   :fibo-fnd-rel-rel/hasTag "ESVUOR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -868,9 +871,9 @@
 
 (def ESVUPR
   "CFI code for a common, voting, unrestricted transfer, partly paid, registered share"
-  {:db/ident :fibo-sec-eq-10962/ESVUPR,
-   :lcc-lr/hasTag "ESVUPR",
-   :lcc-lr/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+  {:cmns-col/isMemberOf :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
+   :db/ident :fibo-sec-eq-10962/ESVUPR,
+   :fibo-fnd-rel-rel/hasTag "ESVUPR",
    :rdf/type [:fibo-sec-sec-cls/FinancialInstrumentClassificationCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -1071,11 +1074,11 @@
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/EnhancedVotingShare
     :fibo-sec-eq-eq/CumulativePreferredShare
-    :fibo-sec-eq-eq/ParticipatingPreferredShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableRedemptionDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableRedemptionDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/ParticipatingPreferredShare
     :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend],
    :skos/definition
@@ -1360,10 +1363,10 @@
    {:rdf/language "en-US",
     :rdf/value
     "preferred, enhanced voting, redeemable, cumulative participating, registered share"},
-   :rdfs/subClassOf [:fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
+   :rdfs/subClassOf [{:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
                                     :fibo-sec-eq-eq/RetractablePreferredShare],
                       :rdf/type    :owl/Class}
+                     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/EnhancedVotingShare
                      :fibo-sec-eq-eq/CumulativePreferredShare
                      :fibo-sec-eq-eq/ParticipatingPreferredShare
@@ -1472,13 +1475,13 @@
    {:rdf/language "en-US",
     :rdf/value
     "preferred, enhanced voting, redeemable exchangeable, cumulative, registered share"},
-   :rdfs/subClassOf [:fibo-sec-eq-eq/ExchangeablePreferredShare
+   :rdfs/subClassOf [{:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
+                                    :fibo-sec-eq-eq/RetractablePreferredShare],
+                      :rdf/type    :owl/Class}
+                     :fibo-sec-eq-eq/ExchangeablePreferredShare
                      :fibo-sec-eq-eq/EnhancedVotingShare
                      :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/CumulativePreferredShare
-                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
-                                    :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}
                      :fibo-sec-eq-eq/NonParticipatingPreferredShare
                      :fibo-sec-sec-lst/RegisteredSecurity],
    :skos/definition
@@ -1545,12 +1548,12 @@
     :rdf/value
     "preferred, enhanced voting, redeemable/exchangeable/extendable, cumulative participating, registered share"},
    :rdfs/subClassOf
-   [{:owl/unionOf
+   [:fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+    :fibo-sec-eq-eq/CumulativePreferredShare
+    {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-    :fibo-sec-eq-eq/CumulativePreferredShare
     :fibo-sec-eq-eq/ParticipatingPreferredShare
     :fibo-sec-eq-eq/EnhancedVotingShare
     :fibo-sec-sec-lst/RegisteredSecurity
@@ -1571,15 +1574,15 @@
     :rdf/value
     "preferred, enhanced voting, redeemable/exchangeable/extendable, cumulative, registered share"},
    :rdfs/subClassOf
-   [{:owl/unionOf
-     [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
-      :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
-     :rdf/type :owl/Class}
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+   [:fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-eq-eq/NonParticipatingPreferredShare
     :fibo-sec-eq-eq/CumulativePreferredShare
     :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/ExchangeablePreferredShare
+    {:owl/unionOf
+     [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
+      :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
+     :rdf/type :owl/Class}
     :fibo-sec-eq-eq/EnhancedVotingShare],
    :skos/definition
    "preferred share that confers multiple votes per share, may be exchanged for securities of another issuer, whose issuer and/or shareholders have the option to extend the maturity date, that provides a periodic stated income and dividends not paid in any year accumulate, and is registered"})
@@ -1597,13 +1600,13 @@
     :rdf/value
     "preferred, enhanced voting, redeemable/exchangeable/extendable, fixed income, registered share"},
    :rdfs/subClassOf
-   [:fibo-sec-eq-eq/NonParticipatingPreferredShare
-    :fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/ExchangeablePreferredShare
-    {:owl/unionOf
+   [{:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/NonParticipatingPreferredShare
+    :fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/ExchangeablePreferredShare
     :fibo-sec-eq-eq/NonCumulativePreferredShare
     :fibo-sec-eq-eq/EnhancedVotingShare
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend],
@@ -1648,12 +1651,12 @@
     "preferred, enhanced voting, redeemable/exchangeable/extendable, participating, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/ParticipatingPreferredShare
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+    :fibo-sec-eq-eq/EnhancedVotingShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-    :fibo-sec-eq-eq/EnhancedVotingShare
     :fibo-sec-eq-eq/NonCumulativePreferredShare
     :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/ExchangeablePreferredShare],
@@ -1718,10 +1721,10 @@
                      :fibo-sec-eq-eq/ParticipatingPreferredShare
                      :fibo-sec-eq-eq/EnhancedVotingShare
                      :fibo-sec-eq-eq/ExchangeablePreferredShare
-                     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
                                     :fibo-sec-eq-eq/RetractablePreferredShare],
                       :rdf/type    :owl/Class}
+                     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-sec-lst/RegisteredSecurity],
    :skos/definition
    "preferred share that confers multiple votes per share, may be exchanged for securities of another issuer, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income and participates with common shareholders in further dividend and capital distributions, and is registered"})
@@ -1784,13 +1787,13 @@
     "preferred, enhanced voting, redeemable extendable, cumulative participating, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/CumulativePreferredShare
-    :fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/ParticipatingPreferredShare
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/ParticipatingPreferredShare
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-eq-eq/EnhancedVotingShare],
    :skos/definition
    "preferred share that confers multiple votes per share, whose issuer and/or shareholders have the option to extend the maturity date, that provides a periodic stated income, dividends not paid in any year accumulate, and participates with common shareholders in further dividend and capital distributions, and is registered"})
@@ -1807,11 +1810,11 @@
     :rdf/value
     "preferred, enhanced voting, redeemable extendable, cumulative, registered share"},
    :rdfs/subClassOf
-   [{:owl/unionOf
+   [:fibo-sec-eq-eq/CumulativePreferredShare
+    {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
-    :fibo-sec-eq-eq/CumulativePreferredShare
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-eq-eq/NonParticipatingPreferredShare
     :fibo-sec-sec-lst/RegisteredSecurity
@@ -1832,11 +1835,11 @@
     "preferred, enhanced voting, redeemable extendable, fixed income, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/NonCumulativePreferredShare
-    :fibo-sec-eq-eq/NonParticipatingPreferredShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/NonParticipatingPreferredShare
     :fibo-sec-eq-eq/EnhancedVotingShare
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-sec-lst/RegisteredSecurity],
@@ -1876,12 +1879,12 @@
     :rdf/value
     "preferred, enhanced voting, redeemable extendable, participating, registered share"},
    :rdfs/subClassOf
-   [:fibo-sec-eq-eq/ParticipatingPreferredShare
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-    {:owl/unionOf
+   [{:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/ParticipatingPreferredShare
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-eq-eq/EnhancedVotingShare
     :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/NonCumulativePreferredShare],
@@ -1902,10 +1905,10 @@
    :rdfs/subClassOf [:fibo-sec-eq-eq/NonCumulativePreferredShare
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/EnhancedVotingShare
-                     :fibo-sec-eq-eq/NonParticipatingPreferredShare
                      {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
                                     :fibo-sec-eq-eq/RetractablePreferredShare],
                       :rdf/type    :owl/Class}
+                     :fibo-sec-eq-eq/NonParticipatingPreferredShare
                      :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend],
    :skos/definition
    "preferred share that confers multiple votes per share, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income, and is registered"})
@@ -1943,10 +1946,10 @@
    :rdfs/subClassOf [:fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/EnhancedVotingShare
                      :fibo-sec-sec-lst/RegisteredSecurity
+                     :fibo-sec-eq-eq/ParticipatingPreferredShare
                      {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
                                     :fibo-sec-eq-eq/RetractablePreferredShare],
                       :rdf/type    :owl/Class}
-                     :fibo-sec-eq-eq/ParticipatingPreferredShare
                      :fibo-sec-eq-eq/NonCumulativePreferredShare],
    :skos/definition
    "preferred share that confers multiple votes per share, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income and participates with common shareholders in further dividend and capital distributions, and is registered"})
@@ -2141,14 +2144,14 @@
     :rdf/value
     "preferred, non-voting, extendable, cumulative participating, registered share"},
    :rdfs/subClassOf
-   [:fibo-sec-eq-eq/ParticipatingPreferredShare
-    :fibo-sec-eq-eq/CumulativePreferredShare
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-    :fibo-sec-sec-lst/RegisteredSecurity
-    {:owl/unionOf
+   [{:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableRedemptionDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableRedemptionDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/ParticipatingPreferredShare
+    :fibo-sec-eq-eq/CumulativePreferredShare
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+    :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/NonVotingShare],
    :skos/definition
    "preferred share that confers zero votes per share, may be redeemed at the option of the issuer and/or of the shareholder with an extendable redemption date, provides a periodic stated income, dividends not paid in any year accumulate, and participates with common shareholders in further dividend and capital distributions, and is registered"})
@@ -2189,14 +2192,14 @@
     :rdf/value
     "preferred, non-voting, extendable, fixed income, registered share"},
    :rdfs/subClassOf
-   [:fibo-sec-eq-eq/NonParticipatingPreferredShare
-    :fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/NonVotingShare
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-    {:owl/unionOf
+   [{:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableRedemptionDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableRedemptionDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/NonParticipatingPreferredShare
+    :fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/NonVotingShare
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-eq-eq/NonCumulativePreferredShare],
    :skos/definition
    "preferred share that confers zero votes per share, may be redeemed at the option of the issuer and/or of the shareholder with an extendable redemption date, provides a periodic stated income, and is registered"})
@@ -2235,11 +2238,11 @@
     :rdf/value
     "preferred, non-voting, extendable, participating, registered share"},
    :rdfs/subClassOf
-   [{:owl/unionOf
+   [:fibo-sec-sec-lst/RegisteredSecurity
+    {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableRedemptionDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableRedemptionDate],
      :rdf/type :owl/Class}
-    :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-eq-eq/NonVotingShare
     :fibo-sec-eq-eq/NonCumulativePreferredShare
@@ -2435,11 +2438,11 @@
    :rdfs/subClassOf [:fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/NonVotingShare
                      :fibo-sec-eq-eq/CumulativePreferredShare
+                     :fibo-sec-sec-lst/RegisteredSecurity
+                     :fibo-sec-eq-eq/ParticipatingPreferredShare
                      {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
                                     :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}
-                     :fibo-sec-sec-lst/RegisteredSecurity
-                     :fibo-sec-eq-eq/ParticipatingPreferredShare],
+                      :rdf/type    :owl/Class}],
    :skos/definition
    "preferred share that confers zero votes per share, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income, dividends not paid in any year accumulate, and participates with common shareholders in further dividend and capital distributions, and is registered"})
 
@@ -2522,10 +2525,10 @@
    :rdfs/subClassOf [:fibo-sec-eq-eq/ParticipatingPreferredShare
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+                     :fibo-sec-eq-eq/CumulativePreferredShare
                      {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
                                     :fibo-sec-eq-eq/RetractablePreferredShare],
                       :rdf/type    :owl/Class}
-                     :fibo-sec-eq-eq/CumulativePreferredShare
                      :fibo-sec-eq-eq/NonVotingShare
                      :fibo-sec-eq-eq/ExchangeablePreferredShare],
    :skos/definition
@@ -2543,10 +2546,10 @@
     :rdf/value
     "preferred, non-voting, redeemable exchangeable, cumulative, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/ExchangeablePreferredShare
+                     :fibo-sec-eq-eq/NonParticipatingPreferredShare
                      {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
                                     :fibo-sec-eq-eq/RetractablePreferredShare],
                       :rdf/type    :owl/Class}
-                     :fibo-sec-eq-eq/NonParticipatingPreferredShare
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/CumulativePreferredShare
@@ -2642,11 +2645,11 @@
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/CumulativePreferredShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/CumulativePreferredShare
     :fibo-sec-eq-eq/NonParticipatingPreferredShare
     :fibo-sec-eq-eq/ExchangeablePreferredShare
     :fibo-sec-eq-eq/NonVotingShare],
@@ -2668,14 +2671,14 @@
    :rdfs/subClassOf
    [:fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/ExchangeablePreferredShare
-    {:owl/unionOf
-     [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
-      :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
-     :rdf/type :owl/Class}
     :fibo-sec-eq-eq/NonParticipatingPreferredShare
     :fibo-sec-eq-eq/NonVotingShare
     :fibo-sec-eq-eq/NonCumulativePreferredShare
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend],
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+    {:owl/unionOf
+     [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
+      :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
+     :rdf/type :owl/Class}],
    :skos/definition
    "preferred share that confers zero votes per share, may be exchanged for securities of another issuer, whose issuer and/or shareholders have the option to extend the maturity date, that provides a periodic stated income, and is registered"})
 
@@ -2717,12 +2720,12 @@
     "preferred, non-voting, redeemable/exchangeable/extendable, participating, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/NonVotingShare
+    :fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/ParticipatingPreferredShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
-    :fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/ParticipatingPreferredShare
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-eq-eq/NonCumulativePreferredShare
     :fibo-sec-eq-eq/ExchangeablePreferredShare],
@@ -2787,10 +2790,10 @@
                      :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/ParticipatingPreferredShare
                      :fibo-sec-sec-lst/RegisteredSecurity
+                     :fibo-sec-eq-eq/NonVotingShare
                      {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
                                     :fibo-sec-eq-eq/RetractablePreferredShare],
                       :rdf/type    :owl/Class}
-                     :fibo-sec-eq-eq/NonVotingShare
                      :fibo-sec-eq-eq/ExchangeablePreferredShare],
    :skos/definition
    "preferred share that confers zero votes per share, may be exchanged for securities of another issuer, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income and participates with common shareholders in further dividend and capital distributions, and is registered"})
@@ -2852,13 +2855,13 @@
     :rdf/value
     "preferred, non-voting, redeemable extendable, cumulative participating, registered share"},
    :rdfs/subClassOf
-   [{:owl/unionOf
+   [:fibo-sec-eq-eq/ParticipatingPreferredShare
+    :fibo-sec-eq-eq/CumulativePreferredShare
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+    {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
-    :fibo-sec-eq-eq/ParticipatingPreferredShare
-    :fibo-sec-eq-eq/CumulativePreferredShare
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/NonVotingShare],
    :skos/definition
@@ -2876,12 +2879,12 @@
     :rdf/value
     "preferred, non-voting, redeemable extendable, cumulative, registered share"},
    :rdfs/subClassOf
-   [{:owl/unionOf
+   [:fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/NonParticipatingPreferredShare
+    {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
-    :fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/NonParticipatingPreferredShare
     :fibo-sec-eq-eq/NonVotingShare
     :fibo-sec-eq-eq/CumulativePreferredShare
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend],
@@ -2901,11 +2904,11 @@
     "preferred, non-voting, redeemable extendable, fixed income, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-eq-eq/NonVotingShare
     :fibo-sec-eq-eq/NonParticipatingPreferredShare
     :fibo-sec-eq-eq/NonCumulativePreferredShare],
@@ -2946,11 +2949,11 @@
     "preferred, non-voting, redeemable extendable, participating, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/NonCumulativePreferredShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
-    :fibo-sec-eq-eq/NonCumulativePreferredShare
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-eq-eq/ParticipatingPreferredShare
     :fibo-sec-eq-eq/NonVotingShare],
@@ -2968,12 +2971,12 @@
    {:rdf/language "en-US",
     :rdf/value
     "preferred, non-voting, redeemable, fixed income, registered share"},
-   :rdfs/subClassOf [{:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
-                                    :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}
-                     :fibo-sec-sec-lst/RegisteredSecurity
+   :rdfs/subClassOf [:fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/NonVotingShare
+                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
+                                    :fibo-sec-eq-eq/RetractablePreferredShare],
+                      :rdf/type    :owl/Class}
                      :fibo-sec-eq-eq/NonCumulativePreferredShare
                      :fibo-sec-eq-eq/NonParticipatingPreferredShare],
    :skos/definition
@@ -3010,11 +3013,11 @@
     :rdf/value
     "preferred, non-voting, redeemable, participating, registered share"},
    :rdfs/subClassOf [:fibo-sec-sec-lst/RegisteredSecurity
+                     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+                     :fibo-sec-eq-eq/NonVotingShare
                      {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
                                     :fibo-sec-eq-eq/RetractablePreferredShare],
                       :rdf/type    :owl/Class}
-                     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-                     :fibo-sec-eq-eq/NonVotingShare
                      :fibo-sec-eq-eq/ParticipatingPreferredShare
                      :fibo-sec-eq-eq/NonCumulativePreferredShare],
    :skos/definition
@@ -3212,12 +3215,12 @@
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/ParticipatingPreferredShare
-    :fibo-sec-eq-eq/CumulativePreferredShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableRedemptionDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableRedemptionDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/ParticipatingPreferredShare
+    :fibo-sec-eq-eq/CumulativePreferredShare
     :fibo-sec-eq-eq/RestrictedVotingShare],
    :skos/definition
    "preferred share that confers less than one vote per share, may be redeemed at the option of the issuer and/or of the shareholder with an extendable redemption date, provides a periodic stated income, dividends not paid in any year accumulate, and participates with common shareholders in further dividend and capital distributions, and is registered"})
@@ -3235,13 +3238,13 @@
     "preferred, restricted voting, extendable, cumulative, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/CumulativePreferredShare
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+    :fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/NonParticipatingPreferredShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableRedemptionDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableRedemptionDate],
      :rdf/type :owl/Class}
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-    :fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/NonParticipatingPreferredShare
     :fibo-sec-eq-eq/RestrictedVotingShare],
    :skos/definition
    "preferred share that confers less than one vote per share, may be redeemed at the option of the issuer and/or of the shareholder with an extendable redemption date, provides a periodic stated income and dividends not paid in any year accumulate, and is registered"})
@@ -3503,10 +3506,10 @@
     "preferred, restricted voting, redeemable, cumulative participating, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/CumulativePreferredShare
                      :fibo-sec-sec-lst/RegisteredSecurity
-                     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
                                     :fibo-sec-eq-eq/RetractablePreferredShare],
                       :rdf/type    :owl/Class}
+                     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/RestrictedVotingShare
                      :fibo-sec-eq-eq/ParticipatingPreferredShare],
    :skos/definition
@@ -3590,13 +3593,13 @@
    {:rdf/language "en-US",
     :rdf/value
     "preferred, restricted voting, redeemable exchangeable, cumulative participating, registered share"},
-   :rdfs/subClassOf [:fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+   :rdfs/subClassOf [{:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
+                                    :fibo-sec-eq-eq/RetractablePreferredShare],
+                      :rdf/type    :owl/Class}
+                     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/ParticipatingPreferredShare
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/CumulativePreferredShare
-                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
-                                    :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}
                      :fibo-sec-eq-eq/ExchangeablePreferredShare
                      :fibo-sec-eq-eq/RestrictedVotingShare],
    :skos/definition
@@ -3614,14 +3617,14 @@
     :rdf/value
     "preferred, restricted voting, redeemable exchangeable, cumulative, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/NonParticipatingPreferredShare
-                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
-                                    :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}
                      :fibo-sec-eq-eq/ExchangeablePreferredShare
                      :fibo-sec-eq-eq/CumulativePreferredShare
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-                     :fibo-sec-eq-eq/RestrictedVotingShare],
+                     :fibo-sec-eq-eq/RestrictedVotingShare
+                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
+                                    :fibo-sec-eq-eq/RetractablePreferredShare],
+                      :rdf/type    :owl/Class}],
    :skos/definition
    "preferred share that confers less than one vote per share, may be exchanged for securities of another issuer, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income and dividends not paid in any year accumulate, and is registered"})
 
@@ -3687,12 +3690,12 @@
     "preferred, restricted voting, redeemable/exchangeable/extendable, cumulative participating, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-    :fibo-sec-eq-eq/ParticipatingPreferredShare
-    :fibo-sec-eq-eq/ExchangeablePreferredShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/ExchangeablePreferredShare
+    :fibo-sec-eq-eq/ParticipatingPreferredShare
     :fibo-sec-eq-eq/RestrictedVotingShare
     :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/CumulativePreferredShare],
@@ -3714,14 +3717,14 @@
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-eq-eq/CumulativePreferredShare
-    :fibo-sec-eq-eq/ExchangeablePreferredShare
-    :fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/NonParticipatingPreferredShare
-    :fibo-sec-eq-eq/RestrictedVotingShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
-     :rdf/type :owl/Class}],
+     :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/ExchangeablePreferredShare
+    :fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/NonParticipatingPreferredShare
+    :fibo-sec-eq-eq/RestrictedVotingShare],
    :skos/definition
    "preferred share that confers less than one vote per share, may be exchanged for securities of another issuer, whose issuer and/or shareholders have the option to extend the maturity date, that provides a periodic stated income and dividends not paid in any year accumulate, and is registered"})
 
@@ -3739,14 +3742,14 @@
     "preferred, restricted voting, redeemable/exchangeable/extendable, fixed income, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/NonParticipatingPreferredShare
-    {:owl/unionOf
-     [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
-      :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
-     :rdf/type :owl/Class}
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-eq-eq/RestrictedVotingShare
     :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/ExchangeablePreferredShare
+    {:owl/unionOf
+     [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
+      :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
+     :rdf/type :owl/Class}
     :fibo-sec-eq-eq/NonCumulativePreferredShare],
    :skos/definition
    "preferred share that confers less than one vote per share, may be exchanged for securities of another issuer, whose issuer and/or shareholders have the option to extend the maturity date, that provides a periodic stated income, and is registered"})
@@ -3789,14 +3792,14 @@
     "preferred, restricted voting, redeemable/exchangeable/extendable, participating, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/NonCumulativePreferredShare
-    :fibo-sec-eq-eq/RestrictedVotingShare
-    :fibo-sec-eq-eq/ExchangeablePreferredShare
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-    :fibo-sec-sec-lst/RegisteredSecurity
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/RestrictedVotingShare
+    :fibo-sec-eq-eq/ExchangeablePreferredShare
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+    :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/ParticipatingPreferredShare],
    :skos/definition
    "preferred share that confers less than one vote per share, may be exchanged for securities of another issuer, whose issuer and/or shareholders have the option to extend the maturity date, that provides a periodic stated income and participates with common shareholders in further dividend and capital distributions, and is registered"})
@@ -3812,15 +3815,15 @@
    {:rdf/language "en-US",
     :rdf/value
     "preferred, restricted voting, redeemable exchangeable, fixed income, registered share"},
-   :rdfs/subClassOf [:fibo-sec-eq-eq/NonCumulativePreferredShare
+   :rdfs/subClassOf [{:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
+                                    :fibo-sec-eq-eq/RetractablePreferredShare],
+                      :rdf/type    :owl/Class}
+                     :fibo-sec-eq-eq/NonCumulativePreferredShare
                      :fibo-sec-eq-eq/NonParticipatingPreferredShare
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/ExchangeablePreferredShare
-                     :fibo-sec-eq-eq/RestrictedVotingShare
-                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
-                                    :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}],
+                     :fibo-sec-eq-eq/RestrictedVotingShare],
    :skos/definition
    "preferred share that confers less than one vote per share, may be exchanged for securities of another issuer, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income, and is registered"})
 
@@ -3856,14 +3859,14 @@
     :rdf/value
     "preferred, restricted voting, redeemable exchangeable, participating, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/ExchangeablePreferredShare
+                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
+                                    :fibo-sec-eq-eq/RetractablePreferredShare],
+                      :rdf/type    :owl/Class}
                      :fibo-sec-eq-eq/ParticipatingPreferredShare
                      :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/RestrictedVotingShare
                      :fibo-sec-eq-eq/NonCumulativePreferredShare
-                     :fibo-sec-sec-lst/RegisteredSecurity
-                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
-                                    :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}],
+                     :fibo-sec-sec-lst/RegisteredSecurity],
    :skos/definition
    "preferred share that confers less than one per share, may be exchanged for securities of another issuer, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income and participates with common shareholders in further dividend and capital distributions, and is registered"})
 
@@ -3954,11 +3957,11 @@
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
     :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/NonParticipatingPreferredShare
+    :fibo-sec-eq-eq/CumulativePreferredShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
-     :rdf/type :owl/Class}
-    :fibo-sec-eq-eq/CumulativePreferredShare],
+     :rdf/type :owl/Class}],
    :skos/definition
    "preferred share that confers less than one vote per share, whose issuer and/or shareholders have the option to extend the maturity date, that provides a periodic stated income and dividends not paid in any year accumulate, and is registered"})
 
@@ -3974,13 +3977,13 @@
     :rdf/value
     "preferred, restricted voting, redeemable extendable, fixed income, registered share"},
    :rdfs/subClassOf
-   [{:owl/unionOf
+   [:fibo-sec-eq-eq/RestrictedVotingShare
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+    :fibo-sec-eq-eq/NonParticipatingPreferredShare
+    {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
-    :fibo-sec-eq-eq/RestrictedVotingShare
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-    :fibo-sec-eq-eq/NonParticipatingPreferredShare
     :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/NonCumulativePreferredShare],
    :skos/definition
@@ -4084,13 +4087,13 @@
     :rdf/value
     "preferred, restricted voting, redeemable, participating, registered share"},
    :rdfs/subClassOf [:fibo-sec-sec-lst/RegisteredSecurity
-                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
-                                    :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}
                      :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/RestrictedVotingShare
                      :fibo-sec-eq-eq/NonCumulativePreferredShare
-                     :fibo-sec-eq-eq/ParticipatingPreferredShare],
+                     :fibo-sec-eq-eq/ParticipatingPreferredShare
+                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
+                                    :fibo-sec-eq-eq/RetractablePreferredShare],
+                      :rdf/type    :owl/Class}],
    :skos/definition
    "preferred share that confers less than one vote per share, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income and participates with common shareholders in further dividend and capital distributions, and is registered"})
 
@@ -4306,13 +4309,13 @@
                 :rdf/value
                 "preferred, voting, extendable, cumulative, registered share"},
    :rdfs/subClassOf
-   [:fibo-sec-eq-eq/NonParticipatingPreferredShare
-    :fibo-sec-eq-eq/SingleVotingShare
-    :fibo-sec-eq-eq/CumulativePreferredShare
-    {:owl/unionOf
+   [{:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableRedemptionDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableRedemptionDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/NonParticipatingPreferredShare
+    :fibo-sec-eq-eq/SingleVotingShare
+    :fibo-sec-eq-eq/CumulativePreferredShare
     :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend],
    :skos/definition
@@ -4376,13 +4379,13 @@
     "preferred, voting, extendable, participating, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/NonCumulativePreferredShare
-    :fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-    :fibo-sec-eq-eq/SingleVotingShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableRedemptionDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableRedemptionDate],
      :rdf/type :owl/Class}
+    :fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+    :fibo-sec-eq-eq/SingleVotingShare
     :fibo-sec-eq-eq/ParticipatingPreferredShare],
    :skos/definition
    "preferred share that confers exactly one vote per share, may be redeemed at the option of the issuer and/or of the shareholder with an extendable redemption date, provides a periodic stated income and participates with common shareholders in further dividend and capital distributions, and is registered"})
@@ -4592,11 +4595,11 @@
    :rdfs/subClassOf [:fibo-sec-eq-eq/NonParticipatingPreferredShare
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/SingleVotingShare
-                     :fibo-sec-eq-eq/CumulativePreferredShare
-                     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
                                     :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}],
+                      :rdf/type    :owl/Class}
+                     :fibo-sec-eq-eq/CumulativePreferredShare
+                     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend],
    :skos/definition
    "preferred share that confers exactly one vote per share, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income and dividends not paid in any year accumulate, and is registered"})
 
@@ -4653,15 +4656,15 @@
    {:rdf/language "en-US",
     :rdf/value
     "preferred, voting, redeemable exchangeable, cumulative participating, registered share"},
-   :rdfs/subClassOf [:fibo-sec-eq-eq/SingleVotingShare
+   :rdfs/subClassOf [{:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
+                                    :fibo-sec-eq-eq/RetractablePreferredShare],
+                      :rdf/type    :owl/Class}
+                     :fibo-sec-eq-eq/SingleVotingShare
                      :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-eq-eq/ExchangeablePreferredShare
                      :fibo-sec-eq-eq/CumulativePreferredShare
                      :fibo-sec-eq-eq/ParticipatingPreferredShare
-                     :fibo-sec-sec-lst/RegisteredSecurity
-                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
-                                    :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}],
+                     :fibo-sec-sec-lst/RegisteredSecurity],
    :skos/definition
    "preferred share that confers exactly one vote per share, may be exchanged for securities of another issuer, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income, dividends not paid in any year accumulate, and participates with common shareholders in further dividend and capital distributions, and is registered"})
 
@@ -4678,13 +4681,13 @@
     "preferred, voting, redeemable exchangeable, cumulative, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/NonParticipatingPreferredShare
                      :fibo-sec-eq-eq/SingleVotingShare
-                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
-                                    :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}
                      :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      :fibo-sec-sec-lst/RegisteredSecurity
                      :fibo-sec-eq-eq/ExchangeablePreferredShare
-                     :fibo-sec-eq-eq/CumulativePreferredShare],
+                     :fibo-sec-eq-eq/CumulativePreferredShare
+                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
+                                    :fibo-sec-eq-eq/RetractablePreferredShare],
+                      :rdf/type    :owl/Class}],
    :skos/definition
    "preferred share that confers exactly one vote per share, may be exchanged for securities of another issuer, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income and dividends not paid in any year accumulate, and is registered"})
 
@@ -4749,14 +4752,14 @@
     :rdf/value
     "preferred, voting, redeemable/exchangeable/extendable, cumulative participating, registered share"},
    :rdfs/subClassOf
-   [:fibo-sec-eq-eq/ParticipatingPreferredShare
-    :fibo-sec-eq-eq/ExchangeablePreferredShare
-    :fibo-sec-eq-eq/SingleVotingShare
-    :fibo-sec-eq-eq/CumulativePreferredShare
-    {:owl/unionOf
+   [{:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/ParticipatingPreferredShare
+    :fibo-sec-eq-eq/ExchangeablePreferredShare
+    :fibo-sec-eq-eq/SingleVotingShare
+    :fibo-sec-eq-eq/CumulativePreferredShare
     :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend],
    :skos/definition
@@ -4775,14 +4778,14 @@
     "preferred, voting, redeemable/exchangeable/extendable, cumulative, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/CumulativePreferredShare
-    :fibo-sec-eq-eq/NonParticipatingPreferredShare
-    :fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-    :fibo-sec-eq-eq/SingleVotingShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/NonParticipatingPreferredShare
+    :fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+    :fibo-sec-eq-eq/SingleVotingShare
     :fibo-sec-eq-eq/ExchangeablePreferredShare],
    :skos/definition
    "preferred share that confers exactly one vote per share, may be exchanged for securities of another issuer, whose issuer and/or shareholders have the option to extend the maturity date, that provides a periodic stated income and dividends not paid in any year accumulate, and is registered"})
@@ -4800,13 +4803,13 @@
     "preferred, voting, redeemable/exchangeable/extendable, fixed income, registered share"},
    :rdfs/subClassOf
    [:fibo-sec-eq-eq/NonCumulativePreferredShare
-    :fibo-sec-eq-eq/NonParticipatingPreferredShare
-    :fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/SingleVotingShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/NonParticipatingPreferredShare
+    :fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/SingleVotingShare
     :fibo-sec-eq-eq/ExchangeablePreferredShare
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend],
    :skos/definition
@@ -4847,11 +4850,11 @@
     :rdf/value
     "preferred, voting, redeemable/exchangeable/extendable, participating, registered share"},
    :rdfs/subClassOf
-   [:fibo-sec-eq-eq/NonCumulativePreferredShare
-    {:owl/unionOf
+   [{:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-eq-eq/NonCumulativePreferredShare
     :fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/ExchangeablePreferredShare
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
@@ -4919,10 +4922,10 @@
                      :fibo-sec-eq-eq/NonCumulativePreferredShare
                      :fibo-sec-eq-eq/ExchangeablePreferredShare
                      :fibo-sec-eq-eq/SingleVotingShare
-                     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
                      {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
                                     :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}],
+                      :rdf/type    :owl/Class}
+                     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend],
    :skos/definition
    "preferred share that confers exactly one per share, may be exchanged for securities of another issuer, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income and participates with common shareholders in further dividend and capital distributions, and is registered"})
 
@@ -4982,14 +4985,14 @@
     :rdf/value
     "preferred, voting, redeemable extendable, cumulative participating, registered share"},
    :rdfs/subClassOf
-   [:fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/SingleVotingShare
-    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
-    :fibo-sec-eq-eq/ParticipatingPreferredShare
-    {:owl/unionOf
+   [{:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/SingleVotingShare
+    :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+    :fibo-sec-eq-eq/ParticipatingPreferredShare
     :fibo-sec-eq-eq/CumulativePreferredShare],
    :skos/definition
    "preferred share that confers exactly one vote per share, whose issuer and/or shareholders have the option to extend the maturity date, that provides a periodic stated income, dividends not paid in any year accumulate, and participates with common shareholders in further dividend and capital distributions, and is registered"})
@@ -5006,12 +5009,12 @@
     :rdf/value
     "preferred, voting, redeemable extendable, cumulative, registered share"},
    :rdfs/subClassOf
-   [:fibo-sec-sec-lst/RegisteredSecurity
-    :fibo-sec-eq-eq/NonParticipatingPreferredShare
-    {:owl/unionOf
+   [{:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
+    :fibo-sec-sec-lst/RegisteredSecurity
+    :fibo-sec-eq-eq/NonParticipatingPreferredShare
     :fibo-sec-eq-eq/SingleVotingShare
     :fibo-sec-eq-eq/CumulativePreferredShare
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend],
@@ -5032,12 +5035,12 @@
    :rdfs/subClassOf
    [:fibo-sec-sec-lst/RegisteredSecurity
     :fibo-sec-eq-eq/NonParticipatingPreferredShare
+    :fibo-sec-eq-eq/NonCumulativePreferredShare
+    :fibo-sec-eq-eq/SingleVotingShare
     {:owl/unionOf
      [:fibo-sec-eq-eq/RedeemablePreferredShareWithExtendableMaturityDate
       :fibo-sec-eq-eq/RetractablePreferredShareWithExtendableMaturityDate],
      :rdf/type :owl/Class}
-    :fibo-sec-eq-eq/NonCumulativePreferredShare
-    :fibo-sec-eq-eq/SingleVotingShare
     :fibo-sec-eq-eq/PreferredShareWithFixedRateDividend],
    :skos/definition
    "preferred share that confers exactly one vote per share, whose issuer and/or shareholders have the option to extend the maturity date, that provides a periodic stated income, and is registered"})
@@ -5139,12 +5142,12 @@
     :rdf/value
     "preferred, voting, redeemable, participating, registered share"},
    :rdfs/subClassOf [:fibo-sec-eq-eq/PreferredShareWithFixedRateDividend
+                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
+                                    :fibo-sec-eq-eq/RetractablePreferredShare],
+                      :rdf/type    :owl/Class}
                      :fibo-sec-eq-eq/SingleVotingShare
                      :fibo-sec-eq-eq/ParticipatingPreferredShare
                      :fibo-sec-eq-eq/NonCumulativePreferredShare
-                     :fibo-sec-sec-lst/RegisteredSecurity
-                     {:owl/unionOf [:fibo-sec-eq-eq/RedeemablePreferredShare
-                                    :fibo-sec-eq-eq/RetractablePreferredShare],
-                      :rdf/type    :owl/Class}],
+                     :fibo-sec-sec-lst/RegisteredSecurity],
    :skos/definition
    "preferred share that confers exactly one vote per share, may be redeemed at the option of the issuer and/or of the shareholder, provides a periodic stated income and participates with common shareholders in further dividend and capital distributions, and is registered"})

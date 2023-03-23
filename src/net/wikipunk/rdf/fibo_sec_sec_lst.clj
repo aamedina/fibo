@@ -14,7 +14,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
@@ -58,7 +57,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
     "fibo-sec-sec-lst"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -77,6 +75,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings.rdf version of this ontology was revised to reuse the composite date value datatype and add disjointness between registered security and exempt security."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings.rdf version of this ontology was revised to eliminate duplication of concepts in LCC and to eliminate the redundancy between hasIssue and lists."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings.rdf version of this ontology was revised to restructure the concept of a listing and augment it with a number of relevant characteristics."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings.rdf version of this ontology was revised to eliminate an unused ontology import, changed the range of hasLotSize to xsd:decimal, and modified the definition of listing to point to an offering rather than directly to the instrument that the offering pertains to."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings.rdf version of this ontology was revised to eliminate a false positive hygiene testing issue due to a concept whose name included 'and' but that actually was a singular concept."]})
@@ -91,15 +90,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
    :rdfs/label "listed security",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-sec-lst/isListedVia,
-                      :owl/someValuesFrom :fibo-sec-sec-lst/Listing,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-lst/RegisteredSecurity
-                     {:owl/onClass :fibo-fbc-fct-mkt/Exchange,
+   :rdfs/subClassOf [{:owl/onClass :fibo-fbc-fct-mkt/Exchange,
                       :owl/onProperty
                       :fibo-sec-sec-lst/hasOriginalPlaceOfListing,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-sec-sec-lst/isListedVia,
+                      :owl/someValuesFrom :fibo-sec-sec-lst/Listing,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-lst/RegisteredSecurity
                      {:owl/onClass    :fibo-fbc-fct-mkt/Exchange,
                       :owl/onProperty :fibo-sec-sec-lst/hasHomeExchange,
                       :owl/qualifiedCardinality 1,
@@ -120,18 +119,17 @@
                       :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-sec-sec-lst/hasTickSize,
                       :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fbc-fct-breg/RegistrationStatus,
-                      :owl/onProperty :fibo-fbc-fct-breg/hasRegistrationStatus,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-sec-sec-iss/SecuritiesOffering,
                       :owl/onProperty :fibo-sec-sec-lst/lists,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
-                      :owl/onProperty  :fibo-sec-sec-lst/hasDelistingDate,
-                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fbc-fct-breg/RegistrationStatus,
+                      :owl/onProperty :fibo-fbc-fct-breg/hasRegistrationStatus,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/DateTime,
                       :owl/onProperty :fibo-sec-sec-lst/hasLastTradingDateTime,
@@ -144,9 +142,10 @@
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fbc-fi-ip/hasLotSize,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
+                      :owl/onProperty  :fibo-sec-sec-lst/hasDelistingDate,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "catalog entry for a securities offering managed by an exchange that provides the terms under which that security is made available on that exchange"})
 
@@ -217,7 +216,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
    :rdfs/label "has home exchange",
    :rdfs/range :fibo-fbc-fct-mkt/Exchange,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
    :skos/definition
    "indicates the exchange that is considered the primary market for a security; typically, but not always, in the country in which the security was originally issued",
    :skos/example

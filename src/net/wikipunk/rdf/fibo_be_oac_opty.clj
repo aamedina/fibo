@@ -6,18 +6,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
    :dcterms/abstract
    "This ontology defines concepts relating to types of organization owning parties. The concepts defined here are party in role concepts, which define the nature of some entity such as an organization or a legal person, in some role such as that of owning equity in the entity. These roles are defined in terms of the ownership enjoyed by the party, with distinctions between constitutional ownership i.e. ownership defined in terms of stockholder equity, and investment ownership more generally.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
@@ -27,6 +27,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-fbo"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
@@ -52,7 +53,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -75,6 +75,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was revised to align isEquityHeldBy and hasInvestor with the situational pattern."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was modified to eliminate duplication of concepts in LCC."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was modified per the FIBO 2.0 RFC to address missing labels and comments, and revise terminology related to shareholders' equity due to requirements for SEC/Equities."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties.rdf version of this ontology was modified to integrate the concept of a situation, situational roles, and corresponding relations with the definition of entity ownership, and eliminate unused and logically inconsistent properties."]})
 
 (def ConstitutionalOwner
@@ -142,15 +143,24 @@
    :rdfs/label "entity ownership",
    :rdfs/subClassOf
    [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
-     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
      :owl/onDataRange :xsd/decimal,
      :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
      :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
+     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    {:owl/unionOf [:fibo-fnd-acc-aeq/OwnersEquity
+                                    :fibo-fnd-agr-ctr/Contract],
+                      :rdf/type    :owl/Class},
+     :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
+     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
+     :rdf/type       :owl/Restriction}
     {:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
-     :owl/onProperty :lcc-cr/isClassifiedBy,
+     :owl/onProperty :cmns-cls/isClassifiedBy,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
     :fibo-fnd-oac-own/Ownership
@@ -159,15 +169,6 @@
                                         :fibo-be-le-lp/BusinessEntity
                                         :fibo-be-le-lp/LegalEntity],
                           :rdf/type    :owl/Class},
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    {:owl/unionOf [:fibo-fnd-acc-aeq/OwnersEquity
-                                    :fibo-fnd-agr-ctr/Contract],
-                      :rdf/type    :owl/Class},
-     :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
-     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "ownership by some party of an interest in some non-governmental formal organization"})

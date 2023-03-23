@@ -1,30 +1,31 @@
 (ns net.wikipunk.rdf.fibo-fnd-arr-arr
-  "This ontology defines abstract structural concepts, including arrangement and collection, for use in other FIBO ontology elements. These abstract concepts are further refined to support definition of identifiers, codes, quantities, and schemata that organize and classify such identifiers and codes."
+  "This ontology defines abstract structural concepts, extending the Commons concept of an arrangement to represent schemes."
   {:cmns-av/copyright ["Copyright (c) 2014-2023 EDM Council, Inc."
                        "Copyright (c) 2014-2023 Object Management Group, Inc."],
    :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
    :dcterms/abstract
-   "This ontology defines abstract structural concepts, including arrangement and collection, for use in other FIBO ontology elements. These abstract concepts are further refined to support definition of identifiers, codes, quantities, and schemata that organize and classify such identifiers and codes.",
+   "This ontology defines abstract structural concepts, extending the Commons concept of an arrangement to represent schemes.",
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
+    "https://www.omg.org/spec/Commons/Designators/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-arr-arr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -45,19 +46,16 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was revised to loosen the restriction on hasObservedDateTime so that it can be used with the new CombinedDateTime datatype (in FinancialDates, which is not imported herein to avoid circular dependencies), with finer granularity than seconds as appropriate for trades, for example."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was revised to move the concepts of a dated collection and dated collection constituent to Financial Dates in order to improve usability and simplify reasoning and make definitions ISO 704 compliant."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 1.2 RTF report to add a definition for a structured collection."]})
 
 (def CollectionConstituent
-  "element of a collection"
   {:db/ident :fibo-fnd-arr-arr/CollectionConstituent,
-   :owl/equivalentClass {:owl/onProperty     :fibo-fnd-arr-arr/isConstituentOf,
-                         :owl/someValuesFrom :lcc-lr/Collection,
-                         :rdf/type           :owl/Restriction},
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-col/Constituent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
-   :rdfs/label "collection constituent",
-   :skos/definition "element of a collection"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"})
 
 (def Scheme
   "structure or means of organizing information such as a blueprint, schema, numbering system, organization structure, measurement system, plan, taxonomy, or language for organizing information"
@@ -67,26 +65,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
    :rdfs/label "scheme",
    :rdfs/subClassOf [{:owl/minCardinality 0,
-                      :owl/onProperty     :fibo-fnd-rel-rel/defines,
+                      :owl/onProperty     :cmns-dsg/defines,
                       :rdf/type           :owl/Restriction}
-                     :lcc-lr/Arrangement],
+                     :cmns-col/Arrangement],
    :skos/definition
    "structure or means of organizing information such as a blueprint, schema, numbering system, organization structure, measurement system, plan, taxonomy, or language for organizing information"})
 
 (def StructuredCollection
-  "collection that has a clearly defined structure according to a specified scheme"
   {:db/ident :fibo-fnd-arr-arr/StructuredCollection,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-col/StructuredCollection,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
-   :rdfs/label "structured collection",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-arr-arr/Scheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isCharacterizedBy,
-                      :rdf/type       :owl/Restriction}
-                     :lcc-lr/Collection],
-   :skos/definition
-   "collection that has a clearly defined structure according to a specified scheme"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"})
 
 (def hasCollectionSize
   "indicates the number of elements in a given collection"
@@ -99,31 +90,22 @@
    :skos/definition "indicates the number of elements in a given collection"})
 
 (def hasConstituent
-  "consists of or contains"
-  {:cmns-av/usageNote
-   "Being a constituent of something does not necessarily mean parthood. Whole-part relations are transitive, whereas constituency is not necessarily transitive and so this property is useful in cases where transitivity is not necessarily desirable or appropriate.",
-   :db/ident :fibo-fnd-arr-arr/hasConstituent,
+  {:db/ident :fibo-fnd-arr-arr/hasConstituent,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-col/hasConstituent,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :lcc-lr/Collection,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
-   :rdfs/label "has constituent",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
-   :skos/definition "consists of or contains"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"})
 
 (def isConstituentOf
-  "identifies the collection that something is an element of"
   {:db/ident :fibo-fnd-arr-arr/isConstituentOf,
-   :owl/inverseOf :fibo-fnd-arr-arr/hasConstituent,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-col/isConstituentOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
-   :rdfs/label "is constituent of",
-   :rdfs/range :lcc-lr/Collection,
-   :skos/definition
-   "identifies the collection that something is an element of"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"})
 
 (def ^{:private true} CodeSet
-  {:db/ident        :lcc-lr/CodeSet,
+  {:db/ident        :cmns-cds/CodeSet,
    :rdf/type        :owl/Class,
    :rdfs/subClassOf :fibo-fnd-arr-arr/Scheme})

@@ -6,7 +6,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
    :dcterms/abstract
    "This ontology defines concepts for representation of registration authorities, registrars, registration-specific identifiers and related identification schemes, and registration authorities specific to ISO and the financial industry. Examples of financial industry registration authorities in the US include the Federal Deposit Insurance Corporation (FDIC) and the Securities Exchange Commission (SEC).",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
@@ -15,8 +15,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"],
@@ -24,13 +23,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
     "fibo-fbc-fct-ra"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-arr-doc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
     "fibo-fnd-dt-fd"
@@ -47,7 +46,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -62,6 +60,7 @@
    ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities.rdf version of this ontology was modified to address text formatting hygiene issues."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities.rdf version of this ontology was modified to clarify the definition of registry identifier, eliminate an unnecessary restriction on registry identifier, and refine the definition of registry entry and hasRegistrationDate based on usage."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities.rdf version of this ontology was modified per the FIBO 2.0 RFC."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities.rdf version of this ontology was modified to replace isAppointedBy with isDesignatedBy due to a property name change in Relations."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities.rdf version of this ontology was modified to eliminate duplication with concepts in LCC, make Registry a subclass of Record and StructuredCollection, make RegistryEntry a child of CollectionConstituent and correct a misspelled annotation."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
@@ -108,25 +107,25 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
    :rdfs/label "registration authority",
    :rdfs/subClassOf [:fibo-fnd-pas-pas/ServiceProvider
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-fct-ra/Registry,
-                      :owl/onProperty :fibo-fnd-rel-rel/manages,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minCardinality 0,
-                      :owl/onProperty     :fibo-fbc-fct-ra/registers,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty
-                      :fibo-fbc-fct-ra/isRegistrationAuthorityFor,
-                      :owl/someValuesFrom :owl/Thing,
-                      :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-be-le-lp/LegalEntity,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onProperty
+                      :fibo-fbc-fct-ra/isRegistrationAuthorityFor,
+                      :owl/someValuesFrom :owl/Thing,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-fct-ra/Registry,
+                      :owl/onProperty :fibo-fnd-rel-rel/manages,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-fct-ra/RegistrationService,
                       :owl/onProperty :fibo-fnd-rel-rel/provides,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minCardinality 0,
+                      :owl/onProperty     :fibo-fbc-fct-ra/registers,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "service provider that is responsible for maintaining a registry and provides registration services"})
 
@@ -148,10 +147,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
    :rdfs/label "registration scheme",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasMember,
                       :owl/someValuesFrom :fibo-fbc-fct-ra/RegistryIdentifier,
                       :rdf/type           :owl/Restriction}
-                     :lcc-lr/IdentificationScheme],
+                     :cmns-id/IdentificationScheme],
    :skos/definition
    "scheme for organizing information and allocating identifiers to items in a registry"})
 
@@ -182,10 +181,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
    :rdfs/label "registry",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-ra/hasRegistryEntry,
+   :rdfs/subClassOf [:cmns-col/StructuredCollection
+                     {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistryEntry,
                       :owl/someValuesFrom :fibo-fbc-fct-ra/RegistryEntry,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-arr/StructuredCollection
                      {:owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-fbc-fct-ra/RegistrationAuthority
@@ -203,11 +202,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
    :rdfs/label "registry entry",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fct-ra/RegistryIdentifier,
                       :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fbc-fct-ra/Registry,
-                      :owl/onProperty    :fibo-fnd-arr-arr/isConstituentOf,
+                      :owl/onProperty    :cmns-col/isConstituentOf,
                       :rdf/type          :owl/Restriction}
                      :fibo-fnd-dt-fd/DatedCollectionConstituent],
    :skos/definition
@@ -224,10 +223,10 @@
                       :owl/someValuesFrom :fibo-fbc-fct-ra/Registry,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fbc-fct-ra/RegistrationScheme,
-                      :owl/onProperty :lcc-lr/isMemberOf,
+                      :owl/onProperty :cmns-col/isMemberOf,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/Identifier],
+                     :cmns-id/Identifier],
    :skos/definition
    "identifier associated with an entry in a registry, i.e., one that provides an index into the registry for the identified item"})
 
@@ -262,7 +261,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
    :rdfs/label "has registry entry",
    :rdfs/range :fibo-fbc-fct-ra/RegistryEntry,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition "links a registry to entries that it contains"})
 
 (def isRegisteredBy

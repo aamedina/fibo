@@ -6,38 +6,42 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwapExampleIndividuals/",
    :dcterms/abstract
    "This ontology provides examples of how to represent individuals for interest rate swaps and swap legs based on the Mizuho mocked-up sample data provided in the FIBO wiki.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
+   ["https://www.omg.org/spec/Commons/ContextualDesignators/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/ISO4217-CurrencyCodes/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Swaps/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/CommonInterestRates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIdentification/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/RateDerivatives/IRSwaps/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecurityAssets/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/RateDerivatives/IRSwapExampleIndividuals/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-der-drc-swp"
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/",
@@ -81,7 +85,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/",
     "fibo-sec-sec-id"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -94,22 +97,23 @@
    :rdfs/label "Interest Rate Swap Example Individuals Ontology",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwapExampleIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwapExampleIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwapExampleIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwapExampleIndividuals.rdf version of this ontology was modified to move the property 'exchanges' to FND given that it could be applied more generally than with respect to swaps only."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwapExampleIndividuals.rdf version of this ontology was modified to correct properties that were modified in the main ontology but not in the examples."]})
 
 (def Contract-IY7VKEUR45886
   "contract IY7VKEUR45886 that is a fixed/float, single currency interest rate swap"
-  {:db/ident :fibo-der-rtd-irsind/Contract-IY7VKEUR45886,
+  {:cmns-col/isIncludedIn :fibo-der-rtd-irsind/PortfolioAlpha,
+   :cmns-id/isIdentifiedBy [:fibo-der-rtd-irsind/ISIN-ZZ216659451
+                            :fibo-der-rtd-irsind/IY7VKEUR45886],
+   :db/ident :fibo-der-rtd-irsind/Contract-IY7VKEUR45886,
    :fibo-fnd-agr-ctr/hasContractParty
    [:fibo-der-rtd-irsind/SwapContractParty-A
     :fibo-der-rtd-irsind/SwapContractParty-ZZZWWK96TRQY0F2IY7VK],
    :fibo-fnd-rel-rel/exchanges
    [:fibo-der-rtd-irsind/ContractLeg1-IY7VKEUR45886
     :fibo-der-rtd-irsind/ContractLeg2-IY7VKEUR45886],
-   :fibo-fnd-rel-rel/isIncludedIn :fibo-der-rtd-irsind/PortfolioAlpha,
-   :lcc-lr/isIdentifiedBy [:fibo-der-rtd-irsind/IY7VKEUR45886
-                           :fibo-der-rtd-irsind/ISIN-ZZ216659451],
    :rdf/type [:fibo-der-rtd-irswp/FixedFloatSingleCurrencyInterestRateSwap
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -294,9 +298,9 @@
 
 (def ISIN-ZZ216659451
   "ISIN for sample swap contract IY7VKEUR45886"
-  {:db/ident :fibo-der-rtd-irsind/ISIN-ZZ216659451,
-   :lcc-lr/hasTag "ZZ216659451",
-   :lcc-lr/identifies :fibo-der-rtd-irsind/Contract-IY7VKEUR45886,
+  {:cmns-id/identifies :fibo-der-rtd-irsind/Contract-IY7VKEUR45886,
+   :db/ident :fibo-der-rtd-irsind/ISIN-ZZ216659451,
+   :fibo-fnd-rel-rel/hasTag "ZZ216659451",
    :rdf/type [:fibo-sec-sec-id/InternationalSecuritiesIdentificationNumber
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -306,9 +310,9 @@
 
 (def IY7VKEUR45886
   "unique swap identifier for sample swap contract IY7VKEUR45886"
-  {:db/ident :fibo-der-rtd-irsind/IY7VKEUR45886,
-   :lcc-lr/hasTag "IY7VKEUR45886",
-   :lcc-lr/identifies :fibo-der-rtd-irsind/Contract-IY7VKEUR45886,
+  {:cmns-id/identifies :fibo-der-rtd-irsind/Contract-IY7VKEUR45886,
+   :db/ident :fibo-der-rtd-irsind/IY7VKEUR45886,
+   :fibo-fnd-rel-rel/hasTag "IY7VKEUR45886",
    :rdf/type [:fibo-der-drc-swp/UniqueSwapIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwapExampleIndividuals/",
@@ -356,9 +360,9 @@
   "securities transaction for contract IY7VKEUR45886"
   {:cmns-av/explanatoryNote
    "Need to create the trade event - this is the activity (maybe we should rename these now? in FND to activity and event?) and add lifecycle elements - date and time, status of the trade and settlement status",
+   :cmns-cxtdsg/appliesTo :fibo-der-rtd-irsind/Contract-IY7VKEUR45886,
    :db/ident :fibo-der-rtd-irsind/SecuritiesTransaction-IY7VKEUR45886,
    :fibo-fbc-pas-fpas/isFacilitatedBy :fibo-der-rtd-irsind/Trader-J_Adams,
-   :fibo-fnd-rel-rel/appliesTo :fibo-der-rtd-irsind/Contract-IY7VKEUR45886,
    :rdf/type [:fibo-fbc-fi-fi/SecuritiesTransaction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwapExampleIndividuals/",

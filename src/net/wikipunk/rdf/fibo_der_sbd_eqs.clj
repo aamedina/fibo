@@ -35,6 +35,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/EquitySwaps/",
     "fibo-der-sbd-sbd"
     "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
+    "fibo-fbc-fi-fi"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
     "fibo-fnd-agr-ctr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
     "fibo-fnd-dt-fd"
@@ -60,7 +62,7 @@
    ["The https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/EquitySwaps.rdf version of this ontology was modified to add the concept of a high-level equity swap as well as an equity volatility swap per the ISO CFI standard and to add references to the CFI where appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/EquitySwaps/ version of this ontology was modified to eliminate deprecated swap elements."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/EquitySwaps.rdf version of this ontology was modified to fix spelling errors."
-    "The https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/EquitySwaps.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/EquitySwaps.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, and to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."]})
 
 (def DispersionSwapIndexConstituentsLeg
   "dispersion leg whose underlying is a defined set of constituents of a given equity index"
@@ -70,7 +72,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/EquitySwaps/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "dispersion swap index constituents leg"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom {:owl/onProperty
                                            :fibo-fnd-rel-rel/hasIdentity,
                                            :owl/someValuesFrom
@@ -92,7 +94,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "dispersion swap index leg"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                           :owl/someValuesFrom :fibo-ind-mkt-bas/ReferenceIndex,
                           :rdf/type           :owl/Restriction},
@@ -118,7 +120,7 @@
                       :owl/someValuesFrom
                       :fibo-der-sbd-eqs/QualifyingDividendPeriod,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-der-sbd-sbd/EquityObservable,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
@@ -207,7 +209,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/EquitySwaps/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "equity return leg"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-der-sbd-sbd/EquityObservable,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-swp/ReturnLeg],

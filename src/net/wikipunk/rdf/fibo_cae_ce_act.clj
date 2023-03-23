@@ -6,23 +6,30 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :dcterms/abstract
    "This ontology provides a high level overview of actions including corporate, market, and regulatory actions, ranging from business oriented events such as address and name changes, to those that are more specific to securities.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+   ["https://www.omg.org/spec/Commons/CodesAndCodeSets/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/Designators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
+    "https://www.omg.org/spec/Commons/Collections/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/CorporateActions/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
@@ -30,8 +37,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
     "fibo-fbc-fi-fi"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-    "fibo-fnd-arr-cls"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-arr-lif"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
     "fibo-fnd-dt-oc"
@@ -40,8 +45,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -54,7 +57,8 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Corporate Actions Ontology"},
    :skos/changeNote
-   "The https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."})
+   ["The https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."]})
 
 (def Action
   "event announced, initiated or carried out by an organization that affects a legal entity or the securities it issues and may have a material impact on that entity's stakeholders, such as shareholders and creditors"
@@ -68,14 +72,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "action"},
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-oc/Occurrence],
    :skos/definition
@@ -96,14 +100,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label "action classification scheme",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/defines,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
                       :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :owl/onProperty    :lcc-lr/hasMember,
+                      :owl/onProperty    :cmns-col/hasMember,
                       :rdf/type          :owl/Restriction}
-                     :lcc-lr/CodeSet
-                     :fibo-fnd-arr-cls/ClassificationScheme],
+                     :cmns-cds/CodeSet
+                     :cmns-cls/ClassificationScheme],
    :skos/definition
    "scheme for classifying the kinds of actions and events that may be announced, initiated or carried out by an organization that affects a legal entity or the securities it issues"})
 
@@ -119,22 +123,22 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "action classifier"},
-   :rdfs/subClassOf [{:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :lcc-lr/hasTag,
+   :rdfs/subClassOf [:cmns-cls/Classifier
+                     {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/OccurrenceKind
                      {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
-                      :owl/onProperty :lcc-lr/isMemberOf,
+                      :owl/onProperty :cmns-col/isMemberOf,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/classifies,
+                     {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-cae-ce-act/Action,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -148,11 +152,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "action status"},
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasTag,
-                      :owl/someValuesFrom :xsd/string,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/classifies,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-cae-ce-act/Action,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
+                      :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-lif/LifecycleStatus],
    :skos/definition {:rdf/language "en",

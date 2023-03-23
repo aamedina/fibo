@@ -6,7 +6,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
    :dcterms/abstract
    "This ontology defines common concepts for derivatives based on securities as their underliers, including those based on indices or baskets of these assets.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/BasketIndices/"
@@ -17,24 +17,21 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Swaps/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
-    "fibo-der-drc-bsc"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
     "fibo-der-sbd-sbd"
     "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
     "fibo-fbc-fi-fi"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
@@ -58,7 +55,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
    :rdfs/label "Security-Based Derivatives Ontology",
    :skos/changeNote
-   "The https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."})
+   ["The https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."]})
 
 (def BasketOfDebtInstruments
   "basket of securities whose constituents are debt instruments"
@@ -68,13 +66,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "basket of debt instruments"},
-   :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
-     :owl/someValuesFrom {:owl/allValuesFrom :fibo-fbc-fi-fi/DebtInstrument,
-                          :owl/onProperty    :fibo-fnd-rel-rel/comprises,
-                          :rdf/type          :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-bsk/BasketOfSecurities],
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom {:owl/allValuesFrom
+                                           :fibo-fbc-fi-fi/DebtInstrument,
+                                           :owl/onProperty :cmns-col/comprises,
+                                           :rdf/type :owl/Restriction},
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-bsk/BasketOfSecurities],
    :skos/definition
    {:rdf/language "en",
     :rdf/value "basket of securities whose constituents are debt instruments"}})
@@ -87,7 +85,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
    :rdfs/label "debt instrument derivative",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                           :owl/someValuesFrom :fibo-der-sbd-sbd/DebtObservable,
                           :rdf/type           :owl/Restriction},
@@ -122,7 +120,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
    :rdfs/label "equity derivative",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-der-sbd-sbd/EquityObservable,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-sbd-sbd/SecurityBasedDerivative],
@@ -155,7 +153,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "security-based derivative"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-der-sbd-sbd/SecurityUnderlier,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-fi-fi/DerivativeInstrument],
@@ -177,6 +175,6 @@
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-drc-bsc/Underlier],
+                     :fibo-fbc-fi-fi/Underlier],
    :skos/definition
    "underlier consisting of security-based assets, such as baskets of securities, individual securities, reference indices, and combinations thereof"})

@@ -11,7 +11,6 @@
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesClassification/"
@@ -20,11 +19,11 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
@@ -39,6 +38,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/EquityIndexExampleIndividuals/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-pub"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
@@ -58,8 +58,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-dt-fd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
     "fibo-fnd-plc-vrt"
@@ -92,6 +90,7 @@
    :rdfs/label "Equity Index Example Individuals Ontology",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals.rdf version of this ontology was modified to reflect the move of market data provider from interest rates in IND to publishers in BE."
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def DowJonesIndustrialAverage
@@ -130,10 +129,10 @@
 
 (def DowJonesIndustrialAverageBasket-AppleIncCommonStockConstituent
   "Apple Inc. common stock constituent of the DJIA basket of 30 stocks"
-  {:db/ident
-   :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-AppleIncCommonStockConstituent,
-   :fibo-fnd-arr-arr/isConstituentOf
+  {:cmns-col/isConstituentOf
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket,
+   :db/ident
+   :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-AppleIncCommonStockConstituent,
    :fibo-fnd-dt-fd/hasDateAdded
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-AppleIncCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves :fibo-sec-eq-eqind/XNASListedAppleIncCommonStock,
@@ -162,10 +161,10 @@
 
 (def DowJonesIndustrialAverageBasket-IBMCommonStockConstituent
   "IBM common stock constituent of the DJIA basket of 30 stocks"
-  {:db/ident
-   :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-IBMCommonStockConstituent,
-   :fibo-fnd-arr-arr/isConstituentOf
+  {:cmns-col/isConstituentOf
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket,
+   :db/ident
+   :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-IBMCommonStockConstituent,
    :fibo-fnd-dt-fd/hasDateAdded
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-IBMCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves
@@ -195,10 +194,10 @@
 
 (def DowJonesIndustrialAverageBasket-TheCoca-ColaCompanyCommonStockConstituent
   "The Coca-Cola Company common stock constituent of the DJIA basket of 30 stocks"
-  {:db/ident
-   :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheCoca-ColaCompanyCommonStockConstituent,
-   :fibo-fnd-arr-arr/isConstituentOf
+  {:cmns-col/isConstituentOf
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket,
+   :db/ident
+   :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheCoca-ColaCompanyCommonStockConstituent,
    :fibo-fnd-dt-fd/hasDateAdded
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheCoca-ColaCompanyCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves
@@ -228,10 +227,10 @@
 
 (def DowJonesIndustrialAverageBasket-TheHomeDepotCommonStockConstituent
   "The Home Depot, Inc. common stock constituent of the DJIA basket of 30 stocks"
-  {:db/ident
-   :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheHomeDepotCommonStockConstituent,
-   :fibo-fnd-arr-arr/isConstituentOf
+  {:cmns-col/isConstituentOf
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket,
+   :db/ident
+   :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheHomeDepotCommonStockConstituent,
    :fibo-fnd-dt-fd/hasDateAdded
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheHomeDepotCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves
@@ -262,10 +261,10 @@
 (def
   DowJonesIndustrialAverageBasket-TheProctorAndGambleCompanyCommonStockConstituent
   "The Proctor & Gamble Company common stock constituent of the DJIA basket of 30 stocks"
-  {:db/ident
-   :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheProctorAndGambleCompanyCommonStockConstituent,
-   :fibo-fnd-arr-arr/isConstituentOf
+  {:cmns-col/isConstituentOf
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket,
+   :db/ident
+   :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheProctorAndGambleCompanyCommonStockConstituent,
    :fibo-fnd-dt-fd/hasDateAdded
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheProctorAndGambleCompanyCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves

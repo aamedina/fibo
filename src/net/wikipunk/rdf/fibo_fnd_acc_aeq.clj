@@ -16,11 +16,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-acc-aeq"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
@@ -32,8 +34,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
     "fibo-fnd-org-fm"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-alx"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
@@ -55,6 +55,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified to fix spelling errors and deprecate the property represents an interest in, which is not used elsewhere and is confusing."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified to make income a subclass of monetary amount and eliminate the oblique restriction on monetary amount to simplify its representation."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified to eliminate the deprecated 'represents an interest in' property."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified per the FIBO 2.0 RFC to rework definitions in support of revised Business Entities, Equities and related ontologies."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified to eliminate deprecated elements."
@@ -120,16 +121,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "owners' equity"},
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/Expression
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
-                      :owl/onProperty :fibo-fnd-rel-rel/appliesTo,
+                      :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
                       :rdf/type           :owl/Restriction}],
    :skos/definition "owners' share in a business plus operating profit"})
 

@@ -9,25 +9,22 @@
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+   ["https://www.omg.org/spec/Commons/Collections/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-arr-doc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
     "fibo-fnd-dt-fd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -39,7 +36,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "Documents Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 1.2 RTF report to add a definition for a record."
+   ["The https://spec.edmcouncil.org/fibo/ontology/Arrangements/Documents.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 1.2 RTF report to add a definition for a record."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents.rdf version of this ontology was revised as a part of the FIBO 2.0 RFC to add definitions for general purpose reports."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents.rdf version of this ontology was introduced as a part of the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/ in advance of the Long Beach meeting in December 2014."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 1.1 RTF report to add a parent of hasDate to date properties."
@@ -114,7 +112,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "record",
-   :rdfs/subClassOf :lcc-lr/Collection,
+   :rdfs/subClassOf :cmns-col/Collection,
    :skos/definition
    "a memorialization and objective evidence of activities performed, events occurred, results achieved, or statements made, regardless of its characteristics, media, physical form, or the manner in which it is recorded or stored",
    :skos/example
@@ -175,7 +173,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "has record",
    :rdfs/range :fibo-fnd-arr-doc/Record,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition "links something to a record that pertains to it"})
 
 (def hasReportingPeriod

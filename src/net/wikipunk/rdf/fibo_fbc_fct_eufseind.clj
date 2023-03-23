@@ -6,20 +6,21 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :dcterms/abstract
    "This ontology extends the primary financial services entities ontology in FBC with additional kinds of entities that provide services internationally, such as international market data providers, organizations that provide exchanges in multiple countries, etc.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateControl/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"
@@ -32,6 +33,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
@@ -69,7 +72,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-3166-1"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -87,6 +89,8 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to eliminate duplication of concepts in LCC, simplify addresses and merge countries with locations in FND."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to reflect revisions to the GLEIF LEI representation for validation level."
+    "The https://spec.edmcouncil.org/fibo/ontology/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to clarify the definitions of various LOUs as well as to update the LEI data for all LEIs to correspond to the content published by the GLEIF and clean up individual definitions as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to add the SIX Group and SIX Financial Information, which owns and operates a number of exchanges and issues the valoren, which is a commonly used financial instrument identifier, as well as to update the LEI data for all LEIs to correspond to the content published by the GLEIF on data.world."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals.rdf version of this ontology was added via the FIBO 2.0 RFC."]})
@@ -152,7 +156,8 @@
 
 (def BusinessEntityDataLegalEntityIdentifierRegistryEntry
   "legal entity identifier Global LEI Index registry entry for Business Entity Data (BED) B.V."
-  {:db/ident
+  {:cmns-col/comprises :gleif-L1-data/L-EVK05KS7XY1DEII3R011-LEI,
+   :db/ident
    :fibo-fbc-fct-eufseind/BusinessEntityDataLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2012-06-06T19:54:00.000-00:00",
@@ -162,8 +167,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-08-05T23:16:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-EVK05KS7XY1DEII3R011-LEI",
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
@@ -216,7 +219,8 @@
 
 (def ClearstreamBankingLegalEntityIdentifierRegistryEntry
   "legal entity identifier Global LEI Index registry entry for Clearstream Banking S.A."
-  {:db/ident
+  {:cmns-col/comprises :gleif-L1-data/L-549300OL514RA0SXJJ44-LEI,
+   :db/ident
    :fibo-fbc-fct-eufseind/ClearstreamBankingLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2015-01-10T03:33:24.097-00:00",
@@ -226,8 +230,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-06-07T04:00:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-549300OL514RA0SXJJ44-LEI",
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
@@ -303,7 +305,8 @@
 
 (def EuroclearLegalEntityIdentifierRegistryEntry
   "legal entity identifier Global LEI Index registry entry for Euroclear SA/NV"
-  {:db/ident :fibo-fbc-fct-eufseind/EuroclearLegalEntityIdentifierRegistryEntry,
+  {:cmns-col/comprises :gleif-L1-data/L-549300CBNW05DILT6870-LEI,
+   :db/ident :fibo-fbc-fct-eufseind/EuroclearLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2014-01-07T08:04:00.000-00:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
@@ -312,8 +315,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-02-09T12:38:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-549300CBNW05DILT6870-LEI",
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
@@ -464,7 +465,8 @@
 
 (def LondonStockExchangeLegalEntityIdentifierRegistryEntry
   "legal entity identifier Global LEI Index registry entry for London Stock Exchange plc."
-  {:db/ident
+  {:cmns-col/comprises :gleif-L1-data/L-213800D1EI4B9WTWWD28-LEI,
+   :db/ident
    :fibo-fbc-fct-eufseind/LondonStockExchangeLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2013-09-13T04:00:00.000-00:00",
@@ -474,8 +476,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-09-18T04:00:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-213800D1EI4B9WTWWD28-LEI",
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -554,7 +554,8 @@
 
 (def LuxCSDLegalEntityIdentifierRegistryEntry
   "legal entity identifier Global LEI Index registry entry for LuxCSD S.A."
-  {:db/ident :fibo-fbc-fct-eufseind/LuxCSDLegalEntityIdentifierRegistryEntry,
+  {:cmns-col/comprises :gleif-L1-data/L-222100T6ICDIY8V4VX70-LEI,
+   :db/ident :fibo-fbc-fct-eufseind/LuxCSDLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2014-06-03T05:45:01.523-00:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
@@ -563,8 +564,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-03-13T05:00:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-222100T6ICDIY8V4VX70-LEI",
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
@@ -642,7 +641,8 @@
 
 (def SIXFinancialInformationAGLegalEntityIdentifierRegistryEntry
   "legal entity identifier registry entry for SIX Financial Information AG"
-  {:db/ident
+  {:cmns-col/comprises :gleif-L1-data/L-506700D369548LQDC335-LEI,
+   :db/ident
    :fibo-fbc-fct-eufseind/SIXFinancialInformationAGLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2019-06-17T06:09:38.000-00:00",
@@ -652,8 +652,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-07-14T22:00:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-506700D369548LQDC335-LEI",
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -722,7 +720,8 @@
 
 (def SIXGroupAGLegalEntityIdentifierRegistryEntry
   "legal entity identifier registry entry for SIX Group AG"
-  {:db/ident
+  {:cmns-col/comprises :gleif-L1-data/L-529900ZMNQFCPP762W05-LEI,
+   :db/ident
    :fibo-fbc-fct-eufseind/SIXGroupAGLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2013-12-09T08:40:03.000-00:00",
@@ -732,8 +731,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-02-06T23:00:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-529900ZMNQFCPP762W05-LEI",
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -745,8 +742,8 @@
   "association that represents banks and financial institutions established in Sweden that contributes to a sound and efficient regulatory framework that facilitates for banks to help create economic wealth for customers and society"
   {:cmns-av/adaptedFrom
    "https://www.swedishbankers.se/en-us/about/about-us/about-us/",
+   :cmns-col/isMemberOf :fibo-fbc-fct-eufseind/EuropeanBankingFederation,
    :db/ident :fibo-fbc-fct-eufseind/SwedishBankersAssociation,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-eufseind/EuropeanBankingFederation,
    :rdf/type [:fibo-fnd-org-fm/FormalOrganization :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
@@ -781,7 +778,8 @@
 
 (def WMGruppeLegalEntityIdentifierRegistryEntry
   "legal entity identifier registry entry for Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG"
-  {:db/ident :fibo-fbc-fct-eufseind/WMGruppeLegalEntityIdentifierRegistryEntry,
+  {:cmns-col/comprises :gleif-L1-data/L-5299000J2N45DDNE4Y28-LEI,
+   :db/ident :fibo-fbc-fct-eufseind/WMGruppeLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2013-04-03T11:47:18.000-00:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
@@ -790,8 +788,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-04-14T08:44:35.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-5299000J2N45DDNE4Y28-LEI",
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -804,4 +800,133 @@
 (def ^{:private true} DTCC-US-DE
   {:db/ident :fibo-fbc-fct-usfsind/DTCC-US-DE,
    :fibo-be-oac-cctl/hasSubsidiary :fibo-fbc-fct-eufseind/BusinessEntityData,
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} L-213800D1EI4B9WTWWD28-LEI
+  "legal entity identifier for London Stock Exchange plc."
+  {:cmns-id/identifies :fibo-fbc-fct-eufseind/LondonStockExchangePlc,
+   :db/ident :gleif-L1-data/L-213800D1EI4B9WTWWD28-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy
+   :fibo-fbc-fct-eufseind/LondonStockExchangeAsLocalOperatingUnit,
+   :fibo-fnd-rel-rel/hasTag "213800D1EI4B9WTWWD28",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label "London Stock Exchange plc. legal entity identifier",
+   :skos/definition "legal entity identifier for London Stock Exchange plc."})
+
+(def ^{:private true} L-222100T6ICDIY8V4VX70-LEI
+  "legal entity identifier for LuxCSD S.A."
+  {:cmns-id/identifies :fibo-fbc-fct-eufseind/LuxCSDSA,
+   :db/ident           :gleif-L1-data/L-222100T6ICDIY8V4VX70-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy
+   :fibo-fbc-fct-eufseind/LuxCSDAsLocalOperatingUnit,
+   :fibo-fnd-rel-rel/hasTag "222100T6ICDIY8V4VX70",
+   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
+                        :owl/NamedIndividual],
+   :rdfs/label         "LuxCSD S.A. legal entity identifier",
+   :skos/definition    "legal entity identifier for LuxCSD S.A."})
+
+(def ^{:private true} L-506700D369548LQDC335-LEI
+  "legal entity identifier for SIX Financial Information AG"
+  {:cmns-id/identifies :fibo-fbc-fct-eufseind/SIXFinancialInformationAG,
+   :db/ident :gleif-L1-data/L-506700D369548LQDC335-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy
+   :fibo-fbc-fct-eufseind/HerausgebergemeinschaftWertpapier-MitteilungenKepplerLehmann,
+   :fibo-fnd-rel-rel/hasTag "506700D369548LQDC335",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label "SIX Financial Information AG legal entity identifier",
+   :skos/definition "legal entity identifier for SIX Financial Information AG"})
+
+(def ^{:private true} L-5299000J2N45DDNE4Y28-LEI
+  "legal entity identifier for Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG"
+  {:cmns-id/identifies
+   :fibo-fbc-fct-eufseind/HerausgebergemeinschaftWertpapier-MitteilungenKepplerLehmannGmbHAndCoKG-DE,
+   :db/ident :gleif-L1-data/L-5299000J2N45DDNE4Y28-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy
+   :fibo-fbc-fct-eufseind/HerausgebergemeinschaftWertpapier-MitteilungenKepplerLehmann,
+   :fibo-fnd-rel-rel/hasTag "5299000J2N45DDNE4Y28",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label
+   "Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG legal entity identifier",
+   :skos/definition
+   "legal entity identifier for Herausgebergemeinschaft Wertpapier-Mitteilungen Keppler, Lehmann GmbH & Co. KG"})
+
+(def ^{:private true} L-529900ZMNQFCPP762W05-LEI
+  "legal entity identifier for SIX Group AG"
+  {:cmns-id/identifies :fibo-fbc-fct-eufseind/SIXGroupAG,
+   :db/ident           :gleif-L1-data/L-529900ZMNQFCPP762W05-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy
+   :fibo-fbc-fct-eufseind/HerausgebergemeinschaftWertpapier-MitteilungenKepplerLehmann,
+   :fibo-fnd-rel-rel/hasTag "529900ZMNQFCPP762W05",
+   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
+                        :owl/NamedIndividual],
+   :rdfs/label         "SIX Group AG legal entity identifier",
+   :skos/definition    "legal entity identifier for SIX Group AG"})
+
+(def ^{:private true} L-5493000F4ZO33MV32P92-LEI
+  {:db/ident :gleif-L1-data/L-5493000F4ZO33MV32P92-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy :fibo-fbc-fct-eufseind/BusinessEntityData,
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} L-549300561UZND4C7B569-LEI
+  {:db/ident :gleif-L1-data/L-549300561UZND4C7B569-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy :fibo-fbc-fct-eufseind/BusinessEntityData,
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} L-549300CBNW05DILT6870-LEI
+  "legal entity identifier for Euroclear SA/NV"
+  {:cmns-id/identifies :fibo-fbc-fct-eufseind/EuroclearSANV,
+   :db/ident           :gleif-L1-data/L-549300CBNW05DILT6870-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy :fibo-fbc-fct-eufseind/BusinessEntityData,
+   :fibo-fnd-rel-rel/hasTag "549300CBNW05DILT6870",
+   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
+                        :owl/NamedIndividual],
+   :rdfs/label         "Euroclear SA/NV legal entity identifier",
+   :skos/definition    "legal entity identifier for Euroclear SA/NV"})
+
+(def ^{:private true} L-549300HBJLRO8YFMI370-LEI
+  {:db/ident :gleif-L1-data/L-549300HBJLRO8YFMI370-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy :fibo-fbc-fct-eufseind/BusinessEntityData,
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} L-549300NOPSIMGJNT8J31-LEI
+  {:db/ident :gleif-L1-data/L-549300NOPSIMGJNT8J31-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy :fibo-fbc-fct-eufseind/BusinessEntityData,
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} L-549300OL514RA0SXJJ44-LEI
+  "legal entity identifier for Clearstream Banking S.A."
+  {:cmns-id/identifies :fibo-fbc-fct-eufseind/ClearstreamBankingSA,
+   :db/ident           :gleif-L1-data/L-549300OL514RA0SXJJ44-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy
+   :fibo-fbc-fct-eufseind/LuxCSDAsLocalOperatingUnit,
+   :fibo-fnd-rel-rel/hasTag "549300OL514RA0SXJJ44",
+   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
+                        :owl/NamedIndividual],
+   :rdfs/label         "Clearstream Banking S.A. legal entity identifier",
+   :skos/definition    "legal entity identifier for Clearstream Banking S.A."})
+
+(def ^{:private true} L-549300PN6MKI0CLP4T28-LEI
+  {:db/ident :gleif-L1-data/L-549300PN6MKI0CLP4T28-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy :fibo-fbc-fct-eufseind/BusinessEntityData,
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} L-EVK05KS7XY1DEII3R011-LEI
+  "legal entity identifier for Business Entity Data (BED) B.V."
+  {:cmns-id/identifies :fibo-fbc-fct-eufseind/BusinessEntityData-NL,
+   :db/ident :gleif-L1-data/L-EVK05KS7XY1DEII3R011-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy :fibo-fbc-fct-eufseind/BusinessEntityData,
+   :fibo-fnd-rel-rel/hasTag "EVK05KS7XY1DEII3R011",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label "Business Entity Data (BED) B.V. legal entity identifier",
+   :skos/definition
+   "legal entity identifier for Business Entity Data (BED) B.V."})
+
+(def ^{:private true} L-MLDY5N6PZ58ZE60QU102-LEI
+  {:db/ident :gleif-L1-data/L-MLDY5N6PZ58ZE60QU102-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy :fibo-fbc-fct-eufseind/BusinessEntityData,
+   :rdf/type :owl/NamedIndividual})
+
+(def ^{:private true} L-Y6X4K52KMJMZE7I7MY94-LEI
+  {:db/ident :gleif-L1-data/L-Y6X4K52KMJMZE7I7MY94-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy :fibo-fbc-fct-eufseind/BusinessEntityData,
    :rdf/type :owl/NamedIndividual})

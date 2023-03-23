@@ -6,7 +6,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
    :dcterms/abstract
    "This ontology defines the fundamental common terms for trusts. Trusts are entities set up in terms of the applicable local statutes goerning trusts, and have as a minimum three specific, defined parties, known in many jurisdictions as trustor (sometimes sponsor), trustee and beneficiary. The terms in this ontology may be extended as necessary to represent specific types of trust, for example in the funds arena.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
@@ -14,16 +14,17 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"],
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Trusts/Trusts/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-fbo"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
@@ -45,7 +46,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -59,6 +59,7 @@
    ["The https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts.rdf version of this ontology was modified to reflect the move of OrganizationMember from Parties to Organizations in FND."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts.rdf version of this ontology was modified to add a number of kinds of trusts, clean-up extraneous concepts, and eliminate circularity and ambiguity in definitions."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts.rdf version of this ontology was modified per the issue resolutions identified in the FIBO BE 1.0 FTF report."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts.rdf version of this ontology was modified per the FIBO 2.0 RFC."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts.rdf version of this ontology was modified to simplify / merge the legal person and formal organization class hierarchies."
@@ -123,20 +124,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
    :rdfs/label "trust",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
+   :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-lp/LegalEntity
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/TrustBeneficiary,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
                       :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
-                      :rdf/type           :owl/Restriction}
                      :fibo-be-le-lp/BusinessEntity],
    :skos/definition
    "fiduciary relationship and legal entity in which one party, known as a trustor, gives another party, the trustee, the right to hold title to and manage assets for the benefit of a third party, the beneficiary"})
@@ -152,15 +153,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
    :rdfs/label "trust agreement",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-fbo/OrganizationCoveringAgreement
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/TrustBeneficiary,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-be-le-fbo/OrganizationCoveringAgreement],
    :skos/definition
    "formal agreement that establishes a trust, whereby the trustor(s) gives the trustee(s) the responsibility to hold and manage assets for the beneficiary(ies)"})
 
@@ -208,13 +209,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
    :rdfs/label "trustee",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
-                          :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
-                          :owl/qualifiedCardinality 1,
-                          :rdf/type       :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-org-org/OrganizationMember
+   [:fibo-fnd-org-org/OrganizationMember
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/allValuesFrom :fibo-be-tr-tr/Trust,
                           :owl/onProperty    :fibo-fnd-rel-rel/manages,
@@ -222,8 +217,14 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/allValuesFrom :fibo-be-tr-tr/Trust,
-                          :owl/onProperty    :lcc-lr/isMemberOf,
+                          :owl/onProperty    :cmns-col/isMemberOf,
                           :rdf/type          :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     :owl/someValuesFrom {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
+                          :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
+                          :owl/qualifiedCardinality 1,
+                          :rdf/type       :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-be-oac-exec/LegallyDelegatedAuthority],
    :skos/definition
@@ -240,16 +241,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
    :rdfs/label "trustor",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   [{:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
+     :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
+     :rdf/type          :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
                           :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
                           :owl/qualifiedCardinality 1,
                           :rdf/type       :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    {:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
-     :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
-     :rdf/type          :owl/Restriction}
-    :fibo-fnd-org-org/OrganizationMember],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "party that establishes a trust and places property under the protection and management of one or more trustees for the benefit of at least one beneficiary"})
 

@@ -9,22 +9,33 @@
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+   ["https://www.omg.org/spec/Commons/Collections/"
+    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
+    "https://www.omg.org/spec/Commons/TextDatatype/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
+    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
+    "https://www.omg.org/spec/Commons/Designators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
     "dcterms" "http://purl.org/dc/terms/",
-    "fibo-fnd-arr-cls"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-arr-id"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
     "fibo-fnd-plc-adr"
@@ -33,12 +44,9 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
     "fibo-fnd-rel-rel"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-    "fibo-fnd-utl-alx"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -60,7 +68,8 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses.rdf version of this ontology was modified to eliminate duplication of concepts in LCC, simplify address representation and merge countries with locations."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses.rdf version of this ontology was modified to address hygiene issues with respect to text formatting."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Places/Addresses.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.1 RTF report. Differences from the 1.0 version include the addition of a hasAddress property and PhysicalAddress class as a parent of PostalAddress."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."]})
 
 (def Address
   "index to a location to which communications may be delivered"
@@ -76,7 +85,7 @@
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/AddressingScheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-arr-id/Index],
    :skos/definition
@@ -89,7 +98,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "address component",
-   :rdfs/subClassOf :fibo-fnd-utl-alx/Aspect,
+   :rdfs/subClassOf :cmns-cls/Aspect,
    :skos/definition "aspect of an address"})
 
 (def AddressingScheme
@@ -100,7 +109,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "addressing scheme",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-plc-adr/Address,
-                      :owl/onProperty    :fibo-fnd-rel-rel/defines,
+                      :owl/onProperty    :cmns-dsg/defines,
                       :rdf/type          :owl/Restriction}
                      :fibo-fnd-arr-id/IndexingScheme],
    :skos/definition "system for allocating addresses to objects"})
@@ -151,22 +160,22 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "conventional street address",
    :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-plc-adr/StreetAddress,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasStreetAddress,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine3,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fnd-plc-adr/PhysicalAddress
-                     {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine2,
                       :rdf/type        :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :rdfs/Literal,
+                      :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine3,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-plc-adr/StreetAddress,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasStreetAddress,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine1,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-plc-adr/PhysicalAddress],
    :skos/definition
    "physical address that identifies a location on a street to which communications may be delivered"})
 
@@ -215,10 +224,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "geographic directional symbol",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasTag,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
-                     :lcc-lr/CodeElement],
+                     :cmns-cds/CodeElement],
    :skos/definition
    "code element that gives directional information for postal delivery",
    :skos/example
@@ -318,29 +327,29 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "physical address"},
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
-                      :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-plc-adr/hasPostalCode,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fnd-plc-adr/Address
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-plc-adr/Postcode,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasIndividualPostcode,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-plc-loc/PhysicalLocation,
+                      :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-plc-loc/hasSubdivision,
                       :owl/someValuesFrom :lcc-cr/CountrySubdivision,
                       :rdf/type           :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :lcc-cr/Country,
-                      :owl/onProperty :fibo-fnd-plc-loc/hasCountry,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fnd-plc-loc/hasCityName,
                       :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-loc/PhysicalLocation,
-                      :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
+                     :fibo-fnd-plc-adr/Address
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :rdfs/Literal,
+                      :owl/onProperty  :fibo-fnd-plc-adr/hasPostalCode,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-plc-adr/Postcode,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasIndividualPostcode,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :lcc-cr/Country,
+                      :owl/onProperty :fibo-fnd-plc-loc/hasCountry,
                       :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-plc-loc/Municipality,
@@ -359,15 +368,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "physical address identifier",
    :rdfs/subClassOf [{:owl/onClass :fibo-fnd-plc-adr/PhysicalAddressingScheme,
-                      :owl/onProperty :lcc-lr/isMemberOf,
+                      :owl/onProperty :cmns-col/isMemberOf,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-plc-adr/PhysicalAddress,
-                      :owl/onProperty :lcc-lr/identifies,
+                      :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/Identifier
-                     :lcc-lr/CodeElement],
+                     :cmns-id/Identifier
+                     :cmns-cds/CodeElement],
    :skos/definition "unique identifier for a physical address",
    :skos/example
    "Physical address identifiers may include bar codes, QCR codes, and +codes in a number of countries."})
@@ -383,11 +392,11 @@
    :rdfs/subClassOf
    [{:owl/unionOf [{:owl/minQualifiedCardinality 0,
                     :owl/onClass    :fibo-fnd-plc-adr/PhysicalAddressIdentifier,
-                    :owl/onProperty :fibo-fnd-rel-rel/defines,
+                    :owl/onProperty :cmns-dsg/defines,
                     :rdf/type       :owl/Restriction}
                    {:owl/minQualifiedCardinality 0,
                     :owl/onClass    :fibo-fnd-plc-adr/PhysicalAddress,
-                    :owl/onProperty :fibo-fnd-rel-rel/defines,
+                    :owl/onProperty :cmns-dsg/defines,
                     :rdf/type       :owl/Restriction}],
      :rdf/type    :owl/Class}
     :fibo-fnd-plc-adr/AddressingScheme],
@@ -427,7 +436,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "post office box",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-plc-adr/PostOfficeBoxDesignator,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/SupplementalAddressComponent],
@@ -441,7 +450,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "post office box address",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-plc-adr/PostOfficeBox,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/PhysicalAddress],
@@ -471,15 +480,11 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "postcode"},
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-plc-adr/PostCodeArea,
-                      :owl/onProperty :lcc-lr/identifies,
+                      :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-plc-adr/PostCodeArea,
-                      :owl/onProperty :lcc-lr/denotes,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :lcc-lr/CodeElement
-                     :lcc-cr/GeographicRegionIdentifier],
+                     :lcc-cr/GeographicRegionIdentifier
+                     :cmns-cds/CodeElement],
    :skos/definition
    "sequence of characters used to assist in the sorting of mail"})
 
@@ -516,7 +521,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "primary address number",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-plc-adr/AddressComponent],
@@ -542,7 +547,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "region-specific identifier",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/isUsedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/isUsedBy,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
                      :lcc-cr/GeographicRegionIdentifier],
@@ -568,12 +573,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "secondary unit",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-plc-adr/SecondaryUnitDesignator,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/SecondaryUnitIndicator,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/AddressComponent],
    :skos/definition
@@ -593,7 +598,7 @@
                       :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier],
+                     :cmns-cls/Classifier],
    :skos/definition
    "classifier for a smaller structure or component within a larger facility, such as an apartment, office, mail stop, or other similar designation"})
 
@@ -605,7 +610,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "secondary unit indicator",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-plc-adr/AddressComponent],
@@ -667,29 +672,29 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "street address",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-adr/StreetSuffix,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasStreetSuffix,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-plc-adr/AddressComponent
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/SecondaryUnit,
                       :owl/onProperty :fibo-fnd-plc-adr/hasSecondaryUnit,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-plc-adr/AddressComponent
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-plc-adr/PostdirectionalSymbol,
-                      :owl/onProperty
-                      :fibo-fnd-plc-adr/hasPostdirectionalSymbol,
-                      :rdf/type :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-plc-adr/PrimaryAddressNumber,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasPrimaryAddressNumber,
+                      :owl/onClass    :fibo-fnd-plc-adr/StreetSuffix,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasStreetSuffix,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-plc-adr/hasStreetName,
                       :owl/someValuesFrom :fibo-fnd-plc-adr/StreetName,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fnd-plc-adr/PostdirectionalSymbol,
+                      :owl/onProperty
+                      :fibo-fnd-plc-adr/hasPostdirectionalSymbol,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/PredirectionalSymbol,
                       :owl/onProperty :fibo-fnd-plc-adr/hasPredirectionalSymbol,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-plc-adr/PrimaryAddressNumber,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasPrimaryAddressNumber,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "index to a location that consists of a primary address number, predirectional, street name, suffix, postdirectional, and an optional secondary unit"})
@@ -702,9 +707,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "street name",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
+                     :cmns-dsg/Name
                      :fibo-fnd-plc-adr/AddressComponent],
    :skos/definition
    "identifier for a street in some context (e.g., city, municipality, geographic region)"})
@@ -718,25 +724,25 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "street suffix",
-   :rdfs/subClassOf [:fibo-fnd-plc-adr/AddressComponent
-                     :fibo-fnd-arr-cls/Classifier],
+   :rdfs/subClassOf [:cmns-cls/Classifier :fibo-fnd-plc-adr/AddressComponent],
    :skos/definition
    "classifier for a street or other delivery location, such as a dwelling located along a waterway"})
 
 (def StructureName
-  "identifier for a building, house, office complex, shopping center, or other structure or group of structures"
+  "name for a building, house, office complex, shopping center, or other structure or group of structures"
   {:db/ident :fibo-fnd-plc-adr/StructureName,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "structure name",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
+                     :cmns-dsg/Name
                      :fibo-fnd-plc-adr/AddressComponent],
    :skos/definition
-   "identifier for a building, house, office complex, shopping center, or other structure or group of structures",
+   "name for a building, house, office complex, shopping center, or other structure or group of structures",
    :skos/example
    "Examples include 'McCoy Center', which is the name of the office complex where JPMorgan Chase's Polaris facility is located, 'Apple Park', which is the name of the corporate headquarters of Apple, Inc., and 'Howells Bridge Cottage', which is the name of a very old cottage in Cornwall."})
 
@@ -762,16 +768,16 @@
    :rdfs/label "supplemental address component",
    :rdfs/subClassOf [{:owl/onClass
                       :fibo-fnd-plc-adr/SupplementalAddressDesignator,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :rdf/type        :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/SupplementalAddressUnit,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/AddressComponent],
    :skos/definition
@@ -784,11 +790,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "supplemental address designator",
-   :rdfs/subClassOf [{:owl/onProperty :lcc-cr/classifies,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-cls/classifies,
                       :owl/someValuesFrom
                       :fibo-fnd-plc-adr/SupplementalAddressComponent,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier],
+                     :cmns-cls/Classifier],
    :skos/definition
    "classifier for supplemental address information, such as a highway contract route, rural route, building complex, shopping center, condominium complex, mail box, or other similar designation"})
 
@@ -800,7 +806,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "supplemental address unit",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-plc-adr/AddressComponent],
@@ -852,7 +858,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "virtual address",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-plc-adr/Address],
@@ -867,7 +873,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has address",
    :rdfs/range :fibo-fnd-plc-adr/Address,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :cmns-cls/isCharacterizedBy,
    :skos/definition
    "indicates a means by which something (in the case of a network address) or some entity may be located or contacted or may receive correspondence"})
 
@@ -881,6 +887,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has address line 1",
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition "the first line of the street address"})
 
 (def hasAddressLine2
@@ -893,6 +900,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has address line 2",
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition "the second line of the street address"})
 
 (def hasAddressLine3
@@ -907,6 +915,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has address line 3",
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition "the third line of the street address"})
 
 (def hasAttentionLine
@@ -917,6 +926,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has attention line",
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "an optional, free text address line denoting the intended recipient"})
 
@@ -931,7 +941,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has individual postcode",
    :rdfs/range :fibo-fnd-plc-adr/Postcode,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition
    "indicates the local or international postcode element of a delivery address as specified by the local postal service"})
 
@@ -945,6 +955,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has mail routing",
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "an optional, free text address line containing explicit routing information (this elements's presence indicates that this address is a routing / 'care of' address)"})
 
@@ -958,6 +969,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has postal code",
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "the postal code of this address as specified by the local postal service"})
 
@@ -970,7 +982,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has postdirectional symbol",
    :rdfs/range :fibo-fnd-plc-adr/PostdirectionalSymbol,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition
    "specifies a geographic directional symbol that follows the street name and street suffix in a street address"})
 
@@ -983,7 +995,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has predirectional symbol",
    :rdfs/range :fibo-fnd-plc-adr/PredirectionalSymbol,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition
    "specifies a geographic directional symbol that occurs after the primary street number but before the street name in a street address"})
 
@@ -996,7 +1008,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has primary address number",
    :rdfs/range :fibo-fnd-plc-adr/PrimaryAddressNumber,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition "specifies a a location with respect to a given street"})
 
 (def hasSecondaryUnit
@@ -1008,7 +1020,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has secondary unit",
    :rdfs/range :fibo-fnd-plc-adr/SecondaryUnit,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition
    "specifies an individual unit within a larger structure, such as an apartment, office, hangar, slip, mailbox, and so forth, at a given street address"})
 
@@ -1021,7 +1033,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has street address",
    :rdfs/range :fibo-fnd-plc-adr/StreetAddress,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition
    "indicates a fully-specified address component that consists of a primary address number, predirectional, street name, suffix, postdirectional, and an optional secondary unit"})
 
@@ -1034,7 +1046,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has street name",
    :rdfs/range :fibo-fnd-plc-adr/StreetName,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition
    "specifies an identifier for a street in some context (e.g., 'Baker', 'First', 'Main')"})
 
@@ -1047,7 +1059,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has street suffix",
    :rdfs/range :fibo-fnd-plc-adr/StreetSuffix,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition
    "specifies an additional qualifier for a street or other delivery location, such as a dwelling located along a waterway"})
 
@@ -1060,7 +1072,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "has structure name",
    :rdfs/range :fibo-fnd-plc-adr/StructureName,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition
    "specifies an identifier for a building, house, office complex, shopping center, or other structure or group of structures"})
 
@@ -1089,5 +1101,6 @@
    :rdfs/label "requires secondary unit range",
    :rdfs/range :xsd/boolean,
    :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"],
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "if true, indicates that an additional qualifier is needed to complete the delivery point description, such as an apartment number"})

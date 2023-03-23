@@ -10,27 +10,28 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/LoanApplications/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/ClientsAndAccounts/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Guaranty/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Assessments/"
@@ -39,6 +40,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MortgageLoans/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lei"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
@@ -62,8 +67,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
     "fibo-fnd-arr-asmt"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
-    "fibo-fnd-arr-cls"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-dt-fd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
     "fibo-fnd-dt-oc"
@@ -84,8 +87,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
     "fibo-loan-reln-mtg"
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -105,7 +106,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "amortization type",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition "classifier of amortization algorithms"})
 
 (def AmortizationType-adjustableRate
@@ -256,7 +257,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "cash-out status",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "classifier indicating the extent to which funds are released to the borrower on a new loan origination that refinances an existing loan"})
 
@@ -302,7 +303,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "charge category",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    ["classifier indicating what a particular fee or other expense is for"
     "Examples include closing costs, interest, taxes, and other service-related fees."]})
@@ -365,7 +366,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "dwelling capacity",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "classifier indicating how many dwellings some property has"})
 
@@ -406,7 +407,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "manufactured home legal classification",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "category indicating whether the covered loan is secured by a manufactured home only or with land as well"})
 
@@ -442,11 +443,11 @@
    :db/ident :fibo-loan-reln-mtg/Mortgage,
    :owl/equivalentClass {:owl/intersectionOf
                          [:fibo-loan-ln-ln/Loan
-                          {:owl/onProperty :fibo-fnd-rel-rel/comprises,
+                          {:owl/onProperty :cmns-col/comprises,
                            :owl/someValuesFrom
                            {:owl/intersectionOf
                             [:fibo-loan-ln-ln/SecurityAgreement
-                             {:owl/onProperty :lcc-lr/has,
+                             {:owl/onProperty :cmns-cxtdsg/isApplicableIn,
                               :owl/someValuesFrom
                               {:owl/intersectionOf
                                [:fibo-fbc-dae-dbt/PhysicalCollateral
@@ -464,43 +465,43 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "mortgage",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-reln-mtg/MortgageIndemnityGuarantor,
-     :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatingServiceProvider,
-     :owl/someValuesFrom {:owl/intersectionOf
-                          [:fibo-fbc-pas-fpas/FinancialServiceProvider
-                           {:owl/onProperty     :lcc-lr/isIdentifiedBy,
-                            :owl/someValuesFrom :fibo-loan-reln-mtg/NMLSR-ID,
-                            :rdf/type           :owl/Restriction}],
-                          :rdf/type :owl/Class},
-     :rdf/type           :owl/Restriction}
-    :fibo-loan-ln-ln/CollateralizedLoan
-    {:owl/onProperty     :fibo-loan-reln-mtg/hasClosingDate,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-reln-mtg/UniversalLoanIdentifier,
-     :owl/onProperty :lcc-lr/isIdentifiedBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatorPerson,
+   [{:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatorPerson,
      :owl/someValuesFrom {:owl/intersectionOf
                           [:fibo-be-le-lp/LegallyCompetentNaturalPerson
-                           {:owl/onProperty     :lcc-lr/has,
+                           {:owl/onProperty     :cmns-id/isIdentifiedBy,
                             :owl/someValuesFrom :fibo-loan-reln-mtg/NMLSR-ID,
                             :rdf/type           :owl/Restriction}],
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-reln-mtg/Mortgage,
+     :owl/onProperty :fibo-loan-reln-mtg/assumes,
+     :rdf/type       :owl/Restriction}
+    :fibo-loan-ln-ln/CollateralizedLoan
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-ln-ln/Servicer,
      :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
      :rdf/type       :owl/Restriction}
-    :fibo-loan-ln-ln/ClosedEndCredit
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-reln-mtg/Mortgage,
-     :owl/onProperty :fibo-loan-reln-mtg/assumes,
-     :rdf/type       :owl/Restriction}],
+     :owl/onClass    :fibo-loan-reln-mtg/MortgageIndemnityGuarantor,
+     :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
+     :rdf/type       :owl/Restriction}
+    :fibo-loan-ln-ln/ClosedEndCredit
+    {:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatingServiceProvider,
+     :owl/someValuesFrom {:owl/intersectionOf
+                          [:fibo-fbc-pas-fpas/FinancialServiceProvider
+                           {:owl/onProperty     :cmns-id/isIdentifiedBy,
+                            :owl/someValuesFrom :fibo-loan-reln-mtg/NMLSR-ID,
+                            :rdf/type           :owl/Restriction}],
+                          :rdf/type :owl/Class},
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-reln-mtg/UniversalLoanIdentifier,
+     :owl/onProperty :cmns-id/isIdentifiedBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-loan-reln-mtg/hasClosingDate,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
+     :rdf/type           :owl/Restriction}],
    :skos/definition "a loan contract that is secured by real property",
    :skos/editorialNote
    {:rdf/language "en",
@@ -574,7 +575,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "mortgage loan purpose",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "the purpose for which mortgage loan proceeds will be used, such as real property purchase, dwelling construction, or loan refinancing"})
 
@@ -666,7 +667,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "property usage",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "a category indicating the manner in which the borrower intends to utilize the property"})
 
@@ -709,16 +710,16 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "real property appraisal",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-asmt/hasAppraiser,
+                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraiser,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-loan-reln-mtg/PropertyInspection,
                       :owl/onProperty :fibo-fnd-dt-oc/hasInput,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-arr-asmt/ValueAssessment
                      {:owl/onProperty     :fibo-loan-reln-mtg/hasAppraisedValue,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-asmt/ValueAssessment
-                     {:owl/onProperty     :fibo-fnd-arr-asmt/hasAppraiser,
-                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraiser,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "value assessment that estimates the amount of money a real estate property is worth",
@@ -755,11 +756,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "universal loan identifier",
    :rdfs/subClassOf [{:owl/onClass    :fibo-loan-ln-ln/Loan,
-                      :owl/onProperty :lcc-lr/identifies,
+                      :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-be-le-lei/LegalEntityIdentifier,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier],
@@ -888,11 +889,11 @@
 (def ^{:private true} RealEstate
   {:db/ident        :fibo-fnd-plc-loc/RealEstate,
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [{:owl/onProperty :lcc-cr/isClassifiedBy,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-cls/isClassifiedBy,
                       :owl/someValuesFrom
                       :fibo-loan-reln-mtg/ManufacturedHomeLegalClassification,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/isClassifiedBy,
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/DwellingCapacity,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty
@@ -905,7 +906,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-loan-reln-mtg/RealPropertyAppraisal,
-                      :owl/onProperty :lcc-lr/has,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/PhysicalAddress,

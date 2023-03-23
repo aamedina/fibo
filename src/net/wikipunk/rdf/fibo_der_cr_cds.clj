@@ -13,6 +13,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/Settlement/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Swaps/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
@@ -33,6 +34,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/CreditDerivatives/CreditDefaultSwaps/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-pub"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
@@ -86,7 +88,8 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Credit Default Swaps Ontology"},
    :skos/changeNote
-   "The https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/CreditDefaultSwaps.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."})
+   ["The https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/CreditDefaultSwaps.rdf version of this ontology was modified to move the property, 'is conferred on' to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/CreditDefaultSwaps.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def AssetBackedCreditDefaultSwap
   "credit default swap whose underlying reference obligation is an asset-backed security rather than corporate credit"
@@ -184,22 +187,22 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/CreditDefaultSwaps/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "credit default swap"},
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom
-                      :fibo-der-cr-cds/CreditProtectionTerms,
-                      :rdf/type :owl/Restriction}
                      :fibo-der-drc-swp/Swap
                      {:owl/onProperty     :fibo-der-cr-cds/hasContractPrice,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-bsc/CreditDerivative
-                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom
+                      :fibo-der-cr-cds/CreditProtectionTerms,
+                      :rdf/type :owl/Restriction}
+                     :fibo-der-drc-bsc/CreditDerivative],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -244,27 +247,27 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "credit protection terms"},
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
-     :owl/onProperty :fibo-der-cr-cds/hasScheduledTerminationDate,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-     :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligation,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
+   [{:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
      :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligationSeller,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
-     :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligationBuyer,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onDataRange :xsd/boolean,
      :owl/onProperty  :fibo-der-cr-cds/allowsSubstitution,
      :rdf/type        :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligation,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
      :rdf/type           :owl/Restriction}
-    :fibo-der-drc-bsc/DerivativeTerms],
+    :fibo-der-drc-bsc/DerivativeTerms
+    {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
+     :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligationBuyer,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
+     :owl/onProperty :fibo-der-cr-cds/hasScheduledTerminationDate,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -609,7 +612,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-der-drc-bsc/ValuationTerms,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-der-cr-cds/CashSettlementMethod,

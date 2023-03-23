@@ -9,11 +9,11 @@
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
@@ -22,9 +22,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
-    "fibo-fnd-arr-cls"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-dt-bd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
     "fibo-fnd-dt-fd"
@@ -33,8 +33,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
     "fibo-fnd-plc-loc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
@@ -53,6 +51,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/ version of this ontology was revised to address the issue resolutions in the FIBO 2.0 RFC, primarily to add properties that are relevant to the inputs and outputs from processes, events, systems and the like."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/ version of this ontology was revised to make use of the new composite date type added to Financial Dates."
     "This ontology was added to Foundations in advance of the December 2014 Long Beach meeting in support of the SEC specification. It is also needed to provide temporal relationships for Ownership and Control.\n\nThese three ontologies are designed for use together:\n\n\t* FinancialDates -- financial Dates and Schedules\n\t* BusinessDates -- business day adjustments\n\t* Occurrences -- occurrences (events) and kinds of occurrences\n\nThey are modularized this way to minimize the ontological committments that are imposed upon ontologies that rely upon them. Ontologies can import FinancialDates alone, or FinancialDates + BusinessDates, or FinancialDates + Occurrences, or all three together."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/ version of this ontology was revised to address hygiene errors with respect to text formatting."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/ version of this ontology was revised to eliminate duplication of concepts in LCC, and eliminate unnecessary complexity in restrictions."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/ version of this ontology was revised to fix spelling errors."
@@ -71,7 +70,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
    :rdfs/label "occurrence",
    :rdfs/subClassOf
-   [{:owl/unionOf [{:owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
+   [{:owl/minQualifiedCardinality 0,
+     :owl/onClass    :lcc-cr/Location,
+     :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
+     :rdf/type       :owl/Restriction}
+    {:owl/unionOf [{:owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
                     :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
                     :owl/qualifiedCardinality 1,
                     :rdf/type       :owl/Restriction}
@@ -87,10 +90,6 @@
     {:owl/onClass    :fibo-fnd-dt-oc/OccurrenceKind,
      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
      :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :lcc-cr/Location,
-     :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
      :rdf/type       :owl/Restriction}],
    :skos/definition "happening of an OccurrenceKind, i.e., an event"})
 
@@ -122,8 +121,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
    :rdfs/label "occurrence kind",
-   :rdfs/subClassOf [:fibo-fnd-arr-cls/Classifier
-                     {:owl/onProperty     :lcc-cr/classifies,
+   :rdfs/subClassOf [:cmns-cls/Classifier
+                     {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fnd-dt-oc/Occurrence,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
@@ -255,7 +254,7 @@
    :rdf/type        :owl/Class,
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-oc/OccurrenceKind,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-oc/Occurrence,
@@ -272,7 +271,7 @@
    :rdf/type        :owl/Class,
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-oc/OccurrenceKind,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-oc/Occurrence,

@@ -6,7 +6,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :dcterms/abstract
    "This ontology provides the parameters which make up the various types of market economic indicators, along with basic facts about these such as the economies or countries they apply to.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
@@ -16,12 +16,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
@@ -30,18 +28,22 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"],
+    "https://www.omg.org/spec/Commons/Classifiers/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-fct"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
@@ -55,8 +57,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
     "fibo-fnd-aap-ppl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-arr-cls"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-arr-doc"
@@ -83,8 +83,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-ind-ei-ei"
     "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -101,6 +99,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators.rdf version of this ontology was modified to reflect the change in name and definition of numeric index to numeric index value in FND."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators.rdf version of this ontology was modified to add definitions for alternative unemployment calculations and correct a circular property definition."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators.rdf version of this ontology was modified per the issue resolutions identified in the FIBO IND 1.0 FTF 3 report."
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators.rdf version of this ontology was modified to use hasCoverageArea rather than appliesTo in the restriction on an economic indicator relating it to a statistical area, to reflect use of actualExpression as an annotation rather than datatype property, and to migrate the general statistics concepts to FND (deprecated herein)."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators.rdf version of this ontology was modified to eliminate the restriction on economic indicator (and its subclasses) that it has an indicator value - the restriction should be on the quantity value such that the value refers to the indicator it represents, and to revise the definition of civilian non-institutional population to correctly represent civilian non-institutional person (added)."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators.rdf version of this ontology was modified to eliminate references to external dictionary sites that no longer resolve, added a synonym to fixed basket and eliminated the restriction with respect to date period, which is not the primary concern of a fixed basket, revised the name of the 'goods or services population' to 'goods population' to eliminate a hygiene issue and reflect the synonym of 'basket of goods', and merged the statistical information publisher class from economic indicator publishers into this ontology."
@@ -282,14 +281,14 @@
                       :owl/someValuesFrom
                       :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
-                     :fibo-ind-ei-ei/EconomicIndicator
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-ind-ei-ei/CivilianLaborForce,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-ind-ei-ei/CivilianLaborForce,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-ind-ei-ei/EconomicIndicator],
    :skos/definition
    "economic indicator representing the rate of participation the labor force of a given economy for some specified period"})
 
@@ -321,7 +320,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "civilian non-institutional population",
-   :rdfs/subClassOf [{:owl/onProperty :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasMember,
                       :owl/someValuesFrom
                       :fibo-ind-ei-ei/CivilianNonInstitutionalPerson,
                       :rdf/type :owl/Restriction}
@@ -349,7 +348,7 @@
                      {:owl/minQualifiedCardinality 2,
                       :owl/onClass
                       :fibo-ind-ei-ei/GovernmentSpecifiedStatisticalArea,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :rdf/type :owl/Restriction}],
    :skos/definition
    "combination of adjacent metropolitan and micropolitan areas with economic ties measured by commuting patterns"})
@@ -371,12 +370,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "consumer price index",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+   [:fibo-fnd-utl-alx/Expression
+    :fibo-ind-ei-ei/EconomicIndicator
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-utl-alx/Expression
-    :fibo-ind-ei-ei/EconomicIndicator
-    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+    {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
@@ -418,28 +417,28 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "economic indicator",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-plc-loc/hasCoverageArea,
-                      :owl/someValuesFrom
-                      :fibo-ind-ei-ei/GovernmentSpecifiedStatisticalArea,
-                      :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/Date,
-                      :owl/onProperty :fibo-fnd-utl-alx/hasReleaseDate,
-                      :rdf/type       :owl/Restriction}
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-doc/hasReportingPeriod,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDatePeriod,
+                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/Date,
                       :owl/onProperty    :fibo-ind-ei-ei/hasSeriesOrigin,
                       :rdf/type          :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-doc/hasReportingPeriod,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDatePeriod,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/ScopedMeasure
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-utl-alx/hasReleaseDateTime,
                       :rdf/type        :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-plc-loc/hasCoverageArea,
+                      :owl/someValuesFrom
+                      :fibo-ind-ei-ei/GovernmentSpecifiedStatisticalArea,
+                      :rdf/type :owl/Restriction}
                      {:owl/allValuesFrom :xsd/boolean,
                       :owl/onProperty    :fibo-ind-ei-ei/isSeasonallyAdjusted,
-                      :rdf/type          :owl/Restriction}],
+                      :rdf/type          :owl/Restriction}
+                     :fibo-fnd-utl-alx/ScopedMeasure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-dt-fd/Date,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasReleaseDate,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "statistical measure of economic activity that is regular and comparable in the context of a statistical area (region), used for analysis of economic performance and predictions of future performance",
    :skos/example
@@ -540,11 +539,11 @@
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-ind-ei-ei/EmployedPopulation,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-                      :owl/someValuesFrom :fibo-ind-ei-ei/EmployedPopulation,
-                      :rdf/type           :owl/Restriction}
                      :fibo-ind-ei-ei/EconomicIndicator
-                     :fibo-fnd-utl-alx/Expression],
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-ind-ei-ei/EmployedPopulation,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "economic indicator representing the ratio of the employed population with respect to the overall civilian non-institutional population of a given economy for some specified period"})
 
@@ -559,22 +558,22 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "enterprise",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
-     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
+   [:fibo-be-fct-fct/FunctionalBusinessEntity
+    {:owl/onProperty     :cmns-cls/isClassifiedBy,
+     :owl/someValuesFrom :fibo-fnd-arr-cls/IndustrySectorClassifier,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-     :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-pas-pas/Good
-                                        :fibo-fnd-pas-pas/Service],
-                          :rdf/type    :owl/Class},
+    {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
+     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
      :rdf/type           :owl/Restriction}
     {:owl/unionOf [:fibo-fnd-pas-pas/Producer
                    :fibo-fnd-pas-pas/ServiceProvider],
      :rdf/type    :owl/Class}
-    :fibo-be-fct-fct/FunctionalBusinessEntity
-    {:owl/onProperty     :lcc-cr/isClassifiedBy,
-     :owl/someValuesFrom :fibo-fnd-arr-cls/IndustrySectorClassifier,
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-pas-pas/Good
+                                        :fibo-fnd-pas-pas/Service],
+                          :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+    {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-ind-ei-ei/Establishment,
      :rdf/type           :owl/Restriction}
     :fibo-ind-ei-ei/InstitutionalUnit],
@@ -588,7 +587,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "enterprise population",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasMember,
                       :owl/someValuesFrom :fibo-ind-ei-ei/Enterprise,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/StatisticalUniverse],
@@ -607,14 +606,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "establishment",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-ind-ei-ei/Enterprise,
-                      :owl/onProperty :fibo-fnd-arr-arr/isConstituentOf,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-ind-ei-ei/InstitutionalUnit
-                     {:owl/onClass    :fibo-fnd-plc-adr/PhysicalAddress,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-plc-adr/PhysicalAddress,
                       :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
                       :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-ind-ei-ei/InstitutionalUnit
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-ind-ei-ei/Enterprise,
+                      :owl/onProperty :cmns-col/isConstituentOf,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "an enterprise (or part of an enterprise) that operates from a single physical location"})
@@ -632,11 +631,11 @@
    :rdfs/label "establishment employment",
    :rdfs/subClassOf
    [:fibo-fnd-utl-alx/Expression
-    :fibo-ind-ei-ei/EconomicIndicator
-    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+    {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-ind-ei-ei/EstablishmentPopulation,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+    :fibo-ind-ei-ei/EconomicIndicator
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-ind-ei-ei/EstablishmentPopulation,
      :rdf/type           :owl/Restriction}],
    :skos/definition
@@ -649,7 +648,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "establishment population",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasMember,
                       :owl/someValuesFrom :fibo-ind-ei-ei/Establishment,
                       :rdf/type           :owl/Restriction}
                      :fibo-ind-ei-ei/EnterprisePopulation],
@@ -666,7 +665,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "fixed basket",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasConstituent,
                       :owl/someValuesFrom
                       :fibo-ind-ei-ei/FixedBasketConstituent,
                       :rdf/type :owl/Restriction}
@@ -678,7 +677,7 @@
 (def FixedBasketConstituent
   "component of a fixed basket"
   {:db/ident :fibo-ind-ei-ei/FixedBasketConstituent,
-   :owl/equivalentClass {:owl/onProperty     :fibo-fnd-arr-arr/isConstituentOf,
+   :owl/equivalentClass {:owl/onProperty     :cmns-col/isConstituentOf,
                          :owl/someValuesFrom :fibo-ind-ei-ei/FixedBasket,
                          :rdf/type           :owl/Restriction},
    :rdf/type :owl/Class,
@@ -703,7 +702,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "fixed basket population",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-pas-pas/Good
                                             :fibo-fnd-pas-pas/Service],
@@ -771,13 +770,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "household",
    :rdfs/subClassOf [:fibo-ind-ei-ei/InstitutionalUnit
-                     {:owl/onProperty     :lcc-lr/hasMember,
-                      :owl/someValuesFrom :fibo-fnd-aap-ppl/Person,
-                      :rdf/type           :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-ind-ei-ei/HousingUnit,
                       :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasMember,
+                      :owl/someValuesFrom :fibo-fnd-aap-ppl/Person,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "individual or small group of persons who occupy a housing unit (such as a house or apartment) as their usual place of residence, who pool some, or all, of their income and wealth and who consume certain types of goods and services collectively, mainly housing and food"})
 
@@ -806,7 +805,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "inflation rate",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom
                       :fibo-ind-ei-ei/GovernmentSpecifiedStatisticalArea,
                       :rdf/type :owl/Restriction}
@@ -1020,13 +1019,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "producer price index",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-     :owl/someValuesFrom {:owl/unionOf [:fibo-ind-ei-ei/EnterprisePopulation
-                                        :fibo-ind-ei-ei/EstablishmentPopulation
-                                        :fibo-ind-ei-ei/FixedBasketPopulation],
-                          :rdf/type    :owl/Class},
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom {:owl/unionOf [:fibo-ind-ei-ei/EnterprisePopulation
                                         :fibo-ind-ei-ei/EstablishmentPopulation
                                         :fibo-ind-ei-ei/FixedBasketPopulation],
@@ -1034,6 +1027,12 @@
      :rdf/type           :owl/Restriction}
     :fibo-ind-ei-ei/EconomicIndicator
     :fibo-fnd-utl-alx/Expression
+    {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+     :owl/someValuesFrom {:owl/unionOf [:fibo-ind-ei-ei/EnterprisePopulation
+                                        :fibo-ind-ei-ei/EstablishmentPopulation
+                                        :fibo-ind-ei-ei/FixedBasketPopulation],
+                          :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-ind-ei-ei/FixedBasket,
      :rdf/type           :owl/Restriction}],
@@ -1161,15 +1160,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "unemployment rate",
    :rdfs/seeAlso ["http://www.bls.gov/news.release/pdf/empsit.pdf"],
-   :rdfs/subClassOf [:fibo-ind-ei-ei/EconomicIndicator
-                     :fibo-fnd-utl-alx/Expression
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-ind-ei-ei/UnemployedPopulation,
                       :rdf/type           :owl/Restriction}
+                     :fibo-ind-ei-ei/EconomicIndicator
+                     :fibo-fnd-utl-alx/Expression
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-ind-ei-ei/CivilianLaborForce,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-ind-ei-ei/UnemployedPopulation,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
@@ -1239,7 +1238,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
    :rdfs/label "has indicator value",
    :rdfs/range :fibo-fnd-qt-qtu/QuantityValue,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasQuantityValue,
    :skos/definition "specifies a quantity value for a given indicator"})
 
 (def hasSeriesOrigin

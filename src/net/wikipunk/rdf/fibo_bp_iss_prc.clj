@@ -18,19 +18,23 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/MuniIssuance/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/PaymentsAndSchedules/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceDocuments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceProcess/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-bp-iss-dbti"
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
@@ -62,8 +66,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-sec-sec-iss"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -85,7 +87,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "allotment information"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   [{:owl/onProperty     :cmns-col/comprises,
      :owl/someValuesFrom :fibo-bp-iss-prc/SubscriptionClosingInformation,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-prc/describesAllotmentOf,
@@ -142,7 +144,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "issuance programme"},
-   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf {:owl/onProperty     :cmns-col/comprises,
                      :owl/someValuesFrom :fibo-sec-sec-iss/SecuritiesOffering,
                      :rdf/type           :owl/Restriction},
    :skos/definition {:rdf/language "en",
@@ -214,11 +216,11 @@
      :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
      :rdf/type           :owl/Restriction}
     :fibo-bp-iss-dbti/IssuanceProcessActivity
-    {:owl/onProperty     :fibo-bp-iss-muni/givesRiseTo,
-     :owl/someValuesFrom :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-prc/hasDistributionType,
      :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingDistributionMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-muni/givesRiseTo,
+     :owl/someValuesFrom :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-prc/hasSaleMethod,
      :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingSaleMethod,
@@ -409,7 +411,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "subscription closing information"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-bp-iss-prc/Subscriber,
      :rdf/type           :owl/Restriction}
     :fibo-bp-iss-prc/TradedInstrumentIssuanceProcessInformation]})
@@ -422,7 +424,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "traded instrument issuance process information"},
-   :rdfs/subClassOf [{:owl/onProperty :lcc-cr/isPartOf,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/isPartOf,
                       :owl/someValuesFrom
                       :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
                       :rdf/type :owl/Restriction}
@@ -814,7 +816,7 @@
 (def ^{:private true} SecuritiesOffering
   {:db/ident        :fibo-sec-sec-iss/SecuritiesOffering,
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [{:owl/onProperty :lcc-lr/isIdentifiedBy,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-id/isIdentifiedBy,
                       :owl/someValuesFrom
                       :fibo-sec-sec-id/ListedSecurityIdentifier,
                       :rdf/type :owl/Restriction}

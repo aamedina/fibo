@@ -7,7 +7,7 @@
    :dcterms/abstract
    "This ontology defines fundamental concepts about funds and collective investment vehicles (CIVs).",
    :dcterms/contributor ["Wells Fargo Bank, N.A." "Thematix Partners LLC"],
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
@@ -23,16 +23,15 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Trusts/Trusts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/Funds/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-fbo"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
@@ -46,8 +45,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-dt-fd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
     "fibo-fnd-gao-obj"
@@ -66,8 +63,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
     "fibo-sec-sec-pls"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -81,6 +76,7 @@
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds.rdf version of this ontology was modified to move the definition of SpecialPurposeVehicle to the Pools ontology to make it available for use more generally."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds.rdf version of this ontology was modified to eliminate a deprecated element for SpecialPurposeVehicle, which was moved to Pools last quarter."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds.rdf version of this ontology was modified to replace the original fibo-sec-fnd-fnd prefix with fibo-sec-fund-fund for the sake of clarity and to change the restriction on LegalFundStructure from an equivalence to a subclass relationship to address a reasoning error as well as adding a missing restriction on jurisdiction."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds.rdf version of this ontology was modified to address text formatting hygiene issues."]})
@@ -200,7 +196,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fund unit"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-arr/isConstituentOf,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/isConstituentOf,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PooledFund,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
@@ -409,7 +405,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has sub-fund"},
    :rdfs/range :fibo-sec-sec-pls/PooledFund,
-   :rdfs/subPropertyOf :lcc-cr/hasPart,
+   :rdfs/subPropertyOf :cmns-col/hasPart,
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -440,7 +436,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "is sub-fund of"},
    :rdfs/range :fibo-sec-sec-pls/PooledFund,
-   :rdfs/subPropertyOf :lcc-cr/isPartOf,
+   :rdfs/subPropertyOf :cmns-col/isPartOf,
    :skos/definition {:rdf/language "en",
                      :rdf/value    "relates a pooled fund to a parent fund"}})
 
@@ -471,11 +467,11 @@
                      :rdf/value    "fund"},
    :db/ident        :fibo-sec-sec-pls/PooledFund,
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,

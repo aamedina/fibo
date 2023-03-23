@@ -1,38 +1,44 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-mkt
   "This ontology defines the fundamental concepts for markets, exchanges, regulated markets, and multilateral trading facilities."
-  {:cmns-av/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
-                       "Copyright (c) 2015-2023 Object Management Group, Inc."],
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 Object Management Group, Inc."
+                       "Copyright (c) 2015-2023 EDM Council, Inc."],
    :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for markets, exchanges, regulated markets, and multilateral trading facilities.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Facilities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
+    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Facilities/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
+    "https://www.omg.org/spec/Commons/Designators/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-pub"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
@@ -46,8 +52,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
     "fibo-fbc-pas-fpas"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
-    "fibo-fnd-arr-cls"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-arr-lif"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
     "fibo-fnd-arr-rep"
@@ -67,7 +71,6 @@
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -79,17 +82,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
    :rdfs/label "Markets Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to replace the hasTag property in Relations with the LCC equivalent on nominals."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to generalize certain unions where they were no longer required and to move international registration authorities individuals to a separate ontology for better modularity."
+   ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to reflect issue resolutions detailed in the FIBO FBC 1.0 RTF report."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified per the FIBO 2.0 RFC."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to integrated details from the redundant 'securities exchange' concept with 'exchange'."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to replace the hasTag property in Relations with the LCC equivalent on nominals."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to add the definition of an exchange participant and loosen constraints on the location in which a given exchange operates, given that there are cases when an exchange may operate in multiple locations."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to generalize certain unions where they were no longer required and to move international registration authorities individuals to a separate ontology for better modularity."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to revise the number and nature of 'market categories' per the latest version of ISO 10383, including the addition of ESMA-regulated data reporting service providers and other new categories, augment the representation of a market to reference the legal entity that is the market, add their LEI and other details that correspond to the entity vs. the market and so forth."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to add: 'off-market', with synonyms of 'off-facility' and 'off-book', 'auction market' for periodic or on-demand auction markets, 'dark pool', and 'quote-driven market' for those that have QUOTE or RFQ in their name excluding QUOTED FUNDS, and other 'alternative trading system's; also moved 'designated contract market' and 'swap execution facility' from DER to the this ontology for use in generating proper classification of the ISO MIC codes."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to eliminate deprecated elements."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to eliminate duplication of concepts in LCC, simplify addresses, merge countries with locations in FND, and correct the declaration of the property 'operates in municipality' to be an object property."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to add the definition of an exchange participant and loosen constraints on the location in which a given exchange operates, given that there are cases when an exchange may operate in multiple locations."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to reflect issue resolutions detailed in the FIBO FBC 1.0 RTF report."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to revise the number and nature of 'market categories' per the latest version of ISO 10383, including the addition of ESMA-regulated data reporting service providers and other new categories, augment the representation of a market to reference the legal entity that is the market, add their LEI and other details that correspond to the entity vs. the market and so forth."]})
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/ version of this ontology was modified to integrated details from the redundant 'securities exchange' concept with 'exchange'."]})
 
 (def ActiveMICStatus
   "market identifier code status that indicates that as of the last report or update, the code was registered and actively in use"
@@ -97,7 +101,7 @@
    ["https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf"
     "ISO 10383, Securities and related financial instruments - Codes for exchanges and market identification (MIC), version 2.0"],
    :db/ident :fibo-fbc-fct-mkt/ActiveMICStatus,
-   :lcc-lr/hasTag "ACTIVE",
+   :fibo-fnd-rel-rel/hasTag "ACTIVE",
    :rdf/type [:fibo-fbc-fct-mkt/MarketIdentifierCodeStatus
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -120,7 +124,7 @@
    :rdfs/label "alternative trading system",
    :rdfs/subClassOf [{:owl/hasValue
                       :fibo-fbc-fct-mkt/MarketCategoryClassifier-ATSS,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fct-mkt/Exchange],
    :skos/definition
@@ -144,7 +148,7 @@
    :rdfs/label "approved publication arrangement",
    :rdfs/subClassOf [{:owl/hasValue
                       :fibo-fbc-fct-mkt/MarketCategoryClassifier-APPA,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fct-mkt/DataReportingServicesProvider],
    :skos/definition
@@ -162,11 +166,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
    :rdfs/label "approved reporting mechanism",
-   :rdfs/subClassOf [:fibo-fbc-fct-mkt/DataReportingServicesProvider
-                     {:owl/hasValue
+   :rdfs/subClassOf [{:owl/hasValue
                       :fibo-fbc-fct-mkt/MarketCategoryClassifier-ARMS,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type :owl/Restriction}],
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-fct-mkt/DataReportingServicesProvider],
    :skos/definition
    "data reporting services provider that is authorized to provide the service of reporting details of transactions to competent authorities or ESMA (the European Securities and Markets Authority) on behalf of investment firms"})
 
@@ -198,7 +202,7 @@
    :rdfs/subClassOf [:fibo-fbc-fct-mkt/DataReportingServicesProvider
                      {:owl/hasValue
                       :fibo-fbc-fct-mkt/MarketCategoryClassifier-CTPS,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}],
    :skos/definition
    "data reporting services provider that is authorized to provide the service of collecting trade reports for financial instruments from regulated markets, MTFs, OTFs and APAs and consolidating them into a continuous electronic live data stream providing price and volume data per financial instrument"})
@@ -216,28 +220,28 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
    :rdfs/label "crypto asset services provider",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-mkt/operatesInCountry,
+                      :owl/someValuesFrom :lcc-cr/Country,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasFormalName,
                       :rdf/type        :owl/Restriction}
+                     {:owl/hasValue
+                      :fibo-fbc-fct-mkt/MarketCategoryClassifier-CASP,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty :fibo-fbc-fct-mkt/operatesInMunicipality,
+                      :owl/someValuesFrom :fibo-fnd-plc-loc/Municipality,
+                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fbc-fct-mkt/hasFacilityAcronym,
                       :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifier,
-                      :owl/onProperty :lcc-lr/isIdentifiedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fct-mkt/operatesInCountry,
-                      :owl/someValuesFrom :lcc-cr/Country,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :fibo-fbc-fct-mkt/operatesInMunicipality,
-                      :owl/someValuesFrom :fibo-fnd-plc-loc/Municipality,
-                      :rdf/type :owl/Restriction}
-                     {:owl/hasValue
-                      :fibo-fbc-fct-mkt/MarketCategoryClassifier-CASP,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
                      :fibo-fbc-pas-fpas/FinancialServiceProvider],
    :skos/definition
    "financial services provider that provides services for crypto assets that enable the control of crypto assets, and participate in, or provide, financial services for issuers' offers, or sale, of crypto assets"})
@@ -265,25 +269,25 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
    :rdfs/label "data reporting services provider",
    :rdfs/subClassOf [:fibo-fnd-arr-rep/ReportingParty
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-rel-rel/hasFormalName,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifier,
-                      :owl/onProperty :lcc-lr/isIdentifiedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fbc-fct-mkt/hasFacilityAcronym,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-be-fct-pub/MarketDataProvider
                      {:owl/onProperty     :fibo-fbc-fct-mkt/operatesInCountry,
                       :owl/someValuesFrom :lcc-cr/Country,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fbc-fct-mkt/operatesInMunicipality,
                       :owl/someValuesFrom :fibo-fnd-plc-loc/Municipality,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :rdfs/Literal,
+                      :owl/onProperty  :fibo-fbc-fct-mkt/hasFacilityAcronym,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-be-fct-pub/MarketDataProvider
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :rdfs/Literal,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasFormalName,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "market data provider and reporting party that reports and/or publishes data on securities transactions, including required regulatory reporting for such transactions, and as such is subject to regulatory supervision"})
 
@@ -308,7 +312,7 @@
    :rdfs/label "designated contract market",
    :rdfs/subClassOf [{:owl/hasValue
                       :fibo-fbc-fct-mkt/MarketCategoryClassifier-DCMS,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fct-mkt/Exchange],
    :skos/definition
@@ -344,28 +348,28 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
    :rdfs/label "exchange",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fbc-pas-fpas/FinancialServiceProvider,
+                      :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-mkt/operatesInCountry,
+                      :owl/someValuesFrom :lcc-cr/Country,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fbc-fct-mkt/operatesInMunicipality,
+                      :owl/someValuesFrom :fibo-fnd-plc-loc/Municipality,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-plc-fac/Facility
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fbc-fct-mkt/hasFacilityAcronym,
                       :rdf/type        :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fbc-pas-fpas/FinancialServiceProvider,
-                      :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
-                      :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasFormalName,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty :fibo-fbc-fct-mkt/operatesInMunicipality,
-                      :owl/someValuesFrom :fibo-fnd-plc-loc/Municipality,
-                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifier,
-                      :owl/onProperty :lcc-lr/isIdentifiedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fct-mkt/operatesInCountry,
-                      :owl/someValuesFrom :lcc-cr/Country,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-plc-fac/Facility],
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "any organization, association, or group of persons, whether incorporated or unincorporated, which constitutes, maintains, or provides a facility for bringing together purchasers and sellers of financial instruments, commodities, or other products, services, or goods, and includes the market place and facilities maintained by such exchange"})
 
@@ -378,7 +382,7 @@
    :rdfs/label "exchange participant",
    :rdfs/seeAlso ["https://www.lawinsider.com/dictionary/exchange-participant"],
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                      :owl/someValuesFrom {:owl/onProperty :lcc-lr/isMemberOf,
+                      :owl/someValuesFrom {:owl/onProperty :cmns-col/isMemberOf,
                                            :owl/someValuesFrom
                                            {:owl/onProperty
                                             :fibo-fnd-pty-rl/playsRole,
@@ -401,7 +405,7 @@
    ["https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf"
     "ISO 10383, Securities and related financial instruments - Codes for exchanges and market identification (MIC), Third edition, version 2.0"],
    :db/ident :fibo-fbc-fct-mkt/ExpiredMICStatus,
-   :lcc-lr/hasTag "EXPIRED",
+   :fibo-fnd-rel-rel/hasTag "EXPIRED",
    :rdf/type [:fibo-fbc-fct-mkt/MarketIdentifierCodeStatus
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -416,7 +420,7 @@
    ["https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf"
     "https://www.iso20022.org/market-identifier-codes"],
    :db/ident :fibo-fbc-fct-mkt/ISO10383-ClassificationScheme,
-   :rdf/type [:fibo-fnd-arr-cls/ClassificationScheme :owl/NamedIndividual],
+   :rdf/type [:cmns-cls/ClassificationScheme :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
    :rdfs/label "ISO 10383 classification scheme",
@@ -439,11 +443,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
    :rdfs/label "interdealer quotation system",
-   :rdfs/subClassOf [{:owl/hasValue
+   :rdfs/subClassOf [:fibo-fbc-fct-mkt/Exchange
+                     {:owl/hasValue
                       :fibo-fbc-fct-mkt/MarketCategoryClassifier-IDQS,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-mkt/Exchange],
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "automated system for organizing and disseminating price quotes by brokers and dealer firms that facilitates electronic trading in securities",
    :skos/example
@@ -459,7 +463,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
    :rdfs/label "market category classifier",
    :rdfs/subClassOf
-   [{:owl/onProperty     :lcc-cr/classifies,
+   [{:owl/onProperty     :cmns-cls/classifies,
      :owl/someValuesFrom {:owl/unionOf
                           [:fibo-fbc-fct-mkt/CryptoAssetServicesProvider
                            :fibo-fbc-fct-mkt/DataReportingServicesProvider
@@ -468,9 +472,9 @@
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
     {:owl/hasValue   :fibo-fbc-fct-mkt/ISO10383-ClassificationScheme,
-     :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+     :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-arr-cls/Classifier],
+    :cmns-cls/Classifier],
    :skos/definition
    "classifier representing the controlled vocabulary that delineates the nature of the exchange or data reporting services provider where possible",
    :skos/scopeNote
@@ -481,7 +485,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-APPA,
-   :lcc-lr/hasTag "APPA",
+   :fibo-fnd-rel-rel/hasTag "APPA",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -494,7 +498,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-ARMS,
-   :lcc-lr/hasTag "ARMS",
+   :fibo-fnd-rel-rel/hasTag "ARMS",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -507,7 +511,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-ATSS,
-   :lcc-lr/hasTag "ATSS",
+   :fibo-fnd-rel-rel/hasTag "ATSS",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -520,7 +524,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-CASP,
-   :lcc-lr/hasTag "CASP",
+   :fibo-fnd-rel-rel/hasTag "CASP",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -533,7 +537,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-CTPS,
-   :lcc-lr/hasTag "CTPS",
+   :fibo-fnd-rel-rel/hasTag "CTPS",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -546,7 +550,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-DCMS,
-   :lcc-lr/hasTag "DCMS",
+   :fibo-fnd-rel-rel/hasTag "DCMS",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -559,7 +563,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-IDQS,
-   :lcc-lr/hasTag "IDQS",
+   :fibo-fnd-rel-rel/hasTag "IDQS",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -572,7 +576,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-MLTF,
-   :lcc-lr/hasTag "MLTF",
+   :fibo-fnd-rel-rel/hasTag "MLTF",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -585,7 +589,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-NSPD,
-   :lcc-lr/hasTag "NSPD",
+   :fibo-fnd-rel-rel/hasTag "NSPD",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -598,7 +602,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-OTFS,
-   :lcc-lr/hasTag "OTFS",
+   :fibo-fnd-rel-rel/hasTag "OTFS",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -611,7 +615,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-OTHR,
-   :lcc-lr/hasTag "OTHR",
+   :fibo-fnd-rel-rel/hasTag "OTHR",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -624,7 +628,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-RMKT,
-   :lcc-lr/hasTag "RMKT",
+   :fibo-fnd-rel-rel/hasTag "RMKT",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -636,7 +640,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-RMOS,
-   :lcc-lr/hasTag "RMOS",
+   :fibo-fnd-rel-rel/hasTag "RMOS",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -649,7 +653,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-SEFS,
-   :lcc-lr/hasTag "SEFS",
+   :fibo-fnd-rel-rel/hasTag "SEFS",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -661,7 +665,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-SINT,
-   :lcc-lr/hasTag "SINT",
+   :fibo-fnd-rel-rel/hasTag "SINT",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -673,7 +677,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketCategoryClassifier-TRFS,
-   :lcc-lr/hasTag "TRFS",
+   :fibo-fnd-rel-rel/hasTag "TRFS",
    :rdf/type [:fibo-fbc-fct-mkt/MarketCategoryClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -696,8 +700,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
    :rdfs/label "market identifier",
-   :rdfs/subClassOf [:lcc-lr/Identifier
-                     {:owl/onProperty :lcc-lr/identifies,
+   :rdfs/subClassOf [:cmns-id/Identifier
+                     {:owl/onProperty :cmns-id/identifies,
                       :owl/someValuesFrom
                       {:owl/unionOf
                        [:fibo-fbc-fct-mkt/CryptoAssetServicesProvider
@@ -731,7 +735,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
    :rdfs/label "market level classifier",
    :rdfs/subClassOf
-   [{:owl/onProperty     :lcc-cr/classifies,
+   [{:owl/onProperty     :cmns-cls/classifies,
      :owl/someValuesFrom {:owl/unionOf
                           [:fibo-fbc-fct-mkt/CryptoAssetServicesProvider
                            :fibo-fbc-fct-mkt/DataReportingServicesProvider
@@ -740,9 +744,9 @@
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
     {:owl/hasValue   :fibo-fbc-fct-mkt/ISO10383-ClassificationScheme,
-     :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+     :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-arr-cls/Classifier],
+    :cmns-cls/Classifier],
    :skos/definition
    "classifier that indicates whether the exchange or data reporting services provider is an operating level or market segment level facility"})
 
@@ -751,7 +755,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketLevelClassifier-OPRT,
-   :lcc-lr/hasTag "OPRT",
+   :fibo-fnd-rel-rel/hasTag "OPRT",
    :rdf/type [:fibo-fbc-fct-mkt/MarketLevelClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -763,7 +767,7 @@
   {:cmns-av/adaptedFrom
    "https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf",
    :db/ident :fibo-fbc-fct-mkt/MarketLevelClassifier-SGMT,
-   :lcc-lr/hasTag "SGMT",
+   :fibo-fnd-rel-rel/hasTag "SGMT",
    :rdf/type [:fibo-fbc-fct-mkt/MarketLevelClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
@@ -783,9 +787,9 @@
    :rdfs/subClassOf
    [:fibo-fbc-fct-mkt/Exchange
     {:owl/hasValue   :fibo-fbc-fct-mkt/MarketLevelClassifier-SGMT,
-     :owl/onProperty :lcc-cr/isClassifiedBy,
+     :owl/onProperty :cmns-cls/isClassifiedBy,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :lcc-cr/isPartOf,
+    {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom :fibo-fbc-fct-mkt/OperatingLevelMarket,
      :rdf/type           :owl/Restriction}],
    :skos/definition
@@ -832,7 +836,7 @@
    :rdfs/label "multilateral trading facility",
    :rdfs/subClassOf [{:owl/hasValue
                       :fibo-fbc-fct-mkt/MarketCategoryClassifier-MLTF,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fct-mkt/AlternativeTradingSystem],
    :skos/definition
@@ -863,10 +867,10 @@
    :rdfs/subClassOf
    [{:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-fct-mkt/OperatingLevelMarketIdentifier,
-     :owl/onProperty :lcc-lr/isIdentifiedBy,
+     :owl/onProperty :cmns-id/isIdentifiedBy,
      :rdf/type       :owl/Restriction}
     {:owl/hasValue   :fibo-fbc-fct-mkt/MarketLevelClassifier-OPRT,
-     :owl/onProperty :lcc-cr/isClassifiedBy,
+     :owl/onProperty :cmns-cls/isClassifiedBy,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-mkt/Exchange],
    :skos/definition
@@ -907,15 +911,15 @@
    ["https://www.financierworldwide.com/organised-trading-facilities-how-they-differ-from-mtfs"],
    :rdfs/subClassOf
    [:fibo-fbc-fct-mkt/AlternativeTradingSystem
+    {:owl/hasValue   :fibo-fbc-fct-mkt/MarketCategoryClassifier-OTFS,
+     :owl/onProperty :cmns-cls/isClassifiedBy,
+     :rdf/type       :owl/Restriction}
     {:owl/allValuesFrom :fibo-fbc-pas-fpas/FinancialServiceProvider,
      :owl/onProperty    :fibo-fnd-rel-rel/isManagedBy,
      :rdf/type          :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-     :rdf/type           :owl/Restriction}
-    {:owl/hasValue   :fibo-fbc-fct-mkt/MarketCategoryClassifier-OTFS,
-     :owl/onProperty :lcc-cr/isClassifiedBy,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "multi-lateral system which is not an RM or an MTF and in which multiple third-party buying and selling interests in bonds, structured finance products, emission allowances or derivatives are able to interact in the system in a way that results in a contract in accordance with the provisions of Title II of MiFID II"})
 
@@ -951,7 +955,7 @@
                  :rdf/value    "recognized market operator"}],
    :rdfs/subClassOf [{:owl/hasValue
                       :fibo-fbc-fct-mkt/MarketCategoryClassifier-RMOS,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fct-mkt/Exchange],
    :skos/definition
@@ -992,14 +996,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
    :rdfs/label "regulated exchange",
-   :rdfs/subClassOf [{:owl/hasValue
-                      :fibo-fbc-fct-mkt/MarketCategoryClassifier-RMKT,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
+   :rdfs/subClassOf [:fibo-fbc-fct-mkt/Exchange
                      {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fct-mkt/Exchange
+                     {:owl/hasValue
+                      :fibo-fbc-fct-mkt/MarketCategoryClassifier-RMKT,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
                       :rdf/type           :owl/Restriction}],
@@ -1020,7 +1024,7 @@
    :rdfs/label "swap execution facility",
    :rdfs/subClassOf [{:owl/hasValue
                       :fibo-fbc-fct-mkt/MarketCategoryClassifier-SEFS,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fct-mkt/Exchange],
    :skos/definition
@@ -1040,11 +1044,11 @@
                  :rdf/value    "systematic internaliser"}
                 {:rdf/language "en-US",
                  :rdf/value    "systematic internalizer"}],
-   :rdfs/subClassOf [{:owl/hasValue
+   :rdfs/subClassOf [:fibo-fbc-fct-mkt/Exchange
+                     {:owl/hasValue
                       :fibo-fbc-fct-mkt/MarketCategoryClassifier-SINT,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-mkt/Exchange],
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "investment firm that, on an organised, frequent, systematic and substantial basis, deals on its own account by executing client orders outside a regulated exchange, MTF or OTF without operating a multilateral system"})
 
@@ -1062,29 +1066,29 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-mkt/operatesInCountry,
                       :owl/someValuesFrom :lcc-cr/Country,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :fibo-fbc-fct-mkt/operatesInMunicipality,
-                      :owl/someValuesFrom :fibo-fnd-plc-loc/Municipality,
-                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fbc-fct-mkt/hasFacilityAcronym,
                       :rdf/type        :owl/Restriction}
+                     :fibo-fnd-plc-fac/Facility
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasFormalName,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-plc-fac/Facility
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifier,
-                      :owl/onProperty :lcc-lr/isIdentifiedBy,
-                      :rdf/type       :owl/Restriction}
+                     {:owl/hasValue
+                      :fibo-fbc-fct-mkt/MarketCategoryClassifier-TRFS,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty :fibo-fbc-fct-mkt/operatesInMunicipality,
+                      :owl/someValuesFrom :fibo-fnd-plc-loc/Municipality,
+                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fbc-pas-fpas/FinancialServiceProvider,
                       :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
-                      :rdf/type :owl/Restriction}
-                     {:owl/hasValue
-                      :fibo-fbc-fct-mkt/MarketCategoryClassifier-TRFS,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
                       :rdf/type :owl/Restriction}],
    :skos/definition
    "facility that provides a mechanism for the reporting of transactions effected otherwise than on an exchange",
@@ -1097,7 +1101,7 @@
    ["https://www.iso20022.org/sites/default/files/2021-12/ISO10383_MIC_Release_2_0_Factsheet.pdf"
     "ISO 10383, Securities and related financial instruments - Codes for exchanges and market identification (MIC), Third edition, version 2.0"],
    :db/ident :fibo-fbc-fct-mkt/UpdatedMICStatus,
-   :lcc-lr/hasTag "UPDATED",
+   :fibo-fnd-rel-rel/hasTag "UPDATED",
    :rdf/type [:fibo-fbc-fct-mkt/MarketIdentifierCodeStatus
               :owl/NamedIndividual],
    :rdfs/isDefinedBy

@@ -11,23 +11,22 @@
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/Designators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"],
+    "https://www.omg.org/spec/Commons/Classifiers/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-arr-arr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-arr-cls"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -44,43 +43,24 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes.rdf version of this ontology was introduced as a part of the initial FIBO FBC RFC and revised due to changes introduced in the FIBO 2.0 RFC."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes.rdf version of this ontology was revised to eliminate circular definitions."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes.rdf version of this ontology was revised to eliminate duplication of concepts in LCC and change the parent class of Classifier to Aspect in Analytics."]})
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes.rdf version of this ontology was revised to eliminate duplication of concepts in LCC and change the parent class of Classifier to Aspect in Analytics."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes.rdf version of this ontology was modified to move the property, 'is conferred on' to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."]})
 
 (def ClassificationScheme
-  "system for allocating classifiers to objects"
-  {:cmns-av/adaptedFrom
-   "ISO/IEC 11179-3 Information technology - Metadata registries (MDR) - Part 3: Registry metamodel and basic attributes, Third edition, 2013-02-15",
-   :cmns-av/explanatoryNote
-   "A classification scheme may be a taxonomy, a network, an ontology, or any other terminological system. Such classification schemes are intended to permit the classification of arbitrary objects into hierarchies, or partial orders, as appropriate. The classification may also be just a list of controlled vocabulary of property words (or terms). The list might be taken from the 'leaf level' of a taxonomy.",
-   :db/ident :fibo-fnd-arr-cls/ClassificationScheme,
+  {:db/ident :fibo-fnd-arr-cls/ClassificationScheme,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-cls/ClassificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
-   :rdfs/label "classification scheme",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/defines,
-                      :owl/someValuesFrom :fibo-fnd-arr-cls/Classifier,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-arr/Scheme],
-   :skos/definition "system for allocating classifiers to objects"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/"})
 
 (def Classifier
-  "standardized classification or delineation for something, per some scheme for such delineation, within a specified context"
-  {:cmns-av/adaptedFrom
-   "ISO/IEC 11179-3 Information technology - Metadata registries (MDR) - Part 3: Registry metamodel and basic attributes, Third edition, 2013-02-15",
-   :db/ident :fibo-fnd-arr-cls/Classifier,
+  {:db/ident :fibo-fnd-arr-cls/Classifier,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-cls/Classifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
-   :rdfs/label "classifier",
-   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-arr-cls/ClassificationScheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minCardinality 0,
-                      :owl/onProperty     :lcc-cr/classifies,
-                      :rdf/type           :owl/Restriction}],
-   :skos/definition
-   "standardized classification or delineation for something, per some scheme for such delineation, within a specified context"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/"})
 
 (def IndustrySectorClassificationScheme
   "system for allocating classifiers to organizations by industry sector"
@@ -89,11 +69,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
    :rdfs/label "industry sector classification scheme",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/defines,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/defines,
                       :owl/someValuesFrom
                       :fibo-fnd-arr-cls/IndustrySectorClassifier,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-cls/ClassificationScheme],
+                     :cmns-cls/ClassificationScheme],
    :skos/definition
    "system for allocating classifiers to organizations by industry sector",
    :skos/example
@@ -108,9 +88,17 @@
    :rdfs/label "industry sector classifier",
    :rdfs/subClassOf [{:owl/onClass
                       :fibo-fnd-arr-cls/IndustrySectorClassificationScheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier],
+                     :cmns-cls/Classifier],
    :skos/definition
    "standardized classification or delineation for an organization, or possibly for a security representing an interest in a given organization, per some scheme for such delineation, by industry"})
+
+(def ^{:private true} ClassificationScheme
+  {:db/ident        :cmns-cls/ClassificationScheme,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/allValuesFrom :cmns-cls/Classifier,
+                      :owl/onProperty    :cmns-dsg/defines,
+                      :rdf/type          :owl/Restriction}
+                     :fibo-fnd-arr-arr/Scheme]})

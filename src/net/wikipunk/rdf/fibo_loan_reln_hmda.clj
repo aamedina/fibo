@@ -14,13 +14,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MortgageLoans/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"],
@@ -28,13 +27,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
     "fibo-fbc-fct-rga"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
-    "fibo-fnd-arr-cls"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-arr-rep"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
     "fibo-fnd-dt-fd"
@@ -53,7 +51,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
     "fibo-loan-reln-mtg"
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -73,11 +70,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
    :rdfs/label "ethnicity",
-   :rdfs/subClassOf [{:owl/onProperty :lcc-cr/classifies,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-cls/classifies,
                       :owl/someValuesFrom
                       :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier],
+                     :cmns-cls/Classifier],
    :skos/definition
    "category based on a cultural factors, including nationality, regional culture, ancestry, and language"})
 
@@ -89,7 +86,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
    :rdfs/label "HMDA covered loan contract",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/isClassifiedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/isClassifiedBy,
                       :owl/someValuesFrom :fibo-loan-reln-hmda/HowSubmitted,
                       :rdf/type           :owl/Restriction}
                      :fibo-loan-reln-mtg/Mortgage],
@@ -103,7 +100,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
    :rdfs/label "HMDA disposition",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "a type of action taken regarding an application for a HMDA covered loan"})
 
@@ -183,7 +180,6 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-rep/isSubmittedTo,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-rep/Report
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/onProperty
                                        :fibo-fnd-pty-rl/isPlayedBy,
@@ -195,6 +191,7 @@
                                        :rdf/type :owl/Restriction},
                       :owl/onProperty :fibo-fnd-arr-rep/isSubmittedBy,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-arr-rep/Report
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasNumberOfEntries,
                       :owl/someValuesFrom :xsd/positiveInteger,
                       :rdf/type           :owl/Restriction}],
@@ -211,7 +208,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
    :rdfs/label "how submitted",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "category indicating whether the applicant or borrower submitted the application for the covered loan directly to the reporting financial institution"})
 
@@ -234,14 +231,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
    :rdfs/label "race",
-   :rdfs/subClassOf [{:owl/onProperty :lcc-cr/classifies,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-cls/classifies,
                       :owl/someValuesFrom
                       :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :skos/broaderTransitive,
                       :owl/someValuesFrom :fibo-loan-reln-hmda/Race,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier],
+                     :cmns-cls/Classifier],
    :skos/definition
    "a category based on a person's physical characteristics, such as bone structure and skin, hair, or eye color"})
 

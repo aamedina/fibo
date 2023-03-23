@@ -1,25 +1,27 @@
 (ns net.wikipunk.rdf.fibo-sec-sec-cls
   "This ontology defines the fundamental concepts for classifying financial instruments, particularly securities, including, but not limited to classification schemes developed by government, regulatory agencies, and industry to classify the issuers of such securities as well as the securities themselves."
-  {:cmns-av/copyright ["Copyright (c) 2016-2023 EDM Council, Inc."
-                       "Copyright (c) 2018-2023 Object Management Group, Inc."],
+  {:cmns-av/copyright ["Copyright (c) 2018-2023 Object Management Group, Inc."
+                       "Copyright (c) 2016-2023 EDM Council, Inc."],
    :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for classifying financial instruments, particularly securities, including, but not limited to classification schemes developed by government, regulatory agencies, and industry to classify the issuers of such securities as well as the securities themselves.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/Designators/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesClassification/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-fi-fi"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
@@ -31,8 +33,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-sec-sec-cls"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -44,7 +44,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
    :rdfs/label "Securities Classification Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was modified to eliminate duplication of concepts in LCC."
+   ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was modified to eliminate duplication of concepts in LCC."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was modified to add an class representing the ISO 10962 CFI standard and an individual for the 2019 version of that standard."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification.rdf version of this ontology was revised to eliminate a reasoning issue with respect to the CFI codes related to making the classification code a code element (which makes it a code that applies to exactly one thing)."
@@ -64,7 +65,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
    :rdfs/label "asset class",
    :rdfs/subClassOf [:fibo-sec-sec-cls/FinancialInstrumentClassifier
-                     {:owl/onProperty     :lcc-cr/classifies,
+                     {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
@@ -81,7 +82,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
    :rdfs/label "classification of financial instruments code scheme",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/defines,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/defines,
                       :owl/someValuesFrom
                       :fibo-sec-sec-cls/FinancialInstrumentClassificationCode,
                       :rdf/type :owl/Restriction}
@@ -100,12 +101,12 @@
    :rdfs/label "financial instrument classification code",
    :rdfs/subClassOf
    [{:owl/onDataRange :xsd/string,
-     :owl/onProperty  :lcc-lr/hasTag,
+     :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
     {:owl/onClass
      :fibo-sec-sec-cls/ClassificationOfFinancialInstrumentsCodeScheme,
-     :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+     :owl/onProperty :cmns-dsg/isDefinedIn,
      :owl/qualifiedCardinality 1,
      :rdf/type :owl/Restriction}
     :fibo-sec-sec-cls/FinancialInstrumentClassifier],
@@ -121,9 +122,9 @@
    :rdfs/label "financial instrument classification scheme",
    :rdfs/subClassOf [{:owl/allValuesFrom
                       :fibo-sec-sec-cls/FinancialInstrumentClassifier,
-                      :owl/onProperty :fibo-fnd-rel-rel/defines,
+                      :owl/onProperty :cmns-dsg/defines,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-cls/ClassificationScheme],
+                     :cmns-cls/ClassificationScheme],
    :skos/definition
    "classification scheme defining a set of classifiers for financial instruments",
    :skos/example
@@ -136,15 +137,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
    :rdfs/label "financial instrument classifier",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/classifies,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass
                       :fibo-sec-sec-cls/FinancialInstrumentClassificationScheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier],
+                     :cmns-cls/Classifier],
    :skos/definition
    "classifier for a financial instrument based on its type and features",
    :skos/example
@@ -167,9 +168,9 @@
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass
                       :fibo-sec-sec-cls/FinancialInstrumentClassifier,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}]})

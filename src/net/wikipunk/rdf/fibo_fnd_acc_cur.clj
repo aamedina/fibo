@@ -13,22 +13,30 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/TextDatatype/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"],
+    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/Designators/"
+    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-qt-qtu"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
     "fibo-fnd-rel-rel"
@@ -38,7 +46,6 @@
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -55,6 +62,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to eliminate duplication with concepts in LCC, dependencies on a couple of ontologies that were unnecessary, eliminate references to external dictionary sites that no longer resolve, clean up ambiguity in definitions, eliminate a redundant property, and add unit price."
     "The FIBO FND 1.0 (https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf) version of this ontology was modified per the additions introduced in the FIBO FBC RFC and related issue resolutions identified in the FIBO FND 1.1 RTF report and https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.1/, including adding support for ISO 4217 currency codes."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to eliminate deprecated elements."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to move the definition of precious metal and the corresponding identifier to this ontology from Products and Services to simplify imports in cases where the broader definitions for commodities are not required and deprecated isTenderIn, given that we have used the property isUsedBy for this purpose in the currency codes themselves."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to add a restriction to indicate the currency on percentage monetary amount, make currency a subclass of unit of measure, and deprecate the notion of monetary measure, which is more about monetary policy and was incorrectly used in a few places, and is out of scope for our current set of use cases."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/ version of this ontology was modified to replace a redundant concept, calculation formula with formula."
@@ -108,19 +116,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "currency",
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasTextualName,
+                      :owl/someValuesFrom :xsd/string,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-acc-cur/hasMinorUnit,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-qt-qtu/MeasurementUnit
-                     {:owl/onProperty     :lcc-lr/hasName,
-                      :owl/someValuesFrom :xsd/string,
+                     {:owl/onProperty     :cmns-cxtdsg/isUsedBy,
+                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasNumericCode,
                       :owl/someValuesFrom :xsd/string,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/isUsedBy,
-                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "medium of exchange value, defined by reference to the geographical location of the monetary authorities responsible for it"})
@@ -134,10 +142,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "currency basket",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-arr/StructuredCollection],
+                     :cmns-col/StructuredCollection],
    :skos/definition
    "selected group of currencies, in which the weighted average is used as a measure of the value or the amount of an obligation",
    :skos/note
@@ -154,18 +162,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "currency identifier",
-   :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-id/identifies,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-id/Identifier
+                     :cmns-cds/CodeElement
+                     {:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :lcc-lr/denotes,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :lcc-lr/identifies,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
-                      :rdf/type           :owl/Restriction}
-                     :lcc-lr/Identifier
-                     :lcc-lr/CodeElement],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition "sequence of characters representing some currency"})
 
 (def ExchangeRate
@@ -218,18 +223,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "funds identifier",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/identifies,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-id/identifies,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Funds,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :lcc-lr/denotes,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/Funds,
-                      :rdf/type           :owl/Restriction}
-                     :lcc-lr/Identifier
                      {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :lcc-lr/CodeElement],
+                     :cmns-id/Identifier
+                     :cmns-cds/CodeElement],
    :skos/definition
    "sequence of characters that can be used to uniquely identify funds"})
 
@@ -316,7 +318,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "precious metal",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasName,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasTextualName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
                      {:owl/onDataRange :xsd/string,
@@ -333,18 +335,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "precious metal identifier",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/identifies,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/PreciousMetal,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :lcc-lr/denotes,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-id/identifies,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/PreciousMetal,
                       :rdf/type           :owl/Restriction}
                      {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :lcc-lr/Identifier
-                     :lcc-lr/CodeElement],
+                     :cmns-id/Identifier
+                     :cmns-cds/CodeElement],
    :skos/definition
    "sequence of characters uniquely identifying the precious metal in some context"})
 
@@ -377,18 +376,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "unit of account identifier",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/identifies,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/UnitOfAccount,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :lcc-lr/denotes,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-id/identifies,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/UnitOfAccount,
                       :rdf/type           :owl/Restriction}
                      {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :lcc-lr/Identifier
-                     :lcc-lr/CodeElement],
+                     :cmns-id/Identifier
+                     :cmns-cds/CodeElement],
    :skos/definition
    "sequence of characters that can be used to uniquely identify a nominal monetary unit"})
 
@@ -464,6 +460,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "has funds type",
    :rdfs/range :xsd/string,
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "indicates the type of funds, such as next day for US funds"})
 
@@ -475,6 +472,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "has minor unit",
    :rdfs/range :xsd/string,
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "relates a code for the minor unit of currency to the currency or fund",
    :skos/scopeNote
@@ -488,7 +486,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "has monetary amount",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasQuantityValue,
    :skos/definition
    "specifies a value for something in terms of an amount of money and the currency in which it is denoted"})
 
@@ -516,6 +514,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "has numeric code",
    :rdfs/range :xsd/string,
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "relates a numeric code to something, such as a currency or fund",
    :skos/scopeNote
@@ -529,7 +528,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "has price",
    :rdfs/range :fibo-fnd-acc-cur/Price,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasQuantityValue,
    :skos/definition
    "indicates the value of something expressed as an amount of money or goods"})
 
@@ -560,7 +559,7 @@
 (def isTenderIn
   {:db/ident :fibo-fnd-acc-cur/isTenderIn,
    :owl/deprecated true,
-   :owl/equivalentProperty :lcc-cr/isUsedBy,
+   :owl/equivalentProperty :cmns-cxtdsg/isUsedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"})

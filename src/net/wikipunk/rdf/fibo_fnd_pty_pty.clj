@@ -10,12 +10,14 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
+    "https://www.omg.org/spec/Commons/Designators/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"],
@@ -23,6 +25,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-aap-agt"
     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
@@ -40,7 +46,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -62,6 +67,7 @@
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20160201/Parties/Parties.rdf version of this ontology was revised as a part of the FIBO 2.0 RFC to introduce disjointness axioms to aid users in understanding."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of this ontology was revised to make hasRelatedPartyInRole symmetric and move hasMailingAddress from people to this ontology."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of this ontology was extended to add the concepts of tax identifier and tax identification scheme."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties.rdf version of this ontology was revised to add the two remaining property chains to complete the lattice, from independent party to thing via the situation, to simplify the class hierarchy for improved understanding, data mapping and alignment, and to add the notion of a contextual name (i.e., a name for someone, some place or something that applies for some period of time in some context)."
     "The http://www.omg.org/spec/FIBO/Foundations/20130601/Roles/Parties.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations.\n\t(6) to combine Parties, Party Roles, and Roles in a single, new, Parties module, combine Parties and Party Roles into a single ontology, and add an inverse for the hasParty property."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/Parties/Parties.rdf version of the ontology was was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/."
@@ -81,28 +87,12 @@
    "Examples include owner, controlling party, beneficiary, guarantor, partner in a partnership, shareholder, etc."})
 
 (def ContextualName
-  "designation by which someone, some place, or something is known in some context"
-  {:cmns-av/explanatoryNote
-   "Names of people, places, and organizations often change over time, and may be used in a particular context, such as a DBA name for a business or legal name for a person.",
-   :cmns-av/usageNote
-   ["Names for people may be considered to be personally identifying information (PII), especially when other details are also available. Specifying names as string values attached directly to an individual makes name reconciliation and management, including from a privacy perspective, more challenging."
-    "This class is designed to be extended to include provenance details regarding the source for a particular name as well as links to the various contexts in which it is used."],
-   :db/ident :fibo-fnd-pty-pty/ContextualName,
+  {:db/ident :fibo-fnd-pty-pty/ContextualName,
+   :owl/deprecated true,
+   :owl/equivalentClass :cmns-cxtdsg/ContextualName,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-   :rdfs/label "contextual name",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-aap-agt/isStructuredNameOf,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-aap-agt/Name
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-dt-fd/DatePeriod,
-                      :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
-                      :rdf/type       :owl/Restriction}],
-   :skos/definition
-   "designation by which someone, some place, or something is known in some context"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/"})
 
 (def IndependentParty
   "any person or organization"
@@ -155,11 +145,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "party-in-role identification scheme",
-   :rdfs/subClassOf [{:owl/onProperty :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasMember,
                       :owl/someValuesFrom
                       :fibo-fnd-pty-pty/PartyInRoleIdentifier,
                       :rdf/type :owl/Restriction}
-                     :lcc-lr/IdentificationScheme],
+                     :cmns-id/IdentificationScheme],
    :skos/definition "system for allocating identifiers to parties"})
 
 (def PartyInRoleIdentifier
@@ -171,18 +161,18 @@
    :rdfs/label "party-in-role identifier",
    :rdfs/subClassOf
    [{:owl/onClass    :fibo-fnd-pty-pty/PartyInRoleIdentificationScheme,
-     :owl/onProperty :lcc-lr/isMemberOf,
+     :owl/onProperty :cmns-dsg/isDefinedIn,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
     {:owl/onClass    :fibo-fnd-pty-pty/PartyInRoleIdentificationScheme,
-     :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+     :owl/onProperty :cmns-col/isMemberOf,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
     {:owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
-     :owl/onProperty :lcc-lr/identifies,
+     :owl/onProperty :cmns-id/identifies,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    :lcc-lr/Identifier],
+    :cmns-id/Identifier],
    :skos/definition
    "sequence of characters, capable of uniquely identifying a party based on a specific role that they play in some context"})
 
@@ -220,7 +210,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "tax identification scheme",
-   :rdfs/subClassOf :lcc-lr/IdentificationScheme,
+   :rdfs/subClassOf :cmns-id/IdentificationScheme,
    :skos/definition
    "identification scheme used to identify taxpayers in some jurisdiction"})
 
@@ -236,14 +226,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "tax identifier",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-pty-pty/TaxIdentificationScheme,
-                      :owl/onProperty :lcc-lr/isMemberOf,
+                      :owl/onProperty :cmns-col/isMemberOf,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :lcc-lr/identifies,
+                      :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/Identifier],
+                     :cmns-id/Identifier],
    :skos/definition
    "identifier assigned to a taxpayer that enables compulsory financial charges and other levies to be imposed on the taxpayer by a governmental organization in order to fund government spending and various public expenditures"})
 
@@ -396,7 +386,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "has party",
    :rdfs/range :fibo-fnd-pty-pty/IndependentParty,
-   :rdfs/subPropertyOf :lcc-lr/has,
    :skos/definition
    "identifies an independent party associated with an agreement, contract, policy, regulation, or other business arrangement"})
 
@@ -408,7 +397,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "has party in role",
    :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasThingInRole,
    :skos/definition
    "identifies a party acting in a specific role as related to the particular agreement, contract, policy, regulation, or other business relationship"})
 
@@ -423,7 +412,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "has related party-in-role",
    :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
    :skos/definition
    "relates a party acting in a specific role directly to another party acting in the same or another role"})
 
@@ -435,7 +424,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "has thing in role",
    :rdfs/range :fibo-fnd-pty-rl/ThingInRole,
-   :rdfs/subPropertyOf :lcc-lr/has,
    :skos/definition
    "identifies something acting in a recipient or target role as related to the particular agreement, contract, policy, regulation, situation, or other business relationship"})
 
@@ -556,6 +544,15 @@
    :rdfs/label "undergoes",
    :rdfs/range :fibo-fnd-pty-pty/Situation,
    :skos/definition "indicates a situation that the undergoer experiences"})
+
+(def ^{:private true} ContextualName
+  {:db/ident        :cmns-cxtdsg/ContextualName,
+   :rdf/type        :owl/Class,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :cmns-dsg/isNameOf,
+                      :rdf/type       :owl/Restriction}
+                     :cmns-dsg/Name]})
 
 (def ^{:private true} holds
   {:db/ident :fibo-fnd-rel-rel/holds,

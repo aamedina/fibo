@@ -72,14 +72,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "arbitrage synthetic c d o"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-syn/issues,
-                      :owl/someValuesFrom :fibo-sec-dbt-syn/SyntheticCDOTranche,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-syn/assetsManagedBy,
+                      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-syn/SyntheticCDO
-                     :fibo-sec-dbt-cdo/ArbitrageCDO
-                     {:owl/onProperty     :fibo-sec-dbt-syn/assetsManagedBy,
-                      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty     :fibo-sec-dbt-syn/issues,
+                      :owl/someValuesFrom :fibo-sec-dbt-syn/SyntheticCDOTranche,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-cdo/ArbitrageCDO],
    :skos/definition
    {:rdf/language "en",
     :rdf/value

@@ -6,31 +6,31 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
    :dcterms/abstract
    "This ontology provides a basic set of definitions related to pricing, yield, and spread that are extended in other instrument-specific ontologies.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-pub"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
@@ -44,8 +44,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-dt-fd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
     "fibo-fnd-gao-obj"
@@ -58,8 +56,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -73,6 +69,7 @@
                 :rdf/value    "Instrument Pricing Ontology"},
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to address text formatting issues uncovered by hygiene testing."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to add trading day and trading session, to address ambiguity in some definitions, to add adjusted price and to create a more general hasLotSize property that can be used in various contexts."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to reflect the move of dated collection from arrangements to financial dates."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing.rdf version of this ontology was modified to eliminate a redundant restriction on CollectionOfSecurityPrices, better integrate pricing methods, loosen the domain restriction on hasPricingSource and add dealer to the set of possible sources for prices."
@@ -212,7 +209,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "collection of security prices"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-fd/DatedStructuredCollection],
@@ -229,10 +226,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "composite market"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-fct-mkt/Exchange,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-arr/StructuredCollection],
+                     :cmns-col/StructuredCollection],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -346,10 +343,10 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "mid price"},
    :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
-                     :fibo-fnd-utl-alx/ArithmeticMean
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fbc-fi-ip/OfferPrice,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/ArithmeticMean
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
                       :owl/qualifiedCardinality 1,
@@ -434,16 +431,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "price analytic"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom
+                      :fibo-fbc-fi-ip/CollectionOfSecurityPrices,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-rel-rel/appliesTo,
-                      :owl/someValuesFrom
-                      :fibo-fbc-fi-ip/CollectionOfSecurityPrices,
-                      :rdf/type :owl/Restriction}
                      :fibo-fnd-utl-alx/ScopedMeasure],
    :skos/definition {:rdf/language "en",
                      :rdf/value
@@ -577,14 +574,14 @@
                       :owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasClosingDateTime,
                       :rdf/type        :owl/Restriction}
-                     {:owl/hasValue   :fibo-fnd-dt-fd/Day,
-                      :owl/onProperty :fibo-fnd-dt-fd/hasDuration,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-dt-fd/ExplicitDatePeriod
                      {:owl/onDataRange :fibo-fnd-dt-fd/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasOpeningDateTime,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-dt-fd/ExplicitDatePeriod],
+                     {:owl/hasValue   :fibo-fnd-dt-fd/Day,
+                      :owl/onProperty :fibo-fnd-dt-fd/hasDuration,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "time span that a particular trading venue is open"}})
@@ -664,17 +661,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "yield"},
-   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
                       :rdf/type :owl/Restriction}
+                     :fibo-fnd-utl-alx/Percentage
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Percentage],
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition {:rdf/language "en",
                      :rdf/value "return on the investor's capital investment"}})
 
@@ -868,5 +865,5 @@
    :rdf/type        :owl/Class,
    :rdfs/subClassOf {:owl/minQualifiedCardinality 0,
                      :owl/onClass    :fibo-fbc-fi-ip/PricingModel,
-                     :owl/onProperty :lcc-cr/uses,
+                     :owl/onProperty :cmns-cxtdsg/uses,
                      :rdf/type       :owl/Restriction}})

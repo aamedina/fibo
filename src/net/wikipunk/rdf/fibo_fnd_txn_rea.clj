@@ -459,7 +459,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "undertaking"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-txn-rea/isMadeAsPartOf,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractParty,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-txn-rea/isMadeAsPartOf,
                       :owl/someValuesFrom :fibo-fnd-agr-agr/Agreement,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-txn-rea/isUndertakingTo,
@@ -468,9 +471,6 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-txn-rea/givesRiseTo,
                       :owl/someValuesFrom :fibo-fnd-agr-agr/MutualCommitment,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractParty,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-txn-rea/bestows,
                       :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentRight,

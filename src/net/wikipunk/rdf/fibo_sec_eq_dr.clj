@@ -9,9 +9,7 @@
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
@@ -20,6 +18,8 @@
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
+    "https://www.omg.org/spec/Commons/Designators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesClassification/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/"],
@@ -27,6 +27,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/DepositaryReceipts/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-easj"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
@@ -40,8 +42,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
     "fibo-fbc-fi-fi"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-sec-dbt-dbti"
@@ -54,7 +54,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
     "fibo-sec-sec-rst"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -71,6 +70,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts.rdf version of this ontology was modified to expand the definition of a depositary receipt to cover a broader range of securities."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts.rdf version of this ontology was modified to address text formatting hygiene issues."
     "The https://spec.edmcouncil.org/fibo/ontology/Equities/DepositaryReceipts.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts.rdf version of this ontology was modified to move the property, 'is conferred on' to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts.rdf version of this ontology was modified to add the concept of a Chinese depositary receipt."]})
 
 (def AmericanDepositaryReceipt
@@ -90,12 +90,12 @@
    :rdfs/subClassOf [{:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
                       :rdf/type       :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass
                       :fibo-sec-eq-dr/AmericanDepositaryReceiptLevel,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
-                      :rdf/type :owl/Restriction}],
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type :owl/Restriction}
+                     :fibo-sec-eq-dr/DepositaryReceipt],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -116,11 +116,11 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "American depositary receipt level"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :lcc-cr/classifies,
-     :owl/someValuesFrom :fibo-sec-eq-dr/AmericanDepositaryReceipt,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
+   [{:owl/onProperty     :cmns-dsg/isDefinedIn,
      :owl/someValuesFrom :fibo-sec-eq-dr/AmericanDepositaryReceiptLevelScheme,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-cls/classifies,
+     :owl/someValuesFrom :fibo-sec-eq-dr/AmericanDepositaryReceipt,
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-cls/FinancialInstrumentClassifier],
    :skos/definition
@@ -138,7 +138,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "American depositary receipt level scheme"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/defines,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/defines,
                       :owl/someValuesFrom
                       :fibo-sec-eq-dr/AmericanDepositaryReceiptLevel,
                       :rdf/type :owl/Restriction}
@@ -196,10 +196,10 @@
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fbc-fi-fi/Security
                      {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -513,7 +513,7 @@
                 :rdf/value    "unsponsored depositary receipt"},
    :rdfs/subClassOf [{:owl/hasValue
                       :fibo-sec-eq-dr/LevelIAmericanDepositaryReceipt,
-                      :owl/onProperty :lcc-cr/isClassifiedBy,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-eq-dr/AmericanDepositaryReceipt],
    :skos/definition
@@ -561,7 +561,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has traded security"},
    :rdfs/range :fibo-fbc-fi-fi/Security,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/represents,
+   :rdfs/subPropertyOf :cmns-dsg/denotes,
    :skos/definition
    {:rdf/language "en",
     :rdf/value

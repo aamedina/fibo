@@ -6,7 +6,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities/",
    :dcterms/abstract
    "This ontology extends the Business Registries ontology to define commonly referenced international registration authorities and related registry details, where the multi-national responsibilities for registering and/or managing various identifiers needed in banking applications occur, such as SWIFT. These individuals and in some cases, such as registry entries, are managed independently to reduce the import footprint for applications that do not require them, in other words, to support modularity needs of FIBO users.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
@@ -21,17 +21,20 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"],
+    "https://www.omg.org/spec/Commons/Identifiers/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-ge"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -67,7 +70,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-3166-1"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -79,7 +81,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities/",
    :rdfs/label "International Registries and Authorities Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+   ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities.rdf version of this ontology was revised to address text formatting issues uncovered via hygiene testing."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities.rdf version of this ontology was revised to add details for the Global LEI Foundation and fix spelling errors."]})
 
@@ -161,7 +164,8 @@
 
 (def BankForInternationalSettlementsLegalEntityIdentifierRegistryEntry
   "Global LEI Index registry entry for Bank for International Settlements (BIS)"
-  {:db/ident
+  {:cmns-col/comprises :gleif-L1-data/L-UXIATLMNPCXXT5KR1S08-LEI,
+   :db/ident
    :fibo-fbc-fct-ireg/BankForInternationalSettlementsLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2012-06-06T15:55:00.000-00:00",
@@ -171,8 +175,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-06-25T14:42:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-UXIATLMNPCXXT5KR1S08-LEI",
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
@@ -192,12 +194,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities/",
    :rdfs/label "business identifier code data record",
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-fbc-fct-ireg/BusinessIdentifierCodeRegistry,
-     :owl/onProperty :fibo-fnd-rel-rel/isIncludedIn,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   [{:owl/onProperty     :cmns-col/comprises,
      :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCode,
      :rdf/type           :owl/Restriction}
+    {:owl/hasValue   :fibo-fbc-fct-ireg/BusinessIdentifierCodeRegistry,
+     :owl/onProperty :cmns-col/isIncludedIn,
+     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-breg/isSelfMaintained,
      :owl/someValuesFrom :xsd/string,
      :rdf/type           :owl/Restriction}
@@ -239,7 +241,8 @@
 
 (def GLEIFLegalEntityIdentifierRegistryEntry
   "Global LEI Index registry entry for Global Legal Entity Identifier Foundation (GLEIF)"
-  {:db/ident :fibo-fbc-fct-ireg/GLEIFLegalEntityIdentifierRegistryEntry,
+  {:cmns-col/comprises :gleif-L1-data/L-506700GE1G29325QX363-LEI,
+   :db/ident :fibo-fbc-fct-ireg/GLEIFLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2018-03-16T05:13:33.000-00:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
@@ -248,8 +251,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-03-15T23:00:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-506700GE1G29325QX363-LEI",
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -378,20 +379,20 @@
    :rdfs/label "market identifier code registry entry",
    :rdfs/subClassOf
    [{:owl/hasValue   :fibo-fbc-fct-ireg/MarketIdentifierCodeRegistry,
-     :owl/onProperty :fibo-fnd-rel-rel/isIncludedIn,
-     :rdf/type       :owl/Restriction}
-    {:owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifierCodeStatus,
-     :owl/onProperty :fibo-fbc-fct-mkt/hasMarketIdentifierCodeStatus,
-     :owl/qualifiedCardinality 1,
+     :owl/onProperty :cmns-col/isIncludedIn,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-ra/RegistryEntry
     {:owl/maxQualifiedCardinality 1,
      :owl/onDataRange :xsd/string,
      :owl/onProperty  :fibo-fbc-fct-breg/hasRegistrationRevisionDate,
      :rdf/type        :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+    {:owl/onProperty     :cmns-col/comprises,
      :owl/someValuesFrom :fibo-fbc-fct-mkt/MarketIdentifier,
      :rdf/type           :owl/Restriction}
+    {:owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifierCodeStatus,
+     :owl/onProperty :fibo-fbc-fct-mkt/hasMarketIdentifierCodeStatus,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
     {:owl/onDataRange :xsd/string,
      :owl/onProperty  :fibo-fbc-fct-breg/hasInitialRegistrationDate,
      :owl/qualifiedCardinality 1,
@@ -401,7 +402,8 @@
 
 (def SWIFTLegalEntityIdentifierRegistryEntry
   "Global LEI Index registry entry for the Society for Worldwide Interbank Financial Telecommunication (SWIFT)"
-  {:db/ident :fibo-fbc-fct-ireg/SWIFTLegalEntityIdentifierRegistryEntry,
+  {:cmns-col/comprises :gleif-L1-data/L-HB7FFAZI0OMZ8PP8OE26-LEI,
+   :db/ident :fibo-fbc-fct-ireg/SWIFTLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2012-06-06T15:54:00.000-00:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
@@ -410,8 +412,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-01-20T08:21:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-HB7FFAZI0OMZ8PP8OE26-LEI",
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -455,3 +455,39 @@
    "Society for Worldwide Interbank Financial Telecommunication address",
    :skos/definition
    "corporate address for the Society for Worldwide Interbank Financial Telecommunication (SWIFT)"})
+
+(def ^{:private true} L-506700GE1G29325QX363-LEI
+  "identifier and link to the official legal entity identifier registry entry for the Global Legal Entity Identifier Foundation as published in the Global LEI Index"
+  {:cmns-id/identifies :fibo-fbc-fct-ireg/GlobalLegalEntityIdentifierFoundation,
+   :db/ident :gleif-L1-data/L-506700GE1G29325QX363-LEI,
+   :fibo-fbc-fct-ra/isRegisteredIn :fibo-fbc-fct-ireg/GlobalLEIIndex,
+   :fibo-fnd-rel-rel/hasTag "506700GE1G29325QX363",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label
+   "Global Legal Entity Identifier Foundation legal entity identifier",
+   :skos/definition
+   "identifier and link to the official legal entity identifier registry entry for the Global Legal Entity Identifier Foundation as published in the Global LEI Index"})
+
+(def ^{:private true} L-HB7FFAZI0OMZ8PP8OE26-LEI
+  "identifier and link to the official legal entity identifier registry entry for the Society for Worldwide Interbank Financial Telecommunication (SWIFT)"
+  {:cmns-id/identifies
+   :fibo-fbc-fct-ireg/SocietyForWorldwideInterbankFinancialTelecommunication,
+   :db/ident :gleif-L1-data/L-HB7FFAZI0OMZ8PP8OE26-LEI,
+   :fibo-fbc-fct-ra/isRegisteredIn :fibo-fbc-fct-ireg/GlobalLEIIndex,
+   :fibo-fnd-rel-rel/hasTag "HB7FFAZI0OMZ8PP8OE26",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label
+   "Society for Worldwide Interbank Financial Telecommunication (SWIFT) legal entity identifier",
+   :skos/definition
+   "identifier and link to the official legal entity identifier registry entry for the Society for Worldwide Interbank Financial Telecommunication (SWIFT)"})
+
+(def ^{:private true} L-UXIATLMNPCXXT5KR1S08-LEI
+  "identifier and link to the official legal entity identifier registry entry for the Bank for International Settlements"
+  {:cmns-id/identifies :fibo-fbc-fct-ireg/BankForInternationalSettlements,
+   :db/ident :gleif-L1-data/L-UXIATLMNPCXXT5KR1S08-LEI,
+   :fibo-fbc-fct-ra/isRegisteredIn :fibo-fbc-fct-ireg/GlobalLEIIndex,
+   :fibo-fnd-rel-rel/hasTag "UXIATLMNPCXXT5KR1S08",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label "Bank for International Settlements legal entity identifier",
+   :skos/definition
+   "identifier and link to the official legal entity identifier registry entry for the Bank for International Settlements"})

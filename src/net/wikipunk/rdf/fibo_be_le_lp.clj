@@ -9,7 +9,8 @@
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
+   ["https://www.omg.org/spec/Commons/ContextualDesignators/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
@@ -27,6 +28,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-lp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
@@ -65,7 +67,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "Legal Persons Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of this ontology was modified to augment the definition of a contract party to be a legal person."
+   ["The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of the ontology was modified to move the property, 'is conferred on' from Relations to the Legal Capacity ontology."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of this ontology was modified to augment the definition of a contract party to be a legal person."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of this ontology was modified to fix spelling errors."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of this ontology was modified to address text formatting hygiene issues."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of this ontology was modified to eliminate deprecated elements."
@@ -113,7 +116,7 @@
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-be-le-lp/BusinessEntity,
-                      :owl/onProperty :fibo-fnd-rel-rel/appliesTo,
+                      :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-law-lcap/License],
@@ -148,11 +151,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "legal entity",
-   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+   :rdfs/subClassOf [:fibo-fnd-org-fm/FormalOrganization
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-org-fm/FormalOrganization
                      :fibo-be-le-lp/LegalPerson],
    :skos/definition
    "legal person that is a partnership, corporation, or other organization having the capacity to negotiate contracts, assume financial obligations, and pay off debts, organized under the laws of some jurisdiction",
@@ -216,7 +219,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "power of attorney",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/isConferredOn,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :owl/someValuesFrom
                       :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :rdf/type :owl/Restriction}

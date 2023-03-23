@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-der-drc-ff
   "This ontology defines concepts for derivative contracts, including forwards and futures, representing a commitment to sell or purchase the underlier at a defined price at a given time in the future."
-  {:cmns-av/copyright ["Copyright (c) 2015-2023 Object Management Group, Inc."
-                       "Copyright (c) 2015-2023 EDM Council, Inc."],
+  {:cmns-av/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
+                       "Copyright (c) 2015-2023 Object Management Group, Inc."],
    :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :dcterms/abstract
@@ -9,36 +9,37 @@
    :dcterms/license "http://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Swaps/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/TradedShortTermDebt/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/TradedShortTermDebt/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/BasketIndices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesListings/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/DerivativesBasics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Options/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Swaps/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesListings/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/BasketIndices/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Options/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/DerivativesBasics/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/FuturesAndForwards/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-pub"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
@@ -70,8 +71,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
     "fibo-fnd-qt-qtu"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-ind-ei-ei"
@@ -102,11 +101,12 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Futures and Forwards Ontology"},
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+   ["The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards.rdf version of this ontology was modified to eliminate references to hasContractSize, clean up unnecessary restrictions on Future and Forward, and eliminate the redundant listing class."
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, and to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards.rdf version of this ontology was modified to move designated contract market to the markets ontology in FBC and revise the definition of a CurrencyFuture to eliminate an unnecessary superclass and restriction due to the release of CurrencyContracts and to revise the definition of a dividend future to reference the listed share that it tracks rather than the dividend itself."
-    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards.rdf version of this ontology was modified to eliminate references to hasContractSize, clean up unnecessary restrictions on Future and Forward, and eliminate the redundant listing class."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards.rdf version of this ontology was modified to better integrate adjustment method."
-    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards.rdf version of this ontology was modified to incorporate the concepts that were originally in a separate, very small equity forwards ontology."]})
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards.rdf version of this ontology was modified to incorporate the concepts that were originally in a separate, very small equity forwards ontology."
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."]})
 
 (def BasketFuture
   "futures contract whose underlying asset is a basket of securities and/or indices"
@@ -120,7 +120,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "basket future"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-sec-sec-bsk/MixedBasket,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-ff/FinancialFuture],
@@ -137,7 +137,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "bond future"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-ff/DebtInstrumentFuture],
@@ -179,7 +179,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "debt instrument future"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/DebtInstrument,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-sbd-sbd/DebtInstrumentDerivative
@@ -215,7 +215,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "dividend future"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-sec-eq-eq/ListedShare,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-sbd-sbd/EquityDerivative
@@ -238,7 +238,14 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "equity forward"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   [{:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
+     :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-ff/hasDividendAdjustmentPeriod,
+     :owl/someValuesFrom :fibo-der-drc-ff/DividendAdjustmentPeriod,
+     :rdf/type           :owl/Restriction}
+    :fibo-der-drc-ff/Forward
+    {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom {:owl/unionOf [:fibo-ind-mkt-bas/BasketOfEquities
                                         :fibo-sec-eq-eq/ListedShare
                                         :fibo-ind-mkt-bas/EquityIndex
@@ -248,13 +255,6 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-der-drc-ff/hasMethodOfAdjustment,
      :owl/someValuesFrom :fibo-der-drc-ff/ForwardContractAdjustmentMethod,
-     :rdf/type           :owl/Restriction}
-    :fibo-der-drc-ff/Forward
-    {:owl/onProperty     :fibo-der-drc-ff/hasDividendAdjustmentPeriod,
-     :owl/someValuesFrom :fibo-der-drc-ff/DividendAdjustmentPeriod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
-     :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
@@ -273,7 +273,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "equity future"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-sec-eq-eq/ListedShare,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-sbd-sbd/EquityDerivative
@@ -352,7 +352,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "future on future"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Future,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-ff/FinancialFuture],
@@ -373,7 +373,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "future on option"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-ff/FinancialFuture],
@@ -394,7 +394,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "future on swap"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-der-drc-swp/Swap,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-ff/FinancialFuture],
@@ -419,7 +419,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "index future"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-ind-ei-ei/EconomicIndicator
                                             :fibo-ind-mkt-bas/ReferenceIndex],
@@ -447,7 +447,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "interest rate future"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-fbc-fi-fi/CashInstrument
                                      :fibo-sec-dbt-dbti/FixedIncomeSecurity],
@@ -467,7 +467,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "money market future"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom
                       :fibo-sec-dbt-tstd/MoneyMarketInstrument,
                       :rdf/type :owl/Restriction}
@@ -489,7 +489,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "standardized futures listing terms"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-sec-lst/Listing,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-be-fct-pub/hasPublisher,
@@ -515,7 +515,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "standardized futures terms"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Future,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-ra/specifies,

@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-fnd-plc-uspsai
   "This ontology augments the U.S. Postal Service Address ontology with individuals for various street suffixes, military and U.S. Department of State specific individuals, and preferred designations for state and territory codes."
-  {:cmns-av/copyright ["Copyright (c) 2019-2022 EDM Council, Inc."
-                       "Copyright (c) 2019-2022 Object Management Group, Inc."],
+  {:cmns-av/copyright ["Copyright (c) 2019-2023 EDM Council, Inc."
+                       "Copyright (c) 2019-2023 Object Management Group, Inc."],
    :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
    :dcterms/abstract
@@ -16,18 +16,28 @@
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"],
+    "https://www.omg.org/spec/Commons/Designators/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
+    "https://www.omg.org/spec/Commons/Classifiers/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-plc-adr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
     "fibo-fnd-plc-uspsai"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-3166-1"
@@ -37,7 +47,6 @@
     "lcc-3166-2-us"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -51,17 +60,18 @@
    :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"
                   "https://about.usps.com/who/profile/"],
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals.rdf version of this ontology was revised to update a dead link."
+   ["The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals.rdf version of this ontology was revised to update a dead link."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def AA
   "US-specific code for the state designation for Armed Forces Americas, excluding Canada"
-  {:db/ident :fibo-fnd-plc-uspsai/AA,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :fibo-fnd-plc-uspsai/ArmedForcesAmericas,
+   :cmns-id/identifies :fibo-fnd-plc-uspsai/ArmedForcesAmericas,
+   :db/ident :fibo-fnd-plc-uspsai/AA,
+   :fibo-fnd-rel-rel/hasTag "AA",
    :fibo-fnd-utl-av/preferredDesignation "AA",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :fibo-fnd-plc-uspsai/ArmedForcesAmericas,
-   :lcc-lr/hasTag "AA",
-   :lcc-lr/identifies :fibo-fnd-plc-uspsai/ArmedForcesAmericas,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -71,12 +81,12 @@
 
 (def AB
   "Canadian and US-specific code for the designation for Alberta"
-  {:db/ident :fibo-fnd-plc-uspsai/AB,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
+   :cmns-dsg/denotes :lcc-3166-2-ca/Alberta,
+   :cmns-id/identifies :lcc-3166-2-ca/Alberta,
+   :db/ident :fibo-fnd-plc-uspsai/AB,
+   :fibo-fnd-rel-rel/hasTag "AB",
    :fibo-fnd-utl-av/preferredDesignation "AB",
-   :lcc-cr/isUsedBy [:lcc-3166-1/Canada :lcc-3166-1/UnitedStatesOfAmerica],
-   :lcc-lr/denotes :lcc-3166-2-ca/Alberta,
-   :lcc-lr/hasTag "AB",
-   :lcc-lr/identifies :lcc-3166-2-ca/Alberta,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -86,12 +96,12 @@
 
 (def AE
   "US-specific code for the state designation for Armed Forces Europe, the Middle East, and Canada"
-  {:db/ident :fibo-fnd-plc-uspsai/AE,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :fibo-fnd-plc-uspsai/ArmedForcesEurope,
+   :cmns-id/identifies :fibo-fnd-plc-uspsai/ArmedForcesEurope,
+   :db/ident :fibo-fnd-plc-uspsai/AE,
+   :fibo-fnd-rel-rel/hasTag "AE",
    :fibo-fnd-utl-av/preferredDesignation "AE",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :fibo-fnd-plc-uspsai/ArmedForcesEurope,
-   :lcc-lr/hasTag "AE",
-   :lcc-lr/identifies :fibo-fnd-plc-uspsai/ArmedForcesEurope,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -101,12 +111,12 @@
 
 (def AK
   "US-specific code for the designation for Alaska"
-  {:db/ident :fibo-fnd-plc-uspsai/AK,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Alaska,
+   :cmns-id/identifies :lcc-3166-2-us/Alaska,
+   :db/ident :fibo-fnd-plc-uspsai/AK,
+   :fibo-fnd-rel-rel/hasTag "AK",
    :fibo-fnd-utl-av/preferredDesignation "AK",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Alaska,
-   :lcc-lr/hasTag "AK",
-   :lcc-lr/identifies :lcc-3166-2-us/Alaska,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -115,12 +125,12 @@
 
 (def AL
   "US-specific code for the designation for Alabama"
-  {:db/ident :fibo-fnd-plc-uspsai/AL,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Alabama,
+   :cmns-id/identifies :lcc-3166-2-us/Alabama,
+   :db/ident :fibo-fnd-plc-uspsai/AL,
+   :fibo-fnd-rel-rel/hasTag "AL",
    :fibo-fnd-utl-av/preferredDesignation "AL",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Alabama,
-   :lcc-lr/hasTag "AL",
-   :lcc-lr/identifies :lcc-3166-2-us/Alabama,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -129,12 +139,12 @@
 
 (def AP
   "US-specific code for the state designation for Armed Forces Pacific"
-  {:db/ident :fibo-fnd-plc-uspsai/AP,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :fibo-fnd-plc-uspsai/ArmedForcesPacific,
+   :cmns-id/identifies :fibo-fnd-plc-uspsai/ArmedForcesPacific,
+   :db/ident :fibo-fnd-plc-uspsai/AP,
+   :fibo-fnd-rel-rel/hasTag "AP",
    :fibo-fnd-utl-av/preferredDesignation "AP",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :fibo-fnd-plc-uspsai/ArmedForcesPacific,
-   :lcc-lr/hasTag "AP",
-   :lcc-lr/identifies :fibo-fnd-plc-uspsai/ArmedForcesPacific,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -144,12 +154,12 @@
 
 (def AR
   "US-specific code for the designation for Arkansas"
-  {:db/ident :fibo-fnd-plc-uspsai/AR,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Arkansas,
+   :cmns-id/identifies :lcc-3166-2-us/Arkansas,
+   :db/ident :fibo-fnd-plc-uspsai/AR,
+   :fibo-fnd-rel-rel/hasTag "AR",
    :fibo-fnd-utl-av/preferredDesignation "AR",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Arkansas,
-   :lcc-lr/hasTag "AR",
-   :lcc-lr/identifies :lcc-3166-2-us/Arkansas,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -158,12 +168,12 @@
 
 (def AS
   "US-specific code for the designation for American Samoa"
-  {:db/ident :fibo-fnd-plc-uspsai/AS,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/AmericanSamoa,
+   :cmns-id/identifies :lcc-3166-2-us/AmericanSamoa,
+   :db/ident :fibo-fnd-plc-uspsai/AS,
+   :fibo-fnd-rel-rel/hasTag "AS",
    :fibo-fnd-utl-av/preferredDesignation "AS",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/AmericanSamoa,
-   :lcc-lr/hasTag "AS",
-   :lcc-lr/identifies :lcc-3166-2-us/AmericanSamoa,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -172,12 +182,12 @@
 
 (def AZ
   "US-specific code for the designation for Arizona"
-  {:db/ident :fibo-fnd-plc-uspsai/AZ,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Arizona,
+   :cmns-id/identifies :lcc-3166-2-us/Arizona,
+   :db/ident :fibo-fnd-plc-uspsai/AZ,
+   :fibo-fnd-rel-rel/hasTag "AZ",
    :fibo-fnd-utl-av/preferredDesignation "AZ",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Arizona,
-   :lcc-lr/hasTag "AZ",
-   :lcc-lr/identifies :lcc-3166-2-us/Arizona,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -221,10 +231,10 @@
 
 (def ArmedForcesAmericas
   "state designation for Armed Forces Americas, excluding Canada"
-  {:db/ident :fibo-fnd-plc-uspsai/ArmedForcesAmericas,
+  {:cmns-cls/isClassifiedBy :lcc-3166-2-us/State,
+   :db/ident :fibo-fnd-plc-uspsai/ArmedForcesAmericas,
    :lcc-cr/hasEnglishShortName {:rdf/language "en",
                                 :rdf/value    "Armed Forces Americas"},
-   :lcc-cr/isClassifiedBy :lcc-3166-2-us/State,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -235,11 +245,11 @@
 
 (def ArmedForcesEurope
   "state designation for Armed Forces Europe, the Middle East, and Canada"
-  {:db/ident :fibo-fnd-plc-uspsai/ArmedForcesEurope,
+  {:cmns-cls/isClassifiedBy :lcc-3166-2-us/State,
+   :db/ident :fibo-fnd-plc-uspsai/ArmedForcesEurope,
    :lcc-cr/hasEnglishShortName
    {:rdf/language "en",
     :rdf/value    "Armed Forces Europe, the Middle East, and Canada"},
-   :lcc-cr/isClassifiedBy :lcc-3166-2-us/State,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -250,10 +260,10 @@
 
 (def ArmedForcesPacific
   "state designation for Armed Forces Pacific"
-  {:db/ident :fibo-fnd-plc-uspsai/ArmedForcesPacific,
+  {:cmns-cls/isClassifiedBy :lcc-3166-2-us/State,
+   :db/ident :fibo-fnd-plc-uspsai/ArmedForcesPacific,
    :lcc-cr/hasEnglishShortName {:rdf/language "en",
                                 :rdf/value    "Armed Forces Pacific"},
-   :lcc-cr/isClassifiedBy :lcc-3166-2-us/State,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -276,12 +286,12 @@
 
 (def BC
   "Canadian and US-specific code for the designation for British Columbia"
-  {:db/ident :fibo-fnd-plc-uspsai/BC,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
+   :cmns-dsg/denotes :lcc-3166-2-ca/BritishColumbia,
+   :cmns-id/identifies :lcc-3166-2-ca/BritishColumbia,
+   :db/ident :fibo-fnd-plc-uspsai/BC,
+   :fibo-fnd-rel-rel/hasTag "BC",
    :fibo-fnd-utl-av/preferredDesignation "BC",
-   :lcc-cr/isUsedBy [:lcc-3166-1/Canada :lcc-3166-1/UnitedStatesOfAmerica],
-   :lcc-lr/denotes :lcc-3166-2-ca/BritishColumbia,
-   :lcc-lr/hasTag "BC",
-   :lcc-lr/identifies :lcc-3166-2-ca/BritishColumbia,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -452,12 +462,12 @@
 
 (def CA
   "US-specific code for the designation for California"
-  {:db/ident :fibo-fnd-plc-uspsai/CA,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/California,
+   :cmns-id/identifies :lcc-3166-2-us/California,
+   :db/ident :fibo-fnd-plc-uspsai/CA,
+   :fibo-fnd-rel-rel/hasTag "CA",
    :fibo-fnd-utl-av/preferredDesignation "CA",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/California,
-   :lcc-lr/hasTag "CA",
-   :lcc-lr/identifies :lcc-3166-2-us/California,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -466,12 +476,12 @@
 
 (def CO
   "US-specific code for the designation for Colorado"
-  {:db/ident :fibo-fnd-plc-uspsai/CO,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Colorado,
+   :cmns-id/identifies :lcc-3166-2-us/Colorado,
+   :db/ident :fibo-fnd-plc-uspsai/CO,
+   :fibo-fnd-rel-rel/hasTag "CO",
    :fibo-fnd-utl-av/preferredDesignation "CO",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Colorado,
-   :lcc-lr/hasTag "CO",
-   :lcc-lr/identifies :lcc-3166-2-us/Colorado,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -480,12 +490,12 @@
 
 (def CT
   "US-specific code for the designation for Connecticut"
-  {:db/ident :fibo-fnd-plc-uspsai/CT,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Connecticut,
+   :cmns-id/identifies :lcc-3166-2-us/Connecticut,
+   :db/ident :fibo-fnd-plc-uspsai/CT,
+   :fibo-fnd-rel-rel/hasTag "CT",
    :fibo-fnd-utl-av/preferredDesignation "CT",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Connecticut,
-   :lcc-lr/hasTag "CT",
-   :lcc-lr/identifies :lcc-3166-2-us/Connecticut,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -766,12 +776,12 @@
 
 (def DC
   "US-specific code for the designation for the District of Colombia"
-  {:db/ident :fibo-fnd-plc-uspsai/DC,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/DistrictOfColumbia,
+   :cmns-id/identifies :lcc-3166-2-us/DistrictOfColumbia,
+   :db/ident :fibo-fnd-plc-uspsai/DC,
+   :fibo-fnd-rel-rel/hasTag "DC",
    :fibo-fnd-utl-av/preferredDesignation "DC",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/DistrictOfColumbia,
-   :lcc-lr/hasTag "DC",
-   :lcc-lr/identifies :lcc-3166-2-us/DistrictOfColumbia,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -781,12 +791,12 @@
 
 (def DE
   "US-specific code for the designation for Delaware"
-  {:db/ident :fibo-fnd-plc-uspsai/DE,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Delaware,
+   :cmns-id/identifies :lcc-3166-2-us/Delaware,
+   :db/ident :fibo-fnd-plc-uspsai/DE,
+   :fibo-fnd-rel-rel/hasTag "DE",
    :fibo-fnd-utl-av/preferredDesignation "DE",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Delaware,
-   :lcc-lr/hasTag "DE",
-   :lcc-lr/identifies :lcc-3166-2-us/Delaware,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -896,12 +906,12 @@
 
 (def FL
   "US-specific code for the designation for Florida"
-  {:db/ident :fibo-fnd-plc-uspsai/FL,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Florida,
+   :cmns-id/identifies :lcc-3166-2-us/Florida,
+   :db/ident :fibo-fnd-plc-uspsai/FL,
+   :fibo-fnd-rel-rel/hasTag "FL",
    :fibo-fnd-utl-av/preferredDesignation "FL",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Florida,
-   :lcc-lr/hasTag "FL",
-   :lcc-lr/identifies :lcc-3166-2-us/Florida,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1070,12 +1080,12 @@
 
 (def GA
   "US-specific code for the designation for Georgia"
-  {:db/ident :fibo-fnd-plc-uspsai/GA,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Georgia,
+   :cmns-id/identifies :lcc-3166-2-us/Georgia,
+   :db/ident :fibo-fnd-plc-uspsai/GA,
+   :fibo-fnd-rel-rel/hasTag "GA",
    :fibo-fnd-utl-av/preferredDesignation "GA",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Georgia,
-   :lcc-lr/hasTag "GA",
-   :lcc-lr/identifies :lcc-3166-2-us/Georgia,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1084,12 +1094,12 @@
 
 (def GU
   "US-specific code for the designation for Guam"
-  {:db/ident :fibo-fnd-plc-uspsai/GU,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Guam,
+   :cmns-id/identifies :lcc-3166-2-us/Guam,
+   :db/ident :fibo-fnd-plc-uspsai/GU,
+   :fibo-fnd-rel-rel/hasTag "GU",
    :fibo-fnd-utl-av/preferredDesignation "GU",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Guam,
-   :lcc-lr/hasTag "GU",
-   :lcc-lr/identifies :lcc-3166-2-us/Guam,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1189,12 +1199,12 @@
 
 (def HI
   "US-specific code for the designation for Hawaii"
-  {:db/ident :fibo-fnd-plc-uspsai/HI,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Hawaii,
+   :cmns-id/identifies :lcc-3166-2-us/Hawaii,
+   :db/ident :fibo-fnd-plc-uspsai/HI,
+   :fibo-fnd-rel-rel/hasTag "HI",
    :fibo-fnd-utl-av/preferredDesignation "HI",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Hawaii,
-   :lcc-lr/hasTag "HI",
-   :lcc-lr/identifies :lcc-3166-2-us/Hawaii,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1285,12 +1295,12 @@
 
 (def IA
   "US-specific code for the designation for Iowa"
-  {:db/ident :fibo-fnd-plc-uspsai/IA,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Iowa,
+   :cmns-id/identifies :lcc-3166-2-us/Iowa,
+   :db/ident :fibo-fnd-plc-uspsai/IA,
+   :fibo-fnd-rel-rel/hasTag "IA",
    :fibo-fnd-utl-av/preferredDesignation "IA",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Iowa,
-   :lcc-lr/hasTag "IA",
-   :lcc-lr/identifies :lcc-3166-2-us/Iowa,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1299,12 +1309,12 @@
 
 (def ID
   "US-specific code for the designation for Idaho"
-  {:db/ident :fibo-fnd-plc-uspsai/ID,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Idaho,
+   :cmns-id/identifies :lcc-3166-2-us/Idaho,
+   :db/ident :fibo-fnd-plc-uspsai/ID,
+   :fibo-fnd-rel-rel/hasTag "ID",
    :fibo-fnd-utl-av/preferredDesignation "ID",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Idaho,
-   :lcc-lr/hasTag "ID",
-   :lcc-lr/identifies :lcc-3166-2-us/Idaho,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1313,12 +1323,12 @@
 
 (def IL
   "US-specific code for the designation for Illinois"
-  {:db/ident :fibo-fnd-plc-uspsai/IL,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Illinois,
+   :cmns-id/identifies :lcc-3166-2-us/Illinois,
+   :db/ident :fibo-fnd-plc-uspsai/IL,
+   :fibo-fnd-rel-rel/hasTag "IL",
    :fibo-fnd-utl-av/preferredDesignation "IL",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Illinois,
-   :lcc-lr/hasTag "IL",
-   :lcc-lr/identifies :lcc-3166-2-us/Illinois,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1327,12 +1337,12 @@
 
 (def IN
   "US-specific code for the designation for Indiana"
-  {:db/ident :fibo-fnd-plc-uspsai/IN,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Indiana,
+   :cmns-id/identifies :lcc-3166-2-us/Indiana,
+   :db/ident :fibo-fnd-plc-uspsai/IN,
+   :fibo-fnd-rel-rel/hasTag "IN",
    :fibo-fnd-utl-av/preferredDesignation "IN",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Indiana,
-   :lcc-lr/hasTag "IN",
-   :lcc-lr/identifies :lcc-3166-2-us/Indiana,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1402,12 +1412,12 @@
 
 (def KS
   "US-specific code for the designation for Kansas"
-  {:db/ident :fibo-fnd-plc-uspsai/KS,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Kansas,
+   :cmns-id/identifies :lcc-3166-2-us/Kansas,
+   :db/ident :fibo-fnd-plc-uspsai/KS,
+   :fibo-fnd-rel-rel/hasTag "KS",
    :fibo-fnd-utl-av/preferredDesignation "KS",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Kansas,
-   :lcc-lr/hasTag "KS",
-   :lcc-lr/identifies :lcc-3166-2-us/Kansas,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1416,12 +1426,12 @@
 
 (def KY
   "US-specific code for the designation for Kentucky"
-  {:db/ident :fibo-fnd-plc-uspsai/KY,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Kentucky,
+   :cmns-id/identifies :lcc-3166-2-us/Kentucky,
+   :db/ident :fibo-fnd-plc-uspsai/KY,
+   :fibo-fnd-rel-rel/hasTag "KY",
    :fibo-fnd-utl-av/preferredDesignation "KY",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Kentucky,
-   :lcc-lr/hasTag "KY",
-   :lcc-lr/identifies :lcc-3166-2-us/Kentucky,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1470,12 +1480,12 @@
 
 (def LA
   "US-specific code for the designation for Louisiana"
-  {:db/ident :fibo-fnd-plc-uspsai/LA,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Louisiana,
+   :cmns-id/identifies :lcc-3166-2-us/Louisiana,
+   :db/ident :fibo-fnd-plc-uspsai/LA,
+   :fibo-fnd-rel-rel/hasTag "LA",
    :fibo-fnd-utl-av/preferredDesignation "LA",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Louisiana,
-   :lcc-lr/hasTag "LA",
-   :lcc-lr/identifies :lcc-3166-2-us/Louisiana,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1604,12 +1614,12 @@
 
 (def MA
   "US-specific code for the designation for Massachusetts"
-  {:db/ident :fibo-fnd-plc-uspsai/MA,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Massachusetts,
+   :cmns-id/identifies :lcc-3166-2-us/Massachusetts,
+   :db/ident :fibo-fnd-plc-uspsai/MA,
+   :fibo-fnd-rel-rel/hasTag "MA",
    :fibo-fnd-utl-av/preferredDesignation "MA",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Massachusetts,
-   :lcc-lr/hasTag "MA",
-   :lcc-lr/identifies :lcc-3166-2-us/Massachusetts,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1618,12 +1628,12 @@
 
 (def MB
   "Canadian and US-specific code for the designation for Manitoba"
-  {:db/ident :fibo-fnd-plc-uspsai/MB,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
+   :cmns-dsg/denotes :lcc-3166-2-ca/Manitoba,
+   :cmns-id/identifies :lcc-3166-2-ca/Manitoba,
+   :db/ident :fibo-fnd-plc-uspsai/MB,
+   :fibo-fnd-rel-rel/hasTag "MB",
    :fibo-fnd-utl-av/preferredDesignation "MB",
-   :lcc-cr/isUsedBy [:lcc-3166-1/Canada :lcc-3166-1/UnitedStatesOfAmerica],
-   :lcc-lr/denotes :lcc-3166-2-ca/Manitoba,
-   :lcc-lr/hasTag "MB",
-   :lcc-lr/identifies :lcc-3166-2-ca/Manitoba,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1633,12 +1643,12 @@
 
 (def MD
   "US-specific code for the designation for Maryland"
-  {:db/ident :fibo-fnd-plc-uspsai/MD,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Maryland,
+   :cmns-id/identifies :lcc-3166-2-us/Maryland,
+   :db/ident :fibo-fnd-plc-uspsai/MD,
+   :fibo-fnd-rel-rel/hasTag "MD",
    :fibo-fnd-utl-av/preferredDesignation "MD",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Maryland,
-   :lcc-lr/hasTag "MD",
-   :lcc-lr/identifies :lcc-3166-2-us/Maryland,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1647,12 +1657,12 @@
 
 (def ME
   "US-specific code for the designation for Maine"
-  {:db/ident :fibo-fnd-plc-uspsai/ME,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Maine,
+   :cmns-id/identifies :lcc-3166-2-us/Maine,
+   :db/ident :fibo-fnd-plc-uspsai/ME,
+   :fibo-fnd-rel-rel/hasTag "ME",
    :fibo-fnd-utl-av/preferredDesignation "ME",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Maine,
-   :lcc-lr/hasTag "ME",
-   :lcc-lr/identifies :lcc-3166-2-us/Maine,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1661,12 +1671,12 @@
 
 (def MI
   "US-specific code for the designation for Michigan"
-  {:db/ident :fibo-fnd-plc-uspsai/MI,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Michigan,
+   :cmns-id/identifies :lcc-3166-2-us/Michigan,
+   :db/ident :fibo-fnd-plc-uspsai/MI,
+   :fibo-fnd-rel-rel/hasTag "MI",
    :fibo-fnd-utl-av/preferredDesignation "MI",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Michigan,
-   :lcc-lr/hasTag "MI",
-   :lcc-lr/identifies :lcc-3166-2-us/Michigan,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1675,12 +1685,12 @@
 
 (def MN
   "US-specific code for the designation for Minnesota"
-  {:db/ident :fibo-fnd-plc-uspsai/MN,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Minnesota,
+   :cmns-id/identifies :lcc-3166-2-us/Minnesota,
+   :db/ident :fibo-fnd-plc-uspsai/MN,
+   :fibo-fnd-rel-rel/hasTag "MN",
    :fibo-fnd-utl-av/preferredDesignation "MN",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Minnesota,
-   :lcc-lr/hasTag "MN",
-   :lcc-lr/identifies :lcc-3166-2-us/Minnesota,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1689,12 +1699,12 @@
 
 (def MO
   "US-specific code for the designation for Missouri"
-  {:db/ident :fibo-fnd-plc-uspsai/MO,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Missouri,
+   :cmns-id/identifies :lcc-3166-2-us/Missouri,
+   :db/ident :fibo-fnd-plc-uspsai/MO,
+   :fibo-fnd-rel-rel/hasTag "MO",
    :fibo-fnd-utl-av/preferredDesignation "MO",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Missouri,
-   :lcc-lr/hasTag "MO",
-   :lcc-lr/identifies :lcc-3166-2-us/Missouri,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1703,12 +1713,12 @@
 
 (def MP
   "US-specific code for the designation for the outlying area of Northern Mariana Islands"
-  {:db/ident :fibo-fnd-plc-uspsai/MP,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/NorthernMarianaIslands,
+   :cmns-id/identifies :lcc-3166-2-us/NorthernMarianaIslands,
+   :db/ident :fibo-fnd-plc-uspsai/MP,
+   :fibo-fnd-rel-rel/hasTag "MP",
    :fibo-fnd-utl-av/preferredDesignation "MP",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/NorthernMarianaIslands,
-   :lcc-lr/hasTag "MP",
-   :lcc-lr/identifies :lcc-3166-2-us/NorthernMarianaIslands,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1718,12 +1728,12 @@
 
 (def MS
   "US-specific code for the designation for Mississippi"
-  {:db/ident :fibo-fnd-plc-uspsai/MS,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Mississippi,
+   :cmns-id/identifies :lcc-3166-2-us/Mississippi,
+   :db/ident :fibo-fnd-plc-uspsai/MS,
+   :fibo-fnd-rel-rel/hasTag "MS",
    :fibo-fnd-utl-av/preferredDesignation "MS",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Mississippi,
-   :lcc-lr/hasTag "MS",
-   :lcc-lr/identifies :lcc-3166-2-us/Mississippi,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1732,12 +1742,12 @@
 
 (def MT
   "US-specific code for the designation for Montana"
-  {:db/ident :fibo-fnd-plc-uspsai/MT,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Montana,
+   :cmns-id/identifies :lcc-3166-2-us/Montana,
+   :db/ident :fibo-fnd-plc-uspsai/MT,
+   :fibo-fnd-rel-rel/hasTag "MT",
    :fibo-fnd-utl-av/preferredDesignation "MT",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Montana,
-   :lcc-lr/hasTag "MT",
-   :lcc-lr/identifies :lcc-3166-2-us/Montana,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1877,12 +1887,12 @@
 
 (def NB
   "Canadian and US-specific code for the designation for New Brunswick"
-  {:db/ident :fibo-fnd-plc-uspsai/NB,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/Canada :lcc-3166-1/UnitedStatesOfAmerica],
+   :cmns-dsg/denotes :lcc-3166-2-ca/NewBrunswick,
+   :cmns-id/identifies :lcc-3166-2-ca/NewBrunswick,
+   :db/ident :fibo-fnd-plc-uspsai/NB,
+   :fibo-fnd-rel-rel/hasTag "NB",
    :fibo-fnd-utl-av/preferredDesignation "NB",
-   :lcc-cr/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
-   :lcc-lr/denotes :lcc-3166-2-ca/NewBrunswick,
-   :lcc-lr/hasTag "NB",
-   :lcc-lr/identifies :lcc-3166-2-ca/NewBrunswick,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1892,12 +1902,12 @@
 
 (def NC
   "US-specific code for the designation for North Carolina"
-  {:db/ident :fibo-fnd-plc-uspsai/NC,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/NorthCarolina,
+   :cmns-id/identifies :lcc-3166-2-us/NorthCarolina,
+   :db/ident :fibo-fnd-plc-uspsai/NC,
+   :fibo-fnd-rel-rel/hasTag "NC",
    :fibo-fnd-utl-av/preferredDesignation "NC",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/NorthCarolina,
-   :lcc-lr/hasTag "NC",
-   :lcc-lr/identifies :lcc-3166-2-us/NorthCarolina,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1906,12 +1916,12 @@
 
 (def ND
   "US-specific code for the designation for North Dakota"
-  {:db/ident :fibo-fnd-plc-uspsai/ND,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/NorthDakota,
+   :cmns-id/identifies :lcc-3166-2-us/NorthDakota,
+   :db/ident :fibo-fnd-plc-uspsai/ND,
+   :fibo-fnd-rel-rel/hasTag "ND",
    :fibo-fnd-utl-av/preferredDesignation "ND",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/NorthDakota,
-   :lcc-lr/hasTag "ND",
-   :lcc-lr/identifies :lcc-3166-2-us/NorthDakota,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1920,12 +1930,12 @@
 
 (def NE
   "US-specific code for the designation for Nebraska"
-  {:db/ident :fibo-fnd-plc-uspsai/NE,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Nebraska,
+   :cmns-id/identifies :lcc-3166-2-us/Nebraska,
+   :db/ident :fibo-fnd-plc-uspsai/NE,
+   :fibo-fnd-rel-rel/hasTag "NE",
    :fibo-fnd-utl-av/preferredDesignation "NE",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Nebraska,
-   :lcc-lr/hasTag "NE",
-   :lcc-lr/identifies :lcc-3166-2-us/Nebraska,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1934,12 +1944,12 @@
 
 (def NH
   "US-specific code for the designation for New Hampshire"
-  {:db/ident :fibo-fnd-plc-uspsai/NH,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/NewHampshire,
+   :cmns-id/identifies :lcc-3166-2-us/NewHampshire,
+   :db/ident :fibo-fnd-plc-uspsai/NH,
+   :fibo-fnd-rel-rel/hasTag "NH",
    :fibo-fnd-utl-av/preferredDesignation "NH",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/NewHampshire,
-   :lcc-lr/hasTag "NH",
-   :lcc-lr/identifies :lcc-3166-2-us/NewHampshire,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1948,12 +1958,12 @@
 
 (def NJ
   "US-specific code for the designation for New Jersey"
-  {:db/ident :fibo-fnd-plc-uspsai/NJ,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/NewJersey,
+   :cmns-id/identifies :lcc-3166-2-us/NewJersey,
+   :db/ident :fibo-fnd-plc-uspsai/NJ,
+   :fibo-fnd-rel-rel/hasTag "NJ",
    :fibo-fnd-utl-av/preferredDesignation "NJ",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/NewJersey,
-   :lcc-lr/hasTag "NJ",
-   :lcc-lr/identifies :lcc-3166-2-us/NewJersey,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1962,12 +1972,12 @@
 
 (def NL
   "Canadian and US-specific code for the designation for Newfoundland and Labrador"
-  {:db/ident :fibo-fnd-plc-uspsai/NL,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
+   :cmns-dsg/denotes :lcc-3166-2-ca/NewfoundlandAndLabrador,
+   :cmns-id/identifies :lcc-3166-2-ca/NewfoundlandAndLabrador,
+   :db/ident :fibo-fnd-plc-uspsai/NL,
+   :fibo-fnd-rel-rel/hasTag "NL",
    :fibo-fnd-utl-av/preferredDesignation "NL",
-   :lcc-cr/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
-   :lcc-lr/denotes :lcc-3166-2-ca/NewfoundlandAndLabrador,
-   :lcc-lr/hasTag "NL",
-   :lcc-lr/identifies :lcc-3166-2-ca/NewfoundlandAndLabrador,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1977,12 +1987,12 @@
 
 (def NM
   "US-specific code for the designation for New Mexico"
-  {:db/ident :fibo-fnd-plc-uspsai/NM,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/NewMexico,
+   :cmns-id/identifies :lcc-3166-2-us/NewMexico,
+   :db/ident :fibo-fnd-plc-uspsai/NM,
+   :fibo-fnd-rel-rel/hasTag "NM",
    :fibo-fnd-utl-av/preferredDesignation "NM",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/NewMexico,
-   :lcc-lr/hasTag "NM",
-   :lcc-lr/identifies :lcc-3166-2-us/NewMexico,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -1991,12 +2001,12 @@
 
 (def NS
   "Canadian and US-specific code for the designation for Nova Scotia"
-  {:db/ident :fibo-fnd-plc-uspsai/NS,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
+   :cmns-dsg/denotes :lcc-3166-2-ca/NovaScotia,
+   :cmns-id/identifies :lcc-3166-2-ca/NovaScotia,
+   :db/ident :fibo-fnd-plc-uspsai/NS,
+   :fibo-fnd-rel-rel/hasTag "NS",
    :fibo-fnd-utl-av/preferredDesignation "NS",
-   :lcc-cr/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
-   :lcc-lr/denotes :lcc-3166-2-ca/NovaScotia,
-   :lcc-lr/hasTag "NS",
-   :lcc-lr/identifies :lcc-3166-2-ca/NovaScotia,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2006,12 +2016,12 @@
 
 (def NT
   "Canadian and US-specific code for the designation for Northwest Territories"
-  {:db/ident :fibo-fnd-plc-uspsai/NT,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/Canada :lcc-3166-1/UnitedStatesOfAmerica],
+   :cmns-dsg/denotes :lcc-3166-2-ca/NorthwestTerritories,
+   :cmns-id/identifies :lcc-3166-2-ca/NorthwestTerritories,
+   :db/ident :fibo-fnd-plc-uspsai/NT,
+   :fibo-fnd-rel-rel/hasTag "NT",
    :fibo-fnd-utl-av/preferredDesignation "NT",
-   :lcc-cr/isUsedBy [:lcc-3166-1/Canada :lcc-3166-1/UnitedStatesOfAmerica],
-   :lcc-lr/denotes :lcc-3166-2-ca/NorthwestTerritories,
-   :lcc-lr/hasTag "NT",
-   :lcc-lr/identifies :lcc-3166-2-ca/NorthwestTerritories,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2021,12 +2031,12 @@
 
 (def NU
   "Canadian and US-specific code for the designation for Nunavut"
-  {:db/ident :fibo-fnd-plc-uspsai/NU,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
+   :cmns-dsg/denotes :lcc-3166-2-ca/Nunavut,
+   :cmns-id/identifies :lcc-3166-2-ca/Nunavut,
+   :db/ident :fibo-fnd-plc-uspsai/NU,
+   :fibo-fnd-rel-rel/hasTag "NU",
    :fibo-fnd-utl-av/preferredDesignation "NU",
-   :lcc-cr/isUsedBy [:lcc-3166-1/Canada :lcc-3166-1/UnitedStatesOfAmerica],
-   :lcc-lr/denotes :lcc-3166-2-ca/Nunavut,
-   :lcc-lr/hasTag "NU",
-   :lcc-lr/identifies :lcc-3166-2-ca/Nunavut,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2036,12 +2046,12 @@
 
 (def NV
   "US-specific code for the designation for Nevada"
-  {:db/ident :fibo-fnd-plc-uspsai/NV,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Nevada,
+   :cmns-id/identifies :lcc-3166-2-us/Nevada,
+   :db/ident :fibo-fnd-plc-uspsai/NV,
+   :fibo-fnd-rel-rel/hasTag "NV",
    :fibo-fnd-utl-av/preferredDesignation "NV",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Nevada,
-   :lcc-lr/hasTag "NV",
-   :lcc-lr/identifies :lcc-3166-2-us/Nevada,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2050,12 +2060,12 @@
 
 (def NY
   "US-specific code for the designation for New York"
-  {:db/ident :fibo-fnd-plc-uspsai/NY,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/NewYork,
+   :cmns-id/identifies :lcc-3166-2-us/NewYork,
+   :db/ident :fibo-fnd-plc-uspsai/NY,
+   :fibo-fnd-rel-rel/hasTag "NY",
    :fibo-fnd-utl-av/preferredDesignation "NY",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/NewYork,
-   :lcc-lr/hasTag "NY",
-   :lcc-lr/identifies :lcc-3166-2-us/NewYork,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2074,12 +2084,12 @@
 
 (def OH
   "US-specific code for the designation for Ohio"
-  {:db/ident :fibo-fnd-plc-uspsai/OH,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Ohio,
+   :cmns-id/identifies :lcc-3166-2-us/Ohio,
+   :db/ident :fibo-fnd-plc-uspsai/OH,
+   :fibo-fnd-rel-rel/hasTag "OH",
    :fibo-fnd-utl-av/preferredDesignation "OH",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Ohio,
-   :lcc-lr/hasTag "OH",
-   :lcc-lr/identifies :lcc-3166-2-us/Ohio,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2088,12 +2098,12 @@
 
 (def OK
   "US-specific code for the designation for Oklahoma"
-  {:db/ident :fibo-fnd-plc-uspsai/OK,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Oklahoma,
+   :cmns-id/identifies :lcc-3166-2-us/Oklahoma,
+   :db/ident :fibo-fnd-plc-uspsai/OK,
+   :fibo-fnd-rel-rel/hasTag "OK",
    :fibo-fnd-utl-av/preferredDesignation "OK",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Oklahoma,
-   :lcc-lr/hasTag "OK",
-   :lcc-lr/identifies :lcc-3166-2-us/Oklahoma,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2102,12 +2112,12 @@
 
 (def ON
   "Canadian and US-specific code for the designation for Ontario"
-  {:db/ident :fibo-fnd-plc-uspsai/ON,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/Canada :lcc-3166-1/UnitedStatesOfAmerica],
+   :cmns-dsg/denotes :lcc-3166-2-ca/Ontario,
+   :cmns-id/identifies :lcc-3166-2-ca/Ontario,
+   :db/ident :fibo-fnd-plc-uspsai/ON,
+   :fibo-fnd-rel-rel/hasTag "ON",
    :fibo-fnd-utl-av/preferredDesignation "ON",
-   :lcc-cr/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
-   :lcc-lr/denotes :lcc-3166-2-ca/Ontario,
-   :lcc-lr/hasTag "ON",
-   :lcc-lr/identifies :lcc-3166-2-ca/Ontario,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2117,12 +2127,12 @@
 
 (def OR
   "US-specific code for the designation for Oregon"
-  {:db/ident :fibo-fnd-plc-uspsai/OR,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Oregon,
+   :cmns-id/identifies :lcc-3166-2-us/Oregon,
+   :db/ident :fibo-fnd-plc-uspsai/OR,
+   :fibo-fnd-rel-rel/hasTag "OR",
    :fibo-fnd-utl-av/preferredDesignation "OR",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Oregon,
-   :lcc-lr/hasTag "OR",
-   :lcc-lr/identifies :lcc-3166-2-us/Oregon,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2161,12 +2171,12 @@
 
 (def PA
   "US-specific code for the designation for Pennsylvania"
-  {:db/ident :fibo-fnd-plc-uspsai/PA,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Pennsylvania,
+   :cmns-id/identifies :lcc-3166-2-us/Pennsylvania,
+   :db/ident :fibo-fnd-plc-uspsai/PA,
+   :fibo-fnd-rel-rel/hasTag "PA",
    :fibo-fnd-utl-av/preferredDesignation "PA",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Pennsylvania,
-   :lcc-lr/hasTag "PA",
-   :lcc-lr/identifies :lcc-3166-2-us/Pennsylvania,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2175,12 +2185,12 @@
 
 (def PE
   "Canadian and US-specific code for the designation for Prince Edward Island"
-  {:db/ident :fibo-fnd-plc-uspsai/PE,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
+   :cmns-dsg/denotes :lcc-3166-2-ca/PrinceEdwardIsland,
+   :cmns-id/identifies :lcc-3166-2-ca/PrinceEdwardIsland,
+   :db/ident :fibo-fnd-plc-uspsai/PE,
+   :fibo-fnd-rel-rel/hasTag "PE",
    :fibo-fnd-utl-av/preferredDesignation "PE",
-   :lcc-cr/isUsedBy [:lcc-3166-1/Canada :lcc-3166-1/UnitedStatesOfAmerica],
-   :lcc-lr/denotes :lcc-3166-2-ca/PrinceEdwardIsland,
-   :lcc-lr/hasTag "PE",
-   :lcc-lr/identifies :lcc-3166-2-ca/PrinceEdwardIsland,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2190,12 +2200,12 @@
 
 (def PR
   "US-specific code for the designation for Puerto Rico"
-  {:db/ident :fibo-fnd-plc-uspsai/PR,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/PuertoRico,
+   :cmns-id/identifies :lcc-3166-2-us/PuertoRico,
+   :db/ident :fibo-fnd-plc-uspsai/PR,
+   :fibo-fnd-rel-rel/hasTag "PR",
    :fibo-fnd-utl-av/preferredDesignation "PR",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/PuertoRico,
-   :lcc-lr/hasTag "PR",
-   :lcc-lr/identifies :lcc-3166-2-us/PuertoRico,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2394,12 +2404,12 @@
 
 (def QC
   "Canadian and US-specific code for the designation for Quebec"
-  {:db/ident :fibo-fnd-plc-uspsai/QC,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
+   :cmns-dsg/denotes :lcc-3166-2-ca/Quebec,
+   :cmns-id/identifies :lcc-3166-2-ca/Quebec,
+   :db/ident :fibo-fnd-plc-uspsai/QC,
+   :fibo-fnd-rel-rel/hasTag "QC",
    :fibo-fnd-utl-av/preferredDesignation "QC",
-   :lcc-cr/isUsedBy [:lcc-3166-1/Canada :lcc-3166-1/UnitedStatesOfAmerica],
-   :lcc-lr/denotes :lcc-3166-2-ca/Quebec,
-   :lcc-lr/hasTag "QC",
-   :lcc-lr/identifies :lcc-3166-2-ca/Quebec,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2409,12 +2419,12 @@
 
 (def RI
   "US-specific code for the designation for Rhode Island"
-  {:db/ident :fibo-fnd-plc-uspsai/RI,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/RhodeIsland,
+   :cmns-id/identifies :lcc-3166-2-us/RhodeIsland,
+   :db/ident :fibo-fnd-plc-uspsai/RI,
+   :fibo-fnd-rel-rel/hasTag "RI",
    :fibo-fnd-utl-av/preferredDesignation "RI",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/RhodeIsland,
-   :lcc-lr/hasTag "RI",
-   :lcc-lr/identifies :lcc-3166-2-us/RhodeIsland,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2573,12 +2583,12 @@
 
 (def SC
   "US-specific code for the designation for South Carolina"
-  {:db/ident :fibo-fnd-plc-uspsai/SC,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/SouthCarolina,
+   :cmns-id/identifies :lcc-3166-2-us/SouthCarolina,
+   :db/ident :fibo-fnd-plc-uspsai/SC,
+   :fibo-fnd-rel-rel/hasTag "SC",
    :fibo-fnd-utl-av/preferredDesignation "SC",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/SouthCarolina,
-   :lcc-lr/hasTag "SC",
-   :lcc-lr/identifies :lcc-3166-2-us/SouthCarolina,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2587,12 +2597,12 @@
 
 (def SD
   "US-specific code for the designation for South Dakota"
-  {:db/ident :fibo-fnd-plc-uspsai/SD,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/SouthDakota,
+   :cmns-id/identifies :lcc-3166-2-us/SouthDakota,
+   :db/ident :fibo-fnd-plc-uspsai/SD,
+   :fibo-fnd-rel-rel/hasTag "SD",
    :fibo-fnd-utl-av/preferredDesignation "SD",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/SouthDakota,
-   :lcc-lr/hasTag "SD",
-   :lcc-lr/identifies :lcc-3166-2-us/SouthDakota,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2601,12 +2611,12 @@
 
 (def SK
   "Canadian and US-specific code for the designation for Saskatchewan"
-  {:db/ident :fibo-fnd-plc-uspsai/SK,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
+   :cmns-dsg/denotes :lcc-3166-2-ca/Saskatchewan,
+   :cmns-id/identifies :lcc-3166-2-ca/Saskatchewan,
+   :db/ident :fibo-fnd-plc-uspsai/SK,
+   :fibo-fnd-rel-rel/hasTag "SK",
    :fibo-fnd-utl-av/preferredDesignation "SK",
-   :lcc-cr/isUsedBy [:lcc-3166-1/Canada :lcc-3166-1/UnitedStatesOfAmerica],
-   :lcc-lr/denotes :lcc-3166-2-ca/Saskatchewan,
-   :lcc-lr/hasTag "SK",
-   :lcc-lr/identifies :lcc-3166-2-ca/Saskatchewan,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2787,12 +2797,12 @@
 
 (def TN
   "US-specific code for the designation for Tennessee"
-  {:db/ident :fibo-fnd-plc-uspsai/TN,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Tennessee,
+   :cmns-id/identifies :lcc-3166-2-us/Tennessee,
+   :db/ident :fibo-fnd-plc-uspsai/TN,
+   :fibo-fnd-rel-rel/hasTag "TN",
    :fibo-fnd-utl-av/preferredDesignation "TN",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Tennessee,
-   :lcc-lr/hasTag "TN",
-   :lcc-lr/identifies :lcc-3166-2-us/Tennessee,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2801,12 +2811,12 @@
 
 (def TX
   "US-specific code for the designation for Texas"
-  {:db/ident :fibo-fnd-plc-uspsai/TX,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Texas,
+   :cmns-id/identifies :lcc-3166-2-us/Texas,
+   :db/ident :fibo-fnd-plc-uspsai/TX,
+   :fibo-fnd-rel-rel/hasTag "TX",
    :fibo-fnd-utl-av/preferredDesignation "TX",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Texas,
-   :lcc-lr/hasTag "TX",
-   :lcc-lr/identifies :lcc-3166-2-us/Texas,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2906,12 +2916,12 @@
 
 (def UM
   "US-specific code for the designation for the United States Minor Outlying Islands"
-  {:db/ident :fibo-fnd-plc-uspsai/UM,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/UnitedStatesMinorOutlyingIslands,
+   :cmns-id/identifies :lcc-3166-2-us/UnitedStatesMinorOutlyingIslands,
+   :db/ident :fibo-fnd-plc-uspsai/UM,
+   :fibo-fnd-rel-rel/hasTag "UM",
    :fibo-fnd-utl-av/preferredDesignation "UM",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/UnitedStatesMinorOutlyingIslands,
-   :lcc-lr/hasTag "UM",
-   :lcc-lr/identifies :lcc-3166-2-us/UnitedStatesMinorOutlyingIslands,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2921,11 +2931,11 @@
 
 (def US-AA
   "subdivision code for the state designation for Armed Forces Americas, excluding Canada"
-  {:db/ident :fibo-fnd-plc-uspsai/US-AA,
+  {:cmns-dsg/denotes :fibo-fnd-plc-uspsai/ArmedForcesAmericas,
+   :cmns-id/identifies :fibo-fnd-plc-uspsai/ArmedForcesAmericas,
+   :db/ident :fibo-fnd-plc-uspsai/US-AA,
+   :fibo-fnd-rel-rel/hasTag "US-AA",
    :fibo-fnd-utl-av/preferredDesignation "AA",
-   :lcc-lr/denotes :fibo-fnd-plc-uspsai/ArmedForcesAmericas,
-   :lcc-lr/hasTag "US-AA",
-   :lcc-lr/identifies :fibo-fnd-plc-uspsai/ArmedForcesAmericas,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2935,11 +2945,11 @@
 
 (def US-AE
   "subdivision code for the state designation for Armed Forces Europe, the Middle East, and Canada"
-  {:db/ident :fibo-fnd-plc-uspsai/US-AE,
+  {:cmns-dsg/denotes :fibo-fnd-plc-uspsai/ArmedForcesEurope,
+   :cmns-id/identifies :fibo-fnd-plc-uspsai/ArmedForcesEurope,
+   :db/ident :fibo-fnd-plc-uspsai/US-AE,
+   :fibo-fnd-rel-rel/hasTag "US-AE",
    :fibo-fnd-utl-av/preferredDesignation "AE",
-   :lcc-lr/denotes :fibo-fnd-plc-uspsai/ArmedForcesEurope,
-   :lcc-lr/hasTag "US-AE",
-   :lcc-lr/identifies :fibo-fnd-plc-uspsai/ArmedForcesEurope,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2949,11 +2959,11 @@
 
 (def US-AP
   "subdivision code for the state designation for Armed Forces Pacific"
-  {:db/ident :fibo-fnd-plc-uspsai/US-AP,
+  {:cmns-dsg/denotes :fibo-fnd-plc-uspsai/ArmedForcesPacific,
+   :cmns-id/identifies :fibo-fnd-plc-uspsai/ArmedForcesPacific,
+   :db/ident :fibo-fnd-plc-uspsai/US-AP,
+   :fibo-fnd-rel-rel/hasTag "US-AP",
    :fibo-fnd-utl-av/preferredDesignation "AP",
-   :lcc-lr/denotes :fibo-fnd-plc-uspsai/ArmedForcesPacific,
-   :lcc-lr/hasTag "US-AP",
-   :lcc-lr/identifies :fibo-fnd-plc-uspsai/ArmedForcesPacific,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -2963,12 +2973,12 @@
 
 (def UT
   "US-specific code for the designation for Utah"
-  {:db/ident :fibo-fnd-plc-uspsai/UT,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Utah,
+   :cmns-id/identifies :lcc-3166-2-us/Utah,
+   :db/ident :fibo-fnd-plc-uspsai/UT,
+   :fibo-fnd-rel-rel/hasTag "UT",
    :fibo-fnd-utl-av/preferredDesignation "UT",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Utah,
-   :lcc-lr/hasTag "UT",
-   :lcc-lr/identifies :lcc-3166-2-us/Utah,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -3007,12 +3017,12 @@
 
 (def VA
   "US-specific code for the designation for Virginia"
-  {:db/ident :fibo-fnd-plc-uspsai/VA,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Virginia,
+   :cmns-id/identifies :lcc-3166-2-us/Virginia,
+   :db/ident :fibo-fnd-plc-uspsai/VA,
+   :fibo-fnd-rel-rel/hasTag "VA",
    :fibo-fnd-utl-av/preferredDesignation "VA",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Virginia,
-   :lcc-lr/hasTag "VA",
-   :lcc-lr/identifies :lcc-3166-2-us/Virginia,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -3021,12 +3031,12 @@
 
 (def VI
   "US-specific code for the designation for the U.S. Virgin Islands"
-  {:db/ident :fibo-fnd-plc-uspsai/VI,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/VirginIslands,
+   :cmns-id/identifies :lcc-3166-2-us/VirginIslands,
+   :db/ident :fibo-fnd-plc-uspsai/VI,
+   :fibo-fnd-rel-rel/hasTag "VI",
    :fibo-fnd-utl-av/preferredDesignation "VI",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/VirginIslands,
-   :lcc-lr/hasTag "VI",
-   :lcc-lr/identifies :lcc-3166-2-us/VirginIslands,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -3036,12 +3046,12 @@
 
 (def VT
   "US-specific code for the designation for Vermont"
-  {:db/ident :fibo-fnd-plc-uspsai/VT,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Vermont,
+   :cmns-id/identifies :lcc-3166-2-us/Vermont,
+   :db/ident :fibo-fnd-plc-uspsai/VT,
+   :fibo-fnd-rel-rel/hasTag "VT",
    :fibo-fnd-utl-av/preferredDesignation "VT",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Vermont,
-   :lcc-lr/hasTag "VT",
-   :lcc-lr/identifies :lcc-3166-2-us/Vermont,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -3141,12 +3151,12 @@
 
 (def WA
   "US-specific code for the designation for Washington"
-  {:db/ident :fibo-fnd-plc-uspsai/WA,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Washington,
+   :cmns-id/identifies :lcc-3166-2-us/Washington,
+   :db/ident :fibo-fnd-plc-uspsai/WA,
+   :fibo-fnd-rel-rel/hasTag "WA",
    :fibo-fnd-utl-av/preferredDesignation "WA",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Washington,
-   :lcc-lr/hasTag "WA",
-   :lcc-lr/identifies :lcc-3166-2-us/Washington,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -3155,12 +3165,12 @@
 
 (def WI
   "US-specific code for the designation for Wisconsin"
-  {:db/ident :fibo-fnd-plc-uspsai/WI,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Wisconsin,
+   :cmns-id/identifies :lcc-3166-2-us/Wisconsin,
+   :db/ident :fibo-fnd-plc-uspsai/WI,
+   :fibo-fnd-rel-rel/hasTag "WI",
    :fibo-fnd-utl-av/preferredDesignation "WI",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Wisconsin,
-   :lcc-lr/hasTag "WI",
-   :lcc-lr/identifies :lcc-3166-2-us/Wisconsin,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -3169,12 +3179,12 @@
 
 (def WV
   "US-specific code for the designation for West Virginia"
-  {:db/ident :fibo-fnd-plc-uspsai/WV,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/WestVirginia,
+   :cmns-id/identifies :lcc-3166-2-us/WestVirginia,
+   :db/ident :fibo-fnd-plc-uspsai/WV,
+   :fibo-fnd-rel-rel/hasTag "WV",
    :fibo-fnd-utl-av/preferredDesignation "WV",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/WestVirginia,
-   :lcc-lr/hasTag "WV",
-   :lcc-lr/identifies :lcc-3166-2-us/WestVirginia,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -3183,12 +3193,12 @@
 
 (def WY
   "US-specific code for the designation for Wyoming"
-  {:db/ident :fibo-fnd-plc-uspsai/WY,
+  {:cmns-cxtdsg/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
+   :cmns-dsg/denotes :lcc-3166-2-us/Wyoming,
+   :cmns-id/identifies :lcc-3166-2-us/Wyoming,
+   :db/ident :fibo-fnd-plc-uspsai/WY,
+   :fibo-fnd-rel-rel/hasTag "WY",
    :fibo-fnd-utl-av/preferredDesignation "WY",
-   :lcc-cr/isUsedBy :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-lr/denotes :lcc-3166-2-us/Wyoming,
-   :lcc-lr/hasTag "WY",
-   :lcc-lr/identifies :lcc-3166-2-us/Wyoming,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/RegionSpecificIdentifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
@@ -3267,12 +3277,12 @@
 
 (def YT
   "Canadian and US-specific code for the designation for Yukon"
-  {:db/ident :fibo-fnd-plc-uspsai/YT,
+  {:cmns-cxtdsg/isUsedBy [:lcc-3166-1/UnitedStatesOfAmerica :lcc-3166-1/Canada],
+   :cmns-dsg/denotes :lcc-3166-2-ca/Yukon,
+   :cmns-id/identifies :lcc-3166-2-ca/Yukon,
+   :db/ident :fibo-fnd-plc-uspsai/YT,
+   :fibo-fnd-rel-rel/hasTag "YT",
    :fibo-fnd-utl-av/preferredDesignation "YT",
-   :lcc-cr/isUsedBy [:lcc-3166-1/Canada :lcc-3166-1/UnitedStatesOfAmerica],
-   :lcc-lr/denotes :lcc-3166-2-ca/Yukon,
-   :lcc-lr/hasTag "YT",
-   :lcc-lr/identifies :lcc-3166-2-ca/Yukon,
    :rdf/type [:fibo-fnd-plc-adr/RegionSpecificIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",

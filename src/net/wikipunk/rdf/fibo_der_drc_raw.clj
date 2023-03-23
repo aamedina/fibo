@@ -36,8 +36,6 @@
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-cb"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
-    "fibo-der-drc-bsc"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
     "fibo-der-drc-comm"
     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CommoditiesContracts/",
     "fibo-der-drc-cur"
@@ -86,7 +84,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Rights and Warrants Ontology"},
    :skos/changeNote
-   "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."})
+   "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."})
 
 (def AllotmentRight
   "privileges allotted to existing security holders, entitling them to receive new securities free of charge"
@@ -106,12 +104,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "allotment right"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
+   :rdfs/subClassOf [:fibo-der-sbd-sbd/EquityDerivative
+                     :fibo-fbc-fi-fi/Entitlement
+                     {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-der-drc-raw/AllotmentRightFormula,
-                      :rdf/type :owl/Restriction}
-                     :fibo-der-sbd-sbd/EquityDerivative
-                     :fibo-fbc-fi-fi/Entitlement],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -147,7 +145,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "basket warrant"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-sec-sec-bsk/BasketOfSecurities,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-raw/Warrant],
@@ -169,7 +167,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "bond purchase right"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                           :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                           :rdf/type           :owl/Restriction},
@@ -193,7 +191,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "bond subscription right"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                           :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                           :rdf/type           :owl/Restriction},
@@ -312,7 +310,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "common convertible share purchase right"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom
                       {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                        :owl/someValuesFrom
@@ -337,7 +335,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "common convertible share subscription right"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom
                       {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                        :owl/someValuesFrom
@@ -363,7 +361,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "common share purchase right"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                           :owl/someValuesFrom :fibo-sec-eq-eq/CommonShare,
                           :rdf/type           :owl/Restriction},
@@ -387,7 +385,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "common share subscription right"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                           :owl/someValuesFrom :fibo-sec-eq-eq/CommonShare,
                           :rdf/type           :owl/Restriction},
@@ -533,7 +531,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "index warrant"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom {:owl/minQualifiedCardinality 0,
                           :owl/onClass    {:owl/unionOf
                                            [:fibo-ind-ei-ei/EconomicIndicator
@@ -602,7 +600,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "preferred convertible share purchase right"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom
                       {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                        :owl/someValuesFrom
@@ -627,7 +625,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "preferred convertible share subscription right"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom
                       {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                        :owl/someValuesFrom
@@ -653,7 +651,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "preferred share purchase right"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                           :owl/someValuesFrom :fibo-sec-eq-eq/PreferredShare,
                           :rdf/type           :owl/Restriction},
@@ -677,7 +675,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "preferred share subscription right"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                           :owl/someValuesFrom :fibo-sec-eq-eq/PreferredShare,
                           :rdf/type           :owl/Restriction},

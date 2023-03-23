@@ -1,7 +1,7 @@
 (ns net.wikipunk.rdf.fibo-fnd-aap-ppl
   "This ontology defines concepts for people and human related terms, for use in other FIBO ontology elements. People as defined here are human persons only. This ontology sets out a number of basic properties which are held by people or are definitive of a small number of specific types of people such as minors or adults. Primary use cases for determining the set of personal information definitions included are the common elements required to (1) open a bank account, (2) identify a sophisticated investor, and (3) establish foreign account ownership for money laundering purposes."
-  {:cmns-av/copyright ["Copyright (c) 2013-2023 EDM Council, Inc."
-                       "Copyright (c) 2013-2023 Object Management Group, Inc."],
+  {:cmns-av/copyright ["Copyright (c) 2013-2023 Object Management Group, Inc."
+                       "Copyright (c) 2013-2023 EDM Council, Inc."],
    :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :dcterms/abstract
@@ -9,25 +9,33 @@
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
+    "https://www.omg.org/spec/Commons/Collections/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/TextDatatype/"
+    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
+    "https://www.omg.org/spec/Commons/Designators/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
     "dcterms" "http://purl.org/dc/terms/",
-    "fibo-fnd-aap-agt"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
     "fibo-fnd-aap-ppl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
     "fibo-fnd-arr-doc"
@@ -45,7 +53,6 @@
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -57,22 +64,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "People Ontology",
    :skos/changeNote
-   ["The https://www.omg.org/spec/EDMC-FIBO/FND/20200201/AgentsAndPeople/People.rdf version of the ontology was modified to add explicit DateOfBirth and DateOfDeath, added DeathCertificate and related concepts, streamlined related properties and restrictions."
-    "The https://www.omg.org/spec/EDMC-FIBO/FND/20190501/AgentsAndPeople/People.rdf version of the ontology was modified to eliminate deprecated elements."
-    "The https://www.omg.org/spec/EDMC-FIBO/FND/20211101/AgentsAndPeople/People.rdf version of the ontology was modified to address hygiene issues with respect to text formatting."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-    "The https://www.omg.org/spec/EDMC-FIBO/FND/20210401/AgentsAndPeople/People.rdf version of the ontology was modified to add concepts specific to legal age, age of majority, legal working age and legal working age person."
-    "The https://www.omg.org/spec/EDMC-FIBO/FND/20190901/AgentsAndPeople/People.rdf version of the ontology was modified to eliminate duplication with concepts in LCC and correct a bug in a restriction on identity document."
-    "The https://www.omg.org/spec/EDMC-FIBO/FND/20180801/AgentsAndPeople/People.rdf version of the ontology was modified to deprecate legally capable person in favor of natural person (defined in Business Entities)."
-    "The https://www.omg.org/spec/EDMC-FIBO/FND/20210301/AgentsAndPeople/People.rdf version of the ontology was modified to allow the People ontology to import Parties, rather than the other way around, to simplify the class hierarchy for ease of use in data mapping and alignment, and to add person name as a first class concept, revising property definitions to allow for structured names by loosening constraints."
-    "The http://spec.edmcouncil.org/fibo/ontology/FND/20130801/AgentsAndPeople/People.rdf version of the ontology was was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/. It was further revised in the FTF in advance of the Long Beach meeting, resulting in https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/."
-    "The http://www.omg.org/spec/FIBO/Foundations/20130601/AgentsAndPeople/People.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations.\n\t\t(6) to revise and extend the set of properties about people required to fulfill the set of use cases listed above."
-    "The http://www.omg.org/spec/EDMC-FIBO/FND/20160201/AgentsAndPeople/People.rdf version of the ontology was modified per the FIBO 2.0 RFC, including integration of LCC."
-    "The http://spec.edmcouncil.org/fibo/ontology/FND/20141101/AgentsAndPeople/People.rdf version of the ontology was was modified per the issue resolutions identified in the FIBO FND 1.1 RTF report, primarily to use the hasAddress property in addresses, and change PostalAddress to PhysicalAddress in a restriction on Person. Also revised the identifiesAddress property in favor of verifiesAddress, and revised hasDateofBirth with respect to an identity document to be verifiesDateOfBirth, which was determined to be more appropriate by the RTF."
+   ["The http://www.omg.org/spec/EDMC-FIBO/FND/20160201/AgentsAndPeople/People.rdf version of the ontology was modified per the FIBO 2.0 RFC, including integration of LCC."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People.rdf version of the ontology was was modified to revise a restriction on IdentityDocument to reference the appropriate identifier rather than use a tag. The impetus behind this change is to support privacy legislation, such as GDPR, which requires protection of both identifiers, such as a passport number, drivers' license number, etc. as well as the documents themselves. Thus, properties and individuals related to those identifiers are urgently needed."
-    "The https://www.omg.org/spec/EDMC-FIBO/FND/20201201/AgentsAndPeople/People.rdf version of the ontology was modified to add hasResidence, hasMailingAddress, and hasPrimaryResidence properties and a restriction on person with respect to residence accordingly, then to move hasMailingAddress to Parties."
+    "The https://www.omg.org/spec/EDMC-FIBO/FND/20211101/AgentsAndPeople/People.rdf version of the ontology was modified to address hygiene issues with respect to text formatting."
+    "The https://www.omg.org/spec/EDMC-FIBO/FND/20210401/AgentsAndPeople/People.rdf version of the ontology was modified to add concepts specific to legal age, age of majority, legal working age and legal working age person."
     "The https://www.omg.org/spec/EDMC-FIBO/FND/20210601/AgentsAndPeople/People.rdf version of the ontology was modified to revise the definition of passport number as a national identification number and eliminate restrictions that would cause people to be inferred to be passports."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People.rdf version of the ontology was modified to replace hasDefinition with isDefinedIn to clarify intent."]})
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The http://spec.edmcouncil.org/fibo/ontology/FND/20130801/AgentsAndPeople/People.rdf version of the ontology was was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/. It was further revised in the FTF in advance of the Long Beach meeting, resulting in https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/."
+    "The https://www.omg.org/spec/EDMC-FIBO/FND/20190901/AgentsAndPeople/People.rdf version of the ontology was modified to eliminate duplication with concepts in LCC and correct a bug in a restriction on identity document."
+    "The http://spec.edmcouncil.org/fibo/ontology/FND/20141101/AgentsAndPeople/People.rdf version of the ontology was was modified per the issue resolutions identified in the FIBO FND 1.1 RTF report, primarily to use the hasAddress property in addresses, and change PostalAddress to PhysicalAddress in a restriction on Person. Also revised the identifiesAddress property in favor of verifiesAddress, and revised hasDateofBirth with respect to an identity document to be verifiesDateOfBirth, which was determined to be more appropriate by the RTF."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People.rdf version of the ontology was modified to replace hasDefinition with isDefinedIn to clarify intent."
+    "The https://www.omg.org/spec/EDMC-FIBO/FND/20201201/AgentsAndPeople/People.rdf version of the ontology was modified to add hasResidence, hasMailingAddress, and hasPrimaryResidence properties and a restriction on person with respect to residence accordingly, then to move hasMailingAddress to Parties."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
+    "The https://www.omg.org/spec/EDMC-FIBO/FND/20190501/AgentsAndPeople/People.rdf version of the ontology was modified to eliminate deprecated elements."
+    "The https://www.omg.org/spec/EDMC-FIBO/FND/20200201/AgentsAndPeople/People.rdf version of the ontology was modified to add explicit DateOfBirth and DateOfDeath, added DeathCertificate and related concepts, streamlined related properties and restrictions."
+    "The http://www.omg.org/spec/FIBO/Foundations/20130601/AgentsAndPeople/People.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations.\n\t\t(6) to revise and extend the set of properties about people required to fulfill the set of use cases listed above."
+    "The https://www.omg.org/spec/EDMC-FIBO/FND/20180801/AgentsAndPeople/People.rdf version of the ontology was modified to deprecate legally capable person in favor of natural person (defined in Business Entities)."
+    "The https://www.omg.org/spec/EDMC-FIBO/FND/20210301/AgentsAndPeople/People.rdf version of the ontology was modified to allow the People ontology to import Parties, rather than the other way around, to simplify the class hierarchy for ease of use in data mapping and alignment, and to add person name as a first class concept, revising property definitions to allow for structured names by loosening constraints."]})
 
 (def Adult
   "person who has attained the age of majority as defined in some jurisdiction"
@@ -112,12 +120,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "birth certificate",
-   :rdfs/subClassOf [{:owl/onClass :fibo-fnd-aap-ppl/BirthCertificateIdentifier,
-                      :owl/onProperty :lcc-lr/isIdentifiedBy,
+   :rdfs/subClassOf [:fibo-fnd-aap-ppl/IdentityDocument
+                     :fibo-fnd-arr-doc/Certificate
+                     {:owl/onClass :fibo-fnd-aap-ppl/BirthCertificateIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-aap-ppl/IdentityDocument
-                     :fibo-fnd-arr-doc/Certificate],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "an original document certifying the circumstances of the birth, or a certified copy of or representation of the ensuing registration of that birth"})
 
@@ -130,11 +138,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "birth certificate identification scheme",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/defines,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/defines,
                       :owl/someValuesFrom
                       :fibo-fnd-aap-ppl/BirthCertificateIdentifier,
                       :rdf/type :owl/Restriction}
-                     :lcc-lr/IdentificationScheme],
+                     :cmns-id/IdentificationScheme],
    :skos/definition "system for allocating identifiers to birth certificates"})
 
 (def BirthCertificateIdentifier
@@ -147,14 +155,14 @@
    :rdfs/label "birth certificate identifier",
    :rdfs/subClassOf [{:owl/onClass
                       :fibo-fnd-aap-ppl/BirthCertificateIdentificationScheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-aap-ppl/BirthCertificate,
-                      :owl/onProperty :lcc-lr/identifies,
+                      :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/Identifier],
+                     :cmns-id/Identifier],
    :skos/definition
    "identifier associated with a vital record documenting the birth of a child"})
 
@@ -192,7 +200,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "death certificate",
    :rdfs/subClassOf [{:owl/onClass :fibo-fnd-aap-ppl/DeathCertificateIdentifier,
-                      :owl/onProperty :lcc-lr/isIdentifiedBy,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-arr-doc/Certificate
@@ -209,11 +217,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "death certificate identification scheme",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/defines,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/defines,
                       :owl/someValuesFrom
                       :fibo-fnd-aap-ppl/DeathCertificateIdentifier,
                       :rdf/type :owl/Restriction}
-                     :lcc-lr/IdentificationScheme],
+                     :cmns-id/IdentificationScheme],
    :skos/definition "system for allocating identifiers to death certificates"})
 
 (def DeathCertificateIdentifier
@@ -226,14 +234,14 @@
    :rdfs/label "death certificate identifier",
    :rdfs/subClassOf [{:owl/onClass
                       :fibo-fnd-aap-ppl/DeathCertificateIdentificationScheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-aap-ppl/DeathCertificate,
-                      :owl/onProperty :lcc-lr/identifies,
+                      :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/Identifier],
+                     :cmns-id/Identifier],
    :skos/definition
    "identifier associated with a vital record documenting the death of an individual"})
 
@@ -248,7 +256,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "driver's license",
    :rdfs/subClassOf [{:owl/onClass :fibo-fnd-aap-ppl/DriversLicenseIdentifier,
-                      :owl/onProperty :lcc-lr/isIdentifiedBy,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-aap-ppl/IdentityDocument],
@@ -264,11 +272,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "driver's license identification scheme",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/defines,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/defines,
                       :owl/someValuesFrom
                       :fibo-fnd-aap-ppl/DriversLicenseIdentifier,
                       :rdf/type :owl/Restriction}
-                     :lcc-lr/IdentificationScheme],
+                     :cmns-id/IdentificationScheme],
    :skos/definition
    "system for allocating identifiers to driver's, operating, or non-driver identification documents"})
 
@@ -282,14 +290,14 @@
    :rdfs/label "driver's license identifier",
    :rdfs/subClassOf [{:owl/onClass
                       :fibo-fnd-aap-ppl/DriversLicenseIdentificationScheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-aap-ppl/DriversLicense,
-                      :owl/onProperty :lcc-lr/identifies,
+                      :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/Identifier],
+                     :cmns-id/Identifier],
    :skos/definition
    "identifier associated with a drivers' or operating license for operating a motor vehicle or non-driver identification card"})
 
@@ -318,20 +326,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "identity document",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/identifies,
-                      :owl/someValuesFrom :fibo-fnd-aap-ppl/Person,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-doc/LegalDocument
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/LegalDocument
+                     {:owl/onClass    :cmns-id/Identifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :cmns-id/identifies,
+                      :owl/someValuesFrom :fibo-fnd-aap-ppl/Person,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-arr-doc/hasExpirationDate,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :lcc-lr/Identifier,
-                      :owl/onProperty :lcc-lr/isIdentifiedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
@@ -427,16 +435,16 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "national identification number",
-   :rdfs/subClassOf [{:owl/onClass
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-aap-ppl/Person,
+                      :owl/onProperty :cmns-id/identifies,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass
                       :fibo-fnd-aap-ppl/NationalIdentificationNumberScheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :lcc-lr/Identifier
-                     {:owl/onClass    :fibo-fnd-aap-ppl/Person,
-                      :owl/onProperty :lcc-lr/identifies,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                     :cmns-id/Identifier],
    :skos/definition
    "number or text which appears on an identity document issued by a country or jurisdiction"})
 
@@ -449,11 +457,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "national identification number scheme",
-   :rdfs/subClassOf [{:owl/onProperty :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasMember,
                       :owl/someValuesFrom
                       :fibo-fnd-aap-ppl/NationalIdentificationNumber,
                       :rdf/type :owl/Restriction}
-                     :lcc-lr/IdentificationScheme],
+                     :cmns-id/IdentificationScheme],
    :skos/definition
    "system for allocating identifiers to national identification numbers"})
 
@@ -468,7 +476,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "passport",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-aap-ppl/PassportNumber,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-aap-ppl/IdentityDocument],
@@ -484,7 +492,7 @@
    :rdfs/label "passport number",
    :rdfs/subClassOf [{:owl/onClass
                       :fibo-fnd-aap-ppl/PassportNumberIdentificationScheme,
-                      :owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-aap-ppl/NationalIdentificationNumber],
@@ -500,10 +508,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "passport number identification scheme",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasMember,
                       :owl/someValuesFrom :fibo-fnd-aap-ppl/PassportNumber,
                       :rdf/type           :owl/Restriction}
-                     :lcc-lr/IdentificationScheme],
+                     :cmns-id/IdentificationScheme],
    :skos/definition "system for allocating identifiers to passports"})
 
 (def Person
@@ -516,12 +524,16 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "person"},
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-aap-ppl/PersonName,
+                      :owl/onProperty :cmns-dsg/hasName,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-plc-adr/ConventionalStreetAddress,
                       :owl/onProperty :fibo-fnd-aap-ppl/hasResidence,
                       :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :lcc-cr/Country,
-                      :owl/onProperty :fibo-fnd-aap-ppl/hasCitizenship,
+                      :owl/onClass    :fibo-fnd-aap-ppl/DateOfDeath,
+                      :owl/onProperty :fibo-fnd-aap-ppl/hasDateOfDeath,
                       :rdf/type       :owl/Restriction}
                      {:owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-aap-ppl/hasGender,
@@ -531,6 +543,10 @@
                       :owl/onClass    :fibo-fnd-dt-fd/Age,
                       :owl/onProperty :fibo-fnd-dt-fd/hasAge,
                       :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :lcc-cr/Country,
+                      :owl/onProperty :fibo-fnd-aap-ppl/hasCitizenship,
+                      :rdf/type       :owl/Restriction}
                      :fibo-fnd-pty-pty/IndependentParty
                      {:owl/onClass    :fibo-fnd-aap-ppl/DateOfBirth,
                       :owl/onProperty :fibo-fnd-aap-ppl/hasDateOfBirth,
@@ -539,14 +555,6 @@
                      {:owl/onClass    :fibo-fnd-aap-ppl/PlaceOfBirth,
                       :owl/onProperty :fibo-fnd-aap-ppl/hasPlaceOfBirth,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-aap-ppl/DateOfDeath,
-                      :owl/onProperty :fibo-fnd-aap-ppl/hasDateOfDeath,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-aap-ppl/PersonName,
-                      :owl/onProperty :fibo-fnd-aap-agt/hasStructuredName,
                       :rdf/type       :owl/Restriction}],
    :skos/definition "individual human being, with consciousness of self"})
 
@@ -558,24 +566,24 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "person name",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
-                      :owl/onProperty  :fibo-fnd-aap-ppl/hasSurname,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
+                      :owl/onDataRange :cmns-txt/Text,
                       :owl/onProperty  :fibo-fnd-aap-ppl/hasFullLegalName,
                       :rdf/type        :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-aap-ppl/Person,
-                      :owl/onProperty :fibo-fnd-aap-agt/isStructuredNameOf,
+                      :owl/onProperty :cmns-dsg/isNameOf,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-pty/ContextualName
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
+                      :owl/onDataRange :cmns-txt/Text,
+                      :owl/onProperty  :fibo-fnd-aap-ppl/hasSurname,
+                      :rdf/type        :owl/Restriction}
+                     :cmns-cxtdsg/ContextualName
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :cmns-txt/Text,
                       :owl/onProperty  :fibo-fnd-aap-ppl/hasNameSuffix,
                       :rdf/type        :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :fibo-fnd-aap-agt/Text,
+                      :owl/onDataRange :cmns-txt/Text,
                       :owl/onProperty  :fibo-fnd-aap-ppl/hasNamePrefix,
                       :rdf/type        :owl/Restriction}],
    :skos/definition "designation by which someone is known in some context"})
@@ -613,7 +621,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "has citizenship",
    :rdfs/range :lcc-cr/Country,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
    :skos/definition "links a person to their country of citizenship"})
 
 (def hasDateOfBirth
@@ -754,7 +762,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "has name prefix",
-   :rdfs/subPropertyOf :fibo-fnd-aap-agt/hasTextValue,
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "indicates a character or sequence of characters, preceding a person's name, that provides additional information about the person, such as a form of address representing a title, honorific, or military rank"})
 
@@ -765,7 +773,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "has name suffix",
-   :rdfs/subPropertyOf :fibo-fnd-aap-agt/hasTextValue,
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "indicates a character or sequence of characters, following a person's name, that provides additional information about the person, such as their position, educational degree, accreditation, office, or honor"})
 
@@ -778,7 +786,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "has person name",
-   :rdfs/subPropertyOf [:lcc-lr/hasName :fibo-fnd-aap-agt/hasTextValue],
+   :rdfs/subPropertyOf [:cmns-txt/hasTextValue
+                        :fibo-fnd-rel-rel/hasTextualName],
    :skos/definition "links a name to an individual"})
 
 (def hasPlaceOfBirth
@@ -790,7 +799,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
    :rdfs/label "has place of birth",
    :rdfs/range :fibo-fnd-aap-ppl/PlaceOfBirth,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :cmns-cls/isCharacterizedBy,
    :skos/definition "identifies the location where an individual was born"})
 
 (def hasPrimaryResidence

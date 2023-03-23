@@ -10,10 +10,12 @@
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+   ["https://www.omg.org/spec/Commons/Identifiers/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"],
@@ -21,6 +23,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-plc-adr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
@@ -33,7 +38,6 @@
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -49,6 +53,7 @@
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here, and correct a duplicate label."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def CompleteAddress
@@ -72,12 +77,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "delivery address code set",
    :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"],
-   :rdfs/subClassOf [{:owl/onProperty :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasMember,
                       :owl/someValuesFrom
                       :fibo-fnd-plc-uspsa/USPostalServiceAddressIdentifier,
                       :rdf/type :owl/Restriction}
-                     :lcc-lr/IdentificationScheme
-                     :lcc-lr/CodeSet],
+                     :cmns-id/IdentificationScheme
+                     :cmns-cds/CodeSet],
    :skos/definition
    "system of numeric codes that substitute for specified delivery point details according to the U.S. Postal Service Publication 28"})
 
@@ -92,14 +97,14 @@
    :rdfs/label "delivery point code",
    :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"],
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-plc-uspsa/DeliveryPointCodeSet,
-                      :owl/onProperty :lcc-lr/isMemberOf,
+                      :owl/onProperty :cmns-col/isMemberOf,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/CodeElement],
+                     :cmns-cds/CodeElement],
    :skos/definition
    "specific set of digits between 00 and 99 assigned to a delivery point"})
 
@@ -111,10 +116,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "delivery point code set",
    :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"],
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasMember,
                       :owl/someValuesFrom :fibo-fnd-plc-uspsa/DeliveryPointCode,
                       :rdf/type           :owl/Restriction}
-                     :lcc-lr/CodeSet],
+                     :cmns-cds/CodeSet],
    :skos/definition
    "system of numeric codes that substitute for specified delivery point details according to the U.S. Postal Service Publication 28"})
 
@@ -127,12 +132,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "Department of State address",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-plc-uspsa/Mailbox,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass
                       :fibo-fnd-plc-uspsa/DepartmentOfStateUnitComponent,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
                      {:owl/hasValue   {:xsd/string "DPO"},
@@ -150,7 +155,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "Department of State unit component",
    :rdfs/subClassOf [{:owl/hasValue   :fibo-fnd-plc-adr/Unit,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/SupplementalAddressComponent],
    :skos/definition
@@ -159,7 +164,7 @@
 (def East
   "geographic directional symbol for East"
   {:db/ident :fibo-fnd-plc-uspsa/East,
-   :lcc-lr/hasTag "E",
+   :fibo-fnd-rel-rel/hasTag "E",
    :rdf/type [:fibo-fnd-plc-adr/GeographicDirectionalSymbol
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -196,7 +201,7 @@
    :rdfs/label "highway contract route",
    :rdfs/subClassOf [{:owl/hasValue
                       :fibo-fnd-plc-uspsa/HighwayContractRouteDesignator,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-plc-adr/SupplementalAddressComponent],
    :skos/definition "highway contract route associated with an address"})
@@ -210,11 +215,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "highway contract address",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-plc-uspsa/Mailbox,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-plc-uspsa/HighwayContractRoute,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/PhysicalAddress],
@@ -255,7 +260,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "mailbox",
    :rdfs/subClassOf [{:owl/hasValue   :fibo-fnd-plc-uspsa/MailboxDesignator,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/SupplementalAddressComponent],
    :skos/definition
@@ -276,7 +281,7 @@
 (def North
   "geographic directional symbol for North"
   {:db/ident :fibo-fnd-plc-uspsa/North,
-   :lcc-lr/hasTag "N",
+   :fibo-fnd-rel-rel/hasTag "N",
    :rdf/type [:fibo-fnd-plc-adr/GeographicDirectionalSymbol
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -290,7 +295,7 @@
 (def Northeast
   "geographic directional symbol for Northeast"
   {:db/ident :fibo-fnd-plc-uspsa/Northeast,
-   :lcc-lr/hasTag "NE",
+   :fibo-fnd-rel-rel/hasTag "NE",
    :rdf/type [:fibo-fnd-plc-adr/GeographicDirectionalSymbol
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -304,7 +309,7 @@
 (def Northwest
   "geographic directional symbol for Northwest"
   {:db/ident :fibo-fnd-plc-uspsa/Northwest,
-   :lcc-lr/hasTag ["NW" "NO"],
+   :fibo-fnd-rel-rel/hasTag ["NW" "NO"],
    :rdf/type [:fibo-fnd-plc-adr/GeographicDirectionalSymbol
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -355,7 +360,7 @@
    :rdfs/label "Puerto Rico address",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-uspsa/Urbanization,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/ConventionalStreetAddress],
    :skos/definition
@@ -369,7 +374,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "highway contract route address",
    :rdfs/subClassOf [{:owl/hasValue   :fibo-fnd-plc-uspsa/RuralRouteDesignator,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/SupplementalAddressComponent],
    :skos/definition
@@ -384,11 +389,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "rural route address",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-plc-uspsa/RuralRoute,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-plc-uspsa/Mailbox,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/PhysicalAddress],
@@ -410,7 +415,7 @@
 (def South
   "geographic directional symbol for South"
   {:db/ident :fibo-fnd-plc-uspsa/South,
-   :lcc-lr/hasTag "S",
+   :fibo-fnd-rel-rel/hasTag "S",
    :rdf/type [:fibo-fnd-plc-adr/GeographicDirectionalSymbol
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -424,7 +429,7 @@
 (def Southeast
   "geographic directional symbol for Southeast"
   {:db/ident :fibo-fnd-plc-uspsa/Southeast,
-   :lcc-lr/hasTag "SE",
+   :fibo-fnd-rel-rel/hasTag "SE",
    :rdf/type [:fibo-fnd-plc-adr/GeographicDirectionalSymbol
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -438,7 +443,7 @@
 (def Southwest
   "geographic directional symbol for Southwest"
   {:db/ident :fibo-fnd-plc-uspsa/Southwest,
-   :lcc-lr/hasTag ["SW" "SO"],
+   :fibo-fnd-rel-rel/hasTag ["SW" "SO"],
    :rdf/type [:fibo-fnd-plc-adr/GeographicDirectionalSymbol
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -480,11 +485,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "U.S. Postal Service address identifier",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-plc-uspsa/ZIPPlus4Code,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-plc-uspsa/DeliveryPointCode,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/PhysicalAddressIdentifier],
@@ -507,7 +512,7 @@
 (def West
   "geographic directional symbol for West"
   {:db/ident :fibo-fnd-plc-uspsa/West,
-   :lcc-lr/hasTag ["W" "O"],
+   :fibo-fnd-rel-rel/hasTag ["W" "O"],
    :rdf/type [:fibo-fnd-plc-adr/GeographicDirectionalSymbol
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -550,14 +555,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "zip code scheme",
    :rdfs/seeAlso ["https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"],
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasMember,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasMember,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-plc-uspsa/ZIPCode
                                             :fibo-fnd-plc-uspsa/ZIPPlus4Code],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :lcc-lr/IdentificationScheme
-                     :lcc-lr/CodeSet],
+                     :cmns-id/IdentificationScheme
+                     :cmns-cds/CodeSet],
    :skos/definition
    "system used in the U.S. to facilitate the delivery of mail, consisting of a five- or nine-digit code Zone Improvement Plan (ZIP) printed directly after the address, the first five digits (initial code) indicating the state and post office or postal zone, the last four (expanded code) the box section or number, portion of a rural route, building, or other specific delivery location"})
 
@@ -569,7 +574,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "has urbanization",
    :rdfs/range :fibo-fnd-plc-uspsa/Urbanization,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition
    "indicates area, sector, or development within a geographic area relevant to a delivery address"})
 

@@ -305,5 +305,6 @@
            '[net.wikipunk.rdf.cmns-col :as cmns-col]
            '[net.wikipunk.rdf.cmns-txt :as cmns-txt]
            '[net.wikipunk.rdf.cmns-dsg :as cmns-dsg]
-           '[net.wikipunk.rdf.cmns-dsg :as cmns-dsg]
+           '[net.wikipunk.rdf.cmns-id :as cmns-id]
+           '[net.wikipunk.rdf.cmns-cls :as cmns-cls]
            '[net.wikipunk.rdf.sm :as sm]))

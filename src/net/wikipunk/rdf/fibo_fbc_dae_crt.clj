@@ -5,12 +5,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :dcterms/abstract
    "This ontology defines the concept of a credit rating, along with credit watch and outlook qualifying terms. There are credit ratings for individuals, for organizations and for instruments. \n\t\tThese are referenced extensively in the securities models but are also applicable to business entities generally and in the context of lending and account maintenance.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
+   ["https://www.omg.org/spec/Commons/Classifiers/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
@@ -22,18 +23,18 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/ClientsAndAccounts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Ratings/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/CreditRatings/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-crt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
@@ -43,8 +44,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
     "fibo-fbc-pas-fpas"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
-    "fibo-fnd-arr-cls"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-arr-doc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
     "fibo-fnd-arr-rep"
@@ -69,8 +68,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -112,7 +109,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label "credit inquiry",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/isClassifiedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/isClassifiedBy,
                       :owl/someValuesFrom :fibo-fbc-dae-crt/CreditInquiryType,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-arr-rep/isRequestedOf,
@@ -132,7 +129,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label "credit inquiry type",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "classifier indicating whether a credit inquiry is a result of a borrower's direct authorization or by some indirect means"})
 
@@ -143,7 +140,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label "credit message",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/isClassifiedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/isClassifiedBy,
                       :owl/someValuesFrom :fibo-fbc-dae-crt/CreditMessageType,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-doc/Notice],
@@ -157,7 +154,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label "credit message type",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition "classifier that categorizes credit messages"})
 
 (def CreditQuality
@@ -226,15 +223,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label "credit rating model",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasName,
-                      :owl/someValuesFrom :xsd/string,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :lcc-cr/isClassifiedBy,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-cls/isClassifiedBy,
                       :owl/someValuesFrom
                       :fibo-fbc-dae-crt/CreditRatingModelType,
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/produces,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/hasTextualName,
+                      :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/Formula],
    :skos/definition "algorithm for computing a credit rating"})
@@ -246,7 +243,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label "credit score model type",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "a type corresonding to a family of credit scoring algorithms sharing common characteristics"})
 
@@ -277,48 +274,48 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label "credit report",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fbc-pas-caa/realizes,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportProduct,
+   [{:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-dae-crt/CreditTradeline,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
-     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
      :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-cls/isClassifiedBy,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportCategory,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-dae-crt/hasCoveragePeriod,
      :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-dae-crt/CreditRating,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditMessage,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :lcc-lr/isIdentifiedBy,
-     :owl/someValuesFrom :lcc-lr/Identifier,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-dae-crt/concernsParty,
-     :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :lcc-cr/isClassifiedBy,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportCategory,
-     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-dae-crt/CreditInquiry,
-     :owl/onProperty :fibo-fnd-rel-rel/comprises,
+     :owl/onProperty :cmns-col/comprises,
      :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-dae-crt/CreditRating,
+     :owl/onProperty :cmns-col/comprises,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-dae-crt/CreditTradeline,
+     :owl/onProperty :cmns-col/comprises,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :cmns-col/comprises,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditMessage,
+     :rdf/type           :owl/Restriction}
     :fibo-fnd-arr-rt/RatingReport
+    {:owl/onProperty     :cmns-id/isIdentifiedBy,
+     :owl/someValuesFrom :cmns-id/Identifier,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-arr-doc/hasDataSource,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom
                           :fibo-fbc-dae-crt/CreditRatingAgency,
                           :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-dae-crt/concernsParty,
+     :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportProduct,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "report describing the creditworthiness and related credit attributes of a borrower"})
@@ -330,7 +327,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label "credit report category",
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier,
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "classifier for credit reports, often available from multiple vendors"})
 
@@ -357,7 +354,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label "credit tradeline",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isIncludedIn,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/isIncludedIn,
                       :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReport,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-qt-qtu/isDerivedFrom,
@@ -375,7 +372,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "credit watch direction"},
-   :rdfs/subClassOf :fibo-fnd-arr-cls/Classifier})
+   :rdfs/subClassOf :cmns-cls/Classifier})
 
 (def CreditWatchDowngrade
   "credit watch downgrade"

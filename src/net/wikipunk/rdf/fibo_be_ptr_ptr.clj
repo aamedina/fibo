@@ -6,7 +6,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :dcterms/abstract
    "This ontology defines partnerships and related concepts. The concepts distinguish general from limited partners, as well as the types of equity that they hold. Included are abstract definitions of partnership types based on whether they have general, limited or both kinds of partners. Both legally incorporated and non incorporated forms of partnerships are covered.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
@@ -14,10 +14,10 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
@@ -26,6 +26,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Partnerships/Partnerships/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-fbo"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
@@ -51,7 +52,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -64,6 +64,7 @@
    :rdfs/label "Partnerships Ontology",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships.rdf version of this ontology was modified to simplify / merge the legal person and formal organization class hierarchies."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships.rdf version of this ontology was modified to eliminate duplication with concepts in LCC."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships.rdf version of this ontology was modified per the FIBO 2.0 RFC to reference shareholders' equity vs. stockholders' equity and correct a number of restrictions."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships.rdf version of this ontology was modified to eliminate deprecated elements."
@@ -107,7 +108,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "general partnership",
    :rdfs/subClassOf
-   [{:owl/onProperty     :lcc-lr/hasMember,
+   [{:owl/onProperty     :cmns-col/hasMember,
      :owl/someValuesFrom {:owl/minQualifiedCardinality 2,
                           :owl/onClass    :fibo-be-ptr-ptr/GeneralPartner,
                           :owl/onProperty :fibo-fnd-pty-rl/playsRole,
@@ -177,12 +178,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "limited partnership",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
-                      :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-be-ptr-ptr/Partnership
+   :rdfs/subClassOf [:fibo-be-ptr-ptr/Partnership
                      {:owl/onProperty     :fibo-be-ptr-ptr/hasLimitedPartner,
                       :owl/someValuesFrom :fibo-be-ptr-ptr/LimitedPartner,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
+                      :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "partnership that has at least one general partner and at least one limited partner",
@@ -198,7 +199,7 @@
    :rdfs/label "partner",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom {:owl/onProperty     :lcc-lr/isMemberOf,
+     :owl/someValuesFrom {:owl/onProperty     :cmns-col/isMemberOf,
                           :owl/someValuesFrom :fibo-be-ptr-ptr/Partnership,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
@@ -228,20 +229,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "partnership",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-be-le-lp/ProfitObjective,
-     :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
-     :rdf/type       :owl/Restriction}
-    :fibo-be-le-lp/LegalEntity
+   [:fibo-be-le-lp/LegalEntity
+    {:owl/onProperty     :cmns-col/hasMember,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
      :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
      :rdf/type           :owl/Restriction}
     :fibo-be-le-lp/BusinessEntity
-    {:owl/onProperty     :lcc-lr/hasMember,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
-                          :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
-                          :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}],
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lp/ProfitObjective,
+     :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "association of two or more legal persons to carry on as co-owners a business for profit"})
 

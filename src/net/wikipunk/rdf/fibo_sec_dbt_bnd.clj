@@ -6,7 +6,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :dcterms/abstract
    "This ontology defines the basic concept of a bond and a number of bond variants including convertible and callable bonds. Medium term notes (MTNs) and debentures are also defined.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
@@ -37,18 +37,19 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/ISO4217-CurrencyCodes/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesListings/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
+    "https://www.omg.org/spec/Commons/Collections/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-ge-ge"
     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
@@ -110,7 +111,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
     "fibo-sec-sec-lst"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -126,6 +126,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate references to the exercise conventions ontology, which are not needed for bonds."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate false positives in hygiene tests due to concept names containing words, such as 'and', which might indicate that the concept actually reflects more than one thing, including distinguishing zero coupon from original issue discount bonds, and replace the use of call price and put price, which are overly constrained, with monetary price."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to incorporate the concept of a credit agreement repaid at maturity, which is a component assumed to be part of the definition of a bond, and to add an explanatory note to the definition of Treasury Bill."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to allow for variation in index-linked bonds, such as those whose interest payments vary with an index in addition to those that have a variable principal linked to an index and to make a number of corrections to the class hierarchy."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Debt/Bonds.rdf version of this ontology was revised to eliminate a duplicate 'isBasedOn' property and replace it with the property of the same name in the debt ontology, to revise the inheritance hierarchy for bond conversion terms to reflect changes in the representation of redemption more generally, to reflect the move of redemption provision from debt to financial instruments, and eliminate circular and ambiguous definitions."
@@ -494,7 +495,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "coupon schedule",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPayment,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pas-psch/PaymentSchedule
@@ -862,6 +863,9 @@
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
+    {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -869,9 +873,6 @@
                                          :fibo-be-ge-ge/RegionalSovereignty],
                            :rdf/type    :owl/Class},
                           :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
      :rdf/type           :owl/Restriction}],
    :skos/definition "debt obligation issued by a regional governmental entity"})
 
@@ -902,12 +903,12 @@
    :rdfs/label "original issue discount bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/Bond
-    {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
-     :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
-     :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
      :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
+     :rdf/type       :owl/Restriction}
+    {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
+     :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
      :rdf/type       :owl/Restriction}],
    :skos/definition
    "interest-bearing bond issued at a deep discount to face value"})
@@ -1032,7 +1033,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "redemption schedule",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/RedemptionEvent,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pas-psch/PaymentSchedule],
@@ -1211,7 +1212,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "step schedule",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/StepEvent,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-fd/AdHocSchedule],
@@ -1294,16 +1295,16 @@
    ["https://www.treasurydirect.gov/indiv/research/indepth/tbills/res_tbill_rates.htm"
     "https://www.treasurydirect.gov/indiv/research/indepth/tbills/res_tbill.htm"],
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-sec-dbt-dbti/AtADiscount,
-     :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-tstd/MoneyMarketInstrument
+   [{:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
+     :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
+     :rdf/type           :owl/Restriction}
     {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
-     :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
-     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-tstd/MoneyMarketInstrument
+    {:owl/hasValue   :fibo-sec-dbt-dbti/AtADiscount,
+     :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
+     :rdf/type       :owl/Restriction}
     :fibo-sec-dbt-bnd/USTreasurySecurity],
    :skos/definition
    "short-term zero coupon treasury obligation with a maturity ranging from one to twelve months"})
@@ -1538,11 +1539,11 @@
      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
      :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-dbti/FixedIncomeSecurity
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/ZeroCouponTerms,
      :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/Bond
+    :fibo-sec-dbt-dbti/FixedIncomeSecurity
     {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
      :rdf/type       :owl/Restriction}],
@@ -1804,7 +1805,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has funding source",
    :rdfs/range :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :fibo-fnd-arr-doc/hasDataSource,
    :skos/definition
    "indicates the source of funds for a new issue of municipal securities"})
 

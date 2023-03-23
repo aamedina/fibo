@@ -8,33 +8,36 @@
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/PoolBackedSecurities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/MortgageBackedSecurities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/DebtTemporal/DebtAnalytics/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-dbt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
     "fibo-fbc-fi-ip"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-dt-fd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
     "fibo-fnd-pas-pas"
@@ -222,7 +225,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "collection of debt pools"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-pls/Pool],
@@ -302,12 +305,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "debt instrument analytical parameter"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
+                      :rdf/type :owl/Restriction}
                      :fibo-fnd-utl-alx/ScopedMeasure],
    :skos/definition
    {:rdf/language "en",
@@ -357,12 +360,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "debt pool analytical parameter"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/CollectionOfDebtPools,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-utl-alx/ScopedMeasure],
    :skos/definition
@@ -378,7 +381,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "debt price spread"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
                       :rdf/type           :owl/Restriction}
                      :fibo-ind-ind-ind/MarketSpread],
@@ -547,7 +550,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "dirty price"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/AccruedInterestAmount,
                       :rdf/type :owl/Restriction}
@@ -849,7 +852,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "loan pool prepayment model"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/LoanPrepaymentFormula,
                       :rdf/type :owl/Restriction}
@@ -1399,7 +1402,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "yield calculation formula"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/DebtInstrumentYield,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/Formula],
@@ -1784,11 +1787,11 @@
   {:db/ident :fibo-sec-dbt-pbs/PoolBackedSecurity,
    :rdf/type :owl/Class,
    :rdfs/subClassOf
-   [{:owl/onProperty :fibo-fnd-rel-rel/isCharacterizedBy,
+   [{:owl/onProperty :cmns-cls/isCharacterizedBy,
      :owl/someValuesFrom
      :fibo-md-dbtx-aly/InstrumentWeightedAverageRemainingMaturity,
      :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isCharacterizedBy,
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
      :owl/someValuesFrom :fibo-md-dbtx-aly/InstrumentWeightedAverageLoanAge,
      :rdf/type           :owl/Restriction}]})
 

@@ -13,6 +13,7 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/CorporateActions/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/TemporalCore/SecurityTradingStatuses/"
@@ -25,6 +26,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-cae-ce-act"
     "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
@@ -72,7 +74,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "bond default event"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-dae-cre/ObligationDefault
@@ -230,7 +232,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "change of security trading status event"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom
                       :fibo-md-temx-trs/SecurityTradingStatus,
                       :rdf/type :owl/Restriction}
@@ -354,7 +356,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "coupon strip"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                       :rdf/type           :owl/Restriction}
                      :fibo-cae-ce-act/CorporateAction],
@@ -564,7 +566,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "interest rate adjustment"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/VariableCouponBond,
                       :rdf/type           :owl/Restriction}
                      :fibo-cae-ce-act/MandatoryCorporateAction],
@@ -790,7 +792,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "reverse stock split"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-eq-eq/Share,
                       :rdf/type           :owl/Restriction}
                      :fibo-cae-ce-act/MandatoryCorporateAction],
@@ -864,7 +866,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "stock split"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-eq-eq/Share,
                       :rdf/type           :owl/Restriction}
                      :fibo-cae-ce-act/MandatoryCorporateAction],
@@ -890,7 +892,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "tender offer"},
    :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-eq-eq/Share,
                       :rdf/type           :owl/Restriction}],
    :skos/definition

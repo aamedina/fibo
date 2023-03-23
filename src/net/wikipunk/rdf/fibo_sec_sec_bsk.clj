@@ -6,33 +6,29 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
    :dcterms/abstract
    "This ontology defines the concept of a tradable container of securities, indices, and/or market rates, and identifies the elements that can be constituents of a such a basket.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-fi-fi"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
     "fibo-fbc-pas-fpas"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-dt-fd"
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-ind-ei-ei"
@@ -53,6 +49,7 @@
    :rdfs/label "Baskets Ontology",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets.rdf version of this ontology was revised to augment the definitions of various baskets to include weighting and to be dated, as needed to represent various benchmarks and funds based on these baskets."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets.rdf version of this ontology was revised to reflect the move of dated collections from arrangements to financial dates, and replace 'involves' with 'comprises' for consistency across basket definitions."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets.rdf version of this ontology was revised to add the date a given constituent is added to a basket, and use involves rather than hasIdentity to link a security or index to the basket constituent it is referenced by."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
@@ -64,7 +61,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
    :rdfs/label "market basket",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasConstituent,
                       :owl/someValuesFrom
                       :fibo-sec-sec-bsk/BasketOfIndicesConstituent,
                       :rdf/type :owl/Restriction}
@@ -89,7 +86,7 @@
                                           [:fibo-ind-ei-ei/EconomicIndicator
                                            :fibo-ind-ind-ind/MarketRate],
                                           :rdf/type :owl/Class},
-                      :owl/onProperty    :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty    :cmns-col/comprises,
                       :rdf/type          :owl/Restriction}
                      :fibo-fnd-dt-fd/DatedCollectionConstituent
                      :fibo-fbc-pas-fpas/WeightedBasketConstituent],
@@ -102,7 +99,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
    :rdfs/label "basket of securities",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasConstituent,
                       :owl/someValuesFrom
                       :fibo-sec-sec-bsk/SecuritiesBasketConstituent,
                       :rdf/type :owl/Restriction}
@@ -118,7 +115,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
    :rdfs/label "mixed basket",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasConstituent,
                       :owl/someValuesFrom
                       {:owl/unionOf
                        [:fibo-sec-sec-bsk/BasketOfIndicesConstituent
@@ -142,7 +139,7 @@
                       :owl/onProperty :fibo-fnd-dt-fd/hasDateAdded,
                       :rdf/type       :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fbc-fi-fi/Security,
-                      :owl/onProperty    :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty    :cmns-col/comprises,
                       :rdf/type          :owl/Restriction}
                      :fibo-fnd-dt-fd/DatedCollectionConstituent
                      :fibo-fbc-pas-fpas/WeightedBasketConstituent],

@@ -6,14 +6,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for financial instruments in general, providing the high-level hooks for build-out in more detail in the relevant domain areas. These include, but are not limited to, equities, options, debt instruments, and so forth, some of which may be negotiable.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateOwnership/"
@@ -26,11 +27,15 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-fbo"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
@@ -62,7 +67,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -80,14 +84,15 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/ version of this ontology was modified to address dead links and text formatting issues uncovered by hygiene testing."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/ version of this ontology was modified to add the concept of a spot contract and clarify the definition of time to maturity, as well as add a property for days to maturity."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/ version of this ontology was modified for the FIBO 2.0 RFC, including minor bug fixes."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary and to add a new property, has underlier, which is needed in both securities and derivatives."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/ version of this ontology was modified to make Entitlement a subclass of Security and fix spelling."
-    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/ version of this ontology was modified to change the restriction on financial instrument identifier from some values to min 0, to allow for cases when an instrument identifier identifies a listing, eliminate duplication of concepts in LCC, and simplify addresses."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/ version of this ontology was modified to move redemption provision from debt to financial instruments, given that it is a broader concept needed for equities."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/ version of this ontology was modified to eliminate deprecated content, i.e., properties related to maturity that are now in the Debt ontology and revise the definition of a securities transaction identifier to align with ISO 23897."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/ version of this ontology was modified to add a property indicating the currency that an instrument is issued in, simplify the contract party hierarchy and add properties relating financial instruments to shareholders."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/ version of this ontology was modified as a part of organizational hierarchy simplification, to add maturity-related properties, and to add exempt security."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/ version of this ontology was modified to incorporate a hasMaturityDate property given that it can apply to debt instruments and preferred shares, as well as to other financial instruments, eliminated the redundant hasScheduledMaturityDate property, cleaned up circular definitions, eliminated the property 'mayBeTradedIn', which was only used in one place and was redundant with the concept of a ListedSecurity / Listing in SEC, added a synonym and additional explanatory note to packaged financial product, added hasNominalValue, which was a gap, and added back restrictions on debt instrument for hasMaturityDate (min 0 to account for rare instruments (e.g., consul) that have no maturity date), hasDurationToMaturity and hasTimeToMaturity."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/ version of this ontology was modified to eliminate deprecated elements."]})
 
 (def CashInstrument
@@ -227,30 +232,30 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "financial instrument",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :xsd/boolean,
-                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass
-                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
-                      :owl/onProperty :lcc-lr/isIdentifiedBy,
-                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "written contract that gives rise to both a financial asset of one entity and a financial liability of another entity",
    :skos/example
@@ -265,9 +270,9 @@
    :rdfs/label "financial instrument identifier",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-fi-fi/FinancialInstrument,
-                      :owl/onProperty :lcc-lr/identifies,
+                      :owl/onProperty :cmns-id/identifies,
                       :rdf/type       :owl/Restriction}
-                     :lcc-lr/Identifier],
+                     :cmns-id/Identifier],
    :skos/definition
    "sequence of characters uniquely identifying a financial instrument for some purpose and within a specified context",
    :skos/scopeNote
@@ -365,7 +370,7 @@
    ["https://www.sec.gov/Archives/edgar/data/36995/000121465907002234/c101872fwp.htm"],
    :rdfs/subClassOf [:fibo-fbc-pas-fpas/FinancialProduct
                      :fibo-fnd-pas-pas/ContractualProduct
-                     {:owl/onProperty :fibo-fnd-rel-rel/comprises,
+                     {:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-fbc-pas-fpas/FinancialProduct
                                      :fibo-fbc-fi-fi/FinancialInstrument],
@@ -373,7 +378,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fbc-pas-fpas/FinancialProductCatalog,
-                      :owl/onProperty :fibo-fnd-rel-rel/isIncludedIn,
+                      :owl/onProperty :cmns-col/isIncludedIn,
                       :rdf/type :owl/Restriction}],
    :skos/definition
    "financial product that acts as a container for at least one financial instrument, including other financial products, and whose value is derived from, or based on a reference asset, market measure, or investment strategy",
@@ -403,7 +408,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "securities transaction",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-fpas/Trade],
@@ -432,11 +437,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "security",
-   :rdfs/subClassOf [:fibo-fbc-fi-fi/FinancialInstrument
-                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fi-fi/FinancialInstrument],
    :skos/definition "financial instrument that can be bought or sold"})
 
 (def SpotContract
@@ -469,6 +474,19 @@
    "contract terms that, grouped together, that are generally and consistently reused across many contracts, published by some organization, and capable of being incorporated into a contract by reference",
    :skos/example
    "Each exchange has a set of terms they apply to membership agreements and with respect to the instruments that may be traded on that exchange. For example, there is a set expiration date that exchanges will publish for exchange-traded options - in the US it is the Saturday following the third Friday of every month. Similarly, there are set incremental dates for strike for exchange traded options. Contract sizes are also stipulated, for example in the US these are standardized by the OPRA Convention (Options Pricing Reporting Authority)."})
+
+(def Underlier
+  "something that can be assigned a value in the marketplace that forms the basis for a derivative or pool-backed instrument"
+  {:db/ident :fibo-fbc-fi-fi/Underlier,
+   :fibo-fnd-utl-av/explanatoryNote
+   "Underlier means any rate (including interest and foreign exchange rates), currency, commodity, security, instrument of indebtedness, index, quantitative measure, occurrence or non-occurrence of an event, or other financial or economic interest, or property of any kind, or any interest therein or based on the value thereof, in or by reference to which any payment or delivery under a transaction is to be made or determined.",
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+   :rdfs/label "underlier",
+   :rdfs/subClassOf :fibo-fnd-pty-rl/ThingInRole,
+   :skos/definition
+   "something that can be assigned a value in the marketplace that forms the basis for a derivative or pool-backed instrument"})
 
 (def hasNominalValue
   "indicates the face value of something"
@@ -523,6 +541,19 @@
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
    :skos/definition "indicates a party that holds shares in the issuer"})
 
+(def hasUnderlier
+  "relates a derivative to something on which the contract is based"
+  {:db/ident :fibo-fbc-fi-fi/hasUnderlier,
+   :fibo-fnd-utl-av/usageNote
+   "The domain of this property can be either a derivative instrument or, in the case of a swap contract, one leg of the swap.",
+   :rdf/type :owl/ObjectProperty,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+   :rdfs/label "has underlier",
+   :rdfs/range :fibo-fbc-fi-fi/Underlier,
+   :skos/definition
+   "relates a derivative to something on which the contract is based"})
+
 (def hasValueExpressedIn
   "relates an instrument to the currency its value is typically expressed in"
   {:cmns-av/explanatoryNote
@@ -534,6 +565,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "has value expressed in",
    :rdfs/range :fibo-fnd-acc-cur/Currency,
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasCurrency,
    :skos/definition
    "relates an instrument to the currency its value is typically expressed in"})
 
@@ -601,6 +633,6 @@
   {:db/ident        :fibo-fbc-pas-fpas/UniqueTransactionIdentifier,
    :rdf/type        :owl/Class,
    :rdfs/subClassOf {:owl/onClass    :fibo-fbc-fi-fi/SecuritiesTransaction,
-                     :owl/onProperty :lcc-lr/identifies,
+                     :owl/onProperty :cmns-id/identifies,
                      :owl/qualifiedCardinality 1,
                      :rdf/type       :owl/Restriction}})

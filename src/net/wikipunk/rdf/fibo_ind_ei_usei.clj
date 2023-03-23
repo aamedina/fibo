@@ -6,13 +6,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :dcterms/abstract
    "This ontology provides specific parameters which make up the various types of market economic indicators applicable to the American economy.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
@@ -20,14 +21,15 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-pub"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
@@ -43,8 +45,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
     "fibo-fnd-pty-rl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-alx"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
@@ -55,8 +55,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
     "lcc-3166-1"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -72,6 +70,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators.rdf version of this ontology was revised to eliminate duplication of concepts in LCC, merge countries with locations in FND, and eliminate a redundant superclass declaration on UrbanConsumerPriceIndex."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators.rdf version of this ontology was added to the IND specification per the issue resolutions identified in the FIBO IND 1.0 FTF 3 report."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators.rdf version of this ontology was revised to merge statistical information publisher with economic indicators."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators.rdf version of this ontology was revised to reflect the new hasCoverageArea property and migration of statistical measures in FND."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators.rdf version of this ontology was revised per the FIBO 2.0 RFC."]})
@@ -95,9 +94,9 @@
    :cmns-av/adaptedFrom "http://www.bls.gov/bls/infohome.htm",
    :cmns-av/explanatoryNote
    "Its mission is to collect, analyze, and disseminate essential economic information to support public and private decision-making. As an independent statistical agency, BLS serves its diverse user communities by providing products and services that are objective, timely, accurate, and relevant.",
+   :cmns-col/isPartOf :fibo-ind-ei-usei/UnitedStatesDepartmentOfLabor,
    :db/ident :fibo-ind-ei-usei/BureauOfLaborStatistics,
    :fibo-fnd-plc-loc/hasCoverageArea :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-cr/isPartOf :fibo-ind-ei-usei/UnitedStatesDepartmentOfLabor,
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/GovernmentAgency],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
@@ -156,7 +155,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "employment situation establishment survey",
    :rdfs/seeAlso ["https://www.bls.gov/news.release/empsit.tn.htm"],
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasContext,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
                       :owl/someValuesFrom :fibo-ind-ei-ei/Establishment,
                       :rdf/type           :owl/Restriction}
                      :fibo-ind-ei-usei/EmploymentSituationSurvey],
@@ -173,7 +172,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "employment situation household survey",
    :rdfs/seeAlso ["https://www.bls.gov/news.release/empsit.tn.htm"],
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasContext,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
                       :owl/someValuesFrom :fibo-ind-ei-ei/Household,
                       :rdf/type           :owl/Restriction}
                      :fibo-ind-ei-usei/EmploymentSituationSurvey],
@@ -232,10 +231,10 @@
   "individual representing the U.S. Department of Labor, a government department whose mission is to foster, promote, and develop the welfare of the wage earners, job seekers, and retirees of the United States; improve working conditions; advance opportunities for profitable employment; and assure work-related benefits and rights"
   {:cmns-av/abbreviation "DOL",
    :cmns-av/adaptedFrom "https://www.dol.gov/general/aboutdol",
+   :cmns-col/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :db/ident :fibo-ind-ei-usei/UnitedStatesDepartmentOfLabor,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-loc/hasCoverageArea :lcc-3166-1/UnitedStatesOfAmerica,
-   :lcc-cr/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :rdf/type [:fibo-be-ge-ge/GovernmentDepartment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
@@ -254,23 +253,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "urban consumer price index",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-be-fct-pub/hasPublisher,
-     :owl/someValuesFrom :fibo-ind-ei-usei/AmericanStatisticsPublisher,
-     :rdf/type           :owl/Restriction}
-    {:owl/hasValue   :fibo-ind-ei-usei/BureauOfLaborStatistics,
+   [{:owl/hasValue   :fibo-ind-ei-usei/BureauOfLaborStatistics,
      :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+    {:owl/onClass    :fibo-ind-ei-usei/UrbanConsumersUniverse,
+     :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-ind-ei-usei/UrbanConsumersUniverse,
      :rdf/type           :owl/Restriction}
     :fibo-ind-ei-ei/ConsumerPriceIndex
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-pas-fpas/Basket,
      :rdf/type           :owl/Restriction}
-    {:owl/onClass    :fibo-ind-ei-usei/UrbanConsumersUniverse,
-     :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}],
+    {:owl/onProperty     :fibo-be-fct-pub/hasPublisher,
+     :owl/someValuesFrom :fibo-ind-ei-usei/AmericanStatisticsPublisher,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "an economic indicator representing a measure of the average change over time in the prices paid by urban consumers for a market basket of consumer goods and services"})
 
@@ -286,17 +285,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "urban consumers universe",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/hasContext,
-     :owl/someValuesFrom :fibo-ind-ei-usei/ConsumerExpenditureSurvey,
+   [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
+     :owl/someValuesFrom :fibo-ind-ei-usei/PointOfPurchaseSurvey,
      :rdf/type           :owl/Restriction}
     :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation
-    {:owl/onProperty     :lcc-lr/hasMember,
+    {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
+     :owl/someValuesFrom :fibo-ind-ei-usei/ConsumerExpenditureSurvey,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasMember,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom :fibo-ind-ei-ei/UltimateConsumer,
                           :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/hasContext,
-     :owl/someValuesFrom :fibo-ind-ei-usei/PointOfPurchaseSurvey,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "a statistical universe for consumer expenditure surveys consisting of people within a household that make joint expenditure decisions"})

@@ -6,7 +6,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
    :dcterms/abstract
    "This ontology defines concepts that are specific to debt instruments (tradable and non-tradable).",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/"
@@ -21,16 +21,20 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-dbt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
@@ -79,6 +83,7 @@
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments.rdf version of this ontology was modified to correct the declaration of the property 'has estate or death put feature' to remove an erroneous subproperty relationship and integrate the instrument pricing ontology."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments.rdf version of this ontology was modified to reflect use of actualExpression as an annotation rather than datatype property, to deprecate maturity-related properties which have been moved to financial instruments more generally, and to simplify restrictions on tradable debt instrument."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments.rdf version of this ontology was modified to move the property, 'is conferred on' to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments.rdf version of this ontology was modified to make hasDefaultLotSize a subproperty of hasLotSize."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments.rdf version of this ontology was modified to reflect a change to make redemption provision a child of contractual commitment and move it to financial instruments, as such provisions apply to preferred shares and other instruments in addition to debt, and eliminate non-tradable and tradable debt instrument redemption provisions, which are synonymous, and adjust the hierarchy for call feature, notification provision, and put feature accordingly."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments.rdf version of this ontology was modified to support integration of the bonds ontology."
@@ -130,7 +135,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
    :rdfs/label "call feature",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/CallSchedule,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
@@ -174,13 +179,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
    :rdfs/label "call schedule",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-sec-dbt-dbti/CallPremium
                                             :fibo-fnd-acc-cur/MonetaryPrice],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+                     {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/CallEvent,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-fd/Schedule],
@@ -204,7 +209,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
    :rdfs/label "debt offering",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/DebtInstrument,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-iss/SecuritiesOffering],
@@ -318,16 +323,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
    :rdfs/label "non-tradable debt instrument",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
+   [{:owl/onProperty     :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
+     :owl/someValuesFrom :fibo-sec-dbt-dbti/RelativePrice,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/DebtInstrument
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-fi-fi/RedemptionProvision,
      :owl/onProperty :fibo-fbc-fi-fi/hasRedemptionProvision,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument
     :fibo-fnd-agr-ctr/MutualContractualAgreement
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasRelativePriceAtRedemption,
-     :owl/someValuesFrom :fibo-sec-dbt-dbti/RelativePrice,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
      :owl/someValuesFrom :fibo-sec-dbt-dbti/RelativePrice,
      :rdf/type           :owl/Restriction}],
    :skos/definition "a debt instrument that may not be bought or sold",
@@ -419,16 +424,16 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
    :rdfs/label "put feature",
-   :rdfs/subClassOf [:fibo-fbc-dae-dbt/DebtTerms
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-dbti/PutSchedule,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-dae-dbt/DebtTerms
                      :fibo-fbc-fi-fi/RedemptionProvision
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-sec-dbt-dbti/PutNotificationProvision,
                       :owl/onProperty
                       :fibo-sec-dbt-dbti/hasNotificationProvision,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
-                      :owl/someValuesFrom :fibo-sec-dbt-dbti/PutSchedule,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "redemption provision giving the holder the right, but not the obligation, to sell a specified amount of the debt instrument (i.e., redeem it), prior to maturity",
    :skos/editorialNote
@@ -466,13 +471,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
    :rdfs/label "put schedule",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-sec-dbt-dbti/PutPremium
                                             :fibo-fnd-acc-cur/MonetaryPrice],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+                     {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/PutEvent,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-fd/Schedule],

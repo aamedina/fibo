@@ -12,7 +12,7 @@
    ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"],
@@ -20,6 +20,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-aap-ppl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
@@ -46,6 +47,7 @@
     "The http://www.omg.org/spec/FIBO/Foundations/20130601/Law/Jurisdiction.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations\n\t(6) to revise definitions using more formal sources."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/Law/Jurisdiction.rdf version of the ontology was was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in http://www.omg.org/spec/EDMC-FIBO/FND/1.0/AboutFND-1.0/."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction.rdf version of the ontology was modified to remove the constraint on jurisdiction that it is governed by some legal system, eliminate the class legal system and its children, which were very general and not used anywhere in FIBO, clean up remaining definitions with better sources, and eliminate an unused import."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction.rdf version of the ontology was modified to integrate jurisdictions with context from the Commons Ontology Library (Commons)."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction.rdf version of the ontology was modified to extend the concept of a tax identifier and identification scheme with the applicable jurisdiction."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Law/Jurisdiction.rdf version of the ontology was was modified per the FIBO 2.0 RFC to integrate LCC."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
@@ -60,9 +62,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "jurisdiction"},
-   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-law-jur/hasReach,
-                     :owl/someValuesFrom :lcc-cr/GeographicRegion,
-                     :rdf/type           :owl/Restriction},
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-jur/hasReach,
+                      :owl/someValuesFrom :lcc-cr/GeographicRegion,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-cxtdsg/Context],
    :skos/definition
    "power of a court to adjudicate cases, issue orders, and interpret and apply the law with respect to some specific geographic area"})
 
@@ -78,22 +81,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "statute law"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
+   :rdfs/subClassOf [:fibo-fnd-law-cor/Law
+                     {:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-law-cor/Law],
+                      :rdf/type           :owl/Restriction}],
    :skos/altLabel "statutory law",
    :skos/definition "law enacted by a legislature"})
 
 (def appliesIn
-  "indicates the jurisdiction in which a law applies"
   {:db/ident :fibo-fnd-law-jur/appliesIn,
+   :owl/deprecated true,
+   :owl/equivalentProperty :cmns-cxtdsg/isApplicableIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
-   :rdfs/label "applies in",
-   :rdfs/range :fibo-fnd-law-jur/Jurisdiction,
-   :skos/definition "indicates the jurisdiction in which a law applies"})
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/"})
 
 (def hasReach
   "indicates the geopolitical area covered by the jurisdiction"
@@ -110,20 +111,20 @@
 (def ^{:private true} LegalAge
   {:db/ident        :fibo-fnd-aap-ppl/LegalAge,
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-law-jur/appliesIn,
+   :rdfs/subClassOf {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                      :rdf/type           :owl/Restriction}})
 
 (def ^{:private true} TaxIdentificationScheme
   {:db/ident        :fibo-fnd-pty-pty/TaxIdentificationScheme,
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-law-jur/appliesIn,
+   :rdfs/subClassOf {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                      :rdf/type           :owl/Restriction}})
 
 (def ^{:private true} TaxIdentifier
   {:db/ident        :fibo-fnd-pty-pty/TaxIdentifier,
    :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-law-jur/appliesIn,
+   :rdfs/subClassOf {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                      :rdf/type           :owl/Restriction}})

@@ -6,7 +6,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
    :dcterms/abstract
    "Core terms are those fundamental to all equity instruments. This ontology also distinguishes between privately held and publicly traded equity instruments, and defines a number of related concepts, such as voting rights.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/ParametricSchedules/"
@@ -17,14 +17,13 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateOwnership/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Partnerships/Partnerships/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
@@ -33,7 +32,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"
@@ -45,6 +43,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
@@ -106,8 +105,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
     "fibo-sec-sec-sch"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -120,7 +117,8 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Equity Instruments Ontology"},
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to add concepts covering additional features of preferred shares, move the two exhaustive CFI-specific classes to the Equity CFI individuals ontology, rename EquityIssuer to ShareIssuer to be clearer about the intent, and add the concept of a price per share."
+   ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to add concepts covering additional features of preferred shares, move the two exhaustive CFI-specific classes to the Equity CFI individuals ontology, rename EquityIssuer to ShareIssuer to be clearer about the intent, and add the concept of a price per share."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to replace 'publicly-traded share' with 'exchange-specific share', which is the more commonly used designation and corresponds better with the intended semantics of this concept, to merge in concepts that were formerly in a separate ShareTerms ontology, and eliminate deprecated elements."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to address text formatting hygiene issues."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments.rdf version of this ontology was revised to incorporate additional features required to map the CFI classification scheme to equity instruments, including features specific to preferred shares."
@@ -184,7 +182,7 @@
                 :rdf/value    "common share"},
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-eq-eq/OrdinaryDividend,
-                      :owl/onProperty :fibo-sec-eq-eq/pays,
+                      :owl/onProperty :fibo-sec-eq-eq/hasDividend,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/Share],
    :skos/definition
@@ -397,17 +395,16 @@
    :rdfs/subClassOf
    [{:owl/minQualifiedCardinality 0,
      :owl/onDataRange :xsd/boolean,
-     :owl/onProperty  :fibo-sec-eq-eq/isRedeemableAtShareholderOption,
+     :owl/onProperty  :fibo-sec-eq-eq/isRedeemableAtIssuerOption,
      :rdf/type        :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-acc-cur/MonetaryPrice,
+     :owl/onProperty :fibo-sec-eq-eq/hasRedemptionPremium,
+     :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onDataRange :xsd/boolean,
      :owl/onProperty  :fibo-sec-eq-eq/hasExtendableRedemptionDate,
      :rdf/type        :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onDataRange :xsd/boolean,
-     :owl/onProperty  :fibo-sec-eq-eq/isRedeemableAtIssuerOption,
-     :rdf/type        :owl/Restriction}
-    :fibo-fbc-fi-fi/RedemptionProvision
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-acc-cur/MonetaryPrice,
      :owl/onProperty :fibo-sec-eq-eq/hasMinimumRedemptionPrice,
@@ -416,10 +413,11 @@
      :owl/onClass    :fibo-fnd-dt-fd/ExplicitDate,
      :owl/onProperty :fibo-sec-eq-eq/hasEarliestRedemptionDate,
      :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/RedemptionProvision
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-acc-cur/MonetaryPrice,
-     :owl/onProperty :fibo-sec-eq-eq/hasRedemptionPremium,
-     :rdf/type       :owl/Restriction}],
+     :owl/onDataRange :xsd/boolean,
+     :owl/onProperty  :fibo-sec-eq-eq/isRedeemableAtShareholderOption,
+     :rdf/type        :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -677,7 +675,7 @@
    :rdfs/label "participating preferred share",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-eq-eq/OrdinaryDividend,
-                      :owl/onProperty :fibo-sec-eq-eq/pays,
+                      :owl/onProperty :fibo-sec-eq-eq/hasDividend,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-eq/PreferredShare],
    :skos/definition
@@ -1006,6 +1004,33 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "share"},
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-sec-eq-eq/hasShareClass,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fbc-fi-fi/EquityInstrument
+                     {:owl/onProperty :fibo-be-corp-corp/hasSharesAuthorized,
+                      :owl/someValuesFrom :xsd/nonNegativeInteger,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty
+                      :fibo-sec-eq-eq/confersNumberOfVotesPerShare,
+                      :owl/someValuesFrom :xsd/decimal,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :xsd/nonNegativeInteger,
+                      :owl/onProperty  :fibo-sec-eq-eq/hasFloatingShares,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-sec-eq-eq/hasVotingRestriction,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :fibo-sec-eq-eq/confersOwnershipOf,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/ShareholdersEquity,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :xsd/nonNegativeInteger,
+                      :owl/onProperty  :fibo-sec-eq-eq/hasSharesOutstanding,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/nonNegativeInteger,
                       :owl/onProperty  :fibo-sec-eq-eq/hasTreasuryShares,
                       :rdf/type        :owl/Restriction}
@@ -1013,36 +1038,9 @@
                       :owl/onDataRange :xsd/nonNegativeInteger,
                       :owl/onProperty  :fibo-sec-eq-eq/hasSharesIssued,
                       :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :xsd/nonNegativeInteger,
-                      :owl/onProperty  :fibo-sec-eq-eq/hasFloatingShares,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fbc-fi-fi/EquityInstrument
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :xsd/nonNegativeInteger,
-                      :owl/onProperty  :fibo-sec-eq-eq/hasSharesOutstanding,
-                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :fibo-sec-eq-eq/hasSharePaymentStatus,
                       :owl/someValuesFrom :fibo-sec-eq-eq/SharePaymentStatus,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty
-                      :fibo-sec-eq-eq/confersNumberOfVotesPerShare,
-                      :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty :fibo-be-corp-corp/hasSharesAuthorized,
-                      :owl/someValuesFrom :xsd/nonNegativeInteger,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-sec-eq-eq/confersOwnershipOf,
-                      :owl/someValuesFrom :fibo-fnd-acc-aeq/ShareholdersEquity,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-sec-eq-eq/hasVotingRestriction,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-sec-eq-eq/hasShareClass,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -1073,7 +1071,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
    :rdfs/label "share payment status",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/classifies,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-sec-eq-eq/Share,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-lif/LifecycleStatus],
@@ -1240,7 +1238,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
    :rdfs/label "has adjustable dividend rate",
    :rdfs/range :fibo-fnd-acc-cur/PercentageMonetaryAmount,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasQuantityValue,
    :skos/definition
    "indicates a variable dividend rate, typically specified in the prospectus as a formula based on a benchmark or set at auction"})
 
@@ -1258,18 +1256,17 @@
    "indicates the method by which dividend payments are to be distributed"})
 
 (def hasDividend
-  "relates a share to a dividend that applies to that share"
+  "relates a share to a dividend that applies to that share, or that the share may pay"
   {:db/ident :fibo-sec-eq-eq/hasDividend,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-eq-eq/Share,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
    :rdfs/label "has dividend",
-   :rdfs/range {:owl/unionOf [:fibo-sec-eq-eq/OrdinaryDividend
-                              :fibo-sec-eq-eq/PreferredDividend],
-                :rdf/type    :owl/Class},
-   :rdfs/subPropertyOf :lcc-lr/has,
-   :skos/definition "relates a share to a dividend that applies to that share"})
+   :rdfs/range :fibo-sec-eq-eq/Dividend,
+   :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
+   :skos/definition
+   "relates a share to a dividend that applies to that share, or that the share may pay"})
 
 (def hasDividendDeclarationDate
   "indicates a date on which an organization states that a dividend payment may be anticipated, including the the dividend amount and the ex-dividend and payment dates"
@@ -1363,7 +1360,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
    :rdfs/label "has fixed dividend rate",
    :rdfs/range :fibo-fnd-acc-cur/PercentageMonetaryAmount,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasQuantityValue,
    :skos/definition
    "indicates a pre-arranged fixed dividend rate, typically specified in the prospectus, for a preferred share"})
 
@@ -1459,7 +1456,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has share payment status"},
    :rdfs/range :fibo-sec-eq-eq/SharePaymentStatus,
-   :rdfs/subPropertyOf :lcc-cr/isClassifiedBy,
+   :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "indicates the payment status for shares issued"}})
@@ -1579,16 +1576,12 @@
    "indicates that a given share (share class) has higher seniority than the related share, meaning that it gives the holder a higher claim on the assets of the issuer"})
 
 (def pays
-  "relates a share to a dividend that it may pay to shareholders"
   {:db/ident :fibo-sec-eq-eq/pays,
+   :owl/deprecated true,
+   :owl/equivalentProperty :fibo-sec-eq-eq/hasDividend,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-eq-eq/Share,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
-   :rdfs/label "pays",
-   :rdfs/range :fibo-sec-eq-eq/Dividend,
-   :skos/definition
-   "relates a share to a dividend that it may pay to shareholders"})
+   "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/"})
 
 (def specifiesConversionDate
   "indicates the date on which, or after which, conversion may occur"

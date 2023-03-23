@@ -6,15 +6,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for companies incorporated by the issuance of shares. Terms defined in this ontology are those which are applicable to all such entities. Many of these concepts form the basis of the relationships of ownership and control which obtain between entities of this type.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
+    "https://www.omg.org/spec/Commons/Designators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
@@ -26,6 +27,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
@@ -51,7 +54,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -73,7 +75,8 @@
     "The https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations.rdf version of this ontology was modified to address text formatting hygiene issues and eliminate a dead link."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations.rdf version of this ontology was modified to eliminate references to external dictionary sites that no longer resolve, eliminate circular and ambiguous definitions and make incorporation date and registration date explicit dates."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations.rdf version of this ontology was modified per the FIBO 2.0 RFC."
-    "The https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations.rdf version of this ontology was modified to eliminate duplication of concepts in LCC."]})
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations.rdf version of this ontology was modified to eliminate duplication of concepts in LCC."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."]})
 
 (def BoardAgreement
   "formal, legally binding agreement between members of the Board of Directors of the organization"
@@ -132,19 +135,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
    :rdfs/label "registration identifier",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/isDefinedIn,
-                      :owl/someValuesFrom
-                      :fibo-be-corp-corp/RegistrationIdentifierScheme,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
-                      :owl/onProperty :lcc-lr/identifies,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-org-org/OrganizationIdentifier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty :cmns-dsg/isDefinedIn,
+                      :owl/someValuesFrom
+                      :fibo-be-corp-corp/RegistrationIdentifierScheme,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "identifier that is officially allocated to an organization at the time of registration, typically in a jurisdiction in which said organization is organized or registered and used in that jurisdiction to identify the organization",
    :skos/scopeNote
@@ -157,7 +160,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
    :rdfs/label "registration identifier scheme",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/defines,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/defines,
                       :owl/someValuesFrom
                       :fibo-be-corp-corp/RegistrationIdentifier,
                       :rdf/type :owl/Restriction}

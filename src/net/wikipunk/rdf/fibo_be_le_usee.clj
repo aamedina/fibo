@@ -6,7 +6,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
    :dcterms/abstract
    "This ontology includes example entities that are companies in the US that issue stock and that are represented in the Dow Jones Industrial Average (DJIA), to demonstrate how to begin to model those entities in FIBO.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
@@ -14,16 +14,17 @@
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
@@ -45,7 +46,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-3166-1"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -59,6 +59,7 @@
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities.rdf version of this ontology was revised to update a dead link."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities.rdf version of this ontology was revised to make incorporation and registration dates explicit dates and to replace references to the legacy LCC UnitedStates country representation with UnitedStatesOfAmerica."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities.rdf version of this ontology was revised to update the LEI format to use the form published by the GLEIF at data.world."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."]})
@@ -82,9 +83,9 @@
 
 (def AlphabetIncBusinessEntityIdentifier
   "registration identifier assigned by the Delaware Department of Corporations for Alphabet Inc."
-  {:db/ident :fibo-be-le-usee/AlphabetIncBusinessEntityIdentifier,
-   :lcc-lr/hasTag "5786925",
-   :lcc-lr/identifies :fibo-be-le-usee/AlphabetInc-US-CA,
+  {:cmns-id/identifies :fibo-be-le-usee/AlphabetInc-US-CA,
+   :db/ident :fibo-be-le-usee/AlphabetIncBusinessEntityIdentifier,
+   :fibo-fnd-rel-rel/hasTag "5786925",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
@@ -123,9 +124,9 @@
 
 (def AppleIncBusinessEntityIdentifier
   "registration identifier assigned by the California Department of Corporations for Apple Inc."
-  {:db/ident :fibo-be-le-usee/AppleIncBusinessEntityIdentifier,
-   :lcc-lr/hasTag "806592",
-   :lcc-lr/identifies :fibo-be-le-usee/AppleInc-US-CA,
+  {:cmns-id/identifies :fibo-be-le-usee/AppleInc-US-CA,
+   :db/ident :fibo-be-le-usee/AppleIncBusinessEntityIdentifier,
+   :fibo-fnd-rel-rel/hasTag "806592",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
@@ -164,11 +165,11 @@
 
 (def InternationalBusinessMachinesCorporationBusinessEntityIdentifier
   "registration identifier assigned by the New York Division of Corporations for International Business Machines Corporation"
-  {:db/ident
-   :fibo-be-le-usee/InternationalBusinessMachinesCorporationBusinessEntityIdentifier,
-   :lcc-lr/hasTag "30059",
-   :lcc-lr/identifies
+  {:cmns-id/identifies
    :fibo-be-le-usee/InternationalBusinessMachinesCorporation-US-NY,
+   :db/ident
+   :fibo-be-le-usee/InternationalBusinessMachinesCorporationBusinessEntityIdentifier,
+   :fibo-fnd-rel-rel/hasTag "30059",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
@@ -208,9 +209,9 @@
 
 (def TheCoca-ColaCompanyBusinessEntityIdentifier
   "registration identifier assigned by the Delaware Division of Corporations for The Coca-Cola Company"
-  {:db/ident :fibo-be-le-usee/TheCoca-ColaCompanyBusinessEntityIdentifier,
-   :lcc-lr/hasTag "88529",
-   :lcc-lr/identifies :fibo-be-le-usee/TheCoca-ColaCompany-US-DE,
+  {:cmns-id/identifies :fibo-be-le-usee/TheCoca-ColaCompany-US-DE,
+   :db/ident :fibo-be-le-usee/TheCoca-ColaCompanyBusinessEntityIdentifier,
+   :fibo-fnd-rel-rel/hasTag "88529",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
@@ -231,9 +232,9 @@
 
 (def TheHomeDepotBusinessEntityIdentifier
   "registration identifier assigned by the Delaware Division of Corporations for The Home Depot, Inc."
-  {:db/ident :fibo-be-le-usee/TheHomeDepotBusinessEntityIdentifier,
-   :lcc-lr/hasTag "856429",
-   :lcc-lr/identifies :fibo-be-le-usee/TheHomeDepotInc-US-DE,
+  {:cmns-id/identifies :fibo-be-le-usee/TheHomeDepotInc-US-DE,
+   :db/ident :fibo-be-le-usee/TheHomeDepotBusinessEntityIdentifier,
+   :fibo-fnd-rel-rel/hasTag "856429",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
@@ -288,10 +289,10 @@
 
 (def TheProctorAndGambleCompanyBusinessEntityIdentifier
   "registration identifier assigned by the Ohio Department of Corporations for The Proctor & Gamble Company"
-  {:db/ident
+  {:cmns-id/identifies :fibo-be-le-usee/TheProctorAndGambleCompany-US-OH,
+   :db/ident
    :fibo-be-le-usee/TheProctorAndGambleCompanyBusinessEntityIdentifier,
-   :lcc-lr/hasTag "20677",
-   :lcc-lr/identifies :fibo-be-le-usee/TheProctorAndGambleCompany-US-OH,
+   :fibo-fnd-rel-rel/hasTag "20677",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
@@ -309,3 +310,64 @@
    :rdfs/label "The Proctor & Gamble Company incorporation date",
    :skos/definition
    "date that The Proctor & Gamble Company was first registered as a corporation in the State of Ohio"})
+
+(def ^{:private true} L-2572IBTT8CCZW6AU4141-LEI
+  "legal entity identifier for The Proctor & Gamble Company"
+  {:cmns-id/identifies :fibo-be-le-usee/TheProctorAndGambleCompany-US-OH,
+   :db/ident :gleif-L1-data/L-2572IBTT8CCZW6AU4141-LEI,
+   :fibo-fnd-rel-rel/hasTag "2572IBTT8CCZW6AU4141",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label "The Proctor & Gamble Company legal entity identifier",
+   :skos/definition "legal entity identifier for The Proctor & Gamble Company"})
+
+(def ^{:private true} L-5493006MHB84DD0ZWV18-LEI
+  "legal entity identifier for Alphabet Inc."
+  {:cmns-id/identifies :fibo-be-le-usee/AlphabetInc-US-CA,
+   :db/ident           :gleif-L1-data/L-5493006MHB84DD0ZWV18-LEI,
+   :fibo-fnd-rel-rel/hasTag "5493006MHB84DD0ZWV18",
+   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
+                        :owl/NamedIndividual],
+   :rdfs/label         "Alphabet Inc. legal entity identifier",
+   :skos/definition    "legal entity identifier for Alphabet Inc."})
+
+(def ^{:private true} L-HWUPKR0MPOU8FGXBT394-LEI
+  "legal entity identifier for Apple Inc."
+  {:cmns-id/identifies :fibo-be-le-usee/AppleInc-US-CA,
+   :db/ident           :gleif-L1-data/L-HWUPKR0MPOU8FGXBT394-LEI,
+   :fibo-fnd-rel-rel/hasTag "HWUPKR0MPOU8FGXBT394",
+   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
+                        :owl/NamedIndividual],
+   :rdfs/label         "Apple Inc. legal entity identifier",
+   :skos/definition    "legal entity identifier for Apple Inc."})
+
+(def ^{:private true} L-QEKMOTMBBKA8I816DO57-LEI
+  "legal entity identifier for The Home Depot, Inc."
+  {:cmns-id/identifies :fibo-be-le-usee/TheHomeDepotInc-US-DE,
+   :db/ident           :gleif-L1-data/L-QEKMOTMBBKA8I816DO57-LEI,
+   :fibo-fnd-rel-rel/hasTag "QEKMOTMBBKA8I816DO57",
+   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
+                        :owl/NamedIndividual],
+   :rdfs/label         "The Home Depot, Inc. legal entity identifier",
+   :skos/definition    "legal entity identifier for The Home Depot, Inc."})
+
+(def ^{:private true} L-UWJKFUJFZ02DKWI3RY53-LEI
+  "legal entity identifier for The Coca-Cola Company"
+  {:cmns-id/identifies :fibo-be-le-usee/TheCoca-ColaCompany-US-DE,
+   :db/ident           :gleif-L1-data/L-UWJKFUJFZ02DKWI3RY53-LEI,
+   :fibo-fnd-rel-rel/hasTag "UWJKFUJFZ02DKWI3RY53",
+   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
+                        :owl/NamedIndividual],
+   :rdfs/label         "The Coca-Cola Company legal entity identifier",
+   :skos/definition    "legal entity identifier for The Coca-Cola Company"})
+
+(def ^{:private true} L-VGRQXHF3J8VDLUA7XE92-LEI
+  "legal entity identifier for International Business Machines Corporation"
+  {:cmns-id/identifies
+   :fibo-be-le-usee/InternationalBusinessMachinesCorporation-US-NY,
+   :db/ident :gleif-L1-data/L-VGRQXHF3J8VDLUA7XE92-LEI,
+   :fibo-fnd-rel-rel/hasTag "VGRQXHF3J8VDLUA7XE92",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label
+   "International Business Machines Corporation legal entity identifier",
+   :skos/definition
+   "legal entity identifier for International Business Machines Corporation"})

@@ -6,22 +6,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :dcterms/abstract
    "Concepts common to all option contracts. An option gives one party (the holder) the right to purchase or sell the underlying instrument at a given time or times in the future (as determined by the exercise convention), if they choose to do so.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquityInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesListings/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"
@@ -41,6 +42,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Options/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-pub"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
@@ -64,8 +68,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
     "fibo-fnd-agr-ctr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-    "fibo-fnd-arr-cls"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-arr-doc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
     "fibo-fnd-dt-fd"
@@ -92,7 +94,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
     "fibo-sec-sec-bsk"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -105,12 +106,13 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Options Ontology"},
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/DER/20210601/DerivativesContracts/Options.rdf version of this ontology was revised to add an expiration date as an important property of an option."
+   ["The https://spec.edmcouncil.org/fibo/ontology/FND/DER/20210601/DerivativesContracts/Options.rdf version of this ontology was revised to add an expiration date as an important property of an option."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/DER/20211201/DerivativesContracts/Options.rdf version of this ontology was revised to make certain values subclasses of MonetaryAmount instead of MonetaryMeasure."
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, and to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/DER/20220101/DerivativesContracts/Options.rdf version of this ontology was revised to add an explanatory note to basket option and make it a kind of exotic option and added interest rate derivative as the parent of interest rate option; added capped option as a kind of vanilla option."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/DER/20210901/DerivativesContracts/Options.rdf version of this ontology was revised to correct a restriction on an option with respect to an optional option premium which was not well-formed, and modified the definition of interest rate option to reflect a benchmark, and to be a specialization of vanilla option."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/DER/20220701/DerivativesContracts/Options.rdf version of this ontology was revised to add the most common options trading strategies."]})
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/DER/20220701/DerivativesContracts/Options.rdf version of this ontology was revised to add the most common options trading strategies."
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."]})
 
 (def AtTheMoney
   "moneyness classifier that refers to an option whose value in terms of its strike price is the same or close to the current market price of the underlying security"
@@ -150,7 +152,7 @@
     {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
      :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+    {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom :fibo-sec-sec-bsk/MixedBasket,
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-opt/ExoticOption],
@@ -167,7 +169,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "bond option"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-opt/FixedIncomeOption],
@@ -189,7 +191,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "butterfly"},
    :rdfs/subClassOf [{:owl/onClass    :fibo-fbc-fi-fi/Option,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 4,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/StrikePrice,
@@ -253,11 +255,11 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "collar"},
    :rdfs/subClassOf [{:owl/onClass    :fibo-der-drc-opt/PutOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/CallOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy],
@@ -384,11 +386,11 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "fence"},
    :rdfs/subClassOf [{:owl/onClass    :fibo-der-drc-opt/PutOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/CallOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy],
@@ -451,11 +453,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "interest rate option"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-opt/hasStrikeRate,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/InterestRate,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-opt/hasStrikeRate,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/InterestRate,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-rtd-rtd/InterestRateDerivativeInstrument
                      :fibo-der-drc-opt/VanillaOption],
@@ -497,11 +499,11 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "iron butterfly"},
    :rdfs/subClassOf [{:owl/onClass    :fibo-der-drc-opt/PutOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/CallOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/Butterfly],
@@ -527,11 +529,11 @@
                       :owl/qualifiedCardinality 4,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/PutOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/CallOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/CondorSpread],
@@ -575,10 +577,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "moneyness"},
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/classifies,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier],
+                     :cmns-cls/Classifier],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -639,7 +641,7 @@
                       :owl/someValuesFrom
                       :fibo-sec-dbt-ex/AmericanExerciseTerms,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Future,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-opt/VanillaOption],
@@ -705,7 +707,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "option trading strategy"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/comprises,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-fpas/TradingStrategy],
@@ -746,11 +748,11 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "protective collar"},
    :rdfs/subClassOf [{:owl/onClass    :fibo-der-drc-opt/ProtectivePut,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/CoveredCall,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/Collar],
@@ -817,11 +819,11 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "risk reversal"},
    :rdfs/subClassOf [{:owl/onClass    :fibo-der-drc-opt/PutOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/CallOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy],
@@ -847,10 +849,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "standardized options terms"},
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-     :owl/someValuesFrom :fibo-der-drc-opt/VanillaOption,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
+   [{:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
      :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-be-fct-pub/hasPublisher,
@@ -858,6 +857,9 @@
                           [:fibo-fbc-fct-mkt/Exchange
                            :fibo-der-drc-bsc/DerivativesClearingOrganization],
                           :rdf/type :owl/Class},
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom :fibo-der-drc-opt/VanillaOption,
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fi-fi/StandardizedTerms],
    :skos/definition
@@ -878,11 +880,11 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "straddle"},
    :rdfs/subClassOf [{:owl/onClass    :fibo-der-drc-opt/PutOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/CallOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy],
@@ -904,11 +906,11 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "strangle"},
    :rdfs/subClassOf [{:owl/onClass    :fibo-der-drc-opt/PutOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/CallOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy],
@@ -951,11 +953,11 @@
                       :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/PutOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/CallOption,
-                      :owl/onProperty :fibo-fnd-rel-rel/comprises,
+                      :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy],
@@ -1084,7 +1086,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label "has exercise style",
    :rdfs/range :fibo-sec-dbt-ex/ExerciseConvention,
-   :rdfs/subPropertyOf :lcc-cr/isClassifiedBy,
+   :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
    :skos/definition
    "indicates the exercise convention specified for the option"})
 

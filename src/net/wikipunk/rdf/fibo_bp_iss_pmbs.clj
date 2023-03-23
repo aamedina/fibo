@@ -10,7 +10,7 @@
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceProcess/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/AgencyMBSIssuance/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
@@ -37,6 +37,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-bp-iss-ambs"
     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/AgencyMBSIssuance/",
@@ -78,7 +79,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
     "fibo-sec-sec-iss"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -967,7 +967,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has content"},
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheStructure,
-   :rdfs/subPropertyOf :lcc-cr/hasPart})
+   :rdfs/subPropertyOf :cmns-col/hasPart})
 
 (def hasContent.1
   "has content"
@@ -979,7 +979,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has content"},
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheTermsheet,
-   :rdfs/subPropertyOf :lcc-cr/hasPart})
+   :rdfs/subPropertyOf :cmns-col/hasPart})
 
 (def hasCounterparty
   "has counterparty"

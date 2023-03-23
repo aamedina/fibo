@@ -10,9 +10,9 @@
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
@@ -21,6 +21,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/ExerciseConventions/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-fi-fi"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
@@ -34,7 +35,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-sec-dbt-ex"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -49,6 +49,7 @@
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions.rdf version of this ontology was modified to loosen the domain of hasExerciseTerms to allow for entitlements to have such terms."
     "The https://spec.edmcouncil.org/fibo/ontology/Debt/ExerciseConventions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions.rdf version of this ontology was added to support integration of Bonds and Options in SEC and DER, respectively."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions.rdf version of this ontology was modified to revise the definition of American exercise terms to say that an option with such terms may be exercised on or before the expiration date of the contract."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions.rdf version of this ontology was modified to eliminate duplication of concepts in LCC."
@@ -82,7 +83,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "American exercise terms"},
    :rdfs/subClassOf [{:owl/hasValue :fibo-sec-dbt-ex/AmericanExerciseConvention,
-                      :owl/onProperty :lcc-cr/uses,
+                      :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-ex/ExerciseTerms],
    :skos/definition
@@ -116,12 +117,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Bermudan exercise terms"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
+   :rdfs/subClassOf [{:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
+                      :owl/onProperty :cmns-cxtdsg/uses,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/DatePeriod,
                       :rdf/type           :owl/Restriction}
-                     {:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
-                      :owl/onProperty :lcc-cr/uses,
-                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseDate,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/ExplicitDate,
                       :rdf/type           :owl/Restriction}
@@ -153,7 +154,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "canary exercise terms"},
    :rdfs/subClassOf [{:owl/hasValue   :fibo-sec-dbt-ex/CanaryExerciseConvention,
-                      :owl/onProperty :lcc-cr/uses,
+                      :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-dbt-ex/BermudanExerciseTerms],
    :skos/definition
@@ -187,7 +188,7 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/hasValue :fibo-sec-dbt-ex/EuropeanExerciseConvention,
-                      :owl/onProperty :lcc-cr/uses,
+                      :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-ex/ExerciseTerms],
    :skos/definition
@@ -217,7 +218,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "exercise terms"},
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/uses,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-agr-ctr/ContractualCommitment],

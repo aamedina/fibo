@@ -14,12 +14,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Facilities/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-plc-adr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
@@ -50,6 +52,7 @@
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20180801/Places/Facilities.rdf version of this ontology was modified to eliminate deprecated elements."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Places/Facilities.rdf version of this ontology was modified for the FIBO 2.0 RFC to integrate it with LCC."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20190901/Places/Facilities.rdf version of this ontology was modified to eliminate circular and ambiguous definitions, and simplify the ontology by merging physical site with site."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20220701/Places/Facilities.rdf version of this ontology was modified to allow a facility to be anything rather than a role."
     "This ontology was added to Foundations in advance of the December 2014 Long Beach meeting in support of the SEC specification."]})
 
@@ -100,21 +103,21 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
    :rdfs/label "site",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   :rdfs/subClassOf [{:owl/onClass    :lcc-cr/Location,
+                      :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-rl/ThingInRole
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-plc-adr/Address,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/onProperty
                                            :fibo-fnd-plc-fac/situates,
                                            :owl/someValuesFrom :owl/Thing,
                                            :rdf/type :owl/Restriction},
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-rl/ThingInRole
-                     {:owl/onClass    :lcc-cr/Location,
-                      :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-adr/Address,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "place, setting, or context in which something, such as a facility, is situated",
    :skos/example
@@ -127,7 +130,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
    :rdfs/label "venue",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasContext,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
                       :owl/someValuesFrom :owl/Thing,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-plc-fac/Site],

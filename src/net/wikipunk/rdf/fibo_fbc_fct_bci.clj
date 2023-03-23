@@ -7,24 +7,29 @@
    :dcterms/abstract
    "This ontology includes individuals representing the set of international business centers corresponding to those identified in FpML as well as additional municipalities called out in the ISO 10383 Codes for exchanges and market identification (MIC) standard.\n\t\tThis set of business centers is current with respect to the FpML published XML data as of Q2 2022. Note that we have deviated from the standard FIBO naming convention of strict use of camel case to add underscores in certain city names for readability purposes.",
    :dcterms/contributor ["Thematix Partners LLC" "agnos.ai UK Ltd."],
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://www.omg.org/spec/Commons/Designators/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CH/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCenters/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCenters/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-fct-bc"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCenters/",
@@ -34,6 +39,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
     "fibo-fnd-plc-loc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-3166-1"
@@ -44,8 +51,6 @@
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CH/",
     "lcc-3166-2-us"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -68,19 +73,20 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of March 2021."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of June 2022."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to equate Almaty and Alma-ata, which are the same city (Alma-ata is the old name, no longer in use)."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of June 2020, replace the relations hasTag property with the equivalent lcc-lr version, and replace skos:definition on reference individuals with dct:description."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to merge countries with locations in FND."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to support revisions of the MIC codes as of December 2018."]})
 
 (def AEAD
   "the FpML business center code for Abu Dhabi, United Arab Emirates"
-  {:db/ident :fibo-fbc-fct-bci/AEAD,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Abu_Dhabi,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Abu_Dhabi,
+   :db/ident :fibo-fbc-fct-bci/AEAD,
    :dcterms/description
    "the FpML business center code for Abu Dhabi, United Arab Emirates",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Abu_Dhabi,
-   :lcc-lr/hasTag "AEAD",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Abu_Dhabi,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "AEAD",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -88,13 +94,13 @@
 
 (def AEDU
   "the FpML business center code for Dubai, United Arab Emirates"
-  {:db/ident :fibo-fbc-fct-bci/AEDU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Dubai,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Dubai,
+   :db/ident :fibo-fbc-fct-bci/AEDU,
    :dcterms/description
    "the FpML business center code for Dubai, United Arab Emirates",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Dubai,
-   :lcc-lr/hasTag "AEDU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Dubai,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "AEDU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -102,12 +108,12 @@
 
 (def AMYE
   "the FpML business center code for Yerevan, Armenia"
-  {:db/ident :fibo-fbc-fct-bci/AMYE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Yerevan,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Yerevan,
+   :db/ident :fibo-fbc-fct-bci/AMYE,
    :dcterms/description "the FpML business center code for Yerevan, Armenia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Yerevan,
-   :lcc-lr/hasTag "AMYE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Yerevan,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "AMYE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -115,12 +121,12 @@
 
 (def AOLU
   "the FpML business center code for Luanda, Angola"
-  {:db/ident :fibo-fbc-fct-bci/AOLU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Luanda,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Luanda,
+   :db/ident :fibo-fbc-fct-bci/AOLU,
    :dcterms/description "the FpML business center code for Luanda, Angola",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Luanda,
-   :lcc-lr/hasTag "AOLU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Luanda,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "AOLU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -128,13 +134,13 @@
 
 (def ARBA
   "the FpML business center code for Buenos Aires, Argentina"
-  {:db/ident :fibo-fbc-fct-bci/ARBA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Buenos_Aires,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Buenos_Aires,
+   :db/ident :fibo-fbc-fct-bci/ARBA,
    :dcterms/description
    "the FpML business center code for Buenos Aires, Argentina",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Buenos_Aires,
-   :lcc-lr/hasTag "ARBA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Buenos_Aires,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ARBA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -142,12 +148,12 @@
 
 (def ATVI
   "the FpML business center code for Vienna, Austria"
-  {:db/ident :fibo-fbc-fct-bci/ATVI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Vienna,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Vienna,
+   :db/ident :fibo-fbc-fct-bci/ATVI,
    :dcterms/description "the FpML business center code for Vienna, Austria",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Vienna,
-   :lcc-lr/hasTag "ATVI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Vienna,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ATVI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -155,12 +161,12 @@
 
 (def AUAD
   "the FpML business center code for Adelaide, Australia"
-  {:db/ident :fibo-fbc-fct-bci/AUAD,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Adelaide,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Adelaide,
+   :db/ident :fibo-fbc-fct-bci/AUAD,
    :dcterms/description "the FpML business center code for Adelaide, Australia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Adelaide,
-   :lcc-lr/hasTag "AUAD",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Adelaide,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "AUAD",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -168,12 +174,12 @@
 
 (def AUBR
   "the FpML business center code for Brisbane, Australia"
-  {:db/ident :fibo-fbc-fct-bci/AUBR,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Brisbane,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Brisbane,
+   :db/ident :fibo-fbc-fct-bci/AUBR,
    :dcterms/description "the FpML business center code for Brisbane, Australia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Brisbane,
-   :lcc-lr/hasTag "AUBR",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Brisbane,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "AUBR",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -181,12 +187,12 @@
 
 (def AUCA
   "the FpML business center code for Canberra, Australia"
-  {:db/ident :fibo-fbc-fct-bci/AUCA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Canberra,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Canberra,
+   :db/ident :fibo-fbc-fct-bci/AUCA,
    :dcterms/description "the FpML business center code for Canberra, Australia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Canberra,
-   :lcc-lr/hasTag "AUCA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Canberra,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "AUCA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -194,12 +200,12 @@
 
 (def AUDA
   "the FpML business center code for Darwin, Australia"
-  {:db/ident :fibo-fbc-fct-bci/AUDA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Darwin,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Darwin,
+   :db/ident :fibo-fbc-fct-bci/AUDA,
    :dcterms/description "the FpML business center code for Darwin, Australia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Darwin,
-   :lcc-lr/hasTag "AUDA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Darwin,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "AUDA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -207,13 +213,13 @@
 
 (def AUME
   "the FpML business center code for Melbourne, Australia"
-  {:db/ident :fibo-fbc-fct-bci/AUME,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Melbourne,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Melbourne,
+   :db/ident :fibo-fbc-fct-bci/AUME,
    :dcterms/description
    "the FpML business center code for Melbourne, Australia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Melbourne,
-   :lcc-lr/hasTag "AUME",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Melbourne,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "AUME",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -221,12 +227,12 @@
 
 (def AUPE
   "the FpML business center code for Perth, Australia"
-  {:db/ident :fibo-fbc-fct-bci/AUPE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Perth,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Perth,
+   :db/ident :fibo-fbc-fct-bci/AUPE,
    :dcterms/description "the FpML business center code for Perth, Australia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Perth,
-   :lcc-lr/hasTag "AUPE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Perth,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "AUPE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -234,12 +240,12 @@
 
 (def AUSY
   "the FpML business center code for Sydney, Australia"
-  {:db/ident :fibo-fbc-fct-bci/AUSY,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Sydney,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Sydney,
+   :db/ident :fibo-fbc-fct-bci/AUSY,
    :dcterms/description "the FpML business center code for Sydney, Australia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Sydney,
-   :lcc-lr/hasTag "AUSY",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Sydney,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "AUSY",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -247,8 +253,8 @@
 
 (def Aabenraa
   "Aabenraa"
-  {:db/ident :fibo-fbc-fct-bci/Aabenraa,
-   :lcc-cr/isPartOf :lcc-3166-1/Denmark,
+  {:cmns-col/isPartOf :lcc-3166-1/Denmark,
+   :db/ident :fibo-fbc-fct-bci/Aabenraa,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -256,8 +262,8 @@
 
 (def Aalborg
   "Aalborg"
-  {:db/ident :fibo-fbc-fct-bci/Aalborg,
-   :lcc-cr/isPartOf :lcc-3166-1/Denmark,
+  {:cmns-col/isPartOf :lcc-3166-1/Denmark,
+   :db/ident :fibo-fbc-fct-bci/Aalborg,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -265,9 +271,9 @@
 
 (def Abha
   "the international business center of Abha"
-  {:db/ident :fibo-fbc-fct-bci/Abha,
+  {:cmns-col/isPartOf :lcc-3166-1/SaudiArabia,
+   :db/ident :fibo-fbc-fct-bci/Abha,
    :dcterms/description "the international business center of Abha",
-   :lcc-cr/isPartOf :lcc-3166-1/SaudiArabia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -275,9 +281,9 @@
 
 (def Abidjan
   "the international business center of Abidjan"
-  {:db/ident :fibo-fbc-fct-bci/Abidjan,
+  {:cmns-col/isPartOf :lcc-3166-1/CoteDIvoire,
+   :db/ident :fibo-fbc-fct-bci/Abidjan,
    :dcterms/description "the international business center of Abidjan",
-   :lcc-cr/isPartOf :lcc-3166-1/CoteDIvoire,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -285,9 +291,9 @@
 
 (def Abu_Dhabi
   "the international business center of Abu Dhabi"
-  {:db/ident :fibo-fbc-fct-bci/Abu_Dhabi,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedArabEmirates,
+   :db/ident :fibo-fbc-fct-bci/Abu_Dhabi,
    :dcterms/description "the international business center of Abu Dhabi",
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedArabEmirates,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -295,9 +301,9 @@
 
 (def Abuja
   "the international business center of Abuja"
-  {:db/ident :fibo-fbc-fct-bci/Abuja,
+  {:cmns-col/isPartOf :lcc-3166-1/Nigeria,
+   :db/ident :fibo-fbc-fct-bci/Abuja,
    :dcterms/description "the international business center of Abuja",
-   :lcc-cr/isPartOf :lcc-3166-1/Nigeria,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -305,9 +311,9 @@
 
 (def Accra
   "the international business center of Accra"
-  {:db/ident :fibo-fbc-fct-bci/Accra,
+  {:cmns-col/isPartOf :lcc-3166-1/Ghana,
+   :db/ident :fibo-fbc-fct-bci/Accra,
    :dcterms/description "the international business center of Accra",
-   :lcc-cr/isPartOf :lcc-3166-1/Ghana,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -315,9 +321,9 @@
 
 (def Addis_Ababa
   "the international business center of Addis Ababa"
-  {:db/ident :fibo-fbc-fct-bci/Addis_Ababa,
+  {:cmns-col/isPartOf :lcc-3166-1/Ethiopia,
+   :db/ident :fibo-fbc-fct-bci/Addis_Ababa,
    :dcterms/description "the international business center of Addis Ababa",
-   :lcc-cr/isPartOf :lcc-3166-1/Ethiopia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -325,9 +331,9 @@
 
 (def Adelaide
   "the international business center of Adelaide"
-  {:db/ident :fibo-fbc-fct-bci/Adelaide,
+  {:cmns-col/isPartOf :lcc-3166-1/Australia,
+   :db/ident :fibo-fbc-fct-bci/Adelaide,
    :dcterms/description "the international business center of Adelaide",
-   :lcc-cr/isPartOf :lcc-3166-1/Australia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -335,9 +341,9 @@
 
 (def Aden
   "the international business center of Aden"
-  {:db/ident :fibo-fbc-fct-bci/Aden,
+  {:cmns-col/isPartOf :lcc-3166-1/Yemen,
+   :db/ident :fibo-fbc-fct-bci/Aden,
    :dcterms/description "the international business center of Aden",
-   :lcc-cr/isPartOf :lcc-3166-1/Yemen,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -345,8 +351,8 @@
 
 (def Ahmedabad
   "Ahmedabad"
-  {:db/ident :fibo-fbc-fct-bci/Ahmedabad,
-   :lcc-cr/isPartOf :lcc-3166-1/India,
+  {:cmns-col/isPartOf :lcc-3166-1/India,
+   :db/ident :fibo-fbc-fct-bci/Ahmedabad,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -354,8 +360,8 @@
 
 (def Aichi
   "Aichi"
-  {:db/ident :fibo-fbc-fct-bci/Aichi,
-   :lcc-cr/isPartOf :lcc-3166-1/Japan,
+  {:cmns-col/isPartOf :lcc-3166-1/Japan,
+   :db/ident :fibo-fbc-fct-bci/Aichi,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -363,8 +369,8 @@
 
 (def Alberta
   "Alberta"
-  {:db/ident :fibo-fbc-fct-bci/Alberta,
-   :lcc-cr/isPartOf :lcc-3166-1/Canada,
+  {:cmns-col/isPartOf :lcc-3166-1/Canada,
+   :db/ident :fibo-fbc-fct-bci/Alberta,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -372,9 +378,9 @@
 
 (def Algiers
   "the international business center of Algiers"
-  {:db/ident :fibo-fbc-fct-bci/Algiers,
+  {:cmns-col/isPartOf :lcc-3166-1/Algeria,
+   :db/ident :fibo-fbc-fct-bci/Algiers,
    :dcterms/description "the international business center of Algiers",
-   :lcc-cr/isPartOf :lcc-3166-1/Algeria,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -382,8 +388,8 @@
 
 (def Alma-ata
   "Alma-ata"
-  {:db/ident :fibo-fbc-fct-bci/Alma-ata,
-   :lcc-cr/isPartOf :lcc-3166-1/Kazakhstan,
+  {:cmns-col/isPartOf :lcc-3166-1/Kazakhstan,
+   :db/ident :fibo-fbc-fct-bci/Alma-ata,
    :owl/sameAs :fibo-fbc-fct-bci/Almaty,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -392,9 +398,9 @@
 
 (def Almaty
   "the international business center of Almaty"
-  {:db/ident :fibo-fbc-fct-bci/Almaty,
+  {:cmns-col/isPartOf :lcc-3166-1/Kazakhstan,
+   :db/ident :fibo-fbc-fct-bci/Almaty,
    :dcterms/description "the international business center of Almaty",
-   :lcc-cr/isPartOf :lcc-3166-1/Kazakhstan,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -402,9 +408,9 @@
 
 (def Amman
   "the international business center of Amman"
-  {:db/ident :fibo-fbc-fct-bci/Amman,
+  {:cmns-col/isPartOf :lcc-3166-1/Jordan,
+   :db/ident :fibo-fbc-fct-bci/Amman,
    :dcterms/description "the international business center of Amman",
-   :lcc-cr/isPartOf :lcc-3166-1/Jordan,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -412,9 +418,9 @@
 
 (def Amsterdam
   "the international business center of Amsterdam"
-  {:db/ident :fibo-fbc-fct-bci/Amsterdam,
+  {:cmns-col/isPartOf :lcc-3166-1/Netherlands,
+   :db/ident :fibo-fbc-fct-bci/Amsterdam,
    :dcterms/description "the international business center of Amsterdam",
-   :lcc-cr/isPartOf :lcc-3166-1/Netherlands,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -422,9 +428,9 @@
 
 (def Ankara
   "the international business center of Ankara"
-  {:db/ident :fibo-fbc-fct-bci/Ankara,
+  {:cmns-col/isPartOf :lcc-3166-1/Turkey,
+   :db/ident :fibo-fbc-fct-bci/Ankara,
    :dcterms/description "the international business center of Ankara",
-   :lcc-cr/isPartOf :lcc-3166-1/Turkey,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -432,8 +438,8 @@
 
 (def Antananarivo
   "Antananarivo"
-  {:db/ident :fibo-fbc-fct-bci/Antananarivo,
-   :lcc-cr/isPartOf :lcc-3166-1/Madagascar,
+  {:cmns-col/isPartOf :lcc-3166-1/Madagascar,
+   :db/ident :fibo-fbc-fct-bci/Antananarivo,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -441,8 +447,8 @@
 
 (def Antwerpen
   "Antwerpen"
-  {:db/ident :fibo-fbc-fct-bci/Antwerpen,
-   :lcc-cr/isPartOf :lcc-3166-1/Belgium,
+  {:cmns-col/isPartOf :lcc-3166-1/Belgium,
+   :db/ident :fibo-fbc-fct-bci/Antwerpen,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -450,8 +456,8 @@
 
 (def Astana
   "Astana"
-  {:db/ident :fibo-fbc-fct-bci/Astana,
-   :lcc-cr/isPartOf :lcc-3166-1/Kazakhstan,
+  {:cmns-col/isPartOf :lcc-3166-1/Kazakhstan,
+   :db/ident :fibo-fbc-fct-bci/Astana,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -459,8 +465,8 @@
 
 (def Asti
   "Asti"
-  {:db/ident :fibo-fbc-fct-bci/Asti,
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Asti,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -468,8 +474,8 @@
 
 (def Asuncion
   "Asuncion"
-  {:db/ident :fibo-fbc-fct-bci/Asuncion,
-   :lcc-cr/isPartOf :lcc-3166-1/Paraguay,
+  {:cmns-col/isPartOf :lcc-3166-1/Paraguay,
+   :db/ident :fibo-fbc-fct-bci/Asuncion,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -477,9 +483,9 @@
 
 (def Athens
   "the international business center of Athens"
-  {:db/ident :fibo-fbc-fct-bci/Athens,
+  {:cmns-col/isPartOf :lcc-3166-1/Greece,
+   :db/ident :fibo-fbc-fct-bci/Athens,
    :dcterms/description "the international business center of Athens",
-   :lcc-cr/isPartOf :lcc-3166-1/Greece,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -487,8 +493,9 @@
 
 (def Atlanta
   "Atlanta"
-  {:db/ident :fibo-fbc-fct-bci/Atlanta,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Georgia :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Georgia
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Atlanta,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -496,9 +503,9 @@
 
 (def Auckland
   "the international business center of Auckland"
-  {:db/ident :fibo-fbc-fct-bci/Auckland,
+  {:cmns-col/isPartOf :lcc-3166-1/NewZealand,
+   :db/ident :fibo-fbc-fct-bci/Auckland,
    :dcterms/description "the international business center of Auckland",
-   :lcc-cr/isPartOf :lcc-3166-1/NewZealand,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -506,8 +513,8 @@
 
 (def Aylesbury
   "Aylesbury"
-  {:db/ident :fibo-fbc-fct-bci/Aylesbury,
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
+   :db/ident :fibo-fbc-fct-bci/Aylesbury,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -515,13 +522,13 @@
 
 (def BBBR
   "the FpML business center code for Bridgetown, Barbados"
-  {:db/ident :fibo-fbc-fct-bci/BBBR,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Bridgetown,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Bridgetown,
+   :db/ident :fibo-fbc-fct-bci/BBBR,
    :dcterms/description
    "the FpML business center code for Bridgetown, Barbados",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Bridgetown,
-   :lcc-lr/hasTag "BBBR",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Bridgetown,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BBBR",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -529,12 +536,12 @@
 
 (def BDDH
   "the FpML business center code for Dhaka, Bangladesh"
-  {:db/ident :fibo-fbc-fct-bci/BDDH,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Dhaka,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Dhaka,
+   :db/ident :fibo-fbc-fct-bci/BDDH,
    :dcterms/description "the FpML business center code for Dhaka, Bangladesh",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Dhaka,
-   :lcc-lr/hasTag "BDDH",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Dhaka,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BDDH",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -542,12 +549,12 @@
 
 (def BEBR
   "the FpML business center code for Brussels, Belgium"
-  {:db/ident :fibo-fbc-fct-bci/BEBR,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Brussels,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Brussels,
+   :db/ident :fibo-fbc-fct-bci/BEBR,
    :dcterms/description "the FpML business center code for Brussels, Belgium",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Brussels,
-   :lcc-lr/hasTag "BEBR",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Brussels,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BEBR",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -555,12 +562,12 @@
 
 (def BGSO
   "the FpML business center code for Sofia, Bulgaria"
-  {:db/ident :fibo-fbc-fct-bci/BGSO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Sofia,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Sofia,
+   :db/ident :fibo-fbc-fct-bci/BGSO,
    :dcterms/description "the FpML business center code for Sofia, Bulgaria",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Sofia,
-   :lcc-lr/hasTag "BGSO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Sofia,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BGSO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -568,12 +575,12 @@
 
 (def BHMA
   "the FpML business center code for Manama, Bahrain"
-  {:db/ident :fibo-fbc-fct-bci/BHMA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Manama,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Manama,
+   :db/ident :fibo-fbc-fct-bci/BHMA,
    :dcterms/description "the FpML business center code for Manama, Bahrain",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Manama,
-   :lcc-lr/hasTag "BHMA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Manama,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BHMA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -581,12 +588,12 @@
 
 (def BMHA
   "the FpML business center code for Hamilton, Bermuda"
-  {:db/ident :fibo-fbc-fct-bci/BMHA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Hamilton,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Hamilton,
+   :db/ident :fibo-fbc-fct-bci/BMHA,
    :dcterms/description "the FpML business center code for Hamilton, Bermuda",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Hamilton,
-   :lcc-lr/hasTag "BMHA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Hamilton,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BMHA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -594,13 +601,13 @@
 
 (def BNBS
   "the FpML business center code for Bandar Seri Begawan, Brunei"
-  {:db/ident :fibo-fbc-fct-bci/BNBS,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Bandar_Seri_Begawan,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Bandar_Seri_Begawan,
+   :db/ident :fibo-fbc-fct-bci/BNBS,
    :dcterms/description
    "the FpML business center code for Bandar Seri Begawan, Brunei",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Bandar_Seri_Begawan,
-   :lcc-lr/hasTag "BNBS",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Bandar_Seri_Begawan,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BNBS",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -608,12 +615,12 @@
 
 (def BOLP
   "the FpML business center code for La Paz, Bolivia"
-  {:db/ident :fibo-fbc-fct-bci/BOLP,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/La_Paz,
+   :cmns-id/identifies :fibo-fbc-fct-bci/La_Paz,
+   :db/ident :fibo-fbc-fct-bci/BOLP,
    :dcterms/description "the FpML business center code for La Paz, Bolivia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/La_Paz,
-   :lcc-lr/hasTag "BOLP",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/La_Paz,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BOLP",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -621,13 +628,13 @@
 
 (def BRBD
   "the FpML business center code for Brazil Business Day. This means a business day in any of Sao Paulo, Rio de Janeiro or Brasilia not otherwise declared as a financial market holiday by the Bolsa de Mercadorias & Futuros (BM&F)"
-  {:db/ident :fibo-fbc-fct-bci/BRBD,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/BrazilBusinessDay,
+   :cmns-id/identifies :fibo-fbc-fct-bci/BrazilBusinessDay,
+   :db/ident :fibo-fbc-fct-bci/BRBD,
    :dcterms/description
    "the FpML business center code for Brazil Business Day. This means a business day in any of Sao Paulo, Rio de Janeiro or Brasilia not otherwise declared as a financial market holiday by the Bolsa de Mercadorias & Futuros (BM&F)",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/BrazilBusinessDay,
-   :lcc-lr/hasTag "BRBD",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/BrazilBusinessDay,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BRBD",
    :rdf/type [:fibo-fbc-fct-bc/BusinessDayAdjustmentCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -635,12 +642,12 @@
 
 (def BRBR
   "the FpML business center code for Brasilia, Brazil"
-  {:db/ident :fibo-fbc-fct-bci/BRBR,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Brasilia,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Brasilia,
+   :db/ident :fibo-fbc-fct-bci/BRBR,
    :dcterms/description "the FpML business center code for Brasilia, Brazil",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Brasilia,
-   :lcc-lr/hasTag "BRBR",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Brasilia,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BRBR",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -648,13 +655,13 @@
 
 (def BRRJ
   "the FpML business center code for Rio de Janeiro, Brazil"
-  {:db/ident :fibo-fbc-fct-bci/BRRJ,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Rio_de_Janeiro,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Rio_de_Janeiro,
+   :db/ident :fibo-fbc-fct-bci/BRRJ,
    :dcterms/description
    "the FpML business center code for Rio de Janeiro, Brazil",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Rio_de_Janeiro,
-   :lcc-lr/hasTag "BRRJ",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Rio_de_Janeiro,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BRRJ",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -662,12 +669,12 @@
 
 (def BRSP
   "the FpML business center code for Sao Paulo, Brazil"
-  {:db/ident :fibo-fbc-fct-bci/BRSP,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Sao_Paulo,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Sao_Paulo,
+   :db/ident :fibo-fbc-fct-bci/BRSP,
    :dcterms/description "the FpML business center code for Sao Paulo, Brazil",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Sao_Paulo,
-   :lcc-lr/hasTag "BRSP",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Sao_Paulo,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BRSP",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -675,12 +682,12 @@
 
 (def BSNA
   "the FpML business center code for Nassau, Bahamas"
-  {:db/ident :fibo-fbc-fct-bci/BSNA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Nassau,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Nassau,
+   :db/ident :fibo-fbc-fct-bci/BSNA,
    :dcterms/description "the FpML business center code for Nassau, Bahamas",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Nassau,
-   :lcc-lr/hasTag "BSNA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Nassau,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BSNA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -688,12 +695,12 @@
 
 (def BWGA
   "the FpML business center code for Gaborone, Botswana"
-  {:db/ident :fibo-fbc-fct-bci/BWGA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Gaborone,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Gaborone,
+   :db/ident :fibo-fbc-fct-bci/BWGA,
    :dcterms/description "the FpML business center code for Gaborone, Botswana",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Gaborone,
-   :lcc-lr/hasTag "BWGA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Gaborone,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BWGA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -701,12 +708,12 @@
 
 (def BYMI
   "the FpML business center code for Minsk, Belarus"
-  {:db/ident :fibo-fbc-fct-bci/BYMI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Minsk,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Minsk,
+   :db/ident :fibo-fbc-fct-bci/BYMI,
    :dcterms/description "the FpML business center code for Minsk, Belarus",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Minsk,
-   :lcc-lr/hasTag "BYMI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Minsk,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "BYMI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -714,8 +721,8 @@
 
 (def Baghdad
   "Baghdad"
-  {:db/ident :fibo-fbc-fct-bci/Baghdad,
-   :lcc-cr/isPartOf :lcc-3166-1/Iraq,
+  {:cmns-col/isPartOf :lcc-3166-1/Iraq,
+   :db/ident :fibo-fbc-fct-bci/Baghdad,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -723,8 +730,8 @@
 
 (def Baku
   "Baku"
-  {:db/ident :fibo-fbc-fct-bci/Baku,
-   :lcc-cr/isPartOf :lcc-3166-1/Azerbaijan,
+  {:cmns-col/isPartOf :lcc-3166-1/Azerbaijan,
+   :db/ident :fibo-fbc-fct-bci/Baku,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -732,10 +739,10 @@
 
 (def Bandar_Seri_Begawan
   "the international business center of Bandar Seri Begawan"
-  {:db/ident :fibo-fbc-fct-bci/Bandar_Seri_Begawan,
+  {:cmns-col/isPartOf :lcc-3166-1/BruneiDarussalam,
+   :db/ident :fibo-fbc-fct-bci/Bandar_Seri_Begawan,
    :dcterms/description
    "the international business center of Bandar Seri Begawan",
-   :lcc-cr/isPartOf :lcc-3166-1/BruneiDarussalam,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -743,9 +750,9 @@
 
 (def Bangalore
   "the international business center of Bangalore"
-  {:db/ident :fibo-fbc-fct-bci/Bangalore,
+  {:cmns-col/isPartOf :lcc-3166-1/India,
+   :db/ident :fibo-fbc-fct-bci/Bangalore,
    :dcterms/description "the international business center of Bangalore",
-   :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -753,9 +760,9 @@
 
 (def Bangkok
   "the international business center of Bangkok"
-  {:db/ident :fibo-fbc-fct-bci/Bangkok,
+  {:cmns-col/isPartOf :lcc-3166-1/Thailand,
+   :db/ident :fibo-fbc-fct-bci/Bangkok,
    :dcterms/description "the international business center of Bangkok",
-   :lcc-cr/isPartOf :lcc-3166-1/Thailand,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -763,8 +770,8 @@
 
 (def Banja_Luka
   "Banja Luka"
-  {:db/ident :fibo-fbc-fct-bci/Banja_Luka,
-   :lcc-cr/isPartOf :lcc-3166-1/BosniaAndHerzegovina,
+  {:cmns-col/isPartOf :lcc-3166-1/BosniaAndHerzegovina,
+   :db/ident :fibo-fbc-fct-bci/Banja_Luka,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -772,9 +779,9 @@
 
 (def Barcelona
   "the international business center of Barcelona"
-  {:db/ident :fibo-fbc-fct-bci/Barcelona,
+  {:cmns-col/isPartOf :lcc-3166-1/Spain,
+   :db/ident :fibo-fbc-fct-bci/Barcelona,
    :dcterms/description "the international business center of Barcelona",
-   :lcc-cr/isPartOf :lcc-3166-1/Spain,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -782,9 +789,9 @@
 
 (def Basel
   "the international business center of Basel"
-  {:db/ident :fibo-fbc-fct-bci/Basel,
+  {:cmns-col/isPartOf :lcc-3166-1/Switzerland,
+   :db/ident :fibo-fbc-fct-bci/Basel,
    :dcterms/description "the international business center of Basel",
-   :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -792,8 +799,8 @@
 
 (def Basseterre
   "Basseterre"
-  {:db/ident :fibo-fbc-fct-bci/Basseterre,
-   :lcc-cr/isPartOf :lcc-3166-1/SaintKittsAndNevis,
+  {:cmns-col/isPartOf :lcc-3166-1/SaintKittsAndNevis,
+   :db/ident :fibo-fbc-fct-bci/Basseterre,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -801,9 +808,9 @@
 
 (def Bedminster
   "Bedminster"
-  {:db/ident :fibo-fbc-fct-bci/Bedminster,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/NewJersey
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/NewJersey
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Bedminster,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -811,9 +818,9 @@
 
 (def Beijing
   "the international business center of Beijing"
-  {:db/ident :fibo-fbc-fct-bci/Beijing,
+  {:cmns-col/isPartOf :lcc-3166-1/China,
+   :db/ident :fibo-fbc-fct-bci/Beijing,
    :dcterms/description "the international business center of Beijing",
-   :lcc-cr/isPartOf :lcc-3166-1/China,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -821,9 +828,9 @@
 
 (def Beirut
   "the international business center of Beirut"
-  {:db/ident :fibo-fbc-fct-bci/Beirut,
+  {:cmns-col/isPartOf :lcc-3166-1/Lebanon,
+   :db/ident :fibo-fbc-fct-bci/Beirut,
    :dcterms/description "the international business center of Beirut",
-   :lcc-cr/isPartOf :lcc-3166-1/Lebanon,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -831,9 +838,9 @@
 
 (def Belgrade
   "the international business center of Belgrade"
-  {:db/ident :fibo-fbc-fct-bci/Belgrade,
+  {:cmns-col/isPartOf :lcc-3166-1/Serbia,
+   :db/ident :fibo-fbc-fct-bci/Belgrade,
    :dcterms/description "the international business center of Belgrade",
-   :lcc-cr/isPartOf :lcc-3166-1/Serbia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -841,8 +848,8 @@
 
 (def Bergamo
   "Bergamo"
-  {:db/ident :fibo-fbc-fct-bci/Bergamo,
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Bergamo,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -850,8 +857,8 @@
 
 (def Bergen
   "Bergen"
-  {:db/ident :fibo-fbc-fct-bci/Bergen,
-   :lcc-cr/isPartOf :lcc-3166-1/Norway,
+  {:cmns-col/isPartOf :lcc-3166-1/Norway,
+   :db/ident :fibo-fbc-fct-bci/Bergen,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -859,8 +866,8 @@
 
 (def Berlin
   "Berlin"
-  {:db/ident :fibo-fbc-fct-bci/Berlin,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Berlin,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -868,8 +875,8 @@
 
 (def Bermuda
   "Bermuda"
-  {:db/ident :fibo-fbc-fct-bci/Bermuda,
-   :lcc-cr/isPartOf :lcc-3166-1/Bermuda,
+  {:cmns-col/isPartOf :lcc-3166-1/Bermuda,
+   :db/ident :fibo-fbc-fct-bci/Bermuda,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -877,8 +884,8 @@
 
 (def Bern
   "Bern"
-  {:db/ident :fibo-fbc-fct-bci/Bern,
-   :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
+  {:cmns-col/isPartOf :lcc-3166-1/Switzerland,
+   :db/ident :fibo-fbc-fct-bci/Bern,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -886,8 +893,8 @@
 
 (def Biella
   "Biella"
-  {:db/ident :fibo-fbc-fct-bci/Biella,
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Biella,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -895,8 +902,8 @@
 
 (def Bilbao
   "Bilbao"
-  {:db/ident :fibo-fbc-fct-bci/Bilbao,
-   :lcc-cr/isPartOf :lcc-3166-1/Spain,
+  {:cmns-col/isPartOf :lcc-3166-1/Spain,
+   :db/ident :fibo-fbc-fct-bci/Bilbao,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -904,8 +911,8 @@
 
 (def Bishkek
   "Bishkek"
-  {:db/ident :fibo-fbc-fct-bci/Bishkek,
-   :lcc-cr/isPartOf :lcc-3166-1/Kyrgyzstan,
+  {:cmns-col/isPartOf :lcc-3166-1/Kyrgyzstan,
+   :db/ident :fibo-fbc-fct-bci/Bishkek,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -913,8 +920,8 @@
 
 (def Blantyre
   "Blantyre"
-  {:db/ident :fibo-fbc-fct-bci/Blantyre,
-   :lcc-cr/isPartOf :lcc-3166-1/Malawi,
+  {:cmns-col/isPartOf :lcc-3166-1/Malawi,
+   :db/ident :fibo-fbc-fct-bci/Blantyre,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -922,8 +929,9 @@
 
 (def BocaRaton
   "Boca Raton"
-  {:db/ident :fibo-fbc-fct-bci/BocaRaton,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Florida :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Florida
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/BocaRaton,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -931,9 +939,9 @@
 
 (def Bogota
   "the international business center of Bogota"
-  {:db/ident :fibo-fbc-fct-bci/Bogota,
+  {:cmns-col/isPartOf :lcc-3166-1/Colombia,
+   :db/ident :fibo-fbc-fct-bci/Bogota,
    :dcterms/description "the international business center of Bogota",
-   :lcc-cr/isPartOf :lcc-3166-1/Colombia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -941,8 +949,8 @@
 
 (def Bologna
   "Bologna"
-  {:db/ident :fibo-fbc-fct-bci/Bologna,
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Bologna,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -950,10 +958,10 @@
 
 (def Boston
   "the international business center of Boston"
-  {:db/ident :fibo-fbc-fct-bci/Boston,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Massachusetts
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Boston,
    :dcterms/description "the international business center of Boston",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Massachusetts
-                     :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -961,8 +969,8 @@
 
 (def Bradford
   "Bradford"
-  {:db/ident :fibo-fbc-fct-bci/Bradford,
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
+   :db/ident :fibo-fbc-fct-bci/Bradford,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -970,9 +978,9 @@
 
 (def Brasilia
   "the international business center of Brasilia"
-  {:db/ident :fibo-fbc-fct-bci/Brasilia,
+  {:cmns-col/isPartOf :lcc-3166-1/Brazil,
+   :db/ident :fibo-fbc-fct-bci/Brasilia,
    :dcterms/description "the international business center of Brasilia",
-   :lcc-cr/isPartOf :lcc-3166-1/Brazil,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -980,9 +988,9 @@
 
 (def Bratislava
   "the international business center of Bratislava"
-  {:db/ident :fibo-fbc-fct-bci/Bratislava,
+  {:cmns-col/isPartOf :lcc-3166-1/Slovakia,
+   :db/ident :fibo-fbc-fct-bci/Bratislava,
    :dcterms/description "the international business center of Bratislava",
-   :lcc-cr/isPartOf :lcc-3166-1/Slovakia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1003,8 +1011,8 @@
 
 (def Bremen
   "Bremen"
-  {:db/ident :fibo-fbc-fct-bci/Bremen,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Bremen,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1012,9 +1020,9 @@
 
 (def Bridgetown
   "the international business center of Bridgetown"
-  {:db/ident :fibo-fbc-fct-bci/Bridgetown,
+  {:cmns-col/isPartOf :lcc-3166-1/Barbados,
+   :db/ident :fibo-fbc-fct-bci/Bridgetown,
    :dcterms/description "the international business center of Bridgetown",
-   :lcc-cr/isPartOf :lcc-3166-1/Barbados,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1022,9 +1030,9 @@
 
 (def Brisbane
   "the international business center of Brisbane"
-  {:db/ident :fibo-fbc-fct-bci/Brisbane,
+  {:cmns-col/isPartOf :lcc-3166-1/Australia,
+   :db/ident :fibo-fbc-fct-bci/Brisbane,
    :dcterms/description "the international business center of Brisbane",
-   :lcc-cr/isPartOf :lcc-3166-1/Australia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1032,9 +1040,9 @@
 
 (def Brussels
   "the international business center of Brussels"
-  {:db/ident :fibo-fbc-fct-bci/Brussels,
+  {:cmns-col/isPartOf :lcc-3166-1/Belgium,
+   :db/ident :fibo-fbc-fct-bci/Brussels,
    :dcterms/description "the international business center of Brussels",
-   :lcc-cr/isPartOf :lcc-3166-1/Belgium,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1042,8 +1050,8 @@
 
 (def BryanstonSandton
   "Bryanston, Sandton"
-  {:db/ident :fibo-fbc-fct-bci/BryanstonSandton,
-   :lcc-cr/isPartOf :lcc-3166-1/SouthAfrica,
+  {:cmns-col/isPartOf :lcc-3166-1/SouthAfrica,
+   :db/ident :fibo-fbc-fct-bci/BryanstonSandton,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1051,9 +1059,9 @@
 
 (def Bucarest
   "the international business center of Bucarest"
-  {:db/ident :fibo-fbc-fct-bci/Bucarest,
+  {:cmns-col/isPartOf :lcc-3166-1/Romania,
+   :db/ident :fibo-fbc-fct-bci/Bucarest,
    :dcterms/description "the international business center of Bucarest",
-   :lcc-cr/isPartOf :lcc-3166-1/Romania,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1061,8 +1069,8 @@
 
 (def Bucharest
   "Bucharest"
-  {:db/ident :fibo-fbc-fct-bci/Bucharest,
-   :lcc-cr/isPartOf :lcc-3166-1/Romania,
+  {:cmns-col/isPartOf :lcc-3166-1/Romania,
+   :db/ident :fibo-fbc-fct-bci/Bucharest,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1070,8 +1078,8 @@
 
 (def Budaors
   "Budaors"
-  {:db/ident :fibo-fbc-fct-bci/Budaors,
-   :lcc-cr/isPartOf :lcc-3166-1/Hungary,
+  {:cmns-col/isPartOf :lcc-3166-1/Hungary,
+   :db/ident :fibo-fbc-fct-bci/Budaors,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1079,9 +1087,9 @@
 
 (def Budapest
   "the international business center of Budapest"
-  {:db/ident :fibo-fbc-fct-bci/Budapest,
+  {:cmns-col/isPartOf :lcc-3166-1/Hungary,
+   :db/ident :fibo-fbc-fct-bci/Budapest,
    :dcterms/description "the international business center of Budapest",
-   :lcc-cr/isPartOf :lcc-3166-1/Hungary,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1089,9 +1097,9 @@
 
 (def Buenos_Aires
   "the international business center of Buenos Aires"
-  {:db/ident :fibo-fbc-fct-bci/Buenos_Aires,
+  {:cmns-col/isPartOf :lcc-3166-1/Argentina,
+   :db/ident :fibo-fbc-fct-bci/Buenos_Aires,
    :dcterms/description "the international business center of Buenos Aires",
-   :lcc-cr/isPartOf :lcc-3166-1/Argentina,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1099,12 +1107,12 @@
 
 (def CACL
   "the FpML business center code for Calgary, Canada"
-  {:db/ident :fibo-fbc-fct-bci/CACL,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Calgary,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Calgary,
+   :db/ident :fibo-fbc-fct-bci/CACL,
    :dcterms/description "the FpML business center code for Calgary, Canada",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Calgary,
-   :lcc-lr/hasTag "CACL",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Calgary,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CACL",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1112,12 +1120,12 @@
 
 (def CAMO
   "the FpML business center code for Montreal, Canada"
-  {:db/ident :fibo-fbc-fct-bci/CAMO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Montreal,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Montreal,
+   :db/ident :fibo-fbc-fct-bci/CAMO,
    :dcterms/description "the FpML business center code for Montreal, Canada",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Montreal,
-   :lcc-lr/hasTag "CAMO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Montreal,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CAMO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1125,12 +1133,12 @@
 
 (def CAOT
   "the FpML business center code for Ottawa, Canada"
-  {:db/ident :fibo-fbc-fct-bci/CAOT,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Ottawa,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Ottawa,
+   :db/ident :fibo-fbc-fct-bci/CAOT,
    :dcterms/description "the FpML business center code for Ottawa, Canada",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Ottawa,
-   :lcc-lr/hasTag "CAOT",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Ottawa,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CAOT",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1138,12 +1146,12 @@
 
 (def CATO
   "the FpML business center code for Toronto, Canada"
-  {:db/ident :fibo-fbc-fct-bci/CATO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Toronto,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Toronto,
+   :db/ident :fibo-fbc-fct-bci/CATO,
    :dcterms/description "the FpML business center code for Toronto, Canada",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Toronto,
-   :lcc-lr/hasTag "CATO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Toronto,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CATO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1151,12 +1159,12 @@
 
 (def CAVA
   "the FpML business center code for Vancouver, Canada"
-  {:db/ident :fibo-fbc-fct-bci/CAVA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Vancouver,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Vancouver,
+   :db/ident :fibo-fbc-fct-bci/CAVA,
    :dcterms/description "the FpML business center code for Vancouver, Canada",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Vancouver,
-   :lcc-lr/hasTag "CAVA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Vancouver,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CAVA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1164,12 +1172,12 @@
 
 (def CAWI
   "the FpML business center code for Winnipeg, Canada"
-  {:db/ident :fibo-fbc-fct-bci/CAWI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Winnipeg,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Winnipeg,
+   :db/ident :fibo-fbc-fct-bci/CAWI,
    :dcterms/description "the FpML business center code for Winnipeg, Canada",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Winnipeg,
-   :lcc-lr/hasTag "CAWI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Winnipeg,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CAWI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1177,12 +1185,12 @@
 
 (def CHBA
   "the FpML business center code for Basel, Switzerland"
-  {:db/ident :fibo-fbc-fct-bci/CHBA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Basel,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Basel,
+   :db/ident :fibo-fbc-fct-bci/CHBA,
    :dcterms/description "the FpML business center code for Basel, Switzerland",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Basel,
-   :lcc-lr/hasTag "CHBA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Basel,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CHBA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1190,12 +1198,12 @@
 
 (def CHGE
   "the FpML business center code for Geneva, Switzerland"
-  {:db/ident :fibo-fbc-fct-bci/CHGE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Geneva,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Geneva,
+   :db/ident :fibo-fbc-fct-bci/CHGE,
    :dcterms/description "the FpML business center code for Geneva, Switzerland",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Geneva,
-   :lcc-lr/hasTag "CHGE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Geneva,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CHGE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1203,12 +1211,12 @@
 
 (def CHZU
   "the FpML business center code for Zurich, Switzerland"
-  {:db/ident :fibo-fbc-fct-bci/CHZU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Zurich,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Zurich,
+   :db/ident :fibo-fbc-fct-bci/CHZU,
    :dcterms/description "the FpML business center code for Zurich, Switzerland",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Zurich,
-   :lcc-lr/hasTag "CHZU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Zurich,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CHZU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1216,13 +1224,13 @@
 
 (def CIAB
   "the FpML business center code for Abidjan, Cote d'Ivoire"
-  {:db/ident :fibo-fbc-fct-bci/CIAB,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Abidjan,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Abidjan,
+   :db/ident :fibo-fbc-fct-bci/CIAB,
    :dcterms/description
    "the FpML business center code for Abidjan, Cote d'Ivoire",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Abidjan,
-   :lcc-lr/hasTag "CIAB",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Abidjan,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CIAB",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1230,12 +1238,12 @@
 
 (def CLSA
   "the FpML business center code for Santiago, Chile"
-  {:db/ident :fibo-fbc-fct-bci/CLSA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Santiago,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Santiago,
+   :db/ident :fibo-fbc-fct-bci/CLSA,
    :dcterms/description "the FpML business center code for Santiago, Chile",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Santiago,
-   :lcc-lr/hasTag "CLSA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Santiago,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CLSA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1243,12 +1251,12 @@
 
 (def CNBE
   "the FpML business center code for Beijing, China"
-  {:db/ident :fibo-fbc-fct-bci/CNBE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Beijing,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Beijing,
+   :db/ident :fibo-fbc-fct-bci/CNBE,
    :dcterms/description "the FpML business center code for Beijing, China",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Beijing,
-   :lcc-lr/hasTag "CNBE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Beijing,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CNBE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1256,12 +1264,12 @@
 
 (def CNSH
   "the FpML business center code for Shanghai, China"
-  {:db/ident :fibo-fbc-fct-bci/CNSH,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Shanghai,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Shanghai,
+   :db/ident :fibo-fbc-fct-bci/CNSH,
    :dcterms/description "the FpML business center code for Shanghai, China",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Shanghai,
-   :lcc-lr/hasTag "CNSH",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Shanghai,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CNSH",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1269,12 +1277,12 @@
 
 (def COBO
   "the FpML business center code for Bogota, Colombia"
-  {:db/ident :fibo-fbc-fct-bci/COBO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Bogota,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Bogota,
+   :db/ident :fibo-fbc-fct-bci/COBO,
    :dcterms/description "the FpML business center code for Bogota, Colombia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Bogota,
-   :lcc-lr/hasTag "COBO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Bogota,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "COBO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1282,13 +1290,13 @@
 
 (def CRSJ
   "the FpML business center code for San Jose, Costa Rica"
-  {:db/ident :fibo-fbc-fct-bci/CRSJ,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/San_Jose,
+   :cmns-id/identifies :fibo-fbc-fct-bci/San_Jose,
+   :db/ident :fibo-fbc-fct-bci/CRSJ,
    :dcterms/description
    "the FpML business center code for San Jose, Costa Rica",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/San_Jose,
-   :lcc-lr/hasTag "CRSJ",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/San_Jose,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CRSJ",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1296,12 +1304,12 @@
 
 (def CYNI
   "the FpML business center code for Nicosia, Cyprus"
-  {:db/ident :fibo-fbc-fct-bci/CYNI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Nicosia,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Nicosia,
+   :db/ident :fibo-fbc-fct-bci/CYNI,
    :dcterms/description "the FpML business center code for Nicosia, Cyprus",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Nicosia,
-   :lcc-lr/hasTag "CYNI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Nicosia,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CYNI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1309,13 +1317,13 @@
 
 (def CZPR
   "the FpML business center code for Prague, Czech Republic"
-  {:db/ident :fibo-fbc-fct-bci/CZPR,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Prague,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Prague,
+   :db/ident :fibo-fbc-fct-bci/CZPR,
    :dcterms/description
    "the FpML business center code for Prague, Czech Republic",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Prague,
-   :lcc-lr/hasTag "CZPR",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Prague,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "CZPR",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1323,9 +1331,9 @@
 
 (def Cairo
   "the international business center of Cairo"
-  {:db/ident :fibo-fbc-fct-bci/Cairo,
+  {:cmns-col/isPartOf :lcc-3166-1/Egypt,
+   :db/ident :fibo-fbc-fct-bci/Cairo,
    :dcterms/description "the international business center of Cairo",
-   :lcc-cr/isPartOf :lcc-3166-1/Egypt,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1333,8 +1341,8 @@
 
 (def Calcutta
   "Calcutta"
-  {:db/ident :fibo-fbc-fct-bci/Calcutta,
-   :lcc-cr/isPartOf :lcc-3166-1/India,
+  {:cmns-col/isPartOf :lcc-3166-1/India,
+   :db/ident :fibo-fbc-fct-bci/Calcutta,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1342,9 +1350,9 @@
 
 (def Calgary
   "the international business center of Calgary"
-  {:db/ident :fibo-fbc-fct-bci/Calgary,
+  {:cmns-col/isPartOf :lcc-3166-1/Canada,
+   :db/ident :fibo-fbc-fct-bci/Calgary,
    :dcterms/description "the international business center of Calgary",
-   :lcc-cr/isPartOf :lcc-3166-1/Canada,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1352,9 +1360,9 @@
 
 (def Canberra
   "the international business center of Canberra"
-  {:db/ident :fibo-fbc-fct-bci/Canberra,
+  {:cmns-col/isPartOf :lcc-3166-1/Australia,
+   :db/ident :fibo-fbc-fct-bci/Canberra,
    :dcterms/description "the international business center of Canberra",
-   :lcc-cr/isPartOf :lcc-3166-1/Australia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1362,9 +1370,9 @@
 
 (def Caracas
   "the international business center of Caracas"
-  {:db/ident :fibo-fbc-fct-bci/Caracas,
+  {:cmns-col/isPartOf :lcc-3166-1/Venezuela,
+   :db/ident :fibo-fbc-fct-bci/Caracas,
    :dcterms/description "the international business center of Caracas",
-   :lcc-cr/isPartOf :lcc-3166-1/Venezuela,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1372,9 +1380,9 @@
 
 (def Casablanca
   "the international business center of Casablanca"
-  {:db/ident :fibo-fbc-fct-bci/Casablanca,
+  {:cmns-col/isPartOf :lcc-3166-1/Morocco,
+   :db/ident :fibo-fbc-fct-bci/Casablanca,
    :dcterms/description "the international business center of Casablanca",
-   :lcc-cr/isPartOf :lcc-3166-1/Morocco,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1382,10 +1390,10 @@
 
 (def Charlotte
   "the international business center of Charlotte"
-  {:db/ident :fibo-fbc-fct-bci/Charlotte,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/NorthCarolina
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Charlotte,
    :dcterms/description "the international business center of Charlotte",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/NorthCarolina
-                     :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1393,9 +1401,9 @@
 
 (def Chatham
   "Chatham"
-  {:db/ident :fibo-fbc-fct-bci/Chatham,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Massachusetts
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Massachusetts
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Chatham,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1403,9 +1411,9 @@
 
 (def Chennai
   "the international business center of Chennai"
-  {:db/ident :fibo-fbc-fct-bci/Chennai,
+  {:cmns-col/isPartOf :lcc-3166-1/India,
+   :db/ident :fibo-fbc-fct-bci/Chennai,
    :dcterms/description "the international business center of Chennai",
-   :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1413,9 +1421,10 @@
 
 (def Chicago
   "the international business center of Chicago"
-  {:db/ident :fibo-fbc-fct-bci/Chicago,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Illinois
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Chicago,
    :dcterms/description "the international business center of Chicago",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Illinois :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1423,8 +1432,8 @@
 
 (def Chisinau
   "Chisinau"
-  {:db/ident :fibo-fbc-fct-bci/Chisinau,
-   :lcc-cr/isPartOf :lcc-3166-1/Moldova,
+  {:cmns-col/isPartOf :lcc-3166-1/Moldova,
+   :db/ident :fibo-fbc-fct-bci/Chisinau,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1432,8 +1441,8 @@
 
 (def Chittagong
   "Chittagong"
-  {:db/ident :fibo-fbc-fct-bci/Chittagong,
-   :lcc-cr/isPartOf :lcc-3166-1/Bangladesh,
+  {:cmns-col/isPartOf :lcc-3166-1/Bangladesh,
+   :db/ident :fibo-fbc-fct-bci/Chittagong,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1441,8 +1450,8 @@
 
 (def Chiyoda-ku
   "Chiyoda-ku"
-  {:db/ident :fibo-fbc-fct-bci/Chiyoda-ku,
-   :lcc-cr/isPartOf :lcc-3166-1/Japan,
+  {:cmns-col/isPartOf :lcc-3166-1/Japan,
+   :db/ident :fibo-fbc-fct-bci/Chiyoda-ku,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1450,8 +1459,8 @@
 
 (def ClujNapoca
   "Cluj Napoca"
-  {:db/ident :fibo-fbc-fct-bci/ClujNapoca,
-   :lcc-cr/isPartOf :lcc-3166-1/Romania,
+  {:cmns-col/isPartOf :lcc-3166-1/Romania,
+   :db/ident :fibo-fbc-fct-bci/ClujNapoca,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1459,9 +1468,9 @@
 
 (def Cologne
   "the international business center of Cologne"
-  {:db/ident :fibo-fbc-fct-bci/Cologne,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Cologne,
    :dcterms/description "the international business center of Cologne",
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1469,9 +1478,9 @@
 
 (def Colombo
   "the international business center of Colombo"
-  {:db/ident :fibo-fbc-fct-bci/Colombo,
+  {:cmns-col/isPartOf :lcc-3166-1/SriLanka,
+   :db/ident :fibo-fbc-fct-bci/Colombo,
    :dcterms/description "the international business center of Colombo",
-   :lcc-cr/isPartOf :lcc-3166-1/SriLanka,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1479,9 +1488,9 @@
 
 (def Copenhagen
   "the international business center of Copenhagen"
-  {:db/ident :fibo-fbc-fct-bci/Copenhagen,
+  {:cmns-col/isPartOf :lcc-3166-1/Denmark,
+   :db/ident :fibo-fbc-fct-bci/Copenhagen,
    :dcterms/description "the international business center of Copenhagen",
-   :lcc-cr/isPartOf :lcc-3166-1/Denmark,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1489,8 +1498,8 @@
 
 (def Cordoba
   "Cordoba"
-  {:db/ident :fibo-fbc-fct-bci/Cordoba,
-   :lcc-cr/isPartOf :lcc-3166-1/Argentina,
+  {:cmns-col/isPartOf :lcc-3166-1/Argentina,
+   :db/ident :fibo-fbc-fct-bci/Cordoba,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1498,8 +1507,8 @@
 
 (def Corrientes
   "Corrientes"
-  {:db/ident :fibo-fbc-fct-bci/Corrientes,
-   :lcc-cr/isPartOf :lcc-3166-1/Argentina,
+  {:cmns-col/isPartOf :lcc-3166-1/Argentina,
+   :db/ident :fibo-fbc-fct-bci/Corrientes,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1507,8 +1516,8 @@
 
 (def Curitiba
   "Curitiba"
-  {:db/ident :fibo-fbc-fct-bci/Curitiba,
-   :lcc-cr/isPartOf :lcc-3166-1/Brazil,
+  {:cmns-col/isPartOf :lcc-3166-1/Brazil,
+   :db/ident :fibo-fbc-fct-bci/Curitiba,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1516,12 +1525,12 @@
 
 (def DECO
   "the FpML business center code for Cologne, Germany"
-  {:db/ident :fibo-fbc-fct-bci/DECO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Cologne,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Cologne,
+   :db/ident :fibo-fbc-fct-bci/DECO,
    :dcterms/description "the FpML business center code for Cologne, Germany",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Cologne,
-   :lcc-lr/hasTag "DECO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Cologne,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "DECO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1529,12 +1538,12 @@
 
 (def DEDU
   "the FpML business center code for Dusseldorf, Germany"
-  {:db/ident :fibo-fbc-fct-bci/DEDU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Dusseldorf,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Dusseldorf,
+   :db/ident :fibo-fbc-fct-bci/DEDU,
    :dcterms/description "the FpML business center code for Dusseldorf, Germany",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Dusseldorf,
-   :lcc-lr/hasTag "DEDU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Dusseldorf,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "DEDU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1542,12 +1551,12 @@
 
 (def DEFR
   "the FpML business center code for Frankfurt, Germany"
-  {:db/ident :fibo-fbc-fct-bci/DEFR,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Frankfurt,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Frankfurt,
+   :db/ident :fibo-fbc-fct-bci/DEFR,
    :dcterms/description "the FpML business center code for Frankfurt, Germany",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Frankfurt,
-   :lcc-lr/hasTag "DEFR",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Frankfurt,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "DEFR",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1555,12 +1564,12 @@
 
 (def DELE
   "the FpML business center code for Leipzig, Germany"
-  {:db/ident :fibo-fbc-fct-bci/DELE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Leipzig,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Leipzig,
+   :db/ident :fibo-fbc-fct-bci/DELE,
    :dcterms/description "the FpML business center code for Leipzig, Germany",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Leipzig,
-   :lcc-lr/hasTag "DELE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Leipzig,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "DELE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1568,12 +1577,12 @@
 
 (def DEMA
   "the FpML business center code for Mainz, Germany"
-  {:db/ident :fibo-fbc-fct-bci/DEMA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Mainz,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Mainz,
+   :db/ident :fibo-fbc-fct-bci/DEMA,
    :dcterms/description "the FpML business center code for Mainz, Germany",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Mainz,
-   :lcc-lr/hasTag "DEMA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Mainz,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "DEMA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1581,12 +1590,12 @@
 
 (def DEMU
   "the FpML business center code for Munich, Germany"
-  {:db/ident :fibo-fbc-fct-bci/DEMU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Munich,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Munich,
+   :db/ident :fibo-fbc-fct-bci/DEMU,
    :dcterms/description "the FpML business center code for Munich, Germany",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Munich,
-   :lcc-lr/hasTag "DEMU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Munich,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "DEMU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1594,12 +1603,12 @@
 
 (def DEST
   "the FpML business center code for Stuttgart, Germany"
-  {:db/ident :fibo-fbc-fct-bci/DEST,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Stuttgart,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Stuttgart,
+   :db/ident :fibo-fbc-fct-bci/DEST,
    :dcterms/description "the FpML business center code for Stuttgart, Germany",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Stuttgart,
-   :lcc-lr/hasTag "DEST",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Stuttgart,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "DEST",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1607,12 +1616,12 @@
 
 (def DKCO
   "the FpML business center code for Copenhagen, Denmark"
-  {:db/ident :fibo-fbc-fct-bci/DKCO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Copenhagen,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Copenhagen,
+   :db/ident :fibo-fbc-fct-bci/DKCO,
    :dcterms/description "the FpML business center code for Copenhagen, Denmark",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Copenhagen,
-   :lcc-lr/hasTag "DKCO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Copenhagen,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "DKCO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1620,13 +1629,13 @@
 
 (def DOSD
   "the FpML business center code for Santo Domingo, Dominican Republic"
-  {:db/ident :fibo-fbc-fct-bci/DOSD,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Santo_Domingo,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Santo_Domingo,
+   :db/ident :fibo-fbc-fct-bci/DOSD,
    :dcterms/description
    "the FpML business center code for Santo Domingo, Dominican Republic",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Santo_Domingo,
-   :lcc-lr/hasTag "DOSD",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Santo_Domingo,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "DOSD",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1634,12 +1643,12 @@
 
 (def DZAL
   "the FpML business center code for Algiers, Algeria"
-  {:db/ident :fibo-fbc-fct-bci/DZAL,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Algiers,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Algiers,
+   :db/ident :fibo-fbc-fct-bci/DZAL,
    :dcterms/description "the FpML business center code for Algiers, Algeria",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Algiers,
-   :lcc-lr/hasTag "DZAL",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Algiers,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "DZAL",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1647,9 +1656,9 @@
 
 (def Dakar
   "the international business center of Dakar"
-  {:db/ident :fibo-fbc-fct-bci/Dakar,
+  {:cmns-col/isPartOf :lcc-3166-1/Senegal,
+   :db/ident :fibo-fbc-fct-bci/Dakar,
    :dcterms/description "the international business center of Dakar",
-   :lcc-cr/isPartOf :lcc-3166-1/Senegal,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1657,8 +1666,8 @@
 
 (def Dalian
   "Dalian"
-  {:db/ident :fibo-fbc-fct-bci/Dalian,
-   :lcc-cr/isPartOf :lcc-3166-1/China,
+  {:cmns-col/isPartOf :lcc-3166-1/China,
+   :db/ident :fibo-fbc-fct-bci/Dalian,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1666,9 +1675,9 @@
 
 (def Damascus
   "the municipality of Damascus"
-  {:db/ident :fibo-fbc-fct-bci/Damascus,
+  {:cmns-col/isPartOf :lcc-3166-1/SyrianArabRepublic,
+   :db/ident :fibo-fbc-fct-bci/Damascus,
    :dcterms/description "the municipality of Damascus",
-   :lcc-cr/isPartOf :lcc-3166-1/SyrianArabRepublic,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1676,9 +1685,9 @@
 
 (def Dar_es_Salaam
   "the international business center of Dar es Salaam"
-  {:db/ident :fibo-fbc-fct-bci/Dar_es_Salaam,
+  {:cmns-col/isPartOf :lcc-3166-1/Tanzania,
+   :db/ident :fibo-fbc-fct-bci/Dar_es_Salaam,
    :dcterms/description "the international business center of Dar es Salaam",
-   :lcc-cr/isPartOf :lcc-3166-1/Tanzania,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1686,9 +1695,9 @@
 
 (def Darwin
   "the international business center of Darwin"
-  {:db/ident :fibo-fbc-fct-bci/Darwin,
+  {:cmns-col/isPartOf :lcc-3166-1/Australia,
+   :db/ident :fibo-fbc-fct-bci/Darwin,
    :dcterms/description "the international business center of Darwin",
-   :lcc-cr/isPartOf :lcc-3166-1/Australia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1696,8 +1705,8 @@
 
 (def Davos_Platz
   "Davos Platz"
-  {:db/ident :fibo-fbc-fct-bci/Davos_Platz,
-   :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
+  {:cmns-col/isPartOf :lcc-3166-1/Switzerland,
+   :db/ident :fibo-fbc-fct-bci/Davos_Platz,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1705,9 +1714,10 @@
 
 (def Denver
   "the international business center of Denver"
-  {:db/ident :fibo-fbc-fct-bci/Denver,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Colorado
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Denver,
    :dcterms/description "the international business center of Denver",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Colorado :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1715,9 +1725,10 @@
 
 (def Detroit
   "the international business center of Detroit"
-  {:db/ident :fibo-fbc-fct-bci/Detroit,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Michigan
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Detroit,
    :dcterms/description "the international business center of Detroit",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Michigan :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1725,9 +1736,9 @@
 
 (def Dhaka
   "the international business center of Dhaka"
-  {:db/ident :fibo-fbc-fct-bci/Dhaka,
+  {:cmns-col/isPartOf :lcc-3166-1/Bangladesh,
+   :db/ident :fibo-fbc-fct-bci/Dhaka,
    :dcterms/description "the international business center of Dhaka",
-   :lcc-cr/isPartOf :lcc-3166-1/Bangladesh,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1735,8 +1746,8 @@
 
 (def Dnipropetrovsk
   "Dnipropetrovsk"
-  {:db/ident :fibo-fbc-fct-bci/Dnipropetrovsk,
-   :lcc-cr/isPartOf :lcc-3166-1/Ukraine,
+  {:cmns-col/isPartOf :lcc-3166-1/Ukraine,
+   :db/ident :fibo-fbc-fct-bci/Dnipropetrovsk,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1744,9 +1755,9 @@
 
 (def Dodoma
   "the international business center of Dodoma"
-  {:db/ident :fibo-fbc-fct-bci/Dodoma,
+  {:cmns-col/isPartOf :lcc-3166-1/Tanzania,
+   :db/ident :fibo-fbc-fct-bci/Dodoma,
    :dcterms/description "the international business center of Dodoma",
-   :lcc-cr/isPartOf :lcc-3166-1/Tanzania,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1754,9 +1765,9 @@
 
 (def Doha
   "the international business center of Doha"
-  {:db/ident :fibo-fbc-fct-bci/Doha,
+  {:cmns-col/isPartOf :lcc-3166-1/Qatar,
+   :db/ident :fibo-fbc-fct-bci/Doha,
    :dcterms/description "the international business center of Doha",
-   :lcc-cr/isPartOf :lcc-3166-1/Qatar,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1764,8 +1775,8 @@
 
 (def Douala
   "Douala"
-  {:db/ident :fibo-fbc-fct-bci/Douala,
-   :lcc-cr/isPartOf :lcc-3166-1/Cameroon,
+  {:cmns-col/isPartOf :lcc-3166-1/Cameroon,
+   :db/ident :fibo-fbc-fct-bci/Douala,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1773,9 +1784,9 @@
 
 (def Dubai
   "the international business center of Dubai"
-  {:db/ident :fibo-fbc-fct-bci/Dubai,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedArabEmirates,
+   :db/ident :fibo-fbc-fct-bci/Dubai,
    :dcterms/description "the international business center of Dubai",
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedArabEmirates,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1783,9 +1794,9 @@
 
 (def Dublin
   "the international business center of Dublin"
-  {:db/ident :fibo-fbc-fct-bci/Dublin,
+  {:cmns-col/isPartOf :lcc-3166-1/Ireland,
+   :db/ident :fibo-fbc-fct-bci/Dublin,
    :dcterms/description "the international business center of Dublin",
-   :lcc-cr/isPartOf :lcc-3166-1/Ireland,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1793,8 +1804,8 @@
 
 (def Duesseldorf
   "Duesseldorf"
-  {:db/ident :fibo-fbc-fct-bci/Duesseldorf,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Duesseldorf,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1802,9 +1813,9 @@
 
 (def Dusseldorf
   "the international business center of Dusseldorf"
-  {:db/ident :fibo-fbc-fct-bci/Dusseldorf,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Dusseldorf,
    :dcterms/description "the international business center of Dusseldorf",
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1812,12 +1823,12 @@
 
 (def EETA
   "the FpML business center code for Tallinn, Estonia"
-  {:db/ident :fibo-fbc-fct-bci/EETA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Tallinn,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Tallinn,
+   :db/ident :fibo-fbc-fct-bci/EETA,
    :dcterms/description "the FpML business center code for Tallinn, Estonia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Tallinn,
-   :lcc-lr/hasTag "EETA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Tallinn,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "EETA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1825,12 +1836,12 @@
 
 (def EGCA
   "the FpML business center code for Cairo, Egypt"
-  {:db/ident :fibo-fbc-fct-bci/EGCA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Cairo,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Cairo,
+   :db/ident :fibo-fbc-fct-bci/EGCA,
    :dcterms/description "the FpML business center code for Cairo, Egypt",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Cairo,
-   :lcc-lr/hasTag "EGCA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Cairo,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "EGCA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1838,13 +1849,13 @@
 
 (def ESAS
   "the FpML business center code for ESAS Settlement Day (as defined in 2006 ISDA Definitions Section 7.1 and Supplement Number 15 to the 2000 ISDA Definitions)"
-  {:db/ident :fibo-fbc-fct-bci/ESAS,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/ESASSettlementDay,
+   :cmns-id/identifies :fibo-fbc-fct-bci/ESASSettlementDay,
+   :db/ident :fibo-fbc-fct-bci/ESAS,
    :dcterms/description
    "the FpML business center code for ESAS Settlement Day (as defined in 2006 ISDA Definitions Section 7.1 and Supplement Number 15 to the 2000 ISDA Definitions)",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/ESASSettlementDay,
-   :lcc-lr/hasTag "ESAS",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/ESASSettlementDay,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ESAS",
    :rdf/type [:fibo-fbc-fct-bc/BusinessDayAdjustmentCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1865,12 +1876,12 @@
 
 (def ESBA
   "the FpML business center code for Barcelona, Spain"
-  {:db/ident :fibo-fbc-fct-bci/ESBA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Barcelona,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Barcelona,
+   :db/ident :fibo-fbc-fct-bci/ESBA,
    :dcterms/description "the FpML business center code for Barcelona, Spain",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Barcelona,
-   :lcc-lr/hasTag "ESBA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Barcelona,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ESBA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1878,12 +1889,12 @@
 
 (def ESMA
   "the FpML business center code for Madrid, Spain"
-  {:db/ident :fibo-fbc-fct-bci/ESMA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Madrid,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Madrid,
+   :db/ident :fibo-fbc-fct-bci/ESMA,
    :dcterms/description "the FpML business center code for Madrid, Spain",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Madrid,
-   :lcc-lr/hasTag "ESMA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Madrid,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ESMA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1891,13 +1902,13 @@
 
 (def ETAA
   "the FpML business center code for Addis Ababa, Ethiopia"
-  {:db/ident :fibo-fbc-fct-bci/ETAA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Addis_Ababa,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Addis_Ababa,
+   :db/ident :fibo-fbc-fct-bci/ETAA,
    :dcterms/description
    "the FpML business center code for Addis Ababa, Ethiopia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Addis_Ababa,
-   :lcc-lr/hasTag "ETAA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Addis_Ababa,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ETAA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1905,13 +1916,13 @@
 
 (def EUTA
   "the FpML business center code for TARGET (euro 'Business Center')"
-  {:db/ident :fibo-fbc-fct-bci/EUTA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/TARGETSettlementDay,
+   :cmns-id/identifies :fibo-fbc-fct-bci/TARGETSettlementDay,
+   :db/ident :fibo-fbc-fct-bci/EUTA,
    :dcterms/description
    "the FpML business center code for TARGET (euro 'Business Center')",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/TARGETSettlementDay,
-   :lcc-lr/hasTag "EUTA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/TARGETSettlementDay,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "EUTA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessDayAdjustmentCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1920,8 +1931,8 @@
 (def Ebene
   "Ebene"
   {:cmns-av/synonym ["Ebene Cybercity" "Cybercity"],
+   :cmns-col/isPartOf :lcc-3166-1/Mauritius,
    :db/ident :fibo-fbc-fct-bci/Ebene,
-   :lcc-cr/isPartOf :lcc-3166-1/Mauritius,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1929,8 +1940,8 @@
 
 (def Eden_Island
   "Eden Island"
-  {:db/ident :fibo-fbc-fct-bci/Eden_Island,
-   :lcc-cr/isPartOf :lcc-3166-1/Seychelles,
+  {:cmns-col/isPartOf :lcc-3166-1/Seychelles,
+   :db/ident :fibo-fbc-fct-bci/Eden_Island,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1938,9 +1949,9 @@
 
 (def Edinburgh
   "the international business center of Edinburgh"
-  {:db/ident :fibo-fbc-fct-bci/Edinburgh,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
+   :db/ident :fibo-fbc-fct-bci/Edinburgh,
    :dcterms/description "the international business center of Edinburgh",
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1948,8 +1959,8 @@
 
 (def Ekaterinburg
   "Ekaterinburg"
-  {:db/ident :fibo-fbc-fct-bci/Ekaterinburg,
-   :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
+  {:cmns-col/isPartOf :lcc-3166-1/RussianFederation,
+   :db/ident :fibo-fbc-fct-bci/Ekaterinburg,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1957,8 +1968,8 @@
 
 (def El_Salvador
   "El Salvador"
-  {:db/ident :fibo-fbc-fct-bci/El_Salvador,
-   :lcc-cr/isPartOf :lcc-3166-1/ElSalvador,
+  {:cmns-col/isPartOf :lcc-3166-1/ElSalvador,
+   :db/ident :fibo-fbc-fct-bci/El_Salvador,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1966,8 +1977,8 @@
 
 (def Esch-sur-alzette
   "Esch-sur-alzette"
-  {:db/ident :fibo-fbc-fct-bci/Esch-sur-alzette,
-   :lcc-cr/isPartOf :lcc-3166-1/Luxembourg,
+  {:cmns-col/isPartOf :lcc-3166-1/Luxembourg,
+   :db/ident :fibo-fbc-fct-bci/Esch-sur-alzette,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1975,8 +1986,8 @@
 
 (def Eschborn
   "Eschborn"
-  {:db/ident :fibo-fbc-fct-bci/Eschborn,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Eschborn,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1984,8 +1995,8 @@
 
 (def Eschenz
   "Eschenz"
-  {:db/ident :fibo-fbc-fct-bci/Eschenz,
-   :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
+  {:cmns-col/isPartOf :lcc-3166-1/Switzerland,
+   :db/ident :fibo-fbc-fct-bci/Eschenz,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -1993,8 +2004,8 @@
 
 (def Espirito_Santo
   "Espirito Santo"
-  {:db/ident :fibo-fbc-fct-bci/Espirito_Santo,
-   :lcc-cr/isPartOf :lcc-3166-1/Brazil,
+  {:cmns-col/isPartOf :lcc-3166-1/Brazil,
+   :db/ident :fibo-fbc-fct-bci/Espirito_Santo,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2002,8 +2013,8 @@
 
 (def Espoo
   "Espoo"
-  {:db/ident :fibo-fbc-fct-bci/Espoo,
-   :lcc-cr/isPartOf :lcc-3166-1/Finland,
+  {:cmns-col/isPartOf :lcc-3166-1/Finland,
+   :db/ident :fibo-fbc-fct-bci/Espoo,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2011,12 +2022,12 @@
 
 (def FIHE
   "the FpML business center code for Helsinki, Finland"
-  {:db/ident :fibo-fbc-fct-bci/FIHE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Helsinki,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Helsinki,
+   :db/ident :fibo-fbc-fct-bci/FIHE,
    :dcterms/description "the FpML business center code for Helsinki, Finland",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Helsinki,
-   :lcc-lr/hasTag "FIHE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Helsinki,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "FIHE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2024,12 +2035,12 @@
 
 (def FRPA
   "the FpML business center code for Paris, France"
-  {:db/ident :fibo-fbc-fct-bci/FRPA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Paris,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Paris,
+   :db/ident :fibo-fbc-fct-bci/FRPA,
    :dcterms/description "the FpML business center code for Paris, France",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Paris,
-   :lcc-lr/hasTag "FRPA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Paris,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "FRPA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2037,8 +2048,8 @@
 
 (def Fiac
   "Fiac"
-  {:db/ident :fibo-fbc-fct-bci/Fiac,
-   :lcc-cr/isPartOf :lcc-3166-1/France,
+  {:cmns-col/isPartOf :lcc-3166-1/France,
+   :db/ident :fibo-fbc-fct-bci/Fiac,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2046,8 +2057,8 @@
 
 (def Firenze
   "Firenze"
-  {:db/ident :fibo-fbc-fct-bci/Firenze,
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Firenze,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2055,8 +2066,8 @@
 
 (def Florence
   "Florence"
-  {:db/ident :fibo-fbc-fct-bci/Florence,
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Florence,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2075,9 +2086,9 @@
 
 (def Frankfurt
   "the international business center of Frankfurt"
-  {:db/ident :fibo-fbc-fct-bci/Frankfurt,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Frankfurt,
    :dcterms/description "the international business center of Frankfurt",
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2085,8 +2096,8 @@
 
 (def Fukuoka
   "Fukuoka"
-  {:db/ident :fibo-fbc-fct-bci/Fukuoka,
-   :lcc-cr/isPartOf :lcc-3166-1/Japan,
+  {:cmns-col/isPartOf :lcc-3166-1/Japan,
+   :db/ident :fibo-fbc-fct-bci/Fukuoka,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2094,12 +2105,12 @@
 
 (def GBED
   "the FpML business center code for Edinburgh, Scotland"
-  {:db/ident :fibo-fbc-fct-bci/GBED,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Edinburgh,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Edinburgh,
+   :db/ident :fibo-fbc-fct-bci/GBED,
    :dcterms/description "the FpML business center code for Edinburgh, Scotland",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Edinburgh,
-   :lcc-lr/hasTag "GBED",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Edinburgh,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "GBED",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2107,13 +2118,13 @@
 
 (def GBLO
   "the FpML business center code for London, United Kingdom"
-  {:db/ident :fibo-fbc-fct-bci/GBLO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/London,
+   :cmns-id/identifies :fibo-fbc-fct-bci/London,
+   :db/ident :fibo-fbc-fct-bci/GBLO,
    :dcterms/description
    "the FpML business center code for London, United Kingdom",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/London,
-   :lcc-lr/hasTag "GBLO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/London,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "GBLO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2121,12 +2132,12 @@
 
 (def GETB
   "the FpML business center code for Tbilisi, Georgia"
-  {:db/ident :fibo-fbc-fct-bci/GETB,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Tbilisi,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Tbilisi,
+   :db/ident :fibo-fbc-fct-bci/GETB,
    :dcterms/description "the FpML business center code for Tbilisi, Georgia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Tbilisi,
-   :lcc-lr/hasTag "GETB",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Tbilisi,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "GETB",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2134,13 +2145,13 @@
 
 (def GGSP
   "the FpML business center code for Saint Peter Port, Guernsey"
-  {:db/ident :fibo-fbc-fct-bci/GGSP,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Saint_Peter_Port,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Saint_Peter_Port,
+   :db/ident :fibo-fbc-fct-bci/GGSP,
    :dcterms/description
    "the FpML business center code for Saint Peter Port, Guernsey",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Saint_Peter_Port,
-   :lcc-lr/hasTag "GGSP",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Saint_Peter_Port,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "GGSP",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2148,12 +2159,12 @@
 
 (def GHAC
   "the FpML business center code for Accra, Ghana"
-  {:db/ident :fibo-fbc-fct-bci/GHAC,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Accra,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Accra,
+   :db/ident :fibo-fbc-fct-bci/GHAC,
    :dcterms/description "the FpML business center code for Accra, Ghana",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Accra,
-   :lcc-lr/hasTag "GHAC",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Accra,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "GHAC",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2162,8 +2173,8 @@
 (def GIFT_City
   "GIFT City"
   {:cmns-av/synonym "Gujarat International Finance Tec-City",
+   :cmns-col/isPartOf :lcc-3166-1/India,
    :db/ident :fibo-fbc-fct-bci/GIFT_City,
-   :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2171,12 +2182,12 @@
 
 (def GRAT
   "the FpML business center code for Athens, Greece"
-  {:db/ident :fibo-fbc-fct-bci/GRAT,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Athens,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Athens,
+   :db/ident :fibo-fbc-fct-bci/GRAT,
    :dcterms/description "the FpML business center code for Athens, Greece",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Athens,
-   :lcc-lr/hasTag "GRAT",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Athens,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "GRAT",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2184,9 +2195,9 @@
 
 (def Gaborone
   "the international business center of Gaborone"
-  {:db/ident :fibo-fbc-fct-bci/Gaborone,
+  {:cmns-col/isPartOf :lcc-3166-1/Botswana,
+   :db/ident :fibo-fbc-fct-bci/Gaborone,
    :dcterms/description "the international business center of Gaborone",
-   :lcc-cr/isPartOf :lcc-3166-1/Botswana,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2194,8 +2205,8 @@
 
 (def Gandhinagar
   "Gandhinagar"
-  {:db/ident :fibo-fbc-fct-bci/Gandhinagar,
-   :lcc-cr/isPartOf :lcc-3166-1/India,
+  {:cmns-col/isPartOf :lcc-3166-1/India,
+   :db/ident :fibo-fbc-fct-bci/Gandhinagar,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2203,9 +2214,9 @@
 
 (def Geneva
   "the international business center of Geneva"
-  {:db/ident :fibo-fbc-fct-bci/Geneva,
+  {:cmns-col/isPartOf :lcc-3166-1/Switzerland,
+   :db/ident :fibo-fbc-fct-bci/Geneva,
    :dcterms/description "the international business center of Geneva",
-   :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2213,8 +2224,8 @@
 
 (def Genova
   "Genova"
-  {:db/ident :fibo-fbc-fct-bci/Genova,
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Genova,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2222,9 +2233,9 @@
 
 (def George_Town
   "the international business center of George Town"
-  {:db/ident :fibo-fbc-fct-bci/George_Town,
+  {:cmns-col/isPartOf :lcc-3166-1/CaymanIslands,
+   :db/ident :fibo-fbc-fct-bci/George_Town,
    :dcterms/description "the international business center of George Town",
-   :lcc-cr/isPartOf :lcc-3166-1/CaymanIslands,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2232,8 +2243,8 @@
 
 (def Georgetown
   "Georgetown"
-  {:db/ident :fibo-fbc-fct-bci/Georgetown,
-   :lcc-cr/isPartOf :lcc-3166-1/Guyana,
+  {:cmns-col/isPartOf :lcc-3166-1/Guyana,
+   :db/ident :fibo-fbc-fct-bci/Georgetown,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2241,8 +2252,8 @@
 
 (def Gibraltar
   "Gibraltar"
-  {:db/ident :fibo-fbc-fct-bci/Gibraltar,
-   :lcc-cr/isPartOf :lcc-3166-1/Gibraltar,
+  {:cmns-col/isPartOf :lcc-3166-1/Gibraltar,
+   :db/ident :fibo-fbc-fct-bci/Gibraltar,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2250,8 +2261,9 @@
 
 (def Glenview
   "Glenview"
-  {:db/ident :fibo-fbc-fct-bci/Glenview,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Illinois :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Illinois
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Glenview,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2259,8 +2271,9 @@
 
 (def Great_Neck
   "Great Neck"
-  {:db/ident :fibo-fbc-fct-bci/Great_Neck,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/NewYork :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/NewYork
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Great_Neck,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2268,9 +2281,9 @@
 
 (def Greenwich
   "Greenwich"
-  {:db/ident :fibo-fbc-fct-bci/Greenwich,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Connecticut
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Connecticut
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Greenwich,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2278,8 +2291,8 @@
 
 (def Grindsted
   "Grindsted"
-  {:db/ident :fibo-fbc-fct-bci/Grindsted,
-   :lcc-cr/isPartOf :lcc-3166-1/Denmark,
+  {:cmns-col/isPartOf :lcc-3166-1/Denmark,
+   :db/ident :fibo-fbc-fct-bci/Grindsted,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2287,8 +2300,8 @@
 
 (def Guatemala
   "Guatemala"
-  {:db/ident :fibo-fbc-fct-bci/Guatemala,
-   :lcc-cr/isPartOf :lcc-3166-1/Guatemala,
+  {:cmns-col/isPartOf :lcc-3166-1/Guatemala,
+   :db/ident :fibo-fbc-fct-bci/Guatemala,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2296,8 +2309,8 @@
 
 (def Guayaquil
   "Guayaquil"
-  {:db/ident :fibo-fbc-fct-bci/Guayaquil,
-   :lcc-cr/isPartOf :lcc-3166-1/Ecuador,
+  {:cmns-col/isPartOf :lcc-3166-1/Ecuador,
+   :db/ident :fibo-fbc-fct-bci/Guayaquil,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2305,9 +2318,9 @@
 
 (def Guaynabo
   "Guaynabo"
-  {:db/ident :fibo-fbc-fct-bci/Guaynabo,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/PuertoRico
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/PuertoRico
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Guaynabo,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2315,8 +2328,8 @@
 
 (def Guildford
   "Guildford"
-  {:db/ident :fibo-fbc-fct-bci/Guildford,
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
+   :db/ident :fibo-fbc-fct-bci/Guildford,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2324,13 +2337,13 @@
 
 (def HKHK
   "the FpML business center code for Hong Kong, Hong Kong"
-  {:db/ident :fibo-fbc-fct-bci/HKHK,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Hong_Kong,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Hong_Kong,
+   :db/ident :fibo-fbc-fct-bci/HKHK,
    :dcterms/description
    "the FpML business center code for Hong Kong, Hong Kong",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Hong_Kong,
-   :lcc-lr/hasTag "HKHK",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Hong_Kong,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "HKHK",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2338,13 +2351,13 @@
 
 (def HNTE
   "the FpML business center code for Tegucigalpa, Honduras"
-  {:db/ident :fibo-fbc-fct-bci/HNTE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Tegucigalpa,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Tegucigalpa,
+   :db/ident :fibo-fbc-fct-bci/HNTE,
    :dcterms/description
    "the FpML business center code for Tegucigalpa, Honduras",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Tegucigalpa,
-   :lcc-lr/hasTag "HNTE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Tegucigalpa,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "HNTE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2352,13 +2365,13 @@
 
 (def HRZA
   "the FpML business center code for Zagreb, Republic of Croatia"
-  {:db/ident :fibo-fbc-fct-bci/HRZA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Zagreb,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Zagreb,
+   :db/ident :fibo-fbc-fct-bci/HRZA,
    :dcterms/description
    "the FpML business center code for Zagreb, Republic of Croatia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Zagreb,
-   :lcc-lr/hasTag "HRZA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Zagreb,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "HRZA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2366,12 +2379,12 @@
 
 (def HUBU
   "the FpML business center code for Budapest, Hungary"
-  {:db/ident :fibo-fbc-fct-bci/HUBU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Budapest,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Budapest,
+   :db/ident :fibo-fbc-fct-bci/HUBU,
    :dcterms/description "the FpML business center code for Budapest, Hungary",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Budapest,
-   :lcc-lr/hasTag "HUBU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Budapest,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "HUBU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2379,8 +2392,8 @@
 
 (def Hamburg
   "Hamburg"
-  {:db/ident :fibo-fbc-fct-bci/Hamburg,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Hamburg,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2388,9 +2401,9 @@
 
 (def Hamilton
   "the international business center of Hamilton"
-  {:db/ident :fibo-fbc-fct-bci/Hamilton,
+  {:cmns-col/isPartOf :lcc-3166-1/Bermuda,
+   :db/ident :fibo-fbc-fct-bci/Hamilton,
    :dcterms/description "the international business center of Hamilton",
-   :lcc-cr/isPartOf :lcc-3166-1/Bermuda,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2398,8 +2411,8 @@
 
 (def Hannover
   "Hannover"
-  {:db/ident :fibo-fbc-fct-bci/Hannover,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Hannover,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2407,9 +2420,9 @@
 
 (def Hanoi
   "the international business center of Hanoi"
-  {:db/ident :fibo-fbc-fct-bci/Hanoi,
+  {:cmns-col/isPartOf :lcc-3166-1/VietNam,
+   :db/ident :fibo-fbc-fct-bci/Hanoi,
    :dcterms/description "the international business center of Hanoi",
-   :lcc-cr/isPartOf :lcc-3166-1/VietNam,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2417,9 +2430,9 @@
 
 (def Harare
   "the international business center of Harare"
-  {:db/ident :fibo-fbc-fct-bci/Harare,
+  {:cmns-col/isPartOf :lcc-3166-1/Zimbabwe,
+   :db/ident :fibo-fbc-fct-bci/Harare,
    :dcterms/description "the international business center of Harare",
-   :lcc-cr/isPartOf :lcc-3166-1/Zimbabwe,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2427,9 +2440,9 @@
 
 (def Helsinki
   "the international business center of Helsinki"
-  {:db/ident :fibo-fbc-fct-bci/Helsinki,
+  {:cmns-col/isPartOf :lcc-3166-1/Finland,
+   :db/ident :fibo-fbc-fct-bci/Helsinki,
    :dcterms/description "the international business center of Helsinki",
-   :lcc-cr/isPartOf :lcc-3166-1/Finland,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2437,8 +2450,8 @@
 
 (def Hiroshima
   "Hiroshima"
-  {:db/ident :fibo-fbc-fct-bci/Hiroshima,
-   :lcc-cr/isPartOf :lcc-3166-1/Japan,
+  {:cmns-col/isPartOf :lcc-3166-1/Japan,
+   :db/ident :fibo-fbc-fct-bci/Hiroshima,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2446,10 +2459,10 @@
 
 (def Ho_Chi_Minh
   "the international business center of Ho Chi Minh (formerly Saigon)"
-  {:db/ident :fibo-fbc-fct-bci/Ho_Chi_Minh,
+  {:cmns-col/isPartOf :lcc-3166-1/VietNam,
+   :db/ident :fibo-fbc-fct-bci/Ho_Chi_Minh,
    :dcterms/description
    "the international business center of Ho Chi Minh (formerly Saigon)",
-   :lcc-cr/isPartOf :lcc-3166-1/VietNam,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2457,8 +2470,8 @@
 
 (def Ho_Chi_Minh_City
   "Ho Chi Minh City"
-  {:db/ident :fibo-fbc-fct-bci/Ho_Chi_Minh_City,
-   :lcc-cr/isPartOf :lcc-3166-1/VietNam,
+  {:cmns-col/isPartOf :lcc-3166-1/VietNam,
+   :db/ident :fibo-fbc-fct-bci/Ho_Chi_Minh_City,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2466,9 +2479,9 @@
 
 (def Hong_Kong
   "the international business center of Hong Kong"
-  {:db/ident :fibo-fbc-fct-bci/Hong_Kong,
+  {:cmns-col/isPartOf :lcc-3166-1/HongKong,
+   :db/ident :fibo-fbc-fct-bci/Hong_Kong,
    :dcterms/description "the international business center of Hong Kong",
-   :lcc-cr/isPartOf :lcc-3166-1/HongKong,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2476,9 +2489,9 @@
 
 (def Honolulu
   "the international business center of Honolulu"
-  {:db/ident :fibo-fbc-fct-bci/Honolulu,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Hawaii :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Honolulu,
    :dcterms/description "the international business center of Honolulu",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Hawaii :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2486,8 +2499,8 @@
 
 (def Horsens
   "Horsens"
-  {:db/ident :fibo-fbc-fct-bci/Horsens,
-   :lcc-cr/isPartOf :lcc-3166-1/Denmark,
+  {:cmns-col/isPartOf :lcc-3166-1/Denmark,
+   :db/ident :fibo-fbc-fct-bci/Horsens,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2495,9 +2508,9 @@
 
 (def Houston
   "the international business center of Houston"
-  {:db/ident :fibo-fbc-fct-bci/Houston,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Texas :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Houston,
    :dcterms/description "the international business center of Houston",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Texas :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2505,8 +2518,8 @@
 
 (def Hove
   "Hove"
-  {:db/ident :fibo-fbc-fct-bci/Hove,
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
+   :db/ident :fibo-fbc-fct-bci/Hove,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2514,9 +2527,9 @@
 
 (def Hyderabad
   "the international business center of Hyderabad"
-  {:db/ident :fibo-fbc-fct-bci/Hyderabad,
+  {:cmns-col/isPartOf :lcc-3166-1/India,
+   :db/ident :fibo-fbc-fct-bci/Hyderabad,
    :dcterms/description "the international business center of Hyderabad",
-   :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2524,12 +2537,12 @@
 
 (def IDJA
   "the FpML business center code for Jakarta, Indonesia"
-  {:db/ident :fibo-fbc-fct-bci/IDJA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Jakarta,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Jakarta,
+   :db/ident :fibo-fbc-fct-bci/IDJA,
    :dcterms/description "the FpML business center code for Jakarta, Indonesia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Jakarta,
-   :lcc-lr/hasTag "IDJA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Jakarta,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "IDJA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2537,12 +2550,12 @@
 
 (def IEDU
   "the FpML business center code for Dublin, Ireland"
-  {:db/ident :fibo-fbc-fct-bci/IEDU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Dublin,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Dublin,
+   :db/ident :fibo-fbc-fct-bci/IEDU,
    :dcterms/description "the FpML business center code for Dublin, Ireland",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Dublin,
-   :lcc-lr/hasTag "IEDU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Dublin,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "IEDU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2550,12 +2563,12 @@
 
 (def ILJE
   "the FpML business center code for Jerusalem, Israel"
-  {:db/ident :fibo-fbc-fct-bci/ILJE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Jerusalem,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Jerusalem,
+   :db/ident :fibo-fbc-fct-bci/ILJE,
    :dcterms/description "the FpML business center code for Jerusalem, Israel",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Jerusalem,
-   :lcc-lr/hasTag "ILJE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Jerusalem,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ILJE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2563,12 +2576,12 @@
 
 (def ILTA
   "the FpML business center code for Tel Aviv, Israel"
-  {:db/ident :fibo-fbc-fct-bci/ILTA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Tel_Aviv,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Tel_Aviv,
+   :db/ident :fibo-fbc-fct-bci/ILTA,
    :dcterms/description "the FpML business center code for Tel Aviv, Israel",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Tel_Aviv,
-   :lcc-lr/hasTag "ILTA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Tel_Aviv,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ILTA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2576,12 +2589,12 @@
 
 (def INBA
   "the FpML business center code for Bangalore, India"
-  {:db/ident :fibo-fbc-fct-bci/INBA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Bangalore,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Bangalore,
+   :db/ident :fibo-fbc-fct-bci/INBA,
    :dcterms/description "the FpML business center code for Bangalore, India",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Bangalore,
-   :lcc-lr/hasTag "INBA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Bangalore,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "INBA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2589,12 +2602,12 @@
 
 (def INCH
   "the FpML business center code for Chennai, India"
-  {:db/ident :fibo-fbc-fct-bci/INCH,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Chennai,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Chennai,
+   :db/ident :fibo-fbc-fct-bci/INCH,
    :dcterms/description "the FpML business center code for Chennai, India",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Chennai,
-   :lcc-lr/hasTag "INCH",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Chennai,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "INCH",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2602,12 +2615,12 @@
 
 (def INHY
   "the FpML business center code for Hyderabad, India"
-  {:db/ident :fibo-fbc-fct-bci/INHY,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Hyderabad,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Hyderabad,
+   :db/ident :fibo-fbc-fct-bci/INHY,
    :dcterms/description "the FpML business center code for Hyderabad, India",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Hyderabad,
-   :lcc-lr/hasTag "INHY",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Hyderabad,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "INHY",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2615,12 +2628,12 @@
 
 (def INKO
   "the FpML business center code for Kolkata, India"
-  {:db/ident :fibo-fbc-fct-bci/INKO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Kolkata,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Kolkata,
+   :db/ident :fibo-fbc-fct-bci/INKO,
    :dcterms/description "the FpML business center code for Kolkata, India",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Kolkata,
-   :lcc-lr/hasTag "INKO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Kolkata,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "INKO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2628,12 +2641,12 @@
 
 (def INMU
   "the FpML business center code for Mumbai, India"
-  {:db/ident :fibo-fbc-fct-bci/INMU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Mumbai,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Mumbai,
+   :db/ident :fibo-fbc-fct-bci/INMU,
    :dcterms/description "the FpML business center code for Mumbai, India",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Mumbai,
-   :lcc-lr/hasTag "INMU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Mumbai,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "INMU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2641,12 +2654,12 @@
 
 (def INND
   "the FpML business center code for New Delhi, India"
-  {:db/ident :fibo-fbc-fct-bci/INND,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/New_Delhi,
+   :cmns-id/identifies :fibo-fbc-fct-bci/New_Delhi,
+   :db/ident :fibo-fbc-fct-bci/INND,
    :dcterms/description "the FpML business center code for New Delhi, India",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/New_Delhi,
-   :lcc-lr/hasTag "INND",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/New_Delhi,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "INND",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2654,12 +2667,12 @@
 
 (def IRTE
   "the FpML business center code for Tehran, Iran"
-  {:db/ident :fibo-fbc-fct-bci/IRTE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Tehran,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Tehran,
+   :db/ident :fibo-fbc-fct-bci/IRTE,
    :dcterms/description "the FpML business center code for Tehran, Iran",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Tehran,
-   :lcc-lr/hasTag "IRTE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Tehran,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "IRTE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2667,12 +2680,12 @@
 
 (def ISRE
   "the FpML business center code for Reykjavik, Iceland"
-  {:db/ident :fibo-fbc-fct-bci/ISRE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Reykjavik,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Reykjavik,
+   :db/ident :fibo-fbc-fct-bci/ISRE,
    :dcterms/description "the FpML business center code for Reykjavik, Iceland",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Reykjavik,
-   :lcc-lr/hasTag "ISRE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Reykjavik,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ISRE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2680,12 +2693,12 @@
 
 (def ITMI
   "the FpML business center code for Milan, Italy"
-  {:db/ident :fibo-fbc-fct-bci/ITMI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Milan,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Milan,
+   :db/ident :fibo-fbc-fct-bci/ITMI,
    :dcterms/description "the FpML business center code for Milan, Italy",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Milan,
-   :lcc-lr/hasTag "ITMI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Milan,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ITMI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2693,12 +2706,12 @@
 
 (def ITRO
   "the FpML business center code for Rome, Italy"
-  {:db/ident :fibo-fbc-fct-bci/ITRO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Rome,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Rome,
+   :db/ident :fibo-fbc-fct-bci/ITRO,
    :dcterms/description "the FpML business center code for Rome, Italy",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Rome,
-   :lcc-lr/hasTag "ITRO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Rome,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ITRO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2706,12 +2719,12 @@
 
 (def ITTU
   "the FpML business center code for Turin, Italy"
-  {:db/ident :fibo-fbc-fct-bci/ITTU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Turin,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Turin,
+   :db/ident :fibo-fbc-fct-bci/ITTU,
    :dcterms/description "the FpML business center code for Turin, Italy",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Turin,
-   :lcc-lr/hasTag "ITTU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Turin,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ITTU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2719,8 +2732,8 @@
 
 (def Indore_Madhya_Pradesh
   "Indore Madhya Pradesh"
-  {:db/ident :fibo-fbc-fct-bci/Indore_Madhya_Pradesh,
-   :lcc-cr/isPartOf :lcc-3166-1/India,
+  {:cmns-col/isPartOf :lcc-3166-1/India,
+   :db/ident :fibo-fbc-fct-bci/Indore_Madhya_Pradesh,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2728,8 +2741,8 @@
 
 (def Islamabad
   "Islamabad"
-  {:db/ident :fibo-fbc-fct-bci/Islamabad,
-   :lcc-cr/isPartOf :lcc-3166-1/Pakistan,
+  {:cmns-col/isPartOf :lcc-3166-1/Pakistan,
+   :db/ident :fibo-fbc-fct-bci/Islamabad,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2737,9 +2750,9 @@
 
 (def Istanbul
   "the international business center of Istanbul"
-  {:db/ident :fibo-fbc-fct-bci/Istanbul,
+  {:cmns-col/isPartOf :lcc-3166-1/Turkey,
+   :db/ident :fibo-fbc-fct-bci/Istanbul,
    :dcterms/description "the international business center of Istanbul",
-   :lcc-cr/isPartOf :lcc-3166-1/Turkey,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2747,8 +2760,8 @@
 
 (def Izmir
   "Izmir"
-  {:db/ident :fibo-fbc-fct-bci/Izmir,
-   :lcc-cr/isPartOf :lcc-3166-1/Turkey,
+  {:cmns-col/isPartOf :lcc-3166-1/Turkey,
+   :db/ident :fibo-fbc-fct-bci/Izmir,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2756,13 +2769,13 @@
 
 (def JESH
   "the FpML business center code for St. Helier, Channel Islands, Jersey"
-  {:db/ident :fibo-fbc-fct-bci/JESH,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/St_Helier,
+   :cmns-id/identifies :fibo-fbc-fct-bci/St_Helier,
+   :db/ident :fibo-fbc-fct-bci/JESH,
    :dcterms/description
    "the FpML business center code for St. Helier, Channel Islands, Jersey",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/St_Helier,
-   :lcc-lr/hasTag "JESH",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/St_Helier,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "JESH",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2770,12 +2783,12 @@
 
 (def JMKI
   "the FpML business center code for Kingston, Jamaica"
-  {:db/ident :fibo-fbc-fct-bci/JMKI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Kingston,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Kingston,
+   :db/ident :fibo-fbc-fct-bci/JMKI,
    :dcterms/description "the FpML business center code for Kingston, Jamaica",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Kingston,
-   :lcc-lr/hasTag "JMKI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Kingston,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "JMKI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2783,12 +2796,12 @@
 
 (def JOAM
   "the FpML business center code for Amman, Jordan"
-  {:db/ident :fibo-fbc-fct-bci/JOAM,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Amman,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Amman,
+   :db/ident :fibo-fbc-fct-bci/JOAM,
    :dcterms/description "the FpML business center code for Amman, Jordan",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Amman,
-   :lcc-lr/hasTag "JOAM",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Amman,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "JOAM",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2796,12 +2809,12 @@
 
 (def JPTO
   "the FpML business center code for Tokyo, Japan"
-  {:db/ident :fibo-fbc-fct-bci/JPTO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Tokyo,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Tokyo,
+   :db/ident :fibo-fbc-fct-bci/JPTO,
    :dcterms/description "the FpML business center code for Tokyo, Japan",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Tokyo,
-   :lcc-lr/hasTag "JPTO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Tokyo,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "JPTO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2809,8 +2822,8 @@
 
 (def Jaen
   "Jaen"
-  {:db/ident :fibo-fbc-fct-bci/Jaen,
-   :lcc-cr/isPartOf :lcc-3166-1/Spain,
+  {:cmns-col/isPartOf :lcc-3166-1/Spain,
+   :db/ident :fibo-fbc-fct-bci/Jaen,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2818,9 +2831,9 @@
 
 (def Jakarta
   "the international business center of Jakarta"
-  {:db/ident :fibo-fbc-fct-bci/Jakarta,
+  {:cmns-col/isPartOf :lcc-3166-1/Indonesia,
+   :db/ident :fibo-fbc-fct-bci/Jakarta,
    :dcterms/description "the international business center of Jakarta",
-   :lcc-cr/isPartOf :lcc-3166-1/Indonesia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2828,9 +2841,9 @@
 
 (def Jeddah
   "the international business center of Jeddah"
-  {:db/ident :fibo-fbc-fct-bci/Jeddah,
+  {:cmns-col/isPartOf :lcc-3166-1/SaudiArabia,
+   :db/ident :fibo-fbc-fct-bci/Jeddah,
    :dcterms/description "the international business center of Jeddah",
-   :lcc-cr/isPartOf :lcc-3166-1/SaudiArabia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2838,9 +2851,9 @@
 
 (def Jersey_City
   "Jersey City"
-  {:db/ident :fibo-fbc-fct-bci/Jersey_City,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/NewJersey
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/NewJersey
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Jersey_City,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2848,9 +2861,9 @@
 
 (def Jerusalem
   "the international business center of Jerusalem"
-  {:db/ident :fibo-fbc-fct-bci/Jerusalem,
+  {:cmns-col/isPartOf :lcc-3166-1/Israel,
+   :db/ident :fibo-fbc-fct-bci/Jerusalem,
    :dcterms/description "the international business center of Jerusalem",
-   :lcc-cr/isPartOf :lcc-3166-1/Israel,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2858,9 +2871,9 @@
 
 (def Johannesburg
   "the international business center of Johannesburg"
-  {:db/ident :fibo-fbc-fct-bci/Johannesburg,
+  {:cmns-col/isPartOf :lcc-3166-1/SouthAfrica,
+   :db/ident :fibo-fbc-fct-bci/Johannesburg,
    :dcterms/description "the international business center of Johannesburg",
-   :lcc-cr/isPartOf :lcc-3166-1/SouthAfrica,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2868,12 +2881,12 @@
 
 (def KENA
   "the FpML business center code for Nairobi, Kenya"
-  {:db/ident :fibo-fbc-fct-bci/KENA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Nairobi,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Nairobi,
+   :db/ident :fibo-fbc-fct-bci/KENA,
    :dcterms/description "the FpML business center code for Nairobi, Kenya",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Nairobi,
-   :lcc-lr/hasTag "KENA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Nairobi,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "KENA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2881,13 +2894,13 @@
 
 (def KRSE
   "the FpML business center code for Seoul, Republic of Korea"
-  {:db/ident :fibo-fbc-fct-bci/KRSE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Seoul,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Seoul,
+   :db/ident :fibo-fbc-fct-bci/KRSE,
    :dcterms/description
    "the FpML business center code for Seoul, Republic of Korea",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Seoul,
-   :lcc-lr/hasTag "KRSE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Seoul,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "KRSE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2895,12 +2908,12 @@
 
 (def KWKC
   "the FpML business center code for Kuwait City, Kuwait"
-  {:db/ident :fibo-fbc-fct-bci/KWKC,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Kuwait_City,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Kuwait_City,
+   :db/ident :fibo-fbc-fct-bci/KWKC,
    :dcterms/description "the FpML business center code for Kuwait City, Kuwait",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Kuwait_City,
-   :lcc-lr/hasTag "KWKC",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Kuwait_City,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "KWKC",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2908,13 +2921,13 @@
 
 (def KYGE
   "the FpML business center code for George Town, Cayman Islands"
-  {:db/ident :fibo-fbc-fct-bci/KYGE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/George_Town,
+   :cmns-id/identifies :fibo-fbc-fct-bci/George_Town,
+   :db/ident :fibo-fbc-fct-bci/KYGE,
    :dcterms/description
    "the FpML business center code for George Town, Cayman Islands",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/George_Town,
-   :lcc-lr/hasTag "KYGE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/George_Town,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "KYGE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2922,12 +2935,12 @@
 
 (def KZAL
   "the FpML business center code for Almaty, Kazakhstan"
-  {:db/ident :fibo-fbc-fct-bci/KZAL,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Almaty,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Almaty,
+   :db/ident :fibo-fbc-fct-bci/KZAL,
    :dcterms/description "the FpML business center code for Almaty, Kazakhstan",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Almaty,
-   :lcc-lr/hasTag "KZAL",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Almaty,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "KZAL",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2935,9 +2948,9 @@
 
 (def Kampala
   "the international business center of Kampala"
-  {:db/ident :fibo-fbc-fct-bci/Kampala,
+  {:cmns-col/isPartOf :lcc-3166-1/Uganda,
+   :db/ident :fibo-fbc-fct-bci/Kampala,
    :dcterms/description "the international business center of Kampala",
-   :lcc-cr/isPartOf :lcc-3166-1/Uganda,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2945,8 +2958,9 @@
 
 (def Kansas_City
   "Kansas City"
-  {:db/ident :fibo-fbc-fct-bci/Kansas_City,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Missouri :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Missouri
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Kansas_City,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2954,9 +2968,9 @@
 
 (def Karachi
   "the international business center of Karachi"
-  {:db/ident :fibo-fbc-fct-bci/Karachi,
+  {:cmns-col/isPartOf :lcc-3166-1/Pakistan,
+   :db/ident :fibo-fbc-fct-bci/Karachi,
    :dcterms/description "the international business center of Karachi",
-   :lcc-cr/isPartOf :lcc-3166-1/Pakistan,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2964,9 +2978,9 @@
 
 (def Kathmandu
   "the international business center of Kathmandu"
-  {:db/ident :fibo-fbc-fct-bci/Kathmandu,
+  {:cmns-col/isPartOf :lcc-3166-1/Nepal,
+   :db/ident :fibo-fbc-fct-bci/Kathmandu,
    :dcterms/description "the international business center of Kathmandu",
-   :lcc-cr/isPartOf :lcc-3166-1/Nepal,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2974,8 +2988,8 @@
 
 (def Kharkov
   "Kharkov"
-  {:db/ident :fibo-fbc-fct-bci/Kharkov,
-   :lcc-cr/isPartOf :lcc-3166-1/Ukraine,
+  {:cmns-col/isPartOf :lcc-3166-1/Ukraine,
+   :db/ident :fibo-fbc-fct-bci/Kharkov,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2983,8 +2997,8 @@
 
 (def Khartoum
   "Khartoum"
-  {:db/ident :fibo-fbc-fct-bci/Khartoum,
-   :lcc-cr/isPartOf :lcc-3166-1/Sudan,
+  {:cmns-col/isPartOf :lcc-3166-1/Sudan,
+   :db/ident :fibo-fbc-fct-bci/Khartoum,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -2992,8 +3006,8 @@
 
 (def Kiel
   "Kiel"
-  {:db/ident :fibo-fbc-fct-bci/Kiel,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Kiel,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3001,9 +3015,9 @@
 
 (def Kiev
   "the international business center of Kiev"
-  {:db/ident :fibo-fbc-fct-bci/Kiev,
+  {:cmns-col/isPartOf :lcc-3166-1/Ukraine,
+   :db/ident :fibo-fbc-fct-bci/Kiev,
    :dcterms/description "the international business center of Kiev",
-   :lcc-cr/isPartOf :lcc-3166-1/Ukraine,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3011,8 +3025,8 @@
 
 (def Kigali
   "Kigali"
-  {:db/ident :fibo-fbc-fct-bci/Kigali,
-   :lcc-cr/isPartOf :lcc-3166-1/Rwanda,
+  {:cmns-col/isPartOf :lcc-3166-1/Rwanda,
+   :db/ident :fibo-fbc-fct-bci/Kigali,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3020,9 +3034,9 @@
 
 (def Kingston
   "the international business center of Kingston"
-  {:db/ident :fibo-fbc-fct-bci/Kingston,
+  {:cmns-col/isPartOf :lcc-3166-1/Jamaica,
+   :db/ident :fibo-fbc-fct-bci/Kingston,
    :dcterms/description "the international business center of Kingston",
-   :lcc-cr/isPartOf :lcc-3166-1/Jamaica,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3030,8 +3044,8 @@
 
 (def Kingstown
   "Kingstown"
-  {:db/ident :fibo-fbc-fct-bci/Kingstown,
-   :lcc-cr/isPartOf :lcc-3166-1/SaintVincentAndTheGrenadines,
+  {:cmns-col/isPartOf :lcc-3166-1/SaintVincentAndTheGrenadines,
+   :db/ident :fibo-fbc-fct-bci/Kingstown,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3039,8 +3053,8 @@
 
 (def Klagenfurt_am_Woerthersee
   "Klagenfurt Am Woerthersee"
-  {:db/ident :fibo-fbc-fct-bci/Klagenfurt_am_Woerthersee,
-   :lcc-cr/isPartOf :lcc-3166-1/Austria,
+  {:cmns-col/isPartOf :lcc-3166-1/Austria,
+   :db/ident :fibo-fbc-fct-bci/Klagenfurt_am_Woerthersee,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3048,8 +3062,8 @@
 
 (def Kobe
   "Kobe"
-  {:db/ident :fibo-fbc-fct-bci/Kobe,
-   :lcc-cr/isPartOf :lcc-3166-1/Japan,
+  {:cmns-col/isPartOf :lcc-3166-1/Japan,
+   :db/ident :fibo-fbc-fct-bci/Kobe,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3057,9 +3071,9 @@
 
 (def Kolkata
   "the international business center of Kolkata"
-  {:db/ident :fibo-fbc-fct-bci/Kolkata,
+  {:cmns-col/isPartOf :lcc-3166-1/India,
+   :db/ident :fibo-fbc-fct-bci/Kolkata,
    :dcterms/description "the international business center of Kolkata",
-   :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3067,8 +3081,8 @@
 
 (def Kongsvinger
   "Kongsvinger"
-  {:db/ident :fibo-fbc-fct-bci/Kongsvinger,
-   :lcc-cr/isPartOf :lcc-3166-1/Norway,
+  {:cmns-col/isPartOf :lcc-3166-1/Norway,
+   :db/ident :fibo-fbc-fct-bci/Kongsvinger,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3076,8 +3090,8 @@
 
 (def Krakow
   "Krakow"
-  {:db/ident :fibo-fbc-fct-bci/Krakow,
-   :lcc-cr/isPartOf :lcc-3166-1/Poland,
+  {:cmns-col/isPartOf :lcc-3166-1/Poland,
+   :db/ident :fibo-fbc-fct-bci/Krakow,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3085,9 +3099,9 @@
 
 (def Kuala_Lumpur
   "the international business center of Kuala Lumpur"
-  {:db/ident :fibo-fbc-fct-bci/Kuala_Lumpur,
+  {:cmns-col/isPartOf :lcc-3166-1/Malaysia,
+   :db/ident :fibo-fbc-fct-bci/Kuala_Lumpur,
    :dcterms/description "the international business center of Kuala Lumpur",
-   :lcc-cr/isPartOf :lcc-3166-1/Malaysia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3095,9 +3109,9 @@
 
 (def Kuwait_City
   "the international business center of Kuwait City"
-  {:db/ident :fibo-fbc-fct-bci/Kuwait_City,
+  {:cmns-col/isPartOf :lcc-3166-1/Kuwait,
+   :db/ident :fibo-fbc-fct-bci/Kuwait_City,
    :dcterms/description "the international business center of Kuwait City",
-   :lcc-cr/isPartOf :lcc-3166-1/Kuwait,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3105,8 +3119,8 @@
 
 (def Kyoto
   "Kyoto"
-  {:db/ident :fibo-fbc-fct-bci/Kyoto,
-   :lcc-cr/isPartOf :lcc-3166-1/Japan,
+  {:cmns-col/isPartOf :lcc-3166-1/Japan,
+   :db/ident :fibo-fbc-fct-bci/Kyoto,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3114,12 +3128,12 @@
 
 (def LBBE
   "the FpML business center code for Beirut, Lebanon"
-  {:db/ident :fibo-fbc-fct-bci/LBBE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Beirut,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Beirut,
+   :db/ident :fibo-fbc-fct-bci/LBBE,
    :dcterms/description "the FpML business center code for Beirut, Lebanon",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Beirut,
-   :lcc-lr/hasTag "LBBE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Beirut,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "LBBE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3127,12 +3141,12 @@
 
 (def LKCO
   "the FpML business center code for Colombo, Sri Lanka"
-  {:db/ident :fibo-fbc-fct-bci/LKCO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Colombo,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Colombo,
+   :db/ident :fibo-fbc-fct-bci/LKCO,
    :dcterms/description "the FpML business center code for Colombo, Sri Lanka",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Colombo,
-   :lcc-lr/hasTag "LKCO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Colombo,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "LKCO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3140,13 +3154,13 @@
 
 (def LULU
   "the FpML business center code for Luxembourg, Luxembourg"
-  {:db/ident :fibo-fbc-fct-bci/LULU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Luxembourg,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Luxembourg,
+   :db/ident :fibo-fbc-fct-bci/LULU,
    :dcterms/description
    "the FpML business center code for Luxembourg, Luxembourg",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Luxembourg,
-   :lcc-lr/hasTag "LULU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Luxembourg,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "LULU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3154,12 +3168,12 @@
 
 (def LVRI
   "the FpML business center code for Riga, Latvia"
-  {:db/ident :fibo-fbc-fct-bci/LVRI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Riga,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Riga,
+   :db/ident :fibo-fbc-fct-bci/LVRI,
    :dcterms/description "the FpML business center code for Riga, Latvia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Riga,
-   :lcc-lr/hasTag "LVRI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Riga,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "LVRI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3167,9 +3181,9 @@
 
 (def La_Paz
   "the international business center of La Paz"
-  {:db/ident :fibo-fbc-fct-bci/La_Paz,
+  {:cmns-col/isPartOf :lcc-3166-1/Bolivia,
+   :db/ident :fibo-fbc-fct-bci/La_Paz,
    :dcterms/description "the international business center of La Paz",
-   :lcc-cr/isPartOf :lcc-3166-1/Bolivia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3177,9 +3191,9 @@
 
 (def Labuan
   "the international business center of Labuan"
-  {:db/ident :fibo-fbc-fct-bci/Labuan,
+  {:cmns-col/isPartOf :lcc-3166-1/Malaysia,
+   :db/ident :fibo-fbc-fct-bci/Labuan,
    :dcterms/description "the international business center of Labuan",
-   :lcc-cr/isPartOf :lcc-3166-1/Malaysia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3187,9 +3201,9 @@
 
 (def Lagos
   "the international business center of Lagos"
-  {:db/ident :fibo-fbc-fct-bci/Lagos,
+  {:cmns-col/isPartOf :lcc-3166-1/Nigeria,
+   :db/ident :fibo-fbc-fct-bci/Lagos,
    :dcterms/description "the international business center of Lagos",
-   :lcc-cr/isPartOf :lcc-3166-1/Nigeria,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3197,8 +3211,8 @@
 
 (def Lahore
   "Lahore"
-  {:db/ident :fibo-fbc-fct-bci/Lahore,
-   :lcc-cr/isPartOf :lcc-3166-1/Pakistan,
+  {:cmns-col/isPartOf :lcc-3166-1/Pakistan,
+   :db/ident :fibo-fbc-fct-bci/Lahore,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3206,8 +3220,8 @@
 
 (def Lane_Cove
   "Lane Cove"
-  {:db/ident :fibo-fbc-fct-bci/Lane_Cove,
-   :lcc-cr/isPartOf :lcc-3166-1/Australia,
+  {:cmns-col/isPartOf :lcc-3166-1/Australia,
+   :db/ident :fibo-fbc-fct-bci/Lane_Cove,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3215,8 +3229,8 @@
 
 (def Lao
   "Lao"
-  {:db/ident :fibo-fbc-fct-bci/Lao,
-   :lcc-cr/isPartOf :lcc-3166-1/LaoPeoplesDemocraticRepublic,
+  {:cmns-col/isPartOf :lcc-3166-1/LaoPeoplesDemocraticRepublic,
+   :db/ident :fibo-fbc-fct-bci/Lao,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3224,8 +3238,8 @@
 
 (def Larnaca
   "Larnaca"
-  {:db/ident :fibo-fbc-fct-bci/Larnaca,
-   :lcc-cr/isPartOf :lcc-3166-1/Cyprus,
+  {:cmns-col/isPartOf :lcc-3166-1/Cyprus,
+   :db/ident :fibo-fbc-fct-bci/Larnaca,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3233,9 +3247,9 @@
 
 (def Leipzig
   "the international business center of Leipzig"
-  {:db/ident :fibo-fbc-fct-bci/Leipzig,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Leipzig,
    :dcterms/description "the international business center of Leipzig",
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3243,8 +3257,8 @@
 
 (def Lenexa
   "Lenexa"
-  {:db/ident :fibo-fbc-fct-bci/Lenexa,
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
+   :db/ident :fibo-fbc-fct-bci/Lenexa,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3252,8 +3266,8 @@
 
 (def Leuven
   "Leuven"
-  {:db/ident :fibo-fbc-fct-bci/Leuven,
-   :lcc-cr/isPartOf :lcc-3166-1/Belgium,
+  {:cmns-col/isPartOf :lcc-3166-1/Belgium,
+   :db/ident :fibo-fbc-fct-bci/Leuven,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3261,9 +3275,9 @@
 
 (def Lilongwe
   "the international business center of Lilongwe"
-  {:db/ident :fibo-fbc-fct-bci/Lilongwe,
+  {:cmns-col/isPartOf :lcc-3166-1/Malawi,
+   :db/ident :fibo-fbc-fct-bci/Lilongwe,
    :dcterms/description "the international business center of Lilongwe",
-   :lcc-cr/isPartOf :lcc-3166-1/Malawi,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3271,9 +3285,9 @@
 
 (def Lima
   "the international business center of Lima"
-  {:db/ident :fibo-fbc-fct-bci/Lima,
+  {:cmns-col/isPartOf :lcc-3166-1/Peru,
+   :db/ident :fibo-fbc-fct-bci/Lima,
    :dcterms/description "the international business center of Lima",
-   :lcc-cr/isPartOf :lcc-3166-1/Peru,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3281,8 +3295,8 @@
 
 (def Limassol
   "Limassol"
-  {:db/ident :fibo-fbc-fct-bci/Limassol,
-   :lcc-cr/isPartOf :lcc-3166-1/Cyprus,
+  {:cmns-col/isPartOf :lcc-3166-1/Cyprus,
+   :db/ident :fibo-fbc-fct-bci/Limassol,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3290,8 +3304,8 @@
 
 (def Linz
   "Linz"
-  {:db/ident :fibo-fbc-fct-bci/Linz,
-   :lcc-cr/isPartOf :lcc-3166-1/Austria,
+  {:cmns-col/isPartOf :lcc-3166-1/Austria,
+   :db/ident :fibo-fbc-fct-bci/Linz,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3299,8 +3313,8 @@
 
 (def Lisboa
   "Lisboa"
-  {:db/ident :fibo-fbc-fct-bci/Lisboa,
-   :lcc-cr/isPartOf :lcc-3166-1/Portugal,
+  {:cmns-col/isPartOf :lcc-3166-1/Portugal,
+   :db/ident :fibo-fbc-fct-bci/Lisboa,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3308,9 +3322,9 @@
 
 (def Lisbon
   "the international business center of Lisbon"
-  {:db/ident :fibo-fbc-fct-bci/Lisbon,
+  {:cmns-col/isPartOf :lcc-3166-1/Portugal,
+   :db/ident :fibo-fbc-fct-bci/Lisbon,
    :dcterms/description "the international business center of Lisbon",
-   :lcc-cr/isPartOf :lcc-3166-1/Portugal,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3318,9 +3332,9 @@
 
 (def Ljubljana
   "the international business center of Ljubljana"
-  {:db/ident :fibo-fbc-fct-bci/Ljubljana,
+  {:cmns-col/isPartOf :lcc-3166-1/Slovenia,
+   :db/ident :fibo-fbc-fct-bci/Ljubljana,
    :dcterms/description "the international business center of Ljubljana",
-   :lcc-cr/isPartOf :lcc-3166-1/Slovenia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3328,9 +3342,9 @@
 
 (def London
   "the international business center of London"
-  {:db/ident :fibo-fbc-fct-bci/London,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
+   :db/ident :fibo-fbc-fct-bci/London,
    :dcterms/description "the international business center of London",
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3338,10 +3352,10 @@
 
 (def Los_Angeles
   "the international business center of Los Angeles"
-  {:db/ident :fibo-fbc-fct-bci/Los_Angeles,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/California
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Los_Angeles,
    :dcterms/description "the international business center of Los Angeles",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/California
-                     :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3349,9 +3363,9 @@
 
 (def Luanda
   "the international business center of Luanda"
-  {:db/ident :fibo-fbc-fct-bci/Luanda,
+  {:cmns-col/isPartOf :lcc-3166-1/Angola,
+   :db/ident :fibo-fbc-fct-bci/Luanda,
    :dcterms/description "the international business center of Luanda",
-   :lcc-cr/isPartOf :lcc-3166-1/Angola,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3359,8 +3373,8 @@
 
 (def Lugano
   "Lugano"
-  {:db/ident :fibo-fbc-fct-bci/Lugano,
-   :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
+  {:cmns-col/isPartOf :lcc-3166-1/Switzerland,
+   :db/ident :fibo-fbc-fct-bci/Lugano,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3368,9 +3382,9 @@
 
 (def Lusaka
   "the international business center of Lusaka"
-  {:db/ident :fibo-fbc-fct-bci/Lusaka,
+  {:cmns-col/isPartOf :lcc-3166-1/Zambia,
+   :db/ident :fibo-fbc-fct-bci/Lusaka,
    :dcterms/description "the international business center of Lusaka",
-   :lcc-cr/isPartOf :lcc-3166-1/Zambia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3378,9 +3392,9 @@
 
 (def Luxembourg
   "the international business center of Luxembourg"
-  {:db/ident :fibo-fbc-fct-bci/Luxembourg,
+  {:cmns-col/isPartOf :lcc-3166-1/Luxembourg,
+   :db/ident :fibo-fbc-fct-bci/Luxembourg,
    :dcterms/description "the international business center of Luxembourg",
-   :lcc-cr/isPartOf :lcc-3166-1/Luxembourg,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3388,8 +3402,8 @@
 
 (def Luzern
   "Luzern"
-  {:db/ident :fibo-fbc-fct-bci/Luzern,
-   :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
+  {:cmns-col/isPartOf :lcc-3166-1/Switzerland,
+   :db/ident :fibo-fbc-fct-bci/Luzern,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3397,12 +3411,12 @@
 
 (def MACA
   "the FpML business center code for Casablanca, Morocco"
-  {:db/ident :fibo-fbc-fct-bci/MACA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Casablanca,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Casablanca,
+   :db/ident :fibo-fbc-fct-bci/MACA,
    :dcterms/description "the FpML business center code for Casablanca, Morocco",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Casablanca,
-   :lcc-lr/hasTag "MACA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Casablanca,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "MACA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3410,12 +3424,12 @@
 
 (def MARA
   "the FpML business center code for Rabat, Morocco"
-  {:db/ident :fibo-fbc-fct-bci/MARA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Rabat,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Rabat,
+   :db/ident :fibo-fbc-fct-bci/MARA,
    :dcterms/description "the FpML business center code for Rabat, Morocco",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Rabat,
-   :lcc-lr/hasTag "MARA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Rabat,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "MARA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3423,12 +3437,12 @@
 
 (def MCMO
   "the FpML business center code for Monaco, Monaco"
-  {:db/ident :fibo-fbc-fct-bci/MCMO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Monaco,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Monaco,
+   :db/ident :fibo-fbc-fct-bci/MCMO,
    :dcterms/description "the FpML business center code for Monaco, Monaco",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Monaco,
-   :lcc-lr/hasTag "MCMO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Monaco,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "MCMO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3436,12 +3450,12 @@
 
 (def MOMA
   "the FpML business center code for Macau, Macao"
-  {:db/ident :fibo-fbc-fct-bci/MOMA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Macau,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Macau,
+   :db/ident :fibo-fbc-fct-bci/MOMA,
    :dcterms/description "the FpML business center code for Macau, Macao",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Macau,
-   :lcc-lr/hasTag "MOMA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Macau,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "MOMA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3449,12 +3463,12 @@
 
 (def MTVA
   "the FpML business center code for Valletta, Malta"
-  {:db/ident :fibo-fbc-fct-bci/MTVA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Valletta,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Valletta,
+   :db/ident :fibo-fbc-fct-bci/MTVA,
    :dcterms/description "the FpML business center code for Valletta, Malta",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Valletta,
-   :lcc-lr/hasTag "MTVA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Valletta,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "MTVA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3462,13 +3476,13 @@
 
 (def MUPL
   "the FpML business center code for Port Louis, Mauritius"
-  {:db/ident :fibo-fbc-fct-bci/MUPL,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Port_Louis,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Port_Louis,
+   :db/ident :fibo-fbc-fct-bci/MUPL,
    :dcterms/description
    "the FpML business center code for Port Louis, Mauritius",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Port_Louis,
-   :lcc-lr/hasTag "MUPL",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Port_Louis,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "MUPL",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3476,12 +3490,12 @@
 
 (def MVMA
   "the FpML business center code for Male, Maldives"
-  {:db/ident :fibo-fbc-fct-bci/MVMA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Male,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Male,
+   :db/ident :fibo-fbc-fct-bci/MVMA,
    :dcterms/description "the FpML business center code for Male, Maldives",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Male,
-   :lcc-lr/hasTag "MVMA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Male,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "MVMA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3489,12 +3503,12 @@
 
 (def MWLI
   "the FpML business center code for Lilongwe, Malawi"
-  {:db/ident :fibo-fbc-fct-bci/MWLI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Lilongwe,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Lilongwe,
+   :db/ident :fibo-fbc-fct-bci/MWLI,
    :dcterms/description "the FpML business center code for Lilongwe, Malawi",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Lilongwe,
-   :lcc-lr/hasTag "MWLI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Lilongwe,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "MWLI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3502,12 +3516,12 @@
 
 (def MXMC
   "the FpML business center code for Mexico City, Mexico"
-  {:db/ident :fibo-fbc-fct-bci/MXMC,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Mexico_City,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Mexico_City,
+   :db/ident :fibo-fbc-fct-bci/MXMC,
    :dcterms/description "the FpML business center code for Mexico City, Mexico",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Mexico_City,
-   :lcc-lr/hasTag "MXMC",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Mexico_City,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "MXMC",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3515,13 +3529,13 @@
 
 (def MYKL
   "the FpML business center code for Kuala Lumpur, Malaysia"
-  {:db/ident :fibo-fbc-fct-bci/MYKL,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Kuala_Lumpur,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Kuala_Lumpur,
+   :db/ident :fibo-fbc-fct-bci/MYKL,
    :dcterms/description
    "the FpML business center code for Kuala Lumpur, Malaysia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Kuala_Lumpur,
-   :lcc-lr/hasTag "MYKL",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Kuala_Lumpur,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "MYKL",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3529,12 +3543,12 @@
 
 (def MYLA
   "the FpML business center code for Labuan, Malaysia"
-  {:db/ident :fibo-fbc-fct-bci/MYLA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Labuan,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Labuan,
+   :db/ident :fibo-fbc-fct-bci/MYLA,
    :dcterms/description "the FpML business center code for Labuan, Malaysia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Labuan,
-   :lcc-lr/hasTag "MYLA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Labuan,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "MYLA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3542,9 +3556,9 @@
 
 (def Macau
   "the international business center of Macau"
-  {:db/ident :fibo-fbc-fct-bci/Macau,
+  {:cmns-col/isPartOf :lcc-3166-1/Macao,
+   :db/ident :fibo-fbc-fct-bci/Macau,
    :dcterms/description "the international business center of Macau",
-   :lcc-cr/isPartOf :lcc-3166-1/Macao,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3552,8 +3566,8 @@
 
 (def Madras
   "Madras"
-  {:db/ident :fibo-fbc-fct-bci/Madras,
-   :lcc-cr/isPartOf :lcc-3166-1/India,
+  {:cmns-col/isPartOf :lcc-3166-1/India,
+   :db/ident :fibo-fbc-fct-bci/Madras,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3561,9 +3575,9 @@
 
 (def Madrid
   "the international business center of Madrid"
-  {:db/ident :fibo-fbc-fct-bci/Madrid,
+  {:cmns-col/isPartOf :lcc-3166-1/Spain,
+   :db/ident :fibo-fbc-fct-bci/Madrid,
    :dcterms/description "the international business center of Madrid",
-   :lcc-cr/isPartOf :lcc-3166-1/Spain,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3571,9 +3585,9 @@
 
 (def Mainz
   "the international business center of Mainz"
-  {:db/ident :fibo-fbc-fct-bci/Mainz,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Mainz,
    :dcterms/description "the international business center of Mainz",
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3581,9 +3595,9 @@
 
 (def Makati
   "the international business center of Makati"
-  {:db/ident :fibo-fbc-fct-bci/Makati,
+  {:cmns-col/isPartOf :lcc-3166-1/Philippines,
+   :db/ident :fibo-fbc-fct-bci/Makati,
    :dcterms/description "the international business center of Makati",
-   :lcc-cr/isPartOf :lcc-3166-1/Philippines,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3591,8 +3605,8 @@
 
 (def Makati_City
   "Makati City"
-  {:db/ident :fibo-fbc-fct-bci/Makati_City,
-   :lcc-cr/isPartOf :lcc-3166-1/Philippines,
+  {:cmns-col/isPartOf :lcc-3166-1/Philippines,
+   :db/ident :fibo-fbc-fct-bci/Makati_City,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3600,9 +3614,9 @@
 
 (def Male
   "the international business center of Male"
-  {:db/ident :fibo-fbc-fct-bci/Male,
+  {:cmns-col/isPartOf :lcc-3166-1/Maldives,
+   :db/ident :fibo-fbc-fct-bci/Male,
    :dcterms/description "the international business center of Male",
-   :lcc-cr/isPartOf :lcc-3166-1/Maldives,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3610,8 +3624,8 @@
 
 (def Managua
   "Managua"
-  {:db/ident :fibo-fbc-fct-bci/Managua,
-   :lcc-cr/isPartOf :lcc-3166-1/Nicaragua,
+  {:cmns-col/isPartOf :lcc-3166-1/Nicaragua,
+   :db/ident :fibo-fbc-fct-bci/Managua,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3619,9 +3633,9 @@
 
 (def Manama
   "the international business center of Manama"
-  {:db/ident :fibo-fbc-fct-bci/Manama,
+  {:cmns-col/isPartOf :lcc-3166-1/Bahrain,
+   :db/ident :fibo-fbc-fct-bci/Manama,
    :dcterms/description "the international business center of Manama",
-   :lcc-cr/isPartOf :lcc-3166-1/Bahrain,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3629,9 +3643,9 @@
 
 (def Manila
   "the international business center of Manila"
-  {:db/ident :fibo-fbc-fct-bci/Manila,
+  {:cmns-col/isPartOf :lcc-3166-1/Philippines,
+   :db/ident :fibo-fbc-fct-bci/Manila,
    :dcterms/description "the international business center of Manila",
-   :lcc-cr/isPartOf :lcc-3166-1/Philippines,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3639,8 +3653,8 @@
 
 (def Maputo
   "Maputo"
-  {:db/ident :fibo-fbc-fct-bci/Maputo,
-   :lcc-cr/isPartOf :lcc-3166-1/Mozambique,
+  {:cmns-col/isPartOf :lcc-3166-1/Mozambique,
+   :db/ident :fibo-fbc-fct-bci/Maputo,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3648,8 +3662,8 @@
 
 (def Maringa
   "Maringa"
-  {:db/ident :fibo-fbc-fct-bci/Maringa,
-   :lcc-cr/isPartOf :lcc-3166-1/Brazil,
+  {:cmns-col/isPartOf :lcc-3166-1/Brazil,
+   :db/ident :fibo-fbc-fct-bci/Maringa,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3657,8 +3671,8 @@
 
 (def Mbabane
   "Mbabane"
-  {:db/ident :fibo-fbc-fct-bci/Mbabane,
-   :lcc-cr/isPartOf :lcc-3166-1/Eswatini,
+  {:cmns-col/isPartOf :lcc-3166-1/Eswatini,
+   :db/ident :fibo-fbc-fct-bci/Mbabane,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3666,9 +3680,9 @@
 
 (def Melbourne
   "the international business center of Melbourne"
-  {:db/ident :fibo-fbc-fct-bci/Melbourne,
+  {:cmns-col/isPartOf :lcc-3166-1/Australia,
+   :db/ident :fibo-fbc-fct-bci/Melbourne,
    :dcterms/description "the international business center of Melbourne",
-   :lcc-cr/isPartOf :lcc-3166-1/Australia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3676,8 +3690,8 @@
 
 (def Mendoza
   "Mendoza"
-  {:db/ident :fibo-fbc-fct-bci/Mendoza,
-   :lcc-cr/isPartOf :lcc-3166-1/Argentina,
+  {:cmns-col/isPartOf :lcc-3166-1/Argentina,
+   :db/ident :fibo-fbc-fct-bci/Mendoza,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3685,9 +3699,9 @@
 
 (def Mexico_City
   "the international business center of Mexico City"
-  {:db/ident :fibo-fbc-fct-bci/Mexico_City,
+  {:cmns-col/isPartOf :lcc-3166-1/Mexico,
+   :db/ident :fibo-fbc-fct-bci/Mexico_City,
    :dcterms/description "the international business center of Mexico City",
-   :lcc-cr/isPartOf :lcc-3166-1/Mexico,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3695,8 +3709,9 @@
 
 (def Miami
   "Miami"
-  {:db/ident :fibo-fbc-fct-bci/Miami,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Florida :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Florida
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Miami,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3704,9 +3719,9 @@
 
 (def Milan
   "the international business center of Milan"
-  {:db/ident :fibo-fbc-fct-bci/Milan,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Milan,
    :dcterms/description "the international business center of Milan",
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3714,10 +3729,10 @@
 
 (def Minneapolis
   "the international business center of Minneapolis"
-  {:db/ident :fibo-fbc-fct-bci/Minneapolis,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Minnesota
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Minneapolis,
    :dcterms/description "the international business center of Minneapolis",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Minnesota
-                     :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3725,9 +3740,9 @@
 
 (def Minsk
   "the international business center of Minsk"
-  {:db/ident :fibo-fbc-fct-bci/Minsk,
+  {:cmns-col/isPartOf :lcc-3166-1/Belarus,
+   :db/ident :fibo-fbc-fct-bci/Minsk,
    :dcterms/description "the international business center of Minsk",
-   :lcc-cr/isPartOf :lcc-3166-1/Belarus,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3735,9 +3750,10 @@
 
 (def Mobile
   "the international business center of Mobile"
-  {:db/ident :fibo-fbc-fct-bci/Mobile,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Alabama
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Mobile,
    :dcterms/description "the international business center of Mobile",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Alabama :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3745,8 +3761,8 @@
 
 (def Moka
   "Moka"
-  {:db/ident :fibo-fbc-fct-bci/Moka,
-   :lcc-cr/isPartOf :lcc-3166-1/Mauritius,
+  {:cmns-col/isPartOf :lcc-3166-1/Mauritius,
+   :db/ident :fibo-fbc-fct-bci/Moka,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3754,9 +3770,9 @@
 
 (def Monaco
   "the international business center of Monaco"
-  {:db/ident :fibo-fbc-fct-bci/Monaco,
+  {:cmns-col/isPartOf :lcc-3166-1/Monaco,
+   :db/ident :fibo-fbc-fct-bci/Monaco,
    :dcterms/description "the international business center of Monaco",
-   :lcc-cr/isPartOf :lcc-3166-1/Monaco,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3764,8 +3780,8 @@
 
 (def Montenegro
   "Montenegro"
-  {:db/ident :fibo-fbc-fct-bci/Montenegro,
-   :lcc-cr/isPartOf :lcc-3166-1/Montenegro,
+  {:cmns-col/isPartOf :lcc-3166-1/Montenegro,
+   :db/ident :fibo-fbc-fct-bci/Montenegro,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3773,9 +3789,9 @@
 
 (def Montevideo
   "the international business center of Montevideo"
-  {:db/ident :fibo-fbc-fct-bci/Montevideo,
+  {:cmns-col/isPartOf :lcc-3166-1/Uruguay,
+   :db/ident :fibo-fbc-fct-bci/Montevideo,
    :dcterms/description "the international business center of Montevideo",
-   :lcc-cr/isPartOf :lcc-3166-1/Uruguay,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3783,9 +3799,9 @@
 
 (def Montreal
   "the international business center of Montreal"
-  {:db/ident :fibo-fbc-fct-bci/Montreal,
+  {:cmns-col/isPartOf :lcc-3166-1/Canada,
+   :db/ident :fibo-fbc-fct-bci/Montreal,
    :dcterms/description "the international business center of Montreal",
-   :lcc-cr/isPartOf :lcc-3166-1/Canada,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3793,8 +3809,8 @@
 
 (def Moorpark
   "Moorpark"
-  {:db/ident :fibo-fbc-fct-bci/Moorpark,
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
+   :db/ident :fibo-fbc-fct-bci/Moorpark,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3802,9 +3818,9 @@
 
 (def Moscow
   "the international business center of Moscow"
-  {:db/ident :fibo-fbc-fct-bci/Moscow,
+  {:cmns-col/isPartOf :lcc-3166-1/RussianFederation,
+   :db/ident :fibo-fbc-fct-bci/Moscow,
    :dcterms/description "the international business center of Moscow",
-   :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3812,9 +3828,9 @@
 
 (def Mount_Pleasant
   "Mount Pleasant"
-  {:db/ident :fibo-fbc-fct-bci/Mount_Pleasant,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/SouthCarolina
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/SouthCarolina
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Mount_Pleasant,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3822,8 +3838,8 @@
 
 (def Muenchen
   "Muenchen"
-  {:db/ident :fibo-fbc-fct-bci/Muenchen,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Muenchen,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3831,9 +3847,9 @@
 
 (def Mumbai
   "the international business center of Mumbai"
-  {:db/ident :fibo-fbc-fct-bci/Mumbai,
+  {:cmns-col/isPartOf :lcc-3166-1/India,
+   :db/ident :fibo-fbc-fct-bci/Mumbai,
    :dcterms/description "the international business center of Mumbai",
-   :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3841,9 +3857,9 @@
 
 (def Munich
   "the international business center of Munich"
-  {:db/ident :fibo-fbc-fct-bci/Munich,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Munich,
    :dcterms/description "the international business center of Munich",
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3851,9 +3867,9 @@
 
 (def Muscat
   "the international business center of Muscat"
-  {:db/ident :fibo-fbc-fct-bci/Muscat,
+  {:cmns-col/isPartOf :lcc-3166-1/Oman,
+   :db/ident :fibo-fbc-fct-bci/Muscat,
    :dcterms/description "the international business center of Muscat",
-   :lcc-cr/isPartOf :lcc-3166-1/Oman,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3861,12 +3877,12 @@
 
 (def NAWI
   "the FpML business center code for Windhoek, Namibia"
-  {:db/ident :fibo-fbc-fct-bci/NAWI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Windhoek,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Windhoek,
+   :db/ident :fibo-fbc-fct-bci/NAWI,
    :dcterms/description "the FpML business center code for Windhoek, Namibia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Windhoek,
-   :lcc-lr/hasTag "NAWI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Windhoek,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "NAWI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3874,12 +3890,12 @@
 
 (def NGAB
   "the FpML business center code for Abuja, Nigeria"
-  {:db/ident :fibo-fbc-fct-bci/NGAB,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Abuja,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Abuja,
+   :db/ident :fibo-fbc-fct-bci/NGAB,
    :dcterms/description "the FpML business center code for Abuja, Nigeria",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Abuja,
-   :lcc-lr/hasTag "NGAB",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Abuja,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "NGAB",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3887,12 +3903,12 @@
 
 (def NGLA
   "the FpML business center code for Lagos, Nigeria"
-  {:db/ident :fibo-fbc-fct-bci/NGLA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Lagos,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Lagos,
+   :db/ident :fibo-fbc-fct-bci/NGLA,
    :dcterms/description "the FpML business center code for Lagos, Nigeria",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Lagos,
-   :lcc-lr/hasTag "NGLA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Lagos,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "NGLA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3900,13 +3916,13 @@
 
 (def NLAM
   "the FpML business center code for Amsterdam, Netherlands"
-  {:db/ident :fibo-fbc-fct-bci/NLAM,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Amsterdam,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Amsterdam,
+   :db/ident :fibo-fbc-fct-bci/NLAM,
    :dcterms/description
    "the FpML business center code for Amsterdam, Netherlands",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Amsterdam,
-   :lcc-lr/hasTag "NLAM",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Amsterdam,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "NLAM",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3914,13 +3930,13 @@
 
 (def NLRO
   "the FpML business center code for Rotterdam, Netherlands"
-  {:db/ident :fibo-fbc-fct-bci/NLRO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Rotterdam,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Rotterdam,
+   :db/ident :fibo-fbc-fct-bci/NLRO,
    :dcterms/description
    "the FpML business center code for Rotterdam, Netherlands",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Rotterdam,
-   :lcc-lr/hasTag "NLRO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Rotterdam,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "NLRO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3928,12 +3944,12 @@
 
 (def NOOS
   "the FpML business center code for Oslo, Norway"
-  {:db/ident :fibo-fbc-fct-bci/NOOS,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Oslo,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Oslo,
+   :db/ident :fibo-fbc-fct-bci/NOOS,
    :dcterms/description "the FpML business center code for Oslo, Norway",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Oslo,
-   :lcc-lr/hasTag "NOOS",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Oslo,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "NOOS",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3941,12 +3957,12 @@
 
 (def NPKA
   "the FpML business center code for Kathmandu, Nepal"
-  {:db/ident :fibo-fbc-fct-bci/NPKA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Kathmandu,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Kathmandu,
+   :db/ident :fibo-fbc-fct-bci/NPKA,
    :dcterms/description "the FpML business center code for Kathmandu, Nepal",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Kathmandu,
-   :lcc-lr/hasTag "NPKA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Kathmandu,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "NPKA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3954,13 +3970,13 @@
 
 (def NYFD
   "the FpML business center code for the New York Fed Business Day (as defined in 2006 ISDA Definitions Section 1.9 and 2000 ISDA Definitions Section 1.9)"
-  {:db/ident :fibo-fbc-fct-bci/NYFD,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/NewYorkFederalReserveBusinessDay,
+   :cmns-id/identifies :fibo-fbc-fct-bci/NewYorkFederalReserveBusinessDay,
+   :db/ident :fibo-fbc-fct-bci/NYFD,
    :dcterms/description
    "the FpML business center code for the New York Fed Business Day (as defined in 2006 ISDA Definitions Section 1.9 and 2000 ISDA Definitions Section 1.9)",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/NewYorkFederalReserveBusinessDay,
-   :lcc-lr/hasTag "NYFD",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/NewYorkFederalReserveBusinessDay,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "NYFD",
    :rdf/type [:fibo-fbc-fct-bc/BusinessDayAdjustmentCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3968,13 +3984,13 @@
 
 (def NYSE
   "the FpML business center code for the New York Stock Exchange Business Day (as defined in 2006 ISDA Definitions Section 1.10 and 2000 ISDA Definitions Section 1.10)"
-  {:db/ident :fibo-fbc-fct-bci/NYSE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/NewYorkStockExchangeBusinessDay,
+   :cmns-id/identifies :fibo-fbc-fct-bci/NewYorkStockExchangeBusinessDay,
+   :db/ident :fibo-fbc-fct-bci/NYSE,
    :dcterms/description
    "the FpML business center code for the New York Stock Exchange Business Day (as defined in 2006 ISDA Definitions Section 1.10 and 2000 ISDA Definitions Section 1.10)",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/NewYorkStockExchangeBusinessDay,
-   :lcc-lr/hasTag "NYSE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/NewYorkStockExchangeBusinessDay,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "NYSE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessDayAdjustmentCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3982,13 +3998,13 @@
 
 (def NZAU
   "the FpML business center code for Auckland, New Zealand"
-  {:db/ident :fibo-fbc-fct-bci/NZAU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Auckland,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Auckland,
+   :db/ident :fibo-fbc-fct-bci/NZAU,
    :dcterms/description
    "the FpML business center code for Auckland, New Zealand",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Auckland,
-   :lcc-lr/hasTag "NZAU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Auckland,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "NZAU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -3996,13 +4012,13 @@
 
 (def NZWE
   "the FpML business center code for Wellington, New Zealand"
-  {:db/ident :fibo-fbc-fct-bci/NZWE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Wellington,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Wellington,
+   :db/ident :fibo-fbc-fct-bci/NZWE,
    :dcterms/description
    "the FpML business center code for Wellington, New Zealand",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Wellington,
-   :lcc-lr/hasTag "NZWE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Wellington,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "NZWE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4010,8 +4026,8 @@
 
 (def Nablus
   "Nablus"
-  {:db/ident :fibo-fbc-fct-bci/Nablus,
-   :lcc-cr/isPartOf :lcc-3166-1/Palestine,
+  {:cmns-col/isPartOf :lcc-3166-1/Palestine,
+   :db/ident :fibo-fbc-fct-bci/Nablus,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4019,8 +4035,8 @@
 
 (def Nacka
   "Nacka"
-  {:db/ident :fibo-fbc-fct-bci/Nacka,
-   :lcc-cr/isPartOf :lcc-3166-1/Sweden,
+  {:cmns-col/isPartOf :lcc-3166-1/Sweden,
+   :db/ident :fibo-fbc-fct-bci/Nacka,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4028,8 +4044,8 @@
 
 (def Nagoya
   "Nagoya"
-  {:db/ident :fibo-fbc-fct-bci/Nagoya,
-   :lcc-cr/isPartOf :lcc-3166-1/Japan,
+  {:cmns-col/isPartOf :lcc-3166-1/Japan,
+   :db/ident :fibo-fbc-fct-bci/Nagoya,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4037,9 +4053,9 @@
 
 (def Nairobi
   "the international business center of Nairobi"
-  {:db/ident :fibo-fbc-fct-bci/Nairobi,
+  {:cmns-col/isPartOf :lcc-3166-1/Kenya,
+   :db/ident :fibo-fbc-fct-bci/Nairobi,
    :dcterms/description "the international business center of Nairobi",
-   :lcc-cr/isPartOf :lcc-3166-1/Kenya,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4047,9 +4063,9 @@
 
 (def Narberth
   "Narberth"
-  {:db/ident :fibo-fbc-fct-bci/Narberth,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Pennsylvania
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Pennsylvania
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Narberth,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4057,8 +4073,8 @@
 
 (def Nasau
   "Nasau"
-  {:db/ident :fibo-fbc-fct-bci/Nasau,
-   :lcc-cr/isPartOf :lcc-3166-1/Bahamas,
+  {:cmns-col/isPartOf :lcc-3166-1/Bahamas,
+   :db/ident :fibo-fbc-fct-bci/Nasau,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4066,9 +4082,9 @@
 
 (def Nassau
   "the international business center of Nassau"
-  {:db/ident :fibo-fbc-fct-bci/Nassau,
+  {:cmns-col/isPartOf :lcc-3166-1/Bahamas,
+   :db/ident :fibo-fbc-fct-bci/Nassau,
    :dcterms/description "the international business center of Nassau",
-   :lcc-cr/isPartOf :lcc-3166-1/Bahamas,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4098,9 +4114,9 @@
 
 (def New_Delhi
   "the international business center of New Delhi"
-  {:db/ident :fibo-fbc-fct-bci/New_Delhi,
+  {:cmns-col/isPartOf :lcc-3166-1/India,
+   :db/ident :fibo-fbc-fct-bci/New_Delhi,
    :dcterms/description "the international business center of New Delhi",
-   :lcc-cr/isPartOf :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4109,9 +4125,10 @@
 (def New_York
   "the international business center of New York"
   {:cmns-av/synonym "New York City",
+   :cmns-col/isPartOf [:lcc-3166-2-us/NewYork
+                       :lcc-3166-1/UnitedStatesOfAmerica],
    :db/ident :fibo-fbc-fct-bci/New_York,
    :dcterms/description "the international business center of New York",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/NewYork :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4119,8 +4136,8 @@
 
 (def Newcastle
   "Newcastle"
-  {:db/ident :fibo-fbc-fct-bci/Newcastle,
-   :lcc-cr/isPartOf :lcc-3166-1/Australia,
+  {:cmns-col/isPartOf :lcc-3166-1/Australia,
+   :db/ident :fibo-fbc-fct-bci/Newcastle,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4128,9 +4145,9 @@
 
 (def Nicosia
   "the international business center of Nicosia"
-  {:db/ident :fibo-fbc-fct-bci/Nicosia,
+  {:cmns-col/isPartOf :lcc-3166-1/Cyprus,
+   :db/ident :fibo-fbc-fct-bci/Nicosia,
    :dcterms/description "the international business center of Nicosia",
-   :lcc-cr/isPartOf :lcc-3166-1/Cyprus,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4138,8 +4155,8 @@
 
 (def Nigita
   "Nigita"
-  {:db/ident :fibo-fbc-fct-bci/Nigita,
-   :lcc-cr/isPartOf :lcc-3166-1/Japan,
+  {:cmns-col/isPartOf :lcc-3166-1/Japan,
+   :db/ident :fibo-fbc-fct-bci/Nigita,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4147,8 +4164,8 @@
 
 (def NizhniyNovgorod
   "Nizhniy Novgorod"
-  {:db/ident :fibo-fbc-fct-bci/NizhniyNovgorod,
-   :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
+  {:cmns-col/isPartOf :lcc-3166-1/RussianFederation,
+   :db/ident :fibo-fbc-fct-bci/NizhniyNovgorod,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4156,9 +4173,9 @@
 
 (def North_Bergen
   "North Bergen"
-  {:db/ident :fibo-fbc-fct-bci/North_Bergen,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/NewJersey
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/NewJersey
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/North_Bergen,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4166,8 +4183,8 @@
 
 (def Novosibirsk
   "Novosibirsk"
-  {:db/ident :fibo-fbc-fct-bci/Novosibirsk,
-   :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
+  {:cmns-col/isPartOf :lcc-3166-1/RussianFederation,
+   :db/ident :fibo-fbc-fct-bci/Novosibirsk,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4175,8 +4192,8 @@
 
 (def Nyon
   "Nyon"
-  {:db/ident :fibo-fbc-fct-bci/Nyon,
-   :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
+  {:cmns-col/isPartOf :lcc-3166-1/Switzerland,
+   :db/ident :fibo-fbc-fct-bci/Nyon,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4184,12 +4201,12 @@
 
 (def OMMU
   "the FpML business center code for Muscat, Oman"
-  {:db/ident :fibo-fbc-fct-bci/OMMU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Muscat,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Muscat,
+   :db/ident :fibo-fbc-fct-bci/OMMU,
    :dcterms/description "the FpML business center code for Muscat, Oman",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Muscat,
-   :lcc-lr/hasTag "OMMU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Muscat,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "OMMU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4197,8 +4214,8 @@
 
 (def Odessa
   "Odessa"
-  {:db/ident :fibo-fbc-fct-bci/Odessa,
-   :lcc-cr/isPartOf :lcc-3166-1/Ukraine,
+  {:cmns-col/isPartOf :lcc-3166-1/Ukraine,
+   :db/ident :fibo-fbc-fct-bci/Odessa,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4206,8 +4223,8 @@
 
 (def Oldenburg
   "Oldenburg"
-  {:db/ident :fibo-fbc-fct-bci/Oldenburg,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Oldenburg,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4215,8 +4232,8 @@
 
 (def Osaka
   "Osaka"
-  {:db/ident :fibo-fbc-fct-bci/Osaka,
-   :lcc-cr/isPartOf :lcc-3166-1/Japan,
+  {:cmns-col/isPartOf :lcc-3166-1/Japan,
+   :db/ident :fibo-fbc-fct-bci/Osaka,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4224,9 +4241,9 @@
 
 (def Oslo
   "the international business center of Oslo"
-  {:db/ident :fibo-fbc-fct-bci/Oslo,
+  {:cmns-col/isPartOf :lcc-3166-1/Norway,
+   :db/ident :fibo-fbc-fct-bci/Oslo,
    :dcterms/description "the international business center of Oslo",
-   :lcc-cr/isPartOf :lcc-3166-1/Norway,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4234,8 +4251,8 @@
 
 (def Oststeinbek
   "Oststeinbek"
-  {:db/ident :fibo-fbc-fct-bci/Oststeinbek,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Oststeinbek,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4243,9 +4260,9 @@
 
 (def Ottawa
   "the international business center of Ottawa"
-  {:db/ident :fibo-fbc-fct-bci/Ottawa,
+  {:cmns-col/isPartOf :lcc-3166-1/Canada,
+   :db/ident :fibo-fbc-fct-bci/Ottawa,
    :dcterms/description "the international business center of Ottawa",
-   :lcc-cr/isPartOf :lcc-3166-1/Canada,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4253,12 +4270,12 @@
 
 (def PAPC
   "the FpML business center code for Panama City, Panama"
-  {:db/ident :fibo-fbc-fct-bci/PAPC,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Panama_City,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Panama_City,
+   :db/ident :fibo-fbc-fct-bci/PAPC,
    :dcterms/description "the FpML business center code for Panama City, Panama",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Panama_City,
-   :lcc-lr/hasTag "PAPC",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Panama_City,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "PAPC",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4266,12 +4283,12 @@
 
 (def PELI
   "the FpML business center code for Lima, Peru"
-  {:db/ident :fibo-fbc-fct-bci/PELI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Lima,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Lima,
+   :db/ident :fibo-fbc-fct-bci/PELI,
    :dcterms/description "the FpML business center code for Lima, Peru",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Lima,
-   :lcc-lr/hasTag "PELI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Lima,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "PELI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4279,12 +4296,12 @@
 
 (def PHMA
   "the FpML business center code for Manila, Philippines"
-  {:db/ident :fibo-fbc-fct-bci/PHMA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Manila,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Manila,
+   :db/ident :fibo-fbc-fct-bci/PHMA,
    :dcterms/description "the FpML business center code for Manila, Philippines",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Manila,
-   :lcc-lr/hasTag "PHMA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Manila,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "PHMA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4292,12 +4309,12 @@
 
 (def PHMK
   "the FpML business center code for Makati, Philippines"
-  {:db/ident :fibo-fbc-fct-bci/PHMK,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Makati,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Makati,
+   :db/ident :fibo-fbc-fct-bci/PHMK,
    :dcterms/description "the FpML business center code for Makati, Philippines",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Makati,
-   :lcc-lr/hasTag "PHMK",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Makati,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "PHMK",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4305,12 +4322,12 @@
 
 (def PKKA
   "the FpML business center code for Karachi, Pakistan"
-  {:db/ident :fibo-fbc-fct-bci/PKKA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Karachi,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Karachi,
+   :db/ident :fibo-fbc-fct-bci/PKKA,
    :dcterms/description "the FpML business center code for Karachi, Pakistan",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Karachi,
-   :lcc-lr/hasTag "PKKA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Karachi,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "PKKA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4318,12 +4335,12 @@
 
 (def PLWA
   "the FpML business center code for Warsaw, Poland"
-  {:db/ident :fibo-fbc-fct-bci/PLWA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Warsaw,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Warsaw,
+   :db/ident :fibo-fbc-fct-bci/PLWA,
    :dcterms/description "the FpML business center code for Warsaw, Poland",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Warsaw,
-   :lcc-lr/hasTag "PLWA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Warsaw,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "PLWA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4331,13 +4348,13 @@
 
 (def PRSJ
   "the FpML business center code for San Juan, Puerto Rico"
-  {:db/ident :fibo-fbc-fct-bci/PRSJ,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/San_Juan,
+   :cmns-id/identifies :fibo-fbc-fct-bci/San_Juan,
+   :db/ident :fibo-fbc-fct-bci/PRSJ,
    :dcterms/description
    "the FpML business center code for San Juan, Puerto Rico",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/San_Juan,
-   :lcc-lr/hasTag "PRSJ",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/San_Juan,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "PRSJ",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4345,12 +4362,12 @@
 
 (def PTLI
   "the FpML business center code for Lisbon, Portugal"
-  {:db/ident :fibo-fbc-fct-bci/PTLI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Lisbon,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Lisbon,
+   :db/ident :fibo-fbc-fct-bci/PTLI,
    :dcterms/description "the FpML business center code for Lisbon, Portugal",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Lisbon,
-   :lcc-lr/hasTag "PTLI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Lisbon,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "PTLI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4358,8 +4375,8 @@
 
 (def Padova
   "Padova"
-  {:db/ident :fibo-fbc-fct-bci/Padova,
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Padova,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4367,8 +4384,8 @@
 
 (def PalmaDeMallorca
   "Palma de Mallorca"
-  {:db/ident :fibo-fbc-fct-bci/PalmaDeMallorca,
-   :lcc-cr/isPartOf :lcc-3166-1/Spain,
+  {:cmns-col/isPartOf :lcc-3166-1/Spain,
+   :db/ident :fibo-fbc-fct-bci/PalmaDeMallorca,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4376,9 +4393,9 @@
 
 (def Panama_City
   "the international business center of Panama City"
-  {:db/ident :fibo-fbc-fct-bci/Panama_City,
+  {:cmns-col/isPartOf :lcc-3166-1/Panama,
+   :db/ident :fibo-fbc-fct-bci/Panama_City,
    :dcterms/description "the international business center of Panama City",
-   :lcc-cr/isPartOf :lcc-3166-1/Panama,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4386,9 +4403,9 @@
 
 (def Paris
   "the international business center of Paris"
-  {:db/ident :fibo-fbc-fct-bci/Paris,
+  {:cmns-col/isPartOf :lcc-3166-1/France,
+   :db/ident :fibo-fbc-fct-bci/Paris,
    :dcterms/description "the international business center of Paris",
-   :lcc-cr/isPartOf :lcc-3166-1/France,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4396,8 +4413,8 @@
 
 (def Pasig_City
   "Pasig City"
-  {:db/ident :fibo-fbc-fct-bci/Pasig_City,
-   :lcc-cr/isPartOf :lcc-3166-1/Philippines,
+  {:cmns-col/isPartOf :lcc-3166-1/Philippines,
+   :db/ident :fibo-fbc-fct-bci/Pasig_City,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4405,9 +4422,9 @@
 
 (def Perth
   "the international business center of Perth"
-  {:db/ident :fibo-fbc-fct-bci/Perth,
+  {:cmns-col/isPartOf :lcc-3166-1/Australia,
+   :db/ident :fibo-fbc-fct-bci/Perth,
    :dcterms/description "the international business center of Perth",
-   :lcc-cr/isPartOf :lcc-3166-1/Australia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4415,8 +4432,8 @@
 
 (def Pfaffikon_SZ
   "Pfäffikon SZ"
-  {:db/ident :fibo-fbc-fct-bci/Pfaffikon_SZ,
-   :lcc-cr/isPartOf [:lcc-3166-2-ch/CH-SZ :lcc-3166-1/Switzerland],
+  {:cmns-col/isPartOf [:lcc-3166-2-ch/CH-SZ :lcc-3166-1/Switzerland],
+   :db/ident :fibo-fbc-fct-bci/Pfaffikon_SZ,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4424,9 +4441,9 @@
 
 (def Philadelphia
   "Philadelphia"
-  {:db/ident :fibo-fbc-fct-bci/Philadelphia,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Pennsylvania
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Pennsylvania
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Philadelphia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4434,8 +4451,8 @@
 
 (def Phnom_Penh
   "Phnom Penh"
-  {:db/ident :fibo-fbc-fct-bci/Phnom_Penh,
-   :lcc-cr/isPartOf :lcc-3166-1/Cambodia,
+  {:cmns-col/isPartOf :lcc-3166-1/Cambodia,
+   :db/ident :fibo-fbc-fct-bci/Phnom_Penh,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4443,8 +4460,8 @@
 
 (def Phoenix
   "Phoenix"
-  {:db/ident :fibo-fbc-fct-bci/Phoenix,
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
+   :db/ident :fibo-fbc-fct-bci/Phoenix,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4452,9 +4469,9 @@
 
 (def Port_Louis
   "the international business center of Port Louis"
-  {:db/ident :fibo-fbc-fct-bci/Port_Louis,
+  {:cmns-col/isPartOf :lcc-3166-1/Mauritius,
+   :db/ident :fibo-fbc-fct-bci/Port_Louis,
    :dcterms/description "the international business center of Port Louis",
-   :lcc-cr/isPartOf :lcc-3166-1/Mauritius,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4462,8 +4479,8 @@
 
 (def Port_Moresby
   "Port Moresby"
-  {:db/ident :fibo-fbc-fct-bci/Port_Moresby,
-   :lcc-cr/isPartOf :lcc-3166-1/PapuaNewGuinea,
+  {:cmns-col/isPartOf :lcc-3166-1/PapuaNewGuinea,
+   :db/ident :fibo-fbc-fct-bci/Port_Moresby,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4471,8 +4488,8 @@
 
 (def Port_Vila
   "Port Vila"
-  {:db/ident :fibo-fbc-fct-bci/Port_Vila,
-   :lcc-cr/isPartOf :lcc-3166-1/Vanuatu,
+  {:cmns-col/isPartOf :lcc-3166-1/Vanuatu,
+   :db/ident :fibo-fbc-fct-bci/Port_Vila,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4480,9 +4497,9 @@
 
 (def Port_of_Spain
   "the international business center of Port of Spain"
-  {:db/ident :fibo-fbc-fct-bci/Port_of_Spain,
+  {:cmns-col/isPartOf :lcc-3166-1/TrinidadAndTobago,
+   :db/ident :fibo-fbc-fct-bci/Port_of_Spain,
    :dcterms/description "the international business center of Port of Spain",
-   :lcc-cr/isPartOf :lcc-3166-1/TrinidadAndTobago,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4490,9 +4507,9 @@
 
 (def Portland
   "the international business center of Portland"
-  {:db/ident :fibo-fbc-fct-bci/Portland,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Oregon :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Portland,
    :dcterms/description "the international business center of Portland",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Oregon :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4500,8 +4517,8 @@
 
 (def Porto
   "Porto"
-  {:db/ident :fibo-fbc-fct-bci/Porto,
-   :lcc-cr/isPartOf :lcc-3166-1/Portugal,
+  {:cmns-col/isPartOf :lcc-3166-1/Portugal,
+   :db/ident :fibo-fbc-fct-bci/Porto,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4509,9 +4526,9 @@
 
 (def Prague
   "the international business center of Prague"
-  {:db/ident :fibo-fbc-fct-bci/Prague,
+  {:cmns-col/isPartOf :lcc-3166-1/Czechia,
+   :db/ident :fibo-fbc-fct-bci/Prague,
    :dcterms/description "the international business center of Prague",
-   :lcc-cr/isPartOf :lcc-3166-1/Czechia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4519,8 +4536,8 @@
 
 (def Praia
   "Praia"
-  {:db/ident :fibo-fbc-fct-bci/Praia,
-   :lcc-cr/isPartOf :lcc-3166-1/CaboVerde,
+  {:cmns-col/isPartOf :lcc-3166-1/CaboVerde,
+   :db/ident :fibo-fbc-fct-bci/Praia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4528,9 +4545,9 @@
 
 (def Princeton
   "Princeton"
-  {:db/ident :fibo-fbc-fct-bci/Princeton,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/NewJersey
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/NewJersey
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Princeton,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4538,8 +4555,8 @@
 
 (def Purchase
   "Purchase"
-  {:db/ident :fibo-fbc-fct-bci/Purchase,
-   :lcc-cr/isPartOf :lcc-3166-2-us/NewYork,
+  {:cmns-col/isPartOf :lcc-3166-2-us/NewYork,
+   :db/ident :fibo-fbc-fct-bci/Purchase,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4547,12 +4564,12 @@
 
 (def QADO
   "the FpML business center code for Doha, Qatar"
-  {:db/ident :fibo-fbc-fct-bci/QADO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Doha,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Doha,
+   :db/ident :fibo-fbc-fct-bci/QADO,
    :dcterms/description "the FpML business center code for Doha, Qatar",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Doha,
-   :lcc-lr/hasTag "QADO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Doha,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "QADO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4560,8 +4577,8 @@
 
 (def Quito
   "Quito"
-  {:db/ident :fibo-fbc-fct-bci/Quito,
-   :lcc-cr/isPartOf :lcc-3166-1/Ecuador,
+  {:cmns-col/isPartOf :lcc-3166-1/Ecuador,
+   :db/ident :fibo-fbc-fct-bci/Quito,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4569,12 +4586,12 @@
 
 (def ROBU
   "the FpML business center code for Bucarest, Romania"
-  {:db/ident :fibo-fbc-fct-bci/ROBU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Bucarest,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Bucarest,
+   :db/ident :fibo-fbc-fct-bci/ROBU,
    :dcterms/description "the FpML business center code for Bucarest, Romania",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Bucarest,
-   :lcc-lr/hasTag "ROBU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Bucarest,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ROBU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4582,12 +4599,12 @@
 
 (def RSBE
   "the FpML business center code for Belgrade, Serbia"
-  {:db/ident :fibo-fbc-fct-bci/RSBE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Belgrade,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Belgrade,
+   :db/ident :fibo-fbc-fct-bci/RSBE,
    :dcterms/description "the FpML business center code for Belgrade, Serbia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Belgrade,
-   :lcc-lr/hasTag "RSBE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Belgrade,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "RSBE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4595,13 +4612,13 @@
 
 (def RUMO
   "the FpML business center code for Moscow, Russian Federation"
-  {:db/ident :fibo-fbc-fct-bci/RUMO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Moscow,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Moscow,
+   :db/ident :fibo-fbc-fct-bci/RUMO,
    :dcterms/description
    "the FpML business center code for Moscow, Russian Federation",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Moscow,
-   :lcc-lr/hasTag "RUMO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Moscow,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "RUMO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4609,9 +4626,9 @@
 
 (def Rabat
   "the international business center of Rabat"
-  {:db/ident :fibo-fbc-fct-bci/Rabat,
+  {:cmns-col/isPartOf :lcc-3166-1/Morocco,
+   :db/ident :fibo-fbc-fct-bci/Rabat,
    :dcterms/description "the international business center of Rabat",
-   :lcc-cr/isPartOf :lcc-3166-1/Morocco,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4619,8 +4636,8 @@
 
 (def Randers
   "Randers"
-  {:db/ident :fibo-fbc-fct-bci/Randers,
-   :lcc-cr/isPartOf :lcc-3166-1/Denmark,
+  {:cmns-col/isPartOf :lcc-3166-1/Denmark,
+   :db/ident :fibo-fbc-fct-bci/Randers,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4628,9 +4645,9 @@
 
 (def Red_Bank
   "Red Bank"
-  {:db/ident :fibo-fbc-fct-bci/Red_Bank,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/NewJersey
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/NewJersey
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Red_Bank,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4638,8 +4655,8 @@
 
 (def Regensburg
   "Regensburg"
-  {:db/ident :fibo-fbc-fct-bci/Regensburg,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Regensburg,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4647,8 +4664,8 @@
 
 (def Reggio_Emilia
   "Reggio Emilia"
-  {:db/ident :fibo-fbc-fct-bci/Reggio_Emilia,
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Reggio_Emilia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4656,9 +4673,9 @@
 
 (def Reykjavik
   "the international business center of Reykjavik"
-  {:db/ident :fibo-fbc-fct-bci/Reykjavik,
+  {:cmns-col/isPartOf :lcc-3166-1/Iceland,
+   :db/ident :fibo-fbc-fct-bci/Reykjavik,
    :dcterms/description "the international business center of Reykjavik",
-   :lcc-cr/isPartOf :lcc-3166-1/Iceland,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4666,9 +4683,9 @@
 
 (def Riga
   "the international business center of Riga"
-  {:db/ident :fibo-fbc-fct-bci/Riga,
+  {:cmns-col/isPartOf :lcc-3166-1/Latvia,
+   :db/ident :fibo-fbc-fct-bci/Riga,
    :dcterms/description "the international business center of Riga",
-   :lcc-cr/isPartOf :lcc-3166-1/Latvia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4676,9 +4693,9 @@
 
 (def Rio_de_Janeiro
   "the international business center of Rio de Janeiro"
-  {:db/ident :fibo-fbc-fct-bci/Rio_de_Janeiro,
+  {:cmns-col/isPartOf :lcc-3166-1/Brazil,
+   :db/ident :fibo-fbc-fct-bci/Rio_de_Janeiro,
    :dcterms/description "the international business center of Rio de Janeiro",
-   :lcc-cr/isPartOf :lcc-3166-1/Brazil,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4686,9 +4703,9 @@
 
 (def Riyadh
   "the international business center of Riyadh"
-  {:db/ident :fibo-fbc-fct-bci/Riyadh,
+  {:cmns-col/isPartOf :lcc-3166-1/SaudiArabia,
+   :db/ident :fibo-fbc-fct-bci/Riyadh,
    :dcterms/description "the international business center of Riyadh",
-   :lcc-cr/isPartOf :lcc-3166-1/SaudiArabia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4696,9 +4713,9 @@
 
 (def Road_Town
   "the international business center of Road Town"
-  {:db/ident :fibo-fbc-fct-bci/Road_Town,
+  {:cmns-col/isPartOf :lcc-3166-1/VirginIslandsBritish,
+   :db/ident :fibo-fbc-fct-bci/Road_Town,
    :dcterms/description "the international business center of Road Town",
-   :lcc-cr/isPartOf :lcc-3166-1/VirginIslandsBritish,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4706,8 +4723,8 @@
 
 (def Rodgau
   "Rodgau"
-  {:db/ident :fibo-fbc-fct-bci/Rodgau,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Rodgau,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4715,8 +4732,8 @@
 
 (def Roma
   "Roma"
-  {:db/ident :fibo-fbc-fct-bci/Roma,
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Roma,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4724,9 +4741,9 @@
 
 (def Rome
   "the international business center of Rome"
-  {:db/ident :fibo-fbc-fct-bci/Rome,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Rome,
    :dcterms/description "the international business center of Rome",
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4734,8 +4751,8 @@
 
 (def Rosario
   "Rosario"
-  {:db/ident :fibo-fbc-fct-bci/Rosario,
-   :lcc-cr/isPartOf :lcc-3166-1/Argentina,
+  {:cmns-col/isPartOf :lcc-3166-1/Argentina,
+   :db/ident :fibo-fbc-fct-bci/Rosario,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4743,8 +4760,8 @@
 
 (def Rostov
   "Rostov"
-  {:db/ident :fibo-fbc-fct-bci/Rostov,
-   :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
+  {:cmns-col/isPartOf :lcc-3166-1/RussianFederation,
+   :db/ident :fibo-fbc-fct-bci/Rostov,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4752,9 +4769,9 @@
 
 (def Rotterdam
   "the international business center of Rotterdam"
-  {:db/ident :fibo-fbc-fct-bci/Rotterdam,
+  {:cmns-col/isPartOf :lcc-3166-1/Netherlands,
+   :db/ident :fibo-fbc-fct-bci/Rotterdam,
    :dcterms/description "the international business center of Rotterdam",
-   :lcc-cr/isPartOf :lcc-3166-1/Netherlands,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4762,12 +4779,12 @@
 
 (def SAAB
   "the FpML business center code for Abha, Saudi Arabia"
-  {:db/ident :fibo-fbc-fct-bci/SAAB,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Abha,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Abha,
+   :db/ident :fibo-fbc-fct-bci/SAAB,
    :dcterms/description "the FpML business center code for Abha, Saudi Arabia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Abha,
-   :lcc-lr/hasTag "SAAB",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Abha,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "SAAB",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4775,13 +4792,13 @@
 
 (def SAJE
   "the FpML business center code for Jeddah, Saudi Arabia"
-  {:db/ident :fibo-fbc-fct-bci/SAJE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Jeddah,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Jeddah,
+   :db/ident :fibo-fbc-fct-bci/SAJE,
    :dcterms/description
    "the FpML business center code for Jeddah, Saudi Arabia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Jeddah,
-   :lcc-lr/hasTag "SAJE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Jeddah,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "SAJE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4789,13 +4806,13 @@
 
 (def SARI
   "the FpML business center code for Riyadh, Saudi Arabia"
-  {:db/ident :fibo-fbc-fct-bci/SARI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Riyadh,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Riyadh,
+   :db/ident :fibo-fbc-fct-bci/SARI,
    :dcterms/description
    "the FpML business center code for Riyadh, Saudi Arabia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Riyadh,
-   :lcc-lr/hasTag "SARI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Riyadh,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "SARI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4803,12 +4820,12 @@
 
 (def SEST
   "the FpML business center code for Stockholm, Sweden"
-  {:db/ident :fibo-fbc-fct-bci/SEST,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Stockholm,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Stockholm,
+   :db/ident :fibo-fbc-fct-bci/SEST,
    :dcterms/description "the FpML business center code for Stockholm, Sweden",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Stockholm,
-   :lcc-lr/hasTag "SEST",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Stockholm,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "SEST",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4816,13 +4833,13 @@
 
 (def SGSI
   "the FpML business center code for Singapore, Singapore"
-  {:db/ident :fibo-fbc-fct-bci/SGSI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Singapore,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Singapore,
+   :db/ident :fibo-fbc-fct-bci/SGSI,
    :dcterms/description
    "the FpML business center code for Singapore, Singapore",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Singapore,
-   :lcc-lr/hasTag "SGSI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Singapore,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "SGSI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4830,12 +4847,12 @@
 
 (def SILJ
   "the FpML business center code for Ljubljana, Slovenia"
-  {:db/ident :fibo-fbc-fct-bci/SILJ,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Ljubljana,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Ljubljana,
+   :db/ident :fibo-fbc-fct-bci/SILJ,
    :dcterms/description "the FpML business center code for Ljubljana, Slovenia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Ljubljana,
-   :lcc-lr/hasTag "SILJ",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Ljubljana,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "SILJ",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4843,13 +4860,13 @@
 
 (def SKBR
   "the FpML business center code for Bratislava, Slovakia"
-  {:db/ident :fibo-fbc-fct-bci/SKBR,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Bratislava,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Bratislava,
+   :db/ident :fibo-fbc-fct-bci/SKBR,
    :dcterms/description
    "the FpML business center code for Bratislava, Slovakia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Bratislava,
-   :lcc-lr/hasTag "SKBR",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Bratislava,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "SKBR",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4857,12 +4874,12 @@
 
 (def SNDA
   "the FpML business center code for Dakar, Senegal"
-  {:db/ident :fibo-fbc-fct-bci/SNDA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Dakar,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Dakar,
+   :db/ident :fibo-fbc-fct-bci/SNDA,
    :dcterms/description "the FpML business center code for Dakar, Senegal",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Dakar,
-   :lcc-lr/hasTag "SNDA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Dakar,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "SNDA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4870,13 +4887,13 @@
 
 (def SVSS
   "the FpML business center code for San Salvador, El Salvador"
-  {:db/ident :fibo-fbc-fct-bci/SVSS,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/San_Salvador,
+   :cmns-id/identifies :fibo-fbc-fct-bci/San_Salvador,
+   :db/ident :fibo-fbc-fct-bci/SVSS,
    :dcterms/description
    "the FpML business center code for San Salvador, El Salvador",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/San_Salvador,
-   :lcc-lr/hasTag "SVSS",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/San_Salvador,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "SVSS",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4884,8 +4901,8 @@
 
 (def Sabadell
   "Sabadell"
-  {:db/ident :fibo-fbc-fct-bci/Sabadell,
-   :lcc-cr/isPartOf :lcc-3166-1/Spain,
+  {:cmns-col/isPartOf :lcc-3166-1/Spain,
+   :db/ident :fibo-fbc-fct-bci/Sabadell,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4893,10 +4910,10 @@
 
 (def Sacramento
   "the international business center of Sacramento"
-  {:db/ident :fibo-fbc-fct-bci/Sacramento,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/California
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Sacramento,
    :dcterms/description "the international business center of Sacramento",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/California
-                     :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4905,8 +4922,8 @@
 (def Saint-Petersburg
   "Saint Petersburg"
   {:cmns-av/synonym "St. Petersburg",
+   :cmns-col/isPartOf :lcc-3166-1/RussianFederation,
    :db/ident :fibo-fbc-fct-bci/Saint-Petersburg,
-   :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4915,9 +4932,9 @@
 (def Saint_Peter_Port
   "the international business center of Saint Peter Port"
   {:cmns-av/synonym "St. Peter Port",
+   :cmns-col/isPartOf :lcc-3166-1/Guernsey,
    :db/ident :fibo-fbc-fct-bci/Saint_Peter_Port,
    :dcterms/description "the international business center of Saint Peter Port",
-   :lcc-cr/isPartOf :lcc-3166-1/Guernsey,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4925,8 +4942,8 @@
 
 (def Salzburg
   "Salzburg"
-  {:db/ident :fibo-fbc-fct-bci/Salzburg,
-   :lcc-cr/isPartOf :lcc-3166-1/Austria,
+  {:cmns-col/isPartOf :lcc-3166-1/Austria,
+   :db/ident :fibo-fbc-fct-bci/Salzburg,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4934,8 +4951,8 @@
 
 (def Samara
   "Samara"
-  {:db/ident :fibo-fbc-fct-bci/Samara,
-   :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
+  {:cmns-col/isPartOf :lcc-3166-1/RussianFederation,
+   :db/ident :fibo-fbc-fct-bci/Samara,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4943,8 +4960,8 @@
 
 (def SanPedroSula
   "San Pedro Sula"
-  {:db/ident :fibo-fbc-fct-bci/SanPedroSula,
-   :lcc-cr/isPartOf :lcc-3166-1/Honduras,
+  {:cmns-col/isPartOf :lcc-3166-1/Honduras,
+   :db/ident :fibo-fbc-fct-bci/SanPedroSula,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4952,9 +4969,9 @@
 
 (def San_Carlos
   "San Carlos"
-  {:db/ident :fibo-fbc-fct-bci/San_Carlos,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/California
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/California
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/San_Carlos,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4962,9 +4979,9 @@
 
 (def San_Francisco
   "San Francisco"
-  {:db/ident :fibo-fbc-fct-bci/San_Francisco,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/California
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/California
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/San_Francisco,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4972,9 +4989,9 @@
 
 (def San_Jose
   "the international business center of San Jose"
-  {:db/ident :fibo-fbc-fct-bci/San_Jose,
+  {:cmns-col/isPartOf :lcc-3166-1/CostaRica,
+   :db/ident :fibo-fbc-fct-bci/San_Jose,
    :dcterms/description "the international business center of San Jose",
-   :lcc-cr/isPartOf :lcc-3166-1/CostaRica,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4982,9 +4999,9 @@
 
 (def San_Juan
   "the international business center of San Juan"
-  {:db/ident :fibo-fbc-fct-bci/San_Juan,
+  {:cmns-col/isPartOf :lcc-3166-1/PuertoRico,
+   :db/ident :fibo-fbc-fct-bci/San_Juan,
    :dcterms/description "the international business center of San Juan",
-   :lcc-cr/isPartOf :lcc-3166-1/PuertoRico,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -4992,9 +5009,9 @@
 
 (def San_Salvador
   "the international business center of San Salvador"
-  {:db/ident :fibo-fbc-fct-bci/San_Salvador,
+  {:cmns-col/isPartOf :lcc-3166-1/ElSalvador,
+   :db/ident :fibo-fbc-fct-bci/San_Salvador,
    :dcterms/description "the international business center of San Salvador",
-   :lcc-cr/isPartOf :lcc-3166-1/ElSalvador,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5002,8 +5019,8 @@
 
 (def Santa_Fe
   "Santa Fe"
-  {:db/ident :fibo-fbc-fct-bci/Santa_Fe,
-   :lcc-cr/isPartOf :lcc-3166-1/Argentina,
+  {:cmns-col/isPartOf :lcc-3166-1/Argentina,
+   :db/ident :fibo-fbc-fct-bci/Santa_Fe,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5011,8 +5028,8 @@
 
 (def Santander
   "Santander"
-  {:db/ident :fibo-fbc-fct-bci/Santander,
-   :lcc-cr/isPartOf :lcc-3166-1/Spain,
+  {:cmns-col/isPartOf :lcc-3166-1/Spain,
+   :db/ident :fibo-fbc-fct-bci/Santander,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5020,9 +5037,9 @@
 
 (def Santiago
   "the international business center of Santiago"
-  {:db/ident :fibo-fbc-fct-bci/Santiago,
+  {:cmns-col/isPartOf :lcc-3166-1/Chile,
+   :db/ident :fibo-fbc-fct-bci/Santiago,
    :dcterms/description "the international business center of Santiago",
-   :lcc-cr/isPartOf :lcc-3166-1/Chile,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5030,9 +5047,9 @@
 
 (def Santo_Domingo
   "the international business center of Santo Domingo"
-  {:db/ident :fibo-fbc-fct-bci/Santo_Domingo,
+  {:cmns-col/isPartOf :lcc-3166-1/DominicanRepublic,
+   :db/ident :fibo-fbc-fct-bci/Santo_Domingo,
    :dcterms/description "the international business center of Santo Domingo",
-   :lcc-cr/isPartOf :lcc-3166-1/DominicanRepublic,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5040,9 +5057,9 @@
 
 (def Sao_Paulo
   "the international business center of Sao Paulo"
-  {:db/ident :fibo-fbc-fct-bci/Sao_Paulo,
+  {:cmns-col/isPartOf :lcc-3166-1/Brazil,
+   :db/ident :fibo-fbc-fct-bci/Sao_Paulo,
    :dcterms/description "the international business center of Sao Paulo",
-   :lcc-cr/isPartOf :lcc-3166-1/Brazil,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5050,8 +5067,8 @@
 
 (def Sapporo
   "Sapporo"
-  {:db/ident :fibo-fbc-fct-bci/Sapporo,
-   :lcc-cr/isPartOf :lcc-3166-1/Japan,
+  {:cmns-col/isPartOf :lcc-3166-1/Japan,
+   :db/ident :fibo-fbc-fct-bci/Sapporo,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5059,8 +5076,8 @@
 
 (def Sarajevo
   "Sarajevo"
-  {:db/ident :fibo-fbc-fct-bci/Sarajevo,
-   :lcc-cr/isPartOf :lcc-3166-1/BosniaAndHerzegovina,
+  {:cmns-col/isPartOf :lcc-3166-1/BosniaAndHerzegovina,
+   :db/ident :fibo-fbc-fct-bci/Sarajevo,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5068,8 +5085,8 @@
 
 (def Schwerin
   "Schwerin"
-  {:db/ident :fibo-fbc-fct-bci/Schwerin,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Schwerin,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5077,8 +5094,8 @@
 
 (def SeaGirt
   "Sea Girt"
-  {:db/ident :fibo-fbc-fct-bci/SeaGirt,
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
+   :db/ident :fibo-fbc-fct-bci/SeaGirt,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5086,10 +5103,10 @@
 
 (def Seattle
   "the international business center of Seattle"
-  {:db/ident :fibo-fbc-fct-bci/Seattle,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Washington
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Seattle,
    :dcterms/description "the international business center of Seattle",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Washington
-                     :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5097,9 +5114,9 @@
 
 (def Seoul
   "the international business center of Seoul"
-  {:db/ident :fibo-fbc-fct-bci/Seoul,
+  {:cmns-col/isPartOf :lcc-3166-1/KoreaRepublicOf,
+   :db/ident :fibo-fbc-fct-bci/Seoul,
    :dcterms/description "the international business center of Seoul",
-   :lcc-cr/isPartOf :lcc-3166-1/KoreaRepublicOf,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5107,9 +5124,9 @@
 
 (def Shanghai
   "the international business center of Shanghai"
-  {:db/ident :fibo-fbc-fct-bci/Shanghai,
+  {:cmns-col/isPartOf :lcc-3166-1/China,
+   :db/ident :fibo-fbc-fct-bci/Shanghai,
    :dcterms/description "the international business center of Shanghai",
-   :lcc-cr/isPartOf :lcc-3166-1/China,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5117,8 +5134,8 @@
 
 (def Shenzhen
   "Shenzhen"
-  {:db/ident :fibo-fbc-fct-bci/Shenzhen,
-   :lcc-cr/isPartOf :lcc-3166-1/China,
+  {:cmns-col/isPartOf :lcc-3166-1/China,
+   :db/ident :fibo-fbc-fct-bci/Shenzhen,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5126,8 +5143,8 @@
 
 (def Shimonoseki
   "Shimonoseki"
-  {:db/ident :fibo-fbc-fct-bci/Shimonoseki,
-   :lcc-cr/isPartOf :lcc-3166-1/Japan,
+  {:cmns-col/isPartOf :lcc-3166-1/Japan,
+   :db/ident :fibo-fbc-fct-bci/Shimonoseki,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5135,8 +5152,8 @@
 
 (def Sibiu
   "Sibiu"
-  {:db/ident :fibo-fbc-fct-bci/Sibiu,
-   :lcc-cr/isPartOf :lcc-3166-1/Romania,
+  {:cmns-col/isPartOf :lcc-3166-1/Romania,
+   :db/ident :fibo-fbc-fct-bci/Sibiu,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5144,8 +5161,8 @@
 
 (def Silkeborg
   "Silkeborg"
-  {:db/ident :fibo-fbc-fct-bci/Silkeborg,
-   :lcc-cr/isPartOf :lcc-3166-1/Denmark,
+  {:cmns-col/isPartOf :lcc-3166-1/Denmark,
+   :db/ident :fibo-fbc-fct-bci/Silkeborg,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5153,9 +5170,9 @@
 
 (def Singapore
   "the international business center of Singapore"
-  {:db/ident :fibo-fbc-fct-bci/Singapore,
+  {:cmns-col/isPartOf :lcc-3166-1/Singapore,
+   :db/ident :fibo-fbc-fct-bci/Singapore,
    :dcterms/description "the international business center of Singapore",
-   :lcc-cr/isPartOf :lcc-3166-1/Singapore,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5163,8 +5180,8 @@
 
 (def Skopje
   "Skopje"
-  {:db/ident :fibo-fbc-fct-bci/Skopje,
-   :lcc-cr/isPartOf :lcc-3166-1/Macedonia,
+  {:cmns-col/isPartOf :lcc-3166-1/Macedonia,
+   :db/ident :fibo-fbc-fct-bci/Skopje,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5172,8 +5189,8 @@
 
 (def Sliema
   "Sliema"
-  {:db/ident :fibo-fbc-fct-bci/Sliema,
-   :lcc-cr/isPartOf :lcc-3166-1/Malta,
+  {:cmns-col/isPartOf :lcc-3166-1/Malta,
+   :db/ident :fibo-fbc-fct-bci/Sliema,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5181,9 +5198,9 @@
 
 (def Sofia
   "the international business center of Sofia"
-  {:db/ident :fibo-fbc-fct-bci/Sofia,
+  {:cmns-col/isPartOf :lcc-3166-1/Bulgaria,
+   :db/ident :fibo-fbc-fct-bci/Sofia,
    :dcterms/description "the international business center of Sofia",
-   :lcc-cr/isPartOf :lcc-3166-1/Bulgaria,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5191,8 +5208,8 @@
 
 (def Split
   "Split"
-  {:db/ident :fibo-fbc-fct-bci/Split,
-   :lcc-cr/isPartOf :lcc-3166-1/Croatia,
+  {:cmns-col/isPartOf :lcc-3166-1/Croatia,
+   :db/ident :fibo-fbc-fct-bci/Split,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5200,8 +5217,8 @@
 
 (def St_Albans
   "St. Albans"
-  {:db/ident :fibo-fbc-fct-bci/St_Albans,
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
+   :db/ident :fibo-fbc-fct-bci/St_Albans,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5209,9 +5226,9 @@
 
 (def St_Helier
   "the international business center of St. Helier"
-  {:db/ident :fibo-fbc-fct-bci/St_Helier,
+  {:cmns-col/isPartOf :lcc-3166-1/Jersey,
+   :db/ident :fibo-fbc-fct-bci/St_Helier,
    :dcterms/description "the international business center of St. Helier",
-   :lcc-cr/isPartOf :lcc-3166-1/Jersey,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5219,8 +5236,8 @@
 
 (def St_John
   "St. John"
-  {:db/ident :fibo-fbc-fct-bci/St_John,
-   :lcc-cr/isPartOf :lcc-3166-1/AntiguaAndBarbuda,
+  {:cmns-col/isPartOf :lcc-3166-1/AntiguaAndBarbuda,
+   :db/ident :fibo-fbc-fct-bci/St_John,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5228,9 +5245,9 @@
 
 (def Stamford
   "Stamford"
-  {:db/ident :fibo-fbc-fct-bci/Stamford,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Connecticut
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Connecticut
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Stamford,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5238,9 +5255,9 @@
 
 (def Stockholm
   "the international business center of Stockholm"
-  {:db/ident :fibo-fbc-fct-bci/Stockholm,
+  {:cmns-col/isPartOf :lcc-3166-1/Sweden,
+   :db/ident :fibo-fbc-fct-bci/Stockholm,
    :dcterms/description "the international business center of Stockholm",
-   :lcc-cr/isPartOf :lcc-3166-1/Sweden,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5248,9 +5265,9 @@
 
 (def Stuttgart
   "the international business center of Stuttgart"
-  {:db/ident :fibo-fbc-fct-bci/Stuttgart,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Stuttgart,
    :dcterms/description "the international business center of Stuttgart",
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5258,9 +5275,9 @@
 
 (def Summit
   "Summit"
-  {:db/ident :fibo-fbc-fct-bci/Summit,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/NewJersey
-                     :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/NewJersey
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Summit,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5268,8 +5285,8 @@
 
 (def Surabaya
   "Surabaya"
-  {:db/ident :fibo-fbc-fct-bci/Surabaya,
-   :lcc-cr/isPartOf :lcc-3166-1/Indonesia,
+  {:cmns-col/isPartOf :lcc-3166-1/Indonesia,
+   :db/ident :fibo-fbc-fct-bci/Surabaya,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5277,8 +5294,8 @@
 
 (def Suva
   "Suva"
-  {:db/ident :fibo-fbc-fct-bci/Suva,
-   :lcc-cr/isPartOf :lcc-3166-1/Fiji,
+  {:cmns-col/isPartOf :lcc-3166-1/Fiji,
+   :db/ident :fibo-fbc-fct-bci/Suva,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5286,9 +5303,9 @@
 
 (def Sydney
   "the international business center of Sydney"
-  {:db/ident :fibo-fbc-fct-bci/Sydney,
+  {:cmns-col/isPartOf :lcc-3166-1/Australia,
+   :db/ident :fibo-fbc-fct-bci/Sydney,
    :dcterms/description "the international business center of Sydney",
-   :lcc-cr/isPartOf :lcc-3166-1/Australia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5320,12 +5337,12 @@
 
 (def THBA
   "the FpML business center code for Bangkok, Thailand"
-  {:db/ident :fibo-fbc-fct-bci/THBA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Bangkok,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Bangkok,
+   :db/ident :fibo-fbc-fct-bci/THBA,
    :dcterms/description "the FpML business center code for Bangkok, Thailand",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Bangkok,
-   :lcc-lr/hasTag "THBA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Bangkok,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "THBA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5333,12 +5350,12 @@
 
 (def TNTU
   "the FpML business center code for Tunis, Tunisia"
-  {:db/ident :fibo-fbc-fct-bci/TNTU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Tunis,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Tunis,
+   :db/ident :fibo-fbc-fct-bci/TNTU,
    :dcterms/description "the FpML business center code for Tunis, Tunisia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Tunis,
-   :lcc-lr/hasTag "TNTU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Tunis,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "TNTU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5346,12 +5363,12 @@
 
 (def TRAN
   "the FpML business center code for Ankara, Turkey"
-  {:db/ident :fibo-fbc-fct-bci/TRAN,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Ankara,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Ankara,
+   :db/ident :fibo-fbc-fct-bci/TRAN,
    :dcterms/description "the FpML business center code for Ankara, Turkey",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Ankara,
-   :lcc-lr/hasTag "TRAN",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Ankara,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "TRAN",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5359,12 +5376,12 @@
 
 (def TRIS
   "the FpML business center code for Istanbul, Turkey"
-  {:db/ident :fibo-fbc-fct-bci/TRIS,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Istanbul,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Istanbul,
+   :db/ident :fibo-fbc-fct-bci/TRIS,
    :dcterms/description "the FpML business center code for Istanbul, Turkey",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Istanbul,
-   :lcc-lr/hasTag "TRIS",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Istanbul,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "TRIS",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5372,13 +5389,13 @@
 
 (def TTPS
   "the FpML business center code for Port of Spain, Trinidad and Tobago"
-  {:db/ident :fibo-fbc-fct-bci/TTPS,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Port_of_Spain,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Port_of_Spain,
+   :db/ident :fibo-fbc-fct-bci/TTPS,
    :dcterms/description
    "the FpML business center code for Port of Spain, Trinidad and Tobago",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Port_of_Spain,
-   :lcc-lr/hasTag "TTPS",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Port_of_Spain,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "TTPS",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5386,12 +5403,12 @@
 
 (def TWTA
   "the FpML business center code for Taipei, Taiwan"
-  {:db/ident :fibo-fbc-fct-bci/TWTA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Taipei,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Taipei,
+   :db/ident :fibo-fbc-fct-bci/TWTA,
    :dcterms/description "the FpML business center code for Taipei, Taiwan",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Taipei,
-   :lcc-lr/hasTag "TWTA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Taipei,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "TWTA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5399,13 +5416,13 @@
 
 (def TZDA
   "the FpML business center code for Dar es Salaam, Tanzania"
-  {:db/ident :fibo-fbc-fct-bci/TZDA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Dar_es_Salaam,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Dar_es_Salaam,
+   :db/ident :fibo-fbc-fct-bci/TZDA,
    :dcterms/description
    "the FpML business center code for Dar es Salaam, Tanzania",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Dar_es_Salaam,
-   :lcc-lr/hasTag "TZDA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Dar_es_Salaam,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "TZDA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5413,12 +5430,12 @@
 
 (def TZDO
   "the FpML business center code for Dodoma, Tanzania"
-  {:db/ident :fibo-fbc-fct-bci/TZDO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Dodoma,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Dodoma,
+   :db/ident :fibo-fbc-fct-bci/TZDO,
    :dcterms/description "the FpML business center code for Dodoma, Tanzania",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Dodoma,
-   :lcc-lr/hasTag "TZDO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Dodoma,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "TZDO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5426,9 +5443,9 @@
 
 (def Taipei
   "the international business center of Taipei"
-  {:db/ident :fibo-fbc-fct-bci/Taipei,
+  {:cmns-col/isPartOf :lcc-3166-1/Taiwan,
+   :db/ident :fibo-fbc-fct-bci/Taipei,
    :dcterms/description "the international business center of Taipei",
-   :lcc-cr/isPartOf :lcc-3166-1/Taiwan,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5436,8 +5453,8 @@
 
 (def Taiwan
   "Taiwan"
-  {:db/ident :fibo-fbc-fct-bci/Taiwan,
-   :lcc-cr/isPartOf :lcc-3166-1/Taiwan,
+  {:cmns-col/isPartOf :lcc-3166-1/Taiwan,
+   :db/ident :fibo-fbc-fct-bci/Taiwan,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5445,9 +5462,9 @@
 
 (def Tallinn
   "the international business center of Tallinn"
-  {:db/ident :fibo-fbc-fct-bci/Tallinn,
+  {:cmns-col/isPartOf :lcc-3166-1/Estonia,
+   :db/ident :fibo-fbc-fct-bci/Tallinn,
    :dcterms/description "the international business center of Tallinn",
-   :lcc-cr/isPartOf :lcc-3166-1/Estonia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5455,8 +5472,8 @@
 
 (def Tashkent
   "Tashkent"
-  {:db/ident :fibo-fbc-fct-bci/Tashkent,
-   :lcc-cr/isPartOf :lcc-3166-1/Uzbekistan,
+  {:cmns-col/isPartOf :lcc-3166-1/Uzbekistan,
+   :db/ident :fibo-fbc-fct-bci/Tashkent,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5464,9 +5481,9 @@
 
 (def Tbilisi
   "the international business center of Tbilisi"
-  {:db/ident :fibo-fbc-fct-bci/Tbilisi,
+  {:cmns-col/isPartOf :lcc-3166-1/Georgia,
+   :db/ident :fibo-fbc-fct-bci/Tbilisi,
    :dcterms/description "the international business center of Tbilisi",
-   :lcc-cr/isPartOf :lcc-3166-1/Georgia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5474,9 +5491,9 @@
 
 (def Tegucigalpa
   "the international business center of Tegucigalpa"
-  {:db/ident :fibo-fbc-fct-bci/Tegucigalpa,
+  {:cmns-col/isPartOf :lcc-3166-1/Honduras,
+   :db/ident :fibo-fbc-fct-bci/Tegucigalpa,
    :dcterms/description "the international business center of Tegucigalpa",
-   :lcc-cr/isPartOf :lcc-3166-1/Honduras,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5484,9 +5501,9 @@
 
 (def Tehran
   "the international business center of Tehran"
-  {:db/ident :fibo-fbc-fct-bci/Tehran,
+  {:cmns-col/isPartOf :lcc-3166-1/Iran,
+   :db/ident :fibo-fbc-fct-bci/Tehran,
    :dcterms/description "the international business center of Tehran",
-   :lcc-cr/isPartOf :lcc-3166-1/Iran,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5494,9 +5511,9 @@
 
 (def Tel_Aviv
   "the international business center of Tel Aviv"
-  {:db/ident :fibo-fbc-fct-bci/Tel_Aviv,
+  {:cmns-col/isPartOf :lcc-3166-1/Israel,
+   :db/ident :fibo-fbc-fct-bci/Tel_Aviv,
    :dcterms/description "the international business center of Tel Aviv",
-   :lcc-cr/isPartOf :lcc-3166-1/Israel,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5504,8 +5521,8 @@
 
 (def TheWoodlands
   "The Woodlands"
-  {:db/ident :fibo-fbc-fct-bci/TheWoodlands,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Texas :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Texas :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/TheWoodlands,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5513,8 +5530,8 @@
 
 (def The_Hague
   "The Hague"
-  {:db/ident :fibo-fbc-fct-bci/The_Hague,
-   :lcc-cr/isPartOf :lcc-3166-1/Netherlands,
+  {:cmns-col/isPartOf :lcc-3166-1/Netherlands,
+   :db/ident :fibo-fbc-fct-bci/The_Hague,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5522,8 +5539,8 @@
 
 (def Tirana
   "Tirana"
-  {:db/ident :fibo-fbc-fct-bci/Tirana,
-   :lcc-cr/isPartOf :lcc-3166-1/Albania,
+  {:cmns-col/isPartOf :lcc-3166-1/Albania,
+   :db/ident :fibo-fbc-fct-bci/Tirana,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5531,9 +5548,9 @@
 
 (def Tokyo
   "the international business center of Tokyo"
-  {:db/ident :fibo-fbc-fct-bci/Tokyo,
+  {:cmns-col/isPartOf :lcc-3166-1/Japan,
+   :db/ident :fibo-fbc-fct-bci/Tokyo,
    :dcterms/description "the international business center of Tokyo",
-   :lcc-cr/isPartOf :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5541,9 +5558,9 @@
 
 (def Toronto
   "the international business center of Toronto"
-  {:db/ident :fibo-fbc-fct-bci/Toronto,
+  {:cmns-col/isPartOf :lcc-3166-1/Canada,
+   :db/ident :fibo-fbc-fct-bci/Toronto,
    :dcterms/description "the international business center of Toronto",
-   :lcc-cr/isPartOf :lcc-3166-1/Canada,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5551,8 +5568,8 @@
 
 (def Torshavn
   "Torshavn"
-  {:db/ident :fibo-fbc-fct-bci/Torshavn,
-   :lcc-cr/isPartOf :lcc-3166-1/FaroeIslands,
+  {:cmns-col/isPartOf :lcc-3166-1/FaroeIslands,
+   :db/ident :fibo-fbc-fct-bci/Torshavn,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5560,8 +5577,8 @@
 
 (def Triesen
   "Triesen"
-  {:db/ident :fibo-fbc-fct-bci/Triesen,
-   :lcc-cr/isPartOf :lcc-3166-1/Liechtenstein,
+  {:cmns-col/isPartOf :lcc-3166-1/Liechtenstein,
+   :db/ident :fibo-fbc-fct-bci/Triesen,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5569,8 +5586,8 @@
 
 (def Tripoli
   "Tripoli"
-  {:db/ident :fibo-fbc-fct-bci/Tripoli,
-   :lcc-cr/isPartOf :lcc-3166-1/Libya,
+  {:cmns-col/isPartOf :lcc-3166-1/Libya,
+   :db/ident :fibo-fbc-fct-bci/Tripoli,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5578,8 +5595,8 @@
 
 (def Tromso
   "Tromso"
-  {:db/ident :fibo-fbc-fct-bci/Tromso,
-   :lcc-cr/isPartOf :lcc-3166-1/Norway,
+  {:cmns-col/isPartOf :lcc-3166-1/Norway,
+   :db/ident :fibo-fbc-fct-bci/Tromso,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5587,8 +5604,8 @@
 
 (def Trondheim
   "Trondheim"
-  {:db/ident :fibo-fbc-fct-bci/Trondheim,
-   :lcc-cr/isPartOf :lcc-3166-1/Norway,
+  {:cmns-col/isPartOf :lcc-3166-1/Norway,
+   :db/ident :fibo-fbc-fct-bci/Trondheim,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5596,8 +5613,8 @@
 
 (def Tucuman
   "Tucuman"
-  {:db/ident :fibo-fbc-fct-bci/Tucuman,
-   :lcc-cr/isPartOf :lcc-3166-1/Argentina,
+  {:cmns-col/isPartOf :lcc-3166-1/Argentina,
+   :db/ident :fibo-fbc-fct-bci/Tucuman,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5605,9 +5622,9 @@
 
 (def Tunis
   "the international business center of Tunis"
-  {:db/ident :fibo-fbc-fct-bci/Tunis,
+  {:cmns-col/isPartOf :lcc-3166-1/Tunisia,
+   :db/ident :fibo-fbc-fct-bci/Tunis,
    :dcterms/description "the international business center of Tunis",
-   :lcc-cr/isPartOf :lcc-3166-1/Tunisia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5615,9 +5632,9 @@
 
 (def Turin
   "the international business center of Turin"
-  {:db/ident :fibo-fbc-fct-bci/Turin,
+  {:cmns-col/isPartOf :lcc-3166-1/Italy,
+   :db/ident :fibo-fbc-fct-bci/Turin,
    :dcterms/description "the international business center of Turin",
-   :lcc-cr/isPartOf :lcc-3166-1/Italy,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5625,12 +5642,12 @@
 
 (def UAKI
   "the FpML business center code for Kiev, Ukraine"
-  {:db/ident :fibo-fbc-fct-bci/UAKI,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Kiev,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Kiev,
+   :db/ident :fibo-fbc-fct-bci/UAKI,
    :dcterms/description "the FpML business center code for Kiev, Ukraine",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Kiev,
-   :lcc-lr/hasTag "UAKI",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Kiev,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "UAKI",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5638,12 +5655,12 @@
 
 (def UGKA
   "the FpML business center code for Kampala, Uganda"
-  {:db/ident :fibo-fbc-fct-bci/UGKA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Kampala,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Kampala,
+   :db/ident :fibo-fbc-fct-bci/UGKA,
    :dcterms/description "the FpML business center code for Kampala, Uganda",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Kampala,
-   :lcc-lr/hasTag "UGKA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Kampala,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "UGKA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5651,13 +5668,13 @@
 
 (def USBO
   "the FpML business center code for Boston, Massachusetts, United States"
-  {:db/ident :fibo-fbc-fct-bci/USBO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Boston,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Boston,
+   :db/ident :fibo-fbc-fct-bci/USBO,
    :dcterms/description
    "the FpML business center code for Boston, Massachusetts, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Boston,
-   :lcc-lr/hasTag "USBO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Boston,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USBO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5665,13 +5682,13 @@
 
 (def USCH
   "the FpML business center code for Chicago, United States"
-  {:db/ident :fibo-fbc-fct-bci/USCH,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Chicago,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Chicago,
+   :db/ident :fibo-fbc-fct-bci/USCH,
    :dcterms/description
    "the FpML business center code for Chicago, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Chicago,
-   :lcc-lr/hasTag "USCH",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Chicago,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USCH",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5679,13 +5696,13 @@
 
 (def USCR
   "the FpML business center code for Charlotte, North Carolina, United States"
-  {:db/ident :fibo-fbc-fct-bci/USCR,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Charlotte,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Charlotte,
+   :db/ident :fibo-fbc-fct-bci/USCR,
    :dcterms/description
    "the FpML business center code for Charlotte, North Carolina, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Charlotte,
-   :lcc-lr/hasTag "USCR",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Charlotte,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USCR",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5693,13 +5710,13 @@
 
 (def USDC
   "the FpML business center code for Washington, District of Columbia, United States"
-  {:db/ident :fibo-fbc-fct-bci/USDC,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Washington,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Washington,
+   :db/ident :fibo-fbc-fct-bci/USDC,
    :dcterms/description
    "the FpML business center code for Washington, District of Columbia, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Washington,
-   :lcc-lr/hasTag "USDC",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Washington,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USDC",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5707,13 +5724,13 @@
 
 (def USDN
   "the FpML business center code for Denver, United States"
-  {:db/ident :fibo-fbc-fct-bci/USDN,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Denver,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Denver,
+   :db/ident :fibo-fbc-fct-bci/USDN,
    :dcterms/description
    "the FpML business center code for Denver, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Denver,
-   :lcc-lr/hasTag "USDN",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Denver,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USDN",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5721,13 +5738,13 @@
 
 (def USDT
   "the FpML business center code for Detroit, Michigan, United States"
-  {:db/ident :fibo-fbc-fct-bci/USDT,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Detroit,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Detroit,
+   :db/ident :fibo-fbc-fct-bci/USDT,
    :dcterms/description
    "the FpML business center code for Detroit, Michigan, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Detroit,
-   :lcc-lr/hasTag "USDT",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Detroit,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USDT",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5735,13 +5752,13 @@
 
 (def USGS
   "the FpML business center code for the U.S. Government Securities Business Day (as defined in 2006 ISDA Definitions Section 1.11 and 2000 ISDA Definitions Section 1.11)"
-  {:db/ident :fibo-fbc-fct-bci/USGS,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/USGovernmentSecuritiesBusinessDay,
+   :cmns-id/identifies :fibo-fbc-fct-bci/USGovernmentSecuritiesBusinessDay,
+   :db/ident :fibo-fbc-fct-bci/USGS,
    :dcterms/description
    "the FpML business center code for the U.S. Government Securities Business Day (as defined in 2006 ISDA Definitions Section 1.11 and 2000 ISDA Definitions Section 1.11)",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/USGovernmentSecuritiesBusinessDay,
-   :lcc-lr/hasTag "USGS",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/USGovernmentSecuritiesBusinessDay,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USGS",
    :rdf/type [:fibo-fbc-fct-bc/BusinessDayAdjustmentCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5760,13 +5777,13 @@
 
 (def USHL
   "the FpML business center code for Honolulu, Hawaii, United States"
-  {:db/ident :fibo-fbc-fct-bci/USHL,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Honolulu,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Honolulu,
+   :db/ident :fibo-fbc-fct-bci/USHL,
    :dcterms/description
    "the FpML business center code for Honolulu, Hawaii, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Honolulu,
-   :lcc-lr/hasTag "USHL",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Honolulu,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USHL",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5774,13 +5791,13 @@
 
 (def USHO
   "the FpML business center code for Houston, United States"
-  {:db/ident :fibo-fbc-fct-bci/USHO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Houston,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Houston,
+   :db/ident :fibo-fbc-fct-bci/USHO,
    :dcterms/description
    "the FpML business center code for Houston, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Houston,
-   :lcc-lr/hasTag "USHO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Houston,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USHO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5788,13 +5805,13 @@
 
 (def USLA
   "the FpML business center code for Los Angeles, United States"
-  {:db/ident :fibo-fbc-fct-bci/USLA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Los_Angeles,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Los_Angeles,
+   :db/ident :fibo-fbc-fct-bci/USLA,
    :dcterms/description
    "the FpML business center code for Los Angeles, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Los_Angeles,
-   :lcc-lr/hasTag "USLA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Los_Angeles,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USLA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5802,13 +5819,13 @@
 
 (def USMB
   "the FpML business center code for Mobile, Alabama, United States"
-  {:db/ident :fibo-fbc-fct-bci/USMB,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Mobile,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Mobile,
+   :db/ident :fibo-fbc-fct-bci/USMB,
    :dcterms/description
    "the FpML business center code for Mobile, Alabama, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Mobile,
-   :lcc-lr/hasTag "USMB",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Mobile,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USMB",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5816,13 +5833,13 @@
 
 (def USMN
   "the FpML business center code for Minneapolis, United States"
-  {:db/ident :fibo-fbc-fct-bci/USMN,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Minneapolis,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Minneapolis,
+   :db/ident :fibo-fbc-fct-bci/USMN,
    :dcterms/description
    "the FpML business center code for Minneapolis, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Minneapolis,
-   :lcc-lr/hasTag "USMN",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Minneapolis,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USMN",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5830,13 +5847,13 @@
 
 (def USNY
   "the FpML business center code for New York, United States"
-  {:db/ident :fibo-fbc-fct-bci/USNY,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/New_York,
+   :cmns-id/identifies :fibo-fbc-fct-bci/New_York,
+   :db/ident :fibo-fbc-fct-bci/USNY,
    :dcterms/description
    "the FpML business center code for New York, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/New_York,
-   :lcc-lr/hasTag "USNY",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/New_York,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USNY",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5844,13 +5861,13 @@
 
 (def USPO
   "the FpML business center code for Portland, Oregon, United States"
-  {:db/ident :fibo-fbc-fct-bci/USPO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Portland,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Portland,
+   :db/ident :fibo-fbc-fct-bci/USPO,
    :dcterms/description
    "the FpML business center code for Portland, Oregon, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Portland,
-   :lcc-lr/hasTag "USPO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Portland,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USPO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5858,13 +5875,13 @@
 
 (def USSA
   "the FpML business center code for Sacramento, California, United States"
-  {:db/ident :fibo-fbc-fct-bci/USSA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Sacramento,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Sacramento,
+   :db/ident :fibo-fbc-fct-bci/USSA,
    :dcterms/description
    "the FpML business center code for Sacramento, California, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Sacramento,
-   :lcc-lr/hasTag "USSA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Sacramento,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USSA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5872,13 +5889,13 @@
 
 (def USSE
   "the FpML business center code for Seattle, United States"
-  {:db/ident :fibo-fbc-fct-bci/USSE,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Seattle,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Seattle,
+   :db/ident :fibo-fbc-fct-bci/USSE,
    :dcterms/description
    "the FpML business center code for Seattle, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Seattle,
-   :lcc-lr/hasTag "USSE",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Seattle,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USSE",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5886,13 +5903,13 @@
 
 (def USWT
   "the FpML business center code for Wichita, United States"
-  {:db/ident :fibo-fbc-fct-bci/USWT,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Wichita,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Wichita,
+   :db/ident :fibo-fbc-fct-bci/USWT,
    :dcterms/description
    "the FpML business center code for Wichita, United States",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Wichita,
-   :lcc-lr/hasTag "USWT",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Wichita,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "USWT",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5900,12 +5917,12 @@
 
 (def UYMO
   "the FpML business center code for Montevideo, Uruguay"
-  {:db/ident :fibo-fbc-fct-bci/UYMO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Montevideo,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Montevideo,
+   :db/ident :fibo-fbc-fct-bci/UYMO,
    :dcterms/description "the FpML business center code for Montevideo, Uruguay",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Montevideo,
-   :lcc-lr/hasTag "UYMO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Montevideo,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "UYMO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5913,8 +5930,8 @@
 
 (def Ulaan_Baatar
   "Ulaan Baatar"
-  {:db/ident :fibo-fbc-fct-bci/Ulaan_Baatar,
-   :lcc-cr/isPartOf :lcc-3166-1/Mongolia,
+  {:cmns-col/isPartOf :lcc-3166-1/Mongolia,
+   :db/ident :fibo-fbc-fct-bci/Ulaan_Baatar,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5922,8 +5939,8 @@
 
 (def Unterschleisshem
   "Unterschleisshem"
-  {:db/ident :fibo-fbc-fct-bci/Unterschleisshem,
-   :lcc-cr/isPartOf :lcc-3166-1/Germany,
+  {:cmns-col/isPartOf :lcc-3166-1/Germany,
+   :db/ident :fibo-fbc-fct-bci/Unterschleisshem,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5931,8 +5948,8 @@
 
 (def Utrecht
   "Utrecht"
-  {:db/ident :fibo-fbc-fct-bci/Utrecht,
-   :lcc-cr/isPartOf :lcc-3166-1/Netherlands,
+  {:cmns-col/isPartOf :lcc-3166-1/Netherlands,
+   :db/ident :fibo-fbc-fct-bci/Utrecht,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5940,12 +5957,12 @@
 
 (def VECA
   "the FpML business center code for Caracas, Venezuela"
-  {:db/ident :fibo-fbc-fct-bci/VECA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Caracas,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Caracas,
+   :db/ident :fibo-fbc-fct-bci/VECA,
    :dcterms/description "the FpML business center code for Caracas, Venezuela",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Caracas,
-   :lcc-lr/hasTag "VECA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Caracas,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "VECA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5953,13 +5970,13 @@
 
 (def VGRT
   "the FpML business center code for Road Town, Virgin Islands (British)"
-  {:db/ident :fibo-fbc-fct-bci/VGRT,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Road_Town,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Road_Town,
+   :db/ident :fibo-fbc-fct-bci/VGRT,
    :dcterms/description
    "the FpML business center code for Road Town, Virgin Islands (British)",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Road_Town,
-   :lcc-lr/hasTag "VGRT",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Road_Town,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "VGRT",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5967,12 +5984,12 @@
 
 (def VNHA
   "the FpML business center code for Hanoi, Vietnam"
-  {:db/ident :fibo-fbc-fct-bci/VNHA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Hanoi,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Hanoi,
+   :db/ident :fibo-fbc-fct-bci/VNHA,
    :dcterms/description "the FpML business center code for Hanoi, Vietnam",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Hanoi,
-   :lcc-lr/hasTag "VNHA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Hanoi,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "VNHA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5980,13 +5997,13 @@
 
 (def VNHC
   "the FpML business center code for Ho Chi Minh (formerly Saigon), Vietnam"
-  {:db/ident :fibo-fbc-fct-bci/VNHC,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Ho_Chi_Minh,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Ho_Chi_Minh,
+   :db/ident :fibo-fbc-fct-bci/VNHC,
    :dcterms/description
    "the FpML business center code for Ho Chi Minh (formerly Saigon), Vietnam",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Ho_Chi_Minh,
-   :lcc-lr/hasTag "VNHC",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Ho_Chi_Minh,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "VNHC",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -5994,8 +6011,8 @@
 
 (def Vaduz
   "Vaduz"
-  {:db/ident :fibo-fbc-fct-bci/Vaduz,
-   :lcc-cr/isPartOf :lcc-3166-1/Liechtenstein,
+  {:cmns-col/isPartOf :lcc-3166-1/Liechtenstein,
+   :db/ident :fibo-fbc-fct-bci/Vaduz,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6003,8 +6020,8 @@
 
 (def Valencia
   "Valencia"
-  {:db/ident :fibo-fbc-fct-bci/Valencia,
-   :lcc-cr/isPartOf :lcc-3166-1/Spain,
+  {:cmns-col/isPartOf :lcc-3166-1/Spain,
+   :db/ident :fibo-fbc-fct-bci/Valencia,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6012,9 +6029,9 @@
 
 (def Valletta
   "the international business center of Valletta"
-  {:db/ident :fibo-fbc-fct-bci/Valletta,
+  {:cmns-col/isPartOf :lcc-3166-1/Malta,
+   :db/ident :fibo-fbc-fct-bci/Valletta,
    :dcterms/description "the international business center of Valletta",
-   :lcc-cr/isPartOf :lcc-3166-1/Malta,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6022,8 +6039,8 @@
 
 (def Valparaiso
   "Valparaiso"
-  {:db/ident :fibo-fbc-fct-bci/Valparaiso,
-   :lcc-cr/isPartOf :lcc-3166-1/Chile,
+  {:cmns-col/isPartOf :lcc-3166-1/Chile,
+   :db/ident :fibo-fbc-fct-bci/Valparaiso,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6031,9 +6048,9 @@
 
 (def Vancouver
   "the international business center of Vancouver"
-  {:db/ident :fibo-fbc-fct-bci/Vancouver,
+  {:cmns-col/isPartOf :lcc-3166-1/Canada,
+   :db/ident :fibo-fbc-fct-bci/Vancouver,
    :dcterms/description "the international business center of Vancouver",
-   :lcc-cr/isPartOf :lcc-3166-1/Canada,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6041,8 +6058,8 @@
 
 (def Varazdin
   "Varazdin"
-  {:db/ident :fibo-fbc-fct-bci/Varazdin,
-   :lcc-cr/isPartOf :lcc-3166-1/Croatia,
+  {:cmns-col/isPartOf :lcc-3166-1/Croatia,
+   :db/ident :fibo-fbc-fct-bci/Varazdin,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6050,8 +6067,8 @@
 
 (def Victoria
   "Victoria"
-  {:db/ident :fibo-fbc-fct-bci/Victoria,
-   :lcc-cr/isPartOf :lcc-3166-1/Seychelles,
+  {:cmns-col/isPartOf :lcc-3166-1/Seychelles,
+   :db/ident :fibo-fbc-fct-bci/Victoria,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6059,8 +6076,8 @@
 
 (def Victoria_Falls
   "Victoria Falls"
-  {:db/ident :fibo-fbc-fct-bci/Victoria_Falls,
-   :lcc-cr/isPartOf :lcc-3166-1/Zimbabwe,
+  {:cmns-col/isPartOf :lcc-3166-1/Zimbabwe,
+   :db/ident :fibo-fbc-fct-bci/Victoria_Falls,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6068,9 +6085,9 @@
 
 (def Vienna
   "the international business center of Vienna"
-  {:db/ident :fibo-fbc-fct-bci/Vienna,
+  {:cmns-col/isPartOf :lcc-3166-1/Austria,
+   :db/ident :fibo-fbc-fct-bci/Vienna,
    :dcterms/description "the international business center of Vienna",
-   :lcc-cr/isPartOf :lcc-3166-1/Austria,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6078,8 +6095,8 @@
 
 (def Vilnius
   "Vilnius"
-  {:db/ident :fibo-fbc-fct-bci/Vilnius,
-   :lcc-cr/isPartOf :lcc-3166-1/Lithuania,
+  {:cmns-col/isPartOf :lcc-3166-1/Lithuania,
+   :db/ident :fibo-fbc-fct-bci/Vilnius,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6087,8 +6104,8 @@
 
 (def Vladivostok
   "Vladivostok"
-  {:db/ident :fibo-fbc-fct-bci/Vladivostok,
-   :lcc-cr/isPartOf :lcc-3166-1/RussianFederation,
+  {:cmns-col/isPartOf :lcc-3166-1/RussianFederation,
+   :db/ident :fibo-fbc-fct-bci/Vladivostok,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6096,9 +6113,9 @@
 
 (def Warsaw
   "the international business center of Warsaw"
-  {:db/ident :fibo-fbc-fct-bci/Warsaw,
+  {:cmns-col/isPartOf :lcc-3166-1/Poland,
+   :db/ident :fibo-fbc-fct-bci/Warsaw,
    :dcterms/description "the international business center of Warsaw",
-   :lcc-cr/isPartOf :lcc-3166-1/Poland,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6106,8 +6123,8 @@
 
 (def Warszawa
   "Warszawa"
-  {:db/ident :fibo-fbc-fct-bci/Warszawa,
-   :lcc-cr/isPartOf :lcc-3166-1/Poland,
+  {:cmns-col/isPartOf :lcc-3166-1/Poland,
+   :db/ident :fibo-fbc-fct-bci/Warszawa,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6115,10 +6132,10 @@
 
 (def Washington
   "the international business center of Washington"
-  {:db/ident :fibo-fbc-fct-bci/Washington,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/DistrictOfColumbia
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Washington,
    :dcterms/description "the international business center of Washington",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/DistrictOfColumbia
-                     :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6126,8 +6143,9 @@
 
 (def Washington_New_York
   "Washington, New York"
-  {:db/ident :fibo-fbc-fct-bci/Washington_New_York,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/NewYork :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/NewYork
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Washington_New_York,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6135,9 +6153,9 @@
 
 (def Wellington
   "the international business center of Wellington"
-  {:db/ident :fibo-fbc-fct-bci/Wellington,
+  {:cmns-col/isPartOf :lcc-3166-1/NewZealand,
+   :db/ident :fibo-fbc-fct-bci/Wellington,
    :dcterms/description "the international business center of Wellington",
-   :lcc-cr/isPartOf :lcc-3166-1/NewZealand,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6145,9 +6163,9 @@
 
 (def Wichita
   "the international business center of Wichita"
-  {:db/ident :fibo-fbc-fct-bci/Wichita,
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Kansas :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Wichita,
    :dcterms/description "the international business center of Wichita",
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Kansas :lcc-3166-1/UnitedStatesOfAmerica],
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6155,8 +6173,8 @@
 
 (def Willemstad
   "Willemstad"
-  {:db/ident :fibo-fbc-fct-bci/Willemstad,
-   :lcc-cr/isPartOf :lcc-3166-1/Curacao,
+  {:cmns-col/isPartOf :lcc-3166-1/Curacao,
+   :db/ident :fibo-fbc-fct-bci/Willemstad,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6164,8 +6182,9 @@
 
 (def Wilmington
   "Wilmington"
-  {:db/ident :fibo-fbc-fct-bci/Wilmington,
-   :lcc-cr/isPartOf [:lcc-3166-2-us/Delaware :lcc-3166-1/UnitedStatesOfAmerica],
+  {:cmns-col/isPartOf [:lcc-3166-2-us/Delaware
+                       :lcc-3166-1/UnitedStatesOfAmerica],
+   :db/ident :fibo-fbc-fct-bci/Wilmington,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6173,9 +6192,9 @@
 
 (def Windhoek
   "the international business center of Windhoek"
-  {:db/ident :fibo-fbc-fct-bci/Windhoek,
+  {:cmns-col/isPartOf :lcc-3166-1/Namibia,
+   :db/ident :fibo-fbc-fct-bci/Windhoek,
    :dcterms/description "the international business center of Windhoek",
-   :lcc-cr/isPartOf :lcc-3166-1/Namibia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6183,9 +6202,9 @@
 
 (def Winnipeg
   "the international business center of Winnipeg"
-  {:db/ident :fibo-fbc-fct-bci/Winnipeg,
+  {:cmns-col/isPartOf :lcc-3166-1/Canada,
+   :db/ident :fibo-fbc-fct-bci/Winnipeg,
    :dcterms/description "the international business center of Winnipeg",
-   :lcc-cr/isPartOf :lcc-3166-1/Canada,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6193,8 +6212,8 @@
 
 (def WinterPark
   "Winter Park"
-  {:db/ident :fibo-fbc-fct-bci/WinterPark,
-   :lcc-cr/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
+  {:cmns-col/isPartOf :lcc-3166-1/UnitedStatesOfAmerica,
+   :db/ident :fibo-fbc-fct-bci/WinterPark,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6202,8 +6221,8 @@
 
 (def Wroclaw
   "Wroclaw"
-  {:db/ident :fibo-fbc-fct-bci/Wroclaw,
-   :lcc-cr/isPartOf :lcc-3166-1/Poland,
+  {:cmns-col/isPartOf :lcc-3166-1/Poland,
+   :db/ident :fibo-fbc-fct-bci/Wroclaw,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6211,8 +6230,8 @@
 
 (def Wuxi
   "Wuxi"
-  {:db/ident :fibo-fbc-fct-bci/Wuxi,
-   :lcc-cr/isPartOf :lcc-3166-1/China,
+  {:cmns-col/isPartOf :lcc-3166-1/China,
+   :db/ident :fibo-fbc-fct-bci/Wuxi,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6220,12 +6239,12 @@
 
 (def YEAD
   "the FpML business center code for Aden, Yemen"
-  {:db/ident :fibo-fbc-fct-bci/YEAD,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Aden,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Aden,
+   :db/ident :fibo-fbc-fct-bci/YEAD,
    :dcterms/description "the FpML business center code for Aden, Yemen",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Aden,
-   :lcc-lr/hasTag "YEAD",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Aden,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "YEAD",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6233,9 +6252,9 @@
 
 (def Yerevan
   "the international business center of Yerevan"
-  {:db/ident :fibo-fbc-fct-bci/Yerevan,
+  {:cmns-col/isPartOf :lcc-3166-1/Armenia,
+   :db/ident :fibo-fbc-fct-bci/Yerevan,
    :dcterms/description "the international business center of Yerevan",
-   :lcc-cr/isPartOf :lcc-3166-1/Armenia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6243,13 +6262,13 @@
 
 (def ZAJO
   "the FpML business center code for Johannesburg, South Africa"
-  {:db/ident :fibo-fbc-fct-bci/ZAJO,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Johannesburg,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Johannesburg,
+   :db/ident :fibo-fbc-fct-bci/ZAJO,
    :dcterms/description
    "the FpML business center code for Johannesburg, South Africa",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Johannesburg,
-   :lcc-lr/hasTag "ZAJO",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Johannesburg,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ZAJO",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6257,12 +6276,12 @@
 
 (def ZMLU
   "the FpML business center code for Lusaka, Zambia"
-  {:db/ident :fibo-fbc-fct-bci/ZMLU,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Lusaka,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Lusaka,
+   :db/ident :fibo-fbc-fct-bci/ZMLU,
    :dcterms/description "the FpML business center code for Lusaka, Zambia",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Lusaka,
-   :lcc-lr/hasTag "ZMLU",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Lusaka,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ZMLU",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6270,12 +6289,12 @@
 
 (def ZWHA
   "the FpML business center code for Harare, Zimbabwe"
-  {:db/ident :fibo-fbc-fct-bci/ZWHA,
+  {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :cmns-dsg/denotes :fibo-fbc-fct-bci/Harare,
+   :cmns-id/identifies :fibo-fbc-fct-bci/Harare,
+   :db/ident :fibo-fbc-fct-bci/ZWHA,
    :dcterms/description "the FpML business center code for Harare, Zimbabwe",
-   :lcc-lr/denotes :fibo-fbc-fct-bci/Harare,
-   :lcc-lr/hasTag "ZWHA",
-   :lcc-lr/identifies :fibo-fbc-fct-bci/Harare,
-   :lcc-lr/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
+   :fibo-fnd-rel-rel/hasTag "ZWHA",
    :rdf/type [:fibo-fbc-fct-bc/BusinessCenterCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6283,9 +6302,9 @@
 
 (def Zagreb
   "the international business center of Zagreb"
-  {:db/ident :fibo-fbc-fct-bci/Zagreb,
+  {:cmns-col/isPartOf :lcc-3166-1/Croatia,
+   :db/ident :fibo-fbc-fct-bci/Zagreb,
    :dcterms/description "the international business center of Zagreb",
-   :lcc-cr/isPartOf :lcc-3166-1/Croatia,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6293,8 +6312,8 @@
 
 (def Zaragoza
   "Zaragoza"
-  {:db/ident :fibo-fbc-fct-bci/Zaragoza,
-   :lcc-cr/isPartOf :lcc-3166-1/Spain,
+  {:cmns-col/isPartOf :lcc-3166-1/Spain,
+   :db/ident :fibo-fbc-fct-bci/Zaragoza,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6302,8 +6321,8 @@
 
 (def Zhengzhou
   "Zhengzhou"
-  {:db/ident :fibo-fbc-fct-bci/Zhengzhou,
-   :lcc-cr/isPartOf :lcc-3166-1/China,
+  {:cmns-col/isPartOf :lcc-3166-1/China,
+   :db/ident :fibo-fbc-fct-bci/Zhengzhou,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6311,8 +6330,8 @@
 
 (def Zilina
   "Zilina"
-  {:db/ident :fibo-fbc-fct-bci/Zilina,
-   :lcc-cr/isPartOf :lcc-3166-1/Slovakia,
+  {:cmns-col/isPartOf :lcc-3166-1/Slovakia,
+   :db/ident :fibo-fbc-fct-bci/Zilina,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6320,9 +6339,9 @@
 
 (def Zurich
   "the international business center of Zurich"
-  {:db/ident :fibo-fbc-fct-bci/Zurich,
+  {:cmns-col/isPartOf :lcc-3166-1/Switzerland,
+   :db/ident :fibo-fbc-fct-bci/Zurich,
    :dcterms/description "the international business center of Zurich",
-   :lcc-cr/isPartOf :lcc-3166-1/Switzerland,
    :rdf/type [:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
@@ -6330,8 +6349,8 @@
 
 (def s-Hertogenbosch
   "s'-Hertogenbosch"
-  {:db/ident :fibo-fbc-fct-bci/s-Hertogenbosch,
-   :lcc-cr/isPartOf :lcc-3166-1/Netherlands,
+  {:cmns-col/isPartOf :lcc-3166-1/Netherlands,
+   :db/ident :fibo-fbc-fct-bci/s-Hertogenbosch,
    :rdf/type [:fibo-fnd-plc-loc/Municipality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",

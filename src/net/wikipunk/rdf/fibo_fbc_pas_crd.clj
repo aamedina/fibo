@@ -6,12 +6,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :dcterms/abstract
    "This ontology defines account-related concepts that are specific to credit and debit cards.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
@@ -21,16 +21,24 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/ClientsAndAccounts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
+    "https://www.omg.org/spec/Commons/Designators/"
+    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/CardAccounts/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fbc-dae-dbt"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
@@ -46,8 +54,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
     "fibo-fnd-agr-ctr"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-    "fibo-fnd-arr-cls"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
     "fibo-fnd-arr-doc"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
     "fibo-fnd-dt-fd"
@@ -65,7 +71,6 @@
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -95,24 +100,24 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "card account",
    :rdfs/subClassOf
-   [{:owl/onProperty     :lcc-lr/isIdentifiedBy,
+   [:fibo-fbc-pas-caa/CustomerAccount
+    {:owl/onProperty     :fibo-fbc-pas-caa/hasPrimaryAccountHolder,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/Cardholder,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/CardProduct,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-id/isIdentifiedBy,
      :owl/someValuesFrom :fibo-fbc-pas-crd/PrimaryCardAccountNumber,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-pas-caa/CustomerAccount
+    {:owl/onProperty     :cmns-dsg/isDefinedIn,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCardAgreement,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-caa/CustomerAccount,
      :owl/onProperty :fibo-fbc-pas-caa/isLinkedToAccount,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/CardProduct,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-pas-caa/hasPrimaryAccountHolder,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/Cardholder,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCardAgreement,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/hasRepresentation,
+    {:owl/onProperty     :cmns-dsg/isSignifiedBy,
      :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
      :rdf/type           :owl/Restriction}],
    :skos/definition
@@ -177,26 +182,26 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "card product",
-   :rdfs/subClassOf [{:owl/onClass    :lcc-cr/Country,
-                      :owl/onProperty :fibo-fnd-plc-loc/hasCountry,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fbc-pas-fpas/FinancialProduct
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :lcc-cr/CountrySubdivision,
-                      :owl/onProperty :fibo-fnd-plc-loc/hasSubdivision,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-fbc-pas-crd/usesCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-pas-crd/CreditCardNetwork,
                       :owl/onProperty :fibo-fbc-pas-crd/hasCreditCardNetwork,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialProduct
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-pas-crd/usesCurrency,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :lcc-cr/Country,
+                      :owl/onProperty :fibo-fnd-plc-loc/hasCountry,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :lcc-cr/CountrySubdivision,
+                      :owl/onProperty :fibo-fnd-plc-loc/hasSubdivision,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "financial product involving the issuance of payment cards"})
 
@@ -251,14 +256,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "card verification code or value",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
                       :rdf/type           :owl/Restriction}
                      {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :lcc-lr/hasTag,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :lcc-lr/CodeElement],
+                     :cmns-cds/CodeElement],
    :skos/definition
    "code that specifies either (1) magnetic-stripe data, or (2) printed security features that are used to protect data integrity and limit alteration, counterfeiting and fraud generally"})
 
@@ -325,7 +330,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "credit card",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/isClassifiedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/isClassifiedBy,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCardProduct,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fbc-pas-crd/CreditCardAccount,
@@ -343,20 +348,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "credit card account",
-   :rdfs/subClassOf [:fibo-fbc-pas-caa/LoanOrCreditAccount
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isDefinedIn,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-pas-caa/hasPaymentDueDate,
+                      :owl/someValuesFrom :fibo-fbc-pas-caa/PaymentDueDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-caa/LoanOrCreditAccount
+                     {:owl/onProperty     :cmns-dsg/isDefinedIn,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCardAgreement,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-crd/CardAccount
+                     {:owl/onProperty     :cmns-dsg/isSignifiedBy,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCard,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCardProduct,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/hasRepresentation,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCard,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-pas-caa/hasPaymentDueDate,
-                      :owl/someValuesFrom :fibo-fbc-pas-caa/PaymentDueDate,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-crd/CardAccount],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "card account whose terms and conditions are defined in a credit card agreement that is represented by a credit card"})
 
@@ -367,18 +372,18 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "credit card agreement",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCard,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCardAccount,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CommittedCreditFacility
-                     :fibo-fbc-pas-crd/PaymentCardAgreement
-                     {:owl/onProperty :fibo-fbc-dae-dbt/hasLender,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-dae-dbt/hasLender,
                       :owl/someValuesFrom
                       :fibo-fbc-pas-crd/IssuingFinancialInstitution,
                       :rdf/type :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CommittedCreditFacility
+                     :fibo-fbc-pas-crd/PaymentCardAgreement
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCardAccount,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCard,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-dae-dbt/hasBorrower,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/Cardholder,
                       :rdf/type           :owl/Restriction}],
@@ -392,13 +397,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "credit card network",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-lr/hasTag,
-                      :owl/someValuesFrom :xsd/string,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :lcc-cr/classifies,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/CardProduct,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-cls/Classifier],
+                     {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
+                      :owl/someValuesFrom :xsd/string,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-cls/Classifier],
    :skos/definition
    "classifier for the network that authorizes, processes, and sets the terms of credit card transactions, as well as transfers payments between shoppers, merchants, and their banks",
    :skos/example "Mastercard, Visa, American Express, Discover"})
@@ -410,7 +415,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "credit card product",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/classifies,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCard,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
@@ -431,7 +436,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "debit card",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/isClassifiedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/isClassifiedBy,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/DebitCardProduct,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fbc-pas-crd/DebitCardAccount,
@@ -449,7 +454,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "debit card account",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasRepresentation,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/isSignifiedBy,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/DebitCard,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
@@ -466,7 +471,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "debit card product",
-   :rdfs/subClassOf [{:owl/onProperty     :lcc-cr/classifies,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/DebitCard,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
@@ -548,7 +553,11 @@
    :rdfs/label "payment card",
    :rdfs/seeAlso
    ["https://www.irs.gov/payments/payment-card-transactions-faqs"],
-   :rdfs/subClassOf [:fibo-fnd-arr-doc/LegalDocument
+   :rdfs/subClassOf [{:owl/onClass :fibo-fbc-pas-crd/PrimaryCardAccountNumber,
+                      :owl/onProperty :fibo-fbc-pas-crd/hasPrimaryAccountNumber,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-arr-doc/LegalDocument
                      {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidenceFor,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
                       :rdf/type           :owl/Restriction}
@@ -560,11 +569,7 @@
                      {:owl/onClass    :fibo-fbc-pas-crd/CardExpirationDate,
                       :owl/onProperty :fibo-fnd-arr-doc/hasExpirationDate,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass :fibo-fbc-pas-crd/PrimaryCardAccountNumber,
-                      :owl/onProperty :fibo-fbc-pas-crd/hasPrimaryAccountNumber,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "legal document issued by a financial services provider that enables the cardholder to access the funds in the customer's designated bank accounts, or through a credit account and make payments by electronic funds transfer and access automated teller machines (ATMs)"})
 
@@ -576,19 +581,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "payment card agreement",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/CreditAgreement
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-caa/AccountSpecificServiceAgreement
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/someValuesFrom
                       :fibo-fbc-pas-crd/IssuingFinancialInstitution,
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/Cardholder,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "account-specific credit agreement that specifies the terms and conditions under which the payment card is offered to the cardholder by the issuer"})
@@ -605,7 +610,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "primary card account number",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fbc-pas-crd/CardAccount,
-                      :owl/onProperty :lcc-lr/identifies,
+                      :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-caa/AccountIdentifier],
@@ -670,7 +675,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "has credit card network",
    :rdfs/range :fibo-fbc-pas-crd/CreditCardNetwork,
-   :rdfs/subPropertyOf :lcc-lr/has,
+   :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
    :skos/definition "indicates the underlying network for credit card product"})
 
 (def hasPrimaryAccountNumber
@@ -695,6 +700,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "uses currency",
    :rdfs/range :fibo-fnd-acc-cur/Currency,
-   :rdfs/subPropertyOf :lcc-cr/uses,
+   :rdfs/subPropertyOf :cmns-cxtdsg/uses,
    :skos/definition
    "indicates the currency defined for the credit card product"})

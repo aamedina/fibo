@@ -6,17 +6,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :dcterms/abstract
    "This ontology extends the financial services entities ontology in FBC with individual American entities that provide broad based services required by other FIBO domains, such as market data providers, instrument identifier issuers, organizations that provide exchanges in multiple countries, and so forth.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"
@@ -25,6 +23,7 @@
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"
@@ -38,8 +37,8 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Trusts/Trusts/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
@@ -48,6 +47,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
@@ -99,8 +100,6 @@
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/",
     "lcc-3166-2-us"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -114,6 +113,7 @@
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to update the LEI URIs to the new form published by the GLEIF on data.world."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to improve the representation of some of the LEI data."
+    "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was added via the FIBO 2.0 RFC."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals.rdf version of this ontology was revised to make incorporation and registration dates explicit and to replace references to the legacy LCC UnitedStates country representation with UnitedStatesOfAmerica."
@@ -123,11 +123,11 @@
 
 (def BloombergBusinessEntityIdentifier
   "Delaware Division of Corporations business entity identifier for Bloomberg L.P."
-  {:db/ident :fibo-fbc-fct-usfsind/BloombergBusinessEntityIdentifier,
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/BloombergLP-US-DE,
+   :db/ident :fibo-fbc-fct-usfsind/BloombergBusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "2110234",
-   :lcc-lr/identifies :fibo-fbc-fct-usfsind/BloombergLP-US-DE,
+   :fibo-fnd-rel-rel/hasTag "2110234",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
@@ -147,11 +147,11 @@
 
 (def BloombergFinanceBusinessEntityIdentifier
   "Delaware Division of Corporations business entity identifier for Bloomberg Finance L.P."
-  {:db/ident :fibo-fbc-fct-usfsind/BloombergFinanceBusinessEntityIdentifier,
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/BloombergFinanceLP-US-DE,
+   :db/ident :fibo-fbc-fct-usfsind/BloombergFinanceBusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "4348344",
-   :lcc-lr/identifies :fibo-fbc-fct-usfsind/BloombergFinanceLP-US-DE,
+   :fibo-fnd-rel-rel/hasTag "4348344",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
@@ -218,7 +218,8 @@
 
 (def BloombergFinanceLPLegalEntityIdentifierRegistryEntry
   "legal entity identifier registry entry for Bloomberg Finance L.P."
-  {:db/ident
+  {:cmns-col/comprises :gleif-L1-data/L-5493001KJTIIGC8Y1R12-LEI,
+   :db/ident
    :fibo-fbc-fct-usfsind/BloombergFinanceLPLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2012-12-07T01:55:22.718-00:00",
@@ -228,8 +229,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-01-25T21:50:02.081-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-5493001KJTIIGC8Y1R12-LEI",
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -313,7 +312,8 @@
 
 (def BloombergLPLegalEntityIdentifierRegistryEntry
   "legal entity identifier Global LEI Index registry entry for Bloomberg L.P."
-  {:db/ident
+  {:cmns-col/comprises :gleif-L1-data/L-549300B56MD0ZC402L06-LEI,
+   :db/ident
    :fibo-fbc-fct-usfsind/BloombergLPLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2012-12-07T02:00:04.761-00:00",
@@ -323,8 +323,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-01-25T21:50:01.379-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-549300B56MD0ZC402L06-LEI",
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -335,11 +333,11 @@
 
 (def BloombergLPRSSDIdentifier
   "Federal Reserve RSSD identifier for Bloomberg L.P. as a data processing servicer"
-  {:db/ident :fibo-fbc-fct-usfsind/BloombergLPRSSDIdentifier,
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/BloombergLP,
+   :db/ident :fibo-fbc-fct-usfsind/BloombergLPRSSDIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
-   :lcc-lr/hasTag "2217129",
-   :lcc-lr/identifies :fibo-fbc-fct-usfsind/BloombergLP,
+   :fibo-fnd-rel-rel/hasTag "2217129",
    :rdf/type
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
@@ -351,7 +349,8 @@
 
 (def CorporationServiceCompanyEntityIdentifierRegistryEntry
   "legal entity identifier for Corporation Service Company"
-  {:db/ident
+  {:cmns-col/comprises :gleif-L1-data/L-549300NOPSIMGJNT8J31-LEI,
+   :db/ident
    :fibo-fbc-fct-usfsind/CorporationServiceCompanyEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2013-08-14T06:34:00.000-00:00",
@@ -361,8 +360,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-09-09T16:59:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-549300NOPSIMGJNT8J31-LEI",
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
@@ -424,11 +421,11 @@
 
 (def DTCCINCBusinessEntityIdentifier
   "Delaware Department of Corporations business entity identifier for The Depository Trust & Clearing Corporation"
-  {:db/ident :fibo-fbc-fct-usfsind/DTCCINCBusinessEntityIdentifier,
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/DTCC-US-DE,
+   :db/ident :fibo-fbc-fct-usfsind/DTCCINCBusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "628925",
-   :lcc-lr/identifies :fibo-fbc-fct-usfsind/DTCC-US-DE,
+   :fibo-fnd-rel-rel/hasTag "628925",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
@@ -456,7 +453,8 @@
 
 (def DTCCLegalEntityIdentifierRegistryEntry
   "legal entity identifier registry entry for The Depository Trust & Clearing Corporation"
-  {:db/ident :fibo-fbc-fct-usfsind/DTCCLegalEntityIdentifierRegistryEntry,
+  {:cmns-col/comprises :gleif-L1-data/L-MLDY5N6PZ58ZE60QU102-LEI,
+   :db/ident :fibo-fbc-fct-usfsind/DTCCLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2012-06-06T19:50:00.000-00:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
@@ -465,8 +463,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-11-02T22:50:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-MLDY5N6PZ58ZE60QU102-LEI",
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -478,9 +474,9 @@
 
 (def DTCFDICCertificateNumber
   "FDIC certificate number for The Depository Trust Company"
-  {:db/ident :fibo-fbc-fct-usfsind/DTCFDICCertificateNumber,
-   :lcc-lr/hasTag "90544",
-   :lcc-lr/identifies :fibo-fbc-fct-usfsind/DepositoryTrustCompany,
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/DepositoryTrustCompany,
+   :db/ident :fibo-fbc-fct-usfsind/DTCFDICCertificateNumber,
+   :fibo-fnd-rel-rel/hasTag "90544",
    :rdf/type [:fibo-fbc-fct-usjrga/FDICCertificateNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
@@ -504,7 +500,8 @@
 
 (def DTCLegalEntityIdentifierRegistryEntry
   "legal entity identifier registry entry for The Depository Trust & Clearing Corporation"
-  {:db/ident :fibo-fbc-fct-usfsind/DTCLegalEntityIdentifierRegistryEntry,
+  {:cmns-col/comprises :gleif-L1-data/L-549300HBJLRO8YFMI370-LEI,
+   :db/ident :fibo-fbc-fct-usfsind/DTCLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2017-12-29T20:32:00.000-00:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
@@ -513,8 +510,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-11-02T22:50:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelEntitySuppliedOnly,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-549300HBJLRO8YFMI370-LEI",
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -525,9 +520,9 @@
 
 (def DTCRSSDIdentifier
   "Federal Reserve RSSD identifier for The Depository Trust Company (DTC)"
-  {:db/ident :fibo-fbc-fct-usfsind/DTCRSSDIdentifier,
-   :lcc-lr/hasTag "52719",
-   :lcc-lr/identifies :fibo-fbc-fct-usfsind/DepositoryTrustCompany,
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/DepositoryTrustCompany,
+   :db/ident :fibo-fbc-fct-usfsind/DTCRSSDIdentifier,
+   :fibo-fnd-rel-rel/hasTag "52719",
    :rdf/type
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
@@ -539,9 +534,9 @@
 
 (def DTCRTN
   "Routing Transit Number (RTN) for the Depository Trust Company (DTC)"
-  {:db/ident :fibo-fbc-fct-usfsind/DTCRTN,
-   :lcc-lr/hasTag "026002066",
-   :lcc-lr/identifies :fibo-fbc-fct-usfsind/DepositoryTrustCompany,
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/DepositoryTrustCompany,
+   :db/ident :fibo-fbc-fct-usfsind/DTCRTN,
+   :fibo-fnd-rel-rel/hasTag "026002066",
    :rdf/type [:fibo-fbc-fct-usjrga/RoutingTransitNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
@@ -603,7 +598,8 @@
 
 (def FederalReserveBankOfNewYorkLegalEntityIdentifierRegistryEntry
   "legal entity identifier for the Federal Reserve Bank of New York"
-  {:db/ident
+  {:cmns-col/comprises :gleif-L1-data/L-254900Y8NKGV541U8Q32-LEI,
+   :db/ident
    :fibo-fbc-fct-usfsind/FederalReserveBankOfNewYorkLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2017-10-06T01:46:14.433-00:00",
@@ -613,8 +609,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-06-29T00:23:33.650-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelEntitySuppliedOnly,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-254900Y8NKGV541U8Q32-LEI",
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -678,12 +672,12 @@
 
 (def IntercontinentalExchangeBusinessEntityIdentifier
   "Delaware Division of Corporations business entity identifier for Intercontinental Exchange, Inc."
-  {:db/ident
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/IntercontinentalExchangeInc-US-DE,
+   :db/ident
    :fibo-fbc-fct-usfsind/IntercontinentalExchangeBusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "5298907",
-   :lcc-lr/identifies :fibo-fbc-fct-usfsind/IntercontinentalExchangeInc-US-DE,
+   :fibo-fnd-rel-rel/hasTag "5298907",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
@@ -747,7 +741,8 @@
 
 (def IntercontinentalExchangeLegalEntityIdentifierRegistryEntry
   "legal entity identifier registry entry for Intercontinental Exchange"
-  {:db/ident
+  {:cmns-col/comprises :gleif-L1-data/L-5493000F4ZO33MV32P92-LEI,
+   :db/ident
    :fibo-fbc-fct-usfsind/IntercontinentalExchangeLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2013-12-10T08:07:00.000-00:00",
@@ -757,8 +752,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-12-01T01:13:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-5493000F4ZO33MV32P92-LEI",
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
@@ -781,11 +774,11 @@
 
 (def SPGlobalBusinessEntityIdentifier
   "New York Division of Corporations business entity identifier for S&P Global Inc."
-  {:db/ident :fibo-fbc-fct-usfsind/SPGlobalBusinessEntityIdentifier,
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/SPGlobalInc-US-NY,
+   :db/ident :fibo-fbc-fct-usfsind/SPGlobalBusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/NewYorkBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "99979",
-   :lcc-lr/identifies :fibo-fbc-fct-usfsind/SPGlobalInc-US-NY,
+   :fibo-fnd-rel-rel/hasTag "99979",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
@@ -840,7 +833,8 @@
 
 (def SPGlobalLegalEntityIdentifierRegistryEntry
   "legal entity identifier registry entry for S&P Global, Inc."
-  {:db/ident :fibo-fbc-fct-usfsind/SPGlobalLegalEntityIdentifierRegistryEntry,
+  {:cmns-col/comprises :gleif-L1-data/L-Y6X4K52KMJMZE7I7MY94-LEI,
+   :db/ident :fibo-fbc-fct-usfsind/SPGlobalLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2012-06-06T19:51:00.000-00:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
@@ -849,8 +843,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2021-09-23T04:46:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-Y6X4K52KMJMZE7I7MY94-LEI",
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -952,7 +944,8 @@
 
 (def ThomsonReutersLegalEntityIdentifierRegistryEntry
   "legal entity identifier registry entry for Thomson Reuters Corporation"
-  {:db/ident
+  {:cmns-col/comprises :gleif-L1-data/L-549300561UZND4C7B569-LEI,
+   :db/ident
    :fibo-fbc-fct-usfsind/ThomsonReutersLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
    #inst "2013-03-01T21:35:00.000-00:00",
@@ -962,8 +955,6 @@
    :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-11-17T23:01:00.000-00:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
-   :fibo-fnd-rel-rel/comprises
-   "https://rdf.gleif.org/L1/L-549300561UZND4C7B569-LEI",
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
@@ -972,3 +963,98 @@
    "Thomson Reuters Corporation legal entity identifier registry entry",
    :skos/definition
    "legal entity identifier registry entry for Thomson Reuters Corporation"})
+
+(def ^{:private true} L-254900Y8NKGV541U8Q32-LEI
+  "legal entity identifier for the Federal Reserve Bank of New York"
+  {:cmns-id/identifies :fibo-fbc-fct-usjrga/FederalReserveBankOfNewYork-US-NY,
+   :db/ident :gleif-L1-data/L-254900Y8NKGV541U8Q32-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy
+   :fibo-fbc-fct-usfsind/BloombergFinanceLPAsLocalOperatingUnit,
+   :fibo-fnd-rel-rel/hasTag "254900Y8NKGV541U8Q32",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label "Federal Reserve Bank of New York legal entity identifier",
+   :skos/definition
+   "legal entity identifier for the Federal Reserve Bank of New York"})
+
+(def ^{:private true} L-5493000F4ZO33MV32P92-LEI
+  "legal entity identifier for Intercontinental Exchange"
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/IntercontinentalExchangeInc-US-DE,
+   :db/ident           :gleif-L1-data/L-5493000F4ZO33MV32P92-LEI,
+   :fibo-fnd-rel-rel/hasTag "5493000F4ZO33MV32P92",
+   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
+                        :owl/NamedIndividual],
+   :rdfs/label         "Intercontinental Exchange legal entity identifier",
+   :skos/definition    "legal entity identifier for Intercontinental Exchange"})
+
+(def ^{:private true} L-5493001KJTIIGC8Y1R12-LEI
+  "legal entity identifier for Bloomberg Finance L.P."
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/BloombergFinanceLP-US-DE,
+   :db/ident           :gleif-L1-data/L-5493001KJTIIGC8Y1R12-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy
+   :fibo-fbc-fct-usfsind/BloombergFinanceLPAsLocalOperatingUnit,
+   :fibo-fnd-rel-rel/hasTag "5493001KJTIIGC8Y1R12",
+   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
+                        :owl/NamedIndividual],
+   :rdfs/label         "Bloomberg Finance L.P. legal entity identifier",
+   :skos/definition    "legal entity identifier for Bloomberg Finance L.P."})
+
+(def ^{:private true} L-549300561UZND4C7B569-LEI
+  "legal entity identifier for Thomson Reuters Corporation"
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/ThomsonReutersCorporation,
+   :db/ident :gleif-L1-data/L-549300561UZND4C7B569-LEI,
+   :fibo-fnd-rel-rel/hasTag "549300561UZND4C7B569",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label "Thomson Reuters Corporation legal entity identifier",
+   :skos/definition "legal entity identifier for Thomson Reuters Corporation"})
+
+(def ^{:private true} L-549300B56MD0ZC402L06-LEI
+  "legal entity identifier for Bloomberg L.P."
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/BloombergLP-US-DE,
+   :db/ident           :gleif-L1-data/L-549300B56MD0ZC402L06-LEI,
+   :fibo-fbc-fct-ra/isRegisteredBy
+   :fibo-fbc-fct-usfsind/BloombergFinanceLPAsLocalOperatingUnit,
+   :fibo-fnd-rel-rel/hasTag "549300B56MD0ZC402L06",
+   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
+                        :owl/NamedIndividual],
+   :rdfs/label         "Bloomberg L.P. legal entity identifier",
+   :skos/definition    "legal entity identifier for Bloomberg L.P."})
+
+(def ^{:private true} L-549300HBJLRO8YFMI370-LEI
+  "legal entity identifier for The Depository Trust Company"
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/DTC-US-NY,
+   :db/ident :gleif-L1-data/L-549300HBJLRO8YFMI370-LEI,
+   :fibo-fnd-rel-rel/hasTag "MLDY5N6PZ58ZE60QU102",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label "The Depository Trust Company legal entity identifier",
+   :skos/definition "legal entity identifier for The Depository Trust Company"})
+
+(def ^{:private true} L-549300NOPSIMGJNT8J31-LEI
+  "legal entity identifier for the Corporation Service Company"
+  {:cmns-id/identifies :fibo-fbc-fct-usjrga/CorporationServiceCompany-US-DE,
+   :db/ident :gleif-L1-data/L-549300NOPSIMGJNT8J31-LEI,
+   :fibo-fnd-rel-rel/hasTag "549300NOPSIMGJNT8J31",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label "Corporation Service Company legal entity identifier",
+   :skos/definition
+   "legal entity identifier for the Corporation Service Company"})
+
+(def ^{:private true} L-MLDY5N6PZ58ZE60QU102-LEI
+  "legal entity identifier for The Depository Trust & Clearing Corporation"
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/DTCC-US-DE,
+   :db/ident :gleif-L1-data/L-MLDY5N6PZ58ZE60QU102-LEI,
+   :fibo-fnd-rel-rel/hasTag "MLDY5N6PZ58ZE60QU102",
+   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
+   :rdfs/label
+   "The Depository Trust & Clearing Corporation legal entity identifier",
+   :skos/definition
+   "legal entity identifier for The Depository Trust & Clearing Corporation"})
+
+(def ^{:private true} L-Y6X4K52KMJMZE7I7MY94-LEI
+  "legal entity identifier for S&P Global, Inc."
+  {:cmns-id/identifies :fibo-fbc-fct-usfsind/SPGlobalInc-US-NY,
+   :db/ident           :gleif-L1-data/L-Y6X4K52KMJMZE7I7MY94-LEI,
+   :fibo-fnd-rel-rel/hasTag "Y6X4K52KMJMZE7I7MY94",
+   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
+                        :owl/NamedIndividual],
+   :rdfs/label         "S&P Global, Inc. legal entity identifier",
+   :skos/definition    "legal entity identifier for S&P Global, Inc."})

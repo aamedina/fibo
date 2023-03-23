@@ -6,10 +6,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
    :dcterms/abstract
    "This ontology includes example corporate executives and other people to demonstrate how to begin to model those entities in FIBO.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
+   ["https://www.omg.org/spec/Commons/Designators/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
@@ -22,12 +23,12 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"],
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-le-usee"
     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/",
@@ -37,8 +38,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
     "fibo-be-oac-exec"
     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
-    "fibo-fnd-aap-agt"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
     "fibo-fnd-aap-ppl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
     "fibo-fnd-dt-bd"
@@ -55,7 +54,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "lcc-3166-1"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -116,9 +114,8 @@
 
 (def KatherineAdams
   "person that is an American attorney and corporate lawyer"
-  {:db/ident :fibo-be-le-usex/KatherineAdams,
-   :fibo-fnd-aap-agt/hasStructuredName
-   :fibo-be-le-usex/KatherineAdamsFullLegalName,
+  {:cmns-dsg/hasName :fibo-be-le-usex/KatherineAdamsFullLegalName,
+   :db/ident :fibo-be-le-usex/KatherineAdams,
    :fibo-fnd-aap-ppl/hasCitizenship :lcc-3166-1/UnitedStatesOfAmerica,
    :fibo-fnd-aap-ppl/hasDateOfBirth :fibo-be-le-usex/KatherineAdamsDateOfBirth,
    :rdf/type [:fibo-fnd-aap-ppl/Person :owl/NamedIndividual],
@@ -165,8 +162,8 @@
 
 (def KatherineAdamsFullLegalName
   "name that is on Katherine Adams' birth certificate and that she uses for legal purposes"
-  {:db/ident :fibo-be-le-usex/KatherineAdamsFullLegalName,
-   :fibo-fnd-aap-agt/isStructuredNameOf :fibo-be-le-usex/KatherineAdams,
+  {:cmns-dsg/isNameOf :fibo-be-le-usex/KatherineAdams,
+   :db/ident :fibo-be-le-usex/KatherineAdamsFullLegalName,
    :fibo-fnd-aap-ppl/hasFullLegalName "Katherine Leatherman Adams",
    :rdf/type [:fibo-fnd-aap-ppl/PersonName :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -177,8 +174,8 @@
 
 (def TimCook
   "person that lives in Palo Alto, California in the San Francisco Bay Area"
-  {:db/ident :fibo-be-le-usex/TimCook,
-   :fibo-fnd-aap-agt/hasStructuredName :fibo-be-le-usex/TimCookFullLegalName,
+  {:cmns-dsg/hasName :fibo-be-le-usex/TimCookFullLegalName,
+   :db/ident :fibo-be-le-usex/TimCook,
    :fibo-fnd-aap-ppl/hasCitizenship :lcc-3166-1/UnitedStatesOfAmerica,
    :fibo-fnd-aap-ppl/hasDateOfBirth :fibo-be-le-usex/TimCookDateOfBirth,
    :rdf/type [:fibo-fnd-aap-ppl/Person :owl/NamedIndividual],
@@ -223,8 +220,8 @@
 
 (def TimCookFullLegalName
   "name that is on Tim Cook's birth certificate and that he uses for legal purposes"
-  {:db/ident :fibo-be-le-usex/TimCookFullLegalName,
-   :fibo-fnd-aap-agt/isStructuredNameOf :fibo-be-le-usex/TimCook,
+  {:cmns-dsg/isNameOf :fibo-be-le-usex/TimCook,
+   :db/ident :fibo-be-le-usex/TimCookFullLegalName,
    :fibo-fnd-aap-ppl/hasFullLegalName "Timothy Donald Cook",
    :rdf/type [:fibo-fnd-aap-ppl/PersonName :owl/NamedIndividual],
    :rdfs/isDefinedBy

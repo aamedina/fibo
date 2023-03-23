@@ -5,20 +5,21 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
    :dcterms/abstract
    "Mortgage backed securities are like asset backed securities except that the underlying loan pool is a pool of mortgage loans.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/CollateralizedDebtObligations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/PaymentsAndSchedules/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/Funds/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/PoolBackedSecurities/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/AssetBackedSecurities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
@@ -32,14 +33,15 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"],
+    "https://www.omg.org/spec/Commons/Collections/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/MortgageBackedSecurities/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-fct-fct"
     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
@@ -55,8 +57,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
     "fibo-fnd-acc-cur"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-    "fibo-fnd-arr-arr"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
     "fibo-fnd-arr-lif"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
     "fibo-fnd-dt-bd"
@@ -89,7 +89,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
     "fibo-sec-sec-pls"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -414,13 +413,13 @@
                 :rdf/value    "mortgage-backed security"},
    :rdfs/subClassOf
    [:fibo-sec-dbt-pbs/PoolBackedSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty :fibo-fnd-rel-rel/isCharacterizedBy,
+    {:owl/onProperty :cmns-cls/isCharacterizedBy,
      :owl/someValuesFrom
      :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}],
+     :rdf/type :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -448,7 +447,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "mortgage pool"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-arr/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-pls/DebtPool],
@@ -1008,7 +1007,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "has note"},
    :rdfs/range :fibo-fbc-dae-dbt/PromissoryNote,
-   :rdfs/subPropertyOf :lcc-cr/hasPart})
+   :rdfs/subPropertyOf :cmns-col/hasPart})
 
 (def hasTrancheType
   "has tranche type"
@@ -1054,7 +1053,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "is slice of"},
    :rdfs/range :fibo-sec-dbt-mbs/MortgageBackedSecurity,
-   :rdfs/subPropertyOf :lcc-cr/isPartOf})
+   :rdfs/subPropertyOf :cmns-col/isPartOf})
 
 (def prime
   "Whether the mortage pool is identified as Prime or not."

@@ -6,15 +6,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
    :dcterms/abstract
    "This ontology includes extended individuals (examples that are more complete) for a sampling of markets operating in the US corresponding to the ISO 10383 Codes for exchanges and market identification (MIC).",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
-    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
+   ["https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
+    "https://www.omg.org/spec/Commons/Identifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/"
+    "https://www.omg.org/spec/Commons/Collections/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
@@ -26,7 +26,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateControl/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/MarketsIndividuals/"
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"
@@ -41,6 +40,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-be-corp-corp"
     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
@@ -92,8 +93,6 @@
     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
     "lcc-3166-2-us"
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -106,6 +105,7 @@
    :rdfs/label "US Markets and Exchanges Individuals",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/ version of this ontology was modified to support revisions of the MIC codes as of 11 January 2019, including the new URI strategy, and to move the registry definitions to a new international financial organizations ontology."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/AgentsFBC/20230101/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals.rdf version of this ontology was revised to replace references to the legacy LCC UnitedStates country representation with UnitedStatesOfAmerica."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals.rdf version of this ontology was revised to replace uses of hasTag in Relations with hasTag from LCC, as the more complex union of datatypes in the Relations concept is not needed here."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
@@ -114,11 +114,11 @@
 
 (def CBOEGlobalMarketsBusinessEntityIdentifier
   "Delaware Division of Corporations business entity identifier for CBOE Global Markets, Inc."
-  {:db/ident :fibo-fbc-fct-usmkt/CBOEGlobalMarketsBusinessEntityIdentifier,
+  {:cmns-id/identifies :fibo-fbc-fct-usmkt/CBOEGlobalMarketsInc-US-DE,
+   :db/ident :fibo-fbc-fct-usmkt/CBOEGlobalMarketsBusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "4205301",
-   :lcc-lr/identifies :fibo-fbc-fct-usmkt/CBOEGlobalMarketsInc-US-DE,
+   :fibo-fnd-rel-rel/hasTag "4205301",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
@@ -234,7 +234,8 @@
 
 (def NYSEAmericanOptions
   "NYSE (New York Stock Exchange) American Options segment-level market that is an options trading platform under the name AMEX options exchange which facilitates trading of the options on domestic stocks; American depository receipts; broad-based, industry sector, and international indexes; exchange traded funds; HOLDRS; LEAPS; and equity and index FLEX options"
-  {:db/ident :fibo-fbc-fct-usmkt/NYSEAmericanOptions,
+  {:cmns-col/isPartOf :fibo-fbc-fct-usmkt/NewYorkStockExchange,
+   :db/ident :fibo-fbc-fct-usmkt/NYSEAmericanOptions,
    :fibo-fbc-fct-breg/hasPriorLegalName ["NYSE Amex Options"
                                          "American Stock Exchange"],
    :fibo-fbc-fct-fse/hasDateEstablished
@@ -246,7 +247,6 @@
    :fibo-fnd-rel-rel/hasFormalName "NYSE American Options",
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usmkt/NYSEAmericanOptionsAsServiceProvider,
-   :lcc-cr/isPartOf :fibo-fbc-fct-usmkt/NewYorkStockExchange,
    :owl/sameAs :fibo-fbc-fct-mkti/Facility-AMXO,
    :rdf/type [:fibo-fbc-fct-mkt/MarketSegmentLevelMarket :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -270,11 +270,11 @@
 
 (def NYSEAmericanOptionsBusinessEntityIdentifier
   "the Delaware Division of Corporations business entity identifier for NYSE American Options LLC"
-  {:db/ident :fibo-fbc-fct-usmkt/NYSEAmericanOptionsBusinessEntityIdentifier,
+  {:cmns-id/identifies :fibo-fbc-fct-usmkt/NYSEAmericanOptionsLLC-US-DE,
+   :db/ident :fibo-fbc-fct-usmkt/NYSEAmericanOptionsBusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "4982468",
-   :lcc-lr/identifies :fibo-fbc-fct-usmkt/NYSEAmericanOptionsLLC-US-DE,
+   :fibo-fnd-rel-rel/hasTag "4982468",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
@@ -314,7 +314,8 @@
 
 (def NYSEArca
   "NYSE Arca functional entity that is an electronic stock market, supporting trading of equity securities and options products listed in the United States, including trading exchange-traded funds (ETFs) and exchange-listed securities"
-  {:db/ident :fibo-fbc-fct-usmkt/NYSEArca,
+  {:cmns-col/isPartOf :fibo-fbc-fct-usmkt/NewYorkStockExchange,
+   :db/ident :fibo-fbc-fct-usmkt/NYSEArca,
    :fibo-fbc-fct-breg/hasPriorLegalName "The Archipelago Exchange",
    :fibo-fbc-fct-fse/hasDateEstablished
    :fibo-fbc-fct-usmkt/NYSEArcaDateEstablished,
@@ -324,7 +325,6 @@
    :fibo-fnd-plc-vrt/hasWebsite "https://www.nyse.com/",
    :fibo-fnd-rel-rel/hasFormalName "NYSE Arca",
    :fibo-fnd-rel-rel/isManagedBy :fibo-fbc-fct-usmkt/NYSEArcaAsServiceProvider,
-   :lcc-cr/isPartOf :fibo-fbc-fct-usmkt/NewYorkStockExchange,
    :owl/sameAs :fibo-fbc-fct-mkti/Facility-ARCX,
    :rdf/type [:fibo-fbc-fct-mkt/MarketSegmentLevelMarket :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -347,11 +347,11 @@
 
 (def NYSEArcaBusinessEntityIdentifier
   "the Delaware Division of Corporations business entity identifier for NYSE Arca, Inc."
-  {:db/ident :fibo-fbc-fct-usmkt/NYSEArcaBusinessEntityIdentifier,
+  {:cmns-id/identifies :fibo-fbc-fct-usmkt/NYSEArcaInc-US-DE,
+   :db/ident :fibo-fbc-fct-usmkt/NYSEArcaBusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "787634",
-   :lcc-lr/identifies :fibo-fbc-fct-usmkt/NYSEArcaInc-US-DE,
+   :fibo-fnd-rel-rel/hasTag "787634",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
@@ -385,11 +385,11 @@
 
 (def NYSEArcaHoldingsBusinessEntityIdentifier
   "the Delaware Division of Corporations business entity identifier for NYSE Arca Holdings, Inc."
-  {:db/ident :fibo-fbc-fct-usmkt/NYSEArcaHoldingsBusinessEntityIdentifier,
+  {:cmns-id/identifies :fibo-fbc-fct-usmkt/NYSEArcaHoldingsInc-US-DE,
+   :db/ident :fibo-fbc-fct-usmkt/NYSEArcaHoldingsBusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "3703898",
-   :lcc-lr/identifies :fibo-fbc-fct-usmkt/NYSEArcaHoldingsInc-US-DE,
+   :fibo-fnd-rel-rel/hasTag "3703898",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
@@ -473,14 +473,14 @@
 
 (def NYSEDark
   "NYSE Dark segment-level market that is a segment of the NYSE involved in trading of dark pools"
-  {:db/ident :fibo-fbc-fct-usmkt/NYSEDark,
+  {:cmns-col/isPartOf :fibo-fbc-fct-usmkt/NewYorkStockExchange,
+   :db/ident :fibo-fbc-fct-usmkt/NYSEDark,
    :fibo-fbc-fct-mkt/hasFacilityAcronym "NYSEDARK",
    :fibo-fbc-fct-mkt/operatesInCountry :lcc-3166-1/UnitedStatesOfAmerica,
    :fibo-fbc-fct-mkt/operatesInMunicipality :fibo-fbc-fct-bci/New_York,
    :fibo-fnd-plc-vrt/hasWebsite "https://www.nyse.com/",
    :fibo-fnd-rel-rel/hasFormalName "NYSE Dark",
    :fibo-fnd-rel-rel/isManagedBy :fibo-fbc-fct-usfsind/IntercontinentalExchange,
-   :lcc-cr/isPartOf :fibo-fbc-fct-usmkt/NewYorkStockExchange,
    :owl/sameAs :fibo-fbc-fct-mkti/Facility-NYSD,
    :rdf/type [:fibo-fbc-fct-mkt/DarkPool
               :fibo-fbc-fct-mkt/MarketSegmentLevelMarket
@@ -507,11 +507,11 @@
 
 (def NYSEGroupBusinessEntityIdentifier
   "the Delaware Division of Corporations business entity identifier for NYSE Group, Inc."
-  {:db/ident :fibo-fbc-fct-usmkt/NYSEGroupBusinessEntityIdentifier,
+  {:cmns-id/identifies :fibo-fbc-fct-usmkt/NYSEGroupInc-US-DE,
+   :db/ident :fibo-fbc-fct-usmkt/NYSEGroupBusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "4160866",
-   :lcc-lr/identifies :fibo-fbc-fct-usmkt/NYSEGroupInc-US-DE,
+   :fibo-fnd-rel-rel/hasTag "4160866",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
@@ -564,11 +564,11 @@
 
 (def NYSEHoldingsBusinessEntityIdentifier
   "Delaware Division of Corporations business entity identifier for NYSE Holdings LLC"
-  {:db/ident :fibo-fbc-fct-usmkt/NYSEHoldingsBusinessEntityIdentifier,
+  {:cmns-id/identifies :fibo-fbc-fct-usmkt/NYSEHoldingsLLC-US-DE,
+   :db/ident :fibo-fbc-fct-usmkt/NYSEHoldingsBusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "5257784",
-   :lcc-lr/identifies :fibo-fbc-fct-usmkt/NYSEHoldingsLLC-US-DE,
+   :fibo-fnd-rel-rel/hasTag "5257784",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
@@ -688,12 +688,12 @@
 
 (def NewYorkStockExchangeLLCBusinessEntityIdentifier
   "the New York Department of State Division of Corporations business entity identifier for New York Stock Exchange LLC"
-  {:db/ident
+  {:cmns-id/identifies :fibo-fbc-fct-usmkt/NewYorkStockExchangeLLC-US-NY,
+   :db/ident
    :fibo-fbc-fct-usmkt/NewYorkStockExchangeLLCBusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/NewYorkBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "3230916",
-   :lcc-lr/identifies :fibo-fbc-fct-usmkt/NewYorkStockExchangeLLC-US-NY,
+   :fibo-fnd-rel-rel/hasTag "3230916",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
@@ -754,12 +754,12 @@
 
 (def UnitedAgentGroupInc-US-DE-BusinessEntityIdentifier
   "Delaware Department of Corporations business entity identifier for the United Agent Group Inc."
-  {:db/ident
+  {:cmns-id/identifies :fibo-fbc-fct-usmkt/UnitedAgentGroupInc-US-DE,
+   :db/ident
    :fibo-fbc-fct-usmkt/UnitedAgentGroupInc-US-DE-BusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "5991300",
-   :lcc-lr/identifies :fibo-fbc-fct-usmkt/UnitedAgentGroupInc-US-DE,
+   :fibo-fnd-rel-rel/hasTag "5991300",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",
@@ -799,12 +799,12 @@
 
 (def UnitedAgentGroupInc-US-NY-BusinessEntityIdentifier
   "New York Department of State Division of Corporations business entity identifier for the United Agent Group Inc."
-  {:db/ident
+  {:cmns-id/identifies :fibo-fbc-fct-usmkt/UnitedAgentGroupInc-US-NY,
+   :db/ident
    :fibo-fbc-fct-usmkt/UnitedAgentGroupInc-US-NY-BusinessEntityIdentifier,
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/NewYorkBusinessEntitiesRegistry,
-   :lcc-lr/hasTag "4914572",
-   :lcc-lr/identifies :fibo-fbc-fct-usmkt/UnitedAgentGroupInc-US-NY,
+   :fibo-fnd-rel-rel/hasTag "4914572",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USMarketsAndExchangesIndividuals/",

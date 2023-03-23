@@ -57,7 +57,7 @@
    :rdfs/label "Rate Derivatives Ontology",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives.rdf version of this ontology was extended to include foreign exchange rates, forward rate agreements, and revise definitions to be unambiguous and ISO 704 compliant."
-    "The https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary, to move the definition of an underlier and the related property, has underlier, to financial instruments so that these concepts are also available for use in relation to pool-backed securities."
     "The https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives.rdf version of this ontology was modified to eliminate the dependency on NonPhysicalUnderlier, which was redundant."]})
 
 (def EconomicRateBasedDerivativeInstrument
@@ -67,7 +67,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
    :rdfs/label "economic rate-based derivative instrument",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom
                       :fibo-der-rtd-rtd/EconomicRateObservable,
                       :rdf/type :owl/Restriction}
@@ -133,7 +133,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
    :rdfs/label "interest rate derivative instrument",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom
                       :fibo-der-rtd-rtd/InterestRateObservable,
                       :rdf/type :owl/Restriction}
@@ -162,7 +162,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
    :rdfs/label "rate-based derivative instrument",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-bsc/hasUnderlier,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-der-rtd-rtd/RateBasedObservable,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-fi-fi/DerivativeInstrument],

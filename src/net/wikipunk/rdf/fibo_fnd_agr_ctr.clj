@@ -9,23 +9,30 @@
    :dcterms/license "https://opensource.org/licenses/MIT",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
+   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
+    "https://www.omg.org/spec/Commons/Collections/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
+    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+    "https://www.omg.org/spec/Commons/Classifiers/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+    "https://www.omg.org/spec/Commons/ContextualDesignators/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
+    "https://www.omg.org/spec/Commons/Designators/"],
    :owl/versionIRI
    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/",
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
     "dcterms" "http://purl.org/dc/terms/",
     "fibo-fnd-aap-ppl"
     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
@@ -51,7 +58,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
     "owl" "http://www.w3.org/2002/07/owl#",
     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
@@ -63,22 +69,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "Contracts Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to add the concept of a master agreement and fix spelling errors."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-    "The http://www.omg.org/spec/FIBO/Foundations/20130601/Agreements/Contracts.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to simplify the contract party hierarchy, eliminate ambiguity in definitions where feasible and add restrictions on identity documents to avoid circular dependencies."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to move the property hasTerm from FinancialInstruments to Contracts as it is more broadly applicable."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to clean up the definition of transferable contract, including eliminating an unnecessary equivalence, adding subclasses for assignable and novatable contracts, and to restrictions from contract to written contract that did not make sense with respect to a verbal contract."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to add the concepts of breach of contract and breach of covenant."
+   ["The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to add the concept of a master agreement and fix spelling errors."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to add the concept of a term sheet, revise definitions to be ISO 704 compliant, and eliminate duplication of concepts in LCC."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 1.2 RTF report to revise definitions related to contractual element, add contractual commitment and deprecate contract terms set."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 1.1 RTF report to add a parent of hasDate to date properties."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to simplify the contract party hierarchy, eliminate ambiguity in definitions where feasible and add restrictions on identity documents to avoid circular dependencies."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to clean up the definition of transferable contract, including eliminating an unnecessary equivalence, adding subclasses for assignable and novatable contracts, and to restrictions from contract to written contract that did not make sense with respect to a verbal contract."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 2.0 RFC to augment restrictions on contract and contractual commitment."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to eliminate deprecated elements."
+    "The http://www.omg.org/spec/FIBO/Foundations/20130601/Agreements/Contracts.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to eliminate references to external dictionary sites that no longer resolve, move the concept of an extension provision from Debt to Contracts to support representation of preferred shares and other extendable contracts, added a property for contract duration which is needed for long-term options, moved PromissoryNote to Debt for better integration with related concepts, and integrated additional contractual elements, including representations, warranties, and termination provision."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to move the property hasTerm from FinancialInstruments to Contracts as it is more broadly applicable."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to add the concepts of breach of contract and breach of covenant."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of the ontology was was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in https://spec.edmcouncil.org/fibo/ontology/FND/1.0/AboutFND-1.0/."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to change a duplicate definition on hasContractDuration to an explanatory note."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to add the concept of a term sheet, revise definitions to be ISO 704 compliant, and eliminate duplication of concepts in LCC."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to eliminate references to external dictionary sites that no longer resolve, move the concept of an extension provision from Debt to Contracts to support representation of preferred shares and other extendable contracts, added a property for contract duration which is needed for long-term options, moved PromissoryNote to Debt for better integration with related concepts, and integrated additional contractual elements, including representations, warranties, and termination provision."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 2.0 RFC to augment restrictions on contract and contractual commitment."
-    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."]})
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts.rdf version of this ontology was revised as a part of the issue resolutions identified in the FIBO FND 1.1 RTF report to add a parent of hasDate to date properties."]})
 
 (def AssignableContract
   "contract in which contract holder (assignor) may transfer some or all of their rights and obligations to another party (assignee)"
@@ -110,13 +117,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "breach of contract"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/refersTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom
                       :fibo-fnd-agr-ctr/ContractualCommitment,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-oc/OccurrenceKind],
    :skos/definition
    {:rdf/language "en",
@@ -135,13 +142,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "breach of covenant"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/refersTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom
                       :fibo-fnd-agr-ctr/ContractualCommitment,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/appliesTo,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-oc/OccurrenceKind],
    :skos/definition
    {:rdf/language "en",
@@ -172,14 +179,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "contract",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 2,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 2,
                       :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-agr-agr/Agreement
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
-                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
@@ -253,7 +260,7 @@
                       :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom
                       :fibo-fnd-agr-ctr/ContractualCommitment,
-                      :owl/onProperty :lcc-cr/hasPart,
+                      :owl/onProperty :cmns-col/hasPart,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-agr-ctr/ContractualElement
                      :fibo-fnd-agr-agr/MutualCommitment],
@@ -280,6 +287,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "contractual element",
+   :rdfs/subClassOf :cmns-col/Constituent,
    :skos/definition
    "element, such as an arrangement, provision, requirement, rule, specification, and standard that forms an integral part of an agreement"})
 
@@ -487,32 +495,32 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "written contract",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
-     :rdf/type           :owl/Restriction}
+   [{:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-dt-fd/Date,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDate,
+     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-dt-fd/DateTimeStamp,
      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-dt-fd/Date,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDate,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-dt-fd/DateTimeStamp,
      :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-agr-ctr/Contract
     {:owl/onDataRange :xsd/boolean,
      :owl/onProperty  :fibo-fnd-agr-ctr/isAssignable,
      :owl/qualifiedCardinality 1,
-     :rdf/type        :owl/Restriction}],
+     :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-agr-ctr/Contract],
    :skos/definition
    "formal contract that is written and signed by the parties thereto"})
 
@@ -524,6 +532,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "defines terms for",
+   :rdfs/subPropertyOf :cmns-dsg/defines,
    :skos/definition
    "relates a contract to something for which the contract defines legally binding terms and conditions"})
 
@@ -565,7 +574,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "has contractual element",
    :rdfs/range :fibo-fnd-agr-ctr/ContractualElement,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/comprises,
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition "indicates something that is a component of an agreement"})
 
 (def hasCounterparty
@@ -774,7 +783,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "is qualified by",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isCharacterizedBy,
+   :rdfs/subPropertyOf :cmns-cls/isCharacterizedBy,
    :skos/definition
    "indicates a constraint, limitation or refinement on something"})
 
@@ -786,7 +795,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "qualifies",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/characterizes,
+   :rdfs/subPropertyOf :cmns-cls/characterizes,
    :skos/definition "limits, constrains or refines"})
 
 (def supersedes
