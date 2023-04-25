@@ -1,11 +1,9 @@
 {:deps
- {com.stuartsierra/component
-  {:mvn/version "1.1.0"}
-  io.github.aamedina/omg
-  {:git/sha "8233bbb1c4208336f5994f45a503bc46f8b3c3cf"}
+ {io.github.aamedina/omg
+  {:git/sha "4da4b69158edfb0acbac0408f0a28942eede5a0e"}
   org.clojure/clojure
   {:mvn/version "1.11.1"}}
- :paths ["src" "classes"]
+ :paths ["src/clj" "src/cljc" "classes"]
  :aliases
  {:dev
   {:extra-deps
