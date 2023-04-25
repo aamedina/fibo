@@ -8,12 +8,15 @@
    [net.wikipunk.omg]
    [net.wikipunk.fibo.boot]
    [net.wikipunk.rdf :as rdf]
+   [net.wikipunk.rdf.skos]
+   [net.wikipunk.rdf.dcterms]
+   [net.wikipunk.rdf.xsd]
    [net.wikipunk.rdf.dcam :as dcam]
    [net.wikipunk.rdf.schema]))
 
 (declare quickstart)
 
-(defrecord FIBO [vocab domains modules submodules]
+(defrecord FIBO [vocab]
   com/Lifecycle
   (start [this]
     (try
@@ -24,13 +27,7 @@
       (catch Throwable ex))
     this)
   (stop [this]
-    this)
-
-  rdf/NamespaceSpitter
-  (emit [_ arg-map]
-    (rdf/emit domains arg-map)
-    (rdf/emit modules arg-map)
-    (rdf/emit submodules arg-map)))
+    this))
 
 (defn quickstart
   []
