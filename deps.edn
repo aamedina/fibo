@@ -1,6 +1,6 @@
 {:deps
  {io.github.aamedina/omg
-  {:git/sha "4da4b69158edfb0acbac0408f0a28942eede5a0e"}
+  {:git/sha "dadb28739e28cdb9eb3a437c7237dff990abb696"}
   org.clojure/clojure
   {:mvn/version "1.11.1"}}
  :paths ["src/clj" "src/cljc" "classes"]
