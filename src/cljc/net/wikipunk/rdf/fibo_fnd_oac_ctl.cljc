@@ -68,7 +68,8 @@
                      {:owl/onProperty     :fibo-fnd-oac-ctl/hasPartyInControl,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/ControllingParty,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/Situation],
+                     :fibo-fnd-pty-pty/Situation
+                     :fibo-fnd-oac-ctl/Control],
    :skos/definition
    "situation in which some party has the power to direct or strongly influence the direction of the management and policies related to something"})
 
@@ -89,7 +90,8 @@
                       :owl/onProperty :fibo-fnd-oac-ctl/isInitiallyControlledOn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-pty-pty/Undergoer],
+                     :fibo-fnd-pty-pty/Undergoer
+                     :fibo-fnd-oac-ctl/ControlledThing],
    :skos/definition
    "something over which some party exercises some form of control with respect to some situation"})
 
@@ -106,7 +108,8 @@
                      {:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyIn,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/Control,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-pty-pty/Actor],
+                     :fibo-fnd-pty-pty/Actor
+                     :fibo-fnd-oac-ctl/ControllingParty],
    :skos/definition
    "actor that exercises some form of control in the context of some situation",
    :skos/editorialNote
@@ -122,7 +125,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
    :rdfs/label "de facto control",
-   :rdfs/subClassOf :fibo-fnd-oac-ctl/Control,
+   :rdfs/subClassOf [:fibo-fnd-oac-ctl/Control
+                     :fibo-fnd-oac-ctl/DeFactoControl
+                     {:owl/onProperty :fibo-fnd-oac-ctl/involvesControlledThing,
+                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-pty-pty/Situation
+                     {:owl/onProperty     :fibo-fnd-oac-ctl/hasPartyInControl,
+                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControllingParty,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "control that exists informally and is accepted, although not formally recognized"})
 
@@ -134,7 +145,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
    :rdfs/label "de jure control",
    :rdfs/subClassOf [:fibo-fnd-oac-ctl/Control
-                     :fibo-fnd-law-lcap/LegalConstruct],
+                     :fibo-fnd-law-lcap/LegalConstruct
+                     :fibo-fnd-oac-ctl/DeJureControl
+                     {:owl/onProperty :fibo-fnd-oac-ctl/involvesControlledThing,
+                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-pty-pty/Situation
+                     {:owl/onProperty     :fibo-fnd-oac-ctl/hasPartyInControl,
+                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControllingParty,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "control that exists as a matter of law, i.e., legitimate, legal control of something"})
 
@@ -147,7 +166,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
    :rdfs/label "has controlling party",
    :rdfs/range :fibo-fnd-oac-ctl/ControllingParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/isAffectedBy
+                        :fibo-fnd-oac-ctl/hasControllingParty],
    :skos/definition
    "indicates the party that exercises authority or influence over something"})
 
@@ -160,7 +180,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
    :rdfs/label "has party in control",
    :rdfs/range :fibo-fnd-oac-ctl/ControllingParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasActor,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasActor
+                        :fibo-fnd-oac-ctl/hasPartyInControl],
    :skos/definition
    "indicates the actor in the context of a control situation"})
 
@@ -173,7 +194,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
    :rdfs/label "involves controlled thing",
    :rdfs/range :fibo-fnd-oac-ctl/ControlledThing,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasUndergoer,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasUndergoer
+                        :fibo-fnd-oac-ctl/involvesControlledThing],
    :skos/definition
    "indicates something controlled in the context of a control situation"})
 
@@ -185,7 +207,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
    :rdfs/label "is controlled party of",
    :rdfs/range :fibo-fnd-oac-ctl/ControllingParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isDirectlyAffectedBy,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/isDirectlyAffectedBy
+                        :fibo-fnd-oac-ctl/isControlledPartyOf],
    :skos/definition
    "indicates a controlling party that has some amount of authority or influence over it"})
 
@@ -199,7 +222,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
    :rdfs/label "is controlled thing in",
    :rdfs/range :fibo-fnd-oac-ctl/Control,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/undergoes,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/undergoes
+                        :fibo-fnd-oac-ctl/isControlledThingIn],
    :skos/definition
    "indicates the context of control in which something is being controlled"})
 
@@ -213,7 +237,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
    :rdfs/label "is controlling party in",
    :rdfs/range :fibo-fnd-oac-ctl/Control,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsIn,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/actsIn
+                        :fibo-fnd-oac-ctl/isControllingPartyIn],
    :skos/definition
    "indicates the context of control in which the party plays the role of controlling something"})
 
@@ -225,7 +250,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
    :rdfs/label "is controlling party of",
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/directlyAffects,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/directlyAffects
+                        :fibo-fnd-oac-ctl/isControllingPartyOf],
    :skos/definition
    "indicates something that a controlling party has some amount of authority or influence over"})
 
@@ -237,7 +263,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
    :rdfs/label "is initially controlled on",
    :rdfs/range :cmns-dt/CombinedDateTime,
-   :rdfs/subPropertyOf :cmns-dt/hasObservedDateTime,
+   :rdfs/subPropertyOf [:cmns-dt/hasObservedDateTime
+                        :fibo-fnd-oac-ctl/isInitiallyControlledOn],
    :skos/definition
    "indicates the date or date and time that some level of authority or influence was first put in place"})
 
@@ -251,18 +278,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
    :rdfs/label "is party controlling",
    :rdfs/range :fibo-fnd-oac-ctl/ControlledThing,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/actsOn
+                        :fibo-fnd-oac-ctl/isPartyControlling],
    :skos/definition
    "indicates something controlled that a controlling party has some amount of authority or influence over"})
-
-(def ^{:private true} controls
-  {:db/ident           :fibo-fnd-rel-rel/controls,
-   :rdf/type           :owl/ObjectProperty,
-   :rdfs/domain        :fibo-fnd-pty-pty/IndependentParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/playsActiveRoleThatDirectlyAffects})
-
-(def ^{:private true} isControlledBy
-  {:db/ident           :fibo-fnd-rel-rel/isControlledBy,
-   :rdf/type           :owl/ObjectProperty,
-   :rdfs/range         :fibo-fnd-pty-pty/IndependentParty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/experiencesDirectly})

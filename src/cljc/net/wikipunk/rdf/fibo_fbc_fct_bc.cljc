@@ -66,7 +66,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-id/identifies,
                       :owl/someValuesFrom :fibo-fnd-plc-loc/BusinessCenter,
                       :rdf/type           :owl/Restriction}
-                     :lcc-cr/GeographicRegionIdentifier],
+                     :lcc-cr/GeographicRegionIdentifier
+                     :fibo-fbc-fct-bc/BusinessCenterCode],
    :skos/definition
    "code used to denote a metropolitan area where business is conducted"})
 
@@ -78,7 +79,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCenters/",
    :rdfs/label "business center code set",
-   :rdfs/subClassOf :cmns-cds/CodeSet,
+   :rdfs/subClassOf [:cmns-cds/CodeSet
+                     :fibo-fbc-fct-bc/BusinessCenterCodeScheme],
    :skos/definition
    "coding scheme used to define a set of codes for municipalities or business centers"})
 
@@ -93,20 +95,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-id/identifies,
                       :owl/someValuesFrom :fibo-fnd-dt-bd/BusinessDayAdjustment,
                       :rdf/type           :owl/Restriction}
-                     :cmns-cds/CodeElement],
+                     :cmns-cds/CodeElement
+                     :fibo-fbc-fct-bc/BusinessDayAdjustmentCode],
    :skos/definition
    "code used to denote a convention for specifying what happens when a date falls on a day that is weekend or holiday in some municipality or business center"})
-
-(def ^{:private true} BusinessCenter
-  {:cmns-av/adaptedFrom "http://www.fpml.org/coding-scheme/business-center",
-   :cmns-av/explanatoryNote
-   "Note that business centers, as defined in FpML, are intended for use in specifying the business calendar used by that municipality, or by certain organizations located in that municipality.",
-   :db/ident :fibo-fnd-plc-loc/BusinessCenter,
-   :rdf/type :owl/Class})
-
-(def ^{:private true} Municipality
-  {:db/ident        :fibo-fnd-plc-loc/Municipality,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onProperty     :cmns-col/isPartOf,
-                     :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-                     :rdf/type           :owl/Restriction}})

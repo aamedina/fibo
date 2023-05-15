@@ -57,8 +57,7 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of Malaysia"},
+   :rdfs/label #voc/lstr "Government of Malaysia@en",
    :skos/definition
    "federal parliamentary constitutional elective monarchy in Southeastern Asia, separated by the South China Sea into two regions, Peninsular Malaysia and Borneo's East Malaysia, that shares land and maritime borders with Thailand, Brunei, and Indonesia, and maritime borders with Singapore, Vietnam, and the Philippines"})
 
@@ -71,13 +70,10 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "tet",
-                 :rdf/value    "Repúblika Demokrátika Timór-Leste"}
-                {:rdf/language "pt",
-                 :rdf/value    "República Democrática de Timor-Leste"}
-                {:rdf/language "en",
-                 :rdf/value
-                 "Government of the Democratic Republic of Timor-Leste"}],
+   :rdfs/label [#voc/lstr "Repúblika Demokrátika Timór-Leste@tet"
+                #voc/lstr "República Democrática de Timor-Leste@pt"
+                #voc/lstr
+                 "Government of the Democratic Republic of Timor-Leste@en"],
    :skos/definition
    "unitary semi-presidential constitutional republic in Southeastern Asia, an island country that comprises the eastern half of the island of Timor, the nearby islands of Atauro and Jaco, and Oecusse, an exclave on the northwestern side of the island surrounded by Indonesian West Timor"})
 
@@ -89,8 +85,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of the Kingdom of Cambodia"},
+   :rdfs/label #voc/lstr "Government of the Kingdom of Cambodia@en",
    :skos/definition
    "unitary dominant-party parliamentary elective constitutional monarchy in Southeastern Asia, located in the southern portion of the Indochinese peninsula, bordered by Thailand to the northwest, Laos to the northeast, Vietnam to the east and the Gulf of Thailand to the southwest"})
 
@@ -103,11 +98,9 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "lo",
-                 :rdf/value    "ສາທາລະນະລັດ ປະຊາທິປະໄຕ ປະຊາຊົນລາວ"}
-                {:rdf/language "en",
-                 :rdf/value
-                 "Government of the Lao People's Democratic Republic"}],
+   :rdfs/label [#voc/lstr "ສາທາລະນະລັດ ປະຊາທິປະໄຕ ປະຊາຊົນລາວ@lo"
+                #voc/lstr
+                 "Government of the Lao People's Democratic Republic@en"],
    :skos/definition
    "unitary Marxist-Leninist one-party socialist republic in Southeastern Asia, located on the Indochinese Peninsula, bordered by Myanmar and China to the northwest, Vietnam to the east, Cambodia to the southeast and Thailand to the west and southwest"})
 
@@ -119,11 +112,9 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ms",
-                 :rdf/value    "Negara Brunei Darussalam"}
-                {:rdf/language "en",
-                 :rdf/value
-                 "Government of the Nation of Brunei, the Abode of Peace"}],
+   :rdfs/label [#voc/lstr "Negara Brunei Darussalam@ms"
+                #voc/lstr
+                 "Government of the Nation of Brunei, the Abode of Peace@en"],
    :skos/definition
    "unitary Islamic absolute monarchy in Southeastern Asia, located on the north coast of the island of Borneo"})
 
@@ -135,10 +126,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "id",
-                 :rdf/value    "Republik Indonesia"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Indonesia"}],
+   :rdfs/label [#voc/lstr "Republik Indonesia@id"
+                #voc/lstr "Government of the Republic of Indonesia@en"],
    :skos/definition
    "unitary presidential constitutional republic in Southeastern Asia, consisting of more than seventeen thousand islands, including Sumatra, Java, Sulawesi, and parts of Borneo and New Guinea, located between the Indian and Pacific oceans"})
 
@@ -151,14 +140,10 @@
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/NationalGovernment],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ta",
-                 :rdf/value    "சிங்கப்பூர் குடியரசு"}
-                {:rdf/language "ms",
-                 :rdf/value    "Republik Singapura"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Singapore"}
-                {:rdf/language "zh",
-                 :rdf/value    "新加坡共和国"}],
+   :rdfs/label [#voc/lstr "சிங்கப்பூர் குடியரசு@ta"
+                #voc/lstr "Republik Singapura@ms"
+                #voc/lstr "Government of the Republic of Singapore@en"
+                #voc/lstr "新加坡共和国@zh"],
    :skos/definition
    "unitary dominant-party parliamentary constitutional republic in Southeastern Asia, located off the southern tip of the Malay Peninsula, bordering the Straits of Malacca to the west, the Riau Islands (Indonesia) to the south, and the South China Sea to the east"})
 
@@ -171,10 +156,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "tl",
-                 :rdf/value    "Republika ng Pilipinas"}
-                {:rdf/language "en",
-                 :rdf/value "Government of the Republic of the Philippines"}],
+   :rdfs/label [#voc/lstr "Republika ng Pilipinas@tl"
+                #voc/lstr "Government of the Republic of the Philippines@en"],
    :rdfs/seeAlso ["https://www.gov.ph/"],
    :skos/definition
    "unitary presidential constitutional republic in Southeastern Asia, an archipelagic country bordered by the South China Sea to the west, the Philippine Sea to the east, and the Celebes Sea to the southwest, and shares maritime borders with Taiwan to the north, Japan to the northeast, Palau to the east and southeast, Indonesia to the south, Malaysia and Brunei to the southwest, Vietnam to the west, and China to the northwest"})
@@ -188,11 +171,9 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "my",
-                 :rdf/value    "ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော်"}
-                {:rdf/language "en",
-                 :rdf/value
-                 "Government of the Republic of the Union of Myanmar"}],
+   :rdfs/label [#voc/lstr "ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော်@my"
+                #voc/lstr
+                 "Government of the Republic of the Union of Myanmar@en"],
    :skos/definition
    "unitary parliamentary assembly-independent republic under a military junta in Southeastern Asia, bordered by Bangladesh and India to its northwest, China to its northeast, Laos and Thailand to its east and southeast, and the Andaman Sea and the Bay of Bengal to its south and southwest"})
 
@@ -205,10 +186,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value "Government of the Socialist Republic of Viet Nam"}
-                {:rdf/language "vi",
-                 :rdf/value    "Cộng hòa Xã hội chủ nghĩa Việt Nam"}],
+   :rdfs/label [#voc/lstr "Government of the Socialist Republic of Viet Nam@en"
+                #voc/lstr "Cộng hòa Xã hội chủ nghĩa Việt Nam@vi"],
    :skos/definition
    "unitary Marxist-Leninist one-party socialist republic in Southeastern Asia, located at the eastern edge of the Indochinese Peninsula, bordering China to the north, and Laos and Cambodia to the west; while maintaining maritime borders with Thailand through the Gulf of Thailand, and the Philippines, Indonesia and Malaysia through the South China Sea"})
 
@@ -366,10 +345,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "th",
-                 :rdf/value    "รัฐบาลไทย"}
-                {:rdf/language "en",
-                 :rdf/value    "Royal Thai Government"}],
+   :rdfs/label [#voc/lstr "รัฐบาลไทย@th" #voc/lstr "Royal Thai Government@en"],
    :skos/definition
    "unitary military-junta constitutional monarchy in Southeastern Asia, bordered to the north by Myanmar and Laos, to the east by Laos and Cambodia, to the south by the Gulf of Thailand and Malaysia, and to the west by the Andaman Sea and the southern extremity of Myanmar, and sharing maritime borders with Vietnam in the Gulf of Thailand to the southeast, and Indonesia and India on the Andaman Sea to the southwest"})
 

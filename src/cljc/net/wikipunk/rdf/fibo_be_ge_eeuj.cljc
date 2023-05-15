@@ -59,12 +59,9 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ru",
-                 :rdf/value    "Белорусское предприятие"}
-                {:rdf/language "be",
-                 :rdf/value    "Беларускае ўтварэнне"}
-                {:rdf/language "en",
-                 :rdf/value    "Belarusian entity"}],
+   :rdfs/label [#voc/lstr "Белорусское предприятие@ru"
+                #voc/lstr "Беларускае ўтварэнне@be"
+                #voc/lstr "Belarusian entity@en"],
    :skos/definition "sovereign state and polity that is Belarus"})
 
 (def BulgarianEntity
@@ -76,10 +73,8 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "bg",
-                 :rdf/value    "Българско образувание"}
-                {:rdf/language "en",
-                 :rdf/value    "Bulgarian entity"}],
+   :rdfs/label [#voc/lstr "Българско образувание@bg"
+                #voc/lstr "Bulgarian entity@en"],
    :skos/definition "sovereign state and polity that is Bulgaria"})
 
 (def CzechEntity
@@ -90,10 +85,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "cs",
-                 :rdf/value    "Český subjekt"}
-                {:rdf/language "en",
-                 :rdf/value    "Czech entity"}],
+   :rdfs/label [#voc/lstr "Český subjekt@cs" #voc/lstr "Czech entity@en"],
    :skos/definition "sovereign state and polity that is Czechia"})
 
 (def GovernmentOfHungary
@@ -104,10 +96,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "hu",
-                 :rdf/value    "Magyarország kormánya"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of Hungary"}],
+   :rdfs/label [#voc/lstr "Magyarország kormánya@hu"
+                #voc/lstr "Government of Hungary@en"],
    :rdfs/seeAlso ["https://www.kormany.hu/en/"],
    :skos/definition
    "unitary, dominant-party, parliamentary republic, bordering Slovakia to the north, Ukraine to the northeast, Romania to the east and southeast, Serbia to the south, Croatia and Slovenia to the southwest, and Austria to the west"})
@@ -120,10 +110,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ro",
-                 :rdf/value    "Guvernul României"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of Romania"}],
+   :rdfs/label [#voc/lstr "Guvernul României@ro"
+                #voc/lstr "Government of Romania@en"],
    :rdfs/seeAlso ["https://www.gov.ro/en/"],
    :skos/definition
    "unitary, semi-presidential republic at the crossroads of Central, Eastern, and Southeastern Europe, bordering Bulgaria to the south, Ukraine to the north, Hungary to the west, Serbia to the southwest, and Moldova to the east"})
@@ -136,10 +124,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "cs",
-                 :rdf/value    "Vláda České republiky"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Czech Republic"}],
+   :rdfs/label [#voc/lstr "Vláda České republiky@cs"
+                #voc/lstr "Government of the Czech Republic@en"],
    :rdfs/seeAlso ["https://www.vlada.cz/en/"],
    :skos/definition
    "unitary, parliamentary, constitutional republic and multi-party, representative democracy, with the president as head of state and prime minister as head of government, that is a landlocked country in Central Europe bordered by Austria to the south, Germany to the west, Poland to the northeast and Slovakia to the southeast"})
@@ -152,12 +138,9 @@
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/NationalGovernment],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "be",
-                 :rdf/value    "Урад Рэспублікі Беларусь"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Belarus"}
-                {:rdf/language "ru",
-                 :rdf/value    "Правительство Республики Беларусь"}],
+   :rdfs/label [#voc/lstr "Урад Рэспублікі Беларусь@be"
+                #voc/lstr "Government of the Republic of Belarus@en"
+                #voc/lstr "Правительство Республики Беларусь@ru"],
    :rdfs/seeAlso ["https://www.bundeskanzleramt.gv.at/en.html"],
    :skos/definition
    "unitary presidential republic, a landlocked country in Eastern Europe bordered by Russia to the northeast, Ukraine to the south, Poland to the west, and Lithuania and Latvia to the northwest"})
@@ -170,10 +153,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "bg",
-                 :rdf/value    "Правителство на Република България"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Bulgaria"}],
+   :rdfs/label [#voc/lstr "Правителство на Република България@bg"
+                #voc/lstr "Government of the Republic of Bulgaria@en"],
    :rdfs/seeAlso ["https://gov.bg/"],
    :skos/definition
    "unitary parliamentary democracy where the prime minister is the head of government, located in Southeastern Europe bordered by Romania to the north, Serbia and North Macedonia to the west, Greece and Turkey to the south, and the Black Sea to the east"})
@@ -186,10 +167,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ro",
-                 :rdf/value    "Guvernul Republicii Moldova"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Moldova"}],
+   :rdfs/label [#voc/lstr "Guvernul Republicii Moldova@ro"
+                #voc/lstr "Government of the Republic of Moldova@en"],
    :rdfs/seeAlso ["https://gov.md/en/"],
    :skos/definition
    "unitary parliamentary constitutional republic that is a landlocked country in Eastern Europe, bordered by Romania to the west and Ukraine to the north, east, and south"})
@@ -202,10 +181,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "pl",
-                 :rdf/value    "Rząd Rzeczpospolita Polska"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Poland"}],
+   :rdfs/label [#voc/lstr "Rząd Rzeczpospolita Polska@pl"
+                #voc/lstr "Government of the Republic of Poland@en"],
    :rdfs/seeAlso ["https://www.gov.pl/"],
    :skos/definition
    "unitary, semi-presidential, constitutional, and representative democratic republic located in Central Europe and bordered by the Baltic Sea, Lithuania, and Russia's Kaliningrad Oblast to the north, Belarus and Ukraine to the east, Slovakia and the Czech Republic to the south, and Germany to the west"})
@@ -219,10 +196,8 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ru",
-                 :rdf/value    "Правительство Российской Федерации"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Russian Federation"}],
+   :rdfs/label [#voc/lstr "Правительство Российской Федерации@ru"
+                #voc/lstr "Government of the Russian Federation@en"],
    :rdfs/seeAlso ["http://government.ru/en/"],
    :skos/definition
    "federal, dominant-party and semi-presidential constitutional republic located in Eastern Europe and Northern Asia"})
@@ -235,10 +210,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sk",
-                 :rdf/value    "Vláda Slovenskej republiky"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Slovak Republic"}],
+   :rdfs/label [#voc/lstr "Vláda Slovenskej republiky@sk"
+                #voc/lstr "Government of the Slovak Republic@en"],
    :rdfs/seeAlso
    ["https://www.vlada.gov.sk/government-of-the-slovak-republic/"],
    :skos/definition
@@ -252,10 +225,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "uk",
-                 :rdf/value    "Уряд України"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of Ukraine"}],
+   :rdfs/label [#voc/lstr "Уряд України@uk"
+                #voc/lstr "Government of Ukraine@en"],
    :rdfs/seeAlso ["https://www.president.gov.ua/en/"],
    :skos/definition
    "unitary, mixed semi-parliamentary and semi-presidential, constitutional republic located in Eastern Europe, bordered by Russia to the north-east; Belarus to the north; Poland, Slovakia and Hungary to the west; and Romania, Moldova, and the Black Sea to the south"})
@@ -268,10 +239,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "hu",
-                 :rdf/value    "Magyar entitás"}
-                {:rdf/language "en",
-                 :rdf/value    "Hungarian entity"}],
+   :rdfs/label [#voc/lstr "Magyar entitás@hu" #voc/lstr "Hungarian entity@en"],
    :skos/definition "sovereign state and polity that is Hungary"})
 
 (def JurisdictionOfBelarus
@@ -283,12 +251,9 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "be",
-                 :rdf/value    "юрысдыкцыя Беларусі"}
-                {:rdf/language "en",
-                 :rdf/value    "юрисдикция Беларуси"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Belarus"}],
+   :rdfs/label [#voc/lstr "юрысдыкцыя Беларусі@be"
+                #voc/lstr "юрисдикция Беларуси@en"
+                #voc/lstr "jurisdiction of Belarus@en"],
    :skos/definition
    "jurisdiction of the judiciary of Belarus, consisting of the Supreme Court and specialized courts such as the Constitutional Court, which deals with specific issues related to constitutional and business law"})
 
@@ -301,10 +266,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "bg",
-                 :rdf/value    "юрисдикция на България"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Bulgaria"}],
+   :rdfs/label [#voc/lstr "юрисдикция на България@bg"
+                #voc/lstr "jurisdiction of Bulgaria@en"],
    :skos/definition
    "jurisdiction of the judiciary of Bulgaria, a civil law legal system under the Ministry of Justice, including the Supreme Administrative Court and the Supreme Court of Cassation, which are the highest courts of appeal and oversee the application of laws in subordinate courts"})
 
@@ -317,10 +280,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "cs",
-                 :rdf/value    "jurisdikce česka"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Czechia"}],
+   :rdfs/label [#voc/lstr "jurisdikce česka@cs"
+                #voc/lstr "jurisdiction of Czechia@en"],
    :skos/definition
    "jurisdiction of the judiciary of the Czech Republic, a civil law system grounded in the Constitution of the Czech Republic, including the Constitutional Court, Supreme Court, and Supreme Administrative Court, as well as district and county courts that are divided into civil, criminal, and administrative branches"})
 
@@ -332,10 +293,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Hungary"}
-                {:rdf/language "hu",
-                 :rdf/value    "Magyarország joghatósága"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Hungary@en"
+                #voc/lstr "Magyarország joghatósága@hu"],
    :skos/definition
    "jurisdiction of the judiciary of Hungary, a civil law system based primarily on German that is divided between courts with regular civil and criminal jurisdiction and administrative courts, including local courts, regional appellate courts, and the supreme court"})
 
@@ -348,10 +307,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ro",
-                 :rdf/value    "jurisdicția Moldovei"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Moldova"}],
+   :rdfs/label [#voc/lstr "jurisdicția Moldovei@ro"
+                #voc/lstr "jurisdiction of Moldova@en"],
    :skos/definition
    "jurisdiction of the judiciary of Moldova, which is the system of courts that interprets and applies the law in Moldova, including an independent Constitutional Court"})
 
@@ -364,10 +321,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "pl",
-                 :rdf/value    "jurysdykcja Polski"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Poland"}],
+   :rdfs/label [#voc/lstr "jurysdykcja Polski@pl"
+                #voc/lstr "jurisdiction of Poland@en"],
    :skos/definition
    "jurisdiction of the judiciary of Poland, a four-tier court system composed of the Supreme Court, the Supreme Administrative Court, Common Courts (District, Regional, Appellate) and the Military Court"})
 
@@ -379,10 +334,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ro",
-                 :rdf/value    "jurisdicția României"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Romania"}],
+   :rdfs/label [#voc/lstr "jurisdicția României@ro"
+                #voc/lstr "jurisdiction of Romania@en"],
    :skos/definition
    "jurisdiction of the judiciary of Romania, a civil law system influenced by the French system that is a hierarchical system of courts with the High Court of Cassation and Justice being the supreme court of Romania, and includes courts of appeal, county courts and local courts"})
 
@@ -395,10 +348,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ru",
-                 :rdf/value    "юрисдикция Российской Федерации"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Russian Federation"}],
+   :rdfs/label [#voc/lstr "юрисдикция Российской Федерации@ru"
+                #voc/lstr "jurisdiction of Russian Federation@en"],
    :skos/definition
    "jurisdiction of the judiciary of Russian Federation, which is the system of courts that interprets and applies the law in the Russian Federation, including Constitutional Court, Supreme Court and lower federal courts, whose judges are appointed by the Federation Council on the recommendation of the President"})
 
@@ -411,10 +362,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sk",
-                 :rdf/value    "jurisdikcia Slovenska"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Slovakia"}],
+   :rdfs/label [#voc/lstr "jurisdikcia Slovenska@sk"
+                #voc/lstr "jurisdiction of Slovakia@en"],
    :skos/definition
    "jurisdiction of the judiciary of the Slovak Republic, which is the system of courts that interprets and applies the law in Slovakia, whose highest judicial body is the Constitutional Court of Slovakia, which rules on constitutional issues"})
 
@@ -426,10 +375,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "uk",
-                 :rdf/value    "юрисдикція України"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Ukraine"}],
+   :rdfs/label [#voc/lstr "юрисдикція України@uk"
+                #voc/lstr "jurisdiction of Ukraine@en"],
    :skos/definition
    "jurisdiction of the judiciary of Ukraine, which is the system of courts that interprets and applies the law in Ukraine, including the Supreme Court of Ukraine, which is the highest judicial body in the system of courts of general jurisdiction in Ukraine"})
 
@@ -442,10 +389,8 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Moldovan entity"}
-                {:rdf/language "ro",
-                 :rdf/value    "Entitate moldovenească"}],
+   :rdfs/label [#voc/lstr "Moldovan entity@en"
+                #voc/lstr "Entitate moldovenească@ro"],
    :skos/definition "sovereign state and polity that is Moldova"})
 
 (def PolishEntity
@@ -457,10 +402,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Polish entity"}
-                {:rdf/language "pl",
-                 :rdf/value    "Podmiot polski"}],
+   :rdfs/label [#voc/lstr "Polish entity@en" #voc/lstr "Podmiot polski@pl"],
    :skos/definition "sovereign state and polity that is Poland"})
 
 (def RomanianEntity
@@ -471,10 +413,8 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Romanian entity"}
-                {:rdf/language "ro",
-                 :rdf/value    "Entitate românească"}],
+   :rdfs/label [#voc/lstr "Romanian entity@en"
+                #voc/lstr "Entitate românească@ro"],
    :skos/definition "sovereign state and polity that is Romania"})
 
 (def RussianEntity
@@ -486,10 +426,8 @@
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ru",
-                 :rdf/value    "Российское предприятие"}
-                {:rdf/language "en",
-                 :rdf/value    "Russian entity"}],
+   :rdfs/label [#voc/lstr "Российское предприятие@ru"
+                #voc/lstr "Russian entity@en"],
    :skos/definition
    "federated sovereignty and polity that is the Russian Federation"})
 
@@ -502,10 +440,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sk",
-                 :rdf/value    "Slovenský subjekt"}
-                {:rdf/language "en",
-                 :rdf/value    "Slovak entity"}],
+   :rdfs/label [#voc/lstr "Slovenský subjekt@sk" #voc/lstr "Slovak entity@en"],
    :skos/definition "sovereign state and polity that is Slovakia"})
 
 (def UkranianEntity
@@ -516,8 +451,6 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "uk",
-                 :rdf/value    "Українське утворення"}
-                {:rdf/language "en",
-                 :rdf/value    "Ukrainian entity"}],
+   :rdfs/label [#voc/lstr "Українське утворення@uk"
+                #voc/lstr "Ukrainian entity@en"],
    :skos/definition "sovereign state and polity that is Ukraine"})

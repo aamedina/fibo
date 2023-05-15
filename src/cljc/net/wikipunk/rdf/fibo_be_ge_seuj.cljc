@@ -59,10 +59,8 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sq",
-                 :rdf/value    "Entiteti shqiptar"}
-                {:rdf/language "en",
-                 :rdf/value    "Albanian entity"}],
+   :rdfs/label [#voc/lstr "Entiteti shqiptar@sq"
+                #voc/lstr "Albanian entity@en"],
    :skos/definition "sovereign state and polity that is Albania"})
 
 (def AndorranEntity
@@ -74,10 +72,8 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ca",
-                 :rdf/value    "Entitat andorrana"}
-                {:rdf/language "en",
-                 :rdf/value    "Andorran entity"}],
+   :rdfs/label [#voc/lstr "Entitat andorrana@ca"
+                #voc/lstr "Andorran entity@en"],
    :skos/definition "sovereign state and polity that is Andorra"})
 
 (def BosnianAndHerzegovinianEntity
@@ -89,14 +85,10 @@
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/FederatedSovereignty],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "hr",
-                 :rdf/value    "Bosanskohercegovački entitet"}
-                {:rdf/language "bs",
-                 :rdf/value    "Bosanskohercegovački entitet"}
-                {:rdf/language "sr",
-                 :rdf/value    "Босанскохерцеговачки ентитет"}
-                {:rdf/language "en",
-                 :rdf/value    "Bosnian and Herzegovinian entity"}],
+   :rdfs/label [#voc/lstr "Bosanskohercegovački entitet@hr"
+                #voc/lstr "Bosanskohercegovački entitet@bs"
+                #voc/lstr "Босанскохерцеговачки ентитет@sr"
+                #voc/lstr "Bosnian and Herzegovinian entity@en"],
    :skos/definition
    "federal sovereignty state and polity that is Bosnia and Herzegovina"})
 
@@ -109,10 +101,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "hr",
-                 :rdf/value    "Hrvatski entitet"}
-                {:rdf/language "en",
-                 :rdf/value    "Croatian entity"}],
+   :rdfs/label [#voc/lstr "Hrvatski entitet@hr" #voc/lstr "Croatian entity@en"],
    :skos/definition "sovereign state and polity that is Croatia"})
 
 (def GovernmentOfMontenegro
@@ -123,8 +112,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of Montenegro"},
+   :rdfs/label #voc/lstr "Government of Montenegro@en",
    :rdfs/seeAlso ["http://www.gov.me/en/homepage/"],
    :skos/definition
    "unitary, dominant-party, parliamentary constitutional republic that is located in South and Southeast Europe on the coast of the Balkans"})
@@ -138,15 +126,11 @@
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/FederalGovernment],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value
-                 "Government of the Federation of Bosnia and Herzegovina"}
-                {:rdf/language "hr",
-                 :rdf/value    "Vlada Federacije Bosne i Hercegovine"}
-                {:rdf/language "sr",
-                 :rdf/value    "Влада Федерације Босне и Херцеговине"}
-                {:rdf/language "bs",
-                 :rdf/value    "Vlada Federacije Bosne i Hercegovine"}],
+   :rdfs/label [#voc/lstr
+                 "Government of the Federation of Bosnia and Herzegovina@en"
+                #voc/lstr "Vlada Federacije Bosne i Hercegovine@hr"
+                #voc/lstr "Влада Федерације Босне и Херцеговине@sr"
+                #voc/lstr "Vlada Federacije Bosne i Hercegovine@bs"],
    :rdfs/seeAlso ["http://fbihvlada.gov.ba/english/"],
    :skos/definition
    "federal parliamentary constitutional republic that is a representative democracy, located in South and Southeast Europe, within the Balkans"})
@@ -159,10 +143,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "el",
-                 :rdf/value    "Κυβέρνηση της Ελληνικής Δημοκρατίας"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Hellenic Republic"}],
+   :rdfs/label [#voc/lstr "Κυβέρνηση της Ελληνικής Δημοκρατίας@el"
+                #voc/lstr "Government of the Hellenic Republic@en"],
    :rdfs/seeAlso
    ["https://www.mfa.gr/missionsabroad/en/about-greece/government-and-politics/"],
    :skos/definition
@@ -177,12 +159,9 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "la",
-                 :rdf/value    "Imperium in Consiliis Sanctae Sedis"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Holy See"}
-                {:rdf/language "it",
-                 :rdf/value    "Governo della Santa Sede"}],
+   :rdfs/label [#voc/lstr "Imperium in Consiliis Sanctae Sedis@la"
+                #voc/lstr "Government of the Holy See@en"
+                #voc/lstr "Governo della Santa Sede@it"],
    :rdfs/seeAlso ["http://www.vatican.va/content/vatican/en.html"],
    :skos/definition
    "unitary Christian absolute monarchy (under an ecclesiastical and elective theocracy), headquartered in, operates from, and exercises 'exclusive dominion' over the independent Vatican City State enclave in Rome, of which the pope is sovereign, administered by the Roman Curia"})
@@ -195,10 +174,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of the Kingdom of Spain"}
-                {:rdf/language "es",
-                 :rdf/value    "Gobierno del Reino de España"}],
+   :rdfs/label [#voc/lstr "Government of the Kingdom of Spain@en"
+                #voc/lstr "Gobierno del Reino de España@es"],
    :rdfs/seeAlso ["https://www.lamoncloa.gob.es/lang/en/Paginas/index.aspx"],
    :skos/definition
    "unitary parliamentary constitutional monarchy, whose monarch is the head of state and prime minister is the head of government, located in Southwestern Europe with some pockets of territory across the Strait of Gibraltar and the Atlantic Ocean"})
@@ -211,10 +188,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "pt",
-                 :rdf/value    "Governo da República Portuguesa"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Portuguese Republic"}],
+   :rdfs/label [#voc/lstr "Governo da República Portuguesa@pt"
+                #voc/lstr "Government of the Portuguese Republic@en"],
    :rdfs/seeAlso ["https://www.portugal.gov.pt/en/gc21"],
    :skos/definition
    "unitary, semi-presidential, constitutional, representative democratic republic, located mostly on the Iberian Peninsula, in southwestern Europe"})
@@ -227,10 +202,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of the Principality of Andorra"}
-                {:rdf/language "ca",
-                 :rdf/value    "Govern del Principat d’Andorra"}],
+   :rdfs/label [#voc/lstr "Government of the Principality of Andorra@en"
+                #voc/lstr "Govern del Principat d’Andorra@ca"],
    :rdfs/seeAlso ["https://www.govern.ad/"],
    :skos/definition
    "unitary parliamentary semi-elective diarchy, a sovereign landlocked microstate on the Iberian Peninsula, in the eastern Pyrenees, bordered by France to the north and Spain to the south"})
@@ -243,10 +216,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sq",
-                 :rdf/value    "Qeveria e Republikës së Shqipërisë"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Albania"}],
+   :rdfs/label [#voc/lstr "Qeveria e Republikës së Shqipërisë@sq"
+                #voc/lstr "Government of the Republic of Albania@en"],
    :rdfs/seeAlso ["http://parlament.al/"],
    :skos/definition
    "unitary parliamentary constitutional republic, located in Southeast Europe on the Adriatic and Ionian Sea within the Mediterranean Sea"})
@@ -259,10 +230,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "hr",
-                 :rdf/value    "Vlada Republike Hrvatske"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Croatia"}],
+   :rdfs/label [#voc/lstr "Vlada Republike Hrvatske@hr"
+                #voc/lstr "Government of the Republic of Croatia@en"],
    :rdfs/seeAlso ["https://vlada.gov.hr/"],
    :skos/definition
    "unitary parliamentary constitutional republic, located in Southeast Europe, bordering Slovenia to the northwest, Hungary to the northeast, Serbia to the east, Bosnia and Herzegovina, and Montenegro to the southeast, sharing a maritime border with Italy"})
@@ -275,10 +244,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "it",
-                 :rdf/value    "Governo della Repubblica Italiana"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Italy"}],
+   :rdfs/label [#voc/lstr "Governo della Repubblica Italiana@it"
+                #voc/lstr "Government of the Republic of Italy@en"],
    :rdfs/seeAlso ["http://www.governo.it/"],
    :skos/definition
    "unitary parliamentary, constitutional, democratic republic, consisting of a peninsula bordering the Alps and surrounded by several islands, located in south-central Europe"})
@@ -291,8 +258,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of the Republic of Malta"},
+   :rdfs/label #voc/lstr "Government of the Republic of Malta@en",
    :rdfs/seeAlso ["https://www.gov.mt/"],
    :skos/definition
    "unitary parliamentary constitutional republic modelled on the Westminster system that is a Southern European island country consisting of an archipelago in the Mediterranean Sea"})
@@ -305,10 +271,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "mk",
-                 :rdf/value    "Влада на Република Северна Македонија"}
-                {:rdf/language "en",
-                 :rdf/value "Government of the Republic of North Macedonia"}],
+   :rdfs/label [#voc/lstr "Влада на Република Северна Македонија@mk"
+                #voc/lstr "Government of the Republic of North Macedonia@en"],
    :rdfs/seeAlso ["https://vlada.mk/"],
    :skos/definition
    "unitary parliamentary, constitutional, democratic republic, located in the Balkan Peninsula in Southeast Europe"})
@@ -321,10 +285,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "it",
-                 :rdf/value    "Governo della Repubblica di San Marino"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of San Marino"}],
+   :rdfs/label [#voc/lstr "Governo della Repubblica di San Marino@it"
+                #voc/lstr "Government of the Republic of San Marino@en"],
    :rdfs/seeAlso ["http://www.sanmarino.sm/on-line/en/home.html"],
    :skos/definition
    "unitary parliamentary, diarchic, directorial republic that is a microstate in Southern Europe, completely surrounded by Italy, located on the northeastern side of the Apennine Mountains"})
@@ -337,10 +299,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sr",
-                 :rdf/value    "Влада Републике Србије"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Serbia"}],
+   :rdfs/label [#voc/lstr "Влада Републике Србије@sr"
+                #voc/lstr "Government of the Republic of Serbia@en"],
    :rdfs/seeAlso ["https://www.srbija.gov.rs/"],
    :skos/definition
    "unitary, dominant-party, parliamentary constitutional republic that is situated at the crossroads of Central and Southeast Europe in the southern Pannonian Plain and the central Balkans"})
@@ -353,10 +313,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sl",
-                 :rdf/value    "Vlada Republike Slovenije"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Slovenia"}],
+   :rdfs/label [#voc/lstr "Vlada Republike Slovenije@sl"
+                #voc/lstr "Government of the Republic of Slovenia@en"],
    :rdfs/seeAlso ["https://www.gov.si/"],
    :skos/definition
    "unitary, parliamentary constitutional republic bordered by Italy to the west, Austria to the north, Hungary to the northeast, Croatia to the southeast, and the Adriatic Sea to the southwest"})
@@ -370,10 +328,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "el",
-                 :rdf/value    "Ελληνική οντότητα"}
-                {:rdf/language "en",
-                 :rdf/value    "Greek entity"}],
+   :rdfs/label [#voc/lstr "Ελληνική οντότητα@el" #voc/lstr "Greek entity@en"],
    :skos/definition "sovereign state and polity that is Greece"})
 
 (def HolySeeEntity
@@ -384,10 +339,8 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Holy See entity"}
-                {:rdf/language "it",
-                 :rdf/value    "Entità della Santa Sede"}],
+   :rdfs/label [#voc/lstr "Holy See entity@en"
+                #voc/lstr "Entità della Santa Sede@it"],
    :skos/definition "sovereign state and polity that is the Holy See"})
 
 (def ItalianEntity
@@ -399,10 +352,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Italian entity"}
-                {:rdf/language "it",
-                 :rdf/value    "Ente italiano"}],
+   :rdfs/label [#voc/lstr "Italian entity@en" #voc/lstr "Ente italiano@it"],
    :skos/definition "sovereign state and polity that is Italy"})
 
 (def JurisdictionOfAlbania
@@ -414,10 +364,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Albania"}
-                {:rdf/language "sq",
-                 :rdf/value    "juridiksioni i Shqipërisë"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Albania@en"
+                #voc/lstr "juridiksioni i Shqipërisë@sq"],
    :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Supreme_Court_of_Albania"],
    :skos/definition
    "jurisdiction of the judiciary of Albania, a system of courts that includes the supreme court, constitutional court, appeal court and administrative court, and whose Supreme Court of the Republic of Albania is the highest court and is the final court of appeal"})
@@ -431,10 +379,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Andorra"}
-                {:rdf/language "ca",
-                 :rdf/value    "jurisdicció d’Andorra"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Andorra@en"
+                #voc/lstr "jurisdicció d’Andorra@ca"],
    :skos/definition
    "jurisdiction of the judiciary of Andorra, composed of the Magistrates Court, the Criminal Law Court, the High Court of Andorra, and the Constitutional Court"})
 
@@ -447,14 +393,10 @@
    :rdf/type [:owl/NamedIndividual :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sr",
-                 :rdf/value    "надлежност Босне и Херцеговине"}
-                {:rdf/language "hr",
-                 :rdf/value    "nadležnost Bosne i Hercegovine"}
-                {:rdf/language "bs",
-                 :rdf/value    "nadležnost Bosne i Hercegovine"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Bosnia and Herzegovina"}],
+   :rdfs/label [#voc/lstr "надлежност Босне и Херцеговине@sr"
+                #voc/lstr "nadležnost Bosne i Hercegovine@hr"
+                #voc/lstr "nadležnost Bosne i Hercegovine@bs"
+                #voc/lstr "jurisdiction of Bosnia and Herzegovina@en"],
    :rdfs/seeAlso
    ["http://www.mpr.gov.ba/organizacija_nadleznosti/pravosudje/Default.aspx"],
    :skos/definition
@@ -469,10 +411,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "hr",
-                 :rdf/value    "nadležnost Hrvatske"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Croatia"}],
+   :rdfs/label [#voc/lstr "nadležnost Hrvatske@hr"
+                #voc/lstr "jurisdiction of Croatia@en"],
    :rdfs/seeAlso ["https://www.usud.hr/"],
    :skos/definition
    "jurisdiction of the judiciary of Croatia, a civil law legal system in which law arises primarily from written statutes, influenced by German and Austrian legal systems, whose national courts include the Constitutional Court, which oversees violations of the Constitution, and the Supreme Court, which is the highest court of appeal"})
@@ -486,10 +426,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "el",
-                 :rdf/value    "δικαιοδοσία της Ελλάδας"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Greece"}],
+   :rdfs/label [#voc/lstr "δικαιοδοσία της Ελλάδας@el"
+                #voc/lstr "jurisdiction of Greece@en"],
    :rdfs/seeAlso
    ["https://www.mfa.gr/missionsabroad/en/about-greece/government-and-politics/judicial-power.html"],
    :skos/definition
@@ -504,10 +442,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Italy"}
-                {:rdf/language "it",
-                 :rdf/value    "giurisdizione dell'Italia"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Italy@en"
+                #voc/lstr "giurisdizione dell'Italia@it"],
    :skos/definition
    "jurisdiction of the judiciary of Italy, a system of courts that is based on Roman law modified by the Napoleonic code and later statutes, comprising the Supreme Court of Cassation, the highest court in Italy for both criminal and civil appeal cases, and the Constitutional Court of Italy (Corte Costituzionale)"})
 
@@ -520,8 +456,7 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "jurisdiction of Malta"},
+   :rdfs/label #voc/lstr "jurisdiction of Malta@en",
    :rdfs/seeAlso
    ["https://justice.gov.mt/en/justice/Pages/The-Judiciary-in-Malta.aspx"],
    :skos/definition
@@ -535,8 +470,7 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "jurisdiction of Montenegro"},
+   :rdfs/label #voc/lstr "jurisdiction of Montenegro@en",
    :skos/definition
    "jurisdiction of the judiciary of Montenegro, that interprets and applies the laws of Montenegro, and has been working with the European Union over the last several years to increase judicial independence and accountability"})
 
@@ -549,10 +483,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "mk",
-                 :rdf/value    "јурисдикција на Северна Македонија"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of North Macedonia"}],
+   :rdfs/label [#voc/lstr "јурисдикција на Северна Македонија@mk"
+                #voc/lstr "jurisdiction of North Macedonia@en"],
    :rdfs/seeAlso
    ["https://www.sobranie.mk/the-constitution-of-the-republic-of-macedonia-ns_article-constitution-of-the-republic-of-north-macedonia.nspx"],
    :skos/definition
@@ -567,10 +499,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "pt",
-                 :rdf/value    "jurisdição de portugal"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Portugal"}],
+   :rdfs/label [#voc/lstr "jurisdição de portugal@pt"
+                #voc/lstr "jurisdiction of Portugal@en"],
    :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Judiciary_of_Portugal"],
    :skos/definition
    "jurisdiction of the judiciary of Portugal, a system of courts that together constitute one of the four organs of Sovereignty as defined by the Portuguese Constitution"})
@@ -584,10 +514,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of San Marino"}
-                {:rdf/language "it",
-                 :rdf/value    "giurisdizione di San Marino"}],
+   :rdfs/label [#voc/lstr "jurisdiction of San Marino@en"
+                #voc/lstr "giurisdizione di San Marino@it"],
    :skos/definition
    "jurisdiction of the judiciary of San Marino, including the Council of Twelve, which forms the judicial branch during the period of legislature of the Council"})
 
@@ -600,10 +528,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sr",
-                 :rdf/value    "надлежност Србије"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Serbia"}],
+   :rdfs/label [#voc/lstr "надлежност Србије@sr"
+                #voc/lstr "jurisdiction of Serbia@en"],
    :skos/definition
    "jurisdiction of the judiciary of Serbia, a three-tiered judicial system that includes the Supreme Court of Cassation as the court of the last resort, Courts of Appeal as the appellate instance, and Basic and High courts as the general jurisdictions at first instance"})
 
@@ -616,10 +542,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sl",
-                 :rdf/value    "pristojnost Slovenije"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Slovenia"}],
+   :rdfs/label [#voc/lstr "pristojnost Slovenije@sl"
+                #voc/lstr "jurisdiction of Slovenia@en"],
    :rdfs/seeAlso ["http://www.sodisce.si/"],
    :skos/definition
    "jurisdiction of the judiciary of Slovenia, a system of courts with general responsibilities and specialised courts that deal with matters relating to specific legal areas, including a Constitutional Court at the highest level"})
@@ -633,10 +557,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Spain"}
-                {:rdf/language "es",
-                 :rdf/value    "jurisdicción de España"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Spain@en"
+                #voc/lstr "jurisdicción de España@es"],
    :rdfs/seeAlso ["http://www.poderjudicial.es/cgpj/es/Poder_Judicial"],
    :skos/definition
    "jurisdiction of judiciary of Spain, a system of courts that includes senior judges - the President and judges of the Constitutional Court (the highest tribunal in the Kingdom) - that interprets and applies the law in Spain"})
@@ -649,12 +571,9 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of the Holy See"}
-                {:rdf/language "la",
-                 :rdf/value    "ius proprium Sanctae Sedis"}
-                {:rdf/language "it",
-                 :rdf/value    "giurisdizione della Santa Sede"}],
+   :rdfs/label [#voc/lstr "jurisdiction of the Holy See@en"
+                #voc/lstr "ius proprium Sanctae Sedis@la"
+                #voc/lstr "giurisdizione della Santa Sede@it"],
    :skos/definition
    "jurisdiction of the Bishop of Rome, known as the pope, which includes the apostolic episcopal see of the Diocese of Rome with universal ecclesiastical jurisdiction of the worldwide Catholic Church, as well as a sovereign entity of international law, governing the Vatican City"})
 
@@ -667,8 +586,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Maltese entity"},
+   :rdfs/label #voc/lstr "Maltese entity@en",
    :skos/definition "sovereign state and polity that is Malta"})
 
 (def MontenegrinEntity
@@ -679,8 +597,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Montenegrin entity"},
+   :rdfs/label #voc/lstr "Montenegrin entity@en",
    :skos/definition "sovereign state and polity that is Montenegro"})
 
 (def NorthMacedonianEntity
@@ -692,10 +609,8 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "mk",
-                 :rdf/value    "Северномакедонски субјект"}
-                {:rdf/language "en",
-                 :rdf/value    "North Macedonian entity"}],
+   :rdfs/label [#voc/lstr "Северномакедонски субјект@mk"
+                #voc/lstr "North Macedonian entity@en"],
    :skos/definition "sovereign state and polity that is North Macedonia"})
 
 (def PortugueseEntity
@@ -707,10 +622,8 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Portuguese entity"}
-                {:rdf/language "pt",
-                 :rdf/value    "Entidade portuguesa"}],
+   :rdfs/label [#voc/lstr "Portuguese entity@en"
+                #voc/lstr "Entidade portuguesa@pt"],
    :skos/definition "sovereign state and polity that is Portugal"})
 
 (def SammarineseEntity
@@ -722,10 +635,8 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Sammarinese entity"}
-                {:rdf/language "it",
-                 :rdf/value    "Ente sammarinese"}],
+   :rdfs/label [#voc/lstr "Sammarinese entity@en"
+                #voc/lstr "Ente sammarinese@it"],
    :skos/definition "sovereign state and polity that is San Marino"})
 
 (def SerbianEntity
@@ -737,10 +648,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sr",
-                 :rdf/value    "Српски ентитет"}
-                {:rdf/language "en",
-                 :rdf/value    "Serbian entity"}],
+   :rdfs/label [#voc/lstr "Српски ентитет@sr" #voc/lstr "Serbian entity@en"],
    :skos/definition "sovereign state and polity that is Serbia"})
 
 (def SloveneEntity
@@ -752,10 +660,8 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sl",
-                 :rdf/value    "Slovenska entiteta"}
-                {:rdf/language "en",
-                 :rdf/value    "Slovene entity"}],
+   :rdfs/label [#voc/lstr "Slovenska entiteta@sl"
+                #voc/lstr "Slovene entity@en"],
    :skos/definition "sovereign state and polity that is Slovenia"})
 
 (def SpanishEntity
@@ -767,8 +673,5 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Spanish entity"}
-                {:rdf/language "es",
-                 :rdf/value    "Entidad española"}],
+   :rdfs/label [#voc/lstr "Spanish entity@en" #voc/lstr "Entidad española@es"],
    :skos/definition "sovereign state and polity that is Spain"})

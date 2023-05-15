@@ -43,8 +43,7 @@
    :rdfa/prefix "fibo-fnd-txn-sec",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Securities Transactions Ontology"}})
+   :rdfs/label #voc/lstr "Securities Transactions Ontology@en"})
 
 (def FinancialPrimaryMarketTransaction
   "financial primary market transaction"
@@ -52,13 +51,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "financial primary market transaction"},
+   :rdfs/label #voc/lstr "financial primary market transaction@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-txn-sec/follows,
                       :owl/someValuesFrom :fibo-fnd-txn-sec/SettlementProcess,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-txn-rea/ContractualTransaction
-                     :fibo-fnd-txn-mkt/MarketTransaction]})
+                     :fibo-fnd-txn-mkt/MarketTransaction
+                     :fibo-fnd-txn-sec/FinancialPrimaryMarketTransaction]})
 
 (def FinancialSecuritiesSecondaryMarketTransaction
   "A Transaction in which some negotiable security is provided in exchange for some Consideration."
@@ -66,11 +65,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value "financial securities secondary market transaction"},
+   :rdfs/label #voc/lstr "financial securities secondary market transaction@en",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-txn-sec/embodies,
-     :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionContract,
+   [{:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
+     :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionCounterparty,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
      :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionPrincipal,
@@ -79,6 +77,79 @@
      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
      :rdf/type           :owl/Restriction}
     :fibo-fnd-txn-mkt/MarketTransaction
+    {:owl/onProperty     :fibo-fnd-txn-sec/embodies,
+     :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionContract,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-txn-mkt/consideration,
+     :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-acc-cur/AmountOfMoney
+                                        :fibo-fbc-fi-fi/Security],
+                          :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-txn-rea/ContractualTransaction
+    :fibo-fnd-txn-sec/FinancialSecuritiesSecondaryMarketTransaction],
+   :skos/definition
+   #voc/lstr
+    "A Transaction in which some negotiable security is provided in exchange for some Consideration.@en"})
+
+(def SecuritiesTransactionContract
+  "The contract (written or implied) which governs the transaction of securities in the secondary Market."
+  {:db/ident :fibo-fnd-txn-sec/SecuritiesTransactionContract,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
+   :rdfs/label #voc/lstr "securities transaction contract@en",
+   :rdfs/subClassOf
+   [{:owl/onProperty :fibo-fnd-txn-sec/governs,
+     :owl/someValuesFrom
+     :fibo-fnd-txn-sec/FinancialSecuritiesSecondaryMarketTransaction,
+     :rdf/type :owl/Restriction}
+    :fibo-fnd-txn-rea/EconomicContract
+    :fibo-fnd-txn-sec/SecuritiesTransactionContract],
+   :skos/definition
+   #voc/lstr
+    "The contract (written or implied) which governs the transaction of securities in the secondary Market.@en",
+   :skos/editorialNote
+   #voc/lstr
+    "This is in line with the REA Ontology in which all Transactions are embodied in some Contract, whether written or implied. forms part of future \"Transaction\" model to be reviewed, but is ancestral to Options contract and transactions model.@en"})
+
+(def SecuritiesTransactionCounterparty
+  "securities transaction counterparty"
+  {:db/ident :fibo-fnd-txn-sec/SecuritiesTransactionCounterparty,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
+   :rdfs/label #voc/lstr "securities transaction counterparty@en",
+   :rdfs/subClassOf [:fibo-fnd-txn-mkt/TransactionCounterparty
+                     :fibo-fnd-txn-sec/SecuritiesTransactionCounterparty]})
+
+(def SecuritiesTransactionPrincipal
+  "securities transaction principal"
+  {:db/ident :fibo-fnd-txn-sec/SecuritiesTransactionPrincipal,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
+   :rdfs/label #voc/lstr "securities transaction principal@en",
+   :rdfs/subClassOf [:fibo-fnd-txn-mkt/TransactionPrincipal
+                     :fibo-fnd-txn-sec/SecuritiesTransactionPrincipal]})
+
+(def SettlementProcess
+  "settlement process"
+  {:db/ident :fibo-fnd-txn-sec/SettlementProcess,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
+   :rdfs/label #voc/lstr "settlement process@en"})
+
+(def WhenIssuedTransaction
+  "Trading in securities ahead of them being traded."
+  {:db/ident :fibo-fnd-txn-sec/WhenIssuedTransaction,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
+   :rdfs/label #voc/lstr "when issued transaction@en",
+   :rdfs/subClassOf
+   [:fibo-fnd-txn-sec/FinancialSecuritiesSecondaryMarketTransaction
+    :fibo-fnd-txn-sec/WhenIssuedTransaction
     {:owl/onProperty     :fibo-fnd-txn-mkt/consideration,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-acc-cur/AmountOfMoney
                                         :fibo-fbc-fi-fi/Security],
@@ -87,77 +158,19 @@
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
      :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionCounterparty,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-txn-rea/ContractualTransaction],
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "A Transaction in which some negotiable security is provided in exchange for some Consideration."}})
-
-(def SecuritiesTransactionContract
-  "The contract (written or implied) which governs the transaction of securities in the secondary Market."
-  {:db/ident :fibo-fnd-txn-sec/SecuritiesTransactionContract,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities transaction contract"},
-   :rdfs/subClassOf
-   [{:owl/onProperty :fibo-fnd-txn-sec/governs,
-     :owl/someValuesFrom
-     :fibo-fnd-txn-sec/FinancialSecuritiesSecondaryMarketTransaction,
-     :rdf/type :owl/Restriction}
-    :fibo-fnd-txn-rea/EconomicContract],
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The contract (written or implied) which governs the transaction of securities in the secondary Market."},
-   :skos/editorialNote
-   {:rdf/language "en",
-    :rdf/value
-    "This is in line with the REA Ontology in which all Transactions are embodied in some Contract, whether written or implied. forms part of future \"Transaction\" model to be reviewed, but is ancestral to Options contract and transactions model."}})
-
-(def SecuritiesTransactionCounterparty
-  "securities transaction counterparty"
-  {:db/ident :fibo-fnd-txn-sec/SecuritiesTransactionCounterparty,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities transaction counterparty"},
-   :rdfs/subClassOf :fibo-fnd-txn-mkt/TransactionCounterparty})
-
-(def SecuritiesTransactionPrincipal
-  "securities transaction principal"
-  {:db/ident :fibo-fnd-txn-sec/SecuritiesTransactionPrincipal,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities transaction principal"},
-   :rdfs/subClassOf :fibo-fnd-txn-mkt/TransactionPrincipal})
-
-(def SettlementProcess
-  "settlement process"
-  {:db/ident :fibo-fnd-txn-sec/SettlementProcess,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "settlement process"}})
-
-(def WhenIssuedTransaction
-  "Trading in securities ahead of them being traded."
-  {:db/ident :fibo-fnd-txn-sec/WhenIssuedTransaction,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "when issued transaction"},
-   :rdfs/subClassOf
-   :fibo-fnd-txn-sec/FinancialSecuritiesSecondaryMarketTransaction,
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "Trading in securities ahead of them being traded."}})
+    :fibo-fnd-txn-mkt/MarketTransaction
+    {:owl/onProperty     :fibo-fnd-txn-sec/embodies,
+     :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionContract,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-txn-rea/ContractualTransaction
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
+     :owl/someValuesFrom :fibo-fnd-txn-sec/SecuritiesTransactionPrincipal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-txn-rea/subject,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}],
+   :skos/definition #voc/lstr
+                     "Trading in securities ahead of them being traded.@en"})
 
 (def embodies
   "embodies"
@@ -166,10 +179,10 @@
    :rdfs/domain :fibo-fnd-txn-sec/FinancialSecuritiesSecondaryMarketTransaction,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "embodies"},
+   :rdfs/label #voc/lstr "embodies@en",
    :rdfs/range :fibo-fnd-txn-sec/SecuritiesTransactionContract,
-   :rdfs/subPropertyOf :fibo-fnd-txn-rea/transactionEmbodiesEconomicAgreement})
+   :rdfs/subPropertyOf [:fibo-fnd-txn-rea/transactionEmbodiesEconomicAgreement
+                        :fibo-fnd-txn-sec/embodies]})
 
 (def follows
   "follows"
@@ -178,11 +191,10 @@
    :rdfs/domain :fibo-fnd-txn-sec/FinancialPrimaryMarketTransaction,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "follows"},
+   :rdfs/label #voc/lstr "follows@en",
    :rdfs/range :fibo-fnd-txn-sec/SettlementProcess,
-   :rdfs/subPropertyOf
-   :fibo-fnd-txn-rea/transactionEventFollowsBusinessProcess})
+   :rdfs/subPropertyOf [:fibo-fnd-txn-rea/transactionEventFollowsBusinessProcess
+                        :fibo-fnd-txn-sec/follows]})
 
 (def governs
   "governs"
@@ -192,10 +204,9 @@
    :rdfs/domain :fibo-fnd-txn-sec/SecuritiesTransactionContract,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "governs"},
+   :rdfs/label #voc/lstr "governs@en",
    :rdfs/range :fibo-fnd-txn-sec/FinancialSecuritiesSecondaryMarketTransaction,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/governs})
+   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/governs :fibo-fnd-txn-sec/governs]})
 
 (def offsetForWIIssueDate
   "Used to calculate actual settlement date from given WI issue date. If issue date is unknwn, this determines how many days form the issue date it's going to settle."
@@ -204,10 +215,8 @@
    :rdfs/domain :fibo-fnd-txn-sec/WhenIssuedTransaction,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "offset for w i issue date"},
+   :rdfs/label #voc/lstr "offset for w i issue date@en",
    :rdfs/range :xsd/integer,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Used to calculate actual settlement date from given WI issue date. If issue date is unknwn, this determines how many days form the issue date it's going to settle."}})
+   #voc/lstr
+    "Used to calculate actual settlement date from given WI issue date. If issue date is unknwn, this determines how many days form the issue date it's going to settle.@en"})

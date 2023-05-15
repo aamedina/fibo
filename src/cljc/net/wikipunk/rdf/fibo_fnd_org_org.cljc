@@ -81,7 +81,8 @@
                                            :fibo-fnd-pty-pty/IndependentParty,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                     :fibo-fnd-pty-pty/PartyInRole
+                     :fibo-fnd-org-org/MemberBearingOrganization],
    :skos/definition
    "role of a group or organization that has members that are people or other organizations"})
 
@@ -91,8 +92,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "membership"},
+   :rdfs/label #voc/lstr "membership@en",
    :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#class-membership"],
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-org-org/hasOrganizationMember,
                       :owl/someValuesFrom :fibo-fnd-org-org/OrganizationMember,
@@ -101,7 +101,8 @@
                       :owl/someValuesFrom
                       :fibo-fnd-org-org/MemberBearingOrganization,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-pty-pty/Situation],
+                     :fibo-fnd-pty-pty/Situation
+                     :fibo-fnd-org-org/Membership],
    :skos/definition
    "situation, corresponding to an n-ary relation, in which some group or organization has at least one member (person or organization) for some period of time"})
 
@@ -113,24 +114,24 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "organization"},
+   :rdfs/label #voc/lstr "organization@en",
    :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:Organization"],
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-gao-obj/Goal,
-                      :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
+   :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty    :cmns-col/hasMember,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-pty-pty/IndependentParty
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-org-org/OrganizationName,
                       :owl/onProperty :cmns-dsg/hasName,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-gao-obj/Goal,
+                      :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
+                      :rdf/type       :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fnd-org-org/Organization,
                       :owl/onProperty    :cmns-col/hasPart,
-                      :rdf/type          :owl/Restriction}],
+                      :rdf/type          :owl/Restriction}
+                     :fibo-fnd-org-org/Organization],
    :skos/definition
    "collection of one or more people, or groups of people formed together into a community or other social, commercial or political structure to act, or that is designated to act, towards some purpose, such as to meet a need or pursue collective goals on a continuing basis",
    :skos/example
@@ -145,7 +146,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
    :rdfs/label "organization identification scheme",
-   :rdfs/subClassOf :cmns-id/IdentificationScheme,
+   :rdfs/subClassOf [:cmns-id/IdentificationScheme
+                     :fibo-fnd-org-org/OrganizationIdentificationScheme],
    :skos/definition
    "identification scheme dedicated to the unique identification of organizations"})
 
@@ -167,7 +169,8 @@
                       :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :cmns-id/Identifier],
+                     :cmns-id/Identifier
+                     :fibo-fnd-org-org/OrganizationIdentifier],
    :skos/definition
    "identifier assigned to an organization within an organization identification scheme, and unique within that scheme"})
 
@@ -185,7 +188,8 @@
                                            :owl/onProperty :cmns-col/isMemberOf,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                     :fibo-fnd-pty-pty/PartyInRole
+                     :fibo-fnd-org-org/OrganizationMember],
    :skos/definition
    "party (person or organization) that has a membership role with respect to some organization"})
 
@@ -204,7 +208,8 @@
                       :owl/onClass    :fibo-fnd-org-org/Organization,
                       :owl/onProperty :cmns-dsg/isNameOf,
                       :rdf/type       :owl/Restriction}
-                     :cmns-cxtdsg/ContextualName],
+                     :cmns-cxtdsg/ContextualName
+                     :fibo-fnd-org-org/OrganizationName],
    :skos/definition
    "designation by which some organization is known in some context"})
 
@@ -223,7 +228,8 @@
                       :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :cmns-id/Identifier],
+                     :cmns-id/Identifier
+                     :fibo-fnd-org-org/OrganizationPartIdentifier],
    :skos/definition
    "identifier allocated to a particular organizational sub-unit"})
 
@@ -243,7 +249,23 @@
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-org-org/Organization,
                       :owl/onProperty    :cmns-col/isPartOf,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-org-org/Organization],
+                     :fibo-fnd-org-org/Organization
+                     :fibo-fnd-org-org/OrganizationalSubUnit
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-gao-obj/Goal,
+                      :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/allValuesFrom :fibo-fnd-org-org/Organization,
+                      :owl/onProperty    :cmns-col/hasPart,
+                      :rdf/type          :owl/Restriction}
+                     {:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty    :cmns-col/hasMember,
+                      :rdf/type          :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-org-org/OrganizationName,
+                      :owl/onProperty :cmns-dsg/hasName,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "any department, service, and other entity within a larger organization that only has full recognition within the context of that organization, but requires identification for some purpose"})
 
@@ -258,7 +280,8 @@
    :rdfs/label "has membership role",
    :rdfs/range :fibo-fnd-org-org/MemberBearingOrganization,
    :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:organization"],
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasActor,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasActor
+                        :fibo-fnd-org-org/hasMembership],
    :skos/definition
    "identifies the organization acting in the role of having members in an organizational membership situation"})
 
@@ -273,7 +296,8 @@
    :rdfs/label "has organization member",
    :rdfs/range :fibo-fnd-org-org/OrganizationMember,
    :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:member"],
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasUndergoer,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasUndergoer
+                        :fibo-fnd-org-org/hasOrganizationMember],
    :skos/definition
    "indicates the party that is the member in an organizational membership situation"})
 
@@ -288,7 +312,7 @@
    :rdfs/label "has sub-unit",
    :rdfs/range :fibo-fnd-org-org/OrganizationalSubUnit,
    :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:hasSubOrganization"],
-   :rdfs/subPropertyOf :cmns-col/hasPart,
+   :rdfs/subPropertyOf [:cmns-col/hasPart :fibo-fnd-org-org/hasSubUnit],
    :skos/definition "relates an organization to a part of that organization"})
 
 (def isMembershipPartyIn
@@ -300,7 +324,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
    :rdfs/label "is membership party in",
    :rdfs/range :fibo-fnd-org-org/Membership,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsIn,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/actsIn
+                        :fibo-fnd-org-org/isMembershipPartyIn],
    :skos/definition
    "indicates the context of membership in which the party plays the role of having members"})
 
@@ -314,7 +339,8 @@
    :rdfs/label "is organization member",
    :rdfs/range :fibo-fnd-org-org/Membership,
    :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:role"],
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/undergoes,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/undergoes
+                        :fibo-fnd-org-org/isOrganizationMember],
    :skos/definition
    "indicates the context of membership in which some party is an organization member"})
 
@@ -328,5 +354,5 @@
    :rdfs/label "is sub-unit of",
    :rdfs/range :fibo-fnd-org-org/Organization,
    :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"],
-   :rdfs/subPropertyOf :cmns-col/isPartOf,
+   :rdfs/subPropertyOf [:cmns-col/isPartOf :fibo-fnd-org-org/isSubUnitOf],
    :skos/definition "relates a part of an organization to the larger entity"})

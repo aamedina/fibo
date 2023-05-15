@@ -70,8 +70,7 @@
    :rdf/type :owl/Ontology,
    :rdfa/prefix "fibo-sec-fund-fund",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Funds Ontology"},
+   :rdfs/label #voc/lstr "Funds Ontology@en",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds.rdf version of this ontology was modified to move the definition of SpecialPurposeVehicle to the Pools ontology to make it available for use more generally."
     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds.rdf version of this ontology was modified to eliminate a deprecated element for SpecialPurposeVehicle, which was moved to Pools last quarter."
@@ -82,72 +81,115 @@
 
 (def ClosedEndInvestment
   "investment fund that has a fixed number of shares offered by an investment company through an initial public offering"
-  {:cmns-av/synonym {:rdf/language "en",
-                     :rdf/value    "closed-end fund"},
+  {:cmns-av/synonym #voc/lstr "closed-end fund@en",
    :db/ident :fibo-sec-fund-fund/ClosedEndInvestment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "closed-end investment"},
+   :rdfs/label #voc/lstr "closed-end investment@en",
    :rdfs/subClassOf [{:owl/hasValue   {:xsd/boolean false},
                       :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
                       :rdf/type       :owl/Restriction}
-                     :fibo-sec-sec-pls/ManagedInvestment],
+                     :fibo-sec-sec-pls/ManagedInvestment
+                     :fibo-sec-fund-fund/ClosedEndInvestment
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
+                     :fibo-sec-sec-pls/PooledFund
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-fund/LegalFundStructure,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "investment fund that has a fixed number of shares offered by an investment company through an initial public offering"}})
+   #voc/lstr
+    "investment fund that has a fixed number of shares offered by an investment company through an initial public offering@en"})
 
 (def CollectiveInvestmentVehicle
   "assets pooled by investors whose share capital remains separate from the assets of the vehicle"
   {:cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019"},
+   #voc/lstr
+    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019@en",
    :cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Collective investment vehicles are typically organized and operated by management companies, banks, or trust companies. Shares or units are issued in the form of unit trusts, mutual funds, or other similar contracts. Common kinds of funds include pension funds, insurance funds, foundations, and endowments. Such pools are often invested and professionally managed, including investment pools, umbrella pools, share class pools, etc."},
+   #voc/lstr
+    "Collective investment vehicles are typically organized and operated by management companies, banks, or trust companies. Shares or units are issued in the form of unit trusts, mutual funds, or other similar contracts. Common kinds of funds include pension funds, insurance funds, foundations, and endowments. Such pools are often invested and professionally managed, including investment pools, umbrella pools, share class pools, etc.@en",
    :db/ident :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "collective investment vehicle"},
+   :rdfs/label #voc/lstr "collective investment vehicle@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
                       :owl/someValuesFrom
                       :fibo-sec-fund-fund/LegalFundStructure,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-sec-pls/PooledFund],
+                     :fibo-sec-sec-pls/PooledFund
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "assets pooled by investors whose share capital remains separate from the assets of the vehicle"}})
+   #voc/lstr
+    "assets pooled by investors whose share capital remains separate from the assets of the vehicle@en"})
 
 (def ExchangeTradedFund
   "investment fund whose fund units are traded on an exchange, much like stocks"
-  {:cmns-av/abbreviation {:rdf/language "en",
-                          :rdf/value    "ETF"},
+  {:cmns-av/abbreviation #voc/lstr "ETF@en",
    :cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019"},
+   #voc/lstr
+    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019@en",
    :cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "An ETF holds assets such as stocks, commodities, or bonds, and trades close to its net asset value over the course of the trading day. Most ETFs track an index, such as a stock, bond, or commodity index."},
+   #voc/lstr
+    "An ETF holds assets such as stocks, commodities, or bonds, and trades close to its net asset value over the course of the trading day. Most ETFs track an index, such as a stock, bond, or commodity index.@en",
    :db/ident :fibo-sec-fund-fund/ExchangeTradedFund,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "exchange-traded fund"},
-   :rdfs/subClassOf :fibo-sec-fund-fund/OpenEndInvestment,
+   :rdfs/label #voc/lstr "exchange-traded fund@en",
+   :rdfs/subClassOf [:fibo-sec-fund-fund/OpenEndInvestment
+                     :fibo-sec-fund-fund/ExchangeTradedFund
+                     :fibo-sec-sec-pls/ManagedInvestment
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
+                     :fibo-sec-sec-pls/PooledFund
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-fund/LegalFundStructure,
+                      :rdf/type :owl/Restriction}
+                     {:owl/hasValue   {:xsd/boolean true},
+                      :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "investment fund whose fund units are traded on an exchange, much like stocks"}})
+   #voc/lstr
+    "investment fund whose fund units are traded on an exchange, much like stocks@en"})
 
 (def FundContract
   "contract that embodies and defines the fund legal form in cases where there is no independent organization"
@@ -155,37 +197,51 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "fund contract"},
-   :rdfs/subClassOf :fibo-be-le-fbo/OrganizationCoveringAgreement,
+   :rdfs/label #voc/lstr "fund contract@en",
+   :rdfs/subClassOf [:fibo-be-le-fbo/OrganizationCoveringAgreement
+                     :fibo-sec-fund-fund/FundContract],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "contract that embodies and defines the fund legal form in cases where there is no independent organization"}})
+   #voc/lstr
+    "contract that embodies and defines the fund legal form in cases where there is no independent organization@en"})
 
 (def FundOfFunds
   "investment fund that invests directly in other investment funds rather than investing in stocks, bonds, and other securities"
   {:cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019"},
-   :cmns-av/synonym {:rdf/language "en",
-                     :rdf/value    "umbrella fund"},
+   #voc/lstr
+    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019@en",
+   :cmns-av/synonym #voc/lstr "umbrella fund@en",
    :db/ident :fibo-sec-fund-fund/FundOfFunds,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "fund of funds"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-sec-fund-fund/hasSubFund,
-                      :owl/someValuesFrom
-                      :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
-                      :rdf/type :owl/Restriction}
-                     :fibo-sec-sec-pls/ManagedInvestment],
+   :rdfs/label #voc/lstr "fund of funds@en",
+   :rdfs/subClassOf
+   [{:owl/onProperty     :fibo-sec-fund-fund/hasSubFund,
+     :owl/someValuesFrom :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-sec-pls/ManagedInvestment
+    :fibo-sec-fund-fund/FundOfFunds
+    {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+     :owl/someValuesFrom :cmns-dt/ExplicitDate,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-fund-fund/CollectiveInvestmentVehicle
+    :fibo-sec-sec-pls/PooledFund
+    {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+     :owl/someValuesFrom :xsd/boolean,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-acc-aeq/FinancialAsset
+    {:owl/onProperty     :fibo-sec-fund-fund/hasLegalStructure,
+     :owl/someValuesFrom :fibo-sec-fund-fund/LegalFundStructure,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+     :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "investment fund that invests directly in other investment funds rather than investing in stocks, bonds, and other securities"}})
+   #voc/lstr
+    "investment fund that invests directly in other investment funds rather than investing in stocks, bonds, and other securities@en"})
 
 (def FundUnit
   "security representing a unit in a fund"
@@ -193,35 +249,55 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "fund unit"},
+   :rdfs/label #voc/lstr "fund unit@en",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/isConstituentOf,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PooledFund,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-eq-eq/Share],
-   :skos/definition {:rdf/language "en",
-                     :rdf/value    "security representing a unit in a fund"}})
+                     :fibo-sec-eq-eq/Share
+                     :fibo-sec-fund-fund/FundUnit],
+   :skos/definition #voc/lstr "security representing a unit in a fund@en"})
 
 (def HedgeFund
   "investment fund that pursues a total return and is usually open to qualified investors only"
   {:cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019"},
+   #voc/lstr
+    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019@en",
    :db/ident :fibo-sec-fund-fund/HedgeFund,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "hedge fund"},
-   :rdfs/subClassOf :fibo-sec-fund-fund/OpenEndInvestment,
+   :rdfs/label #voc/lstr "hedge fund@en",
+   :rdfs/subClassOf [:fibo-sec-fund-fund/OpenEndInvestment
+                     :fibo-sec-fund-fund/HedgeFund
+                     :fibo-sec-sec-pls/ManagedInvestment
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
+                     :fibo-sec-sec-pls/PooledFund
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-fund/LegalFundStructure,
+                      :rdf/type :owl/Restriction}
+                     {:owl/hasValue   {:xsd/boolean true},
+                      :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "investment fund that pursues a total return and is usually open to qualified investors only"}})
+   #voc/lstr
+    "investment fund that pursues a total return and is usually open to qualified investors only@en"})
 
 (def LegalFundStructure
   "structure of a fund with respect to its legal formation in some jurisdiction"
@@ -229,156 +305,248 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "legal fund structure"},
+   :rdfs/label #voc/lstr "legal fund structure@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
                      {:owl/unionOf [:fibo-be-le-lp/LegalEntity
                                     :fibo-sec-fund-fund/FundContract],
                       :rdf/type    :owl/Class}
-                     :fibo-fnd-law-lcap/LegalConstruct],
+                     :fibo-fnd-law-lcap/LegalConstruct
+                     :fibo-sec-fund-fund/LegalFundStructure],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "structure of a fund with respect to its legal formation in some jurisdiction"}})
+   #voc/lstr
+    "structure of a fund with respect to its legal formation in some jurisdiction@en"})
 
 (def MutualFund
   "open-end professionally managed investment fund established for the purpose of investing in securities such as stocks, bonds, money market instruments and similar assets"
   {:cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019"},
-   :cmns-av/synonym {:rdf/language "en",
-                     :rdf/value    "standard (vanilla) investment fund"},
+   #voc/lstr
+    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019@en",
+   :cmns-av/synonym #voc/lstr "standard (vanilla) investment fund@en",
    :db/ident :fibo-sec-fund-fund/MutualFund,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "mutual fund"},
-   :rdfs/subClassOf :fibo-sec-fund-fund/OpenEndInvestment,
+   :rdfs/label #voc/lstr "mutual fund@en",
+   :rdfs/subClassOf [:fibo-sec-fund-fund/OpenEndInvestment
+                     :fibo-sec-fund-fund/MutualFund
+                     :fibo-sec-sec-pls/ManagedInvestment
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
+                     :fibo-sec-sec-pls/PooledFund
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-fund/LegalFundStructure,
+                      :rdf/type :owl/Restriction}
+                     {:owl/hasValue   {:xsd/boolean true},
+                      :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "open-end professionally managed investment fund established for the purpose of investing in securities such as stocks, bonds, money market instruments and similar assets"}})
+   #voc/lstr
+    "open-end professionally managed investment fund established for the purpose of investing in securities such as stocks, bonds, money market instruments and similar assets@en"})
 
 (def OpenEndInvestment
   "investment fund that offered through a fund company that sells shares directly to investors"
-  {:cmns-av/synonym {:rdf/language "en",
-                     :rdf/value    "open-end fund"},
+  {:cmns-av/synonym #voc/lstr "open-end fund@en",
    :db/ident :fibo-sec-fund-fund/OpenEndInvestment,
    :owl/disjointWith :fibo-sec-fund-fund/ClosedEndInvestment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "open-end investment"},
+   :rdfs/label #voc/lstr "open-end investment@en",
    :rdfs/subClassOf [{:owl/hasValue   {:xsd/boolean true},
                       :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
                       :rdf/type       :owl/Restriction}
-                     :fibo-sec-sec-pls/ManagedInvestment],
+                     :fibo-sec-sec-pls/ManagedInvestment
+                     :fibo-sec-fund-fund/OpenEndInvestment
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
+                     :fibo-sec-sec-pls/PooledFund
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-fund/LegalFundStructure,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "investment fund that offered through a fund company that sells shares directly to investors"}})
+   #voc/lstr
+    "investment fund that offered through a fund company that sells shares directly to investors@en"})
 
 (def PensionFund
   "investment fund run by a financial intermediary on behalf of an organization and its employees/members"
-  {:cmns-av/abbreviation {:rdf/language "en",
-                          :rdf/value    "ETF"},
+  {:cmns-av/abbreviation #voc/lstr "ETF@en",
    :cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019"},
+   #voc/lstr
+    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019@en",
    :cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "A pension fund is a common asset pool meant to generate stable growth over a long-term investment horizon."},
+   #voc/lstr
+    "A pension fund is a common asset pool meant to generate stable growth over a long-term investment horizon.@en",
    :db/ident :fibo-sec-fund-fund/PensionFund,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "pension fund"},
-   :rdfs/subClassOf :fibo-sec-sec-pls/ManagedInvestment,
+   :rdfs/label #voc/lstr "pension fund@en",
+   :rdfs/subClassOf [:fibo-sec-sec-pls/ManagedInvestment
+                     :fibo-sec-fund-fund/PensionFund
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
+                     :fibo-sec-sec-pls/PooledFund
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-fund/LegalFundStructure,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "investment fund run by a financial intermediary on behalf of an organization and its employees/members"}})
+   #voc/lstr
+    "investment fund run by a financial intermediary on behalf of an organization and its employees/members@en"})
 
 (def PrivateEquityFund
   "investment fund used for making investments in various equity (and to a lesser extent debt) securities according to an investment strategy associated with private equity"
-  {:cmns-av/abbreviation {:rdf/language "en",
-                          :rdf/value    "ETF"},
+  {:cmns-av/abbreviation #voc/lstr "ETF@en",
    :cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019"},
+   #voc/lstr
+    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019@en",
    :cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Private equity funds are typically structured as limited partnerships or limited liability companies, wherein investors are limited partners, and the fund is managed by one or more general partners. It is composed of investors and funds that invest directly in private companies, or that engage in buyouts of public companies, resulting in the delisting of the public equity."},
+   #voc/lstr
+    "Private equity funds are typically structured as limited partnerships or limited liability companies, wherein investors are limited partners, and the fund is managed by one or more general partners. It is composed of investors and funds that invest directly in private companies, or that engage in buyouts of public companies, resulting in the delisting of the public equity.@en",
    :db/ident :fibo-sec-fund-fund/PrivateEquityFund,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "private equity fund"},
-   :rdfs/subClassOf :fibo-sec-sec-pls/ManagedInvestment,
+   :rdfs/label #voc/lstr "private equity fund@en",
+   :rdfs/subClassOf [:fibo-sec-sec-pls/ManagedInvestment
+                     :fibo-sec-fund-fund/PrivateEquityFund
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
+                     :fibo-sec-sec-pls/PooledFund
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-fund/LegalFundStructure,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "investment fund used for making investments in various equity (and to a lesser extent debt) securities according to an investment strategy associated with private equity"}})
+   #voc/lstr
+    "investment fund used for making investments in various equity (and to a lesser extent debt) securities according to an investment strategy associated with private equity@en"})
 
 (def RealEstateInvestmentTrust
   "investment fund that offers shares/units to the public and invests in real estate directly"
-  {:cmns-av/abbreviation {:rdf/language "en",
-                          :rdf/value    "REIT"},
+  {:cmns-av/abbreviation #voc/lstr "REIT@en",
    :cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019"},
+   #voc/lstr
+    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019@en",
    :cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Real estate investment trusts own, and in most cases operate, income-producing real estate. REITs own many types of commercial real estate, ranging from office and apartment buildings to warehouses, hospitals, shopping centers, hotels and commercial forests. Some REITs engage in financing real estate."},
+   #voc/lstr
+    "Real estate investment trusts own, and in most cases operate, income-producing real estate. REITs own many types of commercial real estate, ranging from office and apartment buildings to warehouses, hospitals, shopping centers, hotels and commercial forests. Some REITs engage in financing real estate.@en",
    :db/ident :fibo-sec-fund-fund/RealEstateInvestmentTrust,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "real estate investment trust"},
+   :rdfs/label #voc/lstr "real estate investment trust@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-fund-fund/hasLegalStructure,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trust,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/ManagedInvestment],
+                     :fibo-sec-sec-pls/ManagedInvestment
+                     :fibo-sec-fund-fund/RealEstateInvestmentTrust
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
+                     :fibo-sec-sec-pls/PooledFund
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-fund/LegalFundStructure,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "investment fund that offers shares/units to the public and invests in real estate directly"}})
+   #voc/lstr
+    "investment fund that offers shares/units to the public and invests in real estate directly@en"})
 
 (def SovereignWealthFund
   "state-owned investment fund that consists of pools of money derived from a country's reserves"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Sovereign wealth funds include the International Monetary Fund, whose corresponding legal entity is a polity."},
-   :cmns-av/synonym [{:rdf/language "en",
-                      :rdf/value    "sovereign investment fund"}
-                     {:rdf/language "en",
-                      :rdf/value    "social wealth fund"}],
+   #voc/lstr
+    "Sovereign wealth funds include the International Monetary Fund, whose corresponding legal entity is a polity.@en",
+   :cmns-av/synonym [#voc/lstr "sovereign investment fund@en"
+                     #voc/lstr "social wealth fund@en"],
    :db/ident :fibo-sec-fund-fund/SovereignWealthFund,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "sovereign wealth fund"},
-   :rdfs/subClassOf :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
+   :rdfs/label #voc/lstr "sovereign wealth fund@en",
+   :rdfs/subClassOf [:fibo-sec-fund-fund/CollectiveInvestmentVehicle
+                     :fibo-sec-fund-fund/SovereignWealthFund
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/PooledFund
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
+                      :owl/someValuesFrom
+                      :fibo-sec-fund-fund/LegalFundStructure,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "state-owned investment fund that consists of pools of money derived from a country's reserves"}})
+   #voc/lstr
+    "state-owned investment fund that consists of pools of money derived from a country's reserves@en"})
 
 (def hasLegalStructure
   "indicates the legal form that the fund takes"
@@ -387,12 +555,10 @@
    :rdfs/domain :fibo-sec-sec-pls/PooledFund,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has legal structure"},
+   :rdfs/label #voc/lstr "has legal structure@en",
    :rdfs/range :fibo-sec-fund-fund/LegalFundStructure,
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "indicates the legal form that the fund takes"}})
+   :skos/definition #voc/lstr
+                     "indicates the legal form that the fund takes@en"})
 
 (def hasSubFund
   "relates a pooled fund to a sub-fund that is a constituent of the parent fund"
@@ -401,14 +567,12 @@
    :rdfs/domain :fibo-sec-sec-pls/PooledFund,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has sub-fund"},
+   :rdfs/label #voc/lstr "has sub-fund@en",
    :rdfs/range :fibo-sec-sec-pls/PooledFund,
-   :rdfs/subPropertyOf :cmns-col/hasPart,
+   :rdfs/subPropertyOf [:cmns-col/hasPart :fibo-sec-fund-fund/hasSubFund],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "relates a pooled fund to a sub-fund that is a constituent of the parent fund"}})
+   #voc/lstr
+    "relates a pooled fund to a sub-fund that is a constituent of the parent fund@en"})
 
 (def isOpenEnded
   "indicates whether the fund is an open-end/closed-end fund"
@@ -417,12 +581,10 @@
    :rdfs/domain :fibo-sec-sec-pls/PooledFund,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "is open ended"},
+   :rdfs/label #voc/lstr "is open ended@en",
    :rdfs/range :xsd/boolean,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value    "indicates whether the fund is an open-end/closed-end fund"}})
+   #voc/lstr "indicates whether the fund is an open-end/closed-end fund@en"})
 
 (def isSubFundOf
   "relates a pooled fund to a parent fund"
@@ -432,47 +594,7 @@
    :rdfs/domain :fibo-sec-sec-pls/PooledFund,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "is sub-fund of"},
+   :rdfs/label #voc/lstr "is sub-fund of@en",
    :rdfs/range :fibo-sec-sec-pls/PooledFund,
-   :rdfs/subPropertyOf :cmns-col/isPartOf,
-   :skos/definition {:rdf/language "en",
-                     :rdf/value    "relates a pooled fund to a parent fund"}})
-
-(def ^{:private true} ManagedInvestment
-  {:cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962:2019 Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth edition, October 2019"},
-   :cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "A managed investment is an investment vehicle that consists of a pool of funds collected from many different investors run by a management company."},
-   :cmns-av/synonym {:rdf/language "en",
-                     :rdf/value    "investment fund"},
-   :db/ident :fibo-sec-sec-pls/ManagedInvestment,
-   :rdf/type :owl/Class,
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
-                      :owl/someValuesFrom :xsd/boolean,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle]})
-
-(def ^{:private true} PooledFund
-  {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "A fund can be established for any purpose, such as a municipality setting aside money for a construction project, monies designated to endow a university chair or for scholarships, or funds set aside by insurance companies to settle claims."},
-   :cmns-av/synonym {:rdf/language "en",
-                     :rdf/value    "fund"},
-   :db/ident        :fibo-sec-sec-pls/PooledFund,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-                      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset]})
+   :rdfs/subPropertyOf [:cmns-col/isPartOf :fibo-sec-fund-fund/isSubFundOf],
+   :skos/definition #voc/lstr "relates a pooled fund to a parent fund@en"})

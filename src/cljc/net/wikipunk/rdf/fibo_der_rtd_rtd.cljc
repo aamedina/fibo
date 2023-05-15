@@ -71,7 +71,12 @@
                       :owl/someValuesFrom
                       :fibo-der-rtd-rtd/EconomicRateObservable,
                       :rdf/type :owl/Restriction}
-                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument],
+                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
+                     :fibo-der-rtd-rtd/EconomicRateBasedDerivativeInstrument
+                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom :fibo-der-rtd-rtd/RateBasedObservable,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/DerivativeInstrument],
    :skos/definition
    "rate-based derivative whose underlier is an economic indicator"})
 
@@ -81,13 +86,22 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "economic rate observable"},
+   :rdfs/label #voc/lstr "economic rate observable@en",
    :rdfs/subClassOf [{:owl/onClass    :fibo-ind-ei-ei/EconomicIndicator,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-rtd-rtd/RateBasedObservable],
+                     :fibo-der-rtd-rtd/RateBasedObservable
+                     :fibo-der-rtd-rtd/EconomicRateObservable
+                     {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/someValuesFrom {:owl/unionOf
+                                           [:fibo-sec-sec-bsk/BasketOfIndices
+                                            :fibo-ind-ind-ind/MarketRate
+                                            :fibo-ind-ei-ei/EconomicIndicator
+                                            :fibo-ind-fx-fx/QuotedExchangeRate],
+                                           :rdf/type :owl/Class},
+                      :rdf/type           :owl/Restriction}
+                     :fibo-der-drc-bsc/ObservableValue],
    :skos/definition
    "rate-based observable that is specifically an economic indicator"})
 
@@ -97,34 +111,49 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "foreign exchange rate observable"},
+   :rdfs/label #voc/lstr "foreign exchange rate observable@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                       :owl/someValuesFrom :fibo-ind-fx-fx/QuotedExchangeRate,
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-rtd-rtd/RateBasedObservable],
+                     :fibo-der-rtd-rtd/RateBasedObservable
+                     :fibo-der-rtd-rtd/ForeignExchangeRateObservable
+                     {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/someValuesFrom {:owl/unionOf
+                                           [:fibo-sec-sec-bsk/BasketOfIndices
+                                            :fibo-ind-ind-ind/MarketRate
+                                            :fibo-ind-ei-ei/EconomicIndicator
+                                            :fibo-ind-fx-fx/QuotedExchangeRate],
+                                           :rdf/type :owl/Class},
+                      :rdf/type           :owl/Restriction}
+                     :fibo-der-drc-bsc/ObservableValue],
    :skos/definition
    "rate-based observable that is an exchange rate, typically a quoted exchange rate"})
 
 (def ForwardRateAgreement
   "agreement to exchange an interest rate commitment on a notional amount"
-  {:cmns-av/abbreviation {:rdf/language "en",
-                          :rdf/value    "FRA"},
+  {:cmns-av/abbreviation #voc/lstr "FRA@en",
    :cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "The FRA determines the rates to be used along with the termination date and notional value. FRAs are cash-settled with the payment based on the net difference between the interest rate of the contract and the floating rate in the market called the reference rate. The notional amount is not exchanged, but rather a cash amount based on the rate differentials and the notional value of the contract."},
+   #voc/lstr
+    "The FRA determines the rates to be used along with the termination date and notional value. FRAs are cash-settled with the payment based on the net difference between the interest rate of the contract and the floating rate in the market called the reference rate. The notional amount is not exchanged, but rather a cash amount based on the rate differentials and the notional value of the contract.@en",
    :db/ident :fibo-der-rtd-rtd/ForwardRateAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "forward rate agreement"},
-   :rdfs/subClassOf :fibo-der-rtd-rtd/InterestRateDerivativeInstrument,
+   :rdfs/label #voc/lstr "forward rate agreement@en",
+   :rdfs/subClassOf [:fibo-der-rtd-rtd/InterestRateDerivativeInstrument
+                     :fibo-der-rtd-rtd/ForwardRateAgreement
+                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
+                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom :fibo-der-rtd-rtd/RateBasedObservable,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/DerivativeInstrument
+                     {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom
+                      :fibo-der-rtd-rtd/InterestRateObservable,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "agreement to exchange an interest rate commitment on a notional amount"}})
+   #voc/lstr
+    "agreement to exchange an interest rate commitment on a notional amount@en"})
 
 (def InterestRateDerivativeInstrument
   "rate-based derivative whose underlier is an interest rate"
@@ -137,7 +166,12 @@
                       :owl/someValuesFrom
                       :fibo-der-rtd-rtd/InterestRateObservable,
                       :rdf/type :owl/Restriction}
-                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument],
+                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
+                     :fibo-der-rtd-rtd/InterestRateDerivativeInstrument
+                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom :fibo-der-rtd-rtd/RateBasedObservable,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/DerivativeInstrument],
    :skos/definition
    "rate-based derivative whose underlier is an interest rate"})
 
@@ -151,7 +185,17 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                       :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-rtd-rtd/RateBasedObservable],
+                     :fibo-der-rtd-rtd/RateBasedObservable
+                     :fibo-der-rtd-rtd/InterestRateObservable
+                     {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/someValuesFrom {:owl/unionOf
+                                           [:fibo-sec-sec-bsk/BasketOfIndices
+                                            :fibo-ind-ind-ind/MarketRate
+                                            :fibo-ind-ei-ei/EconomicIndicator
+                                            :fibo-ind-fx-fx/QuotedExchangeRate],
+                                           :rdf/type :owl/Class},
+                      :rdf/type           :owl/Restriction}
+                     :fibo-der-drc-bsc/ObservableValue],
    :skos/definition
    "rate-based observable that is an interest rate, typically a well-known reference interest rate"})
 
@@ -165,7 +209,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-der-rtd-rtd/RateBasedObservable,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/DerivativeInstrument],
+                     :fibo-fbc-fi-fi/DerivativeInstrument
+                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument],
    :skos/definition
    "derivative instrument whose underlier is a non-physical observable rate"})
 
@@ -186,6 +231,7 @@
                                             :fibo-ind-fx-fx/QuotedExchangeRate],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-bsc/ObservableValue],
+                     :fibo-der-drc-bsc/ObservableValue
+                     :fibo-der-rtd-rtd/RateBasedObservable],
    :skos/definition
    "non-physical observable value, such as an interest rate, market rate, economic indicator, statistical measure calculated over some collection of indices, or some other rate that is readily observable in the world"})

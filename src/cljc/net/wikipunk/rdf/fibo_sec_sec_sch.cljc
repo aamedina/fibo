@@ -57,7 +57,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label "auction date rule",
-   :rdfs/subClassOf :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
+   :rdfs/subClassOf [:fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
+                     :fibo-sec-sec-sch/AuctionDateRule],
    :skos/definition
    "a business recurrence interval convention that is a published rule for defining the date of some auction event"})
 
@@ -80,7 +81,8 @@
                       :owl/onClass    :fibo-sec-sec-sch/CalculationPeriodLength,
                       :owl/onProperty :cmns-dt/hasDuration,
                       :rdf/type       :owl/Restriction}
-                     :cmns-dt/DatePeriod],
+                     :cmns-dt/DatePeriod
+                     :fibo-sec-sec-sch/CalculationPeriod],
    :skos/definition
    "date period defined as the number of days from the start to the scheduled end of the computation window"})
 
@@ -91,7 +93,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label "calculation period length",
-   :rdfs/subClassOf :cmns-dt/ExplicitDuration,
+   :rdfs/subClassOf [:cmns-dt/ExplicitDuration
+                     :fibo-sec-sec-sch/CalculationPeriodLength],
    :skos/definition
    "an explicit duration defined as the number of days from the adjusted effective or start date to the adjusted termination or end date calculated in accordance with the applicable day count fraction"})
 
@@ -105,7 +108,9 @@
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-sec-sec-sch/SettlementDateRule,
                       :owl/onProperty    :cmns-dsg/isDefinedIn,
                       :rdf/type          :owl/Restriction}
-                     :fibo-sec-sec-sch/RuleDeterminedDate],
+                     :fibo-sec-sec-sch/RuleDeterminedDate
+                     :fibo-sec-sec-sch/DateReturnedBySettlementDateRule
+                     :fibo-fnd-dt-fd/CalculatedDate],
    :skos/definition
    "a rule-determined date that is a published rule for defining the date returned by settlement date"})
 
@@ -119,7 +124,9 @@
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-sec-sec-sch/TradingDateRule,
                       :owl/onProperty    :cmns-dsg/isDefinedIn,
                       :rdf/type          :owl/Restriction}
-                     :fibo-sec-sec-sch/RuleDeterminedDate],
+                     :fibo-sec-sec-sch/RuleDeterminedDate
+                     :fibo-sec-sec-sch/DateReturnedByTradingDateRule
+                     :fibo-fnd-dt-fd/CalculatedDate],
    :skos/definition
    "a rule-determined date that is a published rule for defining the date returned by trading date"})
 
@@ -135,7 +142,8 @@
                       :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayAdjustment,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-dt-fd/CalculatedDate],
+                     :fibo-fnd-dt-fd/CalculatedDate
+                     :fibo-sec-sec-sch/FloatingRateNoteDate],
    :skos/definition
    "a calculated date associated with a floating-rate note, also known as a floater or FRN, which is a debt instrument with a variable interest rate"})
 
@@ -147,7 +155,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label "floating-rate note date rule",
-   :rdfs/subClassOf :fibo-fnd-dt-bd/BusinessDayAdjustment,
+   :rdfs/subClassOf [:fibo-fnd-dt-bd/BusinessDayAdjustment
+                     :fibo-sec-sec-sch/FloatingRateNoteDateRule],
    :skos/definition
    "a business day adjustment rule applied to floating-rate note instruments"})
 
@@ -163,7 +172,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label
    "International Money Market (IMM) Australian Dollar (AUD) trading date rule",
-   :rdfs/subClassOf :fibo-sec-sec-sch/TradingDateRule,
+   :rdfs/subClassOf
+   [:fibo-sec-sec-sch/TradingDateRule
+    :fibo-sec-sec-sch/InternationalMoneyMarketAustralianDollarTradingDateRule
+    :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :skos/definition
    "a trading date rule defined as the last trading day of an Australian Stock Exchange (ASX) 90-Day Bank Accepted Futures and Options product, one Sydney business day preceding the second Friday of the relevant settlement month"})
 
@@ -177,10 +189,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label
    "International Money Market (IMM) Canadian Dollar (CAD) trading date rule",
-   :rdfs/subClassOf [{:owl/hasValue   :fibo-fnd-dt-bd/BusinessDayPreceding,
-                      :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayConvention,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-sec-sec-sch/TradingDateRule],
+   :rdfs/subClassOf
+   [{:owl/hasValue   :fibo-fnd-dt-bd/BusinessDayPreceding,
+     :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayConvention,
+     :rdf/type       :owl/Restriction}
+    :fibo-sec-sec-sch/TradingDateRule
+    :fibo-sec-sec-sch/InternationalMoneyMarketCanadianDollarTradingDateRule
+    :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :skos/definition
    "a trading date rule defined as the last trading day / expiration day of the Canadian Derivatives Exchange (Bourse do Montreal Inc.), three month Bankers' Acceptance Futures (Ticker symbol BAX), the second London banking day prior to the third Wednesday of the contract month",
    :skos/editorialNote
@@ -196,7 +211,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label
    "International Money Market (IMM) New Zealand Dollar (NZD) trading date rule",
-   :rdfs/subClassOf :fibo-sec-sec-sch/TradingDateRule,
+   :rdfs/subClassOf
+   [:fibo-sec-sec-sch/TradingDateRule
+    :fibo-sec-sec-sch/InternationalMoneyMarketNewZealandDollarTradingDateRule
+    :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :skos/definition
    "a trading date rule defined as the last trading day of an Australian Stock Exchange (ASX) New Zealand (NZ) 90-Day Bank Accepted Futures and Options product, the first Wednesday after the ninth day of the relevant settlement month"})
 
@@ -210,7 +228,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label "International Money Market (IMM) settlement date rule",
-   :rdfs/subClassOf :fibo-sec-sec-sch/SettlementDateRule,
+   :rdfs/subClassOf
+   [:fibo-sec-sec-sch/SettlementDateRule
+    :fibo-sec-sec-sch/InternationalMoneyMarketSettlementDateRule
+    :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :skos/definition
    "a settlement date rule as defined in the International Money Market (IMM) settlement dates calendar"})
 
@@ -221,7 +242,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label "non-rolling date",
-   :rdfs/subClassOf :cmns-dt/ExplicitDate,
+   :rdfs/subClassOf [:cmns-dt/ExplicitDate :fibo-sec-sec-sch/NonRollingDate],
    :skos/definition
    "an explicit date that equates to a calendar date with no adjustments and with no reference to any date specification"})
 
@@ -236,7 +257,8 @@
                       :owl/someValuesFrom
                       :fibo-sec-sec-sch/PeriodicScheduledEventDate,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-dt-fd/RegularSchedule],
+                     :fibo-fnd-dt-fd/RegularSchedule
+                     :fibo-sec-sec-sch/ParametricSchedule],
    :skos/definition
    "a regular, parameterized schedule typically used for the calculation of payments for coupons, dividends, and interest",
    :skos/editorialNote
@@ -255,7 +277,8 @@
                                     :fibo-sec-sec-sch/NonRollingDate
                                     :fibo-sec-sec-sch/RuleDeterminedDate],
                       :rdf/type    :owl/Class}
-                     :cmns-dt/Date],
+                     :cmns-dt/Date
+                     :fibo-sec-sec-sch/PeriodicScheduledEventDate],
    :skos/definition
    "the date on which a schedule event occurs in some parametric schedule"})
 
@@ -266,7 +289,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label "rule-determined date",
-   :rdfs/subClassOf :fibo-fnd-dt-fd/CalculatedDate,
+   :rdfs/subClassOf [:fibo-fnd-dt-fd/CalculatedDate
+                     :fibo-sec-sec-sch/RuleDeterminedDate],
    :skos/definition "a date determined by the application of some rule"})
 
 (def ScheduledCalculationPeriodEndEvent
@@ -278,7 +302,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label "scheduled calculation period end event",
-   :rdfs/subClassOf :fibo-fnd-dt-oc/OccurrenceKind,
+   :rdfs/subClassOf [:fibo-fnd-dt-oc/OccurrenceKind
+                     :fibo-sec-sec-sch/ScheduledCalculationPeriodEndEvent],
    :skos/definition "the end date of a specific calculation period"})
 
 (def ScheduledCalculationPeriodStartEvent
@@ -290,7 +315,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label "scheduled calculation period start event",
-   :rdfs/subClassOf :fibo-fnd-dt-oc/OccurrenceKind,
+   :rdfs/subClassOf [:fibo-fnd-dt-oc/OccurrenceKind
+                     :fibo-sec-sec-sch/ScheduledCalculationPeriodStartEvent],
    :skos/definition "the start of a specific calculation period"})
 
 (def SettlementDateRule
@@ -300,7 +326,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label "settlement date rule",
-   :rdfs/subClassOf :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
+   :rdfs/subClassOf [:fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
+                     :fibo-sec-sec-sch/SettlementDateRule],
    :skos/definition
    "a rule for determining dates by reference to some calendar or specification of settlement dates"})
 
@@ -311,7 +338,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :rdfs/label "trading date rule",
-   :rdfs/subClassOf :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
+   :rdfs/subClassOf [:fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
+                     :fibo-sec-sec-sch/TradingDateRule],
    :skos/definition
    "a rule for dates defined with reference to some trading date calendar published by some trading facility or authority, such as a stock exchange",
    :skos/editorialNote
@@ -331,7 +359,9 @@
    :rdfs/subClassOf [{:owl/hasValue   :fibo-fnd-dt-bd/BusinessDayFollowing,
                       :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayConvention,
                       :rdf/type       :owl/Restriction}
-                     :fibo-sec-sec-sch/AuctionDateRule],
+                     :fibo-sec-sec-sch/AuctionDateRule
+                     :fibo-sec-sec-sch/USTreasuryBillAuctionDateRule
+                     :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :skos/definition "a rule for setting auction dates for US Treasury bills"})
 
 (def USTreasuryBillDate
@@ -346,7 +376,8 @@
                       :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayAdjustment,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-dt-fd/CalculatedDate],
+                     :fibo-fnd-dt-fd/CalculatedDate
+                     :fibo-sec-sec-sch/USTreasuryBillDate],
    :skos/definition "an auction date for US 13 week and 26 week Treasury bills",
    :skos/editorialNote
    "Per FpML notes/definition, this is every Monday except on New York holidays when it will be on a Tuesday."})

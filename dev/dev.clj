@@ -28,7 +28,9 @@
    [net.wikipunk.fibo.boot :as boot]
    [net.wikipunk.rdf :as rdf :refer [doc]]
    [net.wikipunk.mop :as mop :refer [isa? descendants ancestors parents]]
-   [zprint.core :as zprint])
+   [zprint.core :as zprint]
+   [datomic.client.api :as d]
+   [net.wikipunk.punk.db :as db])
   (:refer-clojure :exclude [isa? descendants ancestors parents]))
 
 (set-init

@@ -105,7 +105,14 @@
                       :owl/onProperty :fibo-fbc-fct-ra/specifies,
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-rtd-irswp/InterestRateSwap],
+                     :fibo-der-rtd-irswp/InterestRateSwap
+                     :fibo-der-rtd-irswp/CrossCurrencyInterestRateSwap
+                     :fibo-der-drc-swp/RatesSwap
+                     {:owl/onClass    :fibo-der-rtd-irswp/InterestRateSwapLeg,
+                      :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+                      :owl/qualifiedCardinality 2,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-der-rtd-rtd/InterestRateDerivativeInstrument],
    :skos/definition
    "interest rate swap in which the two streams of interest payments are in different currencies"})
 
@@ -117,7 +124,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "explicit interest amount calculation event",
    :rdfs/subClassOf [:fibo-sec-sec-sch/ScheduledCalculationPeriodEndEvent
-                     :fibo-der-rtd-irswp/InterestRateStreamEvent],
+                     :fibo-der-rtd-irswp/InterestRateStreamEvent
+                     :fibo-der-rtd-irswp/ExplicitInterestAmountCalculationEvent
+                     :fibo-der-drc-swp/SwapStreamEvent],
    :skos/definition
    "the explicit representation of the calculation event in a given period, in which an interest payment is calculated based on the rate (fixed or floating) and the notional amount (in the payment currency, and factored for Fx if necessary), on a given date"})
 
@@ -134,8 +143,29 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "fixed float cross-currency interest rate swap",
-   :rdfs/subClassOf [:fibo-der-rtd-irswp/FixedFloatInterestRateSwap
-                     :fibo-der-rtd-irswp/CrossCurrencyInterestRateSwap],
+   :rdfs/subClassOf
+   [:fibo-der-rtd-irswp/FixedFloatInterestRateSwap
+    :fibo-der-rtd-irswp/CrossCurrencyInterestRateSwap
+    :fibo-der-rtd-irswp/FixedFloatCrossCurrencyInterestRateSwap
+    {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+     :owl/onProperty :fibo-fbc-fct-ra/specifies,
+     :owl/qualifiedCardinality 2,
+     :rdf/type       :owl/Restriction}
+    {:owl/intersectionOf
+     [{:owl/onProperty     :fibo-fnd-rel-rel/exchanges,
+       :owl/someValuesFrom :fibo-der-rtd-irswp/FixedInterestRateLeg,
+       :rdf/type           :owl/Restriction}
+      {:owl/onProperty     :fibo-fnd-rel-rel/exchanges,
+       :owl/someValuesFrom :fibo-der-rtd-irswp/FloatingInterestRateLeg,
+       :rdf/type           :owl/Restriction}],
+     :rdf/type :owl/Class}
+    :fibo-der-drc-swp/RatesSwap
+    {:owl/onClass    :fibo-der-rtd-irswp/InterestRateSwapLeg,
+     :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+     :owl/qualifiedCardinality 2,
+     :rdf/type       :owl/Restriction}
+    :fibo-der-rtd-rtd/InterestRateDerivativeInstrument
+    :fibo-der-rtd-irswp/InterestRateSwap],
    :skos/definition
    "interest rate swap in which fixed interest payments on the notional are exchanged for floating interest payments and the two streams of interest payments are in different currencies"})
 
@@ -166,7 +196,14 @@
        :owl/someValuesFrom :fibo-der-rtd-irswp/FloatingInterestRateLeg,
        :rdf/type           :owl/Restriction}],
      :rdf/type :owl/Class}
-    :fibo-der-rtd-irswp/InterestRateSwap],
+    :fibo-der-rtd-irswp/InterestRateSwap
+    :fibo-der-rtd-irswp/FixedFloatInterestRateSwap
+    :fibo-der-drc-swp/RatesSwap
+    {:owl/onClass    :fibo-der-rtd-irswp/InterestRateSwapLeg,
+     :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+     :owl/qualifiedCardinality 2,
+     :rdf/type       :owl/Restriction}
+    :fibo-der-rtd-rtd/InterestRateDerivativeInstrument],
    :skos/definition
    "interest rate swap in which fixed interest payments on the notional are exchanged for floating interest payments"})
 
@@ -182,7 +219,24 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "fixed float single currency interest rate swap",
-   :rdfs/subClassOf :fibo-der-rtd-irswp/FixedFloatInterestRateSwap,
+   :rdfs/subClassOf
+   [:fibo-der-rtd-irswp/FixedFloatInterestRateSwap
+    :fibo-der-rtd-irswp/FixedFloatSingleCurrencyInterestRateSwap
+    {:owl/intersectionOf
+     [{:owl/onProperty     :fibo-fnd-rel-rel/exchanges,
+       :owl/someValuesFrom :fibo-der-rtd-irswp/FixedInterestRateLeg,
+       :rdf/type           :owl/Restriction}
+      {:owl/onProperty     :fibo-fnd-rel-rel/exchanges,
+       :owl/someValuesFrom :fibo-der-rtd-irswp/FloatingInterestRateLeg,
+       :rdf/type           :owl/Restriction}],
+     :rdf/type :owl/Class}
+    :fibo-der-drc-swp/RatesSwap
+    {:owl/onClass    :fibo-der-rtd-irswp/InterestRateSwapLeg,
+     :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+     :owl/qualifiedCardinality 2,
+     :rdf/type       :owl/Restriction}
+    :fibo-der-rtd-rtd/InterestRateDerivativeInstrument
+    :fibo-der-rtd-irswp/InterestRateSwap],
    :skos/definition
    "interest rate swap in which fixed interest payments on the notional are exchanged for floating interest payments and where both payment streams are expressed in terms of the same currency"})
 
@@ -204,8 +258,38 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "fixed interest rate leg",
-   :rdfs/subClassOf [:fibo-der-rtd-irswp/InterestRateSwapLeg
-                     :fibo-der-drc-swp/FixedLeg],
+   :rdfs/subClassOf
+   [:fibo-der-rtd-irswp/InterestRateSwapLeg
+    :fibo-der-drc-swp/FixedLeg
+    :fibo-der-rtd-irswp/FixedInterestRateLeg
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-rtd-irswp/NotionalStepSchedule,
+     :owl/onProperty :fibo-der-rtd-irswp/hasNotionalStepSchedule,
+     :rdf/type       :owl/Restriction}
+    :fibo-der-drc-swp/RateBasedLeg
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestPayment,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestCalculation,
+     :rdf/type           :owl/Restriction}
+    {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+     :owl/onProperty :fibo-fbc-fct-ra/specifies,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-pas-psch/hasPaymentSchedule,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestPaymentSchedule,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/DayCountConvention,
+     :rdf/type :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/InterestRateStreamEvent,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-rtd-irswp/NotionalStepChangeEvent,
+     :owl/onProperty :fibo-fbc-fct-ra/specifies,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "fixed leg that specifies fixed interest amounts and terms for the payment of that interest"})
 
@@ -221,7 +305,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "float float cross-currency interest rate swap",
-   :rdfs/subClassOf :fibo-der-rtd-irswp/FloatFloatInterestRateSwap,
+   :rdfs/subClassOf [:fibo-der-rtd-irswp/FloatFloatInterestRateSwap
+                     :fibo-der-rtd-irswp/FloatFloatCrossCurrencyInterestRateSwap
+                     {:owl/onClass :fibo-der-rtd-irswp/FloatingInterestRateLeg,
+                      :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+                      :owl/qualifiedCardinality 2,
+                      :rdf/type :owl/Restriction}
+                     :fibo-der-drc-swp/RatesSwap
+                     {:owl/onClass    :fibo-der-rtd-irswp/InterestRateSwapLeg,
+                      :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+                      :owl/qualifiedCardinality 2,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-der-rtd-rtd/InterestRateDerivativeInstrument
+                     :fibo-der-drc-swp/BasisSwap
+                     :fibo-der-rtd-irswp/InterestRateSwap],
    :skos/definition
    "interest rate swap that exchanges cashflows based on two different interest rates in different currencies"})
 
@@ -244,12 +341,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "float float interest rate swap",
-   :rdfs/subClassOf [{:owl/onClass :fibo-der-rtd-irswp/FloatingInterestRateLeg,
+   :rdfs/subClassOf [:fibo-der-rtd-irswp/InterestRateSwap
+                     :fibo-der-drc-swp/BasisSwap
+                     {:owl/onClass :fibo-der-rtd-irswp/FloatingInterestRateLeg,
                       :owl/onProperty :fibo-fnd-rel-rel/exchanges,
                       :owl/qualifiedCardinality 2,
                       :rdf/type :owl/Restriction}
-                     :fibo-der-rtd-irswp/InterestRateSwap
-                     :fibo-der-drc-swp/BasisSwap],
+                     :fibo-der-rtd-irswp/FloatFloatInterestRateSwap
+                     :fibo-der-drc-swp/RatesSwap
+                     {:owl/onClass    :fibo-der-rtd-irswp/InterestRateSwapLeg,
+                      :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+                      :owl/qualifiedCardinality 2,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-der-rtd-rtd/InterestRateDerivativeInstrument],
    :skos/definition
    "interest rate swap that exchanges cashflows based on two different floating interest rates"})
 
@@ -265,7 +369,21 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "float float single currency interest rate swap",
-   :rdfs/subClassOf :fibo-der-rtd-irswp/FloatFloatInterestRateSwap,
+   :rdfs/subClassOf
+   [:fibo-der-rtd-irswp/FloatFloatInterestRateSwap
+    :fibo-der-rtd-irswp/FloatFloatSingleCurrencyInterestRateSwap
+    {:owl/onClass    :fibo-der-rtd-irswp/FloatingInterestRateLeg,
+     :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+     :owl/qualifiedCardinality 2,
+     :rdf/type       :owl/Restriction}
+    :fibo-der-drc-swp/RatesSwap
+    {:owl/onClass    :fibo-der-rtd-irswp/InterestRateSwapLeg,
+     :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+     :owl/qualifiedCardinality 2,
+     :rdf/type       :owl/Restriction}
+    :fibo-der-rtd-rtd/InterestRateDerivativeInstrument
+    :fibo-der-drc-swp/BasisSwap
+    :fibo-der-rtd-irswp/InterestRateSwap],
    :skos/definition
    "interest rate swap that exchanges cashflows based on two different floating interest rates in the same currency"})
 
@@ -287,22 +405,51 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "floating interest rate leg",
    :rdfs/subClassOf
-   [{:owl/onProperty :fibo-der-rtd-irswp/hasInterestRateResetSchedule,
+   [{:owl/onProperty :fibo-der-rtd-irswp/hasInterestCalculationSchedule,
+     :owl/someValuesFrom
+     :fibo-der-rtd-irswp/SwapStreamInterestCalculationSchedule,
+     :rdf/type :owl/Restriction}
+    :fibo-der-drc-swp/FloatingLeg
+    {:owl/onProperty :fibo-der-rtd-irswp/hasInterestRateResetSchedule,
      :owl/someValuesFrom
      :fibo-der-rtd-irswp/SwapStreamInterestRateResetSchedule,
      :rdf/type :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestRateSettingEvent,
-     :rdf/type           :owl/Restriction}
-    :fibo-der-drc-swp/FloatingLeg
-    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
      :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestRateReset,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty :fibo-der-rtd-irswp/hasInterestCalculationSchedule,
-     :owl/someValuesFrom
-     :fibo-der-rtd-irswp/SwapStreamInterestCalculationSchedule,
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestRateSettingEvent,
+     :rdf/type           :owl/Restriction}
+    :fibo-der-rtd-irswp/InterestRateSwapLeg
+    :fibo-der-rtd-irswp/FloatingInterestRateLeg
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestPayment,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestCalculation,
+     :rdf/type           :owl/Restriction}
+    {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+     :owl/onProperty :fibo-fbc-fct-ra/specifies,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-pas-psch/hasPaymentSchedule,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestPaymentSchedule,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-rtd-irswp/NotionalStepSchedule,
+     :owl/onProperty :fibo-der-rtd-irswp/hasNotionalStepSchedule,
+     :rdf/type       :owl/Restriction}
+    :fibo-der-drc-swp/RateBasedLeg
+    {:owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/DayCountConvention,
      :rdf/type :owl/Restriction}
-    :fibo-der-rtd-irswp/InterestRateSwapLeg],
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/InterestRateStreamEvent,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-rtd-irswp/NotionalStepChangeEvent,
+     :owl/onProperty :fibo-fbc-fct-ra/specifies,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "floating leg in which variable interest is paid on some notional amount, linked to some underlying interest reference rate"})
 
@@ -312,29 +459,26 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "inflation leg"},
+   :rdfs/label #voc/lstr "inflation leg@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-ind-ei-ei/EconomicIndicator,
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/FloatingLeg],
+                     :fibo-der-drc-swp/FloatingLeg
+                     :fibo-der-rtd-irswp/InflationLeg],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "floating rate leg of an inflation swap linked to an inflation index, such as the Consumer Price Index (CPI)"}})
+   #voc/lstr
+    "floating rate leg of an inflation swap linked to an inflation index, such as the Consumer Price Index (CPI)@en"})
 
 (def InflationSwap
   "rate swap in which one party pays an amount calculated using an inflation rate index, and the other party pays an amount calculated using another inflation rate index, or a fixed or floating interest rate"
   {:cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fifth edition, 2021-06-15"},
+   #voc/lstr
+    "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fifth edition, 2021-06-15@en",
    :db/ident :fibo-der-rtd-irswp/InflationSwap,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "inflation swap"},
+   :rdfs/label #voc/lstr "inflation swap@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-swp/hasLeg,
                       :owl/someValuesFrom :fibo-der-rtd-irswp/InflationLeg,
                       :rdf/type           :owl/Restriction}
@@ -343,11 +487,11 @@
                       :owl/onProperty :fibo-sec-dbt-bnd/isLinkedToFallback,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
-                     :fibo-der-drc-swp/RatesSwap],
+                     :fibo-der-drc-swp/RatesSwap
+                     :fibo-der-rtd-irswp/InflationSwap],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "rate swap in which one party pays an amount calculated using an inflation rate index, and the other party pays an amount calculated using another inflation rate index, or a fixed or floating interest rate"}})
+   #voc/lstr
+    "rate swap in which one party pays an amount calculated using an inflation rate index, and the other party pays an amount calculated using another inflation rate index, or a fixed or floating interest rate@en"})
 
 (def InterestRateStreamEvent
   "interest-rate specific event occurring with respect to one leg of a swap"
@@ -356,7 +500,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "interest rate stream event",
-   :rdfs/subClassOf :fibo-der-drc-swp/SwapStreamEvent,
+   :rdfs/subClassOf [:fibo-der-drc-swp/SwapStreamEvent
+                     :fibo-der-rtd-irswp/InterestRateStreamEvent],
    :skos/definition
    "interest-rate specific event occurring with respect to one leg of a swap"})
 
@@ -379,7 +524,8 @@
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-rtd-rtd/InterestRateDerivativeInstrument
-                     :fibo-der-drc-swp/RatesSwap],
+                     :fibo-der-drc-swp/RatesSwap
+                     :fibo-der-rtd-irswp/InterestRateSwap],
    :skos/definition
    "swap in which the reference (underlier) for at least one leg is an interest rate"})
 
@@ -398,34 +544,35 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "interest rate swap leg",
    :rdfs/subClassOf
-   [{:owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/DayCountConvention,
-     :rdf/type :owl/Restriction}
-    :fibo-der-drc-swp/RateBasedLeg
-    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-     :owl/someValuesFrom :fibo-der-rtd-irswp/InterestRateStreamEvent,
-     :rdf/type           :owl/Restriction}
-    {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-     :owl/onProperty :fibo-fbc-fct-ra/specifies,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestCalculation,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-der-rtd-irswp/NotionalStepSchedule,
-     :owl/onProperty :fibo-der-rtd-irswp/hasNotionalStepSchedule,
-     :rdf/type       :owl/Restriction}
+   [:fibo-der-drc-swp/RateBasedLeg
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-rtd-irswp/NotionalStepChangeEvent,
      :owl/onProperty :fibo-fbc-fct-ra/specifies,
      :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-pas-psch/hasPaymentSchedule,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestPaymentSchedule,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
      :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestPayment,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-pas-psch/hasPaymentSchedule,
-     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestPaymentSchedule,
-     :rdf/type           :owl/Restriction}],
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/InterestRateStreamEvent,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestCalculation,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/DayCountConvention,
+     :rdf/type :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-rtd-irswp/NotionalStepSchedule,
+     :owl/onProperty :fibo-der-rtd-irswp/hasNotionalStepSchedule,
+     :rdf/type       :owl/Restriction}
+    {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+     :owl/onProperty :fibo-fbc-fct-ra/specifies,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    :fibo-der-rtd-irswp/InterestRateSwapLeg],
    :skos/definition
    "swap leg specifying an interest rate stream, including both a parametric and cashflow representation for the stream of payments"})
 
@@ -445,7 +592,8 @@
                         :fibo-fnd-acc-cur/PercentageMonetaryAmount],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-qt-qtu/QuantityValue],
+                     :fibo-fnd-qt-qtu/QuantityValue
+                     :fibo-der-rtd-irswp/NotionalStepAmount],
    :skos/definition
    "the amount of money that is subtracted from the notional on each step date"})
 
@@ -461,7 +609,9 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dt/hasDate,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/CalculatedDate,
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-rtd-irswp/InterestRateStreamEvent],
+                     :fibo-der-rtd-irswp/InterestRateStreamEvent
+                     :fibo-der-rtd-irswp/NotionalStepChangeEvent
+                     :fibo-der-drc-swp/SwapStreamEvent],
    :skos/definition
    "event in which a step change in the notional amount of the swap stream occurs"})
 
@@ -472,7 +622,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "notional step period length",
-   :rdfs/subClassOf :fibo-fnd-dt-fd/RecurrenceInterval,
+   :rdfs/subClassOf [:fibo-fnd-dt-fd/RecurrenceInterval
+                     :fibo-der-rtd-irswp/NotionalStepPeriodLength],
    :skos/definition
    "recurrence interval indicating the frequency with which step changes occur, which is a multiple of the calculation period in the calculation schedule"})
 
@@ -491,44 +642,46 @@
                       :owl/someValuesFrom
                       :fibo-der-rtd-irswp/NotionalStepAmount,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-sec-sch/ParametricSchedule],
+                     :fibo-sec-sec-sch/ParametricSchedule
+                     :fibo-der-rtd-irswp/NotionalStepSchedule],
    :skos/definition
    "schedule of changes in the notional amount on which interest is paid, comprising the regular sequence of step events"})
 
 (def OvernightIndexSwap
   "swap in which the periodic payments for one leg are based on an overnight interest rate index multiplied by the same notional amount upon which payments for the other leg of the swap are based"
-  {:cmns-av/abbreviation {:rdf/language "en",
-                          :rdf/value    "OIS swap"},
+  {:cmns-av/abbreviation #voc/lstr "OIS swap@en",
    :cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fifth edition, 2021-06-15"},
+   #voc/lstr
+    "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fifth edition, 2021-06-15@en",
    :cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "The interest of the overnight rate portion of the swap is compounded and paid at reset dates. The present value for the leg is determined by either compounding of the overnight rate or by taking the geometric average of the rate over a given period."},
+   #voc/lstr
+    "The interest of the overnight rate portion of the swap is compounded and paid at reset dates. The present value for the leg is determined by either compounding of the overnight rate or by taking the geometric average of the rate over a given period.@en",
    :db/ident :fibo-der-rtd-irswp/OvernightIndexSwap,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "overnight index swap"},
+   :rdfs/label #voc/lstr "overnight index swap@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-der-drc-swp/hasLeg,
                       :owl/someValuesFrom
                       :fibo-der-rtd-irswp/OvernightRateIndexLeg,
                       :rdf/type :owl/Restriction}
-                     :fibo-der-rtd-irswp/InterestRateSwap],
+                     :fibo-der-rtd-irswp/InterestRateSwap
+                     :fibo-der-rtd-irswp/OvernightIndexSwap
+                     :fibo-der-drc-swp/RatesSwap
+                     {:owl/onClass    :fibo-der-rtd-irswp/InterestRateSwapLeg,
+                      :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+                      :owl/qualifiedCardinality 2,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-der-rtd-rtd/InterestRateDerivativeInstrument],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "swap in which the periodic payments for one leg are based on an overnight interest rate index multiplied by the same notional amount upon which payments for the other leg of the swap are based"}})
+   #voc/lstr
+    "swap in which the periodic payments for one leg are based on an overnight interest rate index multiplied by the same notional amount upon which payments for the other leg of the swap are based@en"})
 
 (def OvernightRateIndexLeg
   "floating leg in which periodic payments are based on an overnight interest rate index multiplied by the same notional amount on which the payments for the other leg of the swap are based"
   {:cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fifth edition, 2021-06-15"},
+   #voc/lstr
+    "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fifth edition, 2021-06-15@en",
    :db/ident :fibo-der-rtd-irswp/OvernightRateIndexLeg,
    :owl/equivalentClass {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
                          :owl/someValuesFrom :fibo-ind-ir-ir/OvernightRate,
@@ -537,7 +690,53 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "overnight rate index leg",
-   :rdfs/subClassOf :fibo-der-rtd-irswp/FloatingInterestRateLeg,
+   :rdfs/subClassOf
+   [:fibo-der-rtd-irswp/FloatingInterestRateLeg
+    :fibo-der-rtd-irswp/OvernightRateIndexLeg
+    :fibo-der-rtd-irswp/InterestRateSwapLeg
+    {:owl/onProperty :fibo-der-rtd-irswp/hasInterestRateResetSchedule,
+     :owl/someValuesFrom
+     :fibo-der-rtd-irswp/SwapStreamInterestRateResetSchedule,
+     :rdf/type :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestPayment,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestRateSettingEvent,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestCalculation,
+     :rdf/type           :owl/Restriction}
+    :fibo-der-drc-swp/FloatingLeg
+    {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+     :owl/onProperty :fibo-fbc-fct-ra/specifies,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestRateReset,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-pas-psch/hasPaymentSchedule,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/SwapStreamInterestPaymentSchedule,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-rtd-irswp/NotionalStepSchedule,
+     :owl/onProperty :fibo-der-rtd-irswp/hasNotionalStepSchedule,
+     :rdf/type       :owl/Restriction}
+    :fibo-der-drc-swp/RateBasedLeg
+    {:owl/onProperty :fibo-der-rtd-irswp/hasInterestCalculationSchedule,
+     :owl/someValuesFrom
+     :fibo-der-rtd-irswp/SwapStreamInterestCalculationSchedule,
+     :rdf/type :owl/Restriction}
+    {:owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/DayCountConvention,
+     :rdf/type :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+     :owl/someValuesFrom :fibo-der-rtd-irswp/InterestRateStreamEvent,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-rtd-irswp/NotionalStepChangeEvent,
+     :owl/onProperty :fibo-fbc-fct-ra/specifies,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "floating leg in which periodic payments are based on an overnight interest rate index multiplied by the same notional amount on which the payments for the other leg of the swap are based"})
 
@@ -567,7 +766,24 @@
      :owl/onProperty :fibo-fnd-acc-cur/hasNotionalAmount,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    :fibo-der-rtd-irswp/FixedFloatSingleCurrencyInterestRateSwap],
+    :fibo-der-rtd-irswp/FixedFloatSingleCurrencyInterestRateSwap
+    :fibo-der-rtd-irswp/PlainVanillaInterestRateSwap
+    {:owl/intersectionOf
+     [{:owl/onProperty     :fibo-fnd-rel-rel/exchanges,
+       :owl/someValuesFrom :fibo-der-rtd-irswp/FixedInterestRateLeg,
+       :rdf/type           :owl/Restriction}
+      {:owl/onProperty     :fibo-fnd-rel-rel/exchanges,
+       :owl/someValuesFrom :fibo-der-rtd-irswp/FloatingInterestRateLeg,
+       :rdf/type           :owl/Restriction}],
+     :rdf/type :owl/Class}
+    :fibo-der-rtd-irswp/FixedFloatInterestRateSwap
+    :fibo-der-drc-swp/RatesSwap
+    {:owl/onClass    :fibo-der-rtd-irswp/InterestRateSwapLeg,
+     :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+     :owl/qualifiedCardinality 2,
+     :rdf/type       :owl/Restriction}
+    :fibo-der-rtd-rtd/InterestRateDerivativeInstrument
+    :fibo-der-rtd-irswp/InterestRateSwap],
    :skos/definition
    "fixed-float single currency interest rate swap in which interest payments are netted, the notional principal does not change, and there are no embedded options"})
 
@@ -582,7 +798,14 @@
                       :owl/onProperty :fibo-fbc-fct-ra/specifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-rtd-irswp/InterestRateSwap],
+                     :fibo-der-rtd-irswp/InterestRateSwap
+                     :fibo-der-rtd-irswp/SingleCurrencyInterestRateSwap
+                     :fibo-der-drc-swp/RatesSwap
+                     {:owl/onClass    :fibo-der-rtd-irswp/InterestRateSwapLeg,
+                      :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+                      :owl/qualifiedCardinality 2,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-der-rtd-rtd/InterestRateDerivativeInstrument],
    :skos/definition
    "interest rate swap in which the two streams of interest payments are in the same currency"})
 
@@ -597,7 +820,8 @@
                       :owl/someValuesFrom
                       :fibo-der-rtd-irswp/SwapStreamInterestRateResetSchedule,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-dt-fd/RelativeDate],
+                     :fibo-fnd-dt-fd/RelativeDate
+                     :fibo-der-rtd-irswp/SwapStreamCalculationRelativeDate],
    :skos/definition
    "calculation date that is relative to the rate reset schedule"})
 
@@ -608,7 +832,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "swapstream interest calculation",
-   :rdfs/subClassOf :fibo-fnd-utl-alx/Expression,
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/Expression
+                     :fibo-der-rtd-irswp/SwapStreamInterestCalculation],
    :skos/definition
    "expression that specifies the formula for calculation of interest"})
 
@@ -619,7 +844,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "swap stream interest calculation schedule",
-   :rdfs/subClassOf :fibo-sec-sec-sch/ParametricSchedule,
+   :rdfs/subClassOf [:fibo-sec-sec-sch/ParametricSchedule
+                     :fibo-der-rtd-irswp/SwapStreamInterestCalculationSchedule],
    :skos/definition
    "parametric schedule that represents the dates on which interest is calculated"})
 
@@ -630,7 +856,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "swap stream interest payment",
-   :rdfs/subClassOf :fibo-fnd-pas-psch/Payment,
+   :rdfs/subClassOf [:fibo-fnd-pas-psch/Payment
+                     :fibo-der-rtd-irswp/SwapStreamInterestPayment],
    :skos/definition
    "event involving the payment of interest for a given swap leg"})
 
@@ -644,7 +871,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "swap stream interest payment schedule",
    :rdfs/subClassOf [:fibo-sec-sec-sch/ParametricSchedule
-                     :fibo-fnd-pas-psch/PaymentSchedule],
+                     :fibo-fnd-pas-psch/PaymentSchedule
+                     :fibo-der-rtd-irswp/SwapStreamInterestPaymentSchedule],
    :skos/definition
    "parametric schedule that represents the dates on which interest is due to be paid"})
 
@@ -655,7 +883,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "swap stream interest rate reset",
-   :rdfs/subClassOf :fibo-der-rtd-irswp/InterestRateStreamEvent,
+   :rdfs/subClassOf [:fibo-der-rtd-irswp/InterestRateStreamEvent
+                     :fibo-der-rtd-irswp/SwapStreamInterestRateReset
+                     :fibo-der-drc-swp/SwapStreamEvent],
    :skos/definition
    "event in which an interest rate for a given swap stream changes (resets)"})
 
@@ -668,7 +898,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "swapstream interest rate reset schedule",
-   :rdfs/subClassOf :fibo-sec-sec-sch/ParametricSchedule,
+   :rdfs/subClassOf [:fibo-sec-sec-sch/ParametricSchedule
+                     :fibo-der-rtd-irswp/SwapStreamInterestRateResetSchedule],
    :skos/definition "parametric schedule of reset dates"})
 
 (def SwapStreamInterestRateSettingEvent
@@ -682,7 +913,9 @@
                       :owl/someValuesFrom
                       :fibo-der-rtd-irswp/SwapStreamInterestSettingRelativeDate,
                       :rdf/type :owl/Restriction}
-                     :fibo-der-rtd-irswp/InterestRateStreamEvent],
+                     :fibo-der-rtd-irswp/InterestRateStreamEvent
+                     :fibo-der-rtd-irswp/SwapStreamInterestRateSettingEvent
+                     :fibo-der-drc-swp/SwapStreamEvent],
    :skos/definition
    "event in which an interest rate for a given swap stream is determined"})
 
@@ -697,16 +930,16 @@
                       :owl/someValuesFrom
                       :fibo-der-rtd-irswp/SwapStreamInterestRateReset,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-dt-fd/RelativeDate],
+                     :fibo-fnd-dt-fd/RelativeDate
+                     :fibo-der-rtd-irswp/SwapStreamInterestSettingRelativeDate],
    :skos/definition
    "date on which an interest rate is revised if that date is relative to a rate reset event"})
 
 (def ZeroCouponInterestRateSwap
   "fixed-float single currency interest rate swap in which payments on the floating leg are made periodically, similar to a plain vanilla interest rate swap, but the fixed rate cash flows are compounded and paid as a lump sum on the expiration date, rather than periodically"
   {:cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fifth edition, 2021-06-15"},
+   #voc/lstr
+    "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fifth edition, 2021-06-15@en",
    :db/ident :fibo-der-rtd-irswp/ZeroCouponInterestRateSwap,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -717,7 +950,24 @@
      :owl/onProperty :fibo-fnd-acc-cur/hasNotionalAmount,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    :fibo-der-rtd-irswp/FixedFloatSingleCurrencyInterestRateSwap],
+    :fibo-der-rtd-irswp/FixedFloatSingleCurrencyInterestRateSwap
+    :fibo-der-rtd-irswp/ZeroCouponInterestRateSwap
+    {:owl/intersectionOf
+     [{:owl/onProperty     :fibo-fnd-rel-rel/exchanges,
+       :owl/someValuesFrom :fibo-der-rtd-irswp/FixedInterestRateLeg,
+       :rdf/type           :owl/Restriction}
+      {:owl/onProperty     :fibo-fnd-rel-rel/exchanges,
+       :owl/someValuesFrom :fibo-der-rtd-irswp/FloatingInterestRateLeg,
+       :rdf/type           :owl/Restriction}],
+     :rdf/type :owl/Class}
+    :fibo-der-rtd-irswp/FixedFloatInterestRateSwap
+    :fibo-der-drc-swp/RatesSwap
+    {:owl/onClass    :fibo-der-rtd-irswp/InterestRateSwapLeg,
+     :owl/onProperty :fibo-fnd-rel-rel/exchanges,
+     :owl/qualifiedCardinality 2,
+     :rdf/type       :owl/Restriction}
+    :fibo-der-rtd-rtd/InterestRateDerivativeInstrument
+    :fibo-der-rtd-irswp/InterestRateSwap],
    :skos/definition
    "fixed-float single currency interest rate swap in which payments on the floating leg are made periodically, similar to a plain vanilla interest rate swap, but the fixed rate cash flows are compounded and paid as a lump sum on the expiration date, rather than periodically"})
 
@@ -729,7 +979,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "has first notional step date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf :cmns-dt/hasStartDate,
+   :rdfs/subPropertyOf [:cmns-dt/hasStartDate
+                        :fibo-der-rtd-irswp/hasFirstNotionalStepDate],
    :skos/definition "indicates the initial date in a notional step schedule"})
 
 (def hasFloatingRateCap
@@ -742,7 +993,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "has floating rate cap",
    :rdfs/range :fibo-fbc-dae-dbt/FloatingInterestRate,
-   :rdfs/subPropertyOf :fibo-fbc-dae-dbt/hasInterestRate,
+   :rdfs/subPropertyOf [:fibo-fbc-dae-dbt/hasInterestRate
+                        :fibo-der-rtd-irswp/hasFloatingRateCap],
    :skos/definition
    "indicates an optional ceiling (cap) on interest rates on floating rate debts"})
 
@@ -754,7 +1006,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "has floating rate floor",
    :rdfs/range :fibo-fbc-dae-dbt/FloatingInterestRate,
-   :rdfs/subPropertyOf :fibo-fbc-dae-dbt/hasInterestRate,
+   :rdfs/subPropertyOf [:fibo-fbc-dae-dbt/hasInterestRate
+                        :fibo-der-rtd-irswp/hasFloatingRateFloor],
    :skos/definition
    "indicates an optional lower bound on interest rates on floating rate debts"})
 
@@ -779,7 +1032,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "has interest calculation schedule",
    :rdfs/range :fibo-fnd-dt-fd/RegularSchedule,
-   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasSchedule,
+   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasSchedule
+                        :fibo-der-rtd-irswp/hasInterestCalculationSchedule],
    :skos/definition
    "links a set of terms to a corresponding schedule for calculating interest"})
 
@@ -791,7 +1045,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "has interest rate reset schedule",
    :rdfs/range :fibo-fnd-dt-fd/Schedule,
-   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasSchedule,
+   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasSchedule
+                        :fibo-der-rtd-irswp/hasInterestRateResetSchedule],
    :skos/definition
    "links a set of terms to a corresponding schedule for resetting the interest rate"})
 
@@ -803,7 +1058,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "has last notional step date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf :cmns-dt/hasEndDate,
+   :rdfs/subPropertyOf [:cmns-dt/hasEndDate
+                        :fibo-der-rtd-irswp/hasLastNotionalStepDate],
    :skos/definition "indicates the final date in a notional step schedule"})
 
 (def hasNotionalStepSchedule
@@ -814,7 +1070,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "has notional step schedule",
    :rdfs/range :fibo-fnd-dt-fd/Schedule,
-   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasSchedule,
+   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasSchedule
+                        :fibo-der-rtd-irswp/hasNotionalStepSchedule],
    :skos/definition
    "links a set of terms to a corresponding notional step schedule"})
 

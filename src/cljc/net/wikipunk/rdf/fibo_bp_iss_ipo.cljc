@@ -68,8 +68,7 @@
    :rdfa/prefix "fibo-bp-iss-ipo",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Equities IPO Issuance Ontology"}})
+   :rdfs/label #voc/lstr "Equities IPO Issuance Ontology@en"})
 
 (def AgreeBasisForAllocation
   "agree basis for allocation"
@@ -77,9 +76,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "agree basis for allocation"},
-   :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
+   :rdfs/label #voc/lstr "agree basis for allocation@en",
+   :rdfs/subClassOf [:fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/AgreeBasisForAllocation
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def Allocation
   "allocation"
@@ -87,9 +90,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "allocation"},
-   :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
+   :rdfs/label #voc/lstr "allocation@en",
+   :rdfs/subClassOf [:fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/Allocation
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def AllocationBasisDetails
   "allocation basis details"
@@ -97,9 +104,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "allocation basis details"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/label #voc/lstr "allocation basis details@en",
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
+                     :fibo-bp-iss-ipo/AllocationBasisDetails]})
 
 (def AllocationDetails
   "allocation details"
@@ -107,9 +114,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "allocation details"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/label #voc/lstr "allocation details@en",
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
+                     :fibo-bp-iss-ipo/AllocationDetails]})
 
 (def AnnounceEquityIssue
   "announce equity issue"
@@ -117,9 +124,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "announce equity issue"},
-   :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
+   :rdfs/label #voc/lstr "announce equity issue@en",
+   :rdfs/subClassOf [:fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/AnnounceEquityIssue
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def ApplicationForShares
   "application for shares"
@@ -127,9 +138,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "application for shares"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/label #voc/lstr "application for shares@en",
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
+                     :fibo-bp-iss-ipo/ApplicationForShares]})
 
 (def AppointAdvisors
   "appoint advisors"
@@ -137,8 +148,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "appoint advisors"},
+   :rdfs/label #voc/lstr "appoint advisors@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/designates,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-bp-iss-ipo/CorporateBroker
@@ -150,7 +160,12 @@
                      {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
                       :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep]})
+                     :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/AppointAdvisors
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def ApproveForFlotation
   "approve for flotation"
@@ -158,12 +173,16 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "approve for flotation"},
+   :rdfs/label #voc/lstr "approve for flotation@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-mkt/Exchange,
                       :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep]})
+                     :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/ApproveForFlotation
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def CorporateBroker
   "corporate broker"
@@ -171,9 +190,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "corporate broker"},
-   :rdfs/subClassOf :fibo-fbc-pas-fpas/Broker})
+   :rdfs/label #voc/lstr "corporate broker@en",
+   :rdfs/subClassOf [:fibo-fbc-pas-fpas/Broker
+                     :fibo-bp-iss-ipo/CorporateBroker]})
 
 (def EquityAnnouncement
   "equity announcement"
@@ -181,9 +200,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "equity announcement"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Notice})
+   :rdfs/label #voc/lstr "equity announcement@en",
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Notice
+                     :fibo-bp-iss-ipo/EquityAnnouncement]})
 
 (def FilingDetails
   "filing details"
@@ -191,9 +210,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "filing details"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/label #voc/lstr "filing details@en",
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
+                     :fibo-bp-iss-ipo/FilingDetails]})
 
 (def FormalApprovalForListingAndTrading
   "formal approval for listing and trading"
@@ -201,12 +220,16 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "formal approval for listing and trading"},
+   :rdfs/label #voc/lstr "formal approval for listing and trading@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-mkt/Exchange,
                       :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep]})
+                     :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/FormalApprovalForListingAndTrading
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def IPOFullProspectus
   "i p o full prospectus"
@@ -214,9 +237,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "i p o full prospectus"},
-   :rdfs/subClassOf :fibo-bp-iss-doc/FinalProspectus})
+   :rdfs/label #voc/lstr "i p o full prospectus@en",
+   :rdfs/subClassOf [:fibo-bp-iss-doc/FinalProspectus
+                     :fibo-bp-iss-ipo/IPOFullProspectus]})
 
 (def IPOPreliminaryProspectus
   "i p o preliminary prospectus"
@@ -224,12 +247,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "i p o preliminary prospectus"},
+   :rdfs/label #voc/lstr "i p o preliminary prospectus@en",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dt/precedes,
                       :owl/someValuesFrom :fibo-bp-iss-ipo/IPOFullProspectus,
                       :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-doc/PreliminaryProspectus]})
+                     :fibo-bp-iss-doc/PreliminaryProspectus
+                     :fibo-bp-iss-ipo/IPOPreliminaryProspectus]})
 
 (def IPOProcess
   "i p o process"
@@ -237,11 +260,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "i p o process"},
-   :rdfs/subClassOf {:owl/onProperty     :cmns-dt/hasDatePeriod,
-                     :owl/someValuesFrom :cmns-dt/DatePeriod,
-                     :rdf/type           :owl/Restriction}})
+   :rdfs/label #voc/lstr "i p o process@en",
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-dt/hasDatePeriod,
+                      :owl/someValuesFrom :cmns-dt/DatePeriod,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-bp-iss-ipo/IPOProcess]})
 
 (def IPOSettlementDetails
   "i p o settlement details"
@@ -249,9 +272,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "i p o settlement details"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/label #voc/lstr "i p o settlement details@en",
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
+                     :fibo-bp-iss-ipo/IPOSettlementDetails]})
 
 (def IndicationOfInterest
   "indication of interest"
@@ -259,9 +282,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "indication of interest"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/label #voc/lstr "indication of interest@en",
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
+                     :fibo-bp-iss-ipo/IndicationOfInterest]})
 
 (def InitialPublicOfferingProcessStep
   "initial public offering process step"
@@ -274,7 +297,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/OccurrenceKind]})
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep]})
 
 (def MarketingOfShareIssue
   "marketing of share issue"
@@ -282,9 +306,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "marketing of share issue"},
-   :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
+   :rdfs/label #voc/lstr "marketing of share issue@en",
+   :rdfs/subClassOf [:fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/MarketingOfShareIssue
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def NoticeOfAllocation
   "notice of allocation"
@@ -292,9 +320,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "notice of allocation"},
-   :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
+   :rdfs/label #voc/lstr "notice of allocation@en",
+   :rdfs/subClassOf [:fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/NoticeOfAllocation
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def PotentialShareUnderwriter
   "potential share underwriter"
@@ -302,9 +334,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "potential share underwriter"},
-   :rdfs/subClassOf :fibo-bp-iss-prc/PotentialUnderwriter})
+   :rdfs/label #voc/lstr "potential share underwriter@en",
+   :rdfs/subClassOf [:fibo-bp-iss-prc/PotentialUnderwriter
+                     :fibo-bp-iss-ipo/PotentialShareUnderwriter]})
 
 (def PublishInitialProspectus
   "publish initial prospectus"
@@ -312,9 +344,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "publish initial prospectus"},
-   :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
+   :rdfs/label #voc/lstr "publish initial prospectus@en",
+   :rdfs/subClassOf [:fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/PublishInitialProspectus
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def PurchasePrice
   "purchase price"
@@ -322,9 +358,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "purchase price"},
-   :rdfs/subClassOf :fibo-fnd-acc-cur/MonetaryPrice})
+   :rdfs/label #voc/lstr "purchase price@en",
+   :rdfs/subClassOf [:fibo-fnd-acc-cur/MonetaryPrice
+                     :fibo-bp-iss-ipo/PurchasePrice]})
 
 (def PurchaseUnallocatedStock
   "purchase unallocated stock"
@@ -332,9 +368,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "purchase unallocated stock"},
-   :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
+   :rdfs/label #voc/lstr "purchase unallocated stock@en",
+   :rdfs/subClassOf [:fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/PurchaseUnallocatedStock
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def ReceiveApplications
   "receive applications"
@@ -342,9 +382,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "receive applications"},
-   :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
+   :rdfs/label #voc/lstr "receive applications@en",
+   :rdfs/subClassOf [:fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/ReceiveApplications
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def RegisterWithRegulatoryAuthority
   "register with regulatory authority"
@@ -352,12 +396,16 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "register with regulatory authority"},
+   :rdfs/label #voc/lstr "register with regulatory authority@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-mkt/Exchange,
                       :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep]})
+                     :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/RegisterWithRegulatoryAuthority
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def RegistrationStatementDocument
   "registration statement document"
@@ -365,9 +413,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "registration statement document"},
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document})
+   :rdfs/label #voc/lstr "registration statement document@en",
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
+                     :fibo-bp-iss-ipo/RegistrationStatementDocument]})
 
 (def ReportingAccountant
   "reporting accountant"
@@ -375,9 +423,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "reporting accountant"},
-   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole})
+   :rdfs/label #voc/lstr "reporting accountant@en",
+   :rdfs/subClassOf [:fibo-fnd-pty-pty/PartyInRole
+                     :fibo-bp-iss-ipo/ReportingAccountant]})
 
 (def SetPrice
   "set price"
@@ -385,9 +433,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "set price"},
-   :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
+   :rdfs/label #voc/lstr "set price@en",
+   :rdfs/subClassOf [:fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/SetPrice
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def SettlementOfAllocatedShares
   "settlement of allocated shares"
@@ -395,9 +447,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "settlement of allocated shares"},
-   :rdfs/subClassOf :fibo-bp-iss-ipo/InitialPublicOfferingProcessStep})
+   :rdfs/label #voc/lstr "settlement of allocated shares@en",
+   :rdfs/subClassOf [:fibo-bp-iss-ipo/InitialPublicOfferingProcessStep
+                     :fibo-bp-iss-ipo/SettlementOfAllocatedShares
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-bp-iss-ipo/IPOProcess,
+                      :rdf/type           :owl/Restriction}]})
 
 (def ShareRegister
   "share register"
@@ -405,9 +461,8 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "share register"},
-   :rdfs/subClassOf :fibo-fbc-fct-ra/Registry})
+   :rdfs/label #voc/lstr "share register@en",
+   :rdfs/subClassOf [:fibo-fbc-fct-ra/Registry :fibo-bp-iss-ipo/ShareRegister]})
 
 (def Sponsor
   "sponsor"
@@ -415,12 +470,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "sponsor"},
+   :rdfs/label #voc/lstr "sponsor@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-bp-iss-ipo/mayBe,
                       :owl/someValuesFrom :fibo-bp-iss-ipo/CorporateBroker,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole]})
+                     :fibo-fnd-pty-pty/PartyInRole
+                     :fibo-bp-iss-ipo/Sponsor]})
 
 (def SyndicateMember
   "syndicate member"
@@ -428,9 +483,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "syndicate member"},
-   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole})
+   :rdfs/label #voc/lstr "syndicate member@en",
+   :rdfs/subClassOf [:fibo-fnd-pty-pty/PartyInRole
+                     :fibo-bp-iss-ipo/SyndicateMember]})
 
 (def Underwriting
   "underwriting"
@@ -438,15 +493,15 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "underwriting"},
+   :rdfs/label #voc/lstr "underwriting@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-bp-iss-ipo/syndicateMember,
                       :owl/someValuesFrom :fibo-bp-iss-ipo/SyndicateMember,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-bp-iss-ipo/shareUnderwriter,
                       :owl/someValuesFrom
                       :fibo-bp-iss-ipo/PotentialShareUnderwriter,
-                      :rdf/type :owl/Restriction}]})
+                      :rdf/type :owl/Restriction}
+                     :fibo-bp-iss-ipo/Underwriting]})
 
 (def lead
   "lead"
@@ -455,8 +510,7 @@
    :rdfs/domain :fibo-bp-iss-ipo/AppointAdvisors,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "lead"},
+   :rdfs/label #voc/lstr "lead@en",
    :rdfs/range :fibo-bp-iss-ipo/Sponsor})
 
 (def mayBe
@@ -466,8 +520,7 @@
    :rdfs/domain :fibo-bp-iss-ipo/Sponsor,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "may be"},
+   :rdfs/label #voc/lstr "may be@en",
    :rdfs/range :fibo-bp-iss-ipo/CorporateBroker})
 
 (def shareUnderwriter
@@ -477,8 +530,7 @@
    :rdfs/domain :fibo-bp-iss-ipo/Underwriting,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "share underwriter"},
+   :rdfs/label #voc/lstr "share underwriter@en",
    :rdfs/range :fibo-bp-iss-ipo/PotentialShareUnderwriter})
 
 (def syndicateMember
@@ -488,6 +540,5 @@
    :rdfs/domain :fibo-bp-iss-ipo/Underwriting,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "syndicate member"},
+   :rdfs/label #voc/lstr "syndicate member@en",
    :rdfs/range :fibo-bp-iss-ipo/SyndicateMember})

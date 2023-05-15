@@ -46,8 +46,7 @@
    :rdfa/prefix "fibo-cae-ce-15022",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value "ISO 15022 Corporate Action Individuals Ontology"}})
+   :rdfs/label #voc/lstr "ISO 15022 Corporate Action Individuals Ontology@en"})
 
 (def BIDS
   "ISO 15022 classifier for corporate actions in which an offer is made to existing shareholders by the issuing company to repurchase equity or other securities convertible into equity"
@@ -61,12 +60,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "BIDS"},
+   :rdfs/label #voc/lstr "BIDS@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions in which an offer is made to existing shareholders by the issuing company to repurchase equity or other securities convertible into equity"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions in which an offer is made to existing shareholders by the issuing company to repurchase equity or other securities convertible into equity@en"})
 
 (def BONU
   "ISO 15022 classifier for corporate actions in which security holders are awarded additional assets free of payment from the issuer in proportion to their holding"
@@ -80,12 +77,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "BONU"},
+   :rdfs/label #voc/lstr "BONU@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions in which security holders are awarded additional assets free of payment from the issuer in proportion to their holding"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions in which security holders are awarded additional assets free of payment from the issuer in proportion to their holding@en"})
 
 (def BPUT
   "ISO 15022 classifier for corporate actions that involve early redemption of a security at the election of the holder subject to the terms and condition of the issue with no reduction in nominal value"
@@ -99,12 +94,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "BPUT"},
+   :rdfs/label #voc/lstr "BPUT@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve early redemption of a security at the election of the holder subject to the terms and condition of the issue with no reduction in nominal value"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve early redemption of a security at the election of the holder subject to the terms and condition of the issue with no reduction in nominal value@en"})
 
 (def CAPD
   "ISO 15022 classifier for corporate actions that pay shareholders an amount in cash issued from the issuer's capital account"
@@ -118,12 +111,10 @@
    :rdf/type [:fibo-cae-ce-act/IncomeOrientedClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "CAPD"},
+   :rdfs/label #voc/lstr "CAPD@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that pay shareholders an amount in cash issued from the issuer's capital account"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that pay shareholders an amount in cash issued from the issuer's capital account@en"})
 
 (def CAPG
   "ISO 15022 classifier for corporate actions that distribute profits resulting from the sale of company assets to shareholders"
@@ -137,12 +128,10 @@
    :rdf/type [:fibo-cae-ce-act/IncomeOrientedClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "CAPG"},
+   :rdfs/label #voc/lstr "CAPG@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that distribute profits resulting from the sale of company assets to shareholders"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that distribute profits resulting from the sale of company assets to shareholders@en"})
 
 (def CHAN
   "ISO 15022 classifier for corporate actions that disseminate information regarding a change further described in the corporate action details"
@@ -156,12 +145,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "CHAN"},
+   :rdfs/label #voc/lstr "CHAN@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that disseminate information regarding a change further described in the corporate action details"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that disseminate information regarding a change further described in the corporate action details@en"})
 
 (def CLSA
   "ISO 15022 classifier for corporate actions involving a situation where interested parties seek restitution for financial loss"
@@ -175,12 +162,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "CLSA"},
+   :rdfs/label #voc/lstr "CLSA@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions involving a situation where interested parties seek restitution for financial loss"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions involving a situation where interested parties seek restitution for financial loss@en"})
 
 (def CONS
   "ISO 15022 classifier for corporate actions that involve procedures aiming to obtain consent of holder to a proposal by the issuer or a third party without convening a meeting"
@@ -194,12 +179,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "CONS"},
+   :rdfs/label #voc/lstr "CONS@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve procedures aiming to obtain consent of holder to a proposal by the issuer or a third party without convening a meeting"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve procedures aiming to obtain consent of holder to a proposal by the issuer or a third party without convening a meeting@en"})
 
 (def CONV
   "ISO 15022 classifier for corporate actions that involve conversion of securities (generally convertible bonds or preferred shares) into another form of securities (usually common shares) at a pre-stated price/ratio"
@@ -213,12 +196,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "CONV"},
+   :rdfs/label #voc/lstr "CONV@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve conversion of securities (generally convertible bonds or preferred shares) into another form of securities (usually common shares) at a pre-stated price/ratio"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve conversion of securities (generally convertible bonds or preferred shares) into another form of securities (usually common shares) at a pre-stated price/ratio@en"})
 
 (def DECR
   "ISO 15022 classifier for corporate actions that reduce the face value of a share or the value of fund assets"
@@ -232,12 +213,10 @@
    :rdf/type [:fibo-cae-ce-act/IncomeOrientedClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "DECR"},
+   :rdfs/label #voc/lstr "DECR@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that reduce the face value of a share or the value of fund assets"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that reduce the face value of a share or the value of fund assets@en"})
 
 (def DFLT
   "ISO 15022 classifier for corporate actions that indicate a failure by the issuer to perform obligations defined as default events under the bond agreement and that have not been remedied"
@@ -251,12 +230,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "DFLT"},
+   :rdfs/label #voc/lstr "DFLT@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that indicate a failure by the issuer to perform obligations defined as default events under the bond agreement and that have not been remedied"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that indicate a failure by the issuer to perform obligations defined as default events under the bond agreement and that have not been remedied@en"})
 
 (def DRIP
   "ISO 15022 classifier for corporate actions that involve a dividend payment whereby holders can keep cash or have the cash reinvested into additional shares in the issuing company"
@@ -270,12 +247,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "DRIP"},
+   :rdfs/label #voc/lstr "DRIP@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve a dividend payment whereby holders can keep cash or have the cash reinvested into additional shares in the issuing company"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve a dividend payment whereby holders can keep cash or have the cash reinvested into additional shares in the issuing company@en"})
 
 (def DSCL
   "ISO 15022 classifier for corporate actions that involve a requirement for holders or beneficial owners to disclose their name, location and holdings of any issue to the issuer"
@@ -289,12 +264,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "DSCL"},
+   :rdfs/label #voc/lstr "DSCL@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve a requirement for holders or beneficial owners to disclose their name, location and holdings of any issue to the issuer"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve a requirement for holders or beneficial owners to disclose their name, location and holdings of any issue to the issuer@en"})
 
 (def DTCH
   "ISO 15022 classifier for corporate actions involving parties wishing to acquire a security"
@@ -308,12 +281,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "DTCH"},
+   :rdfs/label #voc/lstr "DTCH@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions involving parties wishing to acquire a security"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions involving parties wishing to acquire a security@en"})
 
 (def DVCA
   "ISO 15022 classifier for corporate actions that distribute cash to shareholders in proportion to their equity holding"
@@ -327,12 +298,10 @@
    :rdf/type [:fibo-cae-ce-act/IncomeOrientedClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "DVCA"},
+   :rdfs/label #voc/lstr "DVCA@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that distribute cash to shareholders in proportion to their equity holding"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that distribute cash to shareholders in proportion to their equity holding@en"})
 
 (def DVOP
   "ISO 15022 classifier for corporate actions that involve distribution of a dividend to shareholders with a choice of benefit to receive"
@@ -346,12 +315,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "DVOP"},
+   :rdfs/label #voc/lstr "DVOP@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve distribution of a dividend to shareholders with a choice of benefit to receive"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve distribution of a dividend to shareholders with a choice of benefit to receive@en"})
 
 (def DVSE
   "ISO 15022 classifier for corporate actions that involve distribution of a dividend to shareholders in the form of equities of the issuing corporation"
@@ -365,12 +332,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "DVSE"},
+   :rdfs/label #voc/lstr "DVSE@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve distribution of a dividend to shareholders in the form of equities of the issuing corporation"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve distribution of a dividend to shareholders in the form of equities of the issuing corporation@en"})
 
 (def EXOF
   "ISO 15022 classifier for corporate actions that reflect an exchange of holdings for other securities and/or cash"
@@ -384,12 +349,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "EXOF"},
+   :rdfs/label #voc/lstr "EXOF@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that reflect an exchange of holdings for other securities and/or cash"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that reflect an exchange of holdings for other securities and/or cash@en"})
 
 (def EXRI
   "ISO 15022 classifier for corporate actions that involve a call or exercise on nil paid securities or intermediate securities resulting from an intermediate securities distribution (RHDI)"
@@ -403,12 +366,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "EXRI"},
+   :rdfs/label #voc/lstr "EXRI@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve a call or exercise on nil paid securities or intermediate securities resulting from an intermediate securities distribution (RHDI)"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve a call or exercise on nil paid securities or intermediate securities resulting from an intermediate securities distribution (RHDI)@en"})
 
 (def EXTM
   "ISO 15022 classifier for corporate actions that involve prolonging the maturity date of a bond"
@@ -422,12 +383,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "EXTM"},
+   :rdfs/label #voc/lstr "EXTM@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve prolonging the maturity date of a bond"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve prolonging the maturity date of a bond@en"})
 
 (def EXWA
   "ISO 15022 classifier for corporate actions that offer holders the option to buy (call warrant) or to sell (put warrant) a specific amount of stock, cash, or commodity, at a predetermined price, during a predetermined period of time"
@@ -443,12 +402,10 @@
               :fibo-cae-ce-act/IncomeOrientedClassifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "EXWA"},
+   :rdfs/label #voc/lstr "EXWA@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that offer holders the option to buy (call warrant) or to sell (put warrant) a specific amount of stock, cash, or commodity, at a predetermined price, during a predetermined period of time"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that offer holders the option to buy (call warrant) or to sell (put warrant) a specific amount of stock, cash, or commodity, at a predetermined price, during a predetermined period of time@en"})
 
 (def INFO
   "ISO 15022 classifier for corporate actions involving information provided by the issuer having no accounting/financial impact on the holder"
@@ -462,12 +419,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "INFO"},
+   :rdfs/label #voc/lstr "INFO@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions involving information provided by the issuer having no accounting/financial impact on the holder"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions involving information provided by the issuer having no accounting/financial impact on the holder@en"})
 
 (def INTR
   "ISO 15022 classifier for corporate actions that involve distribution of a regular interest payment to holders of an interest-bearing asset"
@@ -481,12 +436,10 @@
    :rdf/type [:fibo-cae-ce-act/IncomeOrientedClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "INTR"},
+   :rdfs/label #voc/lstr "INTR@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve distribution of a regular interest payment to holders of an interest-bearing asset"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve distribution of a regular interest payment to holders of an interest-bearing asset@en"})
 
 (def ISO15022CorporateActionClassificationScheme
   "scheme for classifying corporate actions according to ISO 15022 Securities - Scheme for Messages (Data Field Dictionary)"
@@ -510,12 +463,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "LIQU"},
+   :rdfs/label #voc/lstr "LIQU@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions consisting of distribution of cash, assets, or both"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions consisting of distribution of cash, assets, or both@en"})
 
 (def MCAL
   "ISO 15022 classifier for corporate actions that involve redemption of an entire issue outstanding of securities prior to maturity"
@@ -529,12 +480,10 @@
    :rdf/type [:fibo-cae-ce-act/IncomeOrientedClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "MCAL"},
+   :rdfs/label #voc/lstr "MCAL@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve redemption of an entire issue outstanding of securities prior to maturity"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve redemption of an entire issue outstanding of securities prior to maturity@en"})
 
 (def MRGR
   "ISO 15022 classifier for corporate actions that involve the exchange of outstanding securities, initiated by the issuer which may include options, as the result of two or more companies combining assets, that is, an external, third party company"
@@ -548,12 +497,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "MRGR"},
+   :rdfs/label #voc/lstr "MRGR@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve the exchange of outstanding securities, initiated by the issuer which may include options, as the result of two or more companies combining assets, that is, an external, third party company"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve the exchange of outstanding securities, initiated by the issuer which may include options, as the result of two or more companies combining assets, that is, an external, third party company@en"})
 
 (def PARI
   "ISO 15022 classifier for corporate actions that occur when securities with different characteristics become identical in all respects"
@@ -567,12 +514,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "PARI"},
+   :rdfs/label #voc/lstr "PARI@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that occur when securities with different characteristics become identical in all respects"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that occur when securities with different characteristics become identical in all respects@en"})
 
 (def PCAL
   "ISO 15022 classifier for corporate actions that involve redemption of securities in part before their scheduled final maturity date with reduction of the nominal value of the securities"
@@ -587,12 +532,10 @@
    :rdf/type [:fibo-cae-ce-act/IncomeOrientedClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "PCAL"},
+   :rdfs/label #voc/lstr "PCAL@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve redemption of securities in part before their scheduled final maturity date with reduction of the nominal value of the securities"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve redemption of securities in part before their scheduled final maturity date with reduction of the nominal value of the securities@en"})
 
 (def PRED
   "ISO 15022 classifier for corporate actions that involve redemption of securities in part before their scheduled final maturity date with no reduction in nominal value"
@@ -607,12 +550,10 @@
    :rdf/type [:fibo-cae-ce-act/IncomeOrientedClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "PRED"},
+   :rdfs/label #voc/lstr "PRED@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve redemption of securities in part before their scheduled final maturity date with no reduction in nominal value"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve redemption of securities in part before their scheduled final maturity date with no reduction in nominal value@en"})
 
 (def PRIO
   "ISO 15022 classifier for corporate actions that involve a public offer where priority is given to existing shareholders"
@@ -626,12 +567,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "PRIO"},
+   :rdfs/label #voc/lstr "PRIO@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve a public offer where priority is given to existing shareholders"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve a public offer where priority is given to existing shareholders@en"})
 
 (def REDM
   "ISO 15022 classifier for corporate actions that involve redemption of an entire issue outstanding of securities at final maturity"
@@ -645,12 +584,10 @@
    :rdf/type [:fibo-cae-ce-act/IncomeOrientedClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "REDM"},
+   :rdfs/label #voc/lstr "REDM@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve redemption of an entire issue outstanding of securities at final maturity"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve redemption of an entire issue outstanding of securities at final maturity@en"})
 
 (def REDO
   "ISO 15022 classifier for corporate actions by which the unit (currency and/or nominal) of a security is restated"
@@ -664,12 +601,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "REDO"},
+   :rdfs/label #voc/lstr "REDO@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions by which the unit (currency and/or nominal) of a security is restated"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions by which the unit (currency and/or nominal) of a security is restated@en"})
 
 (def RHDI
   "ISO 15022 classifier for corporate actions involving the distribution of intermediate securities or privilege that gives the holder the right to take part in a future event"
@@ -683,12 +618,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "RHDI"},
+   :rdfs/label #voc/lstr "RHDI@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions involving the distribution of intermediate securities or privilege that gives the holder the right to take part in a future event"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions involving the distribution of intermediate securities or privilege that gives the holder the right to take part in a future event@en"})
 
 (def SHPR
   "ISO 15022 classifier for corporate actions that pay shareholders an amount in cash issued from the shares premium reserve"
@@ -702,12 +635,10 @@
    :rdf/type [:fibo-cae-ce-act/IncomeOrientedClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "SHPR"},
+   :rdfs/label #voc/lstr "SHPR@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that pay shareholders an amount in cash issued from the shares premium reserve"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that pay shareholders an amount in cash issued from the shares premium reserve@en"})
 
 (def SOFF
   "ISO 15022 classifier for corporate actions that involve the distribution of subsidiary stock to the shareholders of the parent company without a surrender of shares"
@@ -721,12 +652,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "SOFF"},
+   :rdfs/label #voc/lstr "SOFF@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve the distribution of subsidiary stock to the shareholders of the parent company without a surrender of shares"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve the distribution of subsidiary stock to the shareholders of the parent company without a surrender of shares@en"})
 
 (def SPLF
   "ISO 15022 classifier for corporate actions that involve an increase in a corporation's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split"
@@ -740,12 +669,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "SPLF"},
+   :rdfs/label #voc/lstr "SPLF@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve an increase in a corporation's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve an increase in a corporation's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split@en"})
 
 (def SPLR
   "ISO 15022 classifier for corporate actions that involve a decrease in a company's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split"
@@ -759,12 +686,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "SPLR"},
+   :rdfs/label #voc/lstr "SPLR@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve a decrease in a company's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve a decrease in a company's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split@en"})
 
 (def TEND
   "ISO 15022 classifier for corporate actions involving information provided by the issuer having no accounting/financial impact on the holder"
@@ -778,12 +703,10 @@
    :rdf/type [:fibo-cae-ce-act/BusinessStrategyClassifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "TEND"},
+   :rdfs/label #voc/lstr "TEND@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions involving information provided by the issuer having no accounting/financial impact on the holder"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions involving information provided by the issuer having no accounting/financial impact on the holder@en"})
 
 (def WRTH
   "ISO 15022 classifier for corporate actions that involve booking out of valueless securities"
@@ -799,9 +722,7 @@
               :fibo-cae-ce-act/BusinessStrategyClassifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "WRTH"},
+   :rdfs/label #voc/lstr "WRTH@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "ISO 15022 classifier for corporate actions that involve booking out of valueless securities"}})
+   #voc/lstr
+    "ISO 15022 classifier for corporate actions that involve booking out of valueless securities@en"})

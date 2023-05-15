@@ -88,7 +88,12 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/holds,
                       :owl/someValuesFrom :fibo-fnd-acc-aeq/ShareholdersEquity,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-oac-opty/EntityOwner],
+                     :fibo-be-oac-opty/EntityOwner
+                     :fibo-be-oac-opty/ConstitutionalOwner
+                     :fibo-fnd-oac-own/Owner
+                     {:owl/onProperty     :fibo-fnd-rel-rel/holds,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/OwnersEquity,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "a party that holds an equity stake in some entity, in the form of shareholders' equity",
    :skos/editorialNote
@@ -104,7 +109,8 @@
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-oac-ctl/DeJureControl,
                       :owl/onProperty    :fibo-fnd-rel-rel/confers,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-acc-aeq/ShareholdersEquity],
+                     :fibo-fnd-acc-aeq/ShareholdersEquity
+                     :fibo-be-oac-opty/ControllingEquity],
    :skos/definition
    "shareholders's equity that formally confers control in the entity, either by law or as explicitly stated in a corresponding equity instrument"})
 
@@ -115,7 +121,37 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
    :rdfs/label "direct consolidation",
-   :rdfs/subClassOf :fibo-be-oac-opty/EntityOwnership,
+   :rdfs/subClassOf
+   [:fibo-be-oac-opty/EntityOwnership
+    :fibo-be-oac-opty/DirectConsolidation
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
+     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
+     :rdf/type           :owl/Restriction}
+    {:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
+     :owl/onProperty :cmns-cls/isClassifiedBy,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onDataRange :xsd/decimal,
+     :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
+     :rdf/type        :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
+     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    {:owl/unionOf [:fibo-fnd-acc-aeq/OwnersEquity
+                                    :fibo-fnd-agr-ctr/Contract],
+                      :rdf/type    :owl/Class},
+     :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
+     :rdf/type       :owl/Restriction}
+    :fibo-fnd-oac-own/Ownership
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwnedEntity,
+     :owl/someValuesFrom {:owl/unionOf [:fibo-be-le-fbo/NotForProfitOrganization
+                                        :fibo-be-le-lp/BusinessEntity
+                                        :fibo-be-le-lp/LegalEntity],
+                          :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "direct ownership recorded as accounting consolidation, by some party of some other formal organization"})
 
@@ -129,7 +165,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/holds,
                       :owl/someValuesFrom :fibo-fnd-acc-aeq/OwnersEquity,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-oac-own/Owner],
+                     :fibo-fnd-oac-own/Owner
+                     :fibo-be-oac-opty/EntityOwner],
    :skos/definition "a party that has some ownership interest in some entity",
    :skos/editorialNote
    "This is not the same meaning as being some owner of some asset. Rather, this is some party which partakes in the ownership of some kind of entity (a business entity or a legal entity for example) via some mechanism such as the ownership of equity in that entity."})
@@ -146,30 +183,31 @@
      :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
      :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
      :rdf/type       :owl/Restriction}
-    {:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
-     :owl/onProperty :cmns-cls/isClassifiedBy,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-oac-own/Ownership
-    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
-     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
-     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-acc-aeq/OwnersEquity
                                     :fibo-fnd-agr-ctr/Contract],
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
      :rdf/type       :owl/Restriction}
+    {:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
+     :owl/onProperty :cmns-cls/isClassifiedBy,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    :fibo-fnd-oac-own/Ownership
     {:owl/minQualifiedCardinality 0,
      :owl/onDataRange :xsd/decimal,
      :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
      :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
+     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-be-oac-opty/hasOwnedEntity,
      :owl/someValuesFrom {:owl/unionOf [:fibo-be-le-fbo/NotForProfitOrganization
                                         :fibo-be-le-lp/BusinessEntity
                                         :fibo-be-le-lp/LegalEntity],
                           :rdf/type    :owl/Class},
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-be-oac-opty/EntityOwnership],
    :skos/definition
    "ownership by some party of an interest in some non-governmental formal organization"})
 
@@ -180,7 +218,37 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
    :rdfs/label "foreign branch ownership",
-   :rdfs/subClassOf :fibo-be-oac-opty/EntityOwnership,
+   :rdfs/subClassOf
+   [:fibo-be-oac-opty/EntityOwnership
+    :fibo-be-oac-opty/ForeignBranchOwnership
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
+     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
+     :rdf/type           :owl/Restriction}
+    {:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
+     :owl/onProperty :cmns-cls/isClassifiedBy,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onDataRange :xsd/decimal,
+     :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
+     :rdf/type        :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
+     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    {:owl/unionOf [:fibo-fnd-acc-aeq/OwnersEquity
+                                    :fibo-fnd-agr-ctr/Contract],
+                      :rdf/type    :owl/Class},
+     :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
+     :rdf/type       :owl/Restriction}
+    :fibo-fnd-oac-own/Ownership
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwnedEntity,
+     :owl/someValuesFrom {:owl/unionOf [:fibo-be-le-fbo/NotForProfitOrganization
+                                        :fibo-be-le-lp/BusinessEntity
+                                        :fibo-be-le-lp/LegalEntity],
+                          :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "ownership by some party of some formal organization or organizational sub-unit that is a foreign affiliate and legally part of the owning entity"})
 
@@ -194,7 +262,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isHeldBy,
                       :owl/someValuesFrom :fibo-be-oac-opty/Investor,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/OwnersEquity],
+                     :fibo-fnd-acc-aeq/OwnersEquity
+                     :fibo-be-oac-opty/InvestmentEquity],
    :skos/definition
    "equity that represents an ownership interest in some entity, but may or may not take the form of shareholders's equity",
    :skos/editorialNote
@@ -210,7 +279,12 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/holds,
                       :owl/someValuesFrom :fibo-be-oac-opty/InvestmentEquity,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-oac-opty/EntityOwner],
+                     :fibo-be-oac-opty/EntityOwner
+                     :fibo-be-oac-opty/Investor
+                     :fibo-fnd-oac-own/Owner
+                     {:owl/onProperty     :fibo-fnd-rel-rel/holds,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/OwnersEquity,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "a party that owns some stake in some organization by way of investment",
    :skos/editorialNote
@@ -226,7 +300,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-agr-ctr/definesTermsFor,
                       :owl/someValuesFrom :fibo-be-oac-opty/InvestmentEquity,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/WrittenContract],
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     :fibo-be-oac-opty/InvestorContract],
    :skos/definition
    "Contract setting out the terms under which some investor invests in the entity and setting out the rights which are conferred on that investor."})
 
@@ -237,7 +312,37 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
    :rdfs/label "ultimate ownership",
-   :rdfs/subClassOf :fibo-be-oac-opty/EntityOwnership,
+   :rdfs/subClassOf
+   [:fibo-be-oac-opty/EntityOwnership
+    :fibo-be-oac-opty/UltimateConsolidation
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
+     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
+     :rdf/type           :owl/Restriction}
+    {:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
+     :owl/onProperty :cmns-cls/isClassifiedBy,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onDataRange :xsd/decimal,
+     :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
+     :rdf/type        :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
+     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    {:owl/unionOf [:fibo-fnd-acc-aeq/OwnersEquity
+                                    :fibo-fnd-agr-ctr/Contract],
+                      :rdf/type    :owl/Class},
+     :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
+     :rdf/type       :owl/Restriction}
+    :fibo-fnd-oac-own/Ownership
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwnedEntity,
+     :owl/someValuesFrom {:owl/unionOf [:fibo-be-le-fbo/NotForProfitOrganization
+                                        :fibo-be-le-lp/BusinessEntity
+                                        :fibo-be-le-lp/LegalEntity],
+                          :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "highest-level (top, end) ancestral ownership, evidenced by accounting consolidation, by some party of some other legal entity"})
 
@@ -264,7 +369,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
    :rdfs/label "has direct ownership",
    :rdfs/range :fibo-be-oac-opty/EntityOwnership,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/experiences,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/experiences
+                        :fibo-be-oac-opty/hasDirectOwnership],
    :skos/definition
    "relates a formal organization to the situation in which it is owned directly by another entity"})
 
@@ -302,7 +408,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
    :rdfs/label "has investment ownership",
    :rdfs/range :fibo-be-oac-opty/EntityOwnership,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/playsActiveRoleIn,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/playsActiveRoleIn
+                        :fibo-be-oac-opty/hasInvestmentOwnership],
    :skos/definition
    "relates a legal person to the context in which it owns a formal organization"})
 
@@ -318,7 +425,8 @@
                               :fibo-be-le-lp/BusinessEntity
                               :fibo-be-le-lp/LegalEntity],
                 :rdf/type    :owl/Class},
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isExperiencedBy,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/isExperiencedBy
+                        :fibo-be-oac-opty/hasOwnedEntity],
    :skos/definition
    "indicates a formal organization, including potentially a sole proprietorship, that is owned by a legal person"})
 
@@ -331,13 +439,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
    :rdfs/label "has owning entity",
    :rdfs/range :fibo-be-le-lp/LegalPerson,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasActiveParty,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasActiveParty
+                        :fibo-be-oac-opty/hasOwningEntity],
    :skos/definition "indicates a party that owns a formal organization"})
-
-(def ^{:private true} RelationshipRecord
-  {:db/ident        :fibo-be-le-lei/RelationshipRecord,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onClass    :fibo-be-oac-opty/EntityOwnership,
-                     :owl/onProperty :fibo-fnd-arr-doc/records,
-                     :owl/qualifiedCardinality 1,
-                     :rdf/type       :owl/Restriction}})

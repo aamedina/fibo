@@ -290,33 +290,3 @@
    :rdfs/label "Tradition",
    :skos/definition
    "Tradition functional entity that is a financial service and market data provider and division of Compagnie Financiere Tradition"})
-
-(def ^{:private true} CanadianBankingRegulatoryAgencyAndCentralBank
-  {:db/ident :fibo-fbc-fct-cajrga/CanadianBankingRegulatoryAgencyAndCentralBank,
-   :rdf/type [:fibo-ind-ir-ir/InterestRateAuthority :owl/NamedIndividual]})
-
-(def ^{:private true} EuropeanBankingRegulatoryAgencyAndCentralBank
-  {:db/ident :fibo-fbc-fct-eurga/EuropeanBankingRegulatoryAgencyAndCentralBank,
-   :rdf/type [:fibo-ind-ir-ir/InterestRateAuthority :owl/NamedIndividual]})
-
-(def ^{:private true} BloombergLP
-  {:db/ident :fibo-fbc-fct-usfsind/BloombergLP,
-   :rdf/type [:fibo-be-fct-pub/MarketDataProvider :owl/NamedIndividual]})
-
-(def ^{:private true} ThomsonReuters
-  {:db/ident :fibo-fbc-fct-usfsind/ThomsonReuters,
-   :rdf/type [:fibo-be-fct-pub/MarketDataProvider :owl/NamedIndividual]})
-
-(def ^{:private true} BoardOfGovernorsOfTheFederalReserveSystem
-  {:db/ident :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
-   :rdf/type [:fibo-ind-ir-ir/InterestRateAuthority :owl/NamedIndividual]})
-
-(def ^{:private true} L-TF1LXM1YNB81WKUH5G19-LEI
-  "legal entity identifier for BGC Partners, Inc."
-  {:cmns-id/identifies :fibo-ind-ir-mdp/BGCPartnersInc-US-DE,
-   :db/ident           :gleif-L1-data/L-TF1LXM1YNB81WKUH5G19-LEI,
-   :fibo-fnd-rel-rel/hasTag "TF1LXM1YNB81WKUH5G19",
-   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
-                        :owl/NamedIndividual],
-   :rdfs/label         "BGC Partners, Inc. legal entity identifier",
-   :skos/definition    "legal entity identifier for BGC Partners, Inc."})

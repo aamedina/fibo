@@ -155,8 +155,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of Antigua and Barbuda"},
+   :rdfs/label #voc/lstr "Government of Antigua and Barbuda@en",
    :skos/definition
    "unitary parliamentary constitutional monarchy, with the queen (Elizabeth II) as head of state represented locally by a governor-general"})
 
@@ -168,8 +167,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of Barbados"},
+   :rdfs/label #voc/lstr "Government of Barbados@en",
    :skos/definition
    "unitary parliamentary constitutional monarchy, modeled on the British Westminster system, with the Queen of Barbados (Elizabeth II) as head of state, represented locally by a governor-general"})
 
@@ -181,8 +179,7 @@
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of Bermuda"},
+   :rdfs/label #voc/lstr "Government of Bermuda@en",
    :rdfs/seeAlso ["https://www.gov.bm/"],
    :skos/definition
    "parliamentary representative democratic dependency and a British island territory in the North Atlantic Ocean"})
@@ -195,8 +192,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of Grenada"},
+   :rdfs/label #voc/lstr "Government of Grenada@en",
    :skos/definition
    "unitary two-party parliamentary constitutional monarchy that is a Commonwealth realm with Queen Elizabeth II as head of state, represented locally by a governor-general, located in the West Indies in the Caribbean Sea at the southern end of the Grenadines island chain"})
 
@@ -208,8 +204,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of Jamaica"},
+   :rdfs/label #voc/lstr "Government of Jamaica@en",
    :skos/definition
    "parliamentary constitutional monarchy with legislative power vested in the bicameral Parliament of Jamaica, consisting of an appointed Senate and a directly elected House of Representatives, and an independent member of the British Commonwealth, situated in the Caribbean Sea"})
 
@@ -221,8 +216,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of Saint Lucia"},
+   :rdfs/label #voc/lstr "Government of Saint Lucia@en",
    :skos/definition
    "unitary parliamentary constitutional monarchy that is a Commonwealth realm with Queen Elizabeth II as head of state, represented locally by a governor-general, located in the West Indies in the eastern Caribbean Sea on the boundary with the Atlantic Ocean"})
 
@@ -235,8 +229,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of Saint Vincent and the Grenadines"},
+   :rdfs/label #voc/lstr "Government of Saint Vincent and the Grenadines@en",
    :skos/definition
    "unitary parliamentary constitutional monarchy, with the Queen of Saint Vincent and the Grenadines (Elizabeth II) as head of state represented locally by a governor-general, an Anglo-Caribbean country of several islands in the Lesser Antilles island arc, in the southeast Windward Islands, which lies in the West Indies at the southern end of the eastern border of the Caribbean Sea where the latter meets the Atlantic Ocean"})
 
@@ -249,8 +242,7 @@
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of the Cayman Islands"},
+   :rdfs/label #voc/lstr "Government of the Cayman Islands@en",
    :rdfs/seeAlso ["http://www.gov.ky/"],
    :skos/definition
    "parliamentary democracy with judicial, executive and legislative branches, and a British Overseas Territory, encompassing 3 islands in the western Caribbean Sea"})
@@ -263,8 +255,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of the Commonwealth of Dominica"},
+   :rdfs/label #voc/lstr "Government of the Commonwealth of Dominica@en",
    :skos/definition
    "unitary parliamentary democracy that is an independent republic and member of the Commonwealth of Nations, one of few republics in the Caribbean"})
 
@@ -277,8 +268,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of the Commonwealth of the Bahamas"},
+   :rdfs/label #voc/lstr "Government of the Commonwealth of the Bahamas@en",
    :skos/definition
    "parliamentary constitutional monarchy, with the queen of the Bahamas (Elizabeth II) as head of state represented locally by a governor-general"})
 
@@ -291,8 +281,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of the the Dominican Republic"},
+   :rdfs/label #voc/lstr "Government of the the Dominican Republic@en",
    :skos/definition
    "unitary presidential republic that occupies the eastern five-eighths of the island of Hispaniola in the Greater Antilles archipelago, which it shares with Haiti"})
 
@@ -306,9 +295,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value
-                "Government of the Federation of Saint Christopher and Nevis"},
+   :rdfs/label
+   #voc/lstr "Government of the Federation of Saint Christopher and Nevis@en",
    :skos/definition
    "federal parliamentary constitutional monarchy that is a Commonwealth realm with the Queen of Saint Christopher and Nevis (Queen Elizabeth II) as head of state, represented locally by a governor-general, located in the Leeward Islands chain of the Lesser Antilles"})
 
@@ -320,10 +308,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Cuba"}
-                {:rdf/language "es",
-                 :rdf/value    "Gobierno de la República de Cuba"}],
+   :rdfs/label [#voc/lstr "Government of the Republic of Cuba@en"
+                #voc/lstr "Gobierno de la República de Cuba@es"],
    :rdfs/seeAlso ["https://www.presidencia.gob.cu/en/government/"],
    :skos/definition
    "unitary Marxist-Leninist, one party socialist republic that includes the island of Cuba as well as Isla de la Juventud and several minor archipelagos"})
@@ -336,10 +322,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Haiti"}
-                {:rdf/language "fr",
-                 :rdf/value    "Gouvernement de la République d'Haïti"}],
+   :rdfs/label [#voc/lstr "Government of the Republic of Haiti@en"
+                #voc/lstr "Gouvernement de la République d'Haïti@fr"],
    :skos/definition
    "unitary semi-presidential republic located on the island of Hispaniola in the Greater Antilles archipelago"})
 
@@ -352,8 +336,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value "Government of the Republic of Trinidad and Tobago"},
+   :rdfs/label #voc/lstr "Government of the Republic of Trinidad and Tobago@en",
    :skos/definition
    "unitary parliamentary constitutional republic with a two-party system and a bicameral parliamentary system based on the Westminster System, that is the southernmost island country in the Caribbean"})
 
@@ -437,10 +420,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Cuba"}
-                {:rdf/language "es",
-                 :rdf/value    "jurisdicción de la República de Cuba"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Cuba@en"
+                #voc/lstr "jurisdicción de la República de Cuba@es"],
    :skos/definition
    "jurisdiction of the judiciary of the Republic of Cuba, including the system of courts that interprets and applies the law in Cuba"})
 
@@ -478,10 +459,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Haiti"}
-                {:rdf/language "fr",
-                 :rdf/value    "juridiction de la République d'Haïti"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Haiti@en"
+                #voc/lstr "juridiction de la République d'Haïti@fr"],
    :skos/definition
    "jurisdiction of the judiciary of Haiti, whose highest court is the Cour de Cassation, assisted by local and civil courts at a communal level"})
 

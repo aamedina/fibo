@@ -58,21 +58,18 @@
    :rdfa/prefix "fibo-fnd-txn-rea",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "REA Transactions Ontology"}})
+   :rdfs/label #voc/lstr "REA Transactions Ontology@en"})
 
 (def ContractualEconomicAgreement
   "An economic agreement forming part of a transaction, which has contractual standing as evidenced by a contract between the two parties to the Agreement."
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "The REA Economic Agreement may or may not be between two distinct legal persons, as the REA scope includes transactions within organizations. For REA based transaction models which are between separate legal entities or persons, the form of agreement in force is this Contractual Economic Agreement, that is the agreement, backed by a written or implied contract, which is in force between the parties to this agreement."},
+   #voc/lstr
+    "The REA Economic Agreement may or may not be between two distinct legal persons, as the REA scope includes transactions within organizations. For REA based transaction models which are between separate legal entities or persons, the form of agreement in force is this Contractual Economic Agreement, that is the agreement, backed by a written or implied contract, which is in force between the parties to this agreement.@en",
    :db/ident :fibo-fnd-txn-rea/ContractualEconomicAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "contractual economic agreement"},
+   :rdfs/label #voc/lstr "contractual economic agreement@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-rel-rel/confers,
      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualCommitment,
@@ -81,70 +78,101 @@
      :owl/someValuesFrom :fibo-fnd-txn-rea/ContractualTransactionParty,
      :rdf/type           :owl/Restriction}
     :fibo-fnd-txn-rea/EconomicAgreement
-    :fibo-fnd-agr-ctr/Contract],
+    :fibo-fnd-agr-ctr/Contract
+    :fibo-fnd-txn-rea/ContractualEconomicAgreement
+    {:owl/onProperty     :fibo-fnd-rel-rel/confers,
+     :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicCommitment,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/governs,
+     :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicTransaction,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-agr-ctr/MutualContractualAgreement
+    {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+     :owl/someValuesFrom :fibo-fnd-txn-rea/TransactionParty,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "An economic agreement forming part of a transaction, which has contractual standing as evidenced by a contract between the two parties to the Agreement."}})
+   #voc/lstr
+    "An economic agreement forming part of a transaction, which has contractual standing as evidenced by a contract between the two parties to the Agreement.@en"})
 
 (def ContractualTransaction
   "An economic transaction which has some contractual basis."
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "This is distinct from a transaction between business units within an enterprise. This is the usual sense of \"Transaction\" and forms the basis for all securities and derivatives transactions, while the parent term \"Economic Transaction\" may also be used to define internal transactions and transactions that have no legal or contractual basis."},
+   #voc/lstr
+    "This is distinct from a transaction between business units within an enterprise. This is the usual sense of \"Transaction\" and forms the basis for all securities and derivatives transactions, while the parent term \"Economic Transaction\" may also be used to define internal transactions and transactions that have no legal or contractual basis.@en",
    :db/ident :fibo-fnd-txn-rea/ContractualTransaction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "contractual transaction"},
-   :rdfs/subClassOf :fibo-fnd-txn-rea/EconomicTransaction,
+   :rdfs/label #voc/lstr "contractual transaction@en",
+   :rdfs/subClassOf
+   [:fibo-fnd-txn-rea/EconomicTransaction
+    :fibo-fnd-txn-rea/ContractualTransaction
+    {:owl/minQualifiedCardinality 2,
+     :owl/onClass    :fibo-fnd-txn-rea/EconomicResource,
+     :owl/onProperty :fibo-fnd-txn-rea/subject,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-txn-rea/transactedUnder,
+     :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicContractTermsSet,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-txn-rea/transactionEmbodiesEconomicAgreement,
+     :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicAgreement,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value    "An economic transaction which has some contractual basis."}})
+   #voc/lstr "An economic transaction which has some contractual basis.@en"})
 
 (def ContractualTransactionParty
   "That which is party to a transaction which has contractual standing."
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "In REA, transactions may include those which are not between legal entities,such as for example internal transactions within a business and between business units. This term Contractual Transaction Party forms the basis for all party definitions for transactions which have some formal contractual basis as being between discrete legal entities (legal persons or other contractually capable entities e.g. non incorporated entities). This is the basis for all derivatives transactions, securities market transactions and so on."},
+   #voc/lstr
+    "In REA, transactions may include those which are not between legal entities,such as for example internal transactions within a business and between business units. This term Contractual Transaction Party forms the basis for all party definitions for transactions which have some formal contractual basis as being between discrete legal entities (legal persons or other contractually capable entities e.g. non incorporated entities). This is the basis for all derivatives transactions, securities market transactions and so on.@en",
    :db/ident :fibo-fnd-txn-rea/ContractualTransactionParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "contractual transaction party"},
+   :rdfs/label #voc/lstr "contractual transaction party@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-txn-rea/TransactionParty
-                     :fibo-fnd-agr-ctr/ContractParty],
+                     :fibo-fnd-agr-ctr/ContractParty
+                     :fibo-fnd-txn-rea/ContractualTransactionParty
+                     :fibo-fnd-pty-pty/PartyInRole
+                     {:owl/onProperty     :fibo-fnd-txn-rea/transactsWith,
+                      :owl/someValuesFrom :fibo-fnd-txn-rea/TransactionParty,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "That which is party to a transaction which has contractual standing."}})
+   #voc/lstr
+    "That which is party to a transaction which has contractual standing.@en"})
 
 (def CoveredTransaction
   "A transaction covered by some Master Agreement."
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "The Master Agreement sets out the terms and conditions under which these transactions are to take place between the parties. These are Over the Counter transactions, including OTC Derivatives."},
+   #voc/lstr
+    "The Master Agreement sets out the terms and conditions under which these transactions are to take place between the parties. These are Over the Counter transactions, including OTC Derivatives.@en",
    :db/ident :fibo-fnd-txn-rea/CoveredTransaction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "covered transaction"},
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/MasterAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-txn-rea/ContractualTransaction],
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "A transaction covered by some Master Agreement."}})
+   :rdfs/label #voc/lstr "covered transaction@en",
+   :rdfs/subClassOf
+   [{:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/MasterAgreement,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-txn-rea/ContractualTransaction
+    :fibo-fnd-txn-rea/CoveredTransaction
+    {:owl/minQualifiedCardinality 2,
+     :owl/onClass    :fibo-fnd-txn-rea/EconomicResource,
+     :owl/onProperty :fibo-fnd-txn-rea/subject,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-txn-rea/transactedUnder,
+     :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicContractTermsSet,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-txn-rea/transactionEmbodiesEconomicAgreement,
+     :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicAgreement,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-txn-rea/EconomicTransaction],
+   :skos/definition #voc/lstr
+                     "A transaction covered by some Master Agreement.@en"})
 
 (def DischargingEvent
   "discharging event"
@@ -152,15 +180,15 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "discharging event"},
+   :rdfs/label #voc/lstr "discharging event@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-txn-rea/triggers,
                       :owl/someValuesFrom :fibo-fnd-txn-rea/LedgerEntry,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-txn-rea/terminates,
                       :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicCommitment,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-txn-rea/TransactionBusinessEvent]})
+                     :fibo-fnd-txn-rea/TransactionBusinessEvent
+                     :fibo-fnd-txn-rea/DischargingEvent]})
 
 (def EconomicAgreement
   "economic agreement"
@@ -168,8 +196,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "economic agreement"},
+   :rdfs/label #voc/lstr "economic agreement@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicTransaction,
                       :rdf/type           :owl/Restriction}
@@ -179,7 +206,8 @@
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-fnd-txn-rea/TransactionParty,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/MutualContractualAgreement]})
+                     :fibo-fnd-agr-ctr/MutualContractualAgreement
+                     :fibo-fnd-txn-rea/EconomicAgreement]})
 
 (def EconomicCommitment
   "Some Commitment which forms part of the subject of some Transaction, being an undertaking by one or other of the parties to the transaction, extended to the other party to that same transaction."
@@ -187,19 +215,18 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "economic commitment"},
+   :rdfs/label #voc/lstr "economic commitment@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-txn-rea/madeBy,
                       :owl/someValuesFrom :fibo-fnd-txn-rea/TransactionParty,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isConferredBy,
                       :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicAgreement,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-agr/MutualCommitment],
+                     :fibo-fnd-agr-agr/MutualCommitment
+                     :fibo-fnd-txn-rea/EconomicCommitment],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Some Commitment which forms part of the subject of some Transaction, being an undertaking by one or other of the parties to the transaction, extended to the other party to that same transaction."}})
+   #voc/lstr
+    "Some Commitment which forms part of the subject of some Transaction, being an undertaking by one or other of the parties to the transaction, extended to the other party to that same transaction.@en"})
 
 (def EconomicContract
   "A contract relating to and governing an economic transaction between two parties."
@@ -207,8 +234,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "economic contract"},
+   :rdfs/label #voc/lstr "economic contract@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-rel-rel/embodies,
      :owl/someValuesFrom :fibo-fnd-txn-rea/ContractualEconomicAgreement,
@@ -216,13 +242,12 @@
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
      :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicContractTermsSet,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-ctr/MutualContractualAgreement],
+    :fibo-fnd-agr-ctr/MutualContractualAgreement
+    :fibo-fnd-txn-rea/EconomicContract],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "A contract relating to and governing an economic transaction between two parties."},
-   :skos/editorialNote {:rdf/language "en",
-                        :rdf/value    "From REA ontology."}})
+   #voc/lstr
+    "A contract relating to and governing an economic transaction between two parties.@en",
+   :skos/editorialNote #voc/lstr "From REA ontology.@en"})
 
 (def EconomicContractTermsSet
   "Terms underlying the contract for a transaction."
@@ -230,16 +255,15 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "economic contract commitment"},
+   :rdfs/label #voc/lstr "economic contract commitment@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-txn-rea/setsOutContractualEconomicCommitment,
      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualCommitment,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-ctr/ContractualCommitment],
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "Terms underlying the contract for a transaction."}})
+    :fibo-fnd-agr-ctr/ContractualCommitment
+    :fibo-fnd-txn-rea/EconomicContractTermsSet],
+   :skos/definition #voc/lstr
+                     "Terms underlying the contract for a transaction.@en"})
 
 (def EconomicResource
   "Anything that can bought sold or exchanged."
@@ -247,20 +271,18 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "economic resource"},
+   :rdfs/label #voc/lstr "economic resource@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-txn-rea/takesMaterialForm,
                       :owl/someValuesFrom :owl/Thing,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-txn-rea/definedInContextOf,
                       :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicTransaction,
-                      :rdf/type           :owl/Restriction}],
-   :skos/definition {:rdf/language "en",
-                     :rdf/value "Anything that can bought sold or exchanged."},
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-txn-rea/EconomicResource],
+   :skos/definition #voc/lstr "Anything that can bought sold or exchanged.@en",
    :skos/editorialNote
-   {:rdf/language "en",
-    :rdf/value
-    "Formerly labeled as Negotiable Thing. Changed to REA terminology with no effect on meaning. Note that this is a relative thing - the thing which is itself the economic resource, is some good or some service (i.e. some physical thing or some event/activity) which can be framed as an economic resource in the context of exchanging it for some other economic resource. Scope Note: Economic Resource may also define things which are not exchanged but are defined as resources in some other context, for example Capital is a kind of economic resource."}})
+   #voc/lstr
+    "Formerly labeled as Negotiable Thing. Changed to REA terminology with no effect on meaning. Note that this is a relative thing - the thing which is itself the economic resource, is some good or some service (i.e. some physical thing or some event/activity) which can be framed as an economic resource in the context of exchanging it for some other economic resource. Scope Note: Economic Resource may also define things which are not exchanged but are defined as resources in some other context, for example Capital is a kind of economic resource.@en"})
 
 (def EconomicTransaction
   "Some exchange of some items of economic value between two parties (economic agents)."
@@ -268,8 +290,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "economic transaction"},
+   :rdfs/label #voc/lstr "economic transaction@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-txn-rea/transactionEmbodiesEconomicAgreement,
      :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicAgreement,
@@ -280,11 +301,11 @@
     {:owl/minQualifiedCardinality 2,
      :owl/onClass    :fibo-fnd-txn-rea/EconomicResource,
      :owl/onProperty :fibo-fnd-txn-rea/subject,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-fnd-txn-rea/EconomicTransaction],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Some exchange of some items of economic value between two parties (economic agents)."}})
+   #voc/lstr
+    "Some exchange of some items of economic value between two parties (economic agents).@en"})
 
 (def LedgerEntry
   "ledger entry"
@@ -292,8 +313,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "ledger entry"},
+   :rdfs/label #voc/lstr "ledger entry@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-ra/isRegisteredIn,
                       :owl/someValuesFrom :fibo-fbc-pas-caa/LedgerAccount,
                       :rdf/type           :owl/Restriction}
@@ -310,7 +330,8 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-dt-fd/DatedCollectionConstituent
-                     :fibo-fbc-fct-ra/RegistryEntry]})
+                     :fibo-fbc-fct-ra/RegistryEntry
+                     :fibo-fnd-txn-rea/LedgerEntry]})
 
 (def REAClaim
   "Some imbalance, at a given point in time, between the respective rights and obligations of two parties with respect to one another."
@@ -318,15 +339,14 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "r e a claim"},
-   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-txn-rea/isImbalanceIn,
-                     :owl/someValuesFrom :fibo-fnd-law-lcap/LegalConstruct,
-                     :rdf/type           :owl/Restriction},
+   :rdfs/label #voc/lstr "r e a claim@en",
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-txn-rea/isImbalanceIn,
+                      :owl/someValuesFrom :fibo-fnd-law-lcap/LegalConstruct,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-txn-rea/REAClaim],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Some imbalance, at a given point in time, between the respective rights and obligations of two parties with respect to one another."}})
+   #voc/lstr
+    "Some imbalance, at a given point in time, between the respective rights and obligations of two parties with respect to one another.@en"})
 
 (def Revaluation
   "revaluation"
@@ -334,12 +354,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "revaluation"},
+   :rdfs/label #voc/lstr "revaluation@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-txn-rea/triggers,
                       :owl/someValuesFrom :fibo-fnd-txn-rea/LedgerEntry,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-txn-rea/TransactionBusinessEvent]})
+                     :fibo-fnd-txn-rea/TransactionBusinessEvent
+                     :fibo-fnd-txn-rea/Revaluation]})
 
 (def TransactionBusinessEvent
   "Occurrence in time that partners to a business transaction wish to monitor or control."
@@ -347,29 +367,25 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "transaction business event"},
+   :rdfs/label #voc/lstr "transaction business event@en",
+   :rdfs/subClassOf :fibo-fnd-txn-rea/TransactionBusinessEvent,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Occurrence in time that partners to a business transaction wish to monitor or control."},
+   #voc/lstr
+    "Occurrence in time that partners to a business transaction wish to monitor or control.@en",
    :skos/editorialNote
-   {:rdf/language "en",
-    :rdf/value
-    "Term derived from REA as expressed in ISO 15944-4 Additional notes in ISO 15944-4 itself: NOTE 1 Business events are the workflow tasks that business partners need to accomplish to complete a business transaction among themselves. As business events occur, they cause a business transaction to move through its various phases of planning, identification, negotiation, actualization and post-actualization. NOTE 2 Occurrences in time can either - be internal as mutually agreed to among the parties to a business transaction; and/or, - reference some common publicly available and recognized date/time referencing schema (e.g. one based on using ISO 8601 and/or ISO 19135)."}})
+   #voc/lstr
+    "Term derived from REA as expressed in ISO 15944-4 Additional notes in ISO 15944-4 itself: NOTE 1 Business events are the workflow tasks that business partners need to accomplish to complete a business transaction among themselves. As business events occur, they cause a business transaction to move through its various phases of planning, identification, negotiation, actualization and post-actualization. NOTE 2 Occurrences in time can either - be internal as mutually agreed to among the parties to a business transaction; and/or, - reference some common publicly available and recognized date/time referencing schema (e.g. one based on using ISO 8601 and/or ISO 19135).@en"})
 
 (def TransactionEvent
   "The event component of a transaction"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "This describes an event. The event may be delivery of something or settlement of monies in payment for something delivered. A Transaction Event will have terms describing the commitment embodied in that side of that transaction."},
+   #voc/lstr
+    "This describes an event. The event may be delivery of something or settlement of monies in payment for something delivered. A Transaction Event will have terms describing the commitment embodied in that side of that transaction.@en",
    :db/ident :fibo-fnd-txn-rea/TransactionEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "transaction event"},
+   :rdfs/label #voc/lstr "transaction event@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-txn-rea/hasStart,
                       :owl/someValuesFrom
                       :fibo-fnd-txn-rea/TransactionUndertaking,
@@ -382,30 +398,28 @@
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/embodies,
                       :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicCommitment,
-                      :rdf/type           :owl/Restriction}],
-   :skos/definition {:rdf/language "en",
-                     :rdf/value    "The event component of a transaction"}})
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-txn-rea/TransactionEvent],
+   :skos/definition #voc/lstr "The event component of a transaction@en"})
 
 (def TransactionEventAspect
   "A transaction side as seen from the perspective of one of the parties to the transaction."
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "This describes one side of one transaction event. The event may be delivery of something or settlement of monies in payment for something delivered. A Transaction Event Side shows that side of that transaction from the perspective of one or other party."},
+   #voc/lstr
+    "This describes one side of one transaction event. The event may be delivery of something or settlement of monies in payment for something delivered. A Transaction Event Side shows that side of that transaction from the perspective of one or other party.@en",
    :db/ident :fibo-fnd-txn-rea/TransactionEventAspect,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "transaction event aspect"},
+   :rdfs/label #voc/lstr "transaction event aspect@en",
    :rdfs/subClassOf
-   {:owl/onProperty     :fibo-fnd-txn-rea/hasCorrespondingAlternativeAspect,
-    :owl/someValuesFrom :fibo-fnd-txn-rea/TransactionEventAspect,
-    :rdf/type           :owl/Restriction},
+   [{:owl/onProperty     :fibo-fnd-txn-rea/hasCorrespondingAlternativeAspect,
+     :owl/someValuesFrom :fibo-fnd-txn-rea/TransactionEventAspect,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-txn-rea/TransactionEventAspect],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "A transaction side as seen from the perspective of one of the parties to the transaction."}})
+   #voc/lstr
+    "A transaction side as seen from the perspective of one of the parties to the transaction.@en"})
 
 (def TransactionParty
   "Some entity which takes part in some transaction by receiving and/or parting with some item of economic value or some payment or both."
@@ -413,20 +427,18 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "transaction party"},
+   :rdfs/label #voc/lstr "transaction party@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-txn-rea/transactsWith,
                       :owl/someValuesFrom :fibo-fnd-txn-rea/TransactionParty,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                     :fibo-fnd-pty-pty/PartyInRole
+                     :fibo-fnd-txn-rea/TransactionParty],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Some entity which takes part in some transaction by receiving and/or parting with some item of economic value or some payment or both."},
+   #voc/lstr
+    "Some entity which takes part in some transaction by receiving and/or parting with some item of economic value or some payment or both.@en",
    :skos/editorialNote
-   {:rdf/language "en",
-    :rdf/value
-    "Referred to in REA as Economic Agent (in the context of the economic event, known here as transaction)."}})
+   #voc/lstr
+    "Referred to in REA as Economic Agent (in the context of the economic event, known here as transaction).@en"})
 
 (def TransactionUndertaking
   "A contractually defined and established commitment to deliver some goods, perform some service or make some payment in cash or in kind."
@@ -434,49 +446,66 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "transaction undertaking"},
+   :rdfs/label #voc/lstr "transaction undertaking@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-txn-rea/givesRiseTo,
                       :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicCommitment,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-txn-rea/UndertakingEvent],
-   :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "A contractually defined and established commitment to deliver some goods, perform some service or make some payment in cash or in kind."},
-   :skos/editorialNote {:rdf/language "en",
-                        :rdf/value    "From REA ontology."}})
-
-(def Undertaking
-  "Some undertaking to act."
-  {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "This could be an undertaking to deliver something, to do something and so on. These correspond to negative and positive pledges in the contract."},
-   :db/ident :fibo-fnd-txn-rea/Undertaking,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "undertaking"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-txn-rea/isUndertakingTo,
-                      :owl/someValuesFrom
-                      :fibo-fnd-law-lcap/ContingentObligation,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractParty,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-txn-rea/bestows,
-                      :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentRight,
+                     :fibo-fnd-txn-rea/UndertakingEvent
+                     :fibo-fnd-txn-rea/TransactionUndertaking
+                     {:owl/onProperty     :fibo-fnd-txn-rea/givesRiseTo,
+                      :owl/someValuesFrom :fibo-fnd-agr-agr/MutualCommitment,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-txn-rea/isMadeAsPartOf,
                       :owl/someValuesFrom :fibo-fnd-agr-agr/Agreement,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-txn-rea/Undertaking
+                     :fibo-fnd-txn-rea/TransactionBusinessEvent
+                     {:owl/onProperty     :fibo-fnd-txn-rea/bestows,
+                      :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentRight,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractParty,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-txn-rea/triggers,
+                      :owl/someValuesFrom :fibo-fnd-txn-rea/LedgerEntry,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-txn-rea/isUndertakingTo,
+                      :owl/someValuesFrom
+                      :fibo-fnd-law-lcap/ContingentObligation,
+                      :rdf/type :owl/Restriction}],
+   :skos/definition
+   #voc/lstr
+    "A contractually defined and established commitment to deliver some goods, perform some service or make some payment in cash or in kind.@en",
+   :skos/editorialNote #voc/lstr "From REA ontology.@en"})
+
+(def Undertaking
+  "Some undertaking to act."
+  {:cmns-av/explanatoryNote
+   #voc/lstr
+    "This could be an undertaking to deliver something, to do something and so on. These correspond to negative and positive pledges in the contract.@en",
+   :db/ident :fibo-fnd-txn-rea/Undertaking,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
+   :rdfs/label #voc/lstr "undertaking@en",
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-txn-rea/bestows,
+                      :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentRight,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractParty,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-txn-rea/isUndertakingTo,
+                      :owl/someValuesFrom
+                      :fibo-fnd-law-lcap/ContingentObligation,
+                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-txn-rea/givesRiseTo,
                       :owl/someValuesFrom :fibo-fnd-agr-agr/MutualCommitment,
-                      :rdf/type           :owl/Restriction}],
-   :skos/definition {:rdf/language "en",
-                     :rdf/value    "Some undertaking to act."}})
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-txn-rea/isMadeAsPartOf,
+                      :owl/someValuesFrom :fibo-fnd-agr-agr/Agreement,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-txn-rea/Undertaking],
+   :skos/definition #voc/lstr "Some undertaking to act.@en"})
 
 (def UndertakingEvent
   "Something which occurs at a point in time, at which a party makes some commitment to some other party."
@@ -484,17 +513,32 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "undertaking event"},
+   :rdfs/label #voc/lstr "undertaking event@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-txn-rea/triggers,
                       :owl/someValuesFrom :fibo-fnd-txn-rea/LedgerEntry,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-txn-rea/Undertaking
-                     :fibo-fnd-txn-rea/TransactionBusinessEvent],
+                     :fibo-fnd-txn-rea/TransactionBusinessEvent
+                     :fibo-fnd-txn-rea/UndertakingEvent
+                     {:owl/onProperty     :fibo-fnd-txn-rea/givesRiseTo,
+                      :owl/someValuesFrom :fibo-fnd-agr-agr/MutualCommitment,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-txn-rea/isMadeAsPartOf,
+                      :owl/someValuesFrom :fibo-fnd-agr-agr/Agreement,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-txn-rea/bestows,
+                      :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentRight,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractParty,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-txn-rea/isUndertakingTo,
+                      :owl/someValuesFrom
+                      :fibo-fnd-law-lcap/ContingentObligation,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Something which occurs at a point in time, at which a party makes some commitment to some other party."}})
+   #voc/lstr
+    "Something which occurs at a point in time, at which a party makes some commitment to some other party.@en"})
 
 (def bestows
   "bestows"
@@ -503,8 +547,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/Undertaking,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "bestows"},
+   :rdfs/label #voc/lstr "bestows@en",
    :rdfs/range :fibo-fnd-law-lcap/ContingentRight})
 
 (def definedInContextOf
@@ -522,8 +565,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/Undertaking,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "gives rise to"},
+   :rdfs/label #voc/lstr "gives rise to@en",
    :rdfs/range :fibo-fnd-agr-agr/MutualCommitment})
 
 (def hasCorresponding
@@ -533,8 +575,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/TransactionEvent,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has corresponding"},
+   :rdfs/label #voc/lstr "has corresponding@en",
    :rdfs/range :fibo-fnd-txn-rea/TransactionEvent})
 
 (def hasCorrespondingAlternativeAspect
@@ -544,8 +585,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/TransactionEventAspect,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has corresponding alternative aspect"},
+   :rdfs/label #voc/lstr "has corresponding alternative aspect@en",
    :rdfs/range :fibo-fnd-txn-rea/TransactionEventAspect})
 
 (def hasEnd
@@ -554,8 +594,7 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has end"},
+   :rdfs/label #voc/lstr "has end@en",
    :rdfs/range :fibo-fnd-txn-rea/DischargingEvent})
 
 (def hasPerspective
@@ -565,8 +604,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/TransactionEvent,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has perspective"},
+   :rdfs/label #voc/lstr "has perspective@en",
    :rdfs/range :fibo-fnd-txn-rea/TransactionEventAspect})
 
 (def hasStart
@@ -575,8 +613,7 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has start"},
+   :rdfs/label #voc/lstr "has start@en",
    :rdfs/range :fibo-fnd-txn-rea/TransactionUndertaking})
 
 (def hasTransactionComponent
@@ -586,8 +623,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/EconomicTransaction,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has transaction component"},
+   :rdfs/label #voc/lstr "has transaction component@en",
    :rdfs/range :fibo-fnd-txn-rea/TransactionEvent})
 
 (def hasTransactionParty
@@ -597,8 +633,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/EconomicTransaction,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has transaction party"},
+   :rdfs/label #voc/lstr "has transaction party@en",
    :rdfs/range :fibo-fnd-txn-rea/TransactionParty})
 
 (def isImbalanceIn
@@ -608,13 +643,11 @@
    :rdfs/domain :fibo-fnd-txn-rea/REAClaim,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "is imbalance in"},
+   :rdfs/label #voc/lstr "is imbalance in@en",
    :rdfs/range :fibo-fnd-law-lcap/LegalConstruct,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The imbalance in Obligations or Rights (depending on the viewpoint from which it is described) between one party and another."}})
+   #voc/lstr
+    "The imbalance in Obligations or Rights (depending on the viewpoint from which it is described) between one party and another.@en"})
 
 (def isMadeAsPartOf
   "is made as part of"
@@ -623,8 +656,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/Undertaking,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "is made as part of"},
+   :rdfs/label #voc/lstr "is made as part of@en",
    :rdfs/range :fibo-fnd-agr-agr/Agreement})
 
 (def isUndertakingTo
@@ -634,8 +666,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/Undertaking,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "is undertaking to"},
+   :rdfs/label #voc/lstr "is undertaking to@en",
    :rdfs/range :fibo-fnd-law-lcap/ContingentObligation})
 
 (def madeBy
@@ -644,8 +675,7 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "made by"},
+   :rdfs/label #voc/lstr "made by@en",
    :rdfs/range :fibo-fnd-txn-rea/TransactionParty})
 
 (def setsOutContractualEconomicCommitment
@@ -655,13 +685,11 @@
    :rdfs/domain :fibo-fnd-txn-rea/EconomicContractTermsSet,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "sets out contractual economic commitment"},
+   :rdfs/label #voc/lstr "sets out contractual economic commitment@en",
    :rdfs/range :fibo-fnd-agr-ctr/ContractualCommitment,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The economic commitment set out in the terms to the contract which formalizes the agreement to the transaction."}})
+   #voc/lstr
+    "The economic commitment set out in the terms to the contract which formalizes the agreement to the transaction.@en"})
 
 (def subject
   "subject"
@@ -670,8 +698,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/EconomicTransaction,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "subject"},
+   :rdfs/label #voc/lstr "subject@en",
    :rdfs/range :fibo-fnd-txn-rea/EconomicResource})
 
 (def takesMaterialForm
@@ -681,12 +708,10 @@
    :rdfs/domain :fibo-fnd-txn-rea/EconomicResource,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "takes material form"},
+   :rdfs/label #voc/lstr "takes material form@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The material form of the Economic Resource; that is the thing which is recognized as being an Economic Resource as defined here, Editorial Note: This would usually be some Independent Thing. However it is conceivable that the existence of some relative thing, for example an asset, may itself be regarded and defined as a resource, over and above the role or context already defined for it. Therefore this identity relationship has a range of Thing, but is modeled as a sub property of \"identity\" to make this conclusion explicit. Editorial Note: This is a relationship with the sense that some relative thing takes the form of something, but is distinct from the similar concept as applied to Asset, in which the thing which takes the form of some asset is owned by someone. Here it is a resource, irrespective of whether or by whom it is owned. Labeled as \"takes material form\" to disambiguate these two relationships."}})
+   #voc/lstr
+    "The material form of the Economic Resource; that is the thing which is recognized as being an Economic Resource as defined here, Editorial Note: This would usually be some Independent Thing. However it is conceivable that the existence of some relative thing, for example an asset, may itself be regarded and defined as a resource, over and above the role or context already defined for it. Therefore this identity relationship has a range of Thing, but is modeled as a sub property of \"identity\" to make this conclusion explicit. Editorial Note: This is a relationship with the sense that some relative thing takes the form of something, but is distinct from the similar concept as applied to Asset, in which the thing which takes the form of some asset is owned by someone. Here it is a resource, irrespective of whether or by whom it is owned. Labeled as \"takes material form\" to disambiguate these two relationships.@en"})
 
 (def terminates
   "terminates"
@@ -695,8 +720,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/DischargingEvent,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "terminates"},
+   :rdfs/label #voc/lstr "terminates@en",
    :rdfs/range :fibo-fnd-txn-rea/EconomicCommitment})
 
 (def transactedUnder
@@ -706,8 +730,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/EconomicTransaction,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "transacted under"},
+   :rdfs/label #voc/lstr "transacted under@en",
    :rdfs/range :fibo-fnd-txn-rea/EconomicContractTermsSet})
 
 (def transactionEmbodiesEconomicAgreement
@@ -718,8 +741,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/EconomicTransaction,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "transaction embodies economic agreement"},
+   :rdfs/label #voc/lstr "transaction embodies economic agreement@en",
    :rdfs/range :fibo-fnd-txn-rea/EconomicAgreement})
 
 (def transactionEventFollowsBusinessProcess
@@ -729,8 +751,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/TransactionEvent,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "transaction event follows business process"}})
+   :rdfs/label #voc/lstr "transaction event follows business process@en"})
 
 (def transactsWith
   "transacts with"
@@ -739,8 +760,7 @@
    :rdfs/domain :fibo-fnd-txn-rea/TransactionParty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "transacts with"},
+   :rdfs/label #voc/lstr "transacts with@en",
    :rdfs/range :fibo-fnd-txn-rea/TransactionParty})
 
 (def triggers
@@ -750,6 +770,5 @@
    :rdfs/domain :fibo-fnd-txn-rea/TransactionBusinessEvent,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "triggers"},
+   :rdfs/label #voc/lstr "triggers@en",
    :rdfs/range :fibo-fnd-txn-rea/LedgerEntry})

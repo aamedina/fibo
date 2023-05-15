@@ -67,7 +67,17 @@
    :rdfs/subClassOf [:fibo-sec-sec-cls/FinancialInstrumentClassifier
                      {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-cls/AssetClass
+                     {:owl/onClass
+                      :fibo-sec-sec-cls/FinancialInstrumentClassificationScheme,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :cmns-cls/classifies,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-cls/Classifier],
    :skos/definition
    "a financial instrument classifier for a group of securities that exhibit similar characteristics, behave similarly in the marketplace and are subject to the same laws and regulations"})
 
@@ -82,11 +92,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
    :rdfs/label "classification of financial instruments code scheme",
-   :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/defines,
-                      :owl/someValuesFrom
-                      :fibo-sec-sec-cls/FinancialInstrumentClassificationCode,
-                      :rdf/type :owl/Restriction}
-                     :fibo-sec-sec-cls/FinancialInstrumentClassificationScheme],
+   :rdfs/subClassOf
+   [{:owl/onProperty :cmns-dsg/defines,
+     :owl/someValuesFrom
+     :fibo-sec-sec-cls/FinancialInstrumentClassificationCode,
+     :rdf/type :owl/Restriction}
+    :fibo-sec-sec-cls/FinancialInstrumentClassificationScheme
+    :fibo-sec-sec-cls/ClassificationOfFinancialInstrumentsCodeScheme
+    :cmns-cls/ClassificationScheme
+    {:owl/allValuesFrom :fibo-sec-sec-cls/FinancialInstrumentClassifier,
+     :owl/onProperty    :cmns-dsg/defines,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    "classification scheme for set of codes for financial instruments that can be used globally for straight-through processing by all involved participants in an electronic data processing environment"})
 
@@ -109,7 +125,16 @@
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :owl/qualifiedCardinality 1,
      :rdf/type :owl/Restriction}
-    :fibo-sec-sec-cls/FinancialInstrumentClassifier],
+    :fibo-sec-sec-cls/FinancialInstrumentClassifier
+    :fibo-sec-sec-cls/FinancialInstrumentClassificationCode
+    {:owl/onClass    :fibo-sec-sec-cls/FinancialInstrumentClassificationScheme,
+     :owl/onProperty :cmns-dsg/isDefinedIn,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :cmns-cls/classifies,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
+     :rdf/type           :owl/Restriction}
+    :cmns-cls/Classifier],
    :skos/definition
    "classifier and code for a financial instrument defined in the ISO 10962 Classification of Financial Instruments (CFI) Code Scheme"})
 
@@ -124,7 +149,8 @@
                       :fibo-sec-sec-cls/FinancialInstrumentClassifier,
                       :owl/onProperty :cmns-dsg/defines,
                       :rdf/type :owl/Restriction}
-                     :cmns-cls/ClassificationScheme],
+                     :cmns-cls/ClassificationScheme
+                     :fibo-sec-sec-cls/FinancialInstrumentClassificationScheme],
    :skos/definition
    "classification scheme defining a set of classifiers for financial instruments",
    :skos/example
@@ -145,7 +171,8 @@
                       :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :cmns-cls/Classifier],
+                     :cmns-cls/Classifier
+                     :fibo-sec-sec-cls/FinancialInstrumentClassifier],
    :skos/definition
    "classifier for a financial instrument based on its type and features",
    :skos/example
@@ -155,22 +182,19 @@
   "Fourth Edition, 2019-10 version of the ISO 10962 Classification of Financial Instruments (CFI) Code scheme"
   {:db/ident :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
    :rdf/type [:fibo-sec-sec-cls/ClassificationOfFinancialInstrumentsCodeScheme
-              :owl/NamedIndividual],
+              :owl/NamedIndividual
+              :cmns-cls/ClassificationScheme
+              {:owl/onProperty :cmns-dsg/defines,
+               :owl/someValuesFrom
+               :fibo-sec-sec-cls/FinancialInstrumentClassificationCode,
+               :rdf/type :owl/Restriction}
+              {:owl/allValuesFrom
+               :fibo-sec-sec-cls/FinancialInstrumentClassifier,
+               :owl/onProperty :cmns-dsg/defines,
+               :rdf/type :owl/Restriction}
+              :fibo-sec-sec-cls/FinancialInstrumentClassificationScheme],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
    :rdfs/label "ISO 10962 2019-10 code set",
    :skos/definition
    "Fourth Edition, 2019-10 version of the ISO 10962 Classification of Financial Instruments (CFI) Code scheme"})
-
-(def ^{:private true} FinancialInstrument
-  {:db/ident        :fibo-fbc-fi-fi/FinancialInstrument,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass
-                      :fibo-sec-sec-cls/FinancialInstrumentClassifier,
-                      :owl/onProperty :cmns-cls/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
-                      :owl/onProperty :cmns-cls/isClassifiedBy,
-                      :rdf/type :owl/Restriction}]})

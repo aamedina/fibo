@@ -137,10 +137,8 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República Argentina"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Argentine Republic"}],
+   :rdfs/label [#voc/lstr "República Argentina@es"
+                #voc/lstr "Government of the Argentine Republic@en"],
    :skos/definition
    "federal presidential constitutional republic and representative democracy whose president is both head of state and head of government"})
 
@@ -152,11 +150,9 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República Bolivariana de Venezuela"}
-                {:rdf/language "en",
-                 :rdf/value
-                 "Government of the Bolivarian Republic of Venezuela"}],
+   :rdfs/label [#voc/lstr "República Bolivariana de Venezuela@es"
+                #voc/lstr
+                 "Government of the Bolivarian Republic of Venezuela@en"],
    :skos/definition
    "federal dominant-party presidential constitutional republic, whose president is both head of state and head of government"})
 
@@ -168,8 +164,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value "Government of the Co-operative Republic of Guyana"},
+   :rdfs/label #voc/lstr "Government of the Co-operative Republic of Guyana@en",
    :skos/definition
    "unitary presidential constitutional republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -181,10 +176,8 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "pt",
-                 :rdf/value    "República Federativa do Brasil"}
-                {:rdf/language "en",
-                 :rdf/value "Government of the Federative Republic of Brazil"}],
+   :rdfs/label [#voc/lstr "República Federativa do Brasil@pt"
+                #voc/lstr "Government of the Federative Republic of Brazil@en"],
    :skos/definition
    "democratic federative republic, with a presidential system, whose president is both head of state and head of government"})
 
@@ -196,12 +189,9 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "pt",
-                 :rdf/value    "República Oriental do Uruguai"}
-                {:rdf/language "es",
-                 :rdf/value    "República Oriental del Uruguay"}
-                {:rdf/language "en",
-                 :rdf/value "Government of the Oriental Republic of Uruguay"}],
+   :rdfs/label [#voc/lstr "República Oriental do Uruguai@pt"
+                #voc/lstr "República Oriental del Uruguay@es"
+                #voc/lstr "Government of the Oriental Republic of Uruguay@en"],
    :skos/definition
    "unitary presidential constitutional republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -213,10 +203,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value "Government of the Plurinational State of Bolivia"}
-                {:rdf/language "es",
-                 :rdf/value    "Estado Plurinacional de Bolivia"}],
+   :rdfs/label [#voc/lstr "Government of the Plurinational State of Bolivia@en"
+                #voc/lstr "Estado Plurinacional de Bolivia@es"],
    :skos/definition
    "Unitary presidential constitutional republic and representative democracy whose president is both head of state and head of government"})
 
@@ -228,10 +216,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República de Chile"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Chile"}],
+   :rdfs/label [#voc/lstr "República de Chile@es"
+                #voc/lstr "Government of the Republic of Chile@en"],
    :skos/definition
    "unitary presidential constitutional republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -243,10 +229,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República de Colombia"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Colombia"}],
+   :rdfs/label [#voc/lstr "República de Colombia@es"
+                #voc/lstr "Government of the Republic of Colombia@en"],
    :skos/definition
    "unitary presidential constitutional republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -258,10 +242,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República del Ecuador"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Ecuador"}],
+   :rdfs/label [#voc/lstr "República del Ecuador@es"
+                #voc/lstr "Government of the Republic of Ecuador@en"],
    :skos/definition
    "unitary presidential constitutional republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -273,10 +255,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República del Paraguay"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Paraguay"}],
+   :rdfs/label [#voc/lstr "República del Paraguay@es"
+                #voc/lstr "Government of the Republic of Paraguay@en"],
    :skos/definition
    "unitary dominant-party presidential republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -288,10 +268,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República del Perú"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Peru"}],
+   :rdfs/label [#voc/lstr "República del Perú@es"
+                #voc/lstr "Government of the Republic of Peru@en"],
    :skos/definition
    "unitary presidential constitutional republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -303,10 +281,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "nl",
-                 :rdf/value    "Republiek Suriname"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Suriname"}],
+   :rdfs/label [#voc/lstr "Republiek Suriname@nl"
+                #voc/lstr "Government of the Republic of Suriname@en"],
    :skos/definition
    "unitary republic and representative democracy, whose president is both head of state and head of government"})
 

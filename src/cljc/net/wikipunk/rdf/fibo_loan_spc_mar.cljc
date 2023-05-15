@@ -34,8 +34,7 @@
    :rdfa/prefix "fibo-loan-spc-mar",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Marine Finance Ontology"}})
+   :rdfs/label #voc/lstr "Marine Finance Ontology@en"})
 
 (def MarineFinancing
   "A loan for the purchase of a boat or other vessel."
@@ -43,12 +42,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "marine finance"},
-   :rdfs/subClassOf :fibo-loan-ln-ln/Loan,
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "A loan for the purchase of a boat or other vessel."}})
+   :rdfs/label #voc/lstr "marine finance@en",
+   :rdfs/subClassOf [:fibo-loan-ln-ln/Loan :fibo-loan-spc-mar/MarineFinancing],
+   :skos/definition #voc/lstr
+                     "A loan for the purchase of a boat or other vessel.@en"})
 
 (def boatHeldAsChattel
   "Whether the vessel is to be held in ownership as a form of chattel by the lender during the period of the loan."
@@ -57,13 +54,11 @@
    :rdfs/domain :fibo-loan-spc-mar/MarineFinancing,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "boat held as chattel"},
+   :rdfs/label #voc/lstr "boat held as chattel@en",
    :rdfs/range :xsd/boolean,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Whether the vessel is to be held in ownership as a form of chattel by the lender during the period of the loan."}})
+   #voc/lstr
+    "Whether the vessel is to be held in ownership as a form of chattel by the lender during the period of the loan.@en"})
 
 (def mooredAt
   "Textual description (name etc.) of where the vessel is to be moored if it has a permanent mooring place."
@@ -72,13 +67,11 @@
    :rdfs/domain :fibo-loan-spc-mar/MarineFinancing,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "moored at"},
+   :rdfs/label #voc/lstr "moored at@en",
    :rdfs/range :xsd/string,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Textual description (name etc.) of where the vessel is to be moored if it has a permanent mooring place."}})
+   #voc/lstr
+    "Textual description (name etc.) of where the vessel is to be moored if it has a permanent mooring place.@en"})
 
 (def percentageAdvanced
   "The percentage of the purchase price advanced as the loan."
@@ -87,12 +80,10 @@
    :rdfs/domain :fibo-loan-spc-mar/MarineFinancing,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "percentage advanced"},
+   :rdfs/label #voc/lstr "percentage advanced@en",
    :rdfs/range :fibo-fnd-utl-alx/Percentage,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value "The percentage of the purchase price advanced as the loan."}})
+   #voc/lstr "The percentage of the purchase price advanced as the loan.@en"})
 
 (def residential
   "Whether the boat is intended to be used and is legally able to be used as a place of residence."
@@ -101,10 +92,8 @@
    :rdfs/domain :fibo-loan-spc-mar/MarineFinancing,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "residential"},
+   :rdfs/label #voc/lstr "residential@en",
    :rdfs/range :xsd/boolean,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Whether the boat is intended to be used and is legally able to be used as a place of residence."}})
+   #voc/lstr
+    "Whether the boat is intended to be used and is legally able to be used as a place of residence.@en"})

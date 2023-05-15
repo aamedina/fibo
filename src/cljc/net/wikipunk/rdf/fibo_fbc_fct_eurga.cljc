@@ -124,7 +124,8 @@
                      {:owl/allValuesFrom :fibo-fbc-fct-eufse/CreditInstitution,
                       :owl/onProperty    :cmns-cxtdsg/appliesTo,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fbc-fct-ra/RegistryEntry],
+                     :fibo-fbc-fct-ra/RegistryEntry
+                     :fibo-fbc-fct-eurga/CreditInstitutionRegisterEntry],
    :skos/definition
    "entry in the Credit Institution Register, a repository of credit institutions collected by the European Banking Authority (EBA) as provided by the various national banking authorities for those institutions that qualify"})
 
@@ -224,15 +225,3 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EURegulatoryAgencies/",
    :rdfs/label "European Central Bank legal entity identifier registry entry",
    :skos/definition "legal entity identifier for the European Central Bank"})
-
-(def ^{:private true} L-549300DTUYXVMJXZNY75-LEI
-  "legal entity identifier for the European Central Bank"
-  {:cmns-id/identifies :fibo-fbc-fct-eurga/EuropeanCentralBank,
-   :db/ident           :gleif-L1-data/L-549300DTUYXVMJXZNY75-LEI,
-   :fibo-fbc-fct-ra/isRegisteredBy
-   :fibo-fbc-fct-eufseind/HerausgebergemeinschaftWertpapier-MitteilungenKepplerLehmann,
-   :fibo-fnd-rel-rel/hasTag "549300DTUYXVMJXZNY75",
-   :rdf/type           [:fibo-be-le-lei/LegalEntityIdentifier
-                        :owl/NamedIndividual],
-   :rdfs/label         "European Central Bank legal entity identifier",
-   :skos/definition    "legal entity identifier for the European Central Bank"})

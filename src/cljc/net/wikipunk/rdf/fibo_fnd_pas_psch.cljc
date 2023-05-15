@@ -89,7 +89,8 @@
                                            :fibo-fnd-pas-psch/PaymentObligation,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-agr/Obligee],
+                     :fibo-fnd-agr-agr/Obligee
+                     :fibo-fnd-pas-psch/Payee],
    :skos/definition
    "a party to whom a debt should be paid, or to whose order a bill of exchange, note, or check is made payable, or who receives or will receive a payment from a payer in partial or complete fulfillment of an obligation"})
 
@@ -103,7 +104,8 @@
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-pas-psch/PaymentObligation,
                       :owl/onProperty    :fibo-fnd-agr-agr/hasObligation,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-agr-agr/Obligor],
+                     :fibo-fnd-agr-agr/Obligor
+                     :fibo-fnd-pas-psch/Payer],
    :skos/definition
    "a party who pays a bill or fees, or who makes payments to a payee in partial or complete fulfillment of an obligation"})
 
@@ -117,7 +119,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pas-psch/hasPaymentAmount,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence],
+                     :fibo-fnd-dt-oc/Occurrence
+                     :fibo-fnd-pas-psch/Payment],
    :skos/definition
    "delivery of money in fulfillment of an obligation, such as to satisfy a claim or debt"})
 
@@ -136,7 +139,8 @@
                       :owl/onProperty :fibo-fnd-rel-rel/involves,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pas-pas/TransactionEvent],
+                     :fibo-fnd-pas-pas/TransactionEvent
+                     :fibo-fnd-pas-psch/PaymentEvent],
    :skos/definition
    "an event that involves delivery of money in fulfillment of an obligation"})
 
@@ -147,17 +151,18 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
    :rdfs/label "payment obligation",
-   :rdfs/subClassOf [:fibo-fnd-agr-agr/Commitment
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-agr-agr/isObligationOf,
+                      :owl/someValuesFrom :fibo-fnd-pas-psch/Payer,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/allValuesFrom :fibo-fnd-agr-ctr/Contract,
+                      :owl/onProperty    :fibo-fnd-rel-rel/isConferredBy,
+                      :rdf/type          :owl/Restriction}
+                     :fibo-fnd-agr-agr/Commitment
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-fnd-pas-psch/Payee,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-agr/isObligationOf,
-                      :owl/someValuesFrom :fibo-fnd-pas-psch/Payer,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-law-lcap/Duty
-                     {:owl/allValuesFrom :fibo-fnd-agr-ctr/Contract,
-                      :owl/onProperty    :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type          :owl/Restriction}],
+                     :fibo-fnd-pas-psch/PaymentObligation],
    :skos/definition
    "legally enforceable duty to pay a sum of money according to the terms stated in a contract",
    :skos/example
@@ -173,7 +178,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fnd-pas-psch/Payment,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-fd/Schedule],
+                     :fibo-fnd-dt-fd/Schedule
+                     :fibo-fnd-pas-psch/PaymentSchedule],
    :skos/definition
    "schedule for delivery of money in fulfillment of an obligation",
    :skos/example
@@ -200,7 +206,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
    :rdfs/label "has payment amount",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
+   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
+                        :fibo-fnd-pas-psch/hasPaymentAmount],
    :skos/definition "specifies the amount of money involved in a payment"})
 
 (def hasPaymentSchedule

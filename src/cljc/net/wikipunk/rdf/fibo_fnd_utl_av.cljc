@@ -42,31 +42,29 @@
 (def Informative
   "entity that is considered deprecated but included for informational purposes because it is referenced by some provisional concept"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Informative content will be removed as soon as all dependencies have been eliminated, thus FIBO users should not depend on it going forward."},
+   #voc/lstr
+    "Informative content will be removed as soon as all dependencies have been eliminated, thus FIBO users should not depend on it going forward.@en",
    :db/ident :fibo-fnd-utl-av/Informative,
-   :rdf/type [:fibo-fnd-utl-av/MaturityLevel :owl/NamedIndividual],
+   :rdf/type
+   [:fibo-fnd-utl-av/MaturityLevel :owl/NamedIndividual :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "informative",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "entity that is considered deprecated but included for informational purposes because it is referenced by some provisional concept"}})
+   #voc/lstr
+    "entity that is considered deprecated but included for informational purposes because it is referenced by some provisional concept@en"})
 
 (def MaturityLevel
   "classifier used to indicate the state of an artifact with respect to its development lifecycle"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "FIBO currently has three maturity levels: Informative, Provisional, and Release."},
+   #voc/lstr
+    "FIBO currently has three maturity levels: Informative, Provisional, and Release.@en",
    :db/ident :fibo-fnd-utl-av/MaturityLevel,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "maturity level",
-   :rdfs/subClassOf :cmns-cls/Classifier,
+   :rdfs/subClassOf [:cmns-cls/Classifier :fibo-fnd-utl-av/MaturityLevel],
    :skos/definition
    "classifier used to indicate the state of an artifact with respect to its development lifecycle"})
 
@@ -79,40 +77,38 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "module",
-   :rdfs/subClassOf :cmns-cls/Classifier,
+   :rdfs/subClassOf [:cmns-cls/Classifier :fibo-fnd-utl-av/Module],
    :skos/definition
    "classifier used to indicate a category used to modularize something based on principles of the model driven architecture methodology (MDA), including but not limited to separation of concerns, coherence, and establishing clear logical boundaries in order to increase reusability and maintainability"})
 
 (def Provisional
   "entity that is considered to be under development"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Provisional content is subject to change, and may change substantially prior to release. FIBO users should be aware that it is not dependable, but could be used for reference and as the basis for further work."},
+   #voc/lstr
+    "Provisional content is subject to change, and may change substantially prior to release. FIBO users should be aware that it is not dependable, but could be used for reference and as the basis for further work.@en",
    :db/ident :fibo-fnd-utl-av/Provisional,
-   :rdf/type [:fibo-fnd-utl-av/MaturityLevel :owl/NamedIndividual],
+   :rdf/type
+   [:fibo-fnd-utl-av/MaturityLevel :owl/NamedIndividual :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "provisional",
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "entity that is considered to be under development"}})
+   :skos/definition #voc/lstr
+                     "entity that is considered to be under development@en"})
 
 (def Release
   "entity that is considered to be stable and mature from a development perspective"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Release notes will be provided for any changes with respect to released content, and any revisions will be backwards compatible with the prior version to the degree possible."},
+   #voc/lstr
+    "Release notes will be provided for any changes with respect to released content, and any revisions will be backwards compatible with the prior version to the degree possible.@en",
    :db/ident :fibo-fnd-utl-av/Release,
-   :rdf/type [:fibo-fnd-utl-av/MaturityLevel :owl/NamedIndividual],
+   :rdf/type
+   [:fibo-fnd-utl-av/MaturityLevel :owl/NamedIndividual :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "release",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "entity that is considered to be stable and mature from a development perspective"}})
+   #voc/lstr
+    "entity that is considered to be stable and mature from a development perspective@en"})
 
 (def abbreviation
   {:db/ident :fibo-fnd-utl-av/abbreviation,
@@ -138,7 +134,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "common designation",
-   :rdfs/subPropertyOf :cmns-av/synonym,
+   :rdfs/subPropertyOf [:cmns-av/synonym :fibo-fnd-utl-av/commonDesignation],
    :skos/definition "frequently used designation for an entity"})
 
 (def definitionOrigin
@@ -148,7 +144,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "definition origin",
-   :rdfs/subPropertyOf :cmns-av/directSource,
+   :rdfs/subPropertyOf [:cmns-av/directSource
+                        :fibo-fnd-utl-av/definitionOrigin],
    :skos/definition
    "document or other source from which a given definition was taken directly; the range for this annotation can be a string, URI, or BibliographicCitation"})
 
@@ -200,7 +197,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "preferred designation",
-   :rdfs/subPropertyOf :cmns-av/synonym,
+   :rdfs/subPropertyOf [:cmns-av/synonym :fibo-fnd-utl-av/preferredDesignation],
    :skos/definition "recommended designation for an entity in some context"})
 
 (def symbol
@@ -226,7 +223,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "term origin",
-   :rdfs/subPropertyOf :cmns-av/directSource,
+   :rdfs/subPropertyOf [:cmns-av/directSource :fibo-fnd-utl-av/termOrigin],
    :skos/definition
    "document or other source from which a given term was taken directly; the range for this annotation can be a string, URI, or BibliographicCitation"})
 

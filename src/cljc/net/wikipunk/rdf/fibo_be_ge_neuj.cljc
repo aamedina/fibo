@@ -50,20 +50,16 @@
 
 (def AlandIslandsJurisdiction
   "jurisdiction of the Aland District Court, which deals with criminal cases, civil cases and petitionary matters in first instance, with escalation to the appellate level in Finland as needed"
-  {:cmns-av/synonym {:rdf/language "fi",
-                     :rdf/value    "Ålands tingsrätt"},
+  {:cmns-av/synonym #voc/lstr "Ålands tingsrätt@fi",
    :db/ident :fibo-be-ge-neuj/AlandIslandsJurisdiction,
    :fibo-be-ge-ge/isJurisdictionOf :fibo-be-ge-neuj/GovernmentOfAland,
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/AlandIslands,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sv",
-                 :rdf/value    "Ålandöarnas jurisdiktion"}
-                {:rdf/language "en",
-                 :rdf/value    "Aland Islands jurisdiction"}
-                {:rdf/language "fi",
-                 :rdf/value    "Ahvenanmaan lainkäyttöalue"}],
+   :rdfs/label [#voc/lstr "Ålandöarnas jurisdiktion@sv"
+                #voc/lstr "Aland Islands jurisdiction@en"
+                #voc/lstr "Ahvenanmaan lainkäyttöalue@fi"],
    :rdfs/seeAlso ["https://www.lexadin.nl/wlg/courts/nofr/eur/lxctfin.htm/"],
    :skos/definition
    "jurisdiction of the Aland District Court, which deals with criminal cases, civil cases and petitionary matters in first instance, with escalation to the appellate level in Finland as needed"})
@@ -76,12 +72,9 @@
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sv",
-                 :rdf/value    "Ålandisk enhet"}
-                {:rdf/language "en",
-                 :rdf/value    "Alandic entity"}
-                {:rdf/language "fi",
-                 :rdf/value    "Ahvenanmaan kokonaisuus"}],
+   :rdfs/label [#voc/lstr "Ålandisk enhet@sv"
+                #voc/lstr "Alandic entity@en"
+                #voc/lstr "Ahvenanmaan kokonaisuus@fi"],
    :skos/definition "regional sovereignty and polity that is Aland"})
 
 (def DanishEntity
@@ -95,10 +88,7 @@
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/SovereignState],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Danish entity"}
-                {:rdf/language "da",
-                 :rdf/value    "Dansk enhed"}],
+   :rdfs/label [#voc/lstr "Danish entity@en" #voc/lstr "Dansk enhed@da"],
    :skos/definition "sovereign state and polity that is Denmark"})
 
 (def EstonianEntity
@@ -110,10 +100,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Estonian entity"}
-                {:rdf/language "et",
-                 :rdf/value    "Eesti üksus"}],
+   :rdfs/label [#voc/lstr "Estonian entity@en" #voc/lstr "Eesti üksus@et"],
    :skos/definition "sovereign state and polity that is Estonia"})
 
 (def FinnishEntity
@@ -126,10 +113,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "fi",
-                 :rdf/value    "Suomen entiteetti"}
-                {:rdf/language "en",
-                 :rdf/value    "Finnish entity"}],
+   :rdfs/label [#voc/lstr "Suomen entiteetti@fi" #voc/lstr "Finnish entity@en"],
    :skos/definition "sovereign state and polity that is Finland"})
 
 (def GovernmentOfAland
@@ -142,12 +126,9 @@
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/RegionalGovernment],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sv",
-                 :rdf/value    "Ålands regering"}
-                {:rdf/language "fi",
-                 :rdf/value    "Ahvenanmaan hallitus"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of Aland"}],
+   :rdfs/label [#voc/lstr "Ålands regering@sv"
+                #voc/lstr "Ahvenanmaan hallitus@fi"
+                #voc/lstr "Government of Aland@en"],
    :rdfs/seeAlso ["https://en.wikipedia.org/wiki/%C3%85land_Islands/"],
    :skos/definition
    "regional government of the Aland Islands, an archipelago province at the entrance to the Gulf of Bothnia in the Baltic Sea belonging to Finland"})
@@ -160,30 +141,24 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "is",
-                 :rdf/value    "Ríkisstjórn Íslands"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of Iceland"}],
+   :rdfs/label [#voc/lstr "Ríkisstjórn Íslands@is"
+                #voc/lstr "Government of Iceland@en"],
    :rdfs/seeAlso ["https://www.government.is/"],
    :skos/definition
    "unitary parliamentary republic and representative democracy, that is a Nordic island country in the North Atlantic"})
 
 (def GovernmentOfTheKingdomOfDenmark
   "unitary constitutional monarchy and parliamentary democracy, with the monarch as the official head of government, that includes the southernmost of the Scandinavian countries, consisting of a peninsula, Jutland, and an archipelago of 443 named islands"
-  {:cmns-av/synonym [{:rdf/language "en",
-                      :rdf/value    "Danish government"}
-                     {:rdf/language "da",
-                      :rdf/value    "Danmarks regering"}],
+  {:cmns-av/synonym [#voc/lstr "Danish government@en"
+                     #voc/lstr "Danmarks regering@da"],
    :db/ident :fibo-be-ge-neuj/GovernmentOfTheKingdomOfDenmark,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-neuj/JurisdictionOfDenmark,
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Denmark,
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/NationalGovernment],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of the Kingdom of Denmark"}
-                {:rdf/language "da",
-                 :rdf/value    "Kongeriget Danmarks regering"}],
+   :rdfs/label [#voc/lstr "Government of the Kingdom of Denmark@en"
+                #voc/lstr "Kongeriget Danmarks regering@da"],
    :rdfs/seeAlso
    ["https://denmark.dk/society-and-business/government-and-politics/"],
    :skos/definition
@@ -197,10 +172,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "no",
-                 :rdf/value    "Kongeriket Norges regjering"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Kingdom of Norway"}],
+   :rdfs/label [#voc/lstr "Kongeriket Norges regjering@no"
+                #voc/lstr "Government of the Kingdom of Norway@en"],
    :rdfs/seeAlso ["https://www.regjeringen.no/en/the-government/id443314/"],
    :skos/definition
    "unitary constitutional monarchy and parliamentary democracy, wherein the monarch is the head of state and the prime minister is the head of government, whose mainland comprises the western and northernmost portion of the Scandinavian Peninsula and includes the remote island of Jan Mayen as well as the archipelago of Svalbard"})
@@ -213,10 +186,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "sv",
-                 :rdf/value    "Konungariket Sveriges regering"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Kingdom of Sweden"}],
+   :rdfs/label [#voc/lstr "Konungariket Sveriges regering@sv"
+                #voc/lstr "Government of the Kingdom of Sweden@en"],
    :rdfs/seeAlso ["https://www.government.se/government-of-sweden/"],
    :skos/definition
    "constitutional monarchy and parliamentary democracy, with a largely ceremonial and representative monarch as head of state, located in Scandinavia between the North Atlantic, the Baltic Sea and Eurasian Russia"})
@@ -229,10 +200,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Estonia"}
-                {:rdf/language "et",
-                 :rdf/value    "Eesti Vabariigi valitsus"}],
+   :rdfs/label [#voc/lstr "Government of the Republic of Estonia@en"
+                #voc/lstr "Eesti Vabariigi valitsus@et"],
    :rdfs/seeAlso ["https://www.valitsus.ee/en/"],
    :skos/definition
    "democratic unitary parliamentary republic divided into fifteen counties, located on the eastern coast of the Baltic Sea in Northern Europe"})
@@ -245,10 +214,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "fi",
-                 :rdf/value    "Suomen tasavallan hallitus"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Finland"}],
+   :rdfs/label [#voc/lstr "Suomen tasavallan hallitus@fi"
+                #voc/lstr "Government of the Republic of Finland@en"],
    :rdfs/seeAlso ["https://valtioneuvosto.fi/en/government"],
    :skos/definition
    "parliamentary republic within the framework of a representative democracy comprised of 19 regions and 310 municipalities, located in the Nordic region of Europe"})
@@ -261,10 +228,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ga",
-                 :rdf/value    "Rialtas Phoblacht na hÉireann"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Ireland"}],
+   :rdfs/label [#voc/lstr "Rialtas Phoblacht na hÉireann@ga"
+                #voc/lstr "Government of the Republic of Ireland@en"],
    :rdfs/seeAlso ["https://www.gov.ie/"],
    :skos/definition
    "parliamentary, representative democratic republic, based on the British model, that is an independent state and member of the European Union, which covers five-sixths of the island of Ireland in the North Atlantic"})
@@ -277,10 +242,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "lv",
-                 :rdf/value    "Latvijas Republikas valdība"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Latvia"}],
+   :rdfs/label [#voc/lstr "Latvijas Republikas valdība@lv"
+                #voc/lstr "Government of the Republic of Latvia@en"],
    :rdfs/seeAlso ["https://www.mk.gov.lv/en"],
    :skos/definition
    "unitary, parliamentary, constitutional republic located in the Baltic region of Northern Europe"})
@@ -293,10 +256,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "lt",
-                 :rdf/value    "Lietuvos Respublikos Vyriausybė"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Lithuania"}],
+   :rdfs/label [#voc/lstr "Lietuvos Respublikos Vyriausybė@lt"
+                #voc/lstr "Government of the Republic of Lithuania@en"],
    :rdfs/seeAlso ["https://lrv.lt/en/"],
    :skos/definition
    "unitary semi-presidential republic situated along the southeastern shore of the Baltic Sea, to the southeast of Sweden and Denmark"})
@@ -309,10 +270,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "is",
-                 :rdf/value    "Íslensk eining"}
-                {:rdf/language "en",
-                 :rdf/value    "Icelandic entity"}],
+   :rdfs/label [#voc/lstr "Íslensk eining@is" #voc/lstr "Icelandic entity@en"],
    :skos/definition "sovereign state and polity that is Iceland"})
 
 (def IrishEntity
@@ -324,10 +282,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Irish entity"}
-                {:rdf/language "ga",
-                 :rdf/value    "Aonán Éireannach"}],
+   :rdfs/label [#voc/lstr "Irish entity@en" #voc/lstr "Aonán Éireannach@ga"],
    :skos/definition "sovereign state and polity that is Ireland"})
 
 (def JurisdictionOfDenmark
@@ -339,10 +294,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Denmark"}
-                {:rdf/language "da",
-                 :rdf/value    "Danmarks jurisdiktion"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Denmark@en"
+                #voc/lstr "Danmarks jurisdiktion@da"],
    :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Courts_of_Denmark/"],
    :skos/definition
    "jurisdiction of the judiciary of Denmark, a civil law system with some references to Germanic law that was substantially reformed in 2007"})
@@ -356,10 +309,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Estonia"}
-                {:rdf/language "et",
-                 :rdf/value    "Eesti jurisdiktsioon"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Estonia@en"
+                #voc/lstr "Eesti jurisdiktsioon@et"],
    :rdfs/seeAlso
    ["https://www.kohus.ee/en/estonian-courts/estonian-court-system"],
    :skos/definition
@@ -374,10 +325,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Finland"}
-                {:rdf/language "fi",
-                 :rdf/value    "Suomen lainkäyttövaltaan"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Finland@en"
+                #voc/lstr "Suomen lainkäyttövaltaan@fi"],
    :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Judicial_system_of_Finland"],
    :skos/definition
    "jurisdiction of the judiciary of Finland, a civil law system divided between courts with regular civil and criminal jurisdiction and administrative courts with jurisdiction over litigation between individuals and the public administration"})
@@ -390,10 +339,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "is",
-                 :rdf/value    "lögsögu Íslands"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Iceland"}],
+   :rdfs/label [#voc/lstr "lögsögu Íslands@is"
+                #voc/lstr "jurisdiction of Iceland@en"],
    :rdfs/seeAlso
    ["https://www.government.is/topics/law-and-order/the-judicial-system-in-iceland/"],
    :skos/definition
@@ -408,10 +355,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Ireland"}
-                {:rdf/language "ga",
-                 :rdf/value    "dlínse na hÉireann"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Ireland@en"
+                #voc/lstr "dlínse na hÉireann@ga"],
    :rdfs/seeAlso
    ["https://www.citizensinformation.ie/en/justice/courts_system/"],
    :skos/definition
@@ -426,10 +371,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Latvia"}
-                {:rdf/language "lv",
-                 :rdf/value    "Latvijas jurisdikcija"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Latvia@en"
+                #voc/lstr "Latvijas jurisdikcija@lv"],
    :rdfs/seeAlso ["http://www.satv.tiesa.gov.lv/"],
    :skos/definition
    "jurisdiction of the judiciary of Latvia, which is the system of courts that interprets and applies the law in Latvia"})
@@ -443,10 +386,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Lithuania"}
-                {:rdf/language "lt",
-                 :rdf/value    "Lietuvos jurisdikcija"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Lithuania@en"
+                #voc/lstr "Lietuvos jurisdikcija@lt"],
    :rdfs/seeAlso ["https://www.teismai.lt/en/courts/judicial-system/650"],
    :skos/definition
    "jurisdiction of the judiciary of Lithuania, whose highest court is the Constitutional Court (Konstitucinis Teismas), but the general jurisdiction dealing with civil and criminal cases includes the Supreme Court of Lithuania, the Court of Appeal of Lithuania, regional courts, and district courts"})
@@ -460,10 +401,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "no",
-                 :rdf/value    "jurisdiksjon av Norge"}
-                {:rdf/language "en",
-                 :rdf/value    "jurisdiction of Norway"}],
+   :rdfs/label [#voc/lstr "jurisdiksjon av Norge@no"
+                #voc/lstr "jurisdiction of Norway@en"],
    :rdfs/seeAlso ["https://www.domstol.no/en/"],
    :skos/definition
    "jurisdiction of the judiciary system in Norway, a civil law system where laws are created and amended in parliament and the system regulated through the Courts of Justice of Norway"})
@@ -477,10 +416,8 @@
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "jurisdiction of Sweden"}
-                {:rdf/language "sv",
-                 :rdf/value    "Sveriges jurisdiktion"}],
+   :rdfs/label [#voc/lstr "jurisdiction of Sweden@en"
+                #voc/lstr "Sveriges jurisdiktion@sv"],
    :rdfs/seeAlso
    ["https://www.government.se/information-material/2019/03/organisation-and-responsibilities-of-the-ministry-of-justice/"],
    :skos/definition
@@ -495,10 +432,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "lv",
-                 :rdf/value    "Latvijas vienība"}
-                {:rdf/language "en",
-                 :rdf/value    "Latvian entity"}],
+   :rdfs/label [#voc/lstr "Latvijas vienība@lv" #voc/lstr "Latvian entity@en"],
    :skos/definition "sovereign state and polity that is Latvia"})
 
 (def LithuanianEntity
@@ -510,10 +444,8 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Lithuanian entity"}
-                {:rdf/language "lt",
-                 :rdf/value    "Lietuvos subjektas"}],
+   :rdfs/label [#voc/lstr "Lithuanian entity@en"
+                #voc/lstr "Lietuvos subjektas@lt"],
    :skos/definition "sovereign state and polity that is Lithuania"})
 
 (def NorwegianEntity
@@ -527,10 +459,7 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Norwegian entity"}
-                {:rdf/language "no",
-                 :rdf/value    "Norsk enhet"}],
+   :rdfs/label [#voc/lstr "Norwegian entity@en" #voc/lstr "Norsk enhet@no"],
    :skos/definition "sovereign state and polity that is Norway"})
 
 (def SwedishEntity
@@ -542,8 +471,5 @@
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Swedish entity"}
-                {:rdf/language "sv",
-                 :rdf/value    "Svensk enhet"}],
+   :rdfs/label [#voc/lstr "Swedish entity@en" #voc/lstr "Svensk enhet@sv"],
    :skos/definition "sovereign state and polity that is Sweden"})

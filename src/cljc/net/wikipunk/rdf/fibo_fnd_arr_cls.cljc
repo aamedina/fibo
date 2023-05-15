@@ -73,7 +73,12 @@
                       :owl/someValuesFrom
                       :fibo-fnd-arr-cls/IndustrySectorClassifier,
                       :rdf/type :owl/Restriction}
-                     :cmns-cls/ClassificationScheme],
+                     :cmns-cls/ClassificationScheme
+                     :fibo-fnd-arr-cls/IndustrySectorClassificationScheme
+                     {:owl/allValuesFrom :cmns-cls/Classifier,
+                      :owl/onProperty    :cmns-dsg/defines,
+                      :rdf/type          :owl/Restriction}
+                     :fibo-fnd-arr-arr/Scheme],
    :skos/definition
    "system for allocating classifiers to organizations by industry sector",
    :skos/example
@@ -91,14 +96,7 @@
                       :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :cmns-cls/Classifier],
+                     :cmns-cls/Classifier
+                     :fibo-fnd-arr-cls/IndustrySectorClassifier],
    :skos/definition
    "standardized classification or delineation for an organization, or possibly for a security representing an interest in a given organization, per some scheme for such delineation, by industry"})
-
-(def ^{:private true} ClassificationScheme
-  {:db/ident        :cmns-cls/ClassificationScheme,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf [{:owl/allValuesFrom :cmns-cls/Classifier,
-                      :owl/onProperty    :cmns-dsg/defines,
-                      :rdf/type          :owl/Restriction}
-                     :fibo-fnd-arr-arr/Scheme]})

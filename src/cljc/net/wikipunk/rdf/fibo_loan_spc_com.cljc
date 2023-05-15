@@ -40,31 +40,27 @@
    :rdfa/prefix "fibo-loan-spc-com",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CommercialLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Commercial Loans Ontology"}})
+   :rdfs/label #voc/lstr "Commercial Loans Ontology@en"})
 
 (def CommercialLoan
   "loan extended to a corporation, commercial enterprise, joint venture, or other organization as opposed to a consumer"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Such loans may include those that provide working capital, are used to finance the purchase of equipment and/or materials, for facilities and/or improvement of facilities, and so forth, and are typically secured."},
-   :cmns-av/synonym {:rdf/language "en",
-                     :rdf/value    "commercial and industrial loan"},
+   #voc/lstr
+    "Such loans may include those that provide working capital, are used to finance the purchase of equipment and/or materials, for facilities and/or improvement of facilities, and so forth, and are typically secured.@en",
+   :cmns-av/synonym #voc/lstr "commercial and industrial loan@en",
    :db/ident :fibo-loan-spc-com/CommercialLoan,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CommercialLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "commercial loan"},
+   :rdfs/label #voc/lstr "commercial loan@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fbc-dae-dbt/hasBorrower,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                           :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-loan-ln-ln/Loan],
+    :fibo-loan-ln-ln/Loan
+    :fibo-loan-spc-com/CommercialLoan],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "loan extended to a corporation, commercial enterprise, joint venture, or other organization as opposed to a consumer"}})
+   #voc/lstr
+    "loan extended to a corporation, commercial enterprise, joint venture, or other organization as opposed to a consumer@en"})

@@ -57,10 +57,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ja",
-                 :rdf/value    "日本国"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of Japan"}],
+   :rdfs/label [#voc/lstr "日本国@ja" #voc/lstr "Government of Japan@en"],
    :skos/definition
    "unitary parliamentary constitutional monarchy with a bicameral legislature in Eastern Asia, bordered on the west by the Sea of Japan, and extending from the Sea of Okhotsk in the north toward the East China Sea and Taiwan in the south"})
 
@@ -72,10 +69,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "mn",
-                 :rdf/value    "Монгол Улс"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of Mongolia"}],
+   :rdfs/label [#voc/lstr "Монгол Улс@mn"
+                #voc/lstr "Government of Mongolia@en"],
    :skos/definition
    "unitary semi-presidential representative democratic republic and landlocked country in Eastern Asia, situated between Russia to the north and China to the south, where it neighbours the Inner Mongolia Autonomous Region"})
 
@@ -88,11 +83,9 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ko",
-                 :rdf/value    "조선민주주의인민공화국"}
-                {:rdf/language "en",
-                 :rdf/value
-                 "Government of the Democratic People's Republic of Korea"}],
+   :rdfs/label [#voc/lstr "조선민주주의인민공화국@ko"
+                #voc/lstr
+                 "Government of the Democratic People's Republic of Korea@en"],
    :skos/definition
    "unitary one-party republic under a totalitarian dictatorship in Eastern Asia, constituting the northern part of the Korean Peninsula, bordered to the north by China and by Russia along the Amnok (known as the Yalu in Chinese) and Tumen rivers, and to the south by South Korea, with the heavily fortified Korean Demilitarized Zone (DMZ) separating the two"})
 
@@ -107,11 +100,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
    :rdfs/label
-   [{:rdf/language "zh",
-     :rdf/value    "中華人民共和國香港特別行政區"}
-    {:rdf/language "en",
-     :rdf/value
-     "Government of the Hong Kong Special Administrative Region of the People's Republic of China"}],
+   [#voc/lstr "中華人民共和國香港特別行政區@zh"
+    #voc/lstr
+     "Government of the Hong Kong Special Administrative Region of the People's Republic of China@en"],
    :skos/definition
    "devolved executive-led system within a socialist republic that is a metropolitan area and special administrative region of the People's Republic of China on the eastern Pearl River Delta of the South China Sea"})
 
@@ -125,11 +116,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
    :rdfs/label
-   [{:rdf/language "zh",
-     :rdf/value    "中華人民共和國澳門特別行政區"}
-    {:rdf/language "en",
-     :rdf/value
-     "Government of the Macao Special Administrative Region of the People's Republic of China"}],
+   [#voc/lstr "中華人民共和國澳門特別行政區@zh"
+    #voc/lstr
+     "Government of the Macao Special Administrative Region of the People's Republic of China@en"],
    :skos/definition
    "devolved executive-led system within a socialist republic that is a metropolitan area and special administrative region of the People's Republic of China in the western Pearl River Delta by the South China Sea"})
 
@@ -141,10 +130,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "zh",
-                 :rdf/value    "中华人民共和国"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the People's Republic of China"}],
+   :rdfs/label [#voc/lstr "中华人民共和国@zh"
+                #voc/lstr "Government of the People's Republic of China@en"],
    :skos/definition
    "unitary Marxist-Leninist single-party socialist republic in Eastern Asia, covering approximately 9.6 million square kilometers (3.7 million square miles), that is the world's third or fourth-largest country by area"})
 
@@ -157,10 +144,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "zh",
-                 :rdf/value    "中華民國"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of China"}],
+   :rdfs/label [#voc/lstr "中華民國@zh"
+                #voc/lstr "Government of the Republic of China@en"],
    :skos/definition
    "unitary semi-presidential constitutional republic whose neighbors include the People's Republic of China (PRC) to the northwest, Japan to the northeast, and the Philippines to the south"})
 
@@ -173,10 +158,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ko",
-                 :rdf/value    "대한민국"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Korea"}],
+   :rdfs/label [#voc/lstr "대한민국@ko"
+                #voc/lstr "Government of the Republic of Korea@en"],
    :skos/definition
    "unitary presidential constitutional republic in Eastern Asia, constituting the southern part of the Korean Peninsula, and sharing a land border with North Korea"})
 

@@ -98,16 +98,14 @@
 (def DowJonesIndustrialAverage
   "equity index of 30 substantial stocks that are traded on the New York Stock Exchange (NYSE) and the Nasdaq"
   {:cmns-av/abbreviation ["Dow" "DJIA"],
-   :cmns-av/explanatoryNote {:rdf/language "en",
-                             :rdf/value    ""},
+   :cmns-av/explanatoryNote #voc/lstr "@en",
    :db/ident :fibo-ind-mkt-eqind/DowJonesIndustrialAverage,
    :fibo-be-fct-pub/hasPublisher :fibo-ind-mkt-eqind/SPDowJonesIndices,
    :fibo-fbc-dae-dbt/isBasedOn
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket,
    :fibo-fnd-utl-alx/isCalculatedViaMethodology
-   {:rdf/language "en",
-    :rdf/value
-    "The index is calculated by adding the price of a single share of each stock together, with equal weighting, and dividing by the Dow Divisor which is constantly adjusted, and is currently around 0.1474."},
+   #voc/lstr
+    "The index is calculated by adding the price of a single share of each stock together, with equal weighting, and dividing by the Dow Divisor which is constantly adjusted, and is currently around 0.1474.@en",
    :rdf/type [:fibo-ind-mkt-bas/EquityIndex :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
@@ -343,17 +341,15 @@
   "equity index that is calculated based on the float-adjusted market capitalization of approximately 500 large companies listed on stock exchanges in the United States"
   {:cmns-av/abbreviation "S&P 500",
    :cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "The S&P 500 is a market capitalization-weighted index and the performance of the 10 largest companies in the index account for 21.8 percent of the performance of the index."},
+   #voc/lstr
+    "The S&P 500 is a market capitalization-weighted index and the performance of the 10 largest companies in the index account for 21.8 percent of the performance of the index.@en",
    :db/ident :fibo-ind-mkt-eqind/StandardAndPoors500CompositeIndex,
    :fibo-be-fct-pub/hasPublisher :fibo-ind-mkt-eqind/SPDowJonesIndices,
    :fibo-fbc-dae-dbt/isBasedOn
    :fibo-ind-mkt-eqind/StandardAndPoors500CompositeIndexBasket,
    :fibo-fnd-utl-alx/isCalculatedViaMethodology
-   {:rdf/language "en",
-    :rdf/value
-    "The components of the S&P 500 are selected by a committee. When considering the eligibility of a new addition, the committee assesses the company's merit using eight primary criteria: market capitalization, liquidity, domicile, public float, sector classification, financial viability, and length of time publicly traded and stock exchange."},
+   #voc/lstr
+    "The components of the S&P 500 are selected by a committee. When considering the eligibility of a new addition, the committee assesses the company's merit using eight primary criteria: market capitalization, liquidity, domicile, public float, sector classification, financial viability, and length of time publicly traded and stock exchange.@en",
    :rdf/type [:fibo-ind-mkt-bas/EquityIndex :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",

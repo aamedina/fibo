@@ -77,10 +77,8 @@
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of Guernsey"}
-                {:rdf/language "fr",
-                 :rdf/value    "Gouvèrnément d'Guernési"}],
+   :rdfs/label [#voc/lstr "Government of Guernsey@en"
+                #voc/lstr "Gouvèrnément d'Guernési@fr"],
    :rdfs/seeAlso ["https://www.gov.gg/"],
    :skos/definition
    "parliamentary representative democracy that is the central government of the Bailiwick of Guernsey, a self-governing dependency of the United Kingdom and one of the British Channel Islands off the coast of Normandy"})
@@ -93,10 +91,8 @@
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of Jersey"}
-                {:rdf/language "fr",
-                 :rdf/value    "Gouvèrnément d'Jèrri"}],
+   :rdfs/label [#voc/lstr "Government of Jersey@en"
+                #voc/lstr "Gouvèrnément d'Jèrri@fr"],
    :rdfs/seeAlso ["https://www.gov.je/Pages/default.aspx"],
    :skos/definition
    "central government of the Bailiwick of Jersey, a self-governing dependency of the United Kingdom that is the largest of the Channel Islands between England and France"})
@@ -112,10 +108,8 @@
               :fibo-be-ge-ge/DevolvedGovernment],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of Scotland"}
-                {:rdf/language "gd",
-                 :rdf/value    "Riaghaltas na h-Alba"}],
+   :rdfs/label [#voc/lstr "Government of Scotland@en"
+                #voc/lstr "Riaghaltas na h-Alba@gd"],
    :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Scottish_Government"
                   "https://www.gov.scot/"
                   "https://www.parliament.scot/index.aspx"],
@@ -130,8 +124,7 @@
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of the Isle of Man"},
+   :rdfs/label #voc/lstr "Government of the Isle of Man@en",
    :rdfs/seeAlso ["https://www.gov.im/"],
    :skos/definition
    "central government of the Isle of Man, a self-governing British Crown dependency in the Irish Sea between England and Ireland"})
@@ -231,10 +224,7 @@
 
 (def NationalAssemblyForWales
   "devolved government of Wales"
-  {:cmns-av/synonym [{:rdf/language "en",
-                      :rdf/value    "Welsh Assembly"}
-                     {:rdf/language "cy",
-                      :rdf/value    "Senedd"}],
+  {:cmns-av/synonym [#voc/lstr "Welsh Assembly@en" #voc/lstr "Senedd@cy"],
    :db/ident :fibo-be-ge-ukj/NationalAssemblyForWales,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-ukj/EnglandAndWalesJurisdiction,
    :fibo-fnd-rel-rel/governs :lcc-3166-2-gb/Wales,
@@ -243,10 +233,8 @@
               :fibo-be-ge-ge/DevolvedGovernment],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "cy",
-                 :rdf/value    "Cynulliad Cenedlaethol Cymru"}
-                {:rdf/language "en",
-                 :rdf/value    "National Assembly for Wales"}],
+   :rdfs/label [#voc/lstr "Cynulliad Cenedlaethol Cymru@cy"
+                #voc/lstr "National Assembly for Wales@en"],
    :rdfs/seeAlso ["https://en.wikipedia.org/wiki/National_Assembly_for_Wales"
                   "http://www.assembly.wales/en/Pages/Home.aspx"
                   "https://law.gov.wales/constitution-government/devolution/"],
@@ -262,10 +250,8 @@
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Northern Ireland Assembly"}
-                {:rdf/language "ga",
-                 :rdf/value    "Tionól Thuaisceart Éireann"}],
+   :rdfs/label [#voc/lstr "Northern Ireland Assembly@en"
+                #voc/lstr "Tionól Thuaisceart Éireann@ga"],
    :rdfs/seeAlso ["http://www.niassembly.gov.uk/"
                   "https://en.wikipedia.org/wiki/Northern_Ireland_Assembly"],
    :skos/definition "devolved government of Northern Ireland"})
@@ -278,8 +264,7 @@
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Northern Ireland entity"},
+   :rdfs/label #voc/lstr "Northern Ireland entity@en",
    :rdfs/seeAlso ["http://www.niassembly.gov.uk/"],
    :skos/definition "regional devolved sovereignty that is Northern Ireland"})
 
@@ -304,8 +289,7 @@
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Scotland entity"},
+   :rdfs/label #voc/lstr "Scotland entity@en",
    :rdfs/seeAlso ["https://www.gov.scot/"
                   "https://en.wikipedia.org/wiki/Scottish_Government"],
    :skos/definition "regional devolved sovereignty that is Scotland"})
@@ -370,7 +354,6 @@
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Welsh entity"},
+   :rdfs/label #voc/lstr "Welsh entity@en",
    :rdfs/seeAlso ["http://www.assembly.wales/en/Pages/Home.aspx"],
    :skos/definition "regional devolved sovereignty that is Wales"})

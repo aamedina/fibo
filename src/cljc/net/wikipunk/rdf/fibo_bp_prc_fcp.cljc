@@ -33,8 +33,7 @@
    :rdfa/prefix "fibo-bp-prc-fcp",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Financial Context and Process Ontology"}})
+   :rdfs/label #voc/lstr "Financial Context and Process Ontology@en"})
 
 (def Clearing
   "The process by which securities trades are cleared."
@@ -42,12 +41,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "clearing"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/ClearingAndSettlement,
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "The process by which securities trades are cleared."}})
+   :rdfs/label #voc/lstr "clearing@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/ClearingAndSettlement
+                     :fibo-bp-prc-fcp/Clearing
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext],
+   :skos/definition #voc/lstr
+                     "The process by which securities trades are cleared.@en"})
 
 (def ClearingAndSettlement
   "The business process or service area of securities clearing and settlement."
@@ -55,13 +55,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "clearing and settlement"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext,
+   :rdfs/label #voc/lstr "clearing and settlement@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/FinancialIndustryContext
+                     :fibo-bp-prc-fcp/ClearingAndSettlement
+                     :cmns-cxtdsg/Context],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The business process or service area of securities clearing and settlement."}})
+   #voc/lstr
+    "The business process or service area of securities clearing and settlement.@en"})
 
 (def FinancialIndustryContext
   "The context in which business activites take place within the financial industry, i.e. investment management, wholesale financial markets trading and so on."
@@ -69,17 +69,15 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "financial industry context"},
-   :rdfs/subClassOf :cmns-cxtdsg/Context,
+   :rdfs/label #voc/lstr "financial industry context@en",
+   :rdfs/subClassOf [:cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The context in which business activites take place within the financial industry, i.e. investment management, wholesale financial markets trading and so on."},
+   #voc/lstr
+    "The context in which business activites take place within the financial industry, i.e. investment management, wholesale financial markets trading and so on.@en",
    :skos/editorialNote
-   {:rdf/language "en",
-    :rdf/value
-    "REVIEW: Ther precise definition above defines the Scope of this model."}})
+   #voc/lstr
+    "REVIEW: Ther precise definition above defines the Scope of this model.@en"})
 
 (def FinancialMarketsRegulation
   "financial markets regulation"
@@ -87,9 +85,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "financial markets regulation"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext})
+   :rdfs/label #voc/lstr "financial markets regulation@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/FinancialIndustryContext
+                     :fibo-bp-prc-fcp/FinancialMarketsRegulation
+                     :cmns-cxtdsg/Context]})
 
 (def InvestmentManagement
   "investment management"
@@ -97,9 +96,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "investment management"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext})
+   :rdfs/label #voc/lstr "investment management@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/FinancialIndustryContext
+                     :fibo-bp-prc-fcp/InvestmentManagement
+                     :cmns-cxtdsg/Context]})
 
 (def MarketDataProvision
   "market data provision"
@@ -107,9 +107,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "market data provision"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/PreTrade})
+   :rdfs/label #voc/lstr "market data provision@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/PreTrade
+                     :fibo-bp-prc-fcp/MarketDataProvision
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/InvestmentManagement
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def PortfolioManagement
   "portfolio management"
@@ -117,9 +120,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "portfolio management"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/InvestmentManagement})
+   :rdfs/label #voc/lstr "portfolio management@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/InvestmentManagement
+                     :fibo-bp-prc-fcp/PortfolioManagement
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def PreTrade
   "pre trade"
@@ -127,9 +132,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "pre trade"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/InvestmentManagement})
+   :rdfs/label #voc/lstr "pre trade@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/InvestmentManagement
+                     :fibo-bp-prc-fcp/PreTrade
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def PretradeQuotes
   "pretrade quotes"
@@ -137,9 +144,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "pretrade quotes"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/PreTrade})
+   :rdfs/label #voc/lstr "pretrade quotes@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/PreTrade
+                     :fibo-bp-prc-fcp/PretradeQuotes
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/InvestmentManagement
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def PretradeReferenceDataProvision
   "pretrade reference data provision"
@@ -147,9 +157,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "pretrade reference data provision"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/PreTrade})
+   :rdfs/label #voc/lstr "pretrade reference data provision@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/PreTrade
+                     :fibo-bp-prc-fcp/PretradeReferenceDataProvision
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/InvestmentManagement
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def PrimaryMarket
   "Issuance and primary market trading of new Traded Financial Instruments"
@@ -157,13 +170,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "primary market"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext,
+   :rdfs/label #voc/lstr "primary market@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/FinancialIndustryContext
+                     :fibo-bp-prc-fcp/PrimaryMarket
+                     :cmns-cxtdsg/Context],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Issuance and primary market trading of new Traded Financial Instruments"}})
+   #voc/lstr
+    "Issuance and primary market trading of new Traded Financial Instruments@en"})
 
 (def PrimaryMarketClosing
   "primary market closing"
@@ -171,9 +184,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "primary market closing"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/PrimaryMarket})
+   :rdfs/label #voc/lstr "primary market closing@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/PrimaryMarket
+                     :fibo-bp-prc-fcp/PrimaryMarketClosing
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def PrimaryMarketIndicationsOfInterest
   "primary market indications of interest"
@@ -181,9 +196,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "primary market indications of interest"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/PreTrade})
+   :rdfs/label #voc/lstr "primary market indications of interest@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/PreTrade
+                     :fibo-bp-prc-fcp/PrimaryMarketIndicationsOfInterest
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/InvestmentManagement
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def SecondaryMarketTradingContext
   "secondary market trading context"
@@ -191,9 +209,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "secondary market trading context"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext})
+   :rdfs/label #voc/lstr "secondary market trading context@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/FinancialIndustryContext
+                     :fibo-bp-prc-fcp/SecondaryMarketTradingContext
+                     :cmns-cxtdsg/Context]})
 
 (def SecuritiesCustody
   "securities custody"
@@ -201,9 +220,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities custody"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext})
+   :rdfs/label #voc/lstr "securities custody@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/FinancialIndustryContext
+                     :fibo-bp-prc-fcp/SecuritiesCustody
+                     :cmns-cxtdsg/Context]})
 
 (def SecuritiesPostTrade
   "securities post trade"
@@ -211,9 +231,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities post trade"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext})
+   :rdfs/label #voc/lstr "securities post trade@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/FinancialIndustryContext
+                     :fibo-bp-prc-fcp/SecuritiesPostTrade
+                     :cmns-cxtdsg/Context]})
 
 (def SecuritiesPostTradePositionManagement
   "securities post trade position management"
@@ -221,9 +242,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities post trade position management"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesPostTrade})
+   :rdfs/label #voc/lstr "securities post trade position management@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/SecuritiesPostTrade
+                     :fibo-bp-prc-fcp/SecuritiesPostTradePositionManagement
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def SecuritiesTrade
   "securities trade"
@@ -231,9 +254,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities trade"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/FinancialIndustryContext})
+   :rdfs/label #voc/lstr "securities trade@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/FinancialIndustryContext
+                     :fibo-bp-prc-fcp/SecuritiesTrade
+                     :cmns-cxtdsg/Context]})
 
 (def SecuritiesTradeAllocation
   "securities trade allocation"
@@ -241,9 +265,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities trade allocation"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesPostTrade})
+   :rdfs/label #voc/lstr "securities trade allocation@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/SecuritiesPostTrade
+                     :fibo-bp-prc-fcp/SecuritiesTradeAllocation
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def SecuritiesTradeCaptureAndValidation
   "securities trade capture and validation"
@@ -251,9 +277,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities trade capture and validation"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesPostTrade})
+   :rdfs/label #voc/lstr "securities trade capture and validation@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/SecuritiesPostTrade
+                     :fibo-bp-prc-fcp/SecuritiesTradeCaptureAndValidation
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def SecuritiesTradeConfirmationAffirmation
   "securities trade confirmation affirmation"
@@ -261,9 +289,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities trade confirmation affirmation"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesPostTrade})
+   :rdfs/label #voc/lstr "securities trade confirmation affirmation@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/SecuritiesPostTrade
+                     :fibo-bp-prc-fcp/SecuritiesTradeConfirmationAffirmation
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def SecuritiesTradeDatePositionReporting
   "securities trade date position reporting"
@@ -271,9 +301,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities trade date position reporting"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesTrade})
+   :rdfs/label #voc/lstr "securities trade date position reporting@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/SecuritiesTrade
+                     :fibo-bp-prc-fcp/SecuritiesTradeDatePositionReporting
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def SecuritiesTradeExecution
   "securities trade execution"
@@ -281,9 +313,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities trade execution"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesTrade})
+   :rdfs/label #voc/lstr "securities trade execution@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/SecuritiesTrade
+                     :fibo-bp-prc-fcp/SecuritiesTradeExecution
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def SecuritiesTradeOrderRouting
   "securities trade order routing"
@@ -291,9 +325,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities trade order routing"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesTrade})
+   :rdfs/label #voc/lstr "securities trade order routing@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/SecuritiesTrade
+                     :fibo-bp-prc-fcp/SecuritiesTradeOrderRouting
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def SecuritiesTradesMatching
   "Matching of trade allegations to identify confirmed trades, on an Over the Counter market in Traded Securities."
@@ -301,13 +337,14 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities trades matching"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesPostTrade,
+   :rdfs/label #voc/lstr "securities trades matching@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/SecuritiesPostTrade
+                     :fibo-bp-prc-fcp/SecuritiesTradesMatching
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Matching of trade allegations to identify confirmed trades, on an Over the Counter market in Traded Securities."}})
+   #voc/lstr
+    "Matching of trade allegations to identify confirmed trades, on an Over the Counter market in Traded Securities.@en"})
 
 (def SecuritiesTradesReporting
   "securities trades reporting"
@@ -315,9 +352,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securities trades reporting"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesPostTrade})
+   :rdfs/label #voc/lstr "securities trades reporting@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/SecuritiesPostTrade
+                     :fibo-bp-prc-fcp/SecuritiesTradesReporting
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def SecurityRetirement
   "security retirement"
@@ -325,11 +364,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "security retirement"},
-   :rdfs/subClassOf {:owl/onProperty     :fibo-bp-prc-fcp/isRetirementOf,
-                     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                     :rdf/type           :owl/Restriction}})
+   :rdfs/label #voc/lstr "security retirement@en",
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-bp-prc-fcp/isRetirementOf,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-bp-prc-fcp/SecurityRetirement]})
 
 (def ShortSaleLocate
   "short sale locate"
@@ -337,9 +376,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "short sale locate"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/PreTrade})
+   :rdfs/label #voc/lstr "short sale locate@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/PreTrade
+                     :fibo-bp-prc-fcp/ShortSaleLocate
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/InvestmentManagement
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def TradeAdvertisements
   "trade advertisements"
@@ -347,9 +389,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "trade advertisements"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/PreTrade})
+   :rdfs/label #voc/lstr "trade advertisements@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/PreTrade
+                     :fibo-bp-prc-fcp/TradeAdvertisements
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/InvestmentManagement
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def TradedSecurityLifecycle
   "traded security lifecycle"
@@ -357,8 +402,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "traded security lifecycle"}})
+   :rdfs/label #voc/lstr "traded security lifecycle@en"})
 
 (def TradesReferenceDataProvision
   "trades reference data provision"
@@ -366,9 +410,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "trades reference data provision"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/SecuritiesTrade})
+   :rdfs/label #voc/lstr "trades reference data provision@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/SecuritiesTrade
+                     :fibo-bp-prc-fcp/TradesReferenceDataProvision
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def WhenIssuedTrading
   "when issued trading"
@@ -376,9 +422,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "when issued trading"},
-   :rdfs/subClassOf :fibo-bp-prc-fcp/PrimaryMarket})
+   :rdfs/label #voc/lstr "when issued trading@en",
+   :rdfs/subClassOf [:fibo-bp-prc-fcp/PrimaryMarket
+                     :fibo-bp-prc-fcp/WhenIssuedTrading
+                     :cmns-cxtdsg/Context
+                     :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def isRetirementOf
   "is retirement of"
@@ -387,6 +435,5 @@
    :rdfs/domain :fibo-bp-prc-fcp/SecurityRetirement,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "is retirement of"},
+   :rdfs/label #voc/lstr "is retirement of@en",
    :rdfs/range :fibo-fbc-fi-fi/Security})

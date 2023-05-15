@@ -81,7 +81,8 @@
                      {:owl/cardinality 1,
                       :owl/onProperty  :fibo-fnd-arr-id/isIndexTo,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-rel-rel/Reference],
+                     :fibo-fnd-rel-rel/Reference
+                     :fibo-fnd-arr-id/Index],
    :skos/definition
    "indirect shortcut derived from and pointing into, a greater volume of values, data, information or knowledge"})
 
@@ -95,7 +96,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-fnd-arr-id/Index,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-arr/Scheme],
+                     :fibo-fnd-arr-arr/Scheme
+                     :fibo-fnd-arr-id/IndexingScheme],
    :skos/definition
    "system for indexing values, data, information, or knowledge"})
 
@@ -117,7 +119,9 @@
                       :owl/onProperty
                       :fibo-fnd-arr-id/hasAssignmentTerminationDate,
                       :rdf/type :owl/Restriction}
-                     :cmns-id/Identifier],
+                     :cmns-id/Identifier
+                     :fibo-fnd-arr-id/ReassignableIdentifier
+                     :fibo-fnd-rel-rel/Reference],
    :skos/definition
    "identifier that uniquely identifies something for a given time period, and that may be reused to identify something else at a different point in time",
    :skos/example
@@ -142,7 +146,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
    :rdfs/label "has assignment termination date",
    :rdfs/range :cmns-dt/CombinedDateTime,
-   :rdfs/subPropertyOf :cmns-dt/hasObservedDateTime,
+   :rdfs/subPropertyOf [:cmns-dt/hasObservedDateTime
+                        :fibo-fnd-arr-id/hasAssignmentTerminationDate],
    :skos/definition
    "the date on which an identifier is released from its assignment to some resource"})
 
@@ -154,7 +159,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
    :rdfs/label "has initial assignment date",
    :rdfs/range :cmns-dt/CombinedDateTime,
-   :rdfs/subPropertyOf :cmns-dt/hasObservedDateTime,
+   :rdfs/subPropertyOf [:cmns-dt/hasObservedDateTime
+                        :fibo-fnd-arr-id/hasInitialAssignmentDate],
    :skos/definition
    "the date on which an identifier is first assigned to some resource"})
 
@@ -166,7 +172,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
    :rdfs/label "is index to",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo,
+   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/refersTo :fibo-fnd-arr-id/isIndexTo],
    :skos/definition "that to which the index refers"})
 
 (def parseRegex
@@ -179,21 +185,3 @@
    :rdfs/range :xsd/string,
    :skos/definition
    "indicates how to deconstruct the supplied character string into its components"})
-
-(def ^{:private true} StructuredIdentifier
-  {:db/ident :cmns-cxtid/StructuredIdentifier,
-   :rdf/type :owl/Class,
-   :skos/example
-   "For a fictional business identifier, the rule used to parse a composite identifier might be fibo-fnd-arr-id:parseRegex \"RA([0-9]{6})-([0-9A-Z]*)\", and fibo-fnd-arr-id:constructRegex \"$1-$2\", where RA represents a text value corresponding to the registration authority for the business identifier.",
-   :skos/note
-   "Use parseRegex and constructRegex annotation properties to express the rules for deconstructing and composing the actual composite identifiers from their constituent parts as appropriate."})
-
-(def ^{:private true} IdentificationScheme
-  {:db/ident        :cmns-id/IdentificationScheme,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf :fibo-fnd-arr-arr/Scheme})
-
-(def ^{:private true} Identifier
-  {:db/ident        :cmns-id/Identifier,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf :fibo-fnd-rel-rel/Reference})

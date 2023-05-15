@@ -79,7 +79,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "actor",
-   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole,
+   :rdfs/subClassOf [:fibo-fnd-pty-pty/PartyInRole
+                     :fibo-fnd-pty-pty/Actor
+                     :fibo-fnd-pty-rl/AgentInRole
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/Date,
+                      :owl/onProperty :fibo-fnd-pty-pty/hasCommencementDate,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "party that is the primary performer in a relationship between parties, i.e., the party that does something, causes something to happen, or otherwise plays an agentive role in the relationship",
    :skos/example
@@ -109,7 +119,8 @@
                       :owl/onClass    :fibo-fnd-plc-adr/PhysicalAddress,
                       :owl/onProperty :fibo-fnd-pty-pty/hasMailingAddress,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-aap-agt/AutonomousAgent],
+                     :fibo-fnd-aap-agt/AutonomousAgent
+                     :fibo-fnd-pty-pty/IndependentParty],
    :skos/definition "any person or organization"})
 
 (def PartyInRole
@@ -129,7 +140,8 @@
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-pty-pty/hasCommencementDate,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition
    "relative concept that ties a person or organization to a specific role they stand in",
    :skos/example
@@ -148,7 +160,8 @@
                       :owl/someValuesFrom
                       :fibo-fnd-pty-pty/PartyInRoleIdentifier,
                       :rdf/type :owl/Restriction}
-                     :cmns-id/IdentificationScheme],
+                     :cmns-id/IdentificationScheme
+                     :fibo-fnd-pty-pty/PartyInRoleIdentificationScheme],
    :skos/definition "system for allocating identifiers to parties"})
 
 (def PartyInRoleIdentifier
@@ -171,7 +184,8 @@
      :owl/onProperty :cmns-id/identifies,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    :cmns-id/Identifier],
+    :cmns-id/Identifier
+    :fibo-fnd-pty-pty/PartyInRoleIdentifier],
    :skos/definition
    "sequence of characters, capable of uniquely identifying a party based on a specific role that they play in some context"})
 
@@ -194,7 +208,8 @@
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-pty-pty/Undergoer,
                       :owl/onProperty :fibo-fnd-pty-pty/hasUndergoer,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-pty/Situation],
    :skos/definition
    "setting, state of being, or relationship that that is relatively stable for some period of time",
    :skos/example
@@ -209,7 +224,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "tax identification scheme",
-   :rdfs/subClassOf :cmns-id/IdentificationScheme,
+   :rdfs/subClassOf [:cmns-id/IdentificationScheme
+                     :fibo-fnd-pty-pty/TaxIdentificationScheme],
    :skos/definition
    "identification scheme used to identify taxpayers in some jurisdiction"})
 
@@ -232,7 +248,8 @@
                       :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :cmns-id/Identifier],
+                     :cmns-id/Identifier
+                     :fibo-fnd-pty-pty/TaxIdentifier],
    :skos/definition
    "identifier assigned to a taxpayer that enables compulsory financial charges and other levies to be imposed on the taxpayer by a governmental organization in order to fund government spending and various public expenditures"})
 
@@ -243,7 +260,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "undergoer",
-   :rdfs/subClassOf :fibo-fnd-pty-rl/ThingInRole,
+   :rdfs/subClassOf [:fibo-fnd-pty-rl/ThingInRole :fibo-fnd-pty-pty/Undergoer],
    :skos/definition
    "something that is the recipient in a relationship, i.e., the thing (or party) that something impacts, affects, or otherwise plays passive recipient / patient or theme role in the relationship",
    :skos/example "Examples include something that is owned or controlled."})
@@ -284,6 +301,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "directly affects",
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/directlyAffects,
    :skos/definition
    "relates an actor in a given situation to the thing (or party) that they impact under the circumstances"})
 
@@ -323,6 +341,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "experiences with",
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/experiencesWith,
    :skos/definition
    "relates something to an actor that drives a situation involving it"})
 
@@ -348,7 +367,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "has actor",
    :rdfs/range :fibo-fnd-pty-pty/Actor,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasPartyInRole
+                        :fibo-fnd-pty-pty/hasActor
+                        :fibo-fnd-pty-pty/hasThingInRole],
    :skos/definition
    "identifies the primary party acting in a specific role with respect to a given situation"})
 
@@ -361,7 +382,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "has commencement date",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf :cmns-dt/hasStartDate,
+   :rdfs/subPropertyOf [:cmns-dt/hasStartDate
+                        :fibo-fnd-pty-pty/hasCommencementDate],
    :skos/definition "the date a party relationship comes into force"})
 
 (def hasMailingAddress
@@ -373,7 +395,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "has mailing address",
    :rdfs/range :fibo-fnd-plc-adr/PhysicalAddress,
-   :rdfs/subPropertyOf :fibo-fnd-plc-adr/hasAddress,
+   :rdfs/subPropertyOf [:fibo-fnd-plc-adr/hasAddress
+                        :fibo-fnd-pty-pty/hasMailingAddress],
    :skos/definition
    "identifies a physical address where an independent party can receive communications, including letters and packages"})
 
@@ -396,7 +419,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "has party in role",
    :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasThingInRole,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasThingInRole
+                        :fibo-fnd-pty-pty/hasPartyInRole],
    :skos/definition
    "identifies a party acting in a specific role as related to the particular agreement, contract, policy, regulation, or other business relationship"})
 
@@ -411,7 +435,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "has related party-in-role",
    :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasPartyInRole
+                        :fibo-fnd-pty-pty/hasRelatedPartyInRole
+                        :fibo-fnd-pty-pty/hasThingInRole],
    :skos/definition
    "relates a party acting in a specific role directly to another party acting in the same or another role"})
 
@@ -423,6 +449,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "has thing in role",
    :rdfs/range :fibo-fnd-pty-rl/ThingInRole,
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasThingInRole,
    :skos/definition
    "identifies something acting in a recipient or target role as related to the particular agreement, contract, policy, regulation, situation, or other business relationship"})
 
@@ -435,7 +462,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
    :rdfs/label "has undergoer",
    :rdfs/range :fibo-fnd-pty-pty/Undergoer,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasThingInRole,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasThingInRole
+                        :fibo-fnd-pty-pty/hasUndergoer],
    :skos/definition
    "identifies the experiencer in a specific role with respect to a given situation"})
 
@@ -543,22 +571,3 @@
    :rdfs/label "undergoes",
    :rdfs/range :fibo-fnd-pty-pty/Situation,
    :skos/definition "indicates a situation that the undergoer experiences"})
-
-(def ^{:private true} ContextualName
-  {:db/ident        :cmns-cxtdsg/ContextualName,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :cmns-dsg/isNameOf,
-                      :rdf/type       :owl/Restriction}
-                     :cmns-dsg/Name]})
-
-(def ^{:private true} holds
-  {:db/ident :fibo-fnd-rel-rel/holds,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/directlyAffects})
-
-(def ^{:private true} isHeldBy
-  {:db/ident :fibo-fnd-rel-rel/isHeldBy,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/experiencesWith})

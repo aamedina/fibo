@@ -115,7 +115,8 @@
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :fibo-be-oac-exec/ResponsibleParty],
+                     :fibo-be-oac-exec/ResponsibleParty
+                     :fibo-fbc-fct-rga/Examiner],
    :skos/definition
    "a party empowered as an official representative by a regulatory agency to investigate and review specified documents for accuracy and truthfulness"})
 
@@ -131,7 +132,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-law-lcap/License],
+                     :fibo-fnd-law-lcap/License
+                     :fibo-fbc-fct-rga/GovernmentIssuedLicense],
    :skos/definition
    "grant of permission needed to legally perform some task, provide some service, exercise a certain privilege, or pursue some business or occupation"})
 
@@ -146,7 +148,8 @@
                       :owl/someValuesFrom
                       :fibo-fbc-fct-rga/RegulationIdentifier,
                       :rdf/type :owl/Restriction}
-                     :cmns-id/IdentificationScheme],
+                     :cmns-id/IdentificationScheme
+                     :fibo-fbc-fct-rga/RegulationIdentificationScheme],
    :skos/definition
    "a scheme for organizing information and allocating identifiers to regulations"})
 
@@ -166,7 +169,8 @@
                       :owl/onProperty :cmns-col/isMemberOf,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :cmns-id/Identifier],
+                     :cmns-id/Identifier
+                     :fibo-fbc-fct-rga/RegulationIdentifier],
    :skos/definition "an identifier associated with a regulation"})
 
 (def RegulatoryAgency
@@ -181,21 +185,22 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
    :rdfs/label "regulatory agency",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-fct-rga/GovernmentIssuedLicense,
-                      :owl/onProperty :fibo-fnd-rel-rel/issues,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pas-pas/ServiceProvider
-                     {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
-                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+   :rdfs/subClassOf [:fibo-fnd-pas-pas/ServiceProvider
+                     {:owl/onProperty     :fibo-fnd-rel-rel/provides,
+                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/provides,
-                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryService,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-fct-rga/GovernmentIssuedLicense,
+                      :owl/onProperty :fibo-fnd-rel-rel/issues,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fct-rga/RegulatoryAgency],
    :skos/definition
    "public authority or government agency responsible for exercising authority over something in a regulatory or supervisory capacity",
    :skos/example
@@ -208,7 +213,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
    :rdfs/label "regulatory capacity",
-   :rdfs/subClassOf :fibo-fnd-law-lcap/LegalCapacity,
+   :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalCapacity
+                     :fibo-fbc-fct-rga/RegulatoryCapacity],
    :skos/definition
    "the capacity of some natural person to regulate some industry, organization, or product by virtue of some certification program on behalf of some regulatory agency"})
 
@@ -229,7 +235,8 @@
                                             :fibo-fnd-law-lcap/Regulation],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-rep/Report],
+                     :fibo-fnd-arr-rep/Report
+                     :fibo-fbc-fct-rga/RegulatoryReport],
    :skos/definition
    "a report required to support operational transparency that demonstrates compliance with some specification, law, policy, restriction, or other rule specified by a regulatory agency"})
 
@@ -243,7 +250,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pas-pas/Service],
+                     :fibo-fnd-pas-pas/Service
+                     :fibo-fbc-fct-rga/RegulatoryService],
    :skos/definition
    "a service provided by a regulatory agency, which may include, but not be limited to, examination, monitoring, supervision, testing, or other capabilities required to ensure the integrity, fairness, safety, or other capacity of a given industry, organization, or product"})
 
@@ -258,17 +266,33 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
    :rdfs/label "tax authority",
    :rdfs/subClassOf [:fibo-fbc-fct-rga/RegulatoryAgency
-                     {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
-                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/TaxIdentifier,
+                      :owl/onProperty :fibo-fnd-rel-rel/issues,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-rel-rel/manages,
                       :owl/someValuesFrom
                       :fibo-fnd-pty-pty/TaxIdentificationScheme,
                       :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fct-rga/TaxAuthority
+                     {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pas-pas/ServiceProvider
+                     {:owl/onProperty     :fibo-fnd-rel-rel/provides,
+                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryService,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/TaxIdentifier,
+                      :owl/onClass    :fibo-fbc-fct-rga/GovernmentIssuedLicense,
                       :owl/onProperty :fibo-fnd-rel-rel/issues,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "regulatory agency that has jurisdiction over the assessment, determination, collection, imposition and other aspects of any tax"})
 
@@ -294,11 +318,3 @@
    :rdfs/label "regulates",
    :skos/definition
    "has regulatory authority over or directs according to rule or law, typically an industry, organization, or product"})
-
-(def ^{:private true} Regulation
-  {:db/ident        :fibo-fnd-law-lcap/Regulation,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onClass    :fibo-fbc-fct-rga/RegulatoryAgency,
-                     :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
-                     :owl/qualifiedCardinality 1,
-                     :rdf/type       :owl/Restriction}})

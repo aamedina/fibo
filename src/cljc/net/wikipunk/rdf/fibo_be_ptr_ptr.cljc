@@ -85,15 +85,33 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "general partner",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                      :owl/someValuesFrom {:owl/onProperty
-                                           :fibo-fnd-law-lcap/hasCapacity,
-                                           :owl/someValuesFrom
-                                           :fibo-fnd-law-lcap/LiabilityCapacity,
-                                           :rdf/type :owl/Restriction},
-                      :rdf/type           :owl/Restriction}
-                     :fibo-be-ptr-ptr/Partner
-                     :fibo-be-oac-cpty/DeJureControllingInterestParty],
+   :rdfs/subClassOf
+   [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-law-lcap/hasCapacity,
+                          :owl/someValuesFrom
+                          :fibo-fnd-law-lcap/LiabilityCapacity,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    :fibo-be-ptr-ptr/Partner
+    :fibo-be-oac-cpty/DeJureControllingInterestParty
+    :fibo-be-ptr-ptr/GeneralPartner
+    :fibo-fnd-org-org/OrganizationMember
+    :fibo-be-oac-opty/ConstitutionalOwner
+    {:owl/onClass    :fibo-be-le-lp/LegalPerson,
+     :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     :owl/someValuesFrom {:owl/onProperty     :cmns-col/isMemberOf,
+                          :owl/someValuesFrom :fibo-be-ptr-ptr/Partnership,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
+                          :owl/someValuesFrom
+                          :fibo-be-ptr-ptr/PartnershipAgreement,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "partner and part-owner that is responsible for managing the day to day operations of the partnership and that may be jointly and severally liable for the obligations of the partnership"})
 
@@ -117,7 +135,22 @@
     {:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
      :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
      :rdf/type           :owl/Restriction}
-    :fibo-be-ptr-ptr/Partnership],
+    :fibo-be-ptr-ptr/Partnership
+    :fibo-be-ptr-ptr/GeneralPartnership
+    {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lp/ProfitObjective,
+     :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
+     :rdf/type       :owl/Restriction}
+    :fibo-be-le-lp/BusinessEntity
+    :fibo-be-le-lp/LegalEntity
+    {:owl/onProperty     :cmns-col/hasMember,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "partnership that has at least two general partners that agree to share in all assets, profits, and financial and legal liabilities of the business"})
 
@@ -131,7 +164,30 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "limited liability limited partnership",
-   :rdfs/subClassOf :fibo-be-ptr-ptr/LimitedPartnership,
+   :rdfs/subClassOf
+   [:fibo-be-ptr-ptr/LimitedPartnership
+    :fibo-be-ptr-ptr/LimitedLiabilityLimitedPartnership
+    {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lp/ProfitObjective,
+     :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
+     :rdf/type       :owl/Restriction}
+    :fibo-be-le-lp/BusinessEntity
+    {:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
+     :rdf/type           :owl/Restriction}
+    :fibo-be-le-lp/LegalEntity
+    :fibo-be-ptr-ptr/Partnership
+    {:owl/onProperty     :cmns-col/hasMember,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-be-ptr-ptr/hasLimitedPartner,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/LimitedPartner,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "limited partnership that consists of one or more general partners who are liable for the obligations of the entity as well as one or more protected limited liability partners"})
 
@@ -146,10 +202,26 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "limited liability partnership",
-   :rdfs/subClassOf [:fibo-be-ptr-ptr/Partnership
-                     {:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
-                      :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
-                      :rdf/type           :owl/Restriction}],
+   :rdfs/subClassOf
+   [:fibo-be-ptr-ptr/Partnership
+    {:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
+     :rdf/type           :owl/Restriction}
+    :fibo-be-ptr-ptr/LimitedLiabilityPartnership
+    {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lp/ProfitObjective,
+     :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
+     :rdf/type       :owl/Restriction}
+    :fibo-be-le-lp/BusinessEntity
+    :fibo-be-le-lp/LegalEntity
+    {:owl/onProperty     :cmns-col/hasMember,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "partnership that has general partners but provides its individual partners some level of protection against personal liability for certain partnership liabilities",
    :skos/example
@@ -164,7 +236,26 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "limited partner",
-   :rdfs/subClassOf :fibo-be-ptr-ptr/Partner,
+   :rdfs/subClassOf
+   [:fibo-be-ptr-ptr/Partner
+    :fibo-be-ptr-ptr/LimitedPartner
+    :fibo-fnd-org-org/OrganizationMember
+    :fibo-be-oac-opty/ConstitutionalOwner
+    {:owl/onClass    :fibo-be-le-lp/LegalPerson,
+     :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     :owl/someValuesFrom {:owl/onProperty     :cmns-col/isMemberOf,
+                          :owl/someValuesFrom :fibo-be-ptr-ptr/Partnership,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
+                          :owl/someValuesFrom
+                          :fibo-be-ptr-ptr/PartnershipAgreement,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "partner whose liabilities are limited to the extent of their investment or guarantees and that has no involvement in the day to day operations of the partnership"})
 
@@ -178,13 +269,29 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "limited partnership",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
-                      :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-be-ptr-ptr/hasLimitedPartner,
-                      :owl/someValuesFrom :fibo-be-ptr-ptr/LimitedPartner,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-be-ptr-ptr/Partnership],
+   :rdfs/subClassOf
+   [:fibo-be-ptr-ptr/Partnership
+    {:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-be-ptr-ptr/hasLimitedPartner,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/LimitedPartner,
+     :rdf/type           :owl/Restriction}
+    :fibo-be-ptr-ptr/LimitedPartnership
+    {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lp/ProfitObjective,
+     :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
+     :rdf/type       :owl/Restriction}
+    :fibo-be-le-lp/BusinessEntity
+    :fibo-be-le-lp/LegalEntity
+    {:owl/onProperty     :cmns-col/hasMember,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "partnership that has at least one general partner and at least one limited partner",
    :skos/example
@@ -214,7 +321,8 @@
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
     :fibo-fnd-org-org/OrganizationMember
-    :fibo-be-oac-opty/ConstitutionalOwner],
+    :fibo-be-oac-opty/ConstitutionalOwner
+    :fibo-be-ptr-ptr/Partner],
    :skos/definition
    "co-owner, member, and agent of a partnership whose participation level, including proportional liabilities and share in the profit / loss of the business is specified in a partnership agreement"})
 
@@ -229,20 +337,21 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "partnership",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
-     :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
-     :rdf/type           :owl/Restriction}
-    :fibo-be-le-lp/LegalEntity
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-be-le-lp/ProfitObjective,
-     :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
-     :rdf/type       :owl/Restriction}
+   [:fibo-be-le-lp/LegalEntity
     {:owl/onProperty     :cmns-col/hasMember,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-be-le-lp/BusinessEntity],
+    :fibo-be-le-lp/BusinessEntity
+    {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lp/ProfitObjective,
+     :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
+     :rdf/type       :owl/Restriction}
+    :fibo-be-ptr-ptr/Partnership],
    :skos/definition
    "association of two or more legal persons to carry on as co-owners a business for profit"})
 
@@ -257,7 +366,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-fbo/OrganizationCoveringAgreement],
+                     :fibo-be-le-fbo/OrganizationCoveringAgreement
+                     :fibo-be-ptr-ptr/PartnershipAgreement],
    :skos/definition
    "contract between partners in a partnership that establishes the terms and conditions of the relationship between the partners"})
 
@@ -270,7 +380,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "has general partner",
    :rdfs/range :fibo-be-ptr-ptr/GeneralPartner,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/isAffectedBy
+                        :fibo-be-ptr-ptr/hasGeneralPartner],
    :skos/definition
    "indicates an actor that has some measure of control over the partnership"})
 
@@ -283,7 +394,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "has limited partner",
    :rdfs/range :fibo-be-ptr-ptr/LimitedPartner,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/isAffectedBy
+                        :fibo-be-ptr-ptr/hasLimitedPartner],
    :skos/definition
    "indicates an actor that may have some measure of influence over the partnership"})
 
@@ -297,7 +409,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "is general partner of",
    :rdfs/range :fibo-be-ptr-ptr/Partnership,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/actsOn
+                        :fibo-be-ptr-ptr/isGeneralPartnerOf],
    :skos/definition
    "indicates the organization that the general partner manages"})
 
@@ -311,6 +424,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "is limited partner of",
    :rdfs/range :fibo-be-ptr-ptr/Partnership,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/actsOn
+                        :fibo-be-ptr-ptr/isLimitedPartnerOf],
    :skos/definition
    "indicates the organization that the limited partner participates in"})

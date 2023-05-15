@@ -53,6 +53,7 @@
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was revised to address hygiene issues with respect to text formatting."
     "The http://www.omg.org/spec/FIBO/Foundations/20130601/Organizations/FormalOrganizations.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n\t(1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n\t(2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n\t(3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n\t(4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n\t(5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was modified to loosen the domain of 'is domiciled in' to include organization sub-units, such as branches and divisions."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Organizations/FormalOrganizations.rdf version of this ontology was modified per the FIBO 2.0 RFC to integrate concepts from LCC."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
     "The http://www.omg.org/spec/EDMC-FIBO/FND/20130801/Organizations/FormalOrganizations.rdf version of this ontology was modified per the issue resolutions identified in the FIBO FND 1.0 FTF report and in http://www.omg.org/spec/EDMC-FIBO/FND/1.0/AboutFND-1.0/. It was further revised in the FTF in advance of the Long Beach meeting, resulting in http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Organizations/FormalOrganizations/."
@@ -77,7 +78,8 @@
                      {:owl/onProperty     :fibo-fnd-org-fm/isEmployedIn,
                       :owl/someValuesFrom :fibo-fnd-org-fm/Employment,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-org-org/OrganizationMember],
+                     :fibo-fnd-org-org/OrganizationMember
+                     :fibo-fnd-org-fm/Employee],
    :skos/definition
    "person in the service of another under any contract of hire, express or implied, oral or written, where the employer has the right to control and direct that person in the material details of how the work is to be performed"})
 
@@ -94,7 +96,8 @@
                      {:owl/onProperty     :fibo-fnd-org-fm/hasEmployee,
                       :owl/someValuesFrom :fibo-fnd-org-fm/Employee,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-org-org/MemberBearingOrganization],
+                     :fibo-fnd-org-org/MemberBearingOrganization
+                     :fibo-fnd-org-fm/Employer],
    :skos/definition
    "party that provides compensation, including wages or a salary and potentially other benefits, in exchange for work performed by one or more people, and that has the right to control and direct the employee in the material details of how the work is to be performed"})
 
@@ -106,15 +109,15 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "employment"},
+   :rdfs/label #voc/lstr "employment@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-org-fm/hasEmployingParty,
                       :owl/someValuesFrom :fibo-fnd-org-fm/Employer,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-org-fm/hasEmployedParty,
                       :owl/someValuesFrom :fibo-fnd-org-fm/Employee,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-org-org/Membership],
+                     :fibo-fnd-org-org/Membership
+                     :fibo-fnd-org-fm/Employment],
    :skos/definition
    "situation representing the state of being employed, i.e., the relationship that holds between an employer and employee for some period of time",
    :skos/scopeNote
@@ -133,7 +136,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-org-fm/isDomiciledIn,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-org-org/Organization],
+                     :fibo-fnd-org-org/Organization
+                     :fibo-fnd-org-fm/FormalOrganization],
    :skos/definition
    "organization that is recognized in some legal jurisdiction, with associated rights and responsibilities",
    :skos/example
@@ -149,7 +153,8 @@
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-aap-agt/AutonomousAgent,
                       :owl/onProperty    :cmns-col/hasMember,
                       :rdf/type          :owl/Restriction}
-                     :cmns-col/Collection],
+                     :cmns-col/Collection
+                     :fibo-fnd-org-fm/Group],
    :skos/definition
    "collection of agents (people, organizations, software agents, etc.) that are considered as a unit"})
 
@@ -160,7 +165,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "informal organization",
-   :rdfs/subClassOf :fibo-fnd-org-org/Organization,
+   :rdfs/subClassOf [:fibo-fnd-org-org/Organization
+                     :fibo-fnd-org-fm/InformalOrganization],
    :skos/definition
    "organization that is not formally constituted in some way"})
 
@@ -172,7 +178,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "employs",
    :rdfs/range :fibo-fnd-aap-ppl/Person,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/playsActiveRoleThatDirectlyAffects,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/playsActiveRoleThatDirectlyAffects
+                        :fibo-fnd-org-fm/employs],
    :skos/definition "indicates someone that is employed by the legal person"})
 
 (def hasEmployedParty
@@ -185,7 +192,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "has employed party",
    :rdfs/range :fibo-fnd-org-fm/Employee,
-   :rdfs/subPropertyOf :fibo-fnd-org-org/hasOrganizationMember,
+   :rdfs/subPropertyOf [:fibo-fnd-org-org/hasOrganizationMember
+                        :fibo-fnd-org-fm/hasEmployedParty],
    :skos/definition "identifies the employee in an employment situation"})
 
 (def hasEmployee
@@ -198,7 +206,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "has employee",
    :rdfs/range :fibo-fnd-org-fm/Employee,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/actsOn :fibo-fnd-org-fm/hasEmployee],
    :skos/definition "indicates an employee that is employed by the employer"})
 
 (def hasEmployingParty
@@ -211,7 +219,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "has employing party",
    :rdfs/range :fibo-fnd-org-fm/Employer,
-   :rdfs/subPropertyOf :fibo-fnd-org-org/hasMembership,
+   :rdfs/subPropertyOf [:fibo-fnd-org-org/hasMembership
+                        :fibo-fnd-org-fm/hasEmployingParty],
    :skos/definition "identifies employer in an employment situation"})
 
 (def isDomiciledIn
@@ -220,7 +229,9 @@
    "Corporate domicile refers to a place where a company's affairs are discharged. It is also typically the legal home of a corporation because the place is considered by law as the center of corporate affairs. In cases where a business has incorporated in one location for convenience, such as for taxation, legal, or regulatory purposes, but operates primarily in one or more other locations, domicile in FIBO refers to the operational location(s) rather than legal location. Many companies in the US have incorporated in the State of Delaware, for example, but do not have operational facilities in Delaware (or only have small offices there).",
    :db/ident :fibo-fnd-org-fm/isDomiciledIn,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-fnd-org-fm/FormalOrganization,
+   :rdfs/domain {:owl/unionOf [:fibo-fnd-org-fm/FormalOrganization
+                               :fibo-fnd-org-org/OrganizationalSubUnit],
+                 :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "is domiciled in",
@@ -236,7 +247,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "is employed by",
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/experiencesDirectly,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/experiencesDirectly
+                        :fibo-fnd-org-fm/isEmployedBy],
    :skos/definition
    "indicates the party (legal person or formal organization) that employs someone"})
 
@@ -249,7 +261,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "is employed in",
    :rdfs/range :fibo-fnd-org-fm/Employment,
-   :rdfs/subPropertyOf :fibo-fnd-org-org/isOrganizationMember,
+   :rdfs/subPropertyOf [:fibo-fnd-org-org/isOrganizationMember
+                        :fibo-fnd-org-fm/isEmployedIn],
    :skos/definition
    "indicates the context of employment in which someone is employed"})
 
@@ -262,7 +275,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "is employee of",
    :rdfs/range :fibo-fnd-org-fm/Employer,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/isAffectedBy
+                        :fibo-fnd-org-fm/isEmployeeOf],
    :skos/definition
    "identifies the formal organization for which the employee works"})
 
@@ -275,6 +289,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "is employing party",
    :rdfs/range :fibo-fnd-org-fm/Employment,
-   :rdfs/subPropertyOf :fibo-fnd-org-org/isMembershipPartyIn,
+   :rdfs/subPropertyOf [:fibo-fnd-org-org/isMembershipPartyIn
+                        :fibo-fnd-org-fm/isEmployingParty],
    :skos/definition
    "relates a party in the role of employer to the context of employment"})

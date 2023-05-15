@@ -84,7 +84,10 @@
                       :rdf/type           :owl/Restriction},
      :owl/onProperty :fibo-fnd-pty-rl/playsRole,
      :rdf/type       :owl/Restriction}
-    :fibo-be-plc-plc/PrivateCompanyWithLimitedLiability],
+    :fibo-be-plc-plc/PrivateCompanyWithLimitedLiability
+    :fibo-be-plc-plc/LimitedLiabilityCompany
+    :fibo-be-le-lp/LegalEntity
+    :fibo-be-le-lp/BusinessEntity],
    :skos/definition
    "private limited company that combines the pass through taxation of a sole proprietorship or partnership with the limited liability of a corporation"})
 
@@ -98,25 +101,26 @@
    :rdfs/subClassOf
    [:fibo-be-oac-cpty/DeJureControllingInterestParty
     :fibo-fnd-org-org/OrganizationMember
-    {:owl/onClass    :fibo-be-le-lp/LegallyCompetentNaturalPerson,
-     :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom {:owl/onProperty :cmns-col/isMemberOf,
-                          :owl/someValuesFrom
-                          :fibo-be-plc-plc/LimitedLiabilityCompany,
-                          :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-be-oac-cpty/EntityControllingParty
-    :fibo-be-oac-opty/EntityOwner
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
                       :fibo-be-plc-plc/LimitedLiabilityCompany,
                       :rdf/type :owl/Restriction},
      :owl/onProperty :fibo-be-oac-cpty/isControllingMemberOf,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-be-oac-cpty/EntityControllingParty
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     :owl/someValuesFrom {:owl/onProperty :cmns-col/isMemberOf,
+                          :owl/someValuesFrom
+                          :fibo-be-plc-plc/LimitedLiabilityCompany,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/onClass    :fibo-be-le-lp/LegallyCompetentNaturalPerson,
+     :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    :fibo-be-oac-opty/EntityOwner
+    :fibo-be-plc-plc/LimitedLiabilityCompanyMember],
    :skos/definition "owner of an interest in a limited liability company"})
 
 (def LimitedLiabilityCompanyTaxedAsACorporation
@@ -129,7 +133,25 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
    :rdfs/label "limited liability company taxed as a corporation",
-   :rdfs/subClassOf :fibo-be-plc-plc/LimitedLiabilityCompany,
+   :rdfs/subClassOf
+   [:fibo-be-plc-plc/LimitedLiabilityCompany
+    :fibo-be-plc-plc/LimitedLiabilityCompanyTaxedAsACorporation
+    :fibo-be-le-lp/LegalEntity
+    :fibo-be-le-lp/BusinessEntity
+    {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+     :owl/someValuesFrom {:owl/onProperty
+                          :fibo-be-oac-cpty/hasControllingOrganizationMember,
+                          :owl/someValuesFrom
+                          :fibo-be-plc-plc/LimitedLiabilityCompanyMember,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    {:owl/onProperty     :fibo-be-plc-plc/hasManagingMember,
+                      :owl/someValuesFrom :fibo-be-plc-plc/ManagingMember,
+                      :rdf/type           :owl/Restriction},
+     :owl/onProperty :fibo-fnd-pty-rl/playsRole,
+     :rdf/type       :owl/Restriction}
+    :fibo-be-plc-plc/PrivateCompanyWithLimitedLiability],
    :skos/definition
    "limited liability company that has elected to have corporate tax status"})
 
@@ -142,7 +164,25 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
    :rdfs/label "manager-managed limited liability company",
-   :rdfs/subClassOf :fibo-be-plc-plc/LimitedLiabilityCompany,
+   :rdfs/subClassOf
+   [:fibo-be-plc-plc/LimitedLiabilityCompany
+    :fibo-be-plc-plc/ManagerManagedLimitedLiabilityCompany
+    :fibo-be-le-lp/LegalEntity
+    :fibo-be-le-lp/BusinessEntity
+    {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+     :owl/someValuesFrom {:owl/onProperty
+                          :fibo-be-oac-cpty/hasControllingOrganizationMember,
+                          :owl/someValuesFrom
+                          :fibo-be-plc-plc/LimitedLiabilityCompanyMember,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    {:owl/onProperty     :fibo-be-plc-plc/hasManagingMember,
+                      :owl/someValuesFrom :fibo-be-plc-plc/ManagingMember,
+                      :rdf/type           :owl/Restriction},
+     :owl/onProperty :fibo-fnd-pty-rl/playsRole,
+     :rdf/type       :owl/Restriction}
+    :fibo-be-plc-plc/PrivateCompanyWithLimitedLiability],
    :skos/definition
    "limited liability company in which the members appoint one or more managers to handle the daily operations and administrative responsibilities of the organization"})
 
@@ -153,15 +193,37 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
    :rdfs/label "managing member",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-be-plc-plc/isManagingMemberOf,
+   :rdfs/subClassOf
+   [{:owl/onProperty     :fibo-be-plc-plc/isManagingMemberOf,
+     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom
+                          :fibo-be-plc-plc/LimitedLiabilityCompany,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    :fibo-be-plc-plc/LimitedLiabilityCompanyMember
+    :fibo-be-oac-exec/PrincipalParty
+    :fibo-be-plc-plc/ManagingMember
+    :fibo-fnd-org-org/OrganizationMember
+    :fibo-be-oac-cpty/EntityControllingParty
+    {:owl/onClass    :fibo-be-le-lp/LegallyCompetentNaturalPerson,
+     :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
-                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
-                       :owl/someValuesFrom
-                       :fibo-be-plc-plc/LimitedLiabilityCompany,
-                       :rdf/type :owl/Restriction},
-                      :rdf/type :owl/Restriction}
-                     :fibo-be-plc-plc/LimitedLiabilityCompanyMember
-                     :fibo-be-oac-exec/PrincipalParty],
+                      :fibo-be-plc-plc/LimitedLiabilityCompany,
+                      :rdf/type :owl/Restriction},
+     :owl/onProperty :fibo-be-oac-cpty/isControllingMemberOf,
+     :rdf/type       :owl/Restriction}
+    :fibo-be-oac-opty/EntityOwner
+    :fibo-be-oac-cpty/DeJureControllingInterestParty
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     :owl/someValuesFrom {:owl/onProperty :cmns-col/isMemberOf,
+                          :owl/someValuesFrom
+                          :fibo-be-plc-plc/LimitedLiabilityCompany,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "owner of an interest in a limited liability company who also runs the day-to-day business operations"})
 
@@ -176,7 +238,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
    :rdfs/label "private company with limited liability",
-   :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity :fibo-be-le-lp/BusinessEntity],
+   :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
+                     :fibo-be-le-lp/BusinessEntity
+                     :fibo-be-plc-plc/PrivateCompanyWithLimitedLiability],
    :skos/definition
    "hybrid business entity having characteristics of both a corporation and a partnership or sole proprietorship (depending on how many owners there are)"})
 
@@ -190,7 +254,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
    :rdfs/label "private limited company",
-   :rdfs/subClassOf :fibo-be-plc-plc/PrivateCompanyWithLimitedLiability,
+   :rdfs/subClassOf [:fibo-be-plc-plc/PrivateCompanyWithLimitedLiability
+                     :fibo-be-plc-plc/PrivateLimitedCompany
+                     :fibo-be-le-lp/LegalEntity
+                     :fibo-be-le-lp/BusinessEntity],
    :skos/definition
    "private limited company whose shareholders' liability is limited to the capital they originally invested"})
 
@@ -202,7 +269,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
    :rdfs/label "has managing member",
    :rdfs/range :fibo-be-plc-plc/ManagingMember,
-   :rdfs/subPropertyOf :fibo-be-oac-cpty/hasControllingOrganizationMember,
+   :rdfs/subPropertyOf [:fibo-be-oac-cpty/hasControllingOrganizationMember
+                        :fibo-be-plc-plc/hasManagingMember],
    :skos/definition
    "indicates a managing member in a controlling role of a limited liability company that has responsibility for the day-to-day business operations"})
 
@@ -215,6 +283,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
    :rdfs/label "is managing member of",
-   :rdfs/subPropertyOf :fibo-be-oac-cpty/isControllingMemberOf,
+   :rdfs/subPropertyOf [:fibo-be-oac-cpty/isControllingMemberOf
+                        :fibo-be-plc-plc/isManagingMemberOf],
    :skos/definition
    "indicates the controlled limited liability company that the managing member runs"})

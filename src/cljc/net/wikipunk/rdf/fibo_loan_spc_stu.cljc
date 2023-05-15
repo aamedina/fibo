@@ -40,21 +40,18 @@
    :rdfa/prefix "fibo-loan-spc-stu",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/StudentLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Student Loans Ontology"}})
+   :rdfs/label #voc/lstr "Student Loans Ontology@en"})
 
 (def StudentLoan
   "A loan provided for the purposes of education."
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Also loans which are Bridge Loan between education and professional certification, e.g. between Law School and Bar Exam. These are considered Student Loans also. So this adds to the list of types of Student Loan and the facts thereof. Also Resident and Relocation e.g. Med students, e..g when doing internship. Provide money for that purpose. Also considered a student loan. Implications: There are different crieteria in making the loan, for each of these, e.g. whether you have graduated. If residentcy and relocation aplication: would have to be completing Med raining and getting ready to go into internship. So there are liufecycle (phase) terms about the Borrower (student). In these the borrower is alwways the student."},
+   #voc/lstr
+    "Also loans which are Bridge Loan between education and professional certification, e.g. between Law School and Bar Exam. These are considered Student Loans also. So this adds to the list of types of Student Loan and the facts thereof. Also Resident and Relocation e.g. Med students, e..g when doing internship. Provide money for that purpose. Also considered a student loan. Implications: There are different crieteria in making the loan, for each of these, e.g. whether you have graduated. If residentcy and relocation aplication: would have to be completing Med raining and getting ready to go into internship. So there are liufecycle (phase) terms about the Borrower (student). In these the borrower is alwways the student.@en",
    :db/ident :fibo-loan-spc-stu/StudentLoan,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/StudentLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "student loan"},
+   :rdfs/label #voc/lstr "student loan@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-dae-dbt/hasBorrower,
                       :owl/someValuesFrom
                       {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
@@ -62,7 +59,7 @@
                        :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                        :rdf/type :owl/Restriction},
                       :rdf/type :owl/Restriction}
-                     :fibo-loan-ln-ln/Loan],
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "A loan provided for the purposes of education."}})
+                     :fibo-loan-ln-ln/Loan
+                     :fibo-loan-spc-stu/StudentLoan],
+   :skos/definition #voc/lstr
+                     "A loan provided for the purposes of education.@en"})

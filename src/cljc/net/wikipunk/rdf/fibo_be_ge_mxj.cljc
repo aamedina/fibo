@@ -55,18 +55,15 @@
 
 (def FederalGovernmentOfMexico
   "federal presidential constitutional republic with shared sovereignty over the republic with the governments of the 31 individual Mexican states, which functions per the Constitution of the United Mexican States"
-  {:cmns-av/synonym {:rdf/language "es-MX",
-                     :rdf/value    "Gobierno de la República"},
+  {:cmns-av/synonym #voc/lstr "Gobierno de la República@es-MX",
    :db/ident :fibo-be-ge-mxj/FederalGovernmentOfMexico,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-mxj/MexicanJurisdiction,
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Mexico,
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/FederalGovernment],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Federal Government of Mexico"}
-                {:rdf/language "es-MX",
-                 :rdf/value    "Gobierno Federal de México"}],
+   :rdfs/label [#voc/lstr "Federal Government of Mexico@en"
+                #voc/lstr "Gobierno Federal de México@es-MX"],
    :rdfs/seeAlso ["http://www.gob.mx/"],
    :skos/definition
    "federal presidential constitutional republic with shared sovereignty over the republic with the governments of the 31 individual Mexican states, which functions per the Constitution of the United Mexican States"})

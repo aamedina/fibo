@@ -89,7 +89,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                       :owl/someValuesFrom :fibo-be-fct-fct/CooperativeSociety,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-fbo/NotForProfitOrganization],
+                     :fibo-be-le-fbo/NotForProfitOrganization
+                     :fibo-be-fct-fct/Association],
    :skos/definition
    "not-for-profit organization that is owned by and acts on behalf of its members"})
 
@@ -101,7 +102,18 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
    :rdfs/label "cooperative society",
-   :rdfs/subClassOf :fibo-be-fct-fct/FunctionalBusinessEntity,
+   :rdfs/subClassOf [:fibo-be-fct-fct/FunctionalBusinessEntity
+                     :fibo-be-fct-fct/CooperativeSociety
+                     {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-fct-fct/FunctionalEntity
+                     :fibo-fnd-pty-rl/ThingInRole],
    :skos/definition
    "organization owned by and operated for the benefit of those using its services",
    :skos/example
@@ -116,7 +128,18 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
    :rdfs/label "family office",
-   :rdfs/subClassOf :fibo-be-fct-fct/FunctionalBusinessEntity,
+   :rdfs/subClassOf [:fibo-be-fct-fct/FunctionalBusinessEntity
+                     :fibo-be-fct-fct/FamilyOffice
+                     {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-fct-fct/FunctionalEntity
+                     :fibo-fnd-pty-rl/ThingInRole],
    :skos/definition
    "organization that assumes the day-to-day administration and management of a family's affairs"})
 
@@ -131,7 +154,13 @@
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-fct-fct/FunctionalEntity],
+                     :fibo-be-fct-fct/FunctionalEntity
+                     :fibo-be-fct-fct/FunctionalBusinessEntity
+                     {:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-rl/ThingInRole],
    :skos/definition
    "functional entity defined in terms of the nature of the commercial activity it conducts"})
 
@@ -146,7 +175,8 @@
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-rl/ThingInRole],
+                     :fibo-fnd-pty-rl/ThingInRole
+                     :fibo-be-fct-fct/FunctionalEntity],
    :skos/definition "party defined in terms of a function it performs"})
 
 (def Merchant
@@ -162,7 +192,18 @@
                      {:owl/onProperty     :cmns-cls/isClassifiedBy,
                       :owl/someValuesFrom :fibo-be-fct-fct/MerchantCategoryCode,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-fct-fct/FunctionalBusinessEntity],
+                     :fibo-be-fct-fct/FunctionalBusinessEntity
+                     :fibo-be-fct-fct/Merchant
+                     {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-fct-fct/FunctionalEntity
+                     :fibo-fnd-pty-rl/ThingInRole],
    :skos/definition
    "party engaged in the purchase and sales of goods produced by others for profit"})
 
@@ -179,23 +220,24 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
    :rdfs/label "merchant category code",
-   :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
+   :rdfs/subClassOf [{:owl/onClass :fibo-be-fct-fct/MerchantCategoryCodeScheme,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-arr-cls/IndustrySectorClassifier
+                     {:owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
+                     :cmns-cds/CodeElement
+                     {:owl/onProperty     :cmns-cls/classifies,
+                      :owl/someValuesFrom :fibo-be-fct-fct/Merchant,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty
                       :fibo-be-fct-fct/hasMerchantCategoryDescription,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-cls/IndustrySectorClassifier
-                     {:owl/onProperty     :cmns-cls/classifies,
-                      :owl/someValuesFrom :fibo-be-fct-fct/Merchant,
-                      :rdf/type           :owl/Restriction}
-                     :cmns-cds/CodeElement
-                     {:owl/onClass :fibo-be-fct-fct/MerchantCategoryCodeScheme,
-                      :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}],
+                     :fibo-be-fct-fct/MerchantCategoryCode],
    :skos/definition "code used internationally to classify a merchant"})
 
 (def MerchantCategoryCodeScheme
@@ -212,7 +254,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-be-fct-fct/MerchantCategoryCode,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-cls/IndustrySectorClassificationScheme],
+                     :fibo-fnd-arr-cls/IndustrySectorClassificationScheme
+                     :fibo-be-fct-fct/MerchantCategoryCodeScheme],
    :skos/definition
    "scheme defining a set of codes for classifying merchant services"})
 
@@ -227,7 +270,8 @@
                       :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :cmns-id/Identifier],
+                     :cmns-id/Identifier
+                     :fibo-be-fct-fct/MerchantIdentifier],
    :skos/definition
    "unique identifier for a merchant that is used, for example, for transaction interchange purposes"})
 
@@ -242,19 +286,3 @@
    :rdfs/range :xsd/string,
    :skos/definition
    "provides a text description of the sector to which the code applies"})
-
-(def ^{:private true} OrganizationIdentifier
-  {:db/ident        :fibo-fnd-org-org/OrganizationIdentifier,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onClass    {:owl/unionOf
-                                      [:fibo-be-fct-fct/FunctionalEntity
-                                       :fibo-fnd-pty-rl/AgentInRole],
-                                      :rdf/type :owl/Class},
-                     :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
-                     :owl/qualifiedCardinality 1,
-                     :rdf/type       :owl/Restriction}})
-
-(def ^{:private true} ServiceProvider
-  {:db/ident        :fibo-fnd-pas-pas/ServiceProvider,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf :fibo-be-fct-fct/FunctionalEntity})

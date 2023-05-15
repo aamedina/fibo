@@ -48,24 +48,21 @@
    :rdfa/prefix "fibo-loan-reln-cnst",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Construction Loans Ontology"}})
+   :rdfs/label #voc/lstr "Construction Loans Ontology@en"})
 
 (def ConstructionLoan
   "loan covering construction and development costs, secured by a mortgage on the property financed"
-  {:cmns-av/synonym {:rdf/language "en",
-                     :rdf/value    "construction mortgage"},
+  {:cmns-av/synonym #voc/lstr "construction mortgage@en",
    :db/ident :fibo-loan-reln-cnst/ConstructionLoan,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "construction loan"},
-   :rdfs/subClassOf :fibo-loan-ln-ln/Loan,
+   :rdfs/label #voc/lstr "construction loan@en",
+   :rdfs/subClassOf [:fibo-loan-ln-ln/Loan
+                     :fibo-loan-reln-cnst/ConstructionLoan],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "loan covering construction and development costs, secured by a mortgage on the property financed"}})
+   #voc/lstr
+    "loan covering construction and development costs, secured by a mortgage on the property financed@en"})
 
 (def ConstructionLoanContract
   "construction loan contract"
@@ -73,8 +70,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "construction loan contract"},
+   :rdfs/label #voc/lstr "construction loan contract@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-loan-reln-cnst/hasMilestoneTerm,
      :owl/someValuesFrom :fibo-loan-reln-cnst/ConstructionLoanMilestoneTermsSet,
@@ -83,7 +79,8 @@
      :owl/onClass    :fibo-loan-reln-cnst/ConstructionLoanCreditFacilityTranche,
      :owl/onProperty :cmns-col/hasConstituent,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-dae-dbt/CreditFacility]})
+    :fibo-fbc-dae-dbt/CreditFacility
+    :fibo-loan-reln-cnst/ConstructionLoanContract]})
 
 (def ConstructionLoanCreditFacilityTranche
   "A loan taken out for construction purposes. Further notes: These are a temporary loan. when the construction is finished then that loan is transformed to another loan, which would be a permanent loan. Information to follow on what the new permanent loan would be. Terms are adjusted in the new loan, since in construction loans the rates are significantly higher. This is an incentive to complete the construction works. Notes from PoC reviews, discussing Maximum Balance concept: In a Construction Loan you agree a maximum amount that you could draw. As you progress with the construction you continue to draw more and more. So you start with the minimum. Example: for purpose of construction of a house you could need to borrow up to 500K and the bank establishes the milestones at which certain amounts are made availalbe and can be drawn. For instance prior to start you might draw 10%, (50K); the next 50K would be available to draw only once the foundations are laid. And so on. Milestones may include \"Frame standing\" (for American-style frame based houses). Each stage requires inspection on behalf of the bank. So you are starting with no more than 10% (in this example) of what is allowable, and could arrive to the full 500K by the end of ths construction but it is not mandated that you arrive to that. What differentiates a Construction Loan is that there si a max amount specified and there are Milestones specified in which the amounts for each milestone can be advanced."
@@ -91,13 +88,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "construction loan credit facility tranche"},
-   :rdfs/subClassOf :fibo-fbc-dae-dbt/CommittedSubFacility,
+   :rdfs/label #voc/lstr "construction loan credit facility tranche@en",
+   :rdfs/subClassOf
+   [:fibo-fbc-dae-dbt/CommittedSubFacility
+    :fibo-loan-reln-cnst/ConstructionLoanCreditFacilityTranche],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "A loan taken out for construction purposes. Further notes: These are a temporary loan. when the construction is finished then that loan is transformed to another loan, which would be a permanent loan. Information to follow on what the new permanent loan would be. Terms are adjusted in the new loan, since in construction loans the rates are significantly higher. This is an incentive to complete the construction works. Notes from PoC reviews, discussing Maximum Balance concept: In a Construction Loan you agree a maximum amount that you could draw. As you progress with the construction you continue to draw more and more. So you start with the minimum. Example: for purpose of construction of a house you could need to borrow up to 500K and the bank establishes the milestones at which certain amounts are made availalbe and can be drawn. For instance prior to start you might draw 10%, (50K); the next 50K would be available to draw only once the foundations are laid. And so on. Milestones may include \"Frame standing\" (for American-style frame based houses). Each stage requires inspection on behalf of the bank. So you are starting with no more than 10% (in this example) of what is allowable, and could arrive to the full 500K by the end of ths construction but it is not mandated that you arrive to that. What differentiates a Construction Loan is that there si a max amount specified and there are Milestones specified in which the amounts for each milestone can be advanced."}})
+   #voc/lstr
+    "A loan taken out for construction purposes. Further notes: These are a temporary loan. when the construction is finished then that loan is transformed to another loan, which would be a permanent loan. Information to follow on what the new permanent loan would be. Terms are adjusted in the new loan, since in construction loans the rates are significantly higher. This is an incentive to complete the construction works. Notes from PoC reviews, discussing Maximum Balance concept: In a Construction Loan you agree a maximum amount that you could draw. As you progress with the construction you continue to draw more and more. So you start with the minimum. Example: for purpose of construction of a house you could need to borrow up to 500K and the bank establishes the milestones at which certain amounts are made availalbe and can be drawn. For instance prior to start you might draw 10%, (50K); the next 50K would be available to draw only once the foundations are laid. And so on. Milestones may include \"Frame standing\" (for American-style frame based houses). Each stage requires inspection on behalf of the bank. So you are starting with no more than 10% (in this example) of what is allowable, and could arrive to the full 500K by the end of ths construction but it is not mandated that you arrive to that. What differentiates a Construction Loan is that there si a max amount specified and there are Milestones specified in which the amounts for each milestone can be advanced.@en"})
 
 (def ConstructionLoanMilestoneTermsSet
   "An agreed point at which an amount is advanced to the lender on completion of some pre-agreed scope of works on the construction."
@@ -105,17 +102,15 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "construction loan milestone terms set"},
-   :rdfs/subClassOf :fibo-fnd-agr-ctr/ConditionPrecedent,
+   :rdfs/label #voc/lstr "construction loan milestone terms set@en",
+   :rdfs/subClassOf [:fibo-fnd-agr-ctr/ConditionPrecedent
+                     :fibo-loan-reln-cnst/ConstructionLoanMilestoneTermsSet],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "An agreed point at which an amount is advanced to the lender on completion of some pre-agreed scope of works on the construction."},
+   #voc/lstr
+    "An agreed point at which an amount is advanced to the lender on completion of some pre-agreed scope of works on the construction.@en",
    :skos/editorialNote
-   {:rdf/language "en",
-    :rdf/value
-    "from review of a separate question, where we identified the need for this term:"}})
+   #voc/lstr
+    "from review of a separate question, where we identified the need for this term:@en"})
 
 (def ConstructionType
   "particular kind of construction"
@@ -124,13 +119,16 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfs/label "construction type",
-   :rdfs/subClassOf :cmns-cls/Classifier,
+   :rdfs/subClassOf [:cmns-cls/Classifier
+                     :fibo-loan-reln-cnst/ConstructionType],
    :skos/definition "particular kind of construction"})
 
 (def ConstructionType_Manufactured
   "a factory-built dwelling built in compliance with the Federal Manufactured Home Construction and Safety Standards in effect at the time the home was manufactured as evidenced by the HUD label"
   {:db/ident :fibo-loan-reln-cnst/ConstructionType_Manufactured,
-   :rdf/type [:fibo-loan-reln-cnst/ConstructionType :owl/NamedIndividual],
+   :rdf/type [:fibo-loan-reln-cnst/ConstructionType
+              :owl/NamedIndividual
+              :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfs/label "manufactured",
@@ -141,7 +139,9 @@
   "a dwelling unit constructed on a base frame which features wheels and axles to be used in transporting home from place to place"
   {:cmns-av/explanatoryNote "It does not meet HUD code.",
    :db/ident :fibo-loan-reln-cnst/ConstructionType_MobileHome,
-   :rdf/type [:fibo-loan-reln-cnst/ConstructionType :owl/NamedIndividual],
+   :rdf/type [:fibo-loan-reln-cnst/ConstructionType
+              :owl/NamedIndividual
+              :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfs/label "mobile home",
@@ -151,7 +151,9 @@
 (def ConstructionType_Modular
   "a factory-built dwelling not on a permanent chassis"
   {:db/ident :fibo-loan-reln-cnst/ConstructionType_Modular,
-   :rdf/type [:fibo-loan-reln-cnst/ConstructionType :owl/NamedIndividual],
+   :rdf/type [:fibo-loan-reln-cnst/ConstructionType
+              :owl/NamedIndividual
+              :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfs/label "modular",
@@ -160,7 +162,9 @@
 (def ConstructionType_OnFrameModular
   "a factory built dwelling on a permanent chassis which does not have a HUD label"
   {:db/ident :fibo-loan-reln-cnst/ConstructionType_OnFrameModular,
-   :rdf/type [:fibo-loan-reln-cnst/ConstructionType :owl/NamedIndividual],
+   :rdf/type [:fibo-loan-reln-cnst/ConstructionType
+              :owl/NamedIndividual
+              :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfs/label "on frame modular",
@@ -170,7 +174,9 @@
 (def ConstructionType_SiteBuilt
   "describes construction process, indicating that most elements are created at the homes permanent site. May include some prefabricated components"
   {:db/ident :fibo-loan-reln-cnst/ConstructionType_SiteBuilt,
-   :rdf/type [:fibo-loan-reln-cnst/ConstructionType :owl/NamedIndividual],
+   :rdf/type [:fibo-loan-reln-cnst/ConstructionType
+              :owl/NamedIndividual
+              :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfs/label "site built",
@@ -184,13 +190,11 @@
    :rdfs/domain :fibo-loan-reln-cnst/ConstructionLoanContract,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has maximum allowed balance"},
+   :rdfs/label #voc/lstr "has maximum allowed balance@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Maximum balance - For loans with flexible re-draw facilities, the maximum balance that could potentially be outstanding based on a credit limit"}})
+   #voc/lstr
+    "Maximum balance - For loans with flexible re-draw facilities, the maximum balance that could potentially be outstanding based on a credit limit@en"})
 
 (def hasMaximumAnticipatedBalance
   "Maximum balance - For loans with flexible re-draw facilities, the maximum balance the borrower believes they might need, below the credit limit, for planning purposes"
@@ -199,13 +203,11 @@
    :rdfs/domain :fibo-loan-reln-cnst/ConstructionLoanCreditFacilityTranche,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has maximum anticipated balance"},
+   :rdfs/label #voc/lstr "has maximum anticipated balance@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Maximum balance - For loans with flexible re-draw facilities, the maximum balance the borrower believes they might need, below the credit limit, for planning purposes"}})
+   #voc/lstr
+    "Maximum balance - For loans with flexible re-draw facilities, the maximum balance the borrower believes they might need, below the credit limit, for planning purposes@en"})
 
 (def hasMilestoneDescription
   "A textual description of the point at which it is legally recognized that the construction milestone has been reached."
@@ -214,13 +216,11 @@
    :rdfs/domain :fibo-loan-reln-cnst/ConstructionLoanMilestoneTermsSet,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has milestone description"},
+   :rdfs/label #voc/lstr "has milestone description@en",
    :rdfs/range :xsd/string,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "A textual description of the point at which it is legally recognized that the construction milestone has been reached."}})
+   #voc/lstr
+    "A textual description of the point at which it is legally recognized that the construction milestone has been reached.@en"})
 
 (def hasMilestoneMaximumDrawdownAmount
   "The maximum amount of the loan that can be drawn by the Borrower on completion of this Milestone."
@@ -229,13 +229,11 @@
    :rdfs/domain :fibo-loan-reln-cnst/ConstructionLoanMilestoneTermsSet,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has milestone maximum drawdown amount"},
+   :rdfs/label #voc/lstr "has milestone maximum drawdown amount@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The maximum amount of the loan that can be drawn by the Borrower on completion of this Milestone."}})
+   #voc/lstr
+    "The maximum amount of the loan that can be drawn by the Borrower on completion of this Milestone.@en"})
 
 (def hasMilestoneTerm
   "has milestone term"
@@ -244,13 +242,5 @@
    :rdfs/domain :fibo-loan-reln-cnst/ConstructionLoanContract,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has milestone term"},
+   :rdfs/label #voc/lstr "has milestone term@en",
    :rdfs/range :fibo-loan-reln-cnst/ConstructionLoanMilestoneTermsSet})
-
-(def ^{:private true} RealEstate
-  {:db/ident        :fibo-fnd-plc-loc/RealEstate,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                     :owl/someValuesFrom :fibo-loan-reln-cnst/ConstructionType,
-                     :rdf/type           :owl/Restriction}})

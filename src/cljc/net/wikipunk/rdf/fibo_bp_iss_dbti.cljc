@@ -83,8 +83,7 @@
    :rdfa/prefix "fibo-bp-iss-dbti",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Debt Issuance Ontology"}})
+   :rdfs/label #voc/lstr "Debt Issuance Ontology@en"})
 
 (def ABSSecuritizationProcess
   "a b s securitization process"
@@ -92,27 +91,29 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "a b s securitization process"},
-   :rdfs/subClassOf :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess})
+   :rdfs/label #voc/lstr "a b s securitization process@en",
+   :rdfs/subClassOf [:fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess
+                     :fibo-bp-iss-dbti/ABSSecuritizationProcess
+                     :fibo-bp-iss-prc/SecuritiesIssuanceProcess
+                     :fibo-bp-iss-dbti/DebtSecuritizationProcess]})
 
 (def AdvancedRefunding
   "refunding in which bond issuance in which new bonds are sold at a lower rate than outstanding ones"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "The proceeds are then invested, and when the older bonds become callable they are paid off with the invested proceeds."},
+   #voc/lstr
+    "The proceeds are then invested, and when the older bonds become callable they are paid off with the invested proceeds.@en",
    :db/ident :fibo-bp-iss-dbti/AdvancedRefunding,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "advance refunding"},
-   :rdfs/subClassOf :fibo-bp-iss-dbti/RefundingPurpose,
+   :rdfs/label #voc/lstr "advance refunding@en",
+   :rdfs/subClassOf [:fibo-bp-iss-dbti/RefundingPurpose
+                     :fibo-bp-iss-dbti/AdvancedRefunding
+                     :fibo-fnd-gao-obj/Objective
+                     :fibo-bp-iss-dbti/DebtIssuancePurpose],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "refunding in which bond issuance in which new bonds are sold at a lower rate than outstanding ones"}})
+   #voc/lstr
+    "refunding in which bond issuance in which new bonds are sold at a lower rate than outstanding ones@en"})
 
 (def AssetPoolCreationProcess
   "asset pool creation process"
@@ -120,12 +121,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "asset pool creation process"},
-   :rdfs/subClassOf {:owl/onProperty :cmns-dt/precedes,
-                     :owl/someValuesFrom
-                     :fibo-bp-iss-dbti/DebtSecuritizationProcess,
-                     :rdf/type :owl/Restriction}})
+   :rdfs/label #voc/lstr "asset pool creation process@en",
+   :rdfs/subClassOf [{:owl/onProperty :cmns-dt/precedes,
+                      :owl/someValuesFrom
+                      :fibo-bp-iss-dbti/DebtSecuritizationProcess,
+                      :rdf/type :owl/Restriction}
+                     :fibo-bp-iss-dbti/AssetPoolCreationProcess]})
 
 (def BondIssuanceProgramme
   "a debt issuance programe under which an entity may, from time to time, issue bonds under the terms and conditions specified in the base prospectus for that programme"
@@ -133,16 +134,19 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "bond issuance programme"},
+   :rdfs/label #voc/lstr "bond issuance programme@en",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-bp-iss-dbti/BondOffering,
                       :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-dbti/DebtIssuanceProgramme],
+                     :fibo-bp-iss-dbti/DebtIssuanceProgramme
+                     :fibo-bp-iss-dbti/BondIssuanceProgramme
+                     :fibo-bp-iss-prc/IssuanceProgramme
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-dbti/DebtOffering,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "a debt issuance programe under which an entity may, from time to time, issue bonds under the terms and conditions specified in the base prospectus for that programme"}})
+   #voc/lstr
+    "a debt issuance programe under which an entity may, from time to time, issue bonds under the terms and conditions specified in the base prospectus for that programme@en"})
 
 (def BondOffering
   "a debt offering of one or more bonds, as all or part of an issuance programme"
@@ -150,13 +154,26 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "bond offering"},
-   :rdfs/subClassOf :fibo-sec-dbt-dbti/DebtOffering,
+   :rdfs/label #voc/lstr "bond offering@en",
+   :rdfs/subClassOf [:fibo-sec-dbt-dbti/DebtOffering
+                     :fibo-bp-iss-dbti/BondOffering
+                     {:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
+                      :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom
+                      :fibo-sec-dbt-dbti/TradableDebtInstrument,
+                      :rdf/type :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingAmount,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+                      :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "a debt offering of one or more bonds, as all or part of an issuance programme"}})
+   #voc/lstr
+    "a debt offering of one or more bonds, as all or part of an issuance programme@en"})
 
 (def BondOfferingWithWarrant
   "a bond offering where the issue includes a warrant; Further notes: ISO 10962 CFI definition is A bond that is issued together with one or more warrant(s) attached as part of the offer, the warrant(s) granting the holder the right to purchase a designated security, often the common stock of the issuer of the debt, at a specified price. Review notes: This need not be any specific type of bond. The warrant is used as a sweetener to encourage people to subscribe to a new bond issue. The Bond and the Warrant trade together as a unit (called \"Bond Unit\")."
@@ -165,19 +182,32 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "bond offering with warrant"},
-   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom {:owl/unionOf
-                                           [:fibo-der-drc-raw/TraditionalWarrant
-                                            :fibo-sec-dbt-bnd/Bond],
-                                           :rdf/type :owl/Class},
-                      :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-dbti/BondOffering],
+   :rdfs/label #voc/lstr "bond offering with warrant@en",
+   :rdfs/subClassOf
+   [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom {:owl/unionOf [:fibo-der-drc-raw/TraditionalWarrant
+                                        :fibo-sec-dbt-bnd/Bond],
+                          :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}
+    :fibo-bp-iss-dbti/BondOffering
+    :fibo-bp-iss-dbti/BondOfferingWithWarrant
+    {:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
+     :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom :fibo-sec-dbt-dbti/TradableDebtInstrument,
+     :rdf/type           :owl/Restriction}
+    {:owl/maxQualifiedCardinality 1,
+     :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+     :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingAmount,
+     :rdf/type       :owl/Restriction}
+    :fibo-sec-dbt-dbti/DebtOffering
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "a bond offering where the issue includes a warrant; Further notes: ISO 10962 CFI definition is A bond that is issued together with one or more warrant(s) attached as part of the offer, the warrant(s) granting the holder the right to purchase a designated security, often the common stock of the issuer of the debt, at a specified price. Review notes: This need not be any specific type of bond. The warrant is used as a sweetener to encourage people to subscribe to a new bond issue. The Bond and the Warrant trade together as a unit (called \"Bond Unit\")."}})
+   #voc/lstr
+    "a bond offering where the issue includes a warrant; Further notes: ISO 10962 CFI definition is A bond that is issued together with one or more warrant(s) attached as part of the offer, the warrant(s) granting the holder the right to purchase a designated security, often the common stock of the issuer of the debt, at a specified price. Review notes: This need not be any specific type of bond. The warrant is used as a sweetener to encourage people to subscribe to a new bond issue. The Bond and the Warrant trade together as a unit (called \"Bond Unit\").@en"})
 
 (def CDOSecuritizationProcess
   "c d o securitization process"
@@ -185,9 +215,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "c d o securitization process"},
-   :rdfs/subClassOf :fibo-bp-iss-dbti/DebtSecuritizationProcess})
+   :rdfs/label #voc/lstr "c d o securitization process@en",
+   :rdfs/subClassOf [:fibo-bp-iss-dbti/DebtSecuritizationProcess
+                     :fibo-bp-iss-dbti/CDOSecuritizationProcess
+                     :fibo-bp-iss-prc/SecuritiesIssuanceProcess]})
 
 (def CompletedDebtsPool
   "completed debts pool"
@@ -195,12 +226,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "completed debts pool"},
+   :rdfs/label #voc/lstr "completed debts pool@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-lif/hasStage,
                       :owl/someValuesFrom :fibo-bp-iss-dbti/InIssuance,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/DebtPool]})
+                     :fibo-sec-sec-pls/DebtPool
+                     :fibo-bp-iss-dbti/CompletedDebtsPool]})
 
 (def CreditCardPoolCreationProcess
   "credit card pool creation process"
@@ -208,9 +239,21 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "credit card pool creation process"},
-   :rdfs/subClassOf :fibo-bp-iss-dbti/RetailAssetPoolCreationProcess})
+   :rdfs/label #voc/lstr "credit card pool creation process@en",
+   :rdfs/subClassOf [:fibo-bp-iss-dbti/RetailAssetPoolCreationProcess
+                     :fibo-bp-iss-dbti/CreditCardPoolCreationProcess
+                     {:owl/onProperty :cmns-dt/precedes,
+                      :owl/someValuesFrom
+                      :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess,
+                      :rdf/type :owl/Restriction}
+                     :fibo-bp-iss-dbti/AssetPoolCreationProcess
+                     {:owl/onProperty :cmns-dt/precedes,
+                      :owl/someValuesFrom
+                      :fibo-bp-iss-dbti/DebtSecuritizationProcess,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}]})
 
 (def DebtInstrumentPoolCreationProcess
   "debt instrument pool creation process"
@@ -218,9 +261,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "debt instrument pool creation process"},
-   :rdfs/subClassOf :fibo-bp-iss-dbti/AssetPoolCreationProcess})
+   :rdfs/label #voc/lstr "debt instrument pool creation process@en",
+   :rdfs/subClassOf [:fibo-bp-iss-dbti/AssetPoolCreationProcess
+                     :fibo-bp-iss-dbti/DebtInstrumentPoolCreationProcess
+                     {:owl/onProperty :cmns-dt/precedes,
+                      :owl/someValuesFrom
+                      :fibo-bp-iss-dbti/DebtSecuritizationProcess,
+                      :rdf/type :owl/Restriction}]})
 
 (def DebtIssuanceProcessInformation
   "information specific to the issuance of a debt security"
@@ -228,16 +275,14 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "debt issuance process information"},
-   :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-bp-iss-dbti/hasDebtIssuancePurpose,
-     :owl/someValuesFrom :fibo-bp-iss-dbti/DebtIssuancePurpose,
-     :rdf/type           :owl/Restriction}
-    :fibo-bp-iss-prc/TradedInstrumentIssuanceProcessInformation],
+   :rdfs/label #voc/lstr "debt issuance process information@en",
+   :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-dbti/hasDebtIssuancePurpose,
+                      :owl/someValuesFrom :fibo-bp-iss-dbti/DebtIssuancePurpose,
+                      :rdf/type :owl/Restriction}
+                     :fibo-bp-iss-prc/TradedInstrumentIssuanceProcessInformation
+                     :fibo-bp-iss-dbti/DebtIssuanceProcessInformation],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value    "information specific to the issuance of a debt security"}})
+   #voc/lstr "information specific to the issuance of a debt security@en"})
 
 (def DebtIssuanceProgramme
   "a series of debt security issuances over time"
@@ -245,15 +290,14 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "debt issuance programme"},
+   :rdfs/label #voc/lstr "debt issuance programme@en",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/DebtOffering,
                       :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProgramme],
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "a series of debt security issuances over time"}})
+                     :fibo-bp-iss-prc/IssuanceProgramme
+                     :fibo-bp-iss-dbti/DebtIssuanceProgramme],
+   :skos/definition #voc/lstr
+                     "a series of debt security issuances over time@en"})
 
 (def DebtIssuancePurpose
   "purpose for the issuance of a debt security; also defines processes to be followed in some instances"
@@ -261,13 +305,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "debt issuance purpose"},
-   :rdfs/subClassOf :fibo-fnd-gao-obj/Objective,
+   :rdfs/label #voc/lstr "debt issuance purpose@en",
+   :rdfs/subClassOf [:fibo-fnd-gao-obj/Objective
+                     :fibo-bp-iss-dbti/DebtIssuancePurpose],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "purpose for the issuance of a debt security; also defines processes to be followed in some instances"}})
+   #voc/lstr
+    "purpose for the issuance of a debt security; also defines processes to be followed in some instances@en"})
 
 (def DebtSecuritizationProcess
   "debt securitization process"
@@ -277,9 +320,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "debt securitization process"},
-   :rdfs/subClassOf :fibo-bp-iss-prc/SecuritiesIssuanceProcess})
+   :rdfs/label #voc/lstr "debt securitization process@en",
+   :rdfs/subClassOf [:fibo-bp-iss-prc/SecuritiesIssuanceProcess
+                     :fibo-bp-iss-dbti/DebtSecuritizationProcess]})
 
 (def HomeEquityLineOfCreditPoolCreationProcess
   "home equity line of credit pool creation process"
@@ -287,9 +330,21 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value "home equity line of credit pool creation process"},
-   :rdfs/subClassOf :fibo-bp-iss-dbti/RetailAssetPoolCreationProcess})
+   :rdfs/label #voc/lstr "home equity line of credit pool creation process@en",
+   :rdfs/subClassOf [:fibo-bp-iss-dbti/RetailAssetPoolCreationProcess
+                     :fibo-bp-iss-dbti/HomeEquityLineOfCreditPoolCreationProcess
+                     {:owl/onProperty :cmns-dt/precedes,
+                      :owl/someValuesFrom
+                      :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess,
+                      :rdf/type :owl/Restriction}
+                     :fibo-bp-iss-dbti/AssetPoolCreationProcess
+                     {:owl/onProperty :cmns-dt/precedes,
+                      :owl/someValuesFrom
+                      :fibo-bp-iss-dbti/DebtSecuritizationProcess,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}]})
 
 (def InAssembly
   "in assembly"
@@ -297,9 +352,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "in assembly"},
-   :rdfs/subClassOf :fibo-bp-iss-pmbs/PoolLifecycleStateSelection})
+   :rdfs/label #voc/lstr "in assembly@en",
+   :rdfs/subClassOf [:fibo-bp-iss-pmbs/PoolLifecycleStateSelection
+                     :fibo-bp-iss-dbti/InAssembly]})
 
 (def InAssemblyDebtsPool
   "in assembly debts pool"
@@ -307,12 +362,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "in assembly debts pool"},
+   :rdfs/label #voc/lstr "in assembly debts pool@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-lif/hasStage,
                       :owl/someValuesFrom :fibo-bp-iss-dbti/InAssembly,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/DebtPool]})
+                     :fibo-sec-sec-pls/DebtPool
+                     :fibo-bp-iss-dbti/InAssemblyDebtsPool]})
 
 (def InIssuance
   "in issuance"
@@ -320,9 +375,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "in issuance"},
-   :rdfs/subClassOf :fibo-bp-iss-pmbs/PoolLifecycleStateSelection})
+   :rdfs/label #voc/lstr "in issuance@en",
+   :rdfs/subClassOf [:fibo-bp-iss-pmbs/PoolLifecycleStateSelection
+                     :fibo-bp-iss-dbti/InIssuance]})
 
 (def IssuanceProcessActivity
   "An activity within the process of securities issuance."
@@ -330,11 +385,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "issuance process activity"},
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "An activity within the process of securities issuance."}})
+   :rdfs/label #voc/lstr "issuance process activity@en",
+   :skos/definition
+   #voc/lstr "An activity within the process of securities issuance.@en"})
 
 (def Issued
   "issued"
@@ -342,9 +395,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "issued"},
-   :rdfs/subClassOf :fibo-bp-iss-pmbs/PoolLifecycleStateSelection})
+   :rdfs/label #voc/lstr "issued@en",
+   :rdfs/subClassOf [:fibo-bp-iss-pmbs/PoolLifecycleStateSelection
+                     :fibo-bp-iss-dbti/Issued]})
 
 (def LoanPoolCreationProcess
   "loan pool creation process"
@@ -352,9 +405,21 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "loan pool creation process"},
-   :rdfs/subClassOf :fibo-bp-iss-dbti/RetailAssetPoolCreationProcess})
+   :rdfs/label #voc/lstr "loan pool creation process@en",
+   :rdfs/subClassOf [:fibo-bp-iss-dbti/RetailAssetPoolCreationProcess
+                     :fibo-bp-iss-dbti/LoanPoolCreationProcess
+                     {:owl/onProperty :cmns-dt/precedes,
+                      :owl/someValuesFrom
+                      :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess,
+                      :rdf/type :owl/Restriction}
+                     :fibo-bp-iss-dbti/AssetPoolCreationProcess
+                     {:owl/onProperty :cmns-dt/precedes,
+                      :owl/someValuesFrom
+                      :fibo-bp-iss-dbti/DebtSecuritizationProcess,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}]})
 
 (def MTNRegistration
   "m t n registration"
@@ -362,13 +427,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "m t n registration"},
+   :rdfs/label #voc/lstr "m t n registration@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-arr-doc/isAbout,
                       :owl/someValuesFrom
                       :fibo-bp-iss-dbti/MediumTermNoteIssuanceProgramme,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-muni/Registration]})
+                     :fibo-bp-iss-muni/Registration
+                     :fibo-bp-iss-dbti/MTNRegistration]})
 
 (def MediumTermNoteIssuanceProgramme
   "a program of offerings of medium term notes; a set of issues where the maturity is defined after the rest of the terms have been registered with some authority; these are registered up front so that then the company wants to borrow more money they don't have to go through the registration period but have the facility up front to issue another security."
@@ -376,17 +441,24 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "medium term note issuance programme"},
+   :rdfs/label #voc/lstr "medium term note issuance programme@en",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
                       :fibo-bp-iss-dbti/MediumTermNoteOffering,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-dbti/BondIssuanceProgramme],
+                     :fibo-bp-iss-dbti/BondIssuanceProgramme
+                     :fibo-bp-iss-dbti/MediumTermNoteIssuanceProgramme
+                     :fibo-bp-iss-prc/IssuanceProgramme
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-bp-iss-dbti/BondOffering,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-bp-iss-dbti/DebtIssuanceProgramme
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-dbti/DebtOffering,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "a program of offerings of medium term notes; a set of issues where the maturity is defined after the rest of the terms have been registered with some authority; these are registered up front so that then the company wants to borrow more money they don't have to go through the registration period but have the facility up front to issue another security."}})
+   #voc/lstr
+    "a program of offerings of medium term notes; a set of issues where the maturity is defined after the rest of the terms have been registered with some authority; these are registered up front so that then the company wants to borrow more money they don't have to go through the registration period but have the facility up front to issue another security.@en"})
 
 (def MediumTermNoteOffering
   "medium term note offering"
@@ -394,9 +466,24 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "medium term note offering"},
-   :rdfs/subClassOf :fibo-bp-iss-dbti/BondOffering})
+   :rdfs/label #voc/lstr "medium term note offering@en",
+   :rdfs/subClassOf [:fibo-bp-iss-dbti/BondOffering
+                     :fibo-bp-iss-dbti/MediumTermNoteOffering
+                     {:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
+                      :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom
+                      :fibo-sec-dbt-dbti/TradableDebtInstrument,
+                      :rdf/type :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingAmount,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-dbt-dbti/DebtOffering
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+                      :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
+                      :rdf/type           :owl/Restriction}]})
 
 (def MuniIssueUnderwriter
   "The party which agrees to buy any certificates that are not bought by investors Term origin:DTCC"
@@ -404,13 +491,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "muni issue underwriter"},
-   :rdfs/subClassOf :fibo-sec-sec-iss/SecurityUnderwriter,
+   :rdfs/label #voc/lstr "muni issue underwriter@en",
+   :rdfs/subClassOf [:fibo-sec-sec-iss/SecurityUnderwriter
+                     :fibo-bp-iss-dbti/MuniIssueUnderwriter],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The party which agrees to buy any certificates that are not bought by investors Term origin:DTCC"}})
+   #voc/lstr
+    "The party which agrees to buy any certificates that are not bought by investors Term origin:DTCC@en"})
 
 (def NewMoneyPurpose
   "securities issued to raise funds for a new project or purpose"
@@ -418,13 +504,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "new money purpose"},
-   :rdfs/subClassOf :fibo-bp-iss-dbti/DebtIssuancePurpose,
+   :rdfs/label #voc/lstr "new money purpose@en",
+   :rdfs/subClassOf [:fibo-bp-iss-dbti/DebtIssuancePurpose
+                     :fibo-bp-iss-dbti/NewMoneyPurpose
+                     :fibo-fnd-gao-obj/Objective],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "securities issued to raise funds for a new project or purpose"}})
+   #voc/lstr
+    "securities issued to raise funds for a new project or purpose@en"})
 
 (def NotYetIssued
   "not yet issued"
@@ -432,9 +518,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "not yet issued"},
-   :rdfs/subClassOf :fibo-bp-iss-pmbs/PoolLifecycleStateSelection})
+   :rdfs/label #voc/lstr "not yet issued@en",
+   :rdfs/subClassOf [:fibo-bp-iss-pmbs/PoolLifecycleStateSelection
+                     :fibo-bp-iss-dbti/NotYetIssued]})
 
 (def NotYetIssuedDebtsPool
   "not yet issued debts pool"
@@ -442,12 +528,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "not yet issued debts pool"},
+   :rdfs/label #voc/lstr "not yet issued debts pool@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-lif/hasStage,
                       :owl/someValuesFrom :fibo-bp-iss-dbti/NotYetIssued,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/DebtPool]})
+                     :fibo-sec-sec-pls/DebtPool
+                     :fibo-bp-iss-dbti/NotYetIssuedDebtsPool]})
 
 (def PoolBackedSecuritySecuritizationProcess
   "pool backed security securitization process"
@@ -455,9 +541,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "pool backed security securitization process"},
-   :rdfs/subClassOf :fibo-bp-iss-dbti/DebtSecuritizationProcess})
+   :rdfs/label #voc/lstr "pool backed security securitization process@en",
+   :rdfs/subClassOf [:fibo-bp-iss-dbti/DebtSecuritizationProcess
+                     :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess
+                     :fibo-bp-iss-prc/SecuritiesIssuanceProcess]})
 
 (def PoolBackedSecuritySecuritizationProcessActor
   "pool backed security securitization process actor"
@@ -465,13 +552,14 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value "pool backed security securitization process actor"},
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/evaluates,
-                      :owl/someValuesFrom
-                      :fibo-bp-iss-prc/IssuanceProcessActivity,
-                      :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-dbti/SecuritizationProcessActor]})
+   :rdfs/label #voc/lstr "pool backed security securitization process actor@en",
+   :rdfs/subClassOf
+   [{:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
+     :owl/someValuesFrom :fibo-bp-iss-prc/IssuanceProcessActivity,
+     :rdf/type           :owl/Restriction}
+    :fibo-bp-iss-dbti/SecuritizationProcessActor
+    :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcessActor
+    :fibo-bp-iss-prc/SecuritiesIssuanceProcessActor]})
 
 (def RefundingPurpose
   "a procedure whereby an issuer refinances outstanding bonds by issuing new bonds"
@@ -479,13 +567,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "refunding purpose"},
-   :rdfs/subClassOf :fibo-bp-iss-dbti/DebtIssuancePurpose,
+   :rdfs/label #voc/lstr "refunding purpose@en",
+   :rdfs/subClassOf [:fibo-bp-iss-dbti/DebtIssuancePurpose
+                     :fibo-bp-iss-dbti/RefundingPurpose
+                     :fibo-fnd-gao-obj/Objective],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "a procedure whereby an issuer refinances outstanding bonds by issuing new bonds"}})
+   #voc/lstr
+    "a procedure whereby an issuer refinances outstanding bonds by issuing new bonds@en"})
 
 (def RemarketingPurpose
   "the process of reselling securities to the public that have been tendered for purchase by the previous owners thereof"
@@ -493,13 +581,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "remarketing purpose"},
-   :rdfs/subClassOf :fibo-bp-iss-dbti/DebtIssuancePurpose,
+   :rdfs/label #voc/lstr "remarketing purpose@en",
+   :rdfs/subClassOf [:fibo-bp-iss-dbti/DebtIssuancePurpose
+                     :fibo-bp-iss-dbti/RemarketingPurpose
+                     :fibo-fnd-gao-obj/Objective],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "the process of reselling securities to the public that have been tendered for purchase by the previous owners thereof"}})
+   #voc/lstr
+    "the process of reselling securities to the public that have been tendered for purchase by the previous owners thereof@en"})
 
 (def RetailAssetPoolCreationProcess
   "The process by which pools of assets are created. These may then be used in the issue of securities based on those asset pools as underlying."
@@ -507,8 +595,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "retail asset pool creation process"},
+   :rdfs/label #voc/lstr "retail asset pool creation process@en",
    :rdfs/subClassOf [{:owl/onProperty :cmns-dt/precedes,
                       :owl/someValuesFrom
                       :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess,
@@ -516,11 +603,15 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
                       :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
                       :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-dbti/AssetPoolCreationProcess],
+                     :fibo-bp-iss-dbti/AssetPoolCreationProcess
+                     :fibo-bp-iss-dbti/RetailAssetPoolCreationProcess
+                     {:owl/onProperty :cmns-dt/precedes,
+                      :owl/someValuesFrom
+                      :fibo-bp-iss-dbti/DebtSecuritizationProcess,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The process by which pools of assets are created. These may then be used in the issue of securities based on those asset pools as underlying."}})
+   #voc/lstr
+    "The process by which pools of assets are created. These may then be used in the issue of securities based on those asset pools as underlying.@en"})
 
 (def SecuritizationProcessActor
   "securitization process actor"
@@ -528,9 +619,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "securitization process actor"},
-   :rdfs/subClassOf :fibo-bp-iss-prc/SecuritiesIssuanceProcessActor})
+   :rdfs/label #voc/lstr "securitization process actor@en",
+   :rdfs/subClassOf [:fibo-bp-iss-prc/SecuritiesIssuanceProcessActor
+                     :fibo-bp-iss-dbti/SecuritizationProcessActor]})
 
 (def UnderwriterTakedownForDebt
   "information on takedown quantity of the debt security handled by the underwriter (that will be brought into DTC)"
@@ -538,13 +629,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "underwriter takedown for debt"},
-   :rdfs/subClassOf :fibo-bp-iss-prc/UnderwriterTakedown,
+   :rdfs/label #voc/lstr "underwriter takedown for debt@en",
+   :rdfs/subClassOf [:fibo-bp-iss-prc/UnderwriterTakedown
+                     :fibo-bp-iss-dbti/UnderwriterTakedownForDebt],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "information on takedown quantity of the debt security handled by the underwriter (that will be brought into DTC)"}})
+   #voc/lstr
+    "information on takedown quantity of the debt security handled by the underwriter (that will be brought into DTC)@en"})
 
 (def announces
   "The issue of one or more securities that the announcement pertains to."
@@ -552,12 +642,10 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "announces"},
+   :rdfs/label #voc/lstr "announces@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The issue of one or more securities that the announcement pertains to."}})
+   #voc/lstr
+    "The issue of one or more securities that the announcement pertains to.@en"})
 
 (def hasDebtIssuancePurpose
   "has debt issuance purpose"
@@ -566,28 +654,24 @@
    :rdfs/domain :fibo-bp-iss-dbti/DebtIssuanceProcessInformation,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has debt issuance purpose"},
+   :rdfs/label #voc/lstr "has debt issuance purpose@en",
    :rdfs/range :fibo-bp-iss-dbti/DebtIssuancePurpose})
 
 (def hasOriginalIssueDiscount
   "discount from par value at the time a bond or other debt instrument is issued"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "The OID is the difference between the stated redemption price at maturity and the actual issue price."},
+   #voc/lstr
+    "The OID is the difference between the stated redemption price at maturity and the actual issue price.@en",
    :db/ident :fibo-bp-iss-dbti/hasOriginalIssueDiscount,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-dbti/BondOffering,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has original issue discount"},
+   :rdfs/label #voc/lstr "has original issue discount@en",
    :rdfs/range :fibo-fnd-utl-alx/Percentage,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "discount from par value at the time a bond or other debt instrument is issued"}})
+   #voc/lstr
+    "discount from par value at the time a bond or other debt instrument is issued@en"})
 
 (def isBankQualified
   "designation given to a public purpose bond offering by the issuer if it reasonably expects to issue in the calendar year of such offering no more than $10 million par amount of bonds of the type required to be included in making such calculation under the Internal Revenue Code.  When purchased by a commercial bank for its portfolio, the bank may receive an 80% tax deduction for the interest cost of carry for the issue.  A bond that is bank qualified is also known as a qualified tax-exempt obligation."
@@ -596,13 +680,11 @@
    :rdfs/domain :fibo-bp-iss-dbti/BondOffering,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "is bank qualified"},
+   :rdfs/label #voc/lstr "is bank qualified@en",
    :rdfs/range :xsd/boolean,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "designation given to a public purpose bond offering by the issuer if it reasonably expects to issue in the calendar year of such offering no more than $10 million par amount of bonds of the type required to be included in making such calculation under the Internal Revenue Code.  When purchased by a commercial bank for its portfolio, the bank may receive an 80% tax deduction for the interest cost of carry for the issue.  A bond that is bank qualified is also known as a qualified tax-exempt obligation."}})
+   #voc/lstr
+    "designation given to a public purpose bond offering by the issuer if it reasonably expects to issue in the calendar year of such offering no more than $10 million par amount of bonds of the type required to be included in making such calculation under the Internal Revenue Code.  When purchased by a commercial bank for its portfolio, the bank may receive an 80% tax deduction for the interest cost of carry for the issue.  A bond that is bank qualified is also known as a qualified tax-exempt obligation.@en"})
 
 (def resultsIn
   "results in"
@@ -610,8 +692,7 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "results in"},
+   :rdfs/label #voc/lstr "results in@en",
    :rdfs/range :fibo-bp-iss-pmbs/PotentialTranchedIssueUnderwriter})
 
 (def underwriterTakedownAmount
@@ -621,28 +702,8 @@
    :rdfs/domain :fibo-bp-iss-dbti/UnderwriterTakedownForDebt,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "underwriter takedown amount"},
+   :rdfs/label #voc/lstr "underwriter takedown amount@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "Takedown amount of the security handled by the underwriter(that will be brought into DTC)."}})
-
-(def ^{:private true} DebtOffering
-  {:db/ident        :fibo-sec-dbt-dbti/DebtOffering,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf [{:owl/onProperty :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom
-                      :fibo-sec-dbt-dbti/TradableDebtInstrument,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
-                      :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-                      :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingAmount,
-                      :rdf/type       :owl/Restriction}]})
+   #voc/lstr
+    "Takedown amount of the security handled by the underwriter(that will be brought into DTC).@en"})

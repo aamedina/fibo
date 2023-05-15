@@ -7,12 +7,14 @@
    [net.wikipunk.ext]
    [net.wikipunk.omg]
    [net.wikipunk.fibo.boot]
+   [net.wikipunk.omg.boot]
    [net.wikipunk.rdf :as rdf]
    [net.wikipunk.rdf.skos]
    [net.wikipunk.rdf.dcterms]
    [net.wikipunk.rdf.xsd]
    [net.wikipunk.rdf.dcam :as dcam]
-   [net.wikipunk.rdf.schema]))
+   [net.wikipunk.rdf.schema]
+   [net.wikipunk.rdf.frbr]))
 
 (declare quickstart)
 
@@ -306,4 +308,5 @@
            '[net.wikipunk.rdf.cmns-dsg :as cmns-dsg]
            '[net.wikipunk.rdf.cmns-id :as cmns-id]
            '[net.wikipunk.rdf.cmns-cls :as cmns-cls]
+           '[net.wikipunk.rdf.cmns-cds :as cmns-cds]
            '[net.wikipunk.rdf.sm :as sm]))

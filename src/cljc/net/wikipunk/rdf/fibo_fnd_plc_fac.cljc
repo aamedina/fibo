@@ -65,9 +65,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
    :rdfs/label "capability",
-   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-rel-rel/involves,
-                     :owl/someValuesFrom :fibo-fnd-plc-fac/Facility,
-                     :rdf/type           :owl/Restriction},
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/involves,
+                      :owl/someValuesFrom :fibo-fnd-plc-fac/Facility,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-plc-fac/Capability],
    :skos/definition
    "ability to perform a particular type of work that may involve people with particular skills and knowledge, intellectual property, defined practices, operating facilities, tools and equipment"})
 
@@ -90,7 +91,8 @@
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/Address,
                       :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-plc-fac/Facility],
    :skos/definition
    "something established to serve a particular purpose, make some course of action or operation easier, or provide some capability or service"})
 
@@ -104,20 +106,21 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
    :rdfs/label "site",
    :rdfs/subClassOf [:fibo-fnd-pty-rl/ThingInRole
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-plc-adr/Address,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/onProperty
                                            :fibo-fnd-plc-fac/situates,
                                            :owl/someValuesFrom :owl/Thing,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-adr/Address,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :lcc-cr/Location,
                       :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-plc-fac/Site],
    :skos/definition
    "place, setting, or context in which something, such as a facility, is situated",
    :skos/example
@@ -133,7 +136,23 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
                       :owl/someValuesFrom :owl/Thing,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-plc-fac/Site],
+                     :fibo-fnd-plc-fac/Site
+                     :fibo-fnd-plc-fac/Venue
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-plc-adr/Address,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-rl/ThingInRole
+                     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                      :owl/someValuesFrom {:owl/onProperty
+                                           :fibo-fnd-plc-fac/situates,
+                                           :owl/someValuesFrom :owl/Thing,
+                                           :rdf/type :owl/Restriction},
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onClass    :lcc-cr/Location,
+                      :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "site where something happens, described in the context of the event or activity that occurs there"})
 

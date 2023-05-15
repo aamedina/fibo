@@ -43,8 +43,7 @@
    :rdfa/prefix "fibo-sec-dbt-ex",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Exercise Conventions Ontology"},
+   :rdfs/label #voc/lstr "Exercise Conventions Ontology@en",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions.rdf version of this ontology was modified to loosen the domain of hasExerciseTerms to allow for entitlements to have such terms."
     "The https://spec.edmcouncil.org/fibo/ontology/Debt/ExerciseConventions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
@@ -57,92 +56,96 @@
 (def AmericanExerciseConvention
   "exercise convention that stipulates that an option may be exercised anytime between the purchase date and date of expiration"
   {:db/ident :fibo-sec-dbt-ex/AmericanExerciseConvention,
-   :rdf/type [:fibo-sec-dbt-ex/ExerciseConvention :owl/NamedIndividual],
+   :rdf/type [:fibo-sec-dbt-ex/ExerciseConvention
+              :owl/NamedIndividual
+              :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "American exercise convention"},
+   :rdfs/label #voc/lstr "American exercise convention@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "exercise convention that stipulates that an option may be exercised anytime between the purchase date and date of expiration"}})
+   #voc/lstr
+    "exercise convention that stipulates that an option may be exercised anytime between the purchase date and date of expiration@en"})
 
 (def AmericanExerciseTerms
   "exercise terms that stipulate that an option may be exercised on or before the date of expiration"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Under certain circumstances, early exercise may be advantageous to the option holder."},
+   #voc/lstr
+    "Under certain circumstances, early exercise may be advantageous to the option holder.@en",
    :db/ident :fibo-sec-dbt-ex/AmericanExerciseTerms,
    :owl/disjointWith [:fibo-sec-dbt-ex/EuropeanExerciseTerms
                       :fibo-sec-dbt-ex/BermudanExerciseTerms],
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "American exercise terms"},
+   :rdfs/label #voc/lstr "American exercise terms@en",
    :rdfs/subClassOf [{:owl/hasValue :fibo-sec-dbt-ex/AmericanExerciseConvention,
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-ex/ExerciseTerms],
+                     :fibo-sec-dbt-ex/ExerciseTerms
+                     :fibo-sec-dbt-ex/AmericanExerciseTerms
+                     {:owl/onProperty     :cmns-cxtdsg/uses,
+                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/ContractualCommitment],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "exercise terms that stipulate that an option may be exercised on or before the date of expiration"}})
+   #voc/lstr
+    "exercise terms that stipulate that an option may be exercised on or before the date of expiration@en"})
 
 (def BermudanExerciseConvention
   "exercise convention that stipulates that an option may be exercised anytime between the purchase date and date of expiration"
   {:db/ident :fibo-sec-dbt-ex/BermudanExerciseConvention,
-   :rdf/type [:fibo-sec-dbt-ex/ExerciseConvention :owl/NamedIndividual],
+   :rdf/type [:fibo-sec-dbt-ex/ExerciseConvention
+              :owl/NamedIndividual
+              :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Bermudan exercise convention"},
+   :rdfs/label #voc/lstr "Bermudan exercise convention@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "exercise convention that stipulates that an option may be exercised anytime between the purchase date and date of expiration"}})
+   #voc/lstr
+    "exercise convention that stipulates that an option may be exercised anytime between the purchase date and date of expiration@en"})
 
 (def BermudanExerciseTerms
   "exercise terms that stipulate that an option may only be exercised on predetermined dates within some exercise window, often on one day each month or at the date of expiration"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "The Bermuda option is named as such because its exercise dates are more flexible than European options and less flexible than American options. Thus, it is in the middle, just like Bermuda is between Europe and America. Bermuda options are also referred to as Mid-Atlantic, Quasi American, or Semi-American options."},
+   #voc/lstr
+    "The Bermuda option is named as such because its exercise dates are more flexible than European options and less flexible than American options. Thus, it is in the middle, just like Bermuda is between Europe and America. Bermuda options are also referred to as Mid-Atlantic, Quasi American, or Semi-American options.@en",
    :db/ident :fibo-sec-dbt-ex/BermudanExerciseTerms,
    :owl/disjointWith :fibo-sec-dbt-ex/EuropeanExerciseTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Bermudan exercise terms"},
+   :rdfs/label #voc/lstr "Bermudan exercise terms@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-ex/ExerciseTerms
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseDate,
                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
                       :rdf/type           :owl/Restriction}
                      {:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-ex/ExerciseTerms],
+                     :fibo-sec-dbt-ex/BermudanExerciseTerms
+                     {:owl/onProperty     :cmns-cxtdsg/uses,
+                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/ContractualCommitment],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "exercise terms that stipulate that an option may only be exercised on predetermined dates within some exercise window, often on one day each month or at the date of expiration"}})
+   #voc/lstr
+    "exercise terms that stipulate that an option may only be exercised on predetermined dates within some exercise window, often on one day each month or at the date of expiration@en"})
 
 (def CanaryExerciseConvention
   "exercise/call convention that stipulates that an option may only be exercised on predetermined dates until the first step is reached, but not after that point"
   {:db/ident :fibo-sec-dbt-ex/CanaryExerciseConvention,
-   :rdf/type [:fibo-sec-dbt-ex/ExerciseConvention :owl/NamedIndividual],
+   :rdf/type [:fibo-sec-dbt-ex/ExerciseConvention
+              :owl/NamedIndividual
+              :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "canary exercise convention"},
+   :rdfs/label #voc/lstr "canary exercise convention@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "exercise/call convention that stipulates that an option may only be exercised on predetermined dates until the first step is reached, but not after that point"}})
+   #voc/lstr
+    "exercise/call convention that stipulates that an option may only be exercised on predetermined dates until the first step is reached, but not after that point@en"})
 
 (def CanaryExerciseTerms
   "exercise terms that stipulate that an option may only be exercised on predetermined dates until the first step is reached, but not after that point"
@@ -150,29 +153,42 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "canary exercise terms"},
+   :rdfs/label #voc/lstr "canary exercise terms@en",
    :rdfs/subClassOf [{:owl/hasValue   :fibo-sec-dbt-ex/CanaryExerciseConvention,
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type       :owl/Restriction}
-                     :fibo-sec-dbt-ex/BermudanExerciseTerms],
+                     :fibo-sec-dbt-ex/BermudanExerciseTerms
+                     :fibo-sec-dbt-ex/CanaryExerciseTerms
+                     :fibo-sec-dbt-ex/ExerciseTerms
+                     {:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
+                      :owl/onProperty :cmns-cxtdsg/uses,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
+                      :owl/someValuesFrom :cmns-dt/DatePeriod,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/uses,
+                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/ContractualCommitment
+                     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseDate,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "exercise terms that stipulate that an option may only be exercised on predetermined dates until the first step is reached, but not after that point"}})
+   #voc/lstr
+    "exercise terms that stipulate that an option may only be exercised on predetermined dates until the first step is reached, but not after that point@en"})
 
 (def EuropeanExerciseConvention
   "exercise convention that stipulates that an option may only be exercised at the date of expiration"
   {:db/ident :fibo-sec-dbt-ex/EuropeanExerciseConvention,
-   :rdf/type [:fibo-sec-dbt-ex/ExerciseConvention :owl/NamedIndividual],
+   :rdf/type [:fibo-sec-dbt-ex/ExerciseConvention
+              :owl/NamedIndividual
+              :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "European exercise convention"},
+   :rdfs/label #voc/lstr "European exercise convention@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "exercise convention that stipulates that an option may only be exercised at the date of expiration"}})
+   #voc/lstr
+    "exercise convention that stipulates that an option may only be exercised at the date of expiration@en"})
 
 (def EuropeanExerciseTerms
   "exercise terms that stipulate that an option may only be exercised at the date of expiration"
@@ -180,8 +196,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "European exercise terms"},
+   :rdfs/label #voc/lstr "European exercise terms@en",
    :rdfs/subClassOf [{:owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-sec-dbt-ex/hasExerciseDate,
                       :owl/qualifiedCardinality 1,
@@ -189,11 +204,15 @@
                      {:owl/hasValue :fibo-sec-dbt-ex/EuropeanExerciseConvention,
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-ex/ExerciseTerms],
+                     :fibo-sec-dbt-ex/ExerciseTerms
+                     :fibo-sec-dbt-ex/EuropeanExerciseTerms
+                     {:owl/onProperty     :cmns-cxtdsg/uses,
+                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/ContractualCommitment],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "exercise terms that stipulate that an option may only be exercised at the date of expiration"}})
+   #voc/lstr
+    "exercise terms that stipulate that an option may only be exercised at the date of expiration@en"})
 
 (def ExerciseConvention
   "convention that determines when the holder or future holder of an option can implement the rights defined in the option"
@@ -201,13 +220,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "exercise convention"},
-   :rdfs/subClassOf :fibo-fnd-dt-bd/Convention,
+   :rdfs/label #voc/lstr "exercise convention@en",
+   :rdfs/subClassOf [:fibo-fnd-dt-bd/Convention
+                     :fibo-sec-dbt-ex/ExerciseConvention],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "convention that determines when the holder or future holder of an option can implement the rights defined in the option"}})
+   #voc/lstr
+    "convention that determines when the holder or future holder of an option can implement the rights defined in the option@en"})
 
 (def ExerciseTerms
   "contract terms specific to the conditions, conventions and other stipulations related to the exercise of an option or entitlement"
@@ -215,16 +233,15 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "exercise terms"},
+   :rdfs/label #voc/lstr "exercise terms@en",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/ContractualCommitment],
+                     :fibo-fnd-agr-ctr/ContractualCommitment
+                     :fibo-sec-dbt-ex/ExerciseTerms],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "contract terms specific to the conditions, conventions and other stipulations related to the exercise of an option or entitlement"}})
+   #voc/lstr
+    "contract terms specific to the conditions, conventions and other stipulations related to the exercise of an option or entitlement@en"})
 
 (def hasExerciseDate
   "indicates a date on which an option may be exercised as specified in the terms of the contract"
@@ -232,14 +249,13 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has exercise date"},
+   :rdfs/label #voc/lstr "has exercise date@en",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
+   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
+                        :fibo-sec-dbt-ex/hasExerciseDate],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "indicates a date on which an option may be exercised as specified in the terms of the contract"}})
+   #voc/lstr
+    "indicates a date on which an option may be exercised as specified in the terms of the contract@en"})
 
 (def hasExerciseTerms
   "links a derivative, such as an option or entitlement, to any exercise terms that are specified therein"
@@ -248,14 +264,13 @@
    :rdfs/domain :fibo-fbc-fi-fi/DerivativeInstrument,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has exercise terms"},
+   :rdfs/label #voc/lstr "has exercise terms@en",
    :rdfs/range :fibo-sec-dbt-ex/ExerciseTerms,
-   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement,
+   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasContractualElement
+                        :fibo-sec-dbt-ex/hasExerciseTerms],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "links a derivative, such as an option or entitlement, to any exercise terms that are specified therein"}})
+   #voc/lstr
+    "links a derivative, such as an option or entitlement, to any exercise terms that are specified therein@en"})
 
 (def hasExerciseWindow
   "indicates a period of time during which the option may be exercised as specified in the terms of the contract"
@@ -263,10 +278,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has exercise window"},
+   :rdfs/label #voc/lstr "has exercise window@en",
    :rdfs/range :cmns-dt/DatePeriod,
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "indicates a period of time during which the option may be exercised as specified in the terms of the contract"}})
+   #voc/lstr
+    "indicates a period of time during which the option may be exercised as specified in the terms of the contract@en"})

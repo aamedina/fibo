@@ -66,7 +66,8 @@
                      {:owl/onProperty     :fibo-fnd-arr-lif/hasStage,
                       :owl/someValuesFrom :fibo-fnd-arr-lif/LifecycleStage,
                       :rdf/type           :owl/Restriction}
-                     :cmns-col/Arrangement],
+                     :cmns-col/Arrangement
+                     :fibo-fnd-arr-lif/Lifecycle],
    :skos/definition
    "arrangement that compares the cyclical nature of families, organizations, processes, products, marketing, and order management, portfolio management or other systems with the cradle to grave life stages (birth, growth, maturity, decay, and death) of living organisms",
    :skos/example
@@ -82,7 +83,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fnd-arr-lif/LifecycleStage,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/OccurrenceKind],
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     :fibo-fnd-arr-lif/LifecycleEvent],
    :skos/definition
    "kind of event that occurs during one or more stages of a lifecycle",
    :skos/example
@@ -103,7 +105,8 @@
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence],
+                     :fibo-fnd-dt-oc/Occurrence
+                     :fibo-fnd-arr-lif/LifecycleEventOccurrence],
    :skos/definition "realization of an event in a stage of a lifecycle"})
 
 (def LifecycleOccurrence
@@ -121,7 +124,8 @@
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence],
+                     :fibo-fnd-dt-oc/Occurrence
+                     :fibo-fnd-arr-lif/LifecycleOccurrence],
    :skos/definition "realization of a lifecycle"})
 
 (def LifecycleStage
@@ -140,7 +144,8 @@
                      {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
                       :owl/someValuesFrom :fibo-fnd-arr-lif/Lifecycle,
                       :rdf/type           :owl/Restriction}
-                     :cmns-cls/Classifier],
+                     :cmns-cls/Classifier
+                     :fibo-fnd-arr-lif/LifecycleStage],
    :skos/definition "phase in a lifecycle",
    :skos/example
    "a research and development phase of a product lifecycle, the introduction phase in a marketing lifecycle, a growth stage in an economic lifecycle, or the origination phase in the lifecycle of a loan"})
@@ -163,7 +168,8 @@
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence],
+                     :fibo-fnd-dt-oc/Occurrence
+                     :fibo-fnd-arr-lif/LifecycleStageOccurrence],
    :skos/definition "realization of a phase in a given lifecycle"})
 
 (def LifecycleStatus
@@ -177,7 +183,8 @@
                       :owl/someValuesFrom
                       :fibo-fnd-arr-lif/LifecycleStageOccurrence,
                       :rdf/type :owl/Restriction}
-                     :cmns-cls/Classifier],
+                     :cmns-cls/Classifier
+                     :fibo-fnd-arr-lif/LifecycleStatus],
    :skos/definition
    "classifier indicating the position or state of something at a particular point in its life-cycle"})
 
@@ -189,7 +196,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
    :rdfs/label "has lifecycle",
    :rdfs/range :fibo-fnd-arr-lif/Lifecycle,
-   :rdfs/subPropertyOf :cmns-cls/isCharacterizedBy,
+   :rdfs/subPropertyOf [:cmns-cls/isCharacterizedBy
+                        :fibo-fnd-arr-lif/hasLifecycle],
    :skos/definition
    "relates something, such as a product, trade, or related process, to a lifecycle that characterizes it"})
 
@@ -203,7 +211,7 @@
    :rdfs/range {:owl/unionOf [:fibo-fnd-arr-lif/LifecycleStage
                               :fibo-fnd-arr-lif/LifecycleStageOccurrence],
                 :rdf/type    :owl/Class},
-   :rdfs/subPropertyOf :cmns-col/hasPart,
+   :rdfs/subPropertyOf [:cmns-col/hasPart :fibo-fnd-arr-lif/hasStage],
    :skos/definition
    "relates something, such as a product or trade lifecycle or related process, to a phase or stage in that lifecycle"})
 
@@ -216,7 +224,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
    :rdfs/label "is lifecycle of",
-   :rdfs/subPropertyOf :cmns-cls/characterizes,
+   :rdfs/subPropertyOf [:cmns-cls/characterizes
+                        :fibo-fnd-arr-lif/isLifecycleOf],
    :skos/definition "relates a lifecycle to something it characterizes"})
 
 (def isStageOf
@@ -230,11 +239,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
    :rdfs/label "is stage of",
-   :rdfs/subPropertyOf :cmns-col/isPartOf,
+   :rdfs/subPropertyOf [:cmns-col/isPartOf :fibo-fnd-arr-lif/isStageOf],
    :skos/definition
    "relates a stage in a product or trade lifecycle or process to the lifecycle or process that it is a stage of"})
-
-(def ^{:private true} MaturityLevel
-  {:db/ident        :fibo-fnd-utl-av/MaturityLevel,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStage})

@@ -68,7 +68,8 @@
                       :fibo-sec-sec-bsk/BasketOfIndicesConstituent,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-dt-fd/DatedStructuredCollection
-                     :fibo-fbc-pas-fpas/WeightedBasket],
+                     :fibo-fbc-pas-fpas/WeightedBasket
+                     :fibo-sec-sec-bsk/BasketOfIndices],
    :skos/definition "basket composed of market indices",
    :skos/example
    "For example, certain equities derivatives have an underlying basket which is a basket of more than one index, not a basket of securities."})
@@ -91,7 +92,8 @@
                       :owl/onProperty    :cmns-col/comprises,
                       :rdf/type          :owl/Restriction}
                      :fibo-fnd-dt-fd/DatedCollectionConstituent
-                     :fibo-fbc-pas-fpas/WeightedBasketConstituent],
+                     :fibo-fbc-pas-fpas/WeightedBasketConstituent
+                     :fibo-sec-sec-bsk/BasketOfIndicesConstituent],
    :skos/definition "single constituent of a basket of indices"})
 
 (def BasketOfSecurities
@@ -106,7 +108,8 @@
                       :fibo-sec-sec-bsk/SecuritiesBasketConstituent,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-dt-fd/DatedStructuredCollection
-                     :fibo-fbc-pas-fpas/WeightedBasket],
+                     :fibo-fbc-pas-fpas/WeightedBasket
+                     :fibo-sec-sec-bsk/BasketOfSecurities],
    :skos/definition
    "basket composed of securities, typically of a particular asset class such as equities or bonds"})
 
@@ -125,7 +128,8 @@
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-dt-fd/DatedStructuredCollection
-                     :fibo-fbc-pas-fpas/WeightedBasket],
+                     :fibo-fbc-pas-fpas/WeightedBasket
+                     :fibo-sec-sec-bsk/MixedBasket],
    :skos/definition
    "basket that has a mix of constituents, including securities and indices"})
 
@@ -144,6 +148,7 @@
                       :owl/onProperty    :cmns-col/comprises,
                       :rdf/type          :owl/Restriction}
                      :fibo-fnd-dt-fd/DatedCollectionConstituent
-                     :fibo-fbc-pas-fpas/WeightedBasketConstituent],
+                     :fibo-fbc-pas-fpas/WeightedBasketConstituent
+                     :fibo-sec-sec-bsk/SecuritiesBasketConstituent],
    :skos/definition
    "security identified as a component of a basket of securities"})

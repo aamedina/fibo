@@ -92,7 +92,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "branch",
-   :rdfs/subClassOf :fibo-fnd-org-org/OrganizationalSubUnit,
+   :rdfs/subClassOf [:fibo-fnd-org-org/OrganizationalSubUnit
+                     :fibo-be-le-fbo/Branch],
    :skos/definition
    "part of a larger organization that might not be co-located with it"})
 
@@ -103,7 +104,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "division",
-   :rdfs/subClassOf :fibo-fnd-org-org/OrganizationalSubUnit,
+   :rdfs/subClassOf [:fibo-fnd-org-org/OrganizationalSubUnit
+                     :fibo-be-le-fbo/Division],
    :skos/definition
    "part of an organization, such as a line of business, that may have separate accounting and reporting requirements"})
 
@@ -116,7 +118,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "joint venture",
-   :rdfs/subClassOf :fibo-be-le-lp/LegalEntity,
+   :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
+                     :fibo-be-le-fbo/JointVenture
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-be-le-fbo/OrganizationCoveringAgreement,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "legal entity that is formed between parties that pool their resources for the purpose of accomplishing a specific task but otherwise retain their distinct identities"})
 
@@ -134,7 +146,12 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/PublicPurpose,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-fbo/NotForProfitOrganization],
+                     :fibo-be-le-fbo/NotForProfitOrganization
+                     :fibo-be-le-fbo/NonGovernmentalOrganization
+                     :fibo-fnd-org-fm/FormalOrganization
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-be-le-lp/NotForProfitObjective,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "not-for-profit organization that functions independently of government"})
 
@@ -152,10 +169,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "not for profit organization",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+   :rdfs/subClassOf [:fibo-fnd-org-fm/FormalOrganization
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/NotForProfitObjective,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-org-fm/FormalOrganization],
+                     :fibo-be-le-fbo/NotForProfitOrganization],
    :skos/definition
    "organization that uses its surplus revenues to further achieve its purpose rather than distributing its surplus income to the organization's owners (directors, investors, and equivalents) as profit / dividends"})
 
@@ -167,7 +185,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "organization covering agreement",
-   :rdfs/subClassOf :fibo-fnd-agr-ctr/WrittenContract,
+   :rdfs/subClassOf [:fibo-fnd-agr-ctr/WrittenContract
+                     :fibo-be-le-fbo/OrganizationCoveringAgreement],
    :skos/definition
    "contract between the principals in a formal organization that specifies the relationship between the principals, and between the principals and the entity"})
 
@@ -185,7 +204,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "value-added tax identification number",
    :rdfs/subClassOf [:fibo-fnd-pty-pty/TaxIdentifier
-                     :fibo-fnd-org-org/OrganizationIdentifier],
+                     :fibo-fnd-org-org/OrganizationIdentifier
+                     :fibo-be-le-fbo/ValueAddedTaxIdentificationNumber
+                     {:owl/unionOf
+                      [:fibo-fnd-org-org/OrganizationIdentifier
+                       :fibo-fnd-aap-ppl/NationalIdentificationNumber],
+                      :rdf/type :owl/Class}],
    :skos/definition
    "tax identifier that identifies a taxable person (business) or non-taxable legal entity for a consumption tax that is assessed incrementally, levied on the price of a product or service at each stage of production, distribution, and sale to the end consumer"})
 
@@ -198,7 +222,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "has equity",
    :rdfs/range :fibo-fnd-acc-aeq/OwnersEquity,
-   :rdfs/subPropertyOf :fibo-fnd-utl-alx/hasExpression,
+   :rdfs/subPropertyOf [:fibo-fnd-utl-alx/hasExpression
+                        :fibo-be-le-fbo/hasEquity],
    :skos/definition "indicates owners' equity associated with the entity"})
 
 (def hasHeadquartersAddress
@@ -211,7 +236,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "has headquarters address",
    :rdfs/range :fibo-fnd-plc-adr/PhysicalAddress,
-   :rdfs/subPropertyOf :fibo-be-le-fbo/hasOperatingAddress,
+   :rdfs/subPropertyOf [:fibo-be-le-fbo/hasOperatingAddress
+                        :fibo-be-le-fbo/hasHeadquartersAddress
+                        :fibo-fnd-plc-adr/hasAddress],
    :skos/definition
    "indicates the main address at which communications may be delivered for the organization"})
 
@@ -224,7 +251,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "has operating address",
    :rdfs/range :fibo-fnd-plc-adr/PhysicalAddress,
-   :rdfs/subPropertyOf :fibo-fnd-plc-adr/hasAddress,
+   :rdfs/subPropertyOf [:fibo-fnd-plc-adr/hasAddress
+                        :fibo-be-le-fbo/hasOperatingAddress],
    :skos/definition
    "indicates an address at which an organization carries out operations"})
 
@@ -237,27 +265,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "has registered address",
    :rdfs/range :fibo-fnd-plc-adr/ConventionalStreetAddress,
-   :rdfs/subPropertyOf :fibo-fnd-plc-adr/hasAddress,
+   :rdfs/subPropertyOf [:fibo-fnd-plc-adr/hasAddress
+                        :fibo-be-le-fbo/hasRegisteredAddress],
    :skos/definition
    "identifies an address that is officially recorded with some government authority and at which legal papers may be served"})
-
-(def ^{:private true} LegalEntity
-  {:db/ident        :fibo-be-le-lp/LegalEntity,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
-                      :owl/onProperty :cmns-cls/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass
-                      :fibo-be-le-fbo/OrganizationCoveringAgreement,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :rdf/type :owl/Restriction}]})
-
-(def ^{:private true} TaxIdentifier
-  {:db/ident        :fibo-fnd-pty-pty/TaxIdentifier,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/unionOf
-                     [:fibo-fnd-org-org/OrganizationIdentifier
-                      :fibo-fnd-aap-ppl/NationalIdentificationNumber],
-                     :rdf/type :owl/Class}})

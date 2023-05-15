@@ -59,7 +59,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/OwnershipAndControl/",
    :rdfs/label "ownership control situation",
-   :rdfs/subClassOf :fibo-fnd-pty-pty/Situation,
+   :rdfs/subClassOf [:fibo-fnd-pty-pty/Situation
+                     :fibo-fnd-oac-oac/OwnershipControlSituation],
    :skos/definition
    "situation in which some party owns and controls something"})
 
@@ -72,7 +73,8 @@
    :rdfs/label "is owned and controlled by",
    :rdfs/range :fibo-fnd-pty-pty/IndependentParty,
    :rdfs/subPropertyOf [:fibo-fnd-rel-rel/isControlledBy
-                        :fibo-fnd-oac-own/isOwnedBy],
+                        :fibo-fnd-oac-own/isOwnedBy
+                        :fibo-fnd-oac-oac/isOwnedAndControlledBy],
    :skos/definition
    "relates something to the party that owns, influences, manages and directs it"})
 
@@ -85,7 +87,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/OwnershipAndControl/",
    :rdfs/label "owns and controls",
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/controls :fibo-fnd-oac-own/owns],
+   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/controls
+                        :fibo-fnd-oac-own/owns
+                        :fibo-fnd-oac-oac/ownsAndControls],
    :skos/definition
    "directs and exercises authoritative or dominating influence over some thing that is also owned",
    :skos/editorialNote

@@ -57,11 +57,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
    :rdfs/label
-   [{:rdf/language "si",
-     :rdf/value    "ශ්‍රී ලංකා ප්‍රජාතාන්ත්‍රික සමාජවාදී ජනරජය"}
-    {:rdf/language "en",
-     :rdf/value
-     "Government of the Democratic Socialist Republic of Sri Lanka"}],
+   [#voc/lstr "ශ්‍රී ලංකා ප්‍රජාතාන්ත්‍රික සමාජවාදී ජනරජය@si"
+    #voc/lstr
+     "Government of the Democratic Socialist Republic of Sri Lanka@en"],
    :rdfs/seeAlso ["http://www.gov.lk/"],
    :skos/definition
    "unitary semi-presidential constitutional republic in Southern Asia that is an island country situated on the Indian Ocean, southwest of the Bay of Bengal, and southeast of the Arabian Sea"})
@@ -74,11 +72,9 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ne",
-                 :rdf/value    "सङ्घीय लोकतान्त्रिक गणतन्त्र नेपाल"}
-                {:rdf/language "en",
-                 :rdf/value
-                 "Government of the Federal Democratic Republic of Nepal"}],
+   :rdfs/label [#voc/lstr "सङ्घीय लोकतान्त्रिक गणतन्त्र नेपाल@ne"
+                #voc/lstr
+                 "Government of the Federal Democratic Republic of Nepal@en"],
    :skos/definition
    "federal parliamentary republic in Southern Asia, mainly situated in the Himalayas, bordering Tibet of China to the north, and India in the south, east, and west"})
 
@@ -90,10 +86,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value "Government of the Islamic Republic of Afghanistan"}
-                {:rdf/language "ps",
-                 :rdf/value    "Da Afġānistān Islāmī Jumhoryat"}],
+   :rdfs/label [#voc/lstr "Government of the Islamic Republic of Afghanistan@en"
+                #voc/lstr "Da Afġānistān Islāmī Jumhoryat@ps"],
    :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Politics_of_Afghanistan"],
    :skos/definition
    "unitary presidential Islamic republic in Southern Asia, bordered by Pakistan to the east and south, Iran to the west, Turkmenistan, Uzbekistan, and Tajikistan to the north, and China to the northeast"})
@@ -106,10 +100,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "fa",
-                 :rdf/value    "جمهوری اسلامی ایران"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Islamic Republic of Iran"}],
+   :rdfs/label [#voc/lstr "جمهوری اسلامی ایران@fa"
+                #voc/lstr "Government of the Islamic Republic of Iran@en"],
    :rdfs/seeAlso ["http://www.icana.ir/"],
    :skos/definition
    "unitary Khomeinist presidential Islamic republic in Southern Asia, bordered to the northwest by Armenia and Azerbaijan, to the north by the Caspian Sea, to the northeast by Turkmenistan, to the east by Afghanistan, to the southeast by Pakistan, to the south by the Persian Gulf and the Gulf of Oman, and to the west by Turkey and Iraq"})
@@ -122,10 +114,8 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ur",
-                 :rdf/value    "اِسلامی جمہوریہ پاكِستان"}
-                {:rdf/language "en",
-                 :rdf/value "Government of the Islamic Republic of Pakistan"}],
+   :rdfs/label [#voc/lstr "اِسلامی جمہوریہ پاكِستان@ur"
+                #voc/lstr "Government of the Islamic Republic of Pakistan@en"],
    :rdfs/seeAlso ["http://www.pakistan.gov.pk/"],
    :skos/definition
    "federal parliamentary constitutional republic in Southern Asia, bordered by India to the east, Afghanistan to the west, Iran to the southwest, and China to the northeast"})
@@ -138,10 +128,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "dz",
-                 :rdf/value    "འབྲུག་རྒྱལ་ཁབ་"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Kingdom of Bhutan"}],
+   :rdfs/label [#voc/lstr "འབྲུག་རྒྱལ་ཁབ་@dz"
+                #voc/lstr "Government of the Kingdom of Bhutan@en"],
    :skos/definition
    "unitary parliamentary constitutional monarchy in Southern Asia, bordered by China to the north and India to the south"})
 
@@ -153,11 +141,9 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "bn",
-                 :rdf/value    "গণপ্রজাতন্ত্রী বাংলাদেশ"}
-                {:rdf/language "en",
-                 :rdf/value
-                 "Government of the People's Republic of Bangladesh"}],
+   :rdfs/label [#voc/lstr "গণপ্রজাতন্ত্রী বাংলাদেশ@bn"
+                #voc/lstr
+                 "Government of the People's Republic of Bangladesh@en"],
    :rdfs/seeAlso ["http://bangladesh.gov.bd/"],
    :skos/definition
    "unitary dominant-party parliamentary constitutional republic in Southern Asia, bordered by India to the west, north, and east, Myanmar to the southeast, and the Bay of Bengal to the south"})
@@ -170,10 +156,8 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of the Republic of India"}
-                {:rdf/language "hi",
-                 :rdf/value    "Bhārat Gaṇarājya"}],
+   :rdfs/label [#voc/lstr "Government of the Republic of India@en"
+                #voc/lstr "Bhārat Gaṇarājya@hi"],
    :rdfs/seeAlso ["http://parliamentofindia.nic.in/"],
    :skos/definition
    "federal parliamentary constitutional and democratic republic in Southern Asia, bordered by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the northwest; China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar to the east"})
@@ -186,10 +170,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "dv",
-                 :rdf/value    "ދިވެހިރާއްޖެ"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Maldives"}],
+   :rdfs/label [#voc/lstr "ދިވެހިރާއްޖެ@dv"
+                #voc/lstr "Government of the Republic of Maldives@en"],
    :skos/definition
    "unitary presidential republic in Southern Asia, a small archipelagic state situated in the Indian Ocean"})
 

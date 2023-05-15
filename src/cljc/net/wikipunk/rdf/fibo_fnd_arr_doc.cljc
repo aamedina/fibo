@@ -55,7 +55,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "certificate",
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document,
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
+                     :fibo-fnd-arr-doc/Certificate
+                     {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
+                      :owl/someValuesFrom :owl/Thing,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "document attesting to the truth of some fact or set of facts"})
 
@@ -68,9 +72,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "document",
-   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
-                     :owl/someValuesFrom :owl/Thing,
-                     :rdf/type           :owl/Restriction},
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
+                      :owl/someValuesFrom :owl/Thing,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-doc/Document],
    :skos/definition
    "something tangible that records something, such as a recording or a photograph, or a writing that can be used to furnish evidence or information"})
 
@@ -83,7 +88,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "legal document",
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document,
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
+                     :fibo-fnd-arr-doc/LegalDocument
+                     {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
+                      :owl/someValuesFrom :owl/Thing,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "document that bears the original, official, or legal form of something, that can be fully attributed to its author, that records and formally expresses a legally enforceable act, process, or contractual duty, obligation, or right and that can be used to furnish decisive evidence for that act, process, or agreement",
    :skos/example
@@ -98,7 +107,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "notice",
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document,
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
+                     :fibo-fnd-arr-doc/Notice
+                     {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
+                      :owl/someValuesFrom :owl/Thing,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "announcement, intimation, or warning of something, especially to allow preparations to be made"})
 
@@ -111,7 +124,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "record",
-   :rdfs/subClassOf :cmns-col/Collection,
+   :rdfs/subClassOf [:cmns-col/Collection :fibo-fnd-arr-doc/Record],
    :skos/definition
    "a memorialization and objective evidence of activities performed, events occurred, results achieved, or statements made, regardless of its characteristics, media, physical form, or the manner in which it is recorded or stored",
    :skos/example
@@ -126,7 +139,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "reference document",
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document,
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
+                     :fibo-fnd-arr-doc/ReferenceDocument
+                     {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
+                      :owl/someValuesFrom :owl/Thing,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "a document that provides pertinent details for consultation about a subject"})
 
@@ -148,7 +165,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "has date of issuance",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf :cmns-dt/hasStartDate,
+   :rdfs/subPropertyOf [:cmns-dt/hasStartDate
+                        :fibo-fnd-arr-doc/hasDateOfIssuance],
    :skos/definition
    "links something, typically an agreement, contract, or document, with the date it was issued"})
 
@@ -160,7 +178,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "has expiration date",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf :cmns-dt/hasEndDate,
+   :rdfs/subPropertyOf [:cmns-dt/hasEndDate
+                        :fibo-fnd-arr-doc/hasExpirationDate],
    :skos/definition
    "links something, typically an agreement, contract, document, or perishable item, with an expiration date"})
 
@@ -172,7 +191,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "has record",
    :rdfs/range :fibo-fnd-arr-doc/Record,
-   :rdfs/subPropertyOf :cmns-col/comprises,
+   :rdfs/subPropertyOf [:cmns-col/comprises :fibo-fnd-arr-doc/hasRecord],
    :skos/definition "links something to a record that pertains to it"})
 
 (def hasReportingPeriod
@@ -183,7 +202,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "has reporting period",
    :rdfs/range :cmns-dt/ExplicitDatePeriod,
-   :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
+   :rdfs/subPropertyOf [:cmns-dt/hasDatePeriod
+                        :fibo-fnd-arr-doc/hasReportingPeriod],
    :skos/definition
    "specifies the reporting period for which a report or something else, such as a market rate or economic indicator, applies"})
 
@@ -195,7 +215,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :rdfs/label "has termination date",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf :cmns-dt/hasEndDate,
+   :rdfs/subPropertyOf [:cmns-dt/hasEndDate
+                        :fibo-fnd-arr-doc/hasTerminationDate],
    :skos/definition
    "links something, typically an agreement, contract, document, or process, with a date on which it was terminated"})
 

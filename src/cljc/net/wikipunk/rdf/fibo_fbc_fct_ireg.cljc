@@ -98,17 +98,13 @@
    :fibo-fbc-fct-ireg/BankForInternationalSettlementsAddress,
    :fibo-fnd-plc-vrt/hasWebsite "https://www.bis.org/",
    :fibo-fnd-rel-rel/hasLegalName
-   {:rdf/language "de",
-    :rdf/value    "Bank für Internationalen Zahlungsausgleich"},
+   #voc/lstr "Bank für Internationalen Zahlungsausgleich@de",
    :rdf/type [:fibo-be-ge-ge/Instrumentality :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Bank for International Settlements"}
-                {:rdf/language "fr",
-                 :rdf/value    "Banque Des Reglements Internationaux"}
-                {:rdf/language "de",
-                 :rdf/value    "Bank für Internationalen Zahlungsausgleich"}],
+   :rdfs/label [#voc/lstr "Bank for International Settlements@en"
+                #voc/lstr "Banque Des Reglements Internationaux@fr"
+                #voc/lstr "Bank für Internationalen Zahlungsausgleich@de"],
    :skos/definition
    "international financial organization that serves central banks in their pursuit of monetary and financial stability, helping to foster international cooperation in those areas and acting as a bank for central banks"})
 
@@ -142,9 +138,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities/",
    :rdfs/label
-   {:rdf/language "en",
-    :rdf/value
-    "Bank for International Settlements as banking services provider"},
+   #voc/lstr
+    "Bank for International Settlements as banking services provider@en",
    :rdfs/seeAlso ["https://www.bis.org/"],
    :skos/definition
    "Bank for International Settlements role as a banking services provider to central banks and other monetary authorities"})
@@ -192,16 +187,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities/",
    :rdfs/label "business identifier code data record",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fbc-fct-breg/isSelfMaintained,
-     :owl/someValuesFrom :xsd/string,
+   [{:owl/onProperty     :cmns-col/comprises,
+     :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCode,
      :rdf/type           :owl/Restriction}
     {:owl/hasValue   :fibo-fbc-fct-ireg/BusinessIdentifierCodeRegistry,
      :owl/onProperty :cmns-col/isIncludedIn,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :cmns-col/comprises,
-     :owl/someValuesFrom :fibo-fbc-fct-fse/BusinessIdentifierCode,
+    {:owl/onProperty     :fibo-fbc-fct-breg/isSelfMaintained,
+     :owl/someValuesFrom :xsd/string,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-breg/BusinessRegistryEntry],
+    :fibo-fbc-fct-breg/BusinessRegistryEntry
+    :fibo-fbc-fct-ireg/BusinessIdentifierCodeDataRecord],
    :skos/definition
    "entry in a registry that conforms to ISO 9362 for the management of BIC codes and related registration information"})
 
@@ -376,25 +372,26 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities/",
    :rdfs/label "market identifier code registry entry",
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-fbc-fct-ireg/MarketIdentifierCodeRegistry,
-     :owl/onProperty :cmns-col/isIncludedIn,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :cmns-col/comprises,
+   [{:owl/onProperty     :cmns-col/comprises,
      :owl/someValuesFrom :fibo-fbc-fct-mkt/MarketIdentifier,
      :rdf/type           :owl/Restriction}
-    {:owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifierCodeStatus,
-     :owl/onProperty :fibo-fbc-fct-mkt/hasMarketIdentifierCodeStatus,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-ra/RegistryEntry
     {:owl/onDataRange :xsd/string,
      :owl/onProperty  :fibo-fbc-fct-breg/hasInitialRegistrationDate,
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
+    :fibo-fbc-fct-ra/RegistryEntry
+    {:owl/hasValue   :fibo-fbc-fct-ireg/MarketIdentifierCodeRegistry,
+     :owl/onProperty :cmns-col/isIncludedIn,
+     :rdf/type       :owl/Restriction}
+    {:owl/onClass    :fibo-fbc-fct-mkt/MarketIdentifierCodeStatus,
+     :owl/onProperty :fibo-fbc-fct-mkt/hasMarketIdentifierCodeStatus,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
     {:owl/maxQualifiedCardinality 1,
      :owl/onDataRange :xsd/string,
      :owl/onProperty  :fibo-fbc-fct-breg/hasRegistrationRevisionDate,
-     :rdf/type        :owl/Restriction}],
+     :rdf/type        :owl/Restriction}
+    :fibo-fbc-fct-ireg/MarketIdentifierCodeRegistryEntry],
    :skos/definition
    "entry in a market identifier code registry that conforms to ISO 10383"})
 
@@ -453,39 +450,3 @@
    "Society for Worldwide Interbank Financial Telecommunication address",
    :skos/definition
    "corporate address for the Society for Worldwide Interbank Financial Telecommunication (SWIFT)"})
-
-(def ^{:private true} L-506700GE1G29325QX363-LEI
-  "identifier and link to the official legal entity identifier registry entry for the Global Legal Entity Identifier Foundation as published in the Global LEI Index"
-  {:cmns-id/identifies :fibo-fbc-fct-ireg/GlobalLegalEntityIdentifierFoundation,
-   :db/ident :gleif-L1-data/L-506700GE1G29325QX363-LEI,
-   :fibo-fbc-fct-ra/isRegisteredIn :fibo-fbc-fct-ireg/GlobalLEIIndex,
-   :fibo-fnd-rel-rel/hasTag "506700GE1G29325QX363",
-   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
-   :rdfs/label
-   "Global Legal Entity Identifier Foundation legal entity identifier",
-   :skos/definition
-   "identifier and link to the official legal entity identifier registry entry for the Global Legal Entity Identifier Foundation as published in the Global LEI Index"})
-
-(def ^{:private true} L-HB7FFAZI0OMZ8PP8OE26-LEI
-  "identifier and link to the official legal entity identifier registry entry for the Society for Worldwide Interbank Financial Telecommunication (SWIFT)"
-  {:cmns-id/identifies
-   :fibo-fbc-fct-ireg/SocietyForWorldwideInterbankFinancialTelecommunication,
-   :db/ident :gleif-L1-data/L-HB7FFAZI0OMZ8PP8OE26-LEI,
-   :fibo-fbc-fct-ra/isRegisteredIn :fibo-fbc-fct-ireg/GlobalLEIIndex,
-   :fibo-fnd-rel-rel/hasTag "HB7FFAZI0OMZ8PP8OE26",
-   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
-   :rdfs/label
-   "Society for Worldwide Interbank Financial Telecommunication (SWIFT) legal entity identifier",
-   :skos/definition
-   "identifier and link to the official legal entity identifier registry entry for the Society for Worldwide Interbank Financial Telecommunication (SWIFT)"})
-
-(def ^{:private true} L-UXIATLMNPCXXT5KR1S08-LEI
-  "identifier and link to the official legal entity identifier registry entry for the Bank for International Settlements"
-  {:cmns-id/identifies :fibo-fbc-fct-ireg/BankForInternationalSettlements,
-   :db/ident :gleif-L1-data/L-UXIATLMNPCXXT5KR1S08-LEI,
-   :fibo-fbc-fct-ra/isRegisteredIn :fibo-fbc-fct-ireg/GlobalLEIIndex,
-   :fibo-fnd-rel-rel/hasTag "UXIATLMNPCXXT5KR1S08",
-   :rdf/type [:fibo-be-le-lei/LegalEntityIdentifier :owl/NamedIndividual],
-   :rdfs/label "Bank for International Settlements legal entity identifier",
-   :skos/definition
-   "identifier and link to the official legal entity identifier registry entry for the Bank for International Settlements"})

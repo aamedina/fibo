@@ -44,8 +44,7 @@
    :rdfa/prefix "fibo-md-civx-fun",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "FundsTemporal"}})
+   :rdfs/label #voc/lstr "FundsTemporal@en"})
 
 (def AccruedFees
   "accrued fees"
@@ -53,8 +52,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "accrued fees"}})
+   :rdfs/label #voc/lstr "accrued fees@en"})
 
 (def AccruedIncome
   "accrued income"
@@ -62,8 +60,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "accrued income"}})
+   :rdfs/label #voc/lstr "accrued income@en"})
 
 (def AccruedTaxes
   "accrued taxes"
@@ -71,8 +68,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "accrued taxes"}})
+   :rdfs/label #voc/lstr "accrued taxes@en"})
 
 (def FeePayable
   "fee payable"
@@ -80,8 +76,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "fee payable"}})
+   :rdfs/label #voc/lstr "fee payable@en"})
 
 (def FundPrice
   "fund price"
@@ -89,9 +84,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "fund price"},
-   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice})
+   :rdfs/label #voc/lstr "fund price@en",
+   :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
+                     :fibo-md-civx-fun/FundPrice]})
 
 (def FundUnitPerformance
   "fund unit performance"
@@ -99,8 +94,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "fund unit performance"}})
+   :rdfs/label #voc/lstr "fund unit performance@en"})
 
 (def FundsTax
   "funds tax"
@@ -108,11 +102,11 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "funds tax"},
-   :rdfs/subClassOf {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                     :owl/someValuesFrom :fibo-be-oac-opty/Investor,
-                     :rdf/type           :owl/Restriction}})
+   :rdfs/label #voc/lstr "funds tax@en",
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-be-oac-opty/Investor,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-md-civx-fun/FundsTax]})
 
 (def SigmaValueOfHoldings
   "sigma value of holdings"
@@ -120,8 +114,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "sigma value of holdings"}})
+   :rdfs/label #voc/lstr "sigma value of holdings@en"})
 
 (def Swing
   "swing"
@@ -129,8 +122,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "swing"}})
+   :rdfs/label #voc/lstr "swing@en"})
 
 (def SwingPrice
   "swing price"
@@ -138,9 +130,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "swing price"},
-   :rdfs/subClassOf :fibo-md-civx-fun/FundPrice})
+   :rdfs/label #voc/lstr "swing price@en",
+   :rdfs/subClassOf [:fibo-md-civx-fun/FundPrice
+                     :fibo-md-civx-fun/SwingPrice
+                     :fibo-fbc-fi-ip/SecurityPrice]})
 
 (def determinationDate.1
   "determination date"
@@ -149,8 +142,7 @@
    :rdfs/domain :fibo-md-civx-fun/FundUnitPerformance,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "determination date"},
+   :rdfs/label #voc/lstr "determination date@en",
    :rdfs/range :cmns-dt/Date})
 
 (def determinationPeriod
@@ -160,12 +152,10 @@
    :rdfs/domain :fibo-md-civx-fun/FundUnitPerformance,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "determination period"},
+   :rdfs/label #voc/lstr "determination period@en",
    :rdfs/range :cmns-dt/DatePeriod,
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "THe period for which the performance is determined"}})
+   :skos/definition #voc/lstr
+                     "THe period for which the performance is determined@en"})
 
 (def determines
   "determines"
@@ -174,8 +164,7 @@
    :rdfs/domain :fibo-sec-fund-fund/CollectiveInvestmentVehicle,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "determines"},
+   :rdfs/label #voc/lstr "determines@en",
    :rdfs/range :fibo-md-civx-fun/FeePayable})
 
 (def hasPerformance
@@ -185,8 +174,7 @@
    :rdfs/domain :fibo-sec-fund-fund/FundUnit,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has performance"},
+   :rdfs/label #voc/lstr "has performance@en",
    :rdfs/range :fibo-md-civx-fun/FundUnitPerformance})
 
 (def incurs
@@ -196,8 +184,7 @@
    :rdfs/domain :fibo-sec-fund-civ/FundPortfolio,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "incurs"},
+   :rdfs/label #voc/lstr "incurs@en",
    :rdfs/range :fibo-md-civx-fun/FundsTax})
 
 (def incursFees
@@ -207,8 +194,7 @@
    :rdfs/domain :fibo-be-oac-opty/Investor,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "incurs fees"},
+   :rdfs/label #voc/lstr "incurs fees@en",
    :rdfs/range :fibo-md-civx-fun/FeePayable})
 
 (def incursFees.1
@@ -218,8 +204,7 @@
    :rdfs/domain :fibo-sec-fund-fund/FundUnit,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "incurs fees"},
+   :rdfs/label #voc/lstr "incurs fees@en",
    :rdfs/range :fibo-md-civx-fun/FeePayable})
 
 (def incursTax
@@ -229,8 +214,7 @@
    :rdfs/domain :fibo-be-oac-opty/Investor,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "incurs tax"},
+   :rdfs/label #voc/lstr "incurs tax@en",
    :rdfs/range :fibo-md-civx-fun/FundsTax})
 
 (def incursTax.1
@@ -240,8 +224,7 @@
    :rdfs/domain :fibo-sec-fund-fund/FundUnit,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "incurs tax"},
+   :rdfs/label #voc/lstr "incurs tax@en",
    :rdfs/range :fibo-md-civx-fun/FundsTax})
 
 (def incursTransactionFee
@@ -251,8 +234,7 @@
    :rdfs/domain :fibo-sec-fund-civ/FundPortfolio,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "incurs transaction fee"},
+   :rdfs/label #voc/lstr "incurs transaction fee@en",
    :rdfs/range :fibo-md-civx-fun/FeePayable})
 
 (def netOrGrossOfFees
@@ -262,6 +244,5 @@
    :rdfs/domain :fibo-md-civx-fun/FundUnitPerformance,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "net or gross of fees"},
+   :rdfs/label #voc/lstr "net or gross of fees@en",
    :rdfs/range :xsd/string})

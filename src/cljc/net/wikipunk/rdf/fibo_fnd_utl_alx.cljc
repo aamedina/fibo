@@ -94,7 +94,45 @@
                       :owl/onProperty :fibo-fnd-utl-alx/hasReferencePeriod,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/StandardDeviation],
+                     :fibo-fnd-utl-alx/StandardDeviation
+                     :fibo-fnd-utl-alx/AnnualizedStandardDeviation
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
+                      :owl/someValuesFrom :cmns-col/StructuredCollection,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-rel-rel/Reference
+                     :fibo-fnd-utl-alx/StatisticalMeasure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :xsd/nonNegativeInteger,
+                      :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-utl-alx/Dispersion
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom {:owl/unionOf
+                                           [:fibo-fnd-utl-alx/Mean
+                                            :fibo-fnd-utl-alx/Variance],
+                                           :rdf/type :owl/Class},
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "standard deviation for some measure over a specific reference period"})
 
@@ -107,7 +145,31 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "arithmetic mean",
-   :rdfs/subClassOf :fibo-fnd-utl-alx/Mean,
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/Mean
+                     :fibo-fnd-utl-alx/ArithmeticMean
+                     :fibo-fnd-rel-rel/Reference
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
+                      :owl/someValuesFrom :cmns-col/StructuredCollection,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/StatisticalMeasure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "sum of a collection of numbers divided by the number of numbers in the collection"})
 
@@ -135,7 +197,38 @@
                                             :fibo-fnd-utl-alx/Median],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Dispersion],
+                     :fibo-fnd-utl-alx/Dispersion
+                     :fibo-fnd-utl-alx/AverageAbsoluteDeviation
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
+                      :owl/someValuesFrom :cmns-col/StructuredCollection,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-rel-rel/Reference
+                     :fibo-fnd-utl-alx/StatisticalMeasure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :xsd/nonNegativeInteger,
+                      :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition "average of the absolute deviations from a central point"})
 
 (def Constant
@@ -145,7 +238,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "constant",
-   :rdfs/subClassOf [:cmns-cls/Aspect :fibo-fnd-rel-rel/Reference],
+   :rdfs/subClassOf
+   [:cmns-cls/Aspect :fibo-fnd-rel-rel/Reference :fibo-fnd-utl-alx/Constant],
    :skos/definition
    "symbol that represents a value that does not change (i.e., is fixed) with respect to a formula or expression"})
 
@@ -163,7 +257,26 @@
                       :owl/onProperty  :fibo-fnd-utl-alx/hasMinuend,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-utl-alx/StatisticalMeasure
-                     :fibo-fnd-utl-alx/Expression],
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/Difference
+                     :fibo-fnd-rel-rel/Reference
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "quantity by which amounts differ; the remainder left after subtraction of one value from another"})
 
@@ -183,12 +296,31 @@
                       :owl/someValuesFrom :cmns-col/StructuredCollection,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/Expression
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
-                      :rdf/type           :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :xsd/nonNegativeInteger,
                       :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Dispersion
+                     :fibo-fnd-rel-rel/Reference
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}],
    :skos/definition "degree of scatter or variability shown by observations",
    :skos/example
@@ -209,7 +341,8 @@
                       :owl/onClass    :fibo-fnd-utl-alx/Constant,
                       :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-rel-rel/Reference],
+                     :fibo-fnd-rel-rel/Reference
+                     :fibo-fnd-utl-alx/Expression],
    :skos/definition
    "finite combination of symbols that are well-formed according to applicable rules"})
 
@@ -223,7 +356,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "finite population",
-   :rdfs/subClassOf :cmns-col/Collection,
+   :rdfs/subClassOf [:cmns-col/Collection :fibo-fnd-utl-alx/FinitePopulation],
    :skos/definition "population for which it is possible to count its units"})
 
 (def Formula
@@ -237,7 +370,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasExpression,
                       :owl/someValuesFrom :fibo-fnd-utl-alx/Expression,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-rel-rel/Reference],
+                     :fibo-fnd-rel-rel/Reference
+                     :fibo-fnd-utl-alx/Formula],
    :skos/definition
    "rule expressed in letters and symbols that consists of at least one expression"})
 
@@ -250,7 +384,31 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "geometric mean",
-   :rdfs/subClassOf :fibo-fnd-utl-alx/Mean,
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/Mean
+                     :fibo-fnd-utl-alx/GeometricMean
+                     :fibo-fnd-rel-rel/Reference
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
+                      :owl/someValuesFrom :cmns-col/StructuredCollection,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/StatisticalMeasure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "mean that indicates the central tendency or typical value of a set of numbers by using the product of their values (as opposed to the arithmetic mean which uses their sum)"})
 
@@ -272,7 +430,26 @@
                      :fibo-fnd-utl-alx/StatisticalMeasure
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
                       :owl/someValuesFrom :cmns-col/StructuredCollection,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Mean
+                     :fibo-fnd-rel-rel/Reference
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "most common measure of central tendency; the average of a set of numbers"})
 
@@ -286,7 +463,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "measure",
-   :rdfs/subClassOf :fibo-fnd-rel-rel/Reference,
+   :rdfs/subClassOf [:fibo-fnd-rel-rel/Reference :fibo-fnd-utl-alx/Measure],
    :skos/definition
    "amount or degree of something; the dimensions, capacity, or amount of something ascertained by measuring"})
 
@@ -305,7 +482,26 @@
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
                       :owl/someValuesFrom :cmns-col/StructuredCollection,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression],
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/Median
+                     :fibo-fnd-rel-rel/Reference
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "value of the variate dividing the total frequency of a data sample, population, or probability distribution, into two halves"})
 
@@ -319,7 +515,38 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fnd-utl-alx/Median,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Dispersion],
+                     :fibo-fnd-utl-alx/Dispersion
+                     :fibo-fnd-utl-alx/MedianAbsoluteDeviation
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
+                      :owl/someValuesFrom :cmns-col/StructuredCollection,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-rel-rel/Reference
+                     :fibo-fnd-utl-alx/StatisticalMeasure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :xsd/nonNegativeInteger,
+                      :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "median of the absolute deviations of observations from the average which may be the arithmetic mean, the median or the mode"})
 
@@ -342,7 +569,8 @@
                       :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
                       :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-qt-qtu/QuantityValue],
+                     :fibo-fnd-qt-qtu/QuantityValue
+                     :fibo-fnd-utl-alx/NumericIndexValue],
    :skos/definition
    "numeric value of some aggregate relative to the value of that aggregate as of some date"})
 
@@ -356,7 +584,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "percentage",
-   :rdfs/subClassOf :fibo-fnd-utl-alx/RatioValue,
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/RatioValue
+                     :fibo-fnd-utl-alx/Percentage
+                     :fibo-fnd-qt-qtu/QuantityValue
+                     {:owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :owl/qualifiedCardinality 2,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "ratio value expressed as a fraction of 100, i.e., in which the denominator is fixed rather than variable and equal to 100"})
 
@@ -377,7 +611,18 @@
                       :owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-fnd-utl-alx/hasAnchorDate,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-utl-alx/StatisticalMeasure],
+                     :fibo-fnd-utl-alx/StatisticalMeasure
+                     :fibo-fnd-utl-alx/QualifiedMeasure
+                     :fibo-fnd-rel-rel/Reference
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "statistical measure that is constrained by features, quantity kinds or units that refine how it is calculated"})
 
@@ -395,7 +640,26 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "ratio",
    :rdfs/subClassOf [:fibo-fnd-utl-alx/StatisticalMeasure
-                     :fibo-fnd-utl-alx/Expression],
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/Ratio
+                     :fibo-fnd-rel-rel/Reference
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "proportional relationship between two different numbers or quantities, or in mathematics a quotient of two numbers or expressions, arrived at by dividing one by the other"})
 
@@ -410,7 +674,8 @@
                       :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-qt-qtu/QuantityValue],
+                     :fibo-fnd-qt-qtu/QuantityValue
+                     :fibo-fnd-utl-alx/RatioValue],
    :skos/definition
    "proportional relationship specifically between two different quantity values that gives rise to a datum of a specific quantity type"})
 
@@ -426,7 +691,42 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "sampling variance",
-   :rdfs/subClassOf :fibo-fnd-utl-alx/Variance,
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/Variance
+                     :fibo-fnd-utl-alx/SamplingVariance
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
+                      :owl/someValuesFrom :cmns-col/StructuredCollection,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-utl-alx/Mean,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-rel-rel/Reference
+                     :fibo-fnd-utl-alx/StatisticalMeasure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :xsd/nonNegativeInteger,
+                      :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-utl-alx/Dispersion
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "measure of the extent to which the estimate of a characteristic from different possible samples of the same size and the same design differ from one another"})
 
@@ -450,7 +750,29 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty    :fibo-fnd-utl-alx/hasPeriodicity,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-utl-alx/QualifiedMeasure],
+                     :fibo-fnd-utl-alx/QualifiedMeasure
+                     :fibo-fnd-utl-alx/ScopedMeasure
+                     :fibo-fnd-rel-rel/Reference
+                     :fibo-fnd-utl-alx/StatisticalMeasure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange {:owl/unionOf [:xsd/string :xsd/anyURI],
+                                        :rdf/type    :rdfs/Datatype},
+                      :owl/onProperty
+                      :fibo-fnd-utl-alx/isCalculatedViaMethodology,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/ExplicitDate,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasAnchorDate,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "qualified measure that is constrained by filters on the statistical population to which it applies"})
 
@@ -475,6 +797,37 @@
                                            [:fibo-fnd-utl-alx/Mean
                                             :fibo-fnd-utl-alx/Variance],
                                            :rdf/type :owl/Class},
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/StandardDeviation
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
+                      :owl/someValuesFrom :cmns-col/StructuredCollection,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-rel-rel/Reference
+                     :fibo-fnd-utl-alx/StatisticalMeasure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :xsd/nonNegativeInteger,
+                      :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "square root of variance that measures the spread or dispersion around the mean of a data set"})
@@ -493,7 +846,8 @@
                       :owl/someValuesFrom
                       :fibo-fnd-utl-alx/StatisticalAreaIdentifier,
                       :rdf/type :owl/Restriction}
-                     :lcc-cr/GeographicRegion],
+                     :lcc-cr/GeographicRegion
+                     :fibo-fnd-utl-alx/StatisticalArea],
    :skos/definition
    "physical location that is defined per some program for designating geographic regions for the purposes of tabulating and presenting statistical data"})
 
@@ -511,7 +865,8 @@
                       :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :lcc-cr/GeographicRegionIdentifier],
+                     :lcc-cr/GeographicRegionIdentifier
+                     :fibo-fnd-utl-alx/StatisticalAreaIdentifier],
    :skos/definition
    "identifier for a physical location that is defined per a nationally consistent program for designating geographic regions for the purposes of tabulating and presenting statistical data"})
 
@@ -533,7 +888,9 @@
                       :owl/onClass    :cmns-cls/Aspect,
                       :owl/onProperty :cmns-cls/isCharacterizedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-utl-alx/Measure],
+                     :fibo-fnd-utl-alx/Measure
+                     :fibo-fnd-utl-alx/StatisticalMeasure
+                     :fibo-fnd-rel-rel/Reference],
    :skos/definition
    "summary (means, mode, total, index, etc.) of the individual quantitative variable values for the statistical units in a specific group (study domain)"})
 
@@ -547,17 +904,25 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "statistical population",
-   :rdfs/subClassOf [{:owl/allValuesFrom :xsd/nonNegativeInteger,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasPopulationSize,
-                      :rdf/type          :owl/Restriction}
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/isCharacterizedBy,
+                      :owl/someValuesFrom :fibo-fnd-utl-alx/StatisticalArea,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-cls/isCharacterizedBy,
                       :owl/someValuesFrom :cmns-dt/ExplicitDatePeriod,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-cls/isCharacterizedBy,
-                      :owl/someValuesFrom :fibo-fnd-utl-alx/StatisticalArea,
-                      :rdf/type           :owl/Restriction}
+                     {:owl/allValuesFrom :xsd/nonNegativeInteger,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasPopulationSize,
+                      :rdf/type          :owl/Restriction}
                      :fibo-fnd-utl-alx/FinitePopulation
-                     :fibo-fnd-utl-alx/StatisticalUniverse],
+                     :fibo-fnd-utl-alx/StatisticalUniverse
+                     :fibo-fnd-utl-alx/StatisticalPopulation
+                     {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
+                      :owl/someValuesFrom :fibo-fnd-utl-alx/StatisticalProgram,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-col/Collection
+                     {:owl/allValuesFrom :xsd/nonNegativeInteger,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasUniverseSize,
+                      :rdf/type          :owl/Restriction}],
    :skos/definition "statistical universe filtered by time and region"})
 
 (def StatisticalProgram
@@ -576,7 +941,8 @@
                      {:owl/onProperty     :fibo-fnd-plc-loc/hasCoverageArea,
                       :owl/someValuesFrom :fibo-fnd-utl-alx/StatisticalArea,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-gao-obj/Program],
+                     :fibo-fnd-gao-obj/Program
+                     :fibo-fnd-utl-alx/StatisticalProgram],
    :skos/definition
    "program that presents a detailed investigation and analysis of a subject or situation involving one or more studies or surveys"})
 
@@ -594,7 +960,8 @@
                      {:owl/allValuesFrom :xsd/nonNegativeInteger,
                       :owl/onProperty    :fibo-fnd-utl-alx/hasUniverseSize,
                       :rdf/type          :owl/Restriction}
-                     :cmns-col/Collection],
+                     :cmns-col/Collection
+                     :fibo-fnd-utl-alx/StatisticalUniverse],
    :skos/definition
    "collection representing the total membership, or 'universe', of people, resources, products, services, events, or entities of interest for some question, experiment, survey or statistical program",
    :skos/example
@@ -608,7 +975,26 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "total",
    :rdfs/subClassOf [:fibo-fnd-utl-alx/StatisticalMeasure
-                     :fibo-fnd-utl-alx/Expression],
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/Total
+                     :fibo-fnd-rel-rel/Reference
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition "sum of the values for some characteristic of all units"})
 
 (def Variable
@@ -618,7 +1004,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "variable",
-   :rdfs/subClassOf [:cmns-cls/Aspect :fibo-fnd-rel-rel/Reference],
+   :rdfs/subClassOf
+   [:cmns-cls/Aspect :fibo-fnd-rel-rel/Reference :fibo-fnd-utl-alx/Variable],
    :skos/definition
    "symbol that represents a parameter in a formula or expression"})
 
@@ -633,10 +1020,41 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "variance",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/Dispersion
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fnd-utl-alx/Mean,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Dispersion],
+                     :fibo-fnd-utl-alx/Variance
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasObservedValue,
+                      :owl/someValuesFrom :cmns-col/StructuredCollection,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-rel-rel/Reference
+                     :fibo-fnd-utl-alx/StatisticalMeasure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :xsd/nonNegativeInteger,
+                      :owl/onProperty  :fibo-fnd-arr-arr/hasCollectionSize,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-utl-alx/FinitePopulation,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "measure of spread, calculated as the average squared deviation of each number from the mean of a data set"})
 
@@ -651,7 +1069,26 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "weighting function",
    :rdfs/subClassOf [:fibo-fnd-utl-alx/StatisticalMeasure
-                     :fibo-fnd-utl-alx/Expression],
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-utl-alx/WeightingFunction
+                     :fibo-fnd-rel-rel/Reference
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Constant,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Measure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-cls/Aspect,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fnd-utl-alx/isEstimate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "expression or function that determines the relative importance or influence of a given element of a set with respect to the whole",
    :skos/example
@@ -678,7 +1115,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has anchor date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
+   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
+                        :fibo-fnd-utl-alx/hasAnchorDate],
    :skos/definition
    "specifies the base date against which the value of a numeric index for a more recent date is compared (i.e., the starting point from which it stems)"})
 
@@ -691,7 +1129,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has applicable date period",
    :rdfs/range :cmns-dt/DatePeriod,
-   :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
+   :rdfs/subPropertyOf [:cmns-dt/hasDatePeriod
+                        :fibo-fnd-utl-alx/hasApplicableDatePeriod],
    :skos/definition
    "indicates the date period for which the statistical measure is applicable"})
 
@@ -704,7 +1143,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has argument",
    :rdfs/range :fibo-fnd-utl-alx/Variable,
-   :rdfs/subPropertyOf :cmns-cls/isCharacterizedBy,
+   :rdfs/subPropertyOf [:cmns-cls/isCharacterizedBy
+                        :fibo-fnd-utl-alx/hasArgument],
    :skos/definition
    "indicates a specific input to a function, formula or expression, also known as an independent variable"})
 
@@ -717,7 +1157,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has expression",
    :rdfs/range :fibo-fnd-utl-alx/Expression,
-   :rdfs/subPropertyOf :cmns-cls/isCharacterizedBy,
+   :rdfs/subPropertyOf [:cmns-cls/isCharacterizedBy
+                        :fibo-fnd-utl-alx/hasExpression],
    :skos/definition
    "specifies a mathematical or other formal expression, which may be part of a formula"})
 
@@ -729,7 +1170,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has fixed comparative date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
+   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
+                        :fibo-fnd-utl-alx/hasFixedComparativeDate],
    :skos/definition
    "specifies the a specific date, such as the end of the last recession (e.g., March 2009) against which the scoped measure is compared"})
 
@@ -741,7 +1183,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has formula",
    :rdfs/range :fibo-fnd-utl-alx/Formula,
-   :rdfs/subPropertyOf :cmns-cls/isCharacterizedBy,
+   :rdfs/subPropertyOf [:cmns-cls/isCharacterizedBy
+                        :fibo-fnd-utl-alx/hasFormula],
    :skos/definition
    "specifies a concise way of expressing information symbolically, as in a mathematical or chemical formula"})
 
@@ -775,7 +1218,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has minuend",
-   :rdfs/subPropertyOf :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subPropertyOf [:fibo-fnd-utl-alx/hasArgument
+                        :fibo-fnd-utl-alx/hasMinuend
+                        :cmns-cls/isCharacterizedBy],
    :skos/definition
    "specifies the quantity value from which something is subtracted; the value that is diminished"})
 
@@ -787,7 +1232,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has number of entries",
    :rdfs/range :xsd/nonNegativeInteger,
-   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasCount,
+   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasCount
+                        :fibo-fnd-utl-alx/hasNumberOfEntries],
    :skos/definition
    "indicates the number of elements in some document, table, or other resource (e.g., in a report, table)"})
 
@@ -801,7 +1247,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has observed value",
    :rdfs/range :cmns-col/StructuredCollection,
-   :rdfs/subPropertyOf :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subPropertyOf [:fibo-fnd-utl-alx/hasArgument
+                        :fibo-fnd-utl-alx/hasObservedValue
+                        :cmns-cls/isCharacterizedBy],
    :skos/definition
    "specifies a collection of values over which some analysis is performed"})
 
@@ -813,7 +1261,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has periodicity",
    :rdfs/range :fibo-fnd-dt-fd/RecurrenceInterval,
-   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasRecurrenceInterval,
+   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasRecurrenceInterval
+                        :fibo-fnd-utl-alx/hasPeriodicity],
    :skos/definition
    "specifies a recurrence interval (monthly, quarterly, annual) that a statistical measure reflects"})
 
@@ -825,7 +1274,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has population size",
    :rdfs/range :xsd/nonNegativeInteger,
-   :rdfs/subPropertyOf :fibo-fnd-arr-arr/hasCollectionSize,
+   :rdfs/subPropertyOf [:fibo-fnd-arr-arr/hasCollectionSize
+                        :fibo-fnd-utl-alx/hasPopulationSize],
    :skos/definition "indicates the number of elements in a given population"})
 
 (def hasReferencePeriod
@@ -836,7 +1286,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has reference period",
    :rdfs/range :fibo-fnd-dt-fd/RecurrenceInterval,
-   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasRecurrenceInterval,
+   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasRecurrenceInterval
+                        :fibo-fnd-utl-alx/hasReferencePeriod],
    :skos/definition
    "specifies a reference (baseline) recurrence interval for which a given measure applies"})
 
@@ -848,7 +1299,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has relative comparative date",
    :rdfs/range :fibo-fnd-dt-fd/RelativeDate,
-   :rdfs/subPropertyOf :cmns-dt/hasDate,
+   :rdfs/subPropertyOf [:cmns-dt/hasDate
+                        :fibo-fnd-utl-alx/hasRelativeComparativeDate],
    :skos/definition
    "specifies a date against which the value of a scoped measure is compared (e.g., one month prior, three months prior, etc., and typically against a prior release or average over prior releases)"})
 
@@ -860,7 +1312,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has relative comparative period",
    :rdfs/range :cmns-dt/DatePeriod,
-   :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
+   :rdfs/subPropertyOf [:cmns-dt/hasDatePeriod
+                        :fibo-fnd-utl-alx/hasRelativeComparativePeriod],
    :skos/definition
    "specifies a period (typically a prior period) against which the scoped measure is compared, such as an average set of values for some period of time compared with a more recent or projected average for a forward looking period of time"})
 
@@ -874,7 +1327,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has release date",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf :cmns-dt/hasDate,
+   :rdfs/subPropertyOf [:cmns-dt/hasDate :fibo-fnd-utl-alx/hasReleaseDate],
    :skos/definition "specifies the date on which something is published"})
 
 (def hasReleaseDateTime
@@ -896,7 +1349,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has subtrahend",
-   :rdfs/subPropertyOf :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subPropertyOf [:fibo-fnd-utl-alx/hasArgument
+                        :fibo-fnd-utl-alx/hasSubtrahend
+                        :cmns-cls/isCharacterizedBy],
    :skos/definition
    "specifies the quantity value that is subtracted from something"})
 
@@ -908,7 +1363,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has universe size",
    :rdfs/range :xsd/nonNegativeInteger,
-   :rdfs/subPropertyOf :fibo-fnd-arr-arr/hasCollectionSize,
+   :rdfs/subPropertyOf [:fibo-fnd-arr-arr/hasCollectionSize
+                        :fibo-fnd-utl-alx/hasUniverseSize],
    :skos/definition "indicates the number of elements in a given universe"})
 
 (def hasWeight
@@ -919,7 +1375,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "has weight",
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasNumericValue,
+   :rdfs/subPropertyOf [:fibo-fnd-qt-qtu/hasNumericValue
+                        :fibo-fnd-utl-alx/hasWeight],
    :skos/definition
    "indicates an amount given to increase or decrease the importance of an item"})
 
@@ -954,10 +1411,5 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
    :rdfs/label "is value of",
-   :rdfs/subPropertyOf :cmns-cxtdsg/appliesTo,
+   :rdfs/subPropertyOf [:cmns-cxtdsg/appliesTo :fibo-fnd-utl-alx/isValueOf],
    :skos/definition "is the measure that the value represents"})
-
-(def ^{:private true} Quantity
-  {:db/ident        :fibo-fnd-qt-qtu/Quantity,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf :fibo-fnd-utl-alx/Measure})

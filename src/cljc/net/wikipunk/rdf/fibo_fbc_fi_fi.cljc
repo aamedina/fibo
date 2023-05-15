@@ -101,7 +101,33 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "cash instrument",
-   :rdfs/subClassOf :fibo-fbc-fi-fi/FinancialInstrument,
+   :rdfs/subClassOf [:fibo-fbc-fi-fi/FinancialInstrument
+                     :fibo-fbc-fi-fi/CashInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "financial instrument whose value is determined by the market and that is readily transferable (highly liquid)",
    :skos/scopeNote
@@ -114,7 +140,33 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "commodity instrument",
-   :rdfs/subClassOf :fibo-fbc-fi-fi/FinancialInstrument,
+   :rdfs/subClassOf [:fibo-fbc-fi-fi/FinancialInstrument
+                     :fibo-fbc-fi-fi/CommodityInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "financial instrument representing an ownership interest in bulk goods, such as raw materials and primary agricultural products"})
 
@@ -127,7 +179,33 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "currency instrument",
-   :rdfs/subClassOf :fibo-fbc-fi-fi/FinancialInstrument,
+   :rdfs/subClassOf [:fibo-fbc-fi-fi/FinancialInstrument
+                     :fibo-fbc-fi-fi/CurrencyInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "financial instrument used for the purposes of currency trading",
    :skos/example
@@ -151,7 +229,33 @@
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Borrower,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-fi-fi/FinancialInstrument
-                     :fibo-fbc-dae-dbt/CreditAgreement],
+                     :fibo-fbc-dae-dbt/CreditAgreement
+                     :fibo-fbc-fi-fi/DebtInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "financial instrument and credit agreement evidencing monies owed by the issuer to the holder on terms as specified"})
 
@@ -168,7 +272,33 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "derivative instrument",
-   :rdfs/subClassOf :fibo-fbc-fi-fi/FinancialInstrument,
+   :rdfs/subClassOf [:fibo-fbc-fi-fi/FinancialInstrument
+                     :fibo-fbc-fi-fi/DerivativeInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "financial instrument that confers on its holders certain rights or obligations, whose value is derived from one or more underlying assets",
    :skos/example
@@ -187,7 +317,38 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "entitlement",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/Security
-                     :fibo-fbc-fi-fi/DerivativeInstrument],
+                     :fibo-fbc-fi-fi/DerivativeInstrument
+                     :fibo-fbc-fi-fi/Entitlement
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fi-fi/FinancialInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "financial instrument that provides the holder the privilege to subscribe to or to receive specific assets on terms specified"})
 
@@ -200,7 +361,38 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "equity instrument",
-   :rdfs/subClassOf :fibo-fbc-fi-fi/Security,
+   :rdfs/subClassOf [:fibo-fbc-fi-fi/Security
+                     :fibo-fbc-fi-fi/EquityInstrument
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fi-fi/FinancialInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "financial instrument representing an ownership interest in an entity or pool of assets"})
 
@@ -214,7 +406,38 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "exempt security",
-   :rdfs/subClassOf :fibo-fbc-fi-fi/Security,
+   :rdfs/subClassOf [:fibo-fbc-fi-fi/Security
+                     :fibo-fbc-fi-fi/ExemptSecurity
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fi-fi/FinancialInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition "security that is exempt from certain regulatory rules",
    :skos/example
    "Some exemptions from the registration requirement include: private offerings to a limited number of persons or institutions; offerings of limited size; intrastate offerings; and securities of municipal, state, and federal governments."})
@@ -230,31 +453,32 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "financial instrument",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
-                      :rdf/type       :owl/Restriction}
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass
                       :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
                       :owl/onProperty :cmns-id/isIdentifiedBy,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-agr-ctr/WrittenContract
-                     {:owl/onDataRange :xsd/boolean,
-                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
-                      :rdf/type           :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fi-fi/FinancialInstrument],
    :skos/definition
    "written contract that gives rise to both a financial asset of one entity and a financial liability of another entity",
    :skos/example
@@ -271,7 +495,8 @@
                       :owl/onClass    :fibo-fbc-fi-fi/FinancialInstrument,
                       :owl/onProperty :cmns-id/identifies,
                       :rdf/type       :owl/Restriction}
-                     :cmns-id/Identifier],
+                     :cmns-id/Identifier
+                     :fibo-fbc-fi-fi/FinancialInstrumentIdentifier],
    :skos/definition
    "sequence of characters uniquely identifying a financial instrument for some purpose and within a specified context",
    :skos/scopeNote
@@ -286,7 +511,34 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "future",
-   :rdfs/subClassOf :fibo-fbc-fi-fi/DerivativeInstrument,
+   :rdfs/subClassOf [:fibo-fbc-fi-fi/DerivativeInstrument
+                     :fibo-fbc-fi-fi/Future
+                     :fibo-fbc-fi-fi/FinancialInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "derivative instrument that obligates the buyer to receive and the seller to deliver the assets specified at an agreed price, at some later point in time"})
 
@@ -309,7 +561,8 @@
                                            :fibo-fbc-fi-fi/FinancialInstrument,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/ContractPrincipal],
+                     :fibo-fnd-agr-ctr/ContractPrincipal
+                     :fibo-fbc-fi-fi/Issuer],
    :skos/definition
    "party that issues (or proposes to issue in a formal filing) a financial instrument"})
 
@@ -324,7 +577,38 @@
                       :owl/onProperty :fibo-fbc-fi-fi/isNegotiable,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-agr-ctr/TransferableContract
-                     :fibo-fbc-fi-fi/Security],
+                     :fibo-fbc-fi-fi/Security
+                     :fibo-fbc-fi-fi/NegotiableSecurity
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fi-fi/FinancialInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition "security that can be transferred to another party"})
 
 (def NonNegotiableSecurity
@@ -337,7 +621,38 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "non-negotiable security",
-   :rdfs/subClassOf :fibo-fbc-fi-fi/Security,
+   :rdfs/subClassOf [:fibo-fbc-fi-fi/Security
+                     :fibo-fbc-fi-fi/NonNegotiableSecurity
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fi-fi/FinancialInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition "security that is not transferable to another party"})
 
 (def Option
@@ -349,7 +664,34 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "option",
-   :rdfs/subClassOf :fibo-fbc-fi-fi/DerivativeInstrument,
+   :rdfs/subClassOf [:fibo-fbc-fi-fi/DerivativeInstrument
+                     :fibo-fbc-fi-fi/Option
+                     :fibo-fbc-fi-fi/FinancialInstrument
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "derivative instrument that grants to the holder either the privilege to purchase or the privilege to sell the assets specified at a predetermined price or formula at or within a time period in the future"})
 
@@ -367,18 +709,19 @@
    :rdfs/label "packaged financial product",
    :rdfs/seeAlso
    ["https://www.sec.gov/Archives/edgar/data/36995/000121465907002234/c101872fwp.htm"],
-   :rdfs/subClassOf [:fibo-fbc-pas-fpas/FinancialProduct
-                     :fibo-fnd-pas-pas/ContractualProduct
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fbc-pas-fpas/FinancialProductCatalog,
                       :owl/onProperty :cmns-col/isIncludedIn,
                       :rdf/type :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialProduct
+                     :fibo-fnd-pas-pas/ContractualProduct
                      {:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-fbc-pas-fpas/FinancialProduct
                                      :fibo-fbc-fi-fi/FinancialInstrument],
                        :rdf/type    :owl/Class},
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-fi-fi/PackagedFinancialProduct],
    :skos/definition
    "financial product that acts as a container for at least one financial instrument, including other financial products, and whose value is derived from, or based on a reference asset, market measure, or investment strategy",
    :skos/scopeNote
@@ -393,7 +736,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "redemption provision",
-   :rdfs/subClassOf :fibo-fnd-agr-ctr/ContractualCommitment,
+   :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractualCommitment
+                     :fibo-fbc-fi-fi/RedemptionProvision],
    :skos/definition
    "contract provision enabling the issuer (writer) to regain possession through repayment of some stipulated price"})
 
@@ -410,7 +754,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/Trade],
+                     :fibo-fbc-pas-fpas/Trade
+                     :fibo-fbc-fi-fi/SecuritiesTransaction],
    :skos/definition
    "transaction between two or more parties involving the exchange of commonly defined financial products"})
 
@@ -440,26 +785,75 @@
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/FinancialInstrument],
+                     :fibo-fbc-fi-fi/FinancialInstrument
+                     :fibo-fbc-fi-fi/Security
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition "financial instrument that can be bought or sold"})
 
 (def SpotContract
   "financial instrument that settles for immediate delivery on a specified date"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "A spot transaction is a transaction in which some goods or instrument(s) are exchanged for some other goods or instruments, including currency, with no future delivery provision, i.e., within the minimum number of days possible. Examples include currency spots and commodity spot transactions, whose settlement convention is determined by the relevant market."},
+   #voc/lstr
+    "A spot transaction is a transaction in which some goods or instrument(s) are exchanged for some other goods or instruments, including currency, with no future delivery provision, i.e., within the minimum number of days possible. Examples include currency spots and commodity spot transactions, whose settlement convention is determined by the relevant market.@en",
    :db/ident :fibo-fbc-fi-fi/SpotContract,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "spot contract"},
-   :rdfs/subClassOf :fibo-fbc-fi-fi/FinancialInstrument,
+   :rdfs/label #voc/lstr "spot contract@en",
+   :rdfs/subClassOf [:fibo-fbc-fi-fi/FinancialInstrument
+                     :fibo-fbc-fi-fi/SpotContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Issuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass
+                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+                      :owl/onProperty :cmns-id/isIdentifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-fbc-fi-fi/hasNominalValue,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-fbc-fi-fi/isNegotiable,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "financial instrument that settles for immediate delivery on a specified date"}})
+   #voc/lstr
+    "financial instrument that settles for immediate delivery on a specified date@en"})
 
 (def StandardizedTerms
   "contract terms that, grouped together, that are generally and consistently reused across many contracts, published by some organization, and capable of being incorporated into a contract by reference"
@@ -468,7 +862,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "standardized terms",
-   :rdfs/subClassOf :fibo-fnd-agr-ctr/ContractualCommitment,
+   :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractualCommitment
+                     :fibo-fbc-fi-fi/StandardizedTerms],
    :skos/definition
    "contract terms that, grouped together, that are generally and consistently reused across many contracts, published by some organization, and capable of being incorporated into a contract by reference",
    :skos/example
@@ -483,7 +878,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "underlier",
-   :rdfs/subClassOf :fibo-fnd-pty-rl/ThingInRole,
+   :rdfs/subClassOf [:fibo-fnd-pty-rl/ThingInRole :fibo-fbc-fi-fi/Underlier],
    :skos/definition
    "something that can be assigned a value in the marketplace that forms the basis for a derivative or pool-backed instrument"})
 
@@ -498,7 +893,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "has nominal value",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
+   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
+                        :fibo-fbc-fi-fi/hasNominalValue],
    :skos/definition "indicates the face value of something"})
 
 (def hasPrincipalExecutiveOfficeAddress
@@ -512,7 +908,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "has principal executive office address",
    :rdfs/range :fibo-fnd-plc-adr/ConventionalStreetAddress,
-   :rdfs/subPropertyOf :fibo-be-le-fbo/hasRegisteredAddress,
+   :rdfs/subPropertyOf [:fibo-be-le-fbo/hasRegisteredAddress
+                        :fibo-fbc-fi-fi/hasPrincipalExecutiveOfficeAddress],
    :skos/definition
    "relates an organization, specifically the issuer of a financial instrument, to its principal executive address, as required for issuance of that instrument"})
 
@@ -524,7 +921,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "has redemption terms",
    :rdfs/range :fibo-fbc-fi-fi/RedemptionProvision,
-   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement,
+   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasContractualElement
+                        :fibo-fbc-fi-fi/hasRedemptionProvision],
    :skos/definition
    "indicates the specific terms related to redemption as specified in the instrument or a related contract document"})
 
@@ -537,7 +935,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "has shareholder",
    :rdfs/range :fibo-be-oac-cown/Shareholder,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/isAffectedBy
+                        :fibo-fbc-fi-fi/hasShareholder],
    :skos/definition "indicates a party that holds shares in the issuer"})
 
 (def hasUnderlier
@@ -564,7 +963,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "has value expressed in",
    :rdfs/range :fibo-fnd-acc-cur/Currency,
-   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasCurrency,
+   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasCurrency
+                        :fibo-fbc-fi-fi/hasValueExpressedIn],
    :skos/definition
    "relates an instrument to the currency its value is typically expressed in"})
 
@@ -578,7 +978,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "holds shares in",
    :rdfs/range :fibo-fbc-fi-fi/Issuer,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/actsOn :fibo-fbc-fi-fi/holdsSharesIn],
    :skos/definition
    "specifies the issuer in which a shareholder holds an equity position"})
 
@@ -591,7 +991,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "is denominated in",
    :rdfs/range :fibo-fnd-acc-cur/Currency,
-   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasCurrency,
+   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasCurrency
+                        :fibo-fbc-fi-fi/isDenominatedIn],
    :skos/definition
    "indicates the currency in which the financial instrument was issued"})
 
@@ -604,7 +1005,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
    :rdfs/label "is legally recorded in",
    :rdfs/range :fibo-fnd-law-jur/Jurisdiction,
-   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
+   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasGoverningJurisdiction
+                        :fibo-fbc-fi-fi/isLegallyRecordedIn],
    :skos/definition
    "jurisdiction (country, county, state, province, city) in which the financial instrument is legally recorded for regulatory and/or tax purposes"})
 
@@ -619,19 +1021,3 @@
    :rdfs/range :xsd/boolean,
    :skos/definition
    "specifies whether a particular financial instrument is or is not transferable"})
-
-(def ^{:private true} PromissoryNote
-  {:db/ident        :fibo-fbc-dae-dbt/PromissoryNote,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf [{:owl/hasValue   {:xsd/boolean true},
-                      :owl/onProperty :fibo-fbc-fi-fi/isNegotiable,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/DebtInstrument]})
-
-(def ^{:private true} UniqueTransactionIdentifier
-  {:db/ident        :fibo-fbc-pas-fpas/UniqueTransactionIdentifier,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onClass    :fibo-fbc-fi-fi/SecuritiesTransaction,
-                     :owl/onProperty :cmns-id/identifies,
-                     :owl/qualifiedCardinality 1,
-                     :rdf/type       :owl/Restriction}})

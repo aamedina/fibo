@@ -53,15 +53,15 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "agreement"},
+   :rdfs/label #voc/lstr "agreement@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-fnd-agr-agr/Commitment,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 2,
                       :owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
                       :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-agr/Agreement],
    :skos/definition
    "negotiated understanding between two or more parties, reflecting the offer and acceptance of commitments on the part of either party"})
 
@@ -79,7 +79,8 @@
                           :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
                           :rdf/type       :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-pty-pty/PartyInRole],
+    :fibo-fnd-pty-pty/PartyInRole
+    :fibo-fnd-agr-agr/Beneficiary],
    :skos/definition
    "party that receives some benefit or advantage or profits from something"})
 
@@ -91,8 +92,8 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "commitment"},
+   :rdfs/label #voc/lstr "commitment@en",
+   :rdfs/subClassOf :fibo-fnd-agr-agr/Commitment,
    :skos/definition
    "promise made by some party to act or refrain from acting in some manner"})
 
@@ -103,7 +104,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
    :rdfs/label "commitment at large",
-   :rdfs/subClassOf :fibo-fnd-agr-agr/UnilateralCommitment,
+   :rdfs/subClassOf [:fibo-fnd-agr-agr/UnilateralCommitment
+                     :fibo-fnd-agr-agr/CommitmentAtLarge
+                     :fibo-fnd-agr-agr/Commitment],
    :skos/definition
    "commitment made by some party without direct involvement from the potential beneficiaries of that commitment",
    :skos/scopeNote
@@ -116,7 +119,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
    :rdfs/label "individual unilateral commitment",
-   :rdfs/subClassOf :fibo-fnd-agr-agr/UnilateralCommitment,
+   :rdfs/subClassOf [:fibo-fnd-agr-agr/UnilateralCommitment
+                     :fibo-fnd-agr-agr/IndividualUnilateralCommitment
+                     :fibo-fnd-agr-agr/Commitment],
    :skos/definition
    "commitment made by some party unilaterally to another specific party"})
 
@@ -130,7 +135,15 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-fnd-agr-agr/MutualCommitment,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-agr/Agreement],
+                     :fibo-fnd-agr-agr/Agreement
+                     :fibo-fnd-agr-agr/MutualAgreement
+                     {:owl/minQualifiedCardinality 2,
+                      :owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
+                      :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
+                      :owl/someValuesFrom :fibo-fnd-agr-agr/Commitment,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "agreement between two or more specific named parties whereby the rights and obligations embodied in the agreement cannot be transferred to another party without prior agreement",
    :skos/scopeNote
@@ -147,7 +160,8 @@
                       :owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
                       :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-agr-agr/Commitment],
+                     :fibo-fnd-agr-agr/Commitment
+                     :fibo-fnd-agr-agr/MutualCommitment],
    :skos/definition "commitment between two or more parties"})
 
 (def Obligee
@@ -164,7 +178,8 @@
                           :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
                           :rdf/type       :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-pty-pty/PartyInRole],
+    :fibo-fnd-pty-pty/PartyInRole
+    :fibo-fnd-agr-agr/Obligee],
    :skos/definition
    "party to whom some commitment or obligation is owed, either legally or per the terms of an agreement"})
 
@@ -186,7 +201,8 @@
     {:owl/onProperty     :fibo-fnd-agr-agr/hasObligation,
      :owl/someValuesFrom :fibo-fnd-agr-agr/Commitment,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-pty-pty/PartyInRole],
+    :fibo-fnd-pty-pty/PartyInRole
+    :fibo-fnd-agr-agr/Obligor],
    :skos/definition
    "party that is bound legally or by agreement to repay a debt, make a payment, do something, or refrain from doing something"})
 
@@ -197,7 +213,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
    :rdfs/label "unilateral commitment",
-   :rdfs/subClassOf :fibo-fnd-agr-agr/Commitment,
+   :rdfs/subClassOf [:fibo-fnd-agr-agr/Commitment
+                     :fibo-fnd-agr-agr/UnilateralCommitment],
    :skos/definition
    "commitment made by one party without reference any other the party to which the commitment is made"})
 

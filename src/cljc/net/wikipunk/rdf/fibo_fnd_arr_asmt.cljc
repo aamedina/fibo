@@ -84,7 +84,13 @@
                       :owl/onClass    :fibo-fnd-arr-asmt/Appraiser,
                       :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-asmt/AssessmentReport],
+                     :fibo-fnd-arr-asmt/AssessmentReport
+                     :fibo-fnd-arr-asmt/Appraisal
+                     :fibo-fnd-arr-rep/Report
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-arr-asmt/Opinion,
+                      :owl/onProperty :fibo-fnd-arr-rep/reportsOn,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "written estimate of the market value of something as of some point in time, typically provided by a qualified appraiser"})
 
@@ -95,7 +101,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "appraised value",
-   :rdfs/subClassOf :fibo-fnd-acc-cur/MonetaryAmount,
+   :rdfs/subClassOf [:fibo-fnd-acc-cur/MonetaryAmount
+                     :fibo-fnd-arr-asmt/AppraisedValue],
    :skos/definition
    "estimated value of some asset as of a given point in time"})
 
@@ -112,7 +119,8 @@
                      {:owl/minCardinality 0,
                       :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                     :fibo-fnd-pty-pty/PartyInRole
+                     :fibo-fnd-arr-asmt/Appraiser],
    :skos/definition
    "party that evaluates or estimates the nature, quality, ability, or value of someone or something"})
 
@@ -129,7 +137,8 @@
                      {:owl/minCardinality 0,
                       :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/OccurrenceKind],
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     :fibo-fnd-arr-asmt/AssessmentActivity],
    :skos/definition
    "activity involving the evaluation or estimation of the nature, quality, ability, or value of someone or something"})
 
@@ -140,24 +149,25 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "assessment event",
-   :rdfs/subClassOf [{:owl/minCardinality 0,
-                      :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
+                      :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-arr-asmt/AssessmentReport,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
-                      :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
+                     :fibo-fnd-dt-oc/Occurrence
+                     {:owl/minCardinality 0,
+                      :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence],
+                     :fibo-fnd-arr-asmt/AssessmentEvent],
    :skos/definition
    "event involving the evaluation or estimation of the nature, quality, or ability of someone or something"})
 
@@ -172,7 +182,8 @@
                       :owl/onClass    :fibo-fnd-arr-asmt/Opinion,
                       :owl/onProperty :fibo-fnd-arr-rep/reportsOn,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-rep/Report],
+                     :fibo-fnd-arr-rep/Report
+                     :fibo-fnd-arr-asmt/AssessmentReport],
    :skos/definition
    "report that includes an opinion, judgement, appraisal, or view about something and typically the methodology and raw inputs used to arrive at that opinion"})
 
@@ -188,26 +199,25 @@
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-dt-oc/isOutputFrom,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/AssessmentEvent,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-asmt/Opinion],
    :skos/definition "judgement, appraisal, or view about something"})
 
 (def ValuationMethod
   "method used to determine the present or expected worth of an asset"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Asset valuation is the process of determining the fair market or present value of assets, using book values, absolute valuation models like discounted cash flow analysis, option pricing models or comparables. Such assets include investments in marketable securities such as stocks, bonds and options; tangible assets like buildings and equipment; or intangible assets such as brands, patents and trademarks."},
+   #voc/lstr
+    "Asset valuation is the process of determining the fair market or present value of assets, using book values, absolute valuation models like discounted cash flow analysis, option pricing models or comparables. Such assets include investments in marketable securities such as stocks, bonds and options; tangible assets like buildings and equipment; or intangible assets such as brands, patents and trademarks.@en",
    :db/ident :fibo-fnd-arr-asmt/ValuationMethod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "valuation method"},
-   :rdfs/subClassOf :fibo-fnd-gao-obj/Strategy,
+   :rdfs/label #voc/lstr "valuation method@en",
+   :rdfs/subClassOf [:fibo-fnd-gao-obj/Strategy
+                     :fibo-fnd-arr-asmt/ValuationMethod],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "method used to determine the present or expected worth of an asset"}})
+   #voc/lstr
+    "method used to determine the present or expected worth of an asset@en"})
 
 (def ValueAssessment
   "assessment event to estimate the value of something"
@@ -229,7 +239,26 @@
                       :owl/onClass    :fibo-fnd-arr-asmt/Appraisal,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-asmt/AssessmentEvent],
+                     :fibo-fnd-arr-asmt/AssessmentEvent
+                     :fibo-fnd-arr-asmt/ValueAssessment
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
+                      :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
+                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
+                      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-arr-asmt/AssessmentReport,
+                      :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minCardinality 0,
+                      :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence],
    :skos/definition "assessment event to estimate the value of something"})
 
 (def appliesMethodology
@@ -240,7 +269,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "applies methodology",
    :rdfs/range :fibo-fnd-arr-asmt/ValuationMethod,
-   :rdfs/subPropertyOf :fibo-fnd-gao-obj/hasStrategy,
+   :rdfs/subPropertyOf [:fibo-fnd-gao-obj/hasStrategy
+                        :fibo-fnd-arr-asmt/appliesMethodology],
    :skos/definition
    "indicates the strategy used for the purposes of determining the fair market or present value of something"})
 
@@ -252,7 +282,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "estimates value at",
    :rdfs/range :fibo-fnd-arr-asmt/AppraisedValue,
-   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
+   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
+                        :fibo-fnd-arr-asmt/estimatesValueAt],
    :skos/definition
    "provides an approximate value of some asset as of some point in time"})
 
@@ -263,7 +294,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "has appraiser",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
+   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/isProvidedBy
+                        :fibo-fnd-arr-asmt/hasAppraiser],
    :skos/definition
    "relates an assessment or report to an agent that conducts the assessment"})
 
@@ -273,13 +305,12 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has date of assessment"},
+   :rdfs/label #voc/lstr "has date of assessment@en",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "date on which an assessment process was completed"}})
+   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
+                        :fibo-fnd-arr-asmt/hasDateOfAssessment],
+   :skos/definition #voc/lstr
+                     "date on which an assessment process was completed@en"})
 
 (def hasEstimatedValue
   "relates something to its estimated value"
@@ -289,7 +320,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "has estimated value",
    :rdfs/range :fibo-fnd-arr-asmt/AppraisedValue,
-   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
+   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
+                        :fibo-fnd-arr-asmt/hasEstimatedValue],
    :skos/definition "relates something to its estimated value"})
 
 (def isEstimatedValueOf
@@ -301,6 +333,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "is estimated value of",
-   :rdfs/subPropertyOf :fibo-fnd-utl-alx/isValueOf,
+   :rdfs/subPropertyOf [:fibo-fnd-utl-alx/isValueOf
+                        :fibo-fnd-arr-asmt/isEstimatedValueOf],
    :skos/definition
    "relates an appraised value to the asset of interest as of the date of the assessment"})

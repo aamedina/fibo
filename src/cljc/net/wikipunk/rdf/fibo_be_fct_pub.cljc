@@ -55,7 +55,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
    :rdfs/label "market data provider",
-   :rdfs/subClassOf :fibo-be-fct-pub/Publisher,
+   :rdfs/subClassOf [:fibo-be-fct-pub/Publisher
+                     :fibo-be-fct-pub/MarketDataProvider
+                     {:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition "publisher of data relevant to financial markets"})
 
 (def Publication
@@ -65,7 +71,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
    :rdfs/label "publication",
-   :rdfs/subClassOf :fibo-fnd-arr-doc/Document,
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document :fibo-be-fct-pub/Publication],
    :skos/definition
    "anything made public by print (such as a newspaper, magazine, pamphlet, letter, telegram, via computer modem or program, or in a poster, brochure or pamphlet), orally, or by broadcast (radio, television)"})
 
@@ -82,7 +88,8 @@
                       :owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                     :fibo-fnd-pty-pty/PartyInRole
+                     :fibo-be-fct-pub/Publisher],
    :skos/definition
    "party responsible for the printing or distribution of digital or printed information"})
 

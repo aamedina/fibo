@@ -55,7 +55,11 @@
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-rl/ThingInRole],
+                     :fibo-fnd-pty-rl/ThingInRole
+                     :fibo-fnd-pty-rl/AgentInRole
+                     {:owl/cardinality 1,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasIdentity,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "relative concept that ties an agent to a part they play in a given situational context"})
 
@@ -66,9 +70,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
    :rdfs/label "thing-in-role",
-   :rdfs/subClassOf {:owl/cardinality 1,
-                     :owl/onProperty  :fibo-fnd-rel-rel/hasIdentity,
-                     :rdf/type        :owl/Restriction},
+   :rdfs/subClassOf [{:owl/cardinality 1,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasIdentity,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-pty-rl/ThingInRole],
    :skos/definition
    "relative concept that ties something to a part it plays in a given situational context"})
 
@@ -81,7 +86,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
    :rdfs/label "is played by",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasIdentity,
+   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/hasIdentity
+                        :fibo-fnd-pty-rl/isPlayedBy],
    :skos/definition
    "indicates the independent thing, typically a person or organization filling a role",
    :skos/example

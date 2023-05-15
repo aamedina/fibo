@@ -68,7 +68,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
    :rdfs/label "capital surplus",
-   :rdfs/subClassOf :fibo-fnd-acc-aeq/PaidInCapital,
+   :rdfs/subClassOf [:fibo-fnd-acc-aeq/PaidInCapital
+                     :fibo-fnd-acc-aeq/CapitalSurplus
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :cmns-cxtdsg/appliesTo,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-acc-aeq/OwnersEquity
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "capital contributed in excess of the par value (stated value) of the ownership interest issued"})
 
@@ -81,7 +94,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
    :rdfs/label "financial asset",
-   :rdfs/subClassOf :fibo-fnd-oac-own/TangibleAsset,
+   :rdfs/subClassOf [:fibo-fnd-oac-own/TangibleAsset
+                     :fibo-fnd-acc-aeq/FinancialAsset],
    :skos/definition
    "non-physical, tangible asset whose value is derived from a contractual claim, such as bank deposits, bonds, stocks, rights, certificates, and bank balances"})
 
@@ -93,13 +107,13 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "income"},
+   :rdfs/label #voc/lstr "income@en",
    :rdfs/subClassOf [{:owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :cmns-dt/hasDatePeriod,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-acc-cur/MonetaryAmount],
+                     :fibo-fnd-acc-cur/MonetaryAmount
+                     :fibo-fnd-acc-aeq/Income],
    :skos/definition "revenue received during a period of time"})
 
 (def OwnersEquity
@@ -110,27 +124,25 @@
    "Owner's equity is represented by capital investments and accumulated earnings less any dividends or other financial obligations. It is typically used to talk about equity in a business, but may also refer to the net assets of a pool or special purpose vehicle.",
    :cmns-av/synonym ["net worth"
                      "equity"
-                     {:rdf/language "en",
-                      :rdf/value    "capital"}
-                     {:rdf/language "en",
-                      :rdf/value    "contributed capital"}],
+                     #voc/lstr "capital@en"
+                     #voc/lstr "contributed capital@en"],
    :db/ident :fibo-fnd-acc-aeq/OwnersEquity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "owners' equity"},
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/label #voc/lstr "owners' equity@en",
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-fnd-acc-aeq/OwnersEquity],
    :skos/definition "owners' share in a business plus operating profit"})
 
 (def PaidInCapital
@@ -140,7 +152,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
    :rdfs/label "paid-in capital",
-   :rdfs/subClassOf :fibo-fnd-acc-aeq/OwnersEquity,
+   :rdfs/subClassOf [:fibo-fnd-acc-aeq/OwnersEquity
+                     :fibo-fnd-acc-aeq/PaidInCapital
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :cmns-cxtdsg/appliesTo,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "assets received from investors in exchange for an ownership interest"})
 
@@ -154,7 +178,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
    :rdfs/label "physical asset",
-   :rdfs/subClassOf :fibo-fnd-oac-own/TangibleAsset,
+   :rdfs/subClassOf [:fibo-fnd-oac-own/TangibleAsset
+                     :fibo-fnd-acc-aeq/PhysicalAsset],
    :skos/definition
    "tangible asset that has a material form, such as property, equipment, and inventory"})
 
@@ -167,7 +192,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
    :rdfs/label "retained earnings",
-   :rdfs/subClassOf :fibo-fnd-acc-aeq/OwnersEquity,
+   :rdfs/subClassOf [:fibo-fnd-acc-aeq/OwnersEquity
+                     :fibo-fnd-acc-aeq/RetainedEarnings
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :cmns-cxtdsg/appliesTo,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "net profits kept to accumulate in a business after dividends are paid"})
 
@@ -178,8 +215,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
    :rdfs/label "shareholders' equity",
-   :rdfs/subClassOf :fibo-fnd-acc-aeq/OwnersEquity,
+   :rdfs/subClassOf [:fibo-fnd-acc-aeq/OwnersEquity
+                     :fibo-fnd-acc-aeq/ShareholdersEquity
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :cmns-cxtdsg/appliesTo,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "equity that is manifested in the form of shares in an entity, fund or structured product"}})
+   #voc/lstr
+    "equity that is manifested in the form of shares in an entity, fund or structured product@en"})

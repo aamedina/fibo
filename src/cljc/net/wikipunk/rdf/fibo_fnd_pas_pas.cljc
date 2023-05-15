@@ -93,7 +93,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pas-pas/buys,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                     :fibo-fnd-pty-pty/PartyInRole
+                     :fibo-fnd-pas-pas/Buyer],
    :skos/definition
    "party that purchases something in exchange for money or other consideration under a contract of sale"})
 
@@ -111,7 +112,8 @@
                                            :fibo-fnd-pas-pas/ServiceAgreement,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                     :fibo-fnd-pty-pty/PartyInRole
+                     :fibo-fnd-pas-pas/Client],
    :skos/definition
    "party that purchases professional services from, or has a formal relationship to purchase services from another party"})
 
@@ -126,7 +128,8 @@
                       :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRoleIdentifier],
+                     :fibo-fnd-pty-pty/PartyInRoleIdentifier
+                     :fibo-fnd-pas-pas/ClientIdentifier],
    :skos/definition
    "sequence of characters uniquely identifying a client within the context of some organization"})
 
@@ -139,7 +142,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "commodity",
-   :rdfs/subClassOf :fibo-fnd-pas-pas/Good,
+   :rdfs/subClassOf [:fibo-fnd-pas-pas/Good :fibo-fnd-pas-pas/Commodity],
    :skos/definition
    "material resource used in commerce that is interchangeable with other commodities of the same type"})
 
@@ -153,7 +156,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "consumer",
    :rdfs/seeAlso ["http://www.oecd.org/sti/consumer/"],
-   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole,
+   :rdfs/subClassOf [:fibo-fnd-pty-pty/PartyInRole :fibo-fnd-pas-pas/Consumer],
    :skos/definition
    "party that utilizes economic goods or services, typically for personal, family, or household purposes"})
 
@@ -166,7 +169,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "contractual product",
-   :rdfs/subClassOf :fibo-fnd-pas-pas/Product,
+   :rdfs/subClassOf [:fibo-fnd-pas-pas/Product
+                     :fibo-fnd-pas-pas/ContractualProduct
+                     {:owl/unionOf [:fibo-fnd-pas-pas/Good
+                                    :fibo-fnd-law-lcap/ContractualRight
+                                    :fibo-fnd-pas-pas/Service],
+                      :rdf/type    :owl/Class}],
    :skos/definition "product that takes the form of an agreement"})
 
 (def ContractualTemplateProduct
@@ -177,7 +185,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "contractual template product",
    :rdfs/subClassOf [:fibo-fnd-pas-pas/OffTheShelfProduct
-                     :fibo-fnd-pas-pas/ContractualProduct],
+                     :fibo-fnd-pas-pas/ContractualProduct
+                     :fibo-fnd-pas-pas/ContractualTemplateProduct
+                     {:owl/unionOf [:fibo-fnd-pas-pas/Good
+                                    :fibo-fnd-law-lcap/ContractualRight
+                                    :fibo-fnd-pas-pas/Service],
+                      :rdf/type    :owl/Class}
+                     :fibo-fnd-pas-pas/Product],
    :skos/definition
    "contractual product that is finalized through specification of values for parameters defined in a template"})
 
@@ -191,7 +205,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "custom product",
-   :rdfs/subClassOf :fibo-fnd-pas-pas/Product,
+   :rdfs/subClassOf [:fibo-fnd-pas-pas/Product
+                     :fibo-fnd-pas-pas/CustomProduct
+                     {:owl/unionOf [:fibo-fnd-pas-pas/Good
+                                    :fibo-fnd-law-lcap/ContractualRight
+                                    :fibo-fnd-pas-pas/Service],
+                      :rdf/type    :owl/Class}],
    :skos/definition
    "product that is made to order, commissioned based on a customer's specifications"})
 
@@ -205,7 +224,12 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pas-pas/buysFrom,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Supplier,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pas-pas/Buyer],
+                     :fibo-fnd-pas-pas/Buyer
+                     :fibo-fnd-pas-pas/Customer
+                     :fibo-fnd-pty-pty/PartyInRole
+                     {:owl/onProperty     :fibo-fnd-pas-pas/buys,
+                      :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "party that receives or consumes products (goods or services) and has the ability to choose between different products and suppliers"})
 
@@ -220,7 +244,8 @@
                       :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRoleIdentifier],
+                     :fibo-fnd-pty-pty/PartyInRoleIdentifier
+                     :fibo-fnd-pas-pas/CustomerIdentifier],
    :skos/definition
    "sequence of characters uniquely identifying a customer within the context of some organization"})
 
@@ -238,6 +263,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "good",
+   :rdfs/subClassOf :fibo-fnd-pas-pas/Good,
    :skos/definition
    "physical, produced item over which ownership rights can be established, whose ownership can be passed from one party to another by engaging in transactions, and that is not money or real estate"})
 
@@ -248,7 +274,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "negotiable commodity",
-   :rdfs/subClassOf :fibo-fnd-pas-pas/Commodity,
+   :rdfs/subClassOf [:fibo-fnd-pas-pas/Commodity
+                     :fibo-fnd-pas-pas/NegotiableCommodity
+                     :fibo-fnd-pas-pas/Good],
    :skos/definition "commodity that can be bought or sold in some marketplace"})
 
 (def OffTheShelfProduct
@@ -261,7 +289,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "off-the-shelf product",
-   :rdfs/subClassOf :fibo-fnd-pas-pas/Product,
+   :rdfs/subClassOf [:fibo-fnd-pas-pas/Product
+                     :fibo-fnd-pas-pas/OffTheShelfProduct
+                     {:owl/unionOf [:fibo-fnd-pas-pas/Good
+                                    :fibo-fnd-law-lcap/ContractualRight
+                                    :fibo-fnd-pas-pas/Service],
+                      :rdf/type    :owl/Class}],
    :skos/definition
    "product that is readily available from merchandise in stock, or can be quickly and easily configured to order, not specially designed or custom-made"})
 
@@ -275,7 +308,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/produces,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Good,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                     :fibo-fnd-pty-pty/PartyInRole
+                     :fibo-fnd-pas-pas/Producer],
    :skos/definition
    "grower, maker, fabricator, or manufacturer of some product or other good"})
 
@@ -288,10 +322,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "product",
-   :rdfs/subClassOf {:owl/unionOf [:fibo-fnd-pas-pas/Good
-                                   :fibo-fnd-law-lcap/ContractualRight
-                                   :fibo-fnd-pas-pas/Service],
-                     :rdf/type    :owl/Class},
+   :rdfs/subClassOf [{:owl/unionOf [:fibo-fnd-pas-pas/Good
+                                    :fibo-fnd-law-lcap/ContractualRight
+                                    :fibo-fnd-pas-pas/Service],
+                      :rdf/type    :owl/Class}
+                     :fibo-fnd-pas-pas/Product],
    :skos/definition
    "commercially distributed good that is (1) tangible property, (2) the output or result of a fabrication, manufacturing, or production process, or (3) something that passes through a distribution channel before being consumed or used."})
 
@@ -306,7 +341,8 @@
                       :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :cmns-id/Identifier],
+                     :cmns-id/Identifier
+                     :fibo-fnd-pas-pas/ProductIdentifier],
    :skos/definition
    "sequence of characters uniquely identifying a product in some context"})
 
@@ -317,20 +353,26 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "sale",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-acc-cur/hasPrice,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pas-pas/TransactionEvent
-                     :fibo-fnd-pty-pty/Situation
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pas-pas/TransactionEvent
+                     :fibo-fnd-pty-pty/Situation
                      {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Buyer,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-acc-cur/hasPrice,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pas-pas/Sale
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pas-pas/TransactionConfirmation,
+                      :owl/onProperty :fibo-fnd-agr-ctr/isEvidencedBy,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-dt-oc/OccurrenceKind],
    :skos/definition "exchange of goods or services for money"})
 
 (def Seller
@@ -344,7 +386,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pas-pas/sells,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                     :fibo-fnd-pty-pty/PartyInRole
+                     :fibo-fnd-pas-pas/Seller],
    :skos/definition
    "party that makes, offers or contracts to make a sale to an actual or potential buyer"})
 
@@ -366,7 +409,8 @@
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-pas-pas/ServiceProvider,
                       :owl/onProperty :fibo-fnd-pas-pas/isProvisionedBy,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pas-pas/Service],
    :skos/definition
    "intangible activity performed by some party for the benefit of another party",
    :skos/example
@@ -388,7 +432,8 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-agr-ctr/WrittenContract
-                     :fibo-fnd-agr-ctr/MutualContractualAgreement],
+                     :fibo-fnd-agr-ctr/MutualContractualAgreement
+                     :fibo-fnd-pas-pas/ServiceAgreement],
    :skos/definition
    "written contract between a client and service provider whereby the service provider supplies some service in the form of time, effort, and/or expertise in exchange for compensation"})
 
@@ -410,7 +455,8 @@
                       :owl/onClass    :fibo-fnd-plc-fac/Facility,
                       :owl/onProperty :fibo-fnd-pas-pas/provisions,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-rl/ThingInRole],
+                     :fibo-fnd-pty-rl/ThingInRole
+                     :fibo-fnd-pas-pas/ServiceProvider],
    :skos/definition
    "party that provides and typically provisions professional services, such as consulting, financial, legal, real estate, education, communications, storage, or processing services, to other parties, typically defined in a service agreement"})
 
@@ -426,7 +472,8 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pas-pas/supplies,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                     :fibo-fnd-pty-pty/PartyInRole
+                     :fibo-fnd-pas-pas/Supplier],
    :skos/definition
    "party that provides goods or services that some party wants or needs, especially over a long period of time"})
 
@@ -441,7 +488,8 @@
                       :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-doc/LegalDocument],
+                     :fibo-fnd-arr-doc/LegalDocument
+                     :fibo-fnd-pas-pas/TransactionConfirmation],
    :skos/definition
    "written communication from a seller or service provider reciting the relevant details of a transaction"})
 
@@ -456,7 +504,8 @@
                       :owl/onClass    :fibo-fnd-pas-pas/TransactionConfirmation,
                       :owl/onProperty :fibo-fnd-agr-ctr/isEvidencedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-oc/OccurrenceKind],
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     :fibo-fnd-pas-pas/TransactionEvent],
    :skos/definition
    "any sale, assignment, lease, license, loan, advance, contribution, or other transfer of any interest in or right to use any property (tangible or intangible) or money, however that transaction is effected, and regardless of whether the terms of the transaction are formally documented"})
 
@@ -481,7 +530,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "buys from",
    :rdfs/range :fibo-fnd-pas-pas/Seller,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/isAffectedBy
+                        :fibo-fnd-pas-pas/buysFrom],
    :skos/definition
    "links a party in the role of purchaser to a party from which they have made or are planning to make a purchase"})
 
@@ -491,11 +541,11 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has buyer"},
+   :rdfs/label #voc/lstr "has buyer@en",
    :rdfs/range :fibo-fnd-pas-pas/Buyer,
    :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasUndergoer
-                        :fibo-fnd-pty-pty/hasPartyInRole],
+                        :fibo-fnd-pty-pty/hasPartyInRole
+                        :fibo-fnd-pas-pas/hasBuyer],
    :skos/definition
    "indicates the purchasing party in the context of a sales transaction"})
 
@@ -505,10 +555,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "has seller"},
+   :rdfs/label #voc/lstr "has seller@en",
    :rdfs/range :fibo-fnd-pas-pas/Seller,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasActor,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasActor :fibo-fnd-pas-pas/hasSeller],
    :skos/definition
    "indicates the vendor in the context of a sales transaction"})
 
@@ -521,7 +570,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "is provisioned by",
    :rdfs/range :fibo-fnd-pas-pas/ServiceProvider,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
+   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/isProvidedBy
+                        :fibo-fnd-pas-pas/isProvisionedBy],
    :skos/definition
    "identifies the service provider that provisions the service or facility"})
 
@@ -535,7 +585,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "is supplied by",
    :rdfs/range :fibo-fnd-pas-pas/Supplier,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
+   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/isProvidedBy
+                        :fibo-fnd-pas-pas/isSuppliedBy],
    :skos/definition
    "identifies the party (supplier, vendor, distributor, etc.) that makes a product available"})
 
@@ -547,7 +598,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "provisions",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/provides,
+   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/provides
+                        :fibo-fnd-pas-pas/provisions],
    :skos/definition
    "customizes, provides, or outfits something required for use in delivering a service"})
 
@@ -573,7 +625,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "sells to",
    :rdfs/range :fibo-fnd-pas-pas/Buyer,
-   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
+   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/actsOn :fibo-fnd-pas-pas/sellsTo],
    :skos/definition
    "links a party in the role of broker, dealer, vendor, or merchandiser to a purchaser or potential purchasing party"})
 
@@ -586,11 +638,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "supplies",
    :rdfs/range :fibo-fnd-pas-pas/Product,
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/provides,
+   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/provides :fibo-fnd-pas-pas/supplies],
    :skos/definition
    "links a party in the role of outfitter, provisioner, distributor, etc. to something that they provide"})
-
-(def ^{:private true} PreciousMetal
-  {:db/ident        :fibo-fnd-acc-cur/PreciousMetal,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf :fibo-fnd-pas-pas/NegotiableCommodity})

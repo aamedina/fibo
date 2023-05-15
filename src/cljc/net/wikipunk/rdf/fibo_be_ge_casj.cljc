@@ -57,10 +57,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ky",
-                 :rdf/value    "Кыргыз Республикасы"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Kyrgyz Republic"}],
+   :rdfs/label [#voc/lstr "Кыргыз Республикасы@ky"
+                #voc/lstr "Government of the Kyrgyz Republic@en"],
    :skos/definition
    "unitary parliamentary secular constitutional republic in Central Asia, bordered by Kazakhstan, Uzbekistan, Tajikistan, and China"})
 
@@ -73,10 +71,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "kk",
-                 :rdf/value    "Қазақстан Республикасы"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Kazakhstan"}],
+   :rdfs/label [#voc/lstr "Қазақстан Республикасы@kk"
+                #voc/lstr "Government of the Republic of Kazakhstan@en"],
    :skos/definition
    "unitary dominant-party presidential constitutional republic in Central Asia, bordered by Russia in the north, China in the east, and Kyrgyzstan, Uzbekistan, and Turkmenistan in the south while also adjoining a large part of the Caspian Sea in the southwest"})
 
@@ -89,10 +85,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "tg",
-                 :rdf/value    "Ҷумҳурии Тоҷикистон"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Tajikistan"}],
+   :rdfs/label [#voc/lstr "Ҷумҳурии Тоҷикистон@tg"
+                #voc/lstr "Government of the Republic of Tajikistan@en"],
    :skos/definition
    "unitary dominant-party presidential constitutional secular republic in Central Asia, bordered by Afghanistan to the south, Uzbekistan to the west, Kyrgyzstan to the north and China to the east"})
 
@@ -105,10 +99,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "uz",
-                 :rdf/value    "Oʻzbekiston Respublikasi"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Uzbekistan"}],
+   :rdfs/label [#voc/lstr "Oʻzbekiston Respublikasi@uz"
+                #voc/lstr "Government of the Republic of Uzbekistan@en"],
    :skos/definition
    "unitary presidential constitutional secular republic in Central Asia, bordered by Kazakhstan to the north, Kyrgyzstan to the northeast, Tajikistan to the southeast, Afghanistan to the south, Turkmenistan and the autonomous republic of Karakalpakstan to the south-west"})
 
@@ -120,10 +112,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "tk",
-                 :rdf/value    "Türkmenistan"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of Turkmenistan"}],
+   :rdfs/label [#voc/lstr "Türkmenistan@tk"
+                #voc/lstr "Government of Turkmenistan@en"],
    :skos/definition
    "unitary dominant-party presidential republic in Central Asia, bordered by Kazakhstan to the northwest, Uzbekistan to the north, east and northeast, Afghanistan to the southeast, Iran to the south and southwest and the Caspian Sea to the west"})
 

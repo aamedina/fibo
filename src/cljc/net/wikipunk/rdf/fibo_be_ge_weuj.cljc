@@ -116,10 +116,8 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of the Federal Republic of Germany"}
-                {:rdf/language "de",
-                 :rdf/value    "Bundesrepublik Deutschland"}],
+   :rdfs/label [#voc/lstr "Government of the Federal Republic of Germany@en"
+                #voc/lstr "Bundesrepublik Deutschland@de"],
    :rdfs/seeAlso ["https://www.bundesregierung.de/breg-en"],
    :skos/definition
    "democratic, federal parliamentary republic led by a chancellor, where federal legislative power is vested in the parliament, consisting of the Bundestag and the Bundesrat"})
@@ -132,10 +130,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of the French Republic"}
-                {:rdf/language "fr",
-                 :rdf/value    "Gouvernement de la République française"}],
+   :rdfs/label [#voc/lstr "Government of the French Republic@en"
+                #voc/lstr "Gouvernement de la République française@fr"],
    :rdfs/seeAlso ["https://www.gouvernement.fr/en/news"],
    :skos/definition
    "unitary semi-presidential constitutional republic, built on strong representative democratic roots, based on the Constitution of the Fifth Republic which was approved in 1958"})
@@ -161,8 +157,7 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of the Kingdom of Belgium"},
+   :rdfs/label #voc/lstr "Government of the Kingdom of Belgium@en",
    :rdfs/seeAlso ["https://www.belgium.be/en/about_belgium/government"],
    :skos/definition
    "federal parliamentary constitutional monarchy, whose head of state is the king, though with limited prerogatives"})
@@ -175,10 +170,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "nl",
-                 :rdf/value    "Rijksoverheid"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Netherlands"}],
+   :rdfs/label [#voc/lstr "Rijksoverheid@nl"
+                #voc/lstr "Government of the Netherlands@en"],
    :rdfs/seeAlso ["https://www.government.nl/"],
    :skos/definition
    "parliamentary constitutional monarchy with a unitary structure, with its monarch as head of state"})
@@ -218,8 +211,7 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of the Republic of Austria"},
+   :rdfs/label #voc/lstr "Government of the Republic of Austria@en",
    :rdfs/seeAlso ["https://www.bundeskanzleramt.gv.at/en.html"],
    :skos/definition
    "federal, representative democratic republic, with nine states, whose head of state is the Federal President (Bundespräsident), and head of the federal government is the Federal Chancellor (Bundeskanzler)"})

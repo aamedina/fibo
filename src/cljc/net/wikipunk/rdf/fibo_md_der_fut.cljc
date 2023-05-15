@@ -42,8 +42,7 @@
    :rdfa/prefix "fibo-md-der-fut",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Futures Temporal Ontology"}})
+   :rdfs/label #voc/lstr "Futures Temporal Ontology@en"})
 
 (def ExchangeFuturesPrice
   "exchange futures price"
@@ -51,9 +50,9 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "exchange futures price"},
-   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice})
+   :rdfs/label #voc/lstr "exchange futures price@en",
+   :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
+                     :fibo-md-der-fut/ExchangeFuturesPrice]})
 
 (def FuturesClosingPrice
   "futures closing price"
@@ -61,9 +60,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "futures closing price"},
-   :rdfs/subClassOf :fibo-md-der-fut/ExchangeFuturesPrice})
+   :rdfs/label #voc/lstr "futures closing price@en",
+   :rdfs/subClassOf [:fibo-md-der-fut/ExchangeFuturesPrice
+                     :fibo-md-der-fut/FuturesClosingPrice
+                     :fibo-fbc-fi-ip/SecurityPrice]})
 
 (def FuturesDailySettlementPrice
   "Review whether this exists"
@@ -71,11 +71,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "futures daily settlement price"},
-   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice,
-   :skos/definition {:rdf/language "en",
-                     :rdf/value    "Review whether this exists"}})
+   :rdfs/label #voc/lstr "futures daily settlement price@en",
+   :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
+                     :fibo-md-der-fut/FuturesDailySettlementPrice],
+   :skos/definition #voc/lstr "Review whether this exists@en"})
 
 (def FuturesGreek
   "quantity representing the sensitivity of the price of a future or futures to a change in underlying parameters on which the value depends"
@@ -83,13 +82,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "futures greek"},
-   :rdfs/subClassOf :fibo-fbc-fi-ip/PriceAnalytic,
+   :rdfs/label #voc/lstr "futures greek@en",
+   :rdfs/subClassOf [:fibo-fbc-fi-ip/PriceAnalytic
+                     :fibo-md-der-fut/FuturesGreek],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "quantity representing the sensitivity of the price of a future or futures to a change in underlying parameters on which the value depends"}})
+   #voc/lstr
+    "quantity representing the sensitivity of the price of a future or futures to a change in underlying parameters on which the value depends@en"})
 
 (def FuturesTheta
   "futures theta"
@@ -97,9 +95,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "futures theta"},
-   :rdfs/subClassOf :fibo-md-der-fut/FuturesGreek})
+   :rdfs/label #voc/lstr "futures theta@en",
+   :rdfs/subClassOf [:fibo-md-der-fut/FuturesGreek
+                     :fibo-md-der-fut/FuturesTheta
+                     :fibo-fbc-fi-ip/PriceAnalytic]})
 
 (def FuturesTradingAccountHolder
   "A party who has an account for futures trading at a derivatives exchange. Further notes: The trader opens an account with a given amount known as a margin."
@@ -107,12 +106,10 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "futures trading account holder"},
+   :rdfs/label #voc/lstr "futures trading account holder@en",
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "A party who has an account for futures trading at a derivatives exchange. Further notes: The trader opens an account with a given amount known as a margin."}})
+   #voc/lstr
+    "A party who has an account for futures trading at a derivatives exchange. Further notes: The trader opens an account with a given amount known as a margin.@en"})
 
 (def FuturesVega
   "futures vega"
@@ -120,24 +117,22 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "futures vega"},
-   :rdfs/subClassOf :fibo-md-der-fut/FuturesGreek})
+   :rdfs/label #voc/lstr "futures vega@en",
+   :rdfs/subClassOf [:fibo-md-der-fut/FuturesGreek
+                     :fibo-md-der-fut/FuturesVega
+                     :fibo-fbc-fi-ip/PriceAnalytic]})
 
 (def InitialMargin
   "money or securities put up as a good faith deposit assuring that a future contract will be fulfilled"
   {:cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "When you open a futures contract, the futures exchange will state a minimum amount of money that you must deposit into your account. This original deposit of money is called the initial margin. When your contract is liquidated, you will be refunded the initial margin plus or minus any gains or losses that occur over the span of the futures contract. In other words, the amount in your margin account changes daily as the market fluctuates in relation to your futures contract. The minimum-level margin is determined by the futures exchange and is usually 5% to 10% of the futures contract. These predetermined initial margin amounts are continuously under review: at times of high market volatility, initial margin requirements can be raised."},
-   :cmns-av/synonym {:rdf/language "en",
-                     :rdf/value    "security deposit"},
+   #voc/lstr
+    "When you open a futures contract, the futures exchange will state a minimum amount of money that you must deposit into your account. This original deposit of money is called the initial margin. When your contract is liquidated, you will be refunded the initial margin plus or minus any gains or losses that occur over the span of the futures contract. In other words, the amount in your margin account changes daily as the market fluctuates in relation to your futures contract. The minimum-level margin is determined by the futures exchange and is usually 5% to 10% of the futures contract. These predetermined initial margin amounts are continuously under review: at times of high market volatility, initial margin requirements can be raised.@en",
+   :cmns-av/synonym #voc/lstr "security deposit@en",
    :db/ident :fibo-md-der-fut/InitialMargin,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "initial margin"},
+   :rdfs/label #voc/lstr "initial margin@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/isHeldBy,
                       :owl/someValuesFrom
                       :fibo-md-der-fut/FuturesTradingAccountHolder,
@@ -145,11 +140,11 @@
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-oac-own/Asset],
+                     :fibo-fnd-oac-own/Asset
+                     :fibo-md-der-fut/InitialMargin],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "money or securities put up as a good faith deposit assuring that a future contract will be fulfilled"}})
+   #voc/lstr
+    "money or securities put up as a good faith deposit assuring that a future contract will be fulfilled@en"})
 
 (def MinimumMargin
   "The lowest amount an account can reach before needing to be replenished."
@@ -157,8 +152,7 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "minimum margin"},
+   :rdfs/label #voc/lstr "minimum margin@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/isHeldBy,
                       :owl/someValuesFrom
                       :fibo-md-der-fut/FuturesTradingAccountHolder,
@@ -166,8 +160,8 @@
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-oac-own/Asset],
+                     :fibo-fnd-oac-own/Asset
+                     :fibo-md-der-fut/MinimumMargin],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "The lowest amount an account can reach before needing to be replenished."}})
+   #voc/lstr
+    "The lowest amount an account can reach before needing to be replenished.@en"})

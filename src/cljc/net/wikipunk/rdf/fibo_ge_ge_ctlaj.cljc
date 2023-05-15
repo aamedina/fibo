@@ -85,8 +85,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/CentralAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "Government of Belize"},
+   :rdfs/label #voc/lstr "Government of Belize@en",
    :skos/definition
    "unitary parliamentary constitutional monarchy, with the queen (Elizabeth II) as head of state represented locally by a governor-general"})
 
@@ -98,10 +97,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/CentralAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República de Costa Rica"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Costa Rica"}],
+   :rdfs/label [#voc/lstr "República de Costa Rica@es"
+                #voc/lstr "Government of the Republic of Costa Rica@en"],
    :skos/definition
    "unitary presidential constitutional republic known for its long-standing and stable democracy"})
 
@@ -113,10 +110,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/CentralAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República de El Salvador"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of El Salvador"}],
+   :rdfs/label [#voc/lstr "República de El Salvador@es"
+                #voc/lstr "Government of the Republic of El Salvador@en"],
    :skos/definition
    "Unitary presidential, constitutional and representative democratic republic whose president is both head of state and head of government"})
 
@@ -128,10 +123,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/CentralAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República de Guatemala"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Guatemala"}],
+   :rdfs/label [#voc/lstr "República de Guatemala@es"
+                #voc/lstr "Government of the Republic of Guatemala@en"],
    :skos/definition
    "unitary presidential and democratic republic that is the most populous country in Central America"})
 
@@ -143,10 +136,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/CentralAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República de Honduras"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Honduras"}],
+   :rdfs/label [#voc/lstr "República de Honduras@es"
+                #voc/lstr "Government of the Republic of Honduras@en"],
    :skos/definition
    "presidential representative democratic republic whose president is both head of state and head of government"})
 
@@ -158,10 +149,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/CentralAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República de Nicaragua"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Nicaragua"}],
+   :rdfs/label [#voc/lstr "República de Nicaragua@es"
+                #voc/lstr "Government of the Republic of Nicaragua@en"],
    :skos/definition
    "Unitary dominant-party presidential constitutional republic whose president is both head of state and head of government"})
 
@@ -173,10 +162,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/CentralAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "es",
-                 :rdf/value    "República de Panamá"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Panama"}],
+   :rdfs/label [#voc/lstr "República de Panamá@es"
+                #voc/lstr "Government of the Republic of Panama@en"],
    :skos/definition
    "Unitary presidential, constitutional and representative democratic republic whose president is both head of state and head of government"})
 

@@ -60,12 +60,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "jurisdiction"},
+   :rdfs/label #voc/lstr "jurisdiction@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-jur/hasReach,
                       :owl/someValuesFrom :lcc-cr/GeographicRegion,
                       :rdf/type           :owl/Restriction}
-                     :cmns-cxtdsg/Context],
+                     :cmns-cxtdsg/Context
+                     :fibo-fnd-law-jur/Jurisdiction],
    :skos/definition
    "power of a court to adjudicate cases, issue orders, and interpret and apply the law with respect to some specific geographic area"})
 
@@ -79,12 +79,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "statute law"},
+   :rdfs/label #voc/lstr "statute law@en",
    :rdfs/subClassOf [:fibo-fnd-law-cor/Law
                      {:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-law-jur/StatuteLaw],
    :skos/altLabel "statutory law",
    :skos/definition "law enacted by a legislature"})
 
@@ -107,24 +107,3 @@
    :rdfs/range :lcc-cr/GeographicRegion,
    :skos/definition
    "indicates the geopolitical area covered by the jurisdiction"})
-
-(def ^{:private true} LegalAge
-  {:db/ident        :fibo-fnd-aap-ppl/LegalAge,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
-                     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                     :rdf/type           :owl/Restriction}})
-
-(def ^{:private true} TaxIdentificationScheme
-  {:db/ident        :fibo-fnd-pty-pty/TaxIdentificationScheme,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
-                     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                     :rdf/type           :owl/Restriction}})
-
-(def ^{:private true} TaxIdentifier
-  {:db/ident        :fibo-fnd-pty-pty/TaxIdentifier,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
-                     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                     :rdf/type           :owl/Restriction}})

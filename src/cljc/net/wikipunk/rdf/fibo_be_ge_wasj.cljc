@@ -55,10 +55,7 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ka",
-                 :rdf/value    "საქართველო"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of Georgia"}],
+   :rdfs/label [#voc/lstr "საქართველო@ka" #voc/lstr "Government of Georgia@en"],
    :skos/definition
    "unitary parliamentary constitutional republic in Western Asia, bounded to the west by the Black Sea, to the north and east by Russia, to the south by Turkey and Armenia, and to the southeast by Azerbaijan"})
 
@@ -71,10 +68,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ar",
-                 :rdf/value    "المملكة الأردنية الهاشمية"}
-                {:rdf/language "en",
-                 :rdf/value "Government of the Hashemite Kingdom of Jordan"}],
+   :rdfs/label [#voc/lstr "المملكة الأردنية الهاشمية@ar"
+                #voc/lstr "Government of the Hashemite Kingdom of Jordan@en"],
    :skos/definition
    "unitary parliamentary constitutional monarchy in Western Asia, located on the East Bank of the Jordan River, bordered by Saudi Arabia, Iraq, Syria, Israel and Palestine (West Bank)"})
 
@@ -87,10 +82,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ar",
-                 :rdf/value    "مملكة البحرين"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Kingdom of Bahrain"}],
+   :rdfs/label [#voc/lstr "مملكة البحرين@ar"
+                #voc/lstr "Government of the Kingdom of Bahrain@en"],
    :skos/definition
    "unitary constitutional monarchy in Western Asia, comprising a small archipelago made up of 70 natural islands and an additional 33 artificial islands, centered around Bahrain Island, between the Qatari peninsula and the north eastern coast of Saudi Arabia"})
 
@@ -103,10 +96,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ar",
-                 :rdf/value    "ٱلْمَمْلَكَة ٱلْعَرَبِيَّة ٱلسَّعُوْدِيَّة"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Kingdom of Saudi Arabia"}],
+   :rdfs/label [#voc/lstr "ٱلْمَمْلَكَة ٱلْعَرَبِيَّة ٱلسَّعُوْدِيَّة@ar"
+                #voc/lstr "Government of the Kingdom of Saudi Arabia@en"],
    :skos/definition
    "unitary Islamic absolute monarchy in Western Asia, located on the Arabian Peninsula and bordered by Jordan and Iraq to the north, Kuwait to the northeast, Qatar, Bahrain, and the United Arab Emirates to the east, Oman to the southeast and Yemen to the south"})
 
@@ -119,10 +110,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ar",
-                 :rdf/value    "ٱلْجُمْهُورِيَّةُ ٱللُّبْنَانِيَّةُ"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Lebanese Republic"}],
+   :rdfs/label [#voc/lstr "ٱلْجُمْهُورِيَّةُ ٱللُّبْنَانِيَّةُ@ar"
+                #voc/lstr "Government of the Lebanese Republic@en"],
    :skos/definition
    "unitary parliamentary confessionalist constitutional republic in Western Asia, bordered by Syria to the north and east and Israel to the south"})
 
@@ -135,10 +124,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "hy",
-                 :rdf/value    "Հայաստանի Հանրապետություն"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Armenia"}],
+   :rdfs/label [#voc/lstr "Հայաստանի Հանրապետություն@hy"
+                #voc/lstr "Government of the Republic of Armenia@en"],
    :skos/definition
    "unitary parliamentary democratic republic in Western Asia, bordered by Turkey to the west, Georgia to the north, the Lachin corridor under a Russian peacekeeping force, and Azerbaijan to the east, and Iran and the Azerbaijani exclave of Nakhchivan to the south"})
 
@@ -151,10 +138,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Azerbaijan"}
-                {:rdf/language "az",
-                 :rdf/value    "Azərbaycan Respublikası"}],
+   :rdfs/label [#voc/lstr "Government of the Republic of Azerbaijan@en"
+                #voc/lstr "Azərbaycan Respublikası@az"],
    :skos/definition
    "unitary semi-presidential republic in Western Asia, bounded by the Caspian Sea to the east, the Russian republic of Dagestan to the north, Georgia to the northwest, Armenia and Turkey to the west, and Iran to the south"})
 
@@ -167,12 +152,9 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "el",
-                 :rdf/value    "Κυπριακή Δημοκρατία"}
-                {:rdf/language "tr",
-                 :rdf/value    "Kıbrıs Cumhuriyeti"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Cyprus"}],
+   :rdfs/label [#voc/lstr "Κυπριακή Δημοκρατία@el"
+                #voc/lstr "Kıbrıs Cumhuriyeti@tr"
+                #voc/lstr "Government of the Republic of Cyprus@en"],
    :skos/definition
    "unitary presidential constitutional republic in Western Asia, an island nation in the eastern Mediterranean Sea located south of Turkey, west of Syria, northwest of Lebanon, Israel and Palestine, north of Egypt, and southeast of Greece"})
 
@@ -185,12 +167,9 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ku",
-                 :rdf/value    "کۆماری عێراق"}
-                {:rdf/language "ar",
-                 :rdf/value    "جمهورية العراق"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Iraq"}],
+   :rdfs/label [#voc/lstr "کۆماری عێراق@ku"
+                #voc/lstr "جمهورية العراق@ar"
+                #voc/lstr "Government of the Republic of Iraq@en"],
    :skos/definition
    "federal parliamentary constitutional republic in Western Asia, bordered by Turkey to the north, Iran to the east, Kuwait to the southeast, Saudi Arabia to the south, Jordan to the southwest and Syria to the west"})
 
@@ -203,10 +182,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "tr",
-                 :rdf/value    "Türkiye Cumhuriyeti"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Turkey"}],
+   :rdfs/label [#voc/lstr "Türkiye Cumhuriyeti@tr"
+                #voc/lstr "Government of the Republic of Turkey@en"],
    :skos/definition
    "unitary presidential constitutional republic in Western Asia, bordered by Greece and Bulgaria to the northwest, the Black Sea to the north, Georgia to the northeast, Armenia, Azerbaijan, and Iran to the east, Iraq to the southeast, Syria and the Mediterranean Sea to the south, and the Aegean Sea to the west"})
 
@@ -219,10 +196,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ar",
-                 :rdf/value    "ٱلْجُمْهُورِيَّةُ ٱلْيَمَنِيَّةُ"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Republic of Yemen"}],
+   :rdfs/label [#voc/lstr "ٱلْجُمْهُورِيَّةُ ٱلْيَمَنِيَّةُ@ar"
+                #voc/lstr "Government of the Republic of Yemen@en"],
    :skos/definition
    "unitary presidential constitutional republic (de jure) and unitary provisional government (de facto) in Western Asia located at the southern end of the Arabian Peninsula"})
 
@@ -235,12 +210,9 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ar",
-                 :rdf/value    "إسرائيل"}
-                {:rdf/language "he",
-                 :rdf/value    "יִשְׂרָאֵל"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the State of Israel"}],
+   :rdfs/label [#voc/lstr "إسرائيل@ar"
+                #voc/lstr "יִשְׂרָאֵל@he"
+                #voc/lstr "Government of the State of Israel@en"],
    :skos/definition
    "unitary parliamentary constitutional republic in Western Asia, bordering Lebanon to the north, Syria to the northeast, Jordan on the east, the Palestinian territories of the West Bank and the Gaza Strip to the east and west, respectively, and Egypt to the southwest"})
 
@@ -253,10 +225,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ar",
-                 :rdf/value    "دولة الكويت"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the State of Kuwait"}],
+   :rdfs/label [#voc/lstr "دولة الكويت@ar"
+                #voc/lstr "Government of the State of Kuwait@en"],
    :skos/definition
    "unitary constitutional monarchy in Western Asia, located at the tip of the Persian Gulf, bordering Iraq to the north and Saudi Arabia to the south"})
 
@@ -269,10 +239,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ar",
-                 :rdf/value    "دولة فلسطين"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the State of Palestine"}],
+   :rdfs/label [#voc/lstr "دولة فلسطين@ar"
+                #voc/lstr "Government of the State of Palestine@en"],
    :skos/definition
    "unitary semi-presidential republic that is a de jure sovereign state in Western Asia claiming the West Bank (bordering Israel and Jordan) and Gaza Strip (bordering Israel and Egypt)"})
 
@@ -285,10 +253,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ar",
-                 :rdf/value    "دولة قطر"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the State of Qatar"}],
+   :rdfs/label [#voc/lstr "دولة قطر@ar"
+                #voc/lstr "Government of the State of Qatar@en"],
    :skos/definition
    "unitary semi-constitutional monarchy in Western Asia, occupying the small Qatar Peninsula on the northeastern coast of the Arabian Peninsula and bordered by Saudi Arabia to the south"})
 
@@ -301,10 +267,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ar",
-                 :rdf/value    "سلطنة عُمان"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Sultinate of Oman"}],
+   :rdfs/label [#voc/lstr "سلطنة عُمان@ar"
+                #voc/lstr "Government of the Sultinate of Oman@en"],
    :skos/definition
    "unitary absolute monarchy located on the southeastern coast of the Arabian Peninsula in Western Asia, bordered by the United Arab Emirates to the northwest, Saudi Arabia to the west, and Yemen to the southwest, and sharing marine borders with Iran and Pakistan"})
 
@@ -317,10 +281,8 @@
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ar",
-                 :rdf/value    "ٱلْجُمْهُورِيَّةُ ٱلْعَرَبِيَّةُ ٱلسُّورِيَّةُ"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the Syrian Arab Republic"}],
+   :rdfs/label [#voc/lstr "ٱلْجُمْهُورِيَّةُ ٱلْعَرَبِيَّةُ ٱلسُّورِيَّةُ@ar"
+                #voc/lstr "Government of the Syrian Arab Republic@en"],
    :skos/definition
    "unitary dominant-party semi-presidential Ba'athist republic bordering Lebanon to the southwest, the Mediterranean Sea to the west, Turkey to the north, Iraq to the east, Jordan to the south, and Israel to the southwest"})
 
@@ -333,10 +295,8 @@
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [{:rdf/language "ar",
-                 :rdf/value    "الإمارات العربية المتحدة"}
-                {:rdf/language "en",
-                 :rdf/value    "Government of the United Arab Emirates"}],
+   :rdfs/label [#voc/lstr "الإمارات العربية المتحدة@ar"
+                #voc/lstr "Government of the United Arab Emirates@en"],
    :skos/definition
    "federal constitutional elective monarchy located at the eastern end of the Arabian Peninsula, bordering Oman and Saudi Arabia, with maritime borders in the Persian Gulf with Qatar and Iran"})
 

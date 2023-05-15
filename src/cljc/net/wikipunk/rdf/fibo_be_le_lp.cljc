@@ -78,6 +78,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of this ontology was modified to eliminate references to external dictionary sites that no longer resolve."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of this ontology was modified to clarify the definition of legal person."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+    "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of the ontology was modified to add a French label to special purpose vehicle."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of this ontology was modified to rationalize natural person and legally capable person in a new concept, namely legally competent natural person, simplify / merge the legal person and formal organization class hierarchies, and correct certain definitions, including power of attorney."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of this ontology was modified per the FIBO 2.0 RFC to normalize restrictions on business license."
     "The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of this ontology was modified to move the concept of a signatory and related properties to the executives ontology for better semantic integration."]})
@@ -99,7 +100,8 @@
                       :owl/onClass    :fibo-fnd-gao-obj/BusinessObjective,
                       :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-org-fm/FormalOrganization],
+                     :fibo-fnd-org-fm/FormalOrganization
+                     :fibo-be-le-lp/BusinessEntity],
    :skos/definition
    "entity that is formed and administered as per commercial law in order to engage in business activities"})
 
@@ -117,7 +119,8 @@
                       :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-law-lcap/License],
+                     :fibo-fnd-law-lcap/License
+                     :fibo-be-le-lp/BusinessLicense],
    :skos/definition
    "license that allows the holder to conduct business or carry out a specific profession within some jurisdiction for some period of time"})
 
@@ -130,7 +133,18 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "chartered legal person",
-   :rdfs/subClassOf :fibo-be-le-lp/LegalEntity,
+   :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
+                     :fibo-be-le-lp/CharteredLegalPerson
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty
+                     :fibo-fnd-org-fm/FormalOrganization
+                     :fibo-be-le-lp/LegalPerson],
    :skos/definition "a legal person created by a royal charter or decree",
    :skos/example
    "Anything with 'Royal Institute' in the name. Also universities are generally set up by royal charter in a monarchy or principality, (often pre-dating any Privy Council i.e. directly be the monarch in the case of older universities). The Bank of England and the British Broadcasting Council (BBC) are also incorporated through Royal Charter."})
@@ -150,11 +164,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "legal entity",
    :rdfs/subClassOf [:fibo-fnd-org-fm/FormalOrganization
+                     :fibo-be-le-lp/LegalPerson
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-le-lp/LegalPerson],
+                     :fibo-be-le-lp/LegalEntity
+                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty],
    :skos/definition
    "legal person that is a partnership, corporation, or other organization having the capacity to negotiate contracts, assume financial obligations, and pay off debts, organized under the laws of some jurisdiction",
    :skos/example
@@ -170,12 +189,12 @@
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "legal person"},
+   :rdfs/label #voc/lstr "legal person@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/IndependentParty],
+                     :fibo-fnd-pty-pty/IndependentParty
+                     :fibo-be-le-lp/LegalPerson],
    :skos/definition
    "autonomous agent that is recognized as having rights and obligations under the law, including but not limited to the right to sue and be sued, enter into contracts, own property, and incur financial and other obligations"})
 
@@ -189,7 +208,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "legally competent natural person",
-   :rdfs/subClassOf [:fibo-fnd-aap-ppl/Person :fibo-be-le-lp/LegalPerson],
+   :rdfs/subClassOf [:fibo-fnd-aap-ppl/Person
+                     :fibo-be-le-lp/LegalPerson
+                     :fibo-be-le-lp/LegallyCompetentNaturalPerson
+                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty],
    :skos/definition
    "person who is considered competent, under the circumstances, to enter into a contract, conduct business, or participate in other activities that generally require the mental ability to understand problems and make decisions on his or her own behalf"})
 
@@ -204,7 +229,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "not for profit objective",
-   :rdfs/subClassOf :fibo-fnd-gao-obj/Objective,
+   :rdfs/subClassOf [:fibo-fnd-gao-obj/Objective
+                     :fibo-be-le-lp/NotForProfitObjective],
    :skos/definition
    "objective that reflects the charitable, educational, religious, humanitarian, public services, or other not for profit goals of an organization"})
 
@@ -225,7 +251,8 @@
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-law-lcap/LegalCapacity],
+                     :fibo-fnd-law-lcap/LegalCapacity
+                     :fibo-be-le-lp/PowerOfAttorney],
    :skos/definition
    "legal authorization given by one party (the principal) to another (the agent or attorney-in-fact) to perform certain acts on the principal's behalf"})
 
@@ -239,7 +266,8 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "profit objective",
-   :rdfs/subClassOf :fibo-fnd-gao-obj/BusinessObjective,
+   :rdfs/subClassOf [:fibo-fnd-gao-obj/BusinessObjective
+                     :fibo-be-le-lp/ProfitObjective],
    :skos/definition
    "objective that reflects pursuit of a financial benefit that may be realized when the amount of revenue gained from a business activity exceeds the expenses, costs and taxes needed to sustain that activity"})
 
@@ -251,7 +279,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "public purpose",
-   :rdfs/subClassOf :fibo-fnd-gao-obj/Objective,
+   :rdfs/subClassOf [:fibo-fnd-gao-obj/Objective :fibo-be-le-lp/PublicPurpose],
    :skos/definition
    "objective that reflects values generally thought to be shared by and that is intended to benefit the populace as a whole"})
 
@@ -262,33 +290,40 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "religious objective",
-   :rdfs/subClassOf :fibo-be-le-lp/NotForProfitObjective,
+   :rdfs/subClassOf [:fibo-be-le-lp/NotForProfitObjective
+                     :fibo-be-le-lp/ReligiousObjective
+                     :fibo-fnd-gao-obj/Objective],
    :skos/definition
    "not-for-profit objective that reflects the religious goals of an organization"})
 
 (def SpecialPurposeVehicle
   "legal entity created to fulfill narrow, specific, and frequently temporary objectives"
-  {:cmns-av/abbreviation [{:rdf/language "en",
-                           :rdf/value    "SPV"}
-                          {:rdf/language "en",
-                           :rdf/value    "SPE"}],
+  {:cmns-av/abbreviation [#voc/lstr "SPE@en" #voc/lstr "SPV@en"],
    :cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "A special purpose vehicle (SPV), also known as a special purpose entity (SPE), refers to a legal entity, typically a limited company or partnership, created to isolate a parent company from financial risk, including bankruptcy."},
-   :cmns-av/synonym {:rdf/language "en",
-                     :rdf/value    "special purpose entity"},
+   #voc/lstr
+    "A special purpose vehicle (SPV), also known as a special purpose entity (SPE), refers to a legal entity, typically a limited company or partnership, created to isolate a parent company from financial risk, including bankruptcy.@en",
+   :cmns-av/synonym #voc/lstr "special purpose entity@en",
    :db/ident :fibo-be-le-lp/SpecialPurposeVehicle,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "special purpose vehicle"},
-   :rdfs/subClassOf :fibo-be-le-lp/LegalEntity,
+   :rdfs/label [#voc/lstr "special purpose vehicle@en-US"
+                #voc/lstr "fonds commun de placement@fr-FR"],
+   :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
+                     :fibo-be-le-lp/SpecialPurposeVehicle
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty
+                     :fibo-fnd-org-fm/FormalOrganization
+                     :fibo-be-le-lp/LegalPerson],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "legal entity created to fulfill narrow, specific, and frequently temporary objectives"}})
+   #voc/lstr
+    "legal entity created to fulfill narrow, specific, and frequently temporary objectives@en"})
 
 (def StatutoryBody
   "legal entity established by a government to consider evidence and make judgements in some field of activity"
@@ -297,31 +332,48 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "statutory body",
-   :rdfs/subClassOf :fibo-be-le-lp/LegalEntity,
+   :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
+                     :fibo-be-le-lp/StatutoryBody
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty
+                     :fibo-fnd-org-fm/FormalOrganization
+                     :fibo-be-le-lp/LegalPerson],
    :skos/definition
    "legal entity established by a government to consider evidence and make judgements in some field of activity"})
 
 (def VariableInterestEntity
   "legal entity whose shareholders are entitled to a percentage of a named company's profits via a private contract"
-  {:cmns-av/abbreviation {:rdf/language "en",
-                          :rdf/value    "VIE"},
+  {:cmns-av/abbreviation #voc/lstr "VIE@en",
    :cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "Variable interest entity (VIE) is a term used by the Financial Accounting Standards Board (FASB) to refer to a legal entity with certain characteristics such that a public company with a financial interest in the entity is subject to certain financial reporting requirements. Examples include certain Chinese companies, such as Alibaba, that leverage VIEs to gain access to foreign capital that would otherwise not be available due to Chinese government regulations."},
-   :cmns-av/synonym {:rdf/language "en",
-                     :rdf/value    "shell company"},
+   #voc/lstr
+    "Variable interest entity (VIE) is a term used by the Financial Accounting Standards Board (FASB) to refer to a legal entity with certain characteristics such that a public company with a financial interest in the entity is subject to certain financial reporting requirements. Examples include certain Chinese companies, such as Alibaba, that leverage VIEs to gain access to foreign capital that would otherwise not be available due to Chinese government regulations.@en",
+   :cmns-av/synonym #voc/lstr "shell company@en",
    :db/ident :fibo-be-le-lp/VariableInterestEntity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "variable interest entity"},
-   :rdfs/subClassOf :fibo-be-le-lp/LegalEntity,
+   :rdfs/label #voc/lstr "variable interest entity@en",
+   :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
+                     :fibo-be-le-lp/VariableInterestEntity
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty
+                     :fibo-fnd-org-fm/FormalOrganization
+                     :fibo-be-le-lp/LegalPerson],
    :skos/definition
-   {:rdf/language "en",
-    :rdf/value
-    "legal entity whose shareholders are entitled to a percentage of a named company's profits via a private contract"}})
+   #voc/lstr
+    "legal entity whose shareholders are entitled to a percentage of a named company's profits via a private contract@en"})
 
 (def isOrganizedIn
   "indicates the jurisdiction whose laws a legal entity is organized under"
@@ -332,7 +384,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "is organized in",
    :rdfs/range :fibo-fnd-law-jur/Jurisdiction,
-   :rdfs/subPropertyOf :fibo-be-le-lp/isRecognizedIn,
+   :rdfs/subPropertyOf [:fibo-be-le-lp/isRecognizedIn
+                        :fibo-be-le-lp/isOrganizedIn],
    :skos/definition
    "indicates the jurisdiction whose laws a legal entity is organized under"})
 
@@ -347,30 +400,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "is recognized in",
    :rdfs/range :fibo-fnd-law-jur/Jurisdiction,
+   :rdfs/subPropertyOf :fibo-be-le-lp/isRecognizedIn,
    :skos/definition
    "indicates the jurisdiction in which a legal person is considered competent to enter into a contract, conduct business, or participate in other activities, or in which an agreement may be acknowledged and possibly enforceable"})
-
-(def ^{:private true} ContractParty
-  {:db/ident        :fibo-fnd-agr-ctr/ContractParty,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onClass    :fibo-be-le-lp/LegalPerson,
-                     :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                     :owl/qualifiedCardinality 1,
-                     :rdf/type       :owl/Restriction}})
-
-(def ^{:private true} Employer
-  {:db/ident        :fibo-fnd-org-fm/Employer,
-   :rdf/type        :owl/Class,
-   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
-                     :rdf/type           :owl/Restriction}})
-
-(def ^{:private true} employs
-  {:db/ident    :fibo-fnd-org-fm/employs,
-   :rdf/type    :owl/ObjectProperty,
-   :rdfs/domain :fibo-be-le-lp/LegalPerson})
-
-(def ^{:private true} isEmployedBy
-  {:db/ident   :fibo-fnd-org-fm/isEmployedBy,
-   :rdf/type   :owl/ObjectProperty,
-   :rdfs/range :fibo-be-le-lp/LegalPerson})
