@@ -122,11 +122,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "apartment@en",
@@ -140,11 +140,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "basement@en",
@@ -158,11 +158,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "building@en",
@@ -180,7 +180,7 @@
    :rdfs/label "conventional street address",
    :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine2,
+                      :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine3,
                       :rdf/type        :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-plc-adr/StreetAddress,
@@ -188,51 +188,51 @@
                       :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine1,
+                      :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine2,
                       :rdf/type        :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine3,
+                      :owl/onProperty  :fibo-fnd-plc-adr/hasAddressLine1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-plc-adr/PhysicalAddress
                      :fibo-fnd-plc-adr/ConventionalStreetAddress
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-adr/AddressingScheme,
-                      :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-plc-adr/Postcode,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasIndividualPostcode,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-loc/PhysicalLocation,
-                      :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :lcc-cr/Location,
-                      :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-id/Index
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-plc-loc/hasCityName,
+                      :owl/onProperty  :fibo-fnd-plc-adr/hasPostalCode,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-plc-adr/Address
+                     :fibo-fnd-arr-id/Index
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :lcc-cr/Country,
                       :owl/onProperty :fibo-fnd-plc-loc/hasCountry,
                       :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
-                      :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-plc-adr/hasPostalCode,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-plc-loc/Municipality,
                       :owl/onProperty :fibo-fnd-plc-loc/hasMunicipality,
                       :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-plc-loc/PhysicalLocation,
+                      :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-plc-loc/hasSubdivision,
                       :owl/someValuesFrom :lcc-cr/CountrySubdivision,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :rdfs/Literal,
+                      :owl/onProperty  :fibo-fnd-plc-loc/hasCityName,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-plc-adr/Postcode,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasIndividualPostcode,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-plc-adr/AddressingScheme,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :lcc-cr/Location,
+                      :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "physical address that identifies a location on a street to which communications may be delivered"})
 
@@ -243,11 +243,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "department@en",
@@ -263,11 +263,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "floor@en",
@@ -281,11 +281,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "front@en",
@@ -316,11 +316,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "hanger@en",
@@ -334,11 +334,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "key@en",
@@ -352,11 +352,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "lobby@en",
@@ -370,11 +370,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "lot@en",
@@ -388,11 +388,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "lower@en",
@@ -406,11 +406,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "office@en",
@@ -424,11 +424,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "penthouse@en",
@@ -445,10 +445,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "physical address@en",
    :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-plc-loc/Municipality,
-                      :owl/onProperty :fibo-fnd-plc-loc/hasMunicipality,
+                      :owl/onDataRange :rdfs/Literal,
+                      :owl/onProperty  :fibo-fnd-plc-loc/hasCityName,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-plc-adr/Postcode,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasIndividualPostcode,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/Address
+                     {:owl/onProperty     :fibo-fnd-plc-loc/hasSubdivision,
+                      :owl/someValuesFrom :lcc-cr/CountrySubdivision,
+                      :rdf/type           :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :lcc-cr/Country,
                       :owl/onProperty :fibo-fnd-plc-loc/hasCountry,
@@ -458,30 +465,23 @@
                       :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
                       :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
-                      :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-plc-loc/hasCityName,
-                      :rdf/type        :owl/Restriction}
+                      :owl/onClass    :fibo-fnd-plc-loc/Municipality,
+                      :owl/onProperty :fibo-fnd-plc-loc/hasMunicipality,
+                      :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :rdfs/Literal,
                       :owl/onProperty  :fibo-fnd-plc-adr/hasPostalCode,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-plc-loc/hasSubdivision,
-                      :owl/someValuesFrom :lcc-cr/CountrySubdivision,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-plc-adr/Postcode,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasIndividualPostcode,
-                      :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/PhysicalAddress
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/AddressingScheme,
                       :owl/onProperty :cmns-dsg/isDefinedIn,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-arr-id/Index
                      {:owl/onClass    :lcc-cr/Location,
                       :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-id/Index],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "physical address where communications can be addressed, papers served or representatives located for any kind of organization or person",
    :skos/scopeNote
@@ -529,10 +529,10 @@
      :rdf/type    :owl/Class}
     :fibo-fnd-plc-adr/AddressingScheme
     :fibo-fnd-plc-adr/PhysicalAddressingScheme
-    :fibo-fnd-arr-id/IndexingScheme
     {:owl/allValuesFrom :fibo-fnd-plc-adr/Address,
      :owl/onProperty    :cmns-dsg/defines,
-     :rdf/type          :owl/Restriction}],
+     :rdf/type          :owl/Restriction}
+    :fibo-fnd-arr-id/IndexingScheme],
    :skos/definition
    "scheme for specifying physical addresses according to a country specific standard"})
 
@@ -543,11 +543,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "pier@en",
@@ -584,16 +584,16 @@
                       :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-plc-adr/AddressComponent
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :rdfs/Literal,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
+                      :rdf/type        :owl/Restriction}
+                     :cmns-cls/Aspect
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/SupplementalAddressUnit,
                       :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
-                     :cmns-cls/Aspect
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :rdf/type        :owl/Restriction}],
+                     :fibo-fnd-plc-adr/AddressComponent],
    :skos/definition "post office box associated with an address"})
 
 (def PostOfficeBoxAddress
@@ -609,43 +609,43 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-adr/PhysicalAddress
                      :fibo-fnd-plc-adr/PostOfficeBoxAddress
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-adr/AddressingScheme,
-                      :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-plc-adr/Postcode,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasIndividualPostcode,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-loc/PhysicalLocation,
-                      :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :lcc-cr/Location,
-                      :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-id/Index
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-plc-loc/hasCityName,
+                      :owl/onProperty  :fibo-fnd-plc-adr/hasPostalCode,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-plc-adr/Address
+                     :fibo-fnd-arr-id/Index
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :lcc-cr/Country,
                       :owl/onProperty :fibo-fnd-plc-loc/hasCountry,
                       :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
-                      :owl/onDataRange :rdfs/Literal,
-                      :owl/onProperty  :fibo-fnd-plc-adr/hasPostalCode,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-plc-loc/Municipality,
                       :owl/onProperty :fibo-fnd-plc-loc/hasMunicipality,
                       :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-plc-loc/PhysicalLocation,
+                      :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-plc-loc/hasSubdivision,
                       :owl/someValuesFrom :lcc-cr/CountrySubdivision,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :rdfs/Literal,
+                      :owl/onProperty  :fibo-fnd-plc-loc/hasCityName,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-plc-adr/Postcode,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasIndividualPostcode,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-plc-adr/AddressingScheme,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :lcc-cr/Location,
+                      :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "physical address used to deliver communications to a designated container at a local post office or the local equivalent for the jurisdiction, where mail is held until the recipient collects it, rather than to a given house, building, or other location"})
 
@@ -658,11 +658,11 @@
    :rdfs/label #voc/lstr "post office box designator@en",
    :rdfs/subClassOf [:fibo-fnd-plc-adr/SupplementalAddressDesignator
                      :fibo-fnd-plc-adr/PostOfficeBoxDesignator
+                     :cmns-cls/Classifier
                      {:owl/onProperty :cmns-cls/classifies,
                       :owl/someValuesFrom
                       :fibo-fnd-plc-adr/SupplementalAddressComponent,
-                      :rdf/type :owl/Restriction}
-                     :cmns-cls/Classifier],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "designator used, together with an identifier, for a post office box",
    :skos/example "In the U.S., the preferred designator is 'PO BOX'."})
@@ -744,11 +744,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "rear@en",
@@ -777,11 +777,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "room@en",
@@ -851,11 +851,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "side@en",
@@ -869,11 +869,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "slip@en",
@@ -887,11 +887,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "space@en",
@@ -905,11 +905,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "stop@en",
@@ -922,31 +922,31 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label "street address",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-adr/PredirectionalSymbol,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasPredirectionalSymbol,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-plc-adr/PrimaryAddressNumber,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasPrimaryAddressNumber,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-plc-adr/AddressComponent
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-plc-adr/StreetSuffix,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasStreetSuffix,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/SecondaryUnit,
                       :owl/onProperty :fibo-fnd-plc-adr/hasSecondaryUnit,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-plc-adr/AddressComponent
-                     {:owl/onProperty     :fibo-fnd-plc-adr/hasStreetName,
-                      :owl/someValuesFrom :fibo-fnd-plc-adr/StreetName,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-adr/StreetSuffix,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasStreetSuffix,
+                      :owl/onClass    :fibo-fnd-plc-adr/PredirectionalSymbol,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasPredirectionalSymbol,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-plc-adr/PostdirectionalSymbol,
                       :owl/onProperty
                       :fibo-fnd-plc-adr/hasPostdirectionalSymbol,
                       :rdf/type :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-plc-adr/PrimaryAddressNumber,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasPrimaryAddressNumber,
-                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-plc-adr/hasStreetName,
+                      :owl/someValuesFrom :fibo-fnd-plc-adr/StreetName,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-plc-adr/StreetAddress
                      :cmns-cls/Aspect],
    :skos/definition
@@ -1013,11 +1013,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "suite@en",
@@ -1091,11 +1091,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "trailer@en",
@@ -1109,11 +1109,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "unit@en",
@@ -1127,11 +1127,11 @@
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onDataRange :xsd/boolean,
                :owl/onProperty  :fibo-fnd-plc-adr/requiresSecondaryUnitRange,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cls/Classifier],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfs/label #voc/lstr "upper@en",
@@ -1156,11 +1156,11 @@
                       :owl/onClass    :fibo-fnd-plc-adr/AddressingScheme,
                       :owl/onProperty :cmns-dsg/isDefinedIn,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-arr-id/Index
                      {:owl/onClass    :lcc-cr/Location,
                       :owl/onProperty :fibo-fnd-arr-id/isIndexTo,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-id/Index],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "address identifying a virtual, i.e. non-physical, location"})
 

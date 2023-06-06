@@ -171,8 +171,8 @@
    :rdfs/range :fibo-fnd-plc-loc/BusinessCenter,
    :rdfs/subPropertyOf [:fibo-fnd-plc-loc/hasMunicipality
                         :fibo-fnd-plc-loc/hasBusinessCenter
-                        :fibo-fnd-plc-loc/hasRegion
-                        :fibo-fnd-plc-loc/isLocatedAt],
+                        :fibo-fnd-plc-loc/isLocatedAt
+                        :fibo-fnd-plc-loc/hasRegion],
    :skos/definition
    "identifies a location where business is conducted, and hence the business calendar used to adjust dates"})
 

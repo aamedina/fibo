@@ -115,16 +115,16 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
    :rdfs/label #voc/lstr "Bermudan exercise terms@en",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
+   :rdfs/subClassOf [{:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
+                      :owl/onProperty :cmns-cxtdsg/uses,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-ex/ExerciseTerms
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseDate,
                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
                       :rdf/type           :owl/Restriction}
-                     {:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
-                      :owl/onProperty :cmns-cxtdsg/uses,
-                      :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-ex/BermudanExerciseTerms
                      {:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
@@ -160,6 +160,9 @@
                      :fibo-sec-dbt-ex/BermudanExerciseTerms
                      :fibo-sec-dbt-ex/CanaryExerciseTerms
                      :fibo-sec-dbt-ex/ExerciseTerms
+                     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseDate,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
                      {:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type :owl/Restriction}
@@ -169,10 +172,7 @@
                      {:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/ContractualCommitment
-                     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseDate,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-fnd-agr-ctr/ContractualCommitment],
    :skos/definition
    #voc/lstr
     "exercise terms that stipulate that an option may only be exercised on predetermined dates until the first step is reached, but not after that point@en"})

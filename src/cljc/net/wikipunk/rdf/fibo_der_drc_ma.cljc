@@ -135,9 +135,9 @@
    :rdfs/label #voc/lstr "cross default provisions@en",
    :rdfs/subClassOf [:fibo-der-drc-ma/MasterAgreementContractualCommitment
                      :fibo-der-drc-ma/CrossDefaultProvisions
-                     :fibo-fnd-agr-ctr/ContractualElement
+                     :fibo-fnd-agr-ctr/ContractualCommitment
                      :fibo-der-drc-ma/MasterAgreementElement
-                     :fibo-fnd-agr-ctr/ContractualCommitment]})
+                     :fibo-fnd-agr-ctr/ContractualElement]})
 
 (def CurrencySpecificationTerm
   "Term defining the currency or currencies for payments."
@@ -315,12 +315,12 @@
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-ma/MasterAgreementTerminationProvision
     :fibo-der-drc-ma/MasterAgreementEarlyTerminationProvisions
-    :fibo-fnd-agr-ctr/TerminationProvision
-    :fibo-fnd-agr-ctr/ContractualElement
-    :fibo-der-drc-ma/MasterAgreementElement
     {:owl/onProperty     :fibo-der-drc-ma/describesTreatmentOf,
      :owl/someValuesFrom :fibo-der-drc-ma/MasterAgreementTerminationEvent,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-der-drc-ma/MasterAgreementElement
+    :fibo-fnd-agr-ctr/TerminationProvision
+    :fibo-fnd-agr-ctr/ContractualElement],
    :skos/definition
    #voc/lstr
     "Terms and Conditions around early termination of the Master Agreement.@en"})
@@ -370,9 +370,9 @@
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-ma/MasterAgreementContractualCommitment
                      :fibo-der-drc-ma/MasterAgreementObligationTerms
-                     :fibo-fnd-agr-ctr/ContractualElement
+                     :fibo-fnd-agr-ctr/ContractualCommitment
                      :fibo-der-drc-ma/MasterAgreementElement
-                     :fibo-fnd-agr-ctr/ContractualCommitment],
+                     :fibo-fnd-agr-ctr/ContractualElement],
    :skos/definition
    #voc/lstr
     "contract terms setting out the obligations on a party to the agreement@en",
@@ -492,9 +492,9 @@
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-ma/MasterAgreementContractualCommitment
                      :fibo-der-drc-ma/NettingTerms
-                     :fibo-fnd-agr-ctr/ContractualElement
+                     :fibo-fnd-agr-ctr/ContractualCommitment
                      :fibo-der-drc-ma/MasterAgreementElement
-                     :fibo-fnd-agr-ctr/ContractualCommitment],
+                     :fibo-fnd-agr-ctr/ContractualElement],
    :skos/definition
    #voc/lstr
     "Terms setting out how Netting may or may not take place and the Obligations on each party in respect of that Netting.@en",
@@ -873,7 +873,7 @@
    :rdfs/label #voc/lstr "invoked in event of@en",
    :rdfs/range :fibo-der-drc-ma/MasterAgreementTerminationEvent})
 
-(def invokedInEventOf.1
+(def invokedInEventOf_1
   "invoked in event of"
   {:db/ident :fibo-der-drc-ma/invokedInEventOf.1,
    :rdf/type :owl/ObjectProperty,

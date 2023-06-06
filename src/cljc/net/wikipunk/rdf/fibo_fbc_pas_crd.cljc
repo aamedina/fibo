@@ -86,13 +86,13 @@
   {:db/ident :fibo-fbc-pas-crd/AmericanExpressNetwork,
    :rdf/type [:fibo-fbc-pas-crd/CreditCardNetwork
               :owl/NamedIndividual
-              :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-cls/classifies,
                :owl/someValuesFrom :fibo-fbc-pas-crd/CardProduct,
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "American Express network",
@@ -108,9 +108,6 @@
    :rdfs/label "card account",
    :rdfs/subClassOf
    [:fibo-fbc-pas-caa/CustomerAccount
-    {:owl/onProperty     :cmns-dsg/isSignifiedBy,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
-     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-caa/CustomerAccount,
      :owl/onProperty :fibo-fbc-pas-caa/isLinkedToAccount,
@@ -120,6 +117,9 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-dsg/isDefinedIn,
      :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCardAgreement,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-dsg/isSignifiedBy,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-id/isIdentifiedBy,
      :owl/someValuesFrom :fibo-fbc-pas-crd/PrimaryCardAccountNumber,
@@ -143,15 +143,15 @@
    :rdfs/label "card authentication value",
    :rdfs/subClassOf [:fibo-fbc-pas-crd/MagneticStripeVerificationCodeOrValue
                      :fibo-fbc-pas-crd/CardAuthenticationValue
+                     {:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
                       :rdf/type           :owl/Restriction}
                      :cmns-cds/CodeElement
-                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue
-                     {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}],
+                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue],
    :skos/definition
    "card verification value specifically for JCB payment cards"})
 
@@ -167,15 +167,15 @@
    :rdfs/label "card authentication value 2",
    :rdfs/subClassOf [:fibo-fbc-pas-crd/ThreeDigitVerificationCodeOrValue
                      :fibo-fbc-pas-crd/CardAuthenticationValue2
+                     {:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
                       :rdf/type           :owl/Restriction}
                      :cmns-cds/CodeElement
-                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue
-                     {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}],
+                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue],
    :skos/definition
    "card verification value specifically for JCB payment cards"})
 
@@ -202,15 +202,15 @@
    :rdfs/label "card identification number",
    :rdfs/subClassOf [:fibo-fbc-pas-crd/ThreeDigitVerificationCodeOrValue
                      :fibo-fbc-pas-crd/CardIdentificationNumber
+                     {:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
                       :rdf/type           :owl/Restriction}
                      :cmns-cds/CodeElement
-                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue
-                     {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}],
+                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue],
    :skos/definition
    "card verification value specifically for American Express and Discover payment cards"})
 
@@ -221,22 +221,22 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "card product",
-   :rdfs/subClassOf [:fibo-fbc-pas-fpas/FinancialProduct
-                     {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
-                      :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-crd/CreditCardNetwork,
+                      :owl/onProperty :fibo-fbc-pas-crd/hasCreditCardNetwork,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialProduct
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fbc-pas-crd/usesCurrency,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-crd/CreditCardNetwork,
-                      :owl/onProperty :fibo-fbc-pas-crd/hasCreditCardNetwork,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :lcc-cr/Country,
                       :owl/onProperty :fibo-fnd-plc-loc/hasCountry,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :lcc-cr/CountrySubdivision,
                       :owl/onProperty :fibo-fnd-plc-loc/hasSubdivision,
@@ -257,15 +257,15 @@
    :rdfs/label "card security code",
    :rdfs/subClassOf [:fibo-fbc-pas-crd/MagneticStripeVerificationCodeOrValue
                      :fibo-fbc-pas-crd/CardSecurityCode
+                     {:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
                       :rdf/type           :owl/Restriction}
                      :cmns-cds/CodeElement
-                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue
-                     {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}],
+                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue],
    :skos/definition
    "card verification value specifically for American Express payment cards"})
 
@@ -281,15 +281,15 @@
    :rdfs/label "card validation code",
    :rdfs/subClassOf [:fibo-fbc-pas-crd/MagneticStripeVerificationCodeOrValue
                      :fibo-fbc-pas-crd/CardValidationCode
+                     {:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
                       :rdf/type           :owl/Restriction}
                      :cmns-cds/CodeElement
-                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue
-                     {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}],
+                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue],
    :skos/definition
    "card verification code specifically for Mastercard payment cards"})
 
@@ -305,15 +305,15 @@
    :rdfs/label "card validation code 2",
    :rdfs/subClassOf [:fibo-fbc-pas-crd/ThreeDigitVerificationCodeOrValue
                      :fibo-fbc-pas-crd/CardValidationCode2
+                     {:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
                       :rdf/type           :owl/Restriction}
                      :cmns-cds/CodeElement
-                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue
-                     {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}],
+                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue],
    :skos/definition
    "card verification value specifically for Mastercard payment cards"})
 
@@ -350,15 +350,15 @@
    :rdfs/label "card verification value",
    :rdfs/subClassOf [:fibo-fbc-pas-crd/MagneticStripeVerificationCodeOrValue
                      :fibo-fbc-pas-crd/CardVerificationValue
+                     {:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
                       :rdf/type           :owl/Restriction}
                      :cmns-cds/CodeElement
-                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue
-                     {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}],
+                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue],
    :skos/definition
    "card verification value specifically for Visa and Discover payment cards"})
 
@@ -374,15 +374,15 @@
    :rdfs/label "card verification value 2",
    :rdfs/subClassOf [:fibo-fbc-pas-crd/ThreeDigitVerificationCodeOrValue
                      :fibo-fbc-pas-crd/CardVerificationValue2
+                     {:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
                       :rdf/type           :owl/Restriction}
                      :cmns-cds/CodeElement
-                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue
-                     {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}],
+                     :fibo-fbc-pas-crd/CardVerificationCodeOrValue],
    :skos/definition
    "card verification value specifically for Visa payment cards"})
 
@@ -431,6 +431,9 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-crd/PaymentCard
                      :fibo-fbc-pas-crd/CreditCard
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidenceFor,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fbc-pas-crd/CardExpirationDate,
                       :owl/onProperty :fibo-fnd-arr-doc/hasExpirationDate,
                       :owl/qualifiedCardinality 1,
@@ -440,9 +443,6 @@
                       :owl/onProperty :fibo-fbc-pas-crd/hasPrimaryAccountNumber,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidenceFor,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onClass
                       :fibo-fbc-pas-crd/CardVerificationCodeOrValue,
                       :owl/onProperty :fibo-fbc-pas-crd/hasCardVerificationCode,
@@ -460,40 +460,40 @@
    :rdfs/label "credit card account",
    :rdfs/subClassOf
    [:fibo-fbc-pas-caa/LoanOrCreditAccount
-    {:owl/onProperty     :cmns-dsg/isSignifiedBy,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCard,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-pas-caa/hasPaymentDueDate,
      :owl/someValuesFrom :fibo-fbc-pas-caa/PaymentDueDate,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCardProduct,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-pas-crd/CardAccount
     {:owl/onProperty     :cmns-dsg/isDefinedIn,
      :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCardAgreement,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-pas-crd/CreditCardAccount
     {:owl/onProperty     :cmns-dsg/isSignifiedBy,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCard,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-pas-caa/CustomerAccount
-    {:owl/onProperty     :cmns-dsg/isDefinedIn,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCardAgreement,
+    :fibo-fbc-pas-crd/CardAccount
+    {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCardProduct,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-pas-caa/hasPrimaryAccountHolder,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/Cardholder,
-     :rdf/type           :owl/Restriction}
+    :fibo-fbc-pas-crd/CreditCardAccount
     {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
      :owl/someValuesFrom :fibo-fbc-pas-crd/CardProduct,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-id/isIdentifiedBy,
      :owl/someValuesFrom :fibo-fbc-pas-crd/PrimaryCardAccountNumber,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-dsg/isDefinedIn,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCardAgreement,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-pas-caa/hasPrimaryAccountHolder,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/Cardholder,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-caa/CustomerAccount,
      :owl/onProperty :fibo-fbc-pas-caa/isLinkedToAccount,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-pas-caa/CustomerAccount
+    {:owl/onProperty     :cmns-dsg/isSignifiedBy,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "card account whose terms and conditions are defined in a credit card agreement that is represented by a credit card"})
 
@@ -505,32 +505,32 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "credit card agreement",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fbc-dae-dbt/hasBorrower,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/Cardholder,
+   [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCardAccount,
      :rdf/type           :owl/Restriction}
     :fibo-fbc-dae-dbt/CommittedCreditFacility
     :fibo-fbc-pas-crd/PaymentCardAgreement
+    {:owl/onProperty     :fibo-fbc-dae-dbt/hasBorrower,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/Cardholder,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
      :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCard,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-dae-dbt/hasLender,
      :owl/someValuesFrom :fibo-fbc-pas-crd/IssuingFinancialInstitution,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/CreditCardAccount,
-     :rdf/type           :owl/Restriction}
     :fibo-fbc-pas-crd/CreditCardAgreement
+    :fibo-fbc-dae-dbt/CreditAgreement
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
      :owl/someValuesFrom :fibo-fbc-pas-crd/Cardholder,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-pas-caa/AccountSpecificServiceAgreement
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
      :owl/someValuesFrom :fibo-fbc-pas-crd/IssuingFinancialInstitution,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-dae-dbt/CreditAgreement
-    :fibo-fbc-pas-caa/AccountSpecificServiceAgreement
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
      :rdf/type           :owl/Restriction}],
@@ -575,25 +575,25 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-crd/CardProduct
                      :fibo-fbc-pas-crd/CreditCardProduct
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-fbc-pas-crd/usesCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-crd/CreditCardNetwork,
-                      :owl/onProperty :fibo-fbc-pas-crd/hasCreditCardNetwork,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :lcc-cr/CountrySubdivision,
                       :owl/onProperty :fibo-fnd-plc-loc/hasSubdivision,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-fpas/FinancialProduct
                      {:owl/onClass    :lcc-cr/Country,
                       :owl/onProperty :fibo-fnd-plc-loc/hasCountry,
                       :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-pas-crd/usesCurrency,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-crd/CreditCardNetwork,
+                      :owl/onProperty :fibo-fbc-pas-crd/hasCreditCardNetwork,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "card product allowing the holder to purchase goods or services on credit"})
@@ -614,6 +614,9 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-crd/PaymentCard
                      :fibo-fbc-pas-crd/DebitCard
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidenceFor,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fbc-pas-crd/CardExpirationDate,
                       :owl/onProperty :fibo-fnd-arr-doc/hasExpirationDate,
                       :owl/qualifiedCardinality 1,
@@ -623,9 +626,6 @@
                       :owl/onProperty :fibo-fbc-pas-crd/hasPrimaryAccountNumber,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidenceFor,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onClass
                       :fibo-fbc-pas-crd/CardVerificationCodeOrValue,
                       :owl/onProperty :fibo-fbc-pas-crd/hasCardVerificationCode,
@@ -650,26 +650,26 @@
      :rdf/type           :owl/Restriction}
     :fibo-fbc-pas-crd/CardAccount
     :fibo-fbc-pas-crd/DebitCardAccount
-    {:owl/onProperty     :fibo-fbc-pas-caa/hasPrimaryAccountHolder,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/Cardholder,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-dsg/isSignifiedBy,
-     :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
      :owl/someValuesFrom :fibo-fbc-pas-crd/CardProduct,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-id/isIdentifiedBy,
      :owl/someValuesFrom :fibo-fbc-pas-crd/PrimaryCardAccountNumber,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-pas-caa/CustomerAccount
     {:owl/onProperty     :cmns-dsg/isDefinedIn,
      :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCardAgreement,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-caa/CustomerAccount,
      :owl/onProperty :fibo-fbc-pas-caa/isLinkedToAccount,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-pas-caa/CustomerAccount
+    {:owl/onProperty     :fibo-fbc-pas-caa/hasPrimaryAccountHolder,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/Cardholder,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-dsg/isSignifiedBy,
+     :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "card account that is represented by a one or more debit cards"})
 
@@ -688,25 +688,25 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-crd/CardProduct
                      :fibo-fbc-pas-crd/DebitCardProduct
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-fbc-pas-crd/usesCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-crd/CreditCardNetwork,
-                      :owl/onProperty :fibo-fbc-pas-crd/hasCreditCardNetwork,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :lcc-cr/CountrySubdivision,
                       :owl/onProperty :fibo-fnd-plc-loc/hasSubdivision,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-fpas/FinancialProduct
                      {:owl/onClass    :lcc-cr/Country,
                       :owl/onProperty :fibo-fnd-plc-loc/hasCountry,
                       :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fbc-pas-crd/usesCurrency,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-pas-caa/isRealizedBy,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-crd/CreditCardNetwork,
+                      :owl/onProperty :fibo-fbc-pas-crd/hasCreditCardNetwork,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "card product card typically provided by a depository institution allowing the holder to transfer money electronically to another account when making a purchase"})
@@ -716,13 +716,13 @@
   {:db/ident :fibo-fbc-pas-crd/DiscoverNetwork,
    :rdf/type [:fibo-fbc-pas-crd/CreditCardNetwork
               :owl/NamedIndividual
-              :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-cls/classifies,
                :owl/someValuesFrom :fibo-fbc-pas-crd/CardProduct,
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "Discover network",
@@ -752,13 +752,13 @@
    :db/ident :fibo-fbc-pas-crd/JCBNetwork,
    :rdf/type [:fibo-fbc-pas-crd/CreditCardNetwork
               :owl/NamedIndividual
-              :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-cls/classifies,
                :owl/someValuesFrom :fibo-fbc-pas-crd/CardProduct,
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "JCB network",
@@ -776,14 +776,14 @@
    :rdfs/label "magnetic stripe verification code or value",
    :rdfs/subClassOf [:fibo-fbc-pas-crd/CardVerificationCodeOrValue
                      :fibo-fbc-pas-crd/MagneticStripeVerificationCodeOrValue
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
-                      :rdf/type           :owl/Restriction}
-                     :cmns-cds/CodeElement
                      {:owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-cds/CodeElement],
    :skos/definition
    "card verification code on a card's magnetic stripe that uses secure cryptographic processes to protect data integrity on the stripe, and reveals any alteration or counterfeiting"})
 
@@ -792,13 +792,13 @@
   {:db/ident :fibo-fbc-pas-crd/MastercardNetwork,
    :rdf/type [:fibo-fbc-pas-crd/CreditCardNetwork
               :owl/NamedIndividual
-              :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-cls/classifies,
                :owl/someValuesFrom :fibo-fbc-pas-crd/CardProduct,
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "Mastercard network",
@@ -817,23 +817,23 @@
    :rdfs/label "payment card",
    :rdfs/seeAlso
    ["https://www.irs.gov/payments/payment-card-transactions-faqs"],
-   :rdfs/subClassOf [{:owl/onClass
-                      :fibo-fbc-pas-crd/CardVerificationCodeOrValue,
-                      :owl/onProperty :fibo-fbc-pas-crd/hasCardVerificationCode,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onClass :fibo-fbc-pas-crd/PrimaryCardAccountNumber,
-                      :owl/onProperty :fibo-fbc-pas-crd/hasPrimaryAccountNumber,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-doc/LegalDocument
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-agr-ctr/isEvidenceFor,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fbc-pas-crd/CardExpirationDate,
                       :owl/onProperty :fibo-fnd-arr-doc/hasExpirationDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidenceFor,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
-                      :rdf/type           :owl/Restriction}
+                     {:owl/onClass
+                      :fibo-fbc-pas-crd/CardVerificationCodeOrValue,
+                      :owl/onProperty :fibo-fbc-pas-crd/hasCardVerificationCode,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-arr-doc/LegalDocument
+                     {:owl/onClass :fibo-fbc-pas-crd/PrimaryCardAccountNumber,
+                      :owl/onProperty :fibo-fbc-pas-crd/hasPrimaryAccountNumber,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
                      :fibo-fbc-pas-crd/PaymentCard],
    :skos/definition
    "legal document issued by a financial services provider that enables the cardholder to access the funds in the customer's designated bank accounts, or through a credit account and make payments by electronic funds transfer and access automated teller machines (ATMs)"})
@@ -846,20 +846,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "payment card agreement",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/CreditAgreement
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom
-                      :fibo-fbc-pas-crd/IssuingFinancialInstitution,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-caa/AccountSpecificServiceAgreement
                      {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/Cardholder,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
                       :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom
+                      :fibo-fbc-pas-crd/IssuingFinancialInstitution,
+                      :rdf/type :owl/Restriction}
                      :fibo-fbc-pas-crd/PaymentCardAgreement],
    :skos/definition
    "account-specific credit agreement that specifies the terms and conditions under which the payment card is offered to the cardholder by the issuer"})
@@ -897,6 +897,9 @@
    :rdfs/label "smart card",
    :rdfs/subClassOf [:fibo-fbc-pas-crd/PaymentCard
                      :fibo-fbc-pas-crd/SmartCard
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidenceFor,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fbc-pas-crd/CardExpirationDate,
                       :owl/onProperty :fibo-fnd-arr-doc/hasExpirationDate,
                       :owl/qualifiedCardinality 1,
@@ -906,9 +909,6 @@
                       :owl/onProperty :fibo-fbc-pas-crd/hasPrimaryAccountNumber,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidenceFor,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/CardAccount,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onClass
                       :fibo-fbc-pas-crd/CardVerificationCodeOrValue,
                       :owl/onProperty :fibo-fbc-pas-crd/hasCardVerificationCode,
@@ -928,14 +928,14 @@
    :rdfs/label "three-digit verification code or value",
    :rdfs/subClassOf [:fibo-fbc-pas-crd/CardVerificationCodeOrValue
                      :fibo-fbc-pas-crd/ThreeDigitVerificationCodeOrValue
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
-                      :rdf/type           :owl/Restriction}
-                     :cmns-cds/CodeElement
                      {:owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fbc-pas-crd/PaymentCard,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-cds/CodeElement],
    :skos/definition
    "card verification code that is the rightmost three-digit value printed in the signature panel area on the back of the card"})
 
@@ -944,13 +944,13 @@
   {:db/ident :fibo-fbc-pas-crd/VisaNetwork,
    :rdf/type [:fibo-fbc-pas-crd/CreditCardNetwork
               :owl/NamedIndividual
-              :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-cls/classifies,
                :owl/someValuesFrom :fibo-fbc-pas-crd/CardProduct,
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              :cmns-cls/Classifier],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
    :rdfs/label "Visa network",

@@ -48,10 +48,10 @@
    :rdfs/label #voc/lstr "credit o k@en",
    :rdfs/subClassOf [:fibo-md-temx-crs/SecurityCreditStatus
                      :fibo-md-temx-crs/CreditOK
-                     :fibo-fnd-arr-lif/LifecycleStatus
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-lif/LifecycleStatus],
    :skos/definition #voc/lstr "Not defaulted.@en"})
 
 (def InDefault
@@ -63,10 +63,10 @@
    :rdfs/label #voc/lstr "in default@en",
    :rdfs/subClassOf [:fibo-md-temx-crs/SecurityCreditStatus
                      :fibo-md-temx-crs/InDefault
-                     :fibo-fnd-arr-lif/LifecycleStatus
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-lif/LifecycleStatus],
    :skos/definition
    #voc/lstr
     "The issuer has failed to pay somthing that they are contractually obliged to pay.@en",

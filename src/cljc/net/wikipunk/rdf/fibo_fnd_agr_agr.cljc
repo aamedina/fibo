@@ -137,13 +137,13 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-agr-agr/Agreement
                      :fibo-fnd-agr-agr/MutualAgreement
+                     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
+                      :owl/someValuesFrom :fibo-fnd-agr-agr/Commitment,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 2,
                       :owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
                       :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
-                      :owl/someValuesFrom :fibo-fnd-agr-agr/Commitment,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "agreement between two or more specific named parties whereby the rights and obligations embodied in the agreement cannot be transferred to another party without prior agreement",
    :skos/scopeNote

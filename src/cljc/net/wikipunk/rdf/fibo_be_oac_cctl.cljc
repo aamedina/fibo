@@ -117,10 +117,10 @@
                      :fibo-be-oac-cctl/Affiliate
                      :fibo-be-oac-cpty/ControlledParty
                      :fibo-be-oac-cctl/ControlledAffiliate
+                     :fibo-fnd-pty-pty/PartyInRole
                      {:owl/onProperty     :fibo-be-oac-cctl/isAffiliateOf,
                       :owl/someValuesFrom :fibo-be-oac-cctl/Affiliate,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition "controlled party in an affiliation situation"})
 
 (def ControllingAffiliate
@@ -133,10 +133,10 @@
    :rdfs/subClassOf [:fibo-be-oac-cctl/Affiliate
                      :fibo-be-oac-cpty/MajorityControllingParty
                      :fibo-be-oac-cctl/ControllingAffiliate
+                     :fibo-fnd-pty-pty/PartyInRole
                      {:owl/onProperty     :fibo-be-oac-cctl/isAffiliateOf,
                       :owl/someValuesFrom :fibo-be-oac-cctl/Affiliate,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition "controlling party in an affiliation situation"})
 
 (def DomesticUltimateParent
@@ -148,11 +148,11 @@
    :rdfs/label "domestic ultimate parent",
    :rdfs/subClassOf [:fibo-be-oac-cctl/TotalControllingInterestParty
                      :fibo-be-oac-cctl/DomesticUltimateParent
-                     :fibo-be-oac-cctl/SignificantShareholder
-                     :fibo-be-oac-cown/Shareholder
-                     :fibo-be-oac-cctl/VotingShareholder
                      :fibo-be-oac-cpty/TotalOwner
-                     :fibo-be-oac-cpty/DeJureControllingInterestParty],
+                     :fibo-be-oac-cctl/VotingShareholder
+                     :fibo-be-oac-cown/Shareholder
+                     :fibo-be-oac-cpty/DeJureControllingInterestParty
+                     :fibo-be-oac-cctl/SignificantShareholder],
    :skos/definition
    "party that is recognized as the ultimate parent of a given organization within the country or jurisdiction of incorporation or organization"})
 
@@ -165,11 +165,11 @@
    :rdfs/label "global ultimate parent",
    :rdfs/subClassOf [:fibo-be-oac-cctl/TotalControllingInterestParty
                      :fibo-be-oac-cctl/GlobalUltimateParent
-                     :fibo-be-oac-cctl/SignificantShareholder
-                     :fibo-be-oac-cown/Shareholder
-                     :fibo-be-oac-cctl/VotingShareholder
                      :fibo-be-oac-cpty/TotalOwner
-                     :fibo-be-oac-cpty/DeJureControllingInterestParty],
+                     :fibo-be-oac-cctl/VotingShareholder
+                     :fibo-be-oac-cown/Shareholder
+                     :fibo-be-oac-cpty/DeJureControllingInterestParty
+                     :fibo-be-oac-cctl/SignificantShareholder],
    :skos/definition
    "party that is recognized as the ultimate parent of a given organization world-wide"})
 
@@ -215,14 +215,14 @@
    :rdfs/label "subsidiary",
    :rdfs/subClassOf [:fibo-be-oac-cctl/ControlledAffiliate
                      :fibo-be-oac-cctl/Subsidiary
+                     :fibo-be-oac-cpty/ControlledParty
                      {:owl/allValuesFrom :fibo-be-le-lp/LegalEntity,
                       :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
                       :rdf/type          :owl/Restriction}
+                     :fibo-fnd-pty-pty/PartyInRole
                      {:owl/onProperty     :fibo-be-oac-cctl/isAffiliateOf,
                       :owl/someValuesFrom :fibo-be-oac-cctl/Affiliate,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole
-                     :fibo-be-oac-cpty/ControlledParty
                      :fibo-be-oac-cctl/Affiliate],
    :skos/definition
    "legal entity that is entirely or majority owned and controlled by another legal entity"})
@@ -240,8 +240,8 @@
    :rdfs/subClassOf [:fibo-be-oac-cctl/SignificantShareholder
                      :fibo-be-oac-cpty/TotalOwner
                      :fibo-be-oac-cctl/TotalControllingInterestParty
-                     :fibo-be-oac-cown/Shareholder
                      :fibo-be-oac-cctl/VotingShareholder
+                     :fibo-be-oac-cown/Shareholder
                      :fibo-be-oac-cpty/DeJureControllingInterestParty],
    :skos/definition
    "voting shareholder that owns 100 percent of the voting shares in some legal entity"})
@@ -377,8 +377,8 @@
    :rdfs/range :fibo-be-oac-cctl/Subsidiary,
    :rdfs/subPropertyOf [:fibo-be-oac-cctl/isControllingAffiliateOf
                         :fibo-be-oac-cctl/isParentCompanyOf
-                        :fibo-fnd-pty-pty/actsOn
-                        :fibo-be-oac-cctl/isAffiliateOf],
+                        :fibo-be-oac-cctl/isAffiliateOf
+                        :fibo-fnd-pty-pty/actsOn],
    :skos/definition
    "indicates a controlled affiliate that it owns at least 50 percent of"})
 

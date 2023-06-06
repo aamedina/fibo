@@ -353,26 +353,26 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :rdfs/label "sale",
-   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
-                      :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf [:fibo-fnd-pas-pas/TransactionEvent
                      {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pas-pas/TransactionEvent
-                     :fibo-fnd-pty-pty/Situation
-                     {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
-                      :owl/someValuesFrom :fibo-fnd-pas-pas/Buyer,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasPrice,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/Situation
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
+                      :owl/someValuesFrom :fibo-fnd-pas-pas/Buyer,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-pas-pas/Sale
+                     :fibo-fnd-dt-oc/OccurrenceKind
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-pas-pas/TransactionConfirmation,
                       :owl/onProperty :fibo-fnd-agr-ctr/isEvidencedBy,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-oc/OccurrenceKind],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition "exchange of goods or services for money"})
 
 (def Seller

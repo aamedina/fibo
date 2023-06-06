@@ -143,10 +143,10 @@
    :rdfs/label "investment objective",
    :rdfs/subClassOf [:fibo-fnd-gao-obj/FinancialObjective
                      :fibo-fnd-gao-obj/InvestmentObjective
+                     :fibo-fnd-gao-obj/Objective
                      {:owl/onProperty     :cmns-dt/hasDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-gao-obj/Objective],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "financial objective used by an investor to determine whether or not a given potential investment is appropriate for themselves or on behalf of another party",
    :skos/example
@@ -195,6 +195,7 @@
    :rdfs/label "sales strategy",
    :rdfs/subClassOf [:fibo-fnd-gao-obj/BusinessStrategy
                      :fibo-fnd-gao-obj/SalesStrategy
+                     :fibo-fnd-gao-obj/Strategy
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-gao-obj/Objective,
                       :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
@@ -202,7 +203,6 @@
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/BusinessObjective,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-gao-obj/Strategy
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-gao-obj/Goal,
                       :owl/onProperty :fibo-fnd-gao-obj/hasGoal,

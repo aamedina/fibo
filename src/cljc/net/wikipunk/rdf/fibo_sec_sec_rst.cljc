@@ -121,18 +121,18 @@
     :fibo-sec-sec-rst/SecuritiesRestriction
     :fibo-fnd-agr-ctr/ContractualCommitment
     :fibo-sec-sec-rst/ContractualRestriction
-    :fibo-fnd-law-lcap/LegalObligation
+    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
+                                       :fibo-sec-sec-lst/Listing],
+                         :rdf/type    :owl/Class},
+     :owl/onProperty    :cmns-cxtdsg/appliesTo,
+     :rdf/type          :owl/Restriction}
     {:owl/allValuesFrom {:owl/unionOf [:fibo-fnd-law-jur/StatuteLaw
                                        :fibo-sec-sec-rst/SecuritiesRegulation
                                        :fibo-fnd-agr-ctr/Contract],
                          :rdf/type    :owl/Class},
      :owl/onProperty    :fibo-fnd-rel-rel/isMandatedBy,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
-                                       :fibo-sec-sec-lst/Listing],
-                         :rdf/type    :owl/Class},
-     :owl/onProperty    :cmns-cxtdsg/appliesTo,
-     :rdf/type          :owl/Restriction}],
+    :fibo-fnd-law-lcap/LegalObligation],
    :skos/definition
    "contract terms setting out restrictions on either the holder or the issuer of the security, as specified in the terms of the instrument itself"})
 
@@ -170,19 +170,19 @@
    :rdfs/subClassOf
    [:fibo-sec-sec-rst/LegalHoldingRestriction
     :fibo-sec-sec-rst/InvestorsDomicileRestriction
-    :fibo-fnd-law-lcap/LegalObligation
-    :fibo-sec-sec-rst/SecuritiesRestriction
+    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
+                                       :fibo-sec-sec-lst/Listing],
+                         :rdf/type    :owl/Class},
+     :owl/onProperty    :cmns-cxtdsg/appliesTo,
+     :rdf/type          :owl/Restriction}
     {:owl/allValuesFrom {:owl/unionOf [:fibo-fnd-law-jur/StatuteLaw
                                        :fibo-sec-sec-rst/SecuritiesRegulation
                                        :fibo-fnd-agr-ctr/Contract],
                          :rdf/type    :owl/Class},
      :owl/onProperty    :fibo-fnd-rel-rel/isMandatedBy,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
-                                       :fibo-sec-sec-lst/Listing],
-                         :rdf/type    :owl/Class},
-     :owl/onProperty    :cmns-cxtdsg/appliesTo,
-     :rdf/type          :owl/Restriction}],
+    :fibo-fnd-law-lcap/LegalObligation
+    :fibo-sec-sec-rst/SecuritiesRestriction],
    :skos/definition
    "legal holding restriction that specifies where holders of a security may be domiciled"})
 
@@ -196,18 +196,18 @@
    :rdfs/subClassOf
    [:fibo-sec-sec-rst/SecuritiesRestriction
     :fibo-sec-sec-rst/LegalHoldingRestriction
-    :fibo-fnd-law-lcap/LegalObligation
+    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
+                                       :fibo-sec-sec-lst/Listing],
+                         :rdf/type    :owl/Class},
+     :owl/onProperty    :cmns-cxtdsg/appliesTo,
+     :rdf/type          :owl/Restriction}
     {:owl/allValuesFrom {:owl/unionOf [:fibo-fnd-law-jur/StatuteLaw
                                        :fibo-sec-sec-rst/SecuritiesRegulation
                                        :fibo-fnd-agr-ctr/Contract],
                          :rdf/type    :owl/Class},
      :owl/onProperty    :fibo-fnd-rel-rel/isMandatedBy,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
-                                       :fibo-sec-sec-lst/Listing],
-                         :rdf/type    :owl/Class},
-     :owl/onProperty    :cmns-cxtdsg/appliesTo,
-     :rdf/type          :owl/Restriction}],
+    :fibo-fnd-law-lcap/LegalObligation],
    :skos/definition "security restriction applicable to holding the security"})
 
 (def QualifiedInvestorRestriction
@@ -225,19 +225,19 @@
      :rdf/type          :owl/Restriction}
     :fibo-sec-sec-rst/LegalHoldingRestriction
     :fibo-sec-sec-rst/QualifiedInvestorRestriction
-    :fibo-fnd-law-lcap/LegalObligation
-    :fibo-sec-sec-rst/SecuritiesRestriction
+    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
+                                       :fibo-sec-sec-lst/Listing],
+                         :rdf/type    :owl/Class},
+     :owl/onProperty    :cmns-cxtdsg/appliesTo,
+     :rdf/type          :owl/Restriction}
     {:owl/allValuesFrom {:owl/unionOf [:fibo-fnd-law-jur/StatuteLaw
                                        :fibo-sec-sec-rst/SecuritiesRegulation
                                        :fibo-fnd-agr-ctr/Contract],
                          :rdf/type    :owl/Class},
      :owl/onProperty    :fibo-fnd-rel-rel/isMandatedBy,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
-                                       :fibo-sec-sec-lst/Listing],
-                         :rdf/type    :owl/Class},
-     :owl/onProperty    :cmns-cxtdsg/appliesTo,
-     :rdf/type          :owl/Restriction}],
+    :fibo-fnd-law-lcap/LegalObligation
+    :fibo-sec-sec-rst/SecuritiesRestriction],
    :skos/definition
    "legal holding restriction that defines the concept of a qualified investor for a given purpose and specifies that only such qualified investors may hold the security"})
 
@@ -260,29 +260,29 @@
      :rdf/type       :owl/Restriction}
     :fibo-sec-sec-rst/QualifiedInvestorRestriction
     :fibo-sec-sec-rst/RegulationS
-    :fibo-fnd-law-lcap/Regulation
-    :fibo-sec-sec-rst/SecuritiesRestriction
     {:owl/allValuesFrom :cmns-dt/DatePeriod,
      :owl/onProperty    :fibo-sec-sec-rst/hasHoldingPeriod,
      :rdf/type          :owl/Restriction}
+    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
+                                       :fibo-sec-sec-lst/Listing],
+                         :rdf/type    :owl/Class},
+     :owl/onProperty    :cmns-cxtdsg/appliesTo,
+     :rdf/type          :owl/Restriction}
+    :fibo-fnd-law-lcap/Regulation
+    :fibo-fnd-law-lcap/LegalObligation
+    :fibo-sec-sec-rst/SecuritiesRestriction
+    {:owl/onProperty     :fibo-fnd-rel-rel/isConferredBy,
+     :owl/someValuesFrom :fibo-fnd-law-jur/StatuteLaw,
+     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom {:owl/unionOf [:fibo-fnd-law-jur/StatuteLaw
                                        :fibo-sec-sec-rst/SecuritiesRegulation
                                        :fibo-fnd-agr-ctr/Contract],
                          :rdf/type    :owl/Class},
      :owl/onProperty    :fibo-fnd-rel-rel/isMandatedBy,
      :rdf/type          :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isConferredBy,
-     :owl/someValuesFrom :fibo-fnd-law-jur/StatuteLaw,
-     :rdf/type           :owl/Restriction}
+    :fibo-sec-sec-rst/LegalHoldingRestriction
     {:owl/allValuesFrom :fibo-sec-sec-rst/SecuritiesRestriction,
      :owl/onProperty    :cmns-dsg/defines,
-     :rdf/type          :owl/Restriction}
-    :fibo-fnd-law-lcap/LegalObligation
-    :fibo-sec-sec-rst/LegalHoldingRestriction
-    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
-                                       :fibo-sec-sec-lst/Listing],
-                         :rdf/type    :owl/Class},
-     :owl/onProperty    :cmns-cxtdsg/appliesTo,
      :rdf/type          :owl/Restriction}],
    :skos/definition
    "securities regulation defining an exemption through which corporations can issue unregistered securities to qualified foreign investors and foreign institutions"})
@@ -305,19 +305,19 @@
      :rdf/type          :owl/Restriction}
     :fibo-sec-sec-rst/LegalHoldingRestriction
     :fibo-sec-sec-rst/Restriction144A
-    :fibo-fnd-law-lcap/LegalObligation
-    :fibo-sec-sec-rst/SecuritiesRestriction
+    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
+                                       :fibo-sec-sec-lst/Listing],
+                         :rdf/type    :owl/Class},
+     :owl/onProperty    :cmns-cxtdsg/appliesTo,
+     :rdf/type          :owl/Restriction}
     {:owl/allValuesFrom {:owl/unionOf [:fibo-fnd-law-jur/StatuteLaw
                                        :fibo-sec-sec-rst/SecuritiesRegulation
                                        :fibo-fnd-agr-ctr/Contract],
                          :rdf/type    :owl/Class},
      :owl/onProperty    :fibo-fnd-rel-rel/isMandatedBy,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
-                                       :fibo-sec-sec-lst/Listing],
-                         :rdf/type    :owl/Class},
-     :owl/onProperty    :cmns-cxtdsg/appliesTo,
-     :rdf/type          :owl/Restriction}],
+    :fibo-fnd-law-lcap/LegalObligation
+    :fibo-sec-sec-rst/SecuritiesRestriction],
    :skos/definition
    "Securities & Exchange Commission rule that establishes specific criteria for determining whether a person is not engaged in a distribution and creates a safe harbor from the Section 2(a)(11) definition of 'underwriter'; section A modifies holding period requirements on privately placed securities to permit qualified institutional buyers to trade these positions among themselves"})
 
@@ -374,18 +374,18 @@
    :rdfs/subClassOf
    [:fibo-sec-sec-rst/SecuritiesRestriction
     :fibo-sec-sec-rst/TradingRestriction
-    :fibo-fnd-law-lcap/LegalObligation
+    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
+                                       :fibo-sec-sec-lst/Listing],
+                         :rdf/type    :owl/Class},
+     :owl/onProperty    :cmns-cxtdsg/appliesTo,
+     :rdf/type          :owl/Restriction}
     {:owl/allValuesFrom {:owl/unionOf [:fibo-fnd-law-jur/StatuteLaw
                                        :fibo-sec-sec-rst/SecuritiesRegulation
                                        :fibo-fnd-agr-ctr/Contract],
                          :rdf/type    :owl/Class},
      :owl/onProperty    :fibo-fnd-rel-rel/isMandatedBy,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
-                                       :fibo-sec-sec-lst/Listing],
-                         :rdf/type    :owl/Class},
-     :owl/onProperty    :cmns-cxtdsg/appliesTo,
-     :rdf/type          :owl/Restriction}],
+    :fibo-fnd-law-lcap/LegalObligation],
    :skos/definition
    "restriction that limits trading in some manner, typically summarized on term sheets or in other documentation, including but not limited to restrictions on day trading"})
 

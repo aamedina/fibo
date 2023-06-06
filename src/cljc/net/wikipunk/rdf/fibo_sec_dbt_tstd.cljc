@@ -93,13 +93,6 @@
     :fibo-sec-dbt-tstd/BillOfExchange
     :fibo-sec-dbt-tstd/BankersAcceptance
     :fibo-sec-dbt-dbti/FixedIncomeSecurity
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-fct-fse/FinancialInstitution,
-     :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-     :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawee,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
      :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawer,
      :rdf/type           :owl/Restriction}
@@ -107,7 +100,14 @@
      :owl/onClass    :fibo-fnd-pas-psch/Payee,
      :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-tstd/MoneyMarketInstrument],
+    {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+     :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawee,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-tstd/MoneyMarketInstrument
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-fct-fse/FinancialInstitution,
+     :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "short-term debt instrument that is guaranteed and paid by a bank and used as a relatively safe form of payment for large transactions@en"})
@@ -124,19 +124,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/",
    :rdfs/label #voc/lstr "bill of exchange@en",
    :rdfs/subClassOf [:fibo-sec-dbt-tstd/MoneyMarketInstrument
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawer,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pas-psch/Payee,
-                      :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-fct-fse/FinancialInstitution,
                       :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
                       :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pas-psch/Payee,
+                      :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawee,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawer,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-tstd/BillOfExchange
                      :fibo-sec-dbt-dbti/FixedIncomeSecurity],

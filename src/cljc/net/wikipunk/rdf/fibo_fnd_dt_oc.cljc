@@ -72,7 +72,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
    :rdfs/label "occurrence",
    :rdfs/subClassOf
-   [{:owl/unionOf [{:owl/onClass    :cmns-dt/DatePeriod,
+   [{:owl/minQualifiedCardinality 0,
+     :owl/onClass    :lcc-cr/Location,
+     :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
+     :rdf/type       :owl/Restriction}
+    {:owl/unionOf [{:owl/onClass    :cmns-dt/DatePeriod,
                     :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
                     :owl/qualifiedCardinality 1,
                     :rdf/type       :owl/Restriction}
@@ -85,10 +89,6 @@
                     :owl/qualifiedCardinality 1,
                     :rdf/type        :owl/Restriction}],
      :rdf/type    :owl/Class}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :lcc-cr/Location,
-     :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
-     :rdf/type       :owl/Restriction}
     {:owl/onClass    :fibo-fnd-dt-oc/OccurrenceKind,
      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
      :owl/qualifiedCardinality 1,

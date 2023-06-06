@@ -121,13 +121,13 @@
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
                      :fibo-be-le-fbo/JointVenture
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass
                       :fibo-be-le-fbo/OrganizationCoveringAgreement,
                       :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
-                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}],
    :skos/definition
    "legal entity that is formed between parties that pool their resources for the purpose of accomplishing a specific task but otherwise retain their distinct identities"})

@@ -88,15 +88,15 @@
                      :cmns-cds/CodeElement
                      :fibo-fnd-arr-rt/RatingScore
                      :fibo-fnd-arr-rt/QualitativeRatingScore
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onDataRange :xsd/decimal,
-                      :owl/onProperty  :fibo-fnd-arr-rt/hasMeasureWithinScale,
-                      :rdf/type        :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingScale,
                       :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :cmns-cls/Classifier],
+                     :cmns-cls/Classifier
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :xsd/decimal,
+                      :owl/onProperty  :fibo-fnd-arr-rt/hasMeasureWithinScale,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "rating score that is represented as a qualitative code with respect to some rating scale"})
 
@@ -113,15 +113,15 @@
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-arr-rt/RatingScore
                      :fibo-fnd-arr-rt/QuantitativeRatingScore
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onDataRange :xsd/decimal,
-                      :owl/onProperty  :fibo-fnd-arr-rt/hasMeasureWithinScale,
-                      :rdf/type        :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingScale,
                       :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :cmns-cls/Classifier],
+                     :cmns-cls/Classifier
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :xsd/decimal,
+                      :owl/onProperty  :fibo-fnd-arr-rt/hasMeasureWithinScale,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "rating score that is a simple numeric value on some scale, such as a credit rating for an individual"})
 
@@ -133,28 +133,28 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "rating",
    :rdfs/subClassOf [:fibo-fnd-arr-asmt/Opinion
-                     {:owl/onClass    :fibo-fnd-arr-rt/RatingParty,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-rt/hasRatingScore,
-                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-arr-rt/RatingIssuer,
-                      :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
+                     {:owl/cardinality 1,
+                      :owl/onProperty  :fibo-fnd-arr-rt/rates,
+                      :rdf/type        :owl/Restriction}
                      {:owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-arr-rt/RatingIssuer,
+                      :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/cardinality 1,
-                      :owl/onProperty  :fibo-fnd-arr-rt/rates,
-                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-arr-rt/hasRatingScore,
+                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-arr-rt/RatingParty,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      :fibo-fnd-arr-rt/Rating],
    :skos/definition
    "standing of something at a particular time, indicated by at least one scores with respect to some scale, based on an assessment by some party"})
@@ -172,13 +172,13 @@
                      :fibo-fnd-arr-rt/RatingScalePublisher
                      :fibo-fnd-arr-rt/RatingIssuer
                      :fibo-fnd-arr-rt/RatingAgency
-                     :fibo-fnd-pty-pty/PartyInRole
                      {:owl/onProperty     :fibo-fnd-rel-rel/manages,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScale,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/issues,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/Rating,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition
    "rating issuer that is also a rating scale publisher, frequently but not always an independent rating service"})
 

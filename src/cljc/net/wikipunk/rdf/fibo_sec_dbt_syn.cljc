@@ -78,10 +78,10 @@
                      :fibo-sec-dbt-syn/SyntheticCDO
                      :fibo-sec-dbt-cdo/ArbitrageCDO
                      :fibo-sec-dbt-syn/ArbitrageSyntheticCDO
+                     :fibo-sec-dbt-cdo/CDODeal
                      {:owl/onProperty     :fibo-sec-dbt-syn/issues,
                       :owl/someValuesFrom :fibo-sec-dbt-syn/SyntheticCDOTranche,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-cdo/CDODeal],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Arbitrage synthetic CDO deals are motivated by regulatory or practical considerations that might make a bank want to retain ownership of debt while achieving capital relief through CDSs. In this case, the sponsoring bank has a portfolio of obligations, called the reference portfolio. It retains that portfolio, but offloads its credit risk by transacting CDSs with the CDO.@en"})
@@ -95,10 +95,10 @@
    :rdfs/label #voc/lstr "synthetic amortizing security@en",
    :rdfs/subClassOf [:fibo-sec-dbt-syn/SyntheticStructuredFinanceInstrument
                      :fibo-sec-dbt-syn/SyntheticAmortizingSecurity
+                     :fibo-sec-dbt-pbs/StructuredFinanceInstrument
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-sec-dbt-syn/SyntheticPoolAsset,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-pbs/StructuredFinanceInstrument],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr "Security constructed to emulate an amortizing security.@en",
    :skos/scopeNote
@@ -118,10 +118,10 @@
                      :fibo-sec-dbt-syn/SyntheticCDO
                      :fibo-sec-dbt-cdo/BalanceSheetCDO
                      :fibo-sec-dbt-syn/SyntheticBalanceSheetCDO
+                     :fibo-sec-dbt-cdo/CDODeal
                      {:owl/onProperty     :fibo-sec-dbt-syn/issues,
                       :owl/someValuesFrom :fibo-sec-dbt-syn/SyntheticCDOTranche,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-cdo/CDODeal]})
+                      :rdf/type           :owl/Restriction}]})
 
 (def SyntheticCDO
   "synthetic c d o"
@@ -406,7 +406,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
    :rdfs/label #voc/lstr "simulates@en"})
 
-(def simulates.1
+(def simulates_1
   "simulates"
   {:db/ident :fibo-sec-dbt-syn/simulates.1,
    :rdf/type :owl/ObjectProperty,

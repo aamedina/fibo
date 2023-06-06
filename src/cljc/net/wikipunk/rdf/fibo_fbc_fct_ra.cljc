@@ -109,14 +109,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
    :rdfs/label "registration authority",
-   :rdfs/subClassOf [:fibo-fnd-pas-pas/ServiceProvider
-                     {:owl/onProperty
-                      :fibo-fbc-fct-ra/isRegistrationAuthorityFor,
-                      :owl/someValuesFrom :owl/Thing,
-                      :rdf/type :owl/Restriction}
-                     {:owl/minCardinality 0,
+   :rdfs/subClassOf [{:owl/minCardinality 0,
                       :owl/onProperty     :fibo-fbc-fct-ra/registers,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pas-pas/ServiceProvider
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-fct-ra/Registry,
+                      :owl/onProperty :fibo-fnd-rel-rel/manages,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-fct-ra/RegistrationService,
                       :owl/onProperty :fibo-fnd-rel-rel/provides,
@@ -125,10 +125,10 @@
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-fct-ra/Registry,
-                      :owl/onProperty :fibo-fnd-rel-rel/manages,
-                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty
+                      :fibo-fbc-fct-ra/isRegistrationAuthorityFor,
+                      :owl/someValuesFrom :owl/Thing,
+                      :rdf/type :owl/Restriction}
                      :fibo-fbc-fct-ra/RegistrationAuthority],
    :skos/definition
    "service provider that is responsible for maintaining a registry and provides registration services"})
@@ -188,17 +188,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
    :rdfs/label "registry",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-ra/hasRegistryEntry,
+   :rdfs/subClassOf [:cmns-col/StructuredCollection
+                     {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistryEntry,
                       :owl/someValuesFrom :fibo-fbc-fct-ra/RegistryEntry,
                       :rdf/type           :owl/Restriction}
-                     :cmns-col/StructuredCollection
+                     :fibo-fnd-arr-doc/Record
                      {:owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-fbc-fct-ra/RegistrationAuthority
                                      :fibo-fbc-fct-ra/Registrar],
                        :rdf/type    :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-doc/Record
                      :fibo-fbc-fct-ra/Registry],
    :skos/definition
    "authoritative record or collection of records relating to something"})

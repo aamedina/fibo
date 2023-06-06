@@ -91,17 +91,17 @@
    :rdfs/label "intangible asset",
    :rdfs/subClassOf [:fibo-fnd-oac-own/Asset
                      :fibo-fnd-oac-own/IntangibleAsset
+                     :fibo-fnd-pty-pty/Undergoer
+                     {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
+                      :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasAcquisitionDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
                       :owl/someValuesFrom :fibo-fnd-oac-own/Ownership,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
-                      :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/Undergoer],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "identifiable, non-monetary asset that lacks physical substance",
    :skos/example
@@ -154,17 +154,17 @@
    :rdfs/label "tangible asset",
    :rdfs/subClassOf [:fibo-fnd-oac-own/Asset
                      :fibo-fnd-oac-own/TangibleAsset
+                     :fibo-fnd-pty-pty/Undergoer
+                     {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
+                      :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasAcquisitionDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
                       :owl/someValuesFrom :fibo-fnd-oac-own/Ownership,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
-                      :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/Undergoer],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "asset that is a physical, measurable resource, i.e., one that takes a physical form"})
 

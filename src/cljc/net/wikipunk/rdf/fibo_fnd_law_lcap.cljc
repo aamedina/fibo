@@ -93,16 +93,16 @@
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalConstruct
                      :fibo-fnd-law-lcap/Claim
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
                                         :fibo-fnd-law-cor/Law],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "demand or assertion made by one party on another, based on facts that, taken together, give rise to a legally enforceable right or judicial action"})
@@ -123,16 +123,16 @@
                      :fibo-fnd-law-lcap/Duty
                      :fibo-fnd-law-lcap/ContingentObligation
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
                                         :fibo-fnd-law-cor/Law],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-law-lcap/LegalConstruct],
    :skos/definition
@@ -157,15 +157,15 @@
     :fibo-fnd-law-lcap/Right
     :fibo-fnd-law-lcap/ContingentRight
     {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+     :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
                                     :fibo-fnd-law-cor/Constitution
                                     :fibo-fnd-law-cor/Law],
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-     :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
      :rdf/type       :owl/Restriction}
     :fibo-fnd-law-lcap/LegalConstruct],
    :skos/definition
@@ -181,16 +181,16 @@
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalCapacity
                      :fibo-fnd-law-lcap/ContractualCapability
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
                                         :fibo-fnd-law-cor/Law],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-law-lcap/LegalConstruct],
    :skos/definition "the capacity to enter into legally binding contracts",
@@ -213,15 +213,18 @@
      :rdf/type          :owl/Restriction}
     :fibo-fnd-law-lcap/LegalObligation
     :fibo-fnd-law-lcap/ContractualObligation
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+     :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
+     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isMandatedBy,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-jur/StatuteLaw
                                         :fibo-fnd-law-lcap/Regulation],
                           :rdf/type    :owl/Class},
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-law-lcap/Duty
-    {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
-     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
@@ -230,17 +233,14 @@
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-     :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
-     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isConferredBy,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-jur/StatuteLaw
                                         :fibo-fnd-law-lcap/Regulation],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-law-lcap/LegalConstruct],
+    :fibo-fnd-law-lcap/LegalConstruct
+    :fibo-fnd-law-lcap/Duty],
    :skos/definition
    "obligation or duty that is specified in and imposed by a contract"})
 
@@ -257,6 +257,10 @@
     {:owl/onProperty     :fibo-fnd-rel-rel/isConferredBy,
      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
      :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+     :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-law-lcap/implies,
      :owl/someValuesFrom :fibo-fnd-law-lcap/ContractualObligation,
      :rdf/type           :owl/Restriction}
@@ -267,12 +271,8 @@
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-     :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-law-lcap/Right
-    :fibo-fnd-law-lcap/LegalConstruct],
+    :fibo-fnd-law-lcap/LegalConstruct
+    :fibo-fnd-law-lcap/Right],
    :skos/definition
    "contractual right that may be exercised at some point in the future, such as an option to extend a contract, or other available but not obligatory rights as defined in the contract"})
 
@@ -293,15 +293,15 @@
     :fibo-fnd-law-lcap/Right
     :fibo-fnd-law-lcap/ContractualRight
     {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+     :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
                                     :fibo-fnd-law-cor/Constitution
                                     :fibo-fnd-law-cor/Law],
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-     :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
      :rdf/type       :owl/Restriction}
     :fibo-fnd-law-lcap/LegalConstruct],
    :skos/definition
@@ -319,16 +319,16 @@
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalCapacity
                      :fibo-fnd-law-lcap/DelegatedLegalAuthority
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
                                         :fibo-fnd-law-cor/Law],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-law-lcap/LegalConstruct],
    :skos/definition
@@ -346,16 +346,16 @@
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalConstruct
                      :fibo-fnd-law-lcap/Duty
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
                                         :fibo-fnd-law-cor/Law],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "some obligation which exists and is imposed on some individual",
@@ -372,16 +372,16 @@
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalConstruct
                      :fibo-fnd-law-lcap/LegalCapacity
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
                                         :fibo-fnd-law-cor/Law],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "the capability to carry out certain actions or to have certain rights together with the resources to do so"})
@@ -437,15 +437,15 @@
     :fibo-fnd-law-lcap/Duty
     :fibo-fnd-law-lcap/LegalObligation
     {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+     :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
                                     :fibo-fnd-law-cor/Constitution
                                     :fibo-fnd-law-cor/Law],
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-     :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
      :rdf/type       :owl/Restriction}
     :fibo-fnd-law-lcap/LegalConstruct],
    :skos/definition "an obligation or duty that is enforceable by a court"})
@@ -471,16 +471,16 @@
                      :fibo-fnd-law-lcap/Right
                      :fibo-fnd-law-lcap/LegalRight
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
                                         :fibo-fnd-law-cor/Law],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-law-lcap/LegalConstruct],
    :skos/definition
@@ -496,16 +496,16 @@
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalCapacity
                      :fibo-fnd-law-lcap/LiabilityCapacity
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
                                         :fibo-fnd-law-cor/Law],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-law-lcap/LegalConstruct],
    :skos/definition "the ability to be sued at law",
@@ -523,19 +523,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
    :rdfs/label "license",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-                      :owl/someValuesFrom :fibo-fnd-law-lcap/Licensor,
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/LegalDocument
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-fnd-law-lcap/Licensee,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-doc/LegalDocument
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-fnd-law-lcap/Licensor,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-fnd-law-lcap/LegalCapacity,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-fnd-law-lcap/Licensee,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-law-lcap/License],
    :skos/definition "grant of permission needed to do something"})
@@ -609,16 +609,16 @@
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalCapacity
                      :fibo-fnd-law-lcap/LitigationCapacity
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
                                         :fibo-fnd-law-cor/Law],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-law-lcap/LegalConstruct],
    :skos/definition "the legal capacity to pursue a litigation action in law"})
@@ -663,16 +663,16 @@
                      :fibo-fnd-law-lcap/LegalConstruct
                      :fibo-fnd-law-lcap/Regulation
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
                                         :fibo-fnd-law-cor/Law],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}],
    :skos/definition "a rule used to carry out a law"})
 
@@ -685,6 +685,9 @@
    :rdfs/label "reporting policy",
    :rdfs/subClassOf [:fibo-fnd-law-lcap/Policy
                      :fibo-fnd-law-lcap/ReportingPolicy
+                     {:owl/onProperty     :fibo-fnd-rel-rel/governs,
+                      :owl/someValuesFrom :fibo-fnd-gao-obj/Strategy,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-law-lcap/LegalConstruct
@@ -692,10 +695,7 @@
                                         :fibo-fnd-gao-obj/Objective],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-law-lcap/implements,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/governs,
-                      :owl/someValuesFrom :fibo-fnd-gao-obj/Strategy,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "policy specifying principles, rules and/or guidelines regarding some aspect of reporting",
    :skos/example
@@ -714,16 +714,16 @@
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalConstruct
                      :fibo-fnd-law-lcap/Right
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
                                         :fibo-fnd-law-cor/Law],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "entitlement (not) to perform certain actions, or (not) to be in certain states; or entitlement that others (not) perform certain actions or (not) be in certain states",
@@ -740,16 +740,16 @@
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalCapacity
                      :fibo-fnd-law-lcap/SignatoryCapacity
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
                                         :fibo-fnd-law-cor/Law],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-law-lcap/LegalConstruct],
    :skos/definition

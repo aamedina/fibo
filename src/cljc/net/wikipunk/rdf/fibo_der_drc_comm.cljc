@@ -135,8 +135,8 @@
    :rdfs/label #voc/lstr "bullion@en",
    :rdfs/subClassOf [:fibo-fnd-acc-cur/PreciousMetal
                      :fibo-der-drc-comm/Bullion
-                     :fibo-der-drc-comm/Metal
                      :fibo-der-drc-comm/ExtractionResource
+                     :fibo-der-drc-comm/Metal
                      :fibo-fnd-pas-pas/NegotiableCommodity],
    :skos/definition
    #voc/lstr

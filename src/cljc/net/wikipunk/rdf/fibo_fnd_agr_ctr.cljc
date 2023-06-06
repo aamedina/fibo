@@ -101,45 +101,45 @@
      :rdf/type       :owl/Restriction}
     :fibo-fnd-agr-ctr/TransferableContract
     :fibo-fnd-agr-ctr/AssignableContract
-    :fibo-fnd-agr-agr/Agreement
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :cmns-dt/DateTimeStamp,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
-     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
+     :rdf/type           :owl/Restriction}
     {:owl/onDataRange :xsd/boolean,
      :owl/onProperty  :fibo-fnd-agr-ctr/isAssignable,
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 2,
+     :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :cmns-dt/DateTimeStamp,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
+     :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
      :rdf/type       :owl/Restriction}
+    :fibo-fnd-agr-agr/Agreement
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDate,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/DateTimeStamp,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
      :rdf/type       :owl/Restriction}
     :fibo-fnd-agr-ctr/Contract
-    :fibo-fnd-agr-ctr/WrittenContract
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 2,
-     :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
-     :rdf/type           :owl/Restriction}],
+    :fibo-fnd-agr-ctr/WrittenContract],
    :skos/definition
    "contract in which contract holder (assignor) may transfer some or all of their rights and obligations to another party (assignee)",
    :skos/example
@@ -217,17 +217,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
    :rdfs/label "contract",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/Date,
-                      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 2,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 2,
                       :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
                       :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/Date,
+                      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
+                      :rdf/type       :owl/Restriction}
                      :fibo-fnd-agr-agr/Agreement
                      :fibo-fnd-agr-ctr/Contract],
    :skos/definition
@@ -277,12 +277,12 @@
    :rdfs/subClassOf
    [:fibo-fnd-agr-ctr/ContractParty
     :fibo-fnd-agr-ctr/ContractPrincipal
+    :fibo-fnd-pty-pty/PartyInRole
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
                           :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
                           :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-pty-pty/PartyInRole],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "party that originates a contract and is identified as the first party to that contract, in the event that the contract distinguishes any party as such"})
 
@@ -358,12 +358,12 @@
    :rdfs/subClassOf
    [:fibo-fnd-agr-ctr/ContractParty
     :fibo-fnd-agr-ctr/Counterparty
+    :fibo-fnd-pty-pty/PartyInRole
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-pty/isAPartyTo,
                           :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
                           :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-pty-pty/PartyInRole],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "party to a contract with whom one negotiates on a given agreement"})
 
@@ -382,16 +382,16 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-agr-ctr/ContractualCommitment
                      :fibo-fnd-agr-ctr/ExtensionProvision
-                     :fibo-fnd-agr-ctr/ContractualElement
-                     :fibo-fnd-agr-agr/MutualCommitment
-                     :cmns-col/Constituent
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isMandatedBy,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
+                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom
                       :fibo-fnd-agr-ctr/ContractualCommitment,
                       :owl/onProperty :cmns-col/hasPart,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isMandatedBy,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
-                      :rdf/type           :owl/Restriction}],
+                     :cmns-col/Constituent
+                     :fibo-fnd-agr-ctr/ContractualElement
+                     :fibo-fnd-agr-agr/MutualCommitment],
    :skos/definition
    "contract terms that specify the conditions under which a contract can be extended"})
 
@@ -413,45 +413,45 @@
      :rdf/type       :owl/Restriction}
     :fibo-fnd-agr-ctr/WrittenContract
     :fibo-fnd-agr-ctr/MasterAgreement
-    :fibo-fnd-agr-agr/Agreement
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :cmns-dt/DateTimeStamp,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
-     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-agr-agr/MutualAgreement
     {:owl/onDataRange :xsd/boolean,
      :owl/onProperty  :fibo-fnd-agr-ctr/isAssignable,
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 2,
+     :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :cmns-dt/DateTimeStamp,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
+     :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
      :rdf/type       :owl/Restriction}
+    :fibo-fnd-agr-agr/Agreement
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDate,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/DateTimeStamp,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-agr-ctr/Contract
-    :fibo-fnd-agr-agr/MutualAgreement
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 2,
-     :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
-     :rdf/type           :owl/Restriction}],
+    :fibo-fnd-agr-ctr/Contract],
    :skos/definition
    "contract between named parties that outlines the terms and conditions designed to apply to a number of accounts, transactions, or other activities between the parties, and that consolidates and provides overarching terms for separate but related agreements",
    :skos/example
@@ -472,14 +472,14 @@
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/Contract
                      :fibo-fnd-agr-agr/MutualAgreement
                      :fibo-fnd-agr-ctr/MutualContractualAgreement
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-agr-agr/Agreement
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-agr/Agreement
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
+                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 2,
                       :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
@@ -513,45 +513,45 @@
    :rdfs/subClassOf
    [:fibo-fnd-agr-ctr/TransferableContract
     :fibo-fnd-agr-ctr/NovateableContract
-    :fibo-fnd-agr-agr/Agreement
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :cmns-dt/DateTimeStamp,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
-     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
+     :rdf/type           :owl/Restriction}
     {:owl/onDataRange :xsd/boolean,
      :owl/onProperty  :fibo-fnd-agr-ctr/isAssignable,
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 2,
+     :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :cmns-dt/DateTimeStamp,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
+     :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
      :rdf/type       :owl/Restriction}
+    :fibo-fnd-agr-agr/Agreement
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDate,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/DateTimeStamp,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
      :rdf/type       :owl/Restriction}
     :fibo-fnd-agr-ctr/Contract
-    :fibo-fnd-agr-ctr/WrittenContract
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 2,
-     :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
-     :rdf/type           :owl/Restriction}],
+    :fibo-fnd-agr-ctr/WrittenContract],
    :skos/definition
    "contract that may be replaced by another contract, and in that event, extinguishes the rights and obligations in effect under the original contract with those in the new agreement"})
 
@@ -566,16 +566,16 @@
    :rdfs/label #voc/lstr "representation@en",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractualCommitment
                      :fibo-fnd-agr-ctr/Representation
-                     :fibo-fnd-agr-ctr/ContractualElement
-                     :fibo-fnd-agr-agr/MutualCommitment
-                     :cmns-col/Constituent
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isMandatedBy,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
+                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom
                       :fibo-fnd-agr-ctr/ContractualCommitment,
                       :owl/onProperty :cmns-col/hasPart,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isMandatedBy,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
-                      :rdf/type           :owl/Restriction}],
+                     :cmns-col/Constituent
+                     :fibo-fnd-agr-ctr/ContractualElement
+                     :fibo-fnd-agr-agr/MutualCommitment],
    :skos/definition
    #voc/lstr
     "contractual element that is a statement made by a party to the contract, before or at the time of making the contract, in regard to some fact, circumstance, or state of affairs pertinent to the contract, which the counterparty(ies) rely on, or is influential in bringing about the contract@en"})
@@ -608,16 +608,16 @@
    :rdfs/label #voc/lstr "termination provision@en",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractualCommitment
                      :fibo-fnd-agr-ctr/TerminationProvision
-                     :fibo-fnd-agr-ctr/ContractualElement
-                     :fibo-fnd-agr-agr/MutualCommitment
-                     :cmns-col/Constituent
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isMandatedBy,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
+                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom
                       :fibo-fnd-agr-ctr/ContractualCommitment,
                       :owl/onProperty :cmns-col/hasPart,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isMandatedBy,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
-                      :rdf/type           :owl/Restriction}],
+                     :cmns-col/Constituent
+                     :fibo-fnd-agr-ctr/ContractualElement
+                     :fibo-fnd-agr-agr/MutualCommitment],
    :skos/definition
    #voc/lstr
     "contractual element that specifies the circumstances under which the parties can dissolve their legal relationship and discontinue the fulfillment of their obligations under the contract@en"})
@@ -632,44 +632,44 @@
    :rdfs/subClassOf
    [:fibo-fnd-agr-ctr/WrittenContract
     :fibo-fnd-agr-ctr/TransferableContract
-    :fibo-fnd-agr-agr/Agreement
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :cmns-dt/DateTimeStamp,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
-     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
+     :rdf/type           :owl/Restriction}
     {:owl/onDataRange :xsd/boolean,
      :owl/onProperty  :fibo-fnd-agr-ctr/isAssignable,
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 2,
+     :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :cmns-dt/DateTimeStamp,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
+     :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
      :rdf/type       :owl/Restriction}
+    :fibo-fnd-agr-agr/Agreement
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDate,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/DateTimeStamp,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-agr-ctr/Contract
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 2,
-     :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
-     :rdf/type           :owl/Restriction}],
+    :fibo-fnd-agr-ctr/Contract],
    :skos/definition
    "contract in which the rights and obligations of one party may be transferred to another party"})
 
@@ -687,14 +687,14 @@
                       :rdf/type          :owl/Restriction}
                      :fibo-fnd-agr-ctr/Contract
                      :fibo-fnd-agr-ctr/UnilateralContract
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-agr-agr/Agreement
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-agr/Agreement
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
+                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 2,
                       :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
@@ -712,14 +712,14 @@
    :rdfs/label "verbal contract",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/Contract
                      :fibo-fnd-agr-ctr/VerbalContract
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-agr-agr/Agreement
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-agr/Agreement
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
+                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 2,
                       :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
@@ -738,16 +738,16 @@
    :rdfs/label #voc/lstr "warranty@en",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractualCommitment
                      :fibo-fnd-agr-ctr/Warranty
-                     :fibo-fnd-agr-ctr/ContractualElement
-                     :fibo-fnd-agr-agr/MutualCommitment
-                     :cmns-col/Constituent
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isMandatedBy,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
+                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom
                       :fibo-fnd-agr-ctr/ContractualCommitment,
                       :owl/onProperty :cmns-col/hasPart,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isMandatedBy,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
-                      :rdf/type           :owl/Restriction}],
+                     :cmns-col/Constituent
+                     :fibo-fnd-agr-ctr/ContractualElement
+                     :fibo-fnd-agr-agr/MutualCommitment],
    :skos/definition #voc/lstr
                      "contractual element that is a statement of fact@en"})
 
@@ -763,37 +763,37 @@
      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractDocument,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :cmns-dt/DateTimeStamp,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDate,
      :rdf/type       :owl/Restriction}
-    {:owl/onDataRange :xsd/boolean,
-     :owl/onProperty  :fibo-fnd-agr-ctr/isAssignable,
-     :owl/qualifiedCardinality 1,
-     :rdf/type        :owl/Restriction}
-    :fibo-fnd-agr-ctr/Contract
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/DateTimeStamp,
      :owl/onProperty :fibo-fnd-agr-ctr/hasExecutionDateTimeStamp,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-agr-ctr/WrittenContract
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/Counterparty,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-agr/Agreement
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :cmns-dt/DateTimeStamp,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDateTimeStamp,
+     :rdf/type       :owl/Restriction}
+    :fibo-fnd-agr-ctr/Contract
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasPrincipalParty,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractPrincipal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onDataRange :xsd/boolean,
+     :owl/onProperty  :fibo-fnd-agr-ctr/isAssignable,
+     :owl/qualifiedCardinality 1,
+     :rdf/type        :owl/Restriction}
+    :fibo-fnd-agr-ctr/WrittenContract
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
      :rdf/type       :owl/Restriction}
+    :fibo-fnd-agr-agr/Agreement
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractualElement,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 2,
      :owl/onClass    :fibo-fnd-agr-ctr/ContractParty,
      :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,

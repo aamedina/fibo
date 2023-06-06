@@ -34,18 +34,10 @@
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
     "dcterms" "http://purl.org/dc/terms/",
-    "fibo-fbc-dae-dbt"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
     "fibo-fbc-fi-fi"
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-    "fibo-fnd-utl-alx"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
     "fibo-fnd-utl-av"
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "fibo-ind-ei-ei"
-    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
-    "fibo-ind-ind-ind"
-    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
     "fibo-loan-spc-cns"
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/",
     "fibo-loan-spc-stu"
@@ -108,6 +100,20 @@
                      :fibo-sec-dbt-abs/AutoDebtPool],
    :skos/definition #voc/lstr "debt pool of auto-related loans or leases@en"})
 
+(def BondPool
+  "debt pool of consisting of bonds"
+  {:db/ident :fibo-sec-dbt-abs/BondPool,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
+   :rdfs/label #voc/lstr "bond pool@en",
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool
+                     :fibo-sec-dbt-abs/BondPool],
+   :skos/definition #voc/lstr "debt pool of consisting of bonds@en"})
+
 (def ConsumerAssetBackedSecurity
   "structured finance securities collateralized by pools of auto loans and leases (auto ABS), credit card receivables (credit card ABS) or student loans (student loan ABS)"
   {:cmns-av/adaptedFrom
@@ -129,28 +135,32 @@
    #voc/lstr
     "structured finance securities collateralized by pools of auto loans and leases (auto ABS), credit card receivables (credit card ABS) or student loans (student loan ABS)@en"})
 
-(def ControlledAmortizationBond
-  "bond that is securitized using a controlled amortization structure"
+(def ControlledAmortizationAssetBackedSecurity
+  "asset-backed security based on a pool of bonds securitized using a controlled amortization structure"
   {:cmns-av/adaptedFrom
    "http://www.investinginbonds.com/learnmore.asp?catid=11&subcatid=57&id=15",
    :cmns-av/explanatoryNote
-   "Revolving debt (primarily credit card receivables, but also HELOCs, trade receivables, dealer floor-plan loans and some leases) may be securitized using a controlled amortization structure. This is a method of providing investors with a relatively predictable repayment schedule, even though the underlying assets are nonamortizing. Controlled-amortization ABS resemble corporate bonds with a sinking fund. After a predetermined 'revolving' period during which only interest payments are made, these securities attempt to return principal to investors in a series of defined periodic payments that usually occur over less than a year. A risk inherent in this kind of ABS is an early amortization event.",
-   :db/ident :fibo-sec-dbt-abs/ControlledAmortizationBond,
+   ["Revolving debt (primarily credit card receivables, but also HELOCs, trade receivables, dealer floor-plan loans and some leases) may be securitized using a controlled amortization structure. This is a method of providing investors with a relatively predictable repayment schedule, even though the underlying assets are nonamortizing. A risk inherent in this kind of ABS is an early amortization event."
+    "Controlled-amortization ABS resemble corporate bonds with a sinking fund. After a predetermined 'revolving' period during which only interest payments are made, these securities attempt to return principal to investors in a series of defined periodic payments that usually occur over less than a year."],
+   :db/ident :fibo-sec-dbt-abs/ControlledAmortizationAssetBackedSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "controlled amortization bond",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-sec-dbt-dbti/hasRepaymentTerms,
-                      :owl/someValuesFrom
-                      :fibo-sec-dbt-abs/ControlledAmortizationStructure,
-                      :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-bnd/AmortizingBond
-                     :fibo-sec-dbt-abs/ControlledAmortizationBond],
+   :rdfs/label "controlled amortization asset-backed security",
+   :rdfs/subClassOf
+   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+     :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-abs/ControlledAmortizationStructure,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-pbs/AssetBackedSecurity
+    :fibo-sec-dbt-abs/ControlledAmortizationAssetBackedSecurity],
    :skos/definition
-   "bond that is securitized using a controlled amortization structure"})
+   "asset-backed security based on a pool of bonds securitized using a controlled amortization structure"})
 
 (def ControlledAmortizationStructure
-  "method of providing investors with a relatively predictable repayment schedule, even though the underlying assets are nonamortizing"
+  "method of providing investors with a relatively predictable repayment schedule, even though the underlying assets are non-amortizing"
   {:db/ident :fibo-sec-dbt-abs/ControlledAmortizationStructure,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -159,7 +169,7 @@
    :rdfs/subClassOf [:fibo-sec-dbt-bnd/BondAmortizationPaymentTerms
                      :fibo-sec-dbt-abs/ControlledAmortizationStructure],
    :skos/definition
-   "method of providing investors with a relatively predictable repayment schedule, even though the underlying assets are nonamortizing"})
+   "method of providing investors with a relatively predictable repayment schedule, even though the underlying assets are non-amortizing"})
 
 (def CreditCardAssetBackedSecurity
   "asset-backed security based on credit card receivables"
@@ -200,22 +210,31 @@
    :skos/definition #voc/lstr
                      "pool of outstanding balances on designated accounts@en"})
 
-(def FullyAmortizingBond
-  "amortizing bond that returns principal to investors over the life of the security"
-  {:cmns-av/explanatoryNote
-   ["These are typically backed by HELs, auto loans, manufactured-housing contracts and other fully amortizing assets. Prepayment risk is a key consideration with such ABS, although the rate of prepayment may vary considerably by the type of underlying asset."
-    "Fully amortizing bonds are designed to closely reflect the full repayment of the underlying loans through scheduled interest and principal payments."],
-   :db/ident :fibo-sec-dbt-abs/FullyAmortizingBond,
-   :fibo-fnd-utl-av/definitionOrigin
+(def FullyAmortizingAssetBackedSecurity
+  "asset-backed security based on a pool of debt instruments that returns principal to investors over the life of the security"
+  {:cmns-av/adaptedFrom
    "http://www.investinginbonds.com/learnmore.asp?catid=11&subcatid=57&id=15",
+   :cmns-av/explanatoryNote
+   ["These are typically backed by HELs, auto loans, manufactured-housing contracts and other fully amortizing assets. Prepayment risk is a key consideration with such ABS, although the rate of prepayment may vary considerably by the type of underlying asset."
+    "Fully amortizing asset-backed securities are designed to closely reflect the full repayment of the underlying loans through scheduled interest and principal payments."],
+   :db/ident :fibo-sec-dbt-abs/FullyAmortizingAssetBackedSecurity,
+   :owl/disjointWith
+   :fibo-sec-dbt-abs/ControlledAmortizationAssetBackedSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "fully amortizing bond",
-   :rdfs/subClassOf [:fibo-sec-dbt-bnd/AmortizingBond
-                     :fibo-sec-dbt-abs/FullyAmortizingBond],
+   :rdfs/label "fully amortizing asset-backed security",
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-sec-dbt-dbti/hasRepaymentTerms,
+                      :owl/someValuesFrom
+                      :fibo-sec-dbt-abs/ControlledAmortizationStructure,
+                      :rdf/type :owl/Restriction}
+                     :fibo-sec-dbt-pbs/AssetBackedSecurity
+                     :fibo-sec-dbt-abs/FullyAmortizingAssetBackedSecurity],
    :skos/definition
-   "amortizing bond that returns principal to investors over the life of the security"})
+   "asset-backed security based on a pool of debt instruments that returns principal to investors over the life of the security"})
 
 (def HomeEquityLineOfCreditPool
   "debt pool consisting of home equity loans"
@@ -252,199 +271,6 @@
                      :fibo-sec-dbt-abs/HomeEquityLoanAssetBackedSecurity],
    :skos/definition
    #voc/lstr "asset-backed security based on home equity loan receivables@en"})
-
-(def IndexAmortizingBond
-  ""
-  {:db/ident :fibo-sec-dbt-abs/IndexAmortizingBond,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "index amortizing bond",
-   :rdfs/subClassOf
-   [{:owl/onProperty :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom
-     :fibo-sec-dbt-abs/IndexLinkedPrincipalDeterminationTerms,
-     :rdf/type :owl/Restriction}
-    :fibo-sec-dbt-bnd/AmortizingBond
-    :fibo-sec-dbt-abs/IndexBasedCouponBond
-    :fibo-sec-dbt-abs/IndexAmortizingBond
-    {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
-     :owl/someValuesFrom :fibo-sec-dbt-abs/IndexLinkedCoupon,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-abs/IndexLinkedCouponTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/VariableCouponBond],
-   :skos/definition ""})
-
-(def IndexBasedCouponBond
-  "variable coupon bond with payments that fluctuate according to an \"index\" other than an interest rate, such as an economic indicator"
-  {:db/ident :fibo-sec-dbt-abs/IndexBasedCouponBond,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "index-based coupon bond",
-   :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-abs/IndexLinkedCouponTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
-     :owl/someValuesFrom :fibo-sec-dbt-abs/IndexLinkedCoupon,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/VariableCouponBond
-    :fibo-sec-dbt-abs/IndexBasedCouponBond],
-   :skos/definition
-   "variable coupon bond with payments that fluctuate according to an \"index\" other than an interest rate, such as an economic indicator",
-   :skos/editorialNote
-   "Might also be referred to as Index Linked, but more commonly the term Index Linked refers to principal. So this term has a made up name for this kind of bond, following OTPP review in which we dealt with the distinction between index linked interest and index linked principal amounts. ."})
-
-(def IndexLinkedCoupon
-  "index linked coupon"
-  {:db/ident :fibo-sec-dbt-abs/IndexLinkedCoupon,
-   :owl/disjointWith [:fibo-sec-dbt-abs/WACBondCoupon
-                      :fibo-sec-dbt-abs/InflationBondVariableCoupon],
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "index linked coupon",
-   :rdfs/subClassOf [:fibo-sec-dbt-bnd/BondVariableCoupon
-                     :fibo-sec-dbt-abs/IndexLinkedCoupon]})
-
-(def IndexLinkedCouponTerms
-  "index-linked coupon terms"
-  {:db/ident :fibo-sec-dbt-abs/IndexLinkedCouponTerms,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "index-linked coupon terms",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
-                      :owl/someValuesFrom {:owl/unionOf
-                                           [:fibo-ind-ei-ei/EconomicIndicator
-                                            :fibo-ind-ind-ind/MarketRate],
-                                           :rdf/type :owl/Class},
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-bnd/VariableCouponTerms
-                     :fibo-sec-dbt-abs/IndexLinkedCouponTerms]})
-
-(def IndexLinkedPrincipalDeterminationTerms
-  "terms for payment of the principal that tie the principal amounts to some underlying index or interest rate"
-  {:db/ident :fibo-sec-dbt-abs/IndexLinkedPrincipalDeterminationTerms,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "index-linked principal determination terms",
-   :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-sec-dbt-abs/specifiesIndexParameter,
-     :owl/someValuesFrom {:owl/unionOf [:fibo-ind-ei-ei/EconomicIndicator
-                                        :fibo-ind-ind-ind/MarketRate],
-                          :rdf/type    :owl/Class},
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-utl-alx/hasExpression,
-     :owl/someValuesFrom :fibo-sec-dbt-abs/PrincipalPaymentCalculation,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-dae-dbt/PrincipalRepaymentTerms
-    :fibo-sec-dbt-abs/IndexLinkedPrincipalDeterminationTerms],
-   :skos/definition
-   "terms for payment of the principal that tie the principal amounts to some underlying index or interest rate"})
-
-(def InflationBondInterestPaymentTerms
-  "terms for the payment of interest on an inflation bond"
-  {:cmns-av/explanatoryNote
-   "These may for example specify that the interest payments are by way of coupone calculated with reference to the inflation rate that is referenced for that bond, or they may not (for example they may specify a fixed coupon amount). Therefore these terms may specify any potential interest payment arrangement used on bonds.",
-   :db/ident :fibo-sec-dbt-abs/InflationBondInterestPaymentTerms,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "inflation bond interest payment terms",
-   :rdfs/subClassOf [:fibo-sec-dbt-bnd/CouponPaymentTerms
-                     :fibo-sec-dbt-abs/InflationBondInterestPaymentTerms],
-   :skos/definition "terms for the payment of interest on an inflation bond"})
-
-(def InflationBondPrincipalRepaymentTerms
-  "terms specifying how the principal amount on an inflation bond is to be paid down"
-  {:cmns-av/explanatoryNote
-   "Further notes: This is typically but not necessarily with reference to the Inflation rate that is referred to for this bond. Further model action: identify and model terms for the case where the bond principal repayments are not pegged to an inflation rate.",
-   :db/ident :fibo-sec-dbt-abs/InflationBondPrincipalRepaymentTerms,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "inflation bond principal repayment terms",
-   :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-utl-alx/hasExpression,
-     :owl/someValuesFrom :fibo-sec-dbt-abs/InflationFactorExpression,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-abs/IndexLinkedPrincipalDeterminationTerms
-    :fibo-sec-dbt-abs/InflationBondPrincipalRepaymentTerms
-    {:owl/onProperty     :fibo-fnd-utl-alx/hasExpression,
-     :owl/someValuesFrom :fibo-sec-dbt-abs/PrincipalPaymentCalculation,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-abs/specifiesIndexParameter,
-     :owl/someValuesFrom {:owl/unionOf [:fibo-ind-ei-ei/EconomicIndicator
-                                        :fibo-ind-ind-ind/MarketRate],
-                          :rdf/type    :owl/Class},
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-dae-dbt/PrincipalRepaymentTerms],
-   :skos/definition
-   "terms specifying how the principal amount on an inflation bond is to be paid down"})
-
-(def InflationBondVariableCoupon
-  "inflation bond variable coupon"
-  {:db/ident :fibo-sec-dbt-abs/InflationBondVariableCoupon,
-   :owl/disjointWith :fibo-sec-dbt-abs/WACBondCoupon,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "inflation bond variable coupon",
-   :rdfs/subClassOf [:fibo-sec-dbt-bnd/BondVariableCoupon
-                     :fibo-sec-dbt-abs/InflationBondVariableCoupon]})
-
-(def InflationBondVariableCouponTerms
-  "inflation bond variable coupon terms"
-  {:db/ident :fibo-sec-dbt-abs/InflationBondVariableCouponTerms,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "inflation bond variable coupon terms",
-   :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-utl-alx/hasExpression,
-     :owl/someValuesFrom :fibo-sec-dbt-abs/InflationFactorExpression,
-     :rdf/type           :owl/Restriction}
-    {:owl/maxQualifiedCardinality 1,
-     :owl/onClass    :fibo-sec-dbt-abs/InflationBondVariableCoupon,
-     :owl/onProperty :fibo-fbc-dae-dbt/hasInterestRate,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-bnd/VariableCouponTerms
-    :fibo-sec-dbt-abs/InflationBondVariableCouponTerms]})
-
-(def InflationFactorExpression
-  "expression used to calculate the outstanding principal of the bond due to changes in the inflation rate"
-  {:db/ident :fibo-sec-dbt-abs/InflationFactorExpression,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "inflation factor expression",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-ind-ei-ei/InflationRate,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
-                     :fibo-sec-dbt-abs/InflationFactorExpression],
-   :skos/definition
-   "expression used to calculate the outstanding principal of the bond due to changes in the inflation rate"})
-
-(def PrincipalPaymentCalculation
-  "a formula for calculation of principal payments for certain kinds of bonds"
-  {:db/ident :fibo-sec-dbt-abs/PrincipalPaymentCalculation,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "principal payment calculation",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Principal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
-                     :fibo-sec-dbt-abs/PrincipalPaymentCalculation],
-   :skos/definition
-   "a formula for calculation of principal payments for certain kinds of bonds"})
 
 (def StudentLoanAssetBackedSecurity
   "asset-backed security based on student loan receivables"
@@ -489,15 +315,3 @@
    :rdfs/label "w a c bond coupon",
    :rdfs/subClassOf [:fibo-sec-dbt-bnd/BondVariableCoupon
                      :fibo-sec-dbt-abs/WACBondCoupon]})
-
-(def specifiesIndexParameter
-  "indicates the index specified in the formula for determination of principal paydown amounts"
-  {:db/ident :fibo-sec-dbt-abs/specifiesIndexParameter,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-dbt-abs/IndexLinkedPrincipalDeterminationTerms,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
-   :rdfs/label "specifies index parameter",
-   :rdfs/range :fibo-ind-ei-ei/InflationRate,
-   :skos/definition
-   "indicates the index specified in the formula for determination of principal paydown amounts"})

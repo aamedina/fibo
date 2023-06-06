@@ -908,7 +908,7 @@
    :rdfs/label #voc/lstr "denomination increment@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount})
 
-(def finalizes.1
+(def finalizes_1
   "finalizes"
   {:db/ident :fibo-bp-iss-pmbs/finalizes.1,
    :rdf/type :owl/ObjectProperty,
@@ -939,7 +939,7 @@
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheStructure,
    :rdfs/subPropertyOf [:cmns-col/hasPart :fibo-bp-iss-pmbs/hasContent]})
 
-(def hasContent.1
+(def hasContent_1
   "has content"
   {:db/ident :fibo-bp-iss-pmbs/hasContent.1,
    :rdf/type :owl/ObjectProperty,
@@ -990,7 +990,7 @@
    :rdfs/label #voc/lstr "has resource@en",
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheNotesParameters})
 
-(def hasResource.1
+(def hasResource_1
   "has resource"
   {:db/ident :fibo-bp-iss-pmbs/hasResource.1,
    :rdf/type :owl/ObjectProperty,
@@ -1000,7 +1000,7 @@
    :rdfs/label #voc/lstr "has resource@en",
    :rdfs/range :fibo-bp-iss-pmbs/TranchedOfferingMemorandum})
 
-(def hasResource.2
+(def hasResource_2
   "has resource"
   {:db/ident :fibo-bp-iss-pmbs/hasResource.2,
    :rdf/type :owl/ObjectProperty,
@@ -1040,7 +1040,7 @@
    :rdfs/label #voc/lstr "includes details about@en",
    :rdfs/range :fibo-bp-iss-pmbs/TrancheStructureAndTermsheet})
 
-(def includesDetailsAbout.1
+(def includesDetailsAbout_1
   "includes details about"
   {:db/ident :fibo-bp-iss-pmbs/includesDetailsAbout.1,
    :rdf/type :owl/ObjectProperty,
@@ -1153,7 +1153,7 @@
    :rdfs/label #voc/lstr "requires@en",
    :rdfs/range :fibo-sec-dbt-mbs/NonAgencyMortgagePool})
 
-(def requires.1
+(def requires_1
   "requires"
   {:db/ident :fibo-bp-iss-pmbs/requires.1,
    :rdf/type :owl/ObjectProperty,
@@ -1173,7 +1173,7 @@
    :rdfs/label #voc/lstr "results in@en",
    :rdfs/range :fibo-bp-iss-pmbs/TranchedMBSDealTransaction})
 
-(def resultsIn.1
+(def resultsIn_1
   "results in"
   {:db/ident :fibo-bp-iss-pmbs/resultsIn.1,
    :rdf/type :owl/ObjectProperty,
@@ -1183,7 +1183,7 @@
    :rdfs/label #voc/lstr "results in@en",
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheNotesParameters})
 
-(def resultsIn.2
+(def resultsIn_2
   "results in"
   {:db/ident :fibo-bp-iss-pmbs/resultsIn.2,
    :rdf/type :owl/ObjectProperty,

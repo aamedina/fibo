@@ -91,10 +91,10 @@
      :rdf/type           :owl/Restriction}
     :fibo-der-sbd-sbd/SecurityBasedDerivative
     :fibo-der-sbd-sbd/DebtInstrumentDerivative
+    :fibo-fbc-fi-fi/DerivativeInstrument
     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom :fibo-der-sbd-sbd/SecurityUnderlier,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DerivativeInstrument],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "security-based derivative whose underlier is a debt observable"})
 
@@ -115,7 +115,6 @@
                       :rdf/type :owl/Restriction}
                      :fibo-der-sbd-sbd/SecurityUnderlier
                      :fibo-der-sbd-sbd/DebtObservable
-                     :fibo-fbc-fi-fi/Underlier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-sec-sec-bsk/BasketOfSecurities
@@ -123,7 +122,8 @@
                                         :fibo-ind-mkt-bas/ReferenceIndex],
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fi-fi/Underlier],
    :skos/definition
    "security underlier that is debt-based, such as individual debt instruments, credit indices, and custom baskets of debt assets"})
 
@@ -139,10 +139,10 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-der-sbd-sbd/SecurityBasedDerivative
                      :fibo-der-sbd-sbd/EquityDerivative
+                     :fibo-fbc-fi-fi/DerivativeInstrument
                      {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-der-sbd-sbd/SecurityUnderlier,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/DerivativeInstrument],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "security-based derivative whose underlier is an equity observable"})
 
@@ -162,14 +162,14 @@
      :rdf/type           :owl/Restriction}
     :fibo-der-sbd-sbd/SecurityUnderlier
     :fibo-der-sbd-sbd/EquityObservable
-    :fibo-fbc-fi-fi/Underlier
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/unionOf [:fibo-sec-sec-bsk/BasketOfSecurities
                                     :fibo-fbc-fi-fi/Security
                                     :fibo-ind-mkt-bas/ReferenceIndex],
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/Underlier],
    :skos/definition
    "security underlier that is equity based, such as individual shares, equity indices, and custom basket of equity assets"})
 

@@ -71,20 +71,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/",
    :rdfs/label #voc/lstr "currency derivative@en",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
-                      :owl/someValuesFrom
-                      :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fbc-fi-fi/CurrencyInstrument
+   :rdfs/subClassOf [:fibo-fbc-fi-fi/CurrencyInstrument
+                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-der-drc-cur/hasBuyingCurrency,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom
+                      :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
+                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
                      :fibo-der-drc-cur/CurrencyDerivative],
    :skos/definition
    #voc/lstr
@@ -105,20 +105,20 @@
                      :fibo-der-drc-ff/Forward
                      :fibo-der-drc-cur/CurrencyDerivative
                      :fibo-der-drc-cur/CurrencyForward
+                     {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom
+                      :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
+                      :rdf/type :owl/Restriction}
                      :fibo-fbc-fi-fi/CurrencyInstrument
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-der-drc-cur/hasBuyingCurrency,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
-                     {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
-                      :owl/someValuesFrom
-                      :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
-                      :rdf/type :owl/Restriction}],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument],
    :skos/definition
    #voc/lstr
     "agreement to deliver and settle a given amount of money in one currency, in exchange for a given amount in another currency, at an agreed date in the future and at an agreed rate of exchange@en"})
@@ -144,24 +144,24 @@
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-cur/CurrencyForward
     :fibo-der-drc-cur/CurrencyForwardOutright
-    :fibo-fbc-fi-fi/CurrencyInstrument
-    {:owl/onProperty     :fibo-der-drc-cur/hasForwardExchangeRate,
-     :owl/someValuesFrom :fibo-fnd-acc-cur/ExchangeRate,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-acc-cur/Currency,
-     :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
-     :rdf/type       :owl/Restriction}
     :fibo-der-drc-cur/CurrencyDerivative
+    :fibo-der-drc-ff/Forward
+    {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+     :owl/someValuesFrom :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/CurrencyInstrument
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-acc-cur/Currency,
      :owl/onProperty :fibo-der-drc-cur/hasBuyingCurrency,
      :rdf/type       :owl/Restriction}
-    :fibo-der-drc-ff/Forward
-    :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
-    {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-     :owl/someValuesFrom :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
-     :rdf/type           :owl/Restriction}],
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-acc-cur/Currency,
+     :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-cur/hasForwardExchangeRate,
+     :owl/someValuesFrom :fibo-fnd-acc-cur/ExchangeRate,
+     :rdf/type           :owl/Restriction}
+    :fibo-der-rtd-rtd/RateBasedDerivativeInstrument],
    :skos/definition
    #voc/lstr
     "forward contract in a foreign exchange market that locks in the price at which an entity must buy or sell a currency on a future date@en"})
@@ -182,27 +182,27 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-opt/hasStrikeRate,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/ExchangeRate,
                       :rdf/type           :owl/Restriction}
+                     :fibo-der-drc-opt/VanillaOption
+                     :fibo-der-drc-cur/CurrencyDerivative
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-ind-fx-fx/CurrencySpotBuyRate,
                       :owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-drc-opt/VanillaOption
-                     :fibo-der-drc-cur/CurrencyDerivative
                      :fibo-der-drc-cur/CurrencyOption
+                     {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom
+                      :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
+                      :rdf/type :owl/Restriction}
                      :fibo-fbc-fi-fi/CurrencyInstrument
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-der-drc-cur/hasBuyingCurrency,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
-                     {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
-                      :owl/someValuesFrom
-                      :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
-                      :rdf/type :owl/Restriction}],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument],
    :skos/definition
    #voc/lstr
     "option giving the buyer (holder) the right, but not the obligation, to buy or sell currency at a specified exchange rate during a specified period of time@en"})
@@ -243,24 +243,24 @@
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-cur/CurrencySwap
     :fibo-der-drc-cur/CurrencySpotForwardSwap
-    :fibo-fbc-fi-fi/CurrencyInstrument
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-acc-cur/Currency,
-     :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
-     :rdf/type       :owl/Restriction}
     :fibo-der-drc-cur/CurrencyDerivative
+    :fibo-der-drc-swp/RatesSwap
+    {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+     :owl/someValuesFrom :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/CurrencyInstrument
+    {:owl/onProperty     :fibo-der-drc-swp/hasLeg,
+     :owl/someValuesFrom :fibo-der-drc-cur/CurrencyForward,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-acc-cur/Currency,
      :owl/onProperty :fibo-der-drc-cur/hasBuyingCurrency,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-swp/hasLeg,
-     :owl/someValuesFrom :fibo-der-drc-cur/CurrencyForward,
-     :rdf/type           :owl/Restriction}
-    :fibo-der-drc-swp/RatesSwap
-    :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
-    {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-     :owl/someValuesFrom :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
-     :rdf/type           :owl/Restriction}],
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-acc-cur/Currency,
+     :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
+     :rdf/type       :owl/Restriction}
+    :fibo-der-rtd-rtd/RateBasedDerivativeInstrument],
    :skos/definition
    #voc/lstr
     "foreign exchange agreement between two parties involving an exchange of two currencies at agreed fixed rates: a) on the spot settlement date and b) a reverse exchange on a later specified date@en"})
@@ -281,20 +281,20 @@
                      :fibo-der-drc-swp/RatesSwap
                      :fibo-der-drc-cur/CurrencyDerivative
                      :fibo-der-drc-cur/CurrencySwap
+                     {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom
+                      :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
+                      :rdf/type :owl/Restriction}
                      :fibo-fbc-fi-fi/CurrencyInstrument
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-der-drc-cur/hasBuyingCurrency,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
-                     {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
-                      :owl/someValuesFrom
-                      :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
-                      :rdf/type :owl/Restriction}],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument],
    :skos/definition
    #voc/lstr
     "foreign exchange agreement between two parties to exchange a given amount of one currency for another currency for spot delivery or for forward delivery at an agreed rate after a specified period of time@en",
@@ -315,28 +315,28 @@
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-cur/CurrencyOption
     :fibo-der-drc-cur/CurrencyVolatilityOption
-    :fibo-fbc-fi-fi/CurrencyInstrument
+    :fibo-der-drc-cur/CurrencyDerivative
     :fibo-der-drc-opt/VanillaOption
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-acc-cur/Currency,
-     :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
-     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+     :owl/someValuesFrom :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/CurrencyInstrument
+    {:owl/onProperty     :fibo-der-drc-opt/hasStrikeRate,
+     :owl/someValuesFrom :fibo-fnd-acc-cur/ExchangeRate,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-acc-cur/Currency,
      :owl/onProperty :fibo-der-drc-cur/hasBuyingCurrency,
      :rdf/type       :owl/Restriction}
-    :fibo-der-drc-cur/CurrencyDerivative
-    {:owl/onProperty     :fibo-der-drc-opt/hasStrikeRate,
-     :owl/someValuesFrom :fibo-fnd-acc-cur/ExchangeRate,
-     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-acc-cur/Currency,
+     :owl/onProperty :fibo-der-drc-cur/hasSellingCurrency,
+     :rdf/type       :owl/Restriction}
     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-ind-fx-fx/CurrencySpotBuyRate,
      :owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-     :owl/someValuesFrom :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "currency option whose underlying asset is based on the volatility of a foreign exchange rate@en"})

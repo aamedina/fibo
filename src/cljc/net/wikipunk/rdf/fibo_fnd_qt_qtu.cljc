@@ -63,11 +63,11 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-qt-qtu/QuantityKind
                      :fibo-fnd-qt-qtu/BaseQuantity
-                     :cmns-cls/Classifier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/MeasurementUnit,
                       :owl/onProperty :fibo-fnd-qt-qtu/hasMeasurementUnit,
                       :rdf/type       :owl/Restriction}
+                     :cmns-cls/Classifier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/QuantityKind,
                       :owl/onProperty :fibo-fnd-qt-qtu/specializes,
@@ -89,17 +89,17 @@
    :rdfs/label "base unit",
    :rdfs/subClassOf [:fibo-fnd-qt-qtu/MeasurementUnit
                      :fibo-fnd-qt-qtu/BaseUnit
-                     {:owl/onProperty     :cmns-dsg/isDefinedIn,
-                      :owl/someValuesFrom :fibo-fnd-qt-qtu/SystemOfUnits,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
                       :owl/someValuesFrom :fibo-fnd-qt-qtu/QuantityKind,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-qt-qtu/Quantity
+                     {:owl/onProperty     :cmns-dsg/isDefinedIn,
+                      :owl/someValuesFrom :fibo-fnd-qt-qtu/SystemOfUnits,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/MeasurementUnit,
                       :owl/onProperty :fibo-fnd-qt-qtu/specializes,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-qt-qtu/Quantity],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "measurement unit that is defined by a system of units to be the reference measurement unit for a base quantity"})
 
@@ -125,11 +125,11 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-qt-qtu/QuantityKind
                      :fibo-fnd-qt-qtu/DerivedQuantity
-                     :cmns-cls/Classifier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/MeasurementUnit,
                       :owl/onProperty :fibo-fnd-qt-qtu/hasMeasurementUnit,
                       :rdf/type       :owl/Restriction}
+                     :cmns-cls/Classifier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/QuantityKind,
                       :owl/onProperty :fibo-fnd-qt-qtu/specializes,
@@ -148,25 +148,25 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label "derived unit",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-qt-qtu/isDerivedFrom,
+   :rdfs/subClassOf [:fibo-fnd-qt-qtu/MeasurementUnit
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/isDerivedFrom,
                       :owl/someValuesFrom :fibo-fnd-qt-qtu/BaseUnit,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-qt-qtu/hasFactor,
                       :owl/someValuesFrom :fibo-fnd-qt-qtu/UnitFactor,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-qt-qtu/MeasurementUnit
                      :fibo-fnd-qt-qtu/DerivedUnit
-                     {:owl/onProperty     :cmns-dsg/isDefinedIn,
-                      :owl/someValuesFrom :fibo-fnd-qt-qtu/SystemOfUnits,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
                       :owl/someValuesFrom :fibo-fnd-qt-qtu/QuantityKind,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-qt-qtu/Quantity
+                     {:owl/onProperty     :cmns-dsg/isDefinedIn,
+                      :owl/someValuesFrom :fibo-fnd-qt-qtu/SystemOfUnits,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/MeasurementUnit,
                       :owl/onProperty :fibo-fnd-qt-qtu/specializes,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-qt-qtu/Quantity],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "measurement unit that is defined with respect to one or more base units, such as as a product of powers of one or more other measurement units",
    :skos/example
@@ -207,11 +207,11 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/isDefinedIn,
                       :owl/someValuesFrom :fibo-fnd-qt-qtu/SystemOfUnits,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-qt-qtu/Quantity
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/MeasurementUnit,
                       :owl/onProperty :fibo-fnd-qt-qtu/specializes,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-qt-qtu/Quantity
                      :fibo-fnd-qt-qtu/MeasurementUnit
                      {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
                       :owl/someValuesFrom :fibo-fnd-qt-qtu/QuantityKind,
@@ -253,14 +253,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label "quantity kind",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-qt-qtu/QuantityKind,
-                      :owl/onProperty :fibo-fnd-qt-qtu/specializes,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/MeasurementUnit,
                       :owl/onProperty :fibo-fnd-qt-qtu/hasMeasurementUnit,
                       :rdf/type       :owl/Restriction}
                      :cmns-cls/Classifier
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-qt-qtu/QuantityKind,
+                      :owl/onProperty :fibo-fnd-qt-qtu/specializes,
+                      :rdf/type       :owl/Restriction}
                      :fibo-fnd-qt-qtu/QuantityKind],
    :skos/definition
    "classifier for 'quantity' that characterizes quantities as being mutually comparable"})
@@ -297,14 +297,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label "quantity value",
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fnd-qt-qtu/MeasurementUnit,
-                      :owl/onProperty :fibo-fnd-qt-qtu/hasMeasurementUnit,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :xsd/decimal,
+   :rdfs/subClassOf [{:owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-qt-qtu/hasNumericValue,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fnd-qt-qtu/MeasurementUnit,
+                      :owl/onProperty :fibo-fnd-qt-qtu/hasMeasurementUnit,
+                      :rdf/type       :owl/Restriction}
                      :fibo-fnd-qt-qtu/QuantityValue],
    :skos/definition
    "number and measurement unit together giving magnitude of a quantity",
@@ -318,15 +318,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label #voc/lstr "system of quantities@en",
-   :rdfs/subClassOf [:cmns-cls/ClassificationScheme
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
+                      :owl/onProperty :cmns-col/comprises,
+                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
-                      :owl/onProperty :cmns-col/comprises,
-                      :rdf/type       :owl/Restriction}
+                     :cmns-cls/ClassificationScheme
                      {:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-qt-qtu/BaseQuantity
@@ -347,21 +347,21 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
    :rdfs/label "system of units",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-qt-qtu/SystemOfUnits,
-                      :owl/onProperty :cmns-cxtdsg/uses,
-                      :rdf/type       :owl/Restriction}
-                     :cmns-cls/ClassificationScheme
-                     {:owl/onProperty     :cmns-dsg/defines,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-fnd-qt-qtu/MeasurementUnit,
                       :rdf/type           :owl/Restriction}
+                     :cmns-cls/ClassificationScheme
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-qt-qtu/SystemOfUnits,
-                      :owl/onProperty :cmns-col/comprises,
+                      :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-qt-qtu/SystemOfQuantities,
                       :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-qt-qtu/SystemOfUnits,
+                      :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-qt-qtu/SystemOfUnits],
    :skos/definition

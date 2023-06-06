@@ -95,12 +95,12 @@
     :fibo-be-ptr-ptr/Partner
     :fibo-be-oac-cpty/DeJureControllingInterestParty
     :fibo-be-ptr-ptr/GeneralPartner
-    :fibo-fnd-org-org/OrganizationMember
-    :fibo-be-oac-opty/ConstitutionalOwner
     {:owl/onClass    :fibo-be-le-lp/LegalPerson,
      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
+    :fibo-be-oac-opty/ConstitutionalOwner
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onProperty     :cmns-col/isMemberOf,
                           :owl/someValuesFrom :fibo-be-ptr-ptr/Partnership,
@@ -137,6 +137,8 @@
      :rdf/type           :owl/Restriction}
     :fibo-be-ptr-ptr/Partnership
     :fibo-be-ptr-ptr/GeneralPartnership
+    :fibo-be-le-lp/LegalEntity
+    :fibo-be-le-lp/BusinessEntity
     {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
      :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
      :rdf/type           :owl/Restriction}
@@ -144,8 +146,6 @@
      :owl/onClass    :fibo-be-le-lp/ProfitObjective,
      :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
      :rdf/type       :owl/Restriction}
-    :fibo-be-le-lp/BusinessEntity
-    :fibo-be-le-lp/LegalEntity
     {:owl/onProperty     :cmns-col/hasMember,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
@@ -167,6 +167,8 @@
    :rdfs/subClassOf
    [:fibo-be-ptr-ptr/LimitedPartnership
     :fibo-be-ptr-ptr/LimitedLiabilityLimitedPartnership
+    :fibo-be-le-lp/LegalEntity
+    :fibo-be-le-lp/BusinessEntity
     {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
      :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
      :rdf/type           :owl/Restriction}
@@ -174,12 +176,10 @@
      :owl/onClass    :fibo-be-le-lp/ProfitObjective,
      :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
      :rdf/type       :owl/Restriction}
-    :fibo-be-le-lp/BusinessEntity
+    :fibo-be-ptr-ptr/Partnership
     {:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
      :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
      :rdf/type           :owl/Restriction}
-    :fibo-be-le-lp/LegalEntity
-    :fibo-be-ptr-ptr/Partnership
     {:owl/onProperty     :cmns-col/hasMember,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
@@ -208,6 +208,8 @@
      :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
      :rdf/type           :owl/Restriction}
     :fibo-be-ptr-ptr/LimitedLiabilityPartnership
+    :fibo-be-le-lp/LegalEntity
+    :fibo-be-le-lp/BusinessEntity
     {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
      :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
      :rdf/type           :owl/Restriction}
@@ -215,8 +217,6 @@
      :owl/onClass    :fibo-be-le-lp/ProfitObjective,
      :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
      :rdf/type       :owl/Restriction}
-    :fibo-be-le-lp/BusinessEntity
-    :fibo-be-le-lp/LegalEntity
     {:owl/onProperty     :cmns-col/hasMember,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
@@ -239,12 +239,12 @@
    :rdfs/subClassOf
    [:fibo-be-ptr-ptr/Partner
     :fibo-be-ptr-ptr/LimitedPartner
-    :fibo-fnd-org-org/OrganizationMember
-    :fibo-be-oac-opty/ConstitutionalOwner
     {:owl/onClass    :fibo-be-le-lp/LegalPerson,
      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
+    :fibo-be-oac-opty/ConstitutionalOwner
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onProperty     :cmns-col/isMemberOf,
                           :owl/someValuesFrom :fibo-be-ptr-ptr/Partnership,
@@ -270,14 +270,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "limited partnership",
    :rdfs/subClassOf
-   [:fibo-be-ptr-ptr/Partnership
+   [{:owl/onProperty     :fibo-be-ptr-ptr/hasLimitedPartner,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/LimitedPartner,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-be-ptr-ptr/hasGeneralPartner,
      :owl/someValuesFrom :fibo-be-ptr-ptr/GeneralPartner,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-be-ptr-ptr/hasLimitedPartner,
-     :owl/someValuesFrom :fibo-be-ptr-ptr/LimitedPartner,
-     :rdf/type           :owl/Restriction}
+    :fibo-be-ptr-ptr/Partnership
     :fibo-be-ptr-ptr/LimitedPartnership
+    :fibo-be-le-lp/LegalEntity
+    :fibo-be-le-lp/BusinessEntity
     {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
      :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
      :rdf/type           :owl/Restriction}
@@ -285,8 +287,6 @@
      :owl/onClass    :fibo-be-le-lp/ProfitObjective,
      :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
      :rdf/type       :owl/Restriction}
-    :fibo-be-le-lp/BusinessEntity
-    :fibo-be-le-lp/LegalEntity
     {:owl/onProperty     :cmns-col/hasMember,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
@@ -337,20 +337,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "partnership",
    :rdfs/subClassOf
-   [:fibo-be-le-lp/LegalEntity
-    {:owl/onProperty     :cmns-col/hasMember,
+   [{:owl/onProperty     :cmns-col/hasMember,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom :fibo-be-ptr-ptr/Partner,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-be-le-lp/BusinessEntity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
-     :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
-     :rdf/type           :owl/Restriction}
+    :fibo-be-le-lp/LegalEntity
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-be-le-lp/ProfitObjective,
      :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
      :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
+     :owl/someValuesFrom :fibo-be-ptr-ptr/PartnershipAgreement,
+     :rdf/type           :owl/Restriction}
+    :fibo-be-le-lp/BusinessEntity
     :fibo-be-ptr-ptr/Partnership],
    :skos/definition
    "association of two or more legal persons to carry on as co-owners a business for profit"})

@@ -207,10 +207,10 @@
    :fibo-fnd-rel-rel/hasTag "COMPLEX_CHANGE_LEGAL_FORM",
    :rdf/type [:fibo-cae-ce-GLEIF/ActionGroup
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
                :rdf/type           :owl/Restriction}
-              :cmns-cls/Classifier
               {:owl/onProperty     :cmns-cls/classifies,
                :owl/someValuesFrom :fibo-cae-ce-act/Action,
                :rdf/type           :owl/Restriction}],
@@ -310,10 +310,10 @@
    :fibo-fnd-rel-rel/hasTag "CHANGE_LEGAL_FORM_AND_NAME",
    :rdf/type [:fibo-cae-ce-GLEIF/ActionGroup
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
                :rdf/type           :owl/Restriction}
-              :cmns-cls/Classifier
               {:owl/onProperty     :cmns-cls/classifies,
                :owl/someValuesFrom :fibo-cae-ce-act/Action,
                :rdf/type           :owl/Restriction}],
@@ -349,10 +349,10 @@
    :fibo-fnd-rel-rel/hasTag "REVERSE_TAKEOVER",
    :rdf/type [:fibo-cae-ce-GLEIF/ActionGroup
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
                :rdf/type           :owl/Restriction}
-              :cmns-cls/Classifier
               {:owl/onProperty     :cmns-cls/classifies,
                :owl/someValuesFrom :fibo-cae-ce-act/Action,
                :rdf/type           :owl/Restriction}],
@@ -385,10 +385,10 @@
    :fibo-fnd-rel-rel/hasTag "STANDALONE",
    :rdf/type [:fibo-cae-ce-GLEIF/ActionGroup
               :owl/NamedIndividual
+              :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
                :rdf/type           :owl/Restriction}
-              :cmns-cls/Classifier
               {:owl/onProperty     :cmns-cls/classifies,
                :owl/someValuesFrom :fibo-cae-ce-act/Action,
                :rdf/type           :owl/Restriction}],

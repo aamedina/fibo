@@ -78,16 +78,16 @@
                       :owl/onClass    :fibo-be-le-cb/InstrumentOfIncorporation,
                       :owl/onProperty :fibo-be-le-cb/isConstitutedBy,
                       :rdf/type       :owl/Restriction}
+                     :fibo-be-le-fbo/NotForProfitOrganization
+                     :fibo-be-le-cb/Corporation
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-fbo/NotForProfitOrganization
-                     :fibo-be-le-lp/LegalEntity
-                     :fibo-be-le-cb/Corporation
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity],
    :skos/definition
    "not-for-profit corporation set up under specific state legislation, typically to provide some social benefit, without an obligation to maximize shareholder return"})
 
@@ -106,16 +106,16 @@
                       :owl/onClass    :fibo-be-le-cb/InstrumentOfIncorporation,
                       :owl/onProperty :fibo-be-le-cb/isConstitutedBy,
                       :rdf/type       :owl/Restriction}
+                     :fibo-be-le-fbo/NotForProfitOrganization
+                     :fibo-be-le-cb/Corporation
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-fbo/NotForProfitOrganization
-                     :fibo-be-le-lp/LegalEntity
-                     :fibo-be-le-cb/Corporation
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity],
    :skos/definition
    "not-for-profit corporation set up under specific state legislation as a business entity for homeowners' associations",
    :skos/example "http://www.dre.ca.gov/files/pdf/re39.pdf"})
@@ -131,8 +131,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
    :rdfs/label #voc/lstr "corporation@en",
-   :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
-                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
@@ -140,6 +139,7 @@
                       :owl/onClass    :fibo-be-le-cb/InstrumentOfIncorporation,
                       :owl/onProperty :fibo-be-le-cb/isConstitutedBy,
                       :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
@@ -167,11 +167,11 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-lp/LegalEntity
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity],
    :skos/definition
    "corporation whose objective is to make money, i.e., to ensure realization of a financial benefit such that the amount of revenue gained from a business activity exceeds the expenses, costs and taxes needed to sustain that activity"})
 
@@ -232,11 +232,11 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-lp/LegalEntity
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity],
    :skos/definition
    "corporation approved by its jurisdictional oversight and tax authorities as operating for educational, charitable, social, religious, civic or humanitarian purposes"})
 
@@ -260,11 +260,11 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-lp/LegalEntity
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity],
    :skos/definition
    "corporation that has shareholders, each of whom receives a portion of the ownership of the corporation through shares of stock"})
 

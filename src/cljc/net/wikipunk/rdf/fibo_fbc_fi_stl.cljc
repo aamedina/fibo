@@ -89,14 +89,14 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-fpas/SettlementTerms
                      :fibo-fbc-fi-stl/CashSettlementTerms
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-fbc-fi-stl/Settlement,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
                       :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fi-stl/hasDeliveryMethod,
                       :owl/someValuesFrom :fibo-fbc-fi-stl/DeliveryMethod,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fbc-fi-stl/Settlement,
                       :rdf/type           :owl/Restriction}],
    :skos/definition "contractual commitment to settle in cash"})
 
@@ -193,14 +193,14 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-fpas/SettlementTerms
                      :fibo-fbc-fi-stl/PhysicalSettlementTerms
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-fbc-fi-stl/Settlement,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
                       :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fi-stl/hasDeliveryMethod,
                       :owl/someValuesFrom :fibo-fbc-fi-stl/DeliveryMethod,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fbc-fi-stl/Settlement,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr

@@ -176,11 +176,11 @@
                       :owl/onProperty  :fibo-fnd-dt-fd/hasOrdinalNumber,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
+                     :fibo-fnd-dt-fd/RecurrenceInterval
                      {:owl/onClass    :fibo-fnd-dt-fd/CalendarPeriod,
                       :owl/onProperty :fibo-fnd-dt-fd/hasCalendarPeriod,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-fd/RecurrenceInterval
                      :fibo-fnd-dt-fd/CalendarSpecifiedInterval
                      :cmns-dt/TimeInterval],
    :skos/definition
@@ -415,13 +415,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "regular schedule",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-dt-fd/hasRecurrenceInterval,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/ScheduleStub,
                       :owl/onProperty :fibo-fnd-dt-fd/hasInitialStub,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-dt-fd/hasRecurrenceInterval,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-fd/Schedule
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasCount,
                       :owl/someValuesFrom :xsd/positiveInteger,

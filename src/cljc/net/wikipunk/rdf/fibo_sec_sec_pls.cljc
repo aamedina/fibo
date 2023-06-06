@@ -77,14 +77,14 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-pls/InstrumentPool
                      :fibo-sec-sec-pls/DebtPool
+                     :cmns-col/Collection
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/Pool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
                       :rdf/type           :owl/Restriction}
-                     :cmns-col/Collection],
+                     :fibo-sec-sec-pls/Pool],
    :skos/definition
    "a pool consisting of debt instruments, such as bonds, loans or mortgages"})
 
@@ -119,10 +119,10 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-pls/Pool
                      :fibo-sec-sec-pls/InstrumentPool
+                     :cmns-col/Collection
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
-                      :rdf/type           :owl/Restriction}
-                     :cmns-col/Collection],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "pool consisting of financial instruments that may be included in the same investment vehicle"})
 
@@ -164,14 +164,14 @@
                       :rdf/type :owl/Restriction}
                      :fibo-sec-sec-pls/PooledFund
                      :fibo-sec-sec-pls/ManagedInvestment
+                     :cmns-col/Collection
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-pls/Pool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/AmountOfMoney,
-                      :rdf/type           :owl/Restriction}
-                     :cmns-col/Collection],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "investment pool that is controlled by a professional investment manager who invests the pool in various financial instruments and assets that align with their investment objectives and is overseen by a board of directors"})
 
@@ -219,10 +219,10 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-pls/Pool
                      :fibo-sec-sec-pls/PooledFund
+                     :cmns-col/Collection
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
-                      :rdf/type           :owl/Restriction}
-                     :cmns-col/Collection],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "a pool of funds that a group of investors combines for common benefit",
    :skos/example
@@ -241,14 +241,14 @@
                       :rdf/type :owl/Restriction}
                      :fibo-sec-sec-pls/InstrumentPool
                      :fibo-sec-sec-pls/SecuritiesPool
+                     :cmns-col/Collection
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/Pool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
                       :rdf/type           :owl/Restriction}
-                     :cmns-col/Collection],
+                     :fibo-sec-sec-pls/Pool],
    :skos/definition
    "a pool of securities organized for the purpose of issuing notes against those securities"})
 

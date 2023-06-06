@@ -4374,7 +4374,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
    :rdfs/label "SGD-Semi-Annual Currency Basis Swap Rate-16:00-Tullett Prebon"})
 
-(def SGD-Semi-Annual_Swap_Rate-11.00-TRADITION
+(def SGD-Semi-Annual_Swap_Rate-11_00-TRADITION
   "SGD-Semi-Annual Swap Rate-11.00-TRADITION"
   {:cmns-av/abbreviation "SGD-Semi-Annual Swap Rate-11.00-TRADITION",
    :cmns-av/explanatoryNote
@@ -5009,7 +5009,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
    :rdfs/label "USD-Annual Swap Rate-4:00-TRADITION"})
 
-(def USD-BA-H.15
+(def USD-BA-H_15
   "USD-BA-H.15"
   {:cmns-av/abbreviation "USD-BA-H.15",
    :cmns-av/explanatoryNote
@@ -5059,7 +5059,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
    :rdfs/label "USD-BSBY"})
 
-(def USD-CD-H.15
+(def USD-CD-H_15
   "USD-CD-H.15"
   {:cmns-av/abbreviation "USD-CD-H.15",
    :cmns-av/explanatoryNote
@@ -5634,7 +5634,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
    :rdfs/label "USD-SandP Index High Grade"})
 
-(def USD-TBILL-H.15
+(def USD-TBILL-H_15
   "USD-TBILL-H.15"
   {:cmns-av/abbreviation "USD-TBILL-H.15",
    :cmns-av/explanatoryNote
@@ -5648,7 +5648,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
    :rdfs/label "USD-TBILL-H.15"})
 
-(def USD-TBILL-H.15-Bloomberg
+(def USD-TBILL-H_15-Bloomberg
   "USD-TBILL-H.15-Bloomberg"
   {:cmns-av/abbreviation "USD-TBILL-H.15-Bloomberg",
    :cmns-av/explanatoryNote

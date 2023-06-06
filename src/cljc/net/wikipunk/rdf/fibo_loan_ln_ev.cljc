@@ -102,13 +102,13 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-loan-ln-ev/LegalProceeding
                      :fibo-loan-ln-ev/CourtJudgment
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :fibo-loan-ln-ev/isAgainst,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "decision by a court or other tribunal that resolves a controversy and determines the rights and obligations of the parties@en"})
@@ -141,13 +141,13 @@
    :rdfs/label #voc/lstr "loan default proceeding@en",
    :rdfs/subClassOf [:fibo-loan-ln-ev/LegalProceeding
                      :fibo-loan-ln-ev/LoanDefaultProceeding
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :fibo-loan-ln-ev/isAgainst,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "[no definition] Further Review This is typically part of mortgagte servicing. THere would typically be a whole department dealing with this. Dealing with default, helping borrowers make payment Collections Default admin Foreclosure Reselling All dealt with by several sub departments. This requires subject matter experts in this area. 1. scoping Identify default as a possible state. This hands off to other business processes. Once you get into the default scenario we are talking about a proces that is going to fall into place over a period of time. The bank works out what to do with the default scenario, e.g. whether it restructures, forecloses, seeks restitution from the security (collateral). It does nto help us to understand the structure of the loan, rather tha consequences of the loan. If we were to further explore the default detail we would bring in other SMEs. And we would have to model a process flow. 1.1 impact on the pool of an MBS Loan Default Proceeding (special ase of legal thing) is an aspect of Default Management / Administratoin. there is also the State of the Loan. Sale / something / fulfilment / fiunduing / approved = servicing mode. Something happens (non payment) =&gt; Default Grace Period followed by negotiation. Some threshold whereby after a given amount of delinquency it needs to go into some other process moving towards foreclosure. Do State Diagram. Stages of loan.@en"})

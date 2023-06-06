@@ -297,8 +297,8 @@
    :rdfs/label #voc/lstr "corporate action payment obligation@en",
    :rdfs/subClassOf [:fibo-cae-ce-srca/CorporateActionObligation
                      :fibo-cae-ce-srca/CorporateActionPaymentObligation
-                     :fibo-fnd-law-lcap/Duty
-                     :fibo-cae-ce-act/CorporateAction]})
+                     :fibo-cae-ce-act/CorporateAction
+                     :fibo-fnd-law-lcap/Duty]})
 
 (def CorporateActionSecuritiesDeliveryObligation
   "Some obligation to deliver some security in the thr context of corporate actions. All cash proceeds and security proceeds can be represented a s acontractual obligation. Where does that obligation arise? Usually in the Contract itself - but there may be other answers to this. Defines what has to be delivered. or paid. Entitlement meanwhile is a calculation based on the Contract."
@@ -310,8 +310,8 @@
    :rdfs/subClassOf
    [:fibo-cae-ce-srca/CorporateActionObligation
     :fibo-cae-ce-srca/CorporateActionSecuritiesDeliveryObligation
-    :fibo-fnd-law-lcap/Duty
-    :fibo-cae-ce-act/CorporateAction],
+    :fibo-cae-ce-act/CorporateAction
+    :fibo-fnd-law-lcap/Duty],
    :skos/definition
    #voc/lstr
     "Some obligation to deliver some security in the thr context of corporate actions. All cash proceeds and security proceeds can be represented a s acontractual obligation. Where does that obligation arise? Usually in the Contract itself - but there may be other answers to this. Defines what has to be delivered. or paid. Entitlement meanwhile is a calculation based on the Contract.@en"})
@@ -816,10 +816,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "tender offer@en",
-   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
+   :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-eq-eq/Share,
                       :rdf/type           :owl/Restriction}
-                     :fibo-cae-ce-act/VoluntaryCorporateAction
                      :fibo-cae-ce-srca/TenderOffer],
    :skos/definition
    #voc/lstr

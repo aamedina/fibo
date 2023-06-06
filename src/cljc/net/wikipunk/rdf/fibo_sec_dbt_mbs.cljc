@@ -26,7 +26,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/DebtIssuance/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/DebtTemporal/DebtAnalytics/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MortgageLoans/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
@@ -73,8 +72,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
     "fibo-loan-reln-mtg"
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
-    "fibo-md-dbtx-aly"
-    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
     "fibo-sec-dbt-abs"
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
     "fibo-sec-dbt-cdo"
@@ -167,10 +164,10 @@
    :rdfs/label #voc/lstr "agency mortgage pool@en",
    :rdfs/subClassOf [:fibo-sec-dbt-mbs/MortgagePool
                      :fibo-sec-dbt-mbs/AgencyMortgagePool
-                     :fibo-sec-sec-pls/DebtPool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool],
    :skos/definition #voc/lstr "A pool of agency mortgages.@en"})
 
 (def CommercialMBS
@@ -181,17 +178,16 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
    :rdfs/label #voc/lstr "commercial m b s@en",
-   :rdfs/subClassOf
-   [:fibo-sec-dbt-mbs/MortgageBackedSecurity
-    :fibo-sec-dbt-mbs/CommercialMBS
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity]})
+   :rdfs/subClassOf [:fibo-sec-dbt-mbs/MortgageBackedSecurity
+                     :fibo-sec-dbt-mbs/CommercialMBS
+                     {:owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :owl/someValuesFrom
+                      :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-pbs/PoolBackedSecurity]})
 
 (def FHLMC-GoldPool
   "FHLMC Gold pool"
@@ -202,11 +198,11 @@
    :rdfs/label #voc/lstr "FHLMC Gold pool@en",
    :rdfs/subClassOf [:fibo-sec-dbt-mbs/AgencyMortgagePool
                      :fibo-sec-dbt-mbs/FHLMC-GoldPool
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-mbs/MortgagePool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool
+                     :fibo-sec-dbt-mbs/MortgagePool]})
 
 (def FHLMC-Pool
   "FHLMC pool"
@@ -217,11 +213,11 @@
    :rdfs/label #voc/lstr "FHLMC pool@en",
    :rdfs/subClassOf [:fibo-sec-dbt-mbs/AgencyMortgagePool
                      :fibo-sec-dbt-mbs/FHLMC-Pool
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-mbs/MortgagePool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool
+                     :fibo-sec-dbt-mbs/MortgagePool]})
 
 (def FNMA-Pool
   "FNMA pool"
@@ -232,11 +228,11 @@
    :rdfs/label #voc/lstr "FNMA pool@en",
    :rdfs/subClassOf [:fibo-sec-dbt-mbs/AgencyMortgagePool
                      :fibo-sec-dbt-mbs/FNMA-Pool
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-mbs/MortgagePool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool
+                     :fibo-sec-dbt-mbs/MortgagePool]})
 
 (def FloaterTranche
   "A floater tranche is a tranche that is keyed to an index and a spread."
@@ -254,24 +250,23 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/TranchedMBSInstrument
     :fibo-sec-dbt-mbs/FloaterTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/MortgageBackedSecurity
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity],
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "A floater tranche is a tranche that is keyed to an index and a spread.@en"})
@@ -285,11 +280,11 @@
    :rdfs/label #voc/lstr "GNMA-II pool@en",
    :rdfs/subClassOf [:fibo-sec-dbt-mbs/AgencyMortgagePool
                      :fibo-sec-dbt-mbs/GNMA-IIPool
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-mbs/MortgagePool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool
+                     :fibo-sec-dbt-mbs/MortgagePool]})
 
 (def GNMA-PlatinumPool
   "GNMA Platinum pool"
@@ -300,11 +295,11 @@
    :rdfs/label #voc/lstr "GNMA Platinum pool@en",
    :rdfs/subClassOf [:fibo-sec-dbt-mbs/AgencyMortgagePool
                      :fibo-sec-dbt-mbs/GNMA-PlatinumPool
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-mbs/MortgagePool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool
+                     :fibo-sec-dbt-mbs/MortgagePool]})
 
 (def GNMA-iPool
   "GNMA-i pool"
@@ -315,11 +310,11 @@
    :rdfs/label #voc/lstr "GNMA-i pool@en",
    :rdfs/subClassOf [:fibo-sec-dbt-mbs/AgencyMortgagePool
                      :fibo-sec-dbt-mbs/GNMA-iPool
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-mbs/MortgagePool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool
+                     :fibo-sec-dbt-mbs/MortgagePool]})
 
 (def GovernmentMortgageAgency
   "An agency set up by a government for the purpose of issuing mortgages."
@@ -355,28 +350,27 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-mbs/FloaterTranche
     :fibo-sec-dbt-mbs/InverseFloaterTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-mbs/TranchedMBSInstrument
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-mbs/MortgageBackedSecurity
+    {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
     {:owl/onProperty     :fibo-fnd-dt-fd/hasRecurrenceInterval,
      :owl/someValuesFrom :fibo-fnd-dt-bd/DayOfMonth,
      :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
-    :fibo-sec-dbt-mbs/MortgageBackedSecurity
-    {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    :fibo-sec-dbt-mbs/TranchedMBSInstrument
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity]})
+     :rdf/type          :owl/Restriction}]})
 
 (def IssuedAndSecuritizedAgencyMortagePool
   "An agency mortgage pool which has been securitized as part of an agency Mortgage Backed Security."
@@ -390,11 +384,11 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-mbs/AgencyMortgagePool
                      :fibo-sec-dbt-mbs/IssuedAndSecuritizedAgencyMortagePool
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-mbs/MortgagePool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool
+                     :fibo-sec-dbt-mbs/MortgagePool],
    :skos/definition
    #voc/lstr
     "An agency mortgage pool which has been securitized as part of an agency Mortgage Backed Security.@en"})
@@ -411,11 +405,11 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-mbs/NonAgencyMortgagePool
                      :fibo-sec-dbt-mbs/IssuedAndSecuritizedNonAgencyMortgagePool
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-mbs/MortgagePool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool
+                     :fibo-sec-dbt-mbs/MortgagePool],
    :skos/definition
    #voc/lstr
     "A non agency mortgage pool which has been securitized as part of a tranched Mortgage Backed Security.@en"})
@@ -477,24 +471,23 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/TranchedMBSInstrument
     :fibo-sec-dbt-mbs/MezzanineMBSTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/MortgageBackedSecurity
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity],
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Specific kinds of tranche are modeled for example and investigation only and have been removed from the diagrams. These will be removed from the final model.@en"})
@@ -511,16 +504,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
    :rdfs/label #voc/lstr "mortgage-backed security@en",
-   :rdfs/subClassOf
-   [:fibo-sec-dbt-pbs/PoolBackedSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    :fibo-sec-dbt-mbs/MortgageBackedSecurity],
+   :rdfs/subClassOf [:fibo-sec-dbt-pbs/PoolBackedSecurity
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :owl/someValuesFrom
+                      :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+                      :rdf/type :owl/Restriction}
+                     :fibo-sec-dbt-mbs/MortgageBackedSecurity],
    :skos/definition
    #voc/lstr
     "debt obligations that represent claims to the cash flows from pools of mortgage loans, most commonly on residential property@en"})
@@ -570,24 +562,23 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-mbs/TranchedMBSInstrument
     :fibo-sec-dbt-mbs/NonAgencyIOTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/MortgageBackedSecurity
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity],
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Interest Only tranche, meaning that this tranche will only pay interest.@en"})
@@ -605,24 +596,23 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/TranchedMBSInstrument
     :fibo-sec-dbt-mbs/NonAgencyJumpTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/MortgageBackedSecurity
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity],
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "A tranche where if there is some sort of trigger event reached then the holders of the tranche will begin to receive payments.@en"})
@@ -638,28 +628,27 @@
    [:fibo-sec-dbt-mbs/NonAgencyZTranche
     :fibo-sec-dbt-mbs/NonAgencyJumpTranche
     :fibo-sec-dbt-mbs/NonAgencyJumpZTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-mbs/TranchedMBSInstrument
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
-    :fibo-sec-dbt-mbs/MortgageBackedSecurity
-    {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-mbs/TranchedMBSInstrument
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-mbs/specifiesTrigger,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/JumpZTriggerEvent,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity],
+    :fibo-sec-dbt-mbs/MortgageBackedSecurity
+    {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "A Jump Z tranche is like a Z tranche but if there is some sort of trigger event reached then the holders of the Jump Z tranche will begin to receive payments. Regular non-Sticky Jump Z tranches maintain their changed status only while the trigger event is in effect, and revert to their old payment status once the trigger event has passed.@en"})
@@ -694,10 +683,10 @@
    :rdfs/label #voc/lstr "non agency mortgage pool@en",
    :rdfs/subClassOf [:fibo-sec-dbt-mbs/MortgagePool
                      :fibo-sec-dbt-mbs/NonAgencyMortgagePool
-                     :fibo-sec-sec-pls/DebtPool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool]})
 
 (def NonAgencyPOTranche
   "Principal Only tranche. This tranche will only pay principal."
@@ -709,24 +698,23 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-mbs/TranchedMBSInstrument
     :fibo-sec-dbt-mbs/NonAgencyPOTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/MortgageBackedSecurity
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity],
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Principal Only tranche. This tranche will only pay principal.@en"})
@@ -744,30 +732,29 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/NonAgencyJumpZTranche
     :fibo-sec-dbt-mbs/NonAgencyRegularJumpZTranche
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-mbs/specifiesTrigger,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/JumpZTriggerEvent,
+     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/NonAgencyJumpTranche
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
      :rdf/type           :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
-     :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
-    :fibo-sec-dbt-mbs/MortgageBackedSecurity
+    :fibo-sec-dbt-mbs/NonAgencyZTranche
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-mbs/TranchedMBSInstrument
-    {:owl/onProperty     :fibo-sec-dbt-mbs/specifiesTrigger,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/JumpZTriggerEvent,
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
      :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-mbs/TranchedMBSInstrument
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
+     :rdf/type          :owl/Restriction}
+    :fibo-sec-dbt-mbs/MortgageBackedSecurity
     :fibo-sec-dbt-pbs/PoolBackedSecurity
-    :fibo-sec-dbt-mbs/NonAgencyZTranche],
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Regular non-Sticky Jump Z tranches maintain their changed status only while the trigger event is in effect, and revert to their old payment status once the trigger event has passed.@en"})
@@ -782,21 +769,13 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-mbs/NonAgencyJumpZTranche
     :fibo-sec-dbt-mbs/NonAgencyStickyJumpZTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-mbs/TranchedMBSInstrument
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
-    :fibo-sec-dbt-mbs/MortgageBackedSecurity
-    {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-mbs/TranchedMBSInstrument
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-mbs/specifiesTrigger,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/JumpZTriggerEvent,
      :rdf/type           :owl/Restriction}
@@ -804,8 +783,15 @@
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
      :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-mbs/NonAgencyZTranche
+    :fibo-sec-dbt-mbs/MortgageBackedSecurity
+    {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
+     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-pbs/PoolBackedSecurity
-    :fibo-sec-dbt-mbs/NonAgencyZTranche],
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "\"Sticky\" Jump Z tranches maintain the payment priority of a Jump Z tranche until they are retired.@en"})
@@ -820,24 +806,23 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-mbs/TranchedMBSInstrument
     :fibo-sec-dbt-mbs/NonAgencyZTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/MortgageBackedSecurity
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity],
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "A tranche that does not receive payments while other tranches remain.@en",
@@ -854,10 +839,10 @@
    :rdfs/label #voc/lstr "pass-through pool@en",
    :rdfs/subClassOf [:fibo-sec-dbt-mbs/MortgagePool
                      :fibo-sec-dbt-mbs/Pass-throughPool
-                     :fibo-sec-sec-pls/DebtPool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool],
    :skos/editorialNote
    #voc/lstr
     "REVIEW: These are all Pass-through so not clear why this term is here. Term originates with Cutter SME review but seems redundant. If not, this would be non mutually exclusive with agency pool. In general, agency MBS pools are pass through and non agency are tranched, but this reflects a business necessity not a logical necessity.@en"})
@@ -911,10 +896,9 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/MortgageBackedSecurity
     :fibo-sec-dbt-mbs/PassThroughMBSInstrument
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
      :rdf/type           :owl/Restriction}
@@ -1007,28 +991,27 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-mbs/FloaterTranche
     :fibo-sec-dbt-mbs/RegularFloaterTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-mbs/TranchedMBSInstrument
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-mbs/MortgageBackedSecurity
+    {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
     {:owl/onProperty     :fibo-fnd-dt-fd/hasRecurrenceInterval,
      :owl/someValuesFrom :fibo-fnd-dt-bd/DayOfMonth,
      :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
-    :fibo-sec-dbt-mbs/MortgageBackedSecurity
-    {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    :fibo-sec-dbt-mbs/TranchedMBSInstrument
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity],
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "A floater tranche is a tranche that is keyed to an index and a spread. The spread is added to the index.@en"})
@@ -1043,17 +1026,16 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/",
    :rdfs/label #voc/lstr "residential m b s@en",
-   :rdfs/subClassOf
-   [:fibo-sec-dbt-mbs/MortgageBackedSecurity
-    :fibo-sec-dbt-mbs/ResidentialMBS
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity],
+   :rdfs/subClassOf [:fibo-sec-dbt-mbs/MortgageBackedSecurity
+                     :fibo-sec-dbt-mbs/ResidentialMBS
+                     {:owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :owl/someValuesFrom
+                      :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-pbs/PoolBackedSecurity],
    :skos/definition
    #voc/lstr
     "Residential Mortgage-Backed Securities, which are trust certificates (bonds) backed by a pool of residential mortgage loans.@en"})
@@ -1068,24 +1050,23 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-mbs/TranchedMBSInstrument
     :fibo-sec-dbt-mbs/ResidualTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/MortgageBackedSecurity
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity],
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Unknown Further notes: Verify whether Residual Tranche and Support Tranche are meant to be in the same list of types as PAC etc. i.e. can a tranche not be PAC and Residual? this looks suspicioulsy like two semantics.@en"})
@@ -1099,10 +1080,10 @@
    :rdfs/label #voc/lstr "SBA pool@en",
    :rdfs/subClassOf [:fibo-sec-dbt-mbs/MortgagePool
                      :fibo-sec-dbt-mbs/SBA-Pool
-                     :fibo-sec-sec-pls/DebtPool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/DebtPool],
    :skos/editorialNote
    #voc/lstr
     "Unknown pool type, from Cutter SME reviews; other pool types listed under Agency are from or validated by AdeptAdvisory SME review.@en"})
@@ -1120,24 +1101,23 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/TranchedMBSInstrument
     :fibo-sec-dbt-mbs/SeniorMBSTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/MortgageBackedSecurity
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity],
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Specific kinds of tranche are modeled for example and investigation only and have been removed from the diagrams. These will be removed from the final model.@en"})
@@ -1168,24 +1148,23 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-mbs/TranchedMBSInstrument
     :fibo-sec-dbt-mbs/SubordinatedMBSTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
-     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/MortgageBackedSecurity
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity],
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
+    {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
+     :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Specific kinds of tranche are modeled for example and investigation only and have been removed from the diagrams. These will be removed from the final model.@en"})
@@ -1200,28 +1179,27 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-mbs/FloaterTranche
     :fibo-sec-dbt-mbs/SuperFloaterTranche
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-mbs/TranchedMBSInstrument
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/providesCreditSupportTo,
      :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-mbs/MortgageBackedSecurity
+    {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-pbs/PoolBackedSecurity
     {:owl/onProperty     :fibo-fnd-dt-fd/hasRecurrenceInterval,
      :owl/someValuesFrom :fibo-fnd-dt-bd/DayOfMonth,
      :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-mbs/TranchedMBSInstrument,
      :owl/onProperty    :fibo-sec-dbt-mbs/cashflowPrecedence,
-     :rdf/type          :owl/Restriction}
-    :fibo-sec-dbt-mbs/MortgageBackedSecurity
-    {:owl/onProperty     :fibo-sec-dbt-mbs/hasNote,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
-    :fibo-sec-dbt-mbs/TranchedMBSInstrument
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/PoolBackedSecurity]})
+     :rdf/type          :owl/Restriction}]})
 
 (def TrancheRatingAtIssue
   "The rating at issue of a tranche of a security. Note this is under review"
@@ -1290,10 +1268,9 @@
      :rdf/type          :owl/Restriction}
     :fibo-sec-dbt-mbs/MortgageBackedSecurity
     :fibo-sec-dbt-mbs/TranchedMBSInstrument
-    {:owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/someValuesFrom
-     :fibo-md-dbtx-aly/MortgageInstrumentWeightedAverageRemainingMaturity,
-     :rdf/type :owl/Restriction}
+    {:owl/onProperty     :cmns-cls/isCharacterizedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSIssuer,
      :rdf/type           :owl/Restriction}
@@ -1337,7 +1314,7 @@
    #voc/lstr
     "The currency amount in which the Note is denominated, for example $500 notes.@en"})
 
-(def denomination.1
+(def denomination_1
   "The currency amount in which the Note is denominated, for example $500 notes. This term added by symmettry with MBS Tranche Note. needs to be reviewed and validated."
   {:db/ident :fibo-sec-dbt-mbs/denomination.1,
    :rdf/type :owl/ObjectProperty,
@@ -1381,7 +1358,7 @@
    :rdfs/label #voc/lstr "is also@en",
    :rdfs/range :fibo-sec-dbt-mbs/AgencyMBSDeal})
 
-(def isAlso.1
+(def isAlso_1
   "is also"
   {:db/ident :fibo-sec-dbt-mbs/isAlso.1,
    :rdf/type :owl/ObjectProperty,

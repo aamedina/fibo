@@ -135,7 +135,7 @@
                      :fibo-md-civx-fun/SwingPrice
                      :fibo-fbc-fi-ip/SecurityPrice]})
 
-(def determinationDate.1
+(def determinationDate_1
   "determination date"
   {:db/ident :fibo-md-civx-fun/determinationDate.1,
    :rdf/type :owl/ObjectProperty,
@@ -197,7 +197,7 @@
    :rdfs/label #voc/lstr "incurs fees@en",
    :rdfs/range :fibo-md-civx-fun/FeePayable})
 
-(def incursFees.1
+(def incursFees_1
   "incurs fees"
   {:db/ident :fibo-md-civx-fun/incursFees.1,
    :rdf/type :owl/ObjectProperty,
@@ -217,7 +217,7 @@
    :rdfs/label #voc/lstr "incurs tax@en",
    :rdfs/range :fibo-md-civx-fun/FundsTax})
 
-(def incursTax.1
+(def incursTax_1
   "incurs tax"
   {:db/ident :fibo-md-civx-fun/incursTax.1,
    :rdf/type :owl/ObjectProperty,

@@ -206,10 +206,10 @@
                       :rdf/type :owl/Restriction}
                      :fibo-be-oac-cpty/DeFactoControllingInterestParty
                      :fibo-be-oac-cpty/InfluenceBasedDeFactoControllingParty
+                     :fibo-fnd-oac-ctl/ControllingParty
                      {:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyIn,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/DeFactoControl,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-oac-ctl/ControllingParty],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "party that holds influence-based control over some other party",
    :skos/editorialNote
@@ -249,10 +249,10 @@
     :fibo-be-oac-opty/Investor
     :fibo-be-oac-cpty/DeFactoControllingInterestParty
     :fibo-be-oac-cpty/InvestmentBasedDeFactoControllingInterestParty
+    :fibo-fnd-oac-ctl/ControllingParty
     {:owl/onProperty     :fibo-fnd-oac-ctl/isControllingPartyIn,
      :owl/someValuesFrom :fibo-fnd-oac-ctl/DeFactoControl,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-oac-ctl/ControllingParty],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "party that holds investment-based control over some other party"})
 
@@ -269,10 +269,10 @@
                       :rdf/type          :owl/Restriction}
                      :fibo-be-oac-cpty/EntityControllingParty
                      :fibo-be-oac-cpty/JointControllingParty
+                     :fibo-fnd-oac-ctl/ControllingParty
                      {:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyOf,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-oac-ctl/ControllingParty],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "party that collectively has the authority to control the affairs of some business organization"})
 
@@ -287,10 +287,10 @@
    :rdfs/label "majority controlling party",
    :rdfs/subClassOf [:fibo-be-oac-cpty/EntityControllingParty
                      :fibo-be-oac-cpty/MajorityControllingParty
+                     :fibo-fnd-oac-ctl/ControllingParty
                      {:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyOf,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-oac-ctl/ControllingParty],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "controlling party that possesses, either directly or indirectly, the power to direct or cause the direction of the management and policies of a legal person, whether through the ownership of a majority of voting securities, by contract, or otherwise"})
 
@@ -323,10 +323,10 @@
    :rdfs/label "sole controlling party",
    :rdfs/subClassOf [:fibo-be-oac-cpty/EntityControllingParty
                      :fibo-be-oac-cpty/SoleControllingParty
+                     :fibo-fnd-oac-ctl/ControllingParty
                      {:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyOf,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-oac-ctl/ControllingParty],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "party that has sole control over and directs the affairs of some legal entity"})
 

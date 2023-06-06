@@ -57,11 +57,11 @@
    :rdfs/label "market data provider",
    :rdfs/subClassOf [:fibo-be-fct-pub/Publisher
                      :fibo-be-fct-pub/MarketDataProvider
+                     :fibo-fnd-pty-pty/PartyInRole
                      {:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition "publisher of data relevant to financial markets"})
 
 (def Publication

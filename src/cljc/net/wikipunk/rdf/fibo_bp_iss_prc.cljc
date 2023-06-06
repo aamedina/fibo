@@ -214,15 +214,15 @@
    [{:owl/onProperty     :fibo-bp-iss-muni/givesRiseTo,
      :owl/someValuesFrom :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-prc/hasDistributionType,
-     :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingDistributionMethod,
+    {:owl/onProperty     :fibo-bp-iss-prc/requiredToMakeEligible,
+     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-bp-iss-prc/hasSaleMethod,
      :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingSaleMethod,
      :rdf/type           :owl/Restriction}
     :fibo-bp-iss-dbti/IssuanceProcessActivity
-    {:owl/onProperty     :fibo-bp-iss-prc/requiredToMakeEligible,
-     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
+    {:owl/onProperty     :fibo-bp-iss-prc/hasDistributionType,
+     :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingDistributionMethod,
      :rdf/type           :owl/Restriction}
     :fibo-bp-iss-prc/OfferingProcess],
    :skos/definition
@@ -458,8 +458,8 @@
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
      :rdf/type           :owl/Restriction}
-    :fibo-bp-iss-prc/TradedInstrumentIssuanceProcessInformation
-    :fibo-fnd-arr-doc/Document],
+    :fibo-fnd-arr-doc/Document
+    :fibo-bp-iss-prc/TradedInstrumentIssuanceProcessInformation],
    :skos/definition
    #voc/lstr
     "Infomation on Takedown quantity of the security handled by the underwriter (that will be brought into DTC).@en",

@@ -116,21 +116,21 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
    :rdfs/label #voc/lstr "organization@en",
    :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:Organization"],
-   :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty    :cmns-col/hasMember,
-                      :rdf/type          :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-org-org/OrganizationName,
-                      :owl/onProperty :cmns-dsg/hasName,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-pty/IndependentParty
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-gao-obj/Goal,
                       :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
                       :rdf/type       :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fnd-org-org/Organization,
                       :owl/onProperty    :cmns-col/hasPart,
                       :rdf/type          :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-org-org/OrganizationName,
+                      :owl/onProperty :cmns-dsg/hasName,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty    :cmns-col/hasMember,
+                      :rdf/type          :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty
                      :fibo-fnd-org-org/Organization],
    :skos/definition
    "collection of one or more people, or groups of people formed together into a community or other social, commercial or political structure to act, or that is designated to act, towards some purpose, such as to meet a need or pursue collective goals on a continuing basis",
@@ -252,20 +252,20 @@
                      :fibo-fnd-org-org/Organization
                      :fibo-fnd-org-org/OrganizationalSubUnit
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-gao-obj/Goal,
-                      :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
+                      :owl/onClass    :fibo-fnd-org-org/OrganizationName,
+                      :owl/onProperty :cmns-dsg/hasName,
                       :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-org-org/Organization,
-                      :owl/onProperty    :cmns-col/hasPart,
-                      :rdf/type          :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty    :cmns-col/hasMember,
                       :rdf/type          :owl/Restriction}
                      :fibo-fnd-pty-pty/IndependentParty
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-org-org/OrganizationName,
-                      :owl/onProperty :cmns-dsg/hasName,
-                      :rdf/type       :owl/Restriction}],
+                      :owl/onClass    :fibo-fnd-gao-obj/Goal,
+                      :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/allValuesFrom :fibo-fnd-org-org/Organization,
+                      :owl/onProperty    :cmns-col/hasPart,
+                      :rdf/type          :owl/Restriction}],
    :skos/definition
    "any department, service, and other entity within a larger organization that only has full recognition within the context of that organization, but requires identification for some purpose"})
 

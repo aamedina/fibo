@@ -144,8 +144,8 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-der-sbd-eqs/EquitySwap
                      :fibo-der-sbd-eqs/DividendSwap
-                     :fibo-der-sbd-sbd/EquityDerivative
-                     :fibo-der-drc-swp/Swap],
+                     :fibo-der-drc-swp/Swap
+                     :fibo-der-sbd-sbd/EquityDerivative],
    :skos/definition
    #voc/lstr
     "equity swap that has at least one leg whose underlier is a dividend stream@en"})
@@ -163,8 +163,8 @@
    :rdfs/subClassOf [:fibo-der-sbd-eqs/EquitySwap
                      :fibo-der-drc-swp/CorrelationSwap
                      :fibo-der-sbd-eqs/EquityCorrelationSwap
-                     :fibo-der-sbd-sbd/EquityDerivative
-                     :fibo-der-drc-swp/Swap],
+                     :fibo-der-drc-swp/Swap
+                     :fibo-der-sbd-sbd/EquityDerivative],
    :skos/definition
    #voc/lstr
     "correlation swap that allows one to hedge risks associated with the observed average correlation of a collection of underlying equity products@en"})
@@ -188,8 +188,8 @@
                      :fibo-der-sbd-eqs/EquitySwap
                      :fibo-der-drc-swp/ReturnSwap
                      :fibo-der-sbd-eqs/EquityPriceReturnSwap
-                     :fibo-der-sbd-sbd/EquityDerivative
-                     :fibo-der-drc-swp/Swap],
+                     :fibo-der-drc-swp/Swap
+                     :fibo-der-sbd-sbd/EquityDerivative],
    :skos/definition
    #voc/lstr
     "return swap whose return leg underlier is an equity observable@en"})
@@ -247,8 +247,8 @@
                      :fibo-der-sbd-eqs/EquitySwap
                      :fibo-der-drc-swp/TotalReturnSwap
                      :fibo-der-sbd-eqs/EquityTotalReturnSwap
-                     :fibo-der-sbd-sbd/EquityDerivative
-                     :fibo-der-drc-swp/Swap],
+                     :fibo-der-drc-swp/Swap
+                     :fibo-der-sbd-sbd/EquityDerivative],
    :skos/definition
    #voc/lstr
     "total return swap whose return leg underlier is an equity observable@en"})
@@ -269,8 +269,8 @@
    :rdfs/subClassOf [:fibo-der-sbd-eqs/EquitySwap
                      :fibo-der-drc-swp/DispersionSwap
                      :fibo-der-sbd-eqs/EquityVarianceSwap
-                     :fibo-der-sbd-sbd/EquityDerivative
-                     :fibo-der-drc-swp/Swap],
+                     :fibo-der-drc-swp/Swap
+                     :fibo-der-sbd-sbd/EquityDerivative],
    :skos/definition
    #voc/lstr
     "dispersion swap in which the parties agree to exchange payments based on the difference between (i) the realized variance of the price changes of a specified equity underlier over a stated observation period and (ii) a fixed amount of variance that is agreed when the contract is executed@en"})
@@ -291,8 +291,8 @@
    :rdfs/subClassOf [:fibo-der-sbd-eqs/EquitySwap
                      :fibo-der-drc-swp/DispersionSwap
                      :fibo-der-sbd-eqs/EquityVolatilitySwap
-                     :fibo-der-sbd-sbd/EquityDerivative
-                     :fibo-der-drc-swp/Swap],
+                     :fibo-der-drc-swp/Swap
+                     :fibo-der-sbd-sbd/EquityDerivative],
    :skos/definition
    #voc/lstr
     "dispersion swap that is a forward contract on the variability of movements in the price of its underlying equity observable@en"})

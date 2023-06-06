@@ -80,16 +80,16 @@
     :fibo-fnd-txn-rea/EconomicAgreement
     :fibo-fnd-agr-ctr/Contract
     :fibo-fnd-txn-rea/ContractualEconomicAgreement
-    {:owl/onProperty     :fibo-fnd-rel-rel/confers,
-     :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicCommitment,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/governs,
      :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicTransaction,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-ctr/MutualContractualAgreement
     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
      :owl/someValuesFrom :fibo-fnd-txn-rea/TransactionParty,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/confers,
+     :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicCommitment,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-agr-ctr/MutualContractualAgreement],
    :skos/definition
    #voc/lstr
     "An economic agreement forming part of a transaction, which has contractual standing as evidenced by a contract between the two parties to the Agreement.@en"})
@@ -107,16 +107,16 @@
    :rdfs/subClassOf
    [:fibo-fnd-txn-rea/EconomicTransaction
     :fibo-fnd-txn-rea/ContractualTransaction
-    {:owl/minQualifiedCardinality 2,
-     :owl/onClass    :fibo-fnd-txn-rea/EconomicResource,
-     :owl/onProperty :fibo-fnd-txn-rea/subject,
-     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-txn-rea/transactedUnder,
      :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicContractTermsSet,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-txn-rea/transactionEmbodiesEconomicAgreement,
      :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicAgreement,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 2,
+     :owl/onClass    :fibo-fnd-txn-rea/EconomicResource,
+     :owl/onProperty :fibo-fnd-txn-rea/subject,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    #voc/lstr "An economic transaction which has some contractual basis.@en"})
 
@@ -160,17 +160,17 @@
      :rdf/type           :owl/Restriction}
     :fibo-fnd-txn-rea/ContractualTransaction
     :fibo-fnd-txn-rea/CoveredTransaction
-    {:owl/minQualifiedCardinality 2,
-     :owl/onClass    :fibo-fnd-txn-rea/EconomicResource,
-     :owl/onProperty :fibo-fnd-txn-rea/subject,
-     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-txn-rea/transactedUnder,
      :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicContractTermsSet,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-txn-rea/transactionEmbodiesEconomicAgreement,
      :owl/someValuesFrom :fibo-fnd-txn-rea/EconomicAgreement,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-txn-rea/EconomicTransaction],
+    :fibo-fnd-txn-rea/EconomicTransaction
+    {:owl/minQualifiedCardinality 2,
+     :owl/onClass    :fibo-fnd-txn-rea/EconomicResource,
+     :owl/onProperty :fibo-fnd-txn-rea/subject,
+     :rdf/type       :owl/Restriction}],
    :skos/definition #voc/lstr
                      "A transaction covered by some Master Agreement.@en"})
 
@@ -452,27 +452,27 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-txn-rea/UndertakingEvent
                      :fibo-fnd-txn-rea/TransactionUndertaking
+                     :fibo-fnd-txn-rea/Undertaking
+                     {:owl/onProperty :fibo-fnd-txn-rea/isUndertakingTo,
+                      :owl/someValuesFrom
+                      :fibo-fnd-law-lcap/ContingentObligation,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractParty,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-txn-rea/bestows,
+                      :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentRight,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-txn-rea/triggers,
+                      :owl/someValuesFrom :fibo-fnd-txn-rea/LedgerEntry,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-txn-rea/givesRiseTo,
                       :owl/someValuesFrom :fibo-fnd-agr-agr/MutualCommitment,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-txn-rea/isMadeAsPartOf,
                       :owl/someValuesFrom :fibo-fnd-agr-agr/Agreement,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-txn-rea/Undertaking
-                     :fibo-fnd-txn-rea/TransactionBusinessEvent
-                     {:owl/onProperty     :fibo-fnd-txn-rea/bestows,
-                      :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentRight,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractParty,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-txn-rea/triggers,
-                      :owl/someValuesFrom :fibo-fnd-txn-rea/LedgerEntry,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-txn-rea/isUndertakingTo,
-                      :owl/someValuesFrom
-                      :fibo-fnd-law-lcap/ContingentObligation,
-                      :rdf/type :owl/Restriction}],
+                     :fibo-fnd-txn-rea/TransactionBusinessEvent],
    :skos/definition
    #voc/lstr
     "A contractually defined and established commitment to deliver some goods, perform some service or make some payment in cash or in kind.@en",
@@ -488,22 +488,22 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/",
    :rdfs/label #voc/lstr "undertaking@en",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-txn-rea/bestows,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractParty,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-txn-rea/givesRiseTo,
+                      :owl/someValuesFrom :fibo-fnd-agr-agr/MutualCommitment,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-txn-rea/bestows,
                       :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentRight,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractParty,
+                     {:owl/onProperty     :fibo-fnd-txn-rea/isMadeAsPartOf,
+                      :owl/someValuesFrom :fibo-fnd-agr-agr/Agreement,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-txn-rea/isUndertakingTo,
                       :owl/someValuesFrom
                       :fibo-fnd-law-lcap/ContingentObligation,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-txn-rea/givesRiseTo,
-                      :owl/someValuesFrom :fibo-fnd-agr-agr/MutualCommitment,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-txn-rea/isMadeAsPartOf,
-                      :owl/someValuesFrom :fibo-fnd-agr-agr/Agreement,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-txn-rea/Undertaking],
    :skos/definition #voc/lstr "Some undertaking to act.@en"})
 
@@ -520,22 +520,22 @@
                      :fibo-fnd-txn-rea/Undertaking
                      :fibo-fnd-txn-rea/TransactionBusinessEvent
                      :fibo-fnd-txn-rea/UndertakingEvent
+                     {:owl/onProperty :fibo-fnd-txn-rea/isUndertakingTo,
+                      :owl/someValuesFrom
+                      :fibo-fnd-law-lcap/ContingentObligation,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractParty,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-txn-rea/bestows,
+                      :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentRight,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-txn-rea/givesRiseTo,
                       :owl/someValuesFrom :fibo-fnd-agr-agr/MutualCommitment,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-txn-rea/isMadeAsPartOf,
                       :owl/someValuesFrom :fibo-fnd-agr-agr/Agreement,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-txn-rea/bestows,
-                      :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentRight,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/ContractParty,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-txn-rea/isUndertakingTo,
-                      :owl/someValuesFrom
-                      :fibo-fnd-law-lcap/ContingentObligation,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Something which occurs at a point in time, at which a party makes some commitment to some other party.@en"})

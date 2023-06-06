@@ -90,29 +90,29 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
    :rdfs/label "listed security",
    :rdfs/subClassOf
-   [{:owl/onClass    :fibo-fbc-fct-mkt/Exchange,
-     :owl/onProperty :fibo-sec-sec-lst/hasOriginalPlaceOfListing,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-sec-lst/isListedVia,
+   [{:owl/onProperty     :fibo-sec-sec-lst/isListedVia,
      :owl/someValuesFrom :fibo-sec-sec-lst/Listing,
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-lst/RegisteredSecurity
+    {:owl/onClass    :fibo-fbc-fct-mkt/Exchange,
+     :owl/onProperty :fibo-sec-sec-lst/hasOriginalPlaceOfListing,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
     {:owl/onClass    :fibo-fbc-fct-mkt/Exchange,
      :owl/onProperty :fibo-sec-sec-lst/hasHomeExchange,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
     :fibo-sec-sec-lst/ListedSecurity
+    :fibo-fbc-fi-fi/Security
+    {:owl/onProperty     :fibo-sec-sec-iss/isIssuedInForm,
+     :owl/someValuesFrom :fibo-sec-sec-iss/RegisteredForm,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-sec-iss/isRegisteredWith,
      :owl/someValuesFrom :fibo-fbc-fct-ra/RegistrationAuthority,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistrationDate,
      :owl/someValuesFrom :cmns-dt/CombinedDateTime,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-sec-iss/isIssuedInForm,
-     :owl/someValuesFrom :fibo-sec-sec-iss/RegisteredForm,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Security],
+     :rdf/type           :owl/Restriction}],
    :skos/definition "registered security listed on at least one exchange"})
 
 (def Listing
@@ -124,35 +124,35 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
    :rdfs/label #voc/lstr "listing@en",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :cmns-dt/CombinedDateTime,
-                      :owl/onProperty  :fibo-sec-sec-lst/hasDelistingDate,
+                      :owl/onDataRange :xsd/decimal,
+                      :owl/onProperty  :fibo-fbc-fi-ip/hasLotSize,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
-                      :rdf/type           :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :fibo-fbc-fct-breg/RegistrationStatus,
+                      :owl/onProperty :fibo-fbc-fct-breg/hasRegistrationStatus,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-sec-sec-iss/SecuritiesOffering,
                       :owl/onProperty :fibo-sec-sec-lst/lists,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/DateTime,
-                      :owl/onProperty :fibo-sec-sec-lst/hasLastTradingDateTime,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :fibo-fbc-fct-breg/RegistrationStatus,
-                      :owl/onProperty :fibo-fbc-fct-breg/hasRegistrationStatus,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-sec-sec-lst/hasTickSize,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :xsd/decimal,
-                      :owl/onProperty  :fibo-fbc-fi-ip/hasLotSize,
-                      :rdf/type        :owl/Restriction}
                      {:owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-sec-sec-lst/hasListingDate,
                       :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/DateTime,
+                      :owl/onProperty :fibo-sec-sec-lst/hasLastTradingDateTime,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :cmns-dt/CombinedDateTime,
+                      :owl/onProperty  :fibo-sec-sec-lst/hasDelistingDate,
                       :rdf/type        :owl/Restriction}
                      :fibo-sec-sec-lst/Listing],
    :skos/definition

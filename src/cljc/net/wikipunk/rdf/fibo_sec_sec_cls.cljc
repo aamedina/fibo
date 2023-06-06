@@ -99,10 +99,10 @@
      :rdf/type :owl/Restriction}
     :fibo-sec-sec-cls/FinancialInstrumentClassificationScheme
     :fibo-sec-sec-cls/ClassificationOfFinancialInstrumentsCodeScheme
-    :cmns-cls/ClassificationScheme
     {:owl/allValuesFrom :fibo-sec-sec-cls/FinancialInstrumentClassifier,
      :owl/onProperty    :cmns-dsg/defines,
-     :rdf/type          :owl/Restriction}],
+     :rdf/type          :owl/Restriction}
+    :cmns-cls/ClassificationScheme],
    :skos/definition
    "classification scheme for set of codes for financial instruments that can be used globally for straight-through processing by all involved participants in an electronic data processing environment"})
 
@@ -183,16 +183,16 @@
   {:db/ident :fibo-sec-sec-cls/ISO10962-201910-CodeScheme,
    :rdf/type [:fibo-sec-sec-cls/ClassificationOfFinancialInstrumentsCodeScheme
               :owl/NamedIndividual
-              :cmns-cls/ClassificationScheme
               {:owl/onProperty :cmns-dsg/defines,
                :owl/someValuesFrom
                :fibo-sec-sec-cls/FinancialInstrumentClassificationCode,
                :rdf/type :owl/Restriction}
+              :fibo-sec-sec-cls/FinancialInstrumentClassificationScheme
+              :cmns-cls/ClassificationScheme
               {:owl/allValuesFrom
                :fibo-sec-sec-cls/FinancialInstrumentClassifier,
                :owl/onProperty :cmns-dsg/defines,
-               :rdf/type :owl/Restriction}
-              :fibo-sec-sec-cls/FinancialInstrumentClassificationScheme],
+               :rdf/type :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
    :rdfs/label "ISO 10962 2019-10 code set",

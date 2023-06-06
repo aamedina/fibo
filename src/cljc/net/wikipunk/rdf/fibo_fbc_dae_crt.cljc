@@ -280,35 +280,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
    :rdfs/label "credit report",
    :rdfs/subClassOf
-   [{:owl/onProperty     :cmns-id/isIdentifiedBy,
-     :owl/someValuesFrom :cmns-id/Identifier,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+   [{:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-dae-crt/CreditInquiry,
      :owl/onProperty :cmns-col/comprises,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-dae-crt/hasCoveragePeriod,
-     :owl/someValuesFrom :cmns-dt/DatePeriod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportProduct,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-dae-crt/CreditRating,
-     :owl/onProperty :cmns-col/comprises,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :cmns-col/comprises,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditMessage,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-cls/isClassifiedBy,
-     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportCategory,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
-     :owl/someValuesFrom :cmns-dt/Date,
-     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-dae-crt/CreditTradeline,
      :owl/onProperty :cmns-col/comprises,
@@ -319,9 +294,34 @@
                           :fibo-fbc-dae-crt/CreditRatingAgency,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-arr-rt/RatingReport
+    {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportProduct,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-dae-crt/concernsParty,
      :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-id/isIdentifiedBy,
+     :owl/someValuesFrom :cmns-id/Identifier,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
+     :owl/someValuesFrom :cmns-dt/Date,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-dae-crt/hasCoveragePeriod,
+     :owl/someValuesFrom :cmns-dt/DatePeriod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-cls/isClassifiedBy,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditReportCategory,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/comprises,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditMessage,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-arr-rt/RatingReport
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-dae-crt/CreditRating,
+     :owl/onProperty :cmns-col/comprises,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
+     :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
      :rdf/type           :owl/Restriction}
     :fibo-fbc-dae-crt/CreditReport],
    :skos/definition
@@ -453,11 +453,11 @@
                       :owl/onClass    :fibo-fbc-dae-crt/CreditRatingModel,
                       :owl/onProperty :fibo-fnd-qt-qtu/isDerivedFrom,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-rt/Rating
+                     :fibo-fbc-dae-crt/CreditRating
                      {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-crt/CreditRating],
+                     :fibo-fnd-arr-rt/Rating],
    :skos/definition
    #voc/lstr
     "investment credit rating that provides an opinion of creditworthiness of an instrument, typically with some relationship to the creditworthiness of the issuer(s)@en"})
@@ -475,10 +475,10 @@
                       :owl/onClass    :fibo-fbc-dae-crt/CreditRatingModel,
                       :owl/onProperty :fibo-fnd-qt-qtu/isDerivedFrom,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-rt/Rating
                      {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-rt/Rating],
    :skos/definition
    #voc/lstr
     "credit rating that provides an opinion of creditworthiness of an investment, including but not limited to an instrument or organization@en"})
@@ -537,10 +537,10 @@
                       :owl/onClass    :fibo-fbc-dae-crt/CreditRatingModel,
                       :owl/onProperty :fibo-fnd-qt-qtu/isDerivedFrom,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-rt/Rating
                      {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-rt/Rating],
    :skos/definition
    #voc/lstr
     "credit rating that provides an opinion of creditworthiness of an organization@en"})
@@ -573,11 +573,11 @@
                       :owl/onClass    :fibo-fbc-dae-crt/CreditRatingModel,
                       :owl/onProperty :fibo-fnd-qt-qtu/isDerivedFrom,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-rt/Rating
+                     :fibo-fbc-dae-crt/CreditRating
                      {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom :fibo-fbc-dae-crt/CreditRatingAgency,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-crt/CreditRating],
+                     :fibo-fnd-arr-rt/Rating],
    :skos/definition
    #voc/lstr
     "credit rating that provides an opinion of the probability of an individual or organization going into default within a year@en"})

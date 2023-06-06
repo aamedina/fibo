@@ -60,6 +60,7 @@
    :rdfs/label "Interest Rates Ontology",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified to move the property, 'is conferred on' to the Legal Capacity ontology and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+    "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified to correct a restriction on specific provider interest rate benchmark."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified per the issue resolutions identified in the FIBO IND 1.0 FTF 2 report."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified to add the notion of a classifier for reference rates, so that we can differentiate between kinds of rates and the rates themselves, clean up definitions to conform with ISO 704, merge classes referenced in interest rate publishers to eliminate potential circular references, and eliminate duplication of concepts in LCC."
     "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was modified to replace 'financial information publisher' with publisher for simplification purposes."
@@ -81,22 +82,22 @@
    :rdfs/label "base rate",
    :rdfs/subClassOf [:fibo-ind-ir-ir/ReferenceInterestRate
                      :fibo-ind-ir-ir/BaseRate
+                     :fibo-ind-ind-ind/MarketRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/DateTime,
-                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-acc-cur/InterestRate
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom :cmns-dt/Duration,
                       :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-acc-cur/InterestRate
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/DateTime,
+                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "basic rate of interest on which the actual rate a bank charges on loans to its customers is calculated"})
 
@@ -163,23 +164,23 @@
    :rdfs/label "interbank bid rate",
    :rdfs/subClassOf [:fibo-ind-ir-ir/InterbankRate
                      :fibo-ind-ir-ir/InterbankBidRate
-                     :fibo-ind-ir-ir/ReferenceInterestRate
+                     :fibo-ind-ind-ind/MarketRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/DateTime,
-                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-acc-cur/InterestRate
+                     :fibo-ind-ir-ir/ReferenceInterestRate
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom :cmns-dt/Duration,
                       :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-acc-cur/InterestRate
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/DateTime,
+                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "interbank rate that is the interest rate at which participating banks are willing to borrow deposits from other banks"})
 
@@ -192,23 +193,23 @@
    :rdfs/label "interbank mid rate",
    :rdfs/subClassOf [:fibo-ind-ir-ir/InterbankRate
                      :fibo-ind-ir-ir/InterbankMidRate
-                     :fibo-ind-ir-ir/ReferenceInterestRate
+                     :fibo-ind-ind-ind/MarketRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/DateTime,
-                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-acc-cur/InterestRate
+                     :fibo-ind-ir-ir/ReferenceInterestRate
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom :cmns-dt/Duration,
                       :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-acc-cur/InterestRate
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/DateTime,
+                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "interbank rate that represents the mid-point between bid and offer rates"})
 
@@ -221,23 +222,23 @@
    :rdfs/label "interbank offered rate",
    :rdfs/subClassOf [:fibo-ind-ir-ir/InterbankRate
                      :fibo-ind-ir-ir/InterbankOfferedRate
-                     :fibo-ind-ir-ir/ReferenceInterestRate
+                     :fibo-ind-ind-ind/MarketRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/DateTime,
-                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-acc-cur/InterestRate
+                     :fibo-ind-ir-ir/ReferenceInterestRate
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom :cmns-dt/Duration,
                       :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-acc-cur/InterestRate
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/DateTime,
+                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "interbank rate that is the interest rate at which participating banks lend money"})
 
@@ -252,22 +253,22 @@
    :rdfs/label "interbank rate",
    :rdfs/subClassOf [:fibo-ind-ir-ir/ReferenceInterestRate
                      :fibo-ind-ir-ir/InterbankRate
+                     :fibo-ind-ind-ind/MarketRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/DateTime,
-                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-acc-cur/InterestRate
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom :cmns-dt/Duration,
                       :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-acc-cur/InterestRate
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/DateTime,
+                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "reference rate that is the rate of interest charged on short-term loans between banks"})
 
@@ -298,29 +299,29 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
    :rdfs/label "interest rate benchmark",
-   :rdfs/subClassOf [:fibo-fnd-qt-qtu/QuantityKind
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-qt-qtu/QuantityKind
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-be-fct-pub/Publisher,
-                      :owl/onProperty :fibo-fnd-rel-rel/isProducedBy,
+                      :owl/onClass    :cmns-dt/Duration,
+                      :owl/onProperty :fibo-ind-ir-ir/hasTenor,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-be-fct-pub/MarketDataProvider,
                       :owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/Duration,
-                      :owl/onProperty :fibo-ind-ir-ir/hasTenor,
+                      :owl/onClass    :fibo-be-fct-pub/Publisher,
+                      :owl/onProperty :fibo-fnd-rel-rel/isProducedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-ind-ir-ir/InterestRateBenchmark],
    :skos/definition
@@ -427,22 +428,22 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-ind-ir-ir/ReferenceInterestRate
                      :fibo-ind-ir-ir/OvernightRate
+                     :fibo-ind-ind-ind/MarketRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/DateTime,
-                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-acc-cur/InterestRate
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom :cmns-dt/Duration,
                       :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-acc-cur/InterestRate
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/DateTime,
+                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "reference rate that is an interest rate at which a depository institution lends funds to another depository institution (short-term), or the interest rate the central bank charges a financial institution to borrow money overnight"})
 
@@ -455,9 +456,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
    :rdfs/label "reference interest rate",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/DateTime,
+                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
+                      :rdf/type       :owl/Restriction}
                      {:owl/allValuesFrom :cmns-dt/Duration,
                       :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
                       :rdf/type          :owl/Restriction}
@@ -466,10 +468,9 @@
                       :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/DateTime,
-                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
-                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-acc-cur/InterestRate
                      :fibo-ind-ir-ir/ReferenceInterestRate],
    :skos/definition
@@ -508,33 +509,33 @@
    :rdfs/label "specific-provider interest rate benchmark",
    :rdfs/subClassOf [{:owl/onClass    :fibo-be-fct-pub/MarketDataProvider,
                       :owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
-                      :owl/qualifiedCardinality 0,
+                      :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-ind-ir-ir/InterestRateBenchmark
                      :fibo-ind-ir-ir/SpecificProviderInterestRateBenchmark
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-be-fct-pub/Publisher,
-                      :owl/onProperty :fibo-fnd-rel-rel/isProducedBy,
+                      :owl/onClass    :cmns-dt/DateTime,
+                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/DateTime,
-                      :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
+                      :owl/onClass    :cmns-dt/Duration,
+                      :owl/onProperty :fibo-ind-ir-ir/hasTenor,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-qt-qtu/QuantityKind
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-be-fct-pub/MarketDataProvider,
                       :owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-qt-qtu/QuantityKind
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-be-fct-pub/Publisher,
+                      :owl/onProperty :fibo-fnd-rel-rel/isProducedBy,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/Duration,
-                      :owl/onProperty :fibo-ind-ir-ir/hasTenor,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "interest rate benchmark that is made available by a specific market data provider for reference purposes"})

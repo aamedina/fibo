@@ -90,14 +90,12 @@
    :rdfs/label #voc/lstr "adjusted closing price@en",
    :rdfs/subClassOf [:fibo-fbc-fi-ip/ClosingPrice
                      :fibo-fbc-fi-ip/AdjustedClosingPrice
-                     :fibo-fbc-fi-ip/MarketPrice
-                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :cmns-dt/hasObservedDateTime,
                       :rdf/type        :owl/Restriction}
+                     :fibo-fbc-fi-ip/SecurityPrice
+                     :fibo-fbc-fi-ip/MarketPrice
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass {:owl/unionOf
                                     [:fibo-be-fct-pub/Publisher
@@ -109,7 +107,6 @@
                                     :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-acc-cur/MonetaryPrice
                      {:owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-be-fct-pub/Publisher
@@ -119,7 +116,10 @@
                                      :fibo-fbc-fi-ip/CompositeMarket],
                        :rdf/type    :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fi-ip/SecurityPrice],
+                     :fibo-fnd-acc-cur/MonetaryPrice
+                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "amended closing price to reflect a security's value after accounting for any corporate actions, such as stock splits, dividends, and rights offerings@en"})
@@ -136,13 +136,11 @@
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fi-ip/BidPrice
                      :fibo-fbc-fi-ip/BestBid
-                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :cmns-dt/hasObservedDateTime,
                       :rdf/type        :owl/Restriction}
+                     :fibo-fbc-fi-ip/SecurityPrice
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass {:owl/unionOf
                                     [:fibo-be-fct-pub/Publisher
@@ -155,7 +153,9 @@
                       :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-acc-cur/MonetaryPrice
-                     :fibo-fbc-fi-ip/SecurityPrice],
+                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "highest bid price a prospective buyer is willing to pay at a particular time for a given security@en"})
@@ -172,13 +172,11 @@
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fi-ip/OfferPrice
                      :fibo-fbc-fi-ip/BestOffer
-                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :cmns-dt/hasObservedDateTime,
                       :rdf/type        :owl/Restriction}
+                     :fibo-fbc-fi-ip/SecurityPrice
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass {:owl/unionOf
                                     [:fibo-be-fct-pub/Publisher
@@ -191,7 +189,9 @@
                       :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-acc-cur/MonetaryPrice
-                     :fibo-fbc-fi-ip/SecurityPrice],
+                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "lowest price acceptable to a prospective seller for a given security at a particular point in time@en"})
@@ -211,13 +211,13 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-fi-ip/PriceSpread
                      :fibo-fbc-fi-ip/BidAskSpread
-                     {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
-                      :owl/someValuesFrom :cmns-dt/DatePeriod,
-                      :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/MonetaryPrice,
                       :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+                      :owl/someValuesFrom :cmns-dt/DatePeriod,
+                      :rdf/type :owl/Restriction}
                      :fibo-fnd-utl-alx/Difference],
    :skos/definition
    #voc/lstr "difference between an offer (ask) price and a bid price@en"})
@@ -235,39 +235,6 @@
    :rdfs/label #voc/lstr "bid price@en",
    :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
                      :fibo-fbc-fi-ip/BidPrice
-                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :cmns-dt/CombinedDateTime,
-                      :owl/onProperty  :cmns-dt/hasObservedDateTime,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass {:owl/unionOf
-                                    [:fibo-be-fct-pub/Publisher
-                                     :fibo-fbc-pas-fpas/FinancialServiceProvider
-                                     :fibo-fbc-pas-fpas/Dealer
-                                     :fibo-fbc-fi-ip/PricingModel
-                                     :fibo-fbc-fct-mkt/Exchange
-                                     :fibo-fbc-fi-ip/CompositeMarket],
-                                    :rdf/type :owl/Class},
-                      :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-acc-cur/MonetaryPrice],
-   :skos/definition #voc/lstr "price a prospective buyer is willing to pay@en"})
-
-(def ClosingPrice
-  "cash value of the last transacted price before the market closes"
-  {:db/ident :fibo-fbc-fi-ip/ClosingPrice,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
-   :rdfs/label #voc/lstr "closing price@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/MarketPrice
-                     :fibo-fbc-fi-ip/ClosingPrice
-                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :cmns-dt/hasObservedDateTime,
@@ -284,6 +251,36 @@
                       :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-acc-cur/MonetaryPrice
+                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
+   :skos/definition #voc/lstr "price a prospective buyer is willing to pay@en"})
+
+(def ClosingPrice
+  "cash value of the last transacted price before the market closes"
+  {:db/ident :fibo-fbc-fi-ip/ClosingPrice,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
+   :rdfs/label #voc/lstr "closing price@en",
+   :rdfs/subClassOf [:fibo-fbc-fi-ip/MarketPrice
+                     :fibo-fbc-fi-ip/ClosingPrice
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :cmns-dt/CombinedDateTime,
+                      :owl/onProperty  :cmns-dt/hasObservedDateTime,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fbc-fi-ip/SecurityPrice
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass {:owl/unionOf
+                                    [:fibo-be-fct-pub/Publisher
+                                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                                     :fibo-fbc-pas-fpas/Dealer
+                                     :fibo-fbc-fi-ip/PricingModel
+                                     :fibo-fbc-fct-mkt/Exchange
+                                     :fibo-fbc-fi-ip/CompositeMarket],
+                                    :rdf/type :owl/Class},
+                      :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
+                      :rdf/type :owl/Restriction}
                      {:owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-be-fct-pub/Publisher
@@ -293,7 +290,10 @@
                                      :fibo-fbc-fi-ip/CompositeMarket],
                        :rdf/type    :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fi-ip/SecurityPrice],
+                     :fibo-fnd-acc-cur/MonetaryPrice
+                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "cash value of the last transacted price before the market closes@en"})
@@ -362,63 +362,6 @@
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fi-ip/SecurityPrice
                      :fibo-fbc-fi-ip/HighPrice
-                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :cmns-dt/CombinedDateTime,
-                      :owl/onProperty  :cmns-dt/hasObservedDateTime,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass {:owl/unionOf
-                                    [:fibo-be-fct-pub/Publisher
-                                     :fibo-fbc-pas-fpas/FinancialServiceProvider
-                                     :fibo-fbc-pas-fpas/Dealer
-                                     :fibo-fbc-fi-ip/PricingModel
-                                     :fibo-fbc-fct-mkt/Exchange
-                                     :fibo-fbc-fi-ip/CompositeMarket],
-                                    :rdf/type :owl/Class},
-                      :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-acc-cur/MonetaryPrice],
-   :skos/definition
-   #voc/lstr "highest price for a given security over the period specified@en"})
-
-(def InternalRateOfReturn
-  "discount rate that results in a net present value (NPV) of zero for a series of future cash flows"
-  {:cmns-av/explanatoryNote
-   #voc/lstr
-    "This concept is central to many definitions of debt instrument analytics, and is the inverse of net present value.@en",
-   :db/ident :fibo-fbc-fi-ip/InternalRateOfReturn,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
-   :rdfs/label #voc/lstr "internal rate of return@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/RateOfReturn
-                     :fibo-fbc-fi-ip/InternalRateOfReturn
-                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Percentage
-                     {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
-                      :owl/someValuesFrom :cmns-dt/DatePeriod,
-                      :rdf/type :owl/Restriction}],
-   :skos/definition
-   #voc/lstr
-    "discount rate that results in a net present value (NPV) of zero for a series of future cash flows@en"})
-
-(def IntraDayPrice
-  "price for a given security at some point between the opening and official closing price on an exchange"
-  {:db/ident :fibo-fbc-fi-ip/IntraDayPrice,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
-   :rdfs/label #voc/lstr "intra day price@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/MarketPrice
-                     :fibo-fbc-fi-ip/IntraDayPrice
-                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :cmns-dt/hasObservedDateTime,
@@ -435,6 +378,60 @@
                       :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-acc-cur/MonetaryPrice
+                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
+   :skos/definition
+   #voc/lstr "highest price for a given security over the period specified@en"})
+
+(def InternalRateOfReturn
+  "discount rate that results in a net present value (NPV) of zero for a series of future cash flows"
+  {:cmns-av/explanatoryNote
+   #voc/lstr
+    "This concept is central to many definitions of debt instrument analytics, and is the inverse of net present value.@en",
+   :db/ident :fibo-fbc-fi-ip/InternalRateOfReturn,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
+   :rdfs/label #voc/lstr "internal rate of return@en",
+   :rdfs/subClassOf [:fibo-fbc-fi-ip/RateOfReturn
+                     :fibo-fbc-fi-ip/InternalRateOfReturn
+                     {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
+                      :owl/someValuesFrom :cmns-dt/DatePeriod,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-utl-alx/Percentage
+                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
+   :skos/definition
+   #voc/lstr
+    "discount rate that results in a net present value (NPV) of zero for a series of future cash flows@en"})
+
+(def IntraDayPrice
+  "price for a given security at some point between the opening and official closing price on an exchange"
+  {:db/ident :fibo-fbc-fi-ip/IntraDayPrice,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
+   :rdfs/label #voc/lstr "intra day price@en",
+   :rdfs/subClassOf [:fibo-fbc-fi-ip/MarketPrice
+                     :fibo-fbc-fi-ip/IntraDayPrice
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :cmns-dt/CombinedDateTime,
+                      :owl/onProperty  :cmns-dt/hasObservedDateTime,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fbc-fi-ip/SecurityPrice
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass {:owl/unionOf
+                                    [:fibo-be-fct-pub/Publisher
+                                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                                     :fibo-fbc-pas-fpas/Dealer
+                                     :fibo-fbc-fi-ip/PricingModel
+                                     :fibo-fbc-fct-mkt/Exchange
+                                     :fibo-fbc-fi-ip/CompositeMarket],
+                                    :rdf/type :owl/Class},
+                      :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
+                      :rdf/type :owl/Restriction}
                      {:owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-be-fct-pub/Publisher
@@ -444,7 +441,10 @@
                                      :fibo-fbc-fi-ip/CompositeMarket],
                        :rdf/type    :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fi-ip/SecurityPrice],
+                     :fibo-fnd-acc-cur/MonetaryPrice
+                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "price for a given security at some point between the opening and official closing price on an exchange@en"})
@@ -461,9 +461,6 @@
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fi-ip/SecurityPrice
                      :fibo-fbc-fi-ip/LowPrice
-                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :cmns-dt/hasObservedDateTime,
@@ -479,7 +476,10 @@
                                     :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-acc-cur/MonetaryPrice],
+                     :fibo-fnd-acc-cur/MonetaryPrice
+                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr "lowest value for a given security over the period specified@en"})
 
@@ -501,9 +501,6 @@
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fi-ip/SecurityPrice
                      :fibo-fbc-fi-ip/MarketPrice
-                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :cmns-dt/hasObservedDateTime,
@@ -519,7 +516,10 @@
                                     :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-acc-cur/MonetaryPrice],
+                     :fibo-fnd-acc-cur/MonetaryPrice
+                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition #voc/lstr
                      "last reported price at which a security was sold@en"})
 
@@ -543,25 +543,22 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
    :rdfs/label #voc/lstr "mid price@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fbc-fi-ip/OfferPrice,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-ip/SecurityPrice
                      :fibo-fnd-utl-alx/ArithmeticMean
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fbc-fi-ip/BidPrice,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
                      :fibo-fbc-fi-ip/MidPrice
-                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :cmns-dt/hasObservedDateTime,
@@ -577,7 +574,10 @@
                                     :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-acc-cur/MonetaryPrice],
+                     :fibo-fnd-acc-cur/MonetaryPrice
+                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition #voc/lstr
                      "arithmetic mean between bid and offer prices@en"})
 
@@ -593,9 +593,6 @@
    :rdfs/label #voc/lstr "offer price@en",
    :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
                      :fibo-fbc-fi-ip/OfferPrice
-                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :cmns-dt/hasObservedDateTime,
@@ -611,7 +608,10 @@
                                     :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-acc-cur/MonetaryPrice],
+                     :fibo-fnd-acc-cur/MonetaryPrice
+                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "price suggested by a prospective seller at a particular time for a given security@en"})
@@ -633,14 +633,12 @@
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fi-ip/ClosingPrice
     :fibo-fbc-fi-ip/OfficialClosingPrice
-    :fibo-fbc-fi-ip/MarketPrice
-    {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onDataRange :cmns-dt/CombinedDateTime,
      :owl/onProperty  :cmns-dt/hasObservedDateTime,
      :rdf/type        :owl/Restriction}
+    :fibo-fbc-fi-ip/SecurityPrice
+    :fibo-fbc-fi-ip/MarketPrice
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/unionOf [:fibo-be-fct-pub/Publisher
                                     :fibo-fbc-pas-fpas/FinancialServiceProvider
@@ -651,7 +649,6 @@
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-acc-cur/MonetaryPrice
     {:owl/onProperty     :fibo-fbc-fi-ip/hasPricingSource,
      :owl/someValuesFrom {:owl/unionOf
                           [:fibo-be-fct-pub/Publisher
@@ -661,7 +658,10 @@
                            :fibo-fbc-fi-ip/CompositeMarket],
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-ip/SecurityPrice],
+    :fibo-fnd-acc-cur/MonetaryPrice
+    {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "price of the final trade of a security at the end of a trading day on a given exchange@en"})
@@ -678,13 +678,11 @@
    :rdfs/label #voc/lstr "opening price@en",
    :rdfs/subClassOf [:fibo-fbc-fi-ip/MarketPrice
                      :fibo-fbc-fi-ip/OpeningPrice
-                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :cmns-dt/hasObservedDateTime,
                       :rdf/type        :owl/Restriction}
+                     :fibo-fbc-fi-ip/SecurityPrice
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass {:owl/unionOf
                                     [:fibo-be-fct-pub/Publisher
@@ -696,7 +694,6 @@
                                     :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-acc-cur/MonetaryPrice
                      {:owl/onProperty :fibo-fbc-fi-ip/hasPricingSource,
                       :owl/someValuesFrom
                       {:owl/unionOf [:fibo-be-fct-pub/Publisher
@@ -706,7 +703,10 @@
                                      :fibo-fbc-fi-ip/CompositeMarket],
                        :rdf/type    :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fi-ip/SecurityPrice],
+                     :fibo-fnd-acc-cur/MonetaryPrice
+                     {:owl/onProperty     :fibo-fnd-acc-cur/isPriceFor,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "price at which something first trades at the start of a trading day@en"})
@@ -850,13 +850,13 @@
                      {:owl/hasValue   :cmns-dt/Day,
                       :owl/onProperty :cmns-dt/hasDuration,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :cmns-dt/CombinedDateTime,
-                      :owl/onProperty  :fibo-fnd-dt-fd/hasOpeningDateTime,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasClosingDateTime,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onDataRange :cmns-dt/CombinedDateTime,
+                      :owl/onProperty  :fibo-fnd-dt-fd/hasOpeningDateTime,
+                      :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fbc-fi-ip/TradingDay],
    :skos/definition #voc/lstr
@@ -898,17 +898,17 @@
    :rdfs/label #voc/lstr "volume-weighted average price@en",
    :rdfs/subClassOf [:fibo-fbc-fi-ip/PriceAnalytic
                      :fibo-fbc-fi-ip/VolumeWeightedAveragePrice
+                     :fibo-fnd-utl-alx/ScopedMeasure
                      {:owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom
                       :fibo-fbc-fi-ip/CollectionOfSecurityPrices,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/ScopedMeasure
-                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "average price at which a given security has traded throughout a trading day, determined by multiplying each trade by its volume, adding the results, then dividing by the volume traded for the day@en"})
@@ -923,17 +923,17 @@
    :rdfs/label #voc/lstr "volume-weighted open price@en",
    :rdfs/subClassOf [:fibo-fbc-fi-ip/PriceAnalytic
                      :fibo-fbc-fi-ip/VolumeWeightedOpenPrice
+                     :fibo-fnd-utl-alx/ScopedMeasure
                      {:owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom
                       :fibo-fbc-fi-ip/CollectionOfSecurityPrices,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/ScopedMeasure
-                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "price determined by multiplying each trade by its volume, adding the results, then dividing by the volume over a certain period during the trading day (rather than over the course of the entire day)@en"})
@@ -950,17 +950,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
    :rdfs/label #voc/lstr "yield@en",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Percentage
                      {:owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/Percentage
                      :fibo-fbc-fi-ip/Yield],
    :skos/definition #voc/lstr "return on the investor's capital investment@en"})
 

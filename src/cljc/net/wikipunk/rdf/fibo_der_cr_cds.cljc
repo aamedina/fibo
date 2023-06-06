@@ -106,18 +106,18 @@
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-bsc/CreditDerivative
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
+                      :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom
                       :fibo-der-cr-cds/CreditProtectionTerms,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/Swap
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
-                      :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
-                      :rdf/type       :owl/Restriction}],
+                     :fibo-der-drc-swp/Swap],
    :skos/definition
    #voc/lstr
     "credit default swap whose underlying reference obligation is an asset-backed security rather than corporate credit@en"})
@@ -138,19 +138,19 @@
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-bsc/CreditDerivative
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom
-                      :fibo-der-cr-cds/CreditProtectionTerms,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/Swap
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-cr-cds/CreditDefaultSwap],
+                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom
+                      :fibo-der-cr-cds/CreditProtectionTerms,
+                      :rdf/type :owl/Restriction}
+                     :fibo-der-cr-cds/CreditDefaultSwap
+                     :fibo-der-drc-swp/Swap],
    :skos/definition
    #voc/lstr
     "credit default swap that references a bespoke, synthetic portfolio of underlying assets whose components have been agreed to for a specific OTC derivative by the parties to the transaction@en"})
@@ -190,18 +190,18 @@
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-bsc/CreditDerivative
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
+                      :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom
                       :fibo-der-cr-cds/CreditProtectionTerms,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/Swap
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
-                      :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
-                      :rdf/type       :owl/Restriction}],
+                     :fibo-der-drc-swp/Swap],
    :skos/definition
    #voc/lstr
     "credit default swap in which an additional triggering event is required@en"})
@@ -225,17 +225,17 @@
                       :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
                       :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
+                      :rdf/type           :owl/Restriction}
                      :fibo-der-drc-swp/Swap
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom
                       :fibo-der-cr-cds/CreditProtectionTerms,
                       :rdf/type :owl/Restriction}
+                     :fibo-der-drc-bsc/CreditDerivative
                      {:owl/onProperty     :fibo-der-cr-cds/hasContractPrice,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-bsc/CreditDerivative
-                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-cr-cds/CreditDefaultSwap],
    :skos/definition
@@ -276,8 +276,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/CreditDefaultSwaps/",
    :rdfs/label #voc/lstr "credit protection terms@en",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
-     :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligationSeller,
+   [{:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
+     :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligationBuyer,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
@@ -290,13 +290,13 @@
      :owl/onClass    :cmns-dt/ExplicitDate,
      :owl/onProperty :fibo-der-cr-cds/hasScheduledTerminationDate,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
-     :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligationBuyer,
+    {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
+     :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligationSeller,
      :rdf/type           :owl/Restriction}
-    :fibo-der-drc-bsc/DerivativeTerms
     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
      :owl/someValuesFrom :fibo-der-cr-cds/DeliverableObligation,
      :rdf/type           :owl/Restriction}
+    :fibo-der-drc-bsc/DerivativeTerms
     :fibo-der-cr-cds/CreditProtectionTerms],
    :skos/definition
    #voc/lstr
@@ -386,19 +386,19 @@
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-bsc/CreditDerivative
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom
-                      :fibo-der-cr-cds/CreditProtectionTerms,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/Swap
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-cr-cds/CreditDefaultSwap],
+                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom
+                      :fibo-der-cr-cds/CreditProtectionTerms,
+                      :rdf/type :owl/Restriction}
+                     :fibo-der-cr-cds/CreditDefaultSwap
+                     :fibo-der-drc-swp/Swap],
    :skos/definition
    #voc/lstr
     "credit default swap that references a family of standardized credit derivative indices, where the underlying reference entities are a defined basket of credit from a particular geographic region (e.g. Asia, North America, Europe), and/or credit rating level (e.g. emerging markets, high yield, investment grade)@en"})
@@ -421,19 +421,19 @@
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-bsc/CreditDerivative
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom
-                      :fibo-der-cr-cds/CreditProtectionTerms,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/Swap
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-cr-cds/CreditDefaultSwap],
+                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom
+                      :fibo-der-cr-cds/CreditProtectionTerms,
+                      :rdf/type :owl/Restriction}
+                     :fibo-der-cr-cds/CreditDefaultSwap
+                     :fibo-der-drc-swp/Swap],
    :skos/definition
    #voc/lstr
     "credit default swap that references a synthetic collateralized debt obligation (CDO) based on a credit index where each tranche references a different segment of the loss distribution of the underlying index@en"})
@@ -452,18 +452,18 @@
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-bsc/CreditDerivative
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
+                      :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom
                       :fibo-der-cr-cds/CreditProtectionTerms,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/Swap
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
-                      :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
-                      :rdf/type       :owl/Restriction}],
+                     :fibo-der-drc-swp/Swap],
    :skos/definition
    #voc/lstr
     "credit default swap whose underlying reference obligation is limited strictly to syndicated secured loans, rather than any type of corporate debt@en"})
@@ -488,18 +488,18 @@
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-bsc/CreditDerivative
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
+                      :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom
                       :fibo-der-cr-cds/CreditProtectionTerms,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/Swap
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
-                      :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
-                      :rdf/type       :owl/Restriction}],
+                     :fibo-der-drc-swp/Swap],
    :skos/definition
    #voc/lstr
     "credit default swap that references more than one obligation or borrower@en"})
@@ -554,18 +554,18 @@
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-bsc/CreditDerivative
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
+                      :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom
                       :fibo-der-cr-cds/CreditProtectionTerms,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-                      :owl/someValuesFrom :fibo-der-cr-cds/TriggeringEvent,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/Swap
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-der-cr-cds/SettlementAuction,
-                      :owl/onProperty :fibo-fnd-dt-oc/hasOccurrence,
-                      :rdf/type       :owl/Restriction}],
+                     :fibo-der-drc-swp/Swap],
    :skos/definition
    #voc/lstr
     "credit default swap whose underlying risk is a single reference obligation, or a single reference entity, such as a corporation or a sovereign borrower@en"})

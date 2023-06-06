@@ -94,8 +94,8 @@
    :rdfs/label #voc/lstr "a b s securitization process@en",
    :rdfs/subClassOf [:fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess
                      :fibo-bp-iss-dbti/ABSSecuritizationProcess
-                     :fibo-bp-iss-prc/SecuritiesIssuanceProcess
-                     :fibo-bp-iss-dbti/DebtSecuritizationProcess]})
+                     :fibo-bp-iss-dbti/DebtSecuritizationProcess
+                     :fibo-bp-iss-prc/SecuritiesIssuanceProcess]})
 
 (def AdvancedRefunding
   "refunding in which bond issuance in which new bonds are sold at a lower rate than outstanding ones"
@@ -109,8 +109,8 @@
    :rdfs/label #voc/lstr "advance refunding@en",
    :rdfs/subClassOf [:fibo-bp-iss-dbti/RefundingPurpose
                      :fibo-bp-iss-dbti/AdvancedRefunding
-                     :fibo-fnd-gao-obj/Objective
-                     :fibo-bp-iss-dbti/DebtIssuancePurpose],
+                     :fibo-bp-iss-dbti/DebtIssuancePurpose
+                     :fibo-fnd-gao-obj/Objective],
    :skos/definition
    #voc/lstr
     "refunding in which bond issuance in which new bonds are sold at a lower rate than outstanding ones@en"})
@@ -140,10 +140,10 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-bp-iss-dbti/DebtIssuanceProgramme
                      :fibo-bp-iss-dbti/BondIssuanceProgramme
-                     :fibo-bp-iss-prc/IssuanceProgramme
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/DebtOffering,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-bp-iss-prc/IssuanceProgramme],
    :skos/definition
    #voc/lstr
     "a debt issuance programe under which an entity may, from time to time, issue bonds under the terms and conditions specified in the base prospectus for that programme@en"})
@@ -157,20 +157,20 @@
    :rdfs/label #voc/lstr "bond offering@en",
    :rdfs/subClassOf [:fibo-sec-dbt-dbti/DebtOffering
                      :fibo-bp-iss-dbti/BondOffering
-                     {:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
-                      :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom
                       :fibo-sec-dbt-dbti/TradableDebtInstrument,
                       :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+                      :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
+                      :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
+                      :rdf/type           :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingAmount,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-                      :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "a debt offering of one or more bonds, as all or part of an issuance programme@en"})
@@ -191,20 +191,20 @@
      :rdf/type           :owl/Restriction}
     :fibo-bp-iss-dbti/BondOffering
     :fibo-bp-iss-dbti/BondOfferingWithWarrant
-    {:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
-     :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-dbti/TradableDebtInstrument,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
+     :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-dbti/DebtOffering
     {:owl/maxQualifiedCardinality 1,
      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
      :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingAmount,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-dbti/DebtOffering
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "a bond offering where the issue includes a warrant; Further notes: ISO 10962 CFI definition is A bond that is issued together with one or more warrant(s) attached as part of the offer, the warrant(s) granting the holder the right to purchase a designated security, often the common stock of the issuer of the debt, at a specified price. Review notes: This need not be any specific type of bond. The warrant is used as a sweetener to encourage people to subscribe to a new bond issue. The Bond and the Warrant trade together as a unit (called \"Bond Unit\").@en"})
@@ -242,18 +242,18 @@
    :rdfs/label #voc/lstr "credit card pool creation process@en",
    :rdfs/subClassOf [:fibo-bp-iss-dbti/RetailAssetPoolCreationProcess
                      :fibo-bp-iss-dbti/CreditCardPoolCreationProcess
+                     :fibo-bp-iss-dbti/AssetPoolCreationProcess
                      {:owl/onProperty :cmns-dt/precedes,
                       :owl/someValuesFrom
                       :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-dbti/AssetPoolCreationProcess
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :cmns-dt/precedes,
                       :owl/someValuesFrom
                       :fibo-bp-iss-dbti/DebtSecuritizationProcess,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type :owl/Restriction}]})
 
 (def DebtInstrumentPoolCreationProcess
   "debt instrument pool creation process"
@@ -333,18 +333,18 @@
    :rdfs/label #voc/lstr "home equity line of credit pool creation process@en",
    :rdfs/subClassOf [:fibo-bp-iss-dbti/RetailAssetPoolCreationProcess
                      :fibo-bp-iss-dbti/HomeEquityLineOfCreditPoolCreationProcess
+                     :fibo-bp-iss-dbti/AssetPoolCreationProcess
                      {:owl/onProperty :cmns-dt/precedes,
                       :owl/someValuesFrom
                       :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-dbti/AssetPoolCreationProcess
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :cmns-dt/precedes,
                       :owl/someValuesFrom
                       :fibo-bp-iss-dbti/DebtSecuritizationProcess,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type :owl/Restriction}]})
 
 (def InAssembly
   "in assembly"
@@ -408,18 +408,18 @@
    :rdfs/label #voc/lstr "loan pool creation process@en",
    :rdfs/subClassOf [:fibo-bp-iss-dbti/RetailAssetPoolCreationProcess
                      :fibo-bp-iss-dbti/LoanPoolCreationProcess
+                     :fibo-bp-iss-dbti/AssetPoolCreationProcess
                      {:owl/onProperty :cmns-dt/precedes,
                       :owl/someValuesFrom
                       :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-dbti/AssetPoolCreationProcess
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :cmns-dt/precedes,
                       :owl/someValuesFrom
                       :fibo-bp-iss-dbti/DebtSecuritizationProcess,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isProducedBy,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type :owl/Restriction}]})
 
 (def MTNRegistration
   "m t n registration"
@@ -448,14 +448,14 @@
                       :rdf/type :owl/Restriction}
                      :fibo-bp-iss-dbti/BondIssuanceProgramme
                      :fibo-bp-iss-dbti/MediumTermNoteIssuanceProgramme
-                     :fibo-bp-iss-prc/IssuanceProgramme
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-dbti/DebtOffering,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-bp-iss-dbti/BondOffering,
                       :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-dbti/DebtIssuanceProgramme
-                     {:owl/onProperty     :cmns-col/comprises,
-                      :owl/someValuesFrom :fibo-sec-dbt-dbti/DebtOffering,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-bp-iss-prc/IssuanceProgramme
+                     :fibo-bp-iss-dbti/DebtIssuanceProgramme],
    :skos/definition
    #voc/lstr
     "a program of offerings of medium term notes; a set of issues where the maturity is defined after the rest of the terms have been registered with some authority; these are registered up front so that then the company wants to borrow more money they don't have to go through the registration period but have the facility up front to issue another security.@en"})
@@ -469,21 +469,21 @@
    :rdfs/label #voc/lstr "medium term note offering@en",
    :rdfs/subClassOf [:fibo-bp-iss-dbti/BondOffering
                      :fibo-bp-iss-dbti/MediumTermNoteOffering
-                     {:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
-                      :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom
                       :fibo-sec-dbt-dbti/TradableDebtInstrument,
                       :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+                      :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-sec-sec-iss/isUnderwrittenBy,
+                      :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-dbti/DebtOffering
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingAmount,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-sec-dbt-dbti/DebtOffering
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-                      :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type       :owl/Restriction}]})
 
 (def MuniIssueUnderwriter
   "The party which agrees to buy any certificates that are not bought by investors Term origin:DTCC"

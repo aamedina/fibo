@@ -179,11 +179,11 @@
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}
+    :fibo-fnd-pty-pty/TaxIdentifier
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
-    :fibo-fnd-pty-pty/TaxIdentifier
     :fibo-fbc-fct-cajrga/BusinessNumber],
    :skos/definition
    "unique, 9-digit number that is the standard identifier for legal entities in Canada which are typically a business",
@@ -309,25 +309,25 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :rdfs/label "corporation income tax number",
    :rdfs/subClassOf
-   [{:owl/hasValue
-     :fibo-fbc-fct-cajrga/CorporationIncomeTaxNumberIdentifierScheme,
-     :owl/onProperty :cmns-col/isMemberOf,
-     :rdf/type :owl/Restriction}
-    :fibo-fbc-fct-cajrga/BusinessNumber
-    {:owl/minQualifiedCardinality 0,
+   [{:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :cmns-id/identifies,
      :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-cajrga/BusinessNumber
+    {:owl/hasValue
+     :fibo-fbc-fct-cajrga/CorporationIncomeTaxNumberIdentifierScheme,
+     :owl/onProperty :cmns-col/isMemberOf,
+     :rdf/type :owl/Restriction}
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-cajrga/CorporationIncomeTaxNumber
-    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
     :fibo-fnd-pty-pty/TaxIdentifier
+    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}],
@@ -431,26 +431,26 @@
    :rdfs/label
    "Goods and Services Tax / Harmonized Sales Tax registration number",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
-     :owl/onProperty :cmns-id/identifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-cajrga/BusinessNumber
-    :fibo-be-le-fbo/ValueAddedTaxIdentificationNumber
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-     :rdf/type       :owl/Restriction}
+   [:fibo-fbc-fct-cajrga/BusinessNumber
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/GoodsServicesTaxHarmonizedSalesTaxRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
+    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
+     :rdf/type       :owl/Restriction}
+    :fibo-be-le-fbo/ValueAddedTaxIdentificationNumber
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
+     :owl/onProperty :cmns-id/identifies,
+     :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-cajrga/GoodsServicesTaxHarmonizedSalesTaxRegistrationNumber
-    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
     :fibo-fnd-pty-pty/TaxIdentifier
+    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}],
@@ -487,25 +487,25 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :rdfs/label "import export program number",
    :rdfs/subClassOf
-   [{:owl/hasValue
-     :fibo-fbc-fct-cajrga/ImportExportProgramNumberIdentifierScheme,
-     :owl/onProperty :cmns-col/isMemberOf,
-     :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+   [{:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :cmns-id/identifies,
      :rdf/type       :owl/Restriction}
+    {:owl/hasValue
+     :fibo-fbc-fct-cajrga/ImportExportProgramNumberIdentifierScheme,
+     :owl/onProperty :cmns-col/isMemberOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-cajrga/BusinessNumber
     :fibo-fbc-fct-cajrga/ImportExportProgramNumber
-    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
     :fibo-fnd-pty-pty/TaxIdentifier
+    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}],
@@ -585,6 +585,9 @@
    :rdfs/label "information return program number",
    :rdfs/subClassOf
    [:fibo-fbc-fct-cajrga/BusinessNumber
+    {:owl/hasValue   :fibo-fbc-fct-cajrga/InformationReturnsIdentifierScheme,
+     :owl/onProperty :cmns-col/isMemberOf,
+     :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :cmns-id/identifies,
@@ -592,16 +595,13 @@
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}
-    {:owl/hasValue   :fibo-fbc-fct-cajrga/InformationReturnsIdentifierScheme,
-     :owl/onProperty :cmns-col/isMemberOf,
-     :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-cajrga/InformationReturnsProgramNumber
-    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
     :fibo-fnd-pty-pty/TaxIdentifier
+    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}],
@@ -686,7 +686,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :rdfs/label "payroll deductions program number",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
+   [{:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :cmns-id/identifies,
      :rdf/type       :owl/Restriction}
@@ -694,17 +697,14 @@
      :fibo-fbc-fct-cajrga/PayrollDeductionsProgramIdentifierRegistrationService,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-     :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-cajrga/BusinessNumber
     :fibo-fbc-fct-cajrga/PayrollDeductionsProgramNumber
-    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
     :fibo-fnd-pty-pty/TaxIdentifier
+    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}],
@@ -738,25 +738,25 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :rdfs/label "registered charity program number",
    :rdfs/subClassOf
-   [{:owl/hasValue
-     :fibo-fbc-fct-cajrga/RegisteredCharityProgramNumberIdentifierScheme,
-     :owl/onProperty :cmns-col/isMemberOf,
-     :rdf/type :owl/Restriction}
-    :fibo-fbc-fct-cajrga/BusinessNumber
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+   [{:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :cmns-id/identifies,
      :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-cajrga/BusinessNumber
+    {:owl/hasValue
+     :fibo-fbc-fct-cajrga/RegisteredCharityProgramNumberIdentifierScheme,
+     :owl/onProperty :cmns-col/isMemberOf,
+     :rdf/type :owl/Restriction}
+    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
+     :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-cajrga/RegisteredCharityProgramNumber
-    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
     :fibo-fnd-pty-pty/TaxIdentifier
+    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}],

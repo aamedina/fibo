@@ -108,17 +108,17 @@
    :rdfs/subClassOf [:fibo-be-ge-ge/Government
                      :fibo-be-ge-ge/DevolvedGovernment
                      {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasPart,
                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentDepartment,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-fct-fct/FunctionalEntity
+                     {:owl/onProperty     :cmns-col/hasPart,
+                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
+                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "government and the politicians that that run a subnational territory with powers that may be temporary and reversible, ultimately residing with the central government"})
@@ -164,22 +164,22 @@
                       :rdf/type :owl/Class}
                      :fibo-be-ge-ge/NationalGovernment
                      :fibo-be-ge-ge/FederalGovernment
-                     {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
+                     {:owl/onProperty     :fibo-fnd-rel-rel/governs,
+                      :owl/someValuesFrom :lcc-cr/Country,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-ge-ge/Government
                      {:owl/onProperty     :cmns-col/hasPart,
                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentDepartment,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-fct-fct/FunctionalEntity
-                     {:owl/onProperty     :fibo-fnd-rel-rel/governs,
-                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-                      :rdf/type           :owl/Restriction}
+                     :fibo-be-ge-ge/Government
                      {:owl/onProperty     :cmns-col/hasPart,
                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/governs,
-                      :owl/someValuesFrom :lcc-cr/Country,
+                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasPart,
+                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "union of states under a central government distinct from the individual governments of the separate states"})
@@ -214,25 +214,25 @@
                       :rdf/type :owl/Class}
                      :fibo-be-ge-ge/SovereignState
                      :fibo-be-ge-ge/FederatedSovereignty
-                     :fibo-be-ge-ge/Polity
+                     :fibo-be-ge-ge/GovernmentBody
                      {:owl/onProperty     :fibo-be-ge-ge/hasFullSovereigntyOver,
                       :owl/someValuesFrom :lcc-cr/Country,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
+                      :owl/someValuesFrom :fibo-be-ge-ge/Government,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+                      :owl/someValuesFrom :fibo-be-le-lp/PublicPurpose,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-be-ge-ge/hasSovereigntyOver,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-ge-ge/GovernmentBody
-                     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-                      :owl/someValuesFrom :fibo-be-le-lp/PublicPurpose,
-                      :rdf/type           :owl/Restriction}
+                     :fibo-be-ge-ge/Polity
                      :fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/LegalPerson
-                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
-                      :owl/someValuesFrom :fibo-be-ge-ge/Government,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
                       :owl/someValuesFrom :fibo-be-ge-ge/NationalGovernment,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-be-le-lp/LegalPerson],
    :skos/definition
    "polity characterized by a union of partially self-governing states or regions under a central (federal) government"})
 
@@ -247,17 +247,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
    :rdfs/label "government",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentDepartment,
+                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-fct-fct/FunctionalEntity
                      {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
+                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentDepartment,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasPart,
+                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-ge-ge/Government],
    :skos/definition "the system by which a state or community is controlled"})
@@ -300,7 +300,6 @@
     :fibo-be-oac-exec/Executive
     :fibo-be-ge-ge/GovernmentOfficial
     :fibo-be-ge-ge/GovernmentAppointee
-    :fibo-be-oac-exec/ResponsibleParty
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/allValuesFrom :fibo-be-ge-ge/GovernmentBody,
                           :owl/onProperty    :cmns-col/isMemberOf,
@@ -309,7 +308,8 @@
     {:owl/onClass    :fibo-be-le-lp/LegallyCompetentNaturalPerson,
      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
      :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-be-oac-exec/ResponsibleParty],
    :skos/definition
    "individual designated by government decree to lead, or participate in some capacity in a government body"})
 
@@ -359,7 +359,6 @@
    :rdfs/subClassOf [:fibo-be-oac-exec/Executive
                      :fibo-be-ge-ge/GovernmentOfficial
                      :fibo-be-ge-ge/GovernmentMinister
-                     :fibo-be-oac-exec/ResponsibleParty
                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/allValuesFrom
                                            :fibo-be-ge-ge/GovernmentBody,
@@ -369,7 +368,8 @@
                      {:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-be-oac-exec/ResponsibleParty],
    :skos/definition
    "government official that is an executive, who is either appointed or elected to a high office in the government",
    :skos/example
@@ -481,18 +481,18 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-be-ge-ge/Polity
                      :fibo-be-ge-ge/MunicipalEntity
-                     {:owl/onProperty     :fibo-be-ge-ge/hasSovereigntyOver,
-                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-                      :rdf/type           :owl/Restriction}
                      :fibo-be-ge-ge/GovernmentBody
+                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
+                      :owl/someValuesFrom :fibo-be-ge-ge/Government,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/PublicPurpose,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ge-ge/hasSovereigntyOver,
+                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/LegalPerson
-                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
-                      :owl/someValuesFrom :fibo-be-ge-ge/Government,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-be-le-lp/LegalPerson],
    :skos/definition
    "polity that typically represents a city, township, or other administrative subdivision having corporate status and powers of self-government or jurisdiction"})
 
@@ -509,17 +509,17 @@
                      :fibo-be-ge-ge/Government
                      :fibo-be-ge-ge/MunicipalGovernment
                      {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasPart,
                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentDepartment,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-fct-fct/FunctionalEntity
+                     {:owl/onProperty     :cmns-col/hasPart,
+                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
+                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "regional government of a city, township, or other administrative subdivision"})
@@ -537,17 +537,17 @@
                      :fibo-be-ge-ge/Government
                      :fibo-be-ge-ge/NationalGovernment
                      {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasPart,
                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentDepartment,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-fct-fct/FunctionalEntity
+                     {:owl/onProperty     :cmns-col/hasPart,
+                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
+                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "government and the politicians that that run a country as a whole (as opposed to local government)"})
@@ -591,17 +591,17 @@
                      :fibo-be-ge-ge/Government
                      :fibo-be-ge-ge/RegionalGovernment
                      {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasPart,
                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentDepartment,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-fct-fct/FunctionalEntity
+                     {:owl/onProperty     :cmns-col/hasPart,
+                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
+                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "administrative body for a geographic area, such as a county, smaller town, or other similar community"})
@@ -622,18 +622,18 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-be-ge-ge/Polity
                      :fibo-be-ge-ge/RegionalSovereignty
-                     {:owl/onProperty     :fibo-be-ge-ge/hasSovereigntyOver,
-                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-                      :rdf/type           :owl/Restriction}
                      :fibo-be-ge-ge/GovernmentBody
+                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
+                      :owl/someValuesFrom :fibo-be-ge-ge/Government,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/PublicPurpose,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ge-ge/hasSovereigntyOver,
+                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/LegalPerson
-                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
-                      :owl/someValuesFrom :fibo-be-ge-ge/Government,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-be-le-lp/LegalPerson],
    :skos/definition
    "legal person that corresponds to an administrative division, administrative unit, administrative entity or country subdivision (or, sometimes, geopolitical division or subnational entity), that has the capacity to incur debt, issue contracts, and enter into relations with other similar entities",
    :skos/example
@@ -656,18 +656,18 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-be-ge-ge/Polity
                      :fibo-be-ge-ge/SovereignState
-                     {:owl/onProperty     :fibo-be-ge-ge/hasSovereigntyOver,
-                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-                      :rdf/type           :owl/Restriction}
                      :fibo-be-ge-ge/GovernmentBody
+                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
+                      :owl/someValuesFrom :fibo-be-ge-ge/Government,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/PublicPurpose,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ge-ge/hasSovereigntyOver,
+                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/LegalPerson
-                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
-                      :owl/someValuesFrom :fibo-be-ge-ge/Government,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-be-le-lp/LegalPerson],
    :skos/definition
    "non-physical juridical entity that is represented by one centralized government that has sovereignty over a geographic area"})
 
@@ -686,24 +686,24 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentBody,
                       :rdf/type           :owl/Restriction}
+                     :fibo-be-ge-ge/Polity
                      {:owl/minQualifiedCardinality 2,
                       :owl/onClass    :lcc-cr/Country,
                       :owl/onProperty :fibo-be-ge-ge/hasSharedSovereigntyOver,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-ge-ge/Polity
                      :fibo-be-ge-ge/SupranationalEntity
-                     {:owl/onProperty     :fibo-be-ge-ge/hasSovereigntyOver,
-                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-                      :rdf/type           :owl/Restriction}
                      :fibo-be-ge-ge/GovernmentBody
+                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
+                      :owl/someValuesFrom :fibo-be-ge-ge/Government,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/PublicPurpose,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ge-ge/hasSovereigntyOver,
+                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/LegalPerson
-                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
-                      :owl/someValuesFrom :fibo-be-ge-ge/Government,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-be-le-lp/LegalPerson],
    :skos/definition
    "governmental or non-governmental entity that is established by international law or treaty or incorporated at an international level"})
 
@@ -735,18 +735,18 @@
                       :rdf/type :owl/Restriction}
                      :fibo-be-ge-ge/Polity
                      :fibo-be-ge-ge/TribalEntity
-                     {:owl/onProperty     :fibo-be-ge-ge/hasSovereigntyOver,
-                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-                      :rdf/type           :owl/Restriction}
                      :fibo-be-ge-ge/GovernmentBody
+                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
+                      :owl/someValuesFrom :fibo-be-ge-ge/Government,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/PublicPurpose,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-be-ge-ge/hasSovereigntyOver,
+                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/LegalPerson
-                     {:owl/onProperty     :fibo-be-ge-ge/isRepresentedBy,
-                      :owl/someValuesFrom :fibo-be-ge-ge/Government,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-be-le-lp/LegalPerson],
    :skos/definition
    "legal entity that represents fundamental unit of sovereign tribal (indigenous) government"})
 
@@ -763,17 +763,17 @@
                      :fibo-be-ge-ge/Government
                      :fibo-be-ge-ge/TribalGovernment
                      {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasPart,
                       :owl/someValuesFrom :fibo-be-ge-ge/GovernmentDepartment,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-fct-fct/FunctionalEntity
+                     {:owl/onProperty     :cmns-col/hasPart,
+                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-col/hasPart,
-                      :owl/someValuesFrom :fibo-be-ge-ge/GovernmentAgency,
+                      :owl/someValuesFrom :fibo-be-ge-ge/BranchOfGovernment,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "government representing a group of indigenous people that has legal authority to govern those people, including authority to legislate the existence of tribal entities"})

@@ -89,12 +89,12 @@
                       :rdf/type          :owl/Restriction}
                      :fibo-ind-fx-fx/QuotedExchangeRate
                      :fibo-ind-fx-fx/CurrencyForwardRate
+                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-ind-ind/MarketRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-acc-cur/ExchangeRate],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "rate of exchange between two currencies for settlement at some future point in time, expressed as a premium on the spot rate"})
 
@@ -127,13 +127,13 @@
    :rdfs/label "currency spot buy rate",
    :rdfs/subClassOf [:fibo-ind-fx-fx/CurrencySpotRate
                      :fibo-ind-fx-fx/CurrencySpotBuyRate
+                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-ind-ind/MarketRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-ind-fx-fx/QuotedExchangeRate
-                     :fibo-fnd-acc-cur/ExchangeRate],
+                     :fibo-ind-fx-fx/QuotedExchangeRate],
    :skos/definition
    "indicative spot buying market rate as observed by the reporting source"})
 
@@ -146,13 +146,13 @@
    :rdfs/label "currency spot mid rate",
    :rdfs/subClassOf [:fibo-ind-fx-fx/CurrencySpotRate
                      :fibo-ind-fx-fx/CurrencySpotMidRate
+                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-ind-ind/MarketRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-ind-fx-fx/QuotedExchangeRate
-                     :fibo-fnd-acc-cur/ExchangeRate],
+                     :fibo-ind-fx-fx/QuotedExchangeRate],
    :skos/definition
    "indicative middle market (mean of spot buying and selling) rate as observed by the reporting source"})
 
@@ -167,12 +167,12 @@
    :rdfs/label "currency spot rate",
    :rdfs/subClassOf [:fibo-ind-fx-fx/QuotedExchangeRate
                      :fibo-ind-fx-fx/CurrencySpotRate
+                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-ind-ind/MarketRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-acc-cur/ExchangeRate],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "rate at which one currency may be exchanged for another for immediate delivery"})
 
@@ -185,13 +185,13 @@
    :rdfs/label "currency spot sell rate",
    :rdfs/subClassOf [:fibo-ind-fx-fx/CurrencySpotRate
                      :fibo-ind-fx-fx/CurrencySpotSellRate
+                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-ind-ind/MarketRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-ind-fx-fx/QuotedExchangeRate
-                     :fibo-fnd-acc-cur/ExchangeRate],
+                     :fibo-ind-fx-fx/QuotedExchangeRate],
    :skos/definition
    "indicative spot selling market rate as observed by the reporting source"})
 

@@ -161,18 +161,18 @@
    [:fibo-sec-fund-civ/FundShareClassUnit
     :fibo-sec-fund-civ/AccumulatingShareClass
     {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundProcessingGeneralTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-fund-fund/FundUnit
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionPolicy,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasDetails,
      :owl/someValuesFrom :fibo-sec-fund-civ/NetAssetValueCalculationMethod,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionPolicy,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-fund-fund/FundUnit],
+    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr "A share class in which there is no option to reinvest.@en"})
 
@@ -216,8 +216,8 @@
                       :rdf/type :owl/Restriction}
                      :fibo-sec-fund-civ/FundPortfolioInvestmentLimitations
                      :fibo-sec-fund-civ/AssetClassStrategy
-                     :fibo-sec-sec-rst/SecuritiesRestriction
                      :fibo-sec-fund-civ/InvestmentRestriction
+                     :fibo-sec-sec-rst/SecuritiesRestriction
                      {:owl/onProperty     :cmns-col/isPartOf,
                       :owl/someValuesFrom :fibo-sec-fund-civ/FundProspectus,
                       :rdf/type           :owl/Restriction}],
@@ -252,18 +252,18 @@
    [:fibo-sec-fund-civ/FundShareClassUnit
     :fibo-sec-fund-civ/CommonShareInFund
     {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundProcessingGeneralTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-fund-fund/FundUnit
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionPolicy,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasDetails,
      :owl/someValuesFrom :fibo-sec-fund-civ/NetAssetValueCalculationMethod,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionPolicy,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-fund-fund/FundUnit],
+    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "A share unit in a fund, which is classified as a Common Share class.@en"})
@@ -277,8 +277,8 @@
    :rdfs/label #voc/lstr "currency strategy@en",
    :rdfs/subClassOf [:fibo-sec-fund-civ/FundPortfolioInvestmentLimitations
                      :fibo-sec-fund-civ/CurrencyStrategy
-                     :fibo-sec-sec-rst/SecuritiesRestriction
                      :fibo-sec-fund-civ/InvestmentRestriction
+                     :fibo-sec-sec-rst/SecuritiesRestriction
                      {:owl/onProperty     :cmns-col/isPartOf,
                       :owl/someValuesFrom :fibo-sec-fund-civ/FundProspectus,
                       :rdf/type           :owl/Restriction}],
@@ -318,18 +318,18 @@
    [:fibo-sec-fund-civ/FundShareClassUnit
     :fibo-sec-fund-civ/DistributingShareClass
     {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundProcessingGeneralTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-fund-fund/FundUnit
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionPolicy,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasDetails,
      :owl/someValuesFrom :fibo-sec-fund-civ/NetAssetValueCalculationMethod,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionPolicy,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-fund-fund/FundUnit]})
+    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
+     :rdf/type           :owl/Restriction}]})
 
 (def EquityAsset
   "The holding of equity securities in a portfolio."
@@ -359,71 +359,71 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
     :fibo-sec-fund-civ/EquityFund
-    {:owl/onProperty     :fibo-sec-fund-civ/hasUnitIssuer,
-     :owl/someValuesFrom :fibo-sec-fund-civ/UnitIssuer,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/advisedBy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/InvestmentAdvisor,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/distributedBy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundDistributor,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasAdditionalInformation,
-     :owl/someValuesFrom :fibo-sec-fund-civ/OtherInvestmentFundInformation,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasAuditor,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundAuditor,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasSubscriptionTerms,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundSubscriptionTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/promotedBy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundPromoter,
+    {:owl/onProperty     :fibo-sec-fund-civ/hasManagementCompany,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/legallyRecordedIn,
      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/describedIn,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundProspectus,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasRelatedFundTerms,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundProcessingTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/administeredBy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundAdministrator,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy.1,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionMethod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasAccountingInformation,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundReportingTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/supervisedBy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundSupervisoryAuthority,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasPerformanceDeterminationMethod,
-     :owl/someValuesFrom :fibo-sec-fund-civ/PerformanceDeterminationMethod,
+    {:owl/onProperty     :fibo-sec-fund-civ/promotedBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundPromoter,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasDataProvider,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundDataProvider,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasDepository,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundDepositary,
+    {:owl/onProperty     :fibo-sec-fund-civ/hasRelatedFundTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundProcessingTerms,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasAccountant,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundAccountant,
+    {:owl/onProperty     :fibo-sec-fund-civ/hasUnitIssuer,
+     :owl/someValuesFrom :fibo-sec-fund-civ/UnitIssuer,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasFundPolicy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundInvestmentPolicy,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasManagementCompany,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundManager,
+    {:owl/onProperty     :fibo-sec-fund-civ/distributedBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundDistributor,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/fundHasRelatedParty,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundsProcessingParty,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasAuditor,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundAuditor,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasTransferAgent,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundTransferAgent,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasAccountant,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundAccountant,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasAdditionalInformation,
+     :owl/someValuesFrom :fibo-sec-fund-civ/OtherInvestmentFundInformation,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/administeredBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundAdministrator,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasAccountingInformation,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundReportingTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasPerformanceDeterminationMethod,
+     :owl/someValuesFrom :fibo-sec-fund-civ/PerformanceDeterminationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/advisedBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/InvestmentAdvisor,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy.1,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasSubscriptionTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundSubscriptionTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/describedIn,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundProspectus,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasFundPolicy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundInvestmentPolicy,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/supervisedBy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundSupervisoryAuthority,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDepository,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundDepositary,
      :rdf/type           :owl/Restriction}],
    :skos/definition #voc/lstr
                      "A fund which invests in at least 85% shares.@en"})
@@ -438,18 +438,15 @@
    :rdfs/subClassOf
    [:fibo-sec-fund-civ/FundPortfolio
     :fibo-sec-fund-civ/EquityPortfolio
-    {:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
-     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioBenchmark,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasLiquidity,
-     :owl/someValuesFrom :fibo-sec-fund-civ/Liquidity,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-ast/Portfolio
     {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
      :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/implementsFundPolicy,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-sec-ast/Portfolio
+    {:owl/onProperty     :fibo-sec-fund-civ/hasInvestmentStrategy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-sec-ast/PortfolioHolding,
@@ -457,8 +454,11 @@
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioManager,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasInvestmentStrategy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
+    {:owl/onProperty     :fibo-sec-fund-civ/hasLiquidity,
+     :owl/someValuesFrom :fibo-sec-fund-civ/Liquidity,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
+     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioBenchmark,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr "A portfolio which has at least 85% exposure to shares.@en"})
@@ -574,13 +574,13 @@
     :fibo-sec-fund-fund/FundUnit
     :fibo-sec-fund-civ/FundBondClassUnit
     {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundProcessingGeneralTerms,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasDetails,
      :owl/someValuesFrom :fibo-sec-fund-civ/NetAssetValueCalculationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr "A fund unit which takes the form of debt in that fund.@en"})
@@ -905,27 +905,27 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
    :rdfs/label #voc/lstr "fund portfolio@en",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-sec-fund-civ/hasInvestmentStrategy,
+   [{:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
+     :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasInvestmentStrategy,
      :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioInvestmentStrategy,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasLiquidity,
      :owl/someValuesFrom :fibo-sec-fund-civ/Liquidity,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-ast/Portfolio
-    {:owl/onProperty     :fibo-sec-fund-civ/implementsFundPolicy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
+    {:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
+     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioBenchmark,
      :rdf/type           :owl/Restriction}
+    :fibo-sec-sec-ast/Portfolio
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioManager,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
-     :owl/someValuesFrom :fibo-fbc-pas-caa/Balance,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-sec-ast/PortfolioHolding,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/assessedAgainst,
-     :owl/someValuesFrom :fibo-sec-fund-civ/PortfolioBenchmark,
+    {:owl/onProperty     :fibo-sec-fund-civ/implementsFundPolicy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundPortfolioInvestmentPolicy,
      :rdf/type           :owl/Restriction}
     :fibo-sec-fund-civ/FundPortfolio],
    :skos/definition
@@ -1005,13 +1005,13 @@
    :rdfs/subClassOf
    [:fibo-sec-fund-civ/FundProcessingTerms
     :fibo-sec-fund-civ/FundProcessingGeneralTerms
-    {:owl/onProperty     :fibo-sec-fund-civ/hasDefaultSettlementConvention,
-     :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/definesMainFundOrderDeskAccount,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundsProcessingAccount,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-ctr/ContractualCommitment],
+    :fibo-fnd-agr-ctr/ContractualCommitment
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDefaultSettlementConvention,
+     :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Formal terms for general processing of the fund. These set out what the investor and the fund may or may not do.@en"})
@@ -1099,13 +1099,13 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-fund-civ/FundProcessingTerms
     :fibo-sec-fund-civ/FundRedemptionTerms
-    {:owl/onProperty     :fibo-sec-fund-civ/hasDefaultSettlementConvention,
-     :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/definesMainFundOrderDeskAccount,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundsProcessingAccount,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-ctr/ContractualCommitment],
+    :fibo-fnd-agr-ctr/ContractualCommitment
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDefaultSettlementConvention,
+     :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Formal terms for redemption of units in the fund. These set out what the investor and the fund may or may not do.@en"})
@@ -1162,13 +1162,13 @@
     :fibo-sec-fund-fund/FundUnit
     :fibo-sec-fund-civ/FundShareClassUnit
     {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundProcessingGeneralTerms,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasDetails,
      :owl/someValuesFrom :fibo-sec-fund-civ/NetAssetValueCalculationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1187,13 +1187,13 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-fund-civ/FundProcessingTerms
     :fibo-sec-fund-civ/FundSubscriptionTerms
-    {:owl/onProperty     :fibo-sec-fund-civ/hasDefaultSettlementConvention,
-     :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/definesMainFundOrderDeskAccount,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundsProcessingAccount,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-ctr/ContractualCommitment],
+    :fibo-fnd-agr-ctr/ContractualCommitment
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDefaultSettlementConvention,
+     :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Subscription terms for the fund. Further notes: ISO FIBIM, EFAMA DD and FPP combine terms for subscription, redemption and general holding requirements. These have been separated here as they are different kinds of term, but this can be reviewed. Subscription Terms are identified as terms of the fund and not the fund unit, since terms for how you might subscribe can't be binding one someone who has not yet subscribed.@en"})
@@ -1458,8 +1458,8 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-fund-civ/FundPortfolioInvestmentLimitations
                      :fibo-sec-fund-civ/JurisdictionStrategy
-                     :fibo-sec-sec-rst/SecuritiesRestriction
                      :fibo-sec-fund-civ/InvestmentRestriction
+                     :fibo-sec-sec-rst/SecuritiesRestriction
                      {:owl/onProperty     :cmns-col/isPartOf,
                       :owl/someValuesFrom :fibo-sec-fund-civ/FundProspectus,
                       :rdf/type           :owl/Restriction}],
@@ -1476,13 +1476,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/",
    :rdfs/label "key investor information document",
-   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/hasValue   :fibo-be-ge-euj/EuropeanUnionJurisdiction,
+   :rdfs/subClassOf [{:owl/hasValue   :fibo-be-ge-euj/EuropeanUnionJurisdiction,
                       :owl/onProperty :cmns-cxtdsg/isApplicableIn,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-sec-iss/OfferingDocument
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
+                      :rdf/type           :owl/Restriction}
                      :fibo-sec-fund-civ/KeyInvestorInformationDocument],
    :skos/definition
    "short document that provides critical information for investors, summarizing content derived from a prospectus such that it can be understood by investors without reference to other documents, as required by law in the European Union"})
@@ -1549,13 +1549,13 @@
    [:fibo-sec-fund-fund/FundUnit
     :fibo-sec-fund-civ/NoteFundUnit
     {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundProcessingGeneralTerms,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasDetails,
      :owl/someValuesFrom :fibo-sec-fund-civ/NetAssetValueCalculationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1576,8 +1576,8 @@
                       :rdf/type :owl/Restriction}
                      :fibo-sec-fund-civ/FundPortfolioInvestmentLimitations
                      :fibo-sec-fund-civ/OrganizationStrategy
-                     :fibo-sec-sec-rst/SecuritiesRestriction
                      :fibo-sec-fund-civ/InvestmentRestriction
+                     :fibo-sec-sec-rst/SecuritiesRestriction
                      {:owl/onProperty     :cmns-col/isPartOf,
                       :owl/someValuesFrom :fibo-sec-fund-civ/FundProspectus,
                       :rdf/type           :owl/Restriction}],
@@ -1647,10 +1647,10 @@
                       :rdf/type :owl/Restriction}
                      :fibo-sec-fund-civ/InvestmentStrategy
                      :fibo-sec-fund-civ/PortfolioInvestmentStrategy
+                     :fibo-fnd-gao-obj/BusinessStrategy
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-gao-obj/BusinessStrategy],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "The manner in which the portfolio manager tries to reach the funds objectives.@en"})
@@ -1688,18 +1688,18 @@
    [:fibo-sec-fund-civ/FundShareClassUnit
     :fibo-sec-fund-civ/PreferredShareInFund
     {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
      :owl/someValuesFrom :fibo-sec-fund-civ/FundProcessingGeneralTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-fund-fund/FundUnit
+    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionPolicy,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-fund-civ/hasDetails,
      :owl/someValuesFrom :fibo-sec-fund-civ/NetAssetValueCalculationMethod,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-fund-civ/hasDistributionPolicy,
-     :owl/someValuesFrom :fibo-sec-fund-civ/FundUnitDistributionPolicy,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-fund-fund/FundUnit]})
+    {:owl/onProperty     :fibo-sec-fund-civ/hasFundProcessingTerms,
+     :owl/someValuesFrom :fibo-sec-fund-civ/FundRedemptionTerms,
+     :rdf/type           :owl/Restriction}]})
 
 (def PrivateEquityHolding
   "A holding of private equity."
@@ -1804,8 +1804,8 @@
    :rdfs/label #voc/lstr "sector strategy@en",
    :rdfs/subClassOf [:fibo-sec-fund-civ/FundPortfolioInvestmentLimitations
                      :fibo-sec-fund-civ/SectorStrategy
-                     :fibo-sec-sec-rst/SecuritiesRestriction
                      :fibo-sec-fund-civ/InvestmentRestriction
+                     :fibo-sec-sec-rst/SecuritiesRestriction
                      {:owl/onProperty     :cmns-col/isPartOf,
                       :owl/someValuesFrom :fibo-sec-fund-civ/FundProspectus,
                       :rdf/type           :owl/Restriction}],
@@ -2168,7 +2168,7 @@
    #voc/lstr
     "The manner in which the manager tries to reach the funds objectives@en"})
 
-(def description.1
+(def description_1
   "Description of the benchmark used to determine the performance of a portfolio."
   {:db/ident :fibo-sec-fund-civ/description.1,
    :rdf/type :owl/DatatypeProperty,
@@ -2454,7 +2454,7 @@
    :rdfs/label #voc/lstr "has distribution policy@en",
    :rdfs/range :fibo-sec-fund-civ/FundUnitDistributionPolicy})
 
-(def hasDistributionPolicy.1
+(def hasDistributionPolicy_1
   "Income policy relating to a class type, ie, if income is paid out or retained in the fund."
   {:cmns-av/explanatoryNote
    #voc/lstr
@@ -2470,7 +2470,7 @@
    #voc/lstr
     "Income policy relating to a class type, ie, if income is paid out or retained in the fund.@en"})
 
-(def hasDistributionPolicy.2
+(def hasDistributionPolicy_2
   "Income policy relating to a class type, ie, if income is paid out or retained in the fund."
   {:db/ident :fibo-sec-fund-civ/hasDistributionPolicy.2,
    :rdf/type :owl/ObjectProperty,
@@ -2732,7 +2732,7 @@
    :skos/definition #voc/lstr
                      "The Funds Special Purpose Vehicle holds this Fund.@en"})
 
-(def identifiedAs.5
+(def identifiedAs_5
   "identified as"
   {:db/ident :fibo-sec-fund-civ/identifiedAs.5,
    :rdf/type :owl/ObjectProperty,
@@ -2742,7 +2742,7 @@
    :rdfs/label #voc/lstr "identified as@en",
    :rdfs/range :fibo-sec-fund-fund/FundUnit})
 
-(def identifies.1
+(def identifies_1
   "Jurisdiction (country, county, state, province, city) of the investment."
   {:db/ident :fibo-sec-fund-civ/identifies.1,
    :rdf/type :owl/ObjectProperty,
@@ -2787,7 +2787,7 @@
    :skos/definition #voc/lstr
                      "Authorization date in the country of origin.@en"})
 
-(def inceptionDate.1
+(def inceptionDate_1
   "Authorization date in the country of origin. Further Notes See definition in Inception Date for Fund. Separate fact exists here. Same definition used. EFAMA Review notes: Inception Date exists as soon as there is a prospectus, so it is a fact about a Share Class even if the share class is never formally issued or offered to the public. Legal structure exists even if something is not launched. Editor question: Review stated this was a fact about Share Class; confirm this fact does not apply to Bond and Note units, or was the term Share Class being used to mean all three? Meanwhile I have put the term \"Issue Date\" as a fact about all Fund Unit, as this is given a sa separate term in the EFAMA DD spreadsheet. MAy come clearer in the next version of that."
   {:db/ident :fibo-sec-fund-civ/inceptionDate.1,
    :rdf/type :owl/ObjectProperty,
@@ -3094,7 +3094,7 @@
    #voc/lstr
     "The unit issuer would be the fund administrator (except when it is a Bond).@en"})
 
-(def mayBe.1
+(def mayBe_1
   "may be"
   {:db/ident :fibo-sec-fund-civ/mayBe.1,
    :rdf/type :owl/ObjectProperty,
@@ -3263,7 +3263,7 @@
    :rdfs/range :xsd/string,
    :skos/definition #voc/lstr "Name of the investment fund.@en"})
 
-(def name.1
+(def name_1
   "Name given to the defined strategy."
   {:db/ident :fibo-sec-fund-civ/name.1,
    :rdf/type :owl/DatatypeProperty,

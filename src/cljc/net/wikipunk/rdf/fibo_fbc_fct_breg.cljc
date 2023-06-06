@@ -275,11 +275,11 @@
    :fibo-fnd-rel-rel/hasTag "CORPORATE_ACTION",
    :rdf/type [:fibo-fbc-fct-breg/EntityExpirationReason
               :owl/NamedIndividual
-              :cmns-cds/CodeElement
               {:owl/onDataRange :xsd/string,
                :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}],
+               :rdf/type        :owl/Restriction}
+              :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "entity expiration reason - corporate action",
@@ -294,11 +294,11 @@
    :fibo-fnd-rel-rel/hasTag "DISSOLVED",
    :rdf/type [:fibo-fbc-fct-breg/EntityExpirationReason
               :owl/NamedIndividual
-              :cmns-cds/CodeElement
               {:owl/onDataRange :xsd/string,
                :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}],
+               :rdf/type        :owl/Restriction}
+              :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "entity expiration reason - disolved",
@@ -313,11 +313,11 @@
    :fibo-fnd-rel-rel/hasTag "OTHER",
    :rdf/type [:fibo-fbc-fct-breg/EntityExpirationReason
               :owl/NamedIndividual
-              :cmns-cds/CodeElement
               {:owl/onDataRange :xsd/string,
                :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}],
+               :rdf/type        :owl/Restriction}
+              :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "entity expiration reason - other",
@@ -404,11 +404,11 @@
    :fibo-fnd-rel-rel/hasTag "ENTITY_SUPPLIED_ONLY",
    :rdf/type [:fibo-fbc-fct-breg/EntityValidationLevel
               :owl/NamedIndividual
+              :cmns-cds/CodeElement
               {:owl/onDataRange :xsd/string,
                :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cds/CodeElement],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "entity validation level - entity-supplied only",
@@ -423,11 +423,11 @@
    :fibo-fnd-rel-rel/hasTag "FULLY_CORROBORATED",
    :rdf/type [:fibo-fbc-fct-breg/EntityValidationLevel
               :owl/NamedIndividual
+              :cmns-cds/CodeElement
               {:owl/onDataRange :xsd/string,
                :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cds/CodeElement],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "entity validation level - fully corroborated",
@@ -442,11 +442,11 @@
    :fibo-fnd-rel-rel/hasTag "PARTIALLY_CORROBORATED",
    :rdf/type [:fibo-fbc-fct-breg/EntityValidationLevel
               :owl/NamedIndividual
+              :cmns-cds/CodeElement
               {:owl/onDataRange :xsd/string,
                :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cds/CodeElement],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "entity validation level - partially corroborated",
@@ -514,18 +514,18 @@
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-breg/BusinessRegistry
     :fibo-fbc-fct-breg/LegalEntityIdentifierRegistry
-    :fibo-fbc-fct-ra/Registry
-    {:owl/minQualifiedCardinality 0,
-     :owl/onDataRange :xsd/string,
-     :owl/onProperty  :fibo-fbc-fct-breg/hasRegistryName,
-     :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistryEntry,
+     :owl/someValuesFrom :fibo-fbc-fct-breg/BusinessRegistryEntry,
+     :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-fbc-fct-breg/BusinessRegistrationAuthority,
      :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistryEntry,
-     :owl/someValuesFrom :fibo-fbc-fct-breg/BusinessRegistryEntry,
-     :rdf/type           :owl/Restriction}],
+    :fibo-fbc-fct-ra/Registry
+    {:owl/minQualifiedCardinality 0,
+     :owl/onDataRange :xsd/string,
+     :owl/onProperty  :fibo-fbc-fct-breg/hasRegistryName,
+     :rdf/type        :owl/Restriction}],
    :skos/definition
    "registry for registering and maintaining information about business entities for a particular jurisdiction"})
 
@@ -540,32 +540,32 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "legal entity identifier registry entry",
    :rdfs/subClassOf
-   [{:owl/onProperty     :cmns-col/comprises,
-     :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fct-breg/hasRegistrationStatus,
-     :owl/someValuesFrom :fibo-fbc-fct-breg/RegistrationStatus,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+   [{:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-fct-breg/BusinessRegistrationAuthority,
      :owl/onProperty :fibo-fbc-fct-breg/hasValidationAuthority,
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-breg/hasValidationLevel,
      :owl/someValuesFrom :fibo-fbc-fct-breg/EntityValidationLevel,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-breg/hasRegistrationStatus,
+     :owl/someValuesFrom :fibo-fbc-fct-breg/RegistrationStatus,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/comprises,
+     :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-breg/BusinessRegistryEntry
     :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
+    {:owl/onProperty     :cmns-col/comprises,
+     :owl/someValuesFrom :fibo-be-corp-corp/RegistrationIdentifier,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fct-ra/RegistryEntry
     {:owl/maxQualifiedCardinality 1,
      :owl/onClass    :fibo-fbc-fct-breg/RegistrationStatus,
      :owl/onProperty :fibo-fbc-fct-breg/hasRegistrationStatus,
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistrationDate,
      :owl/someValuesFrom :cmns-dt/CombinedDateTime,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/comprises,
-     :owl/someValuesFrom :fibo-be-corp-corp/RegistrationIdentifier,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-ra/RegistryEntry],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "entry in a legal entity identifier registry that conforms to ISO 17442 and the Global Legal Entity Identifier Foundation (GLEIF) Common Data Format (CDF)"})
 
@@ -616,20 +616,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "North American Industry Classification System code",
    :rdfs/subClassOf
-   [{:owl/onProperty     :cmns-cls/classifies,
-     :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
-     :rdf/type           :owl/Restriction}
-    :cmns-cds/CodeElement
+   [{:owl/onDataRange :xsd/string,
+     :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
+     :owl/qualifiedCardinality 1,
+     :rdf/type        :owl/Restriction}
     {:owl/onClass
      :fibo-fbc-fct-breg/NorthAmericanIndustryClassificationSystemScheme,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :owl/qualifiedCardinality 1,
      :rdf/type :owl/Restriction}
+    :cmns-cds/CodeElement
+    {:owl/onProperty     :cmns-cls/classifies,
+     :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
+     :rdf/type           :owl/Restriction}
     :fibo-fnd-arr-cls/IndustrySectorClassifier
-    {:owl/onDataRange :xsd/string,
-     :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-     :owl/qualifiedCardinality 1,
-     :rdf/type        :owl/Restriction}
     :fibo-fbc-fct-breg/NorthAmericanIndustryClassificationSystemCode],
    :skos/definition
    "the North American Industry Classification System (NAICS) code representing an industry"})
@@ -758,20 +758,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :rdfs/label "standard industrial classification code",
-   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
-                      :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-cls/IndustrySectorClassifier
+   :rdfs/subClassOf [:fibo-fnd-arr-cls/IndustrySectorClassifier
                      :cmns-cds/CodeElement
-                     {:owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
                      {:owl/onClass
                       :fibo-fbc-fct-breg/StandardIndustrialClassificationScheme,
                       :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
+                     {:owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :cmns-cls/classifies,
+                      :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fbc-fct-breg/StandardIndustrialClassificationCode],
    :skos/definition "the SIC code representing an industry"})
 

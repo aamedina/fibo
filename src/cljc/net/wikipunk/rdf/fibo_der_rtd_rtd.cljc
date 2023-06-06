@@ -146,11 +146,11 @@
                      {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-der-rtd-rtd/RateBasedObservable,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/DerivativeInstrument
                      {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom
                       :fibo-der-rtd-rtd/InterestRateObservable,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-fi-fi/DerivativeInstrument],
    :skos/definition
    #voc/lstr
     "agreement to exchange an interest rate commitment on a notional amount@en"})

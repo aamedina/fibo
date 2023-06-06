@@ -138,21 +138,21 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-plc-fac/Site
                      :fibo-fnd-plc-fac/Venue
+                     :fibo-fnd-pty-rl/ThingInRole
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-plc-adr/Address,
                       :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-rl/ThingInRole
+                     {:owl/onClass    :lcc-cr/Location,
+                      :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/onProperty
                                            :fibo-fnd-plc-fac/situates,
                                            :owl/someValuesFrom :owl/Thing,
                                            :rdf/type :owl/Restriction},
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :lcc-cr/Location,
-                      :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "site where something happens, described in the context of the event or activity that occurs there"})
 

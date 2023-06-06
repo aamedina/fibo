@@ -110,8 +110,8 @@
    :rdfs/label #voc/lstr "market data provision@en",
    :rdfs/subClassOf [:fibo-bp-prc-fcp/PreTrade
                      :fibo-bp-prc-fcp/MarketDataProvision
-                     :cmns-cxtdsg/Context
                      :fibo-bp-prc-fcp/InvestmentManagement
+                     :cmns-cxtdsg/Context
                      :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def PortfolioManagement
@@ -147,8 +147,8 @@
    :rdfs/label #voc/lstr "pretrade quotes@en",
    :rdfs/subClassOf [:fibo-bp-prc-fcp/PreTrade
                      :fibo-bp-prc-fcp/PretradeQuotes
-                     :cmns-cxtdsg/Context
                      :fibo-bp-prc-fcp/InvestmentManagement
+                     :cmns-cxtdsg/Context
                      :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def PretradeReferenceDataProvision
@@ -160,8 +160,8 @@
    :rdfs/label #voc/lstr "pretrade reference data provision@en",
    :rdfs/subClassOf [:fibo-bp-prc-fcp/PreTrade
                      :fibo-bp-prc-fcp/PretradeReferenceDataProvision
-                     :cmns-cxtdsg/Context
                      :fibo-bp-prc-fcp/InvestmentManagement
+                     :cmns-cxtdsg/Context
                      :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def PrimaryMarket
@@ -199,8 +199,8 @@
    :rdfs/label #voc/lstr "primary market indications of interest@en",
    :rdfs/subClassOf [:fibo-bp-prc-fcp/PreTrade
                      :fibo-bp-prc-fcp/PrimaryMarketIndicationsOfInterest
-                     :cmns-cxtdsg/Context
                      :fibo-bp-prc-fcp/InvestmentManagement
+                     :cmns-cxtdsg/Context
                      :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def SecondaryMarketTradingContext
@@ -379,8 +379,8 @@
    :rdfs/label #voc/lstr "short sale locate@en",
    :rdfs/subClassOf [:fibo-bp-prc-fcp/PreTrade
                      :fibo-bp-prc-fcp/ShortSaleLocate
-                     :cmns-cxtdsg/Context
                      :fibo-bp-prc-fcp/InvestmentManagement
+                     :cmns-cxtdsg/Context
                      :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def TradeAdvertisements
@@ -392,8 +392,8 @@
    :rdfs/label #voc/lstr "trade advertisements@en",
    :rdfs/subClassOf [:fibo-bp-prc-fcp/PreTrade
                      :fibo-bp-prc-fcp/TradeAdvertisements
-                     :cmns-cxtdsg/Context
                      :fibo-bp-prc-fcp/InvestmentManagement
+                     :cmns-cxtdsg/Context
                      :fibo-bp-prc-fcp/FinancialIndustryContext]})
 
 (def TradedSecurityLifecycle

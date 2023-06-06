@@ -115,6 +115,10 @@
    :rdfs/label "privately held company",
    :rdfs/subClassOf [:fibo-be-le-cb/StockCorporation
                      :fibo-be-corp-corp/PrivatelyHeldCompany
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/ExplicitDate,
+                      :owl/onProperty :fibo-be-corp-corp/hasDateOfRegistration,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-be-corp-corp/hasDateOfIncorporation,
                       :owl/qualifiedCardinality 1,
@@ -122,10 +126,6 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/someValuesFrom :fibo-be-corp-corp/BoardAgreement,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/ExplicitDate,
-                      :owl/onProperty :fibo-be-corp-corp/hasDateOfRegistration,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-be-corp-corp/hasIssuedCapital,
                       :owl/qualifiedCardinality 1,
@@ -142,6 +142,10 @@
    :rdfs/label "publicly held company",
    :rdfs/subClassOf [:fibo-be-le-cb/StockCorporation
                      :fibo-be-corp-corp/PubliclyHeldCompany
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/ExplicitDate,
+                      :owl/onProperty :fibo-be-corp-corp/hasDateOfRegistration,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-be-corp-corp/hasDateOfIncorporation,
                       :owl/qualifiedCardinality 1,
@@ -149,10 +153,6 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/someValuesFrom :fibo-be-corp-corp/BoardAgreement,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/ExplicitDate,
-                      :owl/onProperty :fibo-be-corp-corp/hasDateOfRegistration,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-be-corp-corp/hasIssuedCapital,
                       :owl/qualifiedCardinality 1,
@@ -172,11 +172,11 @@
                       :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-org-org/OrganizationIdentifier
                      {:owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/someValuesFrom
                       :fibo-be-corp-corp/RegistrationIdentifierScheme,
                       :rdf/type :owl/Restriction}
+                     :fibo-fnd-org-org/OrganizationIdentifier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,

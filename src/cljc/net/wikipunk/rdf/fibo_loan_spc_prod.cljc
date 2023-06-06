@@ -141,24 +141,24 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
    :rdfs/label "line item",
-   :rdfs/subClassOf [:cmns-col/Constituent
-                     {:owl/onProperty     :fibo-loan-ln-ln/hasCost,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-loan-ln-ln/hasCost,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
+                     :cmns-col/Constituent
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :xsd/decimal,
+                      :owl/onProperty  :fibo-fnd-qt-qtu/hasNumericValue,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-loan-spc-prod/hasUnitCost,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-pas-pas/Product
                                             :fibo-loan-reln-mtg/ChargeCategory],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-loan-spc-prod/hasUnitCost,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :xsd/decimal,
-                      :owl/onProperty  :fibo-fnd-qt-qtu/hasNumericValue,
-                      :rdf/type        :owl/Restriction}
                      :fibo-loan-spc-prod/LineItem],
    :skos/definition
    "description of a product or service including its unit cost, number of units and total cost",
@@ -332,20 +332,20 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-loan-spc-prod/LoanProduct
                      :fibo-loan-spc-prod/MortgageProduct
-                     :fibo-fbc-pas-fpas/FinancialProduct
+                     :fibo-fbc-dae-dbt/CreditFacility
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
-                      :owl/onProperty :fibo-loan-spc-prod/hasPreconditions,
+                      :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
+                      :owl/onProperty :fibo-fnd-rel-rel/refersTo,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-loan-ln-ln/Loan,
                       :owl/onProperty :fibo-fbc-pas-caa/isRealizedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditFacility
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
-                      :owl/onProperty :fibo-fnd-rel-rel/refersTo,
-                      :rdf/type       :owl/Restriction}]})
+                      :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
+                      :owl/onProperty :fibo-loan-spc-prod/hasPreconditions,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialProduct]})
 
 (def MotorhomeLoanPurpose
   "motorhome loan purpose"

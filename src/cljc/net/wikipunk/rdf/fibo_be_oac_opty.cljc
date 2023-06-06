@@ -124,20 +124,9 @@
    :rdfs/subClassOf
    [:fibo-be-oac-opty/EntityOwnership
     :fibo-be-oac-opty/DirectConsolidation
-    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
-     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
-     :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
      :owl/onProperty :cmns-cls/isClassifiedBy,
      :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onDataRange :xsd/decimal,
-     :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
-     :rdf/type        :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
-     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-acc-aeq/OwnersEquity
@@ -145,12 +134,23 @@
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-oac-own/Ownership
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
+     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
+     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-be-oac-opty/hasOwnedEntity,
      :owl/someValuesFrom {:owl/unionOf [:fibo-be-le-fbo/NotForProfitOrganization
                                         :fibo-be-le-lp/BusinessEntity
                                         :fibo-be-le-lp/LegalEntity],
                           :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onDataRange :xsd/decimal,
+     :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
+     :rdf/type        :owl/Restriction}
+    :fibo-fnd-oac-own/Ownership
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
+     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "direct ownership recorded as accounting consolidation, by some party of some other formal organization"})
@@ -180,33 +180,33 @@
    :rdfs/label "entity ownership",
    :rdfs/subClassOf
    [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
-     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-acc-aeq/OwnersEquity
                                     :fibo-fnd-agr-ctr/Contract],
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
      :rdf/type       :owl/Restriction}
-    {:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
-     :owl/onProperty :cmns-cls/isClassifiedBy,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-oac-own/Ownership
     {:owl/minQualifiedCardinality 0,
-     :owl/onDataRange :xsd/decimal,
-     :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
-     :rdf/type        :owl/Restriction}
-    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
-     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
-     :rdf/type           :owl/Restriction}
+     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
+     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
+     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-be-oac-opty/hasOwnedEntity,
      :owl/someValuesFrom {:owl/unionOf [:fibo-be-le-fbo/NotForProfitOrganization
                                         :fibo-be-le-lp/BusinessEntity
                                         :fibo-be-le-lp/LegalEntity],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
+    :fibo-fnd-oac-own/Ownership
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
+     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
+     :rdf/type           :owl/Restriction}
+    {:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
+     :owl/onProperty :cmns-cls/isClassifiedBy,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onDataRange :xsd/decimal,
+     :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
+     :rdf/type        :owl/Restriction}
     :fibo-be-oac-opty/EntityOwnership],
    :skos/definition
    "ownership by some party of an interest in some non-governmental formal organization"})
@@ -221,20 +221,9 @@
    :rdfs/subClassOf
    [:fibo-be-oac-opty/EntityOwnership
     :fibo-be-oac-opty/ForeignBranchOwnership
-    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
-     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
-     :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
      :owl/onProperty :cmns-cls/isClassifiedBy,
      :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onDataRange :xsd/decimal,
-     :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
-     :rdf/type        :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
-     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-acc-aeq/OwnersEquity
@@ -242,12 +231,23 @@
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-oac-own/Ownership
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
+     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
+     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-be-oac-opty/hasOwnedEntity,
      :owl/someValuesFrom {:owl/unionOf [:fibo-be-le-fbo/NotForProfitOrganization
                                         :fibo-be-le-lp/BusinessEntity
                                         :fibo-be-le-lp/LegalEntity],
                           :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onDataRange :xsd/decimal,
+     :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
+     :rdf/type        :owl/Restriction}
+    :fibo-fnd-oac-own/Ownership
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
+     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "ownership by some party of some formal organization or organizational sub-unit that is a foreign affiliate and legally part of the owning entity"})
@@ -315,20 +315,9 @@
    :rdfs/subClassOf
    [:fibo-be-oac-opty/EntityOwnership
     :fibo-be-oac-opty/UltimateConsolidation
-    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
-     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
-     :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-be-le-lei/RelationshipStatus,
      :owl/onProperty :cmns-cls/isClassifiedBy,
      :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onDataRange :xsd/decimal,
-     :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
-     :rdf/type        :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
-     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-acc-aeq/OwnersEquity
@@ -336,12 +325,23 @@
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-oac-own/Ownership
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
+     :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
+     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-be-oac-opty/hasOwnedEntity,
      :owl/someValuesFrom {:owl/unionOf [:fibo-be-le-fbo/NotForProfitOrganization
                                         :fibo-be-le-lp/BusinessEntity
                                         :fibo-be-le-lp/LegalEntity],
                           :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onDataRange :xsd/decimal,
+     :owl/onProperty  :fibo-be-le-lei/hasOwnershipPercentage,
+     :rdf/type        :owl/Restriction}
+    :fibo-fnd-oac-own/Ownership
+    {:owl/onProperty     :fibo-be-oac-opty/hasOwningEntity,
+     :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "highest-level (top, end) ancestral ownership, evidenced by accounting consolidation, by some party of some other legal entity"})

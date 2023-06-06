@@ -86,21 +86,21 @@
    :rdfs/subClassOf [{:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
                       :rdf/type       :owl/Restriction}
+                     :fibo-sec-eq-dr/DepositaryReceipt
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass
                       :fibo-sec-eq-dr/AmericanDepositaryReceiptLevel,
                       :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt
                      :fibo-sec-eq-dr/AmericanDepositaryReceipt
                      {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "depositary receipt that represents securities of a foreign company and allows that company's securities to trade in the U.S. financial markets@en",
@@ -164,15 +164,15 @@
                       :rdf/type :owl/Restriction}
                      :fibo-sec-eq-dr/GlobalDepositaryReceipt
                      :fibo-sec-eq-dr/ChineseDepositaryReceipt
+                     :fibo-sec-eq-dr/DepositaryReceipt
                      {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "global depositary receipt that represents ownership in the securities of a non-Chinese company that trades on a public exchange in China@en"})
@@ -196,10 +196,10 @@
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
                       :rdf/type        :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
                      {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Security
                      :fibo-sec-eq-dr/DepositaryReceipt],
    :skos/definition
    #voc/lstr
@@ -221,15 +221,15 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-dr/GlobalDepositaryReceipt
                      :fibo-sec-eq-dr/EuropeanDepositaryReceipt
+                     :fibo-sec-eq-dr/DepositaryReceipt
                      {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "global depositary receipt that represents ownership in the securities of a non-European company that trades in European financial markets@en"})
@@ -251,11 +251,11 @@
                      {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "depositary receipt where a certificate issued by a depositary bank, which purchases securities of foreign companies, creates a security on a local exchange backed by those securities@en"})
@@ -276,15 +276,15 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-dr/GlobalDepositaryReceipt
                      :fibo-sec-eq-dr/HongKongDepositaryReceipt
+                     :fibo-sec-eq-dr/DepositaryReceipt
                      {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "global depositary receipt that represents the purchase, or ownership, of foreign assets which are deposited in a depositary bank in Hong Kong@en"})
@@ -306,15 +306,15 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-dr/GlobalDepositaryReceipt
                      :fibo-sec-eq-dr/IndianDepositoryReceipt
+                     :fibo-sec-eq-dr/DepositaryReceipt
                      {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "global depositary receipt that represents the purchase, or ownership, of foreign assets which are deposited in a Indian account managed by the Domestic Depository in India@en"})
@@ -335,15 +335,15 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-dr/GlobalDepositaryReceipt
                      :fibo-sec-eq-dr/JapaneseDepositaryReceipt
+                     :fibo-sec-eq-dr/DepositaryReceipt
                      {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "global depositary receipt that represents the purchase, or ownership, of foreign assets which are deposited in a trust bank in Japan@en"})
@@ -357,14 +357,14 @@
    :db/ident :fibo-sec-eq-dr/LevelIAmericanDepositaryReceipt,
    :rdf/type [:fibo-sec-eq-dr/AmericanDepositaryReceiptLevel
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-sec-eq-dr/AmericanDepositaryReceipt,
-               :rdf/type           :owl/Restriction}
               {:owl/onProperty :cmns-dsg/isDefinedIn,
                :owl/someValuesFrom
                :fibo-sec-eq-dr/AmericanDepositaryReceiptLevelScheme,
                :rdf/type :owl/Restriction}
-              :fibo-sec-sec-cls/FinancialInstrumentClassifier],
+              :fibo-sec-sec-cls/FinancialInstrumentClassifier
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-sec-eq-dr/AmericanDepositaryReceipt,
+               :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts/",
    :rdfs/label #voc/lstr "Level I American depositary receipt@en",
@@ -381,14 +381,14 @@
    :db/ident :fibo-sec-eq-dr/LevelIIAmericanDepositaryReceipt,
    :rdf/type [:fibo-sec-eq-dr/AmericanDepositaryReceiptLevel
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-sec-eq-dr/AmericanDepositaryReceipt,
-               :rdf/type           :owl/Restriction}
               {:owl/onProperty :cmns-dsg/isDefinedIn,
                :owl/someValuesFrom
                :fibo-sec-eq-dr/AmericanDepositaryReceiptLevelScheme,
                :rdf/type :owl/Restriction}
-              :fibo-sec-sec-cls/FinancialInstrumentClassifier],
+              :fibo-sec-sec-cls/FinancialInstrumentClassifier
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-sec-eq-dr/AmericanDepositaryReceipt,
+               :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts/",
    :rdfs/label #voc/lstr "Level II American depositary receipt@en",
@@ -402,14 +402,14 @@
    :db/ident :fibo-sec-eq-dr/LevelIIIAmericanDepositaryReceipt,
    :rdf/type [:fibo-sec-eq-dr/AmericanDepositaryReceiptLevel
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-sec-eq-dr/AmericanDepositaryReceipt,
-               :rdf/type           :owl/Restriction}
               {:owl/onProperty :cmns-dsg/isDefinedIn,
                :owl/someValuesFrom
                :fibo-sec-eq-dr/AmericanDepositaryReceiptLevelScheme,
                :rdf/type :owl/Restriction}
-              :fibo-sec-sec-cls/FinancialInstrumentClassifier],
+              :fibo-sec-sec-cls/FinancialInstrumentClassifier
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-sec-eq-dr/AmericanDepositaryReceipt,
+               :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts/",
    :rdfs/label #voc/lstr "Level III American depositary receipt@en",
@@ -433,15 +433,15 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-eq-dr/GlobalDepositaryReceipt
                      :fibo-sec-eq-dr/LuxembourgDepositaryReceipt
+                     :fibo-sec-eq-dr/DepositaryReceipt
                      {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "global depositary receipt that represents the purchase, or ownership, of foreign assets which are deposited in a Luxembourg-based account@en"})
@@ -461,12 +461,15 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-eq-dr/SponsoredDepositaryReceipt
                      :fibo-sec-eq-dr/OffshoreDepositaryReceipt
-                     {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
                       :rdf/type       :owl/Restriction}
+                     :fibo-sec-eq-dr/DepositaryReceipt
+                     {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
+                     :fibo-sec-eq-dr/AmericanDepositaryReceipt
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
@@ -475,10 +478,7 @@
                       :owl/onClass
                       :fibo-sec-eq-dr/AmericanDepositaryReceiptLevel,
                       :owl/onProperty :cmns-cls/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt
-                     :fibo-sec-eq-dr/AmericanDepositaryReceipt
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type :owl/Restriction}],
    :skos/definition #voc/lstr
                      "depositary receipt issued under SEC Regulation S@en"})
 
@@ -509,11 +509,11 @@
                      {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "tradable debt instrument that facilitates the ownership of securities traded in other jurisdictions@en",
@@ -536,12 +536,15 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-eq-dr/SponsoredDepositaryReceipt
                      :fibo-sec-eq-dr/PrivatelyPlacedDepositaryReceipt
-                     {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
                       :rdf/type       :owl/Restriction}
+                     :fibo-sec-eq-dr/DepositaryReceipt
+                     {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
+                     :fibo-sec-eq-dr/AmericanDepositaryReceipt
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
@@ -550,10 +553,7 @@
                       :owl/onClass
                       :fibo-sec-eq-dr/AmericanDepositaryReceiptLevel,
                       :owl/onProperty :cmns-cls/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt
-                     :fibo-sec-eq-dr/AmericanDepositaryReceipt
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "depositary receipt that represents shares in a private placement under the SEC Rule 144-A@en"})
@@ -570,12 +570,14 @@
    :rdfs/label #voc/lstr "sponsored depositary receipt@en",
    :rdfs/subClassOf [:fibo-sec-eq-dr/AmericanDepositaryReceipt
                      :fibo-sec-eq-dr/SponsoredDepositaryReceipt
-                     {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
                       :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
                       :rdf/type       :owl/Restriction}
+                     :fibo-sec-eq-dr/DepositaryReceipt
+                     {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Security
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
@@ -584,9 +586,7 @@
                       :owl/onClass
                       :fibo-sec-eq-dr/AmericanDepositaryReceiptLevel,
                       :owl/onProperty :cmns-cls/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
-                     :fibo-sec-eq-dr/DepositaryReceipt
-                     :fibo-fbc-fi-fi/Security],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "depositary receipt that is issued in collaboration with the foreign company enabling them to tap into international capital markets directly@en"})
@@ -608,12 +608,14 @@
      :rdf/type       :owl/Restriction}
     :fibo-sec-eq-dr/AmericanDepositaryReceipt
     :fibo-sec-eq-dr/UnsponsoredDepositaryReceipt
-    {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
-     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-     :rdf/type           :owl/Restriction}
     {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
      :owl/onProperty :fibo-fbc-fi-fi/isLegallyRecordedIn,
      :rdf/type       :owl/Restriction}
+    :fibo-sec-eq-dr/DepositaryReceipt
+    {:owl/onProperty     :fibo-sec-eq-dr/hasTradedSecurity,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/Security
     {:owl/minQualifiedCardinality 0,
      :owl/onDataRange :xsd/decimal,
      :owl/onProperty  :fibo-sec-eq-dr/hasMultiplier,
@@ -621,9 +623,7 @@
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-sec-eq-dr/AmericanDepositaryReceiptLevel,
      :owl/onProperty :cmns-cls/isClassifiedBy,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-eq-dr/DepositaryReceipt
-    :fibo-fbc-fi-fi/Security],
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "depositary receipt that is established without the company's cooperation@en"})

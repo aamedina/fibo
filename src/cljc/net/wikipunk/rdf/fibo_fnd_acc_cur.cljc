@@ -106,6 +106,7 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-acc-cur/MonetaryPrice
                      :fibo-fnd-acc-cur/CalculatedPrice
+                     :fibo-fnd-acc-cur/MonetaryAmount
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
                       :owl/qualifiedCardinality 1,
@@ -114,9 +115,8 @@
                       :owl/onProperty  :fibo-fnd-acc-cur/hasAmount,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-acc-cur/Price
-                     :fibo-fnd-acc-cur/MonetaryAmount
-                     :fibo-fnd-qt-qtu/QuantityValue],
+                     :fibo-fnd-qt-qtu/QuantityValue
+                     :fibo-fnd-acc-cur/Price],
    :skos/definition "monetary price determined by a formula"})
 
 (def Currency
@@ -129,20 +129,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
    :rdfs/label "currency",
-   :rdfs/subClassOf [:fibo-fnd-qt-qtu/MeasurementUnit
-                     {:owl/onProperty     :cmns-cxtdsg/isUsedBy,
-                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-acc-cur/hasMinorUnit,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-acc-cur/hasNumericCode,
-                      :owl/someValuesFrom :xsd/string,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasTextualName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-acc-cur/hasNumericCode,
+                      :owl/someValuesFrom :xsd/string,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-cxtdsg/isUsedBy,
+                      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-qt-qtu/MeasurementUnit
                      :fibo-fnd-acc-cur/Currency],
    :skos/definition
    "medium of exchange value, defined by reference to the geographical location of the monetary authorities responsible for it"})
@@ -181,11 +181,11 @@
                       :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :cmns-id/Identifier
-                     :cmns-cds/CodeElement
                      {:owl/onProperty     :cmns-id/identifies,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
                       :rdf/type           :owl/Restriction}
+                     :cmns-id/Identifier
+                     :cmns-cds/CodeElement
                      :fibo-fnd-acc-cur/CurrencyIdentifier],
    :skos/definition "sequence of characters representing some currency"})
 
@@ -229,17 +229,17 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-acc-cur/Currency
                      :fibo-fnd-acc-cur/Funds
-                     :fibo-fnd-qt-qtu/MeasurementUnit
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-acc-cur/hasMinorUnit,
-                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasNumericCode,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/isUsedBy,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-acc-cur/hasMinorUnit,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-qt-qtu/MeasurementUnit
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasTextualName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}],
@@ -283,11 +283,11 @@
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-acc-cur/PercentageMonetaryAmount
                      :fibo-fnd-acc-cur/InterestRate
+                     :fibo-fnd-utl-alx/Percentage
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-utl-alx/Percentage],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "amount charged, expressed as a percentage of principal, in exchange for the use of assets"})
 
@@ -422,17 +422,17 @@
    :rdfs/label "unit of account",
    :rdfs/subClassOf [:fibo-fnd-acc-cur/Currency
                      :fibo-fnd-acc-cur/UnitOfAccount
-                     :fibo-fnd-qt-qtu/MeasurementUnit
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onDataRange :xsd/string,
-                      :owl/onProperty  :fibo-fnd-acc-cur/hasMinorUnit,
-                      :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasNumericCode,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/isUsedBy,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onDataRange :xsd/string,
+                      :owl/onProperty  :fibo-fnd-acc-cur/hasMinorUnit,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-qt-qtu/MeasurementUnit
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasTextualName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}],
@@ -471,6 +471,7 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-acc-cur/MonetaryPrice
                      :fibo-fnd-acc-cur/UnitPrice
+                     :fibo-fnd-acc-cur/MonetaryAmount
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-fnd-acc-cur/hasCurrency,
                       :owl/qualifiedCardinality 1,
@@ -479,9 +480,8 @@
                       :owl/onProperty  :fibo-fnd-acc-cur/hasAmount,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-acc-cur/Price
-                     :fibo-fnd-acc-cur/MonetaryAmount
-                     :fibo-fnd-qt-qtu/QuantityValue],
+                     :fibo-fnd-qt-qtu/QuantityValue
+                     :fibo-fnd-acc-cur/Price],
    :skos/definition
    "monetary price expressed in relation to a well-known measurable unit by which the goods or services are allocated",
    :skos/example

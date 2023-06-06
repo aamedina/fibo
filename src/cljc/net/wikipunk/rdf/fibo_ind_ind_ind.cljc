@@ -79,11 +79,11 @@
                       :rdf/type        :owl/Restriction}
                      :fibo-ind-ind-ind/MarketRate
                      :fibo-ind-ind-ind/DailyAverageMarketRate
-                     :fibo-fnd-utl-alx/RatioValue
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
                       :rdf/type        :owl/Restriction}
+                     :fibo-fnd-utl-alx/RatioValue
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
                       :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
@@ -108,11 +108,11 @@
                       :rdf/type        :owl/Restriction}
                      :fibo-ind-ind-ind/MarketRate
                      :fibo-ind-ind-ind/EndOfDayMarketRate
-                     :fibo-fnd-utl-alx/RatioValue
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
                       :rdf/type        :owl/Restriction}
+                     :fibo-fnd-utl-alx/RatioValue
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
                       :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
@@ -144,21 +144,21 @@
    :rdfs/subClassOf [:fibo-ind-ind-ind/PriceVolatility
                      :fibo-ind-ind-ind/HistoricalVolatility
                      :fibo-ind-ind-ind/HistoricalPriceVolatility
+                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
+                                    :fibo-fnd-utl-alx/StandardDeviation],
+                      :rdf/type    :owl/Class}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom
                       :fibo-fnd-dt-fd/DatedStructuredCollection,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-ind-ind-ind/PriceStructure,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-ind-ind-ind/Volatility
-                     :fibo-fnd-utl-alx/Dispersion
                      {:owl/onProperty     :cmns-dt/hasDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type           :owl/Restriction}
-                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
-                                    :fibo-fnd-utl-alx/StandardDeviation],
-                      :rdf/type    :owl/Class}],
+                     :fibo-ind-ind-ind/Volatility
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-ind-ind-ind/PriceStructure,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Dispersion],
    :skos/definition
    "historical volatility measure of past trading ranges of prices of underlying securities and indexes"})
 
@@ -172,17 +172,17 @@
    :rdfs/label "historical volatility",
    :rdfs/subClassOf [:fibo-ind-ind-ind/Volatility
                      :fibo-ind-ind-ind/HistoricalVolatility
+                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
+                                    :fibo-fnd-utl-alx/StandardDeviation],
+                      :rdf/type    :owl/Class}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom
                       :fibo-fnd-dt-fd/DatedStructuredCollection,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/Dispersion
                      {:owl/onProperty     :cmns-dt/hasDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type           :owl/Restriction}
-                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
-                                    :fibo-fnd-utl-alx/StandardDeviation],
-                      :rdf/type    :owl/Class}],
+                     :fibo-fnd-utl-alx/Dispersion],
    :skos/definition
    "measure of volatility that uses actual values for pricing, rates, and other measurements calculated over some prior period"})
 
@@ -196,21 +196,21 @@
    :rdfs/subClassOf [:fibo-ind-ind-ind/PriceVolatility
                      :fibo-ind-ind-ind/ImpliedVolatility
                      :fibo-ind-ind-ind/ImpliedPriceVolatility
+                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
+                                    :fibo-fnd-utl-alx/StandardDeviation],
+                      :rdf/type    :owl/Class}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom
                       :fibo-fnd-dt-fd/DatedStructuredCollection,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-ind-ind-ind/PriceStructure,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-ind-ind-ind/Volatility
-                     :fibo-fnd-utl-alx/Dispersion
                      {:owl/onProperty     :cmns-dt/hasDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type           :owl/Restriction}
-                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
-                                    :fibo-fnd-utl-alx/StandardDeviation],
-                      :rdf/type    :owl/Class}],
+                     :fibo-ind-ind-ind/Volatility
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-ind-ind-ind/PriceStructure,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Dispersion],
    :skos/definition
    "measure of volatility that represents the expected fluctuations of an underlying stock or index over a specific time frame"})
 
@@ -224,17 +224,17 @@
    :rdfs/label "implied volatility",
    :rdfs/subClassOf [:fibo-ind-ind-ind/Volatility
                      :fibo-ind-ind-ind/ImpliedVolatility
+                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
+                                    :fibo-fnd-utl-alx/StandardDeviation],
+                      :rdf/type    :owl/Class}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom
                       :fibo-fnd-dt-fd/DatedStructuredCollection,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/Dispersion
                      {:owl/onProperty     :cmns-dt/hasDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type           :owl/Restriction}
-                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
-                                    :fibo-fnd-utl-alx/StandardDeviation],
-                      :rdf/type    :owl/Class}],
+                     :fibo-fnd-utl-alx/Dispersion],
    :skos/definition
    "measure of volatility that is a forward-looking metric used to calculate probability"})
 
@@ -245,19 +245,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
    :rdfs/label "market rate",
-   :rdfs/subClassOf [{:owl/onDataRange :xsd/decimal,
-                      :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fnd-utl-alx/RatioValue
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
-                      :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
-                      :rdf/type       :owl/Restriction}
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/RatioValue
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
                       :rdf/type        :owl/Restriction}
+                     {:owl/onDataRange :xsd/decimal,
+                      :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
+                      :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
+                      :rdf/type       :owl/Restriction}
                      :fibo-ind-ind-ind/MarketRate],
    :skos/definition
    "value of a rate established in the marketplace for a set of instruments or that describes the economic climate for an industry and/or political region (e.g., SOFR, Prime)",
@@ -315,17 +315,17 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-ind-ind-ind/Volatility
                      :fibo-ind-ind-ind/PriceVolatility
+                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
+                                    :fibo-fnd-utl-alx/StandardDeviation],
+                      :rdf/type    :owl/Class}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom
                       :fibo-fnd-dt-fd/DatedStructuredCollection,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/Dispersion
                      {:owl/onProperty     :cmns-dt/hasDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type           :owl/Restriction}
-                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
-                                    :fibo-fnd-utl-alx/StandardDeviation],
-                      :rdf/type    :owl/Class}],
+                     :fibo-fnd-utl-alx/Dispersion],
    :skos/definition
    "statistical measure of the rate of change in pricing for a given security or market index",
    :skos/editorialNote

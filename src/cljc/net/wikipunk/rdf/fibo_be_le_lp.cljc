@@ -135,16 +135,16 @@
    :rdfs/label "chartered legal person",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
                      :fibo-be-le-lp/CharteredLegalPerson
-                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
-                      :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pty-pty/IndependentParty
+                     :fibo-be-le-lp/LegalPerson
                      :fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/LegalPerson],
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition "a legal person created by a royal charter or decree",
    :skos/example
    "Anything with 'Royal Institute' in the name. Also universities are generally set up by royal charter in a monarchy or principality, (often pre-dating any Privy Council i.e. directly be the monarch in the case of older universities). The Bank of England and the British Broadcasting Council (BBC) are also incorporated through Royal Charter."})
@@ -311,16 +311,16 @@
                 #voc/lstr "fonds commun de placement@fr-FR"],
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
                      :fibo-be-le-lp/SpecialPurposeVehicle
-                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
-                      :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pty-pty/IndependentParty
+                     :fibo-be-le-lp/LegalPerson
                      :fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/LegalPerson],
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "legal entity created to fulfill narrow, specific, and frequently temporary objectives@en"})
@@ -334,16 +334,16 @@
    :rdfs/label "statutory body",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
                      :fibo-be-le-lp/StatutoryBody
-                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
-                      :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pty-pty/IndependentParty
+                     :fibo-be-le-lp/LegalPerson
                      :fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/LegalPerson],
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "legal entity established by a government to consider evidence and make judgements in some field of activity"})
 
@@ -361,16 +361,16 @@
    :rdfs/label #voc/lstr "variable interest entity@en",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
                      :fibo-be-le-lp/VariableInterestEntity
-                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
-                      :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pty-pty/IndependentParty
+                     :fibo-be-le-lp/LegalPerson
                      :fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/LegalPerson],
+                     {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "legal entity whose shareholders are entitled to a percentage of a named company's profits via a private contract@en"})

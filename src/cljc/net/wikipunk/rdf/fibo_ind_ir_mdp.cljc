@@ -204,7 +204,7 @@
    :skos/definition
    "individual representing the European Money Markets Institute (EMMI) functional entity that is an international financial information publisher, responsible for the publication of euro-based benchmarks, including Euribor"})
 
-(def FederalReserveBoardH.15RateResetTimeOfDay
+(def FederalReserveBoardH_15RateResetTimeOfDay
   "the time of day that the Federal Reserve Board publishes Selected Interest Rates (Daily) in Schedule H.15"
   {:cmns-av/adaptedFrom "https://www.federalreserve.gov/releases/h15/",
    :cmns-dt/hasTimeValue "T16:15:00",

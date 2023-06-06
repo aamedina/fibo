@@ -120,11 +120,11 @@
     :cmns-cxtid/StructuredIdentifier
     :fibo-sec-sec-id/InternationalSecuritiesIdentificationNumber
     :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
-    {:owl/onProperty     :cmns-dsg/isDefinedIn,
-     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentificationScheme,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-id/identifies,
      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-dsg/isDefinedIn,
+     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentificationScheme,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "security identifier that is defined as specified in ISO 6166, Securities and related financial instruments -- International securities identification numbering system (ISIN)"})
@@ -146,15 +146,15 @@
      :rdf/type :owl/Restriction}
     :fibo-sec-sec-id/SecurityIdentificationScheme
     :fibo-sec-sec-id/InternationalSecuritiesIdentificationNumberingScheme
-    {:owl/onProperty     :cmns-dsg/defines,
-     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasMember,
      :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
      :rdf/type           :owl/Restriction}
+    :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme
+    {:owl/onProperty     :cmns-dsg/defines,
+     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-ra/RegistrationScheme
-    :cmns-id/IdentificationScheme
-    :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme],
+    :cmns-id/IdentificationScheme],
    :skos/definition
    "formal definition of the structure and application of a ISINs as defined in ISO 6166"})
 
@@ -181,11 +181,11 @@
     :fibo-sec-sec-id/SecurityIdentifier
     :fibo-sec-sec-id/ListedSecurityIdentifier
     :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
-    {:owl/onProperty     :cmns-dsg/isDefinedIn,
-     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentificationScheme,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-id/identifies,
      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-dsg/isDefinedIn,
+     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentificationScheme,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "security identifier issued in the public domain and referred to in listings and other relevant publications"})
@@ -199,20 +199,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
    :rdfs/label "national numbering agency",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-plc-loc/hasCoverageArea,
+   [{:owl/onProperty     :fibo-fnd-rel-rel/issues,
+     :owl/someValuesFrom :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-plc-loc/hasCoverageArea,
      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/issues,
+    :fibo-fbc-fct-ra/RegistrationAuthority
+    {:owl/onProperty     :fibo-fbc-fct-ra/registers,
      :owl/someValuesFrom :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty :fibo-fnd-rel-rel/manages,
      :owl/someValuesFrom
      :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumberRegistry,
      :rdf/type :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fct-ra/registers,
-     :owl/someValuesFrom :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-ra/RegistrationAuthority
     :fibo-sec-sec-id/NationalNumberingAgency],
    :skos/definition
    "registration authority responsible for issuing and managing National Securities Identifying Numbers for securities in accordance with the ISO 6166 standard in some jurisdiction (typically that of a country)"})
@@ -235,11 +235,11 @@
     :fibo-sec-sec-id/SecurityIdentifier
     :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber
     :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
-    {:owl/onProperty     :cmns-dsg/isDefinedIn,
-     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentificationScheme,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-id/identifies,
      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-dsg/isDefinedIn,
+     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentificationScheme,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "generic, nine-digit alpha numeric code which identifies a fungible security, assigned by a national numbering agency under the ISO 6166 standard"})
@@ -269,14 +269,14 @@
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-fbc-fct-ra/RegistrationAuthority,
      :rdf/type           :owl/Restriction}
-    {:owl/onClass    :fibo-sec-sec-id/SecurityIdentificationScheme,
-     :owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-ra/Registry
     {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistryEntry,
      :owl/someValuesFrom :fibo-sec-sec-id/SecurityRegistryEntry,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    {:owl/onClass    :fibo-sec-sec-id/SecurityIdentificationScheme,
+     :owl/onProperty :cmns-cls/isCharacterizedBy,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "registry used by a national numbering agency to manage the financial instrument identifiers and related information that it registers"})
 
@@ -293,12 +293,12 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-id/SecurityRegistryEntry
     :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumberRegistryEntry
-    {:owl/onProperty     :cmns-col/comprises,
-     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-ra/RegistryEntry
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-sec-lst/RegisteredSecurity,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fct-ra/RegistryEntry
+    {:owl/onProperty     :cmns-col/comprises,
+     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "entry in a National Securities Identifying Number registry"})
@@ -321,15 +321,15 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-id/SecurityIdentificationScheme
     :fibo-sec-sec-id/NationalSecurityIdentificationScheme
-    {:owl/onProperty     :cmns-dsg/defines,
-     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasMember,
      :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
      :rdf/type           :owl/Restriction}
+    :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme
+    {:owl/onProperty     :cmns-dsg/defines,
+     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-ra/RegistrationScheme
-    :cmns-id/IdentificationScheme
-    :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme],
+    :cmns-id/IdentificationScheme],
    :skos/definition
    "security identification scheme, defining the format and structure of a National Securities Identifying Number (NSIN), published nationally on behalf of a country"})
 
@@ -348,15 +348,15 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-id/SecurityIdentificationScheme
     :fibo-sec-sec-id/ProprietarySecurityIdentificationScheme
-    {:owl/onProperty     :cmns-dsg/defines,
-     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasMember,
      :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
      :rdf/type           :owl/Restriction}
+    :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme
+    {:owl/onProperty     :cmns-dsg/defines,
+     :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-ra/RegistrationScheme
-    :cmns-id/IdentificationScheme
-    :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme],
+    :cmns-id/IdentificationScheme],
    :skos/definition
    "security identification scheme published by a commercial entity"})
 
@@ -374,13 +374,13 @@
                      :fibo-sec-sec-id/SecurityIdentifier
                      :fibo-sec-sec-id/ProprietarySecurityIdentifier
                      :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
+                     {:owl/onProperty     :cmns-id/identifies,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/someValuesFrom
                       :fibo-sec-sec-id/SecurityIdentificationScheme,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :cmns-id/identifies,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type :owl/Restriction}],
    :skos/definition "identifier supplied by a commercial entity"})
 
 (def SecurityIdentificationScheme

@@ -92,25 +92,25 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-sec-pls/ManagedInvestment
                      :fibo-sec-fund-fund/ClosedEndInvestment
-                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
-                     :fibo-sec-sec-pls/PooledFund
-                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
-                      :owl/someValuesFrom :xsd/boolean,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
                      {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
                       :owl/someValuesFrom
                       :fibo-sec-fund-fund/LegalFundStructure,
                       :rdf/type :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     :fibo-sec-sec-pls/PooledFund],
    :skos/definition
    #voc/lstr
     "investment fund that has a fixed number of shares offered by an investment company through an initial public offering@en"})
@@ -134,16 +134,16 @@
                       :rdf/type :owl/Restriction}
                      :fibo-sec-sec-pls/PooledFund
                      :fibo-sec-fund-fund/CollectiveInvestmentVehicle
-                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset],
    :skos/definition
    #voc/lstr
     "assets pooled by investors whose share capital remains separate from the assets of the vehicle@en"})
@@ -164,29 +164,29 @@
    :rdfs/label #voc/lstr "exchange-traded fund@en",
    :rdfs/subClassOf [:fibo-sec-fund-fund/OpenEndInvestment
                      :fibo-sec-fund-fund/ExchangeTradedFund
-                     :fibo-sec-sec-pls/ManagedInvestment
-                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
-                     :fibo-sec-sec-pls/PooledFund
-                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
-                      :owl/someValuesFrom :xsd/boolean,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
                      {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
                       :owl/someValuesFrom
                       :fibo-sec-fund-fund/LegalFundStructure,
                       :rdf/type :owl/Restriction}
-                     {:owl/hasValue   {:xsd/boolean true},
-                      :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/hasValue   {:xsd/boolean true},
+                      :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-sec-pls/ManagedInvestment
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     :fibo-sec-sec-pls/PooledFund],
    :skos/definition
    #voc/lstr
     "investment fund whose fund units are traded on an exchange, much like stocks@en"})
@@ -221,24 +221,24 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-pls/ManagedInvestment
     :fibo-sec-fund-fund/FundOfFunds
-    {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
-     :owl/someValuesFrom :cmns-dt/ExplicitDate,
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-fund-fund/CollectiveInvestmentVehicle
-    :fibo-sec-sec-pls/PooledFund
-    {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
-     :owl/someValuesFrom :xsd/boolean,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-acc-aeq/FinancialAsset
     {:owl/onProperty     :fibo-sec-fund-fund/hasLegalStructure,
      :owl/someValuesFrom :fibo-sec-fund-fund/LegalFundStructure,
      :rdf/type           :owl/Restriction}
+    :fibo-sec-fund-fund/CollectiveInvestmentVehicle
     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
      :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-     :rdf/type           :owl/Restriction}],
+    {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+     :owl/someValuesFrom :xsd/boolean,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+     :owl/someValuesFrom :cmns-dt/ExplicitDate,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-acc-aeq/FinancialAsset
+    :fibo-sec-sec-pls/PooledFund],
    :skos/definition
    #voc/lstr
     "investment fund that invests directly in other investment funds rather than investing in stocks, bonds, and other securities@en"})
@@ -272,29 +272,29 @@
    :rdfs/label #voc/lstr "hedge fund@en",
    :rdfs/subClassOf [:fibo-sec-fund-fund/OpenEndInvestment
                      :fibo-sec-fund-fund/HedgeFund
-                     :fibo-sec-sec-pls/ManagedInvestment
-                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
-                     :fibo-sec-sec-pls/PooledFund
-                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
-                      :owl/someValuesFrom :xsd/boolean,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
                      {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
                       :owl/someValuesFrom
                       :fibo-sec-fund-fund/LegalFundStructure,
                       :rdf/type :owl/Restriction}
-                     {:owl/hasValue   {:xsd/boolean true},
-                      :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/hasValue   {:xsd/boolean true},
+                      :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-sec-pls/ManagedInvestment
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     :fibo-sec-sec-pls/PooledFund],
    :skos/definition
    #voc/lstr
     "investment fund that pursues a total return and is usually open to qualified investors only@en"})
@@ -331,29 +331,29 @@
    :rdfs/label #voc/lstr "mutual fund@en",
    :rdfs/subClassOf [:fibo-sec-fund-fund/OpenEndInvestment
                      :fibo-sec-fund-fund/MutualFund
-                     :fibo-sec-sec-pls/ManagedInvestment
-                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
-                     :fibo-sec-sec-pls/PooledFund
-                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
-                      :owl/someValuesFrom :xsd/boolean,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
                      {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
                       :owl/someValuesFrom
                       :fibo-sec-fund-fund/LegalFundStructure,
                       :rdf/type :owl/Restriction}
-                     {:owl/hasValue   {:xsd/boolean true},
-                      :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/hasValue   {:xsd/boolean true},
+                      :owl/onProperty :fibo-sec-fund-fund/isOpenEnded,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-sec-sec-pls/ManagedInvestment
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     :fibo-sec-sec-pls/PooledFund],
    :skos/definition
    #voc/lstr
     "open-end professionally managed investment fund established for the purpose of investing in securities such as stocks, bonds, money market instruments and similar assets@en"})
@@ -372,25 +372,25 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-sec-pls/ManagedInvestment
                      :fibo-sec-fund-fund/OpenEndInvestment
-                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
-                     :fibo-sec-sec-pls/PooledFund
-                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
-                      :owl/someValuesFrom :xsd/boolean,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
                      {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
                       :owl/someValuesFrom
                       :fibo-sec-fund-fund/LegalFundStructure,
                       :rdf/type :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     :fibo-sec-sec-pls/PooledFund],
    :skos/definition
    #voc/lstr
     "investment fund that offered through a fund company that sells shares directly to investors@en"})
@@ -411,25 +411,25 @@
    :rdfs/label #voc/lstr "pension fund@en",
    :rdfs/subClassOf [:fibo-sec-sec-pls/ManagedInvestment
                      :fibo-sec-fund-fund/PensionFund
-                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
-                     :fibo-sec-sec-pls/PooledFund
-                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
-                      :owl/someValuesFrom :xsd/boolean,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
                      {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
                       :owl/someValuesFrom
                       :fibo-sec-fund-fund/LegalFundStructure,
                       :rdf/type :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     :fibo-sec-sec-pls/PooledFund],
    :skos/definition
    #voc/lstr
     "investment fund run by a financial intermediary on behalf of an organization and its employees/members@en"})
@@ -450,25 +450,25 @@
    :rdfs/label #voc/lstr "private equity fund@en",
    :rdfs/subClassOf [:fibo-sec-sec-pls/ManagedInvestment
                      :fibo-sec-fund-fund/PrivateEquityFund
-                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
-                     :fibo-sec-sec-pls/PooledFund
-                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
-                      :owl/someValuesFrom :xsd/boolean,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
                      {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
                       :owl/someValuesFrom
                       :fibo-sec-fund-fund/LegalFundStructure,
                       :rdf/type :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     :fibo-sec-sec-pls/PooledFund],
    :skos/definition
    #voc/lstr
     "investment fund used for making investments in various equity (and to a lesser extent debt) securities according to an investment strategy associated with private equity@en"})
@@ -492,25 +492,25 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-pls/ManagedInvestment
                      :fibo-sec-fund-fund/RealEstateInvestmentTrust
-                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
-                     :fibo-sec-sec-pls/PooledFund
-                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
-                      :owl/someValuesFrom :xsd/boolean,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
                      {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
                       :owl/someValuesFrom
                       :fibo-sec-fund-fund/LegalFundStructure,
                       :rdf/type :owl/Restriction}
+                     :fibo-sec-fund-fund/CollectiveInvestmentVehicle
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty     :fibo-sec-fund-fund/isOpenEnded,
+                      :owl/someValuesFrom :xsd/boolean,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     :fibo-sec-sec-pls/PooledFund],
    :skos/definition
    #voc/lstr
     "investment fund that offers shares/units to the public and invests in real estate directly@en"})
@@ -529,11 +529,9 @@
    :rdfs/label #voc/lstr "sovereign wealth fund@en",
    :rdfs/subClassOf [:fibo-sec-fund-fund/CollectiveInvestmentVehicle
                      :fibo-sec-fund-fund/SovereignWealthFund
-                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/PooledFund
-                     :fibo-fnd-acc-aeq/FinancialAsset
                      {:owl/onProperty :fibo-sec-fund-fund/hasLegalStructure,
                       :owl/someValuesFrom
                       :fibo-sec-fund-fund/LegalFundStructure,
@@ -541,9 +539,11 @@
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/InvestmentObjective,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-sec-fund-fund/FundUnit,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty     :fibo-fbc-fct-fse/hasDateEstablished,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-acc-aeq/FinancialAsset
+                     :fibo-sec-sec-pls/PooledFund],
    :skos/definition
    #voc/lstr
     "state-owned investment fund that consists of pools of money derived from a country's reserves@en"})

@@ -86,14 +86,14 @@
      :rdf/type           :owl/Restriction}
     :fibo-loan-ln-reg/DisclosureRequirement
     :fibo-loan-ln-reg/BorrowerDisclosureRequirement
+    :fibo-loan-ln-reg/ConsumerCreditRequirement
+    :fibo-fnd-law-lcap/LegalObligation
     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
      :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerRight,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-loan-ln-reg/overseenBy,
      :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerProtectionAgency,
-     :rdf/type           :owl/Restriction}
-    :fibo-loan-ln-reg/ConsumerCreditRequirement
-    :fibo-fnd-law-lcap/LegalObligation]})
+     :rdf/type           :owl/Restriction}]})
 
 (def BorrowerRight
   "borrower right"
@@ -121,14 +121,14 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-loan-ln-reg/ConsumerCreditRequirement
                      :fibo-loan-ln-reg/ConsumerCreditEqualTreatmentRequirement
+                     :fibo-fnd-law-lcap/LegalObligation
                      {:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerRight,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-loan-ln-reg/overseenBy,
                       :owl/someValuesFrom
                       :fibo-loan-ln-reg/ConsumerProtectionAgency,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-law-lcap/LegalObligation]})
+                      :rdf/type :owl/Restriction}]})
 
 (def ConsumerCreditProtectionLaw
   "consumer credit protection law"
@@ -250,14 +250,14 @@
    :rdfs/label #voc/lstr "disclosure requirement@en",
    :rdfs/subClassOf [:fibo-loan-ln-reg/ConsumerCreditRequirement
                      :fibo-loan-ln-reg/DisclosureRequirement
+                     :fibo-fnd-law-lcap/LegalObligation
                      {:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerRight,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-loan-ln-reg/overseenBy,
                       :owl/someValuesFrom
                       :fibo-loan-ln-reg/ConsumerProtectionAgency,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-law-lcap/LegalObligation],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Requirement for disclosure to borrowers or potential borrowers. There are two kinds of disclosure requirement: 1. Disclosure about the information held on the borrower 2. Disclsure about the product.@en"})
@@ -381,14 +381,14 @@
      :rdf/type           :owl/Restriction}
     :fibo-loan-ln-reg/DisclosureRequirement
     :fibo-loan-ln-reg/ProductDisclosureRequirement
+    :fibo-loan-ln-reg/ConsumerCreditRequirement
+    :fibo-fnd-law-lcap/LegalObligation
     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
      :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerRight,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-loan-ln-reg/overseenBy,
      :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerProtectionAgency,
-     :rdf/type           :owl/Restriction}
-    :fibo-loan-ln-reg/ConsumerCreditRequirement
-    :fibo-fnd-law-lcap/LegalObligation],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "A requirement governing what representations can be made about a product, as it affects the consumer.@en"})
@@ -424,18 +424,18 @@
    :rdfs/subClassOf [:fibo-loan-ln-reg/DisclosureRequirement
                      :fibo-loan-ln-reg/ConsumerCreditEqualTreatmentRequirement
                      :fibo-loan-ln-reg/RegB
+                     :fibo-loan-ln-reg/ConsumerCreditRequirement
+                     :fibo-fnd-law-lcap/LegalObligation
+                     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
+                      :owl/someValuesFrom :fibo-loan-ln-reg/EqualTreatmentRight,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerRight,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-loan-ln-reg/overseenBy,
                       :owl/someValuesFrom
                       :fibo-loan-ln-reg/ConsumerProtectionAgency,
-                      :rdf/type :owl/Restriction}
-                     :fibo-loan-ln-reg/ConsumerCreditRequirement
-                     :fibo-fnd-law-lcap/LegalObligation
-                     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
-                      :owl/someValuesFrom :fibo-loan-ln-reg/EqualTreatmentRight,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "US regulation concerning \"Equal credit opportunity act\" Electronic delivery of disclosures@en"})
@@ -453,17 +453,17 @@
    :rdfs/subClassOf
    [:fibo-loan-ln-reg/ProductDisclosureRequirement
     :fibo-loan-ln-reg/RegZ
+    :fibo-loan-ln-reg/ConsumerCreditRequirement
+    {:owl/onProperty     :fibo-fnd-rel-rel/governs,
+     :owl/someValuesFrom :fibo-loan-ln-reg/GoodFaithEstimate,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-law-lcap/LegalObligation
+    :fibo-loan-ln-reg/DisclosureRequirement
     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
      :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerRight,
      :rdf/type           :owl/Restriction}
-    :fibo-loan-ln-reg/DisclosureRequirement
     {:owl/onProperty     :fibo-loan-ln-reg/overseenBy,
      :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerProtectionAgency,
-     :rdf/type           :owl/Restriction}
-    :fibo-loan-ln-reg/ConsumerCreditRequirement
-    :fibo-fnd-law-lcap/LegalObligation
-    {:owl/onProperty     :fibo-fnd-rel-rel/governs,
-     :owl/someValuesFrom :fibo-loan-ln-reg/GoodFaithEstimate,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/governs,
      :owl/someValuesFrom :fibo-loan-ln-reg/LoanProductRepresentations,

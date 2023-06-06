@@ -127,13 +127,13 @@
    :rdfs/label "de facto control",
    :rdfs/subClassOf [:fibo-fnd-oac-ctl/Control
                      :fibo-fnd-oac-ctl/DeFactoControl
-                     {:owl/onProperty :fibo-fnd-oac-ctl/involvesControlledThing,
-                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-pty-pty/Situation
                      {:owl/onProperty     :fibo-fnd-oac-ctl/hasPartyInControl,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/ControllingParty,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/Situation
+                     {:owl/onProperty :fibo-fnd-oac-ctl/involvesControlledThing,
+                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "control that exists informally and is accepted, although not formally recognized"})
 
@@ -147,13 +147,13 @@
    :rdfs/subClassOf [:fibo-fnd-oac-ctl/Control
                      :fibo-fnd-law-lcap/LegalConstruct
                      :fibo-fnd-oac-ctl/DeJureControl
-                     {:owl/onProperty :fibo-fnd-oac-ctl/involvesControlledThing,
-                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-pty-pty/Situation
                      {:owl/onProperty     :fibo-fnd-oac-ctl/hasPartyInControl,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/ControllingParty,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/Situation
+                     {:owl/onProperty :fibo-fnd-oac-ctl/involvesControlledThing,
+                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "control that exists as a matter of law, i.e., legitimate, legal control of something"})
 

@@ -179,11 +179,11 @@
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom :fibo-der-drc-bsc/DerivativeTerms,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Underlier,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-der-drc-bsc/hasValuationTerms,
                       :owl/someValuesFrom :fibo-der-drc-bsc/ValuationTerms,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Underlier,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -210,11 +210,11 @@
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom :fibo-der-drc-bsc/DerivativeTerms,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Underlier,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-der-drc-bsc/hasValuationTerms,
                       :owl/someValuesFrom :fibo-der-drc-bsc/ValuationTerms,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Underlier,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -334,8 +334,8 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-bsc/CashflowTerms
                      :fibo-der-drc-bsc/ParametricCashflowTerms
-                     :fibo-der-drc-bsc/DerivativeTerms
                      :fibo-fnd-agr-ctr/ContractualCommitment
+                     :fibo-der-drc-bsc/DerivativeTerms
                      :fibo-fbc-dae-dbt/DebtTerms],
    :skos/definition
    "terms for a set of cashflows defined according to a mathematical formula"})

@@ -141,14 +141,14 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-ff/DebtInstrumentFuture
                      :fibo-der-drc-ff/BondFuture
-                     :fibo-der-drc-ff/FinancialFuture
-                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-                      :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-sbd-sbd/DebtInstrumentDerivative
                      {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/DebtInstrument,
                       :rdf/type           :owl/Restriction}
+                     :fibo-der-sbd-sbd/DebtInstrumentDerivative
+                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+                      :owl/someValuesFrom :xsd/decimal,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-der-drc-ff/FinancialFuture
                      :fibo-fbc-fi-fi/Future],
    :skos/definition
    #voc/lstr "futures contract whose underlying asset is at least one bond@en"})
@@ -247,14 +247,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label #voc/lstr "equity forward@en",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
-     :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-ff/hasMethodOfAdjustment,
-     :owl/someValuesFrom :fibo-der-drc-ff/ForwardContractAdjustmentMethod,
-     :rdf/type           :owl/Restriction}
-    :fibo-der-drc-ff/Forward
-    {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom {:owl/unionOf [:fibo-ind-mkt-bas/BasketOfEquities
                                         :fibo-sec-eq-eq/ListedShare
                                         :fibo-ind-mkt-bas/EquityIndex
@@ -265,9 +258,16 @@
     {:owl/onProperty     :fibo-der-drc-ff/hasDividendAdjustmentPeriod,
      :owl/someValuesFrom :fibo-der-drc-ff/DividendAdjustmentPeriod,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
+     :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-ff/hasMethodOfAdjustment,
+     :owl/someValuesFrom :fibo-der-drc-ff/ForwardContractAdjustmentMethod,
+     :rdf/type           :owl/Restriction}
+    :fibo-der-drc-ff/Forward
     :fibo-der-drc-ff/EquityForward
-    :fibo-fbc-fi-fi/DerivativeInstrument
-    :fibo-der-drc-bsc/OverTheCounterInstrument],
+    :fibo-der-drc-bsc/OverTheCounterInstrument
+    :fibo-fbc-fi-fi/DerivativeInstrument],
    :skos/definition
    #voc/lstr
     "forward contract to buy or sell the underlying equity stock, equity index, basket of equity stock, equity futures contract, or equity option at a specified future date at the price specified at the outset of the contract@en"})
@@ -489,14 +489,14 @@
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-ff/DebtInstrumentFuture
                      :fibo-der-drc-ff/MoneyMarketFuture
-                     :fibo-der-drc-ff/FinancialFuture
-                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-                      :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-sbd-sbd/DebtInstrumentDerivative
                      {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/DebtInstrument,
                       :rdf/type           :owl/Restriction}
+                     :fibo-der-sbd-sbd/DebtInstrumentDerivative
+                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+                      :owl/someValuesFrom :xsd/decimal,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-der-drc-ff/FinancialFuture
                      :fibo-fbc-fi-fi/Future],
    :skos/definition
    #voc/lstr

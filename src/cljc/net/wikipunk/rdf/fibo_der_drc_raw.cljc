@@ -99,12 +99,12 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label #voc/lstr "allotment right@en",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
+   :rdfs/subClassOf [:fibo-der-sbd-sbd/EquityDerivative
+                     :fibo-fbc-fi-fi/Entitlement
+                     {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-der-drc-raw/AllotmentRightFormula,
                       :rdf/type :owl/Restriction}
-                     :fibo-der-sbd-sbd/EquityDerivative
-                     :fibo-fbc-fi-fi/Entitlement
                      :fibo-der-drc-raw/AllotmentRight
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
@@ -224,12 +224,12 @@
    :rdfs/subClassOf [:fibo-der-drc-raw/PutWarrant
                      :fibo-der-drc-raw/CallWarrant
                      :fibo-der-drc-raw/CallPutWarrant
-                     :fibo-der-drc-raw/Warrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-fi-fi/Entitlement
+                     :fibo-der-drc-raw/Warrant
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
                       :rdf/type           :owl/Restriction}],
@@ -459,12 +459,12 @@
     :fibo-der-drc-raw/EquityWarrant
     :fibo-der-drc-raw/CompanyWarrant
     :fibo-der-sbd-sbd/EquityDerivative
-    :fibo-der-drc-raw/Warrant
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
      :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-fi-fi/Entitlement
+    :fibo-der-drc-raw/Warrant
     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
      :rdf/type           :owl/Restriction}],
@@ -590,16 +590,16 @@
    :rdfs/subClassOf [:fibo-sec-sec-lst/ListedSecurity
                      :fibo-der-drc-raw/PublicWarrant
                      :fibo-der-drc-raw/ExchangeTradedWarrant
-                     :fibo-der-drc-raw/Warrant
+                     :fibo-fbc-fi-fi/NegotiableSecurity
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-fi-fi/Entitlement
+                     :fibo-der-drc-raw/Warrant
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/NegotiableSecurity],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition #voc/lstr
                      "warrant that is listed on a securities exchange@en"})
 

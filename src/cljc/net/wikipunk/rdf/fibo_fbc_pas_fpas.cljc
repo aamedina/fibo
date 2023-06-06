@@ -153,6 +153,7 @@
    :rdfs/subClassOf
    [:fibo-fbc-pas-fpas/RegisteredAgent
     :fibo-fbc-pas-fpas/AgentForServiceOfProcess
+    :fibo-fnd-pty-rl/AgentInRole
     :fibo-fbc-pas-fpas/LegalAgent
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/intersectionOf
@@ -165,14 +166,13 @@
                             :rdf/type           :owl/Restriction}],
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-pty-rl/AgentInRole
+    :fibo-fnd-agr-ctr/ContractParty
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-law-lcap/hasCapacity,
                           :owl/someValuesFrom
                           :fibo-fnd-law-lcap/DelegatedLegalAuthority,
                           :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-ctr/ContractParty],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "a registered agent (person or organization) designated by a business entity, such as a corporation, to receive legal correspondence on behalf of the business entity in the jurisdiction in which the agent's address is located"})
 
@@ -181,14 +181,11 @@
   {:db/ident :fibo-fbc-pas-fpas/AmendedTrade,
    :rdf/type [:fibo-fbc-pas-fpas/TradeLifecycleStage
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+              {:owl/onProperty     :cmns-col/comprises,
+               :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-dsg/isDefinedIn,
                :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
-               :rdf/type           :owl/Restriction}
-              {:owl/onProperty     :cmns-col/comprises,
-               :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
                :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
@@ -197,7 +194,10 @@
                :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycleStage,
                :owl/onProperty :cmns-dt/succeeds,
                :rdf/type       :owl/Restriction}
-              :fibo-fnd-arr-lif/LifecycleStage],
+              :fibo-fnd-arr-lif/LifecycleStage
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+               :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "amended trade",
@@ -214,10 +214,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "basket",
-   :rdfs/subClassOf [:cmns-col/Collection
-                     {:owl/onProperty     :cmns-col/hasConstituent,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/BasketConstituent,
                       :rdf/type           :owl/Restriction}
+                     :cmns-col/Collection
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fbc-pas-fpas/hasSelectingParty,
@@ -305,14 +305,11 @@
    :db/ident :fibo-fbc-pas-fpas/ClearedTrade,
    :rdf/type [:fibo-fbc-pas-fpas/TradeLifecycleStage
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+              {:owl/onProperty     :cmns-col/comprises,
+               :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-dsg/isDefinedIn,
                :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
-               :rdf/type           :owl/Restriction}
-              {:owl/onProperty     :cmns-col/comprises,
-               :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
                :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
@@ -321,7 +318,10 @@
                :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycleStage,
                :owl/onProperty :cmns-dt/succeeds,
                :rdf/type       :owl/Restriction}
-              :fibo-fnd-arr-lif/LifecycleStage],
+              :fibo-fnd-arr-lif/LifecycleStage
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+               :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "cleared trade",
@@ -333,14 +333,11 @@
   {:db/ident :fibo-fbc-pas-fpas/ClosedTrade,
    :rdf/type [:fibo-fbc-pas-fpas/TradeLifecycleStage
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+              {:owl/onProperty     :cmns-col/comprises,
+               :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-dsg/isDefinedIn,
                :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
-               :rdf/type           :owl/Restriction}
-              {:owl/onProperty     :cmns-col/comprises,
-               :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
                :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
@@ -349,7 +346,10 @@
                :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycleStage,
                :owl/onProperty :cmns-dt/succeeds,
                :rdf/type       :owl/Restriction}
-              :fibo-fnd-arr-lif/LifecycleStage],
+              :fibo-fnd-arr-lif/LifecycleStage
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+               :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "closed trade",
@@ -416,11 +416,11 @@
    :rdfs/label "financial intermediation service",
    :rdfs/subClassOf [:fibo-fbc-pas-fpas/FinancialService
                      :fibo-fbc-pas-fpas/FinancialIntermediationService
-                     :fibo-fnd-pas-pas/Service
                      {:owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom
                       :fibo-fbc-pas-fpas/FinancialServiceProvider,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-pas-pas/Service],
    :skos/definition
    "any financial service in which a third party (the intermediary) matches lenders and investors with entrepreneurs and other borrowers in need of capital"})
 
@@ -438,12 +438,12 @@
                      :fibo-fnd-pas-pas/Product
                      :fibo-fbc-pas-fpas/FinancialProduct
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-fpas/Catalog,
-                      :owl/onProperty :cmns-cls/isCharacterizedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-pas-fpas/ProductLifecycle,
                       :owl/onProperty :fibo-fnd-arr-lif/hasLifecycle,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-fpas/Catalog,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies"})
@@ -461,13 +461,13 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-fpas/Catalog
                      :fibo-fbc-pas-fpas/FinancialProductCatalog
-                     :fibo-be-fct-pub/Publication
                      {:owl/onProperty     :cmns-dsg/describes,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
                       :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom :cmns-id/Identifier,
                       :owl/onProperty    :cmns-id/isIdentifiedBy,
-                      :rdf/type          :owl/Restriction}],
+                      :rdf/type          :owl/Restriction}
+                     :fibo-be-fct-pub/Publication],
    :skos/definition
    "a catalog of financial products and/or services available for sale with their description and other product details"})
 
@@ -576,14 +576,11 @@
   {:db/ident :fibo-fbc-pas-fpas/MaturedTrade,
    :rdf/type [:fibo-fbc-pas-fpas/TradeLifecycleStage
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+              {:owl/onProperty     :cmns-col/comprises,
+               :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-dsg/isDefinedIn,
                :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
-               :rdf/type           :owl/Restriction}
-              {:owl/onProperty     :cmns-col/comprises,
-               :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
                :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
@@ -592,7 +589,10 @@
                :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycleStage,
                :owl/onProperty :cmns-dt/succeeds,
                :rdf/type       :owl/Restriction}
-              :fibo-fnd-arr-lif/LifecycleStage],
+              :fibo-fnd-arr-lif/LifecycleStage
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+               :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "matured trade",
@@ -669,14 +669,11 @@
   {:db/ident :fibo-fbc-pas-fpas/OpenTrade,
    :rdf/type [:fibo-fbc-pas-fpas/TradeLifecycleStage
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+              {:owl/onProperty     :cmns-col/comprises,
+               :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-dsg/isDefinedIn,
                :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
-               :rdf/type           :owl/Restriction}
-              {:owl/onProperty     :cmns-col/comprises,
-               :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
                :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
@@ -685,7 +682,10 @@
                :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycleStage,
                :owl/onProperty :cmns-dt/succeeds,
                :rdf/type       :owl/Restriction}
-              :fibo-fnd-arr-lif/LifecycleStage],
+              :fibo-fnd-arr-lif/LifecycleStage
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+               :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "open trade",
@@ -801,19 +801,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "product lifecycle stage",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
-                      :owl/someValuesFrom :fibo-fbc-pas-fpas/ProductLifecycle,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
+                      :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-dsg/isDefinedIn,
-                      :owl/someValuesFrom :fibo-fbc-pas-fpas/ProductLifecycle,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStage
                      {:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
                       :fibo-fbc-pas-fpas/ProductLifecycleEvent,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :cmns-cls/classifies,
-                      :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
+                     :fibo-fnd-arr-lif/LifecycleStage
+                     {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
+                      :owl/someValuesFrom :fibo-fbc-pas-fpas/ProductLifecycle,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-dsg/isDefinedIn,
+                      :owl/someValuesFrom :fibo-fbc-pas-fpas/ProductLifecycle,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-fpas/ProductLifecycleStage],
    :skos/definition "a phase in a product lifecycle",
@@ -856,7 +856,9 @@
    :rdfs/seeAlso ["https://thelawdictionary.org/agent/"
                   "http://www.sos.state.tx.us/corp/registeredagents.shtml"],
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   [:fibo-fbc-pas-fpas/LegalAgent
+    :fibo-fnd-agr-ctr/ContractParty
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/intersectionOf
                           [{:owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
                             :owl/someValuesFrom
@@ -867,8 +869,6 @@
                             :rdf/type           :owl/Restriction}],
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-pas-fpas/LegalAgent
-    :fibo-fnd-agr-ctr/ContractParty
     :fibo-fbc-pas-fpas/RegisteredAgent
     :fibo-fnd-pty-rl/AgentInRole
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
@@ -924,14 +924,11 @@
    :db/ident :fibo-fbc-pas-fpas/TerminatedTrade,
    :rdf/type [:fibo-fbc-pas-fpas/TradeLifecycleStage
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+              {:owl/onProperty     :cmns-col/comprises,
+               :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-dsg/isDefinedIn,
                :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
-               :rdf/type           :owl/Restriction}
-              {:owl/onProperty     :cmns-col/comprises,
-               :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                :rdf/type           :owl/Restriction}
               {:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
                :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
@@ -940,7 +937,10 @@
                :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycleStage,
                :owl/onProperty :cmns-dt/succeeds,
                :rdf/type       :owl/Restriction}
-              :fibo-fnd-arr-lif/LifecycleStage],
+              :fibo-fnd-arr-lif/LifecycleStage
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+               :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "terminated trade",
@@ -990,13 +990,6 @@
                       :owl/onClass    :fibo-fbc-pas-fpas/Trader,
                       :owl/onProperty :fibo-fbc-pas-fpas/isFacilitatedBy,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-pas-fpas/isEmbodiedIn,
-                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycle,
-                      :owl/onProperty :cmns-cls/isCharacterizedBy,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/involves,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-pas-pas/Good
@@ -1005,14 +998,21 @@
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-pas-fpas/Trade,
-                      :owl/onProperty :cmns-dt/succeeds,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pas-pas/TransactionEvent
-                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-pas-fpas/TradeIdentifier,
                       :owl/onProperty :cmns-id/isIdentifiedBy,
                       :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-fpas/Trade,
+                      :owl/onProperty :cmns-dt/succeeds,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycle,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pas-pas/TransactionEvent
+                     {:owl/onProperty     :fibo-fbc-pas-fpas/isEmbodiedIn,
+                      :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-fpas/Trade],
    :skos/definition
    "agreement between parties participating in a voluntary action of buying and selling goods and services"})
@@ -1131,21 +1131,21 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-lif/isStageOf,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :cmns-cls/classifies,
+                      :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-lif/LifecycleStage
                      {:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
                       :fibo-fbc-pas-fpas/TradeLifecycleEvent,
                       :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :cmns-dsg/isDefinedIn,
+                      :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-pas-fpas/TradeLifecycleStage,
                       :owl/onProperty :cmns-dt/succeeds,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStage
-                     {:owl/onProperty     :cmns-cls/classifies,
-                      :owl/someValuesFrom :fibo-fbc-pas-fpas/Trade,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-dsg/isDefinedIn,
-                      :owl/someValuesFrom :fibo-fbc-pas-fpas/TradeLifecycle,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-fpas/TradeLifecycleStage],
    :skos/definition "a phase in the lifecycle of a trade"})
 
@@ -1225,10 +1225,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
    :rdfs/label "unique transaction identifier",
-   :rdfs/subClassOf [:fibo-fbc-pas-fpas/TradeIdentifier
-                     {:owl/onProperty :fibo-fbc-pas-fpas/hasGeneratingEntity,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-pas-fpas/hasGeneratingEntity,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
                       :rdf/type :owl/Restriction}
+                     :fibo-fbc-pas-fpas/TradeIdentifier
                      :fibo-fbc-pas-fpas/UniqueTransactionIdentifier
                      :cmns-id/Identifier
                      {:owl/onProperty     :cmns-id/identifies,
@@ -1257,7 +1257,6 @@
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/BasketConstituent,
                       :rdf/type           :owl/Restriction}
-                     :cmns-col/Collection
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fbc-pas-fpas/hasSelectingParty,
@@ -1265,7 +1264,8 @@
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fbc-pas-fpas/hasSelectionCriteria,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     :cmns-col/Collection],
    :skos/definition
    "basket whose constituents have some relative importance with respect to one another"})
 
