@@ -55,7 +55,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
    :rdfs/label "CRD credit institution",
    :rdfs/subClassOf [:fibo-fbc-fct-eufse/CreditInstitution
-                     :fibo-fbc-fct-eufse/CRDCreditInstitution
                      :fibo-fbc-fct-fse/FinancialInstitution
                      :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm],
    :skos/definition
@@ -72,7 +71,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
    :rdfs/label "credit institution",
    :rdfs/subClassOf [:fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm
-                     :fibo-fbc-fct-eufse/CreditInstitution
                      :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "an undertaking the business of which is to take deposits or other repayable funds from the public and to grant credits for its own account, and to which authorisation has been granted to operate within the European Union and European Economic Area countries (EEA)"})
@@ -86,8 +84,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
    :rdfs/label "credit institution / investment firm",
-   :rdfs/subClassOf [:fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm],
+   :rdfs/subClassOf :fibo-fbc-fct-fse/FinancialInstitution,
    :skos/definition
    "classification specific to European financial institutions that designates them as credit institutions / investment firms as defined by the European Banking Authority (EBA)"})
 
@@ -103,7 +100,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
    :rdfs/label "European Economic Area branch",
    :rdfs/subClassOf [:fibo-fbc-fct-eufse/CreditInstitution
-                     :fibo-fbc-fct-eufse/EuropeanEconomicAreaBranch
                      :fibo-fbc-fct-fse/FinancialInstitution
                      :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm],
    :skos/definition
@@ -128,7 +124,6 @@
                                      :rdf/type :owl/Restriction}],
                       :rdf/type    :owl/Class}
                      :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm
-                     :fibo-fbc-fct-eufse/InvestmentFirm
                      :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "any legal person whose regular occupation or business is the provision of one or more investment services to third parties and/or the performance of one or more investment activities on a professional basis"})
@@ -144,7 +139,6 @@
    :rdfs/label "local firm",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/BrokerageFirm
                      :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm
-                     :fibo-fbc-fct-eufse/LocalFirm
                      :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "a firm dealing for its own account on markets in financial futures or options or other derivatives and on cash markets for the sole purpose of hedging positions on derivatives markets, or dealing for the accounts of other members of those markets and being guaranteed by clearing members of the same markets, where responsibility for ensuring the performance of contracts entered into by such a firm is assumed by clearing members of the same markets"})
@@ -160,7 +154,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
    :rdfs/label "non European Economic Area branch",
    :rdfs/subClassOf [:fibo-fbc-fct-eufse/CreditInstitution
-                     :fibo-fbc-fct-eufse/NonEuropeanEconomicAreaBranch
                      :fibo-fbc-fct-fse/FinancialInstitution
                      :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm],
    :skos/definition
@@ -179,7 +172,6 @@
                       :owl/someValuesFrom :fibo-fbc-fct-fse/PaymentService,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm
-                     :fibo-fbc-fct-eufse/PaymentInstitution
                      :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "a legal person that has been granted authorisation in accordance with Article 10 to provide and execute payment services throughout the European community"})

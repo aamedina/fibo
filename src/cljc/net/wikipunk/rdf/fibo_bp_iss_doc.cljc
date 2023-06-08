@@ -57,8 +57,7 @@
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
      :owl/someValuesFrom :fibo-bp-iss-doc/OfferingDocumentTerms,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-iss/Prospectus
-    :fibo-bp-iss-doc/FinalProspectus],
+    :fibo-sec-sec-iss/Prospectus],
    :skos/definition
    #voc/lstr
     "The final Prospectus for an issue describes the Offer Issue, including facts about the issue itself such as closing dates, and known facts about the securities that will form part of that issue.@en"})
@@ -72,12 +71,11 @@
    :rdfs/label #voc/lstr "indenture@en",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/WrittenContract
                      :fibo-bp-iss-doc/SecuritiesIssuanceAgreement
-                     :fibo-bp-iss-doc/Indenture
-                     :fibo-sec-sec-iss/OfferingDocument
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom
                       :fibo-bp-iss-doc/OfferingDocumentTerms,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-sec-sec-iss/OfferingDocument],
    :skos/definition
    #voc/lstr
     "A written contract, also known as a \"Deed of Trust\", under which bonds and debentures are issued, setting forth maturity date, interest rate, redemption rights, call privileges and other terms. Under the rules of the Trust Indenture Act of 1939, the contract is executed by the issuer and a trustee who acts on behalf of the bondholders.@en"})
@@ -91,12 +89,11 @@
    :rdfs/label #voc/lstr "issuance trust agreement@en",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/WrittenContract
                      :fibo-bp-iss-doc/SecuritiesIssuanceAgreement
-                     :fibo-bp-iss-doc/IssuanceTrustAgreement
-                     :fibo-sec-sec-iss/OfferingDocument
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom
                       :fibo-bp-iss-doc/OfferingDocumentTerms,
-                      :rdf/type :owl/Restriction}]})
+                      :rdf/type :owl/Restriction}
+                     :fibo-sec-sec-iss/OfferingDocument]})
 
 (def OfferingDocumentTerms
   "terms included in an offering document that become legally binding at issue"
@@ -108,8 +105,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceDocuments/",
    :rdfs/label #voc/lstr "offering document terms@en",
-   :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractualElement
-                     :fibo-bp-iss-doc/OfferingDocumentTerms],
+   :rdfs/subClassOf :fibo-fnd-agr-ctr/ContractualElement,
    :skos/definition
    #voc/lstr
     "terms included in an offering document that become legally binding at issue@en"})
@@ -125,8 +121,7 @@
                       :owl/someValuesFrom
                       :fibo-bp-iss-doc/OfferingDocumentTerms,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-sec-iss/Prospectus
-                     :fibo-bp-iss-doc/PreliminaryProspectus],
+                     :fibo-sec-sec-iss/Prospectus],
    :skos/definition
    #voc/lstr
     "The draft prospectus for the issue, as determined prior to marketing the issue. Certain terms in the draft prospectus will be finalized later in the issuance process to become the actual Prospectus. Term origin:DTCC issuance Reviews@en"})
@@ -139,7 +134,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceDocuments/",
    :rdfs/label #voc/lstr "securities issuance agreement@en",
    :rdfs/subClassOf [:fibo-sec-sec-iss/OfferingDocument
-                     :fibo-bp-iss-doc/SecuritiesIssuanceAgreement
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom
                       :fibo-bp-iss-doc/OfferingDocumentTerms,

@@ -54,7 +54,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
    :rdfs/label "business objective",
    :rdfs/subClassOf [:fibo-fnd-gao-obj/Objective
-                     :fibo-fnd-gao-obj/BusinessObjective
                      {:owl/onProperty     :cmns-dt/hasDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type           :owl/Restriction}],
@@ -72,7 +71,6 @@
                       :owl/someValuesFrom :fibo-fnd-gao-obj/BusinessObjective,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-gao-obj/Strategy
-                     :fibo-fnd-gao-obj/BusinessStrategy
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-gao-obj/Objective,
                       :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
@@ -92,7 +90,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
    :rdfs/label "distribution strategy",
    :rdfs/subClassOf [:fibo-fnd-gao-obj/Strategy
-                     :fibo-fnd-gao-obj/DistributionStrategy
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-gao-obj/Objective,
                       :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
@@ -112,7 +109,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
    :rdfs/label "financial objective",
    :rdfs/subClassOf [:fibo-fnd-gao-obj/Objective
-                     :fibo-fnd-gao-obj/FinancialObjective
                      {:owl/onProperty     :cmns-dt/hasDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type           :owl/Restriction}],
@@ -142,7 +138,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
    :rdfs/label "investment objective",
    :rdfs/subClassOf [:fibo-fnd-gao-obj/FinancialObjective
-                     :fibo-fnd-gao-obj/InvestmentObjective
                      :fibo-fnd-gao-obj/Objective
                      {:owl/onProperty     :cmns-dt/hasDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
@@ -159,10 +154,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
    :rdfs/label "objective",
-   :rdfs/subClassOf [{:owl/onProperty     :cmns-dt/hasDatePeriod,
-                      :owl/someValuesFrom :cmns-dt/DatePeriod,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-gao-obj/Objective],
+   :rdfs/subClassOf {:owl/onProperty     :cmns-dt/hasDatePeriod,
+                     :owl/someValuesFrom :cmns-dt/DatePeriod,
+                     :rdf/type           :owl/Restriction},
    :skos/definition
    "short-term, quantitative, measurable result that a party seeks to attain in order to achieve its long-term goals"})
 
@@ -181,8 +175,7 @@
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-gao-obj/Goal,
                       :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-gao-obj/Program],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "coordinated set of activities designed to obtain benefits not available from managing them individually"})
 
@@ -194,8 +187,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
    :rdfs/label "sales strategy",
    :rdfs/subClassOf [:fibo-fnd-gao-obj/BusinessStrategy
-                     :fibo-fnd-gao-obj/SalesStrategy
-                     :fibo-fnd-gao-obj/Strategy
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-gao-obj/Objective,
                       :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
@@ -203,6 +194,7 @@
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/BusinessObjective,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-gao-obj/Strategy
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-gao-obj/Goal,
                       :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
@@ -227,8 +219,7 @@
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-gao-obj/Goal,
                       :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-gao-obj/Strategy],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "plan or method for achieving a specific goal, objective, solution or outcome"})
 

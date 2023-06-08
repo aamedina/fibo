@@ -96,8 +96,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "allocate primary identifier@en",
-   :rdfs/subClassOf [:fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/AllocatePrimaryIdentifier]})
+   :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def AllocateRatings
   "allocate ratings"
@@ -106,8 +105,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "allocate ratings@en",
-   :rdfs/subClassOf [:fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/AllocateRatings]})
+   :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def AssessPoolSuitabilityForIssuance
   "assess pool suitability for issuance"
@@ -120,8 +118,7 @@
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/InAssemblyMortgagePool,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/AssessPoolSuitabilityForIssuance]})
+                     :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def AssessRatings
   "assess ratings"
@@ -130,8 +127,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "assess ratings@en",
-   :rdfs/subClassOf [:fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/AssessRatings]})
+   :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def BrokerDealer
   "An entity which may become a primary investor in the issue. Term origin:MBS PoC Reviews"
@@ -140,11 +136,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "broker dealer@en",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/commitsTo,
-                      :owl/someValuesFrom
-                      :fibo-bp-iss-pmbs/GetCommitmentFromInvestors,
-                      :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-pmbs/BrokerDealer],
+   :rdfs/subClassOf {:owl/onProperty :fibo-bp-iss-pmbs/commitsTo,
+                     :owl/someValuesFrom
+                     :fibo-bp-iss-pmbs/GetCommitmentFromInvestors,
+                     :rdf/type :owl/Restriction},
    :skos/definition
    #voc/lstr
     "An entity which may become a primary investor in the issue. Term origin:MBS PoC Reviews@en"})
@@ -163,8 +158,7 @@
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/TranchedMBSDealTransaction,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/CloseDeal]})
+                     :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def DefineNotesParameters
   "the denom of the notes"
@@ -177,8 +171,7 @@
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/DraftTrancheNotesParameters,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/DefineNotesParameters],
+                     :fibo-bp-iss-prc/IssuanceProcessActivity],
    :skos/definition #voc/lstr "the denom of the notes@en"})
 
 (def DefinePoolCharacteristics
@@ -192,8 +185,7 @@
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/NotYetIssuedNonAgencyMortgagePool,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/DefinePoolCharacteristics]})
+                     :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def DraftTrancheNotesParameters
   "Draft of set of information defining the notes breakdown of one tranche. covers denominations and amounts that you can byu of the instrument in this tranche. Term origin:MBS PoC Reviews"
@@ -202,8 +194,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "draft tranche notes parameters@en",
-   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
-                     :fibo-bp-iss-pmbs/DraftTrancheNotesParameters],
+   :rdfs/subClassOf :fibo-fnd-arr-doc/Document,
    :skos/definition
    #voc/lstr
     "Draft of set of information defining the notes breakdown of one tranche. covers denominations and amounts that you can byu of the instrument in this tranche. Term origin:MBS PoC Reviews@en"})
@@ -215,8 +206,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "draft tranche structure@en",
-   :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
-                     :fibo-bp-iss-pmbs/DraftTrancheStructure],
+   :rdfs/subClassOf :fibo-fnd-arr-doc/Document,
    :skos/definition
    #voc/lstr
     "Draft of set of information defining the tranches in the tranched issue and how these relate to one another. Term origin:MBS PoC Reviews@en"})
@@ -228,8 +218,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "draft tranche termsheet@en",
-   :rdfs/subClassOf [:fibo-fnd-agr-ctr/TermSheet
-                     :fibo-bp-iss-pmbs/DraftTrancheTermsheet],
+   :rdfs/subClassOf :fibo-fnd-agr-ctr/TermSheet,
    :skos/definition
    #voc/lstr
     "Draft of set of information defining one tranche of a tranched issue. This will become the termsheet of an individual tranche within that issue. Term origin:MBS PoC Reviews@en"})
@@ -241,8 +230,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "draw up offering memorandum@en",
-   :rdfs/subClassOf [:fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/DrawUpOfferingMemorandum]})
+   :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def DrawUpTrancheTermsheets
   "draw up tranche termsheets"
@@ -255,8 +243,7 @@
                       :owl/someValuesFrom
                       :fibo-sec-dbt-mbs/NonAgencyMortgagePool,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/DrawUpTrancheTermsheets]})
+                     :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def FinalizePoolContent
   "finalize pool content"
@@ -269,8 +256,7 @@
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/InIssuanceNonAgencyMortgagePool,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/FinalizePoolContent]})
+                     :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def FinalizeProspectus
   "finalize prospectus"
@@ -283,8 +269,7 @@
                       :owl/someValuesFrom
                       :fibo-sec-dbt-mbs/TranchedMBSDealProspectus,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/FinalizeProspectus]})
+                     :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def GetCommitmentFromInvestors
   "get commitment from investors"
@@ -303,8 +288,7 @@
     {:owl/onProperty     :fibo-bp-iss-pmbs/commitmentBasedOn,
      :owl/someValuesFrom :fibo-bp-iss-pmbs/TranchedDraftProspectus,
      :rdf/type           :owl/Restriction}
-    :fibo-bp-iss-prc/IssuanceProcessActivity
-    :fibo-bp-iss-pmbs/GetCommitmentFromInvestors]})
+    :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def IdentifyConformingMortgage
   "identify conforming mortgage"
@@ -316,8 +300,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-bp-iss-pmbs/refersTo,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
                       :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/IdentifyConformingMortgage]})
+                     :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def IdentifyUnderwriter
   "identify underwriter"
@@ -330,8 +313,7 @@
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/PotentialTranchedIssueUnderwriter,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/IdentifyUnderwriter]})
+                     :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def InAssemblyMortgagePool
   "in assembly mortgage pool"
@@ -344,7 +326,6 @@
                       :owl/someValuesFrom :fibo-bp-iss-dbti/InAssembly,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-mbs/NonAgencyMortgagePool
-                     :fibo-bp-iss-pmbs/InAssemblyMortgagePool
                      {:owl/onProperty     :fibo-bp-iss-pmbs/hasTrustee,
                       :owl/someValuesFrom :fibo-bp-iss-pmbs/PoolTrustee,
                       :rdf/type           :owl/Restriction}]})
@@ -360,7 +341,6 @@
                       :owl/someValuesFrom :fibo-bp-iss-dbti/InIssuance,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-mbs/NonAgencyMortgagePool
-                     :fibo-bp-iss-pmbs/InIssuanceNonAgencyMortgagePool
                      {:owl/onProperty     :fibo-bp-iss-pmbs/hasTrustee,
                       :owl/someValuesFrom :fibo-bp-iss-pmbs/PoolTrustee,
                       :rdf/type           :owl/Restriction}]})
@@ -381,7 +361,6 @@
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-agr-ctr/TermSheet
                      :fibo-bp-iss-pmbs/TranchedMBSIssueProspectusPart
-                     :fibo-bp-iss-pmbs/IndividualTrancheDefinitions
                      :fibo-bp-iss-mbs/ProspectusPart],
    :skos/definition
    #voc/lstr
@@ -425,8 +404,7 @@
                      {:owl/onProperty     :fibo-bp-iss-pmbs/isIssueOf,
                       :owl/someValuesFrom :fibo-sec-dbt-mbs/TranchedMBSDeal,
                       :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/MakeSecuritiesAvailableInMarket],
+                     :fibo-bp-iss-prc/IssuanceProcessActivity],
    :skos/definition
    #voc/lstr
     "What happens here? e.g. notices / marketing (phone calls) Structured Finance: There's not really notices in the newspaper, it's a very small market and it's all based on relationships so there's no public notice. So you would get an email from the sales person at the bank who has just closed the deal and is now selling these (this bank is the broker/dealer who bought it?) There's not really much of a secondary market - the initial investors would often hold on to these. There is something around Bloomberg - you can go there and see what's available, if someone has a number of notes from a iven tranche, that they are willing to sell. So there's no transpoarency (!!) Sales would be OTC but less transparent e.g. if you look up a normal OTC stock, you would be able to see more of this information, than in these (non Agency) MBS issues and other SF. DOES THIS APPLY IN ALL MBS??.@en"})
@@ -442,8 +420,7 @@
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/TranchedOfferingMemorandum,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/MarketIssueToPrimaryInvestors]})
+                     :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def NonAgencyPoolCreationEnd
   "non agency pool creation end"
@@ -452,11 +429,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "non agency pool creation end@en",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/flow,
-                      :owl/someValuesFrom
-                      :fibo-bp-iss-pmbs/MBSSecuritizationStart,
-                      :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-pmbs/NonAgencyPoolCreationEnd]})
+   :rdfs/subClassOf {:owl/onProperty :fibo-bp-iss-pmbs/flow,
+                     :owl/someValuesFrom
+                     :fibo-bp-iss-pmbs/MBSSecuritizationStart,
+                     :rdf/type :owl/Restriction}})
 
 (def NonAgencyPoolCreationProcess
   "non agency pool creation process"
@@ -465,8 +441,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "non agency pool creation process@en",
-   :rdfs/subClassOf [:fibo-bp-iss-dbti/RetailAssetPoolCreationProcess
-                     :fibo-bp-iss-pmbs/NonAgencyPoolCreationProcess]})
+   :rdfs/subClassOf :fibo-bp-iss-dbti/RetailAssetPoolCreationProcess})
 
 (def NonAgencyPoolCreationStart
   "non agency pool creation start"
@@ -487,7 +462,6 @@
                       :owl/someValuesFrom :fibo-bp-iss-dbti/NotYetIssued,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-mbs/NonAgencyMortgagePool
-                     :fibo-bp-iss-pmbs/NotYetIssuedNonAgencyMortgagePool
                      {:owl/onProperty     :fibo-bp-iss-pmbs/hasTrustee,
                       :owl/someValuesFrom :fibo-bp-iss-pmbs/PoolTrustee,
                       :rdf/type           :owl/Restriction}]})
@@ -506,8 +480,7 @@
     {:owl/onProperty     :fibo-bp-iss-ambs/allocatesIdentifier,
      :owl/someValuesFrom :fibo-bp-iss-ambs/AllocatePrimaryIdentifier,
      :rdf/type           :owl/Restriction}
-    :fibo-bp-iss-prc/SecuritiesIssuanceProcessActor
-    :fibo-bp-iss-pmbs/NumberingAgency],
+    :fibo-bp-iss-prc/SecuritiesIssuanceProcessActor],
    :skos/definition
    #voc/lstr
     "The agency which will provide the primary securitiy identifier for the security. Term origin:MBS PoC Reviews@en"})
@@ -519,8 +492,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "PoolLifecycleStateSelection@en",
-   :rdfs/subClassOf [:fibo-fnd-arr-lif/LifecycleStage
-                     :fibo-bp-iss-pmbs/PoolLifecycleStateSelection]})
+   :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStage})
 
 (def PoolReadyForIssue
   "pool ready for issue"
@@ -545,8 +517,7 @@
                       :owl/someValuesFrom
                       :fibo-sec-dbt-mbs/TranchedMBSIssueUnderwriter,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole
-                     :fibo-bp-iss-pmbs/PoolTrustee]})
+                     :fibo-fnd-pty-pty/PartyInRole]})
 
 (def PotentialMBSInvestor
   "potential m b s investor"
@@ -570,8 +541,7 @@
     {:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
      :owl/someValuesFrom :fibo-bp-iss-pmbs/AssessPoolSuitabilityForIssuance,
      :rdf/type           :owl/Restriction}
-    :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcessActor
-    :fibo-bp-iss-pmbs/PotentialNonAgencyMBSIssuer],
+    :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcessActor],
    :skos/definition
    #voc/lstr
     "The entity which will become the issuing party for the Tranched MBS Issue. This entity is the principal actor in most of the activities involved in the issue. Term origin:MBS PoC Reviews@en"})
@@ -583,8 +553,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "potential tranched issue underwriter@en",
-   :rdfs/subClassOf [:fibo-bp-iss-prc/PotentialUnderwriter
-                     :fibo-bp-iss-pmbs/PotentialTranchedIssueUnderwriter],
+   :rdfs/subClassOf :fibo-bp-iss-prc/PotentialUnderwriter,
    :skos/definition
    #voc/lstr
     "The entity which will become the underwriter for the tranched MBS issue. Term origin:MBS PoC Reviews@en"})
@@ -614,8 +583,7 @@
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/InAssemblyMortgagePool,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/PurchaseMortgageIntoPool]})
+                     :fibo-bp-iss-prc/IssuanceProcessActivity]})
 
 (def RatingsAgency
   "ratings agency"
@@ -624,10 +592,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "ratings agency@en",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-bp-iss-pmbs/allocatesRatings,
-                      :owl/someValuesFrom :fibo-bp-iss-pmbs/AllocateRatings,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-bp-iss-pmbs/RatingsAgency]})
+   :rdfs/subClassOf {:owl/onProperty     :fibo-bp-iss-pmbs/allocatesRatings,
+                     :owl/someValuesFrom :fibo-bp-iss-pmbs/AllocateRatings,
+                     :rdf/type           :owl/Restriction}})
 
 (def RatingsSuitableForIssue
   "ratings suitable for issue"
@@ -648,8 +615,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "register security@en",
-   :rdfs/subClassOf [:fibo-bp-iss-prc/IssuanceProcessActivity
-                     :fibo-bp-iss-pmbs/RegisterSecurity],
+   :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity,
    :skos/definition
    #voc/lstr
     "After the deal is closed the security is formally registered with some registraton authority This is the \"official\" bit - there is not a separate \"Issue\" activity which is official ?????@en"})
@@ -661,8 +627,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "remittance report@en",
-   :rdfs/subClassOf [:fibo-fnd-arr-rep/Report
-                     :fibo-bp-iss-pmbs/RemittanceReport],
+   :rdfs/subClassOf :fibo-fnd-arr-rep/Report,
    :skos/definition
    #voc/lstr
     "Report containing a specific and limited set of information about the Deal. Term origin:MBS PoC Reviews@en"})
@@ -682,7 +647,6 @@
                       :owl/onProperty :fibo-bp-iss-pmbs/maximumAmount,
                       :rdf/type       :owl/Restriction}
                      :fibo-bp-iss-pmbs/TranchedMBSIssueProspectusPart
-                     :fibo-bp-iss-pmbs/TrancheNotesParameters
                      :fibo-bp-iss-mbs/ProspectusPart],
    :skos/definition
    #voc/lstr
@@ -696,7 +660,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "tranche structure and termsheet@en",
    :rdfs/subClassOf [:fibo-bp-iss-pmbs/TranchedMBSIssueProspectusPart
-                     :fibo-bp-iss-pmbs/TrancheStructureAndTermsheet
                      :fibo-bp-iss-mbs/ProspectusPart],
    :skos/definition
    [#voc/lstr
@@ -714,8 +677,7 @@
                       :owl/someValuesFrom
                       :fibo-sec-dbt-mbs/TranchedMBSDealProspectus,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-doc/PreliminaryProspectus
-                     :fibo-bp-iss-pmbs/TranchedDraftProspectus],
+                     :fibo-bp-iss-doc/PreliminaryProspectus],
    :skos/definition
    #voc/lstr
     "The draft prospectus for a tranched Mortgage Backed Securities issue, as determined by the issuing entity prior to marketing the issue. Certain terms in the draft prospectus will be finalized later in the issuance process to become the actual Prospectus. Term origin:MBS PoC Reviews@en"})
@@ -728,11 +690,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "tranched m b s deal settlement@en",
    :rdfs/subClassOf
-   [{:owl/onProperty :fibo-bp-iss-pmbs/decomposesInto,
-     :owl/someValuesFrom
-     :fibo-bp-iss-pmbs/TranchedMBSPrimaryDealTransactionSettlementProcess,
-     :rdf/type :owl/Restriction}
-    :fibo-bp-iss-pmbs/TranchedMBSDealSettlement]})
+   {:owl/onProperty :fibo-bp-iss-pmbs/decomposesInto,
+    :owl/someValuesFrom
+    :fibo-bp-iss-pmbs/TranchedMBSPrimaryDealTransactionSettlementProcess,
+    :rdf/type :owl/Restriction}})
 
 (def TranchedMBSDealTransaction
   "The deal transaction by which the MBS Issue is issued to primary investors. Term origin:MBS PoC Reviews"
@@ -749,8 +710,7 @@
     {:owl/onProperty     :fibo-bp-iss-pmbs/hasCounterparty,
      :owl/someValuesFrom :fibo-bp-iss-pmbs/PrimaryInvestor,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-txn-sec/FinancialPrimaryMarketTransaction
-    :fibo-bp-iss-pmbs/TranchedMBSDealTransaction],
+    :fibo-fnd-txn-sec/FinancialPrimaryMarketTransaction],
    :skos/definition
    #voc/lstr
     "The deal transaction by which the MBS Issue is issued to primary investors. Term origin:MBS PoC Reviews@en"})
@@ -762,8 +722,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "tranched m b s issue prospectus part@en",
-   :rdfs/subClassOf [:fibo-bp-iss-mbs/ProspectusPart
-                     :fibo-bp-iss-pmbs/TranchedMBSIssueProspectusPart],
+   :rdfs/subClassOf :fibo-bp-iss-mbs/ProspectusPart,
    :skos/definition
    #voc/lstr
     "A part or section of a prospectus for a tranched mortgage backed securities issue. Term origin:MBS PoC Reviews@en"})
@@ -777,9 +736,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr
                 "tranched m b s primary deal transaction settlement process@en",
-   :rdfs/subClassOf
-   [:fibo-fnd-txn-sec/SettlementProcess
-    :fibo-bp-iss-pmbs/TranchedMBSPrimaryDealTransactionSettlementProcess],
+   :rdfs/subClassOf :fibo-fnd-txn-sec/SettlementProcess,
    :skos/definition
    #voc/lstr
     "The process by which the primary deal transaction is settled. Term origin:MBS PoC Reviews@en"})
@@ -795,8 +752,7 @@
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/DraftTrancheTermsheet,
                       :rdf/type :owl/Restriction}
-                     :fibo-bp-iss-doc/PreliminaryProspectus
-                     :fibo-bp-iss-pmbs/TranchedMBSProspectusOutline],
+                     :fibo-bp-iss-doc/PreliminaryProspectus],
    :skos/definition
    #voc/lstr
     "An outline of the tranched prospectus, provind an intial representation of the possible tranches and their features. Term origin:MBS PoC Reviews@en"})
@@ -808,8 +764,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "tranched m b s securitization process@en",
-   :rdfs/subClassOf [:fibo-bp-iss-mbs/MBSSecuritizationProcess
-                     :fibo-bp-iss-pmbs/TranchedMBSSecuritizationProcess]})
+   :rdfs/subClassOf :fibo-bp-iss-mbs/MBSSecuritizationProcess})
 
 (def TranchedOfferingMemorandum
   "The offering memorandum for a tranched MBS issue, setting out basic information about a future issue, for the information of prospective investors and their agents."
@@ -829,8 +784,7 @@
      :owl/onClass    :fibo-bp-iss-pmbs/DraftTrancheNotesParameters,
      :owl/onProperty :fibo-bp-iss-pmbs/mayIncludeDetailsAbout,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-iss/OfferingDocument
-    :fibo-bp-iss-pmbs/TranchedOfferingMemorandum],
+    :fibo-sec-sec-iss/OfferingDocument],
    :skos/definition
    [#voc/lstr
      "The offering memorandum for a tranched MBS issue, setting out basic information about a future issue, for the information of prospective investors and their agents.@en"
@@ -937,7 +891,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "has content@en",
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheStructure,
-   :rdfs/subPropertyOf [:cmns-col/hasPart :fibo-bp-iss-pmbs/hasContent]})
+   :rdfs/subPropertyOf :cmns-col/hasPart})
 
 (def hasContent_1
   "has content"
@@ -948,7 +902,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :rdfs/label #voc/lstr "has content@en",
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheTermsheet,
-   :rdfs/subPropertyOf [:cmns-col/hasPart :fibo-bp-iss-pmbs/hasContent.1]})
+   :rdfs/subPropertyOf :cmns-col/hasPart})
 
 (def hasCounterparty
   "has counterparty"

@@ -107,8 +107,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label #voc/lstr "calculation agent@en",
-   :rdfs/subClassOf [:fibo-fbc-pas-fpas/ThirdPartyAgent
-                     :fibo-der-drc-bsc/CalculationAgent],
+   :rdfs/subClassOf :fibo-fbc-pas-fpas/ThirdPartyAgent,
    :skos/definition
    #voc/lstr
     "party that is responsible for determining the value of a derivative and in some cases, determines how much the parties owe one another@en"})
@@ -120,8 +119,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label "cashflow expression",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/Expression
-                     :fibo-der-drc-bsc/CashflowExpression],
+   :rdfs/subClassOf :fibo-fnd-utl-alx/Expression,
    :skos/definition
    "expression that specifies a calculation of a cash flow as a component of a cashflow formula"})
 
@@ -135,8 +133,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasExpression,
                       :owl/someValuesFrom :fibo-der-drc-bsc/CashflowExpression,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Formula
-                     :fibo-der-drc-bsc/CashflowFormula],
+                     :fibo-fnd-utl-alx/Formula],
    :skos/definition
    "formula for determining cashflows for a derivative instrument"})
 
@@ -149,7 +146,6 @@
    :rdfs/label "cashflow terms",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/DebtTerms
                      :fibo-der-drc-bsc/DerivativeTerms
-                     :fibo-der-drc-bsc/CashflowTerms
                      :fibo-fnd-agr-ctr/ContractualCommitment],
    :skos/definition
    "terms setting out a cashflow structure of payments committed to by one party to a contract",
@@ -172,7 +168,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label #voc/lstr "contract for difference@en",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/DerivativeInstrument
-                     :fibo-der-drc-bsc/ContractForDifference
+                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Underlier,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-der-drc-bsc/hasSettlementTerms,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
                       :rdf/type           :owl/Restriction}
@@ -181,9 +179,6 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-der-drc-bsc/hasValuationTerms,
                       :owl/someValuesFrom :fibo-der-drc-bsc/ValuationTerms,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Underlier,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -203,7 +198,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label #voc/lstr "credit derivative@en",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/DerivativeInstrument
-                     :fibo-der-drc-bsc/CreditDerivative
+                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Underlier,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-der-drc-bsc/hasSettlementTerms,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
                       :rdf/type           :owl/Restriction}
@@ -212,9 +209,6 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-der-drc-bsc/hasValuationTerms,
                       :owl/someValuesFrom :fibo-der-drc-bsc/ValuationTerms,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Underlier,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -240,7 +234,6 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-fpas/SettlementTerms
                      :fibo-der-drc-bsc/DerivativeTerms
-                     :fibo-der-drc-bsc/DerivativeSettlementTerms
                      :fibo-fnd-agr-ctr/ContractualCommitment],
    :skos/definition
    "settlement terms specifying additional details with respect to what is to be delivered when, to whom, under what conditions at the time of settlement"})
@@ -252,8 +245,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label "derivative terms",
-   :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractualCommitment
-                     :fibo-der-drc-bsc/DerivativeTerms],
+   :rdfs/subClassOf :fibo-fnd-agr-ctr/ContractualCommitment,
    :skos/definition
    "contractual terms specific to derivative contracts, including terms related to payments and delivery between parties"})
 
@@ -269,8 +261,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label "derivatives clearing organization",
-   :rdfs/subClassOf [:fibo-fbc-fct-fse/ClearingHouse
-                     :fibo-der-drc-bsc/DerivativesClearingOrganization],
+   :rdfs/subClassOf :fibo-fbc-fct-fse/ClearingHouse,
    :skos/definition
    "clearing house that enables parties to substitute the credit of the DCO for the credit of the parties"})
 
@@ -287,8 +278,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label "introducing broker",
    :rdfs/subClassOf [:fibo-fbc-pas-fpas/Broker
-                     :fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-der-drc-bsc/IntroducingBroker],
+                     :fibo-fbc-fct-fse/NonDepositoryInstitution],
    :skos/definition
    "broker that solicits or accepts orders for derivatives that are traded on or subject to the rules of an exchange"})
 
@@ -302,8 +292,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label "observable value",
    :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Fair_value"],
-   :rdfs/subClassOf [:fibo-fnd-acc-cur/MonetaryAmount
-                     :fibo-der-drc-bsc/ObservableValue],
+   :rdfs/subClassOf :fibo-fnd-acc-cur/MonetaryAmount,
    :skos/definition
    "value for something discernible and for which evidence can be obtained"})
 
@@ -317,8 +306,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label "over-the-counter instrument",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/MutualContractualAgreement
-                     :fibo-fbc-fi-fi/FinancialInstrument
-                     :fibo-der-drc-bsc/OverTheCounterInstrument],
+                     :fibo-fbc-fi-fi/FinancialInstrument],
    :skos/definition
    "financial instrument and bilateral contract that is not listed on an organized exchange"})
 
@@ -333,10 +321,9 @@
                       :owl/someValuesFrom :fibo-der-drc-bsc/CashflowFormula,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-bsc/CashflowTerms
-                     :fibo-der-drc-bsc/ParametricCashflowTerms
+                     :fibo-fbc-dae-dbt/DebtTerms
                      :fibo-fnd-agr-ctr/ContractualCommitment
-                     :fibo-der-drc-bsc/DerivativeTerms
-                     :fibo-fbc-dae-dbt/DebtTerms],
+                     :fibo-der-drc-bsc/DerivativeTerms],
    :skos/definition
    "terms for a set of cashflows defined according to a mathematical formula"})
 
@@ -349,8 +336,7 @@
    :rdfs/label "paying party",
    :rdfs/subClassOf [:fibo-fnd-pas-pas/Buyer
                      :fibo-fnd-pas-psch/Payer
-                     :fibo-fnd-agr-ctr/ContractParty
-                     :fibo-der-drc-bsc/PayingParty],
+                     :fibo-fnd-agr-ctr/ContractParty],
    :skos/definition
    "party responsible for making payments in a transaction specified in a contract"})
 
@@ -363,8 +349,7 @@
    :rdfs/label "receiving counterparty",
    :rdfs/subClassOf [:fibo-fnd-pas-pas/Seller
                      :fibo-fnd-pas-psch/Payee
-                     :fibo-fnd-agr-ctr/ContractParty
-                     :fibo-der-drc-bsc/ReceivingParty],
+                     :fibo-fnd-agr-ctr/ContractParty],
    :skos/definition
    "party that receives payments in a transaction specified in a contract"})
 
@@ -390,8 +375,7 @@
                       :owl/onClass    :fibo-der-drc-bsc/CalculationAgent,
                       :owl/onProperty :fibo-der-drc-bsc/hasCalculationAgent,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-asmt/ValueAssessment
-                     :fibo-der-drc-bsc/UnderlyingAssetValuation],
+                     :fibo-fnd-arr-asmt/ValueAssessment],
    :skos/definition
    #voc/lstr
     "assessment activity to estimate the value of an underlying asset of a derivative@en"})
@@ -411,7 +395,6 @@
                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-bsc/DerivativeTerms
-                     :fibo-der-drc-bsc/ValuationTerms
                      :fibo-fnd-agr-ctr/ContractualCommitment],
    :skos/definition
    "contract terms specific to valuation of the underlying asset(s)"})
@@ -424,8 +407,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label #voc/lstr "has additional costs@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-der-drc-bsc/hasAdditionalCosts],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    #voc/lstr
     "indicates costs, such as up front costs, brokerage fees and the like, that must be paid on delivery@en"})
@@ -438,8 +420,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label #voc/lstr "has calculation agent@en",
    :rdfs/range :fibo-der-drc-bsc/CalculationAgent,
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/isProvidedBy
-                        :fibo-der-drc-bsc/hasCalculationAgent],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
    :skos/definition
    "indicates the party that is responsible for determining the value of a derivative"})
 
@@ -452,9 +433,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label #voc/lstr "has first delivery date@en",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasStartDate
-                        :cmns-dt/hasExplicitDate
-                        :fibo-der-drc-bsc/hasFirstDeliveryDate],
+   :rdfs/subPropertyOf [:cmns-dt/hasStartDate :cmns-dt/hasExplicitDate],
    :skos/definition
    #voc/lstr
     "specifies the initial date in a range of dates by which the underlying asset (or some portion thereof) must be delivered in order for the terms of the contract to be fulfilled@en"})
@@ -468,9 +447,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label #voc/lstr "has first notice date@en",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasStartDate
-                        :cmns-dt/hasExplicitDate
-                        :fibo-der-drc-bsc/hasFirstNoticeDate],
+   :rdfs/subPropertyOf [:cmns-dt/hasStartDate :cmns-dt/hasExplicitDate],
    :skos/definition
    #voc/lstr
     "specifies the initial date on which a delivery notice can be issued@en"})
@@ -484,9 +461,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label #voc/lstr "has last delivery date@en",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :cmns-dt/hasEndDate
-                        :fibo-der-drc-bsc/hasLastDeliveryDate],
+   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate :cmns-dt/hasEndDate],
    :skos/definition
    #voc/lstr
     "specifies the final date in a range of dates by which the underlying asset (or some portion thereof) must be delivered in order for the terms of the contract to be fulfilled@en"})
@@ -500,9 +475,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label #voc/lstr "has last notice date@en",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :cmns-dt/hasEndDate
-                        :fibo-der-drc-bsc/hasLastNoticeDate],
+   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate :cmns-dt/hasEndDate],
    :skos/definition
    #voc/lstr
     "specifies the final date on which a delivery notice can be issued@en"})
@@ -516,8 +489,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label #voc/lstr "has settlement terms@en",
    :rdfs/range :fibo-fbc-pas-fpas/SettlementTerms,
-   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasContractualElement
-                        :fibo-der-drc-bsc/hasSettlementTerms],
+   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement,
    :skos/definition
    "relates a derivative to contractual terms specific to the settlement process"})
 
@@ -530,8 +502,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label #voc/lstr "has tick value@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-der-drc-bsc/hasTickValue],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    #voc/lstr
     "indicates the cash value of one tick, i.e., the minimum price change of the contract@en"})
@@ -552,8 +523,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label "has underlying asset price",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryPrice,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasPrice
-                        :fibo-der-drc-bsc/hasUnderlyingAssetPrice],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasPrice,
    :skos/definition
    "specifies a price for something on which the contract is based"})
 
@@ -566,7 +536,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
    :rdfs/label #voc/lstr "has valuation terms@en",
    :rdfs/range :fibo-der-drc-bsc/ValuationTerms,
-   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasContractualElement
-                        :fibo-der-drc-bsc/hasValuationTerms],
+   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement,
    :skos/definition
    "relates a derivative to contractual terms specific to valuation of the underlying asset(s)"})

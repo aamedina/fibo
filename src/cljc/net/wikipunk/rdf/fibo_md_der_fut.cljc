@@ -51,8 +51,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
    :rdfs/label #voc/lstr "exchange futures price@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
-                     :fibo-md-der-fut/ExchangeFuturesPrice]})
+   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice})
 
 (def FuturesClosingPrice
   "futures closing price"
@@ -62,7 +61,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
    :rdfs/label #voc/lstr "futures closing price@en",
    :rdfs/subClassOf [:fibo-md-der-fut/ExchangeFuturesPrice
-                     :fibo-md-der-fut/FuturesClosingPrice
                      :fibo-fbc-fi-ip/SecurityPrice]})
 
 (def FuturesDailySettlementPrice
@@ -72,8 +70,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
    :rdfs/label #voc/lstr "futures daily settlement price@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
-                     :fibo-md-der-fut/FuturesDailySettlementPrice],
+   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice,
    :skos/definition #voc/lstr "Review whether this exists@en"})
 
 (def FuturesGreek
@@ -83,8 +80,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
    :rdfs/label #voc/lstr "futures greek@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/PriceAnalytic
-                     :fibo-md-der-fut/FuturesGreek],
+   :rdfs/subClassOf :fibo-fbc-fi-ip/PriceAnalytic,
    :skos/definition
    #voc/lstr
     "quantity representing the sensitivity of the price of a future or futures to a change in underlying parameters on which the value depends@en"})
@@ -97,7 +93,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
    :rdfs/label #voc/lstr "futures theta@en",
    :rdfs/subClassOf [:fibo-md-der-fut/FuturesGreek
-                     :fibo-md-der-fut/FuturesTheta
                      :fibo-fbc-fi-ip/PriceAnalytic]})
 
 (def FuturesTradingAccountHolder
@@ -119,7 +114,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/",
    :rdfs/label #voc/lstr "futures vega@en",
    :rdfs/subClassOf [:fibo-md-der-fut/FuturesGreek
-                     :fibo-md-der-fut/FuturesVega
                      :fibo-fbc-fi-ip/PriceAnalytic]})
 
 (def InitialMargin
@@ -140,8 +134,7 @@
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-oac-own/Asset
-                     :fibo-md-der-fut/InitialMargin],
+                     :fibo-fnd-oac-own/Asset],
    :skos/definition
    #voc/lstr
     "money or securities put up as a good faith deposit assuring that a future contract will be fulfilled@en"})
@@ -160,8 +153,7 @@
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-oac-own/Asset
-                     :fibo-md-der-fut/MinimumMargin],
+                     :fibo-fnd-oac-own/Asset],
    :skos/definition
    #voc/lstr
     "The lowest amount an account can reach before needing to be replenished.@en"})

@@ -80,8 +80,7 @@
                      {:owl/allValuesFrom :fibo-fbc-dae-dbt/Collateral,
                       :owl/onProperty    :fibo-fnd-rel-rel/evaluates,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-arr-asmt/AssessmentActivity
-                     :fibo-loan-ln-ev/CollateralValuation],
+                     :fibo-fnd-arr-asmt/AssessmentActivity],
    :skos/definition
    #voc/lstr
     "assessment activity resulting in the valuation of real property as collateral@en"})
@@ -101,13 +100,12 @@
                       :owl/onProperty :fibo-loan-ln-ev/hasJudgementAmount,
                       :rdf/type       :owl/Restriction}
                      :fibo-loan-ln-ev/LegalProceeding
-                     :fibo-loan-ln-ev/CourtJudgment
                      :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :fibo-loan-ln-ev/isAgainst,
-                      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-loan-ln-ev/isAgainst,
+                      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -126,8 +124,7 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     :fibo-loan-ln-ev/LegalProceeding],
+                     :fibo-fnd-dt-oc/Occurrence],
    :skos/definition
    #voc/lstr
     "legal step or action taken at the direction of, or by the authority of, a court or agency@en"})
@@ -140,13 +137,12 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/",
    :rdfs/label #voc/lstr "loan default proceeding@en",
    :rdfs/subClassOf [:fibo-loan-ln-ev/LegalProceeding
-                     :fibo-loan-ln-ev/LoanDefaultProceeding
                      :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :fibo-loan-ln-ev/isAgainst,
-                      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-loan-ln-ev/isAgainst,
+                      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -160,7 +156,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/",
    :rdfs/label #voc/lstr "loan paid in full@en",
    :rdfs/subClassOf [:fibo-loan-ln-ev/LoanPhase
-                     :fibo-loan-ln-ev/LoanPaidInFull
                      :fibo-fnd-arr-lif/LifecycleStage]})
 
 (def LoanPhase
@@ -170,8 +165,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/",
    :rdfs/label #voc/lstr "loan phase@en",
-   :rdfs/subClassOf [:fibo-fnd-arr-lif/LifecycleStage
-                     :fibo-loan-ln-ev/LoanPhase]})
+   :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStage})
 
 (def Prepayment
   "prepayment"
@@ -180,7 +174,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/",
    :rdfs/label #voc/lstr "prepayment@en",
-   :rdfs/subClassOf [:fibo-fnd-pas-psch/Payment :fibo-loan-ln-ev/Prepayment]})
+   :rdfs/subClassOf :fibo-fnd-pas-psch/Payment})
 
 (def RepaymentPhase
   "repayment phase"
@@ -190,7 +184,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/",
    :rdfs/label #voc/lstr "repayment phase@en",
    :rdfs/subClassOf [:fibo-loan-ln-ev/LoanPhase
-                     :fibo-loan-ln-ev/RepaymentPhase
                      :fibo-fnd-arr-lif/LifecycleStage]})
 
 (def hasDefaultAmount
@@ -205,8 +198,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/",
    :rdfs/label #voc/lstr "has default amount@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-loan-ln-ev/hasDefaultAmount],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    #voc/lstr
     "amount before the application of sale proceeds and recoveries@en"})
@@ -220,8 +212,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/",
    :rdfs/label #voc/lstr "disbursement date@en",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :fibo-loan-ln-ev/hasDisbursementDate]})
+   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate})
 
 (def hasJudgementAmount
   "Undefined PoC SDM Notes: Total value of CCJs or equivalent recorded against the primary borrower that were satisfied / unsatsified (at time of underwriting ) is computed by selecting the satisfaction code value of interest and aggregating against all borrower CC Judgements &lt;/p&gt;"
@@ -232,8 +223,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/",
    :rdfs/label #voc/lstr "has judgement amount@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-loan-ln-ev/hasJudgementAmount],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    #voc/lstr
     "Undefined PoC SDM Notes: Total value of CCJs or equivalent recorded against the primary borrower that were satisfied / unsatsified (at time of underwriting ) is computed by selecting the satisfaction code value of interest and aggregating against all borrower CC Judgements &lt;/p&gt;@en"})

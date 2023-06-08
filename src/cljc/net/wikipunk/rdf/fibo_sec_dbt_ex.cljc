@@ -82,7 +82,6 @@
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-ex/ExerciseTerms
-                     :fibo-sec-dbt-ex/AmericanExerciseTerms
                      {:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}
@@ -115,17 +114,16 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
    :rdfs/label #voc/lstr "Bermudan exercise terms@en",
-   :rdfs/subClassOf [{:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
-                      :owl/onProperty :cmns-cxtdsg/uses,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-ex/ExerciseTerms
+                     {:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
+                      :owl/onProperty :cmns-cxtdsg/uses,
+                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseDate,
                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-ex/BermudanExerciseTerms
+                     :fibo-sec-dbt-ex/ExerciseTerms
                      {:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}
@@ -158,21 +156,20 @@
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-dbt-ex/BermudanExerciseTerms
-                     :fibo-sec-dbt-ex/CanaryExerciseTerms
-                     :fibo-sec-dbt-ex/ExerciseTerms
-                     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseDate,
-                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                     {:owl/onProperty     :cmns-cxtdsg/uses,
+                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}
                      {:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type :owl/Restriction}
+                     :fibo-fnd-agr-ctr/ContractualCommitment
+                     :fibo-sec-dbt-ex/ExerciseTerms
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-cxtdsg/uses,
-                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/ContractualCommitment],
+                     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseDate,
+                      :owl/someValuesFrom :cmns-dt/ExplicitDate,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "exercise terms that stipulate that an option may only be exercised on predetermined dates until the first step is reached, but not after that point@en"})
@@ -205,7 +202,6 @@
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-ex/ExerciseTerms
-                     :fibo-sec-dbt-ex/EuropeanExerciseTerms
                      {:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}
@@ -221,8 +217,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
    :rdfs/label #voc/lstr "exercise convention@en",
-   :rdfs/subClassOf [:fibo-fnd-dt-bd/Convention
-                     :fibo-sec-dbt-ex/ExerciseConvention],
+   :rdfs/subClassOf :fibo-fnd-dt-bd/Convention,
    :skos/definition
    #voc/lstr
     "convention that determines when the holder or future holder of an option can implement the rights defined in the option@en"})
@@ -237,8 +232,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/ContractualCommitment
-                     :fibo-sec-dbt-ex/ExerciseTerms],
+                     :fibo-fnd-agr-ctr/ContractualCommitment],
    :skos/definition
    #voc/lstr
     "contract terms specific to the conditions, conventions and other stipulations related to the exercise of an option or entitlement@en"})
@@ -251,8 +245,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
    :rdfs/label #voc/lstr "has exercise date@en",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :fibo-sec-dbt-ex/hasExerciseDate],
+   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
    :skos/definition
    #voc/lstr
     "indicates a date on which an option may be exercised as specified in the terms of the contract@en"})
@@ -266,8 +259,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
    :rdfs/label #voc/lstr "has exercise terms@en",
    :rdfs/range :fibo-sec-dbt-ex/ExerciseTerms,
-   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasContractualElement
-                        :fibo-sec-dbt-ex/hasExerciseTerms],
+   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement,
    :skos/definition
    #voc/lstr
     "links a derivative, such as an option or entitlement, to any exercise terms that are specified therein@en"})

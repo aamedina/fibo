@@ -1,6 +1,18 @@
 (ns net.wikipunk.fibo.boot
   {:rdf/type :jsonld/Context})
 
+(comment
+  (require '[clojure.datafy :refer [datafy]])
+  (->> (datafy :fibo-spec/FIBOSpecification)
+       (:dcterms/hasPart)
+       (map datafy)
+       (map :dcterms/hasPart)
+       (mapcat #(if (sequential? %) % [%]))
+       (map datafy)
+       (map :dcterms/hasPart)
+       (mapcat #(if (sequential? %) % [%]))
+       (sort)))
+
 (def spec
   {:dcat/downloadURL "https://raw.githubusercontent.com/edmcouncil/fibo/master/MetadataFIBO.rdf"
    :rdfa/prefix      "fibo-spec"
@@ -972,11 +984,16 @@
    :rdfa/prefix "fibo-der-drc-opt",
    :rdf/type :rdfa/PrefixMapping})
 
+(def fibo-der-drc-str
+  {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/StructuredInstruments/"
+   :rdfa/prefix "fibo-der-drc-str",
+   :rdf/type :rdfa/PrefixMapping})
+
 (def fibo-der-rtd-irswp
   {:dcat/downloadURL
-     "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
+   "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
+   "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfa/prefix "fibo-der-rtd-irswp",
    :rdf/type :rdfa/PrefixMapping})
 
@@ -1014,9 +1031,9 @@
 
 (def fibo-fbc-dae-gty
   {:dcat/downloadURL
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
    :rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
    :rdfa/prefix "fibo-fbc-dae-gty",
    :rdf/type :rdfa/PrefixMapping})
 
@@ -1060,11 +1077,16 @@
    :rdfa/prefix "fibo-fbc-fct-usmkt",
    :rdf/type :rdfa/PrefixMapping})
 
+(def fibo-fbc-fct-usnic
+  {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"
+   :rdfa/prefix "fibo-fbc-fct-usnic",
+   :rdf/type :rdfa/PrefixMapping})
+
 (def fibo-fbc-fct-usjrga
   {:dcat/downloadURL
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :rdfa/prefix "fibo-fbc-fct-usjrga",
    :rdf/type :rdfa/PrefixMapping})
 
@@ -2016,3 +2038,175 @@
      "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
    :rdfa/prefix "fibo-sec-sec-bsk",
    :rdf/type :rdfa/PrefixMapping})
+
+(def sm
+  {:rdfa/uri    "http://www.omg.org/techprocess/ab/SpecificationMetadata/"
+   :rdfa/prefix "sm"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def cmns-av
+  {:rdfa/prefix "cmns-av"
+   :rdfa/uri    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def cmns-col
+  {:rdfa/prefix "cmns-col"
+   :rdfa/uri    "https://www.omg.org/spec/Commons/Collections/"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def cmns-cls
+  {:rdfa/prefix "cmns-cls"
+   :rdfa/uri    "https://www.omg.org/spec/Commons/Classifiers/"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def cmns-cxtdsg
+  {:rdfa/prefix "cmns-cxtdsg"
+   :rdfa/uri    "https://www.omg.org/spec/Commons/ContextualDesignators/"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def cmns-cxtid
+  {:rdfa/prefix "cmns-cxtid"
+   :rdfa/uri    "https://www.omg.org/spec/Commons/ContextualIdentifiers/"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def cmns-dsg
+  {:rdfa/prefix "cmns-dsg"
+   :rdfa/uri    "https://www.omg.org/spec/Commons/Designators/"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def cmns-cds
+  {:rdfa/prefix "cmns-cds"
+   :rdfa/uri    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def cmns-dt
+  {:rdfa/prefix "cmns-dt"
+   :rdfa/uri    "https://www.omg.org/spec/Commons/DatesAndTimes/"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def cmns-txt
+  {:rdfa/prefix "cmns-txt"
+   :rdfa/uri    "https://www.omg.org/spec/Commons/TextDatatype/"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def cmns-id
+  {:rdfa/prefix "cmns-id"
+   :rdfa/uri    "https://www.omg.org/spec/Commons/Identifiers/"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def lcc-cr
+  {:rdfa/uri    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
+   :rdfa/prefix "lcc-cr"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def lcc-lr
+  {:rdfa/uri    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
+   :rdfa/prefix "lcc-lr"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def lcc-m49
+  {:rdfa/uri    "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"
+   :rdfa/prefix "lcc-m49"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def lcc-3166-1
+  {:rdfa/uri    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
+   :rdfa/prefix "lcc-3166-1"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def lcc-3166-2
+  {:rdfa/uri    "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"
+   :rdfa/prefix "lcc-3166-2"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def lcc-639-1
+  {:rdfa/uri    "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"
+   :rdfa/prefix "lcc-639-1"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def lcc-639-2
+  {:rdfa/uri    "https://www.omg.org/spec/LCC/Languages/ISO639-2-LanguageCodes/"
+   :rdfa/prefix "lcc-639-2"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def lcc-3166-2-ca
+  {:dcat/downloadURL "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA.rdf"
+   :rdfa/prefix      "lcc-3166-2-ca"
+   :rdfa/uri         "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"
+   :rdf/type         :rdfa/PrefixMapping})
+
+(def lcc-3166-2-gb
+  {:dcat/downloadURL "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB.rdf"
+   :rdfa/prefix      "lcc-3166-2-gb"
+   :rdfa/uri         "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"
+   :rdf/type         :rdfa/PrefixMapping})
+
+(def lcc-3166-2-mx
+  {:dcat/downloadURL "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX.rdf"
+   :rdfa/prefix      "lcc-3166-2-mx"
+   :rdfa/uri         "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"
+   :rdf/type         :rdfa/PrefixMapping})
+
+(def lcc-3166-2-us
+  {:dcat/downloadURL "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US.rdf"
+   :rdfa/prefix      "lcc-3166-2-us"
+   :rdfa/uri         "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
+   :rdf/type         :rdfa/PrefixMapping})
+
+(def lcc-3166-2-ch
+  {:dcat/downloadURL "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CH.rdf"
+   :rdfa/prefix      "lcc-3166-2-ch"
+   :rdfa/uri         "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CH/"
+   :rdf/type         :rdfa/PrefixMapping})
+
+(def gleif-base
+  {:dcat/downloadURL #_"https://lov.linkeddata.es/dataset/lov/vocabs/gleif-base/versions/2019-07-11.n3"
+   "https://www.gleif.org/ontology/v1.0/Base/ontology.ttl"
+   :rdfa/uri "https://www.gleif.org/ontology/Base/"
+   :rdfa/prefix "gleif-base"
+   :rdf/type :rdfa/PrefixMapping})
+
+(def gleif-L1
+  {:dcat/downloadURL #_"https://lov.linkeddata.es/dataset/lov/vocabs/gleif-L1/versions/2019-02-01.n3"
+   "https://www.gleif.org/ontology/v1.0/L1/ontology.ttl"
+   :rdfa/uri "https://www.gleif.org/ontology/L1/"
+   :rdfa/prefix "gleif-L1"
+   :rdf/type :rdfa/PrefixMapping})
+
+(def gleif-L2
+  {:dcat/downloadURL #_"https://lov.linkeddata.es/dataset/lov/vocabs/gleif-L2/versions/2019-02-01.n3"
+   "https://www.gleif.org/ontology/v1.0/L2/ontology.ttl"
+   :rdfa/uri "https://www.gleif.org/ontology/L2/"
+   :rdfa/prefix "gleif-L2"
+   :rdf/type :rdfa/PrefixMapping})
+
+(def EntityLegalForm
+  {:dcat/downloadURL #_"https://lov.linkeddata.es/dataset/lov/vocabs/gleif-elf/versions/2019-02-01.n3"
+   "https://www.gleif.org/ontology/v1.0/EntityLegalForm/ontology.ttl"
+   :rdfa/uri "https://www.gleif.org/ontology/EntityLegalForm/"
+   :rdfa/prefix "gleif-elf"
+   :rdf/type :rdfa/PrefixMapping})
+
+(def RegistrationAuthority
+  {:dcat/downloadURL #_"https://lov.linkeddata.es/dataset/lov/vocabs/gleif-ra/versions/2019-02-01.n3"
+   "https://www.gleif.org/ontology/v1.0/RegistrationAuthority/ontology.ttl"
+   :rdfa/uri "https://www.gleif.org/ontology/RegistrationAuthority/"
+   :rdfa/prefix "gleif-ra"
+   :rdf/type :rdfa/PrefixMapping})
+
+(def ReportingException
+  {:dcat/downloadURL #_"https://lov.linkeddata.es/dataset/lov/vocabs/gleif-repex/versions/2019-02-01.n3"
+   "https://www.gleif.org/ontology/v1.0/ReportingException/ontology.ttl"
+   :rdfa/uri "https://www.gleif.org/ontology/ReportingException/"
+   :rdfa/prefix "gleif-repex"
+   :rdf/type :rdfa/PrefixMapping})
+
+(def gleif-L1-data
+  {:rdfa/prefix "gleif-L1-data"
+   :rdfa/uri    "https://rdf.gleif.org/L1/"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def gleif-L2-data
+  {:rdfa/prefix "gleif-L2-data"
+   :rdfa/uri    "https://rdf.gleif.org/L2/"
+   :rdf/type    :rdfa/PrefixMapping})

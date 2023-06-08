@@ -77,8 +77,7 @@
                                            :fibo-ind-mkt-bas/BasketOfEquities,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/DispersionLeg
-                     :fibo-der-sbd-eqs/DispersionSwapIndexConstituentsLeg],
+                     :fibo-der-drc-swp/DispersionLeg],
    :skos/definition
    #voc/lstr
     "dispersion leg whose underlying is a defined set of constituents of a given equity index@en"})
@@ -96,8 +95,7 @@
                           :owl/someValuesFrom :fibo-ind-mkt-bas/ReferenceIndex,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-der-drc-swp/DispersionLeg
-    :fibo-der-sbd-eqs/DispersionSwapIndexLeg],
+    :fibo-der-drc-swp/DispersionLeg],
    :skos/definition #voc/lstr
                      "dispersion leg whose underlying is an equity index@en"})
 
@@ -122,8 +120,7 @@
                       :owl/onClass    :fibo-der-sbd-eqs/SpecialDividendLegTerms,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-drc-swp/SimpleReturnLeg
-                     :fibo-der-sbd-eqs/DividendLeg],
+                     :fibo-der-drc-swp/SimpleReturnLeg],
    :skos/definition #voc/lstr "floating leg of a dividend swap@en"})
 
 (def DividendSwap
@@ -143,7 +140,6 @@
                       :owl/someValuesFrom :fibo-der-sbd-eqs/DividendLeg,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-sbd-eqs/EquitySwap
-                     :fibo-der-sbd-eqs/DividendSwap
                      :fibo-der-drc-swp/Swap
                      :fibo-der-sbd-sbd/EquityDerivative],
    :skos/definition
@@ -162,7 +158,6 @@
    :rdfs/label #voc/lstr "equity correlation swap@en",
    :rdfs/subClassOf [:fibo-der-sbd-eqs/EquitySwap
                      :fibo-der-drc-swp/CorrelationSwap
-                     :fibo-der-sbd-eqs/EquityCorrelationSwap
                      :fibo-der-drc-swp/Swap
                      :fibo-der-sbd-sbd/EquityDerivative],
    :skos/definition
@@ -187,7 +182,6 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-der-sbd-eqs/EquitySwap
                      :fibo-der-drc-swp/ReturnSwap
-                     :fibo-der-sbd-eqs/EquityPriceReturnSwap
                      :fibo-der-drc-swp/Swap
                      :fibo-der-sbd-sbd/EquityDerivative],
    :skos/definition
@@ -204,8 +198,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-der-sbd-sbd/EquityObservable,
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-swp/ReturnLeg
-                     :fibo-der-sbd-eqs/EquityReturnLeg],
+                     :fibo-der-drc-swp/ReturnLeg],
    :skos/definition
    #voc/lstr "return leg whose income is based on an equity observable@en"})
 
@@ -221,9 +214,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/EquitySwaps/",
    :rdfs/label #voc/lstr "equity swap@en",
-   :rdfs/subClassOf [:fibo-der-sbd-sbd/EquityDerivative
-                     :fibo-der-drc-swp/Swap
-                     :fibo-der-sbd-eqs/EquitySwap],
+   :rdfs/subClassOf [:fibo-der-sbd-sbd/EquityDerivative :fibo-der-drc-swp/Swap],
    :skos/definition
    #voc/lstr
     "swap whose payments are linked to the change in value of an underlying equity (e.g. shares, basket of equities or index) or its cashflow@en"})
@@ -246,7 +237,6 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-der-sbd-eqs/EquitySwap
                      :fibo-der-drc-swp/TotalReturnSwap
-                     :fibo-der-sbd-eqs/EquityTotalReturnSwap
                      :fibo-der-drc-swp/Swap
                      :fibo-der-sbd-sbd/EquityDerivative],
    :skos/definition
@@ -268,7 +258,6 @@
    :rdfs/label #voc/lstr "equity variance swap@en",
    :rdfs/subClassOf [:fibo-der-sbd-eqs/EquitySwap
                      :fibo-der-drc-swp/DispersionSwap
-                     :fibo-der-sbd-eqs/EquityVarianceSwap
                      :fibo-der-drc-swp/Swap
                      :fibo-der-sbd-sbd/EquityDerivative],
    :skos/definition
@@ -290,7 +279,6 @@
    :rdfs/label #voc/lstr "equity volatility swap@en",
    :rdfs/subClassOf [:fibo-der-sbd-eqs/EquitySwap
                      :fibo-der-drc-swp/DispersionSwap
-                     :fibo-der-sbd-eqs/EquityVolatilitySwap
                      :fibo-der-drc-swp/Swap
                      :fibo-der-sbd-sbd/EquityDerivative],
    :skos/definition
@@ -304,8 +292,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/EquitySwaps/",
    :rdfs/label #voc/lstr "qualifying dividend period@en",
-   :rdfs/subClassOf [:cmns-dt/ExplicitDatePeriod
-                     :fibo-der-sbd-eqs/QualifyingDividendPeriod],
+   :rdfs/subClassOf :cmns-dt/ExplicitDatePeriod,
    :skos/definition
    #voc/lstr
     "date period over which the sum of all qualifying dividends paid by the relevant issuers as identified in the swap terms is calculated@en"})
@@ -317,8 +304,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/EquitySwaps/",
    :rdfs/label #voc/lstr "special dividend leg terms@en",
-   :rdfs/subClassOf [:fibo-der-drc-bsc/CashflowTerms
-                     :fibo-der-sbd-eqs/SpecialDividendLegTerms],
+   :rdfs/subClassOf :fibo-der-drc-bsc/CashflowTerms,
    :skos/definition
    #voc/lstr
     "terms that are invoked if special dividend and memorial dividends are applicable@en"})

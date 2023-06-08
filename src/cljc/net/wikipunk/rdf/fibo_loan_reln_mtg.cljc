@@ -107,7 +107,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "amortization type",
-   :rdfs/subClassOf [:cmns-cls/Classifier :fibo-loan-reln-mtg/AmortizationType],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition "classifier of amortization algorithms"})
 
 (def AmortizationType-adjustableRate
@@ -213,8 +213,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "automated underwriting system",
-   :rdfs/subClassOf [:fibo-fnd-aap-agt/AutomatedSystem
-                     :fibo-loan-reln-mtg/AutomatedUnderwritingSystem],
+   :rdfs/subClassOf :fibo-fnd-aap-agt/AutomatedSystem,
    :skos/definition
    "software system that collects the information necessary to approve a loan application and supports a mortgage lender's analysis of a new loan application"})
 
@@ -277,7 +276,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "cash-out status",
-   :rdfs/subClassOf [:cmns-cls/Classifier :fibo-loan-reln-mtg/CashOutStatus],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "classifier indicating the extent to which funds are released to the borrower on a new loan origination that refinances an existing loan"})
 
@@ -329,7 +328,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "charge category",
-   :rdfs/subClassOf [:cmns-cls/Classifier :fibo-loan-reln-mtg/ChargeCategory],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    ["classifier indicating what a particular fee or other expense is for"
     "Examples include closing costs, interest, taxes, and other service-related fees."]})
@@ -402,7 +401,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "dwelling capacity",
-   :rdfs/subClassOf [:cmns-cls/Classifier :fibo-loan-reln-mtg/DwellingCapacity],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "classifier indicating how many dwellings some property has"})
 
@@ -438,12 +437,10 @@
    :rdfs/label #voc/lstr "government-sponsored loan@en",
    :rdfs/subClassOf
    [:fibo-loan-reln-mtg/Mortgage
-    :fibo-loan-reln-mtg/GovernmentSponsoredLoan
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-ln-ln/Servicer,
-     :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
+     :owl/onClass    :fibo-loan-reln-mtg/UniversalLoanIdentifier,
+     :owl/onProperty :cmns-id/isIdentifiedBy,
      :rdf/type       :owl/Restriction}
-    :fibo-loan-ln-ln/ClosedEndCredit
     {:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatorPerson,
      :owl/someValuesFrom {:owl/intersectionOf
                           [:fibo-be-le-lp/LegallyCompetentNaturalPerson
@@ -457,16 +454,18 @@
      :owl/onProperty :fibo-loan-reln-mtg/assumes,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-ln-ln/Servicer,
+     :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-reln-mtg/MortgageIndemnityGuarantor,
      :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-reln-mtg/UniversalLoanIdentifier,
-     :owl/onProperty :cmns-id/isIdentifiedBy,
-     :rdf/type       :owl/Restriction}
+    :fibo-loan-ln-ln/ClosedEndCredit
     {:owl/onProperty     :fibo-loan-reln-mtg/hasClosingDate,
      :owl/someValuesFrom :cmns-dt/Date,
      :rdf/type           :owl/Restriction}
+    :fibo-loan-ln-ln/CollateralizedLoan
     {:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatingServiceProvider,
      :owl/someValuesFrom {:owl/intersectionOf
                           [:fibo-fbc-pas-fpas/FinancialServiceProvider
@@ -474,8 +473,7 @@
                             :owl/someValuesFrom :fibo-loan-reln-mtg/NMLSR-ID,
                             :rdf/type           :owl/Restriction}],
                           :rdf/type :owl/Class},
-     :rdf/type           :owl/Restriction}
-    :fibo-loan-ln-ln/CollateralizedLoan]})
+     :rdf/type           :owl/Restriction}]})
 
 (def ManufacturedHomeLegalClassification
   "category indicating whether the covered loan is secured by a manufactured home only or with land as well"
@@ -485,8 +483,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "manufactured home legal classification",
-   :rdfs/subClassOf [:cmns-cls/Classifier
-                     :fibo-loan-reln-mtg/ManufacturedHomeLegalClassification],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "category indicating whether the covered loan is secured by a manufactured home only or with land as well"})
 
@@ -547,6 +544,10 @@
    :rdfs/label "mortgage",
    :rdfs/subClassOf
    [{:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-reln-mtg/MortgageIndemnityGuarantor,
+     :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-reln-mtg/UniversalLoanIdentifier,
      :owl/onProperty :cmns-id/isIdentifiedBy,
      :rdf/type       :owl/Restriction}
@@ -559,9 +560,12 @@
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
     :fibo-loan-ln-ln/CollateralizedLoan
+    {:owl/onProperty     :fibo-loan-reln-mtg/hasClosingDate,
+     :owl/someValuesFrom :cmns-dt/Date,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-reln-mtg/MortgageIndemnityGuarantor,
-     :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
+     :owl/onClass    :fibo-loan-ln-ln/Servicer,
+     :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatorPerson,
      :owl/someValuesFrom {:owl/intersectionOf
@@ -571,19 +575,11 @@
                             :rdf/type           :owl/Restriction}],
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-loan-reln-mtg/hasClosingDate,
-     :owl/someValuesFrom :cmns-dt/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-ln-ln/Servicer,
-     :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
-     :rdf/type       :owl/Restriction}
     :fibo-loan-ln-ln/ClosedEndCredit
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-reln-mtg/Mortgage,
      :owl/onProperty :fibo-loan-reln-mtg/assumes,
-     :rdf/type       :owl/Restriction}
-    :fibo-loan-reln-mtg/Mortgage],
+     :rdf/type       :owl/Restriction}],
    :skos/definition "a loan contract that is secured by real property",
    :skos/editorialNote
    #voc/lstr
@@ -603,8 +599,7 @@
     {:owl/onProperty     :fibo-fbc-dae-gty/isGuaranteedBy,
      :owl/someValuesFrom :fibo-loan-reln-mtg/MortgageIndemnityGuarantor,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-dae-gty/InsuranceBackedGuaranty
-    :fibo-loan-reln-mtg/MortgageIndemnityGuarantee],
+    :fibo-fbc-dae-gty/InsuranceBackedGuaranty],
    :skos/definition
    #voc/lstr
     "insurance-backed guarantee that protects lenders if the mortgage repayments cease for some reason, perhaps due to death or a homeowner being made redundant at work@en",
@@ -622,9 +617,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label #voc/lstr "mortgage indemnity guarantor@en",
-   :rdfs/subClassOf [:fibo-fbc-dae-gty/Insurer
-                     :fibo-fbc-dae-gty/Guarantor
-                     :fibo-loan-reln-mtg/MortgageIndemnityGuarantor],
+   :rdfs/subClassOf [:fibo-fbc-dae-gty/Insurer :fibo-fbc-dae-gty/Guarantor],
    :skos/definition
    #voc/lstr
     "guarantor and insurer that provides mortgage insurance in the form of a mortgage indemnity guarantee (MIG)@en"})
@@ -640,8 +633,7 @@
                       :owl/someValuesFrom
                       :fibo-loan-reln-mtg/MortgageIndemnityGuarantee,
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-dae-gty/InsurancePolicy
-                     :fibo-loan-reln-mtg/MortgageIndemnityInsurancePolicy],
+                     :fibo-fbc-dae-gty/InsurancePolicy],
    :skos/definition
    #voc/lstr "insurance policy providing the mortgage indemnity guarantee@en"})
 
@@ -652,8 +644,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "mortgage loan purpose",
-   :rdfs/subClassOf [:cmns-cls/Classifier
-                     :fibo-loan-reln-mtg/MortgageLoanPurpose],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "the purpose for which mortgage loan proceeds will be used, such as real property purchase, dwelling construction, or loan refinancing"})
 
@@ -727,8 +718,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "Nationwide Mortgage Licensing System and Registry Identifier",
-   :rdfs/subClassOf [:fibo-fnd-law-lcap/LicenseIdentifier
-                     :fibo-loan-reln-mtg/NMLSR-ID],
+   :rdfs/subClassOf :fibo-fnd-law-lcap/LicenseIdentifier,
    :skos/definition
    "the number permanently assigned by the Nationwide Mortgage Licensing System and Registry (NMLS) for each company, branch, and individual that maintains a single account on NMLS."})
 
@@ -747,8 +737,7 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-asmt/AssessmentActivity
-                     :fibo-loan-reln-mtg/PropertyInspection],
+                     :fibo-fnd-arr-asmt/AssessmentActivity],
    :skos/definition
    "assessment activity that involves analyzing one or more aspects of a real property for independent assessment of status or deficiency"})
 
@@ -759,7 +748,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "property usage",
-   :rdfs/subClassOf [:cmns-cls/Classifier :fibo-loan-reln-mtg/PropertyUsage],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "a category indicating the manner in which the borrower intends to utilize the property"})
 
@@ -811,15 +800,14 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-asmt/hasAppraiser,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraiser,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-loan-reln-mtg/PropertyInspection,
-                      :owl/onProperty :fibo-fnd-dt-oc/hasInput,
-                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-arr-asmt/ValueAssessment
                      {:owl/onProperty     :fibo-loan-reln-mtg/hasAppraisedValue,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-asmt/ValueAssessment
-                     :fibo-loan-reln-mtg/RealPropertyAppraisal],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-loan-reln-mtg/PropertyInspection,
+                      :owl/onProperty :fibo-fnd-dt-oc/hasInput,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "value assessment that estimates the amount of money a real estate property is worth",
    :skos/editorialNote
@@ -841,12 +829,10 @@
      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
      :rdf/type           :owl/Restriction}
     :fibo-loan-reln-mtg/Mortgage
-    :fibo-loan-reln-mtg/ReverseMortgage
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-ln-ln/Servicer,
-     :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
+     :owl/onClass    :fibo-loan-reln-mtg/UniversalLoanIdentifier,
+     :owl/onProperty :cmns-id/isIdentifiedBy,
      :rdf/type       :owl/Restriction}
-    :fibo-loan-ln-ln/ClosedEndCredit
     {:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatorPerson,
      :owl/someValuesFrom {:owl/intersectionOf
                           [:fibo-be-le-lp/LegallyCompetentNaturalPerson
@@ -860,16 +846,18 @@
      :owl/onProperty :fibo-loan-reln-mtg/assumes,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-loan-ln-ln/Servicer,
+     :owl/onProperty :fibo-loan-ln-ln/isServicedBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-loan-reln-mtg/MortgageIndemnityGuarantor,
      :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-loan-reln-mtg/UniversalLoanIdentifier,
-     :owl/onProperty :cmns-id/isIdentifiedBy,
-     :rdf/type       :owl/Restriction}
+    :fibo-loan-ln-ln/ClosedEndCredit
     {:owl/onProperty     :fibo-loan-reln-mtg/hasClosingDate,
      :owl/someValuesFrom :cmns-dt/Date,
      :rdf/type           :owl/Restriction}
+    :fibo-loan-ln-ln/CollateralizedLoan
     {:owl/onProperty     :fibo-loan-reln-mtg/hasOriginatingServiceProvider,
      :owl/someValuesFrom {:owl/intersectionOf
                           [:fibo-fbc-pas-fpas/FinancialServiceProvider
@@ -877,8 +865,7 @@
                             :owl/someValuesFrom :fibo-loan-reln-mtg/NMLSR-ID,
                             :rdf/type           :owl/Restriction}],
                           :rdf/type :owl/Class},
-     :rdf/type           :owl/Restriction}
-    :fibo-loan-ln-ln/CollateralizedLoan],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "mortgage contract that pays out money to the borrower against a set principal limit that is based on the value of existing equity in the underlying collateral."})
 
@@ -899,8 +886,7 @@
                       :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
-                     :fibo-loan-reln-mtg/UniversalLoanIdentifier],
+                     :fibo-fbc-fi-fi/FinancialInstrumentIdentifier],
    :skos/definition
    "a unique identifier given to unequivocally identify a specific mortgage loan."})
 
@@ -921,8 +907,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "has appraised value",
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-loan-reln-mtg/hasAppraisedValue],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    "relates to a monetary amount that is the product of a valuation event"})
 
@@ -933,8 +918,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "has closing date",
-   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasEffectiveDate
-                        :fibo-loan-reln-mtg/hasClosingDate],
+   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasEffectiveDate,
    :skos/definition
    "relates, e.g. a loan contract to the date on which the contract is consummated, officially creating the obligations therein"})
 
@@ -947,7 +931,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "has number of affordable dwelling units",
    :rdfs/subPropertyOf [:fibo-loan-reln-mtg/hasNumberOfDwellingUnits
-                        :fibo-loan-reln-mtg/hasNumberOfAffordableDwellingUnits
                         :fibo-fnd-dt-fd/hasCount],
    :skos/definition
    "relates real estate to the number of dwelling units it contains that are income-restricted under Federal, State, or local affordable housing programs."})
@@ -960,8 +943,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "has number of dwelling units",
-   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasCount
-                        :fibo-loan-reln-mtg/hasNumberOfDwellingUnits],
+   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasCount,
    :skos/definition
    "relates real estate to the number of dwelling units it contains"})
 
@@ -980,8 +962,7 @@
                                        :fibo-fnd-agr-ctr/ContractThirdParty],
                                       :rdf/type :owl/Class}],
                 :rdf/type :owl/Class},
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasPartyInRole
-                        :fibo-loan-reln-mtg/hasOriginatingServiceProvider],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
    :skos/definition
    "relates something, typically a loan contract, to the service provider responsible for originated the loan"})
 
@@ -993,8 +974,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/",
    :rdfs/label "has originator person",
    :rdfs/range :fibo-be-le-lp/LegallyCompetentNaturalPerson,
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasParty
-                        :fibo-loan-reln-mtg/hasOriginatorPerson],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasParty,
    :skos/definition
    "relates something, typically a loan, to a person that initially originates or creates it"})
 

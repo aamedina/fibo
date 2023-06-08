@@ -61,7 +61,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/",
    :rdfs/label #voc/lstr "delta@en",
    :rdfs/subClassOf [:fibo-md-derx-eto/OptionsGreek
-                     :fibo-md-derx-eto/Delta
                      :fibo-fbc-fi-ip/PriceAnalytic],
    :skos/definition
    #voc/lstr
@@ -82,8 +81,7 @@
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fi-ip/SecurityPrice
-                     :fibo-fbc-fi-ip/ClosingPrice
-                     :fibo-md-derx-eto/OptionDailySettlementPrice],
+                     :fibo-fbc-fi-ip/ClosingPrice],
    :skos/definition
    #voc/lstr
     "The official price at the end of a trading session. This price is established by The Options Clearing Corporation and is used to determine changes in account equity, margin requirements, and for other purposes.@en"})
@@ -101,8 +99,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-fbc-fi-ip/PricingModel,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-cur/MonetaryAmount
-                     :fibo-md-derx-eto/OptionTheoreticalValue],
+                     :fibo-fnd-acc-cur/MonetaryAmount],
    :skos/definition
    #voc/lstr
     "fair value of the option as determined by an option pricing model@en"})
@@ -114,8 +111,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/",
    :rdfs/label #voc/lstr "options greek@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/PriceAnalytic
-                     :fibo-md-derx-eto/OptionsGreek],
+   :rdfs/subClassOf :fibo-fbc-fi-ip/PriceAnalytic,
    :skos/definition
    #voc/lstr
     "quantity representing the sensitivity of the price of an option or options to a change in underlying parameters on which the value depends@en"})
@@ -132,7 +128,6 @@
                       :fibo-md-derx-eto/OptionTheoreticalValue,
                       :rdf/type :owl/Restriction}
                      :fibo-md-derx-eto/OptionsGreek
-                     :fibo-md-derx-eto/OptionsTheta
                      :fibo-fbc-fi-ip/PriceAnalytic],
    :skos/definition
    #voc/lstr
@@ -150,7 +145,6 @@
                       :fibo-md-derx-eto/OptionTheoreticalValue,
                       :rdf/type :owl/Restriction}
                      :fibo-md-derx-eto/OptionsGreek
-                     :fibo-md-derx-eto/OptionsVega
                      :fibo-fbc-fi-ip/PriceAnalytic],
    :skos/definition
    #voc/lstr

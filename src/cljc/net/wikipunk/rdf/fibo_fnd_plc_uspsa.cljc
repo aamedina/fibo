@@ -66,7 +66,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "complete address",
    :rdfs/subClassOf [:fibo-fnd-plc-uspsa/StandardizedAddress
-                     :fibo-fnd-plc-uspsa/CompleteAddress
                      :fibo-fnd-plc-adr/PhysicalAddress],
    :skos/definition
    "delivery address that has all the address elements necessary to allow an exact match with the current Postal Service ZIP+4 and City State files to obtain the finest level of ZIP+4 and delivery point codes for the delivery address"})
@@ -84,8 +83,7 @@
                       :fibo-fnd-plc-uspsa/USPostalServiceAddressIdentifier,
                       :rdf/type :owl/Restriction}
                      :cmns-id/IdentificationScheme
-                     :cmns-cds/CodeSet
-                     :fibo-fnd-plc-uspsa/DeliveryAddressCodeSet],
+                     :cmns-cds/CodeSet],
    :skos/definition
    "system of numeric codes that substitute for specified delivery point details according to the U.S. Postal Service Publication 28"})
 
@@ -107,8 +105,7 @@
                       :owl/onProperty :cmns-col/isMemberOf,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :cmns-cds/CodeElement
-                     :fibo-fnd-plc-uspsa/DeliveryPointCode],
+                     :cmns-cds/CodeElement],
    :skos/definition
    "specific set of digits between 00 and 99 assigned to a delivery point"})
 
@@ -123,8 +120,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasMember,
                       :owl/someValuesFrom :fibo-fnd-plc-uspsa/DeliveryPointCode,
                       :rdf/type           :owl/Restriction}
-                     :cmns-cds/CodeSet
-                     :fibo-fnd-plc-uspsa/DeliveryPointCodeSet],
+                     :cmns-cds/CodeSet],
    :skos/definition
    "system of numeric codes that substitute for specified delivery point details according to the U.S. Postal Service Publication 28"})
 
@@ -148,8 +144,7 @@
                      {:owl/hasValue   {:xsd/string "DPO"},
                       :owl/onProperty :fibo-fnd-plc-loc/hasCityName,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-plc-adr/PhysicalAddress
-                     :fibo-fnd-plc-uspsa/DepartmentOfStateAddress],
+                     :fibo-fnd-plc-adr/PhysicalAddress],
    :skos/definition
    "delivery address whose delivery address line uses 'UNIT' followed by the unit identifier, followed by 'BOX' followed by box number, in place of a street address, 'DPO' as the literal value for the city, and the appropriate armed forces subdivision code in place of a subdivision (state) code"})
 
@@ -163,8 +158,7 @@
    :rdfs/subClassOf [{:owl/hasValue   :fibo-fnd-plc-adr/Unit,
                       :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-plc-adr/SupplementalAddressComponent
-                     :fibo-fnd-plc-uspsa/DepartmentOfStateUnitComponent],
+                     :fibo-fnd-plc-adr/SupplementalAddressComponent],
    :skos/definition
    "component of a Department of State address that includes 'UNIT' followed by the unit identifier"})
 
@@ -192,8 +186,7 @@
    :rdfs/subClassOf [{:owl/hasValue   {:xsd/string "GENERAL DELIVERY"},
                       :owl/onProperty :fibo-fnd-plc-adr/hasAddressLine1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-plc-adr/PhysicalAddress
-                     :fibo-fnd-plc-uspsa/GeneralDeliveryAddress],
+                     :fibo-fnd-plc-adr/PhysicalAddress],
    :skos/definition
    "delivery address that uses the words 'GENERAL DELIVERY', uppercase preferred, spelled out (no abbreviation), in place of a street address"})
 
@@ -208,8 +201,7 @@
                       :fibo-fnd-plc-uspsa/HighwayContractRouteDesignator,
                       :owl/onProperty :cmns-col/comprises,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-plc-adr/SupplementalAddressComponent
-                     :fibo-fnd-plc-uspsa/HighwayContractRoute],
+                     :fibo-fnd-plc-adr/SupplementalAddressComponent],
    :skos/definition "highway contract route associated with an address"})
 
 (def HighwayContractRouteAddress
@@ -228,8 +220,7 @@
                       :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-plc-adr/PhysicalAddress
-                     :fibo-fnd-plc-uspsa/HighwayContractRouteAddress],
+                     :fibo-fnd-plc-adr/PhysicalAddress],
    :skos/definition
    "delivery address whose delivery address line uses the abbreviation 'HC', followed by the route identifier, followed by 'BOX' followed by box number, in place of a street address"})
 
@@ -256,8 +247,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "international address",
-   :rdfs/subClassOf [:fibo-fnd-plc-adr/PhysicalAddress
-                     :fibo-fnd-plc-uspsa/InternationalAddress],
+   :rdfs/subClassOf :fibo-fnd-plc-adr/PhysicalAddress,
    :skos/definition "physical address that explicitly includes a country"})
 
 (def Mailbox
@@ -270,8 +260,7 @@
    :rdfs/subClassOf [{:owl/hasValue   :fibo-fnd-plc-uspsa/MailboxDesignator,
                       :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-plc-adr/SupplementalAddressComponent
-                     :fibo-fnd-plc-uspsa/Mailbox],
+                     :fibo-fnd-plc-adr/SupplementalAddressComponent],
    :skos/definition
    "mailbox, other than a U.S. Post Office box, associated with an address"})
 
@@ -336,8 +325,7 @@
                      {:owl/onProperty     :fibo-fnd-plc-adr/hasAddressLine1,
                       :owl/someValuesFrom :rdfs/Literal,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-plc-adr/PhysicalAddress
-                     :fibo-fnd-plc-uspsa/OverseasMilitaryAddress],
+                     :fibo-fnd-plc-adr/PhysicalAddress],
    :skos/definition
    "delivery address whose delivery address line uses an abbreviation for the unit or command such as 'CMR', 'PSC', or 'UNIT', or 'HC', followed by the unit identifier, followed by 'BOX' followed by box number, in place of a street address, either 'APO' or 'FPO' as the literal value for the city and the appropriate armed forces subdivision code in place of a subdivision (state) code"})
 
@@ -348,8 +336,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "private mail box address",
-   :rdfs/subClassOf [:fibo-fnd-plc-adr/ConventionalStreetAddress
-                     :fibo-fnd-plc-uspsa/PrivateMailBoxAddress],
+   :rdfs/subClassOf :fibo-fnd-plc-adr/ConventionalStreetAddress,
    :skos/definition
    "delivery address provided by a commercial mail receiving company that includes a supplementary address line containing the abbreviation 'PMB' or the pound \"#\" symbol followed by the mailbox number; alternatively, 'PMB' or '#\" and the mailbox number can be appended to the street address"})
 
@@ -364,8 +351,7 @@
                       :owl/onClass    :fibo-fnd-plc-uspsa/Urbanization,
                       :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-plc-adr/ConventionalStreetAddress
-                     :fibo-fnd-plc-uspsa/PuertoRicoAddress],
+                     :fibo-fnd-plc-adr/ConventionalStreetAddress],
    :skos/definition
    "delivery address for a delivery point in Puerto Rico that may include a supplementary address line containing the abbreviation 'URB' followed by the name of the urbanization area that is appropriate for that address"})
 
@@ -379,8 +365,7 @@
    :rdfs/subClassOf [{:owl/hasValue   :fibo-fnd-plc-uspsa/RuralRouteDesignator,
                       :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-plc-adr/SupplementalAddressComponent
-                     :fibo-fnd-plc-uspsa/RuralRoute],
+                     :fibo-fnd-plc-adr/SupplementalAddressComponent],
    :skos/definition
    "mail route outside the city or township limits in a rural area associated with an address"})
 
@@ -400,8 +385,7 @@
                       :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-plc-adr/PhysicalAddress
-                     :fibo-fnd-plc-uspsa/RuralRouteAddress],
+                     :fibo-fnd-plc-adr/PhysicalAddress],
    :skos/definition
    "delivery address whose delivery address line uses the abbreviation 'RR', followed by the route identifier, followed by 'BOX' followed by box number, in place of a street address"})
 
@@ -457,8 +441,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "standardized address",
-   :rdfs/subClassOf [:fibo-fnd-plc-adr/PhysicalAddress
-                     :fibo-fnd-plc-uspsa/StandardizedAddress],
+   :rdfs/subClassOf :fibo-fnd-plc-adr/PhysicalAddress,
    :skos/definition
    "delivery address that is fully spelled out, abbreviated by using the Postal Service standard abbreviations or as given in the current Postal Service ZIP+4 file"})
 
@@ -489,8 +472,7 @@
                       :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-plc-adr/PhysicalAddressIdentifier
-                     :fibo-fnd-plc-uspsa/USPostalServiceAddressIdentifier],
+                     :fibo-fnd-plc-adr/PhysicalAddressIdentifier],
    :skos/definition
    "combined with the ZIP + 4 code, the delivery point code provides a unique identifier for every deliverable address served by the USPS"})
 
@@ -503,8 +485,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "urbanization",
-   :rdfs/subClassOf [:lcc-cr/CountrySubdivision
-                     :fibo-fnd-plc-uspsa/Urbanization],
+   :rdfs/subClassOf :lcc-cr/CountrySubdivision,
    :skos/definition
    "an area, sector, or development within a larger geographic area"})
 
@@ -526,7 +507,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "Zip Code",
-   :rdfs/subClassOf [:fibo-fnd-plc-adr/Postcode :fibo-fnd-plc-uspsa/ZIPCode],
+   :rdfs/subClassOf :fibo-fnd-plc-adr/Postcode,
    :skos/definition
    "five-digit code code assigned to a delivery address indicating the state and post office or postal zone"})
 
@@ -539,8 +520,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "ZIP+4 Code",
-   :rdfs/subClassOf [:fibo-fnd-plc-adr/Postcode
-                     :fibo-fnd-plc-uspsa/ZIPPlus4Code],
+   :rdfs/subClassOf :fibo-fnd-plc-adr/Postcode,
    :skos/definition
    "nine-digit number consisting of five digits, a hyphen, and four digits, which the USPS describes by its trademark ZIP+4"})
 
@@ -559,8 +539,7 @@
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
                      :cmns-id/IdentificationScheme
-                     :cmns-cds/CodeSet
-                     :fibo-fnd-plc-uspsa/ZipCodeScheme],
+                     :cmns-cds/CodeSet],
    :skos/definition
    "system used in the U.S. to facilitate the delivery of mail, consisting of a five- or nine-digit code Zone Improvement Plan (ZIP) printed directly after the address, the first five digits (initial code) indicating the state and post office or postal zone, the last four (expanded code) the box section or number, portion of a rural route, building, or other specific delivery location"})
 
@@ -572,7 +551,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
    :rdfs/label "has urbanization",
    :rdfs/range :fibo-fnd-plc-uspsa/Urbanization,
-   :rdfs/subPropertyOf [:cmns-col/comprises
-                        :fibo-fnd-plc-uspsa/hasUrbanization],
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition
    "indicates area, sector, or development within a geographic area relevant to a delivery address"})

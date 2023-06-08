@@ -67,8 +67,7 @@
    :rdfs/subClassOf [{:owl/minCardinality 0,
                       :owl/onProperty     :cmns-dsg/defines,
                       :rdf/type           :owl/Restriction}
-                     :cmns-col/Arrangement
-                     :fibo-fnd-arr-arr/Scheme],
+                     :cmns-col/Arrangement],
    :skos/definition
    "structure or means of organizing information such as a blueprint, schema, numbering system, organization structure, measurement system, plan, taxonomy, or language for organizing information"})
 

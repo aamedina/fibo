@@ -100,8 +100,7 @@
                       :owl/onClass    :fibo-fnd-gao-obj/BusinessObjective,
                       :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/BusinessEntity],
+                     :fibo-fnd-org-fm/FormalOrganization],
    :skos/definition
    "entity that is formed and administered as per commercial law in order to engage in business activities"})
 
@@ -119,8 +118,7 @@
                       :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-law-lcap/License
-                     :fibo-be-le-lp/BusinessLicense],
+                     :fibo-fnd-law-lcap/License],
    :skos/definition
    "license that allows the holder to conduct business or carry out a specific profession within some jurisdiction for some period of time"})
 
@@ -134,17 +132,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "chartered legal person",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
-                     :fibo-be-le-lp/CharteredLegalPerson
-                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
-                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/IndependentParty
-                     :fibo-be-le-lp/LegalPerson
-                     :fibo-fnd-org-fm/FormalOrganization
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalPerson
+                     :fibo-fnd-org-fm/FormalOrganization
+                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty],
    :skos/definition "a legal person created by a royal charter or decree",
    :skos/example
    "Anything with 'Royal Institute' in the name. Also universities are generally set up by royal charter in a monarchy or principality, (often pre-dating any Privy Council i.e. directly be the monarch in the case of older universities). The Bank of England and the British Broadcasting Council (BBC) are also incorporated through Royal Charter."})
@@ -169,7 +166,6 @@
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-le-lp/LegalEntity
                      {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
@@ -193,8 +189,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/IndependentParty
-                     :fibo-be-le-lp/LegalPerson],
+                     :fibo-fnd-pty-pty/IndependentParty],
    :skos/definition
    "autonomous agent that is recognized as having rights and obligations under the law, including but not limited to the right to sue and be sued, enter into contracts, own property, and incur financial and other obligations"})
 
@@ -210,7 +205,6 @@
    :rdfs/label "legally competent natural person",
    :rdfs/subClassOf [:fibo-fnd-aap-ppl/Person
                      :fibo-be-le-lp/LegalPerson
-                     :fibo-be-le-lp/LegallyCompetentNaturalPerson
                      {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
@@ -229,8 +223,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "not for profit objective",
-   :rdfs/subClassOf [:fibo-fnd-gao-obj/Objective
-                     :fibo-be-le-lp/NotForProfitObjective],
+   :rdfs/subClassOf :fibo-fnd-gao-obj/Objective,
    :skos/definition
    "objective that reflects the charitable, educational, religious, humanitarian, public services, or other not for profit goals of an organization"})
 
@@ -251,8 +244,7 @@
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-law-lcap/LegalCapacity
-                     :fibo-be-le-lp/PowerOfAttorney],
+                     :fibo-fnd-law-lcap/LegalCapacity],
    :skos/definition
    "legal authorization given by one party (the principal) to another (the agent or attorney-in-fact) to perform certain acts on the principal's behalf"})
 
@@ -266,8 +258,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "profit objective",
-   :rdfs/subClassOf [:fibo-fnd-gao-obj/BusinessObjective
-                     :fibo-be-le-lp/ProfitObjective],
+   :rdfs/subClassOf :fibo-fnd-gao-obj/BusinessObjective,
    :skos/definition
    "objective that reflects pursuit of a financial benefit that may be realized when the amount of revenue gained from a business activity exceeds the expenses, costs and taxes needed to sustain that activity"})
 
@@ -279,7 +270,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "public purpose",
-   :rdfs/subClassOf [:fibo-fnd-gao-obj/Objective :fibo-be-le-lp/PublicPurpose],
+   :rdfs/subClassOf :fibo-fnd-gao-obj/Objective,
    :skos/definition
    "objective that reflects values generally thought to be shared by and that is intended to benefit the populace as a whole"})
 
@@ -291,7 +282,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "religious objective",
    :rdfs/subClassOf [:fibo-be-le-lp/NotForProfitObjective
-                     :fibo-be-le-lp/ReligiousObjective
                      :fibo-fnd-gao-obj/Objective],
    :skos/definition
    "not-for-profit objective that reflects the religious goals of an organization"})
@@ -310,17 +300,16 @@
    :rdfs/label [#voc/lstr "special purpose vehicle@en-US"
                 #voc/lstr "fonds commun de placement@fr-FR"],
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
-                     :fibo-be-le-lp/SpecialPurposeVehicle
-                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
-                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/IndependentParty
-                     :fibo-be-le-lp/LegalPerson
-                     :fibo-fnd-org-fm/FormalOrganization
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalPerson
+                     :fibo-fnd-org-fm/FormalOrganization
+                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty],
    :skos/definition
    #voc/lstr
     "legal entity created to fulfill narrow, specific, and frequently temporary objectives@en"})
@@ -333,17 +322,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "statutory body",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
-                     :fibo-be-le-lp/StatutoryBody
-                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
-                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/IndependentParty
-                     :fibo-be-le-lp/LegalPerson
-                     :fibo-fnd-org-fm/FormalOrganization
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalPerson
+                     :fibo-fnd-org-fm/FormalOrganization
+                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty],
    :skos/definition
    "legal entity established by a government to consider evidence and make judgements in some field of activity"})
 
@@ -360,17 +348,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label #voc/lstr "variable interest entity@en",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
-                     :fibo-be-le-lp/VariableInterestEntity
-                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
-                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/IndependentParty
-                     :fibo-be-le-lp/LegalPerson
-                     :fibo-fnd-org-fm/FormalOrganization
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalPerson
+                     :fibo-fnd-org-fm/FormalOrganization
+                     {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
+                      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty],
    :skos/definition
    #voc/lstr
     "legal entity whose shareholders are entitled to a percentage of a named company's profits via a private contract@en"})
@@ -384,8 +371,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "is organized in",
    :rdfs/range :fibo-fnd-law-jur/Jurisdiction,
-   :rdfs/subPropertyOf [:fibo-be-le-lp/isRecognizedIn
-                        :fibo-be-le-lp/isOrganizedIn],
+   :rdfs/subPropertyOf :fibo-be-le-lp/isRecognizedIn,
    :skos/definition
    "indicates the jurisdiction whose laws a legal entity is organized under"})
 
@@ -400,6 +386,5 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "is recognized in",
    :rdfs/range :fibo-fnd-law-jur/Jurisdiction,
-   :rdfs/subPropertyOf :fibo-be-le-lp/isRecognizedIn,
    :skos/definition
    "indicates the jurisdiction in which a legal person is considered competent to enter into a contract, conduct business, or participate in other activities, or in which an agreement may be acknowledged and possibly enforceable"})

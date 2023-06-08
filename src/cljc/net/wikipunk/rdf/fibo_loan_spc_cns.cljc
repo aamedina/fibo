@@ -57,15 +57,14 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-loan-spc-cns/ConsumerLoan
                      :fibo-loan-ln-ln/CollateralizedLoan
-                     :fibo-loan-spc-cns/AutoLoan
-                     :fibo-loan-ln-ln/Loan
                      {:owl/onProperty :fibo-fbc-dae-dbt/hasBorrower,
                       :owl/someValuesFrom
                       {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                        :owl/someValuesFrom
                        :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                        :rdf/type :owl/Restriction},
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-loan-ln-ln/Loan],
    :skos/definition
    #voc/lstr
     "collateralized, simple-interest loan that is repaid in monthly installments over a period of typically three to five years, for the purpose of purchasing a vehicle@en"})
@@ -84,8 +83,7 @@
                        :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                        :rdf/type :owl/Restriction},
                       :rdf/type :owl/Restriction}
-                     :fibo-loan-ln-ln/Loan
-                     :fibo-loan-spc-cns/ConsumerLoan],
+                     :fibo-loan-ln-ln/Loan],
    :skos/definition
    #voc/lstr
     "loan whose borrower is person as opposed to an organization, i.e., a consumer@en"})
@@ -103,21 +101,20 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/",
    :rdfs/label #voc/lstr "home equity line of credit@en",
-   :rdfs/subClassOf [:fibo-loan-ln-ln/CollateralizedLoan
-                     :fibo-loan-spc-cns/ConsumerLoan
-                     {:owl/onProperty     :fibo-fbc-dae-dbt/isCollateralizedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-dae-dbt/isCollateralizedBy,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/PhysicalCollateral,
                       :rdf/type           :owl/Restriction}
+                     :fibo-loan-ln-ln/CollateralizedLoan
+                     :fibo-loan-spc-cns/ConsumerLoan
                      :fibo-fbc-dae-dbt/RevolvingLineOfCredit
-                     :fibo-loan-spc-cns/HomeEquityLineOfCredit
-                     :fibo-loan-ln-ln/Loan
                      {:owl/onProperty :fibo-fbc-dae-dbt/hasBorrower,
                       :owl/someValuesFrom
                       {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                        :owl/someValuesFrom
                        :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                        :rdf/type :owl/Restriction},
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-loan-ln-ln/Loan],
    :skos/definition
    #voc/lstr
     "line of credit secured by equity value in a borrower's home or other property@en"})

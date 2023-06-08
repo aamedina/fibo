@@ -64,7 +64,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "maturity level",
-   :rdfs/subClassOf [:cmns-cls/Classifier :fibo-fnd-utl-av/MaturityLevel],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "classifier used to indicate the state of an artifact with respect to its development lifecycle"})
 
@@ -77,7 +77,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "module",
-   :rdfs/subClassOf [:cmns-cls/Classifier :fibo-fnd-utl-av/Module],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "classifier used to indicate a category used to modularize something based on principles of the model driven architecture methodology (MDA), including but not limited to separation of concerns, coherence, and establishing clear logical boundaries in order to increase reusability and maintainability"})
 
@@ -134,7 +134,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "common designation",
-   :rdfs/subPropertyOf [:cmns-av/synonym :fibo-fnd-utl-av/commonDesignation],
+   :rdfs/subPropertyOf :cmns-av/synonym,
    :skos/definition "frequently used designation for an entity"})
 
 (def definitionOrigin
@@ -144,8 +144,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "definition origin",
-   :rdfs/subPropertyOf [:cmns-av/directSource
-                        :fibo-fnd-utl-av/definitionOrigin],
+   :rdfs/subPropertyOf :cmns-av/directSource,
    :skos/definition
    "document or other source from which a given definition was taken directly; the range for this annotation can be a string, URI, or BibliographicCitation"})
 
@@ -197,7 +196,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "preferred designation",
-   :rdfs/subPropertyOf [:cmns-av/synonym :fibo-fnd-utl-av/preferredDesignation],
+   :rdfs/subPropertyOf :cmns-av/synonym,
    :skos/definition "recommended designation for an entity in some context"})
 
 (def symbol
@@ -223,7 +222,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "term origin",
-   :rdfs/subPropertyOf [:cmns-av/directSource :fibo-fnd-utl-av/termOrigin],
+   :rdfs/subPropertyOf :cmns-av/directSource,
    :skos/definition
    "document or other source from which a given term was taken directly; the range for this annotation can be a string, URI, or BibliographicCitation"})
 

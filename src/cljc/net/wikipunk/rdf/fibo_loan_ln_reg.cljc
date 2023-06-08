@@ -67,7 +67,6 @@
                       :fibo-loan-ln-reg/ConsumerCreditReferenceAgency,
                       :rdf/type :owl/Restriction}
                      :fibo-loan-ln-reg/DataProtectionRequirement
-                     :fibo-loan-ln-reg/BorrowerDataProtectionRequirement
                      :fibo-fnd-law-lcap/LegalObligation]})
 
 (def BorrowerDisclosureRequirement
@@ -85,9 +84,8 @@
      :owl/someValuesFrom :fibo-loan-ln-reg/ProductDisclosureRight,
      :rdf/type           :owl/Restriction}
     :fibo-loan-ln-reg/DisclosureRequirement
-    :fibo-loan-ln-reg/BorrowerDisclosureRequirement
-    :fibo-loan-ln-reg/ConsumerCreditRequirement
     :fibo-fnd-law-lcap/LegalObligation
+    :fibo-loan-ln-reg/ConsumerCreditRequirement
     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
      :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerRight,
      :rdf/type           :owl/Restriction}
@@ -106,7 +104,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "borrower right@en",
    :rdfs/subClassOf [:fibo-loan-ln-reg/ConsumerRight
-                     :fibo-loan-ln-reg/BorrowerRight
                      :fibo-fnd-law-lcap/LegalRight]})
 
 (def ConsumerCreditEqualTreatmentRequirement
@@ -120,7 +117,6 @@
                       :owl/someValuesFrom :fibo-loan-ln-reg/EqualTreatmentRight,
                       :rdf/type           :owl/Restriction}
                      :fibo-loan-ln-reg/ConsumerCreditRequirement
-                     :fibo-loan-ln-reg/ConsumerCreditEqualTreatmentRequirement
                      :fibo-fnd-law-lcap/LegalObligation
                      {:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerRight,
@@ -138,7 +134,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "consumer credit protection law@en",
    :rdfs/subClassOf [:fibo-loan-ln-reg/ConsumerProtectionLaw
-                     :fibo-loan-ln-reg/ConsumerCreditProtectionLaw
                      :fibo-fnd-law-jur/StatuteLaw]})
 
 (def ConsumerCreditReferenceAgency
@@ -148,8 +143,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "consumer credit reference agency@en",
-   :rdfs/subClassOf [:fibo-fnd-org-fm/FormalOrganization
-                     :fibo-loan-ln-reg/ConsumerCreditReferenceAgency],
+   :rdfs/subClassOf :fibo-fnd-org-fm/FormalOrganization,
    :skos/definition
    #voc/lstr
     "Applicable regulations: vary by jurisdiciton. for example, only being allowed ot divulge actual judgements against a party, but not things that are not substantiated by judgements. For example, slow payments which are not covered by some judgement against the party. There will be different regulatory requirments about: 1. What the CR Agency can hold 2. Who they can divulge it to 3. What information they must provide the borrower at his/her request Some of the third thing there is covered in the EU the Data Protection Directive and local acts that implement this.@en"})
@@ -171,8 +165,7 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerRight,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-law-lcap/LegalObligation
-                     :fibo-loan-ln-reg/ConsumerCreditRequirement],
+                     :fibo-fnd-law-lcap/LegalObligation],
    :skos/definition
    #voc/lstr
     "Requirement set out on the lender about how they must treat the appliction to a loan@en"})
@@ -187,8 +180,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "consumer protection agency@en",
-   :rdfs/subClassOf [:fibo-fbc-fct-rga/RegulatoryAgency
-                     :fibo-loan-ln-reg/ConsumerProtectionAgency],
+   :rdfs/subClassOf :fibo-fbc-fct-rga/RegulatoryAgency,
    :skos/definition
    #voc/lstr
     "Some agency tasked with regulating consumer protection in some jurisdiction.@en"})
@@ -200,8 +192,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "consumer protection law@en",
-   :rdfs/subClassOf [:fibo-fnd-law-jur/StatuteLaw
-                     :fibo-loan-ln-reg/ConsumerProtectionLaw]})
+   :rdfs/subClassOf :fibo-fnd-law-jur/StatuteLaw})
 
 (def ConsumerRight
   "consumer right"
@@ -210,8 +201,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "consumer right@en",
-   :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalRight
-                     :fibo-loan-ln-reg/ConsumerRight]})
+   :rdfs/subClassOf :fibo-fnd-law-lcap/LegalRight})
 
 (def CreditReferenceAgencyRequirements
   "REquirements other than data protection, governing what a credit reference agency can or cannot do."
@@ -220,7 +210,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "credit reference agency requirements@en",
-   :rdfs/subClassOf :fibo-loan-ln-reg/CreditReferenceAgencyRequirements,
    :skos/definition
    #voc/lstr
     "REquirements other than data protection, governing what a credit reference agency can or cannot do.@en",
@@ -235,8 +224,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "data protection requirement@en",
-   :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalObligation
-                     :fibo-loan-ln-reg/DataProtectionRequirement],
+   :rdfs/subClassOf :fibo-fnd-law-lcap/LegalObligation,
    :skos/definition
    #voc/lstr
     "Requirements defining how data about individuals is held. Example is the EU DA directive and laws, which make the data the property of the individual that data is about. Covers - what information i sheld - who information can be divulged to. - the individual's rights in respect of that information Privacy regulations cover most of this. EU defines \"Personal Data\" and \"Sensitive Personal Data\". For credit reference agencies the latter would be covered. More detail about whether they can divulge facts which are not subject to formal judgements etc.@en"})
@@ -249,7 +237,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "disclosure requirement@en",
    :rdfs/subClassOf [:fibo-loan-ln-reg/ConsumerCreditRequirement
-                     :fibo-loan-ln-reg/DisclosureRequirement
                      :fibo-fnd-law-lcap/LegalObligation
                      {:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerRight,
@@ -270,7 +257,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "equal treatment right@en",
    :rdfs/subClassOf [:fibo-loan-ln-reg/BorrowerRight
-                     :fibo-loan-ln-reg/EqualTreatmentRight
                      :fibo-loan-ln-reg/ConsumerRight
                      :fibo-fnd-law-lcap/LegalRight],
    :skos/definition #voc/lstr "The right to equal treatment under the law.@en"})
@@ -286,7 +272,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "good faith estimate@en",
    :rdfs/subClassOf [:fibo-loan-ln-reg/LoanProductRepresentations
-                     :fibo-loan-ln-reg/GoodFaithEstimate
                      :fibo-fnd-agr-ctr/Representation],
    :skos/definition
    #voc/lstr
@@ -300,7 +285,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "information right@en",
    :rdfs/subClassOf [:fibo-loan-ln-reg/BorrowerRight
-                     :fibo-loan-ln-reg/InformationRight
                      :fibo-loan-ln-reg/ConsumerRight
                      :fibo-fnd-law-lcap/LegalRight],
    :skos/definition
@@ -314,8 +298,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "lender right@en",
-   :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalRight
-                     :fibo-loan-ln-reg/LenderRight],
+   :rdfs/subClassOf :fibo-fnd-law-lcap/LegalRight,
    :skos/definition
    #voc/lstr
     "Rights on the lender to protect them against loss. furthe rNtoes: Logically, considering the two parties, they both have protecxtion mechanisms. so while the lender has protecxtion mechanisms through mortgage insurance, and the consumer has protextion mechanisms such as good faith estimates. also the agencies (see Consumer Protection Agency), an instance of which is the CFPB in the US (just set up). Lender rights are: - expressed in the Contract Consumer protection develops becaues the contract is written by the potential Lender. So the rights are introcued to rectify the imbalance between the two parties. Same goes for insurance. consumer protection laws (governe dby the relevant consumer protection agency. So the lender protexts itself as it writes th contract AND does the things it needs to do to protext itself, but on the approval process, and with later instruments such as insurance. Interestingly., it is the Borrower who pays for this by paying for credit reports etc. So the borrower protects itself by other mechanisms. Caveat emptor - displaced by regulation (the buyer is protected by regulation). Uberimae Fidae - in the utmost good faith. Mortgage Insurance is an additional means of mitigating the risk, that the lended may have., so if the information assessed is not accurate, or if the borrower's situation changes for the worse. then the risk rating may go down. So the Mortgage Insurance is a further strategy which mitigates any shortfall in the Lender Righrs that you may have - ie someone guarantees. In the US you can also avoid that by having paid a deposit. PIMI: Principal, Interst and Morgage Insurance. So the Borrower pays towards the MI, esxcept if they have paid a given amount as deposit. there are 2 types of MI: 1. protects the lender in the event of borrower degault 2. Insurance for \"Incapacity to pay the mortage\" (these can be bought off the shelf - can combine health, unemployment etc.). - this is the Borrower mitigating their own risk. Prevents foreclosure. Similar to general sickness etc. Where the lender charges for MI, the cost is passed onto the Borrower. e.g. if there is a % valuation (e.g. 70% in Aus, 80% in US for example) then no insurance is required.@en"})
@@ -330,8 +313,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "loan product representations@en",
-   :rdfs/subClassOf [:fibo-fnd-agr-ctr/Representation
-                     :fibo-loan-ln-reg/LoanProductRepresentations],
+   :rdfs/subClassOf :fibo-fnd-agr-ctr/Representation,
    :skos/definition
    #voc/lstr
     "Representations about the loan product and the appropriateness of this for the borrower.@en"})
@@ -356,8 +338,7 @@
                      {:owl/onProperty     :fibo-fbc-fct-rga/regulates,
                       :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-law-lcap/LegalObligation
-                     :fibo-loan-ln-reg/LoanRegulatoryRequirement],
+                     :fibo-fnd-law-lcap/LegalObligation],
    :skos/definition
    #voc/lstr
     "A regulatory requirement defined in regulations by a comsumer credit act or other legislation.@en"})
@@ -380,9 +361,8 @@
      :owl/someValuesFrom :fibo-loan-ln-reg/GoodFaithEstimate,
      :rdf/type           :owl/Restriction}
     :fibo-loan-ln-reg/DisclosureRequirement
-    :fibo-loan-ln-reg/ProductDisclosureRequirement
-    :fibo-loan-ln-reg/ConsumerCreditRequirement
     :fibo-fnd-law-lcap/LegalObligation
+    :fibo-loan-ln-reg/ConsumerCreditRequirement
     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
      :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerRight,
      :rdf/type           :owl/Restriction}
@@ -403,10 +383,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "product disclosure right@en",
    :rdfs/subClassOf [:fibo-loan-ln-reg/InformationRight
-                     :fibo-loan-ln-reg/ProductDisclosureRight
+                     :fibo-loan-ln-reg/BorrowerRight
                      :fibo-loan-ln-reg/ConsumerRight
-                     :fibo-fnd-law-lcap/LegalRight
-                     :fibo-loan-ln-reg/BorrowerRight],
+                     :fibo-fnd-law-lcap/LegalRight],
    :skos/definition
    #voc/lstr
     "The right to information about products at the point of purchasing these.@en"})
@@ -423,9 +402,8 @@
    :rdfs/label #voc/lstr "reg b@en",
    :rdfs/subClassOf [:fibo-loan-ln-reg/DisclosureRequirement
                      :fibo-loan-ln-reg/ConsumerCreditEqualTreatmentRequirement
-                     :fibo-loan-ln-reg/RegB
-                     :fibo-loan-ln-reg/ConsumerCreditRequirement
                      :fibo-fnd-law-lcap/LegalObligation
+                     :fibo-loan-ln-reg/ConsumerCreditRequirement
                      {:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-loan-ln-reg/EqualTreatmentRight,
                       :rdf/type           :owl/Restriction}
@@ -452,12 +430,11 @@
    :rdfs/label #voc/lstr "reg z@en",
    :rdfs/subClassOf
    [:fibo-loan-ln-reg/ProductDisclosureRequirement
-    :fibo-loan-ln-reg/RegZ
-    :fibo-loan-ln-reg/ConsumerCreditRequirement
     {:owl/onProperty     :fibo-fnd-rel-rel/governs,
-     :owl/someValuesFrom :fibo-loan-ln-reg/GoodFaithEstimate,
+     :owl/someValuesFrom :fibo-loan-ln-reg/LoanProductRepresentations,
      :rdf/type           :owl/Restriction}
     :fibo-fnd-law-lcap/LegalObligation
+    :fibo-loan-ln-reg/ConsumerCreditRequirement
     :fibo-loan-ln-reg/DisclosureRequirement
     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
      :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerRight,
@@ -466,7 +443,7 @@
      :owl/someValuesFrom :fibo-loan-ln-reg/ConsumerProtectionAgency,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/governs,
-     :owl/someValuesFrom :fibo-loan-ln-reg/LoanProductRepresentations,
+     :owl/someValuesFrom :fibo-loan-ln-reg/GoodFaithEstimate,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -479,8 +456,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label #voc/lstr "right of credit record correction@en",
-   :rdfs/subClassOf [:fibo-loan-ln-reg/CreditReferenceAgencyRequirements
-                     :fibo-loan-ln-reg/RightOfCreditRecordCorrection],
+   :rdfs/subClassOf :fibo-loan-ln-reg/CreditReferenceAgencyRequirements,
    :skos/definition #voc/lstr
                      "The right to have a credit record corrected.@en"})
 

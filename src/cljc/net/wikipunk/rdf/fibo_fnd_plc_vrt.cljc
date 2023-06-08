@@ -57,8 +57,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
    :rdfs/label "electronic mail address",
-   :rdfs/subClassOf [:fibo-fnd-plc-adr/VirtualAddress
-                     :fibo-fnd-plc-vrt/ElectronicMailAddress],
+   :rdfs/subClassOf :fibo-fnd-plc-adr/VirtualAddress,
    :skos/definition
    "virtual address that defines an electronic messaging endpoint to which email messages can be delivered, typically via an Simple Mail Transfer Protocol (SMTP) based communications system"})
 
@@ -74,7 +73,6 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-vrt/VirtualLocation
-                     :fibo-fnd-plc-vrt/NetworkLocation
                      :lcc-cr/Location],
    :skos/definition
    "a virtual location that may be identified by a network address (an identifier for a node or interface)"})
@@ -86,7 +84,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
    :rdfs/label "notional place",
-   :rdfs/subClassOf [:lcc-cr/Location :fibo-fnd-plc-vrt/NotionalPlace],
+   :rdfs/subClassOf :lcc-cr/Location,
    :skos/definition
    "an abstract place; one of many commonly understood concepts such as domestic, Eurozone etc."})
 
@@ -100,8 +98,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
    :rdfs/label "telephone number",
-   :rdfs/subClassOf [:fibo-fnd-plc-adr/VirtualAddress
-                     :fibo-fnd-plc-vrt/TelephoneNumber],
+   :rdfs/subClassOf :fibo-fnd-plc-adr/VirtualAddress,
    :skos/definition
    "virtual address that may be assigned to a fixed-line telephone subscriber station connected to a telephone line or to a wireless electronic telephony device, such as a radio telephone or a mobile telephone, or to other devices or services for data transmission via the public switched telephone network (PSTN) or other public and private networks"})
 
@@ -112,7 +109,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
    :rdfs/label #voc/lstr "virtual location@en",
-   :rdfs/subClassOf [:lcc-cr/Location :fibo-fnd-plc-vrt/VirtualLocation],
+   :rdfs/subClassOf :lcc-cr/Location,
    :skos/definition
    "place that is not located in any single physical location; a network location without geographic boundaries"})
 
@@ -125,8 +122,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
    :rdfs/label "has electronic mail address",
    :rdfs/range :fibo-fnd-plc-vrt/ElectronicMailAddress,
-   :rdfs/subPropertyOf [:fibo-fnd-plc-adr/hasAddress
-                        :fibo-fnd-plc-vrt/hasElectronicMailAddress],
+   :rdfs/subPropertyOf :fibo-fnd-plc-adr/hasAddress,
    :skos/definition
    "specifies an electronic messaging endpoint at which some entity may be located or contacted or may receive correspondence"})
 
@@ -138,8 +134,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
    :rdfs/label "has telephone number",
    :rdfs/range :fibo-fnd-plc-vrt/TelephoneNumber,
-   :rdfs/subPropertyOf [:fibo-fnd-plc-adr/hasAddress
-                        :fibo-fnd-plc-vrt/hasTelephoneNumber],
+   :rdfs/subPropertyOf :fibo-fnd-plc-adr/hasAddress,
    :skos/definition
    "indicates a virtual address composed of a sequence of digits and symbols that may be assigned to a fixed-line telephone subscriber station, a wireless electronic telephony device, such as a radio telephone or a mobile telephone, or other similar device or service"})
 
@@ -152,7 +147,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
    :rdfs/label "has URL",
    :rdfs/range :xsd/anyURI,
-   :rdfs/subPropertyOf :fibo-fnd-plc-vrt/hasURL,
    :skos/definition
    "links something to a web resource that specifies its location on a computer network and a method for retrieving it"})
 
@@ -167,6 +161,6 @@
    :rdfs/label "has website",
    :rdfs/range :xsd/anyURI,
    :rdfs/seeAlso ["https://www.w3.org/standards/webdesign/"],
-   :rdfs/subPropertyOf [:fibo-fnd-plc-vrt/hasURL :fibo-fnd-plc-vrt/hasWebsite],
+   :rdfs/subPropertyOf :fibo-fnd-plc-vrt/hasURL,
    :skos/definition
    "links something to a page or set of related web pages located under a single domain name, typically produced by a single person or organization"})

@@ -80,8 +80,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-sec-dbt-abs/AutoDebtPool,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-pbs/AssetBackedSecurity
-                     :fibo-sec-dbt-abs/AutoAssetBackedSecurity],
+                     :fibo-sec-dbt-pbs/AssetBackedSecurity],
    :skos/definition
    #voc/lstr
     "asset-backed security issued by an auto finance company that is backed by an underlying pool of auto-related loans or leases@en"})
@@ -96,8 +95,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-spc-cns/AutoLoan,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-abs/AutoDebtPool],
+                     :fibo-sec-sec-pls/DebtPool],
    :skos/definition #voc/lstr "debt pool of auto-related loans or leases@en"})
 
 (def BondPool
@@ -110,8 +108,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-abs/BondPool],
+                     :fibo-sec-sec-pls/DebtPool],
    :skos/definition #voc/lstr "debt pool of consisting of bonds@en"})
 
 (def ConsumerAssetBackedSecurity
@@ -129,8 +126,7 @@
                        :fibo-sec-dbt-abs/StudentLoanAssetBackedSecurity],
                       :rdf/type :owl/Class}
                      :fibo-sec-dbt-pbs/StructuredFinanceInstrument
-                     :fibo-sec-dbt-pbs/AssetBackedSecurity
-                     :fibo-sec-dbt-abs/ConsumerAssetBackedSecurity],
+                     :fibo-sec-dbt-pbs/AssetBackedSecurity],
    :skos/definition
    #voc/lstr
     "structured finance securities collateralized by pools of auto loans and leases (auto ABS), credit card receivables (credit card ABS) or student loans (student loan ABS)@en"})
@@ -147,15 +143,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
    :rdfs/label "controlled amortization asset-backed security",
-   :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-     :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-abs/ControlledAmortizationStructure,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-pbs/AssetBackedSecurity
-    :fibo-sec-dbt-abs/ControlledAmortizationAssetBackedSecurity],
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-sec-dbt-dbti/hasRepaymentTerms,
+                      :owl/someValuesFrom
+                      :fibo-sec-dbt-abs/ControlledAmortizationStructure,
+                      :rdf/type :owl/Restriction}
+                     :fibo-sec-dbt-pbs/AssetBackedSecurity],
    :skos/definition
    "asset-backed security based on a pool of bonds securitized using a controlled amortization structure"})
 
@@ -166,8 +161,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
    :rdfs/label "controlled amortization structure",
-   :rdfs/subClassOf [:fibo-sec-dbt-bnd/BondAmortizationPaymentTerms
-                     :fibo-sec-dbt-abs/ControlledAmortizationStructure],
+   :rdfs/subClassOf :fibo-sec-dbt-bnd/BondAmortizationPaymentTerms,
    :skos/definition
    "method of providing investors with a relatively predictable repayment schedule, even though the underlying assets are non-amortizing"})
 
@@ -187,8 +181,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-sec-dbt-abs/CreditCardPool,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-pbs/AssetBackedSecurity
-                     :fibo-sec-dbt-abs/CreditCardAssetBackedSecurity],
+                     :fibo-sec-dbt-pbs/AssetBackedSecurity],
    :skos/definition
    #voc/lstr "asset-backed security based on credit card receivables@en"})
 
@@ -205,8 +198,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
    :rdfs/label #voc/lstr "credit card pool@en",
-   :rdfs/subClassOf [:fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-abs/CreditCardPool],
+   :rdfs/subClassOf :fibo-sec-sec-pls/DebtPool,
    :skos/definition #voc/lstr
                      "pool of outstanding balances on designated accounts@en"})
 
@@ -224,15 +216,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
    :rdfs/label "fully amortizing asset-backed security",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+   :rdfs/subClassOf [:fibo-sec-dbt-pbs/AssetBackedSecurity
+                     {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-sec-dbt-dbti/hasRepaymentTerms,
                       :owl/someValuesFrom
                       :fibo-sec-dbt-abs/ControlledAmortizationStructure,
-                      :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-pbs/AssetBackedSecurity
-                     :fibo-sec-dbt-abs/FullyAmortizingAssetBackedSecurity],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "asset-backed security based on a pool of debt instruments that returns principal to investors over the life of the security"})
 
@@ -247,8 +238,7 @@
                       :owl/someValuesFrom
                       :fibo-loan-spc-cns/HomeEquityLineOfCredit,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-abs/HomeEquityLineOfCreditPool],
+                     :fibo-sec-sec-pls/DebtPool],
    :skos/definition #voc/lstr "debt pool consisting of home equity loans@en"})
 
 (def HomeEquityLoanAssetBackedSecurity
@@ -267,8 +257,7 @@
                       :owl/someValuesFrom
                       :fibo-sec-dbt-abs/HomeEquityLineOfCreditPool,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-pbs/AssetBackedSecurity
-                     :fibo-sec-dbt-abs/HomeEquityLoanAssetBackedSecurity],
+                     :fibo-sec-dbt-pbs/AssetBackedSecurity],
    :skos/definition
    #voc/lstr "asset-backed security based on home equity loan receivables@en"})
 
@@ -287,8 +276,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-sec-dbt-abs/StudentLoanPool,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-pbs/AssetBackedSecurity
-                     :fibo-sec-dbt-abs/StudentLoanAssetBackedSecurity],
+                     :fibo-sec-dbt-pbs/AssetBackedSecurity],
    :skos/definition
    #voc/lstr "asset-backed security based on student loan receivables@en"})
 
@@ -302,8 +290,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-spc-stu/StudentLoan,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-abs/StudentLoanPool],
+                     :fibo-sec-sec-pls/DebtPool],
    :skos/definition #voc/lstr "debt pool consisting of student loans@en"})
 
 (def WACBondCoupon
@@ -313,5 +300,4 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
    :rdfs/label "w a c bond coupon",
-   :rdfs/subClassOf [:fibo-sec-dbt-bnd/BondVariableCoupon
-                     :fibo-sec-dbt-abs/WACBondCoupon]})
+   :rdfs/subClassOf :fibo-sec-dbt-bnd/BondVariableCoupon})

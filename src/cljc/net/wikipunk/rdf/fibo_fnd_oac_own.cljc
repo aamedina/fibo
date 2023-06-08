@@ -64,18 +64,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
    :rdfs/label "asset",
-   :rdfs/subClassOf [{:owl/onDataRange :cmns-dt/CombinedDateTime,
-                      :owl/onProperty  :fibo-fnd-dt-fd/hasAcquisitionDate,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
                       :owl/someValuesFrom :fibo-fnd-oac-own/Ownership,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
                       :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/Undergoer
-                     :fibo-fnd-oac-own/Asset],
+                     {:owl/onDataRange :cmns-dt/CombinedDateTime,
+                      :owl/onProperty  :fibo-fnd-dt-fd/hasAcquisitionDate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-pty-pty/Undergoer],
    :skos/definition
    "something of monetary value that is owned or provides benefit to some party"})
 
@@ -90,18 +89,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
    :rdfs/label "intangible asset",
    :rdfs/subClassOf [:fibo-fnd-oac-own/Asset
-                     :fibo-fnd-oac-own/IntangibleAsset
-                     :fibo-fnd-pty-pty/Undergoer
-                     {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
-                      :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
+                     {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
+                      :owl/someValuesFrom :fibo-fnd-oac-own/Ownership,
                       :rdf/type           :owl/Restriction}
                      {:owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasAcquisitionDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
-                      :owl/someValuesFrom :fibo-fnd-oac-own/Ownership,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
+                      :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/Undergoer],
    :skos/definition
    "identifiable, non-monetary asset that lacks physical substance",
    :skos/example
@@ -120,8 +118,7 @@
                      {:owl/onProperty     :fibo-fnd-oac-own/isOwningParty,
                       :owl/someValuesFrom :fibo-fnd-oac-own/Ownership,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/Actor
-                     :fibo-fnd-oac-own/Owner],
+                     :fibo-fnd-pty-pty/Actor],
    :skos/definition
    "party that is legally recognized as having the right to possess, the privilege to use, and ability to transfer any rights or privileges associated with something, as permitted by law"})
 
@@ -138,8 +135,7 @@
                      {:owl/onProperty     :fibo-fnd-oac-own/hasOwnedAsset,
                       :owl/someValuesFrom :fibo-fnd-oac-own/Asset,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/Situation
-                     :fibo-fnd-oac-own/Ownership],
+                     :fibo-fnd-pty-pty/Situation],
    :skos/definition
    "situation in which some party holds the legal title to something (explicitly or implicitly) and has the right to transfer that title and/or possession"})
 
@@ -153,18 +149,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
    :rdfs/label "tangible asset",
    :rdfs/subClassOf [:fibo-fnd-oac-own/Asset
-                     :fibo-fnd-oac-own/TangibleAsset
-                     :fibo-fnd-pty-pty/Undergoer
-                     {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
-                      :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
+                     {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
+                      :owl/someValuesFrom :fibo-fnd-oac-own/Ownership,
                       :rdf/type           :owl/Restriction}
                      {:owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasAcquisitionDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
-                      :owl/someValuesFrom :fibo-fnd-oac-own/Ownership,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty     :fibo-fnd-oac-own/isAssetOf,
+                      :owl/someValuesFrom :fibo-fnd-oac-own/Owner,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pty-pty/Undergoer],
    :skos/definition
    "asset that is a physical, measurable resource, i.e., one that takes a physical form"})
 
@@ -178,8 +173,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
    :rdfs/label "has owned asset",
    :rdfs/range :fibo-fnd-oac-own/Asset,
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasUndergoer
-                        :fibo-fnd-oac-own/hasOwnedAsset],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasUndergoer,
    :skos/definition "indicates the asset in an ownership situation"})
 
 (def hasOwningParty
@@ -192,8 +186,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
    :rdfs/label "has owning party",
    :rdfs/range :fibo-fnd-oac-own/Owner,
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasActor
-                        :fibo-fnd-oac-own/hasOwningParty],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasActor,
    :skos/definition
    "identifies the actor that holds title to the asset in an ownership situation"})
 
@@ -206,8 +199,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
    :rdfs/label "is asset of",
    :rdfs/range :fibo-fnd-oac-own/Owner,
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/isAffectedBy
-                        :fibo-fnd-oac-own/isAssetOf],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
    :skos/definition "identifies the owner of an asset"})
 
 (def isOwnedAsset
@@ -219,8 +211,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
    :rdfs/label "is owned asset",
    :rdfs/range :fibo-fnd-oac-own/Ownership,
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/undergoes
-                        :fibo-fnd-oac-own/isOwnedAsset],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/undergoes,
    :skos/definition
    "indicates the context of ownership in which something is an asset"})
 
@@ -232,8 +223,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
    :rdfs/label "is owned by",
    :rdfs/range :fibo-fnd-pty-pty/IndependentParty,
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/experiencesDirectly
-                        :fibo-fnd-oac-own/isOwnedBy],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/experiencesDirectly,
    :skos/definition "indicates something that someone owns"})
 
 (def isOwningParty
@@ -245,8 +235,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
    :rdfs/label "is owning party",
    :rdfs/range :fibo-fnd-oac-own/Ownership,
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/actsIn
-                        :fibo-fnd-oac-own/isOwningParty],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsIn,
    :skos/definition
    "indicates the context of ownership in which the party plays the role of owner"})
 
@@ -258,8 +247,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
    :rdfs/label "owns",
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/playsActiveRoleThatDirectlyAffects
-                        :fibo-fnd-oac-own/owns],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/playsActiveRoleThatDirectlyAffects,
    :skos/definition
    "indicates something that a party holds title to and may possess"})
 
@@ -273,5 +261,5 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
    :rdfs/label "is asset owner",
    :rdfs/range :fibo-fnd-oac-own/Asset,
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/actsOn :fibo-fnd-oac-own/ownsAsset],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
    :skos/definition "identifies an asset that an owner owns"})

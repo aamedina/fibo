@@ -88,7 +88,6 @@
                       :owl/onProperty :fibo-fbc-fi-stl/hasDeliveryMethod,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-fpas/SettlementTerms
-                     :fibo-fbc-fi-stl/CashSettlementTerms
                      {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
                       :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
                       :rdf/type           :owl/Restriction}
@@ -122,8 +121,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
    :rdfs/label #voc/lstr "delivery method@en",
-   :rdfs/subClassOf [:fibo-fnd-gao-obj/DistributionStrategy
-                     :fibo-fbc-fi-stl/DeliveryMethod],
+   :rdfs/subClassOf :fibo-fnd-gao-obj/DistributionStrategy,
    :skos/definition
    "method and commitment to transfer a commodity, currency, security, cash or another instrument as defined in the settlement terms of the contract"})
 
@@ -192,7 +190,6 @@
                       :owl/onProperty :fibo-fbc-fi-stl/hasDeliveryMethod,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-fpas/SettlementTerms
-                     :fibo-fbc-fi-stl/PhysicalSettlementTerms
                      {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
                       :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
                       :rdf/type           :owl/Restriction}
@@ -213,8 +210,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
    :rdfs/label #voc/lstr "settlement@en",
-   :rdfs/subClassOf [:fibo-fnd-dt-oc/OccurrenceKind
-                     :fibo-fbc-fi-stl/Settlement],
+   :rdfs/subClassOf :fibo-fnd-dt-oc/OccurrenceKind,
    :skos/definition
    "act of finalizing a transaction, including but not limited to finalizing accounting, exchanging consideration, and/or legally recording documents, as applicable"})
 
@@ -230,8 +226,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-qt-qtu/hasNumericValue,
                       :owl/someValuesFrom :xsd/positiveInteger,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-bd/Convention
-                     :fibo-fbc-fi-stl/SettlementConvention],
+                     :fibo-fnd-dt-bd/Convention],
    :skos/definition
    "convention employed to determine the closing date (from the stated settlement date) in the process of settling a transaction on which securities or interests in securities are delivered, usually against (in simultaneous exchange for) payment of some consideration"})
 
@@ -254,8 +249,7 @@
                       :owl/onClass    :fibo-fbc-fi-ip/SecurityPrice,
                       :owl/onProperty :fibo-fnd-acc-cur/hasPrice,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     :fibo-fbc-fi-stl/SettlementEvent],
+                     :fibo-fnd-dt-oc/Occurrence],
    :skos/definition
    "specific event involving the finalization a transaction or portion thereof, including but not limited to finalizing accounting, exchanging consideration, and/or legally recording documents, as applicable"})
 
@@ -268,8 +262,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
    :rdfs/label #voc/lstr "has settlement method@en",
    :rdfs/range :fibo-fbc-fi-stl/DeliveryMethod,
-   :rdfs/subPropertyOf [:fibo-fnd-gao-obj/hasStrategy
-                        :fibo-fbc-fi-stl/hasDeliveryMethod],
+   :rdfs/subPropertyOf :fibo-fnd-gao-obj/hasStrategy,
    :skos/definition
    "specifies the strategy for settlement from a delivery perspective"})
 
@@ -284,8 +277,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
    :rdfs/label "has preferred settlement currency",
    :rdfs/range :fibo-fnd-acc-cur/Currency,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasCurrency
-                        :fibo-fbc-fi-stl/hasPreferredSettlementCurrency],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasCurrency,
    :skos/definition "indicates the preferred currency for settlement purposes"})
 
 (def hasSettlementAmount
@@ -297,8 +289,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
    :rdfs/label #voc/lstr "has settlement amount@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-fbc-fi-stl/hasSettlementAmount],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    "indicates the monetary amount required for cash settlement"})
 

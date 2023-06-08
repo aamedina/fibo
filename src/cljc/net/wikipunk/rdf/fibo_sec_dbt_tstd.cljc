@@ -91,17 +91,16 @@
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
      :rdf/type       :owl/Restriction}
     :fibo-sec-dbt-tstd/BillOfExchange
-    :fibo-sec-dbt-tstd/BankersAcceptance
-    :fibo-sec-dbt-dbti/FixedIncomeSecurity
     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-     :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawer,
+     :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawee,
      :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-dbti/FixedIncomeSecurity
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-pas-psch/Payee,
      :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-     :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawee,
+     :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawer,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-tstd/MoneyMarketInstrument
     {:owl/minQualifiedCardinality 0,
@@ -123,7 +122,13 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/",
    :rdfs/label #voc/lstr "bill of exchange@en",
-   :rdfs/subClassOf [:fibo-sec-dbt-tstd/MoneyMarketInstrument
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-tstd/MoneyMarketInstrument
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawee,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-fct-fse/FinancialInstitution,
                       :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
@@ -132,13 +137,6 @@
                       :owl/onClass    :fibo-fnd-pas-psch/Payee,
                       :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawee,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-sec-dbt-tstd/Drawer,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-tstd/BillOfExchange
                      :fibo-sec-dbt-dbti/FixedIncomeSecurity],
    :skos/definition
    #voc/lstr
@@ -162,7 +160,6 @@
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
      :rdf/type       :owl/Restriction}
     :fibo-sec-dbt-tstd/MoneyMarketInstrument
-    :fibo-sec-dbt-tstd/CommercialPaper
     :fibo-sec-dbt-dbti/FixedIncomeSecurity],
    :skos/definition
    #voc/lstr
@@ -181,8 +178,7 @@
                           :owl/someValuesFrom :fibo-sec-dbt-tstd/BillOfExchange,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-pas-psch/Payer
-    :fibo-sec-dbt-tstd/Drawee],
+    :fibo-fnd-pas-psch/Payer],
    :skos/definition
    "party that is required to pay the amount stated on the bill of exchange to the payee"})
 
@@ -199,8 +195,7 @@
                           :owl/someValuesFrom :fibo-sec-dbt-tstd/BillOfExchange,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-agr/Obligee
-    :fibo-sec-dbt-tstd/Drawer],
+    :fibo-fnd-agr-agr/Obligee],
    :skos/definition
    "party that requires a drawee to pay either a third party or themselves with respect to a bill of exchange"})
 
@@ -214,8 +209,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/",
    :rdfs/label #voc/lstr "eurodollar deposit@en",
-   :rdfs/subClassOf [:fibo-fbc-pas-caa/CertificateOfDeposit
-                     :fibo-sec-dbt-tstd/EurodollarDeposit],
+   :rdfs/subClassOf :fibo-fbc-pas-caa/CertificateOfDeposit,
    :skos/definition
    #voc/lstr
     "a certificate of deposit with a fixed interest rate issued in U.S. dollars outside the jurisdiction of the Federal Reserve, held at banks outside of the United States, including branches of U.S. banks located outside of the U.S.@en"})
@@ -231,8 +225,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/",
    :rdfs/label #voc/lstr "money market instrument@en",
-   :rdfs/subClassOf [:fibo-sec-dbt-dbti/FixedIncomeSecurity
-                     :fibo-sec-dbt-tstd/MoneyMarketInstrument],
+   :rdfs/subClassOf :fibo-sec-dbt-dbti/FixedIncomeSecurity,
    :skos/definition
    #voc/lstr
     "a short-term debt security that gives the owner the unconditional right to receive a stated, fixed sum of money on a specified date@en"})
@@ -254,7 +247,6 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-dbt-tstd/MoneyMarketInstrument
                      :fibo-fnd-agr-ctr/MutualContractualAgreement
-                     :fibo-sec-dbt-tstd/RepurchaseAgreement
                      :fibo-sec-dbt-dbti/FixedIncomeSecurity],
    :skos/definition
    #voc/lstr

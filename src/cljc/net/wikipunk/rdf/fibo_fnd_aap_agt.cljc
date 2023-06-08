@@ -59,15 +59,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
    :rdfs/label "automated system",
    :rdfs/subClassOf [:fibo-fnd-aap-agt/AutonomousAgent
-                     :fibo-fnd-aap-agt/AutomatedSystem
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dsg/Name,
-                      :owl/onProperty :cmns-dsg/hasName,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-txt/Text,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasTextualName,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dsg/Name,
+                      :owl/onProperty :cmns-dsg/hasName,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "system that reduces or eliminates the need for human involvement in order to complete a task"})
 
@@ -95,8 +94,7 @@
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-txt/Text,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasTextualName,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fnd-aap-agt/AutonomousAgent],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "something autonomous that can adapt to and interact with its environment"})
 

@@ -58,8 +58,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfs/label #voc/lstr "construction loan@en",
-   :rdfs/subClassOf [:fibo-loan-ln-ln/Loan
-                     :fibo-loan-reln-cnst/ConstructionLoan],
+   :rdfs/subClassOf :fibo-loan-ln-ln/Loan,
    :skos/definition
    #voc/lstr
     "loan covering construction and development costs, secured by a mortgage on the property financed@en"})
@@ -79,8 +78,7 @@
      :owl/onClass    :fibo-loan-reln-cnst/ConstructionLoanCreditFacilityTranche,
      :owl/onProperty :cmns-col/hasConstituent,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-dae-dbt/CreditFacility
-    :fibo-loan-reln-cnst/ConstructionLoanContract]})
+    :fibo-fbc-dae-dbt/CreditFacility]})
 
 (def ConstructionLoanCreditFacilityTranche
   "A loan taken out for construction purposes. Further notes: These are a temporary loan. when the construction is finished then that loan is transformed to another loan, which would be a permanent loan. Information to follow on what the new permanent loan would be. Terms are adjusted in the new loan, since in construction loans the rates are significantly higher. This is an incentive to complete the construction works. Notes from PoC reviews, discussing Maximum Balance concept: In a Construction Loan you agree a maximum amount that you could draw. As you progress with the construction you continue to draw more and more. So you start with the minimum. Example: for purpose of construction of a house you could need to borrow up to 500K and the bank establishes the milestones at which certain amounts are made availalbe and can be drawn. For instance prior to start you might draw 10%, (50K); the next 50K would be available to draw only once the foundations are laid. And so on. Milestones may include \"Frame standing\" (for American-style frame based houses). Each stage requires inspection on behalf of the bank. So you are starting with no more than 10% (in this example) of what is allowable, and could arrive to the full 500K by the end of ths construction but it is not mandated that you arrive to that. What differentiates a Construction Loan is that there si a max amount specified and there are Milestones specified in which the amounts for each milestone can be advanced."
@@ -89,9 +87,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfs/label #voc/lstr "construction loan credit facility tranche@en",
-   :rdfs/subClassOf
-   [:fibo-fbc-dae-dbt/CommittedSubFacility
-    :fibo-loan-reln-cnst/ConstructionLoanCreditFacilityTranche],
+   :rdfs/subClassOf :fibo-fbc-dae-dbt/CommittedSubFacility,
    :skos/definition
    #voc/lstr
     "A loan taken out for construction purposes. Further notes: These are a temporary loan. when the construction is finished then that loan is transformed to another loan, which would be a permanent loan. Information to follow on what the new permanent loan would be. Terms are adjusted in the new loan, since in construction loans the rates are significantly higher. This is an incentive to complete the construction works. Notes from PoC reviews, discussing Maximum Balance concept: In a Construction Loan you agree a maximum amount that you could draw. As you progress with the construction you continue to draw more and more. So you start with the minimum. Example: for purpose of construction of a house you could need to borrow up to 500K and the bank establishes the milestones at which certain amounts are made availalbe and can be drawn. For instance prior to start you might draw 10%, (50K); the next 50K would be available to draw only once the foundations are laid. And so on. Milestones may include \"Frame standing\" (for American-style frame based houses). Each stage requires inspection on behalf of the bank. So you are starting with no more than 10% (in this example) of what is allowable, and could arrive to the full 500K by the end of ths construction but it is not mandated that you arrive to that. What differentiates a Construction Loan is that there si a max amount specified and there are Milestones specified in which the amounts for each milestone can be advanced.@en"})
@@ -103,8 +99,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfs/label #voc/lstr "construction loan milestone terms set@en",
-   :rdfs/subClassOf [:fibo-fnd-agr-ctr/ConditionPrecedent
-                     :fibo-loan-reln-cnst/ConstructionLoanMilestoneTermsSet],
+   :rdfs/subClassOf :fibo-fnd-agr-ctr/ConditionPrecedent,
    :skos/definition
    #voc/lstr
     "An agreed point at which an amount is advanced to the lender on completion of some pre-agreed scope of works on the construction.@en",
@@ -119,8 +114,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/",
    :rdfs/label "construction type",
-   :rdfs/subClassOf [:cmns-cls/Classifier
-                     :fibo-loan-reln-cnst/ConstructionType],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition "particular kind of construction"})
 
 (def ConstructionType_Manufactured

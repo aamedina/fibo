@@ -120,11 +120,10 @@
                       :owl/someValuesFrom :fibo-sec-sec-bsk/MixedBasket,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-ff/FinancialFuture
-                     :fibo-der-drc-ff/BasketFuture
+                     :fibo-fbc-fi-fi/Future
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Future],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "futures contract whose underlying asset is a basket of securities and/or indices@en"})
@@ -140,16 +139,15 @@
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-ff/DebtInstrumentFuture
-                     :fibo-der-drc-ff/BondFuture
+                     :fibo-fbc-fi-fi/Future
+                     :fibo-der-drc-ff/FinancialFuture
                      {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/DebtInstrument,
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-sbd-sbd/DebtInstrumentDerivative
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-ff/FinancialFuture
-                     :fibo-fbc-fi-fi/Future],
+                     :fibo-der-sbd-sbd/DebtInstrumentDerivative],
    :skos/definition
    #voc/lstr "futures contract whose underlying asset is at least one bond@en"})
 
@@ -166,11 +164,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label #voc/lstr "currency future@en",
    :rdfs/subClassOf [:fibo-der-drc-ff/FinancialFuture
-                     :fibo-der-drc-ff/CurrencyFuture
+                     :fibo-fbc-fi-fi/Future
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Future],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "futures contract whose underlying asset is an agreement to exchange a specified amount of one currency for another at some point in the future based on pricing stated in the contract@en"})
@@ -190,11 +187,10 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-der-sbd-sbd/DebtInstrumentDerivative
                      :fibo-der-drc-ff/FinancialFuture
-                     :fibo-der-drc-ff/DebtInstrumentFuture
+                     :fibo-fbc-fi-fi/Future
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Future],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "futures contract whose underlying asset is at least one debt instrument@en"})
@@ -206,8 +202,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label #voc/lstr "dividend adjustment period@en",
-   :rdfs/subClassOf [:cmns-dt/DatePeriod
-                     :fibo-der-drc-ff/DividendAdjustmentPeriod],
+   :rdfs/subClassOf :cmns-dt/DatePeriod,
    :skos/definition
    #voc/lstr
     "date period used to calculate the difference, if any between an anticipated dividend and the actual dividend distributed in that period@en"})
@@ -227,11 +222,10 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-der-sbd-sbd/EquityDerivative
                      :fibo-der-drc-ff/FinancialFuture
-                     :fibo-der-drc-ff/DividendFuture
+                     :fibo-fbc-fi-fi/Future
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Future],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "futures contract whose underlying asset is at least one stock dividend@en"})
@@ -247,7 +241,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label #voc/lstr "equity forward@en",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
+   [{:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
+     :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-der-drc-ff/Forward
+    {:owl/onProperty     :fibo-der-drc-ff/hasMethodOfAdjustment,
+     :owl/someValuesFrom :fibo-der-drc-ff/ForwardContractAdjustmentMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-ff/hasDividendAdjustmentPeriod,
+     :owl/someValuesFrom :fibo-der-drc-ff/DividendAdjustmentPeriod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
      :owl/someValuesFrom {:owl/unionOf [:fibo-ind-mkt-bas/BasketOfEquities
                                         :fibo-sec-eq-eq/ListedShare
                                         :fibo-ind-mkt-bas/EquityIndex
@@ -255,17 +259,6 @@
                                         :fibo-der-drc-opt/EquityOption],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-ff/hasDividendAdjustmentPeriod,
-     :owl/someValuesFrom :fibo-der-drc-ff/DividendAdjustmentPeriod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractualElement,
-     :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-ff/hasMethodOfAdjustment,
-     :owl/someValuesFrom :fibo-der-drc-ff/ForwardContractAdjustmentMethod,
-     :rdf/type           :owl/Restriction}
-    :fibo-der-drc-ff/Forward
-    :fibo-der-drc-ff/EquityForward
     :fibo-der-drc-bsc/OverTheCounterInstrument
     :fibo-fbc-fi-fi/DerivativeInstrument],
    :skos/definition
@@ -287,11 +280,10 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-der-sbd-sbd/EquityDerivative
                      :fibo-der-drc-ff/FinancialFuture
-                     :fibo-der-drc-ff/EquityFuture
+                     :fibo-fbc-fi-fi/Future
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Future],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "futures contract whose underlying asset is at least one equity security, specifically a publicly issued and traded share@en"})
@@ -307,7 +299,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label #voc/lstr "financial future@en",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/Future
-                     :fibo-der-drc-ff/FinancialFuture
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
                       :rdf/type           :owl/Restriction}],
@@ -330,8 +321,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label #voc/lstr "forward@en",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/DerivativeInstrument
-                     :fibo-der-drc-bsc/OverTheCounterInstrument
-                     :fibo-der-drc-ff/Forward],
+                     :fibo-der-drc-bsc/OverTheCounterInstrument],
    :skos/definition
    #voc/lstr
     "derivative instrument that is privately negotiated between parties to buy the underlier at a specified future date at the price specified in the contract@en"})
@@ -343,8 +333,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label #voc/lstr "forward contract adjustment method@en",
-   :rdfs/subClassOf [:fibo-fnd-gao-obj/Strategy
-                     :fibo-der-drc-ff/ForwardContractAdjustmentMethod],
+   :rdfs/subClassOf :fibo-fnd-gao-obj/Strategy,
    :skos/definition
    #voc/lstr
     "method by which adjustments will be made to the contract should one or more of a number of extraordinary events occur@en"})
@@ -363,11 +352,10 @@
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Future,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-ff/FinancialFuture
-                     :fibo-der-drc-ff/FutureOnFuture
+                     :fibo-fbc-fi-fi/Future
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Future],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "futures contract whose underlying asset is at least one (other) futures contract@en"})
@@ -386,11 +374,10 @@
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-ff/FinancialFuture
-                     :fibo-der-drc-ff/FutureOnOption
+                     :fibo-fbc-fi-fi/Future
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Future],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "futures contract whose underlying asset is at least one option contract@en"})
@@ -409,11 +396,10 @@
                       :owl/someValuesFrom :fibo-der-drc-swp/Swap,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-ff/FinancialFuture
-                     :fibo-der-drc-ff/FutureOnSwap
+                     :fibo-fbc-fi-fi/Future
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Future],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "futures contract whose underlying asset is at least one swap contract@en"})
@@ -438,11 +424,10 @@
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-ff/FinancialFuture
-                     :fibo-der-drc-ff/IndexFuture
+                     :fibo-fbc-fi-fi/Future
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Future],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "futures contract whose underlying asset is at least one reference index or economic indicator@en"})
@@ -467,11 +452,10 @@
                        :rdf/type    :owl/Class},
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-ff/FinancialFuture
-                     :fibo-der-drc-ff/InterestRateFuture
+                     :fibo-fbc-fi-fi/Future
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Future],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "futures contract with an interest-bearing instrument as the underlying asset@en"})
@@ -488,16 +472,15 @@
                       :fibo-sec-dbt-tstd/MoneyMarketInstrument,
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-ff/DebtInstrumentFuture
-                     :fibo-der-drc-ff/MoneyMarketFuture
+                     :fibo-fbc-fi-fi/Future
+                     :fibo-der-drc-ff/FinancialFuture
                      {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/DebtInstrument,
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-sbd-sbd/DebtInstrumentDerivative
                      {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
                       :owl/someValuesFrom :xsd/decimal,
                       :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-ff/FinancialFuture
-                     :fibo-fbc-fi-fi/Future],
+                     :fibo-der-sbd-sbd/DebtInstrumentDerivative],
    :skos/definition
    #voc/lstr
     "futures contract with a money market instrument as the underlying asset@en"})
@@ -520,8 +503,7 @@
                       :fibo-fbc-fct-mkt/DesignatedContractMarket,
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fi-fi/StandardizedTerms
-                     :fibo-der-drc-bsc/DerivativeTerms
-                     :fibo-der-drc-ff/StandardizedFuturesListingTerms],
+                     :fibo-der-drc-bsc/DerivativeTerms],
    :skos/definition
    #voc/lstr
     "contract terms established by a derivatives exchange that apply to any listing of a futures contract on that exchange.@en"})
@@ -543,8 +525,7 @@
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/SettlementTerms,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-fi-fi/StandardizedTerms
-                     :fibo-der-drc-bsc/DerivativeTerms
-                     :fibo-der-drc-ff/StandardizedFuturesTerms],
+                     :fibo-der-drc-bsc/DerivativeTerms],
    :skos/definition
    #voc/lstr
     "contract terms established by a derivatives exchange that apply to any futures contract traded on that exchange@en"})
@@ -558,8 +539,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label #voc/lstr "has conversion factor@en",
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf [:fibo-fnd-qt-qtu/hasNumericValue
-                        :fibo-der-drc-ff/hasConversionFactor],
+   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasNumericValue,
    :skos/definition
    #voc/lstr
     "indicates the price of the delivered bond/note ($1 par value) to yield a fixed rate. The conversion factor is used to calculate a final delivery price.@en"})
@@ -573,8 +553,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label #voc/lstr "has dividend adjustment period@en",
    :rdfs/range :fibo-der-drc-ff/DividendAdjustmentPeriod,
-   :rdfs/subPropertyOf [:cmns-dt/hasDatePeriod
-                        :fibo-der-drc-ff/hasDividendAdjustmentPeriod],
+   :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
    :skos/definition
    #voc/lstr
     "indicates at least one date period used to calculate the deviation between an anticipated/expected dividend and the actual dividend issued during that period@en"})
@@ -588,8 +567,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label #voc/lstr "has method of adjustment@en",
    :rdfs/range :fibo-der-drc-ff/ForwardContractAdjustmentMethod,
-   :rdfs/subPropertyOf [:fibo-fnd-gao-obj/hasStrategy
-                        :fibo-der-drc-ff/hasMethodOfAdjustment],
+   :rdfs/subPropertyOf :fibo-fnd-gao-obj/hasStrategy,
    :skos/definition
    #voc/lstr
     "indicates the method used to address any changes to the contract based on events that occur over the contract lifecycle@en"})
@@ -603,8 +581,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
    :rdfs/label #voc/lstr "has multiple@en",
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf [:fibo-fnd-qt-qtu/hasNumericValue
-                        :fibo-der-drc-ff/hasMultiple],
+   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasNumericValue,
    :skos/definition
    #voc/lstr
     "indicates the multiple for determining the price of the futures contract in relation to the underlying index rate@en"})

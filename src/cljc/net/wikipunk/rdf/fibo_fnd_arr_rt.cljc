@@ -87,16 +87,15 @@
                       :rdf/type        :owl/Restriction}
                      :cmns-cds/CodeElement
                      :fibo-fnd-arr-rt/RatingScore
-                     :fibo-fnd-arr-rt/QualitativeRatingScore
-                     {:owl/onClass    :fibo-fnd-arr-rt/RatingScale,
-                      :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :cmns-cls/Classifier
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-arr-rt/hasMeasureWithinScale,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     :cmns-cls/Classifier
+                     {:owl/onClass    :fibo-fnd-arr-rt/RatingScale,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "rating score that is represented as a qualitative code with respect to some rating scale"})
 
@@ -112,16 +111,15 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-arr-rt/RatingScore
-                     :fibo-fnd-arr-rt/QuantitativeRatingScore
-                     {:owl/onClass    :fibo-fnd-arr-rt/RatingScale,
-                      :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :cmns-cls/Classifier
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-arr-rt/hasMeasureWithinScale,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     :cmns-cls/Classifier
+                     {:owl/onClass    :fibo-fnd-arr-rt/RatingScale,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "rating score that is a simple numeric value on some scale, such as a credit rating for an individual"})
 
@@ -133,29 +131,28 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "rating",
    :rdfs/subClassOf [:fibo-fnd-arr-asmt/Opinion
-                     {:owl/cardinality 1,
-                      :owl/onProperty  :fibo-fnd-arr-rt/rates,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onClass    :cmns-dt/Date,
-                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingIssuer,
                       :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :fibo-fnd-arr-rt/RatingParty,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-rt/hasRatingScore,
-                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-arr-rt/RatingParty,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
+                     {:owl/onClass    :cmns-dt/Date,
+                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-rt/Rating],
+                     {:owl/cardinality 1,
+                      :owl/onProperty  :fibo-fnd-arr-rt/rates,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-arr-rt/hasRatingScore,
+                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "standing of something at a particular time, indicated by at least one scores with respect to some scale, based on an assessment by some party"})
 
@@ -171,12 +168,11 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-rt/RatingScalePublisher
                      :fibo-fnd-arr-rt/RatingIssuer
-                     :fibo-fnd-arr-rt/RatingAgency
-                     {:owl/onProperty     :fibo-fnd-rel-rel/manages,
-                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScale,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/issues,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/Rating,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/manages,
+                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScale,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition
@@ -192,8 +188,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/RatingParty,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-asmt/AssessmentActivity
-                     :fibo-fnd-arr-rt/RatingAssessmentActivity],
+                     :fibo-fnd-arr-asmt/AssessmentActivity],
    :skos/definition
    "assessment activity resulting in a grade or score and potentially a report describing the score and the process used to determine that score"})
 
@@ -218,8 +213,7 @@
                       :owl/onClass    :fibo-fnd-arr-rt/RatingReport,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-asmt/AssessmentEvent
-                     :fibo-fnd-arr-rt/RatingAssessmentEvent],
+                     :fibo-fnd-arr-asmt/AssessmentEvent],
    :skos/definition
    "individual assessment resulting in a grade or score and potentially a report describing the score"})
 
@@ -235,8 +229,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/issues,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/Rating,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole
-                     :fibo-fnd-arr-rt/RatingIssuer],
+                     :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition "party that is responsible for issuing ratings"})
 
 (def RatingParty
@@ -249,8 +242,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/generates,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/Rating,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole
-                     :fibo-fnd-arr-rt/RatingParty],
+                     :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition
    "person, organization or group that analyzes some aspect of something and develops a rating"})
 
@@ -264,8 +256,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-rep/reportsOn,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/Rating,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-asmt/AssessmentReport
-                     :fibo-fnd-arr-rt/RatingReport],
+                     :fibo-fnd-arr-asmt/AssessmentReport],
    :skos/definition "report describing a set of ratings"})
 
 (def RatingScale
@@ -290,8 +281,7 @@
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-arr-rt/hasBestMeasure,
                       :rdf/type        :owl/Restriction}
-                     :cmns-cls/ClassificationScheme
-                     :fibo-fnd-arr-rt/RatingScale],
+                     :cmns-cls/ClassificationScheme],
    :skos/definition
    "system for assigning a value to something according to some scale with respect to quality, a standard, or ranking"})
 
@@ -307,8 +297,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/manages,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScale,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole
-                     :fibo-fnd-arr-rt/RatingScalePublisher],
+                     :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition
    "party responsible for managing one or more rating schemes and potentially publishing ratings based on those schemes"})
 
@@ -329,8 +318,7 @@
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-arr-rt/hasMeasureWithinScale,
                       :rdf/type        :owl/Restriction}
-                     :cmns-cls/Classifier
-                     :fibo-fnd-arr-rt/RatingScore],
+                     :cmns-cls/Classifier],
    :skos/definition
    "grade, classification, or ranking of for something in accordance with some rating scale"})
 
@@ -369,7 +357,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "has rating",
    :rdfs/range :fibo-fnd-arr-rt/Rating,
-   :rdfs/subPropertyOf [:cmns-cls/isClassifiedBy :fibo-fnd-arr-rt/hasRating],
+   :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
    :skos/definition
    "indicates the rating assigned to a thing based on a grade or score according to a particular rating scale"})
 
@@ -382,8 +370,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "has rating score",
    :rdfs/range :fibo-fnd-arr-rt/RatingScore,
-   :rdfs/subPropertyOf [:cmns-cls/isClassifiedBy
-                        :fibo-fnd-arr-rt/hasRatingScore],
+   :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
    :skos/definition
    "indicates the grade or score associated with a rating with respect to a particular rating scale"})
 
@@ -411,8 +398,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "produces ratings for",
    :rdfs/range :fibo-fnd-arr-rt/RatingIssuer,
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/produces
-                        :fibo-fnd-arr-rt/producesRatingsFor],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/produces,
    :skos/definition "issuer for which ratings are produced or posted through"})
 
 (def rates
@@ -423,7 +409,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "rates",
-   :rdfs/subPropertyOf [:cmns-cls/classifies :fibo-fnd-arr-rt/rates],
+   :rdfs/subPropertyOf :cmns-cls/classifies,
    :skos/definition
    "indicates the instrument, party or something else to which a rating applies"})
 
@@ -436,6 +422,5 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :rdfs/label "uses rating performer",
    :rdfs/range :fibo-fnd-arr-rt/RatingParty,
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/isProducedBy
-                        :fibo-fnd-arr-rt/usesRatingParty],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProducedBy,
    :skos/definition "rating performer an issuer uses to assess ratings"})

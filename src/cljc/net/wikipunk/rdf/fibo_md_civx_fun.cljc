@@ -85,8 +85,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
    :rdfs/label #voc/lstr "fund price@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
-                     :fibo-md-civx-fun/FundPrice]})
+   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice})
 
 (def FundUnitPerformance
   "fund unit performance"
@@ -103,10 +102,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
    :rdfs/label #voc/lstr "funds tax@en",
-   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-be-oac-opty/Investor,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-md-civx-fun/FundsTax]})
+   :rdfs/subClassOf {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                     :owl/someValuesFrom :fibo-be-oac-opty/Investor,
+                     :rdf/type           :owl/Restriction}})
 
 (def SigmaValueOfHoldings
   "sigma value of holdings"
@@ -132,7 +130,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
    :rdfs/label #voc/lstr "swing price@en",
    :rdfs/subClassOf [:fibo-md-civx-fun/FundPrice
-                     :fibo-md-civx-fun/SwingPrice
                      :fibo-fbc-fi-ip/SecurityPrice]})
 
 (def determinationDate_1

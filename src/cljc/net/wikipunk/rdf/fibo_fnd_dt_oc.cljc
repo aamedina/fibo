@@ -76,6 +76,10 @@
      :owl/onClass    :lcc-cr/Location,
      :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
      :rdf/type       :owl/Restriction}
+    {:owl/onClass    :fibo-fnd-dt-oc/OccurrenceKind,
+     :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
     {:owl/unionOf [{:owl/onClass    :cmns-dt/DatePeriod,
                     :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
                     :owl/qualifiedCardinality 1,
@@ -88,12 +92,7 @@
                     :owl/onProperty  :fibo-fnd-dt-oc/hasEventDateValue,
                     :owl/qualifiedCardinality 1,
                     :rdf/type        :owl/Restriction}],
-     :rdf/type    :owl/Class}
-    {:owl/onClass    :fibo-fnd-dt-oc/OccurrenceKind,
-     :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-dt-oc/Occurrence],
+     :rdf/type    :owl/Class}],
    :skos/definition "happening of an OccurrenceKind, i.e., an event"})
 
 (def OccurrenceBasedDate
@@ -109,8 +108,7 @@
                       :owl/onProperty :fibo-fnd-dt-oc/isTriggeredBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-fd/CalculatedDate
-                     :fibo-fnd-dt-oc/OccurrenceBasedDate],
+                     :fibo-fnd-dt-fd/CalculatedDate],
    :skos/definition
    "calculated date that is defined with respect to the occurrence of some occurrence kind"})
 
@@ -125,11 +123,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
    :rdfs/label "occurrence kind",
-   :rdfs/subClassOf [:cmns-cls/Classifier
-                     {:owl/onProperty     :cmns-cls/classifies,
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fnd-dt-oc/Occurrence,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/OccurrenceKind],
+                     :cmns-cls/Classifier],
    :skos/definition
    "classifier that specifies the general nature of an occurrence (event)",
    :skos/example ["trade settlement" "loan origination"]})
@@ -154,7 +151,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
    :rdfs/label "has event date",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf [:cmns-dt/hasDate :fibo-fnd-dt-oc/hasEventDate],
+   :rdfs/subPropertyOf :cmns-dt/hasDate,
    :skos/definition "identifies a date associated with an event (occurrence)"})
 
 (def hasEventDateValue

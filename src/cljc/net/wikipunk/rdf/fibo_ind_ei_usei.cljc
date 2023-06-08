@@ -82,8 +82,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "American statistics publisher",
-   :rdfs/subClassOf [:fibo-ind-ei-ei/StatisticalInformationPublisher
-                     :fibo-ind-ei-usei/AmericanStatisticsPublisher],
+   :rdfs/subClassOf :fibo-ind-ei-ei/StatisticalInformationPublisher,
    :skos/definition
    "statistical information publisher comprised of the government agencies and departments that publish statistical information on behalf of the U.S. Federal Government",
    :skos/example
@@ -114,8 +113,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "consumer expenditure survey",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/StatisticalProgram
-                     :fibo-ind-ei-usei/ConsumerExpenditureSurvey],
+   :rdfs/subClassOf :fibo-fnd-utl-alx/StatisticalProgram,
    :skos/definition
    "statistical program conducted on a regular basis that provides information on the buying habits of consumers, including data on their expenditures, income, and consumer unit (families and single consumers) characteristics"})
 
@@ -127,8 +125,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "current employment statistics",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/StatisticalProgram
-                     :fibo-ind-ei-usei/CurrentEmploymentStatistics],
+   :rdfs/subClassOf :fibo-fnd-utl-alx/StatisticalProgram,
    :skos/definition
    "survey conducted on a regular basis that presents analytical information related to businesses and government agencies, in order to provide detailed industry data on employment, hours, and earnings of workers"})
 
@@ -144,8 +141,7 @@
                       :owl/someValuesFrom
                       :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/StatisticalProgram
-                     :fibo-ind-ei-usei/CurrentPopulationSurvey],
+                     :fibo-fnd-utl-alx/StatisticalProgram],
    :skos/definition
    "survey conducted on a regular basis that presents analytical information related to the general population of a given statistical area with respect to labor force, employment, unemployment, persons not in the labor force, hours of work, earnings, and other demographic and labor force characteristics"})
 
@@ -163,18 +159,17 @@
                       :owl/someValuesFrom :fibo-ind-ei-ei/Establishment,
                       :rdf/type           :owl/Restriction}
                      :fibo-ind-ei-usei/EmploymentSituationSurvey
-                     :fibo-ind-ei-usei/EmploymentSituationEstablishmentSurvey
-                     {:owl/onDataRange :xsd/boolean,
-                      :owl/onProperty  :fibo-ind-ei-ei/isSeasonallyAdjusted,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fnd-utl-alx/StatisticalProgram
+                     :fibo-ind-ei-usei/CurrentEmploymentStatistics
                      {:owl/onProperty :fibo-fbc-fct-ra/specifies,
                       :owl/someValuesFrom
                       :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
                       :rdf/type :owl/Restriction}
+                     :fibo-fnd-utl-alx/StatisticalProgram
                      :fibo-ind-ei-usei/CurrentPopulationSurvey
-                     :fibo-ind-ei-usei/CurrentEmploymentStatistics],
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-ind-ei-ei/isSeasonallyAdjusted,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "survey conducted on a regular basis that presents analytical information related to the labor force of a given statistical area, surveyed with respect to businesses, and is, for the most part, seasonally adjusted"})
 
@@ -192,18 +187,17 @@
                       :owl/someValuesFrom :fibo-ind-ei-ei/Household,
                       :rdf/type           :owl/Restriction}
                      :fibo-ind-ei-usei/EmploymentSituationSurvey
-                     :fibo-ind-ei-usei/EmploymentSituationHouseholdSurvey
-                     {:owl/onDataRange :xsd/boolean,
-                      :owl/onProperty  :fibo-ind-ei-ei/isSeasonallyAdjusted,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fnd-utl-alx/StatisticalProgram
+                     :fibo-ind-ei-usei/CurrentEmploymentStatistics
                      {:owl/onProperty :fibo-fbc-fct-ra/specifies,
                       :owl/someValuesFrom
                       :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
                       :rdf/type :owl/Restriction}
+                     :fibo-fnd-utl-alx/StatisticalProgram
                      :fibo-ind-ei-usei/CurrentPopulationSurvey
-                     :fibo-ind-ei-usei/CurrentEmploymentStatistics],
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-ind-ei-ei/isSeasonallyAdjusted,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "a survey conducted on a regular basis that presents analytical information related to the labor force of a given statistical area, surveyed with respect to households, and is, for the most part, seasonally adjusted"})
 
@@ -221,12 +215,11 @@
                       :rdf/type        :owl/Restriction}
                      :fibo-ind-ei-usei/CurrentPopulationSurvey
                      :fibo-ind-ei-usei/CurrentEmploymentStatistics
-                     :fibo-ind-ei-usei/EmploymentSituationSurvey
-                     :fibo-fnd-utl-alx/StatisticalProgram
                      {:owl/onProperty :fibo-fbc-fct-ra/specifies,
                       :owl/someValuesFrom
                       :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-utl-alx/StatisticalProgram],
    :skos/definition
    "a survey conducted on a regular basis that presents analytical information focused on the employment characteristics of a given statistical area"})
 
@@ -238,8 +231,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "point of purchase survey",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/StatisticalProgram
-                     :fibo-ind-ei-usei/PointOfPurchaseSurvey],
+   :rdfs/subClassOf :fibo-fnd-utl-alx/StatisticalProgram,
    :skos/definition
    "a program conducted on a regular basis that provides information on purchases of various items and services by consumers"})
 
@@ -258,8 +250,7 @@
                      {:owl/hasValue   :fibo-ind-ei-usei/BureauOfLaborStatistics,
                       :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-ind-ei-ei/ProducerPriceIndex
-                     :fibo-ind-ei-usei/USProducerPriceIndex],
+                     :fibo-ind-ei-ei/ProducerPriceIndex],
    :skos/definition
    "an economic indicator representing a measure of the change over time in the selling prices received by domestic producers for their output"})
 
@@ -289,24 +280,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "urban consumer price index",
    :rdfs/subClassOf
-   [{:owl/onClass    :fibo-ind-ei-usei/UrbanConsumersUniverse,
-     :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-be-fct-pub/hasPublisher,
-     :owl/someValuesFrom :fibo-ind-ei-usei/AmericanStatisticsPublisher,
+   [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom :fibo-ind-ei-usei/UrbanConsumersUniverse,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-pas-fpas/Basket,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-     :owl/someValuesFrom :fibo-ind-ei-usei/UrbanConsumersUniverse,
-     :rdf/type           :owl/Restriction}
+    {:owl/onClass    :fibo-ind-ei-usei/UrbanConsumersUniverse,
+     :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
     :fibo-ind-ei-ei/ConsumerPriceIndex
     {:owl/hasValue   :fibo-ind-ei-usei/BureauOfLaborStatistics,
      :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
      :rdf/type       :owl/Restriction}
-    :fibo-ind-ei-usei/UrbanConsumerPriceIndex],
+    {:owl/onProperty     :fibo-be-fct-pub/hasPublisher,
+     :owl/someValuesFrom :fibo-ind-ei-usei/AmericanStatisticsPublisher,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "an economic indicator representing a measure of the average change over time in the prices paid by urban consumers for a market basket of consumer goods and services"})
 
@@ -322,18 +312,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
    :rdfs/label "urban consumers universe",
    :rdfs/subClassOf
-   [:fibo-ind-ei-ei/CivilianNonInstitutionalPopulation
-    {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
-     :owl/someValuesFrom :fibo-ind-ei-usei/ConsumerExpenditureSurvey,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
-     :owl/someValuesFrom :fibo-ind-ei-usei/PointOfPurchaseSurvey,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasMember,
+   [{:owl/onProperty     :cmns-col/hasMember,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom :fibo-ind-ei-ei/UltimateConsumer,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-ind-ei-usei/UrbanConsumersUniverse],
+    :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation
+    {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
+     :owl/someValuesFrom :fibo-ind-ei-usei/PointOfPurchaseSurvey,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
+     :owl/someValuesFrom :fibo-ind-ei-usei/ConsumerExpenditureSurvey,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "a statistical universe for consumer expenditure surveys consisting of people within a household that make joint expenditure decisions"})

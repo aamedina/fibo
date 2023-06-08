@@ -43,7 +43,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
    :rdfs/label #voc/lstr "marine finance@en",
-   :rdfs/subClassOf [:fibo-loan-ln-ln/Loan :fibo-loan-spc-mar/MarineFinancing],
+   :rdfs/subClassOf :fibo-loan-ln-ln/Loan,
    :skos/definition #voc/lstr
                      "A loan for the purchase of a boat or other vessel.@en"})
 

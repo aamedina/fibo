@@ -78,8 +78,7 @@
                      {:owl/onProperty     :fibo-fnd-org-fm/isEmployedIn,
                       :owl/someValuesFrom :fibo-fnd-org-fm/Employment,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-org-org/OrganizationMember
-                     :fibo-fnd-org-fm/Employee],
+                     :fibo-fnd-org-org/OrganizationMember],
    :skos/definition
    "person in the service of another under any contract of hire, express or implied, oral or written, where the employer has the right to control and direct that person in the material details of how the work is to be performed"})
 
@@ -96,8 +95,7 @@
                      {:owl/onProperty     :fibo-fnd-org-fm/hasEmployee,
                       :owl/someValuesFrom :fibo-fnd-org-fm/Employee,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-org-org/MemberBearingOrganization
-                     :fibo-fnd-org-fm/Employer],
+                     :fibo-fnd-org-org/MemberBearingOrganization],
    :skos/definition
    "party that provides compensation, including wages or a salary and potentially other benefits, in exchange for work performed by one or more people, and that has the right to control and direct the employee in the material details of how the work is to be performed"})
 
@@ -116,8 +114,7 @@
                      {:owl/onProperty     :fibo-fnd-org-fm/hasEmployedParty,
                       :owl/someValuesFrom :fibo-fnd-org-fm/Employee,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-org-org/Membership
-                     :fibo-fnd-org-fm/Employment],
+                     :fibo-fnd-org-org/Membership],
    :skos/definition
    "situation representing the state of being employed, i.e., the relationship that holds between an employer and employee for some period of time",
    :skos/scopeNote
@@ -136,8 +133,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-org-fm/isDomiciledIn,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-org-org/Organization
-                     :fibo-fnd-org-fm/FormalOrganization],
+                     :fibo-fnd-org-org/Organization],
    :skos/definition
    "organization that is recognized in some legal jurisdiction, with associated rights and responsibilities",
    :skos/example
@@ -153,8 +149,7 @@
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-aap-agt/AutonomousAgent,
                       :owl/onProperty    :cmns-col/hasMember,
                       :rdf/type          :owl/Restriction}
-                     :cmns-col/Collection
-                     :fibo-fnd-org-fm/Group],
+                     :cmns-col/Collection],
    :skos/definition
    "collection of agents (people, organizations, software agents, etc.) that are considered as a unit"})
 
@@ -165,8 +160,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "informal organization",
-   :rdfs/subClassOf [:fibo-fnd-org-org/Organization
-                     :fibo-fnd-org-fm/InformalOrganization],
+   :rdfs/subClassOf :fibo-fnd-org-org/Organization,
    :skos/definition
    "organization that is not formally constituted in some way"})
 
@@ -178,8 +172,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "employs",
    :rdfs/range :fibo-fnd-aap-ppl/Person,
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/playsActiveRoleThatDirectlyAffects
-                        :fibo-fnd-org-fm/employs],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/playsActiveRoleThatDirectlyAffects,
    :skos/definition "indicates someone that is employed by the legal person"})
 
 (def hasEmployedParty
@@ -192,8 +185,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "has employed party",
    :rdfs/range :fibo-fnd-org-fm/Employee,
-   :rdfs/subPropertyOf [:fibo-fnd-org-org/hasOrganizationMember
-                        :fibo-fnd-org-fm/hasEmployedParty],
+   :rdfs/subPropertyOf :fibo-fnd-org-org/hasOrganizationMember,
    :skos/definition "identifies the employee in an employment situation"})
 
 (def hasEmployee
@@ -206,7 +198,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "has employee",
    :rdfs/range :fibo-fnd-org-fm/Employee,
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/actsOn :fibo-fnd-org-fm/hasEmployee],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
    :skos/definition "indicates an employee that is employed by the employer"})
 
 (def hasEmployingParty
@@ -219,8 +211,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "has employing party",
    :rdfs/range :fibo-fnd-org-fm/Employer,
-   :rdfs/subPropertyOf [:fibo-fnd-org-org/hasMembership
-                        :fibo-fnd-org-fm/hasEmployingParty],
+   :rdfs/subPropertyOf :fibo-fnd-org-org/hasMembership,
    :skos/definition "identifies employer in an employment situation"})
 
 (def isDomiciledIn
@@ -247,8 +238,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "is employed by",
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/experiencesDirectly
-                        :fibo-fnd-org-fm/isEmployedBy],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/experiencesDirectly,
    :skos/definition
    "indicates the party (legal person or formal organization) that employs someone"})
 
@@ -261,8 +251,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "is employed in",
    :rdfs/range :fibo-fnd-org-fm/Employment,
-   :rdfs/subPropertyOf [:fibo-fnd-org-org/isOrganizationMember
-                        :fibo-fnd-org-fm/isEmployedIn],
+   :rdfs/subPropertyOf :fibo-fnd-org-org/isOrganizationMember,
    :skos/definition
    "indicates the context of employment in which someone is employed"})
 
@@ -275,8 +264,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "is employee of",
    :rdfs/range :fibo-fnd-org-fm/Employer,
-   :rdfs/subPropertyOf [:fibo-fnd-pty-pty/isAffectedBy
-                        :fibo-fnd-org-fm/isEmployeeOf],
+   :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
    :skos/definition
    "identifies the formal organization for which the employee works"})
 
@@ -289,7 +277,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :rdfs/label "is employing party",
    :rdfs/range :fibo-fnd-org-fm/Employment,
-   :rdfs/subPropertyOf [:fibo-fnd-org-org/isMembershipPartyIn
-                        :fibo-fnd-org-fm/isEmployingParty],
+   :rdfs/subPropertyOf :fibo-fnd-org-org/isMembershipPartyIn,
    :skos/definition
    "relates a party in the role of employer to the context of employment"})

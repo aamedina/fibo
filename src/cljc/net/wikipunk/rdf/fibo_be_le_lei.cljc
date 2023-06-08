@@ -94,7 +94,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "accounting framework",
    :rdfs/subClassOf [:fibo-be-le-lei/RelationshipQualifier
-                     :fibo-be-le-lei/AccountingFramework
                      :cmns-cls/Classifier],
    :skos/definition
    "framework, including policies, methods, rules, and processes, used to measure, recognize, present, and disclose the information appearing in an entity's financial statements, and, from a legal ownership perspective, that is applied for accounting consolidation determination"})
@@ -125,8 +124,7 @@
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-rl/AgentInRole
-                     :fibo-be-le-lei/ContractuallyCapableEntity],
+                     :fibo-fnd-pty-rl/AgentInRole],
    :skos/definition
    "a unique entity that is legally or financially responsible for the performance of financial transactions, or has the legal right in its jurisdiction to enter independently into legal contracts, regardless of whether it is incorporated or constituted in some other way (e.g. trust, partnership, contractual). This excludes natural persons, but includes governmental organizations and supranationals."})
 
@@ -154,14 +152,14 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "entity legal form",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :cmns-txt/Text,
-                      :owl/onProperty  :fibo-be-le-lei/hasLegalFormAbbreviation,
-                      :rdf/type        :owl/Restriction}
-                     :cmns-cls/Classifier
+   :rdfs/subClassOf [:cmns-cls/Classifier
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-txt/Text,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasTextualName,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :cmns-txt/Text,
+                      :owl/onProperty  :fibo-be-le-lei/hasLegalFormAbbreviation,
                       :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :cmns-dsg/isDefinedIn,
                       :owl/someValuesFrom :fibo-be-le-lei/EntityLegalFormScheme,
@@ -173,15 +171,14 @@
                       :owl/onDataRange :cmns-txt/Text,
                       :owl/onProperty  :fibo-be-le-lei/hasTransliteratedName,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :cmns-cls/classifies,
-                      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-txt/Text,
                       :owl/onProperty
                       :fibo-be-le-lei/hasTransliteratedLegalFormAbbreviation,
                       :rdf/type :owl/Restriction}
-                     :fibo-be-le-lei/EntityLegalForm],
+                     {:owl/onProperty     :cmns-cls/classifies,
+                      :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "a classifier for a legal entity that indicates the nature of that entity as defined from a legal or regulatory perspective, in the jurisdiction in which it was established"})
 
@@ -202,8 +199,7 @@
                       :owl/onProperty :cmns-dsg/denotes,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :cmns-cds/CodeElement
-                     :fibo-be-le-lei/EntityLegalFormIdentifier],
+                     :cmns-cds/CodeElement],
    :skos/definition
    "code that denotes an entity legal form as defined in ISO 20275"})
 
@@ -222,8 +218,7 @@
                       :fibo-be-le-lei/EntityLegalFormIdentifier,
                       :rdf/type :owl/Restriction}
                      :cmns-cds/CodeSet
-                     :cmns-cls/ClassificationScheme
-                     :fibo-be-le-lei/EntityLegalFormScheme],
+                     :cmns-cls/ClassificationScheme],
    :skos/definition
    "scheme that specifies the elements of the codes for entity legal forms, such as those that are sanctioned in a given jurisdiction as defined in ISO 20725"})
 
@@ -250,10 +245,10 @@
    :db/ident :fibo-be-le-lei/ISO17442-CodeSet,
    :rdf/type [:fibo-be-le-lei/LegalEntityIdentifierScheme
               :owl/NamedIndividual
-              :fibo-fnd-org-org/OrganizationIdentificationScheme
               {:owl/onProperty     :cmns-dsg/defines,
                :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              :fibo-fnd-org-org/OrganizationIdentificationScheme],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "ISO 17442 code set",
@@ -266,8 +261,8 @@
    :db/ident :fibo-be-le-lei/ISO20275-CodeSet,
    :rdf/type [:fibo-be-le-lei/EntityLegalFormScheme
               :owl/NamedIndividual
-              :cmns-cds/CodeSet
               :cmns-cls/ClassificationScheme
+              :cmns-cds/CodeSet
               {:owl/onProperty     :cmns-dsg/defines,
                :owl/someValuesFrom :fibo-be-le-lei/EntityLegalFormIdentifier,
                :rdf/type           :owl/Restriction}],
@@ -308,7 +303,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "LEI registered entity",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalPerson
-                     :fibo-be-le-lei/LEIRegisteredEntity
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-be-le-lei/LegalEntityIdentifier,
                       :owl/onProperty :cmns-id/isIdentifiedBy,
@@ -334,8 +328,7 @@
                       :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-org-org/OrganizationIdentifier
-                     :fibo-be-le-lei/LegalEntityIdentifier],
+                     :fibo-fnd-org-org/OrganizationIdentifier],
    :skos/definition
    "an organization identifier that uniquely identifies a legal person as defined in ISO 17442"})
 
@@ -352,8 +345,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-org-org/OrganizationIdentificationScheme
-                     :fibo-be-le-lei/LegalEntityIdentifierScheme],
+                     :fibo-fnd-org-org/OrganizationIdentificationScheme],
    :skos/definition
    "a scheme that specifies the elements of an unambiguous legal entity identifier (LEI) scheme to identify the legal entities relevant to any financial transaction"})
 
@@ -382,8 +374,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "relationship period qualifier",
-   :rdfs/subClassOf [:cmns-cls/Classifier
-                     :fibo-be-le-lei/RelationshipPeriodQualifier],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "a classifier that qualifies something about the reporting period specified, such as that the date period reflects an accounting or document filing period"})
 
@@ -396,8 +387,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "relationship qualifier",
-   :rdfs/subClassOf [:cmns-cls/Classifier
-                     :fibo-be-le-lei/RelationshipQualifier],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "a classifier that qualifies something about the relationship between consolidated entities during the reporting period, such as the accounting framework used"})
 
@@ -418,8 +408,7 @@
                       :owl/onClass    :fibo-be-le-lei/RelationshipQualifier,
                       :owl/onProperty :fibo-fnd-agr-ctr/isQualifiedBy,
                       :rdf/type       :owl/Restriction}
-                     :cmns-col/Constituent
-                     :fibo-be-le-lei/RelationshipRecord],
+                     :cmns-col/Constituent],
    :skos/definition "a record describing relationships between legal entities"})
 
 (def RelationshipStatus
@@ -435,7 +424,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "relationship status",
-   :rdfs/subClassOf [:cmns-cls/Classifier :fibo-be-le-lei/RelationshipStatus],
+   :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
    "a classifier that specifies the status of the relationship between consolidated entities during the reporting period (active or inactive)"})
 
@@ -478,8 +467,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "has legal address",
    :rdfs/range :fibo-fnd-plc-adr/ConventionalStreetAddress,
-   :rdfs/subPropertyOf [:fibo-be-le-fbo/hasRegisteredAddress
-                        :fibo-be-le-lei/hasLegalAddress],
+   :rdfs/subPropertyOf :fibo-be-le-fbo/hasRegisteredAddress,
    :skos/definition
    "indicates the legal address for the entity, in the jurisdiction in which the entity is established, used for registration purposes with respect to obtaining an LEI"})
 
@@ -495,7 +483,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "has legal form",
    :rdfs/range :fibo-be-le-lei/EntityLegalForm,
-   :rdfs/subPropertyOf [:cmns-cls/isClassifiedBy :fibo-be-le-lei/hasLegalForm],
+   :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
    :skos/definition
    "indicates the nature of the entity as defined from a legal or regulatory perspective in a given jurisdiction"})
 
@@ -506,8 +494,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "has legal form abbreviation",
-   :rdfs/subPropertyOf [:cmns-txt/hasTextValue
-                        :fibo-be-le-lei/hasLegalFormAbbreviation],
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "the precise abbreviation for the entity legal form as defined in the jurisdiction in which it is registered, for example LLC, LLP, Ltd, PLC, Corp."})
 
@@ -521,8 +508,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "has ownership percentage",
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf [:fibo-be-le-lei/isQuantifiedBy
-                        :fibo-be-le-lei/hasOwnershipPercentage],
+   :rdfs/subPropertyOf :fibo-be-le-lei/isQuantifiedBy,
    :skos/definition
    "the percentage ownership interest in the owned entity owned by owning entity, if known"})
 
@@ -533,8 +519,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "has transliterated legal form abbreviation",
-   :rdfs/subPropertyOf [:cmns-txt/hasTextValue
-                        :fibo-be-le-lei/hasTransliteratedLegalFormAbbreviation],
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "a transliterated (i.e., in Latin or Romanized ASCII) representation of the abbreviation for the entity legal form"})
 
@@ -548,8 +533,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "has transliterated name",
    :rdfs/subPropertyOf [:cmns-txt/hasTextValue
-                        :fibo-fnd-rel-rel/hasTextualName
-                        :fibo-be-le-lei/hasTransliteratedName],
+                        :fibo-fnd-rel-rel/hasTextualName],
    :skos/definition
    "a transliterated (i.e., in Latin or Romanized ASCII) representation of a name for the entity"})
 
@@ -563,7 +547,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "is consolidated by",
    :rdfs/range :fibo-be-le-lp/LegalEntity,
-   :rdfs/subPropertyOf :fibo-be-le-lei/isConsolidatedBy,
    :skos/definition
    "indicates the entity considered the 'end node' or consolidating entity (parent) from an ISO 17442 perspective"})
 
@@ -577,7 +560,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "is consolidation of",
    :rdfs/range :fibo-be-le-lp/LegalEntity,
-   :rdfs/subPropertyOf [:cmns-col/comprises :fibo-be-le-lei/isConsolidationOf],
+   :rdfs/subPropertyOf :cmns-col/comprises,
    :skos/definition
    "indicates the entity considered the 'start node' or consolidated entity from an ISO 17442 perspective"})
 
@@ -591,8 +574,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "is directly consolidated by",
    :rdfs/range :fibo-be-le-lp/LegalEntity,
-   :rdfs/subPropertyOf [:fibo-be-le-lei/isConsolidatedBy
-                        :fibo-be-le-lei/isDirectlyConsolidatedBy],
+   :rdfs/subPropertyOf :fibo-be-le-lei/isConsolidatedBy,
    :skos/definition
    "indicates that the entity considered the 'end node' or consolidating entity (parent) fully consolidates the accounting of the 'start node' (child) per the accounting rules specified, and is the closest consolidating entity to that child in any applicable ownership hierarchy"})
 
@@ -606,8 +588,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "is an international branch of",
    :rdfs/range :fibo-be-le-lp/LegalEntity,
-   :rdfs/subPropertyOf [:fibo-be-le-lei/isConsolidatedBy
-                        :fibo-be-le-lei/isInternationalBranchOf],
+   :rdfs/subPropertyOf :fibo-be-le-lei/isConsolidatedBy,
    :skos/definition
    "indicates that the entity considered the 'start node' or consolidated entity (child) is an international subsidiary of the 'end node' (parent) in the jurisdiction of the child"})
 
@@ -621,7 +602,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "is quantified by",
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf :fibo-be-le-lei/isQuantifiedBy,
    :skos/definition
    "indicates that something is limited to or conditional due to some rate or other statistical value"})
 
@@ -635,7 +615,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
    :rdfs/label "is ultimately consolidated by",
    :rdfs/range :fibo-be-le-lp/LegalEntity,
-   :rdfs/subPropertyOf [:fibo-be-le-lei/isConsolidatedBy
-                        :fibo-be-le-lei/isUltimatelyConsolidatedBy],
+   :rdfs/subPropertyOf :fibo-be-le-lei/isConsolidatedBy,
    :skos/definition
    "indicates that the entity considered the 'end node' or consolidating entity (parent) fully consolidates the accounting of the 'start node' (child) per the accounting rules specified, and is the most distant consolidating entity to that child in any applicable ownership hierarchy"})

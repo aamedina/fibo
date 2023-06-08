@@ -59,8 +59,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :fibo-fnd-law-cor/Law,
                       :rdf/type           :owl/Restriction}
-                     :cmns-col/Collection
-                     :fibo-fnd-law-cor/Constitution],
+                     :cmns-col/Collection],
    :skos/definition
    "set of basic principles by which an organization is governed, especially in relation to the rights of the people it governs"})
 
@@ -73,8 +72,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
    :rdfs/label "court of law",
-   :rdfs/subClassOf [:fibo-fnd-org-fm/FormalOrganization
-                     :fibo-fnd-law-cor/CourtOfLaw],
+   :rdfs/subClassOf :fibo-fnd-org-fm/FormalOrganization,
    :skos/definition
    "person or body of persons having judicial authority to hear and resolve disputes on the basis of statutes or the common law"})
 

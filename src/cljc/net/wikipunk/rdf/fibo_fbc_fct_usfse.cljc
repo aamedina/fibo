@@ -103,22 +103,21 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "agency of a foreign banking organization",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-oac-ctl/isControlledPartyOf,
-     :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom :fibo-fbc-fct-usfse/OfficeOfAForeignBank,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
                           :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
                           :rdf/type       :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-fse/FinancialInstitution
     {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-usfse/AgencyOfAForeignBankingOrganization],
+    {:owl/onProperty     :fibo-fnd-oac-ctl/isControlledPartyOf,
+     :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     :owl/someValuesFrom :fibo-fbc-fct-usfse/OfficeOfAForeignBank,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "place of business of a foreign bank, located in any state, at which credit balances are maintained, checks are paid, money is lent, or, to the extent not prohibited by state or federal law, deposits are accepted from a person or entity that is not a citizen or resident of the United States"})
 
@@ -134,8 +133,7 @@
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-fct-usfse/AgreementCorporation],
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "corporation chartered by a state to engage in international banking, so named because the corporation enters into an 'agreement' with the Fed's Board of Governors that it will limit its activities to those permitted"})
 
@@ -149,7 +147,6 @@
    :rdfs/label "agreement corporation - banking",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/AgreementCorporation
                      :fibo-fbc-fct-fse/DepositoryInstitution
-                     :fibo-fbc-fct-usfse/AgreementCorporation-Banking
                      {:owl/onClass    :fibo-be-le-cb/Corporation,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
@@ -168,7 +165,6 @@
    :rdfs/label "agreement corporation - investment",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/AgreementCorporation
                      :fibo-fbc-fct-fse/InvestmentBank
-                     :fibo-fbc-fct-usfse/AgreementCorporation-Investment
                      {:owl/onClass    :fibo-be-le-cb/Corporation,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
@@ -195,8 +191,6 @@
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fct-usfse/USBank
                      :fibo-fbc-fct-fse/CommercialBank
-                     :fibo-fbc-fct-usfse/BankersBank
-                     :fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -209,6 +203,7 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
+                     :fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-fct-fse/Bank],
    :skos/definition
    "commercial bank owned exclusively (except to the extent directors' qualifying shares are required by law) by other depository institutions or depository institution holding companies, the activities of which are limited by its articles of association exclusively to providing services to or for other depository institutions, their holding companies, and the officers, directors, and employees of such institutions and companies, and to providing correspondent banking services at the request of other depository institutions or their holding companies"})
@@ -227,8 +222,6 @@
      :owl/onProperty :fibo-fbc-fct-usfse/isSubjectToReserveRequirements,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-usfse/BankersBank
-    :fibo-fbc-fct-usfse/BankersBankNotSubjectToReserveRequirements
-    :fibo-fbc-fct-usfse/DomesticEntity
     :fibo-fbc-pas-fpas/FinancialServiceProvider
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/intersectionOf
@@ -241,13 +234,14 @@
                             :rdf/type :owl/Restriction}],
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-usfse/USBank
-    :fibo-fbc-fct-fse/Bank
+    :fibo-fbc-fct-usfse/DomesticEntity
     {:owl/onDataRange :xsd/boolean,
      :owl/onProperty  :fibo-fbc-fct-usfse/isSubjectToReserveRequirements,
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
-    :fibo-fbc-fct-fse/CommercialBank],
+    :fibo-fbc-fct-fse/CommercialBank
+    :fibo-fbc-fct-usfse/USBank
+    :fibo-fbc-fct-fse/Bank],
    :skos/definition
    "bankers' bank whose activities are not limited by specific requirements of the Federal Reserve"})
 
@@ -265,8 +259,6 @@
      :owl/onProperty :fibo-fbc-fct-usfse/isSubjectToReserveRequirements,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-usfse/BankersBank
-    :fibo-fbc-fct-usfse/BankersBankSubjectToReserveRequirements
-    :fibo-fbc-fct-usfse/DomesticEntity
     :fibo-fbc-pas-fpas/FinancialServiceProvider
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/intersectionOf
@@ -279,13 +271,14 @@
                             :rdf/type :owl/Restriction}],
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-usfse/USBank
-    :fibo-fbc-fct-fse/Bank
+    :fibo-fbc-fct-usfse/DomesticEntity
     {:owl/onDataRange :xsd/boolean,
      :owl/onProperty  :fibo-fbc-fct-usfse/isSubjectToReserveRequirements,
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
-    :fibo-fbc-fct-fse/CommercialBank],
+    :fibo-fbc-fct-fse/CommercialBank
+    :fibo-fbc-fct-usfse/USBank
+    :fibo-fbc-fct-fse/Bank],
    :skos/definition
    "bankers' bank whose activities are limited by specific requirements of the Federal Reserve"})
 
@@ -305,8 +298,7 @@
                        :fibo-fbc-fct-fse/DepositoryInstitution,
                        :rdf/type :owl/Restriction},
                       :rdf/type :owl/Restriction}
-                     :fibo-be-le-fbo/Branch
-                     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution],
+                     :fibo-be-le-fbo/Branch],
    :skos/definition
    "any office or any place of business located in any State of the United States at which deposits are received"})
 
@@ -319,8 +311,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "commercial lending company",
-   :rdfs/subClassOf [:fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-fct-usfse/CommercialLendingCompany],
+   :rdfs/subClassOf :fibo-fbc-fct-fse/NonDepositoryInstitution,
    :skos/definition
    "any institution, other than a bank or an organization operating under section 25 of the Federal Reserve Act [12 U.S.C. 601 et seq.], organized under the laws of any State of the United States, or the District of Columbia which maintains credit balances incidental to or arising out of the exercise of banking powers and engages in the business of making commercial loans"})
 
@@ -333,8 +324,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "cooperative bank",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/ThriftInstitution
-                     :fibo-fbc-fct-usfse/CooperativeBank
-                     :fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -347,7 +336,8 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-fse/SavingsAssociation],
+                     :fibo-fbc-fct-fse/SavingsAssociation
+                     :fibo-fbc-fct-usfse/DomesticEntity],
    :skos/definition
    "state-chartered savings association that is organized and operates according to the laws of the state in which it is chartered or organized, including Massachusetts, New Hampshire, Rhode Island or Vermont"})
 
@@ -366,24 +356,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "domestic branch of a foreign bank",
    :rdfs/subClassOf
-   [{:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
-     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usfse/OfficeOfAForeignBank
+   [:fibo-fbc-fct-usfse/OfficeOfAForeignBank
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
-    :fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
-    :fibo-fnd-plc-fac/Facility
+    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
+     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
+     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom
                           :fibo-fbc-fct-fse/DepositoryInstitution,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
+    :fibo-fnd-plc-fac/Facility
     :fibo-be-le-fbo/Branch],
    :skos/definition
    "place of business of a foreign bank, located in any state, at which deposits are received, and that is not an agency as defined in https://www.ecfr.gov/current/title-12/chapter-II/subchapter-A/part-211/subpart-B/section-211.21"})
@@ -408,7 +397,6 @@
      :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
-    :fibo-fbc-fct-usfse/DomesticBranchOfDomesticBank
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom
@@ -437,8 +425,7 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
-                     :fibo-fbc-fct-usfse/DomesticEntity],
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider],
    :skos/definition
    "financial service provider that is incorporated and domiciled in the United States"})
 
@@ -454,7 +441,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "domestic entity other",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/DomesticEntity
-                     :fibo-fbc-fct-usfse/DomesticEntityOther
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -483,20 +469,8 @@
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/NonBankSubsidiaryOfADomesticEntity
     :fibo-fbc-fct-usfse/DomesticEntity
-    :fibo-fbc-fct-usfse/DomesticNonBankSubsidiaryOfADomesticEntity
-    {:owl/onProperty     :fibo-be-oac-cctl/isSubsidiaryOf,
-     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom
-                          :fibo-fbc-fct-usfse/DomesticEntity,
-                          :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
     :fibo-fbc-pas-fpas/FinancialServiceProvider
-    {:owl/onProperty     :fibo-be-oac-cctl/isSubsidiaryOf,
-     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom
-                          :fibo-fbc-fct-fse/FinancialInstitution,
-                          :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fct-usfse/SubsidiaryOfADomesticEntity
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/intersectionOf
                           [{:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
@@ -508,8 +482,19 @@
                             :rdf/type :owl/Restriction}],
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-usfse/SubsidiaryOfADomesticEntity
-    :fibo-be-oac-cctl/Subsidiary],
+    :fibo-be-oac-cctl/Subsidiary
+    {:owl/onProperty     :fibo-be-oac-cctl/isSubsidiaryOf,
+     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom
+                          :fibo-fbc-fct-usfse/DomesticEntity,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-be-oac-cctl/isSubsidiaryOf,
+     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom
+                          :fibo-fbc-fct-fse/FinancialInstitution,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "non-bank financial service provider based in the United States of which 25 percent or more of whose voting shares are owned or controlled by an entity that is also based in the United States, or of which a majority of its directors are controlled by such domestic entity, or of which 25 percent or more of whose voting shares are held by trustees for the benefit of the shareholders or members of such domestic entity"})
 
@@ -525,8 +510,7 @@
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-fct-usfse/EdgeCorporation],
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "corporation chartered by the Federal Reserve to engage in international banking and financial operations"})
 
@@ -540,12 +524,11 @@
    :rdfs/label "edge corporation - banking",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/EdgeCorporation
                      :fibo-fbc-fct-fse/DepositoryInstitution
-                     :fibo-fbc-fct-usfse/EdgeCorporation-Banking
+                     :fibo-fbc-fct-fse/FinancialInstitution
                      {:owl/onClass    :fibo-be-le-cb/Corporation,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fct-fse/FinancialInstitution],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "edge corporation whose charter allows the corporation to engage in international banking"})
 
@@ -567,8 +550,7 @@
                      {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
                       :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-le-fbo/Branch
-                     :fibo-fbc-fct-usfse/EdgeCorporation-DomesticBranch],
+                     :fibo-be-le-fbo/Branch],
    :skos/definition
    "branch of an edge corporation that is located in the United States"})
 
@@ -582,12 +564,11 @@
    :rdfs/label "edge corporation - investment",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/EdgeCorporation
                      :fibo-fbc-fct-fse/InvestmentBank
-                     :fibo-fbc-fct-usfse/EdgeCorporation-Investment
+                     :fibo-fbc-fct-fse/FinancialInstitution
                      {:owl/onClass    :fibo-be-le-cb/Corporation,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fct-fse/FinancialInstitution],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "edge corporation whose charter allows the corporation to engage in international investment banking"})
 
@@ -603,7 +584,6 @@
    :rdfs/label "farm credit system institution",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-fct-usfse/FarmCreditSystemInstitution
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -633,17 +613,16 @@
    :rdfs/label "federal agency of foreign banking organization",
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/AgencyOfAForeignBankingOrganization
-    :fibo-fbc-fct-usfse/FederalAgencyOfForeignBankingOrganization
     {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/OfficeOfAForeignBank,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-fse/FinancialInstitution
     {:owl/onProperty     :fibo-fnd-oac-ctl/isControlledPartyOf,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
      :rdf/type           :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
                           :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
@@ -666,11 +645,11 @@
    :rdfs/label "federal branch of foreign banking organization",
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
-    :fibo-fbc-fct-usfse/FederalBranchOfForeignBankingOrganization
-    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
-     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-plc-fac/Facility
+    {:owl/onProperty     :cmns-col/isPartOf,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
@@ -678,13 +657,12 @@
                           :fibo-fbc-fct-fse/DepositoryInstitution,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/isPartOf,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
-                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
-                          :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
+    :fibo-fnd-plc-fac/Facility
     :fibo-fbc-fct-usfse/OfficeOfAForeignBank
-    :fibo-be-le-fbo/Branch],
+    :fibo-be-le-fbo/Branch
+    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
+     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "branch of a foreign bank established and operating under section 3102 of CFR Title 12, Chapter 32 and section 4 of the International Banking Act of 1978"})
 
@@ -696,15 +674,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "federal credit union",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/USCreditUnion
-                     :fibo-fbc-fct-usfse/FederalCreditUnion
-                     :fibo-fbc-fct-usfse/DomesticEntity
-                     :fibo-fbc-fct-usfse/ThriftInstitution
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
-                     {:owl/onClass    :fibo-be-le-cb/NotForProfitCorporation,
-                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fct-fse/CreditUnion
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
                       {:owl/intersectionOf
@@ -716,7 +686,14 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-fse/SavingsAssociation],
+                     :fibo-fbc-fct-fse/SavingsAssociation
+                     :fibo-fbc-fct-usfse/DomesticEntity
+                     :fibo-fbc-fct-usfse/ThriftInstitution
+                     {:owl/onClass    :fibo-be-le-cb/NotForProfitCorporation,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fct-fse/CreditUnion],
    :skos/definition "credit union that has a federal affiliation"})
 
 (def FederalSavingsBank
@@ -728,9 +705,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "federal savings bank",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/SavingsBank
-                     :fibo-fbc-fct-usfse/FederalSavingsBank
-                     :fibo-fbc-fct-usfse/DomesticEntity
-                     :fibo-fbc-fct-usfse/ThriftInstitution
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -743,7 +717,9 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-fse/SavingsAssociation],
+                     :fibo-fbc-fct-fse/SavingsAssociation
+                     :fibo-fbc-fct-usfse/DomesticEntity
+                     :fibo-fbc-fct-usfse/ThriftInstitution],
    :skos/definition "savings bank that has a federal affiliation"})
 
 (def FinancialHoldingCompany
@@ -757,8 +733,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "financial holding company",
-   :rdfs/subClassOf [:fibo-fbc-fct-fse/BankHoldingCompany
-                     :fibo-fbc-fct-usfse/FinancialHoldingCompany],
+   :rdfs/subClassOf :fibo-fbc-fct-fse/BankHoldingCompany,
    :skos/definition
    "financial entity engaged in a broad range of banking-related activities as permitted under the Gramm-Leach-Bliley Act of 1999",
    :skos/note "Can be a domestic or foreign domiciled holding company"})
@@ -778,16 +753,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "foreign bank",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-usfse/hasHomeCountry,
-                      :owl/someValuesFrom :lcc-cr/Country,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fbc-fct-rga/RegulatoryAgency,
                       :owl/onProperty
                       :fibo-fbc-fct-usfse/hasHomeCountrySupervisor,
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fct-fse/Bank
-                     :fibo-fbc-fct-usfse/ForeignBank],
+                     {:owl/onProperty     :fibo-fbc-fct-usfse/hasHomeCountry,
+                      :owl/someValuesFrom :lcc-cr/Country,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "financial institution organized under the laws of a foreign country, a territory of the United States, Puerto Rico, Guam, American Samoa, or the Virgin Islands, which engages in the business of banking, or any subsidiary or affiliate, organized under such laws, of any such institution"})
 
@@ -805,16 +779,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "foreign banking organization",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-usfse/hasHomeCountry,
-                      :owl/someValuesFrom :lcc-cr/Country,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fbc-fct-rga/RegulatoryAgency,
                       :owl/onProperty
                       :fibo-fbc-fct-usfse/hasHomeCountrySupervisor,
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-usfse/ForeignBankingOrganization],
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     {:owl/onProperty     :fibo-fbc-fct-usfse/hasHomeCountry,
+                      :owl/someValuesFrom :lcc-cr/Country,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "financial service provider that is headquartered outside the United States and that can acquire or establish freestanding banks or bank holding companies in the United States"})
 
@@ -832,14 +805,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "foreign banking organization as a bank holding company",
    :rdfs/subClassOf
-   [:fibo-fbc-fct-fse/BankHoldingCompany
-    :fibo-fbc-fct-usfse/ForeignBankingOrganization
-    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+   [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
                           :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
                           :rdf/type       :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-usfse/ForeignBankingOrganizationAsABankHoldingCompany
+    :fibo-fbc-fct-fse/BankHoldingCompany
+    :fibo-fbc-fct-usfse/ForeignBankingOrganization
     :fibo-fbc-pas-fpas/FinancialServiceProvider
     {:owl/onProperty     :fibo-fbc-fct-usfse/hasHomeCountry,
      :owl/someValuesFrom :lcc-cr/Country,
@@ -861,17 +833,16 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "foreign banking organization of a bank holding company",
-   :rdfs/subClassOf
-   [:fibo-fbc-fct-usfse/ForeignBankingOrganization
-    :fibo-fbc-fct-usfse/ForeignBankingOrganizationOfABankHoldingCompany
-    :fibo-fbc-pas-fpas/FinancialServiceProvider
-    {:owl/onProperty     :fibo-fbc-fct-usfse/hasHomeCountry,
-     :owl/someValuesFrom :lcc-cr/Country,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-fct-rga/RegulatoryAgency,
-     :owl/onProperty :fibo-fbc-fct-usfse/hasHomeCountrySupervisor,
-     :rdf/type       :owl/Restriction}],
+   :rdfs/subClassOf [:fibo-fbc-fct-usfse/ForeignBankingOrganization
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     {:owl/onProperty     :fibo-fbc-fct-usfse/hasHomeCountry,
+                      :owl/someValuesFrom :lcc-cr/Country,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fbc-fct-rga/RegulatoryAgency,
+                      :owl/onProperty
+                      :fibo-fbc-fct-usfse/hasHomeCountrySupervisor,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "foreign banking organization that is owned or controlled by a bank holding company"})
 
@@ -894,7 +865,6 @@
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
-    :fibo-fbc-fct-usfse/ForeignBranchOfForeignBank
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom
@@ -923,7 +893,6 @@
       :rdf/type    :owl/Class},
      :rdf/type :owl/Restriction}
     :fibo-fbc-fct-usfse/ForeignBranchOfForeignBank
-    :fibo-fbc-fct-usfse/ForeignBranchOfForeignBankManagedByUSOffice
     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
@@ -931,12 +900,12 @@
                           :fibo-fbc-fct-fse/DepositoryInstitution,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
+    :fibo-be-le-fbo/Branch
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
                           :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-be-le-fbo/Branch],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "branch that resides outside of the United States whose parent is located outside of the United States that is managed by a US branch or agency of the foreign bank"})
 
@@ -959,7 +928,6 @@
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
-    :fibo-fbc-fct-usfse/ForeignBranchOfUSBank
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom
@@ -979,8 +947,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "foreign entity other",
-   :rdfs/subClassOf [:fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-fct-usfse/ForeignEntityOther],
+   :rdfs/subClassOf :fibo-fbc-fct-fse/FinancialInstitution,
    :skos/definition
    "foreign institution that engages in banking activities usually in connection with the business of banking in the countries where such foreign institutions are organized or operating"})
 
@@ -993,7 +960,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "industrial bank",
-   :rdfs/subClassOf [:fibo-fbc-fct-fse/Bank :fibo-fbc-fct-usfse/IndustrialBank],
+   :rdfs/subClassOf :fibo-fbc-fct-fse/Bank,
    :skos/definition
    "limited service financial institution that raises funds by selling certificates called 'investment shares' and by accepting deposits"})
 
@@ -1010,11 +977,12 @@
    :rdfs/label "insured federal branch of foreign banking organization",
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/FederalBranchOfForeignBankingOrganization
-    :fibo-fbc-fct-usfse/InsuredFederalBranchOfForeignBankingOrganization
-    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
-     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-plc-fac/Facility
+    :fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
+    {:owl/onProperty     :cmns-col/isPartOf,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
@@ -1022,14 +990,12 @@
                           :fibo-fbc-fct-fse/DepositoryInstitution,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/isPartOf,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
-                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
-                          :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
+    :fibo-fnd-plc-fac/Facility
     :fibo-fbc-fct-usfse/OfficeOfAForeignBank
-    :fibo-be-le-fbo/Branch],
+    :fibo-be-le-fbo/Branch
+    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
+     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "any office or any place of business of a foreign bank located in any State of the United States at which deposits are received established and operating under section 4 of the International Banking Act of 1978 that is insured and regulated by the Federal Deposit Insurance Corporation (FDIC)"})
 
@@ -1045,26 +1011,25 @@
    :rdfs/label "insured state branch of foreign banking organization",
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/StateBranchOfForeignBankingOrganization
-    :fibo-fbc-fct-usfse/InsuredStateBranchOfForeignBankingOrganization
-    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
-     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-plc-fac/Facility
+    {:owl/onProperty     :cmns-col/isPartOf,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
+    :fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom
                           :fibo-fbc-fct-fse/DepositoryInstitution,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/isPartOf,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
-                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
-                          :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
+    :fibo-fnd-plc-fac/Facility
     :fibo-fbc-fct-usfse/OfficeOfAForeignBank
-    :fibo-be-le-fbo/Branch],
+    :fibo-be-le-fbo/Branch
+    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
+     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "any office or any place of business of a foreign bank located in any State of the United States at which deposits are received, established and operating under the laws of that State that is insured and regulated by the Federal Deposit Insurance Corporation (FDIC)"})
 
@@ -1075,8 +1040,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "intermediate holding company",
-   :rdfs/subClassOf [:fibo-fbc-fct-fse/BankHoldingCompany
-                     :fibo-fbc-fct-usfse/IntermediateHoldingCompany],
+   :rdfs/subClassOf :fibo-fbc-fct-fse/BankHoldingCompany,
    :skos/definition
    "bank holding company established or designated by a foreign banking organization under subpart O of the Federal Reserve Board's Regulation YY (12 CFR part 252)"})
 
@@ -1088,18 +1052,17 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "international bank of US depositary, edge, trust company",
-   :rdfs/subClassOf
-   [{:owl/onProperty     :cmns-col/isPartOf,
-     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
-                          :owl/someValuesFrom
-                          {:owl/unionOf [:fibo-fbc-fct-fse/DepositoryInstitution
-                                         :fibo-fbc-fct-usfse/EdgeCorporation
-                                         :fibo-fbc-fct-fse/TrustCompany],
-                           :rdf/type    :owl/Class},
-                          :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-fse/Bank
-    :fibo-fbc-fct-usfse/InternationalBankOfUSDepositoryEdgeTrustCompany],
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/isPartOf,
+                      :owl/someValuesFrom
+                      {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
+                       :owl/someValuesFrom
+                       {:owl/unionOf [:fibo-fbc-fct-fse/DepositoryInstitution
+                                      :fibo-fbc-fct-usfse/EdgeCorporation
+                                      :fibo-fbc-fct-fse/TrustCompany],
+                        :rdf/type    :owl/Class},
+                       :rdf/type :owl/Restriction},
+                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-fct-fse/Bank],
    :skos/definition
    "bank that is owned or controlled by a US depository institution, Edge Act corporation or trust company"})
 
@@ -1118,7 +1081,8 @@
    ["https://fraser.stlouisfed.org/title/bank-holding-company-act-1956-984/fulltext"],
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/NonBankSubsidiaryOfADomesticEntity
-    :fibo-fbc-fct-usfse/InternationalNonBankSubsidiaryOfADomesticEntity
+    :fibo-fbc-fct-usfse/SubsidiaryOfADomesticEntity
+    :fibo-be-oac-cctl/Subsidiary
     {:owl/onProperty     :fibo-be-oac-cctl/isSubsidiaryOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -1130,9 +1094,7 @@
                           :owl/someValuesFrom
                           :fibo-fbc-fct-fse/FinancialInstitution,
                           :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-usfse/SubsidiaryOfADomesticEntity
-    :fibo-be-oac-cctl/Subsidiary],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "non-bank financial service provider based outside of the United States of which 25 percent or more of whose voting shares are owned or controlled by an entity that is based in the United States, or of which a majority of its directors are controlled by such domestic entity, or of which 25 percent or more of whose voting shares are held by trustees for the benefit of the shareholders or members of such domestic entity"})
 
@@ -1147,11 +1109,11 @@
    :rdfs/label "limited branch of a foreign bank",
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
-    :fibo-fbc-fct-usfse/LimitedBranchOfAForeignBank
-    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
-     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-plc-fac/Facility
+    {:owl/onProperty     :cmns-col/isPartOf,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
@@ -1159,13 +1121,12 @@
                           :fibo-fbc-fct-fse/DepositoryInstitution,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/isPartOf,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
-                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
-                          :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
+    :fibo-fnd-plc-fac/Facility
     :fibo-fbc-fct-usfse/OfficeOfAForeignBank
-    :fibo-be-le-fbo/Branch],
+    :fibo-be-le-fbo/Branch
+    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
+     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "branch of a foreign bank that receives only such deposits as would be permitted for a corporation organized under section 25A of the Federal Reserve Act (12 U.S.C. 611-631)"})
 
@@ -1178,9 +1139,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "mutual savings bank",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/SavingsBank
-                     :fibo-fbc-fct-usfse/MutualSavingsBank
-                     :fibo-fbc-fct-usfse/DomesticEntity
-                     :fibo-fbc-fct-usfse/ThriftInstitution
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -1193,7 +1151,9 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-fse/SavingsAssociation],
+                     :fibo-fbc-fct-fse/SavingsAssociation
+                     :fibo-fbc-fct-usfse/DomesticEntity
+                     :fibo-fbc-fct-usfse/ThriftInstitution],
    :skos/definition
    "financial institution that accepts deposits primarily from individuals and places a large portion of its funds into mortgage loans"})
 
@@ -1210,8 +1170,6 @@
    :rdfs/label "national bank",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/USBank
                      :fibo-fbc-fct-fse/CommercialBank
-                     :fibo-fbc-fct-usfse/NationalBank
-                     :fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -1224,6 +1182,7 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
+                     :fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-fct-fse/Bank],
    :skos/definition
    "commercial bank whose charter is approved by the Office of the Comptroller of the Currency (OCC) rather than by a state banking agency"})
@@ -1239,8 +1198,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "New York Article XII investment company",
-   :rdfs/subClassOf [:fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-fct-usfse/NewYorkArticleXIIInvestmentCompany],
+   :rdfs/subClassOf :fibo-fbc-fct-fse/NonDepositoryInstitution,
    :skos/definition
    "specialized non-depository lending institution that has broad borrowing and lending powers and may invest in stocks and bonds"})
 
@@ -1263,14 +1221,13 @@
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-usfse/SubsidiaryOfADomesticEntity
-    :fibo-fbc-fct-usfse/NonBankSubsidiaryOfADomesticEntity
+    :fibo-be-oac-cctl/Subsidiary
     {:owl/onProperty     :fibo-be-oac-cctl/isSubsidiaryOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
                           :fibo-fbc-fct-usfse/DomesticEntity,
                           :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-be-oac-cctl/Subsidiary],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "non-bank entity of which 25 percent or more of whose voting shares are owned or controlled by an entity that is based in the United States, or of which a majority of its directors are controlled by such domestic entity, or of which 25 percent or more of whose voting shares are held by trustees for the benefit of the shareholders or members of such domestic entity"})
 
@@ -1283,8 +1240,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "non-depository trust company",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/TrustCompany
-                     :fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-fct-usfse/NonDepositoryTrustCompany],
+                     :fibo-fbc-fct-fse/NonDepositoryInstitution],
    :skos/definition
    "trust company that accepts and executes trusts, but does not issue currency; non-depository trust companies can either be Federal Reserve Members or Federal Reserve Non-members"})
 
@@ -1297,8 +1253,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "office of a foreign bank",
-   :rdfs/subClassOf [:fibo-fnd-plc-fac/Facility
-                     :fibo-fbc-fct-usfse/OfficeOfAForeignBank],
+   :rdfs/subClassOf :fibo-fnd-plc-fac/Facility,
    :skos/definition
    "facility that is any branch, agency, representative office, or commercial lending company subsidiary of a foreign bank in the United States"})
 
@@ -1312,11 +1267,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "regional administrative office of a foreign bank",
-   :rdfs/subClassOf
-   [:fibo-fbc-fct-usfse/RepresentativeOfficeOfAForeignBank
-    :fibo-fbc-fct-usfse/RegionalAdministrativeOfficeOfAForeignBank
-    :fibo-fnd-plc-fac/Facility
-    :fibo-fbc-fct-usfse/OfficeOfAForeignBank],
+   :rdfs/subClassOf [:fibo-fbc-fct-usfse/RepresentativeOfficeOfAForeignBank
+                     :fibo-fnd-plc-fac/Facility
+                     :fibo-fbc-fct-usfse/OfficeOfAForeignBank],
    :skos/definition
    "representative office that \n(1) Is established by a foreign bank that operates two or more branches, agencies, commercial lending companies, or banks in the United States; \n(2) Is located in the same city as one or more of the foreign bank's branches, agencies, commercial lending companies, or banks in the United States; \n(3) Manages, supervises, or coordinates the operations of the foreign bank or its affiliates, if any, in a particular geographic area that includes the United States or a region thereof, including by exercising credit approval authority in that area pursuant to written standards, credit policies, and procedures established by the foreign bank; and \n(4) Does not solicit business from actual or potential customers of the foreign bank or its affiliates."})
 
@@ -1329,18 +1282,17 @@
    :owl/disjointWith [:fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
                       {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
                        :owl/someValuesFrom
-                       :fibo-fbc-fct-usfse/AgencyOfAForeignBankingOrganization,
+                       :fibo-fbc-fct-usfse/CommercialLendingCompany,
                        :rdf/type :owl/Restriction}
                       {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
                        :owl/someValuesFrom
-                       :fibo-fbc-fct-usfse/CommercialLendingCompany,
+                       :fibo-fbc-fct-usfse/AgencyOfAForeignBankingOrganization,
                        :rdf/type :owl/Restriction}],
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "representative office of a foreign bank",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/OfficeOfAForeignBank
-                     :fibo-fbc-fct-usfse/RepresentativeOfficeOfAForeignBank
                      :fibo-fnd-plc-fac/Facility],
    :skos/definition
    "office of a foreign bank which is located in any state and is not a federal branch, federal agency, state branch, state agency, or commercial lending company subsidiary"})
@@ -1356,8 +1308,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "savings bank",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/ThriftInstitution
-                     :fibo-fbc-fct-usfse/SavingsBank
-                     :fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -1370,7 +1320,8 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-fse/SavingsAssociation],
+                     :fibo-fbc-fct-fse/SavingsAssociation
+                     :fibo-fbc-fct-usfse/DomesticEntity],
    :skos/definition
    "banking institution organized to accept savings deposits and pay interest on those savings deposits"})
 
@@ -1384,8 +1335,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "savings loan association",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/ThriftInstitution
-                     :fibo-fbc-fct-usfse/SavingsLoanAssociation
-                     :fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -1398,7 +1347,8 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-fse/SavingsAssociation],
+                     :fibo-fbc-fct-fse/SavingsAssociation
+                     :fibo-fbc-fct-usfse/DomesticEntity],
    :skos/definition
    "financial institution that accepts deposits primarily from individuals and channels its funds primarily into residential mortgage loans"})
 
@@ -1420,8 +1370,7 @@
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
-                     :fibo-fbc-fct-fse/HoldingCompany
-                     :fibo-fbc-fct-usfse/SavingsLoanHoldingCompany],
+                     :fibo-fbc-fct-fse/HoldingCompany],
    :skos/definition
    "company that directly or indirectly controls a savings association or related holding company, and explicitly excludes any company that is also a bank holding company"})
 
@@ -1439,17 +1388,16 @@
    :rdfs/label "state agency of foreign banking organization",
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/AgencyOfAForeignBankingOrganization
-    :fibo-fbc-fct-usfse/StateAgencyOfForeignBankingOrganization
     {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/OfficeOfAForeignBank,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-fse/FinancialInstitution
     {:owl/onProperty     :fibo-fnd-oac-ctl/isControlledPartyOf,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
      :rdf/type           :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
                           :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
@@ -1472,11 +1420,11 @@
    :rdfs/label "state branch of foreign banking organization",
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
-    :fibo-fbc-fct-usfse/StateBranchOfForeignBankingOrganization
-    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
-     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-plc-fac/Facility
+    {:owl/onProperty     :cmns-col/isPartOf,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
@@ -1484,13 +1432,12 @@
                           :fibo-fbc-fct-fse/DepositoryInstitution,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/isPartOf,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
-                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
-                          :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
+    :fibo-fnd-plc-fac/Facility
     :fibo-fbc-fct-usfse/OfficeOfAForeignBank
-    :fibo-be-le-fbo/Branch],
+    :fibo-be-le-fbo/Branch
+    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
+     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "branch of a foreign bank located in any State of the United States at which deposits are received, established and operating under the laws of that State, where state means any State of the United States or the District of Columbia"})
 
@@ -1507,8 +1454,6 @@
    :rdfs/label "state-chartered bank",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/USBank
                      :fibo-fbc-fct-fse/CommercialBank
-                     :fibo-fbc-fct-usfse/StateCharteredBank
-                     :fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -1521,6 +1466,7 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
+                     :fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-fct-fse/Bank],
    :skos/definition
    "commercial bank whose charter is approved by a state banking regulator"})
@@ -1533,15 +1479,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "state credit union",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/USCreditUnion
-                     :fibo-fbc-fct-usfse/StateCreditUnion
-                     :fibo-fbc-fct-usfse/DomesticEntity
-                     :fibo-fbc-fct-usfse/ThriftInstitution
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
-                     {:owl/onClass    :fibo-be-le-cb/NotForProfitCorporation,
-                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fct-fse/CreditUnion
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
                       {:owl/intersectionOf
@@ -1553,7 +1491,14 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-fse/SavingsAssociation],
+                     :fibo-fbc-fct-fse/SavingsAssociation
+                     :fibo-fbc-fct-usfse/DomesticEntity
+                     :fibo-fbc-fct-usfse/ThriftInstitution
+                     {:owl/onClass    :fibo-be-le-cb/NotForProfitCorporation,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fct-fse/CreditUnion],
    :skos/definition "credit union that has a state affiliation"})
 
 (def StateSavingsBank
@@ -1566,9 +1511,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "state savings bank",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/SavingsBank
-                     :fibo-fbc-fct-usfse/StateSavingsBank
-                     :fibo-fbc-fct-usfse/DomesticEntity
-                     :fibo-fbc-fct-usfse/ThriftInstitution
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -1581,7 +1523,9 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-fse/SavingsAssociation],
+                     :fibo-fbc-fct-fse/SavingsAssociation
+                     :fibo-fbc-fct-usfse/DomesticEntity
+                     :fibo-fbc-fct-usfse/ThriftInstitution],
    :skos/definition "savings bank that has a state affiliation"})
 
 (def SubsidiaryOfADomesticEntity
@@ -1603,8 +1547,7 @@
                                            :fibo-fbc-fct-usfse/DomesticEntity,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-oac-cctl/Subsidiary
-                     :fibo-fbc-fct-usfse/SubsidiaryOfADomesticEntity],
+                     :fibo-be-oac-cctl/Subsidiary],
    :skos/definition
    "entity of which 25 percent or more of whose voting shares are owned or controlled by an entity that is based in the United States, or of which a majority of its directors are controlled by such domestic entity, or of which 25 percent or more of whose voting shares are held by trustees for the benefit of the shareholders or members of such domestic entity"})
 
@@ -1618,7 +1561,6 @@
    :rdfs/label "thrift institution",
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-fct-fse/SavingsAssociation
-                     :fibo-fbc-fct-usfse/ThriftInstitution
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -1651,7 +1593,6 @@
    :rdfs/seeAlso ["https://www.sec.gov/about/laws/ica40.pdf"],
    :rdfs/subClassOf [:fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-fct-fse/Bank
-                     :fibo-fbc-fct-usfse/USBank
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -1683,7 +1624,6 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-fct-fse/BankHoldingCompany
-                     :fibo-fbc-fct-usfse/USBankHoldingCompany
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -1714,8 +1654,6 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-fct-usfse/ThriftInstitution
                      :fibo-fbc-fct-fse/CreditUnion
-                     :fibo-fbc-fct-usfse/USCreditUnion
-                     :fibo-fbc-fct-usfse/DomesticEntity
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -1728,7 +1666,8 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-fse/SavingsAssociation],
+                     :fibo-fbc-fct-fse/SavingsAssociation
+                     :fibo-fbc-fct-usfse/DomesticEntity],
    :skos/definition
    "cooperative association organized for the purpose of promoting thrift among its members and creating a source of credit for provident or productive purposes"})
 
@@ -1745,7 +1684,6 @@
    :rdfs/label "uninsured federal agency of foreign banking organization",
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/FederalAgencyOfForeignBankingOrganization
-    :fibo-fbc-fct-usfse/UninsuredFederalAgencyOfForeignBankingOrganization
     {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
      :rdf/type           :owl/Restriction}
@@ -1753,10 +1691,10 @@
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/OfficeOfAForeignBank,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-fse/FinancialInstitution
     {:owl/onProperty     :fibo-fnd-oac-ctl/isControlledPartyOf,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
      :rdf/type           :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
                           :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
@@ -1782,11 +1720,12 @@
    :rdfs/label "uninsured federal branch of foreign banking organization",
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/FederalBranchOfForeignBankingOrganization
-    :fibo-fbc-fct-usfse/UninsuredFederalBranchOfForeignBankingOrganization
-    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
-     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-plc-fac/Facility
+    :fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
+    {:owl/onProperty     :cmns-col/isPartOf,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
@@ -1794,14 +1733,12 @@
                           :fibo-fbc-fct-fse/DepositoryInstitution,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/isPartOf,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
-                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
-                          :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
+    :fibo-fnd-plc-fac/Facility
     :fibo-fbc-fct-usfse/OfficeOfAForeignBank
-    :fibo-be-le-fbo/Branch],
+    :fibo-be-le-fbo/Branch
+    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
+     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "any office or any place of business of a foreign bank located in any State of the United States at which deposits are received established and operating under section 4 of the International Banking Act of 1978 that is not insured or regulated by the Federal Deposit Insurance Corporation (FDIC)"})
 
@@ -1818,7 +1755,6 @@
    :rdfs/label "uninsured state agency of foreign banking organization",
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/StateAgencyOfForeignBankingOrganization
-    :fibo-fbc-fct-usfse/UninsuredStateAgencyOfForeignBankingOrganization
     {:owl/onProperty     :fibo-fnd-oac-own/isOwnedAsset,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
      :rdf/type           :owl/Restriction}
@@ -1826,10 +1762,10 @@
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/OfficeOfAForeignBank,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-fse/FinancialInstitution
     {:owl/onProperty     :fibo-fnd-oac-ctl/isControlledPartyOf,
      :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
      :rdf/type           :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
                           :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
@@ -1855,26 +1791,25 @@
    :rdfs/label "uninsured state branch of foreign banking organization",
    :rdfs/subClassOf
    [:fibo-fbc-fct-usfse/StateBranchOfForeignBankingOrganization
-    :fibo-fbc-fct-usfse/UninsuredStateBranchOfForeignBankingOrganization
-    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
-     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-plc-fac/Facility
+    {:owl/onProperty     :cmns-col/isPartOf,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
+                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-usfse/BranchOfADepositoryInstitution
+    :fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/playsRole,
                           :owl/someValuesFrom
                           :fibo-fbc-fct-fse/DepositoryInstitution,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/isPartOf,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/playsRole,
-                          :owl/someValuesFrom :fibo-fbc-fct-usfse/ForeignBank,
-                          :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-usfse/DomesticBranchOfAForeignBank
+    :fibo-fnd-plc-fac/Facility
     :fibo-fbc-fct-usfse/OfficeOfAForeignBank
-    :fibo-be-le-fbo/Branch],
+    :fibo-be-le-fbo/Branch
+    {:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
+     :owl/onProperty :fibo-fnd-org-fm/isDomiciledIn,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "any office or any place of business of a foreign bank located in any State of the United States at which deposits are received, established and operating under the laws of that State that is not insured or regulated by the Federal Deposit Insurance Corporation (FDIC)"})
 
@@ -1889,8 +1824,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "has home country",
    :rdfs/range :lcc-cr/Country,
-   :rdfs/subPropertyOf [:fibo-fnd-plc-loc/hasCountry
-                        :fibo-fbc-fct-usfse/hasHomeCountry],
+   :rdfs/subPropertyOf :fibo-fnd-plc-loc/hasCountry,
    :skos/definition
    "indicates, with respect to a foreign bank, the country in which the foreign bank is chartered or incorporated"})
 
@@ -1905,8 +1839,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
    :rdfs/label "has home country supervisor",
    :rdfs/range :fibo-fbc-fct-rga/RegulatoryAgency,
-   :rdfs/subPropertyOf [:fibo-fbc-fct-rga/isRegulatedBy
-                        :fibo-fbc-fct-usfse/hasHomeCountrySupervisor],
+   :rdfs/subPropertyOf :fibo-fbc-fct-rga/isRegulatedBy,
    :skos/definition
    "indicates, with respect to a foreign bank, the governmental entity or entities in the foreign bank's home country with responsibility for the supervision and regulation of the foreign bank"})
 

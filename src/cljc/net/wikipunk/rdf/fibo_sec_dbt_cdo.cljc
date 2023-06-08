@@ -96,28 +96,27 @@
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/CDODeal
-    :fibo-sec-dbt-cdo/ABSCDODeal
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
      :rdf/type           :owl/Restriction}],
    :skos/definition #voc/lstr
                      "An issue of Asset Backed Security CDO notes.@en"})
@@ -131,19 +130,18 @@
    :rdfs/label #voc/lstr "a b s c d o instrument@en",
    :rdfs/subClassOf
    [:fibo-sec-dbt-cdo/CashCDOTranche
-    :fibo-sec-dbt-cdo/ABSCDOInstrument
-    :fibo-sec-dbt-cdo/CollateralizedDebtObligation
+    {:owl/maxQualifiedCardinality 1,
+     :owl/onClass    :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
+     :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
+     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :cmns-col/isConstituentOf,
      :owl/someValuesFrom {:owl/unionOf [:fibo-sec-dbt-abs/BondPool
                                         :fibo-sec-sec-pls/DebtPool],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
-    {:owl/maxQualifiedCardinality 1,
-     :owl/onClass    :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
-     :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-pbs/Tranche
-    :fibo-sec-dbt-pbs/StructuredFinanceInstrument],
+    :fibo-sec-dbt-cdo/CollateralizedDebtObligation
+    :fibo-sec-dbt-pbs/StructuredFinanceInstrument
+    :fibo-sec-dbt-pbs/Tranche],
    :skos/definition #voc/lstr "CDO where the underlying asset pool is ABS.@en"})
 
 (def AgencyCMO
@@ -163,8 +161,7 @@
                       :fibo-sec-dbt-cdo/providesPrepaymentSupport,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-dbti/DebtOffering
-                     :fibo-sec-dbt-cdo/AgencyCMO],
+                     :fibo-sec-dbt-dbti/DebtOffering],
    :skos/editorialNote
    #voc/lstr
     "Definition for the property 'has tranche type' which is now a restriction: The type of tranche for the CMO. Many different structures are used in practice, including stable PAC bonds or risky IOs and POs. There are floaters and inverse floaters. There are also Z-bonds, which are analogous to zero-coupon bonds.@en"})
@@ -178,18 +175,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "agency i o tranche@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/AgencyCMO
-                     :fibo-sec-dbt-cdo/AgencyIOTranche
-                     {:owl/onProperty
-                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
-                      :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-dbti/DebtOffering
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
                       :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/comprises,
-                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
-                      :rdf/type           :owl/Restriction}]})
+                     {:owl/onProperty
+                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
+                      :rdf/type :owl/Restriction}]})
 
 (def AgencyJumpTranche
   "A tranche where if there is some sort of trigger event reached then the holders of the tranche will begin to receive payments."
@@ -202,18 +198,17 @@
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/JumpZTriggerEvent,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-cdo/AgencyCMO
-                     :fibo-sec-dbt-cdo/AgencyJumpTranche
-                     {:owl/onProperty
-                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
-                      :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-dbti/DebtOffering
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
                       :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/comprises,
-                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty
+                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "A tranche where if there is some sort of trigger event reached then the holders of the tranche will begin to receive payments.@en"})
@@ -227,22 +222,21 @@
    :rdfs/label #voc/lstr "agency jump z tranche@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/AgencyZTranche
                      :fibo-sec-dbt-cdo/AgencyJumpTranche
-                     :fibo-sec-dbt-cdo/AgencyJumpZTranche
+                     :fibo-sec-dbt-cdo/AgencyCMO
+                     :fibo-sec-dbt-dbti/DebtOffering
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-sec-dbt-cdo/specifiesTrigger,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/JumpZTriggerEvent,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-cdo/AgencyCMO
-                     {:owl/onProperty
-                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
-                      :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-dbti/DebtOffering
                      {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
                       :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/comprises,
-                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty
+                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "A Jump Z tranche is like a Z tranche but if there is some sort of trigger event reached then the holders of the Jump Z tranche will begin to receive payments. Regular non-Sticky Jump Z tranches maintain their changed status only while the trigger event is in effect, and revert to their old payment status once the trigger event has passed.@en"})
@@ -255,18 +249,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "agency p o tranche@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/AgencyCMO
-                     :fibo-sec-dbt-cdo/AgencyPOTranche
-                     {:owl/onProperty
-                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
-                      :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-dbti/DebtOffering
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
                       :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/comprises,
-                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty
+                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Principal Only tranche. This tranche will only pay principal.@en"})
@@ -283,21 +276,20 @@
      :owl/someValuesFrom :fibo-sec-dbt-cdo/JumpZTriggerEventReversal,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/AgencyJumpZTranche
-    :fibo-sec-dbt-cdo/AgencyRegularJumpZ
     :fibo-sec-dbt-cdo/AgencyJumpTranche
+    :fibo-sec-dbt-cdo/AgencyCMO
+    :fibo-sec-dbt-dbti/DebtOffering
+    {:owl/onProperty     :cmns-col/comprises,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-cdo/specifiesTrigger,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/JumpZTriggerEvent,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-cdo/AgencyCMO
-    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/comprises,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/AgencyZTranche],
    :skos/definition
@@ -312,23 +304,22 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "agency sticky jump z@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/AgencyJumpZTranche
-                     :fibo-sec-dbt-cdo/AgencyStickyJumpZ
                      :fibo-sec-dbt-cdo/AgencyJumpTranche
+                     :fibo-sec-dbt-cdo/AgencyCMO
+                     :fibo-sec-dbt-dbti/DebtOffering
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-sec-dbt-cdo/specifiesTrigger,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/JumpZTriggerEvent,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-cdo/AgencyCMO
+                     {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty
                       :fibo-sec-dbt-cdo/providesPrepaymentSupport,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-dbti/DebtOffering
-                     {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
-                      :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/comprises,
-                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
-                      :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-cdo/AgencyZTranche],
    :skos/definition
    #voc/lstr
@@ -342,18 +333,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "agency z tranche@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/AgencyCMO
-                     :fibo-sec-dbt-cdo/AgencyZTranche
-                     {:owl/onProperty
-                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
-                      :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-dbti/DebtOffering
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
                       :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/comprises,
-                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty
+                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "A tranche that does not receive payments while other tranches remain.@en"})
@@ -370,28 +360,27 @@
      :owl/someValuesFrom :fibo-sec-dbt-cdo/ArbitrageCdoObjective,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/CDODeal
-    :fibo-sec-dbt-cdo/ArbitrageCDO
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -408,7 +397,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "arbitrage cdo objective@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/CDOOriginationObjective
-                     :fibo-sec-dbt-cdo/ArbitrageCdoObjective
                      :fibo-fnd-gao-obj/Objective],
    :skos/definition
    #voc/lstr
@@ -426,28 +414,27 @@
      :owl/someValuesFrom :fibo-sec-dbt-cdo/BalanceSheetCDOObjective,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/CDODeal
-    :fibo-sec-dbt-cdo/BalanceSheetCDO
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -464,7 +451,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "balance sheet c d o objective@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/CDOOriginationObjective
-                     :fibo-sec-dbt-cdo/BalanceSheetCDOObjective
                      :fibo-fnd-gao-obj/Objective],
    :skos/definition
    #voc/lstr
@@ -477,8 +463,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "c d o cashflow treatment structure@en",
-   :rdfs/subClassOf [:fibo-fnd-gao-obj/Strategy
-                     :fibo-sec-dbt-cdo/CDOCashflowTreatmentStructure],
+   :rdfs/subClassOf :fibo-fnd-gao-obj/Strategy,
    :skos/definition #voc/lstr
                      "The way in which cash flows are handled in a CDO.@en"})
 
@@ -493,20 +478,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "c d o deal@en",
    :rdfs/subClassOf
-   [{:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+   [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-col/hasConstituent,
@@ -515,7 +497,9 @@
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-cdo/CDODeal],
+    {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "An Issue of a set of CDO tranches as part of an offering to the market.@en"})
@@ -527,8 +511,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "c d o management style@en",
-   :rdfs/subClassOf [:fibo-fnd-gao-obj/Strategy
-                     :fibo-sec-dbt-cdo/CDOManagementStyle],
+   :rdfs/subClassOf :fibo-fnd-gao-obj/Strategy,
    :skos/definition
    #voc/lstr
     "The manner in which reference assets are managed during the life of a CDO.@en"})
@@ -540,8 +523,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "c d o origination objective@en",
-   :rdfs/subClassOf [:fibo-fnd-gao-obj/Objective
-                     :fibo-sec-dbt-cdo/CDOOriginationObjective],
+   :rdfs/subClassOf :fibo-fnd-gao-obj/Objective,
    :skos/definition #voc/lstr
                      "The origin or motivation behind a CDO issue.@en"})
 
@@ -552,7 +534,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "c d o pool@en",
-   :rdfs/subClassOf [:fibo-sec-sec-pls/DebtPool :fibo-sec-dbt-cdo/CDOPool],
+   :rdfs/subClassOf :fibo-sec-sec-pls/DebtPool,
    :skos/definition
    #voc/lstr
     "A pool of CDO securities. The underlying of the CDO Squared is a pool of CDO instruments.@en"})
@@ -570,8 +552,7 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-ast/Portfolio
-                     :fibo-sec-dbt-cdo/CDOPortfolio],
+                     :fibo-sec-sec-ast/Portfolio],
    :skos/definition
    #voc/lstr
     "A portfolio in which the reference assets of the CDO are held.@en"})
@@ -586,8 +567,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/manages,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole
-                     :fibo-sec-dbt-cdo/CDOPortfolioManager],
+                     :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition
    #voc/lstr
     "The portfolio manager for a managed CDO or arbitrage CDO (also called an asset manager). This assumes that the role is the same in both cases.@en"})
@@ -604,28 +584,27 @@
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPool,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/CDODeal
-    :fibo-sec-dbt-cdo/CDOSquaredDeal
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
      :rdf/type           :owl/Restriction}],
    :skos/definition #voc/lstr "An issue of CDO Squared notes.@en"})
 
@@ -637,7 +616,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "c d o squared instrument@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/CollateralizedDebtObligation
-                     :fibo-sec-dbt-cdo/CDOSquaredInstrument
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass
                       :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
@@ -663,7 +641,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "c m o deal@en",
-   :rdfs/subClassOf [:fibo-sec-dbt-dbti/DebtOffering :fibo-sec-dbt-cdo/CMODeal],
+   :rdfs/subClassOf :fibo-sec-dbt-dbti/DebtOffering,
    :skos/definition #voc/lstr
                      "An issue of Collateralized mortgaged Obligations.@en"})
 
@@ -674,7 +652,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "cash a b s pool@en",
-   :rdfs/subClassOf [:fibo-sec-sec-pls/DebtPool :fibo-sec-dbt-cdo/CashABSPool],
+   :rdfs/subClassOf :fibo-sec-sec-pls/DebtPool,
    :skos/definition
    #voc/lstr
     "A pool investment consisting of a collection of cash ABS instruments.@en"})
@@ -692,28 +670,27 @@
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CashCDOTranche,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/CDODeal
-    :fibo-sec-dbt-cdo/CashCDO
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -736,7 +713,6 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-pbs/Tranche
     :fibo-sec-dbt-cdo/CollateralizedDebtObligation
-    :fibo-sec-dbt-cdo/CashCDOTranche
     {:owl/maxQualifiedCardinality 1,
      :owl/onClass    :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
@@ -759,28 +735,27 @@
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CashflowStructure,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/CDODeal
-    :fibo-sec-dbt-cdo/CashflowCDO
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -794,7 +769,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "cashflow structure@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/CDOCashflowTreatmentStructure
-                     :fibo-sec-dbt-cdo/CashflowStructure
                      :fibo-fnd-gao-obj/Strategy],
    :skos/definition
    #voc/lstr
@@ -814,23 +788,22 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "collateralized bond obligation@en",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+   [:fibo-sec-dbt-cdo/CashCDOTranche
+    {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
      :owl/someValuesFrom :fibo-sec-dbt-abs/BondPool,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-cdo/CashCDOTranche
-    :fibo-sec-dbt-cdo/CollateralizedBondObligation
-    :fibo-sec-dbt-cdo/CollateralizedDebtObligation
-    {:owl/onProperty     :cmns-col/isConstituentOf,
-     :owl/someValuesFrom {:owl/unionOf [:fibo-sec-dbt-abs/BondPool
-                                        :fibo-sec-sec-pls/DebtPool],
-                          :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
     {:owl/maxQualifiedCardinality 1,
      :owl/onClass    :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-pbs/Tranche
-    :fibo-sec-dbt-pbs/StructuredFinanceInstrument],
+    {:owl/onProperty     :cmns-col/isConstituentOf,
+     :owl/someValuesFrom {:owl/unionOf [:fibo-sec-dbt-abs/BondPool
+                                        :fibo-sec-sec-pls/DebtPool],
+                          :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-cdo/CollateralizedDebtObligation
+    :fibo-sec-dbt-pbs/StructuredFinanceInstrument
+    :fibo-sec-dbt-pbs/Tranche],
    :skos/definition
    #voc/lstr
     "structured debt security that has investment-grade bonds as its underlying assets backed by the receivables on high-yield or junk bonds@en"})
@@ -848,8 +821,7 @@
                       :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
                       :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-pbs/StructuredFinanceInstrument
-                     :fibo-sec-dbt-cdo/CollateralizedDebtObligation],
+                     :fibo-sec-dbt-pbs/StructuredFinanceInstrument],
    :skos/definition
    #voc/lstr
     "structured finance constructed from a portfolio of fixed income assets including corporate loans and mortgage backed securities. A special purpose vehicle (SPV) issues notes to investors in order to raise funds that are invested in a portfolio of those fixed income assets, held by the SPV as collateral for the notes. Further notes: Collateralized Debt Obligation, for example, ABS CDO which consists of a portfolio of different ABS bonds, and the payments to the holders of these trust certificates are derived from the cash flows of the ABS bonds. This CDO instrument is part of a CDO issue, consisting of individual CDO instruments of a given seniority. Often referred to as tranches and slices (Investopedia). Investopedia: Similar in structure to a collateralized mortgage obligation (CMO) or collateralized bond obligation (CBO), CDOs are unique in that they represent different types of debt and credit risk. In the case of CDOs, these different types of debt are often referred to as 'tranches' or 'slices'. Each slice has a different maturity and risk associated with it. The higher the risk, the more the CDO pays. Further details: Collateralized Debt obligations are securitized interests in pools of - generally non-mortgage - assets. Assets - called collateral - usually comprise loans or debt instruments. A CDO may be called a collateralized loan obligation (CLO) or collateralized bond obligation (CBO) if it holds only loans or bonds, respectively. Investors bear the credit risk of the collateral. Multiple tranches of securities are issued by the CDO, offering investors various maturity and credit risk characteristics.@en"})
@@ -866,8 +838,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/LoanPool,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-dbti/DebtOffering
-                     :fibo-sec-dbt-cdo/CollateralizedLoanObligationOffering]})
+                     :fibo-sec-dbt-dbti/DebtOffering]})
 
 (def HybridCDO
   "A CDO which combines features both of the cash and synthetic CDO. This is a CDO with tranches of cash and tranches of synthetic underlying assets. Further notes: So for example an issiue of $550 million may have $500 million in an asset pool and an additional $50 million created via a synthetic asset."
@@ -883,28 +854,27 @@
      :owl/onProperty    :cmns-cxtdsg/appliesTo,
      :rdf/type          :owl/Restriction}
     :fibo-sec-dbt-cdo/CDODeal
-    :fibo-sec-dbt-cdo/HybridCDO
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -918,19 +888,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "i oette@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/AgencyIOTranche
-                     :fibo-sec-dbt-cdo/IOette
-                     {:owl/onProperty
-                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
-                      :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-cdo/AgencyCMO
                      :fibo-sec-dbt-dbti/DebtOffering
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
                       :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/comprises,
-                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty
+                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
+                      :rdf/type :owl/Restriction}],
    :skos/definition #voc/lstr "REVIEW: Is this a kind of IO Tranche.@en"})
 
 (def JumpZTriggerEvent
@@ -943,8 +912,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "jump z trigger event@en",
-   :rdfs/subClassOf [:fibo-sec-dbt-cdo/TriggerEvent
-                     :fibo-sec-dbt-cdo/JumpZTriggerEvent],
+   :rdfs/subClassOf :fibo-sec-dbt-cdo/TriggerEvent,
    :skos/definition #voc/lstr "The event which triggers the Jump Z@en"})
 
 (def JumpZTriggerEventReversal
@@ -957,8 +925,7 @@
    :rdfs/subClassOf [{:owl/onProperty :fibo-sec-dbt-cdo/specifiesReverseTrigger,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/JumpZTriggerEvent,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-cdo/TriggerEvent
-                     :fibo-sec-dbt-cdo/JumpZTriggerEventReversal],
+                     :fibo-sec-dbt-cdo/TriggerEvent],
    :skos/definition #voc/lstr
                      "The reversal of the event which triggers the Jump Z@en"})
 
@@ -972,8 +939,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-loan-ln-ln/Loan,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/DebtPool
-                     :fibo-sec-dbt-cdo/LoanPool],
+                     :fibo-sec-sec-pls/DebtPool],
    :skos/definition #voc/lstr "debt pool whose consituents are loans@en"})
 
 (def MBSInstrumentSlice
@@ -993,8 +959,7 @@
                         :fibo-sec-dbt-mbs/PassThroughMBSInstrumentNote],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-sec-ast/PortfolioHolding
-                     :fibo-sec-dbt-cdo/MBSInstrumentSlice],
+                     :fibo-sec-sec-ast/PortfolioHolding],
    :skos/definition
    #voc/lstr "A holding of an individual slice or slices of a tranche.@en"})
 
@@ -1017,28 +982,27 @@
      :owl/someValuesFrom :fibo-sec-dbt-cdo/ManagedManagementStyle,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/CDODeal
-    :fibo-sec-dbt-cdo/ManagedCDO
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1052,11 +1016,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "managed c d o portfolio@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/CDOPortfolio
-                     :fibo-sec-dbt-cdo/ManagedCDOPortfolio
-                     :fibo-sec-sec-ast/Portfolio
                      {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
                       :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-ast/Portfolio
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/MBSInstrumentSlice,
                       :rdf/type           :owl/Restriction}],
@@ -1072,7 +1035,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "managed management style@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/CDOManagementStyle
-                     :fibo-sec-dbt-cdo/ManagedManagementStyle
                      :fibo-fnd-gao-obj/Strategy]})
 
 (def MarketValueCDO
@@ -1087,28 +1049,27 @@
      :owl/someValuesFrom :fibo-sec-dbt-cdo/MarketValueStructure,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/CDODeal
-    :fibo-sec-dbt-cdo/MarketValueCDO
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
      :rdf/type           :owl/Restriction}]})
 
 (def MarketValueStructure
@@ -1119,7 +1080,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "market value structure@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/CDOCashflowTreatmentStructure
-                     :fibo-sec-dbt-cdo/MarketValueStructure
                      :fibo-fnd-gao-obj/Strategy]})
 
 (def MezzanineCDOTranche
@@ -1137,7 +1097,6 @@
      :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheRatingAtIssue,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/CollateralizedDebtObligation
-    :fibo-sec-dbt-cdo/MezzanineCDOTranche
     {:owl/maxQualifiedCardinality 1,
      :owl/onClass    :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
@@ -1162,26 +1121,25 @@
      :owl/onProperty    :fibo-sec-dbt-cdo/takesPrepaymentAfter,
      :rdf/type          :owl/Restriction}
     :fibo-sec-dbt-cdo/PlannedAmortizationClassBond
-    :fibo-sec-dbt-cdo/PAC-1Class
-    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
+    {:owl/onProperty     :fibo-sec-dbt-cdo/specifies,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/PACTrancheAmortizationSchedule,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/AgencyCMO
-    :fibo-sec-dbt-dbti/DebtOffering
-    {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
-     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
      :owl/onProperty    :fibo-sec-dbt-cdo/providesPrepaymentSupportFor,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
-     :owl/onProperty    :fibo-sec-dbt-cdo/supportedBy,
-     :rdf/type          :owl/Restriction}
+    :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-col/comprises,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-cdo/specifies,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/PACTrancheAmortizationSchedule,
+    {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
+     :owl/onProperty    :fibo-sec-dbt-cdo/supportedBy,
+     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1202,26 +1160,25 @@
      :owl/onProperty    :fibo-sec-dbt-cdo/takesPrepaymentAfter.1,
      :rdf/type          :owl/Restriction}
     :fibo-sec-dbt-cdo/PlannedAmortizationClassBond
-    :fibo-sec-dbt-cdo/PAC-2Class
-    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
+    {:owl/onProperty     :fibo-sec-dbt-cdo/specifies,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/PACTrancheAmortizationSchedule,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/AgencyCMO
-    :fibo-sec-dbt-dbti/DebtOffering
-    {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
-     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
      :owl/onProperty    :fibo-sec-dbt-cdo/providesPrepaymentSupportFor,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
-     :owl/onProperty    :fibo-sec-dbt-cdo/supportedBy,
-     :rdf/type          :owl/Restriction}
+    :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-col/comprises,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-cdo/specifies,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/PACTrancheAmortizationSchedule,
+    {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
+     :owl/onProperty    :fibo-sec-dbt-cdo/supportedBy,
+     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1239,26 +1196,25 @@
    :rdfs/label #voc/lstr "p a c-3 class@en",
    :rdfs/subClassOf
    [:fibo-sec-dbt-cdo/PlannedAmortizationClassBond
-    :fibo-sec-dbt-cdo/PAC-3Class
-    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
+    {:owl/onProperty     :fibo-sec-dbt-cdo/specifies,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/PACTrancheAmortizationSchedule,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/AgencyCMO
-    :fibo-sec-dbt-dbti/DebtOffering
-    {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
-     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
      :owl/onProperty    :fibo-sec-dbt-cdo/providesPrepaymentSupportFor,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
-     :owl/onProperty    :fibo-sec-dbt-cdo/supportedBy,
-     :rdf/type          :owl/Restriction}
+    :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-col/comprises,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-cdo/specifies,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/PACTrancheAmortizationSchedule,
+    {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
+     :owl/onProperty    :fibo-sec-dbt-cdo/supportedBy,
+     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1274,26 +1230,25 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-cdo/PlannedAmortizationClassBond
     :fibo-sec-dbt-cdo/AgencyZTranche
-    :fibo-sec-dbt-cdo/PAC-ZTranche
-    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
+    {:owl/onProperty     :fibo-sec-dbt-cdo/specifies,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/PACTrancheAmortizationSchedule,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/AgencyCMO
-    :fibo-sec-dbt-dbti/DebtOffering
-    {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
-     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
      :owl/onProperty    :fibo-sec-dbt-cdo/providesPrepaymentSupportFor,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
-     :owl/onProperty    :fibo-sec-dbt-cdo/supportedBy,
-     :rdf/type          :owl/Restriction}
+    :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-col/comprises,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-cdo/specifies,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/PACTrancheAmortizationSchedule,
+    {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
+     :owl/onProperty    :fibo-sec-dbt-cdo/supportedBy,
+     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1311,26 +1266,25 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-cdo/PlannedAmortizationClassBond
     :fibo-sec-dbt-cdo/AgencyPOTranche
-    :fibo-sec-dbt-cdo/PACPOTranche
     :fibo-sec-dbt-cdo/AgencyCMO
-    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
+    {:owl/onProperty     :fibo-sec-dbt-cdo/specifies,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/PACTrancheAmortizationSchedule,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
-    {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
-     :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
      :owl/onProperty    :fibo-sec-dbt-cdo/providesPrepaymentSupportFor,
-     :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
-     :owl/onProperty    :fibo-sec-dbt-cdo/supportedBy,
      :rdf/type          :owl/Restriction}
     {:owl/onProperty     :cmns-col/comprises,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-cdo/specifies,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/PACTrancheAmortizationSchedule,
+    {:owl/allValuesFrom :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
+     :owl/onProperty    :fibo-sec-dbt-cdo/supportedBy,
+     :rdf/type          :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
      :rdf/type           :owl/Restriction}],
    :skos/definition #voc/lstr
                      "Planned Amortization Class principal only tranche.@en"})
@@ -1342,8 +1296,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "p a c tranche amortization schedule@en",
-   :rdfs/subClassOf [:fibo-sec-dbt-bnd/RedemptionSchedule
-                     :fibo-sec-dbt-cdo/PACTrancheAmortizationSchedule]})
+   :rdfs/subClassOf :fibo-sec-dbt-bnd/RedemptionSchedule})
 
 (def PlannedAmortizationClassBond
   "Planned Amortization Class tranche.This is a tranche where the principal payment must follow a certain schedule."
@@ -1366,16 +1319,15 @@
      :owl/onProperty    :fibo-sec-dbt-cdo/providesPrepaymentSupportFor,
      :rdf/type          :owl/Restriction}
     :fibo-sec-dbt-cdo/AgencyCMO
-    :fibo-sec-dbt-cdo/PlannedAmortizationClassBond
-    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
+    {:owl/onProperty     :cmns-col/comprises,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/comprises,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1394,7 +1346,6 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-pbs/Tranche
     :fibo-sec-dbt-cdo/CollateralizedDebtObligation
-    :fibo-sec-dbt-cdo/SeniorCDOTranche
     {:owl/maxQualifiedCardinality 1,
      :owl/onClass    :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
@@ -1419,28 +1370,27 @@
      :owl/someValuesFrom :fibo-sec-dbt-cdo/StaticManagementStyle,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-cdo/CDODeal
-    :fibo-sec-dbt-cdo/StaticCDO
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolio,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-col/hasConstituent,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/MezzanineCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SuperSeniorCDOTranche,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasConstituent,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/SeniorCDOTranche,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/SubordinatedCDOEquity,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1454,11 +1404,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "static c d o portfolio@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/CDOPortfolio
-                     :fibo-sec-dbt-cdo/StaticCDOPortfolio
-                     :fibo-sec-sec-ast/Portfolio
                      {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/CDOPortfolioManager,
                       :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-ast/Portfolio
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-dbt-cdo/MBSInstrumentSlice,
                       :rdf/type           :owl/Restriction}],
@@ -1477,7 +1426,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "static management style@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/CDOManagementStyle
-                     :fibo-sec-dbt-cdo/StaticManagementStyle
                      :fibo-fnd-gao-obj/Strategy]})
 
 (def SubordinatedCDOEquity
@@ -1490,8 +1438,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "subordinated c d o equity@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-fi/Security
-                     :fibo-sec-dbt-cdo/SubordinatedCDOEquity],
+   :rdfs/subClassOf :fibo-fbc-fi-fi/Security,
    :skos/definition
    #voc/lstr
     "The subordinated (also known as equity) CDO tranche is the most junior tranche in the CDO issue. If there are defaults or the CDO's collateral otherwise underperforms, scheduled payments to senior and mezzanine tranches take precedence over those to subordinated/equity tranches.@en"})
@@ -1504,19 +1451,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "super p o tranche@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/AgencyPOTranche
-                     :fibo-sec-dbt-cdo/SuperPOTranche
                      :fibo-sec-dbt-cdo/AgencyCMO
-                     {:owl/onProperty
-                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
-                      :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-dbti/DebtOffering
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
                       :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/comprises,
-                      :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onProperty
+                      :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+                      :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Principal Only tranche. This tranche will only pay principal. Not clear how this is distinct from generic PO.@en"})
@@ -1529,7 +1475,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "super senior c d o tranche@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/CollateralizedDebtObligation
-                     :fibo-sec-dbt-cdo/SuperSeniorCDOTranche
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass
                       :fibo-sec-dbt-cdo/CollateralizedDebtObligation,
@@ -1548,10 +1493,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "support tranche@en",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                      :owl/someValuesFrom :fibo-sec-dbt-cdo/PAC-2Class,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-cdo/SupportTranche],
+   :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                     :owl/someValuesFrom :fibo-sec-dbt-cdo/PAC-2Class,
+                     :rdf/type           :owl/Restriction},
    :skos/definition
    #voc/lstr "A tranche which provides payment support to a PAC Tranche.@en"})
 
@@ -1568,16 +1512,15 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-mbs/TranchedMBSInstrument
     :fibo-sec-dbt-cdo/AgencyCMO
-    :fibo-sec-dbt-cdo/TACTranche
-    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
-     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/DebtOffering
+    {:owl/onProperty     :cmns-col/comprises,
+     :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-mbs/hasTrancheType,
      :owl/someValuesFrom :fibo-sec-dbt-mbs/TrancheType,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/comprises,
-     :owl/someValuesFrom :fibo-sec-dbt-mbs/AgencyMBSPool,
+    {:owl/onProperty     :fibo-sec-dbt-cdo/providesPrepaymentSupport,
+     :owl/someValuesFrom :fibo-sec-dbt-cdo/AgencyCMO,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1593,8 +1536,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "t a c tranche amortization schedule@en",
-   :rdfs/subClassOf [:fibo-sec-dbt-bnd/RedemptionSchedule
-                     :fibo-sec-dbt-cdo/TACTrancheAmortizationSchedule]})
+   :rdfs/subClassOf :fibo-sec-dbt-bnd/RedemptionSchedule})
 
 (def TriggerEvent
   "Any event where some value passes some threashold. Or some other type of business event. This is not restricted to \"trigger\" in the sense of a value passing a threshold. Can also be an seen such as a CDO manager going into bankruptcy."
@@ -1603,7 +1545,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "trigger event@en",
-   :rdfs/subClassOf :fibo-sec-dbt-cdo/TriggerEvent,
    :skos/definition
    #voc/lstr
     "Any event where some value passes some threashold. Or some other type of business event. This is not restricted to \"trigger\" in the sense of a value passing a threshold. Can also be an seen such as a CDO manager going into bankruptcy.@en"})
@@ -1616,7 +1557,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "true p s objective@en",
    :rdfs/subClassOf [:fibo-sec-dbt-cdo/CDOOriginationObjective
-                     :fibo-sec-dbt-cdo/TruePSObjective
                      :fibo-fnd-gao-obj/Objective]})
 
 (def confersOwnershipOf
@@ -1718,8 +1658,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "provides prepayment support@en",
-   :rdfs/range :fibo-sec-dbt-cdo/AgencyCMO,
-   :rdfs/subPropertyOf :fibo-sec-dbt-cdo/providesPrepaymentSupport})
+   :rdfs/range :fibo-sec-dbt-cdo/AgencyCMO})
 
 (def providesPrepaymentSupportFor
   "provides prepayment support for"
@@ -1731,8 +1670,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "provides prepayment support for@en",
    :rdfs/range :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
-   :rdfs/subPropertyOf [:fibo-sec-dbt-cdo/providesPrepaymentSupport
-                        :fibo-sec-dbt-cdo/providesPrepaymentSupportFor]})
+   :rdfs/subPropertyOf :fibo-sec-dbt-cdo/providesPrepaymentSupport})
 
 (def ratedAtIssue
   "rated at issue"
@@ -1899,8 +1837,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "supported by@en",
-   :rdfs/range :fibo-sec-dbt-cdo/PlannedAmortizationClassBond,
-   :rdfs/subPropertyOf :fibo-sec-dbt-cdo/supportedBy})
+   :rdfs/range :fibo-sec-dbt-cdo/PlannedAmortizationClassBond})
 
 (def takesPrepaymentAfter
   "takes prepayment after"
@@ -1911,8 +1848,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "takes prepayment after@en",
    :rdfs/range :fibo-sec-dbt-cdo/PAC-2Class,
-   :rdfs/subPropertyOf [:fibo-sec-dbt-cdo/supportedBy
-                        :fibo-sec-dbt-cdo/takesPrepaymentAfter]})
+   :rdfs/subPropertyOf :fibo-sec-dbt-cdo/supportedBy})
 
 (def takesPrepaymentAfter_1
   "takes prepayment after"
@@ -1923,5 +1859,4 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
    :rdfs/label #voc/lstr "takes prepayment after@en",
    :rdfs/range :fibo-sec-dbt-cdo/PAC-3Class,
-   :rdfs/subPropertyOf [:fibo-sec-dbt-cdo/supportedBy
-                        :fibo-sec-dbt-cdo/takesPrepaymentAfter.1]})
+   :rdfs/subPropertyOf :fibo-sec-dbt-cdo/supportedBy})

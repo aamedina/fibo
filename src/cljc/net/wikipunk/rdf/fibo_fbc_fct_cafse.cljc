@@ -49,7 +49,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CAFinancialServicesEntities/",
    :rdfs/label "Canadian credit union",
    :rdfs/seeAlso ["http://www.investopedia.com/terms/c/creditunion.asp"],
-   :rdfs/subClassOf [:fibo-fbc-fct-fse/CreditUnion
-                     :fibo-fbc-fct-cafse/CanadianCreditUnion],
+   :rdfs/subClassOf :fibo-fbc-fct-fse/CreditUnion,
    :skos/definition
    "a not-for-profit financial institution, typically formed by the employees of a company, labor union, or religious group, operated as a cooperative association organized for the purpose of promoting thrift among its members and creating a source of credit for provident or productive purposes"})

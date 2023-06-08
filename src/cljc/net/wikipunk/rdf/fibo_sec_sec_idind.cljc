@@ -126,25 +126,24 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/",
    :rdfs/label "CUSIP International Numbering System (CINS) number",
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-sec-sec-idind/CGSCUSIPAccessRepository,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-id/ProprietarySecurityIdentifier
-    :fibo-fbc-fct-ra/RegistryIdentifier
+   [:fibo-sec-sec-id/ProprietarySecurityIdentifier
     {:owl/hasValue   :fibo-sec-sec-idind/CUSIPGlobalServices,
-     :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
      :rdf/type       :owl/Restriction}
-    {:owl/onClass    :fibo-fbc-fi-fi/Security,
-     :owl/onProperty :cmns-id/identifies,
-     :owl/qualifiedCardinality 1,
+    {:owl/hasValue   :fibo-sec-sec-idind/CGSCUSIPAccessRepository,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
      :rdf/type       :owl/Restriction}
     {:owl/hasValue :fibo-sec-sec-idind/CUSIPInternationalNumberingSystemScheme,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-sec-sec-idind/CUSIPGlobalServices,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
+    {:owl/onClass    :fibo-fbc-fi-fi/Security,
+     :owl/onProperty :cmns-id/identifies,
+     :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-idind/CUSIPInternationalNumberingSystemNumber],
+    :fibo-fbc-fct-ra/RegistryIdentifier
+    {:owl/hasValue   :fibo-sec-sec-idind/CUSIPGlobalServices,
+     :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "9-character alphanumeric identifier that employs the same 9 characters as CUSIP, but also contains a letter of the alphabet in the first position signifying the issuer's country or geographic region, issued by CUSIP Global Services"})
 
@@ -173,27 +172,26 @@
    "Committee on Uniform Securities Identification Procedures (CUSIP) number",
    :rdfs/seeAlso ["https://www.cusip.com/cusip/about-cgs-identifiers.htm"],
    :rdfs/subClassOf
-   [{:owl/hasValue
-     :fibo-sec-sec-idind/CommitteeOnUniformSecuritiesIdentificationProceduresScheme,
-     :owl/onProperty :cmns-dsg/isDefinedIn,
-     :rdf/type :owl/Restriction}
-    :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber
-    {:owl/hasValue   :fibo-sec-sec-idind/CUSIPGlobalServices,
+   [{:owl/hasValue   :fibo-sec-sec-idind/CUSIPGlobalServices,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-id/ProprietarySecurityIdentifier
-    :fibo-fbc-fct-ra/RegistryIdentifier
-    {:owl/hasValue   :fibo-sec-sec-idind/CUSIPGlobalServices,
-     :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/hasValue   :fibo-sec-sec-idind/CGSCUSIPAccessRepository,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
      :rdf/type       :owl/Restriction}
     {:owl/onClass    :fibo-fbc-fi-fi/Security,
      :owl/onProperty :cmns-id/identifies,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-idind/CommitteeOnUniformSecuritiesIdentificationProceduresNumber],
+    :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber
+    :fibo-sec-sec-id/ProprietarySecurityIdentifier
+    :fibo-fbc-fct-ra/RegistryIdentifier
+    {:owl/hasValue   :fibo-sec-sec-idind/CGSCUSIPAccessRepository,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
+     :rdf/type       :owl/Restriction}
+    {:owl/hasValue   :fibo-sec-sec-idind/CUSIPGlobalServices,
+     :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/hasValue
+     :fibo-sec-sec-idind/CommitteeOnUniformSecuritiesIdentificationProceduresScheme,
+     :owl/onProperty :cmns-dsg/isDefinedIn,
+     :rdf/type :owl/Restriction}],
    :skos/definition
    "nine-character alphanumeric number that identifies all North American stocks and registered bonds for the purposes of facilitating clearing and settlement of trades, issued by CUSIP Global Services on behalf of the American Bankers' Association, which is a part of Standard and Poor's Capital IQ, that is the National Numbering Agency Identifier for securities issued in North America, which is also part of the ISIN for the security it identifies"})
 
@@ -230,8 +228,7 @@
                      {:owl/allValuesFrom :fibo-fbc-fi-fi/Security,
                       :owl/onProperty    :cmns-cxtdsg/appliesTo,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fbc-fct-ra/RegistryEntry
-                     :fibo-sec-sec-idind/CommonCodeRegistryEntry],
+                     :fibo-fbc-fct-ra/RegistryEntry],
    :skos/definition "entry in a common code registry"})
 
 (def CommonCodeRepository
@@ -263,23 +260,22 @@
                          :rdf/type  :owl/Class},
      :owl/onProperty    :fibo-fbc-fct-ra/isRegisteredBy,
      :rdf/type          :owl/Restriction}
-    {:owl/onClass    :fibo-fbc-fi-fi/Security,
-     :owl/onProperty :cmns-id/identifies,
-     :owl/qualifiedCardinality 1,
+    {:owl/hasValue   :fibo-sec-sec-idind/EuroclearClearstreamCommonCodeScheme,
+     :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type       :owl/Restriction}
     {:owl/hasValue   :fibo-sec-sec-idind/CommonCodeRepository,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
      :rdf/type       :owl/Restriction}
     :fibo-sec-sec-id/ProprietarySecurityIdentifier
-    {:owl/hasValue   :fibo-sec-sec-idind/EuroclearClearstreamCommonCodeScheme,
-     :owl/onProperty :cmns-dsg/isDefinedIn,
+    {:owl/onClass    :fibo-fbc-fi-fi/Security,
+     :owl/onProperty :cmns-id/identifies,
+     :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
     {:owl/allValuesFrom {:owl/oneOf [:fibo-fbc-fct-eufseind/Clearstream
                                      :fibo-fbc-fct-eufseind/Euroclear],
                          :rdf/type  :owl/Class},
      :owl/onProperty    :fibo-fnd-rel-rel/isIssuedBy,
-     :rdf/type          :owl/Restriction}
-    :fibo-sec-sec-idind/EuroclearClearstreamCommonCode],
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    "nine-character alphanumeric securities identifier, issued in Luxembourg, jointly by Euroclear and Clearstream"})
 
@@ -308,26 +304,25 @@
    :rdfs/label "financial instrument global identifier",
    :rdfs/subClassOf
    [{:owl/hasValue
+     :fibo-sec-sec-idind/FinancialInstrumentGlobalIdentifierScheme,
+     :owl/onProperty :cmns-dsg/isDefinedIn,
+     :rdf/type :owl/Restriction}
+    :fibo-fbc-fct-ra/RegistryIdentifier
+    {:owl/hasValue   :fibo-fbc-fct-usfsind/BloombergLP,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/hasValue
      :fibo-sec-sec-idind/FinancialInstrumentGlobalIdentifierRegistry,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
      :rdf/type :owl/Restriction}
-    :fibo-fbc-fct-ra/RegistryIdentifier
     {:owl/onProperty     :cmns-id/identifies,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/FinancialInstrument
                                         :fibo-sec-sec-lst/Listing],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-sec-sec-idind/FinancialInstrumentGlobalIdentifierScheme,
-     :owl/onProperty :cmns-dsg/isDefinedIn,
-     :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-fbc-fct-usfsind/BloombergLP,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
-     :rdf/type       :owl/Restriction}
     {:owl/hasValue   :fibo-fbc-fct-usfsind/BloombergLP,
      :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-idind/FinancialInstrumentGlobalIdentifier],
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "financial instrument identifier that is defined as specified in the Object Management Group (OMG) Financial Instrument Global Identifier (FIGI) Specification"})
 
@@ -367,8 +362,7 @@
      :fibo-sec-sec-idind/FinancialInstrumentGlobalIdentifierRegistry,
      :owl/onProperty :cmns-col/isIncludedIn,
      :rdf/type :owl/Restriction}
-    :fibo-fbc-fct-ra/RegistryEntry
-    :fibo-sec-sec-idind/FinancialInstrumentGlobalIdentifierRegistryEntry],
+    :fibo-fbc-fct-ra/RegistryEntry],
    :skos/definition
    "entry in a Financial Instrument Global Identifier (FIGI) registry"})
 
@@ -417,8 +411,7 @@
                      {:owl/hasValue   :fibo-fbc-fct-usfsind/ThomsonReuters,
                       :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-sec-sec-id/ProprietarySecurityIdentifier
-                     :fibo-sec-sec-idind/ReutersInstrumentCode],
+                     :fibo-sec-sec-id/ProprietarySecurityIdentifier],
    :skos/definition
    "ticker-like identifier to identify financial instruments and indices owned, managed, and distributed by Thomson Reuters"})
 
@@ -456,22 +449,21 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/",
    :rdfs/label "Stock Exchange Daily Official List (SEDOL) code",
    :rdfs/subClassOf [{:owl/hasValue :fibo-fbc-fct-eufseind/LondonStockExchange,
-                      :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
-                      :rdf/type :owl/Restriction}
-                     :fibo-sec-sec-id/ProprietarySecurityIdentifier
-                     :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber
-                     {:owl/hasValue :fibo-fbc-fct-eufseind/LondonStockExchange,
                       :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-sec-id/ListedSecurityIdentifier
-                     {:owl/hasValue
-                      :fibo-sec-sec-idind/StockExchangeDailyOfficialListScheme,
-                      :owl/onProperty :cmns-dsg/isDefinedIn,
+                     {:owl/hasValue :fibo-fbc-fct-eufseind/LondonStockExchange,
+                      :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
                       :rdf/type :owl/Restriction}
                      {:owl/hasValue   :fibo-sec-sec-idind/SEDOLMasterFile,
                       :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
                       :rdf/type       :owl/Restriction}
-                     :fibo-sec-sec-idind/StockExchangeDailyOfficialListCode],
+                     :fibo-sec-sec-id/ProprietarySecurityIdentifier
+                     :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber
+                     :fibo-sec-sec-id/ListedSecurityIdentifier
+                     {:owl/hasValue
+                      :fibo-sec-sec-idind/StockExchangeDailyOfficialListScheme,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "seven-character security identifier, issued by the London Stock Exchange, that is the National Securities Identifying Number (NSIN) for securities issued in the United Kingdom, which is also part of the ISIN for the security it identifies"})
 
@@ -509,8 +501,7 @@
     {:owl/hasValue   :fibo-fbc-fct-eufseind/SIXFinancialInformation,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-id/ProprietarySecurityIdentifier
-    :fibo-sec-sec-idind/TelekursId],
+    :fibo-sec-sec-id/ProprietarySecurityIdentifier],
    :skos/definition
    "identifier used to identify financial instruments owned, managed, and distributed by SIX Financial Information (formerly Telekurs AG and subsequently SIX Telekurs Ltd.)"})
 
@@ -545,19 +536,18 @@
    :rdfs/seeAlso
    ["https://www.six-group.com/en/products-services/financial-information.html"],
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-fbc-fct-eufseind/SIXFinancialInformation,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-id/ListedSecurityIdentifier
-    :fibo-sec-sec-id/ProprietarySecurityIdentifier
-    {:owl/hasValue   :fibo-sec-sec-idind/ValorenScheme,
-     :owl/onProperty :cmns-dsg/isDefinedIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber
+   [:fibo-sec-sec-id/ListedSecurityIdentifier
     {:owl/hasValue   :fibo-fbc-fct-eufseind/SIXFinancialInformation,
      :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-idind/Valoren],
+    {:owl/hasValue   :fibo-sec-sec-idind/ValorenScheme,
+     :owl/onProperty :cmns-dsg/isDefinedIn,
+     :rdf/type       :owl/Restriction}
+    :fibo-sec-sec-id/ProprietarySecurityIdentifier
+    :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber
+    {:owl/hasValue   :fibo-fbc-fct-eufseind/SIXFinancialInformation,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "identification number assigned to financial instruments in Switzerland, Liechtenstein and Belgium, issued by SIX Financial Information, that is the National Securities Identifying Number (NSIN) for securities issued in those countries and is also part of the ISIN for the security it identifies"})
 

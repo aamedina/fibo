@@ -63,8 +63,7 @@
                       :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayConvention,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-bd/Convention
-                     :fibo-fnd-dt-bd/BusinessDayAdjustment],
+                     :fibo-fnd-dt-bd/Convention],
    :skos/definition
    "convention that specifies what happens when a date falls on a day that is a weekend or a holiday in one or more business centers"})
 
@@ -75,8 +74,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
    :rdfs/label "business day convention",
-   :rdfs/subClassOf [:fibo-fnd-dt-bd/Convention
-                     :fibo-fnd-dt-bd/BusinessDayConvention],
+   :rdfs/subClassOf :fibo-fnd-dt-bd/Convention,
    :skos/definition
    "convention that enumerates the possible ways to handle a date that falls on a weekend or holiday"})
 
@@ -169,8 +167,7 @@
      :owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-dt-fd/RecurrenceInterval
-    :fibo-fnd-dt-bd/BusinessRecurrenceInterval],
+    :fibo-fnd-dt-fd/RecurrenceInterval],
    :skos/definition
    "recurrence interval that is defined per a specific convention that determines how recurring days should be handled"})
 
@@ -181,8 +178,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
    :rdfs/label "business recurrence interval convention",
-   :rdfs/subClassOf [:fibo-fnd-dt-bd/Convention
-                     :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
+   :rdfs/subClassOf :fibo-fnd-dt-bd/Convention,
    :skos/definition
    "convention that specifies how recurring days should be handled, such as the end of the month, a particular day of the month, a day of the week, or more specifically, a t-bill auction date"})
 
@@ -193,7 +189,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
    :rdfs/label "convention",
-   :rdfs/subClassOf :fibo-fnd-dt-bd/Convention,
    :skos/definition
    "widely accepted or established way of doing 'something' within some community of practice"})
 
@@ -210,12 +205,11 @@
      :owl/qualifiedCardinality 1,
      :rdf/type        :owl/Restriction}
     :fibo-fnd-dt-bd/BusinessRecurrenceInterval
-    :fibo-fnd-dt-bd/DayOfMonth
-    :fibo-fnd-dt-fd/RecurrenceInterval
     {:owl/onClass    :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
      :owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
      :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-fnd-dt-fd/RecurrenceInterval],
    :skos/definition "specific, recurring day of the month"})
 
 (def DayOfWeek
@@ -235,12 +229,11 @@
    :rdfs/label "day of the week",
    :rdfs/subClassOf
    [:fibo-fnd-dt-bd/BusinessRecurrenceInterval
-    :fibo-fnd-dt-bd/DayOfWeek
-    :fibo-fnd-dt-fd/RecurrenceInterval
     {:owl/onClass    :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
      :owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
      :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-fnd-dt-fd/RecurrenceInterval],
    :skos/definition "specific, recurring day of the week"})
 
 (def EndOfMonth
@@ -252,12 +245,11 @@
    :rdfs/label "end of the month",
    :rdfs/subClassOf
    [:fibo-fnd-dt-bd/BusinessRecurrenceInterval
-    :fibo-fnd-dt-bd/EndOfMonth
-    :fibo-fnd-dt-fd/RecurrenceInterval
     {:owl/onClass    :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
      :owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
      :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-fnd-dt-fd/RecurrenceInterval],
    :skos/definition
    "the last day of a calendar month, irrespective of the length of the calendar month"})
 
@@ -301,6 +293,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
    :rdfs/label "holds during",
-   :rdfs/subPropertyOf [:cmns-dt/hasDatePeriod :fibo-fnd-dt-bd/holdsDuring],
+   :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
    :skos/definition
    "specifies that some condition or state is true (holds) during a specified date period"})

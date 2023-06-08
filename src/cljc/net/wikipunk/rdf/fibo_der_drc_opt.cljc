@@ -156,34 +156,33 @@
      :owl/someValuesFrom :fibo-sec-sec-bsk/MixedBasket,
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-opt/ExoticOption
-    :fibo-der-drc-opt/BasketOption
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-     :owl/someValuesFrom :xsd/decimal,
-     :rdf/type           :owl/Restriction}
-    :fibo-der-drc-bsc/OverTheCounterInstrument
-    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-     :owl/someValuesFrom :cmns-dt/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
-     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Option
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-opt/OptionPremium,
      :owl/onProperty :fibo-der-drc-opt/hasCalculatedMarketValue,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+     :owl/someValuesFrom :xsd/decimal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
+     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/Option
+    :fibo-der-drc-bsc/OverTheCounterInstrument
+    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+     :owl/someValuesFrom :cmns-dt/Date,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -201,41 +200,40 @@
      :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-opt/FixedIncomeOption
-    :fibo-der-drc-opt/BondOption
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-     :owl/someValuesFrom :xsd/decimal,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-     :owl/someValuesFrom :cmns-dt/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
-     :rdf/type           :owl/Restriction}
-    :fibo-der-sbd-sbd/DebtInstrumentDerivative
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
-     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
-     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
-     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Option
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+    :fibo-der-drc-opt/VanillaOption
+    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-opt/OptionPremium,
      :owl/onProperty :fibo-der-drc-opt/hasCalculatedMarketValue,
      :rdf/type       :owl/Restriction}
-    :fibo-der-drc-opt/VanillaOption
-    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+     :rdf/type           :owl/Restriction}
+    :fibo-der-sbd-sbd/DebtInstrumentDerivative
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
+     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+     :owl/someValuesFrom :xsd/decimal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
+     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/Option
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
+     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+     :owl/someValuesFrom :cmns-dt/Date,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -260,11 +258,10 @@
                       :owl/qualifiedCardinality 3,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy
-                     :fibo-der-drc-opt/Butterfly
+                     :fibo-fbc-pas-fpas/TradingStrategy
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/TradingStrategy],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "strategy that combines bull and bear spreads with a fixed risk and capped profit@en"})
@@ -283,33 +280,32 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "call option@en",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/Option
-                     :fibo-der-drc-opt/CallOption
-                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-                      :owl/someValuesFrom :xsd/decimal,
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+                      :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-                      :owl/someValuesFrom :cmns-dt/Date,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+                     {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+                      :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-der-drc-opt/OptionHolder,
                       :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-                      :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-der-drc-opt/OptionPremium,
                       :owl/onProperty
                       :fibo-der-drc-opt/hasCalculatedMarketValue,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-                      :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+                      :owl/someValuesFrom :cmns-dt/Date,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+                      :owl/someValuesFrom :xsd/decimal,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -330,39 +326,38 @@
      :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-opt/VanillaOption
-    :fibo-der-drc-opt/CappedOption
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-     :owl/someValuesFrom :xsd/decimal,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-     :owl/someValuesFrom :cmns-dt/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
-     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
-     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
-     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Option
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-opt/OptionPremium,
      :owl/onProperty :fibo-der-drc-opt/hasCalculatedMarketValue,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
+     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+     :owl/someValuesFrom :xsd/decimal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
+     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/Option
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
+     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+     :owl/someValuesFrom :cmns-dt/Date,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
      :rdf/type           :owl/Restriction}],
    :skos/definition #voc/lstr
                      "option with an established profit cap or cap price@en"})
@@ -383,11 +378,10 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy
-                     :fibo-der-drc-opt/Collar
+                     :fibo-fbc-pas-fpas/TradingStrategy
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/TradingStrategy],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "option trading strategy that involves buying a downside put and selling an upside call that is implemented to protect against large losses, but which also limits large upside gains@en"})
@@ -403,11 +397,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "condor spread@en",
    :rdfs/subClassOf [:fibo-der-drc-opt/OptionTradingStrategy
-                     :fibo-der-drc-opt/CondorSpread
+                     :fibo-fbc-pas-fpas/TradingStrategy
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/TradingStrategy],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "non-directional options strategy that limits both gains and losses while seeking to profit from either low or high volatility@en"})
@@ -420,34 +413,33 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "covered call@en",
    :rdfs/subClassOf [:fibo-der-drc-opt/CallOption
-                     :fibo-der-drc-opt/CoveredCall
-                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-                      :owl/someValuesFrom :xsd/decimal,
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+                      :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-                      :owl/someValuesFrom :cmns-dt/Date,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Option
-                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+                     {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+                      :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-der-drc-opt/OptionHolder,
                       :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-                      :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-der-drc-opt/OptionPremium,
                       :owl/onProperty
                       :fibo-der-drc-opt/hasCalculatedMarketValue,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-                      :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Option
+                     {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+                      :owl/someValuesFrom :cmns-dt/Date,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+                      :owl/someValuesFrom :xsd/decimal,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -472,39 +464,38 @@
      :rdf/type       :owl/Restriction}
     :fibo-der-sbd-sbd/EquityDerivative
     :fibo-der-drc-opt/VanillaOption
-    :fibo-der-drc-opt/EquityOption
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-     :owl/someValuesFrom :xsd/decimal,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-     :owl/someValuesFrom :cmns-dt/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
-     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
-     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
-     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Option
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-opt/OptionPremium,
      :owl/onProperty :fibo-der-drc-opt/hasCalculatedMarketValue,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
+     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+     :owl/someValuesFrom :xsd/decimal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
+     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/Option
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
+     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+     :owl/someValuesFrom :cmns-dt/Date,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -525,33 +516,32 @@
    :rdfs/label #voc/lstr "exotic option@en",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/Option
                      :fibo-der-drc-bsc/OverTheCounterInstrument
-                     :fibo-der-drc-opt/ExoticOption
-                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-                      :owl/someValuesFrom :xsd/decimal,
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+                      :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-                      :owl/someValuesFrom :cmns-dt/Date,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+                     {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+                      :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-der-drc-opt/OptionHolder,
                       :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-                      :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-der-drc-opt/OptionPremium,
                       :owl/onProperty
                       :fibo-der-drc-opt/hasCalculatedMarketValue,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-                      :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+                      :owl/someValuesFrom :cmns-dt/Date,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+                      :owl/someValuesFrom :xsd/decimal,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -569,8 +559,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "extrinsic value@en",
-   :rdfs/subClassOf [:fibo-fnd-acc-cur/MonetaryAmount
-                     :fibo-der-drc-opt/ExtrinsicValue],
+   :rdfs/subClassOf :fibo-fnd-acc-cur/MonetaryAmount,
    :skos/definition
    #voc/lstr
     "measure of the difference between the market price of an option, called the premium, and its intrinsic value@en"})
@@ -596,11 +585,10 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy
-                     :fibo-der-drc-opt/Fence
+                     :fibo-fbc-pas-fpas/TradingStrategy
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/TradingStrategy],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "option trading strategy that uses options to limit the range of possible returns on a financial instrument@en"})
@@ -621,39 +609,38 @@
    :rdfs/subClassOf
    [:fibo-der-sbd-sbd/DebtInstrumentDerivative
     :fibo-der-drc-opt/VanillaOption
-    :fibo-der-drc-opt/FixedIncomeOption
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-     :owl/someValuesFrom :xsd/decimal,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-     :owl/someValuesFrom :cmns-dt/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
-     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
-     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
-     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Option
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-opt/OptionPremium,
      :owl/onProperty :fibo-der-drc-opt/hasCalculatedMarketValue,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
+     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+     :owl/someValuesFrom :xsd/decimal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
+     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/Option
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
+     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+     :owl/someValuesFrom :cmns-dt/Date,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -698,39 +685,38 @@
      :rdf/type           :owl/Restriction}
     :fibo-der-rtd-rtd/InterestRateDerivativeInstrument
     :fibo-der-drc-opt/VanillaOption
-    :fibo-der-drc-opt/InterestRateOption
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-     :owl/someValuesFrom :xsd/decimal,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-     :owl/someValuesFrom :cmns-dt/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
-     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
-     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
-     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Option
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-opt/OptionPremium,
      :owl/onProperty :fibo-der-drc-opt/hasCalculatedMarketValue,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
+     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+     :owl/someValuesFrom :xsd/decimal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
+     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/Option
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
+     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+     :owl/someValuesFrom :cmns-dt/Date,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -746,8 +732,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "intrinsic value@en",
-   :rdfs/subClassOf [:fibo-fnd-acc-cur/MonetaryAmount
-                     :fibo-der-drc-opt/IntrinsicValue],
+   :rdfs/subClassOf :fibo-fnd-acc-cur/MonetaryAmount,
    :skos/definition
    #voc/lstr
     "measure of what an asset is worth, i.e. with respect to its current price@en"})
@@ -772,20 +757,19 @@
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/Butterfly
-                     :fibo-der-drc-opt/IronButterfly
+                     :fibo-der-drc-opt/OptionTradingStrategy
+                     :fibo-fbc-pas-fpas/TradingStrategy
+                     {:owl/onClass    :fibo-fbc-fi-fi/Option,
+                      :owl/onProperty :cmns-col/comprises,
+                      :owl/qualifiedCardinality 4,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-der-drc-opt/StrikePrice,
                       :owl/onProperty :fibo-der-drc-opt/hasExercisePrice,
                       :owl/qualifiedCardinality 3,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fbc-pas-fpas/TradingStrategy
-                     {:owl/onClass    :fibo-fbc-fi-fi/Option,
-                      :owl/onProperty :cmns-col/comprises,
-                      :owl/qualifiedCardinality 4,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-der-drc-opt/OptionTradingStrategy],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "butterfly strategy that consists of two call options and two put options, three strike prices and the same expiration date@en"})
@@ -813,12 +797,11 @@
                       :owl/qualifiedCardinality 2,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/CondorSpread
-                     :fibo-der-drc-opt/IronCondor
+                     :fibo-der-drc-opt/OptionTradingStrategy
+                     :fibo-fbc-pas-fpas/TradingStrategy
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/TradingStrategy
-                     :fibo-der-drc-opt/OptionTradingStrategy],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "condor strategy consisting of two puts (one long and one short) and two calls (one long and one short), and four strike prices, all with the same expiration date@en"})
@@ -839,44 +822,43 @@
      :owl/someValuesFrom :cmns-dt/Duration,
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-opt/EquityOption
-    :fibo-der-drc-opt/LongTermEquityAnticipationSecurity
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-     :owl/someValuesFrom :xsd/decimal,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-     :owl/someValuesFrom :cmns-dt/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
-     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
-     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
-     :rdf/type           :owl/Restriction}
-    :fibo-der-sbd-sbd/EquityDerivative
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
-     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Option
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+    :fibo-der-drc-opt/VanillaOption
+    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-opt/OptionPremium,
      :owl/onProperty :fibo-der-drc-opt/hasCalculatedMarketValue,
      :rdf/type       :owl/Restriction}
-    :fibo-der-drc-opt/VanillaOption
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+     :rdf/type           :owl/Restriction}
+    :fibo-der-sbd-sbd/EquityDerivative
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
+     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+     :owl/someValuesFrom :xsd/decimal,
+     :rdf/type           :owl/Restriction}
     {:owl/hasValue   :fibo-sec-dbt-ex/AmericanExerciseConvention,
      :owl/onProperty :fibo-der-drc-opt/hasExerciseStyle,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
+     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/Option
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
+     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+     :owl/someValuesFrom :cmns-dt/Date,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -895,8 +877,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
                       :rdf/type           :owl/Restriction}
-                     :cmns-cls/Classifier
-                     :fibo-der-drc-opt/Moneyness],
+                     :cmns-cls/Classifier],
    :skos/definition
    #voc/lstr
     "classifier for a derivative relating its strike price to the price of its underlying asset@en"})
@@ -914,8 +895,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/holds,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-oac-own/Owner
-                     :fibo-der-drc-opt/OptionHolder],
+                     :fibo-fnd-oac-own/Owner],
    :skos/definition #voc/lstr "party that owns an option@en"})
 
 (def OptionIssuer
@@ -931,8 +911,7 @@
                           :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Issuer
-    :fibo-der-drc-opt/OptionIssuer],
+    :fibo-fbc-fi-fi/Issuer],
    :skos/definition
    #voc/lstr
     "issuer granting the rights defined in the option in exchange for some consideration@en"})
@@ -955,39 +934,38 @@
      :owl/someValuesFrom :fibo-fbc-fi-fi/Future,
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-opt/VanillaOption
-    :fibo-der-drc-opt/OptionOnFuture
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-     :owl/someValuesFrom :xsd/decimal,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-     :owl/someValuesFrom :cmns-dt/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
-     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
-     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
-     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Option
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-opt/OptionPremium,
      :owl/onProperty :fibo-der-drc-opt/hasCalculatedMarketValue,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractDuration,
+     :owl/someValuesFrom :cmns-dt/ExplicitDuration,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+     :owl/someValuesFrom :xsd/decimal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-der-drc-opt/OptionHolder,
+     :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/Option
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
+     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+     :owl/someValuesFrom :cmns-dt/Date,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1015,8 +993,7 @@
                       :owl/onClass    :fibo-der-drc-opt/OptionPremiumFormula,
                       :owl/onProperty :fibo-fnd-utl-alx/hasExpression,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-ip/MarketPrice
-                     :fibo-der-drc-opt/OptionPremium],
+                     :fibo-fbc-fi-ip/MarketPrice],
    :skos/definition #voc/lstr "current market price of an option contract@en"})
 
 (def OptionPremiumFormula
@@ -1026,8 +1003,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "option premium formula@en",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/Expression
-                     :fibo-der-drc-opt/OptionPremiumFormula],
+   :rdfs/subClassOf :fibo-fnd-utl-alx/Expression,
    :skos/definition
    #voc/lstr
     "expression used to calculate the premium based either on the price per option or percentage of the notional amount@en"})
@@ -1047,8 +1023,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/TradingStrategy
-                     :fibo-der-drc-opt/OptionTradingStrategy],
+                     :fibo-fbc-pas-fpas/TradingStrategy],
    :skos/definition
    #voc/lstr
     "trading tactic involving more than one option type, strike price, or expiration date on the same underlying asset@en"})
@@ -1092,20 +1067,19 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/Collar
-                     :fibo-der-drc-opt/ProtectiveCollar
                      {:owl/onClass    :fibo-der-drc-opt/PutOption,
                       :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/comprises,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/TradingStrategy
                      {:owl/onClass    :fibo-der-drc-opt/CallOption,
                       :owl/onProperty :cmns-col/comprises,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-der-drc-opt/OptionTradingStrategy],
+                     :fibo-der-drc-opt/OptionTradingStrategy
+                     :fibo-fbc-pas-fpas/TradingStrategy
+                     {:owl/onProperty     :cmns-col/comprises,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr "collar that consists of a covered call and protective put@en"})
 
@@ -1125,33 +1099,32 @@
      :owl/someValuesFrom :fibo-der-drc-opt/OptionPremium,
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-opt/PutOption
-    :fibo-der-drc-opt/ProtectivePut
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-     :owl/someValuesFrom :xsd/decimal,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-     :owl/someValuesFrom :cmns-dt/Date,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Option
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-opt/OptionHolder,
      :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
-     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-opt/OptionPremium,
      :owl/onProperty :fibo-der-drc-opt/hasCalculatedMarketValue,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/Option
+    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+     :owl/someValuesFrom :cmns-dt/Date,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+     :owl/someValuesFrom :xsd/decimal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1171,33 +1144,32 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "put option@en",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/Option
-                     :fibo-der-drc-opt/PutOption
-                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-                      :owl/someValuesFrom :xsd/decimal,
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+                      :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-                      :owl/someValuesFrom :cmns-dt/Date,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-                      :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+                     {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+                      :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-der-drc-opt/OptionHolder,
                       :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-                      :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-der-drc-opt/OptionPremium,
                       :owl/onProperty
                       :fibo-der-drc-opt/hasCalculatedMarketValue,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-                      :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+                      :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+                      :owl/someValuesFrom :cmns-dt/Date,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+                      :owl/someValuesFrom :xsd/decimal,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+                      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1222,11 +1194,10 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy
-                     :fibo-der-drc-opt/RiskReversal
+                     :fibo-fbc-pas-fpas/TradingStrategy
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/TradingStrategy],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "option trading strategy that consists of being short (selling) an out of the money put and being long (i.e., buying) an out of the money call, both with the same maturity@en"})
@@ -1251,14 +1222,13 @@
                            :fibo-der-drc-bsc/DerivativesClearingOrganization],
                           :rdf/type :owl/Class},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/StandardizedTerms
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
-     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-der-drc-opt/VanillaOption,
      :rdf/type           :owl/Restriction}
-    :fibo-der-drc-opt/StandardizedOptionsTerms],
+    :fibo-fbc-fi-fi/StandardizedTerms
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasPriceDeterminationMethod,
+     :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "standardized contract terms established by a securities or options exchange or by an options clearing entity@en"})
@@ -1282,11 +1252,10 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy
-                     :fibo-der-drc-opt/Straddle
+                     :fibo-fbc-pas-fpas/TradingStrategy
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/TradingStrategy],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "neutral option trading strategy that involves simultaneously buying both a put option and a call option for the underlying security with the same strike price and the same expiration date@en"})
@@ -1310,11 +1279,10 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy
-                     :fibo-der-drc-opt/Strangle
+                     :fibo-fbc-pas-fpas/TradingStrategy
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/TradingStrategy],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "option trading strategy in which the investor holds a position in both a call and a put option with different strike prices, but with the same expiration date and underlying asset@en"})
@@ -1329,8 +1297,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "strike price@en",
-   :rdfs/subClassOf [:fibo-fnd-acc-cur/MonetaryPrice
-                     :fibo-der-drc-opt/StrikePrice],
+   :rdfs/subClassOf :fibo-fnd-acc-cur/MonetaryPrice,
    :skos/definition
    #voc/lstr
     "price at which a lot of the underlying asset may be bought or sold when the contract is exercised@en"})
@@ -1357,11 +1324,10 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-drc-opt/OptionTradingStrategy
-                     :fibo-der-drc-opt/StripStrategy
+                     :fibo-fbc-pas-fpas/TradingStrategy
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Option,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-pas-fpas/TradingStrategy],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "option trading strategy that involves a sequential set of options with periodic reset dates, such that each period between resets behaves like an individual option@en"})
@@ -1384,32 +1350,31 @@
      :owl/someValuesFrom :fibo-fbc-fi-ip/PriceDeterminationMethod,
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fi-fi/Option
-    :fibo-der-drc-opt/VanillaOption
-    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
-     :owl/someValuesFrom :xsd/decimal,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
+     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
-     :owl/someValuesFrom :cmns-dt/Date,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
-     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
+     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-opt/OptionHolder,
      :owl/onProperty :fibo-der-drc-opt/hasOptionHolder,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasOptionWriter,
-     :owl/someValuesFrom :fibo-der-drc-opt/OptionIssuer,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
-     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
-     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-der-drc-opt/OptionPremium,
      :owl/onProperty :fibo-der-drc-opt/hasCalculatedMarketValue,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-der-drc-opt/hasExercisePrice,
-     :owl/someValuesFrom :fibo-der-drc-opt/StrikePrice,
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseSchedule,
+     :owl/someValuesFrom :fibo-fnd-dt-fd/Schedule,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-arr-doc/hasExpirationDate,
+     :owl/someValuesFrom :cmns-dt/Date,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fi-ip/hasLotSize,
+     :owl/someValuesFrom :xsd/decimal,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-der-drc-opt/hasExerciseStyle,
+     :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1425,8 +1390,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "has calculated market value@en",
    :rdfs/range :fibo-der-drc-opt/OptionPremium,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasPrice
-                        :fibo-der-drc-opt/hasCalculatedMarketValue],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasPrice,
    :skos/definition
    #voc/lstr
     "indicates a calculated price as of some relative date considered the market value of the option at that point in time@en"})
@@ -1440,8 +1404,7 @@
    :rdfs/label #voc/lstr "has cap price@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryPrice,
    :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasPrice
-                        :fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-der-drc-opt/hasCapPrice],
+                        :fibo-fnd-acc-cur/hasMonetaryAmount],
    :skos/definition #voc/lstr
                      "price at which the contract may be exercised@en"})
 
@@ -1454,8 +1417,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "has exercise date offset@en",
    :rdfs/range :cmns-dt/Duration,
-   :rdfs/subPropertyOf [:cmns-dt/hasDuration
-                        :fibo-der-drc-opt/hasExerciseDateOffset],
+   :rdfs/subPropertyOf :cmns-dt/hasDuration,
    :skos/definition
    #voc/lstr
     "indicates the period in days between the reset date and the exercise date@en"})
@@ -1469,8 +1431,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "has exercise price@en",
    :rdfs/range :fibo-der-drc-opt/StrikePrice,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasPrice
-                        :fibo-der-drc-opt/hasExercisePrice],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasPrice,
    :skos/definition
    #voc/lstr
     "specifies a predetermined price at which the holder commits to buy or sell an underlying asset@en"})
@@ -1487,8 +1448,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "has exercise schedule@en",
    :rdfs/range :fibo-fnd-dt-fd/Schedule,
-   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasSchedule
-                        :fibo-der-drc-opt/hasExerciseSchedule],
+   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasSchedule,
    :skos/definition
    #voc/lstr
     "links an option to the schedule specified in the contract that constrains when it may be exercised@en"})
@@ -1502,8 +1462,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label "has exercise style",
    :rdfs/range :fibo-sec-dbt-ex/ExerciseConvention,
-   :rdfs/subPropertyOf [:cmns-cls/isClassifiedBy
-                        :fibo-der-drc-opt/hasExerciseStyle],
+   :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
    :skos/definition
    "indicates the exercise convention specified for the option"})
 
@@ -1516,8 +1475,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "has interest accrual date offset@en",
    :rdfs/range :cmns-dt/Duration,
-   :rdfs/subPropertyOf [:cmns-dt/hasDuration
-                        :fibo-der-drc-opt/hasInterestAccrualDateOffset],
+   :rdfs/subPropertyOf :cmns-dt/hasDuration,
    :skos/definition
    #voc/lstr
     "indicates the period in days between each reset date and the commencement of interest accrual for the next period@en"})
@@ -1531,8 +1489,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label "has option holder",
    :rdfs/range :fibo-der-drc-opt/OptionHolder,
-   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasContractParty
-                        :fibo-der-drc-opt/hasOptionHolder],
+   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractParty,
    :skos/definition "indicates the owner of the option"})
 
 (def hasOptionWriter
@@ -1547,8 +1504,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label "has option writer",
    :rdfs/range :fibo-der-drc-opt/OptionIssuer,
-   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasContractParty
-                        :fibo-der-drc-opt/hasOptionWriter],
+   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractParty,
    :skos/definition "indicates the issuer of the option"})
 
 (def hasSettlementDateOffset
@@ -1560,8 +1516,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "has settlement date offset@en",
    :rdfs/range :cmns-dt/Duration,
-   :rdfs/subPropertyOf [:cmns-dt/hasDuration
-                        :fibo-der-drc-opt/hasSettlementDateOffset],
+   :rdfs/subPropertyOf :cmns-dt/hasDuration,
    :skos/definition
    #voc/lstr
     "indicats the period in days between each reset date and the corresponding settlement date@en"})
@@ -1574,8 +1529,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "has strike percentage amount@en",
    :rdfs/range :fibo-fnd-acc-cur/PercentageMonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasPrice
-                        :fibo-der-drc-opt/hasStrikePercentageAmount],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasPrice,
    :skos/definition
    #voc/lstr
     "indicates a strike price or level expressed as a percentage of the value of the underlying asset@en"})
@@ -1588,6 +1542,5 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
    :rdfs/label #voc/lstr "has strike rate@en",
    :rdfs/range :fibo-fnd-utl-alx/RatioValue,
-   :rdfs/subPropertyOf [:fibo-fnd-qt-qtu/hasQuantityValue
-                        :fibo-der-drc-opt/hasStrikeRate],
+   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasQuantityValue,
    :skos/definition #voc/lstr "rate at which the contract may be exercised@en"})

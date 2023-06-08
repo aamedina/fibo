@@ -67,12 +67,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "bankruptcy@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/EntitySpecificCreditEvent
-                     :fibo-fbc-dae-cre/Bankruptcy
-                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                     :fibo-fbc-dae-cre/CreditEvent
+                     :fibo-fnd-dt-oc/Occurrence],
    :skos/definition
    #voc/lstr
     "credit event involving a change in state or condition in which a party becomes insolvent@en"})
@@ -84,7 +83,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "credit event@en",
-   :rdfs/subClassOf [:fibo-fnd-dt-oc/Occurrence :fibo-fbc-dae-cre/CreditEvent],
+   :rdfs/subClassOf :fibo-fnd-dt-oc/Occurrence,
    :skos/definition
    #voc/lstr
     "event signifying a sudden change in credit standing, such as bankruptcy or a violation of a bond indenture or loan agreement, that raises doubts about the party's ability to meet current or future obligations@en"})
@@ -104,7 +103,7 @@
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-dae-cre/ObligationSpecificCreditEvent
-                     :fibo-fbc-dae-cre/DefaultEvent
+                     :fibo-fbc-dae-cre/CreditEvent
                      :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
@@ -113,8 +112,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "credit event representing a failure to meet a contractual obligation, such as failure to repay a debt including interest or principal on a loan or security@en"})
@@ -127,9 +125,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "distressed ratings downgrade@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/Downgrade
-                     :fibo-fbc-dae-cre/DistressedRatingsDowngrade
-                     :fibo-fnd-dt-oc/Occurrence
-                     :fibo-fbc-dae-cre/CreditEvent],
+                     :fibo-fbc-dae-cre/CreditEvent
+                     :fibo-fnd-dt-oc/Occurrence],
    :skos/definition
    #voc/lstr
     "credit event triggered when the credit rating of an obligation is downgraded to a distressed debt level@en"})
@@ -141,9 +138,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "downgrade@en",
-   :rdfs/subClassOf [:fibo-fbc-dae-cre/CreditEvent
-                     :fibo-fbc-dae-cre/Downgrade
-                     :fibo-fnd-dt-oc/Occurrence],
+   :rdfs/subClassOf [:fibo-fbc-dae-cre/CreditEvent :fibo-fnd-dt-oc/Occurrence],
    :skos/definition
    #voc/lstr
     "credit event triggered when the credit rating of a party or obligation is lowered@en",
@@ -162,7 +157,6 @@
                       :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-dae-cre/CreditEvent
-                     :fibo-fbc-dae-cre/EntitySpecificCreditEvent
                      :fibo-fnd-dt-oc/Occurrence],
    :skos/definition #voc/lstr
                      "credit event that applies to a given legal person@en"})
@@ -179,13 +173,13 @@
                       :owl/onProperty :fibo-fbc-dae-cre/hasGracePeriod,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-dae-cre/DefaultEvent
-                     :fibo-fbc-dae-cre/FailureToPay
+                     :fibo-fbc-dae-cre/CreditEvent
                      :fibo-fbc-dae-cre/ObligationSpecificCreditEvent
-                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-agr-ctr/BreachOfCovenant,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty
@@ -193,8 +187,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "default event that is triggered following any applicable grace period in which a payment obligation is missed@en"})
@@ -207,27 +200,26 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "failure to pay interest@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/FailureToPay
-                     :fibo-fbc-dae-cre/FailureToPayInterest
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :cmns-dt/DatePeriod,
+                      :owl/onProperty :fibo-fbc-dae-cre/hasGracePeriod,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-dae-cre/CreditEvent
                      :fibo-fbc-dae-cre/ObligationSpecificCreditEvent
-                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-agr-ctr/BreachOfCovenant,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fbc-dae-cre/DefaultEvent
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty
                       :fibo-fbc-dae-cre/hasDefaultThresholdAmount,
                       :rdf/type :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :cmns-dt/DatePeriod,
-                      :owl/onProperty :fibo-fbc-dae-cre/hasGracePeriod,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/DefaultEvent
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "default event that where either an expected interest payment is missed altogether or the amount paid is less than the required amount@en"})
@@ -240,27 +232,26 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "failure to pay principal@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/FailureToPay
-                     :fibo-fbc-dae-cre/FailureToPayPrincipal
+                     {:owl/maxQualifiedCardinality 1,
+                      :owl/onClass    :cmns-dt/DatePeriod,
+                      :owl/onProperty :fibo-fbc-dae-cre/hasGracePeriod,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-dae-cre/CreditEvent
                      :fibo-fbc-dae-cre/ObligationSpecificCreditEvent
-                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-agr-ctr/BreachOfCovenant,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fbc-dae-cre/DefaultEvent
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty
                       :fibo-fbc-dae-cre/hasDefaultThresholdAmount,
                       :rdf/type :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :cmns-dt/DatePeriod,
-                      :owl/onProperty :fibo-fbc-dae-cre/hasGracePeriod,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/DefaultEvent
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "default event that where either an expected principal payment is missed altogether or the amount paid is less than the required amount@en"})
@@ -276,12 +267,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "filing for bankruptcy@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/EntitySpecificCreditEvent
-                     :fibo-fbc-dae-cre/FilingForBankruptcy
-                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                     :fibo-fbc-dae-cre/CreditEvent
+                     :fibo-fnd-dt-oc/Occurrence],
    :skos/definition
    #voc/lstr
     "credit event that involves a request to a court to be recognized as bankrupt@en"})
@@ -294,13 +284,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "hard credit event@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/DefaultEvent
-                     :fibo-fbc-dae-cre/HardCreditEvent
+                     :fibo-fbc-dae-cre/CreditEvent
                      :fibo-fbc-dae-cre/ObligationSpecificCreditEvent
-                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-agr-ctr/BreachOfCovenant,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty
@@ -308,8 +298,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition #voc/lstr "default event that is not repairable@en"})
 
 (def InstallmentDefault
@@ -323,13 +312,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "installment default@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/DefaultEvent
-                     :fibo-fbc-dae-cre/InstallmentDefault
+                     :fibo-fbc-dae-cre/CreditEvent
                      :fibo-fbc-dae-cre/ObligationSpecificCreditEvent
-                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-agr-ctr/BreachOfCovenant,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty
@@ -337,8 +326,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "default event involving non-payment of several installment payments as scheduled in the terms of the agreement, or non-payment of a call by the beneficial owner@en"})
@@ -354,7 +342,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "maturity extension@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/ObligationSpecificCreditEvent
-                     :fibo-fbc-dae-cre/MaturityExtension
+                     :fibo-fbc-dae-cre/CreditEvent
                      :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
@@ -363,8 +351,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "credit event involving extension of payments beyond the original maturity date of the obligation@en"})
@@ -380,12 +367,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "moratorium@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/EntitySpecificCreditEvent
-                     :fibo-fbc-dae-cre/Moratorium
-                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalPerson,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                     :fibo-fbc-dae-cre/CreditEvent
+                     :fibo-fnd-dt-oc/Occurrence],
    :skos/definition
    #voc/lstr
     "entity-specific credit event involving a temporary suspension of payments until related issues are resolved@en"})
@@ -398,7 +384,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "obligation acceleration@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/ObligationSpecificCreditEvent
-                     :fibo-fbc-dae-cre/ObligationAcceleration
+                     :fibo-fbc-dae-cre/CreditEvent
                      :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
@@ -407,8 +393,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "credit event triggered when one or more reference obligations become immediately due and payable as a result of a default or covenant breach on the reference entity's other debt instruments, subject to a materiality threshold@en"})
@@ -422,12 +407,12 @@
    :rdfs/label #voc/lstr "obligation default@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/ObligationSpecificCreditEvent
                      :fibo-fbc-dae-cre/DefaultEvent
-                     :fibo-fbc-dae-cre/ObligationDefault
-                     :fibo-fnd-dt-oc/Occurrence
+                     :fibo-fbc-dae-cre/CreditEvent
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-agr-ctr/BreachOfCovenant,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty
@@ -435,8 +420,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "credit event triggered as a result of an obligation-specific default@en"})
@@ -449,7 +433,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "obligation restructuring@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/ObligationSpecificCreditEvent
-                     :fibo-fbc-dae-cre/ObligationRestructuring
+                     :fibo-fbc-dae-cre/CreditEvent
                      :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
@@ -458,8 +442,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "credit event that materially impacts an obligation, such as an interest rate reduction, principal reduction, deferral of interest or principal, change in priority ranking, or change in currency or composition of payment@en"})
@@ -480,7 +463,6 @@
                       :fibo-fbc-dae-cre/hasDefaultThresholdAmount,
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-dae-cre/CreditEvent
-                     :fibo-fbc-dae-cre/ObligationSpecificCreditEvent
                      :fibo-fnd-dt-oc/Occurrence],
    :skos/definition
    #voc/lstr
@@ -494,7 +476,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "repudiation@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/ObligationSpecificCreditEvent
-                     :fibo-fbc-dae-cre/Repudiation
+                     :fibo-fbc-dae-cre/CreditEvent
                      :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
@@ -503,8 +485,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "credit event involving the refusal to honor the terms of a contract@en"})
@@ -521,13 +502,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "soft credit event@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/DefaultEvent
-                     :fibo-fbc-dae-cre/SoftCreditEvent
+                     :fibo-fbc-dae-cre/CreditEvent
                      :fibo-fbc-dae-cre/ObligationSpecificCreditEvent
-                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-agr-ctr/BreachOfCovenant,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty
@@ -535,8 +516,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition #voc/lstr "default event that is repairable@en"})
 
 (def WriteDown
@@ -547,7 +527,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "write-down@en",
    :rdfs/subClassOf [:fibo-fbc-dae-cre/ObligationSpecificCreditEvent
-                     :fibo-fbc-dae-cre/WriteDown
+                     :fibo-fbc-dae-cre/CreditEvent
                      :fibo-fnd-dt-oc/Occurrence
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-acc-cur/MonetaryAmount,
@@ -556,8 +536,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-cre/CreditEvent],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "obligation-specific credit event whereby the book value of the obligation, such as the outstanding principal amount, is reduced@en"})
@@ -570,8 +549,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "has default threshold amount@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-fbc-dae-cre/hasDefaultThresholdAmount],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    #voc/lstr
     "specifies an amount of money that triggers a failure to pay, repudiation/moratorium or restructuring event@en"})
@@ -587,8 +565,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
    :rdfs/label #voc/lstr "has grace period@en",
    :rdfs/range :cmns-dt/DatePeriod,
-   :rdfs/subPropertyOf [:cmns-dt/hasDatePeriod
-                        :fibo-fbc-dae-cre/hasGracePeriod],
+   :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
    :skos/definition
    #voc/lstr
     "window following any payment due date during which a party must fulfill its obligations before a failure to pay credit event occurs@en"})

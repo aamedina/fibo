@@ -62,8 +62,7 @@
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasCounterparty,
      :owl/someValuesFrom :fibo-fnd-txn-mkt/TransactionCounterparty,
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-txn-rea/EconomicTransaction
-    :fibo-fnd-txn-mkt/MarketTransaction],
+    :fibo-fnd-txn-rea/EconomicTransaction],
    :skos/definition
    #voc/lstr
     "Any transaction which defines a supply of some negotiable item in return for some Consideration. The Market Transaction has a Principal and a Counterparty, i.e. it is not symmetrical.@en"})
@@ -75,8 +74,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MarketTransactions/",
    :rdfs/label #voc/lstr "market transaction invoicing terms@en",
-   :rdfs/subClassOf [:fibo-fnd-txn-rea/EconomicContractTermsSet
-                     :fibo-fnd-txn-mkt/MarketTransactionInvoicingTerms]})
+   :rdfs/subClassOf :fibo-fnd-txn-rea/EconomicContractTermsSet})
 
 (def MarketTransactionPaymentTerms
   "market transaction payment terms"
@@ -88,8 +86,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :fibo-fnd-pas-psch/Payment,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-txn-rea/EconomicContractTermsSet
-                     :fibo-fnd-txn-mkt/MarketTransactionPaymentTerms]})
+                     :fibo-fnd-txn-rea/EconomicContractTermsSet]})
 
 (def TransactionCounterparty
   "transaction counterparty"
@@ -99,8 +96,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MarketTransactions/",
    :rdfs/label #voc/lstr "transaction counterparty@en",
    :rdfs/subClassOf [:fibo-fnd-txn-rea/TransactionParty
-                     :fibo-fnd-agr-ctr/Counterparty
-                     :fibo-fnd-txn-mkt/TransactionCounterparty]})
+                     :fibo-fnd-agr-ctr/Counterparty]})
 
 (def TransactionPrincipal
   "transaction principal"
@@ -114,8 +110,7 @@
                       :fibo-fnd-txn-mkt/TransactionCounterparty,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-txn-rea/TransactionParty
-                     :fibo-fnd-agr-ctr/ContractPrincipal
-                     :fibo-fnd-txn-mkt/TransactionPrincipal]})
+                     :fibo-fnd-agr-ctr/ContractPrincipal]})
 
 (def consideration
   "consideration"
@@ -126,8 +121,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MarketTransactions/",
    :rdfs/label #voc/lstr "consideration@en",
    :rdfs/range :fibo-fnd-txn-rea/EconomicResource,
-   :rdfs/subPropertyOf [:fibo-fnd-txn-rea/subject
-                        :fibo-fnd-txn-mkt/consideration]})
+   :rdfs/subPropertyOf :fibo-fnd-txn-rea/subject})
 
 (def paymentTerms
   "payment terms"
@@ -138,5 +132,4 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MarketTransactions/",
    :rdfs/label #voc/lstr "payment terms@en",
    :rdfs/range :fibo-fnd-txn-mkt/MarketTransactionPaymentTerms,
-   :rdfs/subPropertyOf [:fibo-fnd-txn-rea/transactedUnder
-                        :fibo-fnd-txn-mkt/paymentTerms]})
+   :rdfs/subPropertyOf :fibo-fnd-txn-rea/transactedUnder})

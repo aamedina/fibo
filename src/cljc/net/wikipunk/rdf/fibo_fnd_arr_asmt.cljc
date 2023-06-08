@@ -85,7 +85,6 @@
                       :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-arr-asmt/AssessmentReport
-                     :fibo-fnd-arr-asmt/Appraisal
                      :fibo-fnd-arr-rep/Report
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-arr-asmt/Opinion,
@@ -101,8 +100,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "appraised value",
-   :rdfs/subClassOf [:fibo-fnd-acc-cur/MonetaryAmount
-                     :fibo-fnd-arr-asmt/AppraisedValue],
+   :rdfs/subClassOf :fibo-fnd-acc-cur/MonetaryAmount,
    :skos/definition
    "estimated value of some asset as of a given point in time"})
 
@@ -119,8 +117,7 @@
                      {:owl/minCardinality 0,
                       :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRole
-                     :fibo-fnd-arr-asmt/Appraiser],
+                     :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition
    "party that evaluates or estimates the nature, quality, ability, or value of someone or something"})
 
@@ -137,8 +134,7 @@
                      {:owl/minCardinality 0,
                       :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/OccurrenceKind
-                     :fibo-fnd-arr-asmt/AssessmentActivity],
+                     :fibo-fnd-dt-oc/OccurrenceKind],
    :skos/definition
    "activity involving the evaluation or estimation of the nature, quality, ability, or value of someone or something"})
 
@@ -149,25 +145,24 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "assessment event",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-arr-asmt/AssessmentReport,
-                      :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
-                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
+   :rdfs/subClassOf [{:owl/minCardinality 0,
+                      :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minCardinality 0,
-                      :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
+                     {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
+                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     :fibo-fnd-arr-asmt/AssessmentEvent],
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-arr-asmt/AssessmentReport,
+                      :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence],
    :skos/definition
    "event involving the evaluation or estimation of the nature, quality, or ability of someone or something"})
 
@@ -182,8 +177,7 @@
                       :owl/onClass    :fibo-fnd-arr-asmt/Opinion,
                       :owl/onProperty :fibo-fnd-arr-rep/reportsOn,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-rep/Report
-                     :fibo-fnd-arr-asmt/AssessmentReport],
+                     :fibo-fnd-arr-rep/Report],
    :skos/definition
    "report that includes an opinion, judgement, appraisal, or view about something and typically the methodology and raw inputs used to arrive at that opinion"})
 
@@ -199,8 +193,7 @@
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-dt-oc/isOutputFrom,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/AssessmentEvent,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-asmt/Opinion],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition "judgement, appraisal, or view about something"})
 
 (def ValuationMethod
@@ -213,8 +206,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label #voc/lstr "valuation method@en",
-   :rdfs/subClassOf [:fibo-fnd-gao-obj/Strategy
-                     :fibo-fnd-arr-asmt/ValuationMethod],
+   :rdfs/subClassOf :fibo-fnd-gao-obj/Strategy,
    :skos/definition
    #voc/lstr
     "method used to determine the present or expected worth of an asset@en"})
@@ -240,24 +232,23 @@
                       :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-arr-asmt/AssessmentEvent
-                     :fibo-fnd-arr-asmt/ValueAssessment
                      {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
-                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
                       :rdf/type           :owl/Restriction}
                      {:owl/minCardinality 0,
                       :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-arr-asmt/AssessmentReport,
-                      :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
                       :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
+                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-arr-asmt/AssessmentReport,
+                      :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
                       :rdf/type       :owl/Restriction}],
    :skos/definition "assessment event to estimate the value of something"})
 
@@ -269,8 +260,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "applies methodology",
    :rdfs/range :fibo-fnd-arr-asmt/ValuationMethod,
-   :rdfs/subPropertyOf [:fibo-fnd-gao-obj/hasStrategy
-                        :fibo-fnd-arr-asmt/appliesMethodology],
+   :rdfs/subPropertyOf :fibo-fnd-gao-obj/hasStrategy,
    :skos/definition
    "indicates the strategy used for the purposes of determining the fair market or present value of something"})
 
@@ -282,8 +272,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "estimates value at",
    :rdfs/range :fibo-fnd-arr-asmt/AppraisedValue,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-fnd-arr-asmt/estimatesValueAt],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    "provides an approximate value of some asset as of some point in time"})
 
@@ -294,8 +283,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "has appraiser",
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/isProvidedBy
-                        :fibo-fnd-arr-asmt/hasAppraiser],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
    :skos/definition
    "relates an assessment or report to an agent that conducts the assessment"})
 
@@ -307,8 +295,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label #voc/lstr "has date of assessment@en",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :fibo-fnd-arr-asmt/hasDateOfAssessment],
+   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
    :skos/definition #voc/lstr
                      "date on which an assessment process was completed@en"})
 
@@ -320,8 +307,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "has estimated value",
    :rdfs/range :fibo-fnd-arr-asmt/AppraisedValue,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-fnd-arr-asmt/hasEstimatedValue],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition "relates something to its estimated value"})
 
 (def isEstimatedValueOf
@@ -333,7 +319,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :rdfs/label "is estimated value of",
-   :rdfs/subPropertyOf [:fibo-fnd-utl-alx/isValueOf
-                        :fibo-fnd-arr-asmt/isEstimatedValueOf],
+   :rdfs/subPropertyOf :fibo-fnd-utl-alx/isValueOf,
    :skos/definition
    "relates an appraised value to the asset of interest as of the date of the assessment"})

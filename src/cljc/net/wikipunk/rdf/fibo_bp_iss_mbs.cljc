@@ -44,8 +44,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MBSIssuance/",
    :rdfs/label "m b s securitization process",
-   :rdfs/subClassOf [:fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess
-                     :fibo-bp-iss-mbs/MBSSecuritizationProcess]})
+   :rdfs/subClassOf :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcess})
 
 (def ProspectusPart
   "A part or section of a prospectus for a securities issue."
@@ -56,8 +55,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MBSIssuance/",
    :rdfs/label "prospectus part",
-   :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractualElement
-                     :fibo-bp-iss-mbs/ProspectusPart],
+   :rdfs/subClassOf :fibo-fnd-agr-ctr/ContractualElement,
    :skos/definition
    "A part or section of a prospectus for a securities issue."})
 

@@ -147,14 +147,13 @@
      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondAmortizationPaymentTerms,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/AmortizingBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond that regularly pays down the principal (face value) on the debt along with its interest expense over the life of the bond"})
@@ -176,8 +175,7 @@
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
-    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    :fibo-sec-dbt-bnd/Bond],
+    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity],
    :skos/definition
    "tradable debt instrument representing a loan in which the issuer owes the holder(s) a debt"})
 
@@ -194,11 +192,10 @@
                       :fibo-fbc-dae-dbt/AmortizationSchedule,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms
-                     :fibo-sec-dbt-bnd/BondAmortizationPaymentTerms
-                     :fibo-fbc-dae-dbt/PrincipalRepaymentTerms
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
                       :owl/someValuesFrom :fibo-fnd-pas-psch/PaymentSchedule,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-dae-dbt/PrincipalRepaymentTerms],
    :skos/definition
    "terms that include a schedule for repayment of the principal over the lifetime of the bond, typically in equal payments at regular intervals"})
 
@@ -212,8 +209,7 @@
    :rdfs/subClassOf [{:owl/onProperty :fibo-sec-sec-iss/specifiesConversionInto,
                       :owl/someValuesFrom :fibo-sec-eq-eq/ListedShare,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-sec-iss/ConversionTerms
-                     :fibo-sec-dbt-bnd/BondConversionTerms],
+                     :fibo-sec-sec-iss/ConversionTerms],
    :skos/definition
    "terms indicating when a convertible bond can be converted to another security (usually a publicly traded share issued by of the same issuer)"})
 
@@ -225,8 +221,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "bond coupon",
-   :rdfs/subClassOf [:fibo-fnd-acc-cur/InterestRate
-                     :fibo-sec-dbt-bnd/BondCoupon],
+   :rdfs/subClassOf :fibo-fnd-acc-cur/InterestRate,
    :skos/definition
    "interest rate on a debt security that the issuer promises to pay to the holder until maturity, expressed as an annual percentage of the face value"})
 
@@ -237,8 +232,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "bond insurance",
-   :rdfs/subClassOf [:fibo-fbc-dae-gty/InsurancePolicy
-                     :fibo-sec-dbt-bnd/BondInsurance],
+   :rdfs/subClassOf :fibo-fbc-dae-gty/InsurancePolicy,
    :skos/definition
    "insurance policy that a bond issuer purchases that guarantees the repayment of the principal and all associated interest payments to the bondholders in the event of default"})
 
@@ -253,8 +247,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
                       :owl/someValuesFrom :fibo-fnd-pas-psch/PaymentSchedule,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/PrincipalRepaymentTerms
-                     :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms],
+                     :fibo-fbc-dae-dbt/PrincipalRepaymentTerms],
    :skos/definition "terms for the repayment of the principal on a bond"})
 
 (def BondRegistrar
@@ -270,8 +263,7 @@
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-pas-fpas/LegalAgent
-                     :fibo-fbc-fct-ra/Registrar
-                     :fibo-sec-dbt-bnd/BondRegistrar],
+                     :fibo-fbc-fct-ra/Registrar],
    :skos/definition
    "party responsible for maintaining records on behalf of the issuer that identify the owners of a registered bond issue"})
 
@@ -284,7 +276,6 @@
    :rdfs/label "bond variable coupon",
    :rdfs/subClassOf [:fibo-sec-dbt-bnd/BondCoupon
                      :fibo-fbc-dae-dbt/VariableInterestRate
-                     :fibo-sec-dbt-bnd/BondVariableCoupon
                      :fibo-fnd-acc-cur/InterestRate],
    :skos/definition "bond coupon that has a variable interest rate"})
 
@@ -300,25 +291,24 @@
      :owl/someValuesFrom :fibo-sec-dbt-bnd/PartialCallFeature,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/CallableBond
-    :fibo-sec-dbt-bnd/BondWithPartialCall
-    :fibo-sec-dbt-bnd/Bond
+    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
     {:owl/maxQualifiedCardinality 1,
      :owl/onClass    :fibo-sec-dbt-bnd/ExtraordinaryRedemptionProvision,
      :owl/onProperty :fibo-sec-dbt-bnd/hasExtraordinaryRedemptionProvision,
      :rdf/type       :owl/Restriction}
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/hasValue   {:xsd/boolean true},
      :owl/onProperty :fibo-sec-dbt-dbti/isCallable,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasCallFeature,
      :owl/someValuesFrom :fibo-sec-dbt-dbti/CallFeature,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond with a feature whereby the issue can be partially called for amounts that are at the discretion of the issuer"})
@@ -332,18 +322,17 @@
    :rdfs/label "bond with published sinking fund",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/AmortizingBond
-    :fibo-sec-dbt-bnd/BondWithPublishedSinkingFund
-    :fibo-sec-dbt-bnd/Bond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondAmortizationPaymentTerms,
      :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond whereby amortization is via a known and published schedule"})
@@ -355,8 +344,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "bond with warrant",
-   :rdfs/subClassOf [:fibo-sec-dbt-dbti/DebtOffering
-                     :fibo-sec-dbt-bnd/BondWithWarrant],
+   :rdfs/subClassOf :fibo-sec-dbt-dbti/DebtOffering,
    :skos/definition "bond issue whereby the issue includes a warrant",
    :skos/editorialNote
    "This need not be any specific type of bond. This is NOT a kind of Bond Contract but a kind of Issue Offer, and is modeled as such, in the Issuance Terms section of the model. This class of contract is retained in the model for now in order to provide traceability with the CFI term for \"Bond With Warrant\" only."})
@@ -372,9 +360,15 @@
    :rdfs/label "Build America Bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/MunicipalBond
-    :fibo-sec-dbt-bnd/BuildAmericaBond
-    :fibo-sec-dbt-bnd/MunicipalSecurity
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
+    :fibo-sec-dbt-bnd/MunicipalSecurity
+    :fibo-sec-dbt-bnd/GovernmentBond
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -383,28 +377,21 @@
                            :rdf/type    :owl/Class},
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentBond
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
-                          :rdf/type           :owl/Restriction},
+    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "taxable municipal bond issued through December 31, 2010 under the American Recovery and Reinvestment Act of 2009 (ARRA)"})
 
@@ -422,14 +409,13 @@
      :owl/someValuesFrom :fibo-sec-dbt-bnd/BulletPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/BulletBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond whose entire principal value is paid on the maturity date, rather than amortized over its lifetime"})
@@ -442,11 +428,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "bond bullet principal repayment terms",
    :rdfs/subClassOf [:fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms
-                     :fibo-sec-dbt-bnd/BulletPrincipalRepaymentTerms
-                     :fibo-fbc-dae-dbt/PrincipalRepaymentTerms
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
                       :owl/someValuesFrom :fibo-fnd-pas-psch/PaymentSchedule,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-dae-dbt/PrincipalRepaymentTerms],
    :skos/definition
    "terms for repayment of the principal for a bond as a single payment covering the whole principal amount"})
 
@@ -469,14 +454,13 @@
      :owl/onProperty :fibo-sec-dbt-dbti/isCallable,
      :rdf/type       :owl/Restriction}
     :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/CallableBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond that includes a stipulation allowing the issuer the right to repurchase and retire the bond at the call price after the call protection period"})
@@ -491,31 +475,30 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/ConvertibleBond
     :fibo-sec-dbt-bnd/CallableBond
-    :fibo-sec-dbt-bnd/CallableConvertibleBond
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-bnd/BondConversionTerms,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
+    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
     {:owl/maxQualifiedCardinality 1,
      :owl/onClass    :fibo-sec-dbt-bnd/ExtraordinaryRedemptionProvision,
      :owl/onProperty :fibo-sec-dbt-bnd/hasExtraordinaryRedemptionProvision,
      :rdf/type       :owl/Restriction}
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/hasValue   {:xsd/boolean true},
      :owl/onProperty :fibo-sec-dbt-dbti/isCallable,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-iss/ConvertibleSecurity
-    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasCallFeature,
      :owl/someValuesFrom :fibo-sec-dbt-dbti/CallFeature,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}],
+    :fibo-sec-sec-iss/ConvertibleSecurity
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-sec-dbt-bnd/BondConversionTerms,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+     :rdf/type       :owl/Restriction}],
    :skos/definition "convertible bond that is also callable"})
 
 (def CertificateOfObligation
@@ -531,7 +514,12 @@
    :rdfs/label "certificate of obligation",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/MunicipalSecurity
-    :fibo-sec-dbt-bnd/CertificateOfObligation
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -542,12 +530,6 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
-                          :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
@@ -566,8 +548,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "certificate of participation",
-   :rdfs/subClassOf [:fibo-fbc-fi-fi/DebtInstrument
-                     :fibo-sec-dbt-bnd/CertificateOfParticipation],
+   :rdfs/subClassOf :fibo-fbc-fi-fi/DebtInstrument,
    :skos/definition
    "debt instrument evidencing a pro rata share in a specific pledged revenue stream, usually lease payments by the issuer that are typically subject to annual appropriation"})
 
@@ -585,33 +566,32 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/UKGovernmentSecurity
     :fibo-sec-dbt-bnd/FixedCouponBond
-    :fibo-sec-dbt-bnd/ConventionalGilt
-    :fibo-sec-dbt-dbti/FixedIncomeSecurity
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    :fibo-sec-dbt-bnd/SovereignDebtInstrument
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/FixedCouponTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
+    :fibo-sec-dbt-dbti/FixedIncomeSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/SovereignState,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/Polity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/FixedCouponTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/SovereignDebtInstrument
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "fixed coupon bond issued by HM Treasury that guarantees to pay the holder of the gilt a fixed cash payment (coupon) every six months until the maturity date, at which point the holder receives the final coupon payment and the return of the principal"})
 
@@ -631,14 +611,13 @@
      :rdf/type       :owl/Restriction}
     :fibo-sec-sec-iss/ConvertibleSecurity
     :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/ConvertibleBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond that gives the holder the right to convert the bond into a fixed number of shares (conversion ratio) if the equity price rises above a specified level (strike price)"})
@@ -662,14 +641,13 @@
                           :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/CorporateBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition "bond issued by a company in order to raise financing"})
 
@@ -680,8 +658,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "coupon payment",
-   :rdfs/subClassOf [:fibo-fnd-pas-psch/PaymentEvent
-                     :fibo-sec-dbt-bnd/CouponPayment],
+   :rdfs/subClassOf :fibo-fnd-pas-psch/PaymentEvent,
    :skos/definition "payment event involving an interest payment on a bond"})
 
 (def CouponPaymentTerms
@@ -700,8 +677,7 @@
                      {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/BondCoupon,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/InterestPaymentTerms
-                     :fibo-sec-dbt-bnd/CouponPaymentTerms],
+                     :fibo-fbc-dae-dbt/InterestPaymentTerms],
    :skos/definition "terms for payment of interest on a bond"})
 
 (def CouponSchedule
@@ -715,8 +691,7 @@
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPayment,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pas-psch/PaymentSchedule
-                     :fibo-fnd-dt-fd/RegularSchedule
-                     :fibo-sec-dbt-bnd/CouponSchedule],
+                     :fibo-fnd-dt-fd/RegularSchedule],
    :skos/definition
    "payment schedule that consists of interest payments on a bond"})
 
@@ -729,20 +704,19 @@
    :rdfs/label "equity linked bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/VariableCouponBond
-    :fibo-sec-dbt-bnd/EquityLinkedBond
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-dbti/VariableIncomeSecurity
-    :fibo-sec-dbt-bnd/VariableIncomeBond
+    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondVariableCoupon,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/VariableIncomeBond
+    :fibo-sec-dbt-bnd/Bond
+    :fibo-sec-dbt-dbti/VariableIncomeSecurity
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond based on the return on an equity over time, i.e. the price and dividend payments or the total return (similar to total return swaps)"})
@@ -756,8 +730,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "extraordinary redemption provision",
-   :rdfs/subClassOf [:fibo-sec-dbt-dbti/CallFeature
-                     :fibo-sec-dbt-bnd/ExtraordinaryRedemptionProvision],
+   :rdfs/subClassOf :fibo-sec-dbt-dbti/CallFeature,
    :skos/definition
    "provision that gives a bond issuer the right to call its bonds due to an unusual one-time occurrence, as specified in the offering statement"})
 
@@ -768,8 +741,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "first regular coupon date",
-   :rdfs/subClassOf [:cmns-dt/ExplicitDate
-                     :fibo-sec-dbt-bnd/FirstRegularCouponDate],
+   :rdfs/subClassOf :cmns-dt/ExplicitDate,
    :skos/definition
    "scheduled date for the first regular coupon payment, in a regular repeating series of coupon periods, after any non standard (long or short) first coupon period in the schedule"})
 
@@ -787,14 +759,13 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/FixedIncomeSecurity
     :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/FixedCouponBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond whose coupon rate and principal amount are fixed at the time of origination or sale and remain constant while the security is outstanding"})
@@ -811,17 +782,16 @@
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/FixedInterestRate,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-bnd/CouponPaymentTerms
-                     :fibo-sec-dbt-bnd/FixedCouponTerms
-                     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
-                      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondCoupon,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/InterestPaymentTerms
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponSchedule,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
+                      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondCoupon,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-dae-dbt/InterestPaymentTerms],
    :skos/definition
    "terms for payment of interest on a bond with a fixed interest rate"})
 
@@ -839,20 +809,19 @@
      :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/VariableCouponBond
-    :fibo-sec-dbt-bnd/FloatingRateNote
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-dbti/VariableIncomeSecurity
-    :fibo-sec-dbt-bnd/VariableIncomeBond
+    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondVariableCoupon,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/VariableIncomeBond
+    :fibo-sec-dbt-bnd/Bond
+    :fibo-sec-dbt-dbti/VariableIncomeSecurity
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond with a variable interest rate based on a published reference interest rate"})
@@ -869,15 +838,14 @@
    :rdfs/label "full faith credit bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/UnsecuredBond
-    :fibo-sec-dbt-bnd/FullFaithCreditBond
-    :fibo-sec-dbt-bnd/Bond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond secured by an unconditional promise to pay by another entity"})
@@ -894,9 +862,15 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/MunicipalBond
     :fibo-sec-dbt-bnd/FullFaithCreditBond
-    :fibo-sec-dbt-bnd/GeneralObligationMunicipalBond
-    :fibo-sec-dbt-bnd/MunicipalSecurity
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
+    :fibo-sec-dbt-bnd/MunicipalSecurity
+    :fibo-sec-dbt-bnd/GovernmentBond
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -905,29 +879,22 @@
                            :rdf/type    :owl/Class},
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentBond
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
+    :fibo-sec-dbt-bnd/UnsecuredBond
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/UnsecuredBond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
-                          :rdf/type           :owl/Restriction},
+    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "municipal bond that is backed by the full faith and credit and general resources of the issuing municipality, including its general taxing authority"})
 
@@ -942,21 +909,20 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/GovernmentBond
-    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/Polity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
+    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-fbc-fi-fi/DebtInstrument
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "debt security issued by a government to fund government spending"})
 
@@ -973,8 +939,7 @@
                           :owl/someValuesFrom :fibo-be-ge-ge/Polity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity],
+    :fibo-fbc-fi-fi/DebtInstrument],
    :skos/definition
    "debt security issued by some government on behalf of some polity, including sovereign and municipal debt"})
 
@@ -989,14 +954,13 @@
    :rdfs/label "green bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/GreenBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond issued specifically to fund climate or environmental projects"})
@@ -1013,15 +977,14 @@
    :rdfs/label "implicit full faith credit bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/UnsecuredBond
-    :fibo-sec-dbt-bnd/ImplicitFullFaithCreditBond
-    :fibo-sec-dbt-bnd/Bond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond issued by a government sponsored agency or corporation rather than by the government directly"})
@@ -1040,16 +1003,15 @@
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/VariableIncomeBond
-    :fibo-sec-dbt-bnd/IndexLinkedBond
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-dbti/VariableIncomeSecurity
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/Bond
+    :fibo-sec-dbt-dbti/VariableIncomeSecurity
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond whose income may vary over time, because either the coupon rate or principal amount is related to a specific index, such as the Consumer Price Index"})
@@ -1070,22 +1032,21 @@
      :owl/someValuesFrom :fibo-ind-ei-ei/InflationRate,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/IndexLinkedBond
-    :fibo-sec-dbt-bnd/InflationLinkedBond
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-dbti/VariableIncomeSecurity
-    :fibo-sec-dbt-bnd/VariableIncomeBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
      :owl/someValuesFrom {:owl/unionOf [:fibo-ind-ei-ei/EconomicIndicator
                                         :fibo-ind-ind-ind/MarketRate],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/VariableIncomeBond
+    :fibo-sec-dbt-bnd/Bond
+    :fibo-sec-dbt-dbti/VariableIncomeSecurity
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond indexed to inflation so that the principal or interest payments rise and fall with the rate of inflation"})
@@ -1097,8 +1058,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "last regular coupon date",
-   :rdfs/subClassOf [:cmns-dt/ExplicitDate
-                     :fibo-sec-dbt-bnd/LastRegularCouponDate],
+   :rdfs/subClassOf :cmns-dt/ExplicitDate,
    :skos/definition
    "scheduled date of the last regular coupon payment, that is the last of the payments that are made according to a regular repeating series of coupon periods, before any non-standard (long or short) final coupon period in the schedule"})
 
@@ -1115,14 +1075,13 @@
    :rdfs/subClassOf
    [:fibo-sec-sec-lst/ListedSecurity
     :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/ListedBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition "bond that may be traded on an exchange"})
 
@@ -1131,11 +1090,11 @@
   {:db/ident :fibo-sec-dbt-bnd/LotteryConvention,
    :rdf/type [:fibo-sec-dbt-bnd/PartialRedemptionAllocationConvention
               :owl/NamedIndividual
+              :fibo-fnd-dt-bd/Convention
               {:owl/maxQualifiedCardinality 1,
                :owl/onDataRange :xsd/decimal,
                :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
-               :rdf/type        :owl/Restriction}
-              :fibo-fnd-dt-bd/Convention],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "lottery convention",
@@ -1151,8 +1110,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "make whole call",
-   :rdfs/subClassOf [:fibo-sec-dbt-dbti/CallEvent
-                     :fibo-sec-dbt-bnd/MakeWholeCall],
+   :rdfs/subClassOf :fibo-sec-dbt-dbti/CallEvent,
    :skos/definition "call allowing the issuer to pay off remaining debt early"})
 
 (def MandatoryConvertibleBond
@@ -1169,21 +1127,20 @@
      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondConversionTerms,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/ConvertibleBond
-    :fibo-sec-dbt-bnd/MandatoryConvertibleBond
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-bnd/BondConversionTerms,
-     :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-sec-iss/ConvertibleSecurity
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-sec-iss/ConvertibleSecurity
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-sec-dbt-bnd/BondConversionTerms,
+     :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "convertible bond that converts into shares at maturity regardless of the equity price"})
 
@@ -1200,14 +1157,13 @@
    :rdfs/label "medium term note",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/MediumTermNote
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond issued over time under a shelf registration program, where each issue may have a different coupon and maturity typically ranging from one to ten years"})
@@ -1225,8 +1181,13 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/MunicipalSecurity
     :fibo-sec-dbt-bnd/GovernmentBond
-    :fibo-sec-dbt-bnd/MunicipalBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -1235,27 +1196,21 @@
                            :rdf/type    :owl/Class},
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
-                          :rdf/type           :owl/Restriction},
+    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "government bond that may be issued by a regional, rather than national, authority"})
 
@@ -1266,8 +1221,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "municipal debt funds usage",
-   :rdfs/subClassOf [:fibo-fnd-arr-doc/LegalDocument
-                     :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage],
+   :rdfs/subClassOf :fibo-fnd-arr-doc/LegalDocument,
    :skos/definition
    "official statement specifying how the funds raised via a new issue of municipal securities are to be applied"})
 
@@ -1281,8 +1235,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "municipal debt remarketing agent",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractThirdParty
-                     :fibo-fbc-pas-fpas/Dealer
-                     :fibo-sec-dbt-bnd/MunicipalDebtRemarketingAgent],
+                     :fibo-fbc-pas-fpas/Dealer],
    :skos/definition
    "municipal securities dealer responsible for reselling to investors securities (such as variable rate demand obligations and other tender option bonds) that have been tendered for purchase by their owner"})
 
@@ -1293,8 +1246,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "municipal debt source of funds",
-   :rdfs/subClassOf [:fibo-fnd-arr-doc/LegalDocument
-                     :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds],
+   :rdfs/subClassOf :fibo-fnd-arr-doc/LegalDocument,
    :skos/definition
    "official statement identifying the source of funds for a new issue of municipal securities"})
 
@@ -1309,7 +1261,12 @@
    :rdfs/label "municipal note",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/MunicipalSecurity
-    :fibo-sec-dbt-bnd/MunicipalNote
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -1320,12 +1277,6 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
-                          :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
@@ -1346,6 +1297,9 @@
    :rdfs/label "municipal security",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
+    {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
      :rdf/type           :owl/Restriction}
@@ -1357,10 +1311,6 @@
                            :rdf/type    :owl/Class},
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/MunicipalSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/Polity,
@@ -1379,8 +1329,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "municipal trustee",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-be-tr-tr/Trustee
-                     :fibo-sec-dbt-bnd/MunicipalTrustee],
+                     :fibo-be-tr-tr/Trustee],
    :skos/definition
    "financial institution with trust powers, designated by the issuer, that acts, pursuant to a bond contract, in a fiduciary capacity for the benefit of the bondholders in enforcing the terms of the bond contract"})
 
@@ -1397,21 +1346,20 @@
    :rdfs/label "original issue discount bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/Bond
+    {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
+     :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
+     :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
      :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
      :rdf/type       :owl/Restriction}
-    {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
-     :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-bnd/OriginalIssueDiscountBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "interest-bearing bond issued at a deep discount to face value"})
@@ -1423,8 +1371,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "partial call",
-   :rdfs/subClassOf [:fibo-sec-dbt-dbti/CallEvent
-                     :fibo-sec-dbt-bnd/PartialCall],
+   :rdfs/subClassOf :fibo-sec-dbt-dbti/CallEvent,
    :skos/definition "call of part of an issue"})
 
 (def PartialCallFeature
@@ -1439,8 +1386,7 @@
      :owl/someValuesFrom
      :fibo-sec-dbt-bnd/PartialRedemptionAllocationConvention,
      :rdf/type :owl/Restriction}
-    :fibo-sec-dbt-dbti/CallFeature
-    :fibo-sec-dbt-bnd/PartialCallFeature],
+    :fibo-sec-dbt-dbti/CallFeature],
    :skos/definition
    "call feature whereby the issuer can recall part of the issue on scheduled dates, where bonds are selected to be called according to some rule, or by selecting various bonds at random"})
 
@@ -1455,8 +1401,7 @@
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-dt-bd/Convention
-                     :fibo-sec-dbt-bnd/PartialRedemptionAllocationConvention],
+                     :fibo-fnd-dt-bd/Convention],
    :skos/definition
    "convention used to determine how the partial call will be actioned with respect to bond selection"})
 
@@ -1466,11 +1411,11 @@
    :db/ident :fibo-sec-dbt-bnd/PercentageCumulativeAverageValue,
    :rdf/type [:fibo-sec-dbt-bnd/RateBasisConvention
               :owl/NamedIndividual
+              :fibo-fnd-dt-bd/Convention
               {:owl/maxQualifiedCardinality 1,
                :owl/onDataRange :xsd/decimal,
                :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
-               :rdf/type        :owl/Restriction}
-              :fibo-fnd-dt-bd/Convention],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "percentage cumulative average value",
@@ -1482,11 +1427,11 @@
   {:db/ident :fibo-sec-dbt-bnd/PercentageParValue,
    :rdf/type [:fibo-sec-dbt-bnd/RateBasisConvention
               :owl/NamedIndividual
+              :fibo-fnd-dt-bd/Convention
               {:owl/maxQualifiedCardinality 1,
                :owl/onDataRange :xsd/decimal,
                :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
-               :rdf/type        :owl/Restriction}
-              :fibo-fnd-dt-bd/Convention],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "percentage par value",
@@ -1504,14 +1449,13 @@
    :rdfs/label "perpetual bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/PerpetualBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond that has no maturity date, i.e., one that pays interest in perpetuity"})
@@ -1521,11 +1465,11 @@
   {:db/ident :fibo-sec-dbt-bnd/ProRataConvention,
    :rdf/type [:fibo-sec-dbt-bnd/PartialRedemptionAllocationConvention
               :owl/NamedIndividual
+              :fibo-fnd-dt-bd/Convention
               {:owl/maxQualifiedCardinality 1,
                :owl/onDataRange :xsd/decimal,
                :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
-               :rdf/type        :owl/Restriction}
-              :fibo-fnd-dt-bd/Convention],
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "pro rata convention",
@@ -1543,8 +1487,7 @@
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-dt-bd/Convention
-                     :fibo-sec-dbt-bnd/RateBasisConvention],
+                     :fibo-fnd-dt-bd/Convention],
    :skos/definition
    "basis for a percentage quoted rate as used in specifying bond call percentage amounts"})
 
@@ -1556,8 +1499,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "redemption payment",
    :rdfs/subClassOf [:fibo-sec-dbt-dbti/RedemptionEvent
-                     :fibo-fnd-pas-psch/PaymentEvent
-                     :fibo-sec-dbt-bnd/RedemptionPayment],
+                     :fibo-fnd-pas-psch/PaymentEvent],
    :skos/definition
    "repayment event involving payment of a bond's principal amount at maturity or when it is called"})
 
@@ -1571,8 +1513,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/RedemptionEvent,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pas-psch/PaymentSchedule
-                     :fibo-sec-dbt-bnd/RedemptionSchedule],
+                     :fibo-fnd-pas-psch/PaymentSchedule],
    :skos/definition
    "repayment schedule whereby a given percentage of a bond issue is redeemed on predefined dates"})
 
@@ -1586,12 +1527,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "regular coupon schedule",
    :rdfs/subClassOf [:fibo-sec-dbt-bnd/CouponSchedule
-                     :fibo-sec-dbt-bnd/RegularCouponSchedule
+                     :fibo-fnd-dt-fd/RegularSchedule
+                     :fibo-fnd-pas-psch/PaymentSchedule
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPayment,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pas-psch/PaymentSchedule
-                     :fibo-fnd-dt-fd/RegularSchedule],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "schedule including an interval of regular coupon payment dates"})
 
@@ -1602,8 +1542,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "regulatory call",
-   :rdfs/subClassOf [:fibo-sec-dbt-dbti/CallEvent
-                     :fibo-sec-dbt-bnd/RegulatoryCall],
+   :rdfs/subClassOf :fibo-sec-dbt-dbti/CallEvent,
    :skos/definition "call triggered by some regulation-specific rule"})
 
 (def RemarketableBond
@@ -1618,15 +1557,7 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/FloatingRateNote
     :fibo-sec-dbt-bnd/CorporateBond
-    :fibo-sec-dbt-bnd/RemarketableBond
-    :fibo-sec-dbt-bnd/VariableIncomeBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/VariableCouponBond
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-dbti/VariableIncomeSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
@@ -1635,13 +1566,20 @@
     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
      :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
      :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/VariableCouponBond
+    :fibo-sec-dbt-bnd/VariableIncomeBond
     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondVariableCoupon,
      :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/Bond
+    :fibo-sec-dbt-dbti/VariableIncomeSecurity
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "corporate bond program where the coupon rate on outstanding bonds is periodically reset through an auction process"})
 
@@ -1657,9 +1595,15 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/SecuredBond
     :fibo-sec-dbt-bnd/MunicipalBond
-    :fibo-sec-dbt-bnd/RevenueBond
-    :fibo-sec-dbt-bnd/MunicipalSecurity
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
+    :fibo-sec-dbt-bnd/MunicipalSecurity
+    :fibo-sec-dbt-bnd/GovernmentBond
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -1668,28 +1612,21 @@
                            :rdf/type    :owl/Class},
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentBond
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
-                          :rdf/type           :owl/Restriction},
+    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "municipal bond supported by the revenue from a specific project"})
 
@@ -1705,14 +1642,13 @@
    :rdfs/label "secured bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/SecuredBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond that is backed by collateral, such as a tangible asset or income stream, in addition to a general promise to pay"})
@@ -1729,16 +1665,15 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-sec-dbt-bnd/BondAmortizationPaymentTerms
-                     :fibo-sec-dbt-bnd/SinkingFundAmortizationTerms
                      {:owl/onProperty :fibo-fnd-dt-fd/hasSchedule,
                       :owl/someValuesFrom
                       :fibo-fbc-dae-dbt/AmortizationSchedule,
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-dae-dbt/PrincipalRepaymentTerms
+                     :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
                       :owl/someValuesFrom :fibo-fnd-pas-psch/PaymentSchedule,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms],
+                     :fibo-fbc-dae-dbt/PrincipalRepaymentTerms],
    :skos/definition
    "terms for the paydown of principal in a sinking fund type of amortizing security",
    :skos/editorialNote
@@ -1757,28 +1692,27 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/SovereignDebtInstrument
     :fibo-sec-dbt-bnd/GovernmentBond
-    :fibo-sec-dbt-bnd/SovereignBond
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/Polity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
+    :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/SovereignState,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition "bond issued by the government of a country"})
 
 (def SovereignDebtInstrument
@@ -1795,7 +1729,6 @@
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    :fibo-sec-dbt-bnd/SovereignDebtInstrument
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/Polity,
@@ -1816,9 +1749,15 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/SecuredBond
     :fibo-sec-dbt-bnd/MunicipalBond
-    :fibo-sec-dbt-bnd/SpecialAssessmentBond
-    :fibo-sec-dbt-bnd/MunicipalSecurity
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
+    :fibo-sec-dbt-bnd/MunicipalSecurity
+    :fibo-sec-dbt-bnd/GovernmentBond
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -1827,28 +1766,21 @@
                            :rdf/type    :owl/Class},
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentBond
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
-                          :rdf/type           :owl/Restriction},
+    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "municipal bond used to fund a development project that is payable from the revenues of an assessment (tax) on the community that is intended to benefit from the project"})
 
@@ -1861,9 +1793,15 @@
    :rdfs/label "special obligation bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/MunicipalBond
-    :fibo-sec-dbt-bnd/SpecialObligationBond
-    :fibo-sec-dbt-bnd/MunicipalSecurity
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
+    :fibo-sec-dbt-bnd/MunicipalSecurity
+    :fibo-sec-dbt-bnd/GovernmentBond
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -1872,28 +1810,21 @@
                            :rdf/type    :owl/Class},
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentBond
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
-                          :rdf/type           :owl/Restriction},
+    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond secured by a limited revenue source, such as receipts derived from a designated project"})
 
@@ -1907,9 +1838,15 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/SecuredBond
     :fibo-sec-dbt-bnd/MunicipalBond
-    :fibo-sec-dbt-bnd/SpecialTaxBond
-    :fibo-sec-dbt-bnd/MunicipalSecurity
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
+    :fibo-sec-dbt-bnd/MunicipalSecurity
+    :fibo-sec-dbt-bnd/GovernmentBond
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -1918,28 +1855,21 @@
                            :rdf/type    :owl/Class},
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentBond
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
-                          :rdf/type           :owl/Restriction},
+    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond secured by revenues derived from designated taxes other than ad valorem taxes",
    :skos/example
@@ -1955,8 +1885,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/involves,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/FixedCouponTerms,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-dbti/PrescriptiveEvent
-                     :fibo-sec-dbt-bnd/StepEvent],
+                     :fibo-sec-dbt-dbti/PrescriptiveEvent],
    :skos/definition
    "event whereby a set of fixed coupon terms comes into force as specified in a step schedule"})
 
@@ -1970,8 +1899,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/StepEvent,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-fd/AdHocSchedule
-                     :fibo-sec-dbt-bnd/StepSchedule],
+                     :fibo-fnd-dt-fd/AdHocSchedule],
    :skos/definition
    "schedule specifying the dates and rates relevant to securities that pay an initial interest rate but also have a feature where set rate increases happen at periodic intervals"})
 
@@ -1991,14 +1919,13 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/FixedIncomeSecurity
     :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/StepUpBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond with a coupon that increases (steps up) while the bond is outstanding"})
@@ -2014,17 +1941,16 @@
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/StepSchedule,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-bnd/CouponPaymentTerms
-                     :fibo-sec-dbt-bnd/SteppedCouponTerms
-                     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
-                      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondCoupon,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/InterestPaymentTerms
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponSchedule,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
+                      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondCoupon,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-dae-dbt/InterestPaymentTerms],
    :skos/definition
    "coupon payment terms for securities with a coupon that increases (steps up) while the bond is outstanding"})
 
@@ -2041,26 +1967,25 @@
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/Strip
     :fibo-sec-dbt-bnd/ZeroCouponBond
-    :fibo-sec-dbt-bnd/StripBond
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-dbti/FixedIncomeSecurity
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+     :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
+     :rdf/type       :owl/Restriction}
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/ZeroCouponTerms,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-     :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
-     :rdf/type       :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-dbti/FixedIncomeSecurity
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond that is part of a series of bonds formed by selling each interest payment and the principal amount of a bond as separate zero coupon bonds."})
@@ -2077,9 +2002,15 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/SecuredBond
     :fibo-sec-dbt-bnd/MunicipalBond
-    :fibo-sec-dbt-bnd/TaxAllocationBond
-    :fibo-sec-dbt-bnd/MunicipalSecurity
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
+    :fibo-sec-dbt-bnd/MunicipalSecurity
+    :fibo-sec-dbt-bnd/GovernmentBond
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
@@ -2088,28 +2019,21 @@
                            :rdf/type    :owl/Class},
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentBond
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-dbt-bnd/hasFundingSource,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/Polity,
-                          :rdf/type           :owl/Restriction},
+    {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/MunicipalDebtFundsUsage,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond payable from the incremental increase in tax revenues realized from any increase in property value and other economic activity, often designed to capture the economic benefit resulting from a bond financing"})
 
@@ -2127,34 +2051,33 @@
    ["https://www.treasurydirect.gov/indiv/research/indepth/tbills/res_tbill_rates.htm"
     "https://www.treasurydirect.gov/indiv/research/indepth/tbills/res_tbill.htm"],
    :rdfs/subClassOf
-   [:fibo-sec-dbt-tstd/MoneyMarketInstrument
-    :fibo-sec-dbt-bnd/USTreasurySecurity
-    {:owl/hasValue   :fibo-sec-dbt-dbti/AtADiscount,
+   [{:owl/hasValue   :fibo-sec-dbt-dbti/AtADiscount,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
      :rdf/type       :owl/Restriction}
+    :fibo-sec-dbt-tstd/MoneyMarketInstrument
+    :fibo-sec-dbt-bnd/USTreasurySecurity
     {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
      :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/TreasuryBill
-    {:owl/hasValue   :fibo-fnd-acc-4217/USDollar,
-     :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-bnd/SovereignDebtInstrument
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/SovereignState,
-                          :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/Polity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
+    :fibo-sec-dbt-bnd/SovereignDebtInstrument
+    :fibo-fbc-fi-fi/DebtInstrument
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/SovereignState,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}
+    {:owl/hasValue   :fibo-fnd-acc-4217/USDollar,
+     :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "short-term zero coupon treasury obligation with a maturity ranging from one to twelve months"})
 
@@ -2170,33 +2093,32 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/USTreasurySecurity
     :fibo-sec-dbt-bnd/SovereignBond
-    :fibo-sec-dbt-bnd/TreasuryBond
-    {:owl/hasValue   :fibo-fnd-acc-4217/USDollar,
-     :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
-     :rdf/type       :owl/Restriction}
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    :fibo-sec-dbt-bnd/SovereignDebtInstrument
     :fibo-sec-dbt-bnd/GovernmentBond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/SovereignState,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/Polity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/SovereignDebtInstrument
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/hasValue   :fibo-fnd-acc-4217/USDollar,
+     :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "long term term coupon bearing treasury obligation issued in terms of 20 years or 30 years that pays interest every six months until they mature"})
 
@@ -2216,46 +2138,45 @@
    [:fibo-sec-dbt-bnd/VariablePrincipalBond
     :fibo-sec-dbt-bnd/InflationLinkedBond
     :fibo-sec-dbt-bnd/USTreasurySecurity
-    :fibo-sec-dbt-bnd/TreasuryInflationProtectedSecurity
-    :fibo-sec-dbt-bnd/VariableIncomeBond
-    {:owl/hasValue   :fibo-fnd-acc-4217/USDollar,
-     :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
-     :rdf/type       :owl/Restriction}
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-fnd-agr-ctr/definesTermsFor,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/VariableDebtPrincipal,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/SovereignDebtInstrument
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
      :owl/someValuesFrom :fibo-ind-ei-ei/InflationRate,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-dbti/VariableIncomeSecurity
-    {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
-     :owl/someValuesFrom {:owl/unionOf [:fibo-ind-ei-ei/EconomicIndicator
-                                        :fibo-ind-ind-ind/MarketRate],
-                          :rdf/type    :owl/Class},
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
     :fibo-sec-dbt-bnd/IndexLinkedBond
+    :fibo-sec-dbt-bnd/VariableIncomeBond
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/SovereignState,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/Polity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
+    {:owl/onProperty     :fibo-fnd-agr-ctr/definesTermsFor,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/VariableDebtPrincipal,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
+    {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
+     :owl/someValuesFrom {:owl/unionOf [:fibo-ind-ei-ei/EconomicIndicator
+                                        :fibo-ind-ind-ind/MarketRate],
+                          :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/SovereignDebtInstrument
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
+    :fibo-sec-dbt-dbti/VariableIncomeSecurity
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/hasValue   :fibo-fnd-acc-4217/USDollar,
+     :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "variable income bond whose principal is indexed to inflation or deflation and thus changes over the life of the security"})
 
@@ -2269,32 +2190,31 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/USTreasurySecurity
     :fibo-sec-dbt-bnd/MediumTermNote
-    :fibo-sec-dbt-bnd/TreasuryNote
-    {:owl/hasValue   :fibo-fnd-acc-4217/USDollar,
-     :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
-     :rdf/type       :owl/Restriction}
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    :fibo-sec-dbt-bnd/SovereignDebtInstrument
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/Bond
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/SovereignState,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/Polity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/SovereignDebtInstrument
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-sec-dbt-bnd/Bond
+    {:owl/hasValue   :fibo-fnd-acc-4217/USDollar,
+     :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "medium term coupon bearing treasury obligation with original maturity ranging from two to ten years"})
 
@@ -2313,19 +2233,18 @@
    ["https://www.dmo.gov.uk/responsibilities/gilt-market/buying-selling/"],
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/SovereignDebtInstrument
-    :fibo-sec-dbt-bnd/UKGovernmentSecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/SovereignState,
-                          :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/Polity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
+    :fibo-fbc-fi-fi/DebtInstrument
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/SovereignState,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "debt instrument issued by HM Treasury and listed on the London Stock Exchange"})
 
@@ -2341,19 +2260,18 @@
      :owl/onProperty :fibo-fbc-fi-fi/isDenominatedIn,
      :rdf/type       :owl/Restriction}
     :fibo-sec-dbt-bnd/SovereignDebtInstrument
-    :fibo-sec-dbt-bnd/USTreasurySecurity
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom :fibo-be-ge-ge/SovereignState,
-                          :rdf/type           :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom :fibo-be-ge-ge/Polity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+    :fibo-sec-dbt-bnd/GovernmentIssuedDebtSecurity
+    :fibo-fbc-fi-fi/DebtInstrument
+    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+     :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom :fibo-be-ge-ge/SovereignState,
+                          :rdf/type           :owl/Restriction},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "debt instrument issued by the United States Department of the Treasury that carries a full faith and credit guarantee"})
 
@@ -2367,14 +2285,13 @@
    :rdfs/label "unlisted bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/UnlistedBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond that is traded over the counter rather than via an exchange or other listing facility"})
@@ -2391,14 +2308,13 @@
    :rdfs/label "unsecured bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/UnsecuredBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond that is only secured by the bond issuer's good credit standing"})
@@ -2417,16 +2333,15 @@
      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondVariableCoupon,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/VariableIncomeBond
-    :fibo-sec-dbt-bnd/VariableCouponBond
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-dbti/VariableIncomeSecurity
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/Bond
+    :fibo-sec-dbt-dbti/VariableIncomeSecurity
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition "bond that has a floating interest rate"})
 
@@ -2445,17 +2360,16 @@
                       :owl/someValuesFrom :fibo-ind-ind-ind/MarketRate,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-bnd/CouponPaymentTerms
-                     :fibo-sec-dbt-bnd/VariableCouponTerms
-                     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
-                      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondCoupon,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/InterestPaymentTerms
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponSchedule,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
+                      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondCoupon,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-dae-dbt/InterestPaymentTerms],
    :skos/definition
    "contractual terms specifying the calculation of the interest rate for a variable coupon bond"})
 
@@ -2472,8 +2386,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-dbti/PubliclyIssuedDebt
-                     :fibo-sec-dbt-bnd/VariableDebtPrincipal],
+                     :fibo-sec-dbt-dbti/PubliclyIssuedDebt],
    :skos/definition
    "principal that is defined in relation to some variable and so varies over time, as principal"})
 
@@ -2487,14 +2400,13 @@
    :rdfs/subClassOf
    [:fibo-sec-dbt-dbti/VariableIncomeSecurity
     :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-bnd/VariableIncomeBond
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond whose income may vary over time, because either the coupon rate or principal amount changes in line with an index or schedule over the life of the security"})
@@ -2506,8 +2418,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "variable interest calculation formula",
-   :rdfs/subClassOf [:fibo-sec-dbt-dbti/FullyIndexedInterestRate
-                     :fibo-sec-dbt-bnd/VariableInterestCalculationFormula],
+   :rdfs/subClassOf :fibo-sec-dbt-dbti/FullyIndexedInterestRate,
    :skos/definition "formula for the calculation of variable interest"})
 
 (def VariableInterestExpression
@@ -2529,8 +2440,7 @@
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-sec-dbt-bnd/hasCeiling,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
-                     :fibo-sec-dbt-bnd/VariableInterestExpression],
+                     :fibo-fnd-utl-alx/Expression],
    :skos/definition
    "an expression used to determine a variable interest payment amount"})
 
@@ -2548,16 +2458,15 @@
      :owl/someValuesFrom :fibo-sec-dbt-bnd/VariableDebtPrincipal,
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-bnd/VariableIncomeBond
-    :fibo-sec-dbt-bnd/VariablePrincipalBond
-    :fibo-sec-dbt-bnd/Bond
-    :fibo-sec-dbt-dbti/VariableIncomeSecurity
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-bnd/Bond
+    :fibo-sec-dbt-dbti/VariableIncomeSecurity
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond whose principal adjusts over time with changes in an index"})
@@ -2575,10 +2484,6 @@
    :rdfs/label "zero coupon bond",
    :rdfs/subClassOf
    [:fibo-sec-dbt-bnd/Bond
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-     :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
-     :rdf/type       :owl/Restriction}
     :fibo-sec-dbt-dbti/FixedIncomeSecurity
     {:owl/hasValue   :fibo-sec-dbt-dbti/ParValue,
      :owl/onProperty :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
@@ -2586,14 +2491,17 @@
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/ZeroCouponTerms,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-bnd/ZeroCouponBond
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+     :owl/onProperty :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount,
+     :rdf/type       :owl/Restriction}
     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "bond issued with a coupon rate of zero and that trades at a deep discount to face value"})
@@ -2610,30 +2518,29 @@
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-dbt-bnd/FixedCouponTerms
                      :fibo-sec-dbt-bnd/BondAmortizationPaymentTerms
-                     :fibo-sec-dbt-bnd/ZeroCouponTerms
-                     {:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
-                      :owl/someValuesFrom :fibo-fnd-pas-psch/PaymentSchedule,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms
-                     {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
-                      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponSchedule,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-bnd/CouponPaymentTerms
-                     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
-                      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondCoupon,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/InterestPaymentTerms
                      {:owl/onProperty :fibo-fnd-dt-fd/hasSchedule,
                       :owl/someValuesFrom
                       :fibo-fbc-dae-dbt/AmortizationSchedule,
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-dae-dbt/PrincipalRepaymentTerms
+                     {:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
+                      :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponSchedule,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-bnd/BondPrincipalRepaymentTerms
+                     {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
+                      :owl/someValuesFrom :fibo-sec-dbt-bnd/BondCoupon,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-dt-fd/hasSchedule,
+                      :owl/someValuesFrom :fibo-fnd-pas-psch/PaymentSchedule,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-bnd/CouponPaymentTerms
+                     {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-dae-dbt/hasInterestRate,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/FixedInterestRate,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-dae-dbt/PrincipalRepaymentTerms
+                     :fibo-fbc-dae-dbt/InterestPaymentTerms],
    :skos/definition "terms for payment of interest on a zero coupon bond"})
 
 (def ZeroInterestRate
@@ -2656,8 +2563,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has award date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :fibo-sec-dbt-bnd/hasAwardDate],
+   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
    :skos/definition
    "specifies the date on which bonds are awarded to the lead manager or syndicate on negotiated deals, or the date of bidding on competitive deals"})
 
@@ -2673,8 +2579,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has call price",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryPrice,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasPrice
-                        :fibo-sec-dbt-bnd/hasCallPrice],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasPrice,
    :skos/definition
    "indicates the amount of the call on the specified call date, typically the sum of par value and the call premium, as specified in the contract"})
 
@@ -2701,8 +2606,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has ceiling",
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasRateValue
-                        :fibo-sec-dbt-bnd/hasCeiling],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasRateValue,
    :skos/definition "indicates the maximum variable interest payment amount"})
 
 (def hasConvertibleDate
@@ -2714,8 +2618,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has convertible date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :fibo-sec-dbt-bnd/hasConvertibleDate],
+   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
    :skos/definition
    "date on which a bond can be converted into the specified equity security"})
 
@@ -2728,8 +2631,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has extraordinary redemption provision",
    :rdfs/range :fibo-sec-dbt-bnd/ExtraordinaryRedemptionProvision,
-   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasContractualElement
-                        :fibo-sec-dbt-bnd/hasExtraordinaryRedemptionProvision],
+   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement,
    :skos/definition
    "relates the redemption provision of a debt instrument to one-time provision that may be exercised by the issuer under certain circumstances"})
 
@@ -2742,8 +2644,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has final maturity date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :fibo-sec-dbt-bnd/hasFinalMaturityDate],
+   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
    :skos/definition
    "indicates the final payment date of a financial instrument, at which point the principal (and all remaining interest) is due to be paid"})
 
@@ -2757,7 +2658,6 @@
    :rdfs/label "has first call price",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryPrice,
    :rdfs/subPropertyOf [:fibo-sec-dbt-bnd/hasCallPrice
-                        :fibo-sec-dbt-bnd/hasFirstCallPrice
                         :fibo-fnd-acc-cur/hasPrice],
    :skos/definition
    "indicates the amount of the call on the first call date as specified in the call schedule"})
@@ -2776,9 +2676,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has first coupon payment date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :cmns-dt/hasStartDate
-                        :fibo-sec-dbt-bnd/hasFirstCouponPaymentDate],
+   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate :cmns-dt/hasStartDate],
    :skos/definition
    "specifies the first date on which the issuer or its agent expects or commits to make a coupon payment"})
 
@@ -2791,9 +2689,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has first par call date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasStartDate
-                        :cmns-dt/hasExplicitDate
-                        :fibo-sec-dbt-bnd/hasFirstParCallDate],
+   :rdfs/subPropertyOf [:cmns-dt/hasStartDate :cmns-dt/hasExplicitDate],
    :skos/definition
    "indicates the first date on which the bond may be called at par for redemption"})
 
@@ -2807,9 +2703,8 @@
    :rdfs/label "has first par call price",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryPrice,
    :rdfs/subPropertyOf [:fibo-sec-dbt-bnd/hasFirstCallPrice
-                        :fibo-sec-dbt-bnd/hasFirstParCallPrice
-                        :fibo-fnd-acc-cur/hasPrice
-                        :fibo-sec-dbt-bnd/hasCallPrice],
+                        :fibo-sec-dbt-bnd/hasCallPrice
+                        :fibo-fnd-acc-cur/hasPrice],
    :skos/definition
    "specifies the amount of the call on the first par call date as specified in the call schedule"})
 
@@ -2822,9 +2717,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has first premium call date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasStartDate
-                        :cmns-dt/hasExplicitDate
-                        :fibo-sec-dbt-bnd/hasFirstPremiumCallDate],
+   :rdfs/subPropertyOf [:cmns-dt/hasStartDate :cmns-dt/hasExplicitDate],
    :skos/definition
    "indicates the first date on which the bond may be called for redemption at a price above par"})
 
@@ -2838,9 +2731,8 @@
    :rdfs/label "has first premium call price",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryPrice,
    :rdfs/subPropertyOf [:fibo-sec-dbt-bnd/hasFirstCallPrice
-                        :fibo-sec-dbt-bnd/hasFirstPremiumCallPrice
-                        :fibo-fnd-acc-cur/hasPrice
-                        :fibo-sec-dbt-bnd/hasCallPrice],
+                        :fibo-sec-dbt-bnd/hasCallPrice
+                        :fibo-fnd-acc-cur/hasPrice],
    :skos/definition
    "specifies the amount of the call on the first call date on which the bond may be called at a price above par as specified in the call schedule"})
 
@@ -2853,9 +2745,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has first put date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :fibo-sec-dbt-bnd/hasPutDate
-                        :fibo-sec-dbt-bnd/hasFirstPutDate],
+   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate :fibo-sec-dbt-bnd/hasPutDate],
    :skos/definition
    "indicates the initial date on which the holder may sell the bond to the issuer prior to maturity"})
 
@@ -2868,8 +2758,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has first put price",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryPrice,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasPrice
-                        :fibo-sec-dbt-bnd/hasFirstPutPrice],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasPrice,
    :skos/definition
    "specifies the initial price at which the holder may sell the bond to the issuer prior to maturity"})
 
@@ -2882,8 +2771,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has floor",
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasRateValue
-                        :fibo-sec-dbt-bnd/hasFloor],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasRateValue,
    :skos/definition "indicates the minimum variable interest payment amount"})
 
 (def hasFundingSource
@@ -2895,8 +2783,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has funding source",
    :rdfs/range :fibo-sec-dbt-bnd/MunicipalDebtSourceOfFunds,
-   :rdfs/subPropertyOf [:fibo-fnd-arr-doc/hasDataSource
-                        :fibo-sec-dbt-bnd/hasFundingSource],
+   :rdfs/subPropertyOf :fibo-fnd-arr-doc/hasDataSource,
    :skos/definition
    "indicates the source of funds for a new issue of municipal securities"})
 
@@ -2912,9 +2799,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has last coupon payment date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :cmns-dt/hasEndDate
-                        :fibo-sec-dbt-bnd/hasLastCouponPaymentDate],
+   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate :cmns-dt/hasEndDate],
    :skos/definition
    "specifies the final date on which the issuer expects to make a final coupon payment"})
 
@@ -2927,8 +2812,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has lockout period",
    :rdfs/range :cmns-dt/DatePeriod,
-   :rdfs/subPropertyOf [:cmns-dt/hasDatePeriod
-                        :fibo-sec-dbt-bnd/hasLockoutPeriod],
+   :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
    :skos/definition
    "indicates the period of time for which a callable security cannot be called and only interest coupon payments are received by the security holder",
    :skos/example
@@ -2943,8 +2827,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has municipal trustee",
    :rdfs/range :fibo-sec-dbt-bnd/MunicipalTrustee,
-   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasThirdParty
-                        :fibo-sec-dbt-bnd/hasMunicipalTrustee],
+   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasThirdParty,
    :skos/definition
    "specifies the financial institution with trust powers, designated by the issuer, that acts, pursuant to a bond contract, in a fiduciary capacity for the benefit of the bondholders in enforcing the terms of the bond contract"})
 
@@ -2957,8 +2840,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has original issue discount amount",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-sec-dbt-bnd/hasOriginalIssueDiscountAmount],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    "indicates the difference between the stated redemption price at maturity and the issue price"})
 
@@ -2986,8 +2868,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has penultimate coupon payment date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :fibo-sec-dbt-bnd/hasPenultimateCouponPaymentDate],
+   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
    :skos/definition "specifies the last coupon payment prior to maturity"})
 
 (def hasPremiumAmount
@@ -2999,8 +2880,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has premium amount",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-sec-dbt-bnd/hasPremiumAmount],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    "indicates the premium paid to a bond holder when the bond is called"})
 
@@ -3013,7 +2893,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has put date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate :fibo-sec-dbt-bnd/hasPutDate],
+   :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
    :skos/definition
    "indicates the date on which a security is subject to redemption by the bond holder"})
 
@@ -3026,8 +2906,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has put frequency",
    :rdfs/range :fibo-fnd-dt-fd/RecurrenceInterval,
-   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasRecurrenceInterval
-                        :fibo-sec-dbt-bnd/hasPutFrequency],
+   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasRecurrenceInterval,
    :skos/definition
    "indicates the recurring window of time in which the put feature can be exercised"})
 
@@ -3040,8 +2919,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has redemption amount",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-sec-dbt-bnd/hasRedemptionAmount],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    "indicates the amount of the principal paid with a redemption payment"})
 
@@ -3054,8 +2932,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has remarketing agent",
    :rdfs/range :fibo-sec-dbt-bnd/MunicipalDebtRemarketingAgent,
-   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasThirdParty
-                        :fibo-sec-dbt-bnd/hasRemarketingAgent],
+   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasThirdParty,
    :skos/definition
    "identifies the dealer responsible for reselling to investors securities (such as variable rate demand obligations and other tender option bonds) that have been tendered for purchase by their owner."})
 
@@ -3068,7 +2945,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "has reset date offset",
    :rdfs/range :fibo-fnd-dt-fd/RelativeDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasDate :fibo-sec-dbt-bnd/hasResetDateOffset],
+   :rdfs/subPropertyOf :cmns-dt/hasDate,
    :skos/definition
    "indicates the offset from the coupon payment date on which the rate is reset"})
 
@@ -3109,8 +2986,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
    :rdfs/label "is linked to fallback",
    :rdfs/range :fibo-sec-dbt-bnd/GovernmentBond,
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/refersTo
-                        :fibo-sec-dbt-bnd/isLinkedToFallback],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo,
    :skos/definition
    "relates an index-linked instrument to a government bond that may be selected by a calculation agent"})
 

@@ -66,8 +66,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-id/identifies,
                       :owl/someValuesFrom :fibo-fnd-plc-loc/BusinessCenter,
                       :rdf/type           :owl/Restriction}
-                     :lcc-cr/GeographicRegionIdentifier
-                     :fibo-fbc-fct-bc/BusinessCenterCode],
+                     :lcc-cr/GeographicRegionIdentifier],
    :skos/definition
    "code used to denote a metropolitan area where business is conducted"})
 
@@ -79,8 +78,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCenters/",
    :rdfs/label "business center code set",
-   :rdfs/subClassOf [:cmns-cds/CodeSet
-                     :fibo-fbc-fct-bc/BusinessCenterCodeScheme],
+   :rdfs/subClassOf :cmns-cds/CodeSet,
    :skos/definition
    "coding scheme used to define a set of codes for municipalities or business centers"})
 
@@ -95,7 +93,6 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-id/identifies,
                       :owl/someValuesFrom :fibo-fnd-dt-bd/BusinessDayAdjustment,
                       :rdf/type           :owl/Restriction}
-                     :cmns-cds/CodeElement
-                     :fibo-fbc-fct-bc/BusinessDayAdjustmentCode],
+                     :cmns-cds/CodeElement],
    :skos/definition
    "code used to denote a convention for specifying what happens when a date falls on a day that is weekend or holiday in some municipality or business center"})

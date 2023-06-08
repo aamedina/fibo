@@ -72,7 +72,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
    :rdfs/label "currency conversion service",
    :rdfs/subClassOf [:fibo-ind-fx-fx/ForeignExchangeService
-                     :fibo-ind-fx-fx/CurrencyConversionService
                      :fibo-fbc-pas-fpas/FinancialService],
    :skos/definition
    "foreign exchange service involving the conversion of currency of one country or group of countries for another, typically, but not always, as a counter transaction"})
@@ -88,9 +87,8 @@
                       :owl/onProperty    :fibo-fbc-pas-fpas/hasSettlementDate,
                       :rdf/type          :owl/Restriction}
                      :fibo-ind-fx-fx/QuotedExchangeRate
-                     :fibo-ind-fx-fx/CurrencyForwardRate
-                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-ind-ind/MarketRate
+                     :fibo-fnd-acc-cur/ExchangeRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
                       :owl/qualifiedCardinality 1,
@@ -110,11 +108,10 @@
                       :rdf/type          :owl/Restriction}
                      :fibo-ind-ind-ind/ImpliedVolatility
                      :fibo-ind-fx-fx/ExchangeRateVolatility
-                     :fibo-ind-fx-fx/CurrencyForwardRateVolatility
+                     :fibo-ind-ind-ind/Volatility
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-ind-fx-fx/ExchangeRateStructure,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-ind-ind-ind/Volatility],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "measure of exchange rate fluctuation based on a range of projected values for exchange rates"})
 
@@ -126,14 +123,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
    :rdfs/label "currency spot buy rate",
    :rdfs/subClassOf [:fibo-ind-fx-fx/CurrencySpotRate
-                     :fibo-ind-fx-fx/CurrencySpotBuyRate
-                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-ind-ind/MarketRate
+                     :fibo-fnd-acc-cur/ExchangeRate
+                     :fibo-ind-fx-fx/QuotedExchangeRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-ind-fx-fx/QuotedExchangeRate],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "indicative spot buying market rate as observed by the reporting source"})
 
@@ -145,14 +141,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
    :rdfs/label "currency spot mid rate",
    :rdfs/subClassOf [:fibo-ind-fx-fx/CurrencySpotRate
-                     :fibo-ind-fx-fx/CurrencySpotMidRate
-                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-ind-ind/MarketRate
+                     :fibo-fnd-acc-cur/ExchangeRate
+                     :fibo-ind-fx-fx/QuotedExchangeRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-ind-fx-fx/QuotedExchangeRate],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "indicative middle market (mean of spot buying and selling) rate as observed by the reporting source"})
 
@@ -166,9 +161,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
    :rdfs/label "currency spot rate",
    :rdfs/subClassOf [:fibo-ind-fx-fx/QuotedExchangeRate
-                     :fibo-ind-fx-fx/CurrencySpotRate
-                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-ind-ind/MarketRate
+                     :fibo-fnd-acc-cur/ExchangeRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
                       :owl/qualifiedCardinality 1,
@@ -184,14 +178,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
    :rdfs/label "currency spot sell rate",
    :rdfs/subClassOf [:fibo-ind-fx-fx/CurrencySpotRate
-                     :fibo-ind-fx-fx/CurrencySpotSellRate
-                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-ind-ind/MarketRate
+                     :fibo-fnd-acc-cur/ExchangeRate
+                     :fibo-ind-fx-fx/QuotedExchangeRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-ind-fx-fx/QuotedExchangeRate],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "indicative spot selling market rate as observed by the reporting source"})
 
@@ -207,11 +200,10 @@
                       :rdf/type          :owl/Restriction}
                      :fibo-ind-ind-ind/HistoricalVolatility
                      :fibo-ind-fx-fx/ExchangeRateVolatility
-                     :fibo-ind-fx-fx/CurrencySpotVolatility
+                     :fibo-ind-ind-ind/Volatility
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-ind-fx-fx/ExchangeRateStructure,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-ind-ind-ind/Volatility],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "measure of exchange rate fluctuation based on a range of past actual values for exchange rates"})
 
@@ -225,8 +217,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/ExchangeRate,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-fd/DatedStructuredCollection
-                     :fibo-ind-fx-fx/ExchangeRateStructure],
+                     :fibo-fnd-dt-fd/DatedStructuredCollection],
    :skos/definition
    "structured collection of quoted or projected exchange rates, such that volatility may be constructed for the structure"})
 
@@ -242,8 +233,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-ind-fx-fx/ExchangeRateStructure,
                       :rdf/type           :owl/Restriction}
-                     :fibo-ind-ind-ind/Volatility
-                     :fibo-ind-fx-fx/ExchangeRateVolatility],
+                     :fibo-ind-ind-ind/Volatility],
    :skos/definition
    "statistical measure of the rate of change in the rate at which one currency can be exchanged for another"})
 
@@ -254,8 +244,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
    :rdfs/label "foreign exchange service",
-   :rdfs/subClassOf [:fibo-fbc-pas-fpas/FinancialService
-                     :fibo-ind-fx-fx/ForeignExchangeService],
+   :rdfs/subClassOf :fibo-fbc-pas-fpas/FinancialService,
    :skos/definition
    "financial service involving the exchange of one currency for another, conversion of one currency for another, and transfer of money from one country to another whereby currency conversion is required"})
 
@@ -269,7 +258,6 @@
    :rdfs/label "international electronic funds transfer service",
    :rdfs/subClassOf [:fibo-ind-fx-fx/ForeignExchangeService
                      :fibo-fbc-fct-fse/ElectronicFundsTransferService
-                     :fibo-ind-fx-fx/InternationalElectronicFundsTransferService
                      :fibo-fbc-pas-fpas/FinancialService],
    :skos/definition
    "electronic funds transfer (EFT) service involving the transfer of funds across national borders, that may also involve currency conversion"})
@@ -288,8 +276,7 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-ind-ind-ind/MarketRate
-                     :fibo-fnd-acc-cur/ExchangeRate
-                     :fibo-ind-fx-fx/QuotedExchangeRate],
+                     :fibo-fnd-acc-cur/ExchangeRate],
    :skos/definition
    "exchange rate quoted at a specific point in time, for a given block amount of currency as quoted against another (base) currency"})
 
@@ -314,8 +301,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
    :rdfs/label "has quotation settlement basis",
    :rdfs/range :cmns-dt/Duration,
-   :rdfs/subPropertyOf [:cmns-dt/hasDuration
-                        :fibo-ind-fx-fx/hasQuotationSettlementBasis],
+   :rdfs/subPropertyOf :cmns-dt/hasDuration,
    :skos/definition
    "indicates the settlement period for a trade for which the stated spot rate applies"})
 
@@ -327,8 +313,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
    :rdfs/label "has quote currency",
    :rdfs/range :fibo-fnd-acc-cur/Currency,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasDealtCurrency
-                        :fibo-ind-fx-fx/hasQuoteCurrency],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasDealtCurrency,
    :skos/definition
    "indicates the quote currency in an exchange rate; R units of this currency represent one unit of the base currency"})
 

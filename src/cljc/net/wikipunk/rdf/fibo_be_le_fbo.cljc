@@ -92,8 +92,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "branch",
-   :rdfs/subClassOf [:fibo-fnd-org-org/OrganizationalSubUnit
-                     :fibo-be-le-fbo/Branch],
+   :rdfs/subClassOf :fibo-fnd-org-org/OrganizationalSubUnit,
    :skos/definition
    "part of a larger organization that might not be co-located with it"})
 
@@ -104,8 +103,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "division",
-   :rdfs/subClassOf [:fibo-fnd-org-org/OrganizationalSubUnit
-                     :fibo-be-le-fbo/Division],
+   :rdfs/subClassOf :fibo-fnd-org-org/OrganizationalSubUnit,
    :skos/definition
    "part of an organization, such as a line of business, that may have separate accounting and reporting requirements"})
 
@@ -119,7 +117,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "joint venture",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
-                     :fibo-be-le-fbo/JointVenture
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
                       :owl/onProperty :cmns-cls/isClassifiedBy,
@@ -147,7 +144,6 @@
                       :owl/someValuesFrom :fibo-be-le-lp/PublicPurpose,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-le-fbo/NotForProfitOrganization
-                     :fibo-be-le-fbo/NonGovernmentalOrganization
                      :fibo-fnd-org-fm/FormalOrganization
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/NotForProfitObjective,
@@ -172,8 +168,7 @@
    :rdfs/subClassOf [:fibo-fnd-org-fm/FormalOrganization
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/NotForProfitObjective,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-be-le-fbo/NotForProfitOrganization],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "organization that uses its surplus revenues to further achieve its purpose rather than distributing its surplus income to the organization's owners (directors, investors, and equivalents) as profit / dividends"})
 
@@ -185,8 +180,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "organization covering agreement",
-   :rdfs/subClassOf [:fibo-fnd-agr-ctr/WrittenContract
-                     :fibo-be-le-fbo/OrganizationCoveringAgreement],
+   :rdfs/subClassOf :fibo-fnd-agr-ctr/WrittenContract,
    :skos/definition
    "contract between the principals in a formal organization that specifies the relationship between the principals, and between the principals and the entity"})
 
@@ -205,7 +199,6 @@
    :rdfs/label "value-added tax identification number",
    :rdfs/subClassOf [:fibo-fnd-pty-pty/TaxIdentifier
                      :fibo-fnd-org-org/OrganizationIdentifier
-                     :fibo-be-le-fbo/ValueAddedTaxIdentificationNumber
                      {:owl/unionOf
                       [:fibo-fnd-org-org/OrganizationIdentifier
                        :fibo-fnd-aap-ppl/NationalIdentificationNumber],
@@ -222,8 +215,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "has equity",
    :rdfs/range :fibo-fnd-acc-aeq/OwnersEquity,
-   :rdfs/subPropertyOf [:fibo-fnd-utl-alx/hasExpression
-                        :fibo-be-le-fbo/hasEquity],
+   :rdfs/subPropertyOf :fibo-fnd-utl-alx/hasExpression,
    :skos/definition "indicates owners' equity associated with the entity"})
 
 (def hasHeadquartersAddress
@@ -237,7 +229,6 @@
    :rdfs/label "has headquarters address",
    :rdfs/range :fibo-fnd-plc-adr/PhysicalAddress,
    :rdfs/subPropertyOf [:fibo-be-le-fbo/hasOperatingAddress
-                        :fibo-be-le-fbo/hasHeadquartersAddress
                         :fibo-fnd-plc-adr/hasAddress],
    :skos/definition
    "indicates the main address at which communications may be delivered for the organization"})
@@ -251,8 +242,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "has operating address",
    :rdfs/range :fibo-fnd-plc-adr/PhysicalAddress,
-   :rdfs/subPropertyOf [:fibo-fnd-plc-adr/hasAddress
-                        :fibo-be-le-fbo/hasOperatingAddress],
+   :rdfs/subPropertyOf :fibo-fnd-plc-adr/hasAddress,
    :skos/definition
    "indicates an address at which an organization carries out operations"})
 
@@ -265,7 +255,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :rdfs/label "has registered address",
    :rdfs/range :fibo-fnd-plc-adr/ConventionalStreetAddress,
-   :rdfs/subPropertyOf [:fibo-fnd-plc-adr/hasAddress
-                        :fibo-be-le-fbo/hasRegisteredAddress],
+   :rdfs/subPropertyOf :fibo-fnd-plc-adr/hasAddress,
    :skos/definition
    "identifies an address that is officially recorded with some government authority and at which legal papers may be served"})

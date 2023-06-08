@@ -120,8 +120,7 @@
                       :owl/onClass    :fibo-fbc-dae-dbt/Interest,
                       :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-rl/ThingInRole
-                     :fibo-fbc-dae-dbt/Accrual],
+                     :fibo-fnd-pty-rl/ThingInRole],
    :skos/definition
    "the process of accumulating interest or other income that has been earned but not paid"})
 
@@ -136,8 +135,7 @@
                       :owl/onClass    :fibo-fbc-dae-dbt/Debt,
                       :owl/onProperty :fibo-fbc-dae-dbt/isAmortizationOf,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-rl/ThingInRole
-                     :fibo-fbc-dae-dbt/Amortization],
+                     :fibo-fnd-pty-rl/ThingInRole],
    :skos/definition
    "the process of reduction of debt or other costs through periodic charges to assets or liabilities, such as through principal payments on mortgages"})
 
@@ -155,7 +153,6 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pas-psch/PaymentSchedule
                      :fibo-fbc-dae-dbt/ProjectedContractEventSchedule
-                     :fibo-fbc-dae-dbt/AmortizationSchedule
                      :fibo-fnd-dt-fd/RegularSchedule
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
@@ -182,15 +179,14 @@
     :fibo-fnd-pas-pas/Customer
     :fibo-fnd-agr-ctr/ContractParty
     :fibo-fbc-dae-dbt/Debtor
-    :fibo-fbc-dae-dbt/Borrower
+    :fibo-fnd-agr-agr/Obligor
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-dae-dbt/Debt,
      :owl/onProperty :fibo-fbc-dae-dbt/owes,
      :rdf/type       :owl/Restriction}
     {:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
      :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
-     :rdf/type          :owl/Restriction}
-    :fibo-fnd-agr-agr/Obligor],
+     :rdf/type          :owl/Restriction}],
    :skos/definition
    "party to a credit agreement that is obligated to repay the amount borrowed (principal) with interest and other fees according to the terms of the instrument"})
 
@@ -205,8 +201,7 @@
    :rdfs/label "borrower identification scheme",
    :rdfs/seeAlso
    ["https://www.fincen.gov/resources/statutes-regulations/guidance/guidance-customer-identification-regulations-financial"],
-   :rdfs/subClassOf [:fibo-fnd-pty-pty/PartyInRoleIdentificationScheme
-                     :fibo-fbc-dae-dbt/BorrowerIdentificationScheme],
+   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRoleIdentificationScheme,
    :skos/definition "system for allocating identifiers to borrowers"})
 
 (def BorrowerIdentifier
@@ -229,8 +224,7 @@
                       :owl/onProperty :cmns-id/identifies,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-pty/PartyInRoleIdentifier
-                     :fibo-fbc-dae-dbt/BorrowerIdentifier],
+                     :fibo-fnd-pty-pty/PartyInRoleIdentifier],
    :skos/definition
    "sequence of characters, capable of uniquely identifying a borrower"})
 
@@ -252,8 +246,7 @@
                      {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/AssessmentReport,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-cur/MonetaryAmount
-                     :fibo-fbc-dae-dbt/BorrowingCapacity],
+                     :fibo-fnd-acc-cur/MonetaryAmount],
    :skos/definition
    "upper bound on the total amount of money that a lender believes a party has the ability to repay an obligation when due, as of some point in time"})
 
@@ -268,8 +261,7 @@
                       :owl/onClass    :fibo-fnd-oac-own/TangibleAsset,
                       :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizationOf,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-pty/Undergoer
-                     :fibo-fbc-dae-dbt/Collateral],
+                     :fibo-fnd-pty-pty/Undergoer],
    :skos/definition
    "something pledged as security to ensure fulfillment of an obligation to another party, to lend money, extend credit, or provision securities"})
 
@@ -284,8 +276,7 @@
                       :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
                       :owl/onProperty :fibo-fnd-rel-rel/involves,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-agr-ctr/WrittenContract
-                     :fibo-fbc-dae-dbt/CollateralAgreement],
+                     :fibo-fnd-agr-ctr/WrittenContract],
    :skos/definition
    "written contract that specifies terms, over and above those specified in a promissory note, loan, or other debt instrument, under which the collateral must be made available to the lender",
    :skos/example
@@ -304,41 +295,40 @@
                       :owl/onProperty :cmns-col/hasConstituent,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-dae-dbt/CreditFacility
-                     :fibo-fbc-dae-dbt/CommittedCreditFacility
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
-                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/PromissoryNote,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
-                      :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/PromissoryNote,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditAgreement
                      :fibo-fnd-agr-ctr/WrittenContract
                      {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/MutualContractualAgreement
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
-                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
+                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CreditAgreement
+                     :fibo-fnd-agr-ctr/MutualContractualAgreement
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/SubFacility,
                       :owl/onProperty :cmns-col/hasConstituent,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
+                      :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -357,7 +347,6 @@
                       :fibo-fbc-dae-dbt/CommittedCreditFacility,
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-dae-dbt/SubFacility
-                     :fibo-fbc-dae-dbt/CommittedSubFacility
                      :fibo-fnd-agr-ctr/MutualContractualAgreement
                      {:owl/onClass    :fibo-fbc-dae-dbt/CreditFacility,
                       :owl/onProperty :cmns-col/isConstituentOf,
@@ -377,26 +366,25 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "credit agreement",
-   :rdfs/subClassOf [:fibo-fnd-agr-ctr/MutualContractualAgreement
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/ExplicitDate,
+                      :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-ctr/MutualContractualAgreement
                      {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
-                      :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/ExplicitDate,
-                      :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
-                      :rdf/type       :owl/Restriction}
                      :fibo-fnd-agr-ctr/WrittenContract
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
                       :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditAgreement],
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "contractual agreement in which a debtor receives something of value and typically agrees to repay the creditor by some date in the future, in some form (e.g., cash, securities, etc.), generally with interest"})
 
@@ -411,26 +399,25 @@
                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-dae-dbt/CreditAgreement
-                     :fibo-fbc-dae-dbt/CreditAgreementRepaidAtMaturity
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-agr-ctr/MutualContractualAgreement
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
                       :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-agr-ctr/WrittenContract],
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "credit agreement in which accrued interest may be periodically repaid or paid at maturity, but principal is paid at maturity",
    :skos/example
@@ -444,26 +431,25 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "credit agreement repaid periodically",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/CreditAgreement
-                     :fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-agr-ctr/MutualContractualAgreement
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
                       :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-agr-ctr/WrittenContract],
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "credit agreement in which the principal and accrued interest may be periodically repaid or exchanged",
    :skos/example
@@ -480,14 +466,11 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label #voc/lstr "credit facility@en",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [:fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/SubFacility,
                       :owl/onProperty :cmns-col/hasConstituent,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/PromissoryNote,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
@@ -495,27 +478,29 @@
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditFacility
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/PromissoryNote,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
-                      :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditAgreement
                      :fibo-fnd-agr-ctr/WrittenContract
                      {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/MutualContractualAgreement
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
                       :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-fbc-dae-dbt/CreditAgreement
+                     :fibo-fnd-agr-ctr/MutualContractualAgreement
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
+                      :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "credit agreement that allows the borrower to periodically take out money over an extended period of time rather than reapplying for a loan every time they need funds@en"})
@@ -533,8 +518,7 @@
                      {:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
                       :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-agr-agr/Obligee
-                     :fibo-fbc-dae-dbt/Creditor],
+                     :fibo-fnd-agr-agr/Obligee],
    :skos/definition
    "a party to whom an obligation, such as an amount of money, or good, or performance of some service exists"})
 
@@ -548,8 +532,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "day-count convention",
    :rdfs/subClassOf [:fibo-fnd-utl-alx/Expression
-                     :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
-                     :fibo-fbc-dae-dbt/DayCountConvention],
+                     :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :skos/definition
    "a business recurrence interval convention that is used to calculate the number of days in an interest payment, which applies to the amount of accrued interest or the present value for debt instruments"})
 
@@ -561,8 +544,8 @@
    :db/ident :fibo-fbc-dae-dbt/DayCountConvention-30360BondBasis,
    :rdf/type [:fibo-fbc-dae-dbt/DayCountConvention
               :owl/NamedIndividual
-              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
-              :fibo-fnd-utl-alx/Expression],
+              :fibo-fnd-utl-alx/Expression
+              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "day-count convention 30/360 bond basis",
@@ -578,8 +561,8 @@
    :db/ident :fibo-fbc-dae-dbt/DayCountConvention-30360US,
    :rdf/type [:fibo-fbc-dae-dbt/DayCountConvention
               :owl/NamedIndividual
-              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
-              :fibo-fnd-utl-alx/Expression],
+              :fibo-fnd-utl-alx/Expression
+              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "day-count convention 30/360 US",
@@ -591,8 +574,8 @@
   {:db/ident :fibo-fbc-dae-dbt/DayCountConvention-30365,
    :rdf/type [:fibo-fbc-dae-dbt/DayCountConvention
               :owl/NamedIndividual
-              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
-              :fibo-fnd-utl-alx/Expression],
+              :fibo-fnd-utl-alx/Expression
+              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "day-count convention 30/365",
@@ -608,8 +591,8 @@
    :db/ident :fibo-fbc-dae-dbt/DayCountConvention-30E360,
    :rdf/type [:fibo-fbc-dae-dbt/DayCountConvention
               :owl/NamedIndividual
-              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
-              :fibo-fnd-utl-alx/Expression],
+              :fibo-fnd-utl-alx/Expression
+              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "day-count convention 30E/360",
@@ -624,8 +607,8 @@
    :db/ident :fibo-fbc-dae-dbt/DayCountConvention-30E360ISDA,
    :rdf/type [:fibo-fbc-dae-dbt/DayCountConvention
               :owl/NamedIndividual
-              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
-              :fibo-fnd-utl-alx/Expression],
+              :fibo-fnd-utl-alx/Expression
+              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "day-count convention 30E/360 ISDA",
@@ -641,8 +624,8 @@
    :db/ident :fibo-fbc-dae-dbt/DayCountConvention-Actual360,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-dae-dbt/DayCountConvention
-              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
-              :fibo-fnd-utl-alx/Expression],
+              :fibo-fnd-utl-alx/Expression
+              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "day-count convention actual/360",
@@ -657,8 +640,8 @@
    :db/ident :fibo-fbc-dae-dbt/DayCountConvention-Actual365Fixed,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-dae-dbt/DayCountConvention
-              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
-              :fibo-fnd-utl-alx/Expression],
+              :fibo-fnd-utl-alx/Expression
+              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "day-count convention actual/365 fixed",
@@ -674,8 +657,8 @@
    :db/ident :fibo-fbc-dae-dbt/DayCountConvention-ActualActualICMA,
    :rdf/type [:fibo-fbc-dae-dbt/DayCountConvention
               :owl/NamedIndividual
-              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
-              :fibo-fnd-utl-alx/Expression],
+              :fibo-fnd-utl-alx/Expression
+              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "day-count convention actual/actual ICMA",
@@ -691,8 +674,8 @@
    :db/ident :fibo-fbc-dae-dbt/DayCountConvention-ActualActualISDA,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-dae-dbt/DayCountConvention
-              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention
-              :fibo-fnd-utl-alx/Expression],
+              :fibo-fnd-utl-alx/Expression
+              :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "day-count convention actual/actual ISDA",
@@ -714,8 +697,7 @@
                      {:owl/onProperty     :fibo-fbc-dae-dbt/isOwedBy,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-agr/Commitment
-                     :fibo-fbc-dae-dbt/Debt],
+                     :fibo-fnd-agr-agr/Commitment],
    :skos/definition
    "an obligation to pay something, such as an amount of money, good, service, or instrument"})
 
@@ -728,8 +710,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "debt terms",
-   :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractualCommitment
-                     :fibo-fbc-dae-dbt/DebtTerms],
+   :rdfs/subClassOf :fibo-fnd-agr-ctr/ContractualCommitment,
    :skos/definition
    "contract terms that specify the formal rights and obligations of borrower and lender under a contract in which funds are lent from the one party to the other"})
 
@@ -747,8 +728,7 @@
                      {:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
                       :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-agr-agr/Obligor
-                     :fibo-fbc-dae-dbt/Debtor],
+                     :fibo-fnd-agr-agr/Obligor],
    :skos/definition
    "a party that owes a debt or other obligation to another party"})
 
@@ -764,8 +744,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-fd/AdHocSchedule
-                     :fibo-fbc-dae-dbt/ExplicitContractEventSchedule],
+                     :fibo-fnd-dt-fd/AdHocSchedule],
    :skos/definition
    "schedule of events, including but not limited to payment events, rate reset events and others that will occur over the lifetime of the credit agreement"})
 
@@ -776,8 +755,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "fixed interest rate",
-   :rdfs/subClassOf [:fibo-fnd-acc-cur/InterestRate
-                     :fibo-fbc-dae-dbt/FixedInterestRate],
+   :rdfs/subClassOf :fibo-fnd-acc-cur/InterestRate,
    :skos/definition
    "an interest rate that does not fluctuate over the lifetime of a loan or other debt instrument"})
 
@@ -793,7 +771,6 @@
    :rdfs/seeAlso
    ["http://recomparison.com/comparisons/100975/floating-vs-variable-vs-adjustable-interest-rate/"],
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/VariableInterestRate
-                     :fibo-fbc-dae-dbt/FloatingInterestRate
                      :fibo-fnd-acc-cur/InterestRate],
    :skos/definition
    "a variable interest rate that is based on a specific index or benchmark rate",
@@ -808,7 +785,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "full amortization",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/Amortization
-                     :fibo-fbc-dae-dbt/FullAmortization
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/Debt,
                       :owl/onProperty :fibo-fbc-dae-dbt/isAmortizationOf,
@@ -833,8 +809,7 @@
                      {:owl/allValuesFrom :fibo-fnd-acc-cur/InterestRate,
                       :owl/onProperty    :fibo-fbc-dae-dbt/hasInterestRate,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-acc-cur/MonetaryAmount
-                     :fibo-fbc-dae-dbt/Interest],
+                     :fibo-fnd-acc-cur/MonetaryAmount],
    :skos/definition
    "the cost of using credit, or another's money, expressed as a rate per period of time, payable by a debtor to a creditor in consideration of the credit extended to the debtor"})
 
@@ -850,21 +825,6 @@
    :rdfs/label "interest payment terms",
    :rdfs/subClassOf
    [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-dt-bd/DayOfMonth,
-     :owl/onProperty :fibo-fbc-dae-dbt/hasInterestPaymentDay,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-acc-cur/InterestRate,
-     :owl/onProperty :fibo-fbc-dae-dbt/hasInterestRate,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-acc-cur/InterestRate,
-     :owl/onProperty :fibo-fbc-dae-dbt/hasInterestRateCap,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-dae-dbt/governsPaymentOf,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/Interest,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-dae-dbt/DayCountConvention,
      :owl/onProperty :fibo-fbc-dae-dbt/hasAccrualBasis,
      :rdf/type       :owl/Restriction}
@@ -872,20 +832,34 @@
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fbc-dae-dbt/hasInitialInterestPaymentDate,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-dae-dbt/DebtTerms
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-dt-fd/RecurrenceInterval,
-     :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
+     :owl/onClass    :fibo-fnd-acc-cur/InterestRate,
+     :owl/onProperty :fibo-fbc-dae-dbt/hasInterestRate,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-dt-fd/RecurrenceInterval,
      :owl/onProperty :fibo-fbc-dae-dbt/hasInterestPaymentFrequency,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-acc-cur/InterestRate,
+     :owl/onProperty :fibo-fbc-dae-dbt/hasInterestRateCap,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-dt-bd/DayOfMonth,
+     :owl/onProperty :fibo-fbc-dae-dbt/hasInterestPaymentDay,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fbc-dae-dbt/hasInitialInterestAccrualDate,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-dae-dbt/InterestPaymentTerms
+    {:owl/onProperty     :fibo-fbc-dae-dbt/governsPaymentOf,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/Interest,
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-dae-dbt/DebtTerms
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-dt-fd/RecurrenceInterval,
+     :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
+     :rdf/type       :owl/Restriction}
     :fibo-fnd-agr-ctr/ContractualCommitment],
    :skos/definition "contract terms for payment of interest on a debt"})
 
@@ -904,14 +878,13 @@
      :rdf/type           :owl/Restriction}
     :fibo-fnd-agr-ctr/ContractParty
     :fibo-fbc-dae-dbt/Creditor
-    :fibo-fbc-dae-dbt/Lender
-    {:owl/onProperty     :fibo-fbc-dae-dbt/isOwed,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/Debt,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-agr/Obligee
     {:owl/allValuesFrom :fibo-be-le-lp/LegalPerson,
      :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
-     :rdf/type          :owl/Restriction}],
+     :rdf/type          :owl/Restriction}
+    :fibo-fnd-agr-agr/Obligee
+    {:owl/onProperty     :fibo-fbc-dae-dbt/isOwed,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/Debt,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "a party that extends credit or money to a borrower with the expectation of being repaid, usually with interest"})
 
@@ -927,7 +900,6 @@
                       :fibo-fbc-pas-fpas/FinancialServiceProvider,
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-dae-dbt/VariableInterestRate
-                     :fibo-fbc-dae-dbt/ManagedInterestRate
                      :fibo-fnd-acc-cur/InterestRate],
    :skos/definition
    "a variable interest rate charged by a financial institution for borrowing that is not prescribed as a margin over base rate but is set from time to time by the institution"})
@@ -940,7 +912,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "negative amortization",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/Amortization
-                     :fibo-fbc-dae-dbt/NegativeAmortization
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/Debt,
                       :owl/onProperty :fibo-fbc-dae-dbt/isAmortizationOf,
@@ -962,12 +933,11 @@
                       :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizationOf,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-dae-dbt/Collateral
-                     :fibo-fbc-dae-dbt/NonPhysicalCollateral
-                     :fibo-fnd-pty-pty/Undergoer
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-oac-own/TangibleAsset,
                       :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizationOf,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-pty/Undergoer],
    :skos/definition
    "asset pledged as collateral that is a financial asset, rather than physical asset",
    :skos/example
@@ -981,7 +951,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "partial amortization",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/Amortization
-                     :fibo-fbc-dae-dbt/PartialAmortization
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/Debt,
                       :owl/onProperty :fibo-fbc-dae-dbt/isAmortizationOf,
@@ -1002,12 +971,11 @@
                       :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizationOf,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-dae-dbt/Collateral
-                     :fibo-fbc-dae-dbt/PhysicalCollateral
-                     :fibo-fnd-pty-pty/Undergoer
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-oac-own/TangibleAsset,
                       :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizationOf,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-pty/Undergoer],
    :skos/definition
    "asset pledged as collateral that has a material form, i.e., is a physical asset of the obligor",
    :skos/example
@@ -1026,8 +994,7 @@
                       :rdf/type           :owl/Restriction}
                      {:owl/unionOf [:fibo-fnd-acc-cur/MonetaryAmount
                                     :fibo-fnd-pas-pas/NegotiableCommodity],
-                      :rdf/type    :owl/Class}
-                     :fibo-fbc-dae-dbt/Principal],
+                      :rdf/type    :owl/Class}],
    :skos/definition
    "with respect to a debt: the value of an obligation, such as a bond or loan, raised and that must be repaid at maturity; for investments: the original amount of money invested, separate from any associated interest, dividends or capital gains"})
 
@@ -1040,30 +1007,29 @@
    :rdfs/label "principal repayment terms",
    :rdfs/subClassOf
    [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fnd-dt-bd/DayOfMonth,
-     :owl/onProperty :fibo-fbc-dae-dbt/hasPrincipalPaymentDay,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
      :owl/onClass    :cmns-dt/Date,
      :owl/onProperty :fibo-fbc-dae-dbt/hasPrincipalRepaymentDate,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-dae-dbt/governsPaymentOf,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/Principal,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :cmns-dt/Date,
+     :owl/onProperty :fibo-fbc-dae-dbt/hasInitialPrincipalPaymentDate,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-fnd-dt-bd/DayOfMonth,
+     :owl/onProperty :fibo-fbc-dae-dbt/hasPrincipalPaymentDay,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fnd-dt-fd/RecurrenceInterval,
      :owl/onProperty :fibo-fbc-dae-dbt/hasPrincipalPaymentFrequency,
      :rdf/type       :owl/Restriction}
+    :fibo-fbc-dae-dbt/DebtTerms
     {:owl/maxQualifiedCardinality 1,
      :owl/onClass    :fibo-fnd-agr-ctr/ExtensionProvision,
      :owl/onProperty :fibo-fnd-agr-ctr/hasExtensionProvision,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :cmns-dt/Date,
-     :owl/onProperty :fibo-fbc-dae-dbt/hasInitialPrincipalPaymentDate,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-dae-dbt/governsPaymentOf,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/Principal,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-dae-dbt/DebtTerms
-    :fibo-fbc-dae-dbt/PrincipalRepaymentTerms
     :fibo-fnd-agr-ctr/ContractualCommitment],
    :skos/definition
    "contract terms that specify requirements for repayment of the principal"})
@@ -1080,8 +1046,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/CreditAgreement,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-fd/RegularSchedule
-                     :fibo-fbc-dae-dbt/ProjectedContractEventSchedule],
+                     :fibo-fnd-dt-fd/RegularSchedule],
    :skos/definition
    "schedule of events, including but not limited to anticipated payment events, rate reset events and others that are expected to occur over the lifetime of the credit agreement"})
 
@@ -1094,26 +1059,25 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "promissory note",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/CreditAgreement
-                     :fibo-fbc-dae-dbt/PromissoryNote
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-agr-ctr/MutualContractualAgreement
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
-                      :rdf/type :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
-                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
                       :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-agr-ctr/WrittenContract],
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "negotiable instrument that is a written promise by one party to another that commits that party to pay a specified sum on demand or within a specified time frame under specified terms"})
 
@@ -1128,8 +1092,7 @@
                       :owl/onClass    :fibo-fnd-plc-loc/BusinessCenter,
                       :owl/onProperty :fibo-fnd-plc-loc/hasBusinessCenter,
                       :rdf/type       :owl/Restriction}
-                     :cmns-dt/TimeOfDay
-                     :fibo-fbc-dae-dbt/RateResetTimeOfDay],
+                     :cmns-dt/TimeOfDay],
    :skos/definition
    "time of day that an interest rate is reset, as indicated by some interest rate authority or market data provider",
    :skos/example
@@ -1143,47 +1106,46 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label #voc/lstr "retail credit facility@en",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/CommittedCreditFacility
-                     :fibo-fbc-dae-dbt/RetailCreditFacility
-                     :fibo-fbc-dae-dbt/CreditFacility
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
-                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/PromissoryNote,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
-                      :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
+                      :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
+                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/CommittedSubFacility,
                       :owl/onProperty :cmns-col/hasConstituent,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/PromissoryNote,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditAgreement
-                     :fibo-fnd-agr-ctr/WrittenContract
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/MutualContractualAgreement
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
-                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CreditAgreement
+                     :fibo-fnd-agr-ctr/MutualContractualAgreement
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/SubFacility,
                       :owl/onProperty :cmns-col/hasConstituent,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
+                      :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CreditFacility],
    :skos/definition
    #voc/lstr
     "credit facility that is a loan or line of credit used by retailers and real estate companies@en",
@@ -1206,47 +1168,46 @@
                       :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-dae-dbt/CommittedCreditFacility
-                     :fibo-fbc-dae-dbt/RevolvingLineOfCredit
-                     :fibo-fbc-dae-dbt/CreditFacility
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
-                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/PromissoryNote,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-agr-ctr/WrittenContract
+                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically
                      {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
-                      :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
+                      :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
+                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/CommittedSubFacility,
                       :owl/onProperty :cmns-col/hasConstituent,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/PromissoryNote,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditAgreement
-                     :fibo-fnd-agr-ctr/WrittenContract
-                     {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/MutualContractualAgreement
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
-                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CreditAgreement
+                     :fibo-fnd-agr-ctr/MutualContractualAgreement
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/SubFacility,
                       :owl/onProperty :cmns-col/hasConstituent,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
+                      :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CreditFacility],
    :skos/definition
    #voc/lstr
     "credit facility that enables the borrower to withdraw funds, repay, and withdraw again@en"})
@@ -1268,8 +1229,7 @@
                       :owl/onProperty :cmns-col/isConstituentOf,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-agr-ctr/MutualContractualAgreement
-                     :fibo-fbc-dae-dbt/SubFacility],
+                     :fibo-fnd-agr-ctr/MutualContractualAgreement],
    :skos/definition
    #voc/lstr
     "portion of a credit facility extended to the borrower for some purpose, possibly per some schedule specified in the facility@en"})
@@ -1282,41 +1242,40 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label #voc/lstr "uncommitted credit facility@en",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/CreditFacility
-                     :fibo-fbc-dae-dbt/UncommittedCreditFacility
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
-                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :cmns-col/hasConstituent,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/PromissoryNote,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasMonetaryAmount,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasMaturityDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
-                      :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-col/hasConstituent,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/PromissoryNote,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditAgreement
                      :fibo-fnd-agr-ctr/WrittenContract
                      {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Debtor,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/MutualContractualAgreement
-                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
-                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CreditAgreementRepaidPeriodically
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
+                      :owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-agr-ctr/hasContractParty,
                       :owl/someValuesFrom :fibo-fbc-dae-dbt/Creditor,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
+                      :owl/someValuesFrom :fibo-fbc-dae-dbt/DebtTerms,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-dae-dbt/CreditAgreement
+                     :fibo-fnd-agr-ctr/MutualContractualAgreement
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/SubFacility,
                       :owl/onProperty :cmns-col/hasConstituent,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
+                      :owl/onProperty :fibo-fbc-dae-dbt/isCollateralizedBy,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -1330,7 +1289,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label #voc/lstr "uncommitted sub-facility@en",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/SubFacility
-                     :fibo-fbc-dae-dbt/UncommittedSubFacility
                      :fibo-fnd-agr-ctr/MutualContractualAgreement
                      {:owl/onClass    :fibo-fbc-dae-dbt/CreditFacility,
                       :owl/onProperty :cmns-col/isConstituentOf,
@@ -1352,8 +1310,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "variable interest rate",
-   :rdfs/subClassOf [:fibo-fnd-acc-cur/InterestRate
-                     :fibo-fbc-dae-dbt/VariableInterestRate],
+   :rdfs/subClassOf :fibo-fnd-acc-cur/InterestRate,
    :skos/definition
    "an interest rate that is allowed to vary over the maturity of a loan or other debt instrument"})
 
@@ -1365,8 +1322,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "governs payment of",
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/governs
-                        :fibo-fbc-dae-dbt/governsPaymentOf],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/governs,
    :skos/definition
    "links contractual terms embedded in a contract, such as interest or repayment terms to the element those terms apply to"})
 
@@ -1389,8 +1345,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has available amount",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-fbc-dae-dbt/hasAvailableAmount],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    "indicates an amount of money available for an individual or organization to borrow"})
 
@@ -1402,8 +1357,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has borrower",
    :rdfs/range :fibo-fbc-dae-dbt/Borrower,
-   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasContractParty
-                        :fibo-fbc-dae-dbt/hasBorrower],
+   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractParty,
    :skos/definition
    "relates a contract, such as a debt instrument or credit agreement, to one or more parties that are incurring the debt"})
 
@@ -1415,8 +1369,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has compounding frequency",
    :rdfs/range :fibo-fnd-dt-fd/RecurrenceInterval,
-   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasRecurrenceInterval
-                        :fibo-fbc-dae-dbt/hasCompoundingFrequency],
+   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasRecurrenceInterval,
    :skos/definition
    "the frequency at which interest is added to the principal of the debt over the course of the agreement"})
 
@@ -1431,8 +1384,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has debt amount",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-fbc-dae-dbt/hasDebtAmount],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition "indicates the monetary amount of the debt"})
 
 (def hasDenomination
@@ -1443,8 +1395,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has denomination",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-fbc-dae-dbt/hasDenomination],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition "the face value of currency units, coins, or securities"})
 
 (def hasFinalInterestPaymentDate
@@ -1455,8 +1406,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has final interest payment date",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf [:cmns-dt/hasEndDate
-                        :fibo-fbc-dae-dbt/hasFinalInterestPaymentDate],
+   :rdfs/subPropertyOf :cmns-dt/hasEndDate,
    :skos/definition "the date on which the last interest payment is due"})
 
 (def hasInitialInterestAccrualDate
@@ -1467,8 +1417,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has initial interest accrual date",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf [:cmns-dt/hasStartDate
-                        :fibo-fbc-dae-dbt/hasInitialInterestAccrualDate],
+   :rdfs/subPropertyOf :cmns-dt/hasStartDate,
    :skos/definition "the date from which interest begins to accrue"})
 
 (def hasInitialInterestPaymentDate
@@ -1479,8 +1428,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has initial interest payment date",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf [:cmns-dt/hasStartDate
-                        :fibo-fbc-dae-dbt/hasInitialInterestPaymentDate],
+   :rdfs/subPropertyOf :cmns-dt/hasStartDate,
    :skos/definition "the date on which the first interest payment is due"})
 
 (def hasInitialPrincipalPaymentDate
@@ -1491,8 +1439,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has initial principal payment date",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf [:cmns-dt/hasStartDate
-                        :fibo-fbc-dae-dbt/hasInitialPrincipalPaymentDate],
+   :rdfs/subPropertyOf :cmns-dt/hasStartDate,
    :skos/definition
    "the date on which the first payment against the principal is due"})
 
@@ -1504,8 +1451,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has interest payment day",
    :rdfs/range :fibo-fnd-dt-fd/RecurrenceInterval,
-   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasRecurrenceInterval
-                        :fibo-fbc-dae-dbt/hasInterestPaymentDay],
+   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasRecurrenceInterval,
    :skos/definition
    "the day of the month on which interest payments must be made on the debt"})
 
@@ -1517,8 +1463,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has interest payment frequency",
    :rdfs/range :fibo-fnd-dt-fd/RecurrenceInterval,
-   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasRecurrenceInterval
-                        :fibo-fbc-dae-dbt/hasInterestPaymentFrequency],
+   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasRecurrenceInterval,
    :skos/definition
    "the frequency at which interest payments must be made on the debt"})
 
@@ -1530,8 +1475,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has interest rate",
    :rdfs/range :fibo-fnd-acc-cur/InterestRate,
-   :rdfs/subPropertyOf [:fibo-fnd-qt-qtu/hasQuantityValue
-                        :fibo-fbc-dae-dbt/hasInterestRate],
+   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasQuantityValue,
    :skos/definition
    "relates something, such as an agreement, or debt instrument, to the rate (typically annual) of interest that is to be paid by the debtor to the creditor on the debt"})
 
@@ -1544,7 +1488,6 @@
    :rdfs/label "has interest rate cap",
    :rdfs/range :fibo-fnd-acc-cur/InterestRate,
    :rdfs/subPropertyOf [:fibo-fbc-dae-dbt/hasInterestRate
-                        :fibo-fbc-dae-dbt/hasInterestRateCap
                         :fibo-fnd-qt-qtu/hasQuantityValue],
    :skos/definition
    "relates something, such as an agreement, or debt instrument, to the upper bound (ceiling) rate (typically annual) of interest on variable-rate debt that is to be paid by the debtor to the creditor on the debt"})
@@ -1557,8 +1500,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has lender",
    :rdfs/range :fibo-fbc-dae-dbt/Lender,
-   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasContractParty
-                        :fibo-fbc-dae-dbt/hasLender],
+   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractParty,
    :skos/definition
    "relates a contract, such as a debt instrument or credit agreement, to one or more parties that are financing the debt"})
 
@@ -1572,9 +1514,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has maturity date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
-                        :cmns-dt/hasEndDate
-                        :fibo-fbc-dae-dbt/hasMaturityDate],
+   :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate :cmns-dt/hasEndDate],
    :skos/definition
    "indicates the date on which the principal amount of an instrument is due to be repaid to the investor and interest or coupon payments stop, and/or the date on which the instrument may be redeemed"})
 
@@ -1587,8 +1527,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has time to maturity",
    :rdfs/range :cmns-dt/ExplicitDuration,
-   :rdfs/subPropertyOf [:cmns-dt/hasDuration
-                        :fibo-fbc-dae-dbt/hasOriginalTimeToMaturity],
+   :rdfs/subPropertyOf :cmns-dt/hasDuration,
    :skos/definition
    "indicates the lifespan of credit agreement or offering, from the date of issuance to the scheduled maturity date"})
 
@@ -1600,8 +1539,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has outstanding amount",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-fbc-dae-dbt/hasOutstandingAmount],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    "indicates an amount of money representing the principal, interest, or other amount owed at a specific point in time"})
 
@@ -1626,8 +1564,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has principal payment day",
    :rdfs/range :fibo-fnd-dt-fd/RecurrenceInterval,
-   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasRecurrenceInterval
-                        :fibo-fbc-dae-dbt/hasPrincipalPaymentDay],
+   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasRecurrenceInterval,
    :skos/definition
    "the day of the month on which payments on the principal must be made"})
 
@@ -1639,8 +1576,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has principal payment frequency",
    :rdfs/range :fibo-fnd-dt-fd/RecurrenceInterval,
-   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasRecurrenceInterval
-                        :fibo-fbc-dae-dbt/hasPrincipalPaymentFrequency],
+   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasRecurrenceInterval,
    :skos/definition
    "the frequency at which payments on the principal must be made"})
 
@@ -1655,8 +1591,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "has principal repayment date",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf [:cmns-dt/hasEndDate
-                        :fibo-fbc-dae-dbt/hasPrincipalRepaymentDate],
+   :rdfs/subPropertyOf :cmns-dt/hasEndDate,
    :skos/definition
    "relates an instrument to the date by which the principal must be repaid in full"})
 
@@ -1678,7 +1613,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "is based on",
-   :rdfs/subPropertyOf [:cmns-cxtdsg/appliesTo :fibo-fbc-dae-dbt/isBasedOn],
+   :rdfs/subPropertyOf :cmns-cxtdsg/appliesTo,
    :skos/definition
    "relates something to something else on which it rests, or that supports it in some way"})
 

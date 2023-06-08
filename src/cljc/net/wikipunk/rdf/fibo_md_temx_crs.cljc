@@ -47,7 +47,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
    :rdfs/label #voc/lstr "credit o k@en",
    :rdfs/subClassOf [:fibo-md-temx-crs/SecurityCreditStatus
-                     :fibo-md-temx-crs/CreditOK
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
@@ -62,7 +61,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
    :rdfs/label #voc/lstr "in default@en",
    :rdfs/subClassOf [:fibo-md-temx-crs/SecurityCreditStatus
-                     :fibo-md-temx-crs/InDefault
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
@@ -82,8 +80,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
    :rdfs/label #voc/lstr "security cashflow status@en",
-   :rdfs/subClassOf [:fibo-fnd-arr-lif/LifecycleStatus
-                     :fibo-md-temx-crs/SecurityCashflowStatus],
+   :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStatus,
    :skos/definition
    #voc/lstr
     "The status of the cashflow due to the holder from the security.@en",
@@ -101,8 +98,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus
-                     :fibo-md-temx-crs/SecurityCreditStatus]})
+                     :fibo-fnd-arr-lif/LifecycleStatus]})
 
 (def acceleratedPrincipalPaymentsExpected
   "accelerated principal payments expected"

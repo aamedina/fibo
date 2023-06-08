@@ -55,8 +55,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/LoanParticipationNotes/",
    :rdfs/label #voc/lstr "lead manager@en",
-   :rdfs/subClassOf [:fibo-be-oac-exec/ResponsibleParty
-                     :fibo-sec-dbt-lpn/LeadManager],
+   :rdfs/subClassOf :fibo-be-oac-exec/ResponsibleParty,
    :skos/definition
    #voc/lstr
     "the party that organizes the potential lenders into a syndicate and arranges the details of the or any potential loan@en",
@@ -78,8 +77,7 @@
                      {:owl/onProperty     :fibo-be-oac-exec/hasResponsibleParty,
                       :owl/someValuesFrom :fibo-sec-dbt-lpn/LeadManager,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-dae-dbt/SubFacility
-                     :fibo-sec-dbt-lpn/LoanParticipationNoteFacility],
+                     :fibo-fbc-dae-dbt/SubFacility],
    :skos/definition
    #voc/lstr
     "A facility formed as part of a LPN which can be drawn down by the borrower.@en"})
@@ -91,8 +89,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/LoanParticipationNotes/",
    :rdfs/label #voc/lstr "loan participation note syndicate member@en",
-   :rdfs/subClassOf [:fibo-fnd-pty-pty/PartyInRole
-                     :fibo-sec-dbt-lpn/LoanParticipationNoteSyndicateMember]})
+   :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole})
 
 (def SyndicatedLoanParticipationNote
   "a fixed-income security that permits investors to buy portions of an outstanding loan or package of loans; LPN holders participate, on a pro rata basis, in collecting interest and principal payments. Banks or other financial institutions often enter into loan participation agreements with local businesses, and also offer loan participation notes as a type of short-term investment."
@@ -108,8 +105,7 @@
                       :owl/someValuesFrom
                       :fibo-sec-dbt-lpn/LoanParticipationNoteFacility,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-dbti/TradableDebtInstrument
-                     :fibo-sec-dbt-lpn/SyndicatedLoanParticipationNote],
+                     :fibo-sec-dbt-dbti/TradableDebtInstrument],
    :skos/definition
    #voc/lstr
     "a fixed-income security that permits investors to buy portions of an outstanding loan or package of loans; LPN holders participate, on a pro rata basis, in collecting interest and principal payments. Banks or other financial institutions often enter into loan participation agreements with local businesses, and also offer loan participation notes as a type of short-term investment.@en",

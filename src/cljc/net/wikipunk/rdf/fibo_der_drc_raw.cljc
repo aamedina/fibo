@@ -105,7 +105,6 @@
                       :owl/someValuesFrom
                       :fibo-der-drc-raw/AllotmentRightFormula,
                       :rdf/type :owl/Restriction}
-                     :fibo-der-drc-raw/AllotmentRight
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -124,8 +123,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label #voc/lstr "allotment right formula@en",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/Formula
-                     :fibo-der-drc-raw/AllotmentRightFormula],
+   :rdfs/subClassOf :fibo-fnd-utl-alx/Formula,
    :skos/definition
    #voc/lstr
     "rule applied to calculate the number of securities for an allotment right, typically based on the number of these instruments that the holder holds@en"})
@@ -144,15 +142,14 @@
                       :owl/someValuesFrom :fibo-sec-sec-bsk/BasketOfSecurities,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-drc-raw/Warrant
-                     :fibo-der-drc-raw/BasketWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    #voc/lstr
     "warrant that permits the holder to acquire a package or group of assets at a specified price during a specified period@en"})
@@ -174,7 +171,6 @@
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-raw/PurchaseRight
-    :fibo-der-drc-raw/BondPurchaseRight
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
      :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -201,7 +197,6 @@
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-raw/SubscriptionRight
-    :fibo-der-drc-raw/BondSubscriptionRight
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
      :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -223,16 +218,15 @@
    :rdfs/label #voc/lstr "call put warrant@en",
    :rdfs/subClassOf [:fibo-der-drc-raw/PutWarrant
                      :fibo-der-drc-raw/CallWarrant
-                     :fibo-der-drc-raw/CallPutWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
-                     :fibo-der-drc-raw/Warrant
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement
+                     :fibo-der-drc-raw/Warrant],
    :skos/definition
    #voc/lstr
     "warrant that either does not specify call or put features, or that explicitly includes both a call and put feature@en"})
@@ -248,15 +242,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label #voc/lstr "call warrant@en",
    :rdfs/subClassOf [:fibo-der-drc-raw/Warrant
-                     :fibo-der-drc-raw/CallWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    #voc/lstr
     "warrant giving the buyer (holder) the right, but not the obligation, to acquire specific underlying assets during a specified period at a specified price@en"})
@@ -272,7 +265,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label #voc/lstr "combined instruments purchase right@en",
    :rdfs/subClassOf [:fibo-der-drc-raw/PurchaseRight
-                     :fibo-der-drc-raw/CombinedInstrumentsPurchaseRight
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -293,7 +285,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label #voc/lstr "combined instruments subscription right@en",
    :rdfs/subClassOf [:fibo-der-drc-raw/SubscriptionRight
-                     :fibo-der-drc-raw/CombinedInstrumentsSubscriptionRight
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -315,15 +306,14 @@
    :rdfs/label #voc/lstr "commodity warrant@en",
    :rdfs/subClassOf [:fibo-der-drc-raw/Warrant
                      :fibo-der-drc-comm/CommodityDerivative
-                     :fibo-der-drc-raw/CommodityWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    #voc/lstr
     "warrant that permits the holder to acquire a specified amount of a commodity during a specified period at a specified price@en",
@@ -349,7 +339,6 @@
                        :rdf/type :owl/Restriction},
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-raw/PurchaseRight
-                     :fibo-der-drc-raw/CommonConvertibleSharePurchaseRight
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -377,7 +366,6 @@
                        :rdf/type :owl/Restriction},
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-raw/SubscriptionRight
-                     :fibo-der-drc-raw/CommonConvertibleShareSubscriptionRight
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -404,7 +392,6 @@
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-raw/PurchaseRight
-    :fibo-der-drc-raw/CommonSharePurchaseRight
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
      :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -431,7 +418,6 @@
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-raw/SubscriptionRight
-    :fibo-der-drc-raw/CommonShareSubscriptionRight
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
      :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -457,17 +443,16 @@
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-raw/TraditionalWarrant
     :fibo-der-drc-raw/EquityWarrant
-    :fibo-der-drc-raw/CompanyWarrant
     :fibo-der-sbd-sbd/EquityDerivative
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
      :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-fi-fi/Entitlement
-    :fibo-der-drc-raw/Warrant
     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/Entitlement
+    :fibo-der-drc-raw/Warrant],
    :skos/definition
    #voc/lstr
     "equity warrant to purchase shares of capital stock issued by the corporation whose equity is the underlying asset@en"})
@@ -492,15 +477,14 @@
                       :fibo-fbc-fct-fse/FinancialInstitution,
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-raw/Warrant
-                     :fibo-der-drc-raw/CoveredWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    #voc/lstr
     "warrant that gives the holder the right, but not the obligation, to buy (call warrant) or to sell (put warrant) an underlying asset at a specified price (the strike or exercise price) by a predetermined date, issued without an accompanying security by a third party that holds as many securities as would be required if all the warrants are exercised@en"})
@@ -517,15 +501,14 @@
    :rdfs/label #voc/lstr "currency warrant@en",
    :rdfs/subClassOf [:fibo-der-drc-raw/Warrant
                      :fibo-der-drc-cur/CurrencyDerivative
-                     :fibo-der-drc-raw/CurrencyWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    #voc/lstr
     "warrant that permits the holder to acquire a specified amount in a certain currency at a specified exchange rate during a specified period@en"})
@@ -542,15 +525,14 @@
    :rdfs/label #voc/lstr "debt warrant@en",
    :rdfs/subClassOf [:fibo-der-sbd-sbd/DebtInstrumentDerivative
                      :fibo-der-drc-raw/Warrant
-                     :fibo-der-drc-raw/DebtWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    #voc/lstr
     "warrant that permits the holder to acquire a specified amount of a debt instrument or related debt observable a specified period at a specified price@en"})
@@ -567,15 +549,14 @@
    :rdfs/label #voc/lstr "equity warrant@en",
    :rdfs/subClassOf [:fibo-der-sbd-sbd/EquityDerivative
                      :fibo-der-drc-raw/Warrant
-                     :fibo-der-drc-raw/EquityWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    #voc/lstr
     "warrant that permits the holder to acquire a specified amount of an equity instrument during a specified period at a specified price@en"})
@@ -589,17 +570,16 @@
    :rdfs/label #voc/lstr "exchange-traded warrant@en",
    :rdfs/subClassOf [:fibo-sec-sec-lst/ListedSecurity
                      :fibo-der-drc-raw/PublicWarrant
-                     :fibo-der-drc-raw/ExchangeTradedWarrant
-                     :fibo-fbc-fi-fi/NegotiableSecurity
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
-                     :fibo-der-drc-raw/Warrant
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement
+                     :fibo-fbc-fi-fi/NegotiableSecurity
+                     :fibo-der-drc-raw/Warrant],
    :skos/definition #voc/lstr
                      "warrant that is listed on a securities exchange@en"})
 
@@ -624,15 +604,14 @@
                           :rdf/type       :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-raw/Warrant
-    :fibo-der-drc-raw/IndexWarrant
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
      :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-fi-fi/Entitlement
     {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
      :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    #voc/lstr
     "warrant that permits the holder to acquire a specified amount based on the performance of an index during a specified period at a specified price@en"})
@@ -653,15 +632,14 @@
                       :fibo-fbc-fct-fse/FinancialInstitution,
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-raw/Warrant
-                     :fibo-der-drc-raw/NakedWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    #voc/lstr
     "warrant that gives the holder the right, but not the obligation, to buy (call warrant) or to sell (put warrant) an underlying asset at a specified price (the strike or exercise price) by a predetermined date, issued without an accompanying security by a third party that does not hold as many securities as would be required if all the warrants are exercised@en"})
@@ -680,15 +658,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label "perpetual warrant",
    :rdfs/subClassOf [:fibo-der-drc-raw/Warrant
-                     :fibo-der-drc-raw/PerpetualWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    "warrant without an expiration date, giving the holder the right, but not the obligation, to buy (call warrant) or to sell (put warrant) an underlying asset at a certain strike price"})
 
@@ -710,7 +687,6 @@
                        :rdf/type :owl/Restriction},
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-raw/PurchaseRight
-                     :fibo-der-drc-raw/PreferredConvertibleSharePurchaseRight
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -730,20 +706,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label #voc/lstr "preferred convertible share subscription right@en",
-   :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                          :owl/someValuesFrom
-                          :fibo-sec-eq-eq/ConvertiblePreferredShare,
-                          :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-der-drc-raw/SubscriptionRight
-    :fibo-der-drc-raw/PreferredConvertibleShareSubscriptionRight
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
-     :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fi-fi/Entitlement],
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
+                      :owl/someValuesFrom
+                      {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                       :owl/someValuesFrom
+                       :fibo-sec-eq-eq/ConvertiblePreferredShare,
+                       :rdf/type :owl/Restriction},
+                      :rdf/type :owl/Restriction}
+                     :fibo-der-drc-raw/SubscriptionRight
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
+                      :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    #voc/lstr
     "subscription right entitling existing preferred, convertible shareholders to subscribe to new securities at a price normally lower than the prevailing market price@en"})
@@ -765,7 +740,6 @@
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-raw/PurchaseRight
-    :fibo-der-drc-raw/PreferredSharePurchaseRight
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
      :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -792,7 +766,6 @@
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-raw/SubscriptionRight
-    :fibo-der-drc-raw/PreferredShareSubscriptionRight
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
      :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -811,15 +784,14 @@
    :rdfs/label "private warrant",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/NonNegotiableSecurity
                      :fibo-der-drc-raw/Warrant
-                     :fibo-der-drc-raw/PrivateWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition "warrant that is not tradable"})
 
 (def PublicWarrant
@@ -831,15 +803,14 @@
    :rdfs/label "public warrant",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/NegotiableSecurity
                      :fibo-der-drc-raw/Warrant
-                     :fibo-der-drc-raw/PublicWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    "warrant that may be traded over the counter (OTC) or through an exchange"})
 
@@ -857,7 +828,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label #voc/lstr "purchase right@en",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/Entitlement
-                     :fibo-der-drc-raw/PurchaseRight
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -877,15 +847,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label #voc/lstr "put warrant@en",
    :rdfs/subClassOf [:fibo-der-drc-raw/Warrant
-                     :fibo-der-drc-raw/PutWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    #voc/lstr
     "warrant giving the buyer (holder) the right, but not the obligation, to sell the assets specified (i.e., acquire cash in exchange for the underlying assets) back to the issuer at a fixed price or formula, on or before a specified date@en"})
@@ -907,7 +876,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label #voc/lstr "subscription right@en",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/Entitlement
-                     :fibo-der-drc-raw/SubscriptionRight
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -929,15 +897,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label #voc/lstr "traditional warrant@en",
    :rdfs/subClassOf [:fibo-der-drc-raw/Warrant
-                     :fibo-der-drc-raw/TraditionalWarrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-fi-fi/Entitlement
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseTerms,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/Entitlement],
    :skos/definition
    #voc/lstr
     "warrant that gives the holder the right, but not the obligation, to buy (call warrant) or to sell (put warrant) an underlying asset at a specified price (the strike or exercise price) by a predetermined date, issued by the issuer of the underlying instrument@en"})
@@ -959,7 +926,6 @@
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseTerms,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-fi-fi/Entitlement
-                     :fibo-der-drc-raw/Warrant
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
                       :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
@@ -977,8 +943,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label #voc/lstr "has conversion ratio@en",
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf [:fibo-fnd-qt-qtu/hasNumericValue
-                        :fibo-der-drc-raw/hasConversionRatio],
+   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasNumericValue,
    :skos/definition
    #voc/lstr
     "indicates the factor used to determine the number of warrants needed in order to buy or sell a specific number of securities or investment units@en"})

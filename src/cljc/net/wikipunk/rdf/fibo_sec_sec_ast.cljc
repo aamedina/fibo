@@ -82,8 +82,7 @@
                          :rdf/type :owl/Class},
      :owl/onProperty    :fibo-fnd-rel-rel/isHeldBy,
      :rdf/type          :owl/Restriction}
-    :cmns-col/Collection
-    :fibo-sec-sec-ast/Portfolio],
+    :cmns-col/Collection],
    :skos/definition
    "a collection of investments (financial assets) such as stocks, bonds and cash equivalents, as well as mutual funds"})
 
@@ -108,7 +107,6 @@
                       :owl/onProperty :fibo-fnd-rel-rel/isHeldBy,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-acc-aeq/FinancialAsset
-                     :fibo-sec-sec-ast/PortfolioHolding
                      {:owl/allValuesFrom :fibo-fnd-acc-cur/Price,
                       :owl/onProperty    :fibo-sec-sec-ast/hasAcquisitionPrice,
                       :rdf/type          :owl/Restriction}],
@@ -123,7 +121,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/",
    :rdfs/label "has acquisition price",
    :rdfs/range :fibo-fnd-acc-cur/Price,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasPrice
-                        :fibo-sec-sec-ast/hasAcquisitionPrice],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasPrice,
    :skos/definition
    "has a value as of the date of acquisition, expressed as an amount of money or goods"})

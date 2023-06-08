@@ -59,8 +59,7 @@
                           :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-loan-ln-ln/Loan
-    :fibo-loan-spc-com/CommercialLoan],
+    :fibo-loan-ln-ln/Loan],
    :skos/definition
    #voc/lstr
     "loan extended to a corporation, commercial enterprise, joint venture, or other organization as opposed to a consumer@en"})

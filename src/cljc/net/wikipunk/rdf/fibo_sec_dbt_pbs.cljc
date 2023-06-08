@@ -78,14 +78,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/",
    :rdfs/label #voc/lstr "absolute prepayment rate@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
-                     :fibo-sec-dbt-pbs/AbsolutePrepaymentRate
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/QualifiedMeasure],
    :skos/definition
    #voc/lstr
@@ -107,19 +106,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/",
    :rdfs/label #voc/lstr "asset-backed security@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/PoolBackedSecurity
-                     :fibo-sec-dbt-pbs/AssetBackedSecurity
                      {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
                       :owl/someValuesFrom :fibo-sec-sec-pls/InstrumentPool,
                       :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-dbti/TradableDebtInstrument
                      {:owl/onDataRange :xsd/boolean,
                       :owl/onProperty  :fibo-sec-dbt-pbs/isPassThrough,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
-                      :owl/onProperty :cmns-cls/isCharacterizedBy,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "debt instrument backed by receivables other than those arising out of real estate loans or mortgages@en"})
@@ -138,8 +136,7 @@
                       :owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-utl-alx/QualifiedMeasure
-                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure],
+                     :fibo-fnd-utl-alx/QualifiedMeasure],
    :skos/definition
    #voc/lstr
     "qualified measure of some aspect of the behavior of one or more debt instrument(s) that may vary over time@en"})
@@ -153,14 +150,13 @@
    :rdfs/label #voc/lstr "default rate@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
                      :fibo-fnd-utl-alx/Ratio
-                     :fibo-sec-dbt-pbs/DefaultRate
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/QualifiedMeasure],
    :skos/definition
    #voc/lstr
@@ -187,8 +183,7 @@
                       :owl/onClass :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
                       :owl/onProperty :cmns-cls/isCharacterizedBy,
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-dbt-dbti/TradableDebtInstrument
-                     :fibo-sec-dbt-pbs/PoolBackedSecurity],
+                     :fibo-sec-dbt-dbti/TradableDebtInstrument],
    :skos/definition
    #voc/lstr
     "debt instrument that derives its cashflow from an underlying pool of mortgage loans or other receivables@en"})
@@ -204,14 +199,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/",
    :rdfs/label #voc/lstr "prepayment speed@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
-                     :fibo-sec-dbt-pbs/PrepaymentSpeed
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/QualifiedMeasure],
    :skos/definition
    #voc/lstr
@@ -231,12 +225,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/",
    :rdfs/label #voc/lstr "principal protected note@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/StructuredFinanceInstrument
-                     :fibo-sec-dbt-pbs/PrincipalProtectedNote
                      :fibo-sec-dbt-pbs/PoolBackedSecurity
-                     {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/InstrumentPool,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-dbti/TradableDebtInstrument
                      {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom {:owl/onProperty
                                            :fibo-fnd-pty-rl/isPlayedBy,
@@ -244,14 +233,18 @@
                                            :fibo-be-le-lp/SpecialPurposeVehicle,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     {:owl/onDataRange :xsd/boolean,
-                      :owl/onProperty  :fibo-sec-dbt-pbs/isPassThrough,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/InstrumentPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
                       :owl/onProperty :cmns-cls/isCharacterizedBy,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-sec-dbt-dbti/TradableDebtInstrument
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-sec-dbt-pbs/isPassThrough,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "structured finance that offers investors exposure to chosen underlying assets using various approaches and asymmetric pay-off profiles@en"})
@@ -269,14 +262,13 @@
    :rdfs/label #voc/lstr "single monthly mortality@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
                      :fibo-fnd-utl-alx/Percentage
-                     :fibo-sec-dbt-pbs/SingleMonthlyMortality
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/QualifiedMeasure],
    :skos/definition
    #voc/lstr
@@ -294,27 +286,26 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/",
    :rdfs/label #voc/lstr "structured finance instrument@en",
    :rdfs/seeAlso ["https://www.bis.org/publ/cgfs23mitchell.pdf"],
-   :rdfs/subClassOf [:fibo-sec-dbt-pbs/PoolBackedSecurity
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom {:owl/onProperty
                                            :fibo-fnd-pty-rl/isPlayedBy,
                                            :owl/someValuesFrom
                                            :fibo-be-le-lp/SpecialPurposeVehicle,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-pbs/StructuredFinanceInstrument
+                     :fibo-sec-dbt-pbs/PoolBackedSecurity
                      {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
                       :owl/someValuesFrom :fibo-sec-sec-pls/InstrumentPool,
                       :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-dbti/TradableDebtInstrument
                      {:owl/onDataRange :xsd/boolean,
                       :owl/onProperty  :fibo-sec-dbt-pbs/isPassThrough,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
-                      :owl/onProperty :cmns-cls/isCharacterizedBy,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "pool-backed security wherein the risk associated with the pool has been uncoupled from the risk associated with the originating institution through a special purpose vehicle@en",
@@ -337,28 +328,27 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/",
    :rdfs/label #voc/lstr "structured finance without principal protection@en",
-   :rdfs/subClassOf
-   [:fibo-sec-dbt-pbs/StructuredFinanceInstrument
-    :fibo-sec-dbt-pbs/StructuredFinanceWithoutPrincipalProtection
-    :fibo-sec-dbt-pbs/PoolBackedSecurity
-    {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
-     :owl/someValuesFrom :fibo-sec-sec-pls/InstrumentPool,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
-     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
-                          :owl/someValuesFrom
-                          :fibo-be-le-lp/SpecialPurposeVehicle,
-                          :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    {:owl/onDataRange :xsd/boolean,
-     :owl/onProperty  :fibo-sec-dbt-pbs/isPassThrough,
-     :owl/qualifiedCardinality 1,
-     :rdf/type        :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
-     :owl/onProperty :cmns-cls/isCharacterizedBy,
-     :rdf/type       :owl/Restriction}],
+   :rdfs/subClassOf [:fibo-sec-dbt-pbs/StructuredFinanceInstrument
+                     :fibo-sec-dbt-pbs/PoolBackedSecurity
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+                      :owl/someValuesFrom {:owl/onProperty
+                                           :fibo-fnd-pty-rl/isPlayedBy,
+                                           :owl/someValuesFrom
+                                           :fibo-be-le-lp/SpecialPurposeVehicle,
+                                           :rdf/type :owl/Restriction},
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/InstrumentPool,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
+                      :owl/onProperty :cmns-cls/isCharacterizedBy,
+                      :rdf/type :owl/Restriction}
+                     :fibo-sec-dbt-dbti/TradableDebtInstrument
+                     {:owl/onDataRange :xsd/boolean,
+                      :owl/onProperty  :fibo-sec-dbt-pbs/isPassThrough,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "structured finance that is a short-term note linked to an underlying asset that offers a steady stream of income@en"})
@@ -381,26 +371,25 @@
                           :rdf/type       :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-sec-dbt-pbs/StructuredFinanceInstrument
-    :fibo-sec-dbt-pbs/Tranche
     :fibo-sec-dbt-pbs/PoolBackedSecurity
-    {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
-     :owl/someValuesFrom :fibo-sec-sec-pls/InstrumentPool,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                           :owl/someValuesFrom
                           :fibo-be-le-lp/SpecialPurposeVehicle,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/onDataRange :xsd/boolean,
-     :owl/onProperty  :fibo-sec-dbt-pbs/isPassThrough,
-     :owl/qualifiedCardinality 1,
-     :rdf/type        :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
+     :owl/someValuesFrom :fibo-sec-sec-pls/InstrumentPool,
+     :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
      :owl/onProperty :cmns-cls/isCharacterizedBy,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type       :owl/Restriction}
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
+    {:owl/onDataRange :xsd/boolean,
+     :owl/onProperty  :fibo-sec-dbt-pbs/isPassThrough,
+     :owl/qualifiedCardinality 1,
+     :rdf/type        :owl/Restriction}],
    :skos/definition
    #voc/lstr "segment of a pool of securities, typically debt instruments@en"})
 
@@ -417,14 +406,13 @@
    :rdfs/label #voc/lstr "weighted average coupon@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
                      :fibo-fnd-utl-alx/ArithmeticMean
-                     :fibo-sec-dbt-pbs/WeightedAverageCoupon
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/QualifiedMeasure],
    :skos/definition
    #voc/lstr
@@ -449,20 +437,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/",
    :rdfs/label #voc/lstr "weighted average life@en",
-   :rdfs/subClassOf [:fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
-                     :fibo-fnd-utl-alx/ArithmeticMean
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-dbt-pbs/PrepaymentSpeed,
                       :owl/onProperty :fibo-fnd-rel-rel/refersTo,
                       :rdf/type       :owl/Restriction}
-                     :fibo-sec-dbt-pbs/WeightedAverageLife
+                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
+                     :fibo-fnd-utl-alx/ArithmeticMean
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/QualifiedMeasure],
    :skos/definition
    #voc/lstr
@@ -483,14 +470,13 @@
    :rdfs/label #voc/lstr "weighted average loan age@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
                      :fibo-fnd-utl-alx/ArithmeticMean
-                     :fibo-sec-dbt-pbs/WeightedAverageLoanAge
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/QualifiedMeasure],
    :skos/definition
    #voc/lstr
@@ -511,14 +497,13 @@
    :rdfs/label #voc/lstr "weighted average maturity@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
                      :fibo-fnd-utl-alx/ArithmeticMean
-                     :fibo-sec-dbt-pbs/WeightedAverageMaturity
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/QualifiedMeasure],
    :skos/definition
    #voc/lstr
@@ -538,14 +523,13 @@
    :rdfs/label #voc/lstr "weighted average remaining term@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
                      :fibo-fnd-utl-alx/ArithmeticMean
-                     :fibo-sec-dbt-pbs/WeightedAverageRemainingTerm
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
+                      :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-utl-alx/hasApplicableDatePeriod,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/QualifiedMeasure],
    :skos/definition
    #voc/lstr

@@ -124,8 +124,7 @@
                      {:owl/allValuesFrom :fibo-fbc-fct-eufse/CreditInstitution,
                       :owl/onProperty    :cmns-cxtdsg/appliesTo,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fbc-fct-ra/RegistryEntry
-                     :fibo-fbc-fct-eurga/CreditInstitutionRegisterEntry],
+                     :fibo-fbc-fct-ra/RegistryEntry],
    :skos/definition
    "entry in the Credit Institution Register, a repository of credit institutions collected by the European Banking Authority (EBA) as provided by the various national banking authorities for those institutions that qualify"})
 

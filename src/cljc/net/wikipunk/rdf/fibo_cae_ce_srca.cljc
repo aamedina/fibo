@@ -76,8 +76,7 @@
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-dae-cre/ObligationDefault
-                     :fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/BondDefaultAction],
+                     :fibo-cae-ce-act/MandatoryCorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action which indicates a failure by the issuer to perform obligations defined as default events under the bond agreement and that have not been remedied@en"})
@@ -94,8 +93,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "bonus issue@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/BonusIssue],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action in which security holders are awarded additional assets free of payment from the issuer in proportion to their holding@en"})
@@ -111,7 +109,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "bonus rights issue@en",
    :rdfs/subClassOf [:fibo-cae-ce-srca/IntermediateSecuritiesDistribution
-                     :fibo-cae-ce-srca/BonusRightsIssue
                      :fibo-cae-ce-act/MandatoryCorporateAction],
    :skos/definition
    #voc/lstr
@@ -125,7 +122,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "bonus share plan distribution@en",
    :rdfs/subClassOf [:fibo-cae-ce-srca/CapitalDistribution
-                     :fibo-cae-ce-srca/BonusSharePlanDistribution
                      :fibo-cae-ce-act/VoluntaryCorporateAction],
    :skos/definition
    #voc/lstr
@@ -141,8 +137,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "call on intermediate securities@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryWithChoiceCorporateAction
-                     :fibo-cae-ce-srca/CallOnIntermediateSecurities],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryWithChoiceCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that involves a call or exercise on nil paid securities or intermediate securities resulting from an intermediate securities distribution (RHDI)@en"})
@@ -154,8 +149,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "cancellation of shares@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-srca/CancellationOfShares],
+   :rdfs/subClassOf :fibo-cae-ce-act/CorporateAction,
    :skos/definition
    #voc/lstr
     "The cancellation of shares. Further Notes Only possible with shares not publicly issued i.e. treasury shares@en"})
@@ -170,8 +164,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "capital distribution@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-srca/CapitalDistribution],
+   :rdfs/subClassOf :fibo-cae-ce-act/VoluntaryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that pays shareholders an amount in cash issued from the issuer's capital account@en"})
@@ -183,8 +176,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "capital gains distribution@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-srca/CapitalGainsDistribution],
+   :rdfs/subClassOf :fibo-cae-ce-act/VoluntaryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that distributes profits resulting from the sale of company assets to shareholders@en",
@@ -202,8 +194,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "cash dividend action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/CashDividendAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that distributes cash to shareholders in proportion to their equity holding@en"})
@@ -220,9 +211,8 @@
                       :fibo-md-temx-trs/SecurityTradingStatus,
                       :rdf/type :owl/Restriction}
                      :fibo-cae-ce-srca/CorporateChangeOfStatusEvent
-                     :fibo-cae-ce-srca/ChangeOfSecurityTradingStatusEvent
-                     :fibo-fnd-arr-lif/LifecycleEvent
-                     :fibo-cae-ce-act/CorporateAction],
+                     :fibo-cae-ce-act/CorporateAction
+                     :fibo-fnd-arr-lif/LifecycleEvent],
    :skos/definition
    #voc/lstr
     "An event in which the trading status of a tradable security changes.@en"})
@@ -234,8 +224,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "change to smallest negotiable unit@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-srca/ChangeToSmallestNegotiableUnit],
+   :rdfs/subClassOf :fibo-cae-ce-act/CorporateAction,
    :skos/definition
    #voc/lstr
     "Modification of the smallest negotiable unit of shares in order to obtain a new negotiable unit. SWIFT:SMAL@en"})
@@ -253,8 +242,7 @@
                      {:owl/onProperty     :fibo-cae-ce-srca/convertsFrom,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
-                     :fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-srca/ConversionAction],
+                     :fibo-cae-ce-act/VoluntaryCorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action involving conversion of securities (generally convertible bonds or preferred shares) into another form of securities (usually common shares) at a pre-stated price/ratio@en"})
@@ -266,8 +254,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "conversion suspension action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-srca/ConversionSuspensionAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/CorporateAction,
    :skos/definition
    #voc/lstr
     "Suspension of conversion of securities, generally a couple of weeks before a meeting takes place. SWIFT = SCOP@en"})
@@ -282,9 +269,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "corporate action obligation@en",
-   :rdfs/subClassOf [:fibo-fnd-law-lcap/Duty
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-srca/CorporateActionObligation],
+   :rdfs/subClassOf [:fibo-fnd-law-lcap/Duty :fibo-cae-ce-act/CorporateAction],
    :skos/definition #voc/lstr
                      "An obligation related to the holding of a Security.@en"})
 
@@ -296,7 +281,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "corporate action payment obligation@en",
    :rdfs/subClassOf [:fibo-cae-ce-srca/CorporateActionObligation
-                     :fibo-cae-ce-srca/CorporateActionPaymentObligation
                      :fibo-cae-ce-act/CorporateAction
                      :fibo-fnd-law-lcap/Duty]})
 
@@ -307,11 +291,9 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "corporate action securities delivery obligation@en",
-   :rdfs/subClassOf
-   [:fibo-cae-ce-srca/CorporateActionObligation
-    :fibo-cae-ce-srca/CorporateActionSecuritiesDeliveryObligation
-    :fibo-cae-ce-act/CorporateAction
-    :fibo-fnd-law-lcap/Duty],
+   :rdfs/subClassOf [:fibo-cae-ce-srca/CorporateActionObligation
+                     :fibo-cae-ce-act/CorporateAction
+                     :fibo-fnd-law-lcap/Duty],
    :skos/definition
    #voc/lstr
     "Some obligation to deliver some security in the thr context of corporate actions. All cash proceeds and security proceeds can be represented a s acontractual obligation. Where does that obligation arise? Usually in the Contract itself - but there may be other answers to this. Defines what has to be delivered. or paid. Entitlement meanwhile is a calculation based on the Contract.@en"})
@@ -327,8 +309,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "corporate change of status event@en",
    :rdfs/subClassOf [:fibo-fnd-arr-lif/LifecycleEvent
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-srca/CorporateChangeOfStatusEvent],
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition #voc/lstr "Some change to the status of some security.@en"})
 
 (def CouponStrip
@@ -341,8 +322,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/Bond,
                       :rdf/type           :owl/Restriction}
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-srca/CouponStrip],
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "Coupon stripping is the process whereby interest coupons for future payment dates are separated from the security corpus that entitles the holder to the principal repayment.@en"})
@@ -357,8 +337,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "decrease in value action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/DecreaseInValueAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action resulting in a reduction of face value of a share or the value of fund assets@en"})
@@ -373,8 +352,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "dividend option action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryWithChoiceCorporateAction
-                     :fibo-cae-ce-srca/DividendOptionAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryWithChoiceCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that involves distribution of a dividend to shareholders with a choice of benefit to receive@en"})
@@ -389,8 +367,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "dividend reinvestment action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryWithChoiceCorporateAction
-                     :fibo-cae-ce-srca/DividendReinvestmentAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryWithChoiceCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that involves a dividend payment whereby holders can keep cash or have the cash reinvested into additional shares in the issuing company@en"})
@@ -404,8 +381,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "drawing@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/Drawing],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryCorporateAction,
    :skos/definition
    #voc/lstr
     "Redemption in part before the scheduled final maturity date of a security.@en"})
@@ -420,8 +396,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "dutch auction@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-srca/DutchAuction],
+   :rdfs/subClassOf :fibo-cae-ce-act/VoluntaryCorporateAction,
    :skos/definition
    #voc/lstr "corporate action by a party wishing to acquire a security@en"})
 
@@ -435,8 +410,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "exchange action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-srca/ExchangeAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/CorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that reflects an exchange of holdings for other securities and/or cash@en"})
@@ -453,8 +427,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "formal offer@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-srca/FormalOffer],
+   :rdfs/subClassOf :fibo-cae-ce-act/VoluntaryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action involving an offer to a holder, potential holder, or other intersted party, to enter into a trade which is or would be legally binding on the part of the party making the offer (the offeror).@en"})
@@ -466,8 +439,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "full call early redemption action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/FullCallEarlyRedemptionAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that involves redemption of an entire issue outstanding of securities prior to maturity@en",
@@ -482,8 +454,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "interest payment action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/InterestPaymentAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that involves distribution of a regular interest payment to holders of an interest-bearing asset@en",
@@ -499,7 +470,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "interest payment in kind@en",
    :rdfs/subClassOf [:fibo-cae-ce-srca/InterestPaymentAction
-                     :fibo-cae-ce-srca/InterestPaymentInKind
                      :fibo-cae-ce-act/MandatoryCorporateAction],
    :skos/definition
    #voc/lstr
@@ -513,7 +483,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "interest payment with principal@en",
    :rdfs/subClassOf [:fibo-cae-ce-srca/InterestPaymentAction
-                     :fibo-cae-ce-srca/InterestPaymentWithPrincipal
                      :fibo-cae-ce-act/MandatoryCorporateAction],
    :skos/definition
    #voc/lstr
@@ -532,8 +501,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/VariableCouponBond,
                       :rdf/type           :owl/Restriction}
-                     :fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/InterestRateAdjustment],
+                     :fibo-cae-ce-act/MandatoryCorporateAction],
    :skos/definition
    #voc/lstr
     "Scheduled change to the coupon rate for a floating or adjustable rate security.@en"})
@@ -546,8 +514,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "intermediate securities distribution@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/IntermediateSecuritiesDistribution],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action involving the distribution of intermediate securities or privilege that gives the holder the right to take part in a future event@en"})
@@ -559,8 +526,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "listing status delisting message@en",
-   :rdfs/subClassOf [:fibo-fnd-arr-doc/Notice
-                     :fibo-cae-ce-srca/ListingStatusDelistingMessage],
+   :rdfs/subClassOf :fibo-fnd-arr-doc/Notice,
    :skos/definition
    #voc/lstr
     "Security is no longer able to comply with the listing requirements of a stock exchange and is removed from official board quotation.@en"})
@@ -572,8 +538,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "odd lot offer@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-srca/OddLotOffer],
+   :rdfs/subClassOf :fibo-cae-ce-act/VoluntaryCorporateAction,
    :skos/definition
    #voc/lstr
     "Offer by issuer to allow holders of an odd lot of a security to order a commission-free transaction at market price, to sell the odd lot, or to buy an amount of shares which will bring the position to a round lot (board lot). SWIFT = ODLT@en"})
@@ -591,8 +556,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "pari-passu action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/PariPassuAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that occurs when securities with different characteristics become identical in all respects@en"})
@@ -609,9 +573,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr
                 "partial redemption with reduction of nominal value action@en",
-   :rdfs/subClassOf
-   [:fibo-cae-ce-act/CorporateAction
-    :fibo-cae-ce-srca/PartialRedemptionWithReductionOfNominalValueAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/CorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that involves redemption of securities in part before their scheduled final maturity date with reduction of the nominal value of the securities@en"})
@@ -628,9 +590,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label
    #voc/lstr "partial redemption without reduction of nominal value action@en",
-   :rdfs/subClassOf
-   [:fibo-cae-ce-act/CorporateAction
-    :fibo-cae-ce-srca/PartialRedemptionWithoutReductionOfNominalValueAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/CorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that involves redemption of securities in part before their scheduled final maturity date with no reduction in nominal value@en"})
@@ -655,8 +615,7 @@
                       :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-fnd-acc-cur/hasMonetaryAmount,
                       :rdf/type       :owl/Restriction}
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-srca/PostMergerSecuritiesExchange],
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action that involves the exchange of outstanding securities, initiated by the issuer which may include options, as the result of two or more companies combining assets, that is, an external, third party company@en"})
@@ -668,8 +627,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "put redemption action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-srca/PutRedemptionAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/VoluntaryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action involving early redemption of a security at the election of the holder subject to the terms and condition of the issue with no reduction in nominal value@en"})
@@ -681,8 +639,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "redemption at maturity action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/RedemptionAtMaturityAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that involves redemption of an entire issue outstanding of securities at final maturity@en"})
@@ -697,8 +654,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "redenomination action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/RedenominationAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action by which the unit (currency and/or nominal) of a security is restated@en"})
@@ -714,8 +670,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "repurchase offer@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-srca/RepurchaseOffer],
+   :rdfs/subClassOf :fibo-cae-ce-act/VoluntaryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action in which an offer is made to existing shareholders by the issuing company to repurchase equity or other securities convertible into equity@en"})
@@ -734,8 +689,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-eq-eq/Share,
                       :rdf/type           :owl/Restriction}
-                     :fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/ReverseStockSplit],
+                     :fibo-cae-ce-act/MandatoryCorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action involving a decrease in a company's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split@en"})
@@ -750,8 +704,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "rights exercise event@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-srca/RightsExerciseEvent],
+   :rdfs/subClassOf :fibo-cae-ce-act/CorporateAction,
    :skos/definition
    #voc/lstr
     "Exercising the right to purchase the shares. Furhter Notes: This is an action on the part of the holder. SWIFT: Call/exercise on nil-paid securities/rights resulting from a rights distribution (RHDI) (To be used for the second event in case rights issue is dealt with in 2 events, first event being the RHDI).@en"})
@@ -766,8 +719,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "shares premium dividend action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryWithChoiceCorporateAction
-                     :fibo-cae-ce-srca/SharesPremiumDividendAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryWithChoiceCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that pays shareholders an amount in cash issued from the shares premium reserve@en"})
@@ -779,8 +731,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "stock dividend action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/StockDividendAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that involves distribution of a dividend to shareholders in the form of equities of the issuing corporation@en"})
@@ -799,8 +750,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-eq-eq/Share,
                       :rdf/type           :owl/Restriction}
-                     :fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/StockSplit],
+                     :fibo-cae-ce-act/MandatoryCorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action involving an increase in a corporation's number of outstanding equities without any change in the shareholder's equity or the aggregate market value at the time of the split@en"})
@@ -819,8 +769,7 @@
    :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-eq-eq/Share,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-cae-ce-srca/TenderOffer],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "corporate action involving an offer made to shareholders, normally by a third party, requesting them to sell (tender) or exchange their equities@en"})
@@ -833,15 +782,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "trading status active message@en",
    :rdfs/subClassOf [:fibo-cae-ce-srca/TradingStatusMessage
-                     :fibo-cae-ce-srca/TradingStatusActiveMessage
                      :fibo-fnd-arr-doc/Notice
-                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-arr-doc/isAbout,
                       :owl/someValuesFrom
                       :fibo-md-temx-trs/SecurityTradingStatus,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Trading in security has commenced or security has been re-activated after a supsension in trading.@en"})
@@ -863,8 +811,7 @@
                       :owl/someValuesFrom
                       :fibo-md-temx-trs/SecurityTradingStatus,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-arr-doc/Notice
-                     :fibo-cae-ce-srca/TradingStatusMessage],
+                     :fibo-fnd-arr-doc/Notice],
    :skos/definition #voc/lstr "A message about trading status.@en"})
 
 (def TradingStatusSuspendedMessage
@@ -875,15 +822,14 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "trading status suspended message@en",
    :rdfs/subClassOf [:fibo-cae-ce-srca/TradingStatusMessage
-                     :fibo-cae-ce-srca/TradingStatusSuspendedMessage
                      :fibo-fnd-arr-doc/Notice
-                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
-                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-arr-doc/isAbout,
                       :owl/someValuesFrom
                       :fibo-md-temx-trs/SecurityTradingStatus,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
+                      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition #voc/lstr "Trading in the security has been suspended.@en"})
 
 (def WarrantExerciseAction
@@ -896,8 +842,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "warrant exercise action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-srca/WarrantExerciseAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/CorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that offers holders the option to buy (call warrant) or to sell (put warrant) a specific amount of stock, cash, or commodity, at a predetermined price, during a predetermined period of time (which usually corresponds to the life of the issue)@en"})
@@ -909,8 +854,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/",
    :rdfs/label #voc/lstr "worthless security action@en",
-   :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-srca/WorthlessSecurityAction],
+   :rdfs/subClassOf :fibo-cae-ce-act/MandatoryCorporateAction,
    :skos/definition
    #voc/lstr
     "corporate action that involves booking out of valueless securities@en"})

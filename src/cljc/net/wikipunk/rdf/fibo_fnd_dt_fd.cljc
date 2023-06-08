@@ -63,12 +63,11 @@
                       :owl/someValuesFrom :fibo-fnd-dt-fd/AdHocScheduleEntry,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-fd/Schedule
-                     :fibo-fnd-dt-fd/AdHocSchedule
+                     :cmns-col/Collection
                      {:owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-dt-fd/hasOverallPeriod,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :cmns-col/Collection],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "schedule consisting of some number of individual events that are not necessarily recurring"})
 
@@ -84,7 +83,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "ad hoc schedule entry",
    :rdfs/subClassOf [:fibo-fnd-dt-fd/DatedCollectionConstituent
-                     :fibo-fnd-dt-fd/AdHocScheduleEntry
                      :cmns-col/Constituent
                      {:owl/onProperty     :cmns-dt/hasObservedDateTime,
                       :owl/someValuesFrom :cmns-dt/CombinedDateTime,
@@ -102,8 +100,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-dt-fd/hasAsOfDate,
                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
                       :rdf/type           :owl/Restriction}
-                     :cmns-dt/Duration
-                     :fibo-fnd-dt-fd/Age],
+                     :cmns-dt/Duration],
    :skos/definition
    "length of time that something or someone has been alive or existed"})
 
@@ -117,7 +114,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "calculated date",
-   :rdfs/subClassOf [:cmns-dt/Date :fibo-fnd-dt-fd/CalculatedDate],
+   :rdfs/subClassOf :cmns-dt/Date,
    :skos/definition "date that is or will be determined based on some formula"})
 
 (def CalendarMonth
@@ -141,7 +138,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "calendar period",
-   :rdfs/subClassOf [:cmns-dt/TimeInterval :fibo-fnd-dt-fd/CalendarPeriod],
+   :rdfs/subClassOf :cmns-dt/TimeInterval,
    :skos/definition
    "time interval that occurs within a system that fixes the beginning and length of a segment of the year with respect to that system",
    :skos/editorialNote
@@ -168,20 +165,19 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "calendar-specified interval",
-   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-dt-fd/TimeDirection,
-                      :owl/onProperty :fibo-fnd-dt-fd/hasTimeDirection,
+   :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-dt-fd/CalendarPeriod,
+                      :owl/onProperty :fibo-fnd-dt-fd/hasCalendarPeriod,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onDataRange :xsd/integer,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasOrdinalNumber,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-dt-fd/RecurrenceInterval
-                     {:owl/onClass    :fibo-fnd-dt-fd/CalendarPeriod,
-                      :owl/onProperty :fibo-fnd-dt-fd/hasCalendarPeriod,
+                     {:owl/onClass    :fibo-fnd-dt-fd/TimeDirection,
+                      :owl/onProperty :fibo-fnd-dt-fd/hasTimeDirection,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-fd/CalendarSpecifiedInterval
+                     :fibo-fnd-dt-fd/RecurrenceInterval
                      :cmns-dt/TimeInterval],
    :skos/definition
    "recurrence interval that is defined as the nth day of some calendar period (such as a calendar month), and a time direction (forward from the beginning of the month, or backwards from the end)",
@@ -269,8 +265,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dt/hasObservedDateTime,
                       :owl/someValuesFrom :cmns-dt/CombinedDateTime,
                       :rdf/type           :owl/Restriction}
-                     :cmns-col/Constituent
-                     :fibo-fnd-dt-fd/DatedCollectionConstituent],
+                     :cmns-col/Constituent],
    :skos/definition
    "element of a collection that is associated with a date and time"})
 
@@ -285,8 +280,7 @@
                       :owl/someValuesFrom
                       :fibo-fnd-dt-fd/DatedCollectionConstituent,
                       :rdf/type :owl/Restriction}
-                     :cmns-col/StructuredCollection
-                     :fibo-fnd-dt-fd/DatedStructuredCollection],
+                     :cmns-col/StructuredCollection],
    :skos/definition
    "structured collection whose elements are required to have a date and time"})
 
@@ -342,7 +336,6 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-dt-fd/RecurrenceInterval
-                     :fibo-fnd-dt-fd/ExplicitRecurrenceInterval
                      :cmns-dt/TimeInterval],
    :skos/definition "recurrence interval defined via an explicit duration"})
 
@@ -399,7 +392,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "recurrence interval",
-   :rdfs/subClassOf [:cmns-dt/TimeInterval :fibo-fnd-dt-fd/RecurrenceInterval],
+   :rdfs/subClassOf :cmns-dt/TimeInterval,
    :skos/definition
    "time interval that is consistent between elements of a regular schedule"})
 
@@ -415,30 +408,29 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "regular schedule",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-dt-fd/hasRecurrenceInterval,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-dt-fd/hasRecurrenceStartDate,
+                      :owl/someValuesFrom :cmns-dt/Date,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-dt-fd/hasRecurrenceInterval,
                       :owl/someValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :rdf/type           :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/ScheduleStub,
                       :owl/onProperty :fibo-fnd-dt-fd/hasInitialStub,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-fd/Schedule
-                     {:owl/onProperty     :fibo-fnd-dt-fd/hasCount,
-                      :owl/someValuesFrom :xsd/positiveInteger,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty :fibo-fnd-dt-fd/hasRecurrenceStartDate,
-                      :owl/someValuesFrom :cmns-dt/Date,
-                      :rdf/type :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-dt-fd/ScheduleStub,
                       :owl/onProperty :fibo-fnd-dt-fd/hasFinalStub,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-fd/RegularSchedule
+                     :fibo-fnd-dt-fd/Schedule
+                     {:owl/onProperty     :fibo-fnd-dt-fd/hasCount,
+                      :owl/someValuesFrom :xsd/positiveInteger,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-col/Collection
                      {:owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :fibo-fnd-dt-fd/hasOverallPeriod,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :cmns-col/Collection],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition "schedule whose time intervals recur regularly",
    :skos/editorialNote
    "The BusinessDates ontology extends 'RegularSchedule' with an optional BusinessDayAdjustment that specifies what should happen if a scheduled date falls on a weekend or a holiday.",
@@ -456,16 +448,15 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "relative date",
-   :rdfs/subClassOf [{:owl/onClass    :cmns-dt/Date,
-                      :owl/onProperty :fibo-fnd-dt-fd/isRelativeTo,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :xsd/string,
+   :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-dt-fd/hasRelativeDuration,
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-dt-fd/CalculatedDate
-                     :fibo-fnd-dt-fd/RelativeDate
+                     {:owl/onClass    :cmns-dt/Date,
+                      :owl/onProperty :fibo-fnd-dt-fd/isRelativeTo,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      :cmns-dt/Date],
    :skos/definition
    "calculated date that is some duration before or after another date",
@@ -497,8 +488,7 @@
                       :owl/onProperty :fibo-fnd-dt-fd/hasOverallPeriod,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :cmns-col/Collection
-                     :fibo-fnd-dt-fd/Schedule],
+                     :cmns-col/Collection],
    :skos/definition
    "collection of events, observations, or other occurrences and the associated dates and/or times when they will be done"})
 
@@ -513,8 +503,7 @@
                       :owl/onProperty :cmns-dt/hasDatePeriod,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :cmns-col/Collection
-                     :fibo-fnd-dt-fd/ScheduleStub],
+                     :cmns-col/Collection],
    :skos/definition
    "date period before the start of the recurring part of a schedule or after the end of the recurring part, which may be associated with a specific occurrence kind",
    :skos/editorialNote
@@ -534,7 +523,6 @@
                       :owl/qualifiedCardinality 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-dt-fd/CalculatedDate
-                     :fibo-fnd-dt-fd/SpecifiedDate
                      :cmns-dt/Date],
    :skos/definition
    "calculated date that is defined by a rule that is captured as a string by the 'hasDateSpecification' property"})
@@ -566,7 +554,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "time direction",
-   :rdfs/subClassOf [:cmns-dt/TemporalEntity :fibo-fnd-dt-fd/TimeDirection],
+   :rdfs/subClassOf :cmns-dt/TemporalEntity,
    :skos/definition
    "enumeration that indicates whether a calendar-specified date is figured from the start or the end of a calendar period"})
 
@@ -624,8 +612,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "has acquisition date",
    :rdfs/range :cmns-dt/CombinedDateTime,
-   :rdfs/subPropertyOf [:cmns-dt/hasObservedDateTime
-                        :fibo-fnd-dt-fd/hasAcquisitionDate],
+   :rdfs/subPropertyOf :cmns-dt/hasObservedDateTime,
    :skos/definition
    "links an asset or owner/controller/controllee to the date or date and time of purchase"})
 
@@ -637,7 +624,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "has age",
    :rdfs/range :cmns-dt/Duration,
-   :rdfs/subPropertyOf [:cmns-dt/hasDuration :fibo-fnd-dt-fd/hasAge],
+   :rdfs/subPropertyOf :cmns-dt/hasDuration,
    :skos/definition "relates something to the length of time it has existed"})
 
 (def hasAsOfDate
@@ -649,7 +636,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "has as-of date",
-   :rdfs/subPropertyOf [:cmns-dt/hasDate :fibo-fnd-dt-fd/hasAsOfDate],
+   :rdfs/subPropertyOf :cmns-dt/hasDate,
    :skos/definition
    "relates something to the date on which it is accurate or valid (e.g. a credit report has an asOfDate that means the date when the information was drawn)"})
 
@@ -674,8 +661,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label #voc/lstr "has closing date time@en",
    :rdfs/range :cmns-dt/CombinedDateTime,
-   :rdfs/subPropertyOf [:cmns-dt/hasObservedDateTime
-                        :fibo-fnd-dt-fd/hasClosingDateTime],
+   :rdfs/subPropertyOf :cmns-dt/hasObservedDateTime,
    :skos/definition #voc/lstr "the day and time at which something closes@en"})
 
 (def hasCount
@@ -705,9 +691,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "has date added",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasStartDate
-                        :cmns-dt/hasExplicitDate
-                        :fibo-fnd-dt-fd/hasDateAdded],
+   :rdfs/subPropertyOf [:cmns-dt/hasStartDate :cmns-dt/hasExplicitDate],
    :skos/definition
    "indicates the date something was included in something else"})
 
@@ -726,7 +710,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "has date received",
-   :rdfs/subPropertyOf [:cmns-dt/hasDate :fibo-fnd-dt-fd/hasDateReceived],
+   :rdfs/subPropertyOf :cmns-dt/hasDate,
    :skos/definition
    "relates something to the date it arrived or was delivered, e.g., a loan application request"})
 
@@ -822,7 +806,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "has final stub",
-   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasStub :fibo-fnd-dt-fd/hasFinalStub],
+   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasStub,
    :skos/definition
    "identifies any special period at the end of a regular schedule"})
 
@@ -833,7 +817,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "has initial stub",
-   :rdfs/subPropertyOf [:fibo-fnd-dt-fd/hasStub :fibo-fnd-dt-fd/hasInitialStub],
+   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasStub,
    :skos/definition
    "identifies any special period at the start of a regular schedule"})
 
@@ -855,8 +839,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label #voc/lstr "has opening date time@en",
    :rdfs/range :cmns-dt/CombinedDateTime,
-   :rdfs/subPropertyOf [:cmns-dt/hasObservedDateTime
-                        :fibo-fnd-dt-fd/hasOpeningDateTime],
+   :rdfs/subPropertyOf :cmns-dt/hasObservedDateTime,
    :skos/definition #voc/lstr "the day and time at which something opens@en"})
 
 (def hasOrdinalNumber
@@ -880,8 +863,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "has overall period",
-   :rdfs/subPropertyOf [:cmns-dt/hasDatePeriod
-                        :fibo-fnd-dt-fd/hasOverallPeriod],
+   :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
    :skos/definition
    "identifies a date period that includes all the dates of a schedule, including any schedule stubs"})
 
@@ -903,8 +885,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "has recurrence start date",
-   :rdfs/subPropertyOf [:cmns-dt/hasStartDate
-                        :fibo-fnd-dt-fd/hasRecurrenceStartDate],
+   :rdfs/subPropertyOf :cmns-dt/hasStartDate,
    :skos/definition
    "the starting date of the first recurrence in a regular schedule"})
 
@@ -948,7 +929,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
    :rdfs/label "has stub",
    :rdfs/range :fibo-fnd-dt-fd/ScheduleStub,
-   :rdfs/subPropertyOf :fibo-fnd-dt-fd/hasStub,
    :skos/definition
    "links an abbreviated period at the start or end of some schedule to the overall schedule"})
 

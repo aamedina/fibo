@@ -84,8 +84,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "accrued interest amount@en",
-   :rdfs/subClassOf [:fibo-fbc-dae-dbt/Interest
-                     :fibo-md-dbtx-aly/AccruedInterestAmount],
+   :rdfs/subClassOf :fibo-fbc-dae-dbt/Interest,
    :skos/definition
    #voc/lstr
     "The interest accrued on the bond or debt instrument at the time that the price is quoted. If this is a dirty price, this is the amount of accrued interest that is included in the price. This is therefore passed on to the purchaser of the bond or debt instrument.@en"})
@@ -105,9 +104,6 @@
      :owl/someValuesFrom :fibo-md-dbtx-aly/EquivalentYieldCalculationMethod,
      :rdf/type           :owl/Restriction}
     :fibo-md-dbtx-aly/RelativelyDefinedDebtInstrumentYield
-    :fibo-md-dbtx-aly/BondEquivalentYield
-    :fibo-fbc-fi-ip/Yield
-    :fibo-md-dbtx-aly/DebtInstrumentYield
     {:owl/onProperty     :fibo-md-dbtx-aly/calculationFollowing,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationMethod,
      :rdf/type           :owl/Restriction}
@@ -124,7 +120,9 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-md-dbtx-aly/DebtInstrumentYield
+    :fibo-fbc-fi-ip/Yield],
    :skos/definition
    #voc/lstr
     "Yield determined on an equivalent basis to the yield of another bond. This is used to be able to realistically compare prices between debt instruments across different markets.@en"})
@@ -139,8 +137,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "cash structured finance instrument price@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
-                     :fibo-md-dbtx-aly/CashStructuredFinanceInstrumentPrice],
+   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice,
    :skos/definition
    #voc/lstr
     "When the price is above a certain level (70), you get a quote in reference to an index e.g. LIBOR+50bp i.e. the yield. When you get below a certain price you get a quote such as 65c to a dollar. Percentage? not seen. Would be a whole number, interpreted as c/$@en"})
@@ -153,8 +150,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "clean price@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
-                     :fibo-md-dbtx-aly/CleanPrice],
+   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice,
    :skos/definition
    #voc/lstr
     "A bond or debt instrument price that does not include accrued interest.@en"})
@@ -169,8 +165,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/Pool
-                     :fibo-md-dbtx-aly/CollectionOfDebtPools],
+                     :fibo-sec-sec-pls/Pool],
    :skos/definition
    #voc/lstr "pool consisting of one or more pools of debt instrument(s)@en"})
 
@@ -187,8 +182,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-ip/YieldSpread
-                     :fibo-md-dbtx-aly/CreditSpread],
+                     :fibo-fbc-fi-ip/YieldSpread],
    :skos/definition
    #voc/lstr
     "yield spread that reflects the additional net yield an investor can earn from a security with more credit risk relative to one with less credit risk@en"})
@@ -207,7 +201,9 @@
                       :owl/someValuesFrom :fibo-md-dbtx-aly/CleanPrice,
                       :rdf/type           :owl/Restriction}
                      :fibo-md-dbtx-aly/YieldCalculationMethod
-                     :fibo-md-dbtx-aly/CurrentYieldCalculationMethod
+                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/YieldCalculationFormula,
@@ -215,9 +211,6 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
                       :rdf/type :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
-                      :rdf/type          :owl/Restriction}
                      :fibo-fnd-utl-alx/Formula],
    :skos/definition
    #voc/lstr "The ratio of the interest payment amount to the clean price.@en"})
@@ -238,8 +231,7 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/DebtInstrumentYield,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-fd/DatedCollectionConstituent
-                     :fibo-md-dbtx-aly/DebtConvexityAnalytic],
+                     :fibo-fnd-dt-fd/DatedCollectionConstituent],
    :skos/definition
    #voc/lstr
     "The second derivative of a security's price with respect to its yield, divided by the security's price. A security exhibits positive convexity when its price rises more for a downward move in its yield than its price declines for an equal upward move in its yield. Further notes: A measure of the change in price for a given change in Modified Duration. This always (necessarily) refers to Modified Duration. This is used as another risk measurement. Numerator is always (a) duration - either MacCaulays or Modified. Always rate of change of (one of the) Duration against some other parameter. The other paramater can be characterised as a Yield (it may be the Price, but that has a relationship to the Yield in any case). REVIEW: Inconsistency in the above - is it always necessarily Modified Duration that is referred to, or \"any\" Duration measure (Macaulays and.or Modified)? notes 9 Dec A measure of the sensitivity of the price with reference to interest rates. This is normally determined with reference to maturity, but since there are different maturity dates, this figure gives an estimate of the equitvalent if you had a homogenous portfolio, i.e. this is an estimate based on a pure equivalent, homogenous portfolio. Convexity of instrument versus portfolio. Sees instrument in terms of the set of cashflows. The term Convexity can be applied either to a bond or to a portfolio. More notes: When you get Convexit in MD, it will tell you what Duration it is refrfering to, along with Redemption Date (logically). Also if there is Option Adjusted Yield, there is a third set of analytics. What are they? i.e. OA Convexity, Duration Yield and the rest. Conclusions: Agreed to revisit this in OTC.@en"})
@@ -271,8 +263,7 @@
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-ip/Yield
-    :fibo-md-dbtx-aly/DebtInstrumentYield],
+    :fibo-fbc-fi-ip/Yield],
    :skos/definition
    #voc/lstr "The return on the debt instrument at the stated price.@en"})
 
@@ -286,8 +277,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
                       :rdf/type           :owl/Restriction}
-                     :fibo-ind-ind-ind/MarketSpread
-                     :fibo-md-dbtx-aly/DebtPriceSpread],
+                     :fibo-ind-ind-ind/MarketSpread],
    :skos/definition
    #voc/lstr
     "The difference between the [what?] of a security and the fair price value of a different security which is used as a point of reference. The spread is used to determine the price of the instrument. (draft definition)@en",
@@ -306,8 +296,7 @@
                       :fibo-md-dbtx-aly/determinesMarketPriceForDebt,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/OTCBondMarketPrice,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-pas-pas/ServiceProvider
-                     :fibo-md-dbtx-aly/DebtSecuritiesMarketMaker],
+                     :fibo-fnd-pas-pas/ServiceProvider],
    :skos/definition
    #voc/lstr
     "An actor which has the role of Market Maker in a given market.@en"})
@@ -324,8 +313,6 @@
      :owl/someValuesFrom :fibo-sec-dbt-pbs/WeightedAverageLife,
      :rdf/type           :owl/Restriction}
     :fibo-md-dbtx-aly/DebtInstrumentYield
-    :fibo-md-dbtx-aly/DebtYieldToAverageLife
-    :fibo-fbc-fi-ip/Yield
     {:owl/onProperty     :fibo-md-dbtx-aly/calculationFollowing,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationMethod,
      :rdf/type           :owl/Restriction}
@@ -342,7 +329,8 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-ip/Yield],
    :skos/definition
    #voc/lstr
     "The yield achieved by substituting a bond's average life for the issue's final maturity date.@en",
@@ -362,8 +350,6 @@
      :owl/someValuesFrom :fibo-md-dbtx-aly/EquivalentLifeAnalytic,
      :rdf/type           :owl/Restriction}
     :fibo-md-dbtx-aly/DebtInstrumentYield
-    :fibo-md-dbtx-aly/DebtYieldToEquivalentLife
-    :fibo-fbc-fi-ip/Yield
     {:owl/onProperty     :fibo-md-dbtx-aly/calculationFollowing,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationMethod,
      :rdf/type           :owl/Restriction}
@@ -380,7 +366,8 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-ip/Yield],
    :skos/definition
    #voc/lstr
     "The yield achieved by substituting a bond's equivalent life for the issue's final maturity date.@en",
@@ -403,8 +390,6 @@
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-md-dbtx-aly/DebtInstrumentYield
-    :fibo-md-dbtx-aly/DebtYieldToMaturity
-    :fibo-fbc-fi-ip/Yield
     {:owl/onProperty     :fibo-md-dbtx-aly/calculationFollowing,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationMethod,
      :rdf/type           :owl/Restriction}
@@ -421,7 +406,8 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-ip/Yield],
    :skos/definition
    #voc/lstr
     "The internal rate of return an investor would achieve if he or she purchased that bond at its current dirty price, and held it to maturity, assuming all coupon and principal payments are received as scheduled.@en"})
@@ -438,8 +424,6 @@
      :owl/someValuesFrom :fibo-md-dbtx-aly/NextCall,
      :rdf/type           :owl/Restriction}
     :fibo-md-dbtx-aly/DebtInstrumentYield
-    :fibo-md-dbtx-aly/DebtYieldToNextCall
-    :fibo-fbc-fi-ip/Yield
     {:owl/onProperty     :fibo-md-dbtx-aly/calculationFollowing,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationMethod,
      :rdf/type           :owl/Restriction}
@@ -456,7 +440,8 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-ip/Yield],
    :skos/definition #voc/lstr
                      "The yield of a bond to the next possible call date.@en"})
 
@@ -472,8 +457,6 @@
      :owl/someValuesFrom :fibo-md-dbtx-aly/WorstCall,
      :rdf/type           :owl/Restriction}
     :fibo-md-dbtx-aly/DebtInstrumentYield
-    :fibo-md-dbtx-aly/DebtYieldToWorst
-    :fibo-fbc-fi-ip/Yield
     {:owl/onProperty     :fibo-md-dbtx-aly/calculationFollowing,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationMethod,
      :rdf/type           :owl/Restriction}
@@ -490,7 +473,8 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-ip/Yield],
    :skos/definition
    #voc/lstr
     "Yield to the worst case of when the instrument might be called.@en"})
@@ -505,8 +489,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "derived price@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
-                     :fibo-md-dbtx-aly/DerivedPrice],
+   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice,
    :skos/definition
    #voc/lstr
     "price that stems from another source or calculation rather than being quoted or based on actual trading data@en"})
@@ -523,8 +506,7 @@
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/AccruedInterestAmount,
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fi-ip/SecurityPrice
-                     :fibo-md-dbtx-aly/DirtyPrice]})
+                     :fibo-fbc-fi-ip/SecurityPrice]})
 
 (def DiscountedInstrumentYield
   "Yield quoted for a discount instrument. This is the ratio of the discount to the face value, divided by the period to maturity as a fraction of a year."
@@ -536,8 +518,6 @@
    :rdfs/label #voc/lstr "discounted instrument yield@en",
    :rdfs/subClassOf
    [:fibo-md-dbtx-aly/DebtInstrumentYield
-    :fibo-md-dbtx-aly/DiscountedInstrumentYield
-    :fibo-fbc-fi-ip/Yield
     {:owl/onProperty     :fibo-md-dbtx-aly/calculationFollowing,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationMethod,
      :rdf/type           :owl/Restriction}
@@ -554,7 +534,8 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-ip/Yield],
    :skos/definition
    #voc/lstr
     "Yield quoted for a discount instrument. This is the ratio of the discount to the face value, divided by the period to maturity as a fraction of a year.@en"})
@@ -569,8 +550,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/DebtInstrumentYield,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
-                     :fibo-md-dbtx-aly/DurationAnalytic],
+                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure],
    :skos/definition #voc/lstr
                      "Weighted average time to receipt of all the payments.@en",
    :skos/editorialNote
@@ -585,11 +565,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "effective duration@en",
    :rdfs/subClassOf [:fibo-md-dbtx-aly/DurationAnalytic
-                     :fibo-md-dbtx-aly/EffectiveDuration
-                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/DebtInstrumentYield,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure]})
 
 (def EffectiveYield
   "effective yield"
@@ -600,8 +579,6 @@
    :rdfs/label #voc/lstr "effective yield@en",
    :rdfs/subClassOf
    [:fibo-md-dbtx-aly/DebtInstrumentYield
-    :fibo-md-dbtx-aly/EffectiveYield
-    :fibo-fbc-fi-ip/Yield
     {:owl/onProperty     :fibo-md-dbtx-aly/calculationFollowing,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationMethod,
      :rdf/type           :owl/Restriction}
@@ -618,7 +595,8 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-ip/Yield],
    :skos/editorialNote
    #voc/lstr
     "The difference between this and Native yield is as per note: Native yield relates to price quotation context; Effective Yild is in relation to portfolio analytics. Recall: every analytic formula relates to the set of cash flows, so there are assumptions underlying each of these, For example the assumption that Y is constant, which it isn't (because there is a curve, which may be convex not linear (is that right?). So you can compare rate or return between what I see and what the market has out there. In the US market: a Y which is calculated using Monto Carlo method simulation. relationship facts to add: Relation to method / formula (e.g. Monte Carlo), and the method used to determine the actual figure for the MC method. eff Y for single instrument: E Y for bonds without calls and stuff. Variation in this: whether we look at a whole set of bonds YTM quoted by Bmb would be the YTM quoted according to whatever the market is - = the NAtive Yield. SO: Publicly quoted more: choose another adjective.@en"})
@@ -639,7 +617,6 @@
                       :fibo-md-dbtx-aly/PartialCallsEstimationModel,
                       :rdf/type :owl/Restriction}
                      :fibo-md-dbtx-aly/LifeAnalytic
-                     :fibo-md-dbtx-aly/EquivalentLifeAnalytic
                      :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure]})
 
 (def EquivalentYieldCalculationMethod
@@ -650,7 +627,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "equivalent yield calculation method@en",
    :rdfs/subClassOf [:fibo-md-dbtx-aly/RelativeYieldCalculationMethod
-                     :fibo-md-dbtx-aly/EquivalentYieldCalculationMethod
+                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/YieldCalculationFormula,
@@ -658,11 +637,8 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
                       :rdf/type :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
-                      :rdf/type          :owl/Restriction}
-                     :fibo-fnd-utl-alx/Formula
-                     :fibo-md-dbtx-aly/YieldCalculationMethod]})
+                     :fibo-md-dbtx-aly/YieldCalculationMethod
+                     :fibo-fnd-utl-alx/Formula]})
 
 (def ExchangeTradedBondPrice
   "exchange traded bond price"
@@ -672,8 +648,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "exchange traded bond price@en",
-   :rdfs/subClassOf [:fibo-fbc-fi-ip/SecurityPrice
-                     :fibo-md-dbtx-aly/ExchangeTradedBondPrice]})
+   :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice})
 
 (def FFIECDown300PrepaySpeed
   "Public Securities Association (PSA) speed used for the underlying collateral for cash-flow calculations in the \"down 300\" scenario."
@@ -683,7 +658,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "f f i e c down 300 prepay speed@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/PrepaymentSpeed
-                     :fibo-md-dbtx-aly/FFIECDown300PrepaySpeed
                      {:owl/onProperty :fibo-fbc-dae-dbt/isBasedOn,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/LoanPoolPrepaymentModel,
@@ -703,7 +677,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "f f i e c up 300 prepay speed@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/PrepaymentSpeed
-                     :fibo-md-dbtx-aly/FFIECUp300PrepaySpeed
                      {:owl/onProperty :fibo-fbc-dae-dbt/isBasedOn,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/LoanPoolPrepaymentModel,
@@ -726,11 +699,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "i c m a yield formula@en",
    :rdfs/subClassOf [:fibo-md-dbtx-aly/YieldCalculationFormula
-                     :fibo-md-dbtx-aly/ICMAYieldFormula
-                     :fibo-fnd-utl-alx/Formula
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/DebtInstrumentYield,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Formula],
    :skos/definition
    #voc/lstr
     "The calculation method specified by ICMA (formerly ISMA) for determination of yield for fixed-rate bonds.@en"})
@@ -742,8 +714,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "implied forward rate@en",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/RatioValue
-                     :fibo-md-dbtx-aly/ImpliedForwardRate]})
+   :rdfs/subClassOf :fibo-fnd-utl-alx/RatioValue})
 
 (def InternallyDeterminedPriceSpread
   "The spread determined internally within the organisation from information available at their own trading desks. Further Notes Internal prices within a bank would be determined by surveying their own traders. So e.g. corporate desk trades these 30 bonds, get the daily spreads on those at the end of the day and calculate the price. The traders determine the pricing during the based on market movements. (this is all for OTC traded bonds, not exchange traded bonds)."
@@ -753,11 +724,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "internally determined price spread@en",
    :rdfs/subClassOf [:fibo-md-dbtx-aly/DebtPriceSpread
-                     :fibo-md-dbtx-aly/InternallyDeterminedPriceSpread
+                     :fibo-ind-ind-ind/MarketSpread
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-ind-ind-ind/MarketSpread],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "The spread determined internally within the organisation from information available at their own trading desks. Further Notes Internal prices within a bank would be determined by surveying their own traders. So e.g. corporate desk trades these 30 bonds, get the daily spreads on those at the end of the day and calculate the price. The traders determine the pricing during the based on market movements. (this is all for OTC traded bonds, not exchange traded bonds).@en"})
@@ -773,7 +743,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "interpolated price@en",
    :rdfs/subClassOf [:fibo-md-dbtx-aly/DerivedPrice
-                     :fibo-md-dbtx-aly/InterpolatedPrice
                      :fibo-fbc-fi-ip/SecurityPrice],
    :skos/definition
    #voc/lstr
@@ -787,7 +756,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "japanese compound yield calculation method@en",
    :rdfs/subClassOf [:fibo-md-dbtx-aly/YieldCalculationMethod
-                     :fibo-md-dbtx-aly/JapaneseCompoundYieldCalculationMethod
+                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/YieldCalculationFormula,
@@ -795,9 +766,6 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
                       :rdf/type :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
-                      :rdf/type          :owl/Restriction}
                      :fibo-fnd-utl-alx/Formula],
    :skos/definition #voc/lstr "No definition in selection list.@en"})
 
@@ -809,7 +777,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "japanese simple yield calculation method@en",
    :rdfs/subClassOf [:fibo-md-dbtx-aly/YieldCalculationMethod
-                     :fibo-md-dbtx-aly/JapaneseSimpleYieldCalculationMethod
+                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/YieldCalculationFormula,
@@ -817,9 +787,6 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
                       :rdf/type :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
-                      :rdf/type          :owl/Restriction}
                      :fibo-fnd-utl-alx/Formula],
    :skos/definition
    #voc/lstr
@@ -833,11 +800,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "key rate duration@en",
    :rdfs/subClassOf [:fibo-md-dbtx-aly/DurationAnalytic
-                     :fibo-md-dbtx-aly/KeyRateDuration
-                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/DebtInstrumentYield,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure]})
 
 (def LifeAnalytic
   "Some measure of the life of a security, other than the actual time to maturity itself. This is a derived figure, based on certain parameters as appropriate to that type of instrument, to give a figure that is equivalent to and similar to the basic maturity of the instrument, for the purposes of analysing that security."
@@ -846,8 +812,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "life analytic@en",
-   :rdfs/subClassOf [:fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
-                     :fibo-md-dbtx-aly/LifeAnalytic],
+   :rdfs/subClassOf :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure,
    :skos/definition
    #voc/lstr
     "Some measure of the life of a security, other than the actual time to maturity itself. This is a derived figure, based on certain parameters as appropriate to that type of instrument, to give a figure that is equivalent to and similar to the basic maturity of the instrument, for the purposes of analysing that security.@en"})
@@ -866,8 +831,7 @@
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/LoanPrepaymentFormula,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/Formula
-                     :fibo-md-dbtx-aly/LoanPoolPrepaymentModel],
+                     :fibo-fnd-utl-alx/Formula],
    :skos/definition
    #voc/lstr
     "Model of the prepayments of loans in a pool of individual loans, such as a mortgage pool or loan pool.@en"})
@@ -879,8 +843,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "loan prepayment formula@en",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/Formula
-                     :fibo-md-dbtx-aly/LoanPrepaymentFormula],
+   :rdfs/subClassOf :fibo-fnd-utl-alx/Formula,
    :skos/definition
    #voc/lstr
     "The formula which embodies the model for loan pool prepayment speed.@en",
@@ -899,11 +862,10 @@
                       :owl/someValuesFrom :fibo-fbc-fi-ip/InternalRateOfReturn,
                       :rdf/type           :owl/Restriction}
                      :fibo-md-dbtx-aly/DurationAnalytic
-                     :fibo-md-dbtx-aly/MacCaulaysDurationAnalytic
-                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/DebtInstrumentYield,
-                      :rdf/type           :owl/Restriction}]})
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure]})
 
 (def MaturityEquivalentPSA
   "Prepayment speed that results in the same average life as that computed for the Collateralized Mortgage Obligation (CMO), Asset Backed Securities (ABS) or Mortgage Backed Securities (MBS) using the Maturity Prepay Model."
@@ -913,7 +875,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "maturity equivalent p s a@en",
    :rdfs/subClassOf [:fibo-sec-dbt-pbs/PrepaymentSpeed
-                     :fibo-md-dbtx-aly/MaturityEquivalentPSA
                      {:owl/onProperty :fibo-fbc-dae-dbt/isBasedOn,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/LoanPoolPrepaymentModel,
@@ -941,11 +902,10 @@
                       :fibo-md-dbtx-aly/MacCaulaysDurationAnalytic,
                       :rdf/type :owl/Restriction}
                      :fibo-md-dbtx-aly/DurationAnalytic
-                     :fibo-md-dbtx-aly/ModifiedDurationAnalytic
-                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/DebtInstrumentYield,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure],
    :skos/definition
    #voc/lstr
     "The percentage price change of a security for a given change in yield. The higher the modified duration of a security, the higher its risk. Ad/ModDuration = [duration / {1 + (IRR/M)}]; where IRR is the internal rate of return and M is the number of compounding periods per year.@en"})
@@ -965,9 +925,6 @@
      :owl/someValuesFrom :fibo-md-dbtx-aly/NativeYieldCalculationMethod,
      :rdf/type           :owl/Restriction}
     :fibo-md-dbtx-aly/RelativelyDefinedDebtInstrumentYield
-    :fibo-md-dbtx-aly/NativeYield
-    :fibo-fbc-fi-ip/Yield
-    :fibo-md-dbtx-aly/DebtInstrumentYield
     {:owl/onProperty     :fibo-md-dbtx-aly/calculationFollowing,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationMethod,
      :rdf/type           :owl/Restriction}
@@ -984,7 +941,9 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-md-dbtx-aly/DebtInstrumentYield
+    :fibo-fbc-fi-ip/Yield],
    :skos/definition
    #voc/lstr
     "The yield of the security as determined using the Yield Calculation Method that is the default for the market that the security is traded in.@en"})
@@ -1001,18 +960,17 @@
      :owl/someValuesFrom :fibo-sec-dbt-dbti/TradableDebtInstrument,
      :rdf/type           :owl/Restriction}
     :fibo-md-dbtx-aly/RelativeYieldCalculationMethod
-    :fibo-md-dbtx-aly/NativeYieldCalculationMethod
+    {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
+     :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
+     :rdf/type          :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasFormula,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationFormula,
      :rdf/type           :owl/Restriction}
     {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
      :owl/onProperty    :fibo-fbc-dae-dbt/hasCompoundingFrequency,
      :rdf/type          :owl/Restriction}
-    {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
-     :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
-     :rdf/type          :owl/Restriction}
-    :fibo-fnd-utl-alx/Formula
-    :fibo-md-dbtx-aly/YieldCalculationMethod],
+    :fibo-md-dbtx-aly/YieldCalculationMethod
+    :fibo-fnd-utl-alx/Formula],
    :skos/definition
    #voc/lstr "The convention used in the marketplace for that security.@en"})
 
@@ -1026,8 +984,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dt/hasDate,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/NextCallDate,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-dbti/CallEvent
-                     :fibo-md-dbtx-aly/NextCall],
+                     :fibo-sec-dbt-dbti/CallEvent],
    :skos/definition #voc/lstr
                      "The next call of the issue, as at the current time.@en"})
 
@@ -1038,7 +995,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "next call date@en",
-   :rdfs/subClassOf [:cmns-dt/Date :fibo-md-dbtx-aly/NextCallDate],
+   :rdfs/subClassOf :cmns-dt/Date,
    :skos/definition
    #voc/lstr
     "The next date on which the issue can be called, from the present date.@en"})
@@ -1050,7 +1007,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "next put@en",
-   :rdfs/subClassOf [:fibo-sec-dbt-dbti/PutEvent :fibo-md-dbtx-aly/NextPut],
+   :rdfs/subClassOf :fibo-sec-dbt-dbti/PutEvent,
    :skos/definition
    #voc/lstr
     "The next available put date for the issue, as at the current time.@en"})
@@ -1066,8 +1023,7 @@
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/DebtSecuritiesMarketMaker,
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fi-ip/SecurityPrice
-                     :fibo-md-dbtx-aly/OTCBondMarketPrice],
+                     :fibo-fbc-fi-ip/SecurityPrice],
    :skos/definition
    #voc/lstr
     "The price determined for the marketplace for a bond which is traded over the counter.@en",
@@ -1084,8 +1040,6 @@
    :rdfs/label #voc/lstr "option adjusted yield@en",
    :rdfs/subClassOf
    [:fibo-md-dbtx-aly/DebtInstrumentYield
-    :fibo-md-dbtx-aly/OptionAdjustedYield
-    :fibo-fbc-fi-ip/Yield
     {:owl/onProperty     :fibo-md-dbtx-aly/calculationFollowing,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationMethod,
      :rdf/type           :owl/Restriction}
@@ -1102,7 +1056,8 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-ip/Yield],
    :skos/definition
    #voc/lstr
     "NB specified as a spread. synonym: OAS Based on different Int Rate paths. There are different OAS models just like there are different Yield methods. Also would make reference to the Yield Curve - but these are parameters that go into that model. Limit this model at the point where it distinguishes the difference between things - we are not in a position to mathematically model the things themselves, just capture the basic facts.@en"})
@@ -1114,8 +1069,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "partial calls estimation model@en",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/Formula
-                     :fibo-md-dbtx-aly/PartialCallsEstimationModel],
+   :rdfs/subClassOf :fibo-fnd-utl-alx/Formula,
    :skos/definition
    #voc/lstr "A model of how the early partial calls are estimated.@en"})
 
@@ -1129,7 +1083,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "pool factor@en",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/Percentage :fibo-md-dbtx-aly/PoolFactor],
+   :rdfs/subClassOf :fibo-fnd-utl-alx/Percentage,
    :skos/definition
    #voc/lstr
     "How much of the original pool is still outstanding. This is a number below one. Expressed as percentage.@en"})
@@ -1144,8 +1098,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/PoolFactor,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/RatioValue
-                     :fibo-md-dbtx-aly/PoolPaydownRate],
+                     :fibo-fnd-utl-alx/RatioValue],
    :skos/definition
    #voc/lstr
     "The rate at which the pool is paying down. This is based on observed factor. CPR, SMM, etc. etc. Measured differently for different kinds of security. CBO might have a prepayment rate for example if the underlying bond is callable. with a non agency mortgge dela, defualts will effect this. so for instance there is principal is no lnger inthe pool because the mortgagee defaults. With agency these are not taken out in the case of default but for non agency these mortgages are removed from the pool if and when a mortgagee defualts.@en"})
@@ -1164,8 +1117,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/DebtInstrumentYield,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure
-                     :fibo-md-dbtx-aly/PriceValueOfBasisPoint],
+                     :fibo-sec-dbt-pbs/DebtPoolStatisticalMeasure],
    :skos/definition
    #voc/lstr
     "Sensitivity of the price for one basis point change in yield, defined as the difference in price given 1 bp change in yield.@en"})
@@ -1178,7 +1130,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "relative yield calculation method@en",
    :rdfs/subClassOf [:fibo-md-dbtx-aly/YieldCalculationMethod
-                     :fibo-md-dbtx-aly/RelativeYieldCalculationMethod
+                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/YieldCalculationFormula,
@@ -1186,9 +1140,6 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
                       :rdf/type :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
-                      :rdf/type          :owl/Restriction}
                      :fibo-fnd-utl-alx/Formula]})
 
 (def RelativelyDefinedDebtInstrumentYield
@@ -1200,8 +1151,6 @@
    :rdfs/label #voc/lstr "relatively defined debt instrument yield@en",
    :rdfs/subClassOf
    [:fibo-md-dbtx-aly/DebtInstrumentYield
-    :fibo-md-dbtx-aly/RelativelyDefinedDebtInstrumentYield
-    :fibo-fbc-fi-ip/Yield
     {:owl/onProperty     :fibo-md-dbtx-aly/calculationFollowing,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationMethod,
      :rdf/type           :owl/Restriction}
@@ -1218,7 +1167,8 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-     :rdf/type           :owl/Restriction}]})
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-ip/Yield]})
 
 (def RussianYieldCalculationMethod
   "The method used in determining Yield in the Russian markets. This is based on an effective yield with fundamentally different math. To give an example of the use of a different \"yield type\", we have Russia, which trades based on an effective yield. The price-yield math is fundamentally different. Notes Origin:Fidessa Uses a trade space and effective yield formula. MAy have same day types but different math."
@@ -1231,7 +1181,9 @@
                       :owl/someValuesFrom :fibo-md-dbtx-aly/RussianYieldFormula,
                       :rdf/type           :owl/Restriction}
                      :fibo-md-dbtx-aly/YieldCalculationMethod
-                     :fibo-md-dbtx-aly/RussianYieldCalculationMethod
+                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/YieldCalculationFormula,
@@ -1239,9 +1191,6 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
                       :rdf/type :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
-                      :rdf/type          :owl/Restriction}
                      :fibo-fnd-utl-alx/Formula],
    :skos/definition
    #voc/lstr
@@ -1255,11 +1204,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "russian yield formula@en",
    :rdfs/subClassOf [:fibo-md-dbtx-aly/YieldCalculationFormula
-                     :fibo-md-dbtx-aly/RussianYieldFormula
-                     :fibo-fnd-utl-alx/Formula
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/DebtInstrumentYield,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Formula],
    :skos/definition
    #voc/lstr
     "This is based on a different Effective Yield than on another market.@en"})
@@ -1278,7 +1226,9 @@
                       :owl/someValuesFrom :fibo-md-dbtx-aly/DirtyPrice,
                       :rdf/type           :owl/Restriction}
                      :fibo-md-dbtx-aly/YieldCalculationMethod
-                     :fibo-md-dbtx-aly/SimpleYieldCalculationMethod
+                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/YieldCalculationFormula,
@@ -1286,9 +1236,6 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
                       :rdf/type :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
-                      :rdf/type          :owl/Restriction}
                      :fibo-fnd-utl-alx/Formula],
    :skos/definition
    #voc/lstr
@@ -1302,7 +1249,9 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "spanish yield calculation method@en",
    :rdfs/subClassOf [:fibo-md-dbtx-aly/YieldCalculationMethod
-                     :fibo-md-dbtx-aly/SpanishYieldCalculationMethod
+                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/YieldCalculationFormula,
@@ -1310,9 +1259,6 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
                       :rdf/type :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
-                      :rdf/type          :owl/Restriction}
                      :fibo-fnd-utl-alx/Formula],
    :skos/definition
    #voc/lstr
@@ -1329,7 +1275,9 @@
                       :owl/someValuesFrom :fibo-md-dbtx-aly/ICMAYieldFormula,
                       :rdf/type           :owl/Restriction}
                      :fibo-md-dbtx-aly/YieldCalculationMethod
-                     :fibo-md-dbtx-aly/USCorporateBondYieldCalculationMethod
+                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/YieldCalculationFormula,
@@ -1337,9 +1285,6 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
                       :rdf/type :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
-                      :rdf/type          :owl/Restriction}
                      :fibo-fnd-utl-alx/Formula],
    :skos/definition #voc/lstr
                      "This has 30/360 and semi-annual compounding.@en"})
@@ -1355,7 +1300,9 @@
                       :owl/someValuesFrom :fibo-md-dbtx-aly/ICMAYieldFormula,
                       :rdf/type           :owl/Restriction}
                      :fibo-md-dbtx-aly/YieldCalculationMethod
-                     :fibo-md-dbtx-aly/USTreasuryYieldCalculationMethod
+                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/YieldCalculationFormula,
@@ -1363,9 +1310,6 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
                       :rdf/type :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
-                      :rdf/type          :owl/Restriction}
                      :fibo-fnd-utl-alx/Formula]})
 
 (def WallStreetYieldCalculationMethod
@@ -1379,7 +1323,9 @@
                       :owl/someValuesFrom :fibo-md-dbtx-aly/ICMAYieldFormula,
                       :rdf/type           :owl/Restriction}
                      :fibo-md-dbtx-aly/YieldCalculationMethod
-                     :fibo-md-dbtx-aly/WallStreetYieldCalculationMethod
+                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasFormula,
                       :owl/someValuesFrom
                       :fibo-md-dbtx-aly/YieldCalculationFormula,
@@ -1387,9 +1333,6 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
                       :rdf/type :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-utl-alx/Variable,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasArgument,
-                      :rdf/type          :owl/Restriction}
                      :fibo-fnd-utl-alx/Formula],
    :skos/definition #voc/lstr "No definition.Term put here from memory.@en"})
 
@@ -1400,8 +1343,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "weighted average time to receipt of cashflows@en",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/Formula
-                     :fibo-md-dbtx-aly/WeightedAverageTimeToReceiptOfCashflows],
+   :rdfs/subClassOf :fibo-fnd-utl-alx/Formula,
    :skos/definition
    #voc/lstr
     "The weighted average time to the receipt of cashflows for an instrument.@en",
@@ -1416,7 +1358,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
    :rdfs/label #voc/lstr "worst call@en",
-   :rdfs/subClassOf [:fibo-sec-dbt-dbti/CallEvent :fibo-md-dbtx-aly/WorstCall],
+   :rdfs/subClassOf :fibo-sec-dbt-dbti/CallEvent,
    :skos/definition
    #voc/lstr
     "call event representing the worst case with respect to when the instrument might be called@en",
@@ -1439,8 +1381,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-md-dbtx-aly/DebtInstrumentYield,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Formula
-                     :fibo-md-dbtx-aly/YieldCalculationFormula],
+                     :fibo-fnd-utl-alx/Formula],
    :skos/definition #voc/lstr "The formula used in determining the Yield.@en"})
 
 (def YieldCalculationMethod
@@ -1460,8 +1401,7 @@
                      {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
                       :owl/onProperty :fibo-fbc-dae-dbt/hasCompoundingFrequency,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/Formula
-                     :fibo-md-dbtx-aly/YieldCalculationMethod],
+                     :fibo-fnd-utl-alx/Formula],
    :skos/definition
    #voc/lstr
     "The method by which the yield is calculated. This includes a formula for calculation and a specific day count convention and compounding. You would apply this calculation method on top of the underlying terms and conditions, do for example the holiday calenders and so on, are used in these formulae. For final cash flow: Japanese yield will round down accrued interest. Add: The actual underlying math. Wall Street uses the same ICMA formula.@en",
@@ -1481,8 +1421,6 @@
      :owl/someValuesFrom :fibo-md-dbtx-aly/NextPut,
      :rdf/type           :owl/Restriction}
     :fibo-md-dbtx-aly/DebtInstrumentYield
-    :fibo-md-dbtx-aly/YieldToNextPut
-    :fibo-fbc-fi-ip/Yield
     {:owl/onProperty     :fibo-md-dbtx-aly/calculationFollowing,
      :owl/someValuesFrom :fibo-md-dbtx-aly/YieldCalculationMethod,
      :rdf/type           :owl/Restriction}
@@ -1499,7 +1437,8 @@
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-fbc-fi-ip/SecurityPrice,
-     :rdf/type           :owl/Restriction}]})
+     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-ip/Yield]})
 
 (def calculationFollowing
   "calculation following"

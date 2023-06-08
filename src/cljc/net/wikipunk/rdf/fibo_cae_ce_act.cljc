@@ -78,8 +78,7 @@
                      {:owl/onProperty     :cmns-cls/isClassifiedBy,
                       :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     :fibo-cae-ce-act/Action],
+                     :fibo-fnd-dt-oc/Occurrence],
    :skos/definition
    #voc/lstr
     "event announced, initiated or carried out by an organization that affects a legal entity or the securities it issues and may have a material impact on that entity's stakeholders, such as shareholders and creditors@en",
@@ -103,8 +102,7 @@
                       :owl/onProperty    :cmns-col/hasMember,
                       :rdf/type          :owl/Restriction}
                      :cmns-cds/CodeSet
-                     :cmns-cls/ClassificationScheme
-                     :fibo-cae-ce-act/ActionClassificationScheme],
+                     :cmns-cls/ClassificationScheme],
    :skos/definition
    "scheme for classifying the kinds of actions and events that may be announced, initiated or carried out by an organization that affects a legal entity or the securities it issues"})
 
@@ -118,11 +116,10 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "action classifier@en",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
-                      :owl/someValuesFrom :xsd/string,
-                      :rdf/type           :owl/Restriction}
-                     :cmns-cls/Classifier
-                     :fibo-fnd-dt-oc/OccurrenceKind
+   :rdfs/subClassOf [{:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
+                      :owl/onProperty :cmns-col/isMemberOf,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
                      {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-cae-ce-act/Action,
                       :rdf/type           :owl/Restriction}
@@ -130,11 +127,11 @@
                       :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
-                      :owl/onProperty :cmns-col/isMemberOf,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
-                     :fibo-cae-ce-act/ActionClassifier],
+                     :cmns-cls/Classifier
+                     {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
+                      :owl/someValuesFrom :xsd/string,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/OccurrenceKind],
    :skos/definition
    #voc/lstr
     "classifier that distinguishes the kinds of actions and events that may be announced, initiated or carried out by an organization that affects a legal entity or the securities it issues, such as income-oriented events@en"})
@@ -152,8 +149,7 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus
-                     :fibo-cae-ce-act/ActionStatus],
+                     :fibo-fnd-arr-lif/LifecycleStatus],
    :skos/definition #voc/lstr "state of some action at some point in time@en"})
 
 (def BusinessStrategyClassifier
@@ -164,23 +160,22 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "business strategy classifier@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/ActionClassifier
-                     :fibo-cae-ce-act/BusinessStrategyClassifier
-                     {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
-                      :owl/someValuesFrom :xsd/string,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-cls/classifies,
-                      :owl/someValuesFrom :fibo-cae-ce-act/Action,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
-                      :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
-                     :cmns-cls/Classifier
                      {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
                       :owl/onProperty :cmns-col/isMemberOf,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-dt-oc/OccurrenceKind],
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :cmns-cls/classifies,
+                      :owl/someValuesFrom :fibo-cae-ce-act/Action,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-cls/Classifier
+                     {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
+                      :owl/someValuesFrom :xsd/string,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "classifier of corporate actions that involve improving liquidity or changing the overall structure of the organization through diversification, combining and closing parts of the business, etc, to increase long-term profitability@en"})
@@ -196,19 +191,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "change action@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-act/ChangeAction
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action to disseminate information regarding a change further described in the corporate action details@en"})
@@ -225,19 +219,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "class action@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-act/ClassAction
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action involving a situation where interested parties seek restitution for financial loss@en"})
@@ -250,19 +243,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "consent solicitation@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-act/ConsentSolicitation
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action that is a procedure that aims to obtain consent of holder to a proposal by the issuer or a third party without convening a meeting@en",
@@ -280,16 +272,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "corporate action@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/Action
-                     :fibo-cae-ce-act/CorporateAction
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -306,19 +297,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "disclosure action@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-act/DisclosureAction
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action involving a request for holders or beneficial owners to disclose their name, location and holdings of any issue to the issuer@en"})
@@ -331,19 +321,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "divestiture@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-act/Divestiture
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action involving the sales of subsidiary business interests or investments@en",
@@ -362,23 +351,22 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "income-oriented classifier@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/ActionClassifier
-                     :fibo-cae-ce-act/IncomeOrientedClassifier
-                     {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
-                      :owl/someValuesFrom :xsd/string,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-cls/classifies,
-                      :owl/someValuesFrom :fibo-cae-ce-act/Action,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
-                      :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
-                     :cmns-cls/Classifier
                      {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
                       :owl/onProperty :cmns-col/isMemberOf,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-dt-oc/OccurrenceKind],
+                     :fibo-fnd-dt-oc/OccurrenceKind
+                     {:owl/onClass :fibo-cae-ce-act/ActionClassificationScheme,
+                      :owl/onProperty :cmns-dsg/isDefinedIn,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :cmns-cls/classifies,
+                      :owl/someValuesFrom :fibo-cae-ce-act/Action,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-cls/Classifier
+                     {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
+                      :owl/someValuesFrom :xsd/string,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "classifier of corporate actions that impacts income to shareholders@en"})
@@ -391,19 +379,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "legal form change@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-act/LegalFormChange
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action indicating a modification of the legal form of the organization@en",
@@ -422,20 +409,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "liquidation@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/Divestiture
-                     :fibo-cae-ce-act/Liquidation
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/MandatoryCorporateAction
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     :fibo-cae-ce-act/MandatoryCorporateAction
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action related to winding up a business, including but not limited to distribution of cash, assets, or both@en"})
@@ -451,18 +437,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "mandatory corporate action@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-act/Action
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action],
    :skos/definition
    #voc/lstr
     "action initiated by the board of directors of a corporation that affects all shareholders@en",
@@ -481,19 +466,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "mandatory with choice corporate action@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-act/MandatoryWithChoiceCorporateAction
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "mandatory corporate action where shareholders are given an opportunity to choose among several options@en"})
@@ -506,16 +490,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "market action@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/Action
-                     :fibo-cae-ce-act/MarketAction
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -532,19 +515,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "merger / acquisition@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-act/MergerAcquisition
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action involving the consolidation of legal entities or assets@en"})
@@ -557,19 +539,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "notification@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/MandatoryCorporateAction
-                     :fibo-cae-ce-act/Notification
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action involving information provided by the issuer having no accounting/financial impact on the holder@en"})
@@ -582,20 +563,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "organization address change@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/Notification
-                     :fibo-cae-ce-act/OrganizationAddressChange
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/MandatoryCorporateAction
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     :fibo-cae-ce-act/MandatoryCorporateAction
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "information action that provides details of address changes for a legal entity@en",
@@ -611,20 +591,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "organization name change@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/Notification
-                     :fibo-cae-ce-act/OrganizationNameChange
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/MandatoryCorporateAction
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     :fibo-cae-ce-act/MandatoryCorporateAction
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "information action that provides details of name changes for a legal entity@en",
@@ -640,19 +619,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "priority issue@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-act/PriorityIssue
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action that is a public offer where, due to a limited amount of securities available, priority is given to existing shareholders@en"})
@@ -665,16 +643,15 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "regulatory action@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/Action
-                     :fibo-cae-ce-act/RegulatoryAction
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
@@ -691,20 +668,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "spin off@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/Divestiture
-                     :fibo-cae-ce-act/SpinOff
-                     :fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/MandatoryCorporateAction
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     :fibo-cae-ce-act/MandatoryCorporateAction
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action
+                     :fibo-cae-ce-act/CorporateAction],
    :skos/definition
    #voc/lstr
     "corporate action involving the distribution of subsidiary stock to the shareholders of the parent company without a surrender of shares@en"})
@@ -721,18 +697,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
    :rdfs/label #voc/lstr "voluntary corporate action@en",
    :rdfs/subClassOf [:fibo-cae-ce-act/CorporateAction
-                     :fibo-cae-ce-act/VoluntaryCorporateAction
-                     :fibo-cae-ce-act/Action
+                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
+                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-be-le-lp/LegalEntity
                                             :fibo-fbc-fi-fi/Security],
                                            :rdf/type :owl/Class},
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :cmns-cls/isClassifiedBy,
-                      :owl/someValuesFrom :fibo-cae-ce-act/ActionClassifier,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-cae-ce-act/Action],
    :skos/definition
    #voc/lstr
     "event in which the shareholders elect to participate and must respond in order for the issuer to process the action@en",

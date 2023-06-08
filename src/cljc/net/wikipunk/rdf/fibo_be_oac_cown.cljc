@@ -92,8 +92,7 @@
                      {:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}
-                     :fibo-be-oac-cown/BeneficialOwner],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "party that enjoys the benefits of ownership (such as receipt of income) of something even though its ownership (title) may be in the name of another party (called a nominee or registered owner)"})
 
@@ -112,8 +111,7 @@
                      {:owl/onProperty     :fibo-fnd-oac-ctl/hasPartyInControl,
                       :owl/someValuesFrom :fibo-be-oac-cown/BeneficialOwner,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-oac-ctl/Control
-                     :fibo-be-oac-cown/BeneficialOwnership],
+                     :fibo-fnd-oac-ctl/Control],
    :skos/definition
    "control situation linking something at least one beneficial owner"})
 
@@ -128,8 +126,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
    :rdfs/label #voc/lstr "shareholder@en",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/Counterparty
-                     :fibo-be-oac-opty/ConstitutionalOwner
-                     :fibo-be-oac-cown/Shareholder],
+                     :fibo-be-oac-opty/ConstitutionalOwner],
    :skos/definition
    "party that owns shares in and has rights and responsibilities with respect to some asset, provided in exchange for investment"})
 
@@ -145,8 +142,7 @@
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-be-oac-cown/Shareholder,
                       :owl/onProperty    :fibo-fnd-rel-rel/isHeldBy,
                       :rdf/type          :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
-                     :fibo-be-oac-cown/Shareholding],
+                     :fibo-fnd-acc-aeq/FinancialAsset],
    :skos/definition
    "financial asset that takes the form of shares considered as a unit"})
 
@@ -159,8 +155,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
    :rdfs/label "has beneficial owner",
    :rdfs/range :fibo-be-oac-cown/BeneficialOwner,
-   :rdfs/subPropertyOf [:fibo-fnd-oac-ctl/hasControllingParty
-                        :fibo-be-oac-cown/hasBeneficialOwner],
+   :rdfs/subPropertyOf :fibo-fnd-oac-ctl/hasControllingParty,
    :skos/definition
    "indicates the party that retains rights in the asset they control in a beneficial ownership situation"})
 
@@ -174,7 +169,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
    :rdfs/label "is beneficial owner of",
    :rdfs/range :fibo-fnd-oac-ctl/ControlledThing,
-   :rdfs/subPropertyOf [:fibo-fnd-oac-ctl/isPartyControlling
-                        :fibo-be-oac-cown/isBeneficialOwnerOf],
+   :rdfs/subPropertyOf :fibo-fnd-oac-ctl/isPartyControlling,
    :skos/definition
    "indicates an asset in which the beneficial owner holds rights (typically voting rights, management rights, etc.) in a beneficial ownership situation"})

@@ -104,8 +104,7 @@
                       :fibo-ind-mkt-bas/CreditIndexConstituent,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-dt-fd/DatedStructuredCollection
-                     :fibo-fbc-pas-fpas/WeightedBasket
-                     :fibo-ind-mkt-bas/BasketOfCreditRisks],
+                     :fibo-fbc-pas-fpas/WeightedBasket],
    :skos/definition
    #voc/lstr
     "basket of instruments, legal entities, or a combination thereof collected for the purpose of analyzing risk@en"})
@@ -126,8 +125,7 @@
                          :rdf/type          :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-sec-sec-bsk/BasketOfSecurities
-                     :fibo-ind-mkt-bas/BasketOfEquities],
+                     :fibo-sec-sec-bsk/BasketOfSecurities],
    :skos/definition
    #voc/lstr "basket of securities whose constituents are listed shares@en"})
 
@@ -142,8 +140,7 @@
                       :owl/someValuesFrom
                       :fibo-ind-mkt-bas/MarketCapitalization,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-utl-alx/WeightingFunction
-                     :fibo-ind-mkt-bas/CapitalizationBasedWeightingFunction],
+                     :fibo-fnd-utl-alx/WeightingFunction],
    :skos/definition
    #voc/lstr
     "weighting function derived from the relative market capitalization (share price times the number of shares outstanding) of the companies tracked by an index@en"})
@@ -162,8 +159,6 @@
                       :owl/someValuesFrom :fibo-ind-mkt-bas/BasketOfCreditRisks,
                       :rdf/type           :owl/Restriction}
                      :fibo-ind-mkt-bas/ReferenceIndex
-                     :fibo-ind-mkt-bas/CreditIndex
-                     :fibo-fnd-utl-alx/ScopedMeasure
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-cls/AssetClass,
                       :owl/onProperty :cmns-cls/isClassifiedBy,
@@ -172,6 +167,11 @@
                       :owl/onProperty    :fibo-fnd-utl-alx/hasPeriodicity,
                       :rdf/type          :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :cmns-dt/CombinedDateTime,
+                      :owl/onProperty  :fibo-fnd-utl-alx/hasReleaseDateTime,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-utl-alx/ScopedMeasure
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-utl-alx/hasReleaseDate,
                       :rdf/type       :owl/Restriction}
@@ -179,10 +179,6 @@
                       :owl/onProperty :fibo-fnd-arr-doc/hasReportingPeriod,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :cmns-dt/CombinedDateTime,
-                      :owl/onProperty  :fibo-fnd-utl-alx/hasReleaseDateTime,
-                      :rdf/type        :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
                       :owl/onProperty :cmns-cls/isClassifiedBy,
@@ -212,8 +208,7 @@
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-fd/DatedCollectionConstituent
-                     :fibo-fbc-pas-fpas/WeightedBasketConstituent
-                     :fibo-ind-mkt-bas/CreditIndexConstituent],
+                     :fibo-fbc-pas-fpas/WeightedBasketConstituent],
    :skos/definition #voc/lstr "constituent of a basket of credit risks@en"})
 
 (def EquityIndex
@@ -227,8 +222,6 @@
                       :owl/someValuesFrom :fibo-ind-mkt-bas/BasketOfEquities,
                       :rdf/type           :owl/Restriction}
                      :fibo-ind-mkt-bas/ReferenceIndex
-                     :fibo-ind-mkt-bas/EquityIndex
-                     :fibo-fnd-utl-alx/ScopedMeasure
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-sec-sec-cls/AssetClass,
                       :owl/onProperty :cmns-cls/isClassifiedBy,
@@ -237,6 +230,11 @@
                       :owl/onProperty    :fibo-fnd-utl-alx/hasPeriodicity,
                       :rdf/type          :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :cmns-dt/CombinedDateTime,
+                      :owl/onProperty  :fibo-fnd-utl-alx/hasReleaseDateTime,
+                      :rdf/type        :owl/Restriction}
+                     :fibo-fnd-utl-alx/ScopedMeasure
+                     {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-utl-alx/hasReleaseDate,
                       :rdf/type       :owl/Restriction}
@@ -244,10 +242,6 @@
                       :owl/onProperty :fibo-fnd-arr-doc/hasReportingPeriod,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :cmns-dt/CombinedDateTime,
-                      :owl/onProperty  :fibo-fnd-utl-alx/hasReleaseDateTime,
-                      :rdf/type        :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
                       :owl/onProperty :cmns-cls/isClassifiedBy,
@@ -269,24 +263,23 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :rdfs/label #voc/lstr "market capitalization@en",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/Expression
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-dt/hasObservedDateTime,
+                      :owl/someValuesFrom :cmns-dt/CombinedDateTime,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-sec-eq-eq/PricePerShare,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/onProperty     :fibo-sec-eq-eq/hasSharesOutstanding,
+                      :owl/someValuesFrom :xsd/nonNegativeInteger,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-eq-eq/ShareIssuer,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-dt/hasObservedDateTime,
-                      :owl/someValuesFrom :cmns-dt/CombinedDateTime,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-sec-eq-eq/hasSharesOutstanding,
-                      :owl/someValuesFrom :xsd/nonNegativeInteger,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty
                       :fibo-ind-mkt-bas/hasMarketCapitalizationValue,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
-                      :rdf/type :owl/Restriction}
-                     :fibo-ind-mkt-bas/MarketCapitalization],
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "expression representing the perceived value of a company as determined by the stock market at a specific point in time@en"})
@@ -302,34 +295,33 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :rdfs/label #voc/lstr "reference index@en",
-   :rdfs/subClassOf [:fibo-fnd-utl-alx/ScopedMeasure
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-utl-alx/hasReleaseDate,
                       :rdf/type       :owl/Restriction}
+                     :fibo-fnd-utl-alx/ScopedMeasure
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-sec-sec-cls/AssetClass,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
+                      :owl/onProperty    :fibo-fnd-utl-alx/hasPeriodicity,
+                      :rdf/type          :owl/Restriction}
                      {:owl/onClass    :cmns-dt/ExplicitDatePeriod,
                       :owl/onProperty :fibo-fnd-arr-doc/hasReportingPeriod,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-dt-fd/RecurrenceInterval,
-                      :owl/onProperty    :fibo-fnd-utl-alx/hasPeriodicity,
-                      :rdf/type          :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-fnd-utl-alx/hasReleaseDateTime,
                       :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-dae-dbt/isBasedOn,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/WeightedBasket,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
-                      :owl/onProperty :cmns-cls/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-sec-sec-cls/AssetClass,
-                      :owl/onProperty :cmns-cls/isClassifiedBy,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-ind-mkt-bas/ReferenceIndex],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "measure of change in the value of the contents of a basket over a given period of time@en"})
@@ -363,8 +355,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :rdfs/label #voc/lstr "has index name@en",
    :rdfs/range :xsd/string,
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/hasFormalName
-                        :fibo-ind-mkt-bas/hasIndexName],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasFormalName,
    :skos/definition #voc/lstr "specifies a formal name for the index@en"})
 
 (def hasIndexValue
@@ -375,8 +366,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :rdfs/label "has index value",
    :rdfs/range :xsd/decimal,
-   :rdfs/subPropertyOf [:fibo-fnd-qt-qtu/hasNumericValue
-                        :fibo-ind-mkt-bas/hasIndexValue],
+   :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasNumericValue,
    :skos/definition
    "specifies the value of a given index as of the release date"})
 
@@ -402,8 +392,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :rdfs/label #voc/lstr "has market capitalization value@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-ind-mkt-bas/hasMarketCapitalizationValue],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    #voc/lstr
     "indicates the monetary amount representing the market capitalization of some issuer as of some date@en"})
@@ -417,8 +406,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :rdfs/label #voc/lstr "has original notional value@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasNotionalAmount
-                        :fibo-ind-mkt-bas/hasOriginalNotionalValue],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasNotionalAmount,
    :skos/definition
    #voc/lstr
     "indicates the notional amount represented by the index when it is first constituted@en"})
@@ -432,8 +420,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
    :rdfs/label #voc/lstr "has premium@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-ind-mkt-bas/hasPremium],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    #voc/lstr
     "indicates a premium payable for a contract based on the index@en"})

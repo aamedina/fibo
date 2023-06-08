@@ -59,7 +59,6 @@
                        :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                        :rdf/type :owl/Restriction},
                       :rdf/type :owl/Restriction}
-                     :fibo-loan-ln-ln/Loan
-                     :fibo-loan-spc-stu/StudentLoan],
+                     :fibo-loan-ln-ln/Loan],
    :skos/definition #voc/lstr
                      "A loan provided for the purposes of education.@en"})

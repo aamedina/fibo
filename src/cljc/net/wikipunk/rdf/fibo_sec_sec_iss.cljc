@@ -107,11 +107,11 @@
               {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
                :owl/someValuesFrom :fibo-fnd-acc-aeq/FinancialAsset,
                :rdf/type           :owl/Restriction}
-              :fibo-fnd-agr-ctr/ContractDocument
-              :fibo-sec-sec-iss/SecurityForm
               {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              :fibo-sec-sec-iss/SecurityForm
+              :fibo-fnd-agr-ctr/ContractDocument],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "bearer and registered form",
@@ -126,13 +126,13 @@
    :rdf/type [:fibo-sec-sec-iss/SecurityForm
               :fibo-fnd-arr-doc/Certificate
               :owl/NamedIndividual
+              {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
+               :owl/someValuesFrom :fibo-fnd-acc-aeq/FinancialAsset,
+               :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                :rdf/type           :owl/Restriction}
-              :fibo-fnd-agr-ctr/ContractDocument
-              {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
-               :owl/someValuesFrom :fibo-fnd-acc-aeq/FinancialAsset,
-               :rdf/type           :owl/Restriction}],
+              :fibo-fnd-agr-ctr/ContractDocument],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "bearer form",
@@ -152,34 +152,33 @@
    :rdfs/label "best efforts offering",
    :rdfs/subClassOf
    [:fibo-sec-sec-iss/SecuritiesOffering
-    :fibo-sec-sec-iss/BestEffortsOffering
-    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/ThirdPartyAgent,
-     :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
-     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/Issuer
                                         :fibo-fbc-pas-fpas/Offeror],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
     :fibo-fnd-agr-agr/Agreement
+    :fibo-fbc-pas-fpas/Offering
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-sec-sec-iss/SecurityUnderwriter,
+     :owl/onProperty :fibo-sec-sec-iss/isUnderwrittenBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
+     :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-fnd-acc-cur/MonetaryPrice,
      :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingPrice,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-sec-iss/SecurityUnderwriter,
-     :owl/onProperty :fibo-sec-sec-iss/isUnderwrittenBy,
+     :owl/onClass    :fibo-fbc-pas-fpas/ThirdPartyAgent,
+     :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-pas-fpas/Offering
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
+     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "securities offering whereby investment bankers commit to doing their best to sell the securities offered, but do not assume the full risk of an underwriter"})
@@ -193,11 +192,11 @@
               {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
                :owl/someValuesFrom :fibo-fnd-acc-aeq/FinancialAsset,
                :rdf/type           :owl/Restriction}
-              :fibo-fnd-agr-ctr/ContractDocument
-              :fibo-sec-sec-iss/SecurityForm
               {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              :fibo-sec-sec-iss/SecurityForm
+              :fibo-fnd-agr-ctr/ContractDocument],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "book entry form",
@@ -217,8 +216,7 @@
                      {:owl/onProperty :fibo-sec-sec-iss/specifiesConversionInto,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fi-fi/RedemptionProvision
-                     :fibo-sec-sec-iss/ConversionTerms],
+                     :fibo-fbc-fi-fi/RedemptionProvision],
    :skos/definition
    "contract terms specifying when and how a security may be converted to another security (usually of the same issuer)"})
 
@@ -233,14 +231,13 @@
                       :owl/someValuesFrom :fibo-sec-sec-iss/ConversionTerms,
                       :rdf/type :owl/Restriction}
                      :fibo-fbc-fi-fi/Security
-                     :fibo-sec-sec-iss/ConvertibleSecurity
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
-                      :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
-                      :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fbc-fct-ra/RegistrationAuthority,
                       :owl/onProperty :fibo-sec-sec-iss/isRegisteredWith,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :fibo-sec-sec-iss/SecurityForm,
+                      :owl/onProperty :fibo-sec-sec-iss/isIssuedInForm,
                       :rdf/type       :owl/Restriction}],
    :skos/definition "security that can be converted into another security",
    :skos/example
@@ -257,7 +254,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "exempt issuer",
    :rdfs/subClassOf [:fibo-fbc-fi-fi/Issuer
-                     :fibo-sec-sec-iss/ExemptIssuer
                      {:owl/minQualifiedCardinality 0,
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-sec-sec-iss/hasIssuerShortName,
@@ -288,17 +284,26 @@
                     :rdf/type           :owl/Restriction}],
      :rdf/type    :owl/Class}
     :fibo-sec-sec-iss/PublicOffering
-    :fibo-sec-sec-iss/ExemptOffering
-    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+    :fibo-fnd-agr-agr/Agreement
+    :fibo-fbc-pas-fpas/Offering
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-sec-sec-iss/SecurityUnderwriter,
+     :owl/onProperty :fibo-sec-sec-iss/isUnderwrittenBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
      :rdf/type           :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-fpas/ThirdPartyAgent,
      :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
-     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-sec-iss/SecuritiesOffering
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/Issuer
                                         :fibo-fbc-pas-fpas/Offeror],
@@ -308,19 +313,9 @@
      :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingPrice,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-pas-fpas/Offering
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-agr/Agreement
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-sec-iss/SecurityUnderwriter,
-     :owl/onProperty :fibo-sec-sec-iss/isUnderwrittenBy,
-     :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-iss/SecuritiesOffering],
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
+     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "public offering involving securities that are excused from certain regulatory reporting requirements"})
 
@@ -333,8 +328,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "exempt transaction",
-   :rdfs/subClassOf [:fibo-fbc-fi-fi/SecuritiesTransaction
-                     :fibo-sec-sec-iss/ExemptTransaction],
+   :rdfs/subClassOf :fibo-fbc-fi-fi/SecuritiesTransaction,
    :skos/definition
    "securities transaction for which there is no requirement to register the transaction with a regulatory agency",
    :skos/example
@@ -359,8 +353,7 @@
                       :fibo-sec-sec-iss/hasInstrumentDescription,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :cmns-id/Identifier
-                     :fibo-sec-sec-iss/FinancialInstrumentShortName],
+                     :cmns-id/Identifier],
    :skos/definition
    "abbreviated name for a financial instrument within a defined structure as specified in ISO 18774"})
 
@@ -376,34 +369,33 @@
    :rdfs/label "firm commitment offering",
    :rdfs/subClassOf
    [:fibo-sec-sec-iss/SecuritiesOffering
-    :fibo-sec-sec-iss/FirmCommitmentOffering
-    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/ThirdPartyAgent,
-     :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
-     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/Issuer
                                         :fibo-fbc-pas-fpas/Offeror],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
     :fibo-fnd-agr-agr/Agreement
+    :fibo-fbc-pas-fpas/Offering
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-sec-sec-iss/SecurityUnderwriter,
+     :owl/onProperty :fibo-sec-sec-iss/isUnderwrittenBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
+     :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-fnd-acc-cur/MonetaryPrice,
      :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingPrice,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-sec-iss/SecurityUnderwriter,
-     :owl/onProperty :fibo-sec-sec-iss/isUnderwrittenBy,
+     :owl/onClass    :fibo-fbc-pas-fpas/ThirdPartyAgent,
+     :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-pas-fpas/Offering
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
+     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "securities offering whereby the underwriter purchases the securities outright for their own account"})
@@ -415,13 +407,13 @@
    :db/ident :fibo-sec-sec-iss/MiscellaneousForm,
    :rdf/type [:fibo-sec-sec-iss/SecurityForm
               :owl/NamedIndividual
+              {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
+               :owl/someValuesFrom :fibo-fnd-acc-aeq/FinancialAsset,
+               :rdf/type           :owl/Restriction}
               {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                :rdf/type           :owl/Restriction}
-              :fibo-fnd-agr-ctr/ContractDocument
-              {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
-               :owl/someValuesFrom :fibo-fnd-acc-aeq/FinancialAsset,
-               :rdf/type           :owl/Restriction}],
+              :fibo-fnd-agr-ctr/ContractDocument],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "miscellaneous form",
@@ -438,11 +430,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "offering document",
    :rdfs/subClassOf [:fibo-be-fct-pub/Publication
-                     {:owl/onClass    :fibo-sec-sec-iss/SecuritiesOffering,
-                      :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-doc/LegalDocument
                      {:owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
                       :owl/qualifiedCardinality 1,
@@ -450,11 +437,15 @@
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-arr-doc/LegalDocument
                      {:owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-arr-doc/hasExpirationDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-sec-sec-iss/OfferingDocument],
+                     {:owl/onClass    :fibo-sec-sec-iss/SecuritiesOffering,
+                      :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "legal document that states the objectives, risks and terms of an investment"})
 
@@ -468,24 +459,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "offering statement",
    :rdfs/subClassOf [:fibo-sec-sec-iss/OfferingDocument
-                     :fibo-sec-sec-iss/OfferingStatement
+                     :fibo-be-fct-pub/Publication
+                     :fibo-fnd-arr-doc/LegalDocument
                      {:owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-arr-doc/hasExpirationDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :cmns-dt/Date,
-                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-doc/LegalDocument
                      {:owl/onClass    :fibo-sec-sec-iss/SecuritiesOffering,
                       :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-fct-pub/Publication
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onClass    :cmns-dt/Date,
+                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "offering memorandum that conforms to Regulation A, Offering Statement, of the Securities Act of 1933"})
 
@@ -505,34 +495,33 @@
      :owl/someValuesFrom :fibo-sec-sec-iss/PrivatePlacementMemorandum,
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-iss/SecuritiesOffering
-    :fibo-sec-sec-iss/PrivateOffering
-    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/ThirdPartyAgent,
-     :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
-     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/Issuer
                                         :fibo-fbc-pas-fpas/Offeror],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
     :fibo-fnd-agr-agr/Agreement
+    :fibo-fbc-pas-fpas/Offering
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-sec-sec-iss/SecurityUnderwriter,
+     :owl/onProperty :fibo-sec-sec-iss/isUnderwrittenBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
+     :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-fnd-acc-cur/MonetaryPrice,
      :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingPrice,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-sec-iss/SecurityUnderwriter,
-     :owl/onProperty :fibo-sec-sec-iss/isUnderwrittenBy,
+     :owl/onClass    :fibo-fbc-pas-fpas/ThirdPartyAgent,
+     :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-pas-fpas/Offering
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
+     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "offering of securities made privately to a limited number of qualified potential investors"})
@@ -552,24 +541,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "private placement memorandum",
    :rdfs/subClassOf [:fibo-sec-sec-iss/OfferingDocument
-                     :fibo-sec-sec-iss/PrivatePlacementMemorandum
+                     :fibo-be-fct-pub/Publication
+                     :fibo-fnd-arr-doc/LegalDocument
                      {:owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-arr-doc/hasExpirationDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :cmns-dt/Date,
-                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-doc/LegalDocument
                      {:owl/onClass    :fibo-sec-sec-iss/SecuritiesOffering,
                       :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-fct-pub/Publication
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onClass    :cmns-dt/Date,
+                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "legal document stating the objectives, risks and terms of investment involved with a private placement"})
 
@@ -588,24 +576,23 @@
    :rdfs/label "prospectus",
    :rdfs/seeAlso ["http://www.investopedia.com/terms/p/prospectus.asp"],
    :rdfs/subClassOf [:fibo-sec-sec-iss/OfferingDocument
-                     :fibo-sec-sec-iss/Prospectus
+                     :fibo-be-fct-pub/Publication
+                     :fibo-fnd-arr-doc/LegalDocument
                      {:owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-arr-doc/hasExpirationDate,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :cmns-dt/Date,
-                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-arr-doc/LegalDocument
                      {:owl/onClass    :fibo-sec-sec-iss/SecuritiesOffering,
                       :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-fct-pub/Publication
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onClass    :cmns-dt/Date,
+                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "formal, written offering document to sell securities that provides the facts an investor needs to make an informed investment decision"})
 
@@ -625,34 +612,33 @@
      :owl/someValuesFrom :fibo-sec-sec-iss/Prospectus,
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-iss/SecuritiesOffering
-    :fibo-sec-sec-iss/PublicOffering
-    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/ThirdPartyAgent,
-     :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
-     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/Issuer
                                         :fibo-fbc-pas-fpas/Offeror],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
     :fibo-fnd-agr-agr/Agreement
+    :fibo-fbc-pas-fpas/Offering
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-sec-sec-iss/SecurityUnderwriter,
+     :owl/onProperty :fibo-sec-sec-iss/isUnderwrittenBy,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
+     :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-fnd-acc-cur/MonetaryPrice,
      :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingPrice,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
     {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-sec-iss/SecurityUnderwriter,
-     :owl/onProperty :fibo-sec-sec-iss/isUnderwrittenBy,
+     :owl/onClass    :fibo-fbc-pas-fpas/ThirdPartyAgent,
+     :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
      :rdf/type       :owl/Restriction}
-    :fibo-fbc-pas-fpas/Offering
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
+     :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "offering of securities for sale to the investment public, after compliance with registration requirements of the relevant regulatory authorities"})
@@ -667,14 +653,13 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "registered form",
    :rdfs/subClassOf [:fibo-sec-sec-iss/SecurityForm
-                     :fibo-sec-sec-iss/RegisteredForm
+                     {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/FinancialAsset,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/ContractDocument
-                     {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
-                      :owl/someValuesFrom :fibo-fnd-acc-aeq/FinancialAsset,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-fnd-agr-ctr/ContractDocument],
    :skos/definition
    "form of a security whereby ownership is recorded in the name of the owner on the books of the issuer or the issuer's registrar and can only be transferred to another owner when endorsed by the registered owner"})
 
@@ -691,35 +676,34 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "securities offering",
    :rdfs/subClassOf
-   [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
-     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-agr-agr/Agreement
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-sec-iss/SecurityUnderwriter,
-     :owl/onProperty :fibo-sec-sec-iss/isUnderwrittenBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/onClass    :fibo-fnd-acc-cur/MonetaryPrice,
-     :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingPrice,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-pas-fpas/Offering
+   [:fibo-fnd-agr-agr/Agreement
     {:owl/minQualifiedCardinality 0,
      :owl/onClass    :fibo-fbc-pas-fpas/ThirdPartyAgent,
      :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
-     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
+    :fibo-fbc-pas-fpas/Offering
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
      :rdf/type           :owl/Restriction}
+    {:owl/onClass    :fibo-fnd-acc-cur/MonetaryPrice,
+     :owl/onProperty :fibo-fbc-pas-fpas/hasOfferingPrice,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
      :owl/someValuesFrom {:owl/unionOf [:fibo-fbc-fi-fi/Issuer
                                         :fibo-fbc-pas-fpas/Offeror],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fnd-agr-ctr/isEvidencedBy,
+     :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-agr-ctr/hasGoverningJurisdiction,
      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-iss/SecuritiesOffering],
+    {:owl/minQualifiedCardinality 0,
+     :owl/onClass    :fibo-sec-sec-iss/SecurityUnderwriter,
+     :owl/onProperty :fibo-sec-sec-iss/isUnderwrittenBy,
+     :rdf/type       :owl/Restriction}],
    :skos/definition "offering of a security (or securities) for sale"})
 
 (def SecurityForm
@@ -737,8 +721,7 @@
                      {:owl/onProperty     :fibo-fbc-pas-caa/realizes,
                       :owl/someValuesFrom :fibo-fnd-acc-aeq/FinancialAsset,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/ContractDocument
-                     :fibo-sec-sec-iss/SecurityForm],
+                     :fibo-fnd-agr-ctr/ContractDocument],
    :skos/definition "nature of the proof of ownership of a security"})
 
 (def SecurityOfferingDistributionType
@@ -764,13 +747,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "security underwriter",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
-                          :owl/someValuesFrom
-                          :fibo-sec-sec-iss/SecuritiesOffering,
-                          :rdf/type :owl/Restriction},
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-pas-fpas/ThirdPartyAgent
+   [:fibo-fbc-pas-fpas/ThirdPartyAgent
     :fibo-fbc-fct-fse/Underwriter
     :fibo-fnd-agr-ctr/ContractThirdParty
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
@@ -779,7 +756,12 @@
                           :fibo-sec-sec-iss/SecurityUnderwritingArrangement,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-iss/SecurityUnderwriter],
+    {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
+     :owl/someValuesFrom {:owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
+                          :owl/someValuesFrom
+                          :fibo-sec-sec-iss/SecuritiesOffering,
+                          :rdf/type :owl/Restriction},
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "party that has purchased from an issuer with a view to, or sells for an issuer in connection with, the distribution of any security, or participates or has a direct or indirect participation in any such undertaking, or participates or has a participation in the direct or indirect underwriting of any such undertaking"})
 
@@ -797,8 +779,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-sec-sec-iss/SecurityUnderwriter,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fct-fse/UnderwritingArrangement
-                     :fibo-sec-sec-iss/SecurityUnderwritingArrangement],
+                     :fibo-fbc-fct-fse/UnderwritingArrangement],
    :skos/definition
    "underwriting agreement between an organization (typically an investment bank) and a securities issuer that commits the underwriter to assuming risk involved in buying a new issue of securities and reselling it to the public"})
 
@@ -810,8 +791,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "has actual closing date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasDate
-                        :fibo-sec-sec-iss/hasActualClosingDate],
+   :rdfs/subPropertyOf :cmns-dt/hasDate,
    :skos/definition
    "indicates the date on which an offering or transaction officially closes, in contrast with an intended closing date"})
 
@@ -825,7 +805,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "has announcement date",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf [:cmns-dt/hasDate :fibo-sec-sec-iss/hasAnnouncementDate],
+   :rdfs/subPropertyOf :cmns-dt/hasDate,
    :skos/definition
    "indicates the first day the public will receive information regarding a new security issue"})
 
@@ -840,8 +820,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "has financial instrument short name",
    :rdfs/range :fibo-sec-sec-iss/FinancialInstrumentShortName,
-   :rdfs/subPropertyOf [:cmns-id/isIdentifiedBy
-                        :fibo-sec-sec-iss/hasFinancialInstrumentShortName],
+   :rdfs/subPropertyOf :cmns-id/isIdentifiedBy,
    :skos/definition
    "relates a security to its ISO 18774-compliant short name, which includes an issuer short name, abbreviated instrument characteristics, and abbreviated instrument description per the ISO standard"})
 
@@ -853,7 +832,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "has first trade date",
    :rdfs/range :cmns-dt/ExplicitDate,
-   :rdfs/subPropertyOf [:cmns-dt/hasDate :fibo-sec-sec-iss/hasFirstTradeDate],
+   :rdfs/subPropertyOf :cmns-dt/hasDate,
    :skos/definition
    "indicates the date on which a newly issued security starts trading"})
 
@@ -897,8 +876,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "has issuer short name",
    :rdfs/range :xsd/string,
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/hasFormalName
-                        :fibo-sec-sec-iss/hasIssuerShortName],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasFormalName,
    :skos/definition
    "relates a security issuer or FISN to an ISO 18774-compliant issuer short name, that is, an abbreviation of the official issuer name, limited to a maximum of 15 alphanumeric characters"})
 
@@ -921,8 +899,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "has subscription amount",
    :rdfs/range :xsd/integer,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasAmount
-                        :fibo-sec-sec-iss/hasSubscriptionAmount],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasAmount,
    :skos/definition "indicates a number of shares or units"})
 
 (def hasSubscriptionPeriod
@@ -933,8 +910,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "has subscription period",
    :rdfs/range :cmns-dt/DatePeriod,
-   :rdfs/subPropertyOf [:cmns-dt/hasDatePeriod
-                        :fibo-sec-sec-iss/hasSubscriptionPeriod],
+   :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
    :skos/definition
    "indicates a period of time in which investors can commit to purchase shares (or units) to be issued"})
 
@@ -948,8 +924,7 @@
    :rdfs/label "is issued in form",
    :rdfs/range :fibo-sec-sec-iss/SecurityForm,
    :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/isEvidencedBy
-                        :fibo-fbc-pas-caa/isRealizedBy
-                        :fibo-sec-sec-iss/isIssuedInForm],
+                        :fibo-fbc-pas-caa/isRealizedBy],
    :skos/definition
    "indicates the form in which the security is issued, typically in registered form"})
 
@@ -973,8 +948,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
    :rdfs/label "is registered",
    :rdfs/range :fibo-fbc-fct-ra/RegistrationAuthority,
-   :rdfs/subPropertyOf [:fibo-fbc-fct-ra/isRegisteredBy
-                        :fibo-sec-sec-iss/isRegisteredWith],
+   :rdfs/subPropertyOf :fibo-fbc-fct-ra/isRegisteredBy,
    :skos/definition
    "indicates the registration authority for a given security, i.e., in the name of the owner on the books of the issuer, with the issuer's registrar, with a third-party transfer agent, with a broker-dealer, or other competent party"})
 

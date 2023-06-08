@@ -126,7 +126,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "confers",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/confers,
    :skos/definition "grants or bestows by virtue of some authority"})
 
 (def controls
@@ -182,7 +181,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "evaluates",
-   :rdfs/subPropertyOf [:cmns-cxtdsg/appliesTo :fibo-fnd-rel-rel/evaluates],
+   :rdfs/subPropertyOf :cmns-cxtdsg/appliesTo,
    :skos/definition
    "assesses the nature, quality, or ability of someone or something"})
 
@@ -222,7 +221,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "has alias",
    :rdfs/subPropertyOf [:fibo-fnd-rel-rel/hasTextualName
-                        :fibo-fnd-rel-rel/hasAlias
                         :cmns-txt/hasTextValue],
    :skos/definition
    "indicates an alternate name of by which something is known"})
@@ -235,7 +233,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "has common name",
    :rdfs/subPropertyOf [:fibo-fnd-rel-rel/hasTextualName
-                        :fibo-fnd-rel-rel/hasCommonName
                         :cmns-txt/hasTextValue],
    :skos/definition
    "indicates a name by which something is frequently referred, without reference to any formal usage or structure"})
@@ -266,7 +263,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "has formal name",
    :rdfs/subPropertyOf [:fibo-fnd-rel-rel/hasTextualName
-                        :fibo-fnd-rel-rel/hasFormalName
                         :cmns-txt/hasTextValue],
    :skos/definition
    "indicates a name by which something is known for some official purpose or context, or which is structured in some way such as to always follow the same format regardless of usage"})
@@ -291,9 +287,8 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "has legal name",
    :rdfs/subPropertyOf [:fibo-fnd-rel-rel/hasFormalName
-                        :fibo-fnd-rel-rel/hasLegalName
-                        :fibo-fnd-rel-rel/hasTextualName
-                        :cmns-txt/hasTextValue],
+                        :cmns-txt/hasTextValue
+                        :fibo-fnd-rel-rel/hasTextualName],
    :skos/definition
    "specifies the name used to refer to a party in legal communications"})
 
@@ -313,7 +308,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "has tag",
    :rdfs/range :xsd/string,
-   :rdfs/subPropertyOf [:cmns-txt/hasTextValue :fibo-fnd-rel-rel/hasTag],
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "combination of alphanumeric characters corresponding to a label for something",
    :skos/note
@@ -328,8 +323,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "has textual name",
-   :rdfs/subPropertyOf [:cmns-txt/hasTextValue
-                        :fibo-fnd-rel-rel/hasTextualName],
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "associates a string-valued name, reference name, or appellation with something"})
 
@@ -382,7 +376,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "is conferred by",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isConferredBy,
    :skos/definition
    "a relationship between a right or obligation and the vehicle, such as an agreement or contract, that vests (or confers) said right or obligation"})
 
@@ -492,8 +485,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "is issued by",
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/isProvidedBy
-                        :fibo-fnd-rel-rel/isIssuedBy],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
    :skos/definition
    "indicates a functional entity or party responsible for circulating, distributing, or publishing something"})
 
@@ -516,8 +508,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "is mandated by",
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/isConferredBy
-                        :fibo-fnd-rel-rel/isMandatedBy],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isConferredBy,
    :skos/definition
    "relates a responsibility, capacity, or action to that which requires it"})
 
@@ -542,7 +533,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "is provided by",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
    :skos/definition "is made available by"})
 
 (def issues
@@ -553,7 +543,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "issues",
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/provides :fibo-fnd-rel-rel/issues],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/provides,
    :skos/definition "officially makes something available"})
 
 (def manages
@@ -574,7 +564,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "mandates",
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/confers :fibo-fnd-rel-rel/mandates],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/confers,
    :skos/definition
    "relates something to a commitment, contract, law, obligation, requirement, regulation, or similar concept that requires it"})
 
@@ -595,7 +585,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "provides",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/provides,
    :skos/definition "makes something available"})
 
 (def refersTo
@@ -605,7 +594,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "refers to",
-   :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo,
    :skos/definition "classifies, provides context for, or indicates"})
 
 (def represents
@@ -623,7 +611,6 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :rdfs/label "was formerly known as",
-   :rdfs/subPropertyOf [:cmns-txt/hasTextValue
-                        :fibo-fnd-rel-rel/wasFormerlyKnownAs],
+   :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
    "indicates a name by which something was known in the past"})

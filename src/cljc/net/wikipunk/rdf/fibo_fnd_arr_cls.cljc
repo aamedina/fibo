@@ -74,7 +74,6 @@
                       :fibo-fnd-arr-cls/IndustrySectorClassifier,
                       :rdf/type :owl/Restriction}
                      :cmns-cls/ClassificationScheme
-                     :fibo-fnd-arr-cls/IndustrySectorClassificationScheme
                      {:owl/allValuesFrom :cmns-cls/Classifier,
                       :owl/onProperty    :cmns-dsg/defines,
                       :rdf/type          :owl/Restriction}
@@ -96,7 +95,6 @@
                       :owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/qualifiedCardinality 1,
                       :rdf/type :owl/Restriction}
-                     :cmns-cls/Classifier
-                     :fibo-fnd-arr-cls/IndustrySectorClassifier],
+                     :cmns-cls/Classifier],
    :skos/definition
    "standardized classification or delineation for an organization, or possibly for a security representing an interest in a given organization, per some scheme for such delineation, by industry"})

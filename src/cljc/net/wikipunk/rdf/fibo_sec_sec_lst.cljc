@@ -90,26 +90,25 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
    :rdfs/label "listed security",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-sec-sec-lst/isListedVia,
+   [:fibo-sec-sec-lst/RegisteredSecurity
+    {:owl/onProperty     :fibo-sec-sec-lst/isListedVia,
      :owl/someValuesFrom :fibo-sec-sec-lst/Listing,
      :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-lst/RegisteredSecurity
-    {:owl/onClass    :fibo-fbc-fct-mkt/Exchange,
-     :owl/onProperty :fibo-sec-sec-lst/hasOriginalPlaceOfListing,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
     {:owl/onClass    :fibo-fbc-fct-mkt/Exchange,
      :owl/onProperty :fibo-sec-sec-lst/hasHomeExchange,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-sec-lst/ListedSecurity
-    :fibo-fbc-fi-fi/Security
+    {:owl/onClass    :fibo-fbc-fct-mkt/Exchange,
+     :owl/onProperty :fibo-sec-sec-lst/hasOriginalPlaceOfListing,
+     :owl/qualifiedCardinality 1,
+     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-sec-sec-iss/isIssuedInForm,
      :owl/someValuesFrom :fibo-sec-sec-iss/RegisteredForm,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-sec-sec-iss/isRegisteredWith,
      :owl/someValuesFrom :fibo-fbc-fct-ra/RegistrationAuthority,
      :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/Security
     {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistrationDate,
      :owl/someValuesFrom :cmns-dt/CombinedDateTime,
      :rdf/type           :owl/Restriction}],
@@ -124,37 +123,36 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
    :rdfs/label #voc/lstr "listing@en",
    :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :xsd/decimal,
-                      :owl/onProperty  :fibo-fbc-fi-ip/hasLotSize,
+                      :owl/onDataRange :cmns-dt/CombinedDateTime,
+                      :owl/onProperty  :fibo-sec-sec-lst/hasDelistingDate,
                       :rdf/type        :owl/Restriction}
+                     {:owl/onDataRange :cmns-dt/CombinedDateTime,
+                      :owl/onProperty  :fibo-sec-sec-lst/hasListingDate,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onClass    :cmns-dt/DateTime,
+                      :owl/onProperty :fibo-sec-sec-lst/hasLastTradingDateTime,
+                      :rdf/type       :owl/Restriction}
                      {:owl/maxQualifiedCardinality 1,
                       :owl/onClass    :fibo-fbc-fct-breg/RegistrationStatus,
                       :owl/onProperty :fibo-fbc-fct-breg/hasRegistrationStatus,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-sec-sec-iss/SecuritiesOffering,
-                      :owl/onProperty :fibo-sec-sec-lst/lists,
-                      :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/minQualifiedCardinality 0,
                       :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-sec-sec-lst/hasTickSize,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :cmns-dt/CombinedDateTime,
-                      :owl/onProperty  :fibo-sec-sec-lst/hasListingDate,
-                      :owl/qualifiedCardinality 1,
+                     {:owl/minQualifiedCardinality 0,
+                      :owl/onDataRange :xsd/decimal,
+                      :owl/onProperty  :fibo-fbc-fi-ip/hasLotSize,
                       :rdf/type        :owl/Restriction}
+                     {:owl/onClass    :fibo-sec-sec-iss/SecuritiesOffering,
+                      :owl/onProperty :fibo-sec-sec-lst/lists,
+                      :owl/qualifiedCardinality 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasCurrency,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/DateTime,
-                      :owl/onProperty :fibo-sec-sec-lst/hasLastTradingDateTime,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :cmns-dt/CombinedDateTime,
-                      :owl/onProperty  :fibo-sec-sec-lst/hasDelistingDate,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-sec-sec-lst/Listing],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "catalog entry for a securities offering managed by an exchange that provides the terms under which that security is made available on that exchange"})
 
@@ -177,8 +175,7 @@
                       :owl/onClass    :fibo-fbc-fct-mkt/Exchange,
                       :owl/onProperty :fibo-fnd-pas-pas/isProvisionedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-pas-fpas/FinancialService
-                     :fibo-sec-sec-lst/ListingService],
+                     :fibo-fbc-pas-fpas/FinancialService],
    :skos/definition
    "service provided by an exchange to facilitate securities trading"})
 
@@ -200,8 +197,7 @@
                      {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistrationDate,
                       :owl/someValuesFrom :cmns-dt/CombinedDateTime,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/Security
-                     :fibo-sec-sec-lst/RegisteredSecurity],
+                     :fibo-fbc-fi-fi/Security],
    :skos/definition
    "security that is registered with some registration authority"})
 
@@ -227,8 +223,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
    :rdfs/label "has home exchange",
    :rdfs/range :fibo-fbc-fct-mkt/Exchange,
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/isProvidedBy
-                        :fibo-sec-sec-lst/hasHomeExchange],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
    :skos/definition
    "indicates the exchange that is considered the primary market for a security; typically, but not always, in the country in which the security was originally issued",
    :skos/example
@@ -243,8 +238,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
    :rdfs/label "has last trading date and time",
    :rdfs/range :cmns-dt/DateTime,
-   :rdfs/subPropertyOf [:cmns-dt/hasDateTime
-                        :fibo-sec-sec-lst/hasLastTradingDateTime],
+   :rdfs/subPropertyOf :cmns-dt/hasDateTime,
    :skos/definition
    "specifies the last date and time that the security was traded on the exchange"})
 
@@ -277,8 +271,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
    :rdfs/label #voc/lstr "has tick size@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
-   :rdfs/subPropertyOf [:fibo-fnd-acc-cur/hasMonetaryAmount
-                        :fibo-sec-sec-lst/hasTickSize],
+   :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
    #voc/lstr
     "specifies a minimum price movement for the security with respect to an exchange@en"})
@@ -319,8 +312,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
    :rdfs/label "is traded on",
    :rdfs/range :fibo-fbc-fct-mkt/Exchange,
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/isProvidedBy
-                        :fibo-sec-sec-lst/isTradedOn],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
    :skos/definition
    "identifies the trading facility on which the security is traded"})
 

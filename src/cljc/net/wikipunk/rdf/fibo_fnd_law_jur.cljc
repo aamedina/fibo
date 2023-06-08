@@ -64,8 +64,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-jur/hasReach,
                       :owl/someValuesFrom :lcc-cr/GeographicRegion,
                       :rdf/type           :owl/Restriction}
-                     :cmns-cxtdsg/Context
-                     :fibo-fnd-law-jur/Jurisdiction],
+                     :cmns-cxtdsg/Context],
    :skos/definition
    "power of a court to adjudicate cases, issue orders, and interpret and apply the law with respect to some specific geographic area"})
 
@@ -83,8 +82,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-law-cor/Law
-                     :fibo-fnd-law-jur/StatuteLaw],
+                     :fibo-fnd-law-cor/Law],
    :skos/altLabel "statutory law",
    :skos/definition "law enacted by a legislature"})
 

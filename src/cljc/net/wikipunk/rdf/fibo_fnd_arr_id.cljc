@@ -81,8 +81,7 @@
                      {:owl/cardinality 1,
                       :owl/onProperty  :fibo-fnd-arr-id/isIndexTo,
                       :rdf/type        :owl/Restriction}
-                     :fibo-fnd-rel-rel/Reference
-                     :fibo-fnd-arr-id/Index],
+                     :fibo-fnd-rel-rel/Reference],
    :skos/definition
    "indirect shortcut derived from and pointing into, a greater volume of values, data, information or knowledge"})
 
@@ -96,8 +95,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-fnd-arr-id/Index,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-arr/Scheme
-                     :fibo-fnd-arr-id/IndexingScheme],
+                     :fibo-fnd-arr-arr/Scheme],
    :skos/definition
    "system for indexing values, data, information, or knowledge"})
 
@@ -120,7 +118,6 @@
                       :fibo-fnd-arr-id/hasAssignmentTerminationDate,
                       :rdf/type :owl/Restriction}
                      :cmns-id/Identifier
-                     :fibo-fnd-arr-id/ReassignableIdentifier
                      :fibo-fnd-rel-rel/Reference],
    :skos/definition
    "identifier that uniquely identifies something for a given time period, and that may be reused to identify something else at a different point in time",
@@ -146,8 +143,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
    :rdfs/label "has assignment termination date",
    :rdfs/range :cmns-dt/CombinedDateTime,
-   :rdfs/subPropertyOf [:cmns-dt/hasObservedDateTime
-                        :fibo-fnd-arr-id/hasAssignmentTerminationDate],
+   :rdfs/subPropertyOf :cmns-dt/hasObservedDateTime,
    :skos/definition
    "the date on which an identifier is released from its assignment to some resource"})
 
@@ -159,8 +155,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
    :rdfs/label "has initial assignment date",
    :rdfs/range :cmns-dt/CombinedDateTime,
-   :rdfs/subPropertyOf [:cmns-dt/hasObservedDateTime
-                        :fibo-fnd-arr-id/hasInitialAssignmentDate],
+   :rdfs/subPropertyOf :cmns-dt/hasObservedDateTime,
    :skos/definition
    "the date on which an identifier is first assigned to some resource"})
 
@@ -172,7 +167,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
    :rdfs/label "is index to",
-   :rdfs/subPropertyOf [:fibo-fnd-rel-rel/refersTo :fibo-fnd-arr-id/isIndexTo],
+   :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo,
    :skos/definition "that to which the index refers"})
 
 (def parseRegex

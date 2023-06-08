@@ -76,15 +76,14 @@
                       :owl/someValuesFrom :fibo-fbc-fi-fi/DebtInstrument,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-pls/InstrumentPool
-                     :fibo-sec-sec-pls/DebtPool
-                     :cmns-col/Collection
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/Pool],
+                     :fibo-sec-sec-pls/Pool
+                     :cmns-col/Collection],
    :skos/definition
    "a pool consisting of debt instruments, such as bonds, loans or mortgages"})
 
@@ -102,8 +101,7 @@
                       :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
                       :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}
-                     :cmns-col/Collection
-                     :fibo-sec-sec-pls/FundFamily],
+                     :cmns-col/Collection],
    :skos/definition
    "a collection of managed investments that are all managed by a single investment institution"})
 
@@ -118,11 +116,10 @@
                       :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-pls/Pool
-                     :fibo-sec-sec-pls/InstrumentPool
-                     :cmns-col/Collection
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :cmns-col/Collection],
    :skos/definition
    "pool consisting of financial instruments that may be included in the same investment vehicle"})
 
@@ -146,8 +143,7 @@
                                       :rdf/type :owl/Restriction}],
                        :rdf/type    :owl/Class},
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
-                     :fibo-sec-sec-pls/InstrumentPoolAsAsset],
+                     :fibo-fnd-acc-aeq/FinancialAsset],
    :skos/definition "financial asset in the form of an instrument pool"})
 
 (def ManagedInvestment
@@ -163,12 +159,11 @@
                       :fibo-fbc-fct-fse/FinancialInstitution,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-sec-pls/PooledFund
-                     :fibo-sec-sec-pls/ManagedInvestment
-                     :cmns-col/Collection
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-pls/Pool
+                     :cmns-col/Collection
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/AmountOfMoney,
                       :rdf/type           :owl/Restriction}],
@@ -187,8 +182,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
                       :rdf/type           :owl/Restriction}
-                     :cmns-col/Collection
-                     :fibo-sec-sec-pls/Pool],
+                     :cmns-col/Collection],
    :skos/definition
    "a combination of resources for a common purpose or benefit"})
 
@@ -204,7 +198,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
    :rdfs/label "pool constituent",
-   :rdfs/subClassOf [:cmns-col/Constituent :fibo-sec-sec-pls/PoolConstituent],
+   :rdfs/subClassOf :cmns-col/Constituent,
    :skos/definition "component of a pool"})
 
 (def PooledFund
@@ -218,11 +212,10 @@
                       :owl/someValuesFrom :fibo-fnd-acc-cur/AmountOfMoney,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-pls/Pool
-                     :fibo-sec-sec-pls/PooledFund
-                     :cmns-col/Collection
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :cmns-col/Collection],
    :skos/definition
    "a pool of funds that a group of investors combines for common benefit",
    :skos/example
@@ -240,15 +233,14 @@
                       :fibo-sec-sec-pls/SecuritiesPoolConstituent,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-sec-pls/InstrumentPool
-                     :fibo-sec-sec-pls/SecuritiesPool
-                     :cmns-col/Collection
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/Pool],
+                     :fibo-sec-sec-pls/Pool
+                     :cmns-col/Collection],
    :skos/definition
    "a pool of securities organized for the purpose of issuing notes against those securities"})
 
@@ -266,6 +258,5 @@
    :rdfs/label "securities pool constituent",
    :rdfs/subClassOf [:fibo-sec-sec-pls/PoolConstituent
                      :fibo-fbc-fi-fi/Security
-                     :fibo-sec-sec-pls/SecuritiesPoolConstituent
                      :cmns-col/Constituent],
    :skos/definition "security that is included in a securities pool"})

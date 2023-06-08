@@ -74,7 +74,6 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-agr-ctr/ContractualDefinition
                      :fibo-der-drc-ma/MasterAgreementElement
-                     :fibo-der-drc-ma/CreditEventDefinition
                      :fibo-fnd-agr-ctr/ContractualElement],
    :skos/definition
    #voc/lstr
@@ -94,8 +93,7 @@
                       :owl/someValuesFrom
                       :fibo-der-drc-ma/CreditSupportBeneficiary,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-agr-ctr/Contract
-                     :fibo-der-drc-ma/CreditSupportAgreement]})
+                     :fibo-fnd-agr-ctr/Contract]})
 
 (def CreditSupportBeneficiary
   "credit support beneficiary"
@@ -104,8 +102,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "credit support beneficiary@en",
-   :rdfs/subClassOf [:fibo-fnd-agr-ctr/Counterparty
-                     :fibo-der-drc-ma/CreditSupportBeneficiary]})
+   :rdfs/subClassOf :fibo-fnd-agr-ctr/Counterparty})
 
 (def CreditSupportDefaultEvent
   "Failure of some Credit Support Agreement."
@@ -122,8 +119,7 @@
                       :fibo-der-drc-ma/CreditSupportAgreement,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-dt-oc/Occurrence
-                     :fibo-fbc-dae-cre/CreditEvent
-                     :fibo-der-drc-ma/CreditSupportDefaultEvent],
+                     :fibo-fbc-dae-cre/CreditEvent],
    :skos/definition #voc/lstr "Failure of some Credit Support Agreement.@en"})
 
 (def CrossDefaultProvisions
@@ -134,7 +130,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "cross default provisions@en",
    :rdfs/subClassOf [:fibo-der-drc-ma/MasterAgreementContractualCommitment
-                     :fibo-der-drc-ma/CrossDefaultProvisions
                      :fibo-fnd-agr-ctr/ContractualCommitment
                      :fibo-der-drc-ma/MasterAgreementElement
                      :fibo-fnd-agr-ctr/ContractualElement]})
@@ -148,7 +143,6 @@
    :rdfs/label #voc/lstr "currency specification term@en",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractualDefinition
                      :fibo-der-drc-ma/MasterAgreementElement
-                     :fibo-der-drc-ma/CurrencySpecificationTerm
                      :fibo-fnd-agr-ctr/ContractualElement],
    :skos/definition
    #voc/lstr "Term defining the currency or currencies for payments.@en",
@@ -162,8 +156,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "default interest obligation@en",
-   :rdfs/subClassOf [:fibo-fnd-law-lcap/ContractualObligation
-                     :fibo-der-drc-ma/DefaultInterestObligation],
+   :rdfs/subClassOf :fibo-fnd-law-lcap/ContractualObligation,
    :skos/definition
    #voc/lstr
     "Obligation in respect of defaults in the performance of any payment obligation.@en",
@@ -181,8 +174,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "delivery obligation@en",
-   :rdfs/subClassOf [:fibo-fnd-law-lcap/ContractualObligation
-                     :fibo-der-drc-ma/DeliveryObligation],
+   :rdfs/subClassOf :fibo-fnd-law-lcap/ContractualObligation,
    :skos/definition
    #voc/lstr
     "Obligation to make deliveries on transactions transacted under the Master Agreement, as specified in any Confirmation made by that party.@en"})
@@ -198,8 +190,7 @@
                       :owl/someValuesFrom
                       :fibo-der-drc-ma/MasterAgreementElement,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-agr-ctr/MasterAgreement
-                     :fibo-der-drc-ma/DerivativeTransactionMasterAgreement],
+                     :fibo-fnd-agr-ctr/MasterAgreement],
    :skos/definition
    #voc/lstr
     "a master agreement covering derivatives transactions to be carried out between the parties to this contract@en",
@@ -222,8 +213,7 @@
                      {:owl/onProperty :fibo-der-drc-ma/hasEarlyTerminationDate,
                       :owl/someValuesFrom :cmns-dt/Date,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-agr-ctr/ContractualCommitment
-                     :fibo-der-drc-ma/EarlyTermination],
+                     :fibo-fnd-agr-ctr/ContractualCommitment],
    :skos/definition
    "termination of an agreement for any reason prior to its expiration date"})
 
@@ -238,7 +228,6 @@
                 "master agreement account change notification obligation@en",
    :rdfs/subClassOf
    [:fibo-der-drc-ma/MasterAgreementChangeNotificationObligation
-    :fibo-der-drc-ma/MasterAgreementAccountChangeNotificationObligation
     :fibo-fnd-law-lcap/ContractualObligation],
    :skos/definition
    #voc/lstr
@@ -256,9 +245,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "master agreement change notification obligation@en",
-   :rdfs/subClassOf
-   [:fibo-fnd-law-lcap/ContractualObligation
-    :fibo-der-drc-ma/MasterAgreementChangeNotificationObligation],
+   :rdfs/subClassOf :fibo-fnd-law-lcap/ContractualObligation,
    :skos/definition
    #voc/lstr
     "The obligtaion to notify the counterparty to this agreement, of any changes in details.@en"})
@@ -278,7 +265,6 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-agr-ctr/ConditionPrecedent
                      :fibo-der-drc-ma/MasterAgreementElement
-                     :fibo-der-drc-ma/MasterAgreementConditionsPrecedent
                      :fibo-fnd-agr-ctr/ContractualElement],
    :skos/definition
    #voc/lstr
@@ -296,7 +282,6 @@
    :rdfs/label #voc/lstr "master agreement contractual commitment@en",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractualCommitment
                      :fibo-der-drc-ma/MasterAgreementElement
-                     :fibo-der-drc-ma/MasterAgreementContractualCommitment
                      :fibo-fnd-agr-ctr/ContractualElement]})
 
 (def MasterAgreementEarlyTerminationProvisions
@@ -314,12 +299,11 @@
      :owl/someValuesFrom :fibo-der-drc-ma/MasterAgreementEarlyTerminationRight,
      :rdf/type           :owl/Restriction}
     :fibo-der-drc-ma/MasterAgreementTerminationProvision
-    :fibo-der-drc-ma/MasterAgreementEarlyTerminationProvisions
+    :fibo-fnd-agr-ctr/TerminationProvision
+    :fibo-der-drc-ma/MasterAgreementElement
     {:owl/onProperty     :fibo-der-drc-ma/describesTreatmentOf,
      :owl/someValuesFrom :fibo-der-drc-ma/MasterAgreementTerminationEvent,
      :rdf/type           :owl/Restriction}
-    :fibo-der-drc-ma/MasterAgreementElement
-    :fibo-fnd-agr-ctr/TerminationProvision
     :fibo-fnd-agr-ctr/ContractualElement],
    :skos/definition
    #voc/lstr
@@ -335,8 +319,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "master agreement early termination right@en",
-   :rdfs/subClassOf [:fibo-fnd-law-lcap/ContractualRight
-                     :fibo-der-drc-ma/MasterAgreementEarlyTerminationRight],
+   :rdfs/subClassOf :fibo-fnd-law-lcap/ContractualRight,
    :skos/definition
    #voc/lstr
     "a contractual right of a party to the master agreement to terminate the agreement early@en"})
@@ -348,8 +331,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "master agreement element@en",
-   :rdfs/subClassOf [:fibo-fnd-agr-ctr/ContractualElement
-                     :fibo-der-drc-ma/MasterAgreementElement],
+   :rdfs/subClassOf :fibo-fnd-agr-ctr/ContractualElement,
    :skos/definition
    #voc/lstr
     "a contract element specific to a master agreement governing derivatives transactions between contract parties@en",
@@ -369,7 +351,6 @@
                       :fibo-fnd-law-lcap/ContractualObligation,
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-ma/MasterAgreementContractualCommitment
-                     :fibo-der-drc-ma/MasterAgreementObligationTerms
                      :fibo-fnd-agr-ctr/ContractualCommitment
                      :fibo-der-drc-ma/MasterAgreementElement
                      :fibo-fnd-agr-ctr/ContractualElement],
@@ -391,8 +372,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "master agreement representation@en",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/Representation
-                     :fibo-fnd-agr-ctr/ContractualElement
-                     :fibo-der-drc-ma/MasterAgreementRepresentation],
+                     :fibo-fnd-agr-ctr/ContractualElement],
    :skos/definition
    #voc/lstr
     "a representation made by one of the parties included in the master agreement@en"})
@@ -409,13 +389,11 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label
    #voc/lstr "master agreement right to termination following default event@en",
-   :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-ma/invokedInEventOf.1,
-     :owl/someValuesFrom :fibo-fbc-dae-cre/CreditEvent,
-     :rdf/type           :owl/Restriction}
-    :fibo-der-drc-ma/MasterAgreementEarlyTerminationRight
-    :fibo-der-drc-ma/MasterAgreementRightToTerminationFollowingDefaultEvent
-    :fibo-fnd-law-lcap/ContractualRight],
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-der-drc-ma/invokedInEventOf.1,
+                      :owl/someValuesFrom :fibo-fbc-dae-cre/CreditEvent,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-der-drc-ma/MasterAgreementEarlyTerminationRight
+                     :fibo-fnd-law-lcap/ContractualRight],
    :skos/definition
    #voc/lstr
     "the right to terminate a master agreement following an event of default@en"})
@@ -433,13 +411,12 @@
    :rdfs/label
    #voc/lstr
     "master agreement right to termination following termination event@en",
-   :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-der-drc-ma/invokedInEventOf,
-     :owl/someValuesFrom :fibo-der-drc-ma/MasterAgreementTerminationEvent,
-     :rdf/type           :owl/Restriction}
-    :fibo-der-drc-ma/MasterAgreementEarlyTerminationRight
-    :fibo-der-drc-ma/MasterAgreementRightToTerminationFollowingTerminationEvent
-    :fibo-fnd-law-lcap/ContractualRight],
+   :rdfs/subClassOf [{:owl/onProperty :fibo-der-drc-ma/invokedInEventOf,
+                      :owl/someValuesFrom
+                      :fibo-der-drc-ma/MasterAgreementTerminationEvent,
+                      :rdf/type :owl/Restriction}
+                     :fibo-der-drc-ma/MasterAgreementEarlyTerminationRight
+                     :fibo-fnd-law-lcap/ContractualRight],
    :skos/definition
    #voc/lstr
     "the right to terminate the agreement following some termination-triggering event@en"})
@@ -451,8 +428,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "master agreement termination event@en",
-   :rdfs/subClassOf [:fibo-fnd-dt-oc/OccurrenceKind
-                     :fibo-der-drc-ma/MasterAgreementTerminationEvent],
+   :rdfs/subClassOf :fibo-fnd-dt-oc/OccurrenceKind,
    :skos/definition
    #voc/lstr
     "\"Termination Event\" means an Illegality, a Tax Event or a Tax Event Upon Merger or, if specified to be applicable, a Credit Event Upon Merger or an Additional Termination Event.@en"})
@@ -473,7 +449,6 @@
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-agr-ctr/TerminationProvision
                      :fibo-der-drc-ma/MasterAgreementElement
-                     :fibo-der-drc-ma/MasterAgreementTerminationProvision
                      :fibo-fnd-agr-ctr/ContractualElement],
    :skos/definition
    #voc/lstr
@@ -491,7 +466,6 @@
                       :fibo-der-drc-ma/ObligationInRespectOfNetting,
                       :rdf/type :owl/Restriction}
                      :fibo-der-drc-ma/MasterAgreementContractualCommitment
-                     :fibo-der-drc-ma/NettingTerms
                      :fibo-fnd-agr-ctr/ContractualCommitment
                      :fibo-der-drc-ma/MasterAgreementElement
                      :fibo-fnd-agr-ctr/ContractualElement],
@@ -513,8 +487,7 @@
                       :owl/someValuesFrom
                       :fibo-fnd-pas-pas/TransactionConfirmation,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-law-lcap/ContractualObligation
-                     :fibo-der-drc-ma/ObligationInRespectOfNetting],
+                     :fibo-fnd-law-lcap/ContractualObligation],
    :skos/definition
    #voc/lstr
     "Some obligation on one or other party in respect of any netting up of amounts due under a combination of transactions transacted under this Master Agreement.@en"})
@@ -526,8 +499,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "other amounts obligation@en",
-   :rdfs/subClassOf [:fibo-fnd-law-lcap/ContractualObligation
-                     :fibo-der-drc-ma/OtherAmountsObligation],
+   :rdfs/subClassOf :fibo-fnd-law-lcap/ContractualObligation,
    :skos/definition
    #voc/lstr
     "Obligation in regard to other defaults on obligations. Example Contract Text: \"If, prior to the occurrence or effective designation of an Early Termination Date in respect of the relevant Transaction, a party defaults in the performance of any obligation required to be settled by delivery, it will compensate the other party on demand if and to the extent provided for in the relevant Confirmation or elsewhere in this Agreement. \"@en"})
@@ -542,8 +514,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "payment obligation@en",
-   :rdfs/subClassOf [:fibo-fnd-law-lcap/ContractualObligation
-                     :fibo-der-drc-ma/PaymentObligation],
+   :rdfs/subClassOf :fibo-fnd-law-lcap/ContractualObligation,
    :skos/definition
    #voc/lstr
     "Obligation to make payments on transactions transacted under the Master Agreement, as specified in any Confirmation made by that party.@en"})
@@ -556,7 +527,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "payment obligation as delivery@en",
    :rdfs/subClassOf [:fibo-der-drc-ma/PaymentObligation
-                     :fibo-der-drc-ma/PaymentObligationAsDelivery
                      :fibo-fnd-law-lcap/ContractualObligation],
    :skos/definition
    #voc/lstr
@@ -572,8 +542,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "payment place specification method@en",
-   :rdfs/subClassOf [:fibo-fnd-gao-obj/Strategy
-                     :fibo-der-drc-ma/PaymentPlaceSpecificationMethod],
+   :rdfs/subClassOf :fibo-fnd-gao-obj/Strategy,
    :skos/definition
    #voc/lstr
     "Selection of possible places to be specified for the payments in a Master Agreement.@en"})
@@ -588,10 +557,8 @@
    :rdfs/label
    #voc/lstr
     "payment place specified either in master agreement or confirmation@en",
-   :rdfs/subClassOf
-   [:fibo-der-drc-ma/PaymentPlaceSpecificationMethod
-    :fibo-der-drc-ma/PaymentPlaceSpecifiedEitherInMasterAgreementOrConfirmation
-    :fibo-fnd-gao-obj/Strategy]})
+   :rdfs/subClassOf [:fibo-der-drc-ma/PaymentPlaceSpecificationMethod
+                     :fibo-fnd-gao-obj/Strategy]})
 
 (def PaymentPlaceSpecifiedInConfirmationMessage
   "payment place specified in confirmation message"
@@ -601,7 +568,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "payment place specified in confirmation message@en",
    :rdfs/subClassOf [:fibo-der-drc-ma/PaymentPlaceSpecificationMethod
-                     :fibo-der-drc-ma/PaymentPlaceSpecifiedInConfirmationMessage
                      :fibo-fnd-gao-obj/Strategy]})
 
 (def PaymentPlaceSpecifiedInMasterAgreement
@@ -612,7 +578,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "payment place specified in master agreement@en",
    :rdfs/subClassOf [:fibo-der-drc-ma/PaymentPlaceSpecificationMethod
-                     :fibo-der-drc-ma/PaymentPlaceSpecifiedInMasterAgreement
                      :fibo-fnd-gao-obj/Strategy]})
 
 (def TaxWithholdingGrossupObligation
@@ -623,7 +588,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "tax withholding grossup obligation@en",
    :rdfs/subClassOf [:fibo-der-drc-ma/TaxWithholdingObligation
-                     :fibo-der-drc-ma/TaxWithholdingGrossupObligation
                      :fibo-fnd-law-lcap/ContractualObligation],
    :skos/definition
    #voc/lstr
@@ -640,7 +604,6 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "tax withholding liability@en",
    :rdfs/subClassOf [:fibo-der-drc-ma/TaxWithholdingObligation
-                     :fibo-der-drc-ma/TaxWithholdingLiability
                      :fibo-fnd-law-lcap/ContractualObligation],
    :skos/definition
    #voc/lstr
@@ -656,8 +619,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "tax withholding obligation@en",
-   :rdfs/subClassOf [:fibo-fnd-law-lcap/ContractualObligation
-                     :fibo-der-drc-ma/TaxWithholdingObligation],
+   :rdfs/subClassOf :fibo-fnd-law-lcap/ContractualObligation,
    :skos/definition #voc/lstr
                      "An obligation with regard to the payment of taxes.@en"})
 
@@ -819,8 +781,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "has beneficiary@en",
    :rdfs/range :fibo-der-drc-ma/CreditSupportBeneficiary,
-   :rdfs/subPropertyOf [:fibo-fnd-agr-ctr/hasCounterparty
-                        :fibo-der-drc-ma/hasBeneficiary]})
+   :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasCounterparty})
 
 (def hasEarlyTerminationDate
   "indicates a termination date that occurs prior to an explicit expiration date"
@@ -830,8 +791,7 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label #voc/lstr "has early termination date@en",
    :rdfs/range :cmns-dt/Date,
-   :rdfs/subPropertyOf [:fibo-fnd-arr-doc/hasTerminationDate
-                        :fibo-der-drc-ma/hasEarlyTerminationDate],
+   :rdfs/subPropertyOf :fibo-fnd-arr-doc/hasTerminationDate,
    :skos/definition
    #voc/lstr
     "indicates a termination date that occurs prior to an explicit expiration date@en"})

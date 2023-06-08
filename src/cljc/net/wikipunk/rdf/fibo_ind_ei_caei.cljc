@@ -86,24 +86,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
    :rdfs/label "Canadian consumer price index",
    :rdfs/subClassOf
-   [:fibo-ind-ei-ei/ConsumerPriceIndex
-    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-     :owl/someValuesFrom :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
-     :rdf/type           :owl/Restriction}
-    {:owl/onClass    :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
+   [{:owl/onClass    :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
      :owl/qualifiedCardinality 1,
      :rdf/type       :owl/Restriction}
+    {:owl/hasValue   :fibo-ind-ei-caei/CanadianStatisticsPublisher,
+     :owl/onProperty :fibo-be-fct-pub/hasPublisher,
+     :rdf/type       :owl/Restriction}
+    :fibo-ind-ei-ei/ConsumerPriceIndex
+    {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+     :owl/someValuesFrom :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
+     :rdf/type           :owl/Restriction}
     {:owl/hasValue   :fibo-ind-ei-caei/StatisticsCanada,
      :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
      :owl/someValuesFrom :fibo-ind-ei-ei/FixedBasket,
-     :rdf/type           :owl/Restriction}
-    {:owl/hasValue   :fibo-ind-ei-caei/CanadianStatisticsPublisher,
-     :owl/onProperty :fibo-be-fct-pub/hasPublisher,
-     :rdf/type       :owl/Restriction}
-    :fibo-ind-ei-caei/CanadianConsumerPriceIndex],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "economic indicator representing a measure of changes over time in the prices of a fixed basket of consumer goods and services that Canadian private households consume"})
 
@@ -125,8 +124,7 @@
                           :owl/someValuesFrom :fibo-ind-ei-ei/UltimateConsumer,
                           :rdf/type           :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation
-    :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse],
+    :fibo-ind-ei-ei/CivilianNonInstitutionalPopulation],
    :skos/definition
    "a statistical universe consisting of all private households in Canada, with the exception of soldiers on military bases, people living on First Nations reserves, institutionalized persons, and households living in the rural areas of the three northern territories"})
 
@@ -141,22 +139,21 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
    :rdfs/label "Canadian producer price index",
-   :rdfs/subClassOf [:fibo-ind-ei-ei/ProducerPriceIndex
-                     {:owl/onProperty :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom
-                      {:owl/unionOf [:fibo-ind-ei-caei/IndustrialProductsSector
-                                     :fibo-ind-ei-caei/NewHousingSector
-                                     :fibo-ind-ei-caei/RawMaterialsSector],
-                       :rdf/type    :owl/Class},
-                      :rdf/type :owl/Restriction}
-                     {:owl/hasValue   :fibo-ind-ei-caei/StatisticsCanada,
+   :rdfs/subClassOf [{:owl/hasValue   :fibo-ind-ei-caei/StatisticsCanada,
                       :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
                       :rdf/type       :owl/Restriction}
                      {:owl/hasValue
                       :fibo-ind-ei-caei/CanadianStatisticsPublisher,
                       :owl/onProperty :fibo-be-fct-pub/hasPublisher,
                       :rdf/type :owl/Restriction}
-                     :fibo-ind-ei-caei/CanadianProducerPriceIndex],
+                     :fibo-ind-ei-ei/ProducerPriceIndex
+                     {:owl/onProperty :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom
+                      {:owl/unionOf [:fibo-ind-ei-caei/IndustrialProductsSector
+                                     :fibo-ind-ei-caei/NewHousingSector
+                                     :fibo-ind-ei-caei/RawMaterialsSector],
+                       :rdf/type    :owl/Class},
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "an economic indicator representing a measure of the change over time in the prices of a fixed-basket of domestic producer goods and services"})
 
@@ -182,8 +179,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
    :rdfs/label "industrial products sector",
-   :rdfs/subClassOf [:fibo-fnd-arr-cls/IndustrySectorClassifier
-                     :fibo-ind-ei-caei/IndustrialProductsSector],
+   :rdfs/subClassOf :fibo-fnd-arr-cls/IndustrySectorClassifier,
    :skos/definition
    "a classifier for a sector of the economy used for price indices focused on major commodities sold by manufacturers in Canada"})
 
@@ -196,8 +192,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
    :rdfs/label "new housing sector",
-   :rdfs/subClassOf [:fibo-fnd-arr-cls/IndustrySectorClassifier
-                     :fibo-ind-ei-caei/NewHousingSector],
+   :rdfs/subClassOf :fibo-fnd-arr-cls/IndustrySectorClassifier,
    :skos/definition
    "a classifier for a sector of the economy used for price indices focused on contractors' selling prices of new residential houses, where detailed specifications pertaining to each house remain the same between two consecutive periods"})
 
@@ -210,8 +205,7 @@
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
    :rdfs/label "raw materials sector",
-   :rdfs/subClassOf [:fibo-fnd-arr-cls/IndustrySectorClassifier
-                     :fibo-ind-ei-caei/RawMaterialsSector],
+   :rdfs/subClassOf :fibo-fnd-arr-cls/IndustrySectorClassifier,
    :skos/definition
    "a classifier used for price indices related to raw materials purchased by industries in Canada for further processing"})
 

@@ -51,11 +51,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/",
    :rdfs/label #voc/lstr "active@en",
    :rdfs/subClassOf [:fibo-md-temx-trs/SecurityTradingStatus
-                     :fibo-md-temx-trs/Active
+                     :fibo-fnd-arr-lif/LifecycleStatus
                      {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition #voc/lstr "Security is actively traded@en"})
 
 (def ActivelyTrading
@@ -67,11 +66,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/",
    :rdfs/label #voc/lstr "actively trading@en",
    :rdfs/subClassOf [:fibo-md-temx-trs/ExchangeSecurityTradingStatus
-                     :fibo-md-temx-trs/ActivelyTrading
+                     :fibo-fnd-arr-lif/LifecycleStatus
                      {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-sec-sec-lst/Listing,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Security is actively traded on the exchange or trading facility@en"})
@@ -86,8 +84,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-sec-sec-lst/Listing,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus
-                     :fibo-md-temx-trs/ExchangeSecurityTradingStatus],
+                     :fibo-fnd-arr-lif/LifecycleStatus],
    :skos/definition
    #voc/lstr
     "trading status of a listed security on a given trading exchange@en"})
@@ -100,11 +97,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/",
    :rdfs/label #voc/lstr "inactive@en",
    :rdfs/subClassOf [:fibo-md-temx-trs/SecurityTradingStatus
-                     :fibo-md-temx-trs/Inactive
+                     :fibo-fnd-arr-lif/LifecycleStatus
                      {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus]})
+                      :rdf/type           :owl/Restriction}]})
 
 (def Issued
   "The security has been issued into the secondary market."
@@ -114,11 +110,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/",
    :rdfs/label #voc/lstr "issued@en",
    :rdfs/subClassOf [:fibo-md-temx-trs/SecurityLifecycleStatus
-                     :fibo-md-temx-trs/Issued
+                     :fibo-fnd-arr-lif/LifecycleStatus
                      {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr "The security has been issued into the secondary market.@en"})
 
@@ -132,8 +127,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus
-                     :fibo-md-temx-trs/SecurityLifecycleStatus],
+                     :fibo-fnd-arr-lif/LifecycleStatus],
    :skos/definition #voc/lstr "status of a security within its lifecycle@en"})
 
 (def SecurityTradingStatus
@@ -146,8 +140,7 @@
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus
-                     :fibo-md-temx-trs/SecurityTradingStatus],
+                     :fibo-fnd-arr-lif/LifecycleStatus],
    :skos/definition
    #voc/lstr
     "status of the security in terms of whether it is trading or not, and any special considerations relating to trading@en",
@@ -163,11 +156,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/",
    :rdfs/label #voc/lstr "trading halted@en",
    :rdfs/subClassOf [:fibo-md-temx-trs/ExchangeSecurityTradingStatus
-                     :fibo-md-temx-trs/TradingHalted
+                     :fibo-fnd-arr-lif/LifecycleStatus
                      {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-sec-sec-lst/Listing,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus]})
+                      :rdf/type           :owl/Restriction}]})
 
 (def WhenDistributed
   "Used to refer to a security that trades after the date of issue but before the time at which the certificates are delivered"
@@ -177,11 +169,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/",
    :rdfs/label #voc/lstr "when distributed@en",
    :rdfs/subClassOf [:fibo-md-temx-trs/SecurityLifecycleStatus
-                     :fibo-md-temx-trs/WhenDistributed
+                     :fibo-fnd-arr-lif/LifecycleStatus
                      {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Used to refer to a security that trades after the date of issue but before the time at which the certificates are delivered@en"})
@@ -194,11 +185,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/",
    :rdfs/label #voc/lstr "when issued@en",
    :rdfs/subClassOf [:fibo-md-temx-trs/SecurityLifecycleStatus
-                     :fibo-md-temx-trs/WhenIssued
+                     :fibo-fnd-arr-lif/LifecycleStatus
                      {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "When Issued or Gray Market trading is when a security is traded ahead of the date at which it is to be issued.@en"})
@@ -213,11 +203,10 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/",
    :rdfs/label #voc/lstr "worthless@en",
    :rdfs/subClassOf [:fibo-md-temx-trs/SecurityLifecycleStatus
-                     :fibo-md-temx-trs/Worthless
+                     :fibo-fnd-arr-lif/LifecycleStatus
                      {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    #voc/lstr
     "Announcement by the regulator that the security has become worthless.@en"})
