@@ -42,6 +42,7 @@
    [net.wikipunk.rdf.cmns-av]
    [net.wikipunk.rdf.cmns-dt]
    [net.wikipunk.rdf.cmns-cxtdsg]
+   [net.wikipunk.rdf.cmns-cxtid]
    [net.wikipunk.rdf.cmns-col]
    [net.wikipunk.rdf.cmns-txt]
    [net.wikipunk.rdf.cmns-dsg]
