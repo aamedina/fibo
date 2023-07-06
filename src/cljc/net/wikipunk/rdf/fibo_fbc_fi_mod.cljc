@@ -40,9 +40,12 @@
    :dcterms/abstract
    "The financial instruments module includes ontologies defining general purpose financial instruments, i.e., agreements, contracts, notes, equities, options, debt instruments, and so forth, some of which may be negotiable.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/"}],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO FBC Financial Instruments Module"

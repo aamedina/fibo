@@ -40,9 +40,12 @@
    :dcterms/abstract
    "This module contains ontologies of general accounting concepts including currency and the ISO 4217 reference currency codes.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"}],
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO FND Accounting Module"

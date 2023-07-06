@@ -38,7 +38,8 @@
    :dcterms/abstract
    "This module covers time-dependent concepts related to debt instruments, such as pricing, yields and analytics.",
    :dcterms/hasPart
-   "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/DebtTemporal/DebtAnalytics/"},
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Market Data (MD) Debt Temporal Module"

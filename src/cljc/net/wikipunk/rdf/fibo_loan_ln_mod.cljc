@@ -50,10 +50,14 @@
     "Adaptive, Inc."
     "Semantic Arts, Inc."],
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/"}],
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO LOAN Loans General Module"

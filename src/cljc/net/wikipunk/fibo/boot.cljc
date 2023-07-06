@@ -2180,6 +2180,26 @@
    :rdfa/prefix "gleif-L2"
    :rdf/type :rdfa/PrefixMapping})
 
+(def gleif-geo
+  {:dcat/downloadURL "https://www.gleif.org/ontology/v1.0/Geocoding/ontology.ttl"
+   :rdfa/uri "https://www.gleif.org/ontology/Geocoding/"
+   :rdfa/prefix "gleif-geo"
+   :rdf/type :rdfa/PrefixMapping
+   :rdf/ns-prefix-map
+   {"dcterms"    "http://purl.org/dc/terms/",
+    "gleif-base" "https://www.gleif.org/ontology/Base/",
+    "gleif-geo"  "https://www.gleif.org/ontology/Geocoding/",
+    "lcc-cr"     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+    "owl"        "http://www.w3.org/2002/07/owl#",
+    "rdf"        "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs"       "http://www.w3.org/2000/01/rdf-schema#",
+    "skos"       "http://www.w3.org/2004/02/skos/core#",
+    "vann"       "http://purl.org/vocab/vann/",
+    "voaf"       "http://purl.org/vocommons/voaf#",
+    "geo"        "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    "xml"        "http://www.w3.org/XML/1998/namespace",
+    "xsd"        "http://www.w3.org/2001/XMLSchema#"}})
+
 (def EntityLegalForm
   {:dcat/downloadURL #_"https://lov.linkeddata.es/dataset/lov/vocabs/gleif-elf/versions/2019-02-01.n3"
    "https://www.gleif.org/ontology/v1.0/EntityLegalForm/ontology.ttl"
@@ -2239,3 +2259,13 @@
   {:rdfa/prefix      "gleif-repex-data"
    :rdfa/uri         "https://rdf.gleif.org/ReportingException/"
    :rdf/type         :rdfa/PrefixMapping})
+
+(def lcc-3166-1-adj
+  {:rdfa/uri    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes-Adjunct/"
+   :rdfa/prefix "lcc-3166-1-adj"
+   :rdf/type    :rdfa/PrefixMapping})
+
+(def lcc-3166-2-adj
+  {:rdfa/uri    "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes-Adjunct/"
+   :rdfa/prefix "lcc-3166-2-adj"
+   :rdf/type    :rdfa/PrefixMapping})

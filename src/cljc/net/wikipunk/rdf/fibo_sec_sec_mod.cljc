@@ -64,16 +64,26 @@
     "Dassault Systemes / No Magic"
     "Wells Fargo Bank, N.A."],
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"}],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Securities and Equities (SEC) Securities Module"

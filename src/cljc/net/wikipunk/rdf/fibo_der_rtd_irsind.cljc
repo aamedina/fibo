@@ -186,7 +186,7 @@
 (def ContractLeg1-IY7VKEUR45886-NotionalAmount
   "contract leg 1 IY7VKEUR45886 notional amount"
   {:db/ident :fibo-der-rtd-irsind/ContractLeg1-IY7VKEUR45886-NotionalAmount,
-   :fibo-fnd-acc-cur/hasAmount 1286805,
+   :fibo-fnd-acc-cur/hasAmount 1286805M,
    :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/Euro,
    :rdf/type [:fibo-fnd-acc-cur/MonetaryAmount :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -267,7 +267,7 @@
 (def ContractLeg2-IY7VKEUR45886-NotionalAmount
   "contract leg 2 IY7VKEUR45886 notional amount"
   {:db/ident :fibo-der-rtd-irsind/ContractLeg2-IY7VKEUR45886-NotionalAmount,
-   :fibo-fnd-acc-cur/hasAmount 1286805,
+   :fibo-fnd-acc-cur/hasAmount 1286805M,
    :fibo-fnd-acc-cur/hasCurrency :fibo-fnd-acc-4217/Euro,
    :rdf/type [:fibo-fnd-acc-cur/MonetaryAmount :owl/NamedIndividual],
    :rdfs/isDefinedBy

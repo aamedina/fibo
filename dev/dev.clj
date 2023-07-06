@@ -7,6 +7,7 @@
   See also https://github.com/stuartsierra/component.repl"
   (:require
    [arachne.aristotle.registry :as reg]
+   [clj-http.client :as http]
    [clojure.datafy :refer [datafy]]
    [clojure.edn :as edn]
    [clojure.java.io :as io]
@@ -30,7 +31,8 @@
    [net.wikipunk.mop :as mop :refer [isa? descendants ancestors parents]]
    [zprint.core :as zprint]
    [datomic.client.api :as d]
-   [net.wikipunk.punk.db :as db])
+   [net.wikipunk.punk.db :as db]
+   [xtdb.api :as xt])
   (:refer-clojure :exclude [isa? descendants ancestors parents]))
 
 (set-init
@@ -44,9 +46,28 @@
 (prefer-method db/infer-datomic-type :dc11/description :owl/AnnotationProperty)
 (prefer-method db/infer-datomic-type :dcterms/source :owl/AnnotationProperty)
 (defmethod db/infer-datomic-type :dcterms/source [_] :db.type/string)
+(defmethod db/infer-datomic-type :dc11/rights [_] :db.type/string)
+(defmethod db/infer-datomic-type :dc11/contributor [_] :db.type/string)
+(prefer-method db/infer-datomic-type :dc11/contributor :owl/AnnotationProperty)
+(prefer-method db/infer-datomic-type :dc11/contributor :dc11/creator)
+(prefer-method db/infer-datomic-type :dc11/rights :owl/AnnotationProperty)
 (prefer-method db/infer-datomic-type :dc11/date :owl/AnnotationProperty)
 (prefer-method db/infer-datomic-type :dc11/title :owl/AnnotationProperty)
 (prefer-method db/infer-datomic-type :dc11/creator :owl/AnnotationProperty)
+(defmethod db/infer-datomic-type :cmns-txt/hasTextValue [_] :db.type/string)
+(defmethod db/infer-datomic-type :lcc-lr/hasName [_] :db.type/string)
+(defmethod db/infer-datomic-type :fibo-sec-sec-lst/hasListingDate [_] :db.type/string)
+(defmethod db/infer-datomic-type :fibo-fnd-plc-adr/requiresSecondaryUnitRange [_] :db.type/boolean)
+(defmethod db/infer-datomic-type :cmns-dt/hasObservedDateTime [_] :db.type/instant)
+(defmethod db/infer-datomic-type :fibo-fnd-plc-loc/hasCityName [_] :db.type/string)
+(defmethod db/infer-datomic-type :fibo-fnd-utl-alx/isCalculatedViaMethodology [_] :db.type/string)
+(defmethod db/infer-datomic-type :fibo-fbc-fct-ra/hasRegistrationDate [_] :db.type/string)
+(defmethod db/infer-datomic-type :fibo-fbc-fct-breg/hasRenewalDate [_] :db.type/instant)
+(defmethod db/infer-datomic-type :fibo-fbc-fct-breg/hasRegistrationRevisionDate [_] :db.type/instant)
+(defmethod db/infer-datomic-type :fibo-fbc-fct-breg/hasInitialRegistrationDate [_] :db.type/instant)
+(defmethod db/infer-datomic-type :rdfs/label [_] :db.type/string)
+(prefer-method db/infer-datomic-type :rdfs/label :owl/AnnotationProperty)
+(prefer-method db/infer-datomic-type :dc11/title :rdfs/label)
 
 (comment
   (def boot-db (db/test-bootstrap (:db system))))

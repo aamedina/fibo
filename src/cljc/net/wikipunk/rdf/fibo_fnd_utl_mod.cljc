@@ -39,8 +39,10 @@
    :dcterms/abstract
    "The utilities module includes ontologies that provide metadata and other basic concepts to be used in other ontologies.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}],
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Foundations (FND) Utilities Module"

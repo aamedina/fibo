@@ -273,7 +273,7 @@
    :db/ident
    :fibo-fbc-fct-usind/BNYMellonNationalAssociationBusinessEntityIdentifier-SD,
    :fibo-fbc-fct-breg/hasEntityStatus :fibo-fbc-fct-breg/ActiveStatus,
-   :fibo-fbc-fct-breg/hasInitialRegistrationDate "1997-06-05",
+   :fibo-fbc-fct-breg/hasInitialRegistrationDate #inst "1997-06-05",
    :fibo-fbc-fct-ra/isRegisteredIn
    :fibo-fbc-fct-usjrga/SouthDakotaBusinessInformationRegistry,
    :fibo-fnd-rel-rel/hasTag "FK010222",
@@ -635,7 +635,7 @@
 (def CitiCardsSouthDakotaAcceptanceCorpOwnership
   "entity ownership context for Citi Cards South Dakota Acceptance Corp., a wholly owned subsidiary of Citigroup Inc."
   {:db/ident :fibo-fbc-fct-usind/CitiCardsSouthDakotaAcceptanceCorpOwnership,
-   :fibo-be-le-lei/hasOwnershipPercentage 100,
+   :fibo-be-le-lei/hasOwnershipPercentage 100M,
    :fibo-be-oac-opty/hasOwnedEntity
    :fibo-fbc-fct-usind/CitiCardsSouthDakotaAcceptanceCorp-US-DE,
    :fibo-be-oac-opty/hasOwningEntity :fibo-fbc-fct-usind/CitigroupInc-US-DE,
@@ -820,7 +820,7 @@
 (def CitibankNAOwnership
   "entity ownership context for Citibank, N.A., a wholly owned subsidiary of Citicorp LLC"
   {:db/ident :fibo-fbc-fct-usind/CitibankNAOwnership,
-   :fibo-be-le-lei/hasOwnershipPercentage 100,
+   :fibo-be-le-lei/hasOwnershipPercentage 100M,
    :fibo-be-oac-opty/hasOwnedEntity :fibo-fbc-fct-usind/CitibankNA-US-DE,
    :fibo-be-oac-opty/hasOwningEntity :fibo-fbc-fct-usind/CiticorpLLC-US-DE,
    :fibo-fnd-agr-ctr/isQualifiedBy
@@ -932,7 +932,7 @@
 (def CiticorpLLCOwnership
   "entity ownership context for Citicorp LLC, a wholly owned subsidiary of Citigroup Inc."
   {:db/ident :fibo-fbc-fct-usind/CiticorpLLCOwnership,
-   :fibo-be-le-lei/hasOwnershipPercentage 100,
+   :fibo-be-le-lei/hasOwnershipPercentage 100M,
    :fibo-be-oac-opty/hasOwnedEntity :fibo-fbc-fct-usind/CiticorpLLC-US-DE,
    :fibo-be-oac-opty/hasOwningEntity :fibo-fbc-fct-usind/CitigroupInc-US-DE,
    :fibo-fnd-agr-ctr/isQualifiedBy
@@ -2453,7 +2453,7 @@
 (def WFCHoldingsLLCOwnership
   "entity ownership context for WFC Holdings, LLC, a wholly-owned subsidiary of Wells Fargo & Company"
   {:db/ident :fibo-fbc-fct-usind/WFCHoldingsLLCOwnership,
-   :fibo-be-le-lei/hasOwnershipPercentage 100,
+   :fibo-be-le-lei/hasOwnershipPercentage 100M,
    :fibo-be-oac-opty/hasOwnedEntity :fibo-fbc-fct-usind/WFCHoldingsLLC-US-DE,
    :fibo-be-oac-opty/hasOwningEntity
    :fibo-fbc-fct-usind/WellsFargoAndCompany-US-DE,

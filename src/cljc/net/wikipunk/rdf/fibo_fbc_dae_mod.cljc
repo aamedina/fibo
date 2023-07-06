@@ -40,10 +40,14 @@
    :dcterms/abstract
    "The debt and equities module includes ontologies describing concepts that are common to debt and equity instruments, as well as across debt instruments, such as loans, bonds, asset-backed securities, and so forth.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/"}],
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Financial Business and Commerce (FBC) Debt and Equities Module"
     "FIBO FBC Debt and Equities Module"],

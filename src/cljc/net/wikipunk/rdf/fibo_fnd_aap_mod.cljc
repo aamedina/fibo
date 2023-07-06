@@ -40,8 +40,10 @@
    :dcterms/abstract
    "This module contains ontologies of concepts relating to types of autonomous entity, that is things in the world which are able to determine their own behavior. Includes ontologies for people and for autononomous entities in general.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"}],
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Foundations (FND) Agents and People Module"

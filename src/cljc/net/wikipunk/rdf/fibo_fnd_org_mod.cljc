@@ -40,8 +40,10 @@
    :dcterms/abstract
    "This module includes ontologies defining organizations, features of an organization and different types of organization. They are purposefully underspecified to facilitate mapping to specific organization ontologies, such as the W3C organization and formal organization ontologies, organization from a BMM or BPMN perspective, organization from a records management (RMS) perspective, and so forth.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"}],
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO FND Organizations Module"

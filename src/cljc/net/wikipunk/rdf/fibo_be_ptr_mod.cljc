@@ -40,7 +40,8 @@
    :dcterms/abstract
    "The partnerships module contains ontologies that define concepts relating to types of partnerships, including incorporated and non-incorporated organizations. Partnerships are defined without reference to jurisdiction-specific legal forms. The abstractions distinguish between types of partnerships and related formation characteristics, as well as kinds of partners and types of partnership equity.",
    :dcterms/hasPart
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/"},
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO BE Partnerships Module"

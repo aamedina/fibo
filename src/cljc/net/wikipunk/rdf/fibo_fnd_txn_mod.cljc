@@ -39,9 +39,12 @@
    :dcterms/abstract
    "This module contains ontologies of Transaction concepts based on the Resource, Events Agents (REA) ontology for transactions.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MarketTransactions/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MarketTransactions/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/SecuritiesTransactions/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/"}],
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Foundations (FND) Transactions Module"

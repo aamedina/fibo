@@ -64,7 +64,8 @@
     "Dassault Systemes/No Magic"
     "Census Bureau (US Department of Commerce)"],
    :dcterms/hasPart
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO IND Indicators Module"

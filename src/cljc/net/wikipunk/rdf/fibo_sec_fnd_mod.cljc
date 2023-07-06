@@ -63,8 +63,9 @@
     "Exprentis"
     "State Street Bank and Trust"],
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"],
+   [{:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"}],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["EDMC Financial Industry Business Ontology (FIBO) Securities (SEC) Domain Funds Module"

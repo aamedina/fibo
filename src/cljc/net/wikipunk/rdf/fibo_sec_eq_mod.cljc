@@ -64,10 +64,14 @@
     "Bloomberg LP"
     "agnos.ai U.K. Ltd"],
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityCFIClassificationIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityCFIClassificationIndividuals/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquitiesExampleIndividuals/"}],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO SEC Equities Module"

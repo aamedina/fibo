@@ -39,8 +39,8 @@
    :dcterms/abstract
    "This module includes ontologies defining concepts that are highly contextual in nature, such as the meaning of a party in a role, an agent playing a role, and so on. Also covers independent roles themselves. \n\nThe definitions for agents and parties in roles provide general, reusable patterns for talking about agents performing roles in specific contexts. For example the same person in the context of aviation could be a pilot, and in the context of family could be a mother. These pattern will be refined in other FIBO ontologies to define concepts such as issuer, counterparty, underwriter, etc.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/"],
+   [{:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/"}],
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO FND Parties Module"

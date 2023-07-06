@@ -40,7 +40,7 @@
    :dcterms/abstract
    "The trusts module defines types of trusts as formally constituted organizations with specific parties as set down in law for trusts (trustor, trustee and beneficiary), each of these being signatories to a trust agreement.",
    :dcterms/hasPart
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Business Entities (BE) Trusts Module"

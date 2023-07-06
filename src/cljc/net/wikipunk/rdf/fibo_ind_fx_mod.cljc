@@ -64,7 +64,8 @@
     "Nordea Bank AB"
     "State Street Bank and Trust"],
    :dcterms/hasPart
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO IND Foreign Exchange Module"

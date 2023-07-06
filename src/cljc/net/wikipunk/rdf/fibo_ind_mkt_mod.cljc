@@ -64,8 +64,10 @@
     "Nordea Bank AB"
     "Statistics Canada"],
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/"
-    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"}],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Indices and Indicators (IND) Market Indices Module"

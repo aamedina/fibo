@@ -38,7 +38,8 @@
    :dcterms/abstract
    "This module provides time-dependent concepts specific to funds and other collective investment vehicles.",
    :dcterms/hasPart
-   "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/FundsTemporal/"},
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO MD Collective Investment Vehicles Temporal Module"

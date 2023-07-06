@@ -136,7 +136,7 @@
    :fibo-fnd-dt-fd/hasDateAdded
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-AppleIncCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves :fibo-sec-eq-eqind/XNASListedAppleIncCommonStock,
-   :fibo-fnd-utl-alx/hasWeight 1,
+   :fibo-fnd-utl-alx/hasWeight 1M,
    :rdf/type [:fibo-sec-sec-bsk/SecuritiesBasketConstituent
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -169,7 +169,7 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-IBMCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves
    :fibo-sec-eq-eqind/XNYSListedInternationalBusinessMachinesCorporationCommonStock,
-   :fibo-fnd-utl-alx/hasWeight 1,
+   :fibo-fnd-utl-alx/hasWeight 1M,
    :rdf/type [:fibo-sec-sec-bsk/SecuritiesBasketConstituent
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -202,7 +202,7 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheCoca-ColaCompanyCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves
    :fibo-sec-eq-eqind/XNYSListedTheCoca-ColaCompanyCommonStock,
-   :fibo-fnd-utl-alx/hasWeight 1,
+   :fibo-fnd-utl-alx/hasWeight 1M,
    :rdf/type [:fibo-sec-sec-bsk/SecuritiesBasketConstituent
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -235,7 +235,7 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheHomeDepotCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves
    :fibo-sec-eq-eqind/XNYSListedTheHomeDepotIncCommonStock,
-   :fibo-fnd-utl-alx/hasWeight 1,
+   :fibo-fnd-utl-alx/hasWeight 1M,
    :rdf/type [:fibo-sec-sec-bsk/SecuritiesBasketConstituent
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
@@ -269,7 +269,7 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheProctorAndGambleCompanyCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves
    :fibo-sec-eq-eqind/XNYSListedTheProctorAndGambleCompanyCommonStock,
-   :fibo-fnd-utl-alx/hasWeight 1,
+   :fibo-fnd-utl-alx/hasWeight 1M,
    :rdf/type [:fibo-sec-sec-bsk/SecuritiesBasketConstituent
               :owl/NamedIndividual],
    :rdfs/isDefinedBy

@@ -38,8 +38,10 @@
    :dcterms/abstract
    "This module covers time-dependent concepts common to all instruments, funds and loans, such as pricing, yields and analytics.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/"
-    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/"}],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Market Data (MD) Temporal Core Module"

@@ -39,12 +39,18 @@
    :dcterms/abstract
    "This module includes ontologies defining concepts to do with real or virtual places and the addresses to such places.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/"}],
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Foundations (FND) Places Module"

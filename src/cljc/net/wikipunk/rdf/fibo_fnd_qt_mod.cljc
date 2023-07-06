@@ -40,7 +40,8 @@
    :dcterms/abstract
    "This module contains ontologies that define concepts related to quantities, units, dimensions, and quantity values.",
    :dcterms/hasPart
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/"},
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Foundations (FND) Quantities Module"

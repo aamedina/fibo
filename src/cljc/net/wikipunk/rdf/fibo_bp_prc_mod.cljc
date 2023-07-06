@@ -38,7 +38,8 @@
    :dcterms/abstract
    "This module contains ontologies of Process concepts including concepts common to a range of business processes, along with basic financial context concepts.",
    :dcterms/hasPart
-   "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/"},
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Business Process (BP) Process Module"

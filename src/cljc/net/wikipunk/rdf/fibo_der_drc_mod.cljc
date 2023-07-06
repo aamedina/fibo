@@ -61,17 +61,28 @@
     "Commodities Futures Trading Commission (CFTC)"
     "John F. Tierney"],
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CommoditiesContracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/StructuredInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CommoditiesContracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/StructuredInstruments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/"}],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Derivatives (DER) Derivatives Contracts Module"

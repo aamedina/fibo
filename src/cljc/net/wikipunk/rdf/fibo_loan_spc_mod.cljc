@@ -8,7 +8,7 @@
    "This module contains ontologies of concepts descriptive of a range of loans, excluding real estate, including commercial and consumer, loans differentiated by purpose, and their differentiating characteristics.",
    :dcterms/issued #inst "2018-03-31T22:00:00.000-00:00",
    :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-03-31T22:00:00.000-00:00",
+   :dcterms/modified #inst "2023-06-27T22:00:00.000-00:00",
    :owl/imports
    ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
@@ -33,12 +33,12 @@
    "Metadata for the EDMC-FIBO Loans (LOAN) Loans - Specific Module"})
 
 (def LoansSpecificModule
-  "This module contains ontologies of concepts descriptive of a range of loans, excluding real estate, including commercial and consumer, loans differentiated by purpose, and their differentiating characteristics."
+  "This module contains ontologies of concepts descriptive of a range of loans, excluding real estate, including commercial and consumer loans differentiated by purpose."
   {:cmns-av/copyright ["Copyright (c) 2018-2023 Object Management Group, Inc."
                        "Copyright (c) 2018-2023 EDM Council, Inc."],
    :db/ident :fibo-loan-spc-mod/LoansSpecificModule,
    :dcterms/abstract
-   "This module contains ontologies of concepts descriptive of a range of loans, excluding real estate, including commercial and consumer, loans differentiated by purpose, and their differentiating characteristics.",
+   "This module contains ontologies of concepts descriptive of a range of loans, excluding real estate, including commercial and consumer loans differentiated by purpose.",
    :dcterms/contributor
    ["Tahoe Blue Ltd"
     "Semantic Arts, Inc."
@@ -51,11 +51,18 @@
     "agnos.ai U.K. Ltd"
     "Adaptive, Inc."],
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/StudentLoans/"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CommercialLoans/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/StudentLoans/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CommercialLoans/"}],
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO LOAN Loans Specific Module"

@@ -60,7 +60,7 @@
   "jurisdiction of the Courts of England and Wales"
   {:db/ident :fibo-be-ge-ukj/EnglandAndWalesJurisdiction,
    :fibo-be-ge-ge/isJurisdictionOf :fibo-be-ge-ukj/NationalAssemblyForWales,
-   :fibo-fnd-law-jur/hasReach :lcc-3166-2-gb/EnglandAndWales,
+   :fibo-fnd-law-jur/hasReach [:lcc-3166-2-gb/England :lcc-3166-2-gb/Wales],
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",

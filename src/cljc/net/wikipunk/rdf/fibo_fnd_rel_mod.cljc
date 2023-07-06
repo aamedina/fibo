@@ -39,7 +39,8 @@
    :dcterms/abstract
    "This module contains an ontology defining a number of reusable relationships. These are used, refined or restricted to define relationships among more specific concepts in other FIBO ontologies. Some of these relationships stand in for relationships which are defined in external standards ontologies.",
    :dcterms/hasPart
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Foundations (FND) Relations Module"

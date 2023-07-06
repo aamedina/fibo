@@ -115,8 +115,7 @@
 
 (def Apartment
   "room or a group of related rooms, among similar sets in one building, designed for use as a dwelling"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Apartment,
+  {:db/ident :fibo-fnd-plc-adr/Apartment,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -133,8 +132,7 @@
 
 (def Basement
   "part of a building consisting of rooms that are partly or entirely below ground"
-  {:cmns-txt/hasTextValue false,
-   :db/ident :fibo-fnd-plc-adr/Basement,
+  {:db/ident :fibo-fnd-plc-adr/Basement,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -151,8 +149,7 @@
 
 (def Building
   "relatively permanent enclosed structure, that has a roof and walls and stands more or less permanently in one place"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Building,
+  {:db/ident :fibo-fnd-plc-adr/Building,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -235,8 +232,7 @@
 
 (def Department
   "division of a large organization such as a government, university, business, or shop, dealing with a specific subject, commodity, or area of activity"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Department,
+  {:db/ident :fibo-fnd-plc-adr/Department,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -255,7 +251,6 @@
   "all of the rooms or areas on the same level of a building; a story"
   {:cmns-av/explanatoryNote
    "Labeling systems for floors vary from country to country, and may be specific to the building, for example, whether or not a 13th floor is identified as such tends to be on a case-by-case basis.",
-   :cmns-txt/hasTextValue true,
    :db/ident :fibo-fnd-plc-adr/Floor,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
@@ -273,8 +268,7 @@
 
 (def Front
   "side or part of a building that presents itself to view first, that faces the street; the most forward part of a building"
-  {:cmns-txt/hasTextValue false,
-   :db/ident :fibo-fnd-plc-adr/Front,
+  {:db/ident :fibo-fnd-plc-adr/Front,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -307,8 +301,7 @@
 
 (def Hangar
   "shed or shelter; any relatively wide structure used for housing airplanes or airships"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Hangar,
+  {:db/ident :fibo-fnd-plc-adr/Hangar,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -325,8 +318,7 @@
 
 (def Key
   "usually metal instrument by which the bolt of a lock is turned"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Key,
+  {:db/ident :fibo-fnd-plc-adr/Key,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -343,8 +335,7 @@
 
 (def Lobby
   "entrance hall, corridor, or vestibule, as in a public building, often serving as an anteroom; foyer"
-  {:cmns-txt/hasTextValue false,
-   :db/ident :fibo-fnd-plc-adr/Lobby,
+  {:db/ident :fibo-fnd-plc-adr/Lobby,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -361,8 +352,7 @@
 
 (def Lot
   "measured parcel of land having fixed boundaries and designated on a plot or survey"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Lot,
+  {:db/ident :fibo-fnd-plc-adr/Lot,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -379,8 +369,7 @@
 
 (def Lower
   "floor of a building in a multistory structure that is closer to ground level"
-  {:cmns-txt/hasTextValue false,
-   :db/ident :fibo-fnd-plc-adr/Lower,
+  {:db/ident :fibo-fnd-plc-adr/Lower,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -397,8 +386,7 @@
 
 (def Office
   "place where a particular kind of business is transacted or a service is supplied"
-  {:cmns-txt/hasTextValue false,
-   :db/ident :fibo-fnd-plc-adr/Office,
+  {:db/ident :fibo-fnd-plc-adr/Office,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -415,8 +403,7 @@
 
 (def Penthouse
   "structure or dwelling on the roof or top floor of a building"
-  {:cmns-txt/hasTextValue false,
-   :db/ident :fibo-fnd-plc-adr/Penthouse,
+  {:db/ident :fibo-fnd-plc-adr/Penthouse,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -531,8 +518,7 @@
 
 (def Pier
   "structure extending into navigable water for use as a landing place or promenade"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Pier,
+  {:db/ident :fibo-fnd-plc-adr/Pier,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -725,8 +711,7 @@
 
 (def Rear
   "side or part of a building at the back, located opposite its front"
-  {:cmns-txt/hasTextValue false,
-   :db/ident :fibo-fnd-plc-adr/Rear,
+  {:db/ident :fibo-fnd-plc-adr/Rear,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -757,8 +742,7 @@
 
 (def Room
   "partitioned part of the inside of a building"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Room,
+  {:db/ident :fibo-fnd-plc-adr/Room,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -828,8 +812,7 @@
 
 (def Side
   "place, space, or direction with respect to a center or to a line of division"
-  {:cmns-txt/hasTextValue false,
-   :db/ident :fibo-fnd-plc-adr/Side,
+  {:db/ident :fibo-fnd-plc-adr/Side,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -846,8 +829,7 @@
 
 (def Slip
   "sloping ramp extending out into the water to serve as a place for landing or repairing ships; ship's or boat's berth between two piers"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Slip,
+  {:db/ident :fibo-fnd-plc-adr/Slip,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -864,8 +846,7 @@
 
 (def Space
   "extent set apart or available, such as a parking or storage space"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Space,
+  {:db/ident :fibo-fnd-plc-adr/Space,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -882,8 +863,7 @@
 
 (def Stop
   "stopping place, such as a bus or mail stop"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Stop,
+  {:db/ident :fibo-fnd-plc-adr/Stop,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -985,8 +965,7 @@
 
 (def Suite
   "group of rooms occupied as a unit"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Suite,
+  {:db/ident :fibo-fnd-plc-adr/Suite,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -1060,8 +1039,7 @@
 
 (def Trailer
   "vehicle designed to serve wherever parked as a temporary dwelling or place of business"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Trailer,
+  {:db/ident :fibo-fnd-plc-adr/Trailer,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -1078,8 +1056,7 @@
 
 (def Unit
   "area in a facility, such as a medical facility or hospital that is specially staffed and equipped to provide a particular service or type of care"
-  {:cmns-txt/hasTextValue true,
-   :db/ident :fibo-fnd-plc-adr/Unit,
+  {:db/ident :fibo-fnd-plc-adr/Unit,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange true,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual
@@ -1096,8 +1073,7 @@
 
 (def Upper
   "floor of a building in a multistory structure that is farther away from the ground level"
-  {:cmns-txt/hasTextValue false,
-   :db/ident :fibo-fnd-plc-adr/Upper,
+  {:db/ident :fibo-fnd-plc-adr/Upper,
    :fibo-fnd-plc-adr/requiresSecondaryUnitRange false,
    :rdf/type [:fibo-fnd-plc-adr/SecondaryUnitDesignator
               :owl/NamedIndividual

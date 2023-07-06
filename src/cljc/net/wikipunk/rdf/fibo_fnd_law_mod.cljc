@@ -39,9 +39,11 @@
    :dcterms/abstract
    "This module includes several ontologies defining legal concepts, including constitutions, laws and jurisdictions. It also includes the definition of legal capacities such as signatory capacity, contractual capability and the like.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/"}],
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO FND Law Module"

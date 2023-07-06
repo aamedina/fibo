@@ -7,8 +7,8 @@
    :dcterms/abstract
    "The FBC Products and Services module extends the FND Products and Services module via ontologies defining financial products, financial services, financial service providers, and product catalogs as well as customer/client accounts.",
    :dcterms/issued #inst "2015-08-13T22:00:00.000-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-01-30T23:00:00.000-00:00",
+   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/modified #inst "2023-06-27T22:00:00.000-00:00",
    :owl/imports
    ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
@@ -40,10 +40,11 @@
    :dcterms/abstract
    "The products and services module extends the FND Products and Services module via ontologies defining financial products, financial services, financial service providers, and product catalogs as well as customer/client accounts.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/"],
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/"}],
+   :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO FBC Products and Services Module"
     "Financial Industry Business Ontology (FIBO) Financial Business and Commerce (FBC) Products and Services Module"],

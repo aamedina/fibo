@@ -40,7 +40,8 @@
    :dcterms/abstract
    "The credit derivatives module covers derivatives that allow either the lender or borrower to transfer the credit risk, or risk of default, to another party other than the lender or debtholder.",
    :dcterms/hasPart
-   "https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/CreditDefaultSwaps/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/CreditDefaultSwaps/"},
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO DER Credit Derivatives Module"

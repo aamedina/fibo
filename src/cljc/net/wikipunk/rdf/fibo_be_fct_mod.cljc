@@ -40,8 +40,10 @@
    :dcterms/abstract
    "The functional entities module includes ontologies describing entities that are defined according to their function, as opposed to their form, such as businesses, service providers, and publishers.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/"}],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Business Entities (BE) Functional Entities Module"

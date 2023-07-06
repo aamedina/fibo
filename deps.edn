@@ -22,6 +22,7 @@
     org.slf4j/slf4j-simple
     {:mvn/version "1.7.36"}}
    :extra-paths ["dev"]
-   :jvm-opts    ["-XX:-OmitStackTraceInFastThrow"
+   :jvm-opts    ["-Xmx110g"
+                 "-XX:-OmitStackTraceInFastThrow"
                  "-XX:+HeapDumpOnOutOfMemoryError"
                  "-Dorg.slf4j.simpleLogger.defaultLogLevel=warn"]}}}

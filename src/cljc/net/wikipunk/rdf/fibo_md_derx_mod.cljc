@@ -38,8 +38,10 @@
    :dcterms/abstract
    "This module covers time-dependent concepts related to derivative instruments, such as the various derivatives-related greeks and other analytics.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/"
-    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/FuturesTemporal/"}],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Market Data (MD) Derivatives Temporal Module"

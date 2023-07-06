@@ -40,7 +40,8 @@
    :dcterms/abstract
    "The corporations module includes ontologies describing the essential features of companies incorporated through the issuance of shares.",
    :dcterms/hasPart
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"},
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO BE Corporations Module"

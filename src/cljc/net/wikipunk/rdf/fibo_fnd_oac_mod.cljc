@@ -40,9 +40,12 @@
    :dcterms/abstract
    "This module includes ontologies defining the meanings of ownership and owner, and of types of control such as de jure and de facto control. These form the basis of ownership and control relationship hierarchies as well as what it means to own or to control something.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/OwnershipAndControl/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/OwnershipAndControl/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"}],
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO FND Ownership and Control Module"

@@ -277,7 +277,7 @@
   {:db/ident :fibo-be-ge-wasj/GovernmentOfTheSyrianArabRepublic,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-be-ge-wasj/JurisdictionOfTheSyrianArabRepublic,
-   :fibo-fnd-rel-rel/governs :lcc-3166-1/Syria,
+   :fibo-fnd-rel-rel/governs :lcc-3166-1/SyrianArabRepublic,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
@@ -511,7 +511,7 @@
   {:db/ident :fibo-be-ge-wasj/JurisdictionOfTheSyrianArabRepublic,
    :fibo-be-ge-ge/isJurisdictionOf
    :fibo-be-ge-wasj/GovernmentOfTheSyrianArabRepublic,
-   :fibo-fnd-law-jur/hasReach :lcc-3166-1/Syria,
+   :fibo-fnd-law-jur/hasReach :lcc-3166-1/SyrianArabRepublic,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
@@ -700,7 +700,7 @@
 (def StateOfSyria
   "sovereign state and polity that is Syria"
   {:db/ident :fibo-be-ge-wasj/StateOfSyria,
-   :fibo-be-ge-ge/hasFullSovereigntyOver :lcc-3166-1/Syria,
+   :fibo-be-ge-ge/hasFullSovereigntyOver :lcc-3166-1/SyrianArabRepublic,
    :fibo-be-ge-ge/isRepresentedBy
    :fibo-be-ge-wasj/GovernmentOfTheSyrianArabRepublic,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],

@@ -239,7 +239,7 @@
 (def BloombergFinanceOwnership
   "entity ownership context for Bloomberg Finance, a wholly owned subsidiary of Bloomberg L.P."
   {:db/ident :fibo-fbc-fct-usfsind/BloombergFinanceOwnership,
-   :fibo-be-le-lei/hasOwnershipPercentage 100,
+   :fibo-be-le-lei/hasOwnershipPercentage 100M,
    :fibo-be-oac-opty/hasOwnedEntity
    :fibo-fbc-fct-usfsind/BloombergFinanceLP-US-DE,
    :fibo-be-oac-opty/hasOwningEntity :fibo-fbc-fct-usfsind/BloombergLP-US-DE,
@@ -583,7 +583,7 @@
 (def DepositoryTrustCompanyOwnership
   "entity ownership context for the Depository Trust Company, a wholly owned subsidiary of the Depository Trust & Clearing Corporation"
   {:db/ident :fibo-fbc-fct-usfsind/DepositoryTrustCompanyOwnership,
-   :fibo-be-le-lei/hasOwnershipPercentage 100,
+   :fibo-be-le-lei/hasOwnershipPercentage 100M,
    :fibo-be-oac-opty/hasOwnedEntity :fibo-fbc-fct-usfsind/DTC-US-NY,
    :fibo-be-oac-opty/hasOwningEntity :fibo-fbc-fct-usfsind/DTCC-US-DE,
    :fibo-fnd-agr-ctr/isQualifiedBy

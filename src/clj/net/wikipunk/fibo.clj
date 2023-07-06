@@ -18,12 +18,14 @@
    [net.wikipunk.rdf.dcam]
    [net.wikipunk.rdf.schema]
    [net.wikipunk.rdf.frbr]
+   [net.wikipunk.rdf.event]
    [net.wikipunk.rdf.sm]   
    [net.wikipunk.rdf.gleif-base]
    [net.wikipunk.rdf.gleif-L1]
    [net.wikipunk.rdf.gleif-L2]
    [net.wikipunk.rdf.gleif-elf]
    [net.wikipunk.rdf.gleif-ra]
+   [net.wikipunk.rdf.gleif-geo]
    [net.wikipunk.rdf.gleif-repex]
    [net.wikipunk.rdf.gleif-L1-data]
    [net.wikipunk.rdf.gleif-L2-data]
@@ -249,8 +251,8 @@
 (defrecord FIBO [vocab]
   com/Lifecycle
   (start [this]
-    (rdf/import-from 'net.wikipunk.rdf.fibo-fbc-fct-mkti
-                     'net.wikipunk.rdf.gleif-L1-data)
+    #_(rdf/import-from 'net.wikipunk.rdf.fibo-fbc-fct-mkti
+                       'net.wikipunk.rdf.gleif-L1-data)
     this)
   (stop [this]
     this))

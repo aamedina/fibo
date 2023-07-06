@@ -2546,7 +2546,7 @@
 (def ZeroInterestRate
   "an interest rate of zero (0) percent"
   {:db/ident :fibo-sec-dbt-bnd/ZeroInterestRate,
-   :fibo-fnd-acc-cur/hasRateValue 0,
+   :fibo-fnd-acc-cur/hasRateValue 0M,
    :rdf/type [:fibo-fbc-dae-dbt/FixedInterestRate :owl/NamedIndividual],
    :rdfs/isDefinedBy
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",

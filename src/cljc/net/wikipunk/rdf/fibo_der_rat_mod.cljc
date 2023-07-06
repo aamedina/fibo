@@ -61,9 +61,12 @@
     "agnos.ai"
     "Citigroup"],
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwapExampleIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwapExampleIndividuals/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/"}],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Derivatives (DER) Rate Derivatives Module"

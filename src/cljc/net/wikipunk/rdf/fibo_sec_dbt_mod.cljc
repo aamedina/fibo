@@ -63,16 +63,25 @@
     "Dassault Systemes / No Magic"
     "Credit Suisse"],
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/LoanParticipationNotes/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MortgageBackedSecurities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/LoanParticipationNotes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/"}],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO SEC Debt Module"

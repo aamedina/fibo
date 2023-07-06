@@ -64,9 +64,12 @@
     "HP Enterprise / Mphasis"
     "Tahoe Blue Ltd"],
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"
-    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/"
-    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"}],
    :dcterms/license "http://opensource.org/licenses/MIT",
    :dcterms/title
    ["FIBO IND Interest Rates Module"

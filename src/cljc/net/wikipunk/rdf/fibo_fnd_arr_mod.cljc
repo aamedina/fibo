@@ -40,14 +40,22 @@
    :dcterms/abstract
    "This module contains ontologies that define abstract concepts, structures and schemata, such as identifiers and identification schemes, indices and indexing schemes, codes and coding schemes, and classification strategies.",
    :dcterms/hasPart
-   ["https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"}],
    :dcterms/license "https://opensource.org/licenses/MIT",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Foundations (FND) Arrangements Module"
