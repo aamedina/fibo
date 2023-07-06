@@ -40,3 +40,13 @@
           (edn/read-string)
           (sc/assemble-system))
       (throw (ex-info "system.edn is not on classpath" {})))))
+
+(prefer-method db/infer-datomic-type :dc11/description :owl/AnnotationProperty)
+(prefer-method db/infer-datomic-type :dcterms/source :owl/AnnotationProperty)
+(defmethod db/infer-datomic-type :dcterms/source [_] :db.type/string)
+(prefer-method db/infer-datomic-type :dc11/date :owl/AnnotationProperty)
+(prefer-method db/infer-datomic-type :dc11/title :owl/AnnotationProperty)
+(prefer-method db/infer-datomic-type :dc11/creator :owl/AnnotationProperty)
+
+(comment
+  (def boot-db (db/test-bootstrap (:db system))))

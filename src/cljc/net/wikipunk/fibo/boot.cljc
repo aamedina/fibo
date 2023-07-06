@@ -2201,12 +2201,41 @@
    :rdfa/prefix "gleif-repex"
    :rdf/type :rdfa/PrefixMapping})
 
+;; :dcat/downloadURL "resources/gleif-lei-data/L1Data.ttl.gz"
+
 (def gleif-L1-data
   {:rdfa/prefix "gleif-L1-data"
    :rdfa/uri    "https://rdf.gleif.org/L1/"
    :rdf/type    :rdfa/PrefixMapping})
 
+;; :dcat/downloadURL "resources/gleif-lei-data/L2Data.ttl.gz"
+
 (def gleif-L2-data
   {:rdfa/prefix "gleif-L2-data"
    :rdfa/uri    "https://rdf.gleif.org/L2/"
    :rdf/type    :rdfa/PrefixMapping})
+
+(def gleif-BIC-data
+  {:rdfa/prefix      "gleif-BIC-data"
+   :rdfa/uri         "https://rdf.gleif.org/BIC/"
+   :rdf/type         :rdfa/PrefixMapping
+   :dcat/downloadURL "resources/gleif-lei-data/BICData.ttl"})
+
+(def gleif-ELF-data
+  {:rdfa/prefix      "gleif-ELF-data"
+   :rdfa/uri         "https://rdf.gleif.org/EntityLegalForm/"
+   :rdf/type         :rdfa/PrefixMapping
+   :dcat/downloadURL "resources/gleif-lei-data/EntityLegalFormData.ttl"})
+
+(def gleif-RA-data
+  {:rdfa/prefix      "gleif-RA-data"
+   :rdfa/uri         "https://rdf.gleif.org/RegistrationAuthority/"
+   :rdf/type         :rdfa/PrefixMapping
+   :dcat/downloadURL "resources/gleif-lei-data/RegistrationAuthorityData.ttl"})
+
+;; :dcat/downloadURL "resources/gleif-lei-data/RepExData.ttl.gz"
+
+(def gleif-repex-data
+  {:rdfa/prefix      "gleif-repex-data"
+   :rdfa/uri         "https://rdf.gleif.org/ReportingException/"
+   :rdf/type         :rdfa/PrefixMapping})

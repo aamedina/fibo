@@ -1,0 +1,6 @@
+*.ttl filter=lfs diff=lfs merge=lfs -text
+resources/net/wikipunk/rdf/gleif_RA_data.cljc filter=lfs diff=lfs merge=lfs -text
+resources/net/wikipunk/rdf/gleif_BIC_data.cljc filter=lfs diff=lfs merge=lfs -text
+resources/net/wikipunk/rdf/gleif_ELF_data.cljc filter=lfs diff=lfs merge=lfs -text
+resources/net/wikipunk/rdf/gleif_L2_data.cljc filter=lfs diff=lfs merge=lfs -text
+*.ttl.gz filter=lfs diff=lfs merge=lfs -text

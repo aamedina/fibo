@@ -1,5 +1,5 @@
 {:vocab  {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
-          :sc/refs      [:fibo]
+          :sc/refs      [:fibo :db]
           :boot         [net.wikipunk.fibo.boot]
           :config       {:xtdb.lucene/lucene-store
                          {:db-dir ".vocab/lucene"}}}
