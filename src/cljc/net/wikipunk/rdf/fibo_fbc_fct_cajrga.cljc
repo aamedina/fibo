@@ -6,38 +6,62 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
    :dcterms/abstract
    "This ontology extends the primary regulatory agencies ontology in FBC with additional regulators that are specific to the United States and augments certain U.S. financial services entities based on who regulates them.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/CAFinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/ClientsAndAccounts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/CAFinancialServicesEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/ClientsAndAccounts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -113,7 +137,8 @@
 (def BankOfCanada
   "central bank of Canada"
   {:cmns-av/adaptedFrom
-   "http://www.bankofcanada.ca/wp-content/uploads/2010/11/regulation_canadian_financial.pdf",
+   {:rdfa/uri
+    "http://www.bankofcanada.ca/wp-content/uploads/2010/11/regulation_canadian_financial.pdf"},
    :cmns-av/explanatoryNote
    "The Bank of Canada's overall goal is to promote a stable and efficient financial system in Canada. The focus on the financial system as a whole parallels the Bank's approach to monetary policy, which focuses on the entire economy.\n \n The Bank provides liquidity to the financial system, gives policy advice to the federal government on the design and development of the system, oversees major clearing and settlement systems, and provides banking services to these systems and their participants.",
    :cmns-col/isPartOf :fibo-be-ge-caj/GovernmentOfCanada,
@@ -121,13 +146,15 @@
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-caj/CanadianJurisdiction,
    :fibo-be-le-fbo/hasHeadquartersAddress
    :fibo-fbc-fct-cajrga/BankOfCanadaHeadOfficeAddress,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.bankofcanada.ca/",
-   :fibo-fnd-rel-rel/hasLegalName [#voc/lstr "Banque du Canada@fr"
-                                   #voc/lstr "Bank of Canada@en"],
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.bankofcanada.ca/"},
+   :fibo-fnd-rel-rel/hasLegalName [#xsd/langString "Banque du Canada@fr"
+                                   #xsd/langString "Bank of Canada@en"],
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/GovernmentAgency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
-   :rdfs/label [#voc/lstr "Banque du Canada@fr" #voc/lstr "Bank of Canada@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
+   :rdfs/label [#xsd/langString "Banque du Canada@fr"
+                #xsd/langString "Bank of Canada@en"],
    :skos/definition "central bank of Canada"})
 
 (def BankOfCanadaHeadOfficeAddress
@@ -140,7 +167,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-ca/Ontario,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/ConventionalStreetAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "Bank of Canada head office address",
    :skos/definition "head office address for the Bank of Canada"})
 
@@ -150,17 +178,19 @@
    :db/ident
    :fibo-fbc-fct-cajrga/BankOfCanadaLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2014-03-28T05:39:00.000-00:00",
+   #xsd/dateTime #inst "2014-03-28T01:39:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2020-12-23T05:19:00.000-00:00",
+   #xsd/dateTime #inst "2020-12-23T00:19:00.000-05:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2021-12-23T00:31:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2021-12-22T19:31:00.000-05:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelEntitySuppliedOnly,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "Bank of Canada legal entity identifier registry entry",
    :skos/definition "legal entity identifier for the Bank of Canada"})
 
@@ -168,22 +198,23 @@
   "unique, 9-digit number that is the standard identifier for legal entities in Canada which are typically a business"
   {:cmns-av/abbreviation "BN",
    :cmns-av/adaptedFrom
-   "https://www.canada.ca/en/services/taxes/business-number.html",
+   {:rdfa/uri "https://www.canada.ca/en/services/taxes/business-number.html"},
    :db/ident :fibo-fbc-fct-cajrga/BusinessNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "business number",
    :rdfs/subClassOf
    [:fibo-fnd-org-org/OrganizationIdentifier
+    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
+     :rdf/type       :owl/Restriction}
+    :fibo-fnd-pty-pty/TaxIdentifier
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
-     :rdf/type :owl/Restriction}
-    :fibo-fnd-pty-pty/TaxIdentifier
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type :owl/Restriction}],
    :skos/definition
    "unique, 9-digit number that is the standard identifier for legal entities in Canada which are typically a business",
    :skos/example "000000000"})
@@ -195,7 +226,8 @@
               :fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency business number registration identifier scheme",
    :skos/definition
@@ -210,10 +242,12 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "Canada Revenue Agency business number registration service",
    :rdfs/seeAlso
-   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/you-need-a-business-number-a-program-account.html"],
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/you-need-a-business-number-a-program-account.html"},
    :skos/definition
    "Canada Revenue Agency service for the registration of business entities"})
 
@@ -226,13 +260,15 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-breg/BusinessRegistry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "Canada Revenue Agency business number entity registry",
    :skos/definition "Canada Revenue Agency business number registry"})
 
 (def CanadaRevenueAgency
   "taxation authority of the Government of Canada"
-  {:cmns-av/adaptedFrom "https://www.canada.ca/en/revenue-agency.html",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://www.canada.ca/en/revenue-agency.html"},
    :cmns-av/explanatoryNote
    "This agency administers tax laws for the Canadian government and for several of the provinces and territories of Canada.",
    :cmns-col/isPartOf :fibo-be-ge-caj/GovernmentOfCanada,
@@ -240,14 +276,17 @@
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-caj/CanadianJurisdiction,
    :fibo-be-le-fbo/hasHeadquartersAddress
    :fibo-fbc-fct-cajrga/CanadaRevenueAgencyHeadOfficeAddress,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.canada.ca/en/revenue-agency.html",
-   :fibo-fnd-rel-rel/hasLegalName [#voc/lstr "Agence du revenu du Canada@fr"
-                                   #voc/lstr "Canada Revenue Agency@en"],
+   :fibo-fnd-plc-vrt/hasWebsite
+   {:rdfa/uri "https://www.canada.ca/en/revenue-agency.html"},
+   :fibo-fnd-rel-rel/hasLegalName [#xsd/langString
+                                    "Agence du revenu du Canada@fr"
+                                   #xsd/langString "Canada Revenue Agency@en"],
    :rdf/type [:fibo-be-ge-ge/GovernmentAgency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
-   :rdfs/label [#voc/lstr "Agence du revenu du Canada@fr"
-                #voc/lstr "Canada Revenue Agency@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
+   :rdfs/label [#xsd/langString "Agence du revenu du Canada@fr"
+                #xsd/langString "Canada Revenue Agency@en"],
    :skos/definition "taxation authority of the Government of Canada"})
 
 (def CanadaRevenueAgencyHeadOfficeAddress
@@ -260,13 +299,14 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-ca/Ontario,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/ConventionalStreetAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "Canada Revenue Agency head office address",
    :skos/definition "head office address for the Canada Revenue Agency"})
 
 (def CanadianBankingRegulatoryAgencyAndCentralBank
   "regulatory agency, registration authority and central banking role of the Bank of Canada"
-  {:cmns-av/adaptedFrom "http://www.bankofcanada.ca/",
+  {:cmns-av/adaptedFrom {:rdfa/uri "http://www.bankofcanada.ca/"},
    :db/ident :fibo-fbc-fct-cajrga/CanadianBankingRegulatoryAgencyAndCentralBank,
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-cajrga/BankOfCanada,
    :rdf/type [:fibo-fbc-fct-rga/RegulatoryAgency
@@ -274,7 +314,8 @@
               :fibo-fbc-fct-fse/CentralBank
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canadian banking regulatory agency, registration authority and central bank role of the Bank of Canada",
    :skos/definition
@@ -291,7 +332,8 @@
               :fibo-fbc-fct-breg/BusinessRegistrationAuthority
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "Canadian business and tax registrar",
    :skos/definition
    "regulatory agency and registration authority role of the Canada Revenue Agency"})
@@ -299,13 +341,15 @@
 (def CorporationIncomeTaxNumber
   "concatenation of an entity's business number, the 'RC' abbreviation and a 4-digit subaccount number used for reporting corporate income tax"
   {:cmns-av/adaptedFrom
-   "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/corporation-income-tax-program-account.html",
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/corporation-income-tax-program-account.html"},
    :cmns-av/explanatoryNote
    "An organization may have more than one tax account through its subunits, this is handled through additional 4-digit subaccount numbers. This is used as both an account and an identifier for the registration.",
    :db/ident :fibo-fbc-fct-cajrga/CorporationIncomeTaxNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "corporation income tax number",
    :rdfs/subClassOf
    [:fibo-fbc-fct-cajrga/BusinessNumber
@@ -313,10 +357,14 @@
      :fibo-fbc-fct-cajrga/CorporationIncomeTaxNumberIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :cmns-id/identifies,
      :rdf/type       :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}
@@ -324,10 +372,6 @@
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-org-org/OrganizationIdentifier
     :fibo-fnd-pty-pty/TaxIdentifier],
    :skos/definition
    "concatenation of an entity's business number, the 'RC' abbreviation and a 4-digit subaccount number used for reporting corporate income tax",
@@ -341,7 +385,8 @@
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency corporation income tax number identifier scheme",
    :skos/definition
@@ -356,11 +401,13 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency corporation income tax number registration service",
    :rdfs/seeAlso
-   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/account-register.html"],
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/account-register.html"},
    :skos/definition
    "Canada Revenue Agency service for the registration of corporation income tax accounts"})
 
@@ -373,7 +420,8 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-breg/BusinessRegistry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "Canada Revenue Agency corporation income tax number registry",
    :skos/definition
    "Canada Revenue Agency corporation income tax number registry"})
@@ -389,11 +437,13 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-breg/BusinessRegistry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency Goods and Services Tax / Harmonized Sales Tax number registry",
    :rdfs/seeAlso
-   ["https://www.canada.ca/en/revenue-agency/services/e-services/e-services-businesses/confirming-a-gst-hst-account-number/terms-conditions-use.html"],
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/e-services/e-services-businesses/confirming-a-gst-hst-account-number/terms-conditions-use.html"},
    :skos/definition
    "registry that records and tracks individual GST/HST numbers for the Canada Revenue Agency"})
 
@@ -408,7 +458,8 @@
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency Goods and Services Tax / Harmonized Sales Tax registration number identifier scheme",
    :skos/definition
@@ -418,38 +469,40 @@
   "concatenation of an entity's business number, the 'RT' abbreviation and a 4-digit subaccount number used for reporting GST/HST"
   {:cmns-av/abbreviation "GST/HST registation number",
    :cmns-av/adaptedFrom
-   "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/account-register.html",
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/account-register.html"},
    :cmns-av/explanatoryNote
    "An organization may have more than one GST/HST account through its subunits, this is handled through additional 4-digit subaccount numbers. This is used as both an account and an identifier for the registration.",
    :db/ident
    :fibo-fbc-fct-cajrga/GoodsServicesTaxHarmonizedSalesTaxRegistrationNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Goods and Services Tax / Harmonized Sales Tax registration number",
    :rdfs/subClassOf
-   [{:owl/hasValue
-     :fibo-fbc-fct-cajrga/GoodsServicesTaxHarmonizedSalesTaxRegistrationIdentifierScheme,
-     :owl/onProperty :cmns-col/isMemberOf,
-     :rdf/type :owl/Restriction}
-    :fibo-fbc-fct-cajrga/BusinessNumber
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+   [{:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    :fibo-fbc-fct-cajrga/BusinessNumber
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :cmns-id/identifies,
      :rdf/type       :owl/Restriction}
     :fibo-be-le-fbo/ValueAddedTaxIdentificationNumber
     {:owl/hasValue
-     :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
+     :fibo-fbc-fct-cajrga/GoodsServicesTaxHarmonizedSalesTaxRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-org-org/OrganizationIdentifier
+    {:owl/hasValue
+     :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
+     :owl/onProperty :cmns-col/isMemberOf,
+     :rdf/type :owl/Restriction}
     :fibo-fnd-pty-pty/TaxIdentifier],
    :skos/definition
    "concatenation of an entity's business number, the 'RT' abbreviation and a 4-digit subaccount number used for reporting GST/HST",
@@ -465,45 +518,49 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "Canada Revenue Agency GST/HST number registration service",
    :rdfs/seeAlso
-   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/account-register.html"],
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/account-register.html"},
    :skos/definition
    "Canada Revenue Agency service for the registration of GST/HST accounts"})
 
 (def ImportExportProgramNumber
   "concatenation of an entity's business number, the 'RM' abbreviation and a 4-digit subaccount number used for customs and import/export reporting purposes"
   {:cmns-av/adaptedFrom
-   "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/import-export-program-account.html",
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/import-export-program-account.html"},
    :cmns-av/explanatoryNote
    "An organization may have more than one import-exports account through its subunits, this is handled through additional 4-digit subaccount numbers. This is used as both an account and an identifier for the registration.",
    :db/ident :fibo-fbc-fct-cajrga/ImportExportProgramNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "import export program number",
    :rdfs/subClassOf
    [{:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
+     :owl/onProperty :cmns-id/identifies,
+     :rdf/type       :owl/Restriction}
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/ImportExportProgramNumberIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
-     :owl/onProperty :cmns-id/identifies,
-     :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-cajrga/BusinessNumber
+    :fibo-fnd-org-org/OrganizationIdentifier
+    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
+     :rdf/type       :owl/Restriction}
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-org-org/OrganizationIdentifier
     :fibo-fnd-pty-pty/TaxIdentifier],
    :skos/definition
    "concatenation of an entity's business number, the 'RM' abbreviation and a 4-digit subaccount number used for customs and import/export reporting purposes",
@@ -517,7 +574,8 @@
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency import export program number identifier scheme",
    :skos/definition
@@ -532,11 +590,13 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency import export program number registration service",
    :rdfs/seeAlso
-   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/register.html"],
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/register.html"},
    :skos/definition
    "Canada Revenue Agency service for the registration of import export program number accounts"})
 
@@ -549,7 +609,8 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-breg/BusinessRegistry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "Canada Revenue Agency import export program number registry",
    :skos/definition
    "Canada Revenue Agency import export program number registry"})
@@ -562,7 +623,8 @@
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency information return program number identifier scheme",
    :skos/definition
@@ -571,23 +633,29 @@
 (def InformationReturnsProgramNumber
   "concatenation of an entity's business number, the 'RZ' abbreviation and a 4-digit subaccount number used for information returns"
   {:cmns-av/adaptedFrom
-   "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/completing-slips-summaries/financial-slips-summaries/information-returns-program-account.html",
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/completing-slips-summaries/financial-slips-summaries/information-returns-program-account.html"},
    :cmns-av/explanatoryNote
    "An organization may have more than one information returns program number through its subunits, this is handled through additional 4-digit subaccount numbers. This is used as both an account and an identifier for the registration. As opposed to other program numbers, this number is used for filing information returns and not as an account.",
    :db/ident :fibo-fbc-fct-cajrga/InformationReturnsProgramNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "information return program number",
    :rdfs/subClassOf
-   [:fibo-fbc-fct-cajrga/BusinessNumber
-    {:owl/minQualifiedCardinality 0,
+   [{:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-cajrga/BusinessNumber
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :cmns-id/identifies,
      :rdf/type       :owl/Restriction}
     {:owl/hasValue   :fibo-fbc-fct-cajrga/InformationReturnsIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type       :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationIdentifier
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}
@@ -595,10 +663,6 @@
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-org-org/OrganizationIdentifier
     :fibo-fnd-pty-pty/TaxIdentifier],
    :skos/definition
    "concatenation of an entity's business number, the 'RZ' abbreviation and a 4-digit subaccount number used for information returns",
@@ -614,11 +678,13 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency information return program number registration service",
    :rdfs/seeAlso
-   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/register.html"],
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/register.html"},
    :skos/definition
    "Canada Revenue Agency service for the registration of an information return program number accounts"})
 
@@ -631,7 +697,8 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-breg/BusinessRegistry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency import information return program number registry",
    :skos/definition
@@ -647,11 +714,13 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency payroll deductions program number registration service",
    :rdfs/seeAlso
-   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/How-open-payroll-account.html"],
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/How-open-payroll-account.html"},
    :skos/definition
    "Canada Revenue Agency service for the registration of payroll deductions program number accounts"})
 
@@ -663,7 +732,8 @@
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency payroll deductions program number identifier scheme",
    :skos/definition
@@ -672,19 +742,18 @@
 (def PayrollDeductionsProgramNumber
   "concatenation of an entity's business number, the 'RP' abbreviation and a 4-digit subaccount number used for reporting payroll deductions"
   {:cmns-av/adaptedFrom
-   "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/what-payroll-account.html",
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/what-payroll-account.html"},
    :cmns-av/explanatoryNote
    "An organization may have more than one deduction account through its subunits, this is handled through additional 4-digit subaccount numbers. This is used as both an account and an identifier for the registration.",
    :db/ident :fibo-fbc-fct-cajrga/PayrollDeductionsProgramNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "payroll deductions program number",
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+   [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :cmns-id/identifies,
      :rdf/type       :owl/Restriction}
@@ -692,15 +761,18 @@
      :fibo-fbc-fct-cajrga/PayrollDeductionsProgramIdentifierRegistrationService,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
+    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
+     :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-cajrga/BusinessNumber
+    :fibo-fnd-org-org/OrganizationIdentifier
+    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
+     :rdf/type       :owl/Restriction}
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-org-org/OrganizationIdentifier
     :fibo-fnd-pty-pty/TaxIdentifier],
    :skos/definition
    "concatenation of an entity's business number, the 'RP' abbreviation and a 4-digit subaccount number used for reporting payroll deductions",
@@ -715,7 +787,8 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-breg/BusinessRegistry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency payroll deductions program number registry",
    :skos/definition "Canada Revenue Agency payroll deduction program registry"})
@@ -723,35 +796,37 @@
 (def RegisteredCharityProgramNumber
   "concatenation of an entity's business number, the 'RR' abbreviation and a 4-digit subaccount number used for registered charity contribution"
   {:cmns-av/adaptedFrom
-   "https://www.canada.ca/en/revenue-agency/services/charities-giving/charities/operating-a-registered-charity/registration-number.html",
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/charities-giving/charities/operating-a-registered-charity/registration-number.html"},
    :cmns-av/explanatoryNote
    "An organization may have more than one registered charity account through its subunits, this is handled through additional 4-digit subaccount numbers. This is used as both an account and an identifier for the registration.",
    :db/ident :fibo-fbc-fct-cajrga/RegisteredCharityProgramNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label "registered charity program number",
    :rdfs/subClassOf
-   [:fibo-fbc-fct-cajrga/BusinessNumber
-    {:owl/hasValue
+   [{:owl/hasValue
      :fibo-fbc-fct-cajrga/RegisteredCharityProgramNumberIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
+    :fibo-fbc-fct-cajrga/BusinessNumber
     {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-pas-caa/LedgerAccount,
      :owl/onProperty :cmns-id/identifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationIdentifier
+    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
+     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
      :rdf/type       :owl/Restriction}
     {:owl/hasValue
      :fibo-fbc-fct-cajrga/BusinessNumberRegistrationIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
      :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-be-ge-caj/CanadianJurisdiction,
-     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-org-org/OrganizationIdentifier
     :fibo-fnd-pty-pty/TaxIdentifier],
    :skos/definition
    "concatenation of an entity's business number, the 'RR' abbreviation and a 4-digit subaccount number used for registered charity contribution",
@@ -766,7 +841,8 @@
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency registered charity program number identifier scheme",
    :skos/definition
@@ -782,11 +858,13 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency registered charity program number registration service",
    :rdfs/seeAlso
-   ["https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/register.html"],
+   {:rdfa/uri
+    "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/register.html"},
    :skos/definition
    "Canada Revenue Agency service for the registration of a registered charity program number accounts"})
 
@@ -799,10 +877,12 @@
    :fibo-fbc-fct-cajrga/CanadianBusinessTaxRegistrar,
    :rdf/type [:fibo-fbc-fct-breg/BusinessRegistry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/"},
    :rdfs/label
    "Canada Revenue Agency import registered charity program number registry",
    :rdfs/seeAlso
-   ["https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyBscSrch?request_locale=en"],
+   {:rdfa/uri
+    "https://apps.cra-arc.gc.ca/ebci/hacc/srch/pub/dsplyBscSrch?request_locale=en"},
    :skos/definition
    "Canada Revenue Agency registered charity program number registry"})

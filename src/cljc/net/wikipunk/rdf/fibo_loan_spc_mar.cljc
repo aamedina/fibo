@@ -5,15 +5,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
    :dcterms/abstract
    "This ontology defines concepts specific to marine finance, which involves financing vessel acquisitions for the spot market, time charters or bareboat charters, as well as the construction of work boats, and to finance the acquisition of vessels for scrapping.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/MarineFinance/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/MarineFinance/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -34,17 +38,18 @@
    :rdfa/prefix "fibo-loan-spc-mar",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
-   :rdfs/label #voc/lstr "Marine Finance Ontology@en"})
+   :rdfs/label #xsd/langString "Marine Finance Ontology@en"})
 
 (def MarineFinancing
   "A loan for the purchase of a boat or other vessel."
   {:db/ident :fibo-loan-spc-mar/MarineFinancing,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
-   :rdfs/label #voc/lstr "marine finance@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/"},
+   :rdfs/label #xsd/langString "marine finance@en",
    :rdfs/subClassOf :fibo-loan-ln-ln/Loan,
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "A loan for the purchase of a boat or other vessel.@en"})
 
 (def boatHeldAsChattel
@@ -53,11 +58,12 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-loan-spc-mar/MarineFinancing,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
-   :rdfs/label #voc/lstr "boat held as chattel@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/"},
+   :rdfs/label #xsd/langString "boat held as chattel@en",
    :rdfs/range :xsd/boolean,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Whether the vessel is to be held in ownership as a form of chattel by the lender during the period of the loan.@en"})
 
 (def mooredAt
@@ -66,11 +72,12 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-loan-spc-mar/MarineFinancing,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
-   :rdfs/label #voc/lstr "moored at@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/"},
+   :rdfs/label #xsd/langString "moored at@en",
    :rdfs/range :xsd/string,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Textual description (name etc.) of where the vessel is to be moored if it has a permanent mooring place.@en"})
 
 (def percentageAdvanced
@@ -79,11 +86,13 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-loan-spc-mar/MarineFinancing,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
-   :rdfs/label #voc/lstr "percentage advanced@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/"},
+   :rdfs/label #xsd/langString "percentage advanced@en",
    :rdfs/range :fibo-fnd-utl-alx/Percentage,
    :skos/definition
-   #voc/lstr "The percentage of the purchase price advanced as the loan.@en"})
+   #xsd/langString
+    "The percentage of the purchase price advanced as the loan.@en"})
 
 (def residential
   "Whether the boat is intended to be used and is legally able to be used as a place of residence."
@@ -91,9 +100,10 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-loan-spc-mar/MarineFinancing,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/",
-   :rdfs/label #voc/lstr "residential@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/MarineFinance/"},
+   :rdfs/label #xsd/langString "residential@en",
    :rdfs/range :xsd/boolean,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Whether the boat is intended to be used and is legally able to be used as a place of residence.@en"})

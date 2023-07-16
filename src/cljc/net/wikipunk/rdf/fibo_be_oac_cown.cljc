@@ -6,26 +6,41 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
    :dcterms/abstract
    "This ontology defines concepts relating to corporation-specific ownership. Roles are defined in terms of the ownership enjoyed by the party, and are the specific examples of these concepts as they apply to companies incorporated by the issuance of shares.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateOwnership/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateOwnership/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -71,28 +86,32 @@
 (def BeneficialOwner
   "party that enjoys the benefits of ownership (such as receipt of income) of something even though its ownership (title) may be in the name of another party (called a nominee or registered owner)"
   {:cmns-av/adaptedFrom
-   ["https://www.fincen.gov/resources/statutes-regulations/guidance/guidance-obtaining-and-retaining-beneficial-ownership"
-    "https://www.ncua.gov/regulation-supervision/letters-credit-unions-other-guidance/beneficial-ownership-requirements-legal-entity-customers-overview"
-    "https://en.wikipedia.org/wiki/Beneficial_ownership#Financial_Action_Task_Force_on_Money_Laundering_(FATF)"],
+   [{:rdfa/uri
+     "https://www.fincen.gov/resources/statutes-regulations/guidance/guidance-obtaining-and-retaining-beneficial-ownership"}
+    {:rdfa/uri
+     "https://www.ncua.gov/regulation-supervision/letters-credit-unions-other-guidance/beneficial-ownership-requirements-legal-entity-customers-overview"}
+    {:rdfa/uri
+     "https://en.wikipedia.org/wiki/Beneficial_ownership#Financial_Action_Task_Force_on_Money_Laundering_(FATF)"}],
    :cmns-av/explanatoryNote
-   ["From World Bank Report: In identifying the beneficial owner, the focus should be on two factors: the control exercised and the benefit derived. Control of a corporate vehicle will always depend on context, as control can be exercised in many different ways, including through ownership, contractually or informally."
-    "The Financial Action Task Force on Money Laundering (FATF) refers to a 'beneficial owner' as the natural person(s) who ultimately owns or controls a legal entity and/or the natural person on whose behalf a transaction is being conducted. It also includes those persons who exercise ultimate effective control over a legal person or arrangement."
+   ["The Financial Action Task Force on Money Laundering (FATF) refers to a 'beneficial owner' as the natural person(s) who ultimately owns or controls a legal entity and/or the natural person on whose behalf a transaction is being conducted. It also includes those persons who exercise ultimate effective control over a legal person or arrangement."
+    "From World Bank Report: In identifying the beneficial owner, the focus should be on two factors: the control exercised and the benefit derived. Control of a corporate vehicle will always depend on context, as control can be exercised in many different ways, including through ownership, contractually or informally."
     "The National Credit Union Administration (NCUA) defines a 'beneficial owner' as (1) a single individual with significant responsibility to control, manage or direct a legal entity customer, or (2) each individual, if any, who, directly or indirectly, through any contract, arrangement, understanding, relationship or otherwise, owns 25 percent or more of the equity interests of a legal entity customer; if a trust owns directly or indirectly, through any contract, arrangement, understanding, relationship or otherwise, 25 percent or more of the equity interests of a legal entity customer, the beneficial owner is the trustee."
     "Use of a nominee (who may be an agent, custodian, or a trustee) does not change the position regarding tax reporting and tax liability, and the beneficial owner remains responsible."],
    :db/ident :fibo-be-oac-cown/BeneficialOwner,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/"},
    :rdfs/label "beneficial owner",
    :rdfs/subClassOf [:fibo-fnd-oac-ctl/ControllingParty
-                     {:owl/onProperty     :fibo-be-oac-cown/isBeneficialOwnerOf,
-                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-agr/Beneficiary
                      {:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}],
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-agr-agr/Beneficiary
+                     {:owl/onProperty     :fibo-be-oac-cown/isBeneficialOwnerOf,
+                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "party that enjoys the benefits of ownership (such as receipt of income) of something even though its ownership (title) may be in the name of another party (called a nominee or registered owner)"})
 
@@ -103,7 +122,8 @@
    :db/ident :fibo-be-oac-cown/BeneficialOwnership,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/"},
    :rdfs/label "beneficial ownership",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-oac-ctl/involvesControlledThing,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
@@ -119,12 +139,13 @@
   "party that owns shares in and has rights and responsibilities with respect to some asset, provided in exchange for investment"
   {:cmns-av/explanatoryNote
    "The shares represent an ownership interest in a corporation, mutual fund, or partnership, or a unit of ownership in a structured product, such as a real estate investment trust.",
-   :cmns-av/synonym #voc/lstr "stockholder@en-US",
+   :cmns-av/synonym #xsd/langString "stockholder@en-US",
    :db/ident :fibo-be-oac-cown/Shareholder,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
-   :rdfs/label #voc/lstr "shareholder@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/"},
+   :rdfs/label #xsd/langString "shareholder@en",
    :rdfs/subClassOf [:fibo-fnd-agr-ctr/Counterparty
                      :fibo-be-oac-opty/ConstitutionalOwner],
    :skos/definition
@@ -137,7 +158,8 @@
    :db/ident :fibo-be-oac-cown/Shareholding,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/"},
    :rdfs/label "shareholding",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-be-oac-cown/Shareholder,
                       :owl/onProperty    :fibo-fnd-rel-rel/isHeldBy,
@@ -152,7 +174,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-oac-ctl/ControlledThing,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/"},
    :rdfs/label "has beneficial owner",
    :rdfs/range :fibo-be-oac-cown/BeneficialOwner,
    :rdfs/subPropertyOf :fibo-fnd-oac-ctl/hasControllingParty,
@@ -166,7 +189,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-oac-cown/BeneficialOwner,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/"},
    :rdfs/label "is beneficial owner of",
    :rdfs/range :fibo-fnd-oac-ctl/ControlledThing,
    :rdfs/subPropertyOf :fibo-fnd-oac-ctl/isPartyControlling,

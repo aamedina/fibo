@@ -6,22 +6,33 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
    :dcterms/abstract
    "This ontology defines concepts relating to corporation-specific control. These concepts are based on the general types of control (both de facto control and controlling interests), as defined in the ControlParties ontology, and are the specific examples of these concepts as they apply to companies incorporated by the issuance of shares.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateOwnership/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateOwnership/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateControl/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -75,7 +86,8 @@
                          :rdf/type :owl/Class},
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "affiliate",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-be-oac-cctl/isAffiliateOf,
                       :owl/someValuesFrom :fibo-be-oac-cctl/Affiliate,
@@ -89,7 +101,8 @@
   {:db/ident :fibo-be-oac-cctl/Affiliation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "affiliation",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-pty/hasUndergoer,
                       :owl/someValuesFrom :fibo-be-oac-cctl/ControlledAffiliate,
@@ -107,7 +120,8 @@
   {:db/ident :fibo-be-oac-cctl/ControlledAffiliate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "controlled affiliate",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-be-le-lp/LegalEntity,
                       :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
@@ -125,7 +139,8 @@
   {:db/ident :fibo-be-oac-cctl/ControllingAffiliate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "controlling affiliate",
    :rdfs/subClassOf [:fibo-be-oac-cctl/Affiliate
                      :fibo-be-oac-cpty/MajorityControllingParty
@@ -140,14 +155,15 @@
   {:db/ident :fibo-be-oac-cctl/DomesticUltimateParent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "domestic ultimate parent",
    :rdfs/subClassOf [:fibo-be-oac-cctl/TotalControllingInterestParty
-                     :fibo-be-oac-cown/Shareholder
                      :fibo-be-oac-cpty/TotalOwner
-                     :fibo-be-oac-cpty/DeJureControllingInterestParty
                      :fibo-be-oac-cctl/SignificantShareholder
-                     :fibo-be-oac-cctl/VotingShareholder],
+                     :fibo-be-oac-cctl/VotingShareholder
+                     :fibo-be-oac-cown/Shareholder
+                     :fibo-be-oac-cpty/DeJureControllingInterestParty],
    :skos/definition
    "party that is recognized as the ultimate parent of a given organization within the country or jurisdiction of incorporation or organization"})
 
@@ -156,14 +172,15 @@
   {:db/ident :fibo-be-oac-cctl/GlobalUltimateParent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "global ultimate parent",
    :rdfs/subClassOf [:fibo-be-oac-cctl/TotalControllingInterestParty
-                     :fibo-be-oac-cown/Shareholder
                      :fibo-be-oac-cpty/TotalOwner
-                     :fibo-be-oac-cpty/DeJureControllingInterestParty
                      :fibo-be-oac-cctl/SignificantShareholder
-                     :fibo-be-oac-cctl/VotingShareholder],
+                     :fibo-be-oac-cctl/VotingShareholder
+                     :fibo-be-oac-cown/Shareholder
+                     :fibo-be-oac-cpty/DeJureControllingInterestParty],
    :skos/definition
    "party that is recognized as the ultimate parent of a given organization world-wide"})
 
@@ -172,7 +189,8 @@
   {:db/ident :fibo-be-oac-cctl/JointVenturePartner,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "joint venture partner",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyOf,
                       :owl/someValuesFrom :fibo-be-le-fbo/JointVenture,
@@ -188,7 +206,8 @@
    :db/ident :fibo-be-oac-cctl/SignificantShareholder,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "significant shareholder",
    :rdfs/subClassOf [:fibo-be-oac-cctl/VotingShareholder
                      :fibo-be-oac-cown/Shareholder
@@ -203,18 +222,19 @@
    :db/ident :fibo-be-oac-cctl/Subsidiary,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "subsidiary",
    :rdfs/subClassOf [:fibo-be-oac-cctl/ControlledAffiliate
-                     :fibo-be-oac-cpty/ControlledParty
-                     :fibo-fnd-pty-pty/PartyInRole
-                     {:owl/onProperty     :fibo-be-oac-cctl/isAffiliateOf,
-                      :owl/someValuesFrom :fibo-be-oac-cctl/Affiliate,
-                      :rdf/type           :owl/Restriction}
                      {:owl/allValuesFrom :fibo-be-le-lp/LegalEntity,
                       :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
                       :rdf/type          :owl/Restriction}
-                     :fibo-be-oac-cctl/Affiliate],
+                     :fibo-be-oac-cpty/ControlledParty
+                     :fibo-fnd-pty-pty/PartyInRole
+                     :fibo-be-oac-cctl/Affiliate
+                     {:owl/onProperty     :fibo-be-oac-cctl/isAffiliateOf,
+                      :owl/someValuesFrom :fibo-be-oac-cctl/Affiliate,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "legal entity that is entirely or majority owned and controlled by another legal entity"})
 
@@ -226,13 +246,14 @@
    :db/ident :fibo-be-oac-cctl/TotalControllingInterestParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "total controlling interest party",
    :rdfs/subClassOf [:fibo-be-oac-cctl/SignificantShareholder
                      :fibo-be-oac-cpty/TotalOwner
+                     :fibo-be-oac-cctl/VotingShareholder
                      :fibo-be-oac-cown/Shareholder
-                     :fibo-be-oac-cpty/DeJureControllingInterestParty
-                     :fibo-be-oac-cctl/VotingShareholder],
+                     :fibo-be-oac-cpty/DeJureControllingInterestParty],
    :skos/definition
    "voting shareholder that owns 100 percent of the voting shares in some legal entity"})
 
@@ -241,7 +262,8 @@
   {:db/ident :fibo-be-oac-cctl/VotingShareholder,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "voting shareholder",
    :rdfs/subClassOf [:fibo-be-oac-cown/Shareholder
                      :fibo-be-oac-cpty/DeJureControllingInterestParty],
@@ -254,7 +276,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-le-lp/LegalEntity,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "has affiliate",
    :rdfs/range :fibo-be-oac-cctl/Affiliate,
    :rdfs/subPropertyOf :fibo-fnd-oac-ctl/isControlledPartyOf,
@@ -267,7 +290,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-oac-cctl/ControlledAffiliate,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "has controlling affiliate",
    :rdfs/range :fibo-be-oac-cctl/ControllingAffiliate,
    :rdfs/subPropertyOf [:fibo-fnd-pty-pty/isAffectedBy
@@ -278,11 +302,13 @@
 (def hasDomesticUltimateParent
   "relates an organization to another recognized as its ultimate parent, within its country or jurisdiction of incorporation, if it has one"
   {:cmns-av/adaptedFrom
-   "consensus definition of ultimate parent, with the split between domestic and global parent",
+   {:xsd/string
+    "consensus definition of ultimate parent, with the split between domestic and global parent"},
    :db/ident :fibo-be-oac-cctl/hasDomesticUltimateParent,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "has domestic ultimate parent",
    :rdfs/range :fibo-be-oac-cctl/DomesticUltimateParent,
    :rdfs/subPropertyOf :fibo-be-oac-cpty/hasMajorityControllingParty,
@@ -294,11 +320,13 @@
 (def hasGlobalUltimateParent
   "relates an organization to another recognized as its ultimate parent, if it has one"
   {:cmns-av/adaptedFrom
-   "consensus definition of ultimate parent, with the split between domestic and global parent",
+   {:xsd/string
+    "consensus definition of ultimate parent, with the split between domestic and global parent"},
    :db/ident :fibo-be-oac-cctl/hasGlobalUltimateParent,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "has global ultimate parent",
    :rdfs/range :fibo-be-oac-cctl/GlobalUltimateParent,
    :rdfs/subPropertyOf :fibo-be-oac-cpty/hasMajorityControllingParty,
@@ -315,7 +343,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-le-lp/LegalEntity,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "has subsidiary",
    :rdfs/range :fibo-be-oac-cctl/Subsidiary,
    :skos/definition
@@ -327,7 +356,8 @@
    :rdf/type [:owl/SymmetricProperty :owl/ObjectProperty],
    :rdfs/domain :fibo-be-oac-cctl/Affiliate,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "is affiliate of",
    :rdfs/range :fibo-be-oac-cctl/Affiliate,
    :skos/definition
@@ -340,7 +370,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-oac-cctl/ControllingAffiliate,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "is controlling affiliate of",
    :rdfs/range :fibo-be-oac-cctl/ControlledAffiliate,
    :rdfs/subPropertyOf [:fibo-fnd-pty-pty/actsOn
@@ -355,7 +386,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-oac-cctl/ControllingAffiliate,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "is parent company of",
    :rdfs/range :fibo-be-oac-cctl/Subsidiary,
    :rdfs/subPropertyOf [:fibo-be-oac-cctl/isControllingAffiliateOf
@@ -370,7 +402,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-oac-cctl/Subsidiary,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "is subsidiary of",
    :rdfs/range :fibo-be-oac-cctl/ControllingAffiliate,
    :rdfs/subPropertyOf [:fibo-be-oac-cctl/hasControllingAffiliate
@@ -387,7 +420,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-le-lp/LegalEntity,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/"},
    :rdfs/label "is wholly owned by",
    :rdfs/range :fibo-be-oac-cctl/TotalControllingInterestParty,
    :skos/definition

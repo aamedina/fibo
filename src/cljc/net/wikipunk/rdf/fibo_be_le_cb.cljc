@@ -6,21 +6,31 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
    :dcterms/abstract
    "This ontology defines the basic mechanisms that establish legal personhood for judicial or artificial persons, specifically those that are corporate bodies, including bodies incorporated by equity, by guarantee, and by agreement.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -70,23 +80,24 @@
    :db/ident :fibo-be-le-cb/BenefitCorporation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/"},
    :rdfs/label "benefit corporation",
    :rdfs/subClassOf [:fibo-be-le-cb/NotForProfitCorporation
-                     :fibo-be-le-cb/Corporation
-                     :fibo-be-le-lp/LegalEntity
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-fbo/NotForProfitOrganization
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-be-le-fbo/NotForProfitOrganization
+                     :fibo-be-le-cb/Corporation
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-be-le-cb/InstrumentOfIncorporation,
                       :owl/onProperty :fibo-be-le-cb/isConstitutedBy,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity],
    :skos/definition
    "not-for-profit corporation set up under specific state legislation, typically to provide some social benefit, without an obligation to maximize shareholder return"})
 
@@ -97,23 +108,24 @@
    :db/ident :fibo-be-le-cb/CommonInterestDevelopmentCorporation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/"},
    :rdfs/label "common interest development corporation",
    :rdfs/subClassOf [:fibo-be-le-cb/NotForProfitCorporation
-                     :fibo-be-le-cb/Corporation
-                     :fibo-be-le-lp/LegalEntity
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-fbo/NotForProfitOrganization
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-be-le-fbo/NotForProfitOrganization
+                     :fibo-be-le-cb/Corporation
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-be-le-cb/InstrumentOfIncorporation,
                       :owl/onProperty :fibo-be-le-cb/isConstitutedBy,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity],
    :skos/definition
    "not-for-profit corporation set up under specific state legislation as a business entity for homeowners' associations",
    :skos/example "http://www.dre.ca.gov/files/pdf/re39.pdf"})
@@ -127,17 +139,18 @@
    :db/ident :fibo-be-le-cb/Corporation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
-   :rdfs/label #voc/lstr "corporation@en",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/"},
+   :rdfs/label #xsd/langString "corporation@en",
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-be-le-cb/InstrumentOfIncorporation,
                       :owl/onProperty :fibo-be-le-cb/isConstitutedBy,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-le-lp/LegalEntity
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}],
@@ -150,24 +163,25 @@
    :owl/disjointWith :fibo-be-le-cb/NotForProfitCorporation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/"},
    :rdfs/label "for profit corporation",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/ProfitObjective,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-le-cb/Corporation
-                     :fibo-be-le-lp/LegalEntity
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-be-le-cb/InstrumentOfIncorporation,
                       :owl/onProperty :fibo-be-le-cb/isConstitutedBy,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity],
    :skos/definition
    "corporation whose objective is to make money, i.e., to ensure realization of a financial benefit such that the amount of revenue gained from a business activity exceeds the expenses, costs and taxes needed to sustain that activity"})
 
@@ -176,13 +190,14 @@
   {:db/ident :fibo-be-le-cb/IncorporationGuarantee,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/"},
    :rdfs/label "incorporation guarantee",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-fnd-acc-cur/hasNotionalAmount,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/cardinality 1,
+                     {:owl/cardinality #xsd/nonNegativeInteger 1,
                       :owl/onProperty  :fibo-fnd-rel-rel/isProvidedBy,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-law-cor/Constitution],
@@ -196,11 +211,12 @@
    :db/ident :fibo-be-le-cb/InstrumentOfIncorporation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/"},
    :rdfs/label "instrument of incorporation",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-law-cor/Constitution],
    :skos/definition
@@ -214,49 +230,52 @@
    :db/ident :fibo-be-le-cb/NotForProfitCorporation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/"},
    :rdfs/label "not-for-profit corporation",
    :rdfs/subClassOf [:fibo-be-le-fbo/NotForProfitOrganization
                      :fibo-be-le-cb/Corporation
-                     :fibo-be-le-lp/LegalEntity
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-be-le-cb/InstrumentOfIncorporation,
                       :owl/onProperty :fibo-be-le-cb/isConstitutedBy,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity],
    :skos/definition
    "corporation approved by its jurisdictional oversight and tax authorities as operating for educational, charitable, social, religious, civic or humanitarian purposes"})
 
 (def StockCorporation
   "corporation that has shareholders, each of whom receives a portion of the ownership of the corporation through shares of stock"
   {:cmns-av/adaptedFrom
-   "https://www.oecd.org/corporate/OECD-Corporate-Governance-Factbook.pdf",
+   {:rdfa/uri
+    "https://www.oecd.org/corporate/OECD-Corporate-Governance-Factbook.pdf"},
    :cmns-av/explanatoryNote
    "The shares in a stock corporation may receive a return on their investment in the form of dividends. Shares are used for voting on matters of corporate policy or to elect directors, at the corporation's annual meeting and at other meetings of the corporation.",
    :db/ident :fibo-be-le-cb/StockCorporation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
-   :rdfs/label #voc/lstr "stock corporation@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/"},
+   :rdfs/label #xsd/langString "stock corporation@en",
    :rdfs/subClassOf [:fibo-be-le-cb/Corporation
-                     :fibo-be-le-lp/LegalEntity
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasLegalName,
                       :owl/someValuesFrom :xsd/string,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-cb/isIncorporatedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-be-le-cb/InstrumentOfIncorporation,
                       :owl/onProperty :fibo-be-le-cb/isConstitutedBy,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity],
    :skos/definition
    "corporation that has shareholders, each of whom receives a portion of the ownership of the corporation through shares of stock"})
 
@@ -266,7 +285,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-le-cb/Corporation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/"},
    :rdfs/label "is constituted by",
    :rdfs/range :fibo-fnd-law-cor/Constitution,
    :skos/definition "the instrument by which an entity is incorporated"})
@@ -279,7 +299,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-le-cb/Corporation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/"},
    :rdfs/label "is incorporated in",
    :rdfs/range :fibo-fnd-law-jur/Jurisdiction,
    :rdfs/subPropertyOf :fibo-be-le-lp/isOrganizedIn,

@@ -6,14 +6,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/DebtAndEquitiesModule",
    :dcterms/abstract
    "The debt and equities module includes ontologies describing concepts that are common to debt and equity instruments, as well as across debt instruments, such as loans, bonds, asset-backed securities, and so forth.",
-   :dcterms/issued #inst "2017-08-13T22:00:00.000-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-01-30T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2017-08-13T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-01-30T18:00:00.000-05:00",
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -53,6 +55,7 @@
     "FIBO FBC Debt and Equities Module"],
    :rdf/type [:owl/NamedIndividual :fibo-fnd-utl-av/Module],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/"},
    :rdfs/label "debt and equities module",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})

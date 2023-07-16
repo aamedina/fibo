@@ -6,14 +6,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/MetadataFNDUtilities/UtilitiesModule",
    :dcterms/abstract
    "This is the metadata ontology used to describe the Foundations Utilities Module.",
-   :dcterms/issued #inst "2020-08-28T22:00:00.000-00:00",
-   :dcterms/license "https://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-01-06T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2020-08-28T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-01-06T18:00:00.000-05:00",
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/MetadataFNDUtilities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/MetadataFNDUtilities/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -43,12 +45,13 @@
      "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}
     {:rdfa/uri
      "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/"}],
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Foundations (FND) Utilities Module"
     "FIBO FND Utilities Module"],
    :rdf/type [:owl/NamedIndividual :fibo-fnd-utl-av/Module],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/MetadataFNDUtilities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/MetadataFNDUtilities/"},
    :rdfs/label "utilities module",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})

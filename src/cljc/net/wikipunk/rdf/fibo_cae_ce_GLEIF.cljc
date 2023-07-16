@@ -5,18 +5,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
    :dcterms/abstract
    "This ontology includes the codes for corporate action events as specified in GLEIF LEI Common Data Format (CDF) schema, as of 4 March 2021.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/CreditEvents/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/CorporateActions/"
-    "https://www.omg.org/spec/Commons/Classifiers/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/CreditEvents/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/CorporateActions/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
@@ -41,7 +46,8 @@
    :rdfa/prefix "fibo-cae-ce-GLEIF",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "GLEIF Corporate Action Individuals Ontology@en"})
+   :rdfs/label #xsd/langString
+                "GLEIF Corporate Action Individuals Ontology@en"})
 
 (def ABSORPTION
   "GLEIF classifier for corporate actions that is a kind of merger where there is a combination of two or more companies into an existing company"
@@ -51,13 +57,14 @@
    :fibo-fnd-rel-rel/hasTag "ABSORPTION",
    :rdf/type [:fibo-cae-ce-act/MergerAcquisition :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "ABSORPTION@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "ABSORPTION@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions that is a kind of merger where there is a combination of two or more companies into an existing company@en",
    :skos/note
-   #voc/lstr
+   #xsd/langString
     "In the case of absorption, only one company survives and all others lose their identity.@en"})
 
 (def ACQUISITION_BRANCH
@@ -68,10 +75,11 @@
    :fibo-fnd-rel-rel/hasTag "ACQUISITION_BRANCH",
    :rdf/type [:fibo-cae-ce-act/MergerAcquisition :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "ACQUISITION_BRANCH@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "ACQUISITION_BRANCH@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions where the acquiring legal entity purchases an international branch entity@en"})
 
 (def ActionGroup
@@ -79,8 +87,9 @@
   {:db/ident :fibo-cae-ce-GLEIF/ActionGroup,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "action group@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "action group@en",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-cae-ce-act/Action,
                       :rdf/type           :owl/Restriction}
@@ -89,7 +98,7 @@
                       :rdf/type           :owl/Restriction}
                      :cmns-cls/Classifier],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "classifier that differentiates corporate actions based on a GLEIF specific grouping@en"})
 
 (def BANKRUPTCY
@@ -102,13 +111,14 @@
               :fibo-cae-ce-act/BusinessStrategyClassifier
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "BANKRUPTCY@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "BANKRUPTCY@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions in which the status of a legal entity is that it is unable to pay creditors@en",
    :skos/note
-   #voc/lstr
+   #xsd/langString
     "Bankruptcy usually involves a formal court ruling. Securities may become valueless (event completed).@en"})
 
 (def BREAKUP
@@ -119,13 +129,14 @@
    :fibo-fnd-rel-rel/hasTag "BREAKUP",
    :rdf/type [:fibo-cae-ce-act/Divestiture :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "BREAKUP@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "BREAKUP@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions in which a single company splits into two or more independent, separately-run companies@en",
    :skos/note
-   #voc/lstr
+   #xsd/langString
     "Regulators also can mandate break-ups of companies for anti-trust reasons.@en"})
 
 (def CHANGE_HQ_ADDRESS
@@ -136,10 +147,11 @@
    :fibo-fnd-rel-rel/hasTag "CHANGE_HQ_ADDRESS",
    :rdf/type [:fibo-cae-ce-act/OrganizationAddressChange :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "CHANGE_HQ_ADDRESS@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "CHANGE_HQ_ADDRESS@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving a notification of a change in the headquarters address of the legal entity@en"})
 
 (def CHANGE_LEGAL_ADDRESS
@@ -150,10 +162,11 @@
    :fibo-fnd-rel-rel/hasTag "CHANGE_LEGAL_ADDRESS",
    :rdf/type [:fibo-cae-ce-act/OrganizationAddressChange :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "CHANGE_LEGAL_ADDRESS@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "CHANGE_LEGAL_ADDRESS@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving a notification of a change in the legal address of the legal entity@en"})
 
 (def CHANGE_LEGAL_FORM
@@ -164,10 +177,11 @@
    :fibo-fnd-rel-rel/hasTag "CHANGE_LEGAL_FORM",
    :rdf/type [:fibo-cae-ce-act/LegalFormChange :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "CHANGE_LEGAL_FORM@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "CHANGE_LEGAL_FORM@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving a notification of a change in the legal form of the legal entity@en"})
 
 (def CHANGE_LEGAL_NAME
@@ -178,10 +192,11 @@
    :fibo-fnd-rel-rel/hasTag "CHANGE_LEGAL_NAME",
    :rdf/type [:fibo-cae-ce-act/OrganizationNameChange :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "CHANGE_LEGAL_NAME@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "CHANGE_LEGAL_NAME@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving a notification of a change in the legal name of the legal entity@en"})
 
 (def CHANGE_OTHER_NAMES
@@ -192,10 +207,11 @@
    :fibo-fnd-rel-rel/hasTag "CHANGE_OTHER_NAMES",
    :rdf/type [:fibo-cae-ce-act/OrganizationNameChange :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "CHANGE_OTHER_NAMES@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "CHANGE_OTHER_NAMES@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving a notification of a change in the trade- or doing business name of the legal entity@en"})
 
 (def ComplexLegalFormGroup
@@ -206,18 +222,19 @@
    :fibo-fnd-rel-rel/hasTag "COMPLEX_CHANGE_LEGAL_FORM",
    :rdf/type [:fibo-cae-ce-GLEIF/ActionGroup
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-cae-ce-act/Action,
-               :rdf/type           :owl/Restriction}
               :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
+               :rdf/type           :owl/Restriction}
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-cae-ce-act/Action,
                :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "complex legal form group@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "complex legal form group@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving a more complex legal entity event including change of the legal entity status triggered by change of the legal form@en"})
 
 (def DEMERGER
@@ -228,13 +245,14 @@
    :fibo-fnd-rel-rel/hasTag "DEMERGER",
    :rdf/type [:fibo-cae-ce-act/Divestiture :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "DEMERGER@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "DEMERGER@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving a distribution of securities issued by another legal entity@en",
    :skos/note
-   #voc/lstr
+   #xsd/langString
     "The distributed securities may either be of a newly created or of an existing legal entity. For example, spin-off, demerger, unbundling, divestment.@en"})
 
 (def DISSOLUTION
@@ -247,10 +265,11 @@
               :fibo-cae-ce-act/BusinessStrategyClassifier
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "DISSOLUTION@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "DISSOLUTION@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving (i) A voluntary termination of operations, (ii) a general assignment for the benefit of the legal entity's creditors or (iii) any other liquidation, dissolution or winding up of the legal entity (excluding a Liquidity Event), whether voluntary or involuntary (event completed)@en"})
 
 (def GLEIF-CorporateActionClassificationScheme
@@ -258,10 +277,12 @@
   {:db/ident :fibo-cae-ce-GLEIF/GLEIF-CorporateActionClassificationScheme,
    :rdf/type [:fibo-cae-ce-act/ActionClassificationScheme :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
    :rdfs/label "GLEIF corporate action classification scheme",
    :rdfs/seeAlso
-   ["https://www.gleif.org/content/2-about-lei/6-common-data-file-format/1-upcoming-versions/2021-03-04_lei-cdf-v3-1.xsd"],
+   {:rdfa/uri
+    "https://www.gleif.org/content/2-about-lei/6-common-data-file-format/1-upcoming-versions/2021-03-04_lei-cdf-v3-1.xsd"},
    :skos/definition
    "scheme for classifying corporate actions according to the GLEIF LEI Common Data Format (CDF) schema"})
 
@@ -275,10 +296,11 @@
               :fibo-cae-ce-act/BusinessStrategyClassifier
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "INSOLVENCY@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "INSOLVENCY@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving the entry of a decree or order by a court or agency or supervisory authority having jurisdiction in the premises the appointment of a trustee-in-bankruptcy or similar official for such party in any insolvency, readjustment of debt, marshalling of assets and liabilities, or similar proceedings, or for the winding up or liquidation of their respective affairs (event completed)@en"})
 
 (def LIQUIDATION
@@ -292,13 +314,14 @@
               :owl/NamedIndividual
               :fibo-fbc-dae-cre/EntitySpecificCreditEvent],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "LIQUIDATION@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "LIQUIDATION@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions consisting of distribution of cash, assets, or both@en",
    :skos/note
-   #voc/lstr
+   #xsd/langString
     "Debt may be paid in order of priority based on preferred claims to assets specified by the security (event completed).@en"})
 
 (def LegalFormNameGroup
@@ -309,18 +332,19 @@
    :fibo-fnd-rel-rel/hasTag "CHANGE_LEGAL_FORM_AND_NAME",
    :rdf/type [:fibo-cae-ce-GLEIF/ActionGroup
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-cae-ce-act/Action,
-               :rdf/type           :owl/Restriction}
               :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
+               :rdf/type           :owl/Restriction}
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-cae-ce-act/Action,
                :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "legal form and name group@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "legal form and name group@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving a change in the legal form, name, or other information such as an address change for an organization@en"})
 
 (def MERGERS_AND_ACQUISITIONS
@@ -331,13 +355,14 @@
    :fibo-fnd-rel-rel/hasTag "MERGERS_AND_ACQUISITIONS",
    :rdf/type [:fibo-cae-ce-act/MergerAcquisition :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "MERGERS_AND_ACQUISITIONS@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "MERGERS_AND_ACQUISITIONS@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions in which a single company splits into two or more independent, separately-run companies@en",
    :skos/note
-   #voc/lstr
+   #xsd/langString
     "Regulators also can mandate break-ups of companies for anti-trust reasons.@en"})
 
 (def ReverseTakeoverGroup
@@ -348,18 +373,19 @@
    :fibo-fnd-rel-rel/hasTag "REVERSE_TAKEOVER",
    :rdf/type [:fibo-cae-ce-GLEIF/ActionGroup
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-cae-ce-act/Action,
-               :rdf/type           :owl/Restriction}
               :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
+               :rdf/type           :owl/Restriction}
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-cae-ce-act/Action,
                :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "reverse takeover group@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "reverse takeover group@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions that are part of a reverse takeover event@en"})
 
 (def SPINOFF
@@ -370,10 +396,11 @@
    :fibo-fnd-rel-rel/hasTag "SPINOFF",
    :rdf/type [:fibo-cae-ce-act/SpinOff :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "SPINOFF@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "SPINOFF@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions where the shareholders of the original entity are compensated for the value loss of the original entity via shares of the new entity or via dividend@en"})
 
 (def StandaloneGroup
@@ -384,18 +411,19 @@
    :fibo-fnd-rel-rel/hasTag "STANDALONE",
    :rdf/type [:fibo-cae-ce-GLEIF/ActionGroup
               :owl/NamedIndividual
-              {:owl/onProperty     :cmns-cls/classifies,
-               :owl/someValuesFrom :fibo-cae-ce-act/Action,
-               :rdf/type           :owl/Restriction}
               :cmns-cls/Classifier
               {:owl/onProperty     :fibo-fnd-rel-rel/hasTag,
                :owl/someValuesFrom :xsd/string,
+               :rdf/type           :owl/Restriction}
+              {:owl/onProperty     :cmns-cls/classifies,
+               :owl/someValuesFrom :fibo-cae-ce-act/Action,
                :rdf/type           :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "standalone group@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "standalone group@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions that are single, standalone events rather than a combination of multiple events@en"})
 
 (def TRANSFORMATION_BRANCH_TO_SUBSIDIARY
@@ -406,10 +434,11 @@
    :fibo-fnd-rel-rel/hasTag "TRANSFORMATION_BRANCH_TO_SUBSIDIARY",
    :rdf/type [:fibo-cae-ce-act/MergerAcquisition :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "TRANSFORMATION_BRANCH_TO_SUBSIDIARY@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "TRANSFORMATION_BRANCH_TO_SUBSIDIARY@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving the transfer of all of the assets and liabilities of an International Branch to the new subsidiary entity in exchange for the transfer of securities representing the capital of the subsidiary entity receiving the transfer@en"})
 
 (def TRANSFORMATION_SUBSIDIARY_TO_BRANCH
@@ -420,10 +449,11 @@
    :fibo-fnd-rel-rel/hasTag "TRANSFORMATION_SUBSIDIARY_TO_BRANCH",
    :rdf/type [:fibo-cae-ce-act/MergerAcquisition :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "TRANSFORMATION_SUBSIDIARY_TO_BRANCH@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "TRANSFORMATION_SUBSIDIARY_TO_BRANCH@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving the transfer of all of the assets and liabilities of a subsidiary to an International Branch entity in exchange for the transfer of securities representing the capital of the International Branch entity receiving the transfer@en"})
 
 (def TRANSFORMATION_UMBRELLA_TO_STANDALONE
@@ -434,10 +464,11 @@
    :fibo-fnd-rel-rel/hasTag "TRANSFORMATION_UMBRELLA_TO_STANDALONE",
    :rdf/type [:fibo-cae-ce-act/LegalFormChange :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "TRANSFORMATION_UMBRELLA_TO_STANDALONE@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "TRANSFORMATION_UMBRELLA_TO_STANDALONE@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions involving a notification of a change in the legal form from a Fund legal entity structure with one or more than one sub-funds/compartments to a Fund legal entity structure without sub-funds/compartments@en"})
 
 (def VOLUNTARY_ARRANGEMENT
@@ -450,8 +481,9 @@
               :fibo-cae-ce-act/BusinessStrategyClassifier
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-   :rdfs/label #voc/lstr "VOLUNTARY_ARRANGEMENT@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
+   :rdfs/label #xsd/langString "VOLUNTARY_ARRANGEMENT@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "GLEIF classifier for corporate actions consisting of a procedure that allows a legal entity to settle debts by paying only a proportion of the amount that it owes to creditors or to come to some other arrangement with its creditors over the payment of its debts (event completed)@en"})

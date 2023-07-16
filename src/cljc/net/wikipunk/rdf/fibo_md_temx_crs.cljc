@@ -1,21 +1,26 @@
 (ns net.wikipunk.rdf.fibo-md-temx-crs
-  "This ontology extends the credit status ontology to define credit status concepts that are specific to issued securities. These include cashflow status and the basic credit statuses of being OK or in default. Note that in application data models these concepts would be represented as one or more selectable code lists or enumerations."
+  "This ontology extends the credit status ontology to define credit status concepts that are specific to issued securities. These include cashflow status and the basic credit statuses of being OK or in default. \n\t\tNote that in application data models these concepts would be represented as one or more selectable code lists or enumerations."
   {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
    :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
    :dcterms/abstract
    "This ontology extends the credit status ontology to define credit status concepts that are specific to issued securities. These include cashflow status and the basic credit statuses of being OK or in default. \n\t\tNote that in application data models these concepts would be represented as one or more selectable code lists or enumerations.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/TemporalCore/SecurityCreditStatuses/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/TemporalCore/SecurityCreditStatuses/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
@@ -37,39 +42,41 @@
    :rdfa/prefix "fibo-md-temx-crs",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
-   :rdfs/label #voc/lstr "SecurityCreditStatuses@en"})
+   :rdfs/label #xsd/langString "SecurityCreditStatuses@en"})
 
 (def CreditOK
   "Not defaulted."
   {:db/ident :fibo-md-temx-crs/CreditOK,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
-   :rdfs/label #voc/lstr "credit o k@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/"},
+   :rdfs/label #xsd/langString "credit o k@en",
    :rdfs/subClassOf [:fibo-md-temx-crs/SecurityCreditStatus
+                     :fibo-fnd-arr-lif/LifecycleStatus
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus],
-   :skos/definition #voc/lstr "Not defaulted.@en"})
+                      :rdf/type           :owl/Restriction}],
+   :skos/definition #xsd/langString "Not defaulted.@en"})
 
 (def InDefault
   "The issuer has failed to pay somthing that they are contractually obliged to pay."
   {:db/ident :fibo-md-temx-crs/InDefault,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
-   :rdfs/label #voc/lstr "in default@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/"},
+   :rdfs/label #xsd/langString "in default@en",
    :rdfs/subClassOf [:fibo-md-temx-crs/SecurityCreditStatus
+                     :fibo-fnd-arr-lif/LifecycleStatus
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-lif/LifecycleStatus],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The issuer has failed to pay somthing that they are contractually obliged to pay.@en",
    :skos/editorialNote
-   #voc/lstr
+   #xsd/langString
     "(review 7 Oct 09) Does this exist as a term? This is a characteristic of the instrument not the rating. Because it's in default you can expect the rating to drop. Applies to instrument not to debtor. So a company may have 3 bond issues and may be defualt on only one. 14 Oct: Degrees of defaults e.g. tranche not paying interest due to losses on the underlying portrfolio; tranches being used to pay down more senior tranches.@en"})
 
 (def SecurityCashflowStatus
@@ -78,14 +85,15 @@
    :owl/disjointWith :fibo-md-temx-crs/SecurityCreditStatus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
-   :rdfs/label #voc/lstr "security cashflow status@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/"},
+   :rdfs/label #xsd/langString "security cashflow status@en",
    :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStatus,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The status of the cashflow due to the holder from the security.@en",
    :skos/editorialNote
-   #voc/lstr
+   #xsd/langString
     "Specialize this for preferred stocks, debt tranches and so on.@en"})
 
 (def SecurityCreditStatus
@@ -93,8 +101,9 @@
   {:db/ident :fibo-md-temx-crs/SecurityCreditStatus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
-   :rdfs/label #voc/lstr "security credit status@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/"},
+   :rdfs/label #xsd/langString "security credit status@en",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
@@ -106,8 +115,9 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-md-temx-crs/SecurityCashflowStatus,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
-   :rdfs/label #voc/lstr "accelerated principal payments expected@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/"},
+   :rdfs/label #xsd/langString "accelerated principal payments expected@en",
    :rdfs/range :xsd/boolean})
 
 (def interestPaymentsExpected
@@ -116,8 +126,9 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-md-temx-crs/SecurityCashflowStatus,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
-   :rdfs/label #voc/lstr "interest payments expected@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/"},
+   :rdfs/label #xsd/langString "interest payments expected@en",
    :rdfs/range :xsd/boolean})
 
 (def principalPaymentsExpected
@@ -126,6 +137,7 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-md-temx-crs/SecurityCashflowStatus,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
-   :rdfs/label #voc/lstr "principal payments expected@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/"},
+   :rdfs/label #xsd/langString "principal payments expected@en",
    :rdfs/range :xsd/boolean})

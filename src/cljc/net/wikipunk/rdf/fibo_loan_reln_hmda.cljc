@@ -6,25 +6,37 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
    :dcterms/abstract
    "This ontology defines concepts specific to mortgages that are covered by the Home Mortgage Disclosure Act (HMDA) and related regulations. This includes the concept of a HMDA report as well as specializations of the core classes for pre-approval requests, covered loan contracts.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MortgageLoans/"
-    "https://www.omg.org/spec/Commons/Classifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MortgageLoans/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
@@ -67,7 +79,8 @@
   {:db/ident :fibo-loan-reln-hmda/Ethnicity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"},
    :rdfs/label "ethnicity",
    :rdfs/subClassOf [{:owl/onProperty :cmns-cls/classifies,
                       :owl/someValuesFrom
@@ -79,11 +92,12 @@
 
 (def HMDA-CoveredLoanContract
   "a closed-end mortgage loan or open-end line of credit that is not an excluded transaction for HMDA reporting under US section 1003.3(c) of the Revised Home Mortgage Disclosure Act of 2015"
-  {:cmns-av/adaptedFrom "the Revised HMDA regulatory text.",
+  {:cmns-av/adaptedFrom {:xsd/string "the Revised HMDA regulatory text."},
    :db/ident :fibo-loan-reln-hmda/HMDA-CoveredLoanContract,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"},
    :rdfs/label "HMDA covered loan contract",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/isClassifiedBy,
                       :owl/someValuesFrom :fibo-loan-reln-hmda/HowSubmitted,
@@ -97,7 +111,8 @@
   {:db/ident :fibo-loan-reln-hmda/HMDA-Disposition,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"},
    :rdfs/label "HMDA disposition",
    :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
@@ -110,7 +125,8 @@
               :owl/NamedIndividual
               :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"}})
 
 (def HMDA-Disposition-ApplicationDenied
   {:db/ident :fibo-loan-reln-hmda/HMDA-Disposition-ApplicationDenied,
@@ -118,7 +134,8 @@
               :owl/NamedIndividual
               :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"}})
 
 (def HMDA-Disposition-ApplicationWithdrawn
   {:db/ident :fibo-loan-reln-hmda/HMDA-Disposition-ApplicationWithdrawn,
@@ -126,7 +143,8 @@
               :owl/NamedIndividual
               :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"}})
 
 (def HMDA-Disposition-FileClosedForIncompleteness
   {:db/ident :fibo-loan-reln-hmda/HMDA-Disposition-FileClosedForIncompleteness,
@@ -134,7 +152,8 @@
               :owl/NamedIndividual
               :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"}})
 
 (def HMDA-Disposition-LoanOriginated
   {:db/ident :fibo-loan-reln-hmda/HMDA-Disposition-LoanOriginated,
@@ -142,7 +161,8 @@
               :owl/NamedIndividual
               :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"}})
 
 (def HMDA-Disposition-LoanPurchasedByYourInstitution
   {:db/ident
@@ -151,7 +171,8 @@
               :owl/NamedIndividual
               :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"}})
 
 (def HMDA-Disposition-PreapprovalRequestApprovedButNotAccepted
   {:db/ident
@@ -160,7 +181,8 @@
               :owl/NamedIndividual
               :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"}})
 
 (def HMDA-Disposition-PreapprovalRequestDenied
   {:db/ident :fibo-loan-reln-hmda/HMDA-Disposition-PreapprovalRequestDenied,
@@ -168,17 +190,19 @@
               :owl/NamedIndividual
               :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"}})
 
 (def HMDA-PreApprovalRequest
   "a request for pre-approval of a home purchase loan up to a certain amount, and subject to certain non-credit related conditions"
-  {:cmns-av/adaptedFrom "the 2015 Revised HMDA regulation.",
+  {:cmns-av/adaptedFrom {:xsd/string "the 2015 Revised HMDA regulation."},
    :cmns-av/explanatoryNote
    "This request is approved only after a comprehensive analysis of the credit worthiness of the borrower is carried out.",
    :db/ident :fibo-loan-reln-hmda/HMDA-PreApprovalRequest,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"},
    :rdfs/label "HMDA pre-approval request",
    :rdfs/subClassOf :fibo-loan-ln-app/PreApprovalRequest,
    :skos/definition
@@ -186,16 +210,20 @@
 
 (def HMDA-Report
   "a report prepared to satisfy HMDA regulatory reporting requirements as described US section 1003.3(c) of the Revised Home Mortgage Disclosure Act of 2015"
-  {:cmns-av/adaptedFrom "the Revised HMDA regulatory text.",
+  {:cmns-av/adaptedFrom {:xsd/string "the Revised HMDA regulatory text."},
    :db/ident :fibo-loan-reln-hmda/HMDA-Report,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"},
    :rdfs/label "HMDA report",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasNumberOfEntries,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-rep/isSubmittedTo,
+                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasNumberOfEntries,
                       :owl/someValuesFrom :xsd/positiveInteger,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/onProperty
                                        :fibo-fnd-pty-rl/isPlayedBy,
                                        :owl/someValuesFrom
@@ -206,9 +234,6 @@
                                        :rdf/type :owl/Restriction},
                       :owl/onProperty :fibo-fnd-arr-rep/isSubmittedBy,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-rep/isSubmittedTo,
-                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-rep/Report],
    :skos/definition
    "a report prepared to satisfy HMDA regulatory reporting requirements as described US section 1003.3(c) of the Revised Home Mortgage Disclosure Act of 2015",
@@ -217,11 +242,12 @@
 
 (def HowSubmitted
   "category indicating whether the applicant or borrower submitted the application for the covered loan directly to the reporting financial institution"
-  {:cmns-av/adaptedFrom "2015 Revised HMDA regulation",
+  {:cmns-av/adaptedFrom {:xsd/string "2015 Revised HMDA regulation"},
    :db/ident :fibo-loan-reln-hmda/HowSubmitted,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"},
    :rdfs/label "how submitted",
    :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
@@ -233,7 +259,8 @@
               :owl/NamedIndividual
               :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"}})
 
 (def HowSubmitted-notDirectly
   {:db/ident :fibo-loan-reln-hmda/HowSubmitted-notDirectly,
@@ -241,14 +268,16 @@
               :owl/NamedIndividual
               :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"}})
 
 (def Race
   "a category based on a person's physical characteristics, such as bone structure and skin, hair, or eye color"
   {:db/ident :fibo-loan-reln-hmda/Race,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"},
    :rdfs/label "race",
    :rdfs/subClassOf [{:owl/onProperty :cmns-cls/classifies,
                       :owl/someValuesFrom
@@ -266,7 +295,8 @@
   {:db/ident :fibo-loan-reln-hmda/hasHMDA-DispositionDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"},
    :rdfs/label "HMDA disposition date",
    :rdfs/subPropertyOf :cmns-dt/hasDate,
    :skos/definition

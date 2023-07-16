@@ -6,30 +6,43 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
    :dcterms/abstract
    "This ontology defines concepts required to identify securities, including a number of well-known securities identifiers and related schemes, registries, and registration authorities.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"
-    "https://www.omg.org/spec/Commons/Classifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesListings/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/ContextualIdentifiers/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesListings/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualIdentifiers/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIdentification/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
@@ -85,7 +98,8 @@
   {:db/ident :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "financial instrument identification scheme",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasMember,
                       :owl/someValuesFrom
@@ -103,24 +117,26 @@
    :db/ident :fibo-sec-sec-id/InternationalSecuritiesIdentificationNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "international securities identification number",
-   :rdfs/seeAlso ["http://www.iso.org/iso/catalogue_detail?csnumber=44811"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "http://www.iso.org/iso/catalogue_detail?csnumber=44811"},
    :rdfs/subClassOf
-   [{:owl/onClass    :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
+   [{:owl/onClass    :lcc-cr/Alpha2Code,
      :owl/onProperty :cmns-col/comprises,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
-    {:owl/onClass    :lcc-cr/Alpha2Code,
+    {:owl/onClass    :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
      :owl/onProperty :cmns-col/comprises,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
     :fibo-sec-sec-id/SecurityIdentifier
     :cmns-cxtid/StructuredIdentifier
-    :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
     {:owl/onProperty     :cmns-id/identifies,
      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
      :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
     {:owl/onProperty     :cmns-dsg/isDefinedIn,
      :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentificationScheme,
      :rdf/type           :owl/Restriction}],
@@ -134,24 +150,26 @@
    :fibo-sec-sec-id/InternationalSecuritiesIdentificationNumberingScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "international securities identification numbering scheme",
-   :rdfs/seeAlso ["http://www.iso.org/iso/catalogue_detail?csnumber=44811"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "http://www.iso.org/iso/catalogue_detail?csnumber=44811"},
    :rdfs/subClassOf
    [{:owl/onProperty :cmns-dsg/defines,
      :owl/someValuesFrom
      :fibo-sec-sec-id/InternationalSecuritiesIdentificationNumber,
      :rdf/type :owl/Restriction}
     :fibo-sec-sec-id/SecurityIdentificationScheme
+    :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme
+    {:owl/onProperty     :cmns-col/hasMember,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+     :rdf/type           :owl/Restriction}
     :cmns-id/IdentificationScheme
     :fibo-fbc-fct-ra/RegistrationScheme
     {:owl/onProperty     :cmns-dsg/defines,
      :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasMember,
-     :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "formal definition of the structure and application of a ISINs as defined in ISO 6166"})
 
@@ -160,7 +178,8 @@
   {:db/ident :fibo-sec-sec-id/ListedSecurityIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "listed security identifier",
    :rdfs/subClassOf
    [{:owl/onProperty     :cmns-id/identifies,
@@ -176,10 +195,10 @@
      :owl/someValuesFrom :fibo-fbc-fct-mkt/Exchange,
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-id/SecurityIdentifier
-    :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
     {:owl/onProperty     :cmns-id/identifies,
      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
      :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
     {:owl/onProperty     :cmns-dsg/isDefinedIn,
      :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentificationScheme,
      :rdf/type           :owl/Restriction}],
@@ -192,13 +211,14 @@
    :db/ident :fibo-sec-sec-id/NationalNumberingAgency,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "national numbering agency",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-plc-loc/hasCoverageArea,
      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fbc-fct-ra/registers,
+    {:owl/onProperty     :fibo-fnd-rel-rel/issues,
      :owl/someValuesFrom :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty :fibo-fnd-rel-rel/manages,
@@ -206,7 +226,7 @@
      :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumberRegistry,
      :rdf/type :owl/Restriction}
     :fibo-fbc-fct-ra/RegistrationAuthority
-    {:owl/onProperty     :fibo-fnd-rel-rel/issues,
+    {:owl/onProperty     :fibo-fbc-fct-ra/registers,
      :owl/someValuesFrom :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
      :rdf/type           :owl/Restriction}],
    :skos/definition
@@ -218,7 +238,8 @@
    :db/ident :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "National Securities Identifying Number",
    :rdfs/subClassOf
    [{:owl/onProperty     :cmns-dsg/isDefinedIn,
@@ -228,10 +249,10 @@
      :owl/someValuesFrom :fibo-sec-sec-id/NationalNumberingAgency,
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-id/SecurityIdentifier
-    :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
     {:owl/onProperty     :cmns-id/identifies,
      :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
      :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
     {:owl/onProperty     :cmns-dsg/isDefinedIn,
      :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentificationScheme,
      :rdf/type           :owl/Restriction}],
@@ -244,7 +265,8 @@
    :db/ident :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumberRegistry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "National Securities Identifying Number registry",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
@@ -256,20 +278,20 @@
      :rdf/type :owl/Restriction}
     {:owl/onClass    :fibo-sec-sec-id/NationalSecurityIdentificationScheme,
      :owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
     :fibo-sec-sec-id/SecurityRegistry
+    {:owl/onClass    :fibo-sec-sec-id/SecurityIdentificationScheme,
+     :owl/onProperty :cmns-cls/isCharacterizedBy,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-ra/Registry
     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
      :owl/someValuesFrom :fibo-fbc-fct-ra/RegistrationAuthority,
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistryEntry,
      :owl/someValuesFrom :fibo-sec-sec-id/SecurityRegistryEntry,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-ra/Registry
-    {:owl/onClass    :fibo-sec-sec-id/SecurityIdentificationScheme,
-     :owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "registry used by a national numbering agency to manage the financial instrument identifiers and related information that it registers"})
 
@@ -278,19 +300,20 @@
   {:db/ident :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumberRegistryEntry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "national numbering agency registry entry",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
                       :fibo-sec-sec-id/NationalSecuritiesIdentifyingNumber,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-sec-id/SecurityRegistryEntry
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-sec-sec-lst/RegisteredSecurity,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fct-ra/RegistryEntry
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fct-ra/RegistryEntry
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-sec-sec-lst/RegisteredSecurity,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "entry in a National Securities Identifying Number registry"})
@@ -302,7 +325,8 @@
    :db/ident :fibo-sec-sec-id/NationalSecurityIdentificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "national security identification scheme",
    :rdfs/subClassOf
    [{:owl/onProperty     :cmns-dsg/defines,
@@ -312,15 +336,15 @@
      :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-id/SecurityIdentificationScheme
+    :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme
+    {:owl/onProperty     :cmns-col/hasMember,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+     :rdf/type           :owl/Restriction}
     :cmns-id/IdentificationScheme
     :fibo-fbc-fct-ra/RegistrationScheme
     {:owl/onProperty     :cmns-dsg/defines,
      :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasMember,
-     :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "security identification scheme, defining the format and structure of a National Securities Identifying Number (NSIN), published nationally on behalf of a country"})
 
@@ -331,22 +355,23 @@
    :db/ident :fibo-sec-sec-id/ProprietarySecurityIdentificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "proprietary security identification scheme",
    :rdfs/subClassOf
    [{:owl/onProperty     :cmns-dsg/defines,
      :owl/someValuesFrom :fibo-sec-sec-id/ProprietarySecurityIdentifier,
      :rdf/type           :owl/Restriction}
     :fibo-sec-sec-id/SecurityIdentificationScheme
+    :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme
+    {:owl/onProperty     :cmns-col/hasMember,
+     :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
+     :rdf/type           :owl/Restriction}
     :cmns-id/IdentificationScheme
     :fibo-fbc-fct-ra/RegistrationScheme
     {:owl/onProperty     :cmns-dsg/defines,
      :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/hasMember,
-     :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
-     :rdf/type           :owl/Restriction}
-    :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "security identification scheme published by a commercial entity"})
 
@@ -355,17 +380,18 @@
   {:db/ident :fibo-sec-sec-id/ProprietarySecurityIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "proprietary security identifier",
    :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/someValuesFrom
                       :fibo-sec-sec-id/ProprietarySecurityIdentificationScheme,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-sec-id/SecurityIdentifier
-                     :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
                      {:owl/onProperty     :cmns-id/identifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fi-fi/FinancialInstrumentIdentifier
                      {:owl/onProperty :cmns-dsg/isDefinedIn,
                       :owl/someValuesFrom
                       :fibo-sec-sec-id/SecurityIdentificationScheme,
@@ -377,18 +403,19 @@
   {:db/ident :fibo-sec-sec-id/SecurityIdentificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "security identification scheme",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-sec-sec-id/SecurityIdentifier,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-sec-id/FinancialInstrumentIdentificationScheme
                      :fibo-fbc-fct-ra/RegistrationScheme
-                     :cmns-id/IdentificationScheme
                      {:owl/onProperty :cmns-col/hasMember,
                       :owl/someValuesFrom
                       :fibo-fbc-fi-fi/FinancialInstrumentIdentifier,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :cmns-id/IdentificationScheme],
    :skos/definition
    "formal definition of the structure and application of a particular set of securities identifiers"})
 
@@ -397,7 +424,8 @@
   {:db/ident :fibo-sec-sec-id/SecurityIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "security identifier",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-id/identifies,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
@@ -417,7 +445,8 @@
    :db/ident :fibo-sec-sec-id/SecurityRegistry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "security registry",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
@@ -428,7 +457,7 @@
      :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-sec-sec-id/SecurityIdentificationScheme,
      :owl/onProperty :cmns-cls/isCharacterizedBy,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-ra/Registry],
    :skos/definition
@@ -439,7 +468,8 @@
   {:db/ident :fibo-sec-sec-id/SecurityRegistryEntry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "security registry entry",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-sec-sec-lst/RegisteredSecurity,
@@ -459,9 +489,11 @@
    :db/ident :fibo-sec-sec-id/TickerSymbol,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/"},
    :rdfs/label "ticker symbol",
-   :rdfs/seeAlso ["https://www.investopedia.com/terms/t/tickersymbol.asp"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.investopedia.com/terms/t/tickersymbol.asp"},
    :rdfs/subClassOf [{:owl/onProperty     :cmns-id/identifies,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-sec-sec-lst/ListedSecurity

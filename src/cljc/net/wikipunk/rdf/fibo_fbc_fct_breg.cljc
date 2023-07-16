@@ -6,33 +6,49 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
    :dcterms/abstract
    "This ontology extends the Registration Authorities ontology to define specific kinds of registries, such as business entity registries, registries for identifiers and codes of various sorts, and registries for financial institutions and intermediaries based on jurisdiction, who regulates them, and the services they provide.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://www.omg.org/spec/Commons/Classifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
@@ -99,14 +115,16 @@
 (def ActiveStatus
   "status indicating that as of the last report or update, the entity was legally registered and operating"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/ActiveStatus,
    :fibo-fnd-rel-rel/hasTag "ACTIVE",
    :rdf/type [:fibo-fbc-fct-breg/EntityStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "active status",
    :skos/definition
    "status indicating that as of the last report or update, the entity was legally registered and operating"})
@@ -114,14 +132,16 @@
 (def AnnulledStatus
   "status indicating that the registration was determined to be erroneous or invalid after issuance"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/AnnulledStatus,
    :fibo-fnd-rel-rel/hasTag "ANNULLED",
    :rdf/type [:fibo-fbc-fct-breg/RegistrationStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "annulled status",
    :skos/definition
    "status indicating that the registration was determined to be erroneous or invalid after issuance"})
@@ -129,11 +149,13 @@
 (def BusinessRegisterIdentifier
   "identifier that uniquely identifies a business register, such as a register identified by the Global Legal Entity Identifier Foundation (GLEIF) registration authorities list"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"},
    :db/ident :fibo-fbc-fct-breg/BusinessRegisterIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "business register identifier",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
                       :owl/someValuesFrom
@@ -141,7 +163,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fbc-fct-breg/BusinessRegistry,
                       :owl/onProperty :cmns-id/identifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :cmns-id/Identifier],
    :skos/definition
@@ -150,13 +172,15 @@
 (def BusinessRegistrationAuthority
   "registration authority that is responsible for maintaining a registry of business entities"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"},
    :cmns-av/explanatoryNote
    "A business registry may include any government-managed registry for registering a business, such as a state department of corporations in the US, as well as other registries such as a local operating unit (LOU) for registration of legal entity identifiers (LEIs). Any sanctioned registration authority as defined by the Registration Authorities List, published by GLEIF, is a business registration authority in this sense.",
    :db/ident :fibo-fbc-fct-breg/BusinessRegistrationAuthority,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "business registration authority",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/manages,
                       :owl/someValuesFrom :fibo-fbc-fct-breg/BusinessRegistry,
@@ -172,11 +196,13 @@
 (def BusinessRegistry
   "registry for registering and maintaining information about business entities"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"},
    :db/ident :fibo-fbc-fct-breg/BusinessRegistry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "business registry",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fbc-fct-ra/hasRegistryEntry,
@@ -184,9 +210,9 @@
      :rdf/type           :owl/Restriction}
     {:owl/onClass    :fibo-fbc-fct-breg/BusinessRegistrationAuthority,
      :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onDataRange :xsd/string,
      :owl/onProperty  :fibo-fbc-fct-breg/hasRegistryName,
      :rdf/type        :owl/Restriction}
@@ -199,7 +225,8 @@
   {:db/ident :fibo-fbc-fct-breg/BusinessRegistryEntry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "business registry entry",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
@@ -208,7 +235,7 @@
                      {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistrationDate,
                       :owl/someValuesFrom :cmns-dt/CombinedDateTime,
                       :rdf/type           :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :fibo-fbc-fct-breg/RegistrationStatus,
                       :owl/onProperty :fibo-fbc-fct-breg/hasRegistrationStatus,
                       :rdf/type       :owl/Restriction}
@@ -218,14 +245,16 @@
 (def CancelledStatus
   "status indicating that the registration was abandoned prior to issuance"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/CancelledStatus,
    :fibo-fnd-rel-rel/hasTag "CANCELLED",
    :rdf/type [:fibo-fbc-fct-breg/RegistrationStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "cancelled status",
    :skos/definition
    "status indicating that the registration was abandoned prior to issuance"})
@@ -233,14 +262,16 @@
 (def DuplicateStatus
   "status indicating that the registration was determined to be a duplicate registration of the same entity as another registration; duplicate status is assigned to the non-surviving registration (i.e. the identifier that should no longer be used)"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/DuplicateStatus,
    :fibo-fnd-rel-rel/hasTag "DUPLICATE",
    :rdf/type [:fibo-fbc-fct-breg/RegistrationStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "duplicate status",
    :skos/definition
    "status indicating that the registration was determined to be a duplicate registration of the same entity as another registration; duplicate status is assigned to the non-surviving registration (i.e. the identifier that should no longer be used)"})
@@ -248,15 +279,17 @@
 (def EntityExpirationReason
   "code for the reason that a legal entity ceased to exist and/or operate"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/EntityExpirationReason,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "entity expiration reason",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      :cmns-cds/CodeElement],
    :skos/definition
@@ -265,18 +298,20 @@
 (def EntityExpirationReasonCorporateAction
   "expiration reason indicating that an entity was acquired or merged with another entity"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/EntityExpirationReasonCorporateAction,
    :fibo-fnd-rel-rel/hasTag "CORPORATE_ACTION",
    :rdf/type [:fibo-fbc-fct-breg/EntityExpirationReason
               :owl/NamedIndividual
+              :cmns-cds/CodeElement
               {:owl/onDataRange :xsd/string,
                :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-               :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cds/CodeElement],
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "entity expiration reason - corporate action",
    :skos/definition
    "expiration reason indicating that an entity was acquired or merged with another entity"})
@@ -284,18 +319,20 @@
 (def EntityExpirationReasonDissolved
   "expiration reason indicating that an entity ceased to operate"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/EntityExpirationReasonDissolved,
    :fibo-fnd-rel-rel/hasTag "DISSOLVED",
    :rdf/type [:fibo-fbc-fct-breg/EntityExpirationReason
               :owl/NamedIndividual
+              :cmns-cds/CodeElement
               {:owl/onDataRange :xsd/string,
                :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-               :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cds/CodeElement],
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "entity expiration reason - disolved",
    :skos/definition
    "expiration reason indicating that an entity ceased to operate"})
@@ -303,18 +340,20 @@
 (def EntityExpirationReasonOther
   "expiration reason indicating something that is neither due to disolution nor corporate action"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/EntityExpirationReasonOther,
    :fibo-fnd-rel-rel/hasTag "OTHER",
    :rdf/type [:fibo-fbc-fct-breg/EntityExpirationReason
               :owl/NamedIndividual
+              :cmns-cds/CodeElement
               {:owl/onDataRange :xsd/string,
                :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-               :owl/qualifiedCardinality 1,
-               :rdf/type        :owl/Restriction}
-              :cmns-cds/CodeElement],
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+               :rdf/type        :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "entity expiration reason - other",
    :skos/definition
    "expiration reason indicating something that is neither due to disolution nor corporate action"})
@@ -323,11 +362,13 @@
   "registry for registering and maintaining information about the legal forms that are valid for business entities for a particular jurisdiction following the ISO 20275 standard"
   {:cmns-av/abbreviation "ELF registry",
    :cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/code-lists/iso-20275-entity-legal-forms-code-list",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/code-lists/iso-20275-entity-legal-forms-code-list"},
    :db/ident :fibo-fbc-fct-breg/EntityLegalFormRegistry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "entity legal form registry",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fct-ra/hasRegistryEntry,
                       :owl/someValuesFrom
@@ -341,11 +382,13 @@
   "entry in an entity legal form registry that conforms to ISO 20275"
   {:cmns-av/abbreviation "ELF registry entry",
    :cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/code-lists/iso-20275-entity-legal-forms-code-list",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/code-lists/iso-20275-entity-legal-forms-code-list"},
    :db/ident :fibo-fbc-fct-breg/EntityLegalFormRegistryEntry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "entity legal form registry entry",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
@@ -358,13 +401,15 @@
 (def EntityStatus
   "lifecycle stage indicating the operational and/or legal status of an entity"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :cmns-av/explanatoryNote
    "In some jurisdictions, there may be other possible values for entity status, such as suspended in the State of California, thus the individuals provided herein are not intended to be exhaustive.",
    :db/ident :fibo-fbc-fct-breg/EntityStatus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "entity status",
    :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStage,
    :skos/definition
@@ -373,15 +418,17 @@
 (def EntityValidationLevel
   "code for the level of validation performed by the GLEIF or LOU with respect to the reference data provided by the registrant"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/EntityValidationLevel,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "entity validation level",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      :cmns-cds/CodeElement],
    :skos/definition
@@ -390,18 +437,20 @@
 (def EntityValidationLevelEntitySuppliedOnly
   "Based on the validation procedures in use by the LOU responsible for the record, the information associated with this record has significant reliance on the information that a submitter provided due to the unavailability of corroborating information."
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/EntityValidationLevelEntitySuppliedOnly,
    :fibo-fnd-rel-rel/hasTag "ENTITY_SUPPLIED_ONLY",
    :rdf/type [:fibo-fbc-fct-breg/EntityValidationLevel
               :owl/NamedIndividual
               {:owl/onDataRange :xsd/string,
                :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type        :owl/Restriction}
               :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "entity validation level - entity-supplied only",
    :skos/definition
    "Based on the validation procedures in use by the LOU responsible for the record, the information associated with this record has significant reliance on the information that a submitter provided due to the unavailability of corroborating information."})
@@ -409,18 +458,20 @@
 (def EntityValidationLevelFullyCorroborated
   "Based on the validation procedures in use by the LOU responsible for the record, there is sufficient information contained in authoritative public sources to corroborate the information that the submitter has provided for the record."
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :fibo-fnd-rel-rel/hasTag "FULLY_CORROBORATED",
    :rdf/type [:fibo-fbc-fct-breg/EntityValidationLevel
               :owl/NamedIndividual
               {:owl/onDataRange :xsd/string,
                :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type        :owl/Restriction}
               :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "entity validation level - fully corroborated",
    :skos/definition
    "Based on the validation procedures in use by the LOU responsible for the record, there is sufficient information contained in authoritative public sources to corroborate the information that the submitter has provided for the record."})
@@ -428,18 +479,20 @@
 (def EntityValidationLevelPartiallyCorroborated
   "Based on the validation procedures in use by the LOU responsible for the record, the information supplied by the registrant can be partially corroborated by public authoritative sources, while some of the record is dependent upon the information that the registrant submitted, either due to conflicts with authoritative information, or due to data unavailability."
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/EntityValidationLevelPartiallyCorroborated,
    :fibo-fnd-rel-rel/hasTag "PARTIALLY_CORROBORATED",
    :rdf/type [:fibo-fbc-fct-breg/EntityValidationLevel
               :owl/NamedIndividual
               {:owl/onDataRange :xsd/string,
                :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type        :owl/Restriction}
               :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "entity validation level - partially corroborated",
    :skos/definition
    "Based on the validation procedures in use by the LOU responsible for the record, the information supplied by the registrant can be partially corroborated by public authoritative sources, while some of the record is dependent upon the information that the registrant submitted, either due to conflicts with authoritative information, or due to data unavailability."})
@@ -447,14 +500,16 @@
 (def InactiveStatus
   "status indicating that the entity is no longer legally registered and/or operating, whether as a result of business closure, acquisition by or merger with another (or new) entity, or determination of illegitimacy"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/InactiveStatus,
    :fibo-fnd-rel-rel/hasTag "INACTIVE",
    :rdf/type [:fibo-fbc-fct-breg/EntityStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "inactive status",
    :skos/definition
    "status indicating that the entity is no longer legally registered and/or operating, whether as a result of business closure, acquisition by or merger with another (or new) entity, or determination of illegitimacy"})
@@ -462,14 +517,16 @@
 (def IssuedStatus
   "status indicating that the registration has been validated and issued, and which identifies an entity that was operating legally as of the last update"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/IssuedStatus,
    :fibo-fnd-rel-rel/hasTag "ISSUED",
    :rdf/type [:fibo-fbc-fct-breg/RegistrationStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "issued status",
    :skos/definition
    "status indicating that the registration has been validated and issued, and which identifies an entity that was operating legally as of the last update"})
@@ -477,14 +534,16 @@
 (def LapsedStatus
   "status indicating that the registration that has not been renewed by the specified renewal date and is not known by public sources to have ceased operation as of the last update"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/LapsedStatus,
    :fibo-fnd-rel-rel/hasTag "LAPSED",
    :rdf/type [:fibo-fbc-fct-breg/RegistrationStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "lapsed status",
    :skos/definition
    "status indicating that the registration that has not been renewed by the specified renewal date and is not known by public sources to have ceased operation as of the last update"})
@@ -493,28 +552,30 @@
   "registry for registering and maintaining information about business entities for a particular jurisdiction"
   {:cmns-av/abbreviation "LEI registry",
    :cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/LegalEntityIdentifierRegistry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "legal entity identifier registry",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fbc-fct-ra/hasRegistryEntry,
      :owl/someValuesFrom :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry,
      :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-breg/BusinessRegistry
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onDataRange :xsd/string,
+     :owl/onProperty  :fibo-fbc-fct-breg/hasRegistryName,
+     :rdf/type        :owl/Restriction}
     {:owl/onClass    :fibo-fbc-fct-breg/BusinessRegistrationAuthority,
      :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistryEntry,
      :owl/someValuesFrom :fibo-fbc-fct-breg/BusinessRegistryEntry,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onDataRange :xsd/string,
-     :owl/onProperty  :fibo-fbc-fct-breg/hasRegistryName,
-     :rdf/type        :owl/Restriction}
     :fibo-fbc-fct-ra/Registry],
    :skos/definition
    "registry for registering and maintaining information about business entities for a particular jurisdiction"})
@@ -523,37 +584,39 @@
   "entry in a legal entity identifier registry that conforms to ISO 17442 and the Global Legal Entity Identifier Foundation (GLEIF) Common Data Format (CDF)"
   {:cmns-av/abbreviation "LEI registry entry",
    :cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "legal entity identifier registry entry",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-fbc-fct-breg/hasValidationLevel,
+   [{:owl/onProperty     :cmns-col/comprises,
+     :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-breg/hasValidationLevel,
      :owl/someValuesFrom :fibo-fbc-fct-breg/EntityValidationLevel,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-fct-breg/BusinessRegistrationAuthority,
-     :owl/onProperty :fibo-fbc-fct-breg/hasValidationAuthority,
-     :rdf/type       :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fct-breg/hasRegistrationStatus,
      :owl/someValuesFrom :fibo-fbc-fct-breg/RegistrationStatus,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :cmns-col/comprises,
-     :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
-     :rdf/type           :owl/Restriction}
     :fibo-fbc-fct-breg/BusinessRegistryEntry
-    {:owl/onProperty     :cmns-col/comprises,
-     :owl/someValuesFrom :fibo-be-corp-corp/RegistrationIdentifier,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-fct-breg/BusinessRegistrationAuthority,
+     :owl/onProperty :fibo-fbc-fct-breg/hasValidationAuthority,
+     :rdf/type       :owl/Restriction}
+    {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistrationDate,
+     :owl/someValuesFrom :cmns-dt/CombinedDateTime,
      :rdf/type           :owl/Restriction}
-    {:owl/maxQualifiedCardinality 1,
+    {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
      :owl/onClass    :fibo-fbc-fct-breg/RegistrationStatus,
      :owl/onProperty :fibo-fbc-fct-breg/hasRegistrationStatus,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-ra/RegistryEntry
-    {:owl/onProperty     :fibo-fbc-fct-ra/hasRegistrationDate,
-     :owl/someValuesFrom :cmns-dt/CombinedDateTime,
+    {:owl/onProperty     :cmns-col/comprises,
+     :owl/someValuesFrom :fibo-be-corp-corp/RegistrationIdentifier,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "entry in a legal entity identifier registry that conforms to ISO 17442 and the Global Legal Entity Identifier Foundation (GLEIF) Common Data Format (CDF)"})
@@ -562,18 +625,20 @@
   "registrar that is authorized by the Global LEI Foundation to issue legal entity identifiers"
   {:cmns-av/abbreviation "LOU",
    :cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :cmns-av/explanatoryNote
    "LOUs supply registration, renewal and other services, and act as the primary interface for legal entities wishing to obtain an LEI.",
    :db/ident :fibo-fbc-fct-breg/LocalOperatingUnit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "local operating unit",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/issues,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-ra/registers,
                       :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fbc-fct-ra/registers,
+                     {:owl/onProperty     :fibo-fnd-rel-rel/issues,
                       :owl/someValuesFrom :fibo-be-le-lei/LegalEntityIdentifier,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-fct-ra/Registrar],
@@ -583,14 +648,16 @@
 (def MergedStatus
   "status indicating that the registration is for an entity that has been merged into another legal entity, such that this legal entity no longer exists as an independently operating entity"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/MergedStatus,
    :fibo-fnd-rel-rel/hasTag "MERGED",
    :rdf/type [:fibo-fbc-fct-breg/RegistrationStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "merged status",
    :skos/definition
    "status indicating that the registration is for an entity that has been merged into another legal entity, such that this legal entity no longer exists as an independently operating entity"})
@@ -601,23 +668,24 @@
    :db/ident :fibo-fbc-fct-breg/NorthAmericanIndustryClassificationSystemCode,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "North American Industry Classification System code",
    :rdfs/subClassOf
-   [{:owl/onClass
+   [{:owl/onDataRange :xsd/string,
+     :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type        :owl/Restriction}
+    {:owl/onClass
      :fibo-fbc-fct-breg/NorthAmericanIndustryClassificationSystemScheme,
      :owl/onProperty :cmns-dsg/isDefinedIn,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type :owl/Restriction}
-    {:owl/onDataRange :xsd/string,
-     :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-     :owl/qualifiedCardinality 1,
-     :rdf/type        :owl/Restriction}
     :cmns-cds/CodeElement
+    :fibo-fnd-arr-cls/IndustrySectorClassifier
     {:owl/onProperty     :cmns-cls/classifies,
      :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-arr-cls/IndustrySectorClassifier],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "the North American Industry Classification System (NAICS) code representing an industry"})
 
@@ -628,9 +696,10 @@
    :db/ident :fibo-fbc-fct-breg/NorthAmericanIndustryClassificationSystemScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "North American Industry Classification System scheme",
-   :rdfs/seeAlso ["https://www.census.gov/naics/"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.census.gov/naics/"},
    :rdfs/subClassOf
    [{:owl/onProperty :cmns-dsg/defines,
      :owl/someValuesFrom
@@ -644,14 +713,16 @@
 (def PendingArchivalStatus
   "status indicating that the registration is about to be transferred to a different registration authority, after which its registration status will revert to a non-pending status"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/PendingArchivalStatus,
    :fibo-fnd-rel-rel/hasTag "PENDING_ARCHIVAL",
    :rdf/type [:fibo-fbc-fct-breg/RegistrationStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "pending archival status",
    :skos/definition
    "status indicating that the registration is about to be transferred to a different registration authority, after which its registration status will revert to a non-pending status"})
@@ -659,14 +730,16 @@
 (def PendingTransferStatus
   "status indicating that the registration has requested transfer to a different registration authority, and for which transfer is in progress"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/PendingTransferStatus,
    :fibo-fnd-rel-rel/hasTag "PENDING_TRANSFER",
    :rdf/type [:fibo-fbc-fct-breg/RegistrationStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "pending transfer status",
    :skos/definition
    "status indicating that the registration has requested transfer to a different registration authority, and for which transfer is in progress"})
@@ -674,14 +747,16 @@
 (def PendingValidationStatus
   "status indicating that an application for registration has been submitted and is in process, pending validation"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/PendingValidationStatus,
    :fibo-fnd-rel-rel/hasTag "PENDING_VALIDATION",
    :rdf/type [:fibo-fbc-fct-breg/RegistrationStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "pending validation status",
    :skos/definition
    "status indicating that an application for registration has been submitted and is in process, pending validation"})
@@ -689,15 +764,17 @@
 (def RegistrationAuthorityCode
   "identifier that uniquely identifies a business registry, and is associated with a registration authority and jurisdiction, issued by the Global Legal Entity Identifier Foundation (GLEIF)"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"},
    :db/ident :fibo-fbc-fct-breg/RegistrationAuthorityCode,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "registration authority code",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fbc-fct-breg/BusinessRegistry,
                       :owl/onProperty :cmns-id/identifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :cmns-cds/CodeElement
                      :fibo-fbc-fct-ra/RegistryIdentifier],
@@ -707,13 +784,15 @@
 (def RegistrationStatus
   "lifecycle stage indicating the status of a given registration of something, such as a business or legal entity, as specified by the registration authority"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :cmns-av/explanatoryNote
    "There may be other possible values for registration status, depending on the registry, thus the individuals provided herein are not intended to be exhaustive.",
    :db/ident :fibo-fbc-fct-breg/RegistrationStatus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "registration status",
    :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStage,
    :skos/definition
@@ -722,14 +801,16 @@
 (def RetiredStatus
   "status indicating that the registration is for an entity that has ceased operation, without having been merged into another entity"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/RetiredStatus,
    :fibo-fnd-rel-rel/hasTag "RETIRED",
    :rdf/type [:fibo-fbc-fct-breg/RegistrationStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "retired status",
    :skos/definition
    "status indicating that the registration is for an entity that has ceased operation, without having been merged into another entity"})
@@ -740,22 +821,23 @@
    :db/ident :fibo-fbc-fct-breg/StandardIndustrialClassificationCode,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "standard industrial classification code",
-   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
-                      :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onDataRange :xsd/string,
+   :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-arr-cls/IndustrySectorClassifier
                      :cmns-cds/CodeElement
                      {:owl/onClass
                       :fibo-fbc-fct-breg/StandardIndustrialClassificationScheme,
                       :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type :owl/Restriction}],
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :cmns-cls/classifies,
+                      :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition "the SIC code representing an industry"})
 
 (def StandardIndustrialClassificationScheme
@@ -765,9 +847,10 @@
    :db/ident :fibo-fbc-fct-breg/StandardIndustrialClassificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "standard industrial classification scheme",
-   :rdfs/seeAlso ["https://www.osha.gov/pls/imis/sic_manual.html/"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.osha.gov/pls/imis/sic_manual.html/"},
    :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/defines,
                       :owl/someValuesFrom
                       :fibo-fbc-fct-breg/StandardIndustrialClassificationCode,
@@ -780,14 +863,16 @@
 (def TransferredStatus
   "status indicating that the registration that has been transferred to a different registration authority"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/TransferredStatus,
    :fibo-fnd-rel-rel/hasTag "TRANSFERRED",
    :rdf/type [:fibo-fbc-fct-breg/RegistrationStatus
               :owl/NamedIndividual
               :fibo-fnd-arr-lif/LifecycleStage],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "transferred status",
    :skos/definition
    "status indicating that the registration that has been transferred to a different registration authority"})
@@ -795,11 +880,13 @@
 (def hasAlternativeLanguageLegalName
   "denotes a registered legal name for the entity in an alternative language used in the legal jurisdiction in which the entity is registered"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasAlternativeLanguageLegalName,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has alternative language legal name",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasLegalName,
    :skos/definition
@@ -808,26 +895,30 @@
 (def hasAutomaticallyTransliteratedLegalName
   "denotes an auto-generated ASCII-transliterated representation of the legal name for the entity"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasAutomaticallyTransliteratedLegalName,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has automatically transliterated legal name",
    :rdfs/subPropertyOf [:fibo-fbc-fct-breg/hasTransliteratedLegalName
-                        :fibo-fnd-rel-rel/hasLegalName
-                        :fibo-be-le-lei/hasTransliteratedName],
+                        :fibo-be-le-lei/hasTransliteratedName
+                        :fibo-fnd-rel-rel/hasLegalName],
    :skos/definition
    "denotes an auto-generated ASCII-transliterated representation of the legal name for the entity"})
 
 (def hasEntityExpirationDate
   "indicates the date on which an entity ceases(d) to exist"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasEntityExpirationDate,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has entity expiration date",
    :rdfs/range :cmns-dt/CombinedDateTime,
    :rdfs/subPropertyOf :fibo-fbc-fct-breg/hasExpiryDate,
@@ -836,11 +927,13 @@
 (def hasEntityExpirationReason
   "indicates the reason that an entity ceased to exist (i.e., disolved, merged with another entity, etc.)"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasEntityExpirationReason,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has entity expiration reason",
    :rdfs/range :fibo-fbc-fct-breg/EntityExpirationReason,
    :rdfs/subPropertyOf :cmns-dsg/isSignifiedBy,
@@ -850,11 +943,13 @@
 (def hasEntityStatus
   "indicates the status of the entity (i.e., active, inactive)"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasEntityStatus,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has entity status",
    :rdfs/range :fibo-fbc-fct-breg/EntityStatus,
    :rdfs/subPropertyOf :fibo-fnd-arr-lif/hasStage,
@@ -864,11 +959,13 @@
 (def hasExpiryDate
   "indicates the date on which something ceases(d) to exist"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasExpiryDate,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has expiry date",
    :rdfs/range :cmns-dt/CombinedDateTime,
    :skos/definition "indicates the date on which something ceases(d) to exist"})
@@ -876,11 +973,13 @@
 (def hasInitialRegistrationDate
   "indicates the date on which an identifier or other registered item was created and/or first registered"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasInitialRegistrationDate,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has initial registration date",
    :rdfs/range :cmns-dt/CombinedDateTime,
    :rdfs/subPropertyOf :fibo-fbc-fct-ra/hasRegistrationDate,
@@ -890,26 +989,30 @@
 (def hasPreferredTransliteratedLegalName
   "denotes a preferred ASCII-transliterated representation of the legal name for the entity"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasPreferredTransliteratedLegalName,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has preferred transliterated legal name",
    :rdfs/subPropertyOf [:fibo-fbc-fct-breg/hasTransliteratedLegalName
-                        :fibo-fnd-rel-rel/hasLegalName
-                        :fibo-be-le-lei/hasTransliteratedName],
+                        :fibo-be-le-lei/hasTransliteratedName
+                        :fibo-fnd-rel-rel/hasLegalName],
    :skos/definition
    "denotes a preferred ASCII-transliterated representation of the legal name for the entity"})
 
 (def hasPriorLegalName
   "denotes a primary legal name that was used previously for the entity"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasPriorLegalName,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has prior legal name",
    :rdfs/subPropertyOf [:fibo-fnd-rel-rel/wasFormerlyKnownAs
                         :fibo-fnd-rel-rel/hasLegalName],
@@ -919,11 +1022,13 @@
 (def hasRegistrationRevisionDate
   "indicates the date that the status of a specific registration in the registry was revised"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasRegistrationRevisionDate,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has registration status revision date",
    :rdfs/range :cmns-dt/CombinedDateTime,
    :rdfs/subPropertyOf :fibo-fbc-fct-ra/hasRegistrationDate,
@@ -935,7 +1040,8 @@
   {:db/ident :fibo-fbc-fct-breg/hasRegistrationStatus,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has registration status",
    :rdfs/range :fibo-fbc-fct-breg/RegistrationStatus,
    :rdfs/subPropertyOf :fibo-fnd-arr-lif/hasStage,
@@ -948,17 +1054,20 @@
    :owl/equivalentProperty :fibo-fbc-fct-breg/hasRegistrationRevisionDate,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"}})
 
 (def hasRegistryName
   "denotes a name for the registry, for example, for a business registry in which a business registration identifier for the legal entity is registered"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasRegistryName,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fbc-fct-ra/Registry,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has registry name",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasTextualName,
    :skos/definition
@@ -967,14 +1076,17 @@
 (def hasRenewalDate
   "indicates the date by which a specific registration in the registry must be renewed or updated"
   {:cmns-av/adaptedFrom
-   ["https://www.swift.com/standards/data-standards/bic?tl=en#BICPolicyandDatarecord"
-    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"],
+   [{:rdfa/uri
+     "https://www.swift.com/standards/data-standards/bic?tl=en#BICPolicyandDatarecord"}
+    {:rdfa/uri
+     "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"}],
    :cmns-av/usageNote
    "This property is equivalent to the date of expiry in some registries, such as the BIC registry.",
    :db/ident :fibo-fbc-fct-breg/hasRenewalDate,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has renewal date",
    :rdfs/range :cmns-dt/CombinedDateTime,
    :rdfs/subPropertyOf :fibo-fbc-fct-ra/hasRegistrationDate,
@@ -984,11 +1096,13 @@
 (def hasTradingOrOperationalName
   "denotes a 'trading as', 'brand name', 'doing business as', or 'operating under' name currently used by the entity in addition to, but not replacing, the (primary) legal, official registered name"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasTradingOrOperationalName,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has trading or operational name",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasTextualName,
    :skos/definition
@@ -997,11 +1111,13 @@
 (def hasTransliteratedLegalName
   "denotes an optional ASCII-transliterated (i.e. Latin- or Romanized) representation of the legal name for the entity"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasTransliteratedLegalName,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has transliterated legal name",
    :rdfs/subPropertyOf [:fibo-fnd-rel-rel/hasLegalName
                         :fibo-be-le-lei/hasTransliteratedName],
@@ -1011,11 +1127,13 @@
 (def hasValidationAuthority
   "identifies the business registration authority for the legal entity, used by the Local Operating Unit (LOU) as the basis for validation, as defined in the GLEIF Registration Authorities List"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fbc-fct-breg/hasValidationAuthority,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has validation authority",
    :rdfs/range :fibo-fbc-fct-breg/BusinessRegistrationAuthority,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
@@ -1025,11 +1143,13 @@
 (def hasValidationDate
   "indicates the date that a specific registration in the registry was most recently reviewed and validated"
   {:cmns-av/adaptedFrom
-   "https://www.swift.com/standards/data-standards/bic?tl=en#BICPolicyandDatarecord",
+   {:rdfa/uri
+    "https://www.swift.com/standards/data-standards/bic?tl=en#BICPolicyandDatarecord"},
    :db/ident :fibo-fbc-fct-breg/hasValidationDate,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has validation date",
    :rdfs/range :cmns-dt/CombinedDateTime,
    :rdfs/subPropertyOf :fibo-fbc-fct-ra/hasRegistrationDate,
@@ -1041,7 +1161,8 @@
   {:db/ident :fibo-fbc-fct-breg/hasValidationLevel,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "has validation level",
    :rdfs/range :fibo-fbc-fct-breg/EntityValidationLevel,
    :skos/definition
@@ -1050,11 +1171,13 @@
 (def isSelfMaintained
   "indicates whether the information about the entity is maintained internally or by a third-party"
   {:cmns-av/adaptedFrom
-   "https://www.swift.com/standards/data-standards/bic?tl=en#BICPolicyandDatarecord",
+   {:rdfa/uri
+    "https://www.swift.com/standards/data-standards/bic?tl=en#BICPolicyandDatarecord"},
    :db/ident :fibo-fbc-fct-breg/isSelfMaintained,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/"},
    :rdfs/label "is self-maintained",
    :rdfs/range :xsd/string,
    :skos/definition

@@ -6,23 +6,35 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
    :dcterms/abstract
    "This ontology defines concepts relating to types of controlling parties. The concepts defined here are party in role concepts, which define the nature of some entity such as an organization or a legal person, in some role such as that of owning a controlling interest in the entity or of controlling that entity. These roles are defined in terms of the types of control enjoyed by the party, for example de facto or de jure control. An important feature of this ontology is the distinction between the holding of a controlling interest (such as voting shares), and the de facto existence of control of one body by another as asserted in company filings or as a conclusion drawn from computational analysis of controlling interests.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -73,7 +85,8 @@
   {:db/ident :fibo-be-oac-cpty/ContractualControl,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "contractual control",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isConferredBy,
                       :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
@@ -86,11 +99,12 @@
   {:db/ident :fibo-be-oac-cpty/ControlledParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "controlled party",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-oac-ctl/ControlledThing],
    :skos/definition
@@ -101,7 +115,8 @@
   {:db/ident :fibo-be-oac-cpty/ControllingAlliance,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "controlling alliance",
    :rdfs/subClassOf :fibo-fnd-org-fm/Group,
    :skos/definition
@@ -114,7 +129,8 @@
   {:db/ident :fibo-be-oac-cpty/CourtAppointedControl,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "court appointed control",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-law-cor/CourtOfLaw,
                       :owl/onProperty    :fibo-fnd-rel-rel/isConferredBy,
@@ -128,7 +144,8 @@
   {:db/ident :fibo-be-oac-cpty/DeFactoControllingInterestParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "de facto controlling interest party",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyIn,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/DeFactoControl,
@@ -146,7 +163,8 @@
   {:db/ident :fibo-be-oac-cpty/DeJureControllingInterestParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "de jure controlling interest party",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyIn,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/DeJureControl,
@@ -159,7 +177,8 @@
   {:db/ident :fibo-be-oac-cpty/EntityControllingParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "entity controlling party",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyOf,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
@@ -176,7 +195,8 @@
   {:db/ident :fibo-be-oac-cpty/InfluenceBasedDeFactoControl,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "influence-based de facto control",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-oac-ctl/hasPartyInControl,
                       :owl/someValuesFrom
@@ -190,7 +210,8 @@
   {:db/ident :fibo-be-oac-cpty/InfluenceBasedDeFactoControllingParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "influence-based de facto controlling party",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyIn,
                       :owl/someValuesFrom
@@ -211,7 +232,8 @@
   {:db/ident :fibo-be-oac-cpty/InvestmentBasedDeFactoControl,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "investment-based de facto control",
    :rdfs/subClassOf
    [{:owl/onProperty :fibo-fnd-oac-ctl/hasPartyInControl,
@@ -230,7 +252,8 @@
   {:db/ident :fibo-be-oac-cpty/InvestmentBasedDeFactoControllingInterestParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "investment-based de facto controlling interest party",
    :rdfs/subClassOf [{:owl/allValuesFrom
                       :fibo-be-oac-cpty/InvestmentBasedDeFactoControl,
@@ -251,33 +274,36 @@
    :owl/disjointWith :fibo-be-oac-cpty/SoleControllingParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "joint controlling party",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-be-oac-cpty/ControllingAlliance,
                       :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
                       :rdf/type          :owl/Restriction}
                      :fibo-be-oac-cpty/EntityControllingParty
-                     :fibo-fnd-oac-ctl/ControllingParty
                      {:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyOf,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-oac-ctl/ControllingParty],
    :skos/definition
    "party that collectively has the authority to control the affairs of some business organization"})
 
 (def MajorityControllingParty
   "controlling party that possesses, either directly or indirectly, the power to direct or cause the direction of the management and policies of a legal person, whether through the ownership of a majority of voting securities, by contract, or otherwise"
   {:cmns-av/adaptedFrom
-   "Electronic Code of Federal Regulations, Title 17, Chapter 1, Section 49.2",
+   {:xsd/string
+    "Electronic Code of Federal Regulations, Title 17, Chapter 1, Section 49.2"},
    :db/ident :fibo-be-oac-cpty/MajorityControllingParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "majority controlling party",
    :rdfs/subClassOf [:fibo-be-oac-cpty/EntityControllingParty
-                     :fibo-fnd-oac-ctl/ControllingParty
                      {:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyOf,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-oac-ctl/ControllingParty],
    :skos/definition
    "controlling party that possesses, either directly or indirectly, the power to direct or cause the direction of the management and policies of a legal person, whether through the ownership of a majority of voting securities, by contract, or otherwise"})
 
@@ -286,7 +312,8 @@
   {:db/ident :fibo-be-oac-cpty/Receiver,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "receiver",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyIn,
                       :owl/someValuesFrom
@@ -305,13 +332,14 @@
   {:db/ident :fibo-be-oac-cpty/SoleControllingParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "sole controlling party",
    :rdfs/subClassOf [:fibo-be-oac-cpty/EntityControllingParty
-                     :fibo-fnd-oac-ctl/ControllingParty
                      {:owl/onProperty :fibo-fnd-oac-ctl/isControllingPartyOf,
                       :owl/someValuesFrom :fibo-be-le-lp/LegalEntity,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     :fibo-fnd-oac-ctl/ControllingParty],
    :skos/definition
    "party that has sole control over and directs the affairs of some legal entity"})
 
@@ -320,7 +348,8 @@
   {:db/ident :fibo-be-oac-cpty/TotalOwner,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "total owner",
    :rdfs/subClassOf :fibo-be-oac-opty/ConstitutionalOwner,
    :skos/definition "party that has 100 percent ownership some legal entity",
@@ -334,7 +363,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-oac-ctl/ControllingParty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "advises",
    :rdfs/range :fibo-be-oac-cpty/ControlledParty,
    :rdfs/subPropertyOf :fibo-fnd-oac-ctl/isPartyControlling,
@@ -347,7 +377,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-oac-cpty/ControlledParty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "has controlling organization member",
    :rdfs/range :fibo-fnd-org-org/OrganizationMember,
    :rdfs/subPropertyOf :fibo-fnd-oac-ctl/hasControllingParty,
@@ -360,7 +391,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-le-lp/LegalEntity,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "has majority controlling party",
    :rdfs/range :fibo-be-oac-cpty/MajorityControllingParty,
    :rdfs/subPropertyOf :fibo-fnd-oac-ctl/isControlledPartyOf,
@@ -373,7 +405,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-oac-cpty/ControlledParty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "has advisor",
    :rdfs/range :fibo-fnd-oac-ctl/ControllingParty,
    :rdfs/subPropertyOf :fibo-fnd-oac-ctl/hasControllingParty,
@@ -386,7 +419,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-oac-cpty/InvestmentBasedDeFactoControl,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "is based on investment equity",
    :rdfs/range :fibo-be-oac-opty/InvestmentEquity,
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/isConferredBy,
@@ -399,7 +433,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-org/OrganizationMember,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/"},
    :rdfs/label "is controlling member of",
    :rdfs/range :fibo-be-oac-cpty/ControlledParty,
    :rdfs/subPropertyOf :fibo-fnd-oac-ctl/isPartyControlling,

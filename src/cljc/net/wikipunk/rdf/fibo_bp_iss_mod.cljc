@@ -5,14 +5,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MetadataBPSecuritiesIssuance/SecuritiesIssuanceModule",
    :dcterms/abstract
    "This module contains ontologies of securities issuance process concepts, both for processes common to all securities issuance and variants for common types of equity and debt issuance such as auction and syndication.",
-   :dcterms/issued #inst "2018-03-01T23:00:00.000-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-01-30T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-03-01T18:00:00.000-05:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-01-30T18:00:00.000-05:00",
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/MetadataBPSecuritiesIssuance/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/MetadataBPSecuritiesIssuance/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -54,12 +56,13 @@
      "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/EquitiesIPOIssuance/"}
     {:rdfa/uri
      "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"}],
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Business Process (BP) Securities Issuance Module"
     "FIBO BP Securities Issuance Module"],
    :rdf/type [:owl/NamedIndividual :fibo-fnd-utl-av/Module],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MetadataBPSecuritiesIssuance/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MetadataBPSecuritiesIssuance/"},
    :rdfs/label "securities issuance module",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})

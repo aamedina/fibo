@@ -6,19 +6,26 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/MetadataIND/INDDomain",
    :dcterms/abstract
    "This ontology provides metadata about the FIBO Indices and Indicators (IND) Domain, which covers market indices and reference rates including economic indicators, foreign exchange, interest rates, and other benchmarks.",
-   :dcterms/issued #inst "2018-08-27T22:00:00.000-00:00",
-   :dcterms/license "https://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-03-31T22:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-08-27T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-03-31T18:00:00.000-04:00",
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/MetadataINDEconomicIndicators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/MetadataINDIndicators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/MetadataINDMarketIndices/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/MetadataINDInterestRates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/ForeignExchange/MetadataINDForeignExchange/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/MetadataINDEconomicIndicators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/MetadataINDIndicators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/MetadataINDMarketIndices/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/MetadataINDInterestRates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/ForeignExchange/MetadataINDForeignExchange/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MetadataIND/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MetadataIND/"},
    :rdf/ns-prefix-map
    {"cmns-av"      "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms"      "http://purl.org/dc/terms/",
@@ -77,18 +84,19 @@
     "Bureau of Economic Analysis (BEA, US Department of Commerce)"
     "Statistics Canada"],
    :dcterms/creator
-   "https://wiki.edmcouncil.org/display/IND/FIBO+-+FCT+-+Indices+and+Indicators+Home",
+   {:rdfa/uri
+    "https://wiki.edmcouncil.org/display/IND/FIBO+-+FCT+-+Indices+and+Indicators+Home"},
    :dcterms/hasPart [:fibo-ind-mkt-mod/MarketIndicesModule
                      :fibo-ind-ei-mod/EconomicIndicatorsModule
                      :fibo-ind-ind-mod/IndicatorsModule
                      :fibo-ind-ir-mod/InterestRatesModule
                      :fibo-ind-fx-mod/ForeignExchangeModule],
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Indices and Indicators (IND) Domain"
     "FIBO IND Domain"],
    :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MetadataIND/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/IND/MetadataIND/"},
    :rdfs/label "indices and indicators module",
-   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://www.edmcouncil.org/fibo/"}})

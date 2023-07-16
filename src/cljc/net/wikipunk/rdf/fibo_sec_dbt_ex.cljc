@@ -6,19 +6,25 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
    :dcterms/abstract
    "This ontology defines the various kinds of exercise conventions that are common to debt and options instruments. They are distinguished primarily in terms of the date period during which an optional contract clause may be exercised.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/ExerciseConventions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/ExerciseConventions/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
@@ -43,7 +49,7 @@
    :rdfa/prefix "fibo-sec-dbt-ex",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "Exercise Conventions Ontology@en",
+   :rdfs/label #xsd/langString "Exercise Conventions Ontology@en",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions.rdf version of this ontology was modified to loosen the domain of hasExerciseTerms to allow for entitlements to have such terms."
     "The https://spec.edmcouncil.org/fibo/ontology/Debt/ExerciseConventions.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
@@ -60,34 +66,36 @@
               :owl/NamedIndividual
               :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "American exercise convention@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "American exercise convention@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "exercise convention that stipulates that an option may be exercised anytime between the purchase date and date of expiration@en"})
 
 (def AmericanExerciseTerms
   "exercise terms that stipulate that an option may be exercised on or before the date of expiration"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "Under certain circumstances, early exercise may be advantageous to the option holder.@en",
    :db/ident :fibo-sec-dbt-ex/AmericanExerciseTerms,
    :owl/disjointWith [:fibo-sec-dbt-ex/EuropeanExerciseTerms
                       :fibo-sec-dbt-ex/BermudanExerciseTerms],
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "American exercise terms@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "American exercise terms@en",
    :rdfs/subClassOf [{:owl/hasValue :fibo-sec-dbt-ex/AmericanExerciseConvention,
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-ex/ExerciseTerms
+                     :fibo-fnd-agr-ctr/ContractualCommitment
                      {:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/ContractualCommitment],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "exercise terms that stipulate that an option may be exercised on or before the date of expiration@en"})
 
 (def BermudanExerciseConvention
@@ -97,23 +105,25 @@
               :owl/NamedIndividual
               :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "Bermudan exercise convention@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "Bermudan exercise convention@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "exercise convention that stipulates that an option may be exercised anytime between the purchase date and date of expiration@en"})
 
 (def BermudanExerciseTerms
   "exercise terms that stipulate that an option may only be exercised on predetermined dates within some exercise window, often on one day each month or at the date of expiration"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "The Bermuda option is named as such because its exercise dates are more flexible than European options and less flexible than American options. Thus, it is in the middle, just like Bermuda is between Europe and America. Bermuda options are also referred to as Mid-Atlantic, Quasi American, or Semi-American options.@en",
    :db/ident :fibo-sec-dbt-ex/BermudanExerciseTerms,
    :owl/disjointWith :fibo-sec-dbt-ex/EuropeanExerciseTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "Bermudan exercise terms@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "Bermudan exercise terms@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
                       :rdf/type           :owl/Restriction}
@@ -124,12 +134,12 @@
                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
                       :rdf/type           :owl/Restriction}
                      :fibo-sec-dbt-ex/ExerciseTerms
+                     :fibo-fnd-agr-ctr/ContractualCommitment
                      {:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/ContractualCommitment],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "exercise terms that stipulate that an option may only be exercised on predetermined dates within some exercise window, often on one day each month or at the date of expiration@en"})
 
 (def CanaryExerciseConvention
@@ -139,10 +149,11 @@
               :owl/NamedIndividual
               :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "canary exercise convention@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "canary exercise convention@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "exercise/call convention that stipulates that an option may only be exercised on predetermined dates until the first step is reached, but not after that point@en"})
 
 (def CanaryExerciseTerms
@@ -150,19 +161,20 @@
   {:db/ident :fibo-sec-dbt-ex/CanaryExerciseTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "canary exercise terms@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "canary exercise terms@en",
    :rdfs/subClassOf [{:owl/hasValue   :fibo-sec-dbt-ex/CanaryExerciseConvention,
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type       :owl/Restriction}
                      :fibo-sec-dbt-ex/BermudanExerciseTerms
+                     :fibo-fnd-agr-ctr/ContractualCommitment
                      {:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}
                      {:owl/hasValue :fibo-sec-dbt-ex/BermudanExerciseConvention,
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-agr-ctr/ContractualCommitment
                      :fibo-sec-dbt-ex/ExerciseTerms
                      {:owl/onProperty     :fibo-sec-dbt-ex/hasExerciseWindow,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
@@ -171,7 +183,7 @@
                       :owl/someValuesFrom :cmns-dt/ExplicitDate,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "exercise terms that stipulate that an option may only be exercised on predetermined dates until the first step is reached, but not after that point@en"})
 
 (def EuropeanExerciseConvention
@@ -181,10 +193,11 @@
               :owl/NamedIndividual
               :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "European exercise convention@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "European exercise convention@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "exercise convention that stipulates that an option may only be exercised at the date of expiration@en"})
 
 (def EuropeanExerciseTerms
@@ -192,22 +205,23 @@
   {:db/ident :fibo-sec-dbt-ex/EuropeanExerciseTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "European exercise terms@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "European exercise terms@en",
    :rdfs/subClassOf [{:owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-sec-dbt-ex/hasExerciseDate,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/hasValue :fibo-sec-dbt-ex/EuropeanExerciseConvention,
                       :owl/onProperty :cmns-cxtdsg/uses,
                       :rdf/type :owl/Restriction}
                      :fibo-sec-dbt-ex/ExerciseTerms
+                     :fibo-fnd-agr-ctr/ContractualCommitment
                      {:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-ctr/ContractualCommitment],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "exercise terms that stipulate that an option may only be exercised at the date of expiration@en"})
 
 (def ExerciseConvention
@@ -215,11 +229,12 @@
   {:db/ident :fibo-sec-dbt-ex/ExerciseConvention,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "exercise convention@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "exercise convention@en",
    :rdfs/subClassOf :fibo-fnd-dt-bd/Convention,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "convention that determines when the holder or future holder of an option can implement the rights defined in the option@en"})
 
 (def ExerciseTerms
@@ -227,14 +242,15 @@
   {:db/ident :fibo-sec-dbt-ex/ExerciseTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "exercise terms@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "exercise terms@en",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/uses,
                       :owl/someValuesFrom :fibo-sec-dbt-ex/ExerciseConvention,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-agr-ctr/ContractualCommitment],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "contract terms specific to the conditions, conventions and other stipulations related to the exercise of an option or entitlement@en"})
 
 (def hasExerciseDate
@@ -242,12 +258,13 @@
   {:db/ident :fibo-sec-dbt-ex/hasExerciseDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "has exercise date@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "has exercise date@en",
    :rdfs/range :cmns-dt/ExplicitDate,
    :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "indicates a date on which an option may be exercised as specified in the terms of the contract@en"})
 
 (def hasExerciseTerms
@@ -256,12 +273,13 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-fi-fi/DerivativeInstrument,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "has exercise terms@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "has exercise terms@en",
    :rdfs/range :fibo-sec-dbt-ex/ExerciseTerms,
    :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "links a derivative, such as an option or entitlement, to any exercise terms that are specified therein@en"})
 
 (def hasExerciseWindow
@@ -269,9 +287,10 @@
   {:db/ident :fibo-sec-dbt-ex/hasExerciseWindow,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-   :rdfs/label #voc/lstr "has exercise window@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/"},
+   :rdfs/label #xsd/langString "has exercise window@en",
    :rdfs/range :cmns-dt/DatePeriod,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "indicates a period of time during which the option may be exercised as specified in the terms of the contract@en"})

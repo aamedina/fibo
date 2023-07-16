@@ -6,14 +6,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MetadataINDInterestRates/InterestRatesModule",
    :dcterms/abstract
    "This module includes ontologies defining concepts for reference interest rates, that is, rates of interest paid on capital by central banks, groups of banks and other lenders, including inter-bank lending rates and rates of certain representative debt instruments.",
-   :dcterms/issued #inst "2018-08-27T22:00:00.000-00:00",
-   :dcterms/license "https://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-02-06T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-08-27T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-02-06T18:00:00.000-05:00",
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/MetadataINDInterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/MetadataINDInterestRates/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -70,12 +72,13 @@
      "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/"}
     {:rdfa/uri
      "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"}],
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :dcterms/title
    ["FIBO IND Interest Rates Module"
     "Financial Industry Business Ontology (FIBO) Indices and Indicators (IND) Interest Rates Module"],
    :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MetadataINDInterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MetadataINDInterestRates/"},
    :rdfs/label "interest rates module",
-   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://www.edmcouncil.org/fibo/"}})

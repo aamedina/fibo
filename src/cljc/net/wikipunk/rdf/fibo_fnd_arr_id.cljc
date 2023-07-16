@@ -6,21 +6,25 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
    :dcterms/abstract
    "This ontology defines abstract concepts for representation of identifiers, identification schemes, indices and indexing schemes for use in other FIBO ontology elements.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/ContextualIdentifiers/"
-    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualIdentifiers/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
@@ -64,7 +68,8 @@
    :owl/equivalentClass :cmns-cxtid/StructuredIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"}})
 
 (def Index
   "indirect shortcut derived from and pointing into, a greater volume of values, data, information or knowledge"
@@ -72,13 +77,14 @@
    :fibo-fnd-utl-av/definitionOrigin "http://en.wikipedia.org/wiki/Index",
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"},
    :rdfs/label "index",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-arr-id/IndexingScheme,
                       :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/cardinality 1,
+                     {:owl/cardinality #xsd/nonNegativeInteger 1,
                       :owl/onProperty  :fibo-fnd-arr-id/isIndexTo,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-rel-rel/Reference],
@@ -90,7 +96,8 @@
   {:db/ident :fibo-fnd-arr-id/IndexingScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"},
    :rdfs/label "indexing scheme",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-fnd-arr-id/Index,
@@ -106,13 +113,14 @@
    :db/ident :fibo-fnd-arr-id/ReassignableIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"},
    :rdfs/label "reassignable identifier",
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty :fibo-fnd-arr-id/hasInitialAssignmentDate,
                       :rdf/type :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty
                       :fibo-fnd-arr-id/hasAssignmentTerminationDate,
@@ -129,7 +137,8 @@
   {:db/ident :fibo-fnd-arr-id/constructRegex,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"},
    :rdfs/label "construct regex",
    :rdfs/range :xsd/string,
    :skos/definition
@@ -140,7 +149,8 @@
   {:db/ident :fibo-fnd-arr-id/hasAssignmentTerminationDate,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"},
    :rdfs/label "has assignment termination date",
    :rdfs/range :cmns-dt/CombinedDateTime,
    :rdfs/subPropertyOf :cmns-dt/hasObservedDateTime,
@@ -152,7 +162,8 @@
   {:db/ident :fibo-fnd-arr-id/hasInitialAssignmentDate,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"},
    :rdfs/label "has initial assignment date",
    :rdfs/range :cmns-dt/CombinedDateTime,
    :rdfs/subPropertyOf :cmns-dt/hasObservedDateTime,
@@ -165,7 +176,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-arr-id/Index,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"},
    :rdfs/label "is index to",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/refersTo,
    :skos/definition "that to which the index refers"})
@@ -175,7 +187,8 @@
   {:db/ident :fibo-fnd-arr-id/parseRegex,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/"},
    :rdfs/label "parse regex",
    :rdfs/range :xsd/string,
    :skos/definition

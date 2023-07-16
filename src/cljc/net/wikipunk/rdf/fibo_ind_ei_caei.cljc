@@ -6,25 +6,36 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
    :dcterms/abstract
    "This ontology provides specific parameters which make up the various types of market economic indicators applicable to the Canadian economy.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"],
+   [{:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -78,22 +89,24 @@
   "economic indicator representing a measure of changes over time in the prices of a fixed basket of consumer goods and services that Canadian private households consume"
   {:cmns-av/abbreviation "CPI",
    :cmns-av/adaptedFrom
-   ["https://www.statcan.gc.ca/en/subjects-start/prices_and_price_indexes/consumer_price_indexes"
-    "http://www.statcan.gc.ca/eng/start"],
+   [{:rdfa/uri
+     "https://www.statcan.gc.ca/en/subjects-start/prices_and_price_indexes/consumer_price_indexes"}
+    {:rdfa/uri "http://www.statcan.gc.ca/eng/start"}],
    :db/ident :fibo-ind-ei-caei/CanadianConsumerPriceIndex,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/"},
    :rdfs/label "Canadian consumer price index",
    :rdfs/subClassOf
    [{:owl/onClass    :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
      :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
+    :fibo-ind-ei-ei/ConsumerPriceIndex
     {:owl/hasValue   :fibo-ind-ei-caei/CanadianStatisticsPublisher,
      :owl/onProperty :fibo-be-fct-pub/hasPublisher,
      :rdf/type       :owl/Restriction}
-    :fibo-ind-ei-ei/ConsumerPriceIndex
     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
      :owl/someValuesFrom :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
      :rdf/type           :owl/Restriction}
@@ -109,11 +122,12 @@
 (def CanadianHouseholdsConsumersUniverse
   "a statistical universe consisting of all private households in Canada, with the exception of soldiers on military bases, people living on First Nations reserves, institutionalized persons, and households living in the rural areas of the three northern territories"
   {:cmns-av/adaptedFrom
-   "http://www.statcan.gc.ca/pub/62-553-x/62-553-x2015001-eng.pdf",
+   {:rdfa/uri "http://www.statcan.gc.ca/pub/62-553-x/62-553-x2015001-eng.pdf"},
    :db/ident :fibo-ind-ei-caei/CanadianHouseholdsConsumersUniverse,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/"},
    :rdfs/label "Canadian households consumers universe",
    :rdfs/subClassOf
    [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
@@ -131,21 +145,18 @@
 (def CanadianProducerPriceIndex
   "an economic indicator representing a measure of the change over time in the prices of a fixed-basket of domestic producer goods and services"
   {:cmns-av/adaptedFrom
-   "http://www23.statcan.gc.ca/imdb-bmdi/pub/indexth-eng.htm",
+   {:rdfa/uri "http://www23.statcan.gc.ca/imdb-bmdi/pub/indexth-eng.htm"},
    :cmns-av/explanatoryNote
    "Note that Canada does not produce a high level, cross industry PPI per se. Canadian PPIs are published by industry sector. Three of the most important are captured in the union defined herein, which may be expanded over time to integrate others, as needed.",
    :db/ident :fibo-ind-ei-caei/CanadianProducerPriceIndex,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/"},
    :rdfs/label "Canadian producer price index",
    :rdfs/subClassOf [{:owl/hasValue   :fibo-ind-ei-caei/StatisticsCanada,
                       :owl/onProperty :fibo-be-fct-pub/isPublishedBy,
                       :rdf/type       :owl/Restriction}
-                     {:owl/hasValue
-                      :fibo-ind-ei-caei/CanadianStatisticsPublisher,
-                      :owl/onProperty :fibo-be-fct-pub/hasPublisher,
-                      :rdf/type :owl/Restriction}
                      :fibo-ind-ei-ei/ProducerPriceIndex
                      {:owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom
@@ -153,19 +164,25 @@
                                      :fibo-ind-ei-caei/NewHousingSector
                                      :fibo-ind-ei-caei/RawMaterialsSector],
                        :rdf/type    :owl/Class},
+                      :rdf/type :owl/Restriction}
+                     {:owl/hasValue
+                      :fibo-ind-ei-caei/CanadianStatisticsPublisher,
+                      :owl/onProperty :fibo-be-fct-pub/hasPublisher,
                       :rdf/type :owl/Restriction}],
    :skos/definition
    "an economic indicator representing a measure of the change over time in the prices of a fixed-basket of domestic producer goods and services"})
 
 (def CanadianStatisticsPublisher
   "individual representing the functional entity that is the primary publisher of statistical information for the Canadian Government"
-  {:cmns-av/adaptedFrom "http://www.statcan.gc.ca/eng/about/mandate/",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "http://www.statcan.gc.ca/eng/about/mandate/"},
    :db/ident :fibo-ind-ei-caei/CanadianStatisticsPublisher,
    :fibo-fnd-rel-rel/hasIdentity :fibo-ind-ei-caei/StatisticsCanada,
    :rdf/type [:fibo-ind-ei-ei/StatisticalInformationPublisher
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/"},
    :rdfs/label "Canadian statistics publisher",
    :skos/definition
    "individual representing the functional entity that is the primary publisher of statistical information for the Canadian Government"})
@@ -173,11 +190,13 @@
 (def IndustrialProductsSector
   "a classifier for a sector of the economy used for price indices focused on major commodities sold by manufacturers in Canada"
   {:cmns-av/adaptedFrom
-   "http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=2318",
+   {:rdfa/uri
+    "http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=2318"},
    :db/ident :fibo-ind-ei-caei/IndustrialProductsSector,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/"},
    :rdfs/label "industrial products sector",
    :rdfs/subClassOf :fibo-fnd-arr-cls/IndustrySectorClassifier,
    :skos/definition
@@ -186,11 +205,13 @@
 (def NewHousingSector
   "a classifier for a sector of the economy used for price indices focused on contractors' selling prices of new residential houses, where detailed specifications pertaining to each house remain the same between two consecutive periods"
   {:cmns-av/adaptedFrom
-   "http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=2310",
+   {:rdfa/uri
+    "http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=2310"},
    :db/ident :fibo-ind-ei-caei/NewHousingSector,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/"},
    :rdfs/label "new housing sector",
    :rdfs/subClassOf :fibo-fnd-arr-cls/IndustrySectorClassifier,
    :skos/definition
@@ -199,11 +220,13 @@
 (def RawMaterialsSector
   "a classifier used for price indices related to raw materials purchased by industries in Canada for further processing"
   {:cmns-av/adaptedFrom
-   "http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=2306",
+   {:rdfa/uri
+    "http://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=2306"},
    :db/ident :fibo-ind-ei-caei/RawMaterialsSector,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/"},
    :rdfs/label "raw materials sector",
    :rdfs/subClassOf :fibo-fnd-arr-cls/IndustrySectorClassifier,
    :skos/definition
@@ -212,14 +235,16 @@
 (def StatisticsCanada
   "individual representing Statistics Canada, a government agency mandated to collect, compile, analyse, abstract and publish statistical information relating to the commercial, industrial, financial, social, economic and general activities and condition of the people of Canada"
   {:cmns-av/abbreviation "StatCan",
-   :cmns-av/adaptedFrom "http://www.statcan.gc.ca/eng/about/mandate",
+   :cmns-av/adaptedFrom {:rdfa/uri
+                         "http://www.statcan.gc.ca/eng/about/mandate"},
    :cmns-col/isPartOf :fibo-be-ge-caj/GovernmentOfCanada,
    :db/ident :fibo-ind-ei-caei/StatisticsCanada,
    :fibo-fnd-plc-loc/hasCoverageArea :lcc-3166-1/Canada,
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/GovernmentAgency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
-   :rdfs/label [#voc/lstr "Statistique Canada@fr"
-                #voc/lstr "Statistics Canada@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/"},
+   :rdfs/label [#xsd/langString "Statistique Canada@fr"
+                #xsd/langString "Statistics Canada@en"],
    :skos/definition
    "individual representing Statistics Canada, a government agency mandated to collect, compile, analyse, abstract and publish statistical information relating to the commercial, industrial, financial, social, economic and general activities and condition of the people of Canada"})

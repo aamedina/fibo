@@ -6,18 +6,24 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/DERDomain",
    :dcterms/abstract
    "The Derivatives (DER) Domain covers many of the concepts that are common to derivative instruments, including but not limited to options, futures, forwards, swaps, and a wide range of other derivatives. This ontology provides metadata about the Derivatives Domain and its contents.",
-   :dcterms/issued #inst "2018-03-31T22:00:00.000-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-02-03T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-03-31T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-02-03T18:00:00.000-05:00",
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/MetadataDERDerivativesContracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/RateDerivatives/MetadataDERRateDerivatives/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/CreditDerivatives/MetadataDERCreditDerivatives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/SecurityBasedDerivatives/MetadataDERSecurityBasedDerivatives/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/MetadataDERDerivativesContracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/RateDerivatives/MetadataDERRateDerivatives/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/CreditDerivatives/MetadataDERCreditDerivatives/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/SecurityBasedDerivatives/MetadataDERSecurityBasedDerivatives/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/MetadataDER/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/MetadataDER/"},
    :rdf/ns-prefix-map
    {"cmns-av"      "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms"      "http://purl.org/dc/terms/",
@@ -70,19 +76,20 @@
     "Adaptive, Inc."
     "Exprentis"],
    :dcterms/creator
-   "https://wiki.edmcouncil.org/display/DER/FIBO+-+FCT+-+Derivatives+Home",
+   {:rdfa/uri
+    "https://wiki.edmcouncil.org/display/DER/FIBO+-+FCT+-+Derivatives+Home"},
    :dcterms/hasPart [:fibo-der-sbd-mod/SecurityBasedDerivativesModule
                      :fibo-der-drc-mod/DerivativesContractsModule
                      :fibo-der-cr-mod/CreditDerivativesModule
                      :fibo-der-rat-mod/RateDerivativesModule],
-   :dcterms/issued #inst "2018-03-31T22:00:00.000-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-02-03T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-03-31T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-02-03T18:00:00.000-05:00",
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Derivatives (DER) Domain"
     "FIBO DER Domain"],
    :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/"},
    :rdfs/label "derivatives domain",
-   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://www.edmcouncil.org/fibo/"}})

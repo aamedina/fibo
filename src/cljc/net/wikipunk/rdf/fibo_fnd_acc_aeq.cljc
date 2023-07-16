@@ -6,20 +6,27 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
    :dcterms/abstract
    "This ontology defines equity-related concepts for use in defining other FIBO ontology elements. These are based on basic accounting principles as they relate to equity, debt, assets and liabilities of a firm. Equity forms the basis for ownership of certain forms of corporate body.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
@@ -52,6 +59,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified to add physical asset and eliminate ambiguity in some definitions."
     "The http://www.omg.org/spec/FIBO/Foundations/20130601/Accounting/AccountingEquity.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n   (1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n   (2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n   (3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n   (4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n   (5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified to fix spelling errors and deprecate the property represents an interest in, which is not used elsewhere and is confusing."
+    "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified to add a definition for EBITDA."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified to make income a subclass of monetary amount and eliminate the oblique restriction on monetary amount to simplify its representation."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified to eliminate the deprecated 'represents an interest in' property."
     "The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
@@ -66,23 +74,52 @@
   {:db/ident :fibo-fnd-acc-aeq/CapitalSurplus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"},
    :rdfs/label "capital surplus",
    :rdfs/subClassOf [:fibo-fnd-acc-aeq/PaidInCapital
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-acc-aeq/OwnersEquity
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
+                     :fibo-fnd-acc-aeq/OwnersEquity
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "capital contributed in excess of the par value (stated value) of the ownership interest issued"})
+
+(def EarningsBeforeInterestTaxesDepreciationAmortization
+  "measure of profitability to net income prior to payment of interest, taxes, depreciation and amortization"
+  {:cmns-av/abbreviation "EBITDA",
+   :cmns-av/explanatoryNote
+   "By stripping out the non-cash depreciation and amortization expense as well as taxes and debt costs dependent on the capital structure, EBITDA attempts to represent cash profit generated by the company's operations. EBITDA is not a metric recognized under Generally Accepted Accounting Principles (GAAP). Some public companies report EBITDA in their quarterly results along with adjusted EBITDA figures typically excluding additional costs, such as stock-based compensation.",
+   :db/ident
+   :fibo-fnd-acc-aeq/EarningsBeforeInterestTaxesDepreciationAmortization,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"},
+   :rdfs/label
+   "retained earnings before interest, taxes, depreciation and amortization",
+   :rdfs/subClassOf [:fibo-fnd-acc-aeq/OwnersEquity
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
+                      :owl/onProperty :cmns-cxtdsg/appliesTo,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
+                      :rdf/type           :owl/Restriction}],
+   :skos/definition
+   "measure of profitability to net income prior to payment of interest, taxes, depreciation and amortization"})
 
 (def FinancialAsset
   "non-physical, tangible asset whose value is derived from a contractual claim, such as bank deposits, bonds, stocks, rights, certificates, and bank balances"
@@ -91,7 +128,8 @@
    :db/ident :fibo-fnd-acc-aeq/FinancialAsset,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"},
    :rdfs/label "financial asset",
    :rdfs/subClassOf :fibo-fnd-oac-own/TangibleAsset,
    :skos/definition
@@ -104,11 +142,12 @@
    :db/ident :fibo-fnd-acc-aeq/Income,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
-   :rdfs/label #voc/lstr "income@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"},
+   :rdfs/label #xsd/langString "income@en",
    :rdfs/subClassOf [{:owl/onClass    :cmns-dt/DatePeriod,
                       :owl/onProperty :cmns-dt/hasDatePeriod,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-acc-cur/MonetaryAmount],
    :skos/definition "revenue received during a period of time"})
@@ -116,28 +155,29 @@
 (def OwnersEquity
   "owners' share in a business plus operating profit"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Banking Terms, Sixth Edition, 2012.",
+   {:xsd/string "Barron's Dictionary of Banking Terms, Sixth Edition, 2012."},
    :cmns-av/explanatoryNote
    "Owner's equity is represented by capital investments and accumulated earnings less any dividends or other financial obligations. It is typically used to talk about equity in a business, but may also refer to the net assets of a pool or special purpose vehicle.",
    :cmns-av/synonym ["net worth"
                      "equity"
-                     #voc/lstr "capital@en"
-                     #voc/lstr "contributed capital@en"],
+                     #xsd/langString "capital@en"
+                     #xsd/langString "contributed capital@en"],
    :db/ident :fibo-fnd-acc-aeq/OwnersEquity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
-   :rdfs/label #voc/lstr "owners' equity@en",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
-                     {:owl/minQualifiedCardinality 0,
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"},
+   :rdfs/label #xsd/langString "owners' equity@en",
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/Expression
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
                       :rdf/type           :owl/Restriction}],
    :skos/definition "owners' share in a business plus operating profit"})
 
@@ -146,17 +186,18 @@
   {:db/ident :fibo-fnd-acc-aeq/PaidInCapital,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"},
    :rdfs/label "paid-in capital",
    :rdfs/subClassOf [:fibo-fnd-acc-aeq/OwnersEquity
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
                       :rdf/type           :owl/Restriction}],
@@ -171,7 +212,8 @@
    :owl/disjointWith :fibo-fnd-acc-aeq/FinancialAsset,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"},
    :rdfs/label "physical asset",
    :rdfs/subClassOf :fibo-fnd-oac-own/TangibleAsset,
    :skos/definition
@@ -184,17 +226,18 @@
    :db/ident :fibo-fnd-acc-aeq/RetainedEarnings,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"},
    :rdfs/label "retained earnings",
    :rdfs/subClassOf [:fibo-fnd-acc-aeq/OwnersEquity
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
                       :rdf/type           :owl/Restriction}],
@@ -206,20 +249,21 @@
   {:db/ident :fibo-fnd-acc-aeq/ShareholdersEquity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"},
    :rdfs/label "shareholders' equity",
    :rdfs/subClassOf [:fibo-fnd-acc-aeq/OwnersEquity
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-utl-alx/Expression
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :cmns-cxtdsg/appliesTo,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-utl-alx/Expression
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-fnd-acc-aeq/RetainedEarnings,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-fnd-acc-aeq/PaidInCapital,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "equity that is manifested in the form of shares in an entity, fund or structured product@en"})

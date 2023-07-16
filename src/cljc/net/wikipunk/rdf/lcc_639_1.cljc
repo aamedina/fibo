@@ -1,10 +1,11 @@
 (ns net.wikipunk.rdf.lcc-639-1
-  "ISO 639-1 Language Codes Ontology"
-  {:dcterms/license "http://opensource.org/licenses/MIT",
+  "This ontology represents the subset of the ISO 639 standard that provides the language names and actual codes for ISO 639-1."
+  {:dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :owl/imports
-   "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"},
    :owl/versionIRI
-   "https://www.omg.org/spec/LCC/20211101/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/20211101/Languages/ISO639-1-LanguageCodes/"},
    :rdf/ns-prefix-map
    {"dcterms" "http://purl.org/dc/terms/",
     "lcc-639-1"
@@ -20,22 +21,24 @@
    :rdfa/prefix "lcc-639-1",
    :rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
    :rdfs/label "ISO 639-1 Language Codes Ontology",
-   :rdfs/seeAlso ["https://id.loc.gov/vocabulary/iso639-1.html"
-                  "http://www.loc.gov/standards/iso639-2/php/code_list.php/"
-                  "https://www.omg.org/spec/LCC/Languages/AboutLanguages/"
-                  "https://www.omg.org/spec/LCC/AboutLCC/"],
+   :rdfs/seeAlso
+   [{:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1.html"}
+    {:rdfa/uri "http://www.loc.gov/standards/iso639-2/php/code_list.php/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/AboutLanguages/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/AboutLCC/"}],
    :skos/changeNote
    ["The https://www.omg.org/spec/LCC/20211101/Languages/ISO639-2-LanguageCodes.rdf version of this ontology has been revised to incorporate recently published Library of Congress links to their URIs for the language codes, minor revisions to metadata about the languages to be in sync with the LoC site, and is current as of 29 October 2021."
     "The https://www.omg.org/spec/LCC/20190201/Languages/ISO639-2-LanguageCodes.rdf version of this ontology is current as of 14 February 2019, based on the US Library of Congress site."
     "The http://www.omg.org/spec/LCC/20151101/Languages/ISO639-1-LanguageCodes.rdf version of this ontology has been revised to reflect the issues addressed by the LCC 1.0 FTF report.  The codes themselves are current as of 31 July 2017, based on the US Library of Congress site."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
+   :sm/contentLanguage {:rdfa/uri
+                        "https://www.w3.org/TR/owl2-quick-reference/"},
    :sm/copyright ["Copyright (c) 2015-2021 Thematix Partners LLC"
                   "Copyright (c) 2015-2017 Unisys"
                   "Copyright (c) 2019-2021 agnos.ai"
                   "Copyright (c) 2015-2019 Adaptive Inc."
                   "Copyright (c) 2015-2021 Object Management Group, Inc."],
    :sm/dependsOn
-   "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"},
    :sm/fileAbbreviation "lcc-639-1",
    :sm/fileAbstract
    "This ontology represents the subset of the ISO 639 standard that provides the language names and actual codes for ISO 639-1.",
@@ -45,982 +48,990 @@
 (def Abkhazian
   "Abkhazian language"
   {:db/ident :lcc-639-1/Abkhazian,
-   :lcc-lr/hasEnglishName #voc/lstr "Abkhazian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "abkhaze@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Abchasisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Abkhazian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "abkhaze@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Abchasisch@de",
    :lcc-lr/hasIndigenousName "apṕsua bysžwa",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ab",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ab"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Abkhazian",
    :skos/definition "Abkhazian language"})
 
 (def Afar
   "Afar language"
   {:db/ident :lcc-639-1/Afar,
-   :lcc-lr/hasEnglishName #voc/lstr "Afar@en",
-   :lcc-lr/hasFrenchName #voc/lstr "afar@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Danakil-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Afar@en",
+   :lcc-lr/hasFrenchName #xsd/langString "afar@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Danakil-Sprache@de",
    :lcc-lr/hasIndigenousName "afar",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/aa",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/aa"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Afar",
    :skos/definition "Afar language"})
 
 (def Afrikaans
   "Afrikaans language"
   {:db/ident :lcc-639-1/Afrikaans,
-   :lcc-lr/hasEnglishName #voc/lstr "Afrikaans@en",
-   :lcc-lr/hasFrenchName #voc/lstr "afrikaans@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Afrikaans@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Afrikaans@en",
+   :lcc-lr/hasFrenchName #xsd/langString "afrikaans@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Afrikaans@de",
    :lcc-lr/hasIndigenousName "Afrikaans",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/af",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/af"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Afrikaans",
    :skos/definition "Afrikaans language"})
 
 (def Akan
   "Akan language"
   {:db/ident :lcc-639-1/Akan,
-   :lcc-lr/hasEnglishName #voc/lstr "Akan@en",
-   :lcc-lr/hasFrenchName #voc/lstr "akan@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Akan-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Akan@en",
+   :lcc-lr/hasFrenchName #xsd/langString "akan@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Akan-Sprache@de",
    :lcc-lr/hasIndigenousName "akana",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ak",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ak"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/Macrolanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Akan",
    :skos/definition "Akan language"})
 
 (def Albanian
   "Albanian languages"
   {:db/ident :lcc-639-1/Albanian,
-   :lcc-lr/hasEnglishName #voc/lstr "Albanian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "albanais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Albanisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Albanian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "albanais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Albanisch@de",
    :lcc-lr/hasIndigenousName "shqip",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/sq",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/sq"},
    :rdf/type
    [:lcc-lr/Macrolanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Albanian",
    :skos/definition "Albanian languages"})
 
 (def Amharic
   "Amharic language"
   {:db/ident :lcc-639-1/Amharic,
-   :lcc-lr/hasEnglishName #voc/lstr "Amharic@en",
-   :lcc-lr/hasFrenchName #voc/lstr "amharique@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Amharisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Amharic@en",
+   :lcc-lr/hasFrenchName #xsd/langString "amharique@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Amharisch@de",
    :lcc-lr/hasIndigenousName "amarinja",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/am",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/am"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Amharic",
    :skos/definition "Amharic language"})
 
 (def Arabic
   "Arabic language"
   {:db/ident :lcc-639-1/Arabic,
-   :lcc-lr/hasEnglishName #voc/lstr "Arabic@en",
-   :lcc-lr/hasFrenchName #voc/lstr "arabe@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Arabisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Arabic@en",
+   :lcc-lr/hasFrenchName #xsd/langString "arabe@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Arabisch@de",
    :lcc-lr/hasIndigenousName "'arabiy",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ar",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ar"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/Macrolanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Arabic",
    :skos/definition "Arabic language"})
 
 (def Aragonese
   "Aragonese language"
   {:db/ident :lcc-639-1/Aragonese,
-   :lcc-lr/hasEnglishName #voc/lstr "Aragonese@en",
-   :lcc-lr/hasFrenchName #voc/lstr "aragonais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Aragonesisch@de",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/an",
+   :lcc-lr/hasEnglishName #xsd/langString "Aragonese@en",
+   :lcc-lr/hasFrenchName #xsd/langString "aragonais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Aragonesisch@de",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/an"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Aragonese",
    :skos/definition "Aragonese language"})
 
 (def Armenian
   "Armenian language"
   {:db/ident :lcc-639-1/Armenian,
-   :lcc-lr/hasEnglishName #voc/lstr "Armenian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "arménien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Armenisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Armenian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "arménien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Armenisch@de",
    :lcc-lr/hasIndigenousName "hayeren lezow",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/hy",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/hy"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Armenian",
    :skos/definition "Armenian language"})
 
 (def Assamese
   "Assamese language"
   {:db/ident :lcc-639-1/Assamese,
-   :lcc-lr/hasEnglishName #voc/lstr "Assamese@en",
-   :lcc-lr/hasFrenchName #voc/lstr "assamais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Assamesisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Assamese@en",
+   :lcc-lr/hasFrenchName #xsd/langString "assamais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Assamesisch@de",
    :lcc-lr/hasIndigenousName "asamī",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/as",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/as"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Assamese",
    :skos/definition "Assamese language"})
 
 (def Avaric
   "Avaric language"
   {:db/ident :lcc-639-1/Avaric,
-   :lcc-lr/hasEnglishName #voc/lstr "Avaric@en",
-   :lcc-lr/hasFrenchName #voc/lstr "avar@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Awarisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Avaric@en",
+   :lcc-lr/hasFrenchName #xsd/langString "avar@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Awarisch@de",
    :lcc-lr/hasIndigenousName "avar mac‡",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/av",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/av"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Avaric",
    :skos/definition "Avaric language"})
 
 (def Avestan
   "Avestan language"
   {:db/ident :lcc-639-1/Avestan,
-   :lcc-lr/hasEnglishName #voc/lstr "Avestan@en",
-   :lcc-lr/hasFrenchName #voc/lstr "avestique@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Avestisch@de",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ae",
+   :lcc-lr/hasEnglishName #xsd/langString "Avestan@en",
+   :lcc-lr/hasFrenchName #xsd/langString "avestique@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Avestisch@de",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ae"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/AncientLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Avestan",
    :skos/definition "Avestan language"})
 
 (def Aymara
   "Aymara language"
   {:db/ident :lcc-639-1/Aymara,
-   :lcc-lr/hasEnglishName #voc/lstr "Aymara@en",
-   :lcc-lr/hasFrenchName #voc/lstr "aymara@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Aymará-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Aymara@en",
+   :lcc-lr/hasFrenchName #xsd/langString "aymara@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Aymará-Sprache@de",
    :lcc-lr/hasIndigenousName "aymara",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ay",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ay"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/Macrolanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Aymara",
    :skos/definition "Aymara language"})
 
 (def Azerbaijani
   "Azerbaijani language"
   {:db/ident :lcc-639-1/Azerbaijani,
-   :lcc-lr/hasEnglishName #voc/lstr "Azerbaijani@en",
-   :lcc-lr/hasFrenchName #voc/lstr "azéri@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Aserbeidschanisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Azerbaijani@en",
+   :lcc-lr/hasFrenchName #xsd/langString "azéri@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Aserbeidschanisch@de",
    :lcc-lr/hasIndigenousName "azǝrbaycan dil",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/az",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/az"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/Macrolanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Azerbaijani",
    :skos/definition "Azerbaijani language"})
 
 (def Bambara
   "Bambara language"
   {:db/ident :lcc-639-1/Bambara,
-   :lcc-lr/hasEnglishName #voc/lstr "Bambara@en",
-   :lcc-lr/hasFrenchName #voc/lstr "bambara@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Bambara-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Bambara@en",
+   :lcc-lr/hasFrenchName #xsd/langString "bambara@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Bambara-Sprache@de",
    :lcc-lr/hasIndigenousName "bambankan",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/bm",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/bm"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Bambara",
    :skos/definition "Bambara language"})
 
 (def Bashkir
   "Bashkir language"
   {:db/ident :lcc-639-1/Bashkir,
-   :lcc-lr/hasEnglishName #voc/lstr "Bashkir@en",
-   :lcc-lr/hasFrenchName #voc/lstr "bachkir@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Baschkirisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Bashkir@en",
+   :lcc-lr/hasFrenchName #xsd/langString "bachkir@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Baschkirisch@de",
    :lcc-lr/hasIndigenousName "bašǩort",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ba",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ba"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Bashkir",
    :skos/definition "Bashkir language"})
 
 (def Basque
   "Basque language"
   {:db/ident :lcc-639-1/Basque,
-   :lcc-lr/hasEnglishName #voc/lstr "Basque@en",
-   :lcc-lr/hasFrenchName #voc/lstr "basque@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Baskisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Basque@en",
+   :lcc-lr/hasFrenchName #xsd/langString "basque@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Baskisch@de",
    :lcc-lr/hasIndigenousName ["euskera" "euskara"],
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/eu",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/eu"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Basque",
    :skos/definition "Basque language"})
 
 (def Belarusian
   "Belarusian language"
   {:db/ident :lcc-639-1/Belarusian,
-   :lcc-lr/hasEnglishName #voc/lstr "Belarusian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "biélorusse@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Weißrussisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Belarusian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "biélorusse@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Weißrussisch@de",
    :lcc-lr/hasIndigenousName "belaruskaâ mova",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/be",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/be"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Belarusian",
    :skos/definition "Belarusian language"})
 
 (def Bengali
   "Bengali language"
   {:db/ident :lcc-639-1/Bengali,
-   :lcc-lr/hasEnglishName #voc/lstr "Bengali@en",
-   :lcc-lr/hasFrenchName #voc/lstr "bengali@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Bengali@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Bengali@en",
+   :lcc-lr/hasFrenchName #xsd/langString "bengali@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Bengali@de",
    :lcc-lr/hasIndigenousName "bāṅlā",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/bn",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/bn"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Bengali",
    :skos/definition "Bengali language"})
 
 (def BihariLanguages
   "Bihari languages"
   {:db/ident :lcc-639-1/BihariLanguages,
-   :lcc-lr/hasEnglishName #voc/lstr "Bihari languages@en",
-   :lcc-lr/hasFrenchName #voc/lstr "langues biharis@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Bihari (Andere)@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Bihari languages@en",
+   :lcc-lr/hasFrenchName #xsd/langString "langues biharis@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Bihari (Andere)@de",
    :lcc-lr/hasIndigenousName "bihārī",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/bh",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/bh"},
    :rdf/type [:lcc-lr/LanguageFamily :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Bihari languages"})
 
 (def Bislama
   "Bislama language"
   {:db/ident :lcc-639-1/Bislama,
-   :lcc-lr/hasEnglishName #voc/lstr "Bislama@en",
-   :lcc-lr/hasFrenchName #voc/lstr "bichlamar@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Beach-la-mar@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Bislama@en",
+   :lcc-lr/hasFrenchName #xsd/langString "bichlamar@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Beach-la-mar@de",
    :lcc-lr/hasIndigenousName "bislama",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/bi",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/bi"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Bislama",
    :skos/definition "Bislama language"})
 
 (def Bosnian
   "Bosnian language"
   {:db/ident :lcc-639-1/Bosnian,
-   :lcc-lr/hasEnglishName #voc/lstr "Bosnian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "bosniaque@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Bosnisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Bosnian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "bosniaque@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Bosnisch@de",
    :lcc-lr/hasIndigenousName "bosanski (jezik)",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/bs",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/bs"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Bosnian",
    :skos/definition "Bosnian language"})
 
 (def Breton
   "Breton language"
   {:db/ident :lcc-639-1/Breton,
-   :lcc-lr/hasEnglishName #voc/lstr "Breton@en",
-   :lcc-lr/hasFrenchName #voc/lstr "breton@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Bretonisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Breton@en",
+   :lcc-lr/hasFrenchName #xsd/langString "breton@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Bretonisch@de",
    :lcc-lr/hasIndigenousName "Brezhoneg",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/br",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/br"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Breton",
    :skos/definition "Breton language"})
 
 (def Bulgarian
   "Bulgarian language"
   {:db/ident :lcc-639-1/Bulgarian,
-   :lcc-lr/hasEnglishName #voc/lstr "Bulgarian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "bulgare@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Bulgarisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Bulgarian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "bulgare@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Bulgarisch@de",
    :lcc-lr/hasIndigenousName "b\"lgarski ezik",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/bg",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/bg"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Bulgarian",
    :skos/definition "Bulgarian language"})
 
 (def Burmese
   "Burmese language"
   {:db/ident :lcc-639-1/Burmese,
-   :lcc-lr/hasEnglishName #voc/lstr "Burmese@en",
-   :lcc-lr/hasFrenchName #voc/lstr "birman@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Birmanisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Burmese@en",
+   :lcc-lr/hasFrenchName #xsd/langString "birman@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Birmanisch@de",
    :lcc-lr/hasIndigenousName "myanmasa",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/my",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/my"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Burmese",
    :skos/definition "Burmese language"})
 
 (def Catalan
   "Catalan language"
   {:db/ident :lcc-639-1/Catalan,
-   :lcc-lr/hasEnglishName [#voc/lstr "Valencian@en" #voc/lstr "Catalan@en"],
-   :lcc-lr/hasFrenchName [#voc/lstr "catalan@fr" #voc/lstr "valencien@fr"],
-   :lcc-lr/hasGermanName #voc/lstr "Katalanisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Valencian@en"
+                           #xsd/langString "Catalan@en"],
+   :lcc-lr/hasFrenchName [#xsd/langString "catalan@fr"
+                          #xsd/langString "valencien@fr"],
+   :lcc-lr/hasGermanName #xsd/langString "Katalanisch@de",
    :lcc-lr/hasIndigenousName "català",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ca",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ca"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Catalan",
    :skos/definition "Catalan language"})
 
 (def CentralKhmer
   "Central Khmer language"
   {:db/ident :lcc-639-1/CentralKhmer,
-   :lcc-lr/hasEnglishName #voc/lstr "Central Khmer@en",
-   :lcc-lr/hasFrenchName #voc/lstr "khmer central@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Kambodschanisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Central Khmer@en",
+   :lcc-lr/hasFrenchName #xsd/langString "khmer central@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Kambodschanisch@de",
    :lcc-lr/hasIndigenousName "khmêr",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/km",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/km"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Central Khmer",
    :skos/definition "Central Khmer language"})
 
 (def Chamorro
   "Chamorro language"
   {:db/ident :lcc-639-1/Chamorro,
-   :lcc-lr/hasEnglishName #voc/lstr "Chamorro@en",
-   :lcc-lr/hasFrenchName #voc/lstr "chamorro@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Chamorro-Sprache@de",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ch",
+   :lcc-lr/hasEnglishName #xsd/langString "Chamorro@en",
+   :lcc-lr/hasFrenchName #xsd/langString "chamorro@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Chamorro-Sprache@de",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ch"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Chamorro",
    :skos/definition "Chamorro language"})
 
 (def Chechen
   "Chechen language"
   {:db/ident :lcc-639-1/Chechen,
-   :lcc-lr/hasEnglishName #voc/lstr "Chechen@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tchétchène@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tschetschenisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Chechen@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tchétchène@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tschetschenisch@de",
    :lcc-lr/hasIndigenousName ["nohčijn mott" "noxçiyn mott"],
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ce",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ce"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Chechen",
    :skos/definition "Chechen language"})
 
 (def Chichewa
   "Chichewa language"
   {:db/ident :lcc-639-1/Chichewa,
-   :lcc-lr/hasEnglishName
-   [#voc/lstr "Chichewa@en" #voc/lstr "Nyanja@en" #voc/lstr "Chewa@en"],
-   :lcc-lr/hasFrenchName
-   [#voc/lstr "chichewa@fr" #voc/lstr "chewa@fr" #voc/lstr "nyanja@fr"],
-   :lcc-lr/hasGermanName #voc/lstr "Nyanja-Sprache@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Chichewa@en"
+                           #xsd/langString "Nyanja@en"
+                           #xsd/langString "Chewa@en"],
+   :lcc-lr/hasFrenchName [#xsd/langString "chichewa@fr"
+                          #xsd/langString "chewa@fr"
+                          #xsd/langString "nyanja@fr"],
+   :lcc-lr/hasGermanName #xsd/langString "Nyanja-Sprache@de",
    :lcc-lr/hasIndigenousName ["tshichewa" "tshinyanja"],
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ny",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ny"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Chichewa",
    :skos/definition "Chichewa language"})
 
 (def Chinese
   "Chinese languages"
   {:db/ident :lcc-639-1/Chinese,
-   :lcc-lr/hasEnglishName #voc/lstr "Chinese@en",
-   :lcc-lr/hasFrenchName #voc/lstr "chinois@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Chinesisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Chinese@en",
+   :lcc-lr/hasFrenchName #xsd/langString "chinois@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Chinesisch@de",
    :lcc-lr/hasIndigenousName "zhongwen",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/zh",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/zh"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/Macrolanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Chinese",
    :skos/definition "Chinese languages"})
 
 (def ChurchSlavic
   "Church Slavic language"
   {:db/ident :lcc-639-1/ChurchSlavic,
-   :lcc-lr/hasEnglishName [#voc/lstr "Church Slavonic@en"
-                           #voc/lstr "Old Slavonic@en"
-                           #voc/lstr "Old Church Slavonic@en"
-                           #voc/lstr "Old Bulgarian@en"
-                           #voc/lstr "Church Slavic@en"],
-   :lcc-lr/hasFrenchName [#voc/lstr "vieux slave@fr"
-                          #voc/lstr "vieux bulgare@fr"
-                          #voc/lstr "slavon liturgique@fr"
-                          #voc/lstr "slavon d'église@fr"],
-   :lcc-lr/hasGermanName #voc/lstr "Kirchenslawisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Church Slavonic@en"
+                           #xsd/langString "Old Slavonic@en"
+                           #xsd/langString "Old Church Slavonic@en"
+                           #xsd/langString "Old Bulgarian@en"
+                           #xsd/langString "Church Slavic@en"],
+   :lcc-lr/hasFrenchName [#xsd/langString "vieux slave@fr"
+                          #xsd/langString "vieux bulgare@fr"
+                          #xsd/langString "slavon liturgique@fr"
+                          #xsd/langString "slavon d'église@fr"],
+   :lcc-lr/hasGermanName #xsd/langString "Kirchenslawisch@de",
    :lcc-lr/hasIndigenousName "cerkovno-slavânskij",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/cu",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/cu"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/AncientLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Church Slavic",
    :skos/definition "Church Slavic language"})
 
 (def Chuvash
   "Chuvash language"
   {:db/ident :lcc-639-1/Chuvash,
-   :lcc-lr/hasEnglishName #voc/lstr "Chuvash@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tchouvache@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tschuwaschisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Chuvash@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tchouvache@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tschuwaschisch@de",
    :lcc-lr/hasIndigenousName "čǎvaš čělhi",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/cv",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/cv"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Chuvash",
    :skos/definition "Chuvash language"})
 
 (def Cornish
   "Cornish language"
   {:db/ident :lcc-639-1/Cornish,
-   :lcc-lr/hasEnglishName #voc/lstr "Cornish@en",
-   :lcc-lr/hasFrenchName #voc/lstr "cornique@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Kornisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Cornish@en",
+   :lcc-lr/hasFrenchName #xsd/langString "cornique@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Kornisch@de",
    :lcc-lr/hasIndigenousName "Kernewek",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/kw",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/kw"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Cornish",
    :skos/definition "Cornish language"})
 
 (def Corsican
   "Corsican language"
   {:db/ident :lcc-639-1/Corsican,
-   :lcc-lr/hasEnglishName #voc/lstr "Corsican@en",
-   :lcc-lr/hasFrenchName #voc/lstr "corse@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Korsisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Corsican@en",
+   :lcc-lr/hasFrenchName #xsd/langString "corse@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Korsisch@de",
    :lcc-lr/hasIndigenousName "corsu",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/co",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/co"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Corsican",
    :skos/definition "Corsican language"})
 
 (def Cree
   "Cree languages"
   {:db/ident :lcc-639-1/Cree,
-   :lcc-lr/hasEnglishName #voc/lstr "Cree@en",
-   :lcc-lr/hasFrenchName #voc/lstr "cree@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Cree-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Cree@en",
+   :lcc-lr/hasFrenchName #xsd/langString "cree@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Cree-Sprache@de",
    :lcc-lr/hasIndigenousName "nêhiyawa",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/cr",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/cr"},
    :rdf/type
    [:lcc-lr/Macrolanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Cree",
    :skos/definition "Cree languages"})
 
 (def Croatian
   "Croatian language"
   {:db/ident :lcc-639-1/Croatian,
-   :lcc-lr/hasEnglishName #voc/lstr "Croatian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "croate@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Kroatisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Croatian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "croate@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Kroatisch@de",
    :lcc-lr/hasIndigenousName "hrvatski jezik",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/hr",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/hr"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Croatian",
    :skos/definition "Croatian language"})
 
 (def Czech
   "Czech language"
   {:db/ident :lcc-639-1/Czech,
-   :lcc-lr/hasEnglishName #voc/lstr "Czech@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tchèque@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tschechisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Czech@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tchèque@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tschechisch@de",
    :lcc-lr/hasIndigenousName "český jazyk",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/cs",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/cs"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Czech",
    :skos/definition "Czech language"})
 
 (def Danish
   "Danish language"
   {:db/ident :lcc-639-1/Danish,
-   :lcc-lr/hasEnglishName #voc/lstr "Danish@en",
-   :lcc-lr/hasFrenchName #voc/lstr "danois@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Dänisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Danish@en",
+   :lcc-lr/hasFrenchName #xsd/langString "danois@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Dänisch@de",
    :lcc-lr/hasIndigenousName "dansk",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/da",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/da"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Danish",
    :skos/definition "Danish language"})
 
 (def Dhivehi
   "Divehi language"
   {:db/ident :lcc-639-1/Dhivehi,
-   :lcc-lr/hasEnglishName
-   [#voc/lstr "Divehi@en" #voc/lstr "Dhivehi@en" #voc/lstr "Maldivian@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "maldivien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Maledivisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Divehi@en"
+                           #xsd/langString "Dhivehi@en"
+                           #xsd/langString "Maldivian@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "maldivien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Maledivisch@de",
    :lcc-lr/hasIndigenousName "dhivehi",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/dv",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/dv"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Dhivehi",
    :skos/definition "Divehi language"})
 
 (def Dutch
   "Dutch language"
   {:db/ident :lcc-639-1/Dutch,
-   :lcc-lr/hasEnglishName [#voc/lstr "Dutch@en" #voc/lstr "Flemish@en"],
-   :lcc-lr/hasFrenchName [#voc/lstr "néerlandais@fr" #voc/lstr "flamand@fr"],
-   :lcc-lr/hasGermanName #voc/lstr "Niederländisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Dutch@en"
+                           #xsd/langString "Flemish@en"],
+   :lcc-lr/hasFrenchName [#xsd/langString "néerlandais@fr"
+                          #xsd/langString "flamand@fr"],
+   :lcc-lr/hasGermanName #xsd/langString "Niederländisch@de",
    :lcc-lr/hasIndigenousName "Nederlands",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/nl",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/nl"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Dutch",
    :skos/definition "Dutch language"})
 
 (def Dzongkha
   "Dzongkha language"
   {:db/ident :lcc-639-1/Dzongkha,
-   :lcc-lr/hasEnglishName #voc/lstr "Dzongkha@en",
-   :lcc-lr/hasFrenchName #voc/lstr "dzongkha@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Dzongkha@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Dzongkha@en",
+   :lcc-lr/hasFrenchName #xsd/langString "dzongkha@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Dzongkha@de",
    :lcc-lr/hasIndigenousName "dzongkha",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/dz",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/dz"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Dzongkha",
    :skos/definition "Dzongkha language"})
 
 (def English
   "English language"
   {:db/ident :lcc-639-1/English,
-   :lcc-lr/hasEnglishName #voc/lstr "English@en",
-   :lcc-lr/hasFrenchName #voc/lstr "anglais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Englisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "English@en",
+   :lcc-lr/hasFrenchName #xsd/langString "anglais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Englisch@de",
    :lcc-lr/hasIndigenousName "English",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/en",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/en"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "English",
    :skos/definition "English language"})
 
 (def Esperanto
   "Esperanto language"
   {:db/ident :lcc-639-1/Esperanto,
-   :lcc-lr/hasEnglishName #voc/lstr "Esperanto@en",
-   :lcc-lr/hasFrenchName #voc/lstr "espéranto@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Esperanto@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Esperanto@en",
+   :lcc-lr/hasFrenchName #xsd/langString "espéranto@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Esperanto@de",
    :lcc-lr/hasIndigenousName "esperanto",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/eo",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/eo"},
    :rdf/type
    [:lcc-lr/ArtificialLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Esperanto",
    :skos/definition "Esperanto language"})
 
 (def Estonian
   "Estonian language"
   {:db/ident :lcc-639-1/Estonian,
-   :lcc-lr/hasEnglishName #voc/lstr "Estonian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "estonien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Estnisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Estonian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "estonien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Estnisch@de",
    :lcc-lr/hasIndigenousName "eesti keel",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/et",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/et"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Estonian",
    :skos/definition "Estonian language"})
 
 (def Ewe
   "Ewe language"
   {:db/ident :lcc-639-1/Ewe,
-   :lcc-lr/hasEnglishName #voc/lstr "Ewe@en",
-   :lcc-lr/hasFrenchName #voc/lstr "éwé@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Ewe-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Ewe@en",
+   :lcc-lr/hasFrenchName #xsd/langString "éwé@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Ewe-Sprache@de",
    :lcc-lr/hasIndigenousName "eve",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ee",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ee"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Ewe",
    :skos/definition "Ewe language"})
 
 (def Faroese
   "Faroese language"
   {:db/ident :lcc-639-1/Faroese,
-   :lcc-lr/hasEnglishName #voc/lstr "Faroese@en",
-   :lcc-lr/hasFrenchName #voc/lstr "féroïen@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Färöisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Faroese@en",
+   :lcc-lr/hasFrenchName #xsd/langString "féroïen@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Färöisch@de",
    :lcc-lr/hasIndigenousName "føroyskt",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/fo",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/fo"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Faroese",
    :skos/definition "Faroese language"})
 
 (def Fijian
   "Fijian language"
   {:db/ident :lcc-639-1/Fijian,
-   :lcc-lr/hasEnglishName #voc/lstr "Fijian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "fidjien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Fidschi-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Fijian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "fidjien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Fidschi-Sprache@de",
    :lcc-lr/hasIndigenousName "Na Vosa Vakaviti",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/fj",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/fj"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Fijian",
    :skos/definition "Fijian language"})
 
 (def Finnish
   "Finnish language"
   {:db/ident :lcc-639-1/Finnish,
-   :lcc-lr/hasEnglishName #voc/lstr "Finnish@en",
-   :lcc-lr/hasFrenchName #voc/lstr "finnois@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Finnisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Finnish@en",
+   :lcc-lr/hasFrenchName #xsd/langString "finnois@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Finnisch@de",
    :lcc-lr/hasIndigenousName ["suomi" "suomen kieli"],
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/fi",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/fi"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Finnish",
    :skos/definition "Finnish language"})
 
 (def French
   "French language"
   {:db/ident :lcc-639-1/French,
-   :lcc-lr/hasEnglishName #voc/lstr "French@en",
-   :lcc-lr/hasFrenchName #voc/lstr "français@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Französisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "French@en",
+   :lcc-lr/hasFrenchName #xsd/langString "français@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Französisch@de",
    :lcc-lr/hasIndigenousName "français",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/fr",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/fr"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "French",
    :skos/definition "French language"})
 
 (def Fulah
   "Fulah languages"
   {:db/ident :lcc-639-1/Fulah,
-   :lcc-lr/hasEnglishName #voc/lstr "Fulah@en",
-   :lcc-lr/hasFrenchName #voc/lstr "peul@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Ful@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Fulah@en",
+   :lcc-lr/hasFrenchName #xsd/langString "peul@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Ful@de",
    :lcc-lr/hasIndigenousName "fulfulde",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ff",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ff"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/Macrolanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Fulah",
    :skos/definition "Fulah languages"})
 
 (def Gaelic
   "Gaelic language"
   {:db/ident :lcc-639-1/Gaelic,
-   :lcc-lr/hasEnglishName [#voc/lstr "Gaelic@en"
-                           #voc/lstr "Scottish Gaelic@en"],
-   :lcc-lr/hasFrenchName [#voc/lstr "gaélique@fr"
-                          #voc/lstr "gaélique écossais@fr"],
-   :lcc-lr/hasGermanName #voc/lstr "Gälisch-Schottisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Gaelic@en"
+                           #xsd/langString "Scottish Gaelic@en"],
+   :lcc-lr/hasFrenchName [#xsd/langString "gaélique@fr"
+                          #xsd/langString "gaélique écossais@fr"],
+   :lcc-lr/hasGermanName #xsd/langString "Gälisch-Schottisch@de",
    :lcc-lr/hasIndigenousName "Gàidhlig",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/gd",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/gd"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Gaelic",
    :skos/definition "Gaelic language"})
 
 (def Galician
   "Galician; Gallegan language"
   {:db/ident :lcc-639-1/Galician,
-   :lcc-lr/hasEnglishName #voc/lstr "Galician@en",
-   :lcc-lr/hasFrenchName #voc/lstr "galicien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Galicisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Galician@en",
+   :lcc-lr/hasFrenchName #xsd/langString "galicien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Galicisch@de",
    :lcc-lr/hasIndigenousName "galego",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/gl",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/gl"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Galician",
    :skos/definition "Galician; Gallegan language"})
 
 (def Ganda
   "Ganda language"
   {:db/ident :lcc-639-1/Ganda,
-   :lcc-lr/hasEnglishName #voc/lstr "Ganda@en",
-   :lcc-lr/hasFrenchName #voc/lstr "ganda@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Ganda-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Ganda@en",
+   :lcc-lr/hasFrenchName #xsd/langString "ganda@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Ganda-Sprache@de",
    :lcc-lr/hasIndigenousName "luganda",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/lg",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/lg"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Ganda",
    :skos/definition "Ganda language"})
 
 (def Georgian
   "Georgian language"
   {:db/ident :lcc-639-1/Georgian,
-   :lcc-lr/hasEnglishName #voc/lstr "Georgian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "géorgien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Georgisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Georgian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "géorgien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Georgisch@de",
    :lcc-lr/hasIndigenousName "k'art'uli ena",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ka",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ka"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Georgian",
    :skos/definition "Georgian language"})
 
 (def German
   "German language"
   {:db/ident :lcc-639-1/German,
-   :lcc-lr/hasEnglishName #voc/lstr "German@en",
-   :lcc-lr/hasFrenchName #voc/lstr "allemand@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Deutsch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "German@en",
+   :lcc-lr/hasFrenchName #xsd/langString "allemand@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Deutsch@de",
    :lcc-lr/hasIndigenousName "Deutsch",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/de",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/de"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "German",
    :skos/definition "German language"})
 
 (def Guarani
   "Guarani language"
   {:db/ident :lcc-639-1/Guarani,
-   :lcc-lr/hasEnglishName #voc/lstr "Guarani@en",
-   :lcc-lr/hasFrenchName #voc/lstr "guarani@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Guaraní-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Guarani@en",
+   :lcc-lr/hasFrenchName #xsd/langString "guarani@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Guaraní-Sprache@de",
    :lcc-lr/hasIndigenousName "guarani",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/gn",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/gn"},
    :rdf/type
    [:lcc-lr/Macrolanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Guarani",
    :skos/definition "Guarani language"})
 
 (def Gujarati
   "Gujarati language"
   {:db/ident :lcc-639-1/Gujarati,
-   :lcc-lr/hasEnglishName #voc/lstr "Gujarati@en",
-   :lcc-lr/hasFrenchName #voc/lstr "goudjrati@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Gujarati-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Gujarati@en",
+   :lcc-lr/hasFrenchName #xsd/langString "goudjrati@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Gujarati-Sprache@de",
    :lcc-lr/hasIndigenousName "gujarātī",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/gu",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/gu"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Gujarati",
    :skos/definition "Gujarati language"})
 
 (def Haitian
   "Haitian; Haitian Creole language"
   {:db/ident :lcc-639-1/Haitian,
-   :lcc-lr/hasEnglishName [#voc/lstr "Haitian@en"
-                           #voc/lstr "Haitian Creole@en"],
-   :lcc-lr/hasFrenchName [#voc/lstr "créole haïtien@fr" #voc/lstr "haïtien@fr"],
-   :lcc-lr/hasGermanName #voc/lstr "Haïtien (Haiti-Kreolisch)@de",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ht",
+   :lcc-lr/hasEnglishName [#xsd/langString "Haitian@en"
+                           #xsd/langString "Haitian Creole@en"],
+   :lcc-lr/hasFrenchName [#xsd/langString "créole haïtien@fr"
+                          #xsd/langString "haïtien@fr"],
+   :lcc-lr/hasGermanName #xsd/langString "Haïtien (Haiti-Kreolisch)@de",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ht"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Haitian",
    :skos/definition "Haitian; Haitian Creole language"})
 
 (def Hausa
   "Hausa language"
   {:db/ident :lcc-639-1/Hausa,
-   :lcc-lr/hasEnglishName #voc/lstr "Hausa@en",
-   :lcc-lr/hasFrenchName #voc/lstr "haoussa@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Haussa-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Hausa@en",
+   :lcc-lr/hasFrenchName #xsd/langString "haoussa@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Haussa-Sprache@de",
    :lcc-lr/hasIndigenousName "hausa",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ha",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ha"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Hausa",
    :skos/definition "Hausa language"})
 
 (def Hebrew
   "Hebrew language"
   {:db/ident :lcc-639-1/Hebrew,
-   :lcc-lr/hasEnglishName #voc/lstr "Hebrew@en",
-   :lcc-lr/hasFrenchName #voc/lstr "hébreu@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Hebräisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Hebrew@en",
+   :lcc-lr/hasFrenchName #xsd/langString "hébreu@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Hebräisch@de",
    :lcc-lr/hasIndigenousName "ivrit",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/he",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/he"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Hebrew",
    :skos/definition "Hebrew language"})
 
 (def Herero
   "Herero language"
   {:db/ident :lcc-639-1/Herero,
-   :lcc-lr/hasEnglishName #voc/lstr "Herero@en",
-   :lcc-lr/hasFrenchName #voc/lstr "herero@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Herero-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Herero@en",
+   :lcc-lr/hasFrenchName #xsd/langString "herero@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Herero-Sprache@de",
    :lcc-lr/hasIndigenousName "otshiherero",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/hz",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/hz"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Herero",
    :skos/definition "Herero language"})
 
 (def Hindi
   "Hindi language"
   {:db/ident :lcc-639-1/Hindi,
-   :lcc-lr/hasEnglishName #voc/lstr "Hindi@en",
-   :lcc-lr/hasFrenchName #voc/lstr "hindi@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Hindi@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Hindi@en",
+   :lcc-lr/hasFrenchName #xsd/langString "hindi@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Hindi@de",
    :lcc-lr/hasIndigenousName "hindī",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/hi",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/hi"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Hindi",
    :skos/definition "Hindi language"})
 
 (def HiriMotu
   "Hiri Motu language"
   {:db/ident :lcc-639-1/HiriMotu,
-   :lcc-lr/hasEnglishName #voc/lstr "Hiri Motu@en",
-   :lcc-lr/hasFrenchName #voc/lstr "hiri motu@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Hiri-Motu@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Hiri Motu@en",
+   :lcc-lr/hasFrenchName #xsd/langString "hiri motu@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Hiri-Motu@de",
    :lcc-lr/hasIndigenousName "Hiri Motu",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ho",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ho"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Hiri Motu",
    :skos/definition "Hiri Motu language"})
 
 (def Hungarian
   "Hungarian language"
   {:db/ident :lcc-639-1/Hungarian,
-   :lcc-lr/hasEnglishName #voc/lstr "Hungarian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "hongrois@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Ungarisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Hungarian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "hongrois@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Ungarisch@de",
    :lcc-lr/hasIndigenousName "magyar nyelv",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/hu",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/hu"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Hungarian",
    :skos/definition "Hungarian language"})
 
@@ -1030,71 +1041,71 @@
    :rdf/type
    [:lcc-lr/IdentificationScheme :lcc-lr/CodeSet :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ISO 639-1 code set",
    :rdfs/seeAlso
-   ["https://id.loc.gov/vocabulary/iso639-1.html"
-    "http://www.infoterm.info/standardization/iso_639_1_2002.php"],
+   [{:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1.html"}
+    {:rdfa/uri "http://www.infoterm.info/standardization/iso_639_1_2002.php"}],
    :skos/definition
    "the set of language identifiers that make up the ISO 639-1 specification"})
 
 (def Icelandic
   "Icelandic language"
   {:db/ident :lcc-639-1/Icelandic,
-   :lcc-lr/hasEnglishName #voc/lstr "Icelandic@en",
-   :lcc-lr/hasFrenchName #voc/lstr "islandais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Isländisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Icelandic@en",
+   :lcc-lr/hasFrenchName #xsd/langString "islandais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Isländisch@de",
    :lcc-lr/hasIndigenousName "íslenska",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/is",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/is"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Icelandic",
    :skos/definition "Icelandic language"})
 
 (def Ido
   "Ido language"
   {:db/ident :lcc-639-1/Ido,
-   :lcc-lr/hasEnglishName #voc/lstr "Ido@en",
-   :lcc-lr/hasFrenchName #voc/lstr "ido@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Ido@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Ido@en",
+   :lcc-lr/hasFrenchName #xsd/langString "ido@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Ido@de",
    :lcc-lr/hasIndigenousName "ido ",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/io",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/io"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/ArtificialLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Ido",
    :skos/definition "Ido language"})
 
 (def Igbo
   "Igbo language"
   {:db/ident :lcc-639-1/Igbo,
-   :lcc-lr/hasEnglishName #voc/lstr "Igbo@en",
-   :lcc-lr/hasFrenchName #voc/lstr "igbo@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Ibo-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Igbo@en",
+   :lcc-lr/hasFrenchName #xsd/langString "igbo@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Ibo-Sprache@de",
    :lcc-lr/hasIndigenousName "igbo",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ig",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ig"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Igbo",
    :skos/definition "Igbo language"})
 
 (def Indonesian
   "Indonesian language"
   {:db/ident :lcc-639-1/Indonesian,
-   :lcc-lr/hasEnglishName #voc/lstr "Indonesian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "indonésien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Bahasa Indonesia@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Indonesian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "indonésien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Bahasa Indonesia@de",
    :lcc-lr/hasIndigenousName "bahasa Indonesia",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/id",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/id"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Indonesian",
    :skos/definition "Indonesian language"})
 
@@ -1102,16 +1113,17 @@
   "Interlingua (International Auxiliary Language Association) language"
   {:db/ident :lcc-639-1/Interlingua,
    :lcc-lr/hasEnglishName
-   #voc/lstr "Interlingua (International Auxiliary Language Association)@en",
-   :lcc-lr/hasFrenchName #voc/lstr
+   #xsd/langString
+    "Interlingua (International Auxiliary Language Association)@en",
+   :lcc-lr/hasFrenchName #xsd/langString
                           "interlingua (langue auxiliaire internationale)@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Interlingua@de",
+   :lcc-lr/hasGermanName #xsd/langString "Interlingua@de",
    :lcc-lr/hasIndigenousName "interlingua",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ia",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ia"},
    :rdf/type
    [:lcc-lr/ArtificialLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Interlingua",
    :skos/definition
    "Interlingua (International Auxiliary Language Association) language"})
@@ -1119,727 +1131,733 @@
 (def Interlingue
   "Interlingue language"
   {:db/ident :lcc-639-1/Interlingue,
-   :lcc-lr/hasEnglishName [#voc/lstr "Occidental@en"
-                           #voc/lstr "Interlingue@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "interlingue@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Interlingue@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Occidental@en"
+                           #xsd/langString "Interlingue@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "interlingue@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Interlingue@de",
    :lcc-lr/hasIndigenousName "interlingue",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ie",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ie"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/ArtificialLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Interlingue",
    :skos/definition "Interlingue language"})
 
 (def Inuktitut
   "Inuktitut language"
   {:db/ident :lcc-639-1/Inuktitut,
-   :lcc-lr/hasEnglishName #voc/lstr "Inuktitut@en",
-   :lcc-lr/hasFrenchName #voc/lstr "inuktitut@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Inuktitut@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Inuktitut@en",
+   :lcc-lr/hasFrenchName #xsd/langString "inuktitut@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Inuktitut@de",
    :lcc-lr/hasIndigenousName "inuktitut",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/iu",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/iu"},
    :rdf/type
    [:lcc-lr/Macrolanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Inuktitut",
    :skos/definition "Inuktitut language"})
 
 (def Inupiaq
   "Inupiaq language"
   {:db/ident :lcc-639-1/Inupiaq,
-   :lcc-lr/hasEnglishName #voc/lstr "Inupiaq@en",
-   :lcc-lr/hasFrenchName #voc/lstr "inupiaq@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Inupik@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Inupiaq@en",
+   :lcc-lr/hasFrenchName #xsd/langString "inupiaq@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Inupik@de",
    :lcc-lr/hasIndigenousName "inupiaq",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ik",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ik"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/Macrolanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Inupiaq",
    :skos/definition "Inupiaq language"})
 
 (def Irish
   "Irish language"
   {:db/ident :lcc-639-1/Irish,
-   :lcc-lr/hasEnglishName #voc/lstr "Irish@en",
-   :lcc-lr/hasFrenchName #voc/lstr "irlandais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Irisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Irish@en",
+   :lcc-lr/hasFrenchName #xsd/langString "irlandais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Irisch@de",
    :lcc-lr/hasIndigenousName "Gaeilge",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ga",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ga"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Irish",
    :skos/definition "Irish language"})
 
 (def Italian
   "Italian language"
   {:db/ident :lcc-639-1/Italian,
-   :lcc-lr/hasEnglishName #voc/lstr "Italian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "italien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Italienisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Italian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "italien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Italienisch@de",
    :lcc-lr/hasIndigenousName "italiano",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/it",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/it"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Italian",
    :skos/definition "Italian language"})
 
 (def Japanese
   "Japanese language"
   {:db/ident :lcc-639-1/Japanese,
-   :lcc-lr/hasEnglishName #voc/lstr "Japanese@en",
-   :lcc-lr/hasFrenchName #voc/lstr "japonais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Japanisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Japanese@en",
+   :lcc-lr/hasFrenchName #xsd/langString "japonais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Japanisch@de",
    :lcc-lr/hasIndigenousName ["nippongo" "nihongo"],
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ja",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ja"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Japanese",
    :skos/definition "Japanese language"})
 
 (def Javanese
   "Javanese language"
   {:db/ident :lcc-639-1/Javanese,
-   :lcc-lr/hasEnglishName #voc/lstr "Javanese@en",
-   :lcc-lr/hasFrenchName #voc/lstr "javanais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Javanisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Javanese@en",
+   :lcc-lr/hasFrenchName #xsd/langString "javanais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Javanisch@de",
    :lcc-lr/hasIndigenousName "bahasa Jawa",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/jv",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/jv"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Javanese",
    :skos/definition "Javanese language"})
 
 (def Kalaallisut
   "Kalaallisut language"
   {:db/ident :lcc-639-1/Kalaallisut,
-   :lcc-lr/hasEnglishName [#voc/lstr "Greenlandic@en"
-                           #voc/lstr "Kalaallisut@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "groenlandais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Grönländisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Greenlandic@en"
+                           #xsd/langString "Kalaallisut@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "groenlandais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Grönländisch@de",
    :lcc-lr/hasIndigenousName "kalaallisut",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/kl",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/kl"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Kalaallisut",
    :skos/definition "Kalaallisut language"})
 
 (def Kannada
   "Kannada language"
   {:db/ident :lcc-639-1/Kannada,
-   :lcc-lr/hasEnglishName #voc/lstr "Kannada@en",
-   :lcc-lr/hasFrenchName #voc/lstr "kannada@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Kannada@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Kannada@en",
+   :lcc-lr/hasFrenchName #xsd/langString "kannada@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Kannada@de",
    :lcc-lr/hasIndigenousName "kannaḍa",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/kn",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/kn"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Kannada",
    :skos/definition "Kannada language"})
 
 (def Kanuri
   "Kanuri language"
   {:db/ident :lcc-639-1/Kanuri,
-   :lcc-lr/hasEnglishName #voc/lstr "Kanuri@en",
-   :lcc-lr/hasFrenchName #voc/lstr "kanouri@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Kanuri-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Kanuri@en",
+   :lcc-lr/hasFrenchName #xsd/langString "kanouri@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Kanuri-Sprache@de",
    :lcc-lr/hasIndigenousName "kanuri",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/kr",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/kr"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/Macrolanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Kanuri",
    :skos/definition "Kanuri language"})
 
 (def Kashmiri
   "Kashmiri language"
   {:db/ident :lcc-639-1/Kashmiri,
-   :lcc-lr/hasEnglishName #voc/lstr "Kashmiri@en",
-   :lcc-lr/hasFrenchName #voc/lstr "kashmiri@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Kaschmiri@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Kashmiri@en",
+   :lcc-lr/hasFrenchName #xsd/langString "kashmiri@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Kaschmiri@de",
    :lcc-lr/hasIndigenousName "kaśmīrī",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ks",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ks"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Kashmiri",
    :skos/definition "Kashmiri language"})
 
 (def Kazakh
   "Kazakh language"
   {:db/ident :lcc-639-1/Kazakh,
-   :lcc-lr/hasEnglishName #voc/lstr "Kazakh@en",
-   :lcc-lr/hasFrenchName #voc/lstr "kazakh@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Kasachisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Kazakh@en",
+   :lcc-lr/hasFrenchName #xsd/langString "kazakh@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Kasachisch@de",
    :lcc-lr/hasIndigenousName "ķazaķ (tili)",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/kk",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/kk"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Kazakh",
    :skos/definition "Kazakh language"})
 
 (def Kikuyu
   "Kikuyu language"
   {:db/ident :lcc-639-1/Kikuyu,
-   :lcc-lr/hasEnglishName [#voc/lstr "Kikuyu@en" #voc/lstr "Gikuyu@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "kikuyu@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Kikuyu-Sprache@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Kikuyu@en"
+                           #xsd/langString "Gikuyu@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "kikuyu@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Kikuyu-Sprache@de",
    :lcc-lr/hasIndigenousName "Gikuyu",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ki",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ki"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Kikuyu",
    :skos/definition "Kikuyu language"})
 
 (def Kinyarwanda
   "Kinyarwanda language"
   {:db/ident :lcc-639-1/Kinyarwanda,
-   :lcc-lr/hasEnglishName #voc/lstr "Kinyarwanda@en",
-   :lcc-lr/hasFrenchName #voc/lstr "kinyarwanda@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Rwanda-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Kinyarwanda@en",
+   :lcc-lr/hasFrenchName #xsd/langString "kinyarwanda@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Rwanda-Sprache@de",
    :lcc-lr/hasIndigenousName "kinyarwanda",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/rw",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/rw"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Kinyarwanda",
    :skos/definition "Kinyarwanda language"})
 
 (def Kirghiz
   "Kirghiz language"
   {:db/ident :lcc-639-1/Kirghiz,
-   :lcc-lr/hasEnglishName [#voc/lstr "Kyrgyz@en" #voc/lstr "Kirghiz@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "kirghiz@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Kirgisisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Kyrgyz@en"
+                           #xsd/langString "Kirghiz@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "kirghiz@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Kirgisisch@de",
    :lcc-lr/hasIndigenousName "kyrgyz tili",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ky",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ky"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Kirghiz",
    :skos/definition "Kirghiz language"})
 
 (def Komi
   "Komi language"
   {:db/ident :lcc-639-1/Komi,
-   :lcc-lr/hasEnglishName #voc/lstr "Komi@en",
-   :lcc-lr/hasFrenchName #voc/lstr "komi@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Komi-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Komi@en",
+   :lcc-lr/hasFrenchName #xsd/langString "komi@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Komi-Sprache@de",
    :lcc-lr/hasIndigenousName "komi kyv",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/kv",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/kv"},
    :rdf/type
    [:lcc-lr/Macrolanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Komi",
    :skos/definition "Komi language"})
 
 (def Kongo
   "Kongo languages"
   {:db/ident :lcc-639-1/Kongo,
-   :lcc-lr/hasEnglishName #voc/lstr "Kongo@en",
-   :lcc-lr/hasFrenchName #voc/lstr "kongo@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Kongo-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Kongo@en",
+   :lcc-lr/hasFrenchName #xsd/langString "kongo@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Kongo-Sprache@de",
    :lcc-lr/hasIndigenousName "kikongo",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/kg",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/kg"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/Macrolanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Kongo",
    :skos/definition "Kongo languages"})
 
 (def Korean
   "Korean language"
   {:db/ident :lcc-639-1/Korean,
-   :lcc-lr/hasEnglishName #voc/lstr "Korean@en",
-   :lcc-lr/hasFrenchName #voc/lstr "coréen@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Koreanisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Korean@en",
+   :lcc-lr/hasFrenchName #xsd/langString "coréen@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Koreanisch@de",
    :lcc-lr/hasIndigenousName ["hanguk-o" "choson-o"],
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ko",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ko"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Korean",
    :skos/definition "Korean language"})
 
 (def Kuanyama
   "Kuanyama language"
   {:db/ident :lcc-639-1/Kuanyama,
-   :lcc-lr/hasEnglishName [#voc/lstr "Kuanyama@en" #voc/lstr "Kwanyama@en"],
-   :lcc-lr/hasFrenchName [#voc/lstr "kwanyama@fr" #voc/lstr "kuanyama@fr"],
-   :lcc-lr/hasGermanName #voc/lstr "Kwanyama-Sprache@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Kuanyama@en"
+                           #xsd/langString "Kwanyama@en"],
+   :lcc-lr/hasFrenchName [#xsd/langString "kwanyama@fr"
+                          #xsd/langString "kuanyama@fr"],
+   :lcc-lr/hasGermanName #xsd/langString "Kwanyama-Sprache@de",
    :lcc-lr/hasIndigenousName "oshikwanyama",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/kj",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/kj"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Kuanyama",
    :skos/definition "Kuanyama language"})
 
 (def Kurdish
   "Kurdish language"
   {:db/ident :lcc-639-1/Kurdish,
-   :lcc-lr/hasEnglishName #voc/lstr "Kurdish@en",
-   :lcc-lr/hasFrenchName #voc/lstr "kurde@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Kurdisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Kurdish@en",
+   :lcc-lr/hasFrenchName #xsd/langString "kurde@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Kurdisch@de",
    :lcc-lr/hasIndigenousName "zimany kurdy",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ku",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ku"},
    :rdf/type
    [:lcc-lr/Macrolanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Kurdish",
    :skos/definition "Kurdish language"})
 
 (def Lao
   "Lao language"
   {:db/ident :lcc-639-1/Lao,
-   :lcc-lr/hasEnglishName #voc/lstr "Lao@en",
-   :lcc-lr/hasFrenchName #voc/lstr "lao@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Laotisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Lao@en",
+   :lcc-lr/hasFrenchName #xsd/langString "lao@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Laotisch@de",
    :lcc-lr/hasIndigenousName "pha xa lao",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/lo",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/lo"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Lao",
    :skos/definition "Lao language"})
 
 (def Latin
   "Latin language"
   {:db/ident :lcc-639-1/Latin,
-   :lcc-lr/hasEnglishName #voc/lstr "Latin@en",
-   :lcc-lr/hasFrenchName #voc/lstr "latin@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Latein@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Latin@en",
+   :lcc-lr/hasFrenchName #xsd/langString "latin@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Latein@de",
    :lcc-lr/hasIndigenousName "lingua latina",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/la",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/la"},
    :rdf/type
    [:lcc-lr/AncientLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Latin",
    :skos/definition "Latin language"})
 
 (def Latvian
   "Latvian language"
   {:db/ident :lcc-639-1/Latvian,
-   :lcc-lr/hasEnglishName #voc/lstr "Latvian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "letton@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Lettisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Latvian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "letton@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Lettisch@de",
    :lcc-lr/hasIndigenousName "latviešu valoda",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/lv",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/lv"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Latvian",
    :skos/definition "Latvian language"})
 
 (def Limburgan
   "Limburgan; Limburger; Limburgish language"
   {:db/ident :lcc-639-1/Limburgan,
-   :lcc-lr/hasEnglishName [#voc/lstr "Limburgish@en"
-                           #voc/lstr "Limburgan@en"
-                           #voc/lstr "Limburger@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "limbourgeois@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Limburgisch@de",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/li",
+   :lcc-lr/hasEnglishName [#xsd/langString "Limburgish@en"
+                           #xsd/langString "Limburgan@en"
+                           #xsd/langString "Limburger@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "limbourgeois@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Limburgisch@de",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/li"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Limburgan",
    :skos/definition "Limburgan; Limburger; Limburgish language"})
 
 (def Lingala
   "Lingala language"
   {:db/ident :lcc-639-1/Lingala,
-   :lcc-lr/hasEnglishName #voc/lstr "Lingala@en",
-   :lcc-lr/hasFrenchName #voc/lstr "lingala@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Lingala@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Lingala@en",
+   :lcc-lr/hasFrenchName #xsd/langString "lingala@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Lingala@de",
    :lcc-lr/hasIndigenousName "lingala",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ln",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ln"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Lingala",
    :skos/definition "Lingala language"})
 
 (def Lithuanian
   "Lithuanian language"
   {:db/ident :lcc-639-1/Lithuanian,
-   :lcc-lr/hasEnglishName #voc/lstr "Lithuanian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "lituanien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Litauisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Lithuanian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "lituanien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Litauisch@de",
    :lcc-lr/hasIndigenousName "lietuvių kalba",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/lt",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/lt"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Lithuanian",
    :skos/definition "Lithuanian language"})
 
 (def LubaKatanga
   "Luba-Katanga language"
   {:db/ident :lcc-639-1/LubaKatanga,
-   :lcc-lr/hasEnglishName #voc/lstr "Luba-Katanga@en",
-   :lcc-lr/hasFrenchName #voc/lstr "luba-katanga@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Luba-Katanga-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Luba-Katanga@en",
+   :lcc-lr/hasFrenchName #xsd/langString "luba-katanga@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Luba-Katanga-Sprache@de",
    :lcc-lr/hasIndigenousName "tshiluba",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/lu",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/lu"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Luba-Katanga",
    :skos/definition "Luba-Katanga language"})
 
 (def Luxembourgish
   "Luxembourgish language"
   {:db/ident :lcc-639-1/Luxembourgish,
-   :lcc-lr/hasEnglishName [#voc/lstr "Luxembourgish@en"
-                           #voc/lstr "Letzeburgesch@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "luxembourgeois@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Luxemburgisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Luxembourgish@en"
+                           #xsd/langString "Letzeburgesch@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "luxembourgeois@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Luxemburgisch@de",
    :lcc-lr/hasIndigenousName "lëtzebuergesch",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/lb",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/lb"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Luxembourgish",
    :skos/definition "Luxembourgish language"})
 
 (def Macedonian
   "Macedonian language"
   {:db/ident :lcc-639-1/Macedonian,
-   :lcc-lr/hasEnglishName #voc/lstr "Macedonian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "macédonien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Makedonisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Macedonian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "macédonien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Makedonisch@de",
    :lcc-lr/hasIndigenousName "makedonski",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/mk",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/mk"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Macedonian",
    :skos/definition "Macedonian language"})
 
 (def Malagasy
   "Malagasy languages"
   {:db/ident :lcc-639-1/Malagasy,
-   :lcc-lr/hasEnglishName #voc/lstr "Malagasy@en",
-   :lcc-lr/hasFrenchName #voc/lstr "malgache@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Malagassi-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Malagasy@en",
+   :lcc-lr/hasFrenchName #xsd/langString "malgache@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Malagassi-Sprache@de",
    :lcc-lr/hasIndigenousName "malagasy",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/mg",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/mg"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/Macrolanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Malagasy",
    :skos/definition "Malagasy languages"})
 
 (def Malay
   "Malay macrolanguage"
   {:db/ident :lcc-639-1/Malay,
-   :lcc-lr/hasEnglishName #voc/lstr "Malay (macrolanguage)@en",
-   :lcc-lr/hasFrenchName #voc/lstr "malais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Malaiisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Malay (macrolanguage)@en",
+   :lcc-lr/hasFrenchName #xsd/langString "malais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Malaiisch@de",
    :lcc-lr/hasIndigenousName "bahasa Malaysia",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ms",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ms"},
    :rdf/type
    [:lcc-lr/Macrolanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Malay",
    :skos/definition "Malay macrolanguage"})
 
 (def Malayalam
   "Malayalam language"
   {:db/ident :lcc-639-1/Malayalam,
-   :lcc-lr/hasEnglishName #voc/lstr "Malayalam@en",
-   :lcc-lr/hasFrenchName #voc/lstr "malayalam@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Malayalam@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Malayalam@en",
+   :lcc-lr/hasFrenchName #xsd/langString "malayalam@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Malayalam@de",
    :lcc-lr/hasIndigenousName "malayāḷaṁ",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ml",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ml"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Malayalam",
    :skos/definition "Malayalam language"})
 
 (def Maltese
   "Maltese language"
   {:db/ident :lcc-639-1/Maltese,
-   :lcc-lr/hasEnglishName #voc/lstr "Maltese@en",
-   :lcc-lr/hasFrenchName #voc/lstr "maltais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Maltesisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Maltese@en",
+   :lcc-lr/hasFrenchName #xsd/langString "maltais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Maltesisch@de",
    :lcc-lr/hasIndigenousName "il-Malti",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/mt",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/mt"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Maltese",
    :skos/definition "Maltese language"})
 
 (def Manx
   "Manx language"
   {:db/ident :lcc-639-1/Manx,
-   :lcc-lr/hasEnglishName #voc/lstr "Manx@en",
-   :lcc-lr/hasFrenchName [#voc/lstr "manx@fr" #voc/lstr "mannois@fr"],
-   :lcc-lr/hasGermanName #voc/lstr "Manx@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Manx@en",
+   :lcc-lr/hasFrenchName [#xsd/langString "manx@fr"
+                          #xsd/langString "mannois@fr"],
+   :lcc-lr/hasGermanName #xsd/langString "Manx@de",
    :lcc-lr/hasIndigenousName "Gaelg",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/gv",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/gv"},
    :rdf/type
    [:lcc-lr/ExtinctLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Manx",
    :skos/definition "Manx language"})
 
 (def Maori
   "Maori language"
   {:db/ident :lcc-639-1/Maori,
-   :lcc-lr/hasEnglishName #voc/lstr "Maori@en",
-   :lcc-lr/hasFrenchName #voc/lstr "maori@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Maori-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Maori@en",
+   :lcc-lr/hasFrenchName #xsd/langString "maori@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Maori-Sprache@de",
    :lcc-lr/hasIndigenousName "māori",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/mi",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/mi"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Maori",
    :skos/definition "Maori language"})
 
 (def Marathi
   "Marathi language"
   {:db/ident :lcc-639-1/Marathi,
-   :lcc-lr/hasEnglishName #voc/lstr "Marathi@en",
-   :lcc-lr/hasFrenchName #voc/lstr "marathe@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Marathi@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Marathi@en",
+   :lcc-lr/hasFrenchName #xsd/langString "marathe@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Marathi@de",
    :lcc-lr/hasIndigenousName "marāṭī",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/mr",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/mr"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Marathi",
    :skos/definition "Marathi language"})
 
 (def Marshallese
   "Marshallese language"
   {:db/ident :lcc-639-1/Marshallese,
-   :lcc-lr/hasEnglishName #voc/lstr "Marshallese@en",
-   :lcc-lr/hasFrenchName #voc/lstr "marshall@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Marschallesisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Marshallese@en",
+   :lcc-lr/hasFrenchName #xsd/langString "marshall@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Marschallesisch@de",
    :lcc-lr/hasIndigenousName "M̧ajeł",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/mh",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/mh"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Marshallese",
    :skos/definition "Marshallese language"})
 
 (def ModernGreek
   "Modern Greek (post 1453-) language"
   {:db/ident :lcc-639-1/ModernGreek,
-   :lcc-lr/hasEnglishName #voc/lstr "Greek, Modern (1453-)@en",
-   :lcc-lr/hasFrenchName #voc/lstr "grec moderne (après 1453)@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Neugriechisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Greek, Modern (1453-)@en",
+   :lcc-lr/hasFrenchName #xsd/langString "grec moderne (après 1453)@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Neugriechisch@de",
    :lcc-lr/hasIndigenousName "elliniká",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/el",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/el"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Modern Greek",
    :skos/definition "Modern Greek (post 1453-) language"})
 
 (def Mongolian
   "Mongolian languages"
   {:db/ident :lcc-639-1/Mongolian,
-   :lcc-lr/hasEnglishName #voc/lstr "Mongolian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "mongol@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Mongolisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Mongolian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "mongol@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Mongolisch@de",
    :lcc-lr/hasIndigenousName "mongol",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/mn",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/mn"},
    :rdf/type
    [:lcc-lr/Macrolanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Mongolian",
    :skos/definition "Mongolian languages"})
 
 (def Nauru
   "Nauru language"
   {:db/ident :lcc-639-1/Nauru,
-   :lcc-lr/hasEnglishName #voc/lstr "Nauru@en",
-   :lcc-lr/hasFrenchName #voc/lstr "nauruan@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Nauruanisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Nauru@en",
+   :lcc-lr/hasFrenchName #xsd/langString "nauruan@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Nauruanisch@de",
    :lcc-lr/hasIndigenousName "nauru",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/na",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/na"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Nauru",
    :skos/definition "Nauru language"})
 
 (def Navajo
   "Navajo language"
   {:db/ident :lcc-639-1/Navajo,
-   :lcc-lr/hasEnglishName [#voc/lstr "Navaho@en" #voc/lstr "Navajo@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "navaho@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Navajo-Sprache@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Navaho@en"
+                           #xsd/langString "Navajo@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "navaho@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Navajo-Sprache@de",
    :lcc-lr/hasIndigenousName "diné bizaad",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/nv",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/nv"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Navajo",
    :skos/definition "Navajo language"})
 
 (def Ndonga
   "Ndonga language"
   {:db/ident :lcc-639-1/Ndonga,
-   :lcc-lr/hasEnglishName #voc/lstr "Ndonga@en",
-   :lcc-lr/hasFrenchName #voc/lstr "ndonga@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Ndonga@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Ndonga@en",
+   :lcc-lr/hasFrenchName #xsd/langString "ndonga@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Ndonga@de",
    :lcc-lr/hasIndigenousName "oshindonga",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ng",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ng"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Ndonga",
    :skos/definition "Ndonga language"})
 
 (def Nepali
   "Nepali language"
   {:db/ident :lcc-639-1/Nepali,
-   :lcc-lr/hasEnglishName #voc/lstr "Nepali@en",
-   :lcc-lr/hasFrenchName #voc/lstr "népalais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Nepali@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Nepali@en",
+   :lcc-lr/hasFrenchName #xsd/langString "népalais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Nepali@de",
    :lcc-lr/hasIndigenousName "nepālī",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ne",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ne"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Nepali",
    :skos/definition "Nepali language"})
 
 (def NorthNdebele
   "North Ndebele language"
   {:db/ident :lcc-639-1/NorthNdebele,
-   :lcc-lr/hasEnglishName [#voc/lstr "North Ndebele@en"
-                           #voc/lstr "Ndebele, North@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "ndébélé du Nord@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Ndebele-Sprache (Simbabwe)@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "North Ndebele@en"
+                           #xsd/langString "Ndebele, North@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "ndébélé du Nord@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Ndebele-Sprache (Simbabwe)@de",
    :lcc-lr/hasIndigenousName "isiNdebele",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/nd",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/nd"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "North Ndebele",
    :skos/definition "North Ndebele language"})
 
 (def NorthernSami
   "Northern Sami language"
   {:db/ident :lcc-639-1/NorthernSami,
-   :lcc-lr/hasEnglishName #voc/lstr "Northern Sami@en",
-   :lcc-lr/hasFrenchName #voc/lstr "sami du Nord@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Nordsaamisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Northern Sami@en",
+   :lcc-lr/hasFrenchName #xsd/langString "sami du Nord@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Nordsaamisch@de",
    :lcc-lr/hasIndigenousName "davvisámegiella",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/se",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/se"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Northern Sami",
    :skos/definition "Northern Sami language"})
 
 (def Norwegian
   "Norwegian language"
   {:db/ident :lcc-639-1/Norwegian,
-   :lcc-lr/hasEnglishName #voc/lstr "Norwegian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "norvégien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Norwegisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Norwegian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "norvégien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Norwegisch@de",
    :lcc-lr/hasIndigenousName "norsk",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/no",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/no"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/Macrolanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Norwegian",
    :skos/definition "Norwegian language"})
 
 (def NorwegianBokmal
   "Norwegian Bokmal language"
   {:db/ident :lcc-639-1/NorwegianBokmal,
-   :lcc-lr/hasEnglishName [#voc/lstr "Bokmål, Norwegian@en"
-                           #voc/lstr "Norwegian Bokmål@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "norvégien bokmål@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Bokmål@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Bokmål, Norwegian@en"
+                           #xsd/langString "Norwegian Bokmål@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "norvégien bokmål@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Bokmål@de",
    :lcc-lr/hasIndigenousName "bokmål",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/nb",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/nb"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Norwegian Bokmal",
    :skos/definition "Norwegian Bokmal language"})
 
 (def NorwegianNynorsk
   "Norwegian Nynorsk language"
   {:db/ident :lcc-639-1/NorwegianNynorsk,
-   :lcc-lr/hasEnglishName [#voc/lstr "Nynorsk, Norwegian@en"
-                           #voc/lstr "Norwegian Nynorsk@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "norvégien nynorsk@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Nynorsk@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Nynorsk, Norwegian@en"
+                           #xsd/langString "Norwegian Nynorsk@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "norvégien nynorsk@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Nynorsk@de",
    :lcc-lr/hasIndigenousName "nynorsk",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/nn",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/nn"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Norwegian Nynorsk",
    :skos/definition "Norwegian Nynorsk language"})
 
@@ -1852,301 +1870,307 @@
 (def Occitan
   "Occitan (post 1500) language"
   {:db/ident :lcc-639-1/Occitan,
-   :lcc-lr/hasEnglishName #voc/lstr "Occitan (post 1500)@en",
-   :lcc-lr/hasFrenchName #voc/lstr "occitan (après 1500)@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Okzitanisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Occitan (post 1500)@en",
+   :lcc-lr/hasFrenchName #xsd/langString "occitan (après 1500)@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Okzitanisch@de",
    :lcc-lr/hasIndigenousName "occitan",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/oc",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/oc"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Occitan",
    :skos/definition "Occitan (post 1500) language"})
 
 (def Ojibwa
   "Ojibwa languages"
   {:db/ident :lcc-639-1/Ojibwa,
-   :lcc-lr/hasEnglishName #voc/lstr "Ojibwa@en",
-   :lcc-lr/hasFrenchName #voc/lstr "ojibwa@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Ojibwa-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Ojibwa@en",
+   :lcc-lr/hasFrenchName #xsd/langString "ojibwa@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Ojibwa-Sprache@de",
    :lcc-lr/hasIndigenousName ["ojibwe" "chippewa"],
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/oj",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/oj"},
    :rdf/type
    [:lcc-lr/Macrolanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Ojibwa",
    :skos/definition "Ojibwa languages"})
 
 (def Oriya
   "Oriya language"
   {:db/ident :lcc-639-1/Oriya,
-   :lcc-lr/hasEnglishName #voc/lstr "Oriya@en",
-   :lcc-lr/hasFrenchName #voc/lstr "oriya@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Oriya-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Oriya@en",
+   :lcc-lr/hasFrenchName #xsd/langString "oriya@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Oriya-Sprache@de",
    :lcc-lr/hasIndigenousName "oṛiā",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/or",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/or"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Oriya",
    :skos/definition "Oriya language"})
 
 (def Oromo
   "Oromo languages"
   {:db/ident :lcc-639-1/Oromo,
-   :lcc-lr/hasEnglishName #voc/lstr "Oromo@en",
-   :lcc-lr/hasFrenchName #voc/lstr "galla@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Galla-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Oromo@en",
+   :lcc-lr/hasFrenchName #xsd/langString "galla@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Galla-Sprache@de",
    :lcc-lr/hasIndigenousName "(afan) oromo",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/om",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/om"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/Macrolanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Oromo",
    :skos/definition "Oromo languages"})
 
 (def Ossetian
   "Ossetian; Ossetic language"
   {:db/ident :lcc-639-1/Ossetian,
-   :lcc-lr/hasEnglishName [#voc/lstr "Ossetian@en" #voc/lstr "Ossetic@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "ossète@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Ossetisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Ossetian@en"
+                           #xsd/langString "Ossetic@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "ossète@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Ossetisch@de",
    :lcc-lr/hasIndigenousName "iron avzæg",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/os",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/os"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Ossetian",
    :skos/definition "Ossetian; Ossetic language"})
 
 (def Pali
   "Pali language"
   {:db/ident :lcc-639-1/Pali,
-   :lcc-lr/hasEnglishName #voc/lstr "Pali@en",
-   :lcc-lr/hasFrenchName #voc/lstr "pali@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Pali@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Pali@en",
+   :lcc-lr/hasFrenchName #xsd/langString "pali@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Pali@de",
    :lcc-lr/hasIndigenousName "pāli bhāsa",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/pi",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/pi"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/AncientLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Pali",
    :skos/definition "Pali language"})
 
 (def Panjabi
   "Panjabi language"
   {:db/ident :lcc-639-1/Panjabi,
-   :lcc-lr/hasEnglishName [#voc/lstr "Panjabi@en" #voc/lstr "Punjabi@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "pendjabi@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Pandschabi-Sprache@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Panjabi@en"
+                           #xsd/langString "Punjabi@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "pendjabi@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Pandschabi-Sprache@de",
    :lcc-lr/hasIndigenousName "paṁjābī",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/pa",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/pa"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Panjabi",
    :skos/definition "Panjabi language"})
 
 (def Persian
   "Persian languages"
   {:db/ident :lcc-639-1/Persian,
-   :lcc-lr/hasEnglishName #voc/lstr "Persian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "persan@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Persisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Persian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "persan@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Persisch@de",
    :lcc-lr/hasIndigenousName "fârsy",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/fa",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/fa"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/Macrolanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Persian",
    :skos/definition "Persian languages"})
 
 (def Polish
   "Polish language"
   {:db/ident :lcc-639-1/Polish,
-   :lcc-lr/hasEnglishName #voc/lstr "Polish@en",
-   :lcc-lr/hasFrenchName #voc/lstr "polonais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Polnisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Polish@en",
+   :lcc-lr/hasFrenchName #xsd/langString "polonais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Polnisch@de",
    :lcc-lr/hasIndigenousName "(język) polski",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/pl",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/pl"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Polish",
    :skos/definition "Polish language"})
 
 (def Portuguese
   "Portuguese language"
   {:db/ident :lcc-639-1/Portuguese,
-   :lcc-lr/hasEnglishName #voc/lstr "Portuguese@en",
-   :lcc-lr/hasFrenchName #voc/lstr "portugais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Portugiesisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Portuguese@en",
+   :lcc-lr/hasFrenchName #xsd/langString "portugais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Portugiesisch@de",
    :lcc-lr/hasIndigenousName "português",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/pt",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/pt"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Portuguese",
    :skos/definition "Portuguese language"})
 
 (def Pushto
   "Pushto languages"
   {:db/ident :lcc-639-1/Pushto,
-   :lcc-lr/hasEnglishName [#voc/lstr "Pushto@en" #voc/lstr "Pashto@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "pachto@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Paschtu@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Pushto@en"
+                           #xsd/langString "Pashto@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "pachto@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Paschtu@de",
    :lcc-lr/hasIndigenousName "pashto",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ps",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ps"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/Macrolanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Pushto",
    :skos/definition "Pushto languages"})
 
 (def Quechua
   "Quechua languages"
   {:db/ident :lcc-639-1/Quechua,
-   :lcc-lr/hasEnglishName #voc/lstr "Quechua@en",
-   :lcc-lr/hasFrenchName [#voc/lstr "quechua@fr" #voc/lstr "quichua@fr"],
-   :lcc-lr/hasGermanName #voc/lstr "Quechua-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Quechua@en",
+   :lcc-lr/hasFrenchName [#xsd/langString "quechua@fr"
+                          #xsd/langString "quichua@fr"],
+   :lcc-lr/hasGermanName #xsd/langString "Quechua-Sprache@de",
    :lcc-lr/hasIndigenousName "qhëtshwa",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/qu",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/qu"},
    :rdf/type
    [:lcc-lr/Macrolanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Quechua",
    :skos/definition "Quechua languages"})
 
 (def Romanian
   "Romanian language"
   {:db/ident :lcc-639-1/Romanian,
-   :lcc-lr/hasEnglishName
-   [#voc/lstr "Moldovan@en" #voc/lstr "Romanian@en" #voc/lstr "Moldavian@en"],
-   :lcc-lr/hasFrenchName [#voc/lstr "roumain@fr" #voc/lstr "moldave@fr"],
-   :lcc-lr/hasGermanName #voc/lstr "Rumänisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Moldovan@en"
+                           #xsd/langString "Romanian@en"
+                           #xsd/langString "Moldavian@en"],
+   :lcc-lr/hasFrenchName [#xsd/langString "roumain@fr"
+                          #xsd/langString "moldave@fr"],
+   :lcc-lr/hasGermanName #xsd/langString "Rumänisch@de",
    :lcc-lr/hasIndigenousName ["(limba) moldoveanǎ" "(limba) română"],
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ro",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ro"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Romanian",
    :skos/definition "Romanian language"})
 
 (def Romansh
   "Romansh language"
   {:db/ident :lcc-639-1/Romansh,
-   :lcc-lr/hasEnglishName #voc/lstr "Romansh@en",
-   :lcc-lr/hasFrenchName #voc/lstr "romanche@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Rätoromanisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Romansh@en",
+   :lcc-lr/hasFrenchName #xsd/langString "romanche@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Rätoromanisch@de",
    :lcc-lr/hasIndigenousName "romontsch",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/rm",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/rm"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Romansh",
    :skos/definition "Romansh language"})
 
 (def Rundi
   "Rundi language"
   {:db/ident :lcc-639-1/Rundi,
-   :lcc-lr/hasEnglishName #voc/lstr "Rundi@en",
-   :lcc-lr/hasFrenchName #voc/lstr "rundi@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Rundi-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Rundi@en",
+   :lcc-lr/hasFrenchName #xsd/langString "rundi@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Rundi-Sprache@de",
    :lcc-lr/hasIndigenousName "kirundi",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/rn",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/rn"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Rundi",
    :skos/definition "Rundi language"})
 
 (def Russian
   "Russian language"
   {:db/ident :lcc-639-1/Russian,
-   :lcc-lr/hasEnglishName #voc/lstr "Russian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "russe@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Russisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Russian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "russe@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Russisch@de",
    :lcc-lr/hasIndigenousName "russkij (âzyk)",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ru",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ru"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Russian",
    :skos/definition "Russian language"})
 
 (def Samoan
   "Samoan language"
   {:db/ident :lcc-639-1/Samoan,
-   :lcc-lr/hasEnglishName #voc/lstr "Samoan@en",
-   :lcc-lr/hasFrenchName #voc/lstr "samoan@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Samoanisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Samoan@en",
+   :lcc-lr/hasFrenchName #xsd/langString "samoan@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Samoanisch@de",
    :lcc-lr/hasIndigenousName "samoa",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/sm",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/sm"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Samoan",
    :skos/definition "Samoan language"})
 
 (def Sango
   "Sango language"
   {:db/ident :lcc-639-1/Sango,
-   :lcc-lr/hasEnglishName #voc/lstr "Sango@en",
-   :lcc-lr/hasFrenchName #voc/lstr "sango@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Sango-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Sango@en",
+   :lcc-lr/hasFrenchName #xsd/langString "sango@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Sango-Sprache@de",
    :lcc-lr/hasIndigenousName "sango",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/sg",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/sg"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Sango",
    :skos/definition "Sango language"})
 
 (def Sanskrit
   "Sanskrit language"
   {:db/ident :lcc-639-1/Sanskrit,
-   :lcc-lr/hasEnglishName #voc/lstr "Sanskrit@en",
-   :lcc-lr/hasFrenchName #voc/lstr "sanskrit@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Sanskrit@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Sanskrit@en",
+   :lcc-lr/hasFrenchName #xsd/langString "sanskrit@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Sanskrit@de",
    :lcc-lr/hasIndigenousName "saṁskr̥tam",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/sa",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/sa"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/AncientLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Sanskrit",
    :skos/definition "Sanskrit language"})
 
 (def Sardinian
   "Sardinian languages"
   {:db/ident :lcc-639-1/Sardinian,
-   :lcc-lr/hasEnglishName #voc/lstr "Sardinian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "sarde@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Sardisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Sardinian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "sarde@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Sardisch@de",
    :lcc-lr/hasIndigenousName "sardu",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/sc",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/sc"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/Macrolanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Sardinian",
    :skos/definition "Sardinian languages"})
 
@@ -2159,689 +2183,696 @@
 (def Serbian
   "Serbian language"
   {:db/ident :lcc-639-1/Serbian,
-   :lcc-lr/hasEnglishName #voc/lstr "Serbian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "serbe@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Serbisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Serbian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "serbe@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Serbisch@de",
    :lcc-lr/hasIndigenousName "srpski (jezik)",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/sr",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/sr"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Serbian",
    :skos/definition "Serbian language"})
 
 (def Shona
   "Shona language"
   {:db/ident :lcc-639-1/Shona,
-   :lcc-lr/hasEnglishName #voc/lstr "Shona@en",
-   :lcc-lr/hasFrenchName #voc/lstr "shona@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Schona-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Shona@en",
+   :lcc-lr/hasFrenchName #xsd/langString "shona@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Schona-Sprache@de",
    :lcc-lr/hasIndigenousName "chiShona",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/sn",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/sn"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Shona",
    :skos/definition "Shona language"})
 
 (def SichuanYi
   "Sichuan Yi language"
   {:db/ident :lcc-639-1/SichuanYi,
-   :lcc-lr/hasEnglishName [#voc/lstr "Nuosu@en" #voc/lstr "Sichuan Yi@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "yi de Sichuan@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Lalo-Sprache@de",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ii",
+   :lcc-lr/hasEnglishName [#xsd/langString "Nuosu@en"
+                           #xsd/langString "Sichuan Yi@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "yi de Sichuan@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Lalo-Sprache@de",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ii"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Sichuan Yi",
    :skos/definition "Sichuan Yi language"})
 
 (def Sindhi
   "Sindhi language"
   {:db/ident :lcc-639-1/Sindhi,
-   :lcc-lr/hasEnglishName #voc/lstr "Sindhi@en",
-   :lcc-lr/hasFrenchName #voc/lstr "sindhi@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Sindhi-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Sindhi@en",
+   :lcc-lr/hasFrenchName #xsd/langString "sindhi@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Sindhi-Sprache@de",
    :lcc-lr/hasIndigenousName "sindhī",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/sd",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/sd"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Sindhi",
    :skos/definition "Sindhi language"})
 
 (def Sinhala
   "Sinhala; Sinhalese language"
   {:db/ident :lcc-639-1/Sinhala,
-   :lcc-lr/hasEnglishName [#voc/lstr "Sinhalese@en" #voc/lstr "Sinhala@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "singhalais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Singhalesisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Sinhalese@en"
+                           #xsd/langString "Sinhala@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "singhalais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Singhalesisch@de",
    :lcc-lr/hasIndigenousName "siṁhala",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/si",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/si"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Sinhala",
    :skos/definition "Sinhala; Sinhalese language"})
 
 (def Slovak
   "Slovak language"
   {:db/ident :lcc-639-1/Slovak,
-   :lcc-lr/hasEnglishName #voc/lstr "Slovak@en",
-   :lcc-lr/hasFrenchName #voc/lstr "slovaque@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Slowakisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Slovak@en",
+   :lcc-lr/hasFrenchName #xsd/langString "slovaque@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Slowakisch@de",
    :lcc-lr/hasIndigenousName "slovenský (jazyk)",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/sk",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/sk"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Slovak",
    :skos/definition "Slovak language"})
 
 (def Slovenian
   "Slovenian language"
   {:db/ident :lcc-639-1/Slovenian,
-   :lcc-lr/hasEnglishName #voc/lstr "Slovenian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "slovène@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Slowenisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Slovenian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "slovène@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Slowenisch@de",
    :lcc-lr/hasIndigenousName "slovenski (jezik)",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/sl",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/sl"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Slovenian",
    :skos/definition "Slovenian language"})
 
 (def Somali
   "Somali language"
   {:db/ident :lcc-639-1/Somali,
-   :lcc-lr/hasEnglishName #voc/lstr "Somali@en",
-   :lcc-lr/hasFrenchName #voc/lstr "somali@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Somali@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Somali@en",
+   :lcc-lr/hasFrenchName #xsd/langString "somali@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Somali@de",
    :lcc-lr/hasIndigenousName "soomaali",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/so",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/so"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Somali",
    :skos/definition "Somali language"})
 
 (def SouthNdebele
   "South Ndebele language"
   {:db/ident :lcc-639-1/SouthNdebele,
-   :lcc-lr/hasEnglishName [#voc/lstr "Ndebele, South@en"
-                           #voc/lstr "South Ndebele@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "ndébélé du Sud@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Ndebele-Sprache (Transvaal)@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Ndebele, South@en"
+                           #xsd/langString "South Ndebele@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "ndébélé du Sud@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Ndebele-Sprache (Transvaal)@de",
    :lcc-lr/hasIndigenousName "isiNdebele",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/nr",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/nr"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "South Ndebele",
    :skos/definition "South Ndebele language"})
 
 (def SouthernSotho
   "Southern Sotho language"
   {:db/ident :lcc-639-1/SouthernSotho,
-   :lcc-lr/hasEnglishName [#voc/lstr "Southern Sotho@en"
-                           #voc/lstr "Sotho, Southern@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "sotho du Sud@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Süd-Sotho-Sprache@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Southern Sotho@en"
+                           #xsd/langString "Sotho, Southern@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "sotho du Sud@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Süd-Sotho-Sprache@de",
    :lcc-lr/hasIndigenousName "Sesotho",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/st",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/st"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Southern Sotho",
    :skos/definition "Southern Sotho language"})
 
 (def Spanish
   "Spanish language"
   {:db/ident :lcc-639-1/Spanish,
-   :lcc-lr/hasEnglishName [#voc/lstr "Spanish@en" #voc/lstr "Castilian@en"],
-   :lcc-lr/hasFrenchName [#voc/lstr "castillan@fr" #voc/lstr "espagnol@fr"],
-   :lcc-lr/hasGermanName #voc/lstr "Spanisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Spanish@en"
+                           #xsd/langString "Castilian@en"],
+   :lcc-lr/hasFrenchName [#xsd/langString "castillan@fr"
+                          #xsd/langString "espagnol@fr"],
+   :lcc-lr/hasGermanName #xsd/langString "Spanisch@de",
    :lcc-lr/hasIndigenousName ["castellano" "español"],
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/es",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/es"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Spanish",
    :skos/definition "Spanish language"})
 
 (def Sundanese
   "Sundanese languaage"
   {:db/ident :lcc-639-1/Sundanese,
-   :lcc-lr/hasEnglishName #voc/lstr "Sundanese@en",
-   :lcc-lr/hasFrenchName #voc/lstr "soundanais@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Sundanesisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Sundanese@en",
+   :lcc-lr/hasFrenchName #xsd/langString "soundanais@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Sundanesisch@de",
    :lcc-lr/hasIndigenousName "bahasa Sunda",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/su",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/su"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Sundanese",
    :skos/definition "Sundanese languaage"})
 
 (def Swahili
   "Swahili macrolanguage"
   {:db/ident :lcc-639-1/Swahili,
-   :lcc-lr/hasEnglishName #voc/lstr "Swahili@en",
-   :lcc-lr/hasFrenchName #voc/lstr "swahili@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Swahili@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Swahili@en",
+   :lcc-lr/hasFrenchName #xsd/langString "swahili@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Swahili@de",
    :lcc-lr/hasIndigenousName "Kiswahili",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/sw",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/sw"},
    :rdf/type
    [:lcc-lr/Macrolanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Swahili",
    :skos/definition "Swahili macrolanguage"})
 
 (def Swati
   "Swati language"
   {:db/ident :lcc-639-1/Swati,
-   :lcc-lr/hasEnglishName #voc/lstr "Swati@en",
-   :lcc-lr/hasFrenchName #voc/lstr "swati@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Swasi-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Swati@en",
+   :lcc-lr/hasFrenchName #xsd/langString "swati@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Swasi-Sprache@de",
    :lcc-lr/hasIndigenousName "siSwati",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ss",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ss"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Swati",
    :skos/definition "Swati language"})
 
 (def Swedish
   "Swedish language"
   {:db/ident :lcc-639-1/Swedish,
-   :lcc-lr/hasEnglishName #voc/lstr "Swedish@en",
-   :lcc-lr/hasFrenchName #voc/lstr "suédois@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Schwedisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Swedish@en",
+   :lcc-lr/hasFrenchName #xsd/langString "suédois@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Schwedisch@de",
    :lcc-lr/hasIndigenousName "svenska",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/sv",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/sv"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Swedish",
    :skos/definition "Swedish language"})
 
 (def Tagalog
   "Tagalog language"
   {:db/ident :lcc-639-1/Tagalog,
-   :lcc-lr/hasEnglishName #voc/lstr "Tagalog@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tagalog@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tagalog@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Tagalog@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tagalog@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tagalog@de",
    :lcc-lr/hasIndigenousName "tagalog",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/tl",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/tl"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Tagalog",
    :skos/definition "Tagalog language"})
 
 (def Tahitian
   "Tahitian language"
   {:db/ident :lcc-639-1/Tahitian,
-   :lcc-lr/hasEnglishName #voc/lstr "Tahitian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tahitien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tahitisch@de",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ty",
+   :lcc-lr/hasEnglishName #xsd/langString "Tahitian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tahitien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tahitisch@de",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ty"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Tahitian",
    :skos/definition "Tahitian language"})
 
 (def Tajik
   "Tajik language"
   {:db/ident :lcc-639-1/Tajik,
-   :lcc-lr/hasEnglishName #voc/lstr "Tajik@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tadjik@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tadschikisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Tajik@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tadjik@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tadschikisch@de",
    :lcc-lr/hasIndigenousName "toçikī",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/tg",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/tg"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Tajik",
    :skos/definition "Tajik language"})
 
 (def Tamil
   "Tamil language"
   {:db/ident :lcc-639-1/Tamil,
-   :lcc-lr/hasEnglishName #voc/lstr "Tamil@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tamoul@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tamil@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Tamil@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tamoul@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tamil@de",
    :lcc-lr/hasIndigenousName "tamiḻ",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ta",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ta"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Tamil",
    :skos/definition "Tamil language"})
 
 (def Tatar
   "Tatar language"
   {:db/ident :lcc-639-1/Tatar,
-   :lcc-lr/hasEnglishName #voc/lstr "Tatar@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tatar@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tatarisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Tatar@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tatar@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tatarisch@de",
    :lcc-lr/hasIndigenousName "tatar tele",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/tt",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/tt"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Tatar",
    :skos/definition "Tatar language"})
 
 (def Telugu
   "Telugu language"
   {:db/ident :lcc-639-1/Telugu,
-   :lcc-lr/hasEnglishName #voc/lstr "Telugu@en",
-   :lcc-lr/hasFrenchName #voc/lstr "télougou@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Telugu-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Telugu@en",
+   :lcc-lr/hasFrenchName #xsd/langString "télougou@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Telugu-Sprache@de",
    :lcc-lr/hasIndigenousName "telugu",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/te",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/te"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Telugu",
    :skos/definition "Telugu language"})
 
 (def Thai
   "Thai language"
   {:db/ident :lcc-639-1/Thai,
-   :lcc-lr/hasEnglishName #voc/lstr "Thai@en",
-   :lcc-lr/hasFrenchName #voc/lstr "thaï@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Thailändisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Thai@en",
+   :lcc-lr/hasFrenchName #xsd/langString "thaï@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Thailändisch@de",
    :lcc-lr/hasIndigenousName "thai",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/th",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/th"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Thai",
    :skos/definition "Thai language"})
 
 (def Tibetan
   "Tibetan language"
   {:db/ident :lcc-639-1/Tibetan,
-   :lcc-lr/hasEnglishName #voc/lstr "Tibetan@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tibétain@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tibetisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Tibetan@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tibétain@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tibetisch@de",
    :lcc-lr/hasIndigenousName "bod skad",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/bo",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/bo"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Tibetan",
    :skos/definition "Tibetan language"})
 
 (def Tigrinya
   "Tigrinya language"
   {:db/ident :lcc-639-1/Tigrinya,
-   :lcc-lr/hasEnglishName #voc/lstr "Tigrinya@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tigrigna@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tigrinja-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Tigrinya@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tigrigna@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tigrinja-Sprache@de",
    :lcc-lr/hasIndigenousName "tigriña",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ti",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ti"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Tigrinya",
    :skos/definition "Tigrinya language"})
 
 (def Tonga-TongaIslands
   "Tonga (Tonga Islands) language"
   {:db/ident :lcc-639-1/Tonga-TongaIslands,
-   :lcc-lr/hasEnglishName #voc/lstr "Tonga (Tonga Islands)@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tonga (îles Tonga)@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tongaisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Tonga (Tonga Islands)@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tonga (îles Tonga)@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tongaisch@de",
    :lcc-lr/hasIndigenousName "tonga",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/to",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/to"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Tonga (Tonga Islands)",
    :skos/definition "Tonga (Tonga Islands) language"})
 
 (def Tsonga
   "Tsonga language"
   {:db/ident :lcc-639-1/Tsonga,
-   :lcc-lr/hasEnglishName #voc/lstr "Tsonga@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tsonga@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tsonga-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Tsonga@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tsonga@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tsonga-Sprache@de",
    :lcc-lr/hasIndigenousName "Xitsonga",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ts",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ts"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Tsonga",
    :skos/definition "Tsonga language"})
 
 (def Tswana
   "Tswana language"
   {:db/ident :lcc-639-1/Tswana,
-   :lcc-lr/hasEnglishName #voc/lstr "Tswana@en",
-   :lcc-lr/hasFrenchName #voc/lstr "tswana@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Tswana-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Tswana@en",
+   :lcc-lr/hasFrenchName #xsd/langString "tswana@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Tswana-Sprache@de",
    :lcc-lr/hasIndigenousName "Setswana",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/tn",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/tn"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Tswana",
    :skos/definition "Tswana language"})
 
 (def Turkish
   "Turkish language"
   {:db/ident :lcc-639-1/Turkish,
-   :lcc-lr/hasEnglishName #voc/lstr "Turkish@en",
-   :lcc-lr/hasFrenchName #voc/lstr "turc@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Türkisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Turkish@en",
+   :lcc-lr/hasFrenchName #xsd/langString "turc@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Türkisch@de",
    :lcc-lr/hasIndigenousName "türkçe",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/tr",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/tr"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Turkish",
    :skos/definition "Turkish language"})
 
 (def Turkmen
   "Turkmen language"
   {:db/ident :lcc-639-1/Turkmen,
-   :lcc-lr/hasEnglishName #voc/lstr "Turkmen@en",
-   :lcc-lr/hasFrenchName #voc/lstr "turkmène@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Turkmenisch@de",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/tk",
+   :lcc-lr/hasEnglishName #xsd/langString "Turkmen@en",
+   :lcc-lr/hasFrenchName #xsd/langString "turkmène@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Turkmenisch@de",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/tk"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Turkmen",
    :skos/definition "Turkmen language"})
 
 (def Twi
   "Twi language"
   {:db/ident :lcc-639-1/Twi,
-   :lcc-lr/hasEnglishName #voc/lstr "Twi@en",
-   :lcc-lr/hasFrenchName #voc/lstr "twi@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Twi-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Twi@en",
+   :lcc-lr/hasFrenchName #xsd/langString "twi@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Twi-Sprache@de",
    :lcc-lr/hasIndigenousName "twi",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/tw",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/tw"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Twi",
    :skos/definition "Twi language"})
 
 (def Uighur
   "Uighur language"
   {:db/ident :lcc-639-1/Uighur,
-   :lcc-lr/hasEnglishName [#voc/lstr "Uighur@en" #voc/lstr "Uyghur@en"],
-   :lcc-lr/hasFrenchName #voc/lstr "ouïgour@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Uigurisch@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Uighur@en"
+                           #xsd/langString "Uyghur@en"],
+   :lcc-lr/hasFrenchName #xsd/langString "ouïgour@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Uigurisch@de",
    :lcc-lr/hasIndigenousName "oyghurqǝ",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ug",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ug"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Uighur",
    :skos/definition "Uighur language"})
 
 (def Ukrainian
   "Ukrainian language"
   {:db/ident :lcc-639-1/Ukrainian,
-   :lcc-lr/hasEnglishName #voc/lstr "Ukrainian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "ukrainien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Ukrainisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Ukrainian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "ukrainien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Ukrainisch@de",
    :lcc-lr/hasIndigenousName "ukraïns'ka mova",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/uk",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/uk"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Ukrainian",
    :skos/definition "Ukrainian language"})
 
 (def Urdu
   "Urdu language"
   {:db/ident :lcc-639-1/Urdu,
-   :lcc-lr/hasEnglishName #voc/lstr "Urdu@en",
-   :lcc-lr/hasFrenchName #voc/lstr "ourdou@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Urdu@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Urdu@en",
+   :lcc-lr/hasFrenchName #xsd/langString "ourdou@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Urdu@de",
    :lcc-lr/hasIndigenousName "urdū",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ur",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ur"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Urdu",
    :skos/definition "Urdu language"})
 
 (def Uzbek
   "Uzbek languages"
   {:db/ident :lcc-639-1/Uzbek,
-   :lcc-lr/hasEnglishName #voc/lstr "Uzbek@en",
-   :lcc-lr/hasFrenchName #voc/lstr "ouszbek@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Usbekisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Uzbek@en",
+   :lcc-lr/hasFrenchName #xsd/langString "ouszbek@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Usbekisch@de",
    :lcc-lr/hasIndigenousName "oʻzbek tili",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/uz",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/uz"},
    :rdf/type
    [:lcc-lr/Macrolanguage :lcc-lr/LivingLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Uzbek",
    :skos/definition "Uzbek languages"})
 
 (def Venda
   "Venda language"
   {:db/ident :lcc-639-1/Venda,
-   :lcc-lr/hasEnglishName #voc/lstr "Venda@en",
-   :lcc-lr/hasFrenchName #voc/lstr "venda@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Venda-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Venda@en",
+   :lcc-lr/hasFrenchName #xsd/langString "venda@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Venda-Sprache@de",
    :lcc-lr/hasIndigenousName "Tshivenḓa",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/ve",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/ve"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Venda",
    :skos/definition "Venda language"})
 
 (def Vietnamese
   "Vietnamese language"
   {:db/ident :lcc-639-1/Vietnamese,
-   :lcc-lr/hasEnglishName #voc/lstr "Vietnamese@en",
-   :lcc-lr/hasFrenchName #voc/lstr "vietnamien@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Vietnamesisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Vietnamese@en",
+   :lcc-lr/hasFrenchName #xsd/langString "vietnamien@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Vietnamesisch@de",
    :lcc-lr/hasIndigenousName "Tiếng Việt Nam",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/vi",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/vi"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Vietnamese",
    :skos/definition "Vietnamese language"})
 
 (def Volapuk
   "Volapuk language"
   {:db/ident :lcc-639-1/Volapuk,
-   :lcc-lr/hasEnglishName #voc/lstr "Volapük@en",
-   :lcc-lr/hasFrenchName #voc/lstr "volapük@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Volapük@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Volapük@en",
+   :lcc-lr/hasFrenchName #xsd/langString "volapük@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Volapük@de",
    :lcc-lr/hasIndigenousName "volapük",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/vo",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/vo"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/ArtificialLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Volapuk",
    :skos/definition "Volapuk language"})
 
 (def Walloon
   "Walloon language"
   {:db/ident :lcc-639-1/Walloon,
-   :lcc-lr/hasEnglishName #voc/lstr "Walloon@en",
-   :lcc-lr/hasFrenchName #voc/lstr "wallon@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Wallonisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Walloon@en",
+   :lcc-lr/hasFrenchName #xsd/langString "wallon@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Wallonisch@de",
    :lcc-lr/hasIndigenousName "wallon",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/wa",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/wa"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Walloon",
    :skos/definition "Walloon language"})
 
 (def Welsh
   "Welsh language"
   {:db/ident :lcc-639-1/Welsh,
-   :lcc-lr/hasEnglishName #voc/lstr "Welsh@en",
-   :lcc-lr/hasFrenchName #voc/lstr "gallois@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Kymrisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Welsh@en",
+   :lcc-lr/hasFrenchName #xsd/langString "gallois@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Kymrisch@de",
    :lcc-lr/hasIndigenousName "Cymraeg",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/cy",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/cy"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Welsh",
    :skos/definition "Welsh language"})
 
 (def WesternFrisian
   "Western Frisian language"
   {:db/ident :lcc-639-1/WesternFrisian,
-   :lcc-lr/hasEnglishName #voc/lstr "Western Frisian@en",
-   :lcc-lr/hasFrenchName #voc/lstr "frison occidental@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Friesisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Western Frisian@en",
+   :lcc-lr/hasFrenchName #xsd/langString "frison occidental@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Friesisch@de",
    :lcc-lr/hasIndigenousName "frysk",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/fy",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/fy"},
    :rdf/type
    [:lcc-lr/IndividualLanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Western Frisian",
    :skos/definition "Western Frisian language"})
 
 (def Wolof
   "Wolof language"
   {:db/ident :lcc-639-1/Wolof,
-   :lcc-lr/hasEnglishName #voc/lstr "Wolof@en",
-   :lcc-lr/hasFrenchName #voc/lstr "wolof@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Wolof-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Wolof@en",
+   :lcc-lr/hasFrenchName #xsd/langString "wolof@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Wolof-Sprache@de",
    :lcc-lr/hasIndigenousName "wolof",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/wo",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/wo"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/IndividualLanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Wolof",
    :skos/definition "Wolof language"})
 
 (def Xhosa
   "Xhosa language"
   {:db/ident :lcc-639-1/Xhosa,
-   :lcc-lr/hasEnglishName #voc/lstr "Xhosa@en",
-   :lcc-lr/hasFrenchName #voc/lstr "xhosa@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Xhosa-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Xhosa@en",
+   :lcc-lr/hasFrenchName #xsd/langString "xhosa@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Xhosa-Sprache@de",
    :lcc-lr/hasIndigenousName "isiXhosa",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/xh",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/xh"},
    :rdf/type
    [:lcc-lr/LivingLanguage :owl/NamedIndividual :lcc-lr/IndividualLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Xhosa",
    :skos/definition "Xhosa language"})
 
 (def Yiddish
   "Yiddish language"
   {:db/ident :lcc-639-1/Yiddish,
-   :lcc-lr/hasEnglishName #voc/lstr "Yiddish@en",
-   :lcc-lr/hasFrenchName #voc/lstr "yiddish@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Jiddisch@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Yiddish@en",
+   :lcc-lr/hasFrenchName #xsd/langString "yiddish@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Jiddisch@de",
    :lcc-lr/hasIndigenousName "yidiš",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/yi",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/yi"},
    :rdf/type
    [:owl/NamedIndividual :lcc-lr/Macrolanguage :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Yiddish",
    :skos/definition "Yiddish language"})
 
 (def Yoruba
   "Yoruba language"
   {:db/ident :lcc-639-1/Yoruba,
-   :lcc-lr/hasEnglishName #voc/lstr "Yoruba@en",
-   :lcc-lr/hasFrenchName #voc/lstr "yoruba@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Yoruba-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Yoruba@en",
+   :lcc-lr/hasFrenchName #xsd/langString "yoruba@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Yoruba-Sprache@de",
    :lcc-lr/hasIndigenousName "Yorùbá",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/yo",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/yo"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Yoruba",
    :skos/definition "Yoruba language"})
 
 (def Zhuang
   "Zhuang languages"
   {:db/ident :lcc-639-1/Zhuang,
-   :lcc-lr/hasEnglishName [#voc/lstr "Zhuang@en" #voc/lstr "Chuang@en"],
-   :lcc-lr/hasFrenchName [#voc/lstr "zhuang@fr" #voc/lstr "chuang@fr"],
-   :lcc-lr/hasGermanName #voc/lstr "Zhuang@de",
+   :lcc-lr/hasEnglishName [#xsd/langString "Zhuang@en"
+                           #xsd/langString "Chuang@en"],
+   :lcc-lr/hasFrenchName [#xsd/langString "zhuang@fr"
+                          #xsd/langString "chuang@fr"],
+   :lcc-lr/hasGermanName #xsd/langString "Zhuang@de",
    :lcc-lr/hasIndigenousName "cuengh",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/za",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/za"},
    :rdf/type
    [:lcc-lr/Macrolanguage :owl/NamedIndividual :lcc-lr/LivingLanguage],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Zhuang",
    :skos/definition "Zhuang languages"})
 
 (def Zulu
   "Zulu language"
   {:db/ident :lcc-639-1/Zulu,
-   :lcc-lr/hasEnglishName #voc/lstr "Zulu@en",
-   :lcc-lr/hasFrenchName #voc/lstr "zoulou@fr",
-   :lcc-lr/hasGermanName #voc/lstr "Zulu-Sprache@de",
+   :lcc-lr/hasEnglishName #xsd/langString "Zulu@en",
+   :lcc-lr/hasFrenchName #xsd/langString "zoulou@fr",
+   :lcc-lr/hasGermanName #xsd/langString "Zulu-Sprache@de",
    :lcc-lr/hasIndigenousName "isiZulu",
-   :owl/sameAs "https://id.loc.gov/vocabulary/iso639-1/zu",
+   :owl/sameAs {:rdfa/uri "https://id.loc.gov/vocabulary/iso639-1/zu"},
    :rdf/type
    [:lcc-lr/LivingLanguage :lcc-lr/IndividualLanguage :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "Zulu",
    :skos/definition "Zulu language"})
 
@@ -2854,7 +2885,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "aa",
    :skos/definition "language identifier for Afar"})
 
@@ -2867,7 +2898,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ab",
    :skos/definition "language identifier for Abkhazian; Abkhaz"})
 
@@ -2880,7 +2911,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ae",
    :skos/definition "language identifier for Avestan"})
 
@@ -2893,7 +2924,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "af",
    :skos/definition "language identifier for Afrikaans"})
 
@@ -2906,7 +2937,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ak",
    :skos/definition "language identifier for Akan"})
 
@@ -2919,7 +2950,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "am",
    :skos/definition "language identifier for Amharic"})
 
@@ -2932,7 +2963,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "an",
    :skos/definition "language identifier for Aragonese"})
 
@@ -2945,7 +2976,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ar",
    :skos/definition "language identifier for Arabic"})
 
@@ -2958,7 +2989,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "as",
    :skos/definition "language identifier for Assamese"})
 
@@ -2971,7 +3002,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "av",
    :skos/definition "language identifier for Avaric"})
 
@@ -2984,7 +3015,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ay",
    :skos/definition "language identifier for Aymara"})
 
@@ -2997,7 +3028,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "az",
    :skos/definition "language identifier for Azerbaijani"})
 
@@ -3010,7 +3041,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ba",
    :skos/definition "language identifier for Bashkir"})
 
@@ -3023,7 +3054,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "be",
    :skos/definition "language identifier for Belarusian"})
 
@@ -3036,7 +3067,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "bg",
    :skos/definition "language identifier for Bulgarian"})
 
@@ -3049,7 +3080,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "bh",
    :skos/definition "language identifier for Bihari languages"})
 
@@ -3062,7 +3093,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "bi",
    :skos/definition "language identifier for Bislama"})
 
@@ -3075,7 +3106,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "bm",
    :skos/definition "language identifier for Bambara"})
 
@@ -3088,7 +3119,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "bn",
    :skos/definition "language identifier for Bengali; Bangla"})
 
@@ -3101,7 +3132,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "bo",
    :skos/definition "language identifier for Tibetan"})
 
@@ -3114,7 +3145,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "br",
    :skos/definition "language identifier for Breton"})
 
@@ -3127,7 +3158,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "bs",
    :skos/definition "language identifier for Bosnian"})
 
@@ -3140,7 +3171,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ca",
    :skos/definition "language identifier for Catalan"})
 
@@ -3153,7 +3184,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ce",
    :skos/definition "language identifier for Chechen"})
 
@@ -3166,7 +3197,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ch",
    :skos/definition "language identifier for Chamorro"})
 
@@ -3179,7 +3210,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "co",
    :skos/definition "language identifier for Corsican"})
 
@@ -3192,7 +3223,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "cr",
    :skos/definition "language identifier for Cree"})
 
@@ -3205,7 +3236,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "cs",
    :skos/definition "language identifier for Czech"})
 
@@ -3218,7 +3249,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "cu",
    :skos/definition
    "language identifier for Old Slavonic; Old Church Slavonic; Church Slavonic; Church Slavic; Old Bulgarian"})
@@ -3232,7 +3263,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "cv",
    :skos/definition "language identifier for Chuvash"})
 
@@ -3245,7 +3276,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "cy",
    :skos/definition "language identifier for Welsh"})
 
@@ -3258,7 +3289,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "da",
    :skos/definition "language identifier for Danish"})
 
@@ -3271,7 +3302,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "de",
    :skos/definition "language identifier for German"})
 
@@ -3284,7 +3315,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "dv",
    :skos/definition "language identifier for Dhivehi"})
 
@@ -3297,7 +3328,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "dz",
    :skos/definition "language identifier for Dzongkha; Bhutani; Butanese"})
 
@@ -3310,7 +3341,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ee",
    :skos/definition "language identifier for Ewe"})
 
@@ -3323,7 +3354,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "el",
    :skos/definition "language identifier for Modern Greek (post 1453)"})
 
@@ -3336,7 +3367,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "en",
    :skos/definition "language identifier for English"})
 
@@ -3349,7 +3380,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "eo",
    :skos/definition "language identifier for Esperanto"})
 
@@ -3362,7 +3393,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "es",
    :skos/definition "language identifier for Spanish; Castilian"})
 
@@ -3375,7 +3406,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "et",
    :skos/definition "language identifier for Estonian"})
 
@@ -3388,7 +3419,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "eu",
    :skos/definition "language identifier for Basque"})
 
@@ -3401,7 +3432,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "fa",
    :skos/definition "language identifier for Persian"})
 
@@ -3414,7 +3445,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ff",
    :skos/definition
    "language identifier for Fulah; Fula; Fulani; Fulfulde; Peul"})
@@ -3428,7 +3459,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "fi",
    :skos/definition "language identifier for Finnish"})
 
@@ -3441,7 +3472,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "fj",
    :skos/definition "language identifier for Fijian"})
 
@@ -3454,7 +3485,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "fo",
    :skos/definition "language identifier for Faroese; Faeroese"})
 
@@ -3467,7 +3498,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "fr",
    :skos/definition "language identifier for French"})
 
@@ -3480,7 +3511,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "fy",
    :skos/definition "language identifier for Western Frisian"})
 
@@ -3493,7 +3524,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ga",
    :skos/definition "language identifier for Irish"})
 
@@ -3506,7 +3537,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "gd",
    :skos/definition "language identifier for Gaelic; Scottish Gaelic"})
 
@@ -3519,7 +3550,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "gl",
    :skos/definition "language identifier for Galician; Gallegan"})
 
@@ -3532,7 +3563,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "gn",
    :skos/definition "language identifier for Guarani"})
 
@@ -3545,7 +3576,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "gu",
    :skos/definition "language identifier for Gujarati"})
 
@@ -3558,7 +3589,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "gv",
    :skos/definition "language identifier for Manx"})
 
@@ -3571,7 +3602,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ha",
    :skos/definition "language identifier for Hausa"})
 
@@ -3584,7 +3615,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "he",
    :skos/definition "language identifier for Hebrew"})
 
@@ -3597,7 +3628,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "hi",
    :skos/definition "language identifier for Hindi"})
 
@@ -3610,7 +3641,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ho",
    :skos/definition "language identifier for Hiri Motu"})
 
@@ -3623,7 +3654,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "hr",
    :skos/definition "language identifier for Croatian"})
 
@@ -3636,7 +3667,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ht",
    :skos/definition "language identifier for Haitian; Haitian Creole"})
 
@@ -3649,7 +3680,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "hu",
    :skos/definition "language identifier for Hungarian"})
 
@@ -3662,7 +3693,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "hy",
    :skos/definition "language identifier for Armenian"})
 
@@ -3675,7 +3706,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "hz",
    :skos/definition "language identifier for Herero"})
 
@@ -3688,7 +3719,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ia",
    :skos/definition
    "language identifier for Interlingua (International Auxiliary Language Association)"})
@@ -3702,7 +3733,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "id",
    :skos/definition "language identifier for Indonesian"})
 
@@ -3715,7 +3746,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ie",
    :skos/definition "language identifier for Interlingue"})
 
@@ -3728,7 +3759,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ig",
    :skos/definition "language identifier for Igbo"})
 
@@ -3741,7 +3772,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ii",
    :skos/definition "language identifier for Sichuan Yi"})
 
@@ -3754,7 +3785,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ik",
    :skos/definition "language identifier for Inupiaq"})
 
@@ -3767,7 +3798,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "io",
    :skos/definition "language identifier for Ido"})
 
@@ -3780,7 +3811,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "is",
    :skos/definition "language identifier for Icelandic"})
 
@@ -3793,7 +3824,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "it",
    :skos/definition "language identifier for Italian"})
 
@@ -3806,7 +3837,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "iu",
    :skos/definition "language identifier for Inuktitut"})
 
@@ -3819,7 +3850,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ja",
    :skos/definition "language identifier for Japanese"})
 
@@ -3832,7 +3863,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "jv",
    :skos/definition "language identifier for Javanese"})
 
@@ -3845,7 +3876,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ka",
    :skos/definition "language identifier for Georgian"})
 
@@ -3858,7 +3889,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "kg",
    :skos/definition "language identifier for Kongo"})
 
@@ -3871,7 +3902,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ki",
    :skos/definition "language identifier for Kikuyu; Gikuyu"})
 
@@ -3884,7 +3915,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "kj",
    :skos/definition "language identifier for Kwanyama; Kuanyama"})
 
@@ -3897,7 +3928,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "kk",
    :skos/definition "language identifier for Kazakh"})
 
@@ -3910,7 +3941,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "kl",
    :skos/definition "language identifier for Greenlandic; Kalaallisut"})
 
@@ -3923,7 +3954,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "km",
    :skos/definition "language identifier for Central Khmer"})
 
@@ -3936,7 +3967,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "kn",
    :skos/definition "language identifier for Kannada"})
 
@@ -3949,7 +3980,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ko",
    :skos/definition "language identifier for Korean"})
 
@@ -3962,7 +3993,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "kr",
    :skos/definition "language identifier for Kanuri"})
 
@@ -3975,7 +4006,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ks",
    :skos/definition "language identifier for Kashmiri"})
 
@@ -3988,7 +4019,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ku",
    :skos/definition "language identifier for Kurdish"})
 
@@ -4001,7 +4032,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "kv",
    :skos/definition "language identifier for Komi"})
 
@@ -4014,7 +4045,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "kw",
    :skos/definition "language identifier for Cornish"})
 
@@ -4027,7 +4058,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ky",
    :skos/definition "language identifier for Kirghiz; Kyrgyz"})
 
@@ -4040,7 +4071,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "la",
    :skos/definition "language identifier for Latin"})
 
@@ -4053,7 +4084,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "lb",
    :skos/definition "language identifier for Luxembourgish"})
 
@@ -4066,7 +4097,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "lg",
    :skos/definition "language identifier for Ganda"})
 
@@ -4079,7 +4110,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "li",
    :skos/definition "language identifier for Limburgan; Limburger; Limburgish"})
 
@@ -4092,7 +4123,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ln",
    :skos/definition "language identifier for Lingala"})
 
@@ -4105,7 +4136,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "lo",
    :skos/definition "language identifier for Lao"})
 
@@ -4118,7 +4149,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "lt",
    :skos/definition "language identifier for Lithuanian"})
 
@@ -4131,7 +4162,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "lu",
    :skos/definition "language identifier for Luba-Katanga"})
 
@@ -4144,7 +4175,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "lv",
    :skos/definition "language identifier for Latvian"})
 
@@ -4157,7 +4188,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "mg",
    :skos/definition "language identifier for Malagasy"})
 
@@ -4170,7 +4201,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "mh",
    :skos/definition "language identifier for Marshallese"})
 
@@ -4183,7 +4214,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "mi",
    :skos/definition "language identifier for Maori"})
 
@@ -4196,7 +4227,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "mk",
    :skos/definition "language identifier for Macedonian"})
 
@@ -4209,7 +4240,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ml",
    :skos/definition "language identifier for Malayalam"})
 
@@ -4222,7 +4253,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "mn",
    :skos/definition "language identifier for Mongolian"})
 
@@ -4235,7 +4266,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "mr",
    :skos/definition "language identifier for Marathi"})
 
@@ -4248,7 +4279,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ms",
    :skos/definition "language identifier for Malay"})
 
@@ -4261,7 +4292,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "mt",
    :skos/definition "language identifier for Maltese"})
 
@@ -4274,7 +4305,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "my",
    :skos/definition "language identifier for Burmese"})
 
@@ -4287,7 +4318,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "na",
    :skos/definition "language identifier for Nauruan"})
 
@@ -4300,7 +4331,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "nb",
    :skos/definition "language identifier for Norwegian Bokmal"})
 
@@ -4313,7 +4344,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "nd",
    :skos/definition "language identifier for North Ndebele"})
 
@@ -4326,7 +4357,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ne",
    :skos/definition "language identifier for Nepali"})
 
@@ -4339,7 +4370,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ng",
    :skos/definition "language identifier for Ndonga"})
 
@@ -4352,7 +4383,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "nl",
    :skos/definition "language identifier for Dutch"})
 
@@ -4365,7 +4396,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "nn",
    :skos/definition "language identifier for Norwegian Nynorsk"})
 
@@ -4378,7 +4409,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "no",
    :skos/definition "language identifier for Norwegian"})
 
@@ -4391,7 +4422,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "nr",
    :skos/definition "language identifier for South Ndebele"})
 
@@ -4404,7 +4435,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "nv",
    :skos/definition "language identifier for Navajo; Navaho"})
 
@@ -4417,7 +4448,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ny",
    :skos/definition "language identifier for Chichewa; Chewa; Nyanja"})
 
@@ -4430,7 +4461,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "oc",
    :skos/definition "language identifier for Occitan; Provencal (post 1500)"})
 
@@ -4443,7 +4474,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "oj",
    :skos/definition "language identifier for Ojibwa"})
 
@@ -4456,7 +4487,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "om",
    :skos/definition "language identifier for Oromo"})
 
@@ -4469,7 +4500,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "or",
    :skos/definition "language identifier for Oriya"})
 
@@ -4482,7 +4513,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "os",
    :skos/definition "language identifier for Ossetian; Ossetic"})
 
@@ -4495,7 +4526,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "pa",
    :skos/definition "language identifier for Panjabi; Punjabi"})
 
@@ -4508,7 +4539,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "pi",
    :skos/definition "language identifier for Pali"})
 
@@ -4521,7 +4552,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "pl",
    :skos/definition "language identifier for Polish"})
 
@@ -4534,7 +4565,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ps",
    :skos/definition "language identifier for Pashto; Pushto"})
 
@@ -4547,7 +4578,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "pt",
    :skos/definition "language identifier for Portuguese"})
 
@@ -4560,7 +4591,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "qu",
    :skos/definition "language identifier for Quechua"})
 
@@ -4573,7 +4604,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "rm",
    :skos/definition "language identifier for Romansh"})
 
@@ -4586,7 +4617,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "rn",
    :skos/definition "language identifier for Rundi"})
 
@@ -4599,7 +4630,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ro",
    :skos/definition "language identifier for Romanian"})
 
@@ -4612,7 +4643,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ru",
    :skos/definition "language identifier for Russian"})
 
@@ -4625,7 +4656,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "rw",
    :skos/definition "language identifier for Kinyarwanda; Rwanda"})
 
@@ -4638,7 +4669,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "sa",
    :skos/definition "language identifier for Sanskrit"})
 
@@ -4651,7 +4682,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "sc",
    :skos/definition "language identifier for Sardinian"})
 
@@ -4664,7 +4695,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "sd",
    :skos/definition "language identifier for Sindhi"})
 
@@ -4677,7 +4708,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "se",
    :skos/definition "language identifier for Northern Sami"})
 
@@ -4690,7 +4721,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "sg",
    :skos/definition "language identifier for Sango"})
 
@@ -4703,7 +4734,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "si",
    :skos/definition "language identifier for Sinhala; Sinhalese"})
 
@@ -4716,7 +4747,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "sk",
    :skos/definition "language identifier for Slovak"})
 
@@ -4729,7 +4760,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "sl",
    :skos/definition "language identifier for Slovenian"})
 
@@ -4742,7 +4773,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "sm",
    :skos/definition "language identifier for Samoan"})
 
@@ -4755,7 +4786,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "sn",
    :skos/definition "language identifier for Shona"})
 
@@ -4768,7 +4799,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "so",
    :skos/definition "language identifier for Somali"})
 
@@ -4781,7 +4812,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "sq",
    :skos/definition "language identifier for Albanian"})
 
@@ -4794,7 +4825,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "sr",
    :skos/definition "language identifier for Serbian"})
 
@@ -4807,7 +4838,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ss",
    :skos/definition "language identifier for Swati"})
 
@@ -4820,7 +4851,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "st",
    :skos/definition "language identifier for Sesotho; Southern Sotho"})
 
@@ -4833,7 +4864,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "su",
    :skos/definition "language identifier for Sundanese"})
 
@@ -4846,7 +4877,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "sv",
    :skos/definition "language identifier for Swedish"})
 
@@ -4859,7 +4890,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "sw",
    :skos/definition "language identifier for Swahili"})
 
@@ -4872,7 +4903,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ta",
    :skos/definition "language identifier for Tamil"})
 
@@ -4885,7 +4916,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "te",
    :skos/definition "language identifier for Telugu"})
 
@@ -4898,7 +4929,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "tg",
    :skos/definition "language identifier for Tajik"})
 
@@ -4911,7 +4942,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "th",
    :skos/definition "language identifier for Thai"})
 
@@ -4924,7 +4955,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ti",
    :skos/definition "language identifier for Tigrinya"})
 
@@ -4937,7 +4968,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "tk",
    :skos/definition "language identifier for Turkmen"})
 
@@ -4950,7 +4981,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "tl",
    :skos/definition "language identifier for Tagalog"})
 
@@ -4963,7 +4994,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "tn",
    :skos/definition "language identifier for Tswana"})
 
@@ -4976,7 +5007,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "to",
    :skos/definition "language identifier for Tonga (Tonga Islands)"})
 
@@ -4989,7 +5020,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "tr",
    :skos/definition "language identifier for Turkish"})
 
@@ -5002,7 +5033,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ts",
    :skos/definition "language identifier for Tsonga"})
 
@@ -5015,7 +5046,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "tt",
    :skos/definition "language identifier for Tatar"})
 
@@ -5028,7 +5059,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "tw",
    :skos/definition "language identifier for Twi"})
 
@@ -5041,7 +5072,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ty",
    :skos/definition "language identifier for Tahitian"})
 
@@ -5054,7 +5085,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ug",
    :skos/definition "language identifier for Uighur; Uyghur"})
 
@@ -5067,7 +5098,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "uk",
    :skos/definition "language identifier for Ukrainian"})
 
@@ -5080,7 +5111,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ur",
    :skos/definition "language identifier for Urdu"})
 
@@ -5093,7 +5124,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "uz",
    :skos/definition "language identifier for Uzbek"})
 
@@ -5106,7 +5137,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "ve",
    :skos/definition "language identifier for Venda"})
 
@@ -5119,7 +5150,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "vi",
    :skos/definition "language identifier for Vietnamese"})
 
@@ -5132,7 +5163,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "vo",
    :skos/definition "language identifier for Volapuk"})
 
@@ -5145,7 +5176,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "wa",
    :skos/definition "language identifier for Walloon"})
 
@@ -5158,7 +5189,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "wo",
    :skos/definition "language identifier for Wolof"})
 
@@ -5171,7 +5202,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "xh",
    :skos/definition "language identifier for Xhosa"})
 
@@ -5184,7 +5215,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "yi",
    :skos/definition "language identifier for Yiddish"})
 
@@ -5197,7 +5228,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "yo",
    :skos/definition "language identifier for Yoruba"})
 
@@ -5210,7 +5241,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "za",
    :skos/definition "language identifier for Zhuang; Chuang"})
 
@@ -5223,7 +5254,7 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "zh",
    :skos/definition "language identifier for Chinese"})
 
@@ -5236,6 +5267,6 @@
    :lcc-lr/isMemberOf :lcc-639-1/ISO639-1-CodeSet,
    :rdf/type [:lcc-lr/Alpha2Code :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"},
    :rdfs/label "zu",
    :skos/definition "language identifier for Zulu"})

@@ -6,14 +6,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/MetadataSECFunds/FundsModule",
    :dcterms/abstract
    "This module contains ontologies of funds concepts covering fund structure, definition and involved parties, along with concepts for tradable fund units.",
-   :dcterms/issued #inst "2018-03-31T22:00:00.000-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-02-03T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-03-31T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-02-03T18:00:00.000-05:00",
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/MetadataSECFunds/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/MetadataSECFunds/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -66,12 +68,13 @@
    [{:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/"}
     {:rdfa/uri
      "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/CollectiveInvestmentVehicles/"}],
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :dcterms/title
    ["EDMC Financial Industry Business Ontology (FIBO) Securities (SEC) Domain Funds Module"
     "FIBO SEC Funds Module"],
    :rdf/type [:owl/NamedIndividual :fibo-fnd-utl-av/Module],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/MetadataSECFunds/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/MetadataSECFunds/"},
    :rdfs/label "funds module",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})

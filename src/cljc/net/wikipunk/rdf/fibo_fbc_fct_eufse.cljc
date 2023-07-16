@@ -6,17 +6,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
    :dcterms/abstract
    "This ontology extends the primary financial services entities ontology in FBC with additional kinds of entities that that provide services in Europe, across national boundaries, such as European market data providers, organizations that provide exchanges in multiple countries, organizations that support the European Union, and so forth.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -52,23 +58,27 @@
                       :fibo-fbc-fct-eufse/EuropeanEconomicAreaBranch],
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/"},
    :rdfs/label "CRD credit institution",
    :rdfs/subClassOf [:fibo-fbc-fct-eufse/CreditInstitution
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm],
+                     :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "an undertaking whose business is to receive deposits or other repayable funds from the public and to grant credits for its own account as defined by the European Banking Authority (EBA)"})
 
 (def CreditInstitution
   "an undertaking the business of which is to take deposits or other repayable funds from the public and to grant credits for its own account, and to which authorisation has been granted to operate within the European Union and European Economic Area countries (EEA)"
   {:cmns-av/adaptedFrom
-   ["http://www.eba.europa.eu/risk-analysis-and-data/credit-institutions-register"
-    "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32013R0575&from=EN#page=18"],
+   [{:rdfa/uri
+     "http://www.eba.europa.eu/risk-analysis-and-data/credit-institutions-register"}
+    {:rdfa/uri
+     "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32013R0575&from=EN#page=18"}],
    :db/ident :fibo-fbc-fct-eufse/CreditInstitution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/"},
    :rdfs/label "credit institution",
    :rdfs/subClassOf [:fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm
                      :fibo-fbc-fct-fse/FinancialInstitution],
@@ -78,11 +88,13 @@
 (def CreditInstitutionInvestmentFirm
   "classification specific to European financial institutions that designates them as credit institutions / investment firms as defined by the European Banking Authority (EBA)"
   {:cmns-av/adaptedFrom
-   "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32013R0575&from=EN#page=18",
+   {:rdfa/uri
+    "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32013R0575&from=EN#page=18"},
    :db/ident :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/"},
    :rdfs/label "credit institution / investment firm",
    :rdfs/subClassOf :fibo-fbc-fct-fse/FinancialInstitution,
    :skos/definition
@@ -97,24 +109,27 @@
    :owl/disjointWith :fibo-fbc-fct-eufse/NonEuropeanEconomicAreaBranch,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/"},
    :rdfs/label "European Economic Area branch",
    :rdfs/subClassOf [:fibo-fbc-fct-eufse/CreditInstitution
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm],
+                     :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "a branch of a credit institution authorised in another European Economic Area (EEA) country that has the right to passport its activities"})
 
 (def InvestmentFirm
   "any legal person whose regular occupation or business is the provision of one or more investment services to third parties and/or the performance of one or more investment activities on a professional basis"
   {:cmns-av/adaptedFrom
-   "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32004L0039&from=en#page=9",
+   {:rdfa/uri
+    "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32004L0039&from=en#page=9"},
    :db/ident :fibo-fbc-fct-eufse/InvestmentFirm,
    :owl/disjointWith [:fibo-fbc-fct-eufse/LocalFirm
                       :fibo-fbc-fct-eufse/CreditInstitution],
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/"},
    :rdfs/label "investment firm",
    :rdfs/subClassOf [{:owl/unionOf [:fibo-fbc-fct-fse/BrokerageFirm
                                     :fibo-fbc-fct-fse/InvestmentCompany
@@ -131,11 +146,13 @@
 (def LocalFirm
   "a firm dealing for its own account on markets in financial futures or options or other derivatives and on cash markets for the sole purpose of hedging positions on derivatives markets, or dealing for the accounts of other members of those markets and being guaranteed by clearing members of the same markets, where responsibility for ensuring the performance of contracts entered into by such a firm is assumed by clearing members of the same markets"
   {:cmns-av/adaptedFrom
-   "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32013R0575&from=EN#page=18",
+   {:rdfa/uri
+    "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32013R0575&from=EN#page=18"},
    :db/ident :fibo-fbc-fct-eufse/LocalFirm,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/"},
    :rdfs/label "local firm",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/BrokerageFirm
                      :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm
@@ -151,22 +168,25 @@
    "http://www.eba.europa.eu/risk-analysis-and-data/credit-institutions-register",
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/"},
    :rdfs/label "non European Economic Area branch",
    :rdfs/subClassOf [:fibo-fbc-fct-eufse/CreditInstitution
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm],
+                     :fibo-fbc-fct-eufse/CreditInstitutionInvestmentFirm
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "a branch of a credit institution whose Head Office is in a third country"})
 
 (def PaymentInstitution
   "a legal person that has been granted authorisation in accordance with Article 10 to provide and execute payment services throughout the European community"
   {:cmns-av/adaptedFrom
-   "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32007L0064&from=EN#page=18",
+   {:rdfa/uri
+    "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32007L0064&from=EN#page=18"},
    :db/ident :fibo-fbc-fct-eufse/PaymentInstitution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/"},
    :rdfs/label "payment institution",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-fct-fse/PaymentService,

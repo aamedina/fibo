@@ -13,23 +13,27 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
    :dcterms/abstract
    "This ontology represents the subset of the ISO 4217 standard that include the actual currency codes.",
-   :dcterms/issued #inst "2023-01-01T05:00:00.000-00:00",
-   :dcterms/license "https://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-03-11T05:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2023-01-01T00:00:00.000-05:00",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-03-11T00:00:00.000-05:00",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
@@ -76,9 +80,10 @@
    :fibo-fnd-rel-rel/hasTextualName "ADB Unit of Account",
    :rdf/type [:fibo-fnd-acc-cur/UnitOfAccount :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "ADB Unit of Account",
-   :skos/definition #voc/lstr "the ADB Unit of Account@en"})
+   :skos/definition #xsd/langString "the ADB Unit of Account@en"})
 
 (def AED
   "the currency identifier for UAE Dirham"
@@ -89,9 +94,11 @@
    :fibo-fnd-rel-rel/hasTag "AED",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "AED",
-   :skos/definition #voc/lstr "the currency identifier for UAE Dirham@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for UAE Dirham@en"})
 
 (def AFN
   "the currency identifier for Afghani"
@@ -102,9 +109,10 @@
    :fibo-fnd-rel-rel/hasTag "AFN",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "AFN",
-   :skos/definition #voc/lstr "the currency identifier for Afghani@en"})
+   :skos/definition #xsd/langString "the currency identifier for Afghani@en"})
 
 (def ALL
   "the currency identifier for Lek"
@@ -115,9 +123,10 @@
    :fibo-fnd-rel-rel/hasTag "ALL",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "ALL",
-   :skos/definition #voc/lstr "the currency identifier for Lek@en"})
+   :skos/definition #xsd/langString "the currency identifier for Lek@en"})
 
 (def AMD
   "the currency identifier for Armenian Dram"
@@ -128,9 +137,11 @@
    :fibo-fnd-rel-rel/hasTag "AMD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "AMD",
-   :skos/definition #voc/lstr "the currency identifier for Armenian Dram@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Armenian Dram@en"})
 
 (def ANG
   "the currency identifier for Netherlands Antillean Guilder"
@@ -141,10 +152,12 @@
    :fibo-fnd-rel-rel/hasTag "ANG",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "ANG",
    :skos/definition
-   #voc/lstr "the currency identifier for Netherlands Antillean Guilder@en"})
+   #xsd/langString
+    "the currency identifier for Netherlands Antillean Guilder@en"})
 
 (def AOA
   "the currency identifier for Kwanza"
@@ -155,9 +168,10 @@
    :fibo-fnd-rel-rel/hasTag "AOA",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "AOA",
-   :skos/definition #voc/lstr "the currency identifier for Kwanza@en"})
+   :skos/definition #xsd/langString "the currency identifier for Kwanza@en"})
 
 (def ARS
   "the currency identifier for Argentine Peso"
@@ -168,9 +182,11 @@
    :fibo-fnd-rel-rel/hasTag "ARS",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "ARS",
-   :skos/definition #voc/lstr "the currency identifier for Argentine Peso@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Argentine Peso@en"})
 
 (def AUD
   "the currency identifier for Australian Dollar"
@@ -181,9 +197,10 @@
    :fibo-fnd-rel-rel/hasTag "AUD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "AUD",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Australian Dollar@en"})
 
 (def AWG
@@ -195,9 +212,11 @@
    :fibo-fnd-rel-rel/hasTag "AWG",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "AWG",
-   :skos/definition #voc/lstr "the currency identifier for Aruban Florin@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Aruban Florin@en"})
 
 (def AZN
   "the currency identifier for Azerbaijan Manat"
@@ -208,9 +227,10 @@
    :fibo-fnd-rel-rel/hasTag "AZN",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "AZN",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Azerbaijan Manat@en"})
 
 (def Afghani
@@ -222,9 +242,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Afghani",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Afghani",
-   :skos/definition #voc/lstr "the currency Afghani@en"})
+   :skos/definition #xsd/langString "the currency Afghani@en"})
 
 (def AlgerianDinar
   "the currency Algerian Dinar"
@@ -235,9 +256,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Algerian Dinar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Algerian Dinar",
-   :skos/definition #voc/lstr "the currency Algerian Dinar@en"})
+   :skos/definition #xsd/langString "the currency Algerian Dinar@en"})
 
 (def ArgentinePeso
   "the currency Argentine Peso"
@@ -248,9 +270,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Argentine Peso",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Argentine Peso",
-   :skos/definition #voc/lstr "the currency Argentine Peso@en"})
+   :skos/definition #xsd/langString "the currency Argentine Peso@en"})
 
 (def ArmenianDram
   "the currency Armenian Dram"
@@ -261,9 +284,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Armenian Dram",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Armenian Dram",
-   :skos/definition #voc/lstr "the currency Armenian Dram@en"})
+   :skos/definition #xsd/langString "the currency Armenian Dram@en"})
 
 (def ArubanFlorin
   "the currency Aruban Florin"
@@ -274,9 +298,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Aruban Florin",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Aruban Florin",
-   :skos/definition #voc/lstr "the currency Aruban Florin@en"})
+   :skos/definition #xsd/langString "the currency Aruban Florin@en"})
 
 (def AustralianDollar
   "the currency Australian Dollar"
@@ -294,9 +319,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Australian Dollar",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Currency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Australian Dollar",
-   :skos/definition #voc/lstr "the currency Australian Dollar@en"})
+   :skos/definition #xsd/langString "the currency Australian Dollar@en"})
 
 (def AzerbaijanManat
   "the currency Azerbaijan Manat"
@@ -307,9 +333,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Azerbaijan Manat",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Azerbaijan Manat",
-   :skos/definition #voc/lstr "the currency Azerbaijan Manat@en"})
+   :skos/definition #xsd/langString "the currency Azerbaijan Manat@en"})
 
 (def BAM
   "the currency identifier for Convertible Mark"
@@ -320,9 +347,10 @@
    :fibo-fnd-rel-rel/hasTag "BAM",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BAM",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Convertible Mark@en"})
 
 (def BBD
@@ -334,9 +362,11 @@
    :fibo-fnd-rel-rel/hasTag "BBD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BBD",
-   :skos/definition #voc/lstr "the currency identifier for Barbados Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Barbados Dollar@en"})
 
 (def BDT
   "the currency identifier for Taka"
@@ -347,9 +377,10 @@
    :fibo-fnd-rel-rel/hasTag "BDT",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BDT",
-   :skos/definition #voc/lstr "the currency identifier for Taka@en"})
+   :skos/definition #xsd/langString "the currency identifier for Taka@en"})
 
 (def BGN
   "the currency identifier for Bulgarian Lev"
@@ -360,9 +391,11 @@
    :fibo-fnd-rel-rel/hasTag "BGN",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BGN",
-   :skos/definition #voc/lstr "the currency identifier for Bulgarian Lev@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Bulgarian Lev@en"})
 
 (def BHD
   "the currency identifier for Bahraini Dinar"
@@ -373,9 +406,11 @@
    :fibo-fnd-rel-rel/hasTag "BHD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BHD",
-   :skos/definition #voc/lstr "the currency identifier for Bahraini Dinar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Bahraini Dinar@en"})
 
 (def BIF
   "the currency identifier for Burundi Franc"
@@ -386,9 +421,11 @@
    :fibo-fnd-rel-rel/hasTag "BIF",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BIF",
-   :skos/definition #voc/lstr "the currency identifier for Burundi Franc@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Burundi Franc@en"})
 
 (def BMD
   "the currency identifier for Bermudian Dollar"
@@ -399,9 +436,10 @@
    :fibo-fnd-rel-rel/hasTag "BMD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BMD",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Bermudian Dollar@en"})
 
 (def BND
@@ -413,9 +451,11 @@
    :fibo-fnd-rel-rel/hasTag "BND",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BND",
-   :skos/definition #voc/lstr "the currency identifier for Brunei Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Brunei Dollar@en"})
 
 (def BOB
   "the currency identifier for Boliviano"
@@ -426,9 +466,10 @@
    :fibo-fnd-rel-rel/hasTag "BOB",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BOB",
-   :skos/definition #voc/lstr "the currency identifier for Boliviano@en"})
+   :skos/definition #xsd/langString "the currency identifier for Boliviano@en"})
 
 (def BOV
   "the funds identifier for Mvdol"
@@ -439,9 +480,10 @@
    :fibo-fnd-rel-rel/hasTag "BOV",
    :rdf/type [:fibo-fnd-acc-cur/FundsIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BOV",
-   :skos/definition #voc/lstr "the funds identifier for Mvdol@en"})
+   :skos/definition #xsd/langString "the funds identifier for Mvdol@en"})
 
 (def BRL
   "the currency identifier for Brazilian Real"
@@ -452,9 +494,11 @@
    :fibo-fnd-rel-rel/hasTag "BRL",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BRL",
-   :skos/definition #voc/lstr "the currency identifier for Brazilian Real@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Brazilian Real@en"})
 
 (def BSD
   "the currency identifier for Bahamian Dollar"
@@ -465,9 +509,11 @@
    :fibo-fnd-rel-rel/hasTag "BSD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BSD",
-   :skos/definition #voc/lstr "the currency identifier for Bahamian Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Bahamian Dollar@en"})
 
 (def BTN
   "the currency identifier for Ngultrum"
@@ -478,9 +524,10 @@
    :fibo-fnd-rel-rel/hasTag "BTN",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BTN",
-   :skos/definition #voc/lstr "the currency identifier for Ngultrum@en"})
+   :skos/definition #xsd/langString "the currency identifier for Ngultrum@en"})
 
 (def BWP
   "the currency identifier for Pula"
@@ -491,9 +538,10 @@
    :fibo-fnd-rel-rel/hasTag "BWP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BWP",
-   :skos/definition #voc/lstr "the currency identifier for Pula@en"})
+   :skos/definition #xsd/langString "the currency identifier for Pula@en"})
 
 (def BYN
   "the currency identifier for Belarusian Ruble"
@@ -504,9 +552,10 @@
    :fibo-fnd-rel-rel/hasTag "BYN",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BYN",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Belarusian Ruble@en"})
 
 (def BZD
@@ -518,9 +567,11 @@
    :fibo-fnd-rel-rel/hasTag "BZD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "BZD",
-   :skos/definition #voc/lstr "the currency identifier for Belize Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Belize Dollar@en"})
 
 (def BahamianDollar
   "the currency Bahamian Dollar"
@@ -531,9 +582,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Bahamian Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Bahamian Dollar",
-   :skos/definition #voc/lstr "the currency Bahamian Dollar@en"})
+   :skos/definition #xsd/langString "the currency Bahamian Dollar@en"})
 
 (def BahrainiDinar
   "the currency Bahraini Dinar"
@@ -544,9 +596,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Bahraini Dinar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Bahraini Dinar",
-   :skos/definition #voc/lstr "the currency Bahraini Dinar@en"})
+   :skos/definition #xsd/langString "the currency Bahraini Dinar@en"})
 
 (def Baht
   "the currency Baht"
@@ -557,9 +610,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Baht",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Baht",
-   :skos/definition #voc/lstr "the currency Baht@en"})
+   :skos/definition #xsd/langString "the currency Baht@en"})
 
 (def Balboa
   "the currency Balboa"
@@ -570,9 +624,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Balboa",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Balboa",
-   :skos/definition #voc/lstr "the currency Balboa@en"})
+   :skos/definition #xsd/langString "the currency Balboa@en"})
 
 (def BarbadosDollar
   "the currency Barbados Dollar"
@@ -583,9 +638,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Barbados Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Barbados Dollar",
-   :skos/definition #voc/lstr "the currency Barbados Dollar@en"})
+   :skos/definition #xsd/langString "the currency Barbados Dollar@en"})
 
 (def BelarusianRuble
   "the currency Belarusian Ruble"
@@ -596,9 +652,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Belarusian Ruble",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Belarusian Ruble",
-   :skos/definition #voc/lstr "the currency Belarusian Ruble@en"})
+   :skos/definition #xsd/langString "the currency Belarusian Ruble@en"})
 
 (def BelizeDollar
   "the currency Belize Dollar"
@@ -609,9 +666,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Belize Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Belize Dollar",
-   :skos/definition #voc/lstr "the currency Belize Dollar@en"})
+   :skos/definition #xsd/langString "the currency Belize Dollar@en"})
 
 (def BermudianDollar
   "the currency Bermudian Dollar"
@@ -622,9 +680,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Bermudian Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Bermudian Dollar",
-   :skos/definition #voc/lstr "the currency Bermudian Dollar@en"})
+   :skos/definition #xsd/langString "the currency Bermudian Dollar@en"})
 
 (def Boliviano
   "the currency Boliviano"
@@ -635,9 +694,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Boliviano",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Boliviano",
-   :skos/definition #voc/lstr "the currency Boliviano@en"})
+   :skos/definition #xsd/langString "the currency Boliviano@en"})
 
 (def BolívarSoberano
   "the currency Bolívar Soberano"
@@ -648,11 +708,12 @@
    :fibo-fnd-rel-rel/hasTextualName "Bolívar Soberano",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Bolívar Soberano",
-   :skos/definition #voc/lstr "the currency Bolívar Soberano@en",
+   :skos/definition #xsd/langString "the currency Bolívar Soberano@en",
    :skos/note
-   #voc/lstr
+   #xsd/langString
     "The Bolívar Soberano (VES) is redenominated by removing six zeros from the denominations. A new currency code VED/926 representing the new valuation (1,000,000 times old VES/928) is introduced on 1 October 2021 for any internal needs during the redenomination process, but is not replacing VES as the official currency code. The Central Bank of Venezuela will not adopt the new codes in the local system, VES/928 remains in use. The actual currency code VES/928 remains the valid code after 1 October 2021 to use in any future transactions to indicate the redenominated Bolívar Soberano.@en"})
 
 (def BondMarketsUnitEuropeanCompositeUnit_EURCO
@@ -663,10 +724,11 @@
    "Bond Markets Unit European Composite Unit (EURCO)",
    :rdf/type [:fibo-fnd-acc-cur/UnitOfAccount :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Bond Markets Unit European Composite Unit (EURCO)",
    :skos/definition
-   #voc/lstr "the Bond Markets Unit European Composite Unit (EURCO)@en"})
+   #xsd/langString "the Bond Markets Unit European Composite Unit (EURCO)@en"})
 
 (def BondMarketsUnitEuropeanMonetaryUnit_EMU-6
   "the Bond Markets Unit European Monetary Unit (E.M.U.-6)"
@@ -676,10 +738,12 @@
    "Bond Markets Unit European Monetary Unit (E.M.U.-6)",
    :rdf/type [:fibo-fnd-acc-cur/UnitOfAccount :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Bond Markets Unit European Monetary Unit (E.M.U.-6)",
    :skos/definition
-   #voc/lstr "the Bond Markets Unit European Monetary Unit (E.M.U.-6)@en"})
+   #xsd/langString
+    "the Bond Markets Unit European Monetary Unit (E.M.U.-6)@en"})
 
 (def BondMarketsUnitEuropeanUnitofAccount17_EUA-17
   "the Bond Markets Unit European Unit of Account 17 (E.U.A.-17)"
@@ -689,10 +753,11 @@
    "Bond Markets Unit European Unit of Account 17 (E.U.A.-17)",
    :rdf/type [:fibo-fnd-acc-cur/UnitOfAccount :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Bond Markets Unit European Unit of Account 17 (E.U.A.-17)",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "the Bond Markets Unit European Unit of Account 17 (E.U.A.-17)@en"})
 
 (def BondMarketsUnitEuropeanUnitofAccount9_EUA-9
@@ -703,10 +768,12 @@
    "Bond Markets Unit European Unit of Account 9 (E.U.A.-9)",
    :rdf/type [:fibo-fnd-acc-cur/UnitOfAccount :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Bond Markets Unit European Unit of Account 9 (E.U.A.-9)",
    :skos/definition
-   #voc/lstr "the Bond Markets Unit European Unit of Account 9 (E.U.A.-9)@en"})
+   #xsd/langString
+    "the Bond Markets Unit European Unit of Account 9 (E.U.A.-9)@en"})
 
 (def BrazilianReal
   "the currency Brazilian Real"
@@ -717,9 +784,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Brazilian Real",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Brazilian Real",
-   :skos/definition #voc/lstr "the currency Brazilian Real@en"})
+   :skos/definition #xsd/langString "the currency Brazilian Real@en"})
 
 (def BruneiDollar
   "the currency Brunei Dollar"
@@ -730,9 +798,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Brunei Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Brunei Dollar",
-   :skos/definition #voc/lstr "the currency Brunei Dollar@en"})
+   :skos/definition #xsd/langString "the currency Brunei Dollar@en"})
 
 (def BulgarianLev
   "the currency Bulgarian Lev"
@@ -743,9 +812,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Bulgarian Lev",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Bulgarian Lev",
-   :skos/definition #voc/lstr "the currency Bulgarian Lev@en"})
+   :skos/definition #xsd/langString "the currency Bulgarian Lev@en"})
 
 (def BurundiFranc
   "the currency Burundi Franc"
@@ -756,9 +826,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Burundi Franc",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Burundi Franc",
-   :skos/definition #voc/lstr "the currency Burundi Franc@en"})
+   :skos/definition #xsd/langString "the currency Burundi Franc@en"})
 
 (def CAD
   "the currency identifier for Canadian Dollar"
@@ -769,9 +840,11 @@
    :fibo-fnd-rel-rel/hasTag "CAD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CAD",
-   :skos/definition #voc/lstr "the currency identifier for Canadian Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Canadian Dollar@en"})
 
 (def CDF
   "the currency identifier for Congolese Franc"
@@ -782,9 +855,11 @@
    :fibo-fnd-rel-rel/hasTag "CDF",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CDF",
-   :skos/definition #voc/lstr "the currency identifier for Congolese Franc@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Congolese Franc@en"})
 
 (def CFAFrancBCEAO
   "the currency CFA Franc BCEAO"
@@ -802,9 +877,10 @@
    :fibo-fnd-rel-rel/hasTextualName "CFA Franc BCEAO",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Currency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CFA Franc BCEAO",
-   :skos/definition #voc/lstr "the currency CFA Franc BCEAO@en"})
+   :skos/definition #xsd/langString "the currency CFA Franc BCEAO@en"})
 
 (def CFAFrancBEAC
   "the currency CFA Franc BEAC"
@@ -820,9 +896,10 @@
    :fibo-fnd-rel-rel/hasTextualName "CFA Franc BEAC",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Currency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CFA Franc BEAC",
-   :skos/definition #voc/lstr "the currency CFA Franc BEAC@en"})
+   :skos/definition #xsd/langString "the currency CFA Franc BEAC@en"})
 
 (def CFPFranc
   "the currency CFP Franc"
@@ -835,9 +912,10 @@
    :fibo-fnd-rel-rel/hasTextualName "CFP Franc",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CFP Franc",
-   :skos/definition #voc/lstr "the currency CFP Franc@en"})
+   :skos/definition #xsd/langString "the currency CFP Franc@en"})
 
 (def CHE
   "the funds identifier for WIR Euro"
@@ -848,9 +926,10 @@
    :fibo-fnd-rel-rel/hasTag "CHE",
    :rdf/type [:fibo-fnd-acc-cur/FundsIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CHE",
-   :skos/definition #voc/lstr "the funds identifier for WIR Euro@en"})
+   :skos/definition #xsd/langString "the funds identifier for WIR Euro@en"})
 
 (def CHF
   "the currency identifier for Swiss Franc"
@@ -861,9 +940,11 @@
    :fibo-fnd-rel-rel/hasTag "CHF",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CHF",
-   :skos/definition #voc/lstr "the currency identifier for Swiss Franc@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Swiss Franc@en"})
 
 (def CHW
   "the funds identifier for WIR Franc"
@@ -874,9 +955,10 @@
    :fibo-fnd-rel-rel/hasTag "CHW",
    :rdf/type [:fibo-fnd-acc-cur/FundsIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CHW",
-   :skos/definition #voc/lstr "the funds identifier for WIR Franc@en"})
+   :skos/definition #xsd/langString "the funds identifier for WIR Franc@en"})
 
 (def CLF
   "the funds identifier for Unidad de Fomento"
@@ -887,9 +969,11 @@
    :fibo-fnd-rel-rel/hasTag "CLF",
    :rdf/type [:fibo-fnd-acc-cur/FundsIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CLF",
-   :skos/definition #voc/lstr "the funds identifier for Unidad de Fomento@en"})
+   :skos/definition #xsd/langString
+                     "the funds identifier for Unidad de Fomento@en"})
 
 (def CLP
   "the currency identifier for Chilean Peso"
@@ -900,9 +984,11 @@
    :fibo-fnd-rel-rel/hasTag "CLP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CLP",
-   :skos/definition #voc/lstr "the currency identifier for Chilean Peso@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Chilean Peso@en"})
 
 (def CNY
   "the currency identifier for Yuan Renminbi"
@@ -913,9 +999,11 @@
    :fibo-fnd-rel-rel/hasTag "CNY",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CNY",
-   :skos/definition #voc/lstr "the currency identifier for Yuan Renminbi@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Yuan Renminbi@en"})
 
 (def COP
   "the currency identifier for Colombian Peso"
@@ -926,9 +1014,11 @@
    :fibo-fnd-rel-rel/hasTag "COP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "COP",
-   :skos/definition #voc/lstr "the currency identifier for Colombian Peso@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Colombian Peso@en"})
 
 (def COU
   "the funds identifier for Unidad de Valor Real"
@@ -939,9 +1029,10 @@
    :fibo-fnd-rel-rel/hasTag "COU",
    :rdf/type [:fibo-fnd-acc-cur/FundsIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "COU",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the funds identifier for Unidad de Valor Real@en"})
 
 (def CRC
@@ -953,9 +1044,10 @@
    :fibo-fnd-rel-rel/hasTag "CRC",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CRC",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Costa Rican Colon@en"})
 
 (def CUC
@@ -967,9 +1059,10 @@
    :fibo-fnd-rel-rel/hasTag "CUC",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CUC",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Peso Convertible@en"})
 
 (def CUP
@@ -981,9 +1074,11 @@
    :fibo-fnd-rel-rel/hasTag "CUP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CUP",
-   :skos/definition #voc/lstr "the currency identifier for Cuban Peso@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Cuban Peso@en"})
 
 (def CVE
   "the currency identifier for Cabo Verde Escudo"
@@ -994,9 +1089,10 @@
    :fibo-fnd-rel-rel/hasTag "CVE",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CVE",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Cabo Verde Escudo@en"})
 
 (def CZK
@@ -1008,9 +1104,11 @@
    :fibo-fnd-rel-rel/hasTag "CZK",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "CZK",
-   :skos/definition #voc/lstr "the currency identifier for Czech Koruna@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Czech Koruna@en"})
 
 (def CaboVerdeEscudo
   "the currency Cabo Verde Escudo"
@@ -1021,9 +1119,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Cabo Verde Escudo",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Cabo Verde Escudo",
-   :skos/definition #voc/lstr "the currency Cabo Verde Escudo@en"})
+   :skos/definition #xsd/langString "the currency Cabo Verde Escudo@en"})
 
 (def CanadianDollar
   "the currency Canadian Dollar"
@@ -1034,9 +1133,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Canadian Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Canadian Dollar",
-   :skos/definition #voc/lstr "the currency Canadian Dollar@en"})
+   :skos/definition #xsd/langString "the currency Canadian Dollar@en"})
 
 (def CaymanIslandsDollar
   "the currency Cayman Islands Dollar"
@@ -1047,9 +1147,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Cayman Islands Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Cayman Islands Dollar",
-   :skos/definition #voc/lstr "the currency Cayman Islands Dollar@en"})
+   :skos/definition #xsd/langString "the currency Cayman Islands Dollar@en"})
 
 (def ChileanPeso
   "the currency Chilean Peso"
@@ -1060,9 +1161,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Chilean Peso",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Chilean Peso",
-   :skos/definition #voc/lstr "the currency Chilean Peso@en"})
+   :skos/definition #xsd/langString "the currency Chilean Peso@en"})
 
 (def ColombianPeso
   "the currency Colombian Peso"
@@ -1073,9 +1175,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Colombian Peso",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Colombian Peso",
-   :skos/definition #voc/lstr "the currency Colombian Peso@en"})
+   :skos/definition #xsd/langString "the currency Colombian Peso@en"})
 
 (def ComorianFranc
   "the currency Comorian Franc"
@@ -1086,9 +1189,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Comorian Franc",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Comorian Franc",
-   :skos/definition #voc/lstr "the currency Comorian Franc@en"})
+   :skos/definition #xsd/langString "the currency Comorian Franc@en"})
 
 (def CongoleseFranc
   "the currency Congolese Franc"
@@ -1099,9 +1203,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Congolese Franc",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Congolese Franc",
-   :skos/definition #voc/lstr "the currency Congolese Franc@en"})
+   :skos/definition #xsd/langString "the currency Congolese Franc@en"})
 
 (def ConvertibleMark
   "the currency Convertible Mark"
@@ -1112,9 +1217,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Convertible Mark",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Convertible Mark",
-   :skos/definition #voc/lstr "the currency Convertible Mark@en"})
+   :skos/definition #xsd/langString "the currency Convertible Mark@en"})
 
 (def CordobaOro
   "the currency Cordoba Oro"
@@ -1125,9 +1231,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Cordoba Oro",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Cordoba Oro",
-   :skos/definition #voc/lstr "the currency Cordoba Oro@en"})
+   :skos/definition #xsd/langString "the currency Cordoba Oro@en"})
 
 (def CostaRicanColon
   "the currency Costa Rican Colon"
@@ -1138,9 +1245,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Costa Rican Colon",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Costa Rican Colon",
-   :skos/definition #voc/lstr "the currency Costa Rican Colon@en"})
+   :skos/definition #xsd/langString "the currency Costa Rican Colon@en"})
 
 (def CubanPeso
   "the currency Cuban Peso"
@@ -1151,9 +1259,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Cuban Peso",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Cuban Peso",
-   :skos/definition #voc/lstr "the currency Cuban Peso@en"})
+   :skos/definition #xsd/langString "the currency Cuban Peso@en"})
 
 (def CzechKoruna
   "the currency Czech Koruna"
@@ -1164,9 +1273,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Czech Koruna",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Czech Koruna",
-   :skos/definition #voc/lstr "the currency Czech Koruna@en"})
+   :skos/definition #xsd/langString "the currency Czech Koruna@en"})
 
 (def DJF
   "the currency identifier for Djibouti Franc"
@@ -1177,9 +1287,11 @@
    :fibo-fnd-rel-rel/hasTag "DJF",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "DJF",
-   :skos/definition #voc/lstr "the currency identifier for Djibouti Franc@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Djibouti Franc@en"})
 
 (def DKK
   "the currency identifier for Danish Krone"
@@ -1190,9 +1302,11 @@
    :fibo-fnd-rel-rel/hasTag "DKK",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "DKK",
-   :skos/definition #voc/lstr "the currency identifier for Danish Krone@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Danish Krone@en"})
 
 (def DOP
   "the currency identifier for Dominican Peso"
@@ -1203,9 +1317,11 @@
    :fibo-fnd-rel-rel/hasTag "DOP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "DOP",
-   :skos/definition #voc/lstr "the currency identifier for Dominican Peso@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Dominican Peso@en"})
 
 (def DZD
   "the currency identifier for Algerian Dinar"
@@ -1216,9 +1332,11 @@
    :fibo-fnd-rel-rel/hasTag "DZD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "DZD",
-   :skos/definition #voc/lstr "the currency identifier for Algerian Dinar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Algerian Dinar@en"})
 
 (def Dalasi
   "the currency Dalasi"
@@ -1229,9 +1347,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Dalasi",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Dalasi",
-   :skos/definition #voc/lstr "the currency Dalasi@en"})
+   :skos/definition #xsd/langString "the currency Dalasi@en"})
 
 (def DanishKrone
   "the currency Danish Krone"
@@ -1243,9 +1362,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Danish Krone",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Currency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Danish Krone",
-   :skos/definition #voc/lstr "the currency Danish Krone@en"})
+   :skos/definition #xsd/langString "the currency Danish Krone@en"})
 
 (def Denar
   "the currency Denar"
@@ -1256,9 +1376,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Denar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Denar",
-   :skos/definition #voc/lstr "the currency Denar@en"})
+   :skos/definition #xsd/langString "the currency Denar@en"})
 
 (def DjiboutiFranc
   "the currency Djibouti Franc"
@@ -1269,9 +1390,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Djibouti Franc",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Djibouti Franc",
-   :skos/definition #voc/lstr "the currency Djibouti Franc@en"})
+   :skos/definition #xsd/langString "the currency Djibouti Franc@en"})
 
 (def Dobra
   "the currency Dobra"
@@ -1282,9 +1404,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Dobra",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Dobra",
-   :skos/definition #voc/lstr "the currency Dobra@en"})
+   :skos/definition #xsd/langString "the currency Dobra@en"})
 
 (def DominicanPeso
   "the currency Dominican Peso"
@@ -1295,9 +1418,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Dominican Peso",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Dominican Peso",
-   :skos/definition #voc/lstr "the currency Dominican Peso@en"})
+   :skos/definition #xsd/langString "the currency Dominican Peso@en"})
 
 (def Dong
   "the currency Dong"
@@ -1308,9 +1432,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Dong",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Dong",
-   :skos/definition #voc/lstr "the currency Dong@en"})
+   :skos/definition #xsd/langString "the currency Dong@en"})
 
 (def EGP
   "the currency identifier for Egyptian Pound"
@@ -1321,9 +1446,11 @@
    :fibo-fnd-rel-rel/hasTag "EGP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "EGP",
-   :skos/definition #voc/lstr "the currency identifier for Egyptian Pound@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Egyptian Pound@en"})
 
 (def ERN
   "the currency identifier for Nakfa"
@@ -1334,9 +1461,10 @@
    :fibo-fnd-rel-rel/hasTag "ERN",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "ERN",
-   :skos/definition #voc/lstr "the currency identifier for Nakfa@en"})
+   :skos/definition #xsd/langString "the currency identifier for Nakfa@en"})
 
 (def ETB
   "the currency identifier for Ethiopian Birr"
@@ -1347,9 +1475,11 @@
    :fibo-fnd-rel-rel/hasTag "ETB",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "ETB",
-   :skos/definition #voc/lstr "the currency identifier for Ethiopian Birr@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Ethiopian Birr@en"})
 
 (def EUR
   "the currency identifier for Euro"
@@ -1360,9 +1490,10 @@
    :fibo-fnd-rel-rel/hasTag "EUR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "EUR",
-   :skos/definition #voc/lstr "the currency identifier for Euro@en"})
+   :skos/definition #xsd/langString "the currency identifier for Euro@en"})
 
 (def EastCaribbeanDollar
   "the currency East Caribbean Dollar"
@@ -1380,9 +1511,10 @@
    :fibo-fnd-rel-rel/hasTextualName "East Caribbean Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "East Caribbean Dollar",
-   :skos/definition #voc/lstr "the currency East Caribbean Dollar@en"})
+   :skos/definition #xsd/langString "the currency East Caribbean Dollar@en"})
 
 (def EgyptianPound
   "the currency Egyptian Pound"
@@ -1393,9 +1525,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Egyptian Pound",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Egyptian Pound",
-   :skos/definition #voc/lstr "the currency Egyptian Pound@en"})
+   :skos/definition #xsd/langString "the currency Egyptian Pound@en"})
 
 (def ElSalvadorColon
   "the currency El Salvador Colon"
@@ -1406,9 +1539,10 @@
    :fibo-fnd-rel-rel/hasTextualName "El Salvador Colon",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "El Salvador Colon",
-   :skos/definition #voc/lstr "the currency El Salvador Colon@en"})
+   :skos/definition #xsd/langString "the currency El Salvador Colon@en"})
 
 (def EthiopianBirr
   "the currency Ethiopian Birr"
@@ -1419,9 +1553,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Ethiopian Birr",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Ethiopian Birr",
-   :skos/definition #voc/lstr "the currency Ethiopian Birr@en"})
+   :skos/definition #xsd/langString "the currency Ethiopian Birr@en"})
 
 (def Euro
   "the currency Euro"
@@ -1466,9 +1601,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Euro",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Currency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Euro",
-   :skos/definition #voc/lstr "the currency Euro@en"})
+   :skos/definition #xsd/langString "the currency Euro@en"})
 
 (def FJD
   "the currency identifier for Fiji Dollar"
@@ -1479,9 +1615,11 @@
    :fibo-fnd-rel-rel/hasTag "FJD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "FJD",
-   :skos/definition #voc/lstr "the currency identifier for Fiji Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Fiji Dollar@en"})
 
 (def FKP
   "the currency identifier for Falkland Islands Pound"
@@ -1492,9 +1630,10 @@
    :fibo-fnd-rel-rel/hasTag "FKP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "FKP",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Falkland Islands Pound@en"})
 
 (def FalklandIslandsPound
@@ -1506,9 +1645,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Falkland Islands Pound",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Falkland Islands Pound",
-   :skos/definition #voc/lstr "the currency Falkland Islands Pound@en"})
+   :skos/definition #xsd/langString "the currency Falkland Islands Pound@en"})
 
 (def FijiDollar
   "the currency Fiji Dollar"
@@ -1519,9 +1659,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Fiji Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Fiji Dollar",
-   :skos/definition #voc/lstr "the currency Fiji Dollar@en"})
+   :skos/definition #xsd/langString "the currency Fiji Dollar@en"})
 
 (def Forint
   "the currency Forint"
@@ -1532,9 +1673,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Forint",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Forint",
-   :skos/definition #voc/lstr "the currency Forint@en"})
+   :skos/definition #xsd/langString "the currency Forint@en"})
 
 (def GBP
   "the currency identifier for Pound Sterling"
@@ -1545,9 +1687,11 @@
    :fibo-fnd-rel-rel/hasTag "GBP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "GBP",
-   :skos/definition #voc/lstr "the currency identifier for Pound Sterling@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Pound Sterling@en"})
 
 (def GEL
   "the currency identifier for Lari"
@@ -1558,9 +1702,10 @@
    :fibo-fnd-rel-rel/hasTag "GEL",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "GEL",
-   :skos/definition #voc/lstr "the currency identifier for Lari@en"})
+   :skos/definition #xsd/langString "the currency identifier for Lari@en"})
 
 (def GHS
   "the currency identifier for Ghana Cedi"
@@ -1571,9 +1716,11 @@
    :fibo-fnd-rel-rel/hasTag "GHS",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "GHS",
-   :skos/definition #voc/lstr "the currency identifier for Ghana Cedi@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Ghana Cedi@en"})
 
 (def GIP
   "the currency identifier for Gibraltar Pound"
@@ -1584,9 +1731,11 @@
    :fibo-fnd-rel-rel/hasTag "GIP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "GIP",
-   :skos/definition #voc/lstr "the currency identifier for Gibraltar Pound@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Gibraltar Pound@en"})
 
 (def GMD
   "the currency identifier for Dalasi"
@@ -1597,9 +1746,10 @@
    :fibo-fnd-rel-rel/hasTag "GMD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "GMD",
-   :skos/definition #voc/lstr "the currency identifier for Dalasi@en"})
+   :skos/definition #xsd/langString "the currency identifier for Dalasi@en"})
 
 (def GNF
   "the currency identifier for Guinean Franc"
@@ -1610,9 +1760,11 @@
    :fibo-fnd-rel-rel/hasTag "GNF",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "GNF",
-   :skos/definition #voc/lstr "the currency identifier for Guinean Franc@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Guinean Franc@en"})
 
 (def GTQ
   "the currency identifier for Quetzal"
@@ -1623,9 +1775,10 @@
    :fibo-fnd-rel-rel/hasTag "GTQ",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "GTQ",
-   :skos/definition #voc/lstr "the currency identifier for Quetzal@en"})
+   :skos/definition #xsd/langString "the currency identifier for Quetzal@en"})
 
 (def GYD
   "the currency identifier for Guyana Dollar"
@@ -1636,9 +1789,11 @@
    :fibo-fnd-rel-rel/hasTag "GYD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "GYD",
-   :skos/definition #voc/lstr "the currency identifier for Guyana Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Guyana Dollar@en"})
 
 (def GhanaCedi
   "the currency Ghana Cedi"
@@ -1649,9 +1804,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Ghana Cedi",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Ghana Cedi",
-   :skos/definition #voc/lstr "the currency Ghana Cedi@en"})
+   :skos/definition #xsd/langString "the currency Ghana Cedi@en"})
 
 (def GibraltarPound
   "the currency Gibraltar Pound"
@@ -1662,9 +1818,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Gibraltar Pound",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Gibraltar Pound",
-   :skos/definition #voc/lstr "the currency Gibraltar Pound@en"})
+   :skos/definition #xsd/langString "the currency Gibraltar Pound@en"})
 
 (def Gold
   "the currency whose unit is one troy ounce of the precious metal Gold"
@@ -1673,10 +1830,11 @@
    :fibo-fnd-rel-rel/hasTextualName "Gold",
    :rdf/type [:fibo-fnd-acc-cur/PreciousMetal :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Gold",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "the currency whose unit is one troy ounce of the precious metal Gold@en"})
 
 (def Gourde
@@ -1688,9 +1846,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Gourde",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Gourde",
-   :skos/definition #voc/lstr "the currency Gourde@en"})
+   :skos/definition #xsd/langString "the currency Gourde@en"})
 
 (def Guarani
   "the currency Guarani"
@@ -1701,9 +1860,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Guarani",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Guarani",
-   :skos/definition #voc/lstr "the currency Guarani@en"})
+   :skos/definition #xsd/langString "the currency Guarani@en"})
 
 (def GuineanFranc
   "the currency Guinean Franc"
@@ -1714,9 +1874,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Guinean Franc",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Guinean Franc",
-   :skos/definition #voc/lstr "the currency Guinean Franc@en"})
+   :skos/definition #xsd/langString "the currency Guinean Franc@en"})
 
 (def GuyanaDollar
   "the currency Guyana Dollar"
@@ -1727,9 +1888,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Guyana Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Guyana Dollar",
-   :skos/definition #voc/lstr "the currency Guyana Dollar@en"})
+   :skos/definition #xsd/langString "the currency Guyana Dollar@en"})
 
 (def HKD
   "the currency identifier for Hong Kong Dollar"
@@ -1740,9 +1902,10 @@
    :fibo-fnd-rel-rel/hasTag "HKD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "HKD",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Hong Kong Dollar@en"})
 
 (def HNL
@@ -1754,9 +1917,10 @@
    :fibo-fnd-rel-rel/hasTag "HNL",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "HNL",
-   :skos/definition #voc/lstr "the currency identifier for Lempira@en"})
+   :skos/definition #xsd/langString "the currency identifier for Lempira@en"})
 
 (def HRK
   "the currency identifier for Kuna"
@@ -1768,9 +1932,10 @@
    :owl/deprecated true,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/CurrencyIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "HRK",
-   :skos/definition #voc/lstr "the currency identifier for Kuna@en"})
+   :skos/definition #xsd/langString "the currency identifier for Kuna@en"})
 
 (def HTG
   "the currency identifier for Gourde"
@@ -1781,9 +1946,10 @@
    :fibo-fnd-rel-rel/hasTag "HTG",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "HTG",
-   :skos/definition #voc/lstr "the currency identifier for Gourde@en"})
+   :skos/definition #xsd/langString "the currency identifier for Gourde@en"})
 
 (def HUF
   "the currency identifier for Forint"
@@ -1794,9 +1960,10 @@
    :fibo-fnd-rel-rel/hasTag "HUF",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "HUF",
-   :skos/definition #voc/lstr "the currency identifier for Forint@en"})
+   :skos/definition #xsd/langString "the currency identifier for Forint@en"})
 
 (def HongKongDollar
   "the currency Hong Kong Dollar"
@@ -1807,9 +1974,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Hong Kong Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Hong Kong Dollar",
-   :skos/definition #voc/lstr "the currency Hong Kong Dollar@en"})
+   :skos/definition #xsd/langString "the currency Hong Kong Dollar@en"})
 
 (def Hryvnia
   "the currency Hryvnia"
@@ -1820,9 +1988,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Hryvnia",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Hryvnia",
-   :skos/definition #voc/lstr "the currency Hryvnia@en"})
+   :skos/definition #xsd/langString "the currency Hryvnia@en"})
 
 (def IDR
   "the currency identifier for Rupiah"
@@ -1833,9 +2002,10 @@
    :fibo-fnd-rel-rel/hasTag "IDR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "IDR",
-   :skos/definition #voc/lstr "the currency identifier for Rupiah@en"})
+   :skos/definition #xsd/langString "the currency identifier for Rupiah@en"})
 
 (def ILS
   "the currency identifier for New Israeli Sheqel"
@@ -1846,9 +2016,10 @@
    :fibo-fnd-rel-rel/hasTag "ILS",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "ILS",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for New Israeli Sheqel@en"})
 
 (def INR
@@ -1860,9 +2031,11 @@
    :fibo-fnd-rel-rel/hasTag "INR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "INR",
-   :skos/definition #voc/lstr "the currency identifier for Indian Rupee@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Indian Rupee@en"})
 
 (def IQD
   "the currency identifier for Iraqi Dinar"
@@ -1873,9 +2046,11 @@
    :fibo-fnd-rel-rel/hasTag "IQD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "IQD",
-   :skos/definition #voc/lstr "the currency identifier for Iraqi Dinar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Iraqi Dinar@en"})
 
 (def IRR
   "the currency identifier for Iranian Rial"
@@ -1886,9 +2061,11 @@
    :fibo-fnd-rel-rel/hasTag "IRR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "IRR",
-   :skos/definition #voc/lstr "the currency identifier for Iranian Rial@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Iranian Rial@en"})
 
 (def ISK
   "the currency identifier for Iceland Krona"
@@ -1899,9 +2076,11 @@
    :fibo-fnd-rel-rel/hasTag "ISK",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "ISK",
-   :skos/definition #voc/lstr "the currency identifier for Iceland Krona@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Iceland Krona@en"})
 
 (def ISO4217-CodeSet
   "the set of currency identifiers that comprise the ISO 4217 specification"
@@ -1909,7 +2088,8 @@
    :rdf/type
    [:cmns-id/IdentificationScheme :cmns-cds/CodeSet :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "ISO 4217 code set",
    :skos/definition
    "the set of currency identifiers that comprise the ISO 4217 specification"})
@@ -1923,9 +2103,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Iceland Krona",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Iceland Krona",
-   :skos/definition #voc/lstr "the currency Iceland Krona@en"})
+   :skos/definition #xsd/langString "the currency Iceland Krona@en"})
 
 (def IndianRupee
   "the currency Indian Rupee"
@@ -1936,9 +2117,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Indian Rupee",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Indian Rupee",
-   :skos/definition #voc/lstr "the currency Indian Rupee@en"})
+   :skos/definition #xsd/langString "the currency Indian Rupee@en"})
 
 (def IranianRial
   "the currency Iranian Rial"
@@ -1949,9 +2131,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Iranian Rial",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Iranian Rial",
-   :skos/definition #voc/lstr "the currency Iranian Rial@en"})
+   :skos/definition #xsd/langString "the currency Iranian Rial@en"})
 
 (def IraqiDinar
   "the currency Iraqi Dinar"
@@ -1962,9 +2145,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Iraqi Dinar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Iraqi Dinar",
-   :skos/definition #voc/lstr "the currency Iraqi Dinar@en"})
+   :skos/definition #xsd/langString "the currency Iraqi Dinar@en"})
 
 (def JMD
   "the currency identifier for Jamaican Dollar"
@@ -1975,9 +2159,11 @@
    :fibo-fnd-rel-rel/hasTag "JMD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "JMD",
-   :skos/definition #voc/lstr "the currency identifier for Jamaican Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Jamaican Dollar@en"})
 
 (def JOD
   "the currency identifier for Jordanian Dinar"
@@ -1988,9 +2174,11 @@
    :fibo-fnd-rel-rel/hasTag "JOD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "JOD",
-   :skos/definition #voc/lstr "the currency identifier for Jordanian Dinar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Jordanian Dinar@en"})
 
 (def JPY
   "the currency identifier for Yen"
@@ -2001,9 +2189,10 @@
    :fibo-fnd-rel-rel/hasTag "JPY",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "JPY",
-   :skos/definition #voc/lstr "the currency identifier for Yen@en"})
+   :skos/definition #xsd/langString "the currency identifier for Yen@en"})
 
 (def JamaicanDollar
   "the currency Jamaican Dollar"
@@ -2014,9 +2203,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Jamaican Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Jamaican Dollar",
-   :skos/definition #voc/lstr "the currency Jamaican Dollar@en"})
+   :skos/definition #xsd/langString "the currency Jamaican Dollar@en"})
 
 (def JordanianDinar
   "the currency Jordanian Dinar"
@@ -2027,9 +2217,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Jordanian Dinar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Jordanian Dinar",
-   :skos/definition #voc/lstr "the currency Jordanian Dinar@en"})
+   :skos/definition #xsd/langString "the currency Jordanian Dinar@en"})
 
 (def KES
   "the currency identifier for Kenyan Shilling"
@@ -2040,9 +2231,11 @@
    :fibo-fnd-rel-rel/hasTag "KES",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "KES",
-   :skos/definition #voc/lstr "the currency identifier for Kenyan Shilling@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Kenyan Shilling@en"})
 
 (def KGS
   "the currency identifier for Som"
@@ -2053,9 +2246,10 @@
    :fibo-fnd-rel-rel/hasTag "KGS",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "KGS",
-   :skos/definition #voc/lstr "the currency identifier for Som@en"})
+   :skos/definition #xsd/langString "the currency identifier for Som@en"})
 
 (def KHR
   "the currency identifier for Riel"
@@ -2066,9 +2260,10 @@
    :fibo-fnd-rel-rel/hasTag "KHR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "KHR",
-   :skos/definition #voc/lstr "the currency identifier for Riel@en"})
+   :skos/definition #xsd/langString "the currency identifier for Riel@en"})
 
 (def KMF
   "the currency identifier for Comorian Franc"
@@ -2079,9 +2274,11 @@
    :fibo-fnd-rel-rel/hasTag "KMF",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "KMF",
-   :skos/definition #voc/lstr "the currency identifier for Comorian Franc@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Comorian Franc@en"})
 
 (def KPW
   "the currency identifier for North Korean Won"
@@ -2092,9 +2289,10 @@
    :fibo-fnd-rel-rel/hasTag "KPW",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "KPW",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for North Korean Won@en"})
 
 (def KRW
@@ -2106,9 +2304,10 @@
    :fibo-fnd-rel-rel/hasTag "KRW",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "KRW",
-   :skos/definition #voc/lstr "the currency identifier for Won@en"})
+   :skos/definition #xsd/langString "the currency identifier for Won@en"})
 
 (def KWD
   "the currency identifier for Kuwaiti Dinar"
@@ -2119,9 +2318,11 @@
    :fibo-fnd-rel-rel/hasTag "KWD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "KWD",
-   :skos/definition #voc/lstr "the currency identifier for Kuwaiti Dinar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Kuwaiti Dinar@en"})
 
 (def KYD
   "the currency identifier for Cayman Islands Dollar"
@@ -2132,9 +2333,10 @@
    :fibo-fnd-rel-rel/hasTag "KYD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "KYD",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Cayman Islands Dollar@en"})
 
 (def KZT
@@ -2146,9 +2348,10 @@
    :fibo-fnd-rel-rel/hasTag "KZT",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "KZT",
-   :skos/definition #voc/lstr "the currency identifier for Tenge@en"})
+   :skos/definition #xsd/langString "the currency identifier for Tenge@en"})
 
 (def KenyanShilling
   "the currency Kenyan Shilling"
@@ -2159,9 +2362,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Kenyan Shilling",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Kenyan Shilling",
-   :skos/definition #voc/lstr "the currency Kenyan Shilling@en"})
+   :skos/definition #xsd/langString "the currency Kenyan Shilling@en"})
 
 (def Kina
   "the currency Kina"
@@ -2172,9 +2376,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Kina",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Kina",
-   :skos/definition #voc/lstr "the currency Kina@en"})
+   :skos/definition #xsd/langString "the currency Kina@en"})
 
 (def Kuna
   "the currency Kuna"
@@ -2188,9 +2393,10 @@
    :owl/deprecated true,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Currency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Kuna",
-   :skos/definition #voc/lstr "the currency Kuna@en",
+   :skos/definition #xsd/langString "the currency Kuna@en",
    :skos/note
    "Effective 1 Jan 2023, Croatia will use the Euro as its primary currency. The Kuna (HRK) and Euro (EUR) will be used during the parallel circulation period from 1 January 2023 to 14 January 2023 inclusive. The period of mandatory dual price display lasts from 5 September 2022 to 31 December 2023. As of 1 January 2023, the Kuna should be listed as the old/historic currency of Croatia. The exchange rate is fixed at EUR 1 = HRK 7.53450"})
 
@@ -2203,9 +2409,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Kuwaiti Dinar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Kuwaiti Dinar",
-   :skos/definition #voc/lstr "the currency Kuwaiti Dinar@en"})
+   :skos/definition #xsd/langString "the currency Kuwaiti Dinar@en"})
 
 (def Kwanza
   "the currency Kwanza"
@@ -2216,9 +2423,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Kwanza",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Kwanza",
-   :skos/definition #voc/lstr "the currency Kwanza@en"})
+   :skos/definition #xsd/langString "the currency Kwanza@en"})
 
 (def Kyat
   "the currency Kyat"
@@ -2229,9 +2437,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Kyat",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Kyat",
-   :skos/definition #voc/lstr "the currency Kyat@en"})
+   :skos/definition #xsd/langString "the currency Kyat@en"})
 
 (def LAK
   "the currency identifier for Lao Kip"
@@ -2242,9 +2451,10 @@
    :fibo-fnd-rel-rel/hasTag "LAK",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "LAK",
-   :skos/definition #voc/lstr "the currency identifier for Lao Kip@en"})
+   :skos/definition #xsd/langString "the currency identifier for Lao Kip@en"})
 
 (def LBP
   "the currency identifier for Lebanese Pound"
@@ -2255,9 +2465,11 @@
    :fibo-fnd-rel-rel/hasTag "LBP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "LBP",
-   :skos/definition #voc/lstr "the currency identifier for Lebanese Pound@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Lebanese Pound@en"})
 
 (def LKR
   "the currency identifier for Sri Lanka Rupee"
@@ -2268,9 +2480,11 @@
    :fibo-fnd-rel-rel/hasTag "LKR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "LKR",
-   :skos/definition #voc/lstr "the currency identifier for Sri Lanka Rupee@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Sri Lanka Rupee@en"})
 
 (def LRD
   "the currency identifier for Liberian Dollar"
@@ -2281,9 +2495,11 @@
    :fibo-fnd-rel-rel/hasTag "LRD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "LRD",
-   :skos/definition #voc/lstr "the currency identifier for Liberian Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Liberian Dollar@en"})
 
 (def LSL
   "the currency identifier for Loti"
@@ -2294,9 +2510,10 @@
    :fibo-fnd-rel-rel/hasTag "LSL",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "LSL",
-   :skos/definition #voc/lstr "the currency identifier for Loti@en"})
+   :skos/definition #xsd/langString "the currency identifier for Loti@en"})
 
 (def LYD
   "the currency identifier for Libyan Dinar"
@@ -2307,9 +2524,11 @@
    :fibo-fnd-rel-rel/hasTag "LYD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "LYD",
-   :skos/definition #voc/lstr "the currency identifier for Libyan Dinar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Libyan Dinar@en"})
 
 (def LaoKip
   "the currency Lao Kip"
@@ -2320,9 +2539,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Lao Kip",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Lao Kip",
-   :skos/definition #voc/lstr "the currency Lao Kip@en"})
+   :skos/definition #xsd/langString "the currency Lao Kip@en"})
 
 (def Lari
   "the currency Lari"
@@ -2333,9 +2553,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Lari",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Lari",
-   :skos/definition #voc/lstr "the currency Lari@en"})
+   :skos/definition #xsd/langString "the currency Lari@en"})
 
 (def LebanesePound
   "the currency Lebanese Pound"
@@ -2346,9 +2567,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Lebanese Pound",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Lebanese Pound",
-   :skos/definition #voc/lstr "the currency Lebanese Pound@en"})
+   :skos/definition #xsd/langString "the currency Lebanese Pound@en"})
 
 (def Lek
   "the currency Lek"
@@ -2359,9 +2581,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Lek",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Lek",
-   :skos/definition #voc/lstr "the currency Lek@en"})
+   :skos/definition #xsd/langString "the currency Lek@en"})
 
 (def Lempira
   "the currency Lempira"
@@ -2372,9 +2595,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Lempira",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Lempira",
-   :skos/definition #voc/lstr "the currency Lempira@en"})
+   :skos/definition #xsd/langString "the currency Lempira@en"})
 
 (def Leone
   "the currency Leone"
@@ -2385,9 +2609,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Leone",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Leone",
-   :skos/definition #voc/lstr "the currency Leone@en",
+   :skos/definition #xsd/langString "the currency Leone@en",
    :skos/note
    "The Sierra Leonean LEONE (SLL) is redenominated by removing three (3) zeros from the denominations. A new currency code SLE/925 representing the new valuation (1,000 times old SLL/694) is introduced on 1st April 2022 for any internal needs during the redenomination process, and is replacing SLL as the official currency code, after the transition period to be determined. During this transition period, both the old Leone and new Leone will be in physical circulation for at least 90 days. The Bank of Sierra Leone will adopt the new code in the local system but SLL/694 shall remain in use until further notice. The Sierra Leonean currency shall continue to be the LEONE and this will not change after redenomination."})
 
@@ -2400,9 +2625,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Liberian Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Liberian Dollar",
-   :skos/definition #voc/lstr "the currency Liberian Dollar@en"})
+   :skos/definition #xsd/langString "the currency Liberian Dollar@en"})
 
 (def LibyanDinar
   "the currency Libyan Dinar"
@@ -2413,9 +2639,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Libyan Dinar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Libyan Dinar",
-   :skos/definition #voc/lstr "the currency Libyan Dinar@en"})
+   :skos/definition #xsd/langString "the currency Libyan Dinar@en"})
 
 (def Lilangeni
   "the currency Lilangeni"
@@ -2426,9 +2653,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Lilangeni",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Lilangeni",
-   :skos/definition #voc/lstr "the currency Lilangeni@en"})
+   :skos/definition #xsd/langString "the currency Lilangeni@en"})
 
 (def Loti
   "the currency Loti"
@@ -2439,9 +2667,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Loti",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Loti",
-   :skos/definition #voc/lstr "the currency Loti@en"})
+   :skos/definition #xsd/langString "the currency Loti@en"})
 
 (def MAD
   "the currency identifier for Moroccan Dirham"
@@ -2452,9 +2681,11 @@
    :fibo-fnd-rel-rel/hasTag "MAD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MAD",
-   :skos/definition #voc/lstr "the currency identifier for Moroccan Dirham@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Moroccan Dirham@en"})
 
 (def MDL
   "the currency identifier for Moldovan Leu"
@@ -2465,9 +2696,11 @@
    :fibo-fnd-rel-rel/hasTag "MDL",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MDL",
-   :skos/definition #voc/lstr "the currency identifier for Moldovan Leu@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Moldovan Leu@en"})
 
 (def MGA
   "the currency identifier for Malagasy Ariary"
@@ -2478,9 +2711,11 @@
    :fibo-fnd-rel-rel/hasTag "MGA",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MGA",
-   :skos/definition #voc/lstr "the currency identifier for Malagasy Ariary@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Malagasy Ariary@en"})
 
 (def MKD
   "the currency identifier for Denar"
@@ -2491,9 +2726,10 @@
    :fibo-fnd-rel-rel/hasTag "MKD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MKD",
-   :skos/definition #voc/lstr "the currency identifier for Denar@en"})
+   :skos/definition #xsd/langString "the currency identifier for Denar@en"})
 
 (def MMK
   "the currency identifier for Kyat"
@@ -2504,9 +2740,10 @@
    :fibo-fnd-rel-rel/hasTag "MMK",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MMK",
-   :skos/definition #voc/lstr "the currency identifier for Kyat@en"})
+   :skos/definition #xsd/langString "the currency identifier for Kyat@en"})
 
 (def MNT
   "the currency identifier for Tugrik"
@@ -2517,9 +2754,10 @@
    :fibo-fnd-rel-rel/hasTag "MNT",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MNT",
-   :skos/definition #voc/lstr "the currency identifier for Tugrik@en"})
+   :skos/definition #xsd/langString "the currency identifier for Tugrik@en"})
 
 (def MOP
   "the currency identifier for Pataca"
@@ -2530,9 +2768,10 @@
    :fibo-fnd-rel-rel/hasTag "MOP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MOP",
-   :skos/definition #voc/lstr "the currency identifier for Pataca@en"})
+   :skos/definition #xsd/langString "the currency identifier for Pataca@en"})
 
 (def MRU
   "the currency identifier for Ouguiya"
@@ -2543,9 +2782,10 @@
    :fibo-fnd-rel-rel/hasTag "MRU",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MRU",
-   :skos/definition #voc/lstr "the currency identifier for Ouguiya@en"})
+   :skos/definition #xsd/langString "the currency identifier for Ouguiya@en"})
 
 (def MUR
   "the currency identifier for Mauritius Rupee"
@@ -2556,9 +2796,11 @@
    :fibo-fnd-rel-rel/hasTag "MUR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MUR",
-   :skos/definition #voc/lstr "the currency identifier for Mauritius Rupee@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Mauritius Rupee@en"})
 
 (def MVR
   "the currency identifier for Rufiyaa"
@@ -2569,9 +2811,10 @@
    :fibo-fnd-rel-rel/hasTag "MVR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MVR",
-   :skos/definition #voc/lstr "the currency identifier for Rufiyaa@en"})
+   :skos/definition #xsd/langString "the currency identifier for Rufiyaa@en"})
 
 (def MWK
   "the currency identifier for Malawi Kwacha"
@@ -2582,9 +2825,11 @@
    :fibo-fnd-rel-rel/hasTag "MWK",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MWK",
-   :skos/definition #voc/lstr "the currency identifier for Malawi Kwacha@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Malawi Kwacha@en"})
 
 (def MXN
   "the currency identifier for Mexican Peso"
@@ -2595,9 +2840,11 @@
    :fibo-fnd-rel-rel/hasTag "MXN",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MXN",
-   :skos/definition #voc/lstr "the currency identifier for Mexican Peso@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Mexican Peso@en"})
 
 (def MXV
   "the funds identifier for Mexican Unidad de Inversion (UDI)"
@@ -2608,10 +2855,12 @@
    :fibo-fnd-rel-rel/hasTag "MXV",
    :rdf/type [:fibo-fnd-acc-cur/FundsIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MXV",
    :skos/definition
-   #voc/lstr "the funds identifier for Mexican Unidad de Inversion (UDI)@en"})
+   #xsd/langString
+    "the funds identifier for Mexican Unidad de Inversion (UDI)@en"})
 
 (def MYR
   "the currency identifier for Malaysian Ringgit"
@@ -2622,9 +2871,10 @@
    :fibo-fnd-rel-rel/hasTag "MYR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MYR",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Malaysian Ringgit@en"})
 
 (def MZN
@@ -2636,9 +2886,10 @@
    :fibo-fnd-rel-rel/hasTag "MZN",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "MZN",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Mozambique Metical@en"})
 
 (def MalagasyAriary
@@ -2650,9 +2901,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Malagasy Ariary",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Malagasy Ariary",
-   :skos/definition #voc/lstr "the currency Malagasy Ariary@en"})
+   :skos/definition #xsd/langString "the currency Malagasy Ariary@en"})
 
 (def MalawiKwacha
   "the currency Malawi Kwacha"
@@ -2663,9 +2915,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Malawi Kwacha",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Malawi Kwacha",
-   :skos/definition #voc/lstr "the currency Malawi Kwacha@en"})
+   :skos/definition #xsd/langString "the currency Malawi Kwacha@en"})
 
 (def MalaysianRinggit
   "the currency Malaysian Ringgit"
@@ -2676,9 +2929,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Malaysian Ringgit",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Malaysian Ringgit",
-   :skos/definition #voc/lstr "the currency Malaysian Ringgit@en"})
+   :skos/definition #xsd/langString "the currency Malaysian Ringgit@en"})
 
 (def MauritiusRupee
   "the currency Mauritius Rupee"
@@ -2689,9 +2943,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Mauritius Rupee",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Mauritius Rupee",
-   :skos/definition #voc/lstr "the currency Mauritius Rupee@en"})
+   :skos/definition #xsd/langString "the currency Mauritius Rupee@en"})
 
 (def MexicanPeso
   "the currency Mexican Peso"
@@ -2702,9 +2957,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Mexican Peso",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Mexican Peso",
-   :skos/definition #voc/lstr "the currency Mexican Peso@en"})
+   :skos/definition #xsd/langString "the currency Mexican Peso@en"})
 
 (def MexicanUnidaddeInversion_UDI
   "the funds Mexican Unidad de Inversion (UDI)"
@@ -2718,9 +2974,11 @@
    :fibo-fnd-rel-rel/hasTextualName "Mexican Unidad de Inversion (UDI)",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Funds],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Mexican Unidad de Inversion (UDI)",
-   :skos/definition #voc/lstr "the funds Mexican Unidad de Inversion (UDI)@en"})
+   :skos/definition #xsd/langString
+                     "the funds Mexican Unidad de Inversion (UDI)@en"})
 
 (def MoldovanLeu
   "the currency Moldovan Leu"
@@ -2731,9 +2989,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Moldovan Leu",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Moldovan Leu",
-   :skos/definition #voc/lstr "the currency Moldovan Leu@en"})
+   :skos/definition #xsd/langString "the currency Moldovan Leu@en"})
 
 (def MoroccanDirham
   "the currency Moroccan Dirham"
@@ -2744,9 +3003,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Moroccan Dirham",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Currency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Moroccan Dirham",
-   :skos/definition #voc/lstr "the currency Moroccan Dirham@en"})
+   :skos/definition #xsd/langString "the currency Moroccan Dirham@en"})
 
 (def MozambiqueMetical
   "the currency Mozambique Metical"
@@ -2757,9 +3017,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Mozambique Metical",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Mozambique Metical",
-   :skos/definition #voc/lstr "the currency Mozambique Metical@en"})
+   :skos/definition #xsd/langString "the currency Mozambique Metical@en"})
 
 (def Mvdol
   "the funds Mvdol"
@@ -2773,9 +3034,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Mvdol",
    :rdf/type [:fibo-fnd-acc-cur/Funds :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Mvdol",
-   :skos/definition #voc/lstr "the funds Mvdol@en"})
+   :skos/definition #xsd/langString "the funds Mvdol@en"})
 
 (def NAD
   "the currency identifier for Namibia Dollar"
@@ -2786,9 +3048,11 @@
    :fibo-fnd-rel-rel/hasTag "NAD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "NAD",
-   :skos/definition #voc/lstr "the currency identifier for Namibia Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Namibia Dollar@en"})
 
 (def NGN
   "the currency identifier for Naira"
@@ -2799,9 +3063,10 @@
    :fibo-fnd-rel-rel/hasTag "NGN",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "NGN",
-   :skos/definition #voc/lstr "the currency identifier for Naira@en"})
+   :skos/definition #xsd/langString "the currency identifier for Naira@en"})
 
 (def NIO
   "the currency identifier for Cordoba Oro"
@@ -2812,9 +3077,11 @@
    :fibo-fnd-rel-rel/hasTag "NIO",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "NIO",
-   :skos/definition #voc/lstr "the currency identifier for Cordoba Oro@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Cordoba Oro@en"})
 
 (def NOK
   "the currency identifier for Norwegian Krone"
@@ -2825,9 +3092,11 @@
    :fibo-fnd-rel-rel/hasTag "NOK",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "NOK",
-   :skos/definition #voc/lstr "the currency identifier for Norwegian Krone@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Norwegian Krone@en"})
 
 (def NPR
   "the currency identifier for Nepalese Rupee"
@@ -2838,9 +3107,11 @@
    :fibo-fnd-rel-rel/hasTag "NPR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "NPR",
-   :skos/definition #voc/lstr "the currency identifier for Nepalese Rupee@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Nepalese Rupee@en"})
 
 (def NZD
   "the currency identifier for New Zealand Dollar"
@@ -2851,9 +3122,10 @@
    :fibo-fnd-rel-rel/hasTag "NZD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "NZD",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for New Zealand Dollar@en"})
 
 (def Naira
@@ -2865,9 +3137,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Naira",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Naira",
-   :skos/definition #voc/lstr "the currency Naira@en"})
+   :skos/definition #xsd/langString "the currency Naira@en"})
 
 (def Nakfa
   "the currency Nakfa"
@@ -2878,9 +3151,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Nakfa",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Nakfa",
-   :skos/definition #voc/lstr "the currency Nakfa@en"})
+   :skos/definition #xsd/langString "the currency Nakfa@en"})
 
 (def NamibiaDollar
   "the currency Namibia Dollar"
@@ -2891,9 +3165,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Namibia Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Namibia Dollar",
-   :skos/definition #voc/lstr "the currency Namibia Dollar@en"})
+   :skos/definition #xsd/langString "the currency Namibia Dollar@en"})
 
 (def NepaleseRupee
   "the currency Nepalese Rupee"
@@ -2904,9 +3179,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Nepalese Rupee",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Nepalese Rupee",
-   :skos/definition #voc/lstr "the currency Nepalese Rupee@en"})
+   :skos/definition #xsd/langString "the currency Nepalese Rupee@en"})
 
 (def NetherlandsAntilleanGuilder
   "the currency Netherlands Antillean Guilder"
@@ -2917,9 +3193,11 @@
    :fibo-fnd-rel-rel/hasTextualName "Netherlands Antillean Guilder",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Netherlands Antillean Guilder",
-   :skos/definition #voc/lstr "the currency Netherlands Antillean Guilder@en"})
+   :skos/definition #xsd/langString
+                     "the currency Netherlands Antillean Guilder@en"})
 
 (def NewIsraeliSheqel
   "the currency New Israeli Sheqel"
@@ -2930,9 +3208,10 @@
    :fibo-fnd-rel-rel/hasTextualName "New Israeli Sheqel",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "New Israeli Sheqel",
-   :skos/definition #voc/lstr "the currency New Israeli Sheqel@en"})
+   :skos/definition #xsd/langString "the currency New Israeli Sheqel@en"})
 
 (def NewTaiwanDollar
   "the currency New Taiwan Dollar"
@@ -2943,9 +3222,10 @@
    :fibo-fnd-rel-rel/hasTextualName "New Taiwan Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "New Taiwan Dollar",
-   :skos/definition #voc/lstr "the currency New Taiwan Dollar@en"})
+   :skos/definition #xsd/langString "the currency New Taiwan Dollar@en"})
 
 (def NewZealandDollar
   "the currency New Zealand Dollar"
@@ -2960,9 +3240,10 @@
    :fibo-fnd-rel-rel/hasTextualName "New Zealand Dollar",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Currency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "New Zealand Dollar",
-   :skos/definition #voc/lstr "the currency New Zealand Dollar@en"})
+   :skos/definition #xsd/langString "the currency New Zealand Dollar@en"})
 
 (def Ngultrum
   "the currency Ngultrum"
@@ -2973,9 +3254,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Ngultrum",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Ngultrum",
-   :skos/definition #voc/lstr "the currency Ngultrum@en"})
+   :skos/definition #xsd/langString "the currency Ngultrum@en"})
 
 (def NorthKoreanWon
   "the currency North Korean Won"
@@ -2986,9 +3268,10 @@
    :fibo-fnd-rel-rel/hasTextualName "North Korean Won",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "North Korean Won",
-   :skos/definition #voc/lstr "the currency North Korean Won@en"})
+   :skos/definition #xsd/langString "the currency North Korean Won@en"})
 
 (def NorwegianKrone
   "the currency Norwegian Krone"
@@ -3001,9 +3284,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Norwegian Krone",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Norwegian Krone",
-   :skos/definition #voc/lstr "the currency Norwegian Krone@en"})
+   :skos/definition #xsd/langString "the currency Norwegian Krone@en"})
 
 (def OMR
   "the currency identifier for Rial Omani"
@@ -3014,9 +3298,11 @@
    :fibo-fnd-rel-rel/hasTag "OMR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "OMR",
-   :skos/definition #voc/lstr "the currency identifier for Rial Omani@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Rial Omani@en"})
 
 (def Ouguiya
   "the currency Ouguiya"
@@ -3027,9 +3313,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Ouguiya",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Ouguiya",
-   :skos/definition #voc/lstr "the currency Ouguiya@en"})
+   :skos/definition #xsd/langString "the currency Ouguiya@en"})
 
 (def PAB
   "the currency identifier for Balboa"
@@ -3040,9 +3327,10 @@
    :fibo-fnd-rel-rel/hasTag "PAB",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "PAB",
-   :skos/definition #voc/lstr "the currency identifier for Balboa@en"})
+   :skos/definition #xsd/langString "the currency identifier for Balboa@en"})
 
 (def PEN
   "the currency identifier for Sol"
@@ -3053,9 +3341,10 @@
    :fibo-fnd-rel-rel/hasTag "PEN",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "PEN",
-   :skos/definition #voc/lstr "the currency identifier for Sol@en"})
+   :skos/definition #xsd/langString "the currency identifier for Sol@en"})
 
 (def PGK
   "the currency identifier for Kina"
@@ -3066,9 +3355,10 @@
    :fibo-fnd-rel-rel/hasTag "PGK",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "PGK",
-   :skos/definition #voc/lstr "the currency identifier for Kina@en"})
+   :skos/definition #xsd/langString "the currency identifier for Kina@en"})
 
 (def PHP
   "the currency identifier for Philippine Peso"
@@ -3079,9 +3369,11 @@
    :fibo-fnd-rel-rel/hasTag "PHP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "PHP",
-   :skos/definition #voc/lstr "the currency identifier for Philippine Peso@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Philippine Peso@en"})
 
 (def PKR
   "the currency identifier for Pakistan Rupee"
@@ -3092,9 +3384,11 @@
    :fibo-fnd-rel-rel/hasTag "PKR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "PKR",
-   :skos/definition #voc/lstr "the currency identifier for Pakistan Rupee@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Pakistan Rupee@en"})
 
 (def PLN
   "the currency identifier for Zloty"
@@ -3105,9 +3399,10 @@
    :fibo-fnd-rel-rel/hasTag "PLN",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "PLN",
-   :skos/definition #voc/lstr "the currency identifier for Zloty@en"})
+   :skos/definition #xsd/langString "the currency identifier for Zloty@en"})
 
 (def PYG
   "the currency identifier for Guarani"
@@ -3118,9 +3413,10 @@
    :fibo-fnd-rel-rel/hasTag "PYG",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "PYG",
-   :skos/definition #voc/lstr "the currency identifier for Guarani@en"})
+   :skos/definition #xsd/langString "the currency identifier for Guarani@en"})
 
 (def Paanga
   "the currency Paʻanga"
@@ -3131,9 +3427,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Paʻanga",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Paʻanga",
-   :skos/definition #voc/lstr "the currency Paʻanga@en"})
+   :skos/definition #xsd/langString "the currency Paʻanga@en"})
 
 (def PakistanRupee
   "the currency Pakistan Rupee"
@@ -3144,9 +3441,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Pakistan Rupee",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Pakistan Rupee",
-   :skos/definition #voc/lstr "the currency Pakistan Rupee@en"})
+   :skos/definition #xsd/langString "the currency Pakistan Rupee@en"})
 
 (def Palladium
   "the currency whose unit is one troy ounce of the precious metal Palladium"
@@ -3155,10 +3453,11 @@
    :fibo-fnd-rel-rel/hasTextualName "Palladium",
    :rdf/type [:fibo-fnd-acc-cur/PreciousMetal :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Palladium",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "the currency whose unit is one troy ounce of the precious metal Palladium@en"})
 
 (def Pataca
@@ -3170,9 +3469,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Pataca",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Pataca",
-   :skos/definition #voc/lstr "the currency Pataca@en"})
+   :skos/definition #xsd/langString "the currency Pataca@en"})
 
 (def PesoConvertible
   "the currency Peso Convertible"
@@ -3183,9 +3483,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Peso Convertible",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Peso Convertible",
-   :skos/definition #voc/lstr "the currency Peso Convertible@en"})
+   :skos/definition #xsd/langString "the currency Peso Convertible@en"})
 
 (def PesoUruguayo
   "the currency Peso Uruguayo"
@@ -3196,9 +3497,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Peso Uruguayo",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Peso Uruguayo",
-   :skos/definition #voc/lstr "the currency Peso Uruguayo@en"})
+   :skos/definition #xsd/langString "the currency Peso Uruguayo@en"})
 
 (def PhilippinePeso
   "the currency Philippine Peso"
@@ -3209,9 +3511,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Philippine Peso",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Philippine Peso",
-   :skos/definition #voc/lstr "the currency Philippine Peso@en"})
+   :skos/definition #xsd/langString "the currency Philippine Peso@en"})
 
 (def Platinum
   "the currency whose unit is one troy ounce of the precious metal Platinum"
@@ -3220,10 +3523,11 @@
    :fibo-fnd-rel-rel/hasTextualName "Platinum",
    :rdf/type [:fibo-fnd-acc-cur/PreciousMetal :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Platinum",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "the currency whose unit is one troy ounce of the precious metal Platinum@en"})
 
 (def PoundSterling
@@ -3239,9 +3543,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Pound Sterling",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Currency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Pound Sterling",
-   :skos/definition #voc/lstr "the currency Pound Sterling@en"})
+   :skos/definition #xsd/langString "the currency Pound Sterling@en"})
 
 (def Pula
   "the currency Pula"
@@ -3252,9 +3557,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Pula",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Pula",
-   :skos/definition #voc/lstr "the currency Pula@en"})
+   :skos/definition #xsd/langString "the currency Pula@en"})
 
 (def QAR
   "the currency identifier for Qatari Rial"
@@ -3265,9 +3571,11 @@
    :fibo-fnd-rel-rel/hasTag "QAR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "QAR",
-   :skos/definition #voc/lstr "the currency identifier for Qatari Rial@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Qatari Rial@en"})
 
 (def QatariRial
   "the currency Qatari Rial"
@@ -3278,9 +3586,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Qatari Rial",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Qatari Rial",
-   :skos/definition #voc/lstr "the currency Qatari Rial@en"})
+   :skos/definition #xsd/langString "the currency Qatari Rial@en"})
 
 (def Quetzal
   "the currency Quetzal"
@@ -3291,9 +3600,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Quetzal",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Quetzal",
-   :skos/definition #voc/lstr "the currency Quetzal@en"})
+   :skos/definition #xsd/langString "the currency Quetzal@en"})
 
 (def RON
   "the currency identifier for Romanian Leu"
@@ -3304,9 +3614,11 @@
    :fibo-fnd-rel-rel/hasTag "RON",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "RON",
-   :skos/definition #voc/lstr "the currency identifier for Romanian Leu@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Romanian Leu@en"})
 
 (def RSD
   "the currency identifier for Serbian Dinar"
@@ -3317,9 +3629,11 @@
    :fibo-fnd-rel-rel/hasTag "RSD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "RSD",
-   :skos/definition #voc/lstr "the currency identifier for Serbian Dinar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Serbian Dinar@en"})
 
 (def RUB
   "the currency identifier for Russian Ruble"
@@ -3330,9 +3644,11 @@
    :fibo-fnd-rel-rel/hasTag "RUB",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "RUB",
-   :skos/definition #voc/lstr "the currency identifier for Russian Ruble@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Russian Ruble@en"})
 
 (def RWF
   "the currency identifier for Rwanda Franc"
@@ -3343,9 +3659,11 @@
    :fibo-fnd-rel-rel/hasTag "RWF",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "RWF",
-   :skos/definition #voc/lstr "the currency identifier for Rwanda Franc@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Rwanda Franc@en"})
 
 (def Rand
   "the currency Rand"
@@ -3357,9 +3675,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Rand",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Currency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Rand",
-   :skos/definition #voc/lstr "the currency Rand@en"})
+   :skos/definition #xsd/langString "the currency Rand@en"})
 
 (def RialOmani
   "the currency Rial Omani"
@@ -3370,9 +3689,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Rial Omani",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Rial Omani",
-   :skos/definition #voc/lstr "the currency Rial Omani@en"})
+   :skos/definition #xsd/langString "the currency Rial Omani@en"})
 
 (def Riel
   "the currency Riel"
@@ -3383,9 +3703,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Riel",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Riel",
-   :skos/definition #voc/lstr "the currency Riel@en"})
+   :skos/definition #xsd/langString "the currency Riel@en"})
 
 (def RomanianLeu
   "the currency Romanian Leu"
@@ -3396,9 +3717,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Romanian Leu",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Romanian Leu",
-   :skos/definition #voc/lstr "the currency Romanian Leu@en"})
+   :skos/definition #xsd/langString "the currency Romanian Leu@en"})
 
 (def Rufiyaa
   "the currency Rufiyaa"
@@ -3409,9 +3731,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Rufiyaa",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Rufiyaa",
-   :skos/definition #voc/lstr "the currency Rufiyaa@en"})
+   :skos/definition #xsd/langString "the currency Rufiyaa@en"})
 
 (def Rupiah
   "the currency Rupiah"
@@ -3422,9 +3745,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Rupiah",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Rupiah",
-   :skos/definition #voc/lstr "the currency Rupiah@en"})
+   :skos/definition #xsd/langString "the currency Rupiah@en"})
 
 (def RussianRuble
   "the currency Russian Ruble"
@@ -3435,9 +3759,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Russian Ruble",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Russian Ruble",
-   :skos/definition #voc/lstr "the currency Russian Ruble@en"})
+   :skos/definition #xsd/langString "the currency Russian Ruble@en"})
 
 (def RwandaFranc
   "the currency Rwanda Franc"
@@ -3448,9 +3773,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Rwanda Franc",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Rwanda Franc",
-   :skos/definition #voc/lstr "the currency Rwanda Franc@en"})
+   :skos/definition #xsd/langString "the currency Rwanda Franc@en"})
 
 (def SAR
   "the currency identifier for Saudi Riyal"
@@ -3461,9 +3787,11 @@
    :fibo-fnd-rel-rel/hasTag "SAR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SAR",
-   :skos/definition #voc/lstr "the currency identifier for Saudi Riyal@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Saudi Riyal@en"})
 
 (def SBD
   "the currency identifier for Solomon Islands Dollar"
@@ -3474,9 +3802,10 @@
    :fibo-fnd-rel-rel/hasTag "SBD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SBD",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Solomon Islands Dollar@en"})
 
 (def SCR
@@ -3488,9 +3817,10 @@
    :fibo-fnd-rel-rel/hasTag "SCR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SCR",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Seychelles Rupee@en"})
 
 (def SDG
@@ -3502,9 +3832,11 @@
    :fibo-fnd-rel-rel/hasTag "SDG",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SDG",
-   :skos/definition #voc/lstr "the currency identifier for Sudanese Pound@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Sudanese Pound@en"})
 
 (def SDR_SpecialDrawingRight
   "the IMF's SDR (Special Drawing Right)"
@@ -3513,9 +3845,10 @@
    :fibo-fnd-rel-rel/hasTextualName "SDR (Special Drawing Right)",
    :rdf/type [:fibo-fnd-acc-cur/UnitOfAccount :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SDR (Special Drawing Right)",
-   :skos/definition #voc/lstr "the IMF's SDR (Special Drawing Right)@en"})
+   :skos/definition #xsd/langString "the IMF's SDR (Special Drawing Right)@en"})
 
 (def SEK
   "the currency identifier for Swedish Krona"
@@ -3526,9 +3859,11 @@
    :fibo-fnd-rel-rel/hasTag "SEK",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SEK",
-   :skos/definition #voc/lstr "the currency identifier for Swedish Krona@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Swedish Krona@en"})
 
 (def SGD
   "the currency identifier for Singapore Dollar"
@@ -3539,9 +3874,10 @@
    :fibo-fnd-rel-rel/hasTag "SGD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SGD",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Singapore Dollar@en"})
 
 (def SHP
@@ -3553,9 +3889,10 @@
    :fibo-fnd-rel-rel/hasTag "SHP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SHP",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Saint Helena Pound@en"})
 
 (def SLE
@@ -3567,11 +3904,12 @@
    :fibo-fnd-rel-rel/hasTag "SLE",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SLE",
-   :skos/definition #voc/lstr "the currency identifier for Leone@en",
+   :skos/definition #xsd/langString "the currency identifier for Leone@en",
    :skos/note
-   #voc/lstr
+   #xsd/langString
     "The Sierra Leonean LEONE (SLL) is redenominated by removing three (3) zeros from the denominations. A new currency code SLE/925 representing the new valuation (1,000 times old SLL/694) is introduced on 1st April 2022 for any internal needs during the redenomination process, and is replacing SLL as the official currency code, after the transition period to be determined. During this transition period, both the old Leone and new Leone will be in physical circulation for at least 90 days. The Bank of Sierra Leone will adopt the new code in the local system but SLL/694 shall remain in use until further notice. The Sierra Leonean currency shall continue to be the LEONE and this will not change after redenomination.@en"})
 
 (def SLL
@@ -3583,9 +3921,10 @@
    :fibo-fnd-rel-rel/hasTag "SLL",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SLL",
-   :skos/definition #voc/lstr "the currency identifier for Leone@en"})
+   :skos/definition #xsd/langString "the currency identifier for Leone@en"})
 
 (def SOS
   "the currency identifier for Somali Shilling"
@@ -3596,9 +3935,11 @@
    :fibo-fnd-rel-rel/hasTag "SOS",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SOS",
-   :skos/definition #voc/lstr "the currency identifier for Somali Shilling@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Somali Shilling@en"})
 
 (def SRD
   "the currency identifier for Surinam Dollar"
@@ -3609,9 +3950,11 @@
    :fibo-fnd-rel-rel/hasTag "SRD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SRD",
-   :skos/definition #voc/lstr "the currency identifier for Surinam Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Surinam Dollar@en"})
 
 (def SSP
   "the currency identifier for South Sudanese Pound"
@@ -3622,9 +3965,10 @@
    :fibo-fnd-rel-rel/hasTag "SSP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SSP",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for South Sudanese Pound@en"})
 
 (def STN
@@ -3636,9 +3980,10 @@
    :fibo-fnd-rel-rel/hasTag "STN",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "STN",
-   :skos/definition #voc/lstr "the currency identifier for Dobra@en"})
+   :skos/definition #xsd/langString "the currency identifier for Dobra@en"})
 
 (def SVC
   "the currency identifier for El Salvador Colon"
@@ -3649,9 +3994,10 @@
    :fibo-fnd-rel-rel/hasTag "SVC",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SVC",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for El Salvador Colon@en"})
 
 (def SYP
@@ -3663,9 +4009,11 @@
    :fibo-fnd-rel-rel/hasTag "SYP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SYP",
-   :skos/definition #voc/lstr "the currency identifier for Syrian Pound@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Syrian Pound@en"})
 
 (def SZL
   "the currency identifier for Lilangeni"
@@ -3676,9 +4024,10 @@
    :fibo-fnd-rel-rel/hasTag "SZL",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "SZL",
-   :skos/definition #voc/lstr "the currency identifier for Lilangeni@en"})
+   :skos/definition #xsd/langString "the currency identifier for Lilangeni@en"})
 
 (def SaintHelenaPound
   "the currency Saint Helena Pound"
@@ -3689,9 +4038,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Saint Helena Pound",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Saint Helena Pound",
-   :skos/definition #voc/lstr "the currency Saint Helena Pound@en"})
+   :skos/definition #xsd/langString "the currency Saint Helena Pound@en"})
 
 (def SaudiRiyal
   "the currency Saudi Riyal"
@@ -3702,9 +4052,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Saudi Riyal",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Saudi Riyal",
-   :skos/definition #voc/lstr "the currency Saudi Riyal@en"})
+   :skos/definition #xsd/langString "the currency Saudi Riyal@en"})
 
 (def SerbianDinar
   "the currency Serbian Dinar"
@@ -3715,9 +4066,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Serbian Dinar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Serbian Dinar",
-   :skos/definition #voc/lstr "the currency Serbian Dinar@en"})
+   :skos/definition #xsd/langString "the currency Serbian Dinar@en"})
 
 (def SeychellesRupee
   "the currency Seychelles Rupee"
@@ -3728,9 +4080,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Seychelles Rupee",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Seychelles Rupee",
-   :skos/definition #voc/lstr "the currency Seychelles Rupee@en"})
+   :skos/definition #xsd/langString "the currency Seychelles Rupee@en"})
 
 (def Silver
   "the currency whose unit is one troy ounce of the precious metal Silver"
@@ -3739,10 +4092,11 @@
    :fibo-fnd-rel-rel/hasTextualName "Silver",
    :rdf/type [:fibo-fnd-acc-cur/PreciousMetal :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Silver",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "the currency whose unit is one troy ounce of the precious metal Silver@en"})
 
 (def SingaporeDollar
@@ -3754,9 +4108,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Singapore Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Singapore Dollar",
-   :skos/definition #voc/lstr "the currency Singapore Dollar@en"})
+   :skos/definition #xsd/langString "the currency Singapore Dollar@en"})
 
 (def Sol
   "the currency Sol"
@@ -3767,9 +4122,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Sol",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Sol",
-   :skos/definition #voc/lstr "the currency Sol@en"})
+   :skos/definition #xsd/langString "the currency Sol@en"})
 
 (def SolomonIslandsDollar
   "the currency Solomon Islands Dollar"
@@ -3780,9 +4136,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Solomon Islands Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Solomon Islands Dollar",
-   :skos/definition #voc/lstr "the currency Solomon Islands Dollar@en"})
+   :skos/definition #xsd/langString "the currency Solomon Islands Dollar@en"})
 
 (def Som
   "the currency Som"
@@ -3793,9 +4150,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Som",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Som",
-   :skos/definition #voc/lstr "the currency Som@en"})
+   :skos/definition #xsd/langString "the currency Som@en"})
 
 (def SomaliShilling
   "the currency Somali Shilling"
@@ -3806,9 +4164,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Somali Shilling",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Somali Shilling",
-   :skos/definition #voc/lstr "the currency Somali Shilling@en"})
+   :skos/definition #xsd/langString "the currency Somali Shilling@en"})
 
 (def Somoni
   "the currency Somoni"
@@ -3819,9 +4178,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Somoni",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Somoni",
-   :skos/definition #voc/lstr "the currency Somoni@en"})
+   :skos/definition #xsd/langString "the currency Somoni@en"})
 
 (def SouthSudanesePound
   "the currency South Sudanese Pound"
@@ -3832,9 +4192,10 @@
    :fibo-fnd-rel-rel/hasTextualName "South Sudanese Pound",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "South Sudanese Pound",
-   :skos/definition #voc/lstr "the currency South Sudanese Pound@en"})
+   :skos/definition #xsd/langString "the currency South Sudanese Pound@en"})
 
 (def SriLankaRupee
   "the currency Sri Lanka Rupee"
@@ -3845,9 +4206,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Sri Lanka Rupee",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Sri Lanka Rupee",
-   :skos/definition #voc/lstr "the currency Sri Lanka Rupee@en"})
+   :skos/definition #xsd/langString "the currency Sri Lanka Rupee@en"})
 
 (def Sucre
   "the currency Sucre"
@@ -3856,9 +4218,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Sucre",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Sucre",
-   :skos/definition #voc/lstr "the currency Sucre@en"})
+   :skos/definition #xsd/langString "the currency Sucre@en"})
 
 (def SudanesePound
   "the currency Sudanese Pound"
@@ -3869,9 +4232,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Sudanese Pound",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Sudanese Pound",
-   :skos/definition #voc/lstr "the currency Sudanese Pound@en"})
+   :skos/definition #xsd/langString "the currency Sudanese Pound@en"})
 
 (def SurinamDollar
   "the currency Surinam Dollar"
@@ -3882,9 +4246,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Surinam Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Surinam Dollar",
-   :skos/definition #voc/lstr "the currency Surinam Dollar@en"})
+   :skos/definition #xsd/langString "the currency Surinam Dollar@en"})
 
 (def SwedishKrona
   "the currency Swedish Krona"
@@ -3895,9 +4260,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Swedish Krona",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Swedish Krona",
-   :skos/definition #voc/lstr "the currency Swedish Krona@en"})
+   :skos/definition #xsd/langString "the currency Swedish Krona@en"})
 
 (def SwissFranc
   "the currency Swiss Franc"
@@ -3908,9 +4274,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Swiss Franc",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Currency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Swiss Franc",
-   :skos/definition #voc/lstr "the currency Swiss Franc@en"})
+   :skos/definition #xsd/langString "the currency Swiss Franc@en"})
 
 (def SyrianPound
   "the currency Syrian Pound"
@@ -3921,9 +4288,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Syrian Pound",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Syrian Pound",
-   :skos/definition #voc/lstr "the currency Syrian Pound@en"})
+   :skos/definition #xsd/langString "the currency Syrian Pound@en"})
 
 (def THB
   "the currency identifier for Baht"
@@ -3934,9 +4302,10 @@
    :fibo-fnd-rel-rel/hasTag "THB",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "THB",
-   :skos/definition #voc/lstr "the currency identifier for Baht@en"})
+   :skos/definition #xsd/langString "the currency identifier for Baht@en"})
 
 (def TJS
   "the currency identifier for Somoni"
@@ -3947,9 +4316,10 @@
    :fibo-fnd-rel-rel/hasTag "TJS",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "TJS",
-   :skos/definition #voc/lstr "the currency identifier for Somoni@en"})
+   :skos/definition #xsd/langString "the currency identifier for Somoni@en"})
 
 (def TMT
   "the currency identifier for Turkmenistan New Manat"
@@ -3960,9 +4330,10 @@
    :fibo-fnd-rel-rel/hasTag "TMT",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "TMT",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Turkmenistan New Manat@en"})
 
 (def TND
@@ -3974,9 +4345,11 @@
    :fibo-fnd-rel-rel/hasTag "TND",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "TND",
-   :skos/definition #voc/lstr "the currency identifier for Tunisian Dinar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Tunisian Dinar@en"})
 
 (def TOP
   "the currency identifier for Paʻanga"
@@ -3987,9 +4360,10 @@
    :fibo-fnd-rel-rel/hasTag "TOP",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "TOP",
-   :skos/definition #voc/lstr "the currency identifier for Paʻanga@en"})
+   :skos/definition #xsd/langString "the currency identifier for Paʻanga@en"})
 
 (def TRY
   "the currency identifier for Turkish Lira"
@@ -4000,9 +4374,11 @@
    :fibo-fnd-rel-rel/hasTag "TRY",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "TRY",
-   :skos/definition #voc/lstr "the currency identifier for Turkish Lira@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Turkish Lira@en"})
 
 (def TTD
   "the currency identifier for Trinidad and Tobago Dollar"
@@ -4013,10 +4389,11 @@
    :fibo-fnd-rel-rel/hasTag "TTD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "TTD",
    :skos/definition
-   #voc/lstr "the currency identifier for Trinidad and Tobago Dollar@en"})
+   #xsd/langString "the currency identifier for Trinidad and Tobago Dollar@en"})
 
 (def TWD
   "the currency identifier for New Taiwan Dollar"
@@ -4027,9 +4404,10 @@
    :fibo-fnd-rel-rel/hasTag "TWD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "TWD",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for New Taiwan Dollar@en"})
 
 (def TZS
@@ -4041,9 +4419,10 @@
    :fibo-fnd-rel-rel/hasTag "TZS",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "TZS",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Tanzanian Shilling@en"})
 
 (def Taka
@@ -4055,9 +4434,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Taka",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Taka",
-   :skos/definition #voc/lstr "the currency Taka@en"})
+   :skos/definition #xsd/langString "the currency Taka@en"})
 
 (def Tala
   "the currency Tala"
@@ -4068,9 +4448,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Tala",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Tala",
-   :skos/definition #voc/lstr "the currency Tala@en"})
+   :skos/definition #xsd/langString "the currency Tala@en"})
 
 (def TanzanianShilling
   "the currency Tanzanian Shilling"
@@ -4081,9 +4462,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Tanzanian Shilling",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Tanzanian Shilling",
-   :skos/definition #voc/lstr "the currency Tanzanian Shilling@en"})
+   :skos/definition #xsd/langString "the currency Tanzanian Shilling@en"})
 
 (def Tenge
   "the currency Tenge"
@@ -4094,9 +4476,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Tenge",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Tenge",
-   :skos/definition #voc/lstr "the currency Tenge@en"})
+   :skos/definition #xsd/langString "the currency Tenge@en"})
 
 (def TrinidadandTobagoDollar
   "the currency Trinidad and Tobago Dollar"
@@ -4107,9 +4490,11 @@
    :fibo-fnd-rel-rel/hasTextualName "Trinidad and Tobago Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Trinidad and Tobago Dollar",
-   :skos/definition #voc/lstr "the currency Trinidad and Tobago Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency Trinidad and Tobago Dollar@en"})
 
 (def Tugrik
   "the currency Tugrik"
@@ -4120,9 +4505,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Tugrik",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Tugrik",
-   :skos/definition #voc/lstr "the currency Tugrik@en"})
+   :skos/definition #xsd/langString "the currency Tugrik@en"})
 
 (def TunisianDinar
   "the currency Tunisian Dinar"
@@ -4133,9 +4519,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Tunisian Dinar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Tunisian Dinar",
-   :skos/definition #voc/lstr "the currency Tunisian Dinar@en"})
+   :skos/definition #xsd/langString "the currency Tunisian Dinar@en"})
 
 (def TurkishLira
   "the currency Turkish Lira"
@@ -4146,9 +4533,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Turkish Lira",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Turkish Lira",
-   :skos/definition #voc/lstr "the currency Turkish Lira@en"})
+   :skos/definition #xsd/langString "the currency Turkish Lira@en"})
 
 (def TurkmenistanNewManat
   "the currency Turkmenistan New Manat"
@@ -4159,9 +4547,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Turkmenistan New Manat",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Turkmenistan New Manat",
-   :skos/definition #voc/lstr "the currency Turkmenistan New Manat@en"})
+   :skos/definition #xsd/langString "the currency Turkmenistan New Manat@en"})
 
 (def UAEDirham
   "the currency UAE Dirham"
@@ -4172,9 +4561,10 @@
    :fibo-fnd-rel-rel/hasTextualName "UAE Dirham",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "UAE Dirham",
-   :skos/definition #voc/lstr "the currency UAE Dirham@en"})
+   :skos/definition #xsd/langString "the currency UAE Dirham@en"})
 
 (def UAH
   "the currency identifier for Hryvnia"
@@ -4185,9 +4575,10 @@
    :fibo-fnd-rel-rel/hasTag "UAH",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "UAH",
-   :skos/definition #voc/lstr "the currency identifier for Hryvnia@en"})
+   :skos/definition #xsd/langString "the currency identifier for Hryvnia@en"})
 
 (def UGX
   "the currency identifier for Uganda Shilling"
@@ -4198,9 +4589,11 @@
    :fibo-fnd-rel-rel/hasTag "UGX",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "UGX",
-   :skos/definition #voc/lstr "the currency identifier for Uganda Shilling@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Uganda Shilling@en"})
 
 (def USD
   "the currency identifier for US Dollar"
@@ -4211,9 +4604,10 @@
    :fibo-fnd-rel-rel/hasTag "USD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "USD",
-   :skos/definition #voc/lstr "the currency identifier for US Dollar@en"})
+   :skos/definition #xsd/langString "the currency identifier for US Dollar@en"})
 
 (def USDollar
   "the currency US Dollar"
@@ -4242,9 +4636,10 @@
    :fibo-fnd-rel-rel/hasTextualName "US Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "US Dollar",
-   :skos/definition #voc/lstr "the currency US Dollar@en"})
+   :skos/definition #xsd/langString "the currency US Dollar@en"})
 
 (def USDollar_Nextday
   "the funds US Dollar (Next day)"
@@ -4258,9 +4653,10 @@
    :fibo-fnd-rel-rel/hasTextualName "US Dollar (Next day)",
    :rdf/type [:fibo-fnd-acc-cur/Funds :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "US Dollar (Next day)",
-   :skos/definition #voc/lstr "the funds US Dollar (Next day)@en"})
+   :skos/definition #xsd/langString "the funds US Dollar (Next day)@en"})
 
 (def USN
   "the funds identifier for US Dollar (Next day)"
@@ -4271,9 +4667,10 @@
    :fibo-fnd-rel-rel/hasTag "USN",
    :rdf/type [:fibo-fnd-acc-cur/FundsIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "USN",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the funds identifier for US Dollar (Next day)@en"})
 
 (def UYI
@@ -4285,10 +4682,11 @@
    :fibo-fnd-rel-rel/hasTag "UYI",
    :rdf/type [:fibo-fnd-acc-cur/FundsIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "UYI",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "the funds identifier for Uruguay Peso en Unidades Indexadas (UI)@en"})
 
 (def UYU
@@ -4300,9 +4698,11 @@
    :fibo-fnd-rel-rel/hasTag "UYU",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "UYU",
-   :skos/definition #voc/lstr "the currency identifier for Peso Uruguayo@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Peso Uruguayo@en"})
 
 (def UYW
   "the currency identifier for Unidad Previsional"
@@ -4313,9 +4713,10 @@
    :fibo-fnd-rel-rel/hasTag "UYW",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "UYW",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for Unidad Previsional@en"})
 
 (def UZS
@@ -4327,9 +4728,11 @@
    :fibo-fnd-rel-rel/hasTag "UZS",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "UZS",
-   :skos/definition #voc/lstr "the currency identifier for Uzbekistan Sum@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Uzbekistan Sum@en"})
 
 (def UgandaShilling
   "the currency Uganda Shilling"
@@ -4340,9 +4743,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Uganda Shilling",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Uganda Shilling",
-   :skos/definition #voc/lstr "the currency Uganda Shilling@en"})
+   :skos/definition #xsd/langString "the currency Uganda Shilling@en"})
 
 (def UnidadPrevisional
   "the funds Unidad Previsional"
@@ -4354,11 +4758,12 @@
    :fibo-fnd-rel-rel/hasTextualName "Unidad Previsional",
    :rdf/type [:fibo-fnd-acc-cur/Funds :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Unidad Previsional",
-   :skos/definition #voc/lstr "the funds Unidad Previsional@en",
+   :skos/definition #xsd/langString "the funds Unidad Previsional@en",
    :skos/note
-   #voc/lstr
+   #xsd/langString
     "The Unidad Previsional (UP) is a daily accounting unit that tracks changes to the nominal wage index. The value of UP is expressed in terms of Uruguayan Pesos per UP, with the initial value of one peso (UYU 1.00) on 04/30/2018. The institution responsible for the calculation and publication is the Instituto Nacional de Estadística (National Bureau of Statistics) according to Law 19,608.@en"})
 
 (def UnidaddeFomento
@@ -4373,9 +4778,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Unidad de Fomento",
    :rdf/type [:fibo-fnd-acc-cur/Funds :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Unidad de Fomento",
-   :skos/definition #voc/lstr "the funds Unidad de Fomento@en"})
+   :skos/definition #xsd/langString "the funds Unidad de Fomento@en"})
 
 (def UnidaddeValorReal
   "the funds Unidad de Valor Real"
@@ -4389,9 +4795,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Unidad de Valor Real",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Funds],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Unidad de Valor Real",
-   :skos/definition #voc/lstr "the funds Unidad de Valor Real@en"})
+   :skos/definition #xsd/langString "the funds Unidad de Valor Real@en"})
 
 (def UruguayPesoenUnidadesIndexadas_UI
   "the funds Uruguay Peso en Unidades Indexadas (UI)"
@@ -4405,9 +4812,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Uruguay Peso en Unidades Indexadas (UI)",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/Funds],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Uruguay Peso en Unidades Indexadas (UI)",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the funds Uruguay Peso en Unidades Indexadas (UI)@en"})
 
 (def UzbekistanSum
@@ -4419,9 +4827,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Uzbekistan Sum",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Uzbekistan Sum",
-   :skos/definition #voc/lstr "the currency Uzbekistan Sum@en"})
+   :skos/definition #xsd/langString "the currency Uzbekistan Sum@en"})
 
 (def VED
   "the currency identifier for Bolívar Soberano"
@@ -4432,11 +4841,13 @@
    :fibo-fnd-rel-rel/hasTag "VED",
    :rdf/type [:owl/NamedIndividual :fibo-fnd-acc-cur/CurrencyIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "VED",
-   :skos/definition #voc/lstr "the currency identifier for Bolívar Soberano@en",
+   :skos/definition #xsd/langString
+                     "the currency identifier for Bolívar Soberano@en",
    :skos/note
-   #voc/lstr
+   #xsd/langString
     "Note that the numeric currency code corresponding to the Bolívar Soberano with currency code 'VED' is 926.@en"})
 
 (def VES
@@ -4448,11 +4859,13 @@
    :fibo-fnd-rel-rel/hasTag "VES",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "VES",
-   :skos/definition #voc/lstr "the currency identifier for Bolívar Soberano@en",
+   :skos/definition #xsd/langString
+                     "the currency identifier for Bolívar Soberano@en",
    :skos/note
-   #voc/lstr
+   #xsd/langString
     "Note that the numeric currency code corresponding to the Bolívar Soberano with currency code 'VES' is 928.@en"})
 
 (def VND
@@ -4464,9 +4877,10 @@
    :fibo-fnd-rel-rel/hasTag "VND",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "VND",
-   :skos/definition #voc/lstr "the currency identifier for Dong@en"})
+   :skos/definition #xsd/langString "the currency identifier for Dong@en"})
 
 (def VUV
   "the currency identifier for Vatu"
@@ -4477,9 +4891,10 @@
    :fibo-fnd-rel-rel/hasTag "VUV",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "VUV",
-   :skos/definition #voc/lstr "the currency identifier for Vatu@en"})
+   :skos/definition #xsd/langString "the currency identifier for Vatu@en"})
 
 (def Vatu
   "the currency Vatu"
@@ -4490,9 +4905,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Vatu",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Vatu",
-   :skos/definition #voc/lstr "the currency Vatu@en"})
+   :skos/definition #xsd/langString "the currency Vatu@en"})
 
 (def WIREuro
   "the funds WIR Euro"
@@ -4506,9 +4922,10 @@
    :fibo-fnd-rel-rel/hasTextualName "WIR Euro",
    :rdf/type [:fibo-fnd-acc-cur/Funds :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "WIR Euro",
-   :skos/definition #voc/lstr "the funds WIR Euro@en"})
+   :skos/definition #xsd/langString "the funds WIR Euro@en"})
 
 (def WIRFranc
   "the funds WIR Franc"
@@ -4522,9 +4939,10 @@
    :fibo-fnd-rel-rel/hasTextualName "WIR Franc",
    :rdf/type [:fibo-fnd-acc-cur/Funds :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "WIR Franc",
-   :skos/definition #voc/lstr "the funds WIR Franc@en"})
+   :skos/definition #xsd/langString "the funds WIR Franc@en"})
 
 (def WST
   "the currency identifier for Tala"
@@ -4535,9 +4953,10 @@
    :fibo-fnd-rel-rel/hasTag "WST",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "WST",
-   :skos/definition #voc/lstr "the currency identifier for Tala@en"})
+   :skos/definition #xsd/langString "the currency identifier for Tala@en"})
 
 (def Won
   "the currency Won"
@@ -4548,9 +4967,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Won",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Won",
-   :skos/definition #voc/lstr "the currency Won@en"})
+   :skos/definition #xsd/langString "the currency Won@en"})
 
 (def XAF
   "the currency identifier for CFA Franc BEAC"
@@ -4561,9 +4981,11 @@
    :fibo-fnd-rel-rel/hasTag "XAF",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XAF",
-   :skos/definition #voc/lstr "the currency identifier for CFA Franc BEAC@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for CFA Franc BEAC@en"})
 
 (def XAG
   "identifier for the currency whose unit is one troy ounce of the precious metal Silver"
@@ -4574,10 +4996,11 @@
    :fibo-fnd-rel-rel/hasTag "XAG",
    :rdf/type [:fibo-fnd-acc-cur/PreciousMetalIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XAG",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "identifier for the currency whose unit is one troy ounce of the precious metal Silver@en"})
 
 (def XAU
@@ -4589,10 +5012,11 @@
    :fibo-fnd-rel-rel/hasTag "XAU",
    :rdf/type [:fibo-fnd-acc-cur/PreciousMetalIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XAU",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "identifier for the currency whose unit is one troy ounce of the precious metal Gold@en"})
 
 (def XBA
@@ -4606,10 +5030,11 @@
    :fibo-fnd-rel-rel/hasTag "XBA",
    :rdf/type [:fibo-fnd-acc-cur/UnitOfAccountIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XBA",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "the identifier for Bond Markets Unit European Composite Unit (EURCO)@en"})
 
 (def XBB
@@ -4623,10 +5048,11 @@
    :fibo-fnd-rel-rel/hasTag "XBB",
    :rdf/type [:fibo-fnd-acc-cur/UnitOfAccountIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XBB",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "the identifier for Bond Markets Unit European Monetary Unit (E.M.U.-6)@en"})
 
 (def XBC
@@ -4640,10 +5066,11 @@
    :fibo-fnd-rel-rel/hasTag "XBC",
    :rdf/type [:fibo-fnd-acc-cur/UnitOfAccountIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XBC",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "the identifier for Bond Markets Unit European Unit of Account 9 (E.U.A.-9)@en"})
 
 (def XBD
@@ -4657,10 +5084,11 @@
    :fibo-fnd-rel-rel/hasTag "XBD",
    :rdf/type [:fibo-fnd-acc-cur/UnitOfAccountIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XBD",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "the identifier for Bond Markets Unit European Unit of Account 17 (E.U.A.-17)@en"})
 
 (def XCD
@@ -4672,9 +5100,10 @@
    :fibo-fnd-rel-rel/hasTag "XCD",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XCD",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the currency identifier for East Caribbean Dollar@en"})
 
 (def XDR
@@ -4686,9 +5115,10 @@
    :fibo-fnd-rel-rel/hasTag "XDR",
    :rdf/type [:fibo-fnd-acc-cur/UnitOfAccountIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XDR",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "the IMF's identifier for SDR (Special Drawing Right)@en"})
 
 (def XOF
@@ -4700,9 +5130,11 @@
    :fibo-fnd-rel-rel/hasTag "XOF",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XOF",
-   :skos/definition #voc/lstr "the currency identifier for CFA Franc BCEAO@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for CFA Franc BCEAO@en"})
 
 (def XPD
   "identifier for the currency whose unit is one troy ounce of the precious metal Palladium"
@@ -4713,10 +5145,11 @@
    :fibo-fnd-rel-rel/hasTag "XPD",
    :rdf/type [:fibo-fnd-acc-cur/PreciousMetalIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XPD",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "identifier for the currency whose unit is one troy ounce of the precious metal Palladium@en"})
 
 (def XPF
@@ -4728,9 +5161,10 @@
    :fibo-fnd-rel-rel/hasTag "XPF",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XPF",
-   :skos/definition #voc/lstr "the currency identifier for CFP Franc@en"})
+   :skos/definition #xsd/langString "the currency identifier for CFP Franc@en"})
 
 (def XPT
   "identifier for the currency whose unit is one troy ounce of the precious metal Platinum"
@@ -4741,10 +5175,11 @@
    :fibo-fnd-rel-rel/hasTag "XPT",
    :rdf/type [:fibo-fnd-acc-cur/PreciousMetalIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XPT",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "identifier for the currency whose unit is one troy ounce of the precious metal Platinum@en"})
 
 (def XSU
@@ -4756,9 +5191,10 @@
    :fibo-fnd-rel-rel/hasTag "XSU",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XSU",
-   :skos/definition #voc/lstr "the currency identifier for Sucre@en"})
+   :skos/definition #xsd/langString "the currency identifier for Sucre@en"})
 
 (def XTS
   "Codes specifically reserved for testing purposes"
@@ -4767,9 +5203,10 @@
    :fibo-fnd-rel-rel/hasTag "XTS",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XTS",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "Codes specifically reserved for testing purposes@en"})
 
 (def XUA
@@ -4781,9 +5218,11 @@
    :fibo-fnd-rel-rel/hasTag "XUA",
    :rdf/type [:fibo-fnd-acc-cur/UnitOfAccountIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XUA",
-   :skos/definition #voc/lstr "the identifier for ADB Unit of Account@en"})
+   :skos/definition #xsd/langString
+                     "the identifier for ADB Unit of Account@en"})
 
 (def XXX
   "The codes assigned for transactions where no currency is involved"
@@ -4792,10 +5231,11 @@
    :fibo-fnd-rel-rel/hasTag "XXX",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "XXX",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The codes assigned for transactions where no currency is involved@en"})
 
 (def YER
@@ -4807,9 +5247,11 @@
    :fibo-fnd-rel-rel/hasTag "YER",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "YER",
-   :skos/definition #voc/lstr "the currency identifier for Yemeni Rial@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Yemeni Rial@en"})
 
 (def YemeniRial
   "the currency Yemeni Rial"
@@ -4820,9 +5262,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Yemeni Rial",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Yemeni Rial",
-   :skos/definition #voc/lstr "the currency Yemeni Rial@en"})
+   :skos/definition #xsd/langString "the currency Yemeni Rial@en"})
 
 (def Yen
   "the currency Yen"
@@ -4833,9 +5276,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Yen",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Yen",
-   :skos/definition #voc/lstr "the currency Yen@en"})
+   :skos/definition #xsd/langString "the currency Yen@en"})
 
 (def YuanRenminbi
   "the currency Yuan Renminbi"
@@ -4846,9 +5290,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Yuan Renminbi",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Yuan Renminbi",
-   :skos/definition #voc/lstr "the currency Yuan Renminbi@en"})
+   :skos/definition #xsd/langString "the currency Yuan Renminbi@en"})
 
 (def ZAR
   "the currency identifier for Rand"
@@ -4859,9 +5304,10 @@
    :fibo-fnd-rel-rel/hasTag "ZAR",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "ZAR",
-   :skos/definition #voc/lstr "the currency identifier for Rand@en"})
+   :skos/definition #xsd/langString "the currency identifier for Rand@en"})
 
 (def ZMW
   "the currency identifier for Zambian Kwacha"
@@ -4872,9 +5318,11 @@
    :fibo-fnd-rel-rel/hasTag "ZMW",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "ZMW",
-   :skos/definition #voc/lstr "the currency identifier for Zambian Kwacha@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Zambian Kwacha@en"})
 
 (def ZWL
   "the currency identifier for Zimbabwe Dollar"
@@ -4885,9 +5333,11 @@
    :fibo-fnd-rel-rel/hasTag "ZWL",
    :rdf/type [:fibo-fnd-acc-cur/CurrencyIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "ZWL",
-   :skos/definition #voc/lstr "the currency identifier for Zimbabwe Dollar@en"})
+   :skos/definition #xsd/langString
+                     "the currency identifier for Zimbabwe Dollar@en"})
 
 (def ZambianKwacha
   "the currency Zambian Kwacha"
@@ -4898,9 +5348,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Zambian Kwacha",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Zambian Kwacha",
-   :skos/definition #voc/lstr "the currency Zambian Kwacha@en"})
+   :skos/definition #xsd/langString "the currency Zambian Kwacha@en"})
 
 (def ZimbabweDollar
   "the currency Zimbabwe Dollar"
@@ -4911,9 +5362,10 @@
    :fibo-fnd-rel-rel/hasTextualName "Zimbabwe Dollar",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Zimbabwe Dollar",
-   :skos/definition #voc/lstr "the currency Zimbabwe Dollar@en"})
+   :skos/definition #xsd/langString "the currency Zimbabwe Dollar@en"})
 
 (def Zloty
   "the currency Zloty"
@@ -4924,6 +5376,7 @@
    :fibo-fnd-rel-rel/hasTextualName "Zloty",
    :rdf/type [:fibo-fnd-acc-cur/Currency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdfs/label "Zloty",
-   :skos/definition #voc/lstr "the currency Zloty@en"})
+   :skos/definition #xsd/langString "the currency Zloty@en"})

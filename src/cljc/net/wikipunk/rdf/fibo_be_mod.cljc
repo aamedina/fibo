@@ -1,28 +1,39 @@
 (ns net.wikipunk.rdf.fibo-be-mod
-  "This ontology provides metadata about the FIBO Business Entities (BE) Domain, which covers defines business concepts that are used for data governance, interoperability, and in regulatory reporting about business entities. The business scope of the BE ontologies covers a range of business and legal entities that are considered by financial industry firms, regulators and other industry participants to be of relevance in the financial services domain, including: - Legal entities generally - Corporate structure, ownership and control, including primary executive roles for businesses, - Functional entities such as governments and government entities, non-governmental organizations, international organizations, not-for-profit organization, etc. - Concepts specific to corporations, partnerships, private limited companies, sole proprietorships, and trusts."
+  "This ontology provides metadata about the FIBO Business Entities (BE) Domain, which covers defines business concepts that are used for data governance, interoperability, and in regulatory reporting about business entities.\n\nThe business scope of the BE ontologies covers a range of business and legal entities that are considered by financial industry firms, regulators and other industry participants to be of relevance in the financial services domain, including:\n - Legal entities generally\n - Corporate structure, ownership and control, including primary executive roles for businesses,\n - Functional entities such as governments and government entities, non-governmental organizations, international organizations, not-for-profit organization, etc.\n - Concepts specific to corporations, partnerships, private limited companies, sole proprietorships, and trusts."
   {:cmns-av/copyright ["Copyright (c) 2015-2023 EDM Council, Inc."
                        "Copyright (c) 2015-2023 Object Management Group, Inc."],
    :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/BE/MetadataBE/BEDomain",
    :dcterms/abstract
    "This ontology provides metadata about the FIBO Business Entities (BE) Domain, which covers defines business concepts that are used for data governance, interoperability, and in regulatory reporting about business entities.\n\nThe business scope of the BE ontologies covers a range of business and legal entities that are considered by financial industry firms, regulators and other industry participants to be of relevance in the financial services domain, including:\n - Legal entities generally\n - Corporate structure, ownership and control, including primary executive roles for businesses,\n - Functional entities such as governments and government entities, non-governmental organizations, international organizations, not-for-profit organization, etc.\n - Concepts specific to corporations, partnerships, private limited companies, sole proprietorships, and trusts.",
-   :dcterms/issued #inst "2018-08-27T22:00:00.000-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-03-31T22:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-08-27T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-03-31T18:00:00.000-04:00",
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/SoleProprietorships/MetadataBESoleProprietorships/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/MetadataBELegalEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Trusts/MetadataBETrusts/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/MetadataBEOwnershipAndControl/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Partnerships/MetadataBEPartnerships/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/MetadataBEPrivateLimitedCompanies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/MetadataBECorporations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/MetadataBEFunctionalEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/MetadataBEGovernmentEntities/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/SoleProprietorships/MetadataBESoleProprietorships/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/MetadataBELegalEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Trusts/MetadataBETrusts/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/MetadataBEOwnershipAndControl/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Partnerships/MetadataBEPartnerships/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/MetadataBEPrivateLimitedCompanies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/MetadataBECorporations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/MetadataBEFunctionalEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/MetadataBEGovernmentEntities/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/MetadataBE/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/MetadataBE/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -61,7 +72,7 @@
     "The https://spec.edmcouncil.org/fibo/ontology/BE/MetadataBE.rdf version of the ontology and subordinate module-specific BE metadata ontologies were modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."]})
 
 (def BEDomain
-  "The FIBO Business Entities (BE) Domain covers defines business concepts that are used for data governance, interoperability, and in regulatory reporting about business entities. The business scope of the BE ontologies covers a range of business and legal entities that are considered by financial industry firms, regulators and other industry participants to be of relevance in the financial services domain, including: - Legal entities generally - Corporate structure, ownership and control, including primary executive roles for businesses, - Functional entities such as governments and government entities, non-governmental organizations, international organizations, not-for-profit organization, etc. - Concepts specific to corporations, partnerships, private limited companies, sole proprietorships, and trusts."
+  "The FIBO Business Entities (BE) Domain covers defines business concepts that are used for data governance, interoperability, and in regulatory reporting about business entities.\n\nThe business scope of the BE ontologies covers a range of business and legal entities that are considered by financial industry firms, regulators and other industry participants to be of relevance in the financial services domain, including:\n - Legal entities generally\n - Corporate structure, ownership and control, including primary executive roles for businesses,\n - Functional entities such as governments and government entities, non-governmental organizations, international organizations, not-for-profit organization, etc.\n - Concepts specific to corporations, partnerships, private limited companies, sole proprietorships, and trusts."
   {:cmns-av/copyright ["Copyright (c) 2015-2023 Object Management Group, Inc."
                        "Copyright (c) 2015-2023 EDM Council, Inc."],
    :db/ident :fibo-be-mod/BEDomain,
@@ -88,7 +99,8 @@
     "Statistics Canada"
     "Adaptive, Inc."],
    :dcterms/creator
-   "https://wiki.edmcouncil.org/display/BE/FIBO+-+FCT+-+Business+Entities+Home",
+   {:rdfa/uri
+    "https://wiki.edmcouncil.org/display/BE/FIBO+-+FCT+-+Business+Entities+Home"},
    :dcterms/hasPart [:fibo-be-ptr-mod/PartnershipsModule
                      :fibo-be-fct-mod/FunctionalEntitiesModule
                      :fibo-be-plc-mod/PrivateLimitedCompaniesModule
@@ -98,11 +110,12 @@
                      :fibo-be-corp-mod/CorporationsModule
                      :fibo-be-sps-mod/SoleProprietorshipsModule
                      :fibo-be-oac-mod/OwnershipAndControlModule],
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :dcterms/title
    ["FIBO BE Domain"
     "EDMC Financial Industry Business Ontology (FIBO) Business Entities (BE) Domain"],
    :rdf/type [:owl/NamedIndividual :fibo-fnd-utl-av/Module],
-   :rdfs/isDefinedBy "https://spec.edmcouncil.org/fibo/ontology/BE/MetadataBE/",
+   :rdfs/isDefinedBy
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/MetadataBE/"},
    :rdfs/label "business entities domain",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})

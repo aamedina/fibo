@@ -6,17 +6,22 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
    :dcterms/abstract
    "This ontology extends definitions of date and schedule concepts from the FinancialDates ontology with concepts defining dates that may be adjusted when they fall on weekends or holidays as defined in a given business center, for use in other FIBO ontologies.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
@@ -54,14 +59,15 @@
   {:db/ident :fibo-fnd-dt-bd/BusinessDayAdjustment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "business day adjustment",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-plc-loc/hasBusinessCenter,
                       :owl/someValuesFrom :fibo-fnd-plc-loc/BusinessCenter,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-dt-bd/BusinessDayConvention,
                       :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayConvention,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-dt-bd/Convention],
    :skos/definition
@@ -72,7 +78,8 @@
   {:db/ident :fibo-fnd-dt-bd/BusinessDayConvention,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "business day convention",
    :rdfs/subClassOf :fibo-fnd-dt-bd/Convention,
    :skos/definition
@@ -80,65 +87,70 @@
 
 (def BusinessDayFollowing
   "convention specifying that a non-business date will be adjusted to the first following day that is a business day"
-  {:cmns-av/adaptedFrom "FPML 5.1 \"BusinessDayConventionEnum\"",
+  {:cmns-av/adaptedFrom {:xsd/string "FPML 5.1 \"BusinessDayConventionEnum\""},
    :db/ident :fibo-fnd-dt-bd/BusinessDayFollowing,
    :rdf/type [:fibo-fnd-dt-bd/BusinessDayConvention
               :owl/NamedIndividual
               :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "business day following",
    :skos/definition
    "convention specifying that a non-business date will be adjusted to the first following day that is a business day"})
 
 (def BusinessDayModifiedFollowing
   "convention specifying that a non-business date will be adjusted to the first following day that is a business day unless that day falls in the next calendar month, in which case that date will be the first preceding day that is a calendar date"
-  {:cmns-av/adaptedFrom "FPML 5.1 \"BusinessDayConventionEnum\"",
+  {:cmns-av/adaptedFrom {:xsd/string "FPML 5.1 \"BusinessDayConventionEnum\""},
    :db/ident :fibo-fnd-dt-bd/BusinessDayModifiedFollowing,
    :rdf/type [:fibo-fnd-dt-bd/BusinessDayConvention
               :owl/NamedIndividual
               :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "business day modified following",
    :skos/definition
    "convention specifying that a non-business date will be adjusted to the first following day that is a business day unless that day falls in the next calendar month, in which case that date will be the first preceding day that is a calendar date"})
 
 (def BusinessDayModifiedPreceding
   "convention specifying that a non-business date will be adjusted to the first preceding day that is a business day unless that day falls in the previous month, in which case that date will be the first following day that is a business day"
-  {:cmns-av/adaptedFrom "FPML 5.1 \"BusinessDayConventionEnum\"",
+  {:cmns-av/adaptedFrom {:xsd/string "FPML 5.1 \"BusinessDayConventionEnum\""},
    :db/ident :fibo-fnd-dt-bd/BusinessDayModifiedPreceding,
    :rdf/type [:fibo-fnd-dt-bd/BusinessDayConvention
               :owl/NamedIndividual
               :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "business day modified preceding",
    :skos/definition
    "convention specifying that a non-business date will be adjusted to the first preceding day that is a business day unless that day falls in the previous month, in which case that date will be the first following day that is a business day"})
 
 (def BusinessDayNearest
   "convention specifying that a non-business date will be adjusted to the nearest day that is a business day -- i.e. if the non-business day falls on any day other than a Sunday or a Monday, it will be the first preceding day that is a business day, and will be the first following business day if it falls on a Sunday or a Monday"
-  {:cmns-av/adaptedFrom "FPML 5.1 \"BusinessDayConventionEnum\"",
+  {:cmns-av/adaptedFrom {:xsd/string "FPML 5.1 \"BusinessDayConventionEnum\""},
    :db/ident :fibo-fnd-dt-bd/BusinessDayNearest,
    :rdf/type [:fibo-fnd-dt-bd/BusinessDayConvention
               :owl/NamedIndividual
               :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "business day nearest",
    :skos/definition
    "convention specifying that a non-business date will be adjusted to the nearest day that is a business day -- i.e. if the non-business day falls on any day other than a Sunday or a Monday, it will be the first preceding day that is a business day, and will be the first following business day if it falls on a Sunday or a Monday"})
 
 (def BusinessDayNone
   "convention specifying that a date will not be adjusted if it falls on a day that is not a business day"
-  {:cmns-av/adaptedFrom "FPML 5.1 \"BusinessDayConventionEnum\"",
+  {:cmns-av/adaptedFrom {:xsd/string "FPML 5.1 \"BusinessDayConventionEnum\""},
    :db/ident :fibo-fnd-dt-bd/BusinessDayNone,
    :rdf/type [:fibo-fnd-dt-bd/BusinessDayConvention
               :owl/NamedIndividual
               :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "business day none",
    :skos/definition
    "convention specifying that a date will not be adjusted if it falls on a day that is not a business day"})
@@ -150,7 +162,8 @@
               :owl/NamedIndividual
               :fibo-fnd-dt-bd/Convention],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "business day preceding",
    :skos/definition
    "convention specifying that a date will be adjusted to the first previous day that is a business day"})
@@ -160,12 +173,13 @@
   {:db/ident :fibo-fnd-dt-bd/BusinessRecurrenceInterval,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "business recurrence interval",
    :rdfs/subClassOf
    [{:owl/onClass    :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
      :owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
     :fibo-fnd-dt-fd/RecurrenceInterval],
    :skos/definition
@@ -176,7 +190,8 @@
   {:db/ident :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "business recurrence interval convention",
    :rdfs/subClassOf :fibo-fnd-dt-bd/Convention,
    :skos/definition
@@ -187,7 +202,8 @@
   {:db/ident :fibo-fnd-dt-bd/Convention,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "convention",
    :skos/definition
    "widely accepted or established way of doing 'something' within some community of practice"})
@@ -197,19 +213,20 @@
   {:db/ident :fibo-fnd-dt-bd/DayOfMonth,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "day of month",
    :rdfs/subClassOf
    [{:owl/onDataRange :xsd/nonNegativeInteger,
      :owl/onProperty  :fibo-fnd-dt-fd/hasOrdinalNumber,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type        :owl/Restriction}
     :fibo-fnd-dt-bd/BusinessRecurrenceInterval
+    :fibo-fnd-dt-fd/RecurrenceInterval
     {:owl/onClass    :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
      :owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-dt-fd/RecurrenceInterval],
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :skos/definition "specific, recurring day of the month"})
 
 (def DayOfWeek
@@ -225,15 +242,16 @@
                          :rdf/type  :owl/Class},
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "day of the week",
    :rdfs/subClassOf
    [:fibo-fnd-dt-bd/BusinessRecurrenceInterval
+    :fibo-fnd-dt-fd/RecurrenceInterval
     {:owl/onClass    :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
      :owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-dt-fd/RecurrenceInterval],
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :skos/definition "specific, recurring day of the week"})
 
 (def EndOfMonth
@@ -241,15 +259,16 @@
   {:db/ident :fibo-fnd-dt-bd/EndOfMonth,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "end of the month",
    :rdfs/subClassOf
    [:fibo-fnd-dt-bd/BusinessRecurrenceInterval
+    :fibo-fnd-dt-fd/RecurrenceInterval
     {:owl/onClass    :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
      :owl/onProperty :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    :fibo-fnd-dt-fd/RecurrenceInterval],
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "the last day of a calendar month, irrespective of the length of the calendar month"})
 
@@ -258,7 +277,8 @@
   {:db/ident :fibo-fnd-dt-bd/hasBusinessDayAdjustment,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "has business day adjustment",
    :rdfs/range :fibo-fnd-dt-bd/BusinessDayAdjustment,
    :skos/definition
@@ -269,7 +289,8 @@
   {:db/ident :fibo-fnd-dt-bd/hasBusinessDayConvention,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "has business day convention",
    :rdfs/range :fibo-fnd-dt-bd/BusinessDayConvention,
    :skos/definition
@@ -280,7 +301,8 @@
   {:db/ident :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "has business recurrence interval convention",
    :rdfs/range :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
    :skos/definition
@@ -291,7 +313,8 @@
   {:db/ident :fibo-fnd-dt-bd/holdsDuring,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/"},
    :rdfs/label "holds during",
    :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
    :skos/definition

@@ -6,22 +6,32 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
    :dcterms/abstract
    "This ontology defines the fundamental common terms for trusts. Trusts are entities set up in terms of the applicable local statutes goerning trusts, and have as a minimum three specific, defined parties, known in many jurisdictions as trustor (sometimes sponsor), trustee and beneficiary. The terms in this ontology may be extended as necessary to represent specific types of trust, for example in the funds arena.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Trusts/Trusts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Trusts/Trusts/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -73,24 +83,24 @@
    :db/ident :fibo-be-tr-tr/IrrevocableTrust,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "irrevocable trust",
    :rdfs/subClassOf [:fibo-be-tr-tr/Trust
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity
+                     :fibo-be-le-lp/BusinessEntity
+                     {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/TrustBeneficiary,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-be-le-lp/LegalEntity
-                     :fibo-be-le-lp/BusinessEntity],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "trust that cannot be modified, amended or terminated except under certain legal circumstances and typically not without the permission of the grantor's named beneficiary or beneficiaries"})
 
@@ -101,24 +111,24 @@
    :db/ident :fibo-be-tr-tr/LivingTrust,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "living trust",
    :rdfs/subClassOf [:fibo-be-tr-tr/Trust
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity
+                     :fibo-be-le-lp/BusinessEntity
+                     {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/TrustBeneficiary,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-be-le-lp/LegalEntity
-                     :fibo-be-le-lp/BusinessEntity],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "trust created during an individual's lifetime where a designated person, the trustee, is given responsibility for managing that individual's assets for the benefit of the eventual beneficiary"})
 
@@ -128,24 +138,24 @@
    :owl/disjointWith :fibo-be-tr-tr/IrrevocableTrust,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "revocable trust",
    :rdfs/subClassOf [:fibo-be-tr-tr/Trust
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity
+                     :fibo-be-le-lp/BusinessEntity
+                     {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/TrustBeneficiary,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-be-le-lp/LegalEntity
-                     :fibo-be-le-lp/BusinessEntity],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "trust in which legal ownership of the trust property is transferred to the trustee, but the trustor retains full power to revoke, modify or amend the trust"})
 
@@ -156,25 +166,25 @@
    :db/ident :fibo-be-tr-tr/TestamentaryTrust,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "testamentary trust",
    :rdfs/subClassOf [:fibo-be-tr-tr/IrrevocableTrust
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-be-le-lp/LegalEntity
+                     :fibo-be-le-lp/BusinessEntity
+                     {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-be-tr-tr/Trust
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/TrustBeneficiary,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-be-tr-tr/Trust
-                     {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-be-le-lp/LegalEntity
-                     :fibo-be-le-lp/BusinessEntity],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "trust established in accordance with the instructions contained in a last will and testament"})
 
@@ -183,23 +193,23 @@
   {:db/ident :fibo-be-tr-tr/Trust,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "trust",
-   :rdfs/subClassOf [{:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
+                      :rdf/type           :owl/Restriction}
                      :fibo-be-le-lp/LegalEntity
+                     {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
                       :rdf/type           :owl/Restriction}
+                     :fibo-be-le-lp/BusinessEntity
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/TrustBeneficiary,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-be-le-lp/BusinessEntity],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "fiduciary relationship and legal entity in which one party, known as a trustor, gives another party, the trustee, the right to hold title to and manage assets for the benefit of a third party, the beneficiary"})
 
@@ -211,18 +221,18 @@
    :db/ident :fibo-be-tr-tr/TrustAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "trust agreement",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustor,
                       :rdf/type           :owl/Restriction}
-                     :fibo-be-le-fbo/OrganizationCoveringAgreement
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/TrustBeneficiary,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-be-tr-tr/Trustee,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-be-le-fbo/OrganizationCoveringAgreement],
    :skos/definition
    "formal agreement that establishes a trust, whereby the trustor(s) gives the trustee(s) the responsibility to hold and manage assets for the beneficiary(ies)"})
 
@@ -231,7 +241,7 @@
   {:db/ident :fibo-be-tr-tr/TrustBeneficiary,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "trust beneficiary",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
@@ -248,7 +258,7 @@
   {:db/ident :fibo-be-tr-tr/TrustFundManager,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "trust fund manager",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
@@ -267,15 +277,14 @@
    :db/ident :fibo-be-tr-tr/Trustee,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "trustee",
    :rdfs/subClassOf
    [:fibo-fnd-org-org/OrganizationMember
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
-                          :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
-                          :owl/qualifiedCardinality 1,
-                          :rdf/type       :owl/Restriction},
+     :owl/someValuesFrom {:owl/allValuesFrom :fibo-be-tr-tr/Trust,
+                          :owl/onProperty    :fibo-fnd-rel-rel/manages,
+                          :rdf/type          :owl/Restriction},
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/allValuesFrom :fibo-be-tr-tr/Trust,
@@ -283,9 +292,10 @@
                           :rdf/type          :owl/Restriction},
      :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom {:owl/allValuesFrom :fibo-be-tr-tr/Trust,
-                          :owl/onProperty    :fibo-fnd-rel-rel/manages,
-                          :rdf/type          :owl/Restriction},
+     :owl/someValuesFrom {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
+                          :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
+                          :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                          :rdf/type       :owl/Restriction},
      :rdf/type           :owl/Restriction}
     :fibo-be-oac-exec/LegallyDelegatedAuthority],
    :skos/definition
@@ -299,7 +309,7 @@
    :db/ident :fibo-be-tr-tr/Trustor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "trustor",
    :rdfs/subClassOf
    [{:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
@@ -309,7 +319,7 @@
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/onClass    :fibo-be-tr-tr/TrustAgreement,
                           :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
-                          :owl/qualifiedCardinality 1,
+                          :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                           :rdf/type       :owl/Restriction},
      :rdf/type           :owl/Restriction}],
    :skos/definition
@@ -322,7 +332,7 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-tr-tr/Trust,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "has beneficiary",
    :rdfs/range :fibo-be-tr-tr/TrustBeneficiary,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
@@ -335,7 +345,7 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-tr-tr/Trust,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "has trustee",
    :rdfs/range :fibo-be-tr-tr/Trustee,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
@@ -347,7 +357,7 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-tr-tr/TrustBeneficiary,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "is beneficiary of",
    :rdfs/range :fibo-be-tr-tr/Trust,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
@@ -359,7 +369,7 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-tr-tr/Trustee,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/"},
    :rdfs/label "is trustee of",
    :rdfs/range :fibo-be-tr-tr/Trust,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,

@@ -6,23 +6,34 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
    :dcterms/abstract
    "This ontology defines abstract concepts for assessments, evaluations, and outcomes, as the basis for various analysis, such as for business performance, compliance and risk.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Assessments/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
@@ -71,22 +82,23 @@
   {:db/ident :fibo-fnd-arr-asmt/Appraisal,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "appraisal",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-asmt/estimatesValueAt,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/AppraisedValue,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-oac-own/Asset,
                       :owl/onProperty :fibo-fnd-rel-rel/evaluates,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-arr-asmt/Appraiser,
                       :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-arr-asmt/AssessmentReport
                      :fibo-fnd-arr-rep/Report
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-arr-asmt/Opinion,
                       :owl/onProperty :fibo-fnd-arr-rep/reportsOn,
                       :rdf/type       :owl/Restriction}],
@@ -98,7 +110,8 @@
   {:db/ident :fibo-fnd-arr-asmt/AppraisedValue,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "appraised value",
    :rdfs/subClassOf :fibo-fnd-acc-cur/MonetaryAmount,
    :skos/definition
@@ -109,12 +122,13 @@
   {:db/ident :fibo-fnd-arr-asmt/Appraiser,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "appraiser",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Appraisal,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minCardinality 0,
+                     {:owl/minCardinality #xsd/nonNegativeInteger 0,
                       :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pty-pty/PartyInRole],
@@ -126,12 +140,13 @@
   {:db/ident :fibo-fnd-arr-asmt/AssessmentActivity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "assessment activity",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minCardinality 0,
+                     {:owl/minCardinality #xsd/nonNegativeInteger 0,
                       :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-dt-oc/OccurrenceKind],
@@ -143,26 +158,27 @@
   {:db/ident :fibo-fnd-arr-asmt/AssessmentEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "assessment event",
-   :rdfs/subClassOf [{:owl/minCardinality 0,
-                      :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
+                      :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
-                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
-                      :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-arr-asmt/AssessmentReport,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence],
+                     {:owl/minCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
+                     {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
+                      :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "event involving the evaluation or estimation of the nature, quality, or ability of someone or something"})
 
@@ -171,9 +187,10 @@
   {:db/ident :fibo-fnd-arr-asmt/AssessmentReport,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "assessment report",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-arr-asmt/Opinion,
                       :owl/onProperty :fibo-fnd-arr-rep/reportsOn,
                       :rdf/type       :owl/Restriction}
@@ -186,7 +203,8 @@
   {:db/ident :fibo-fnd-arr-asmt/Opinion,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "opinion",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isGeneratedBy,
                       :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
@@ -199,16 +217,17 @@
 (def ValuationMethod
   "method used to determine the present or expected worth of an asset"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "Asset valuation is the process of determining the fair market or present value of assets, using book values, absolute valuation models like discounted cash flow analysis, option pricing models or comparables. Such assets include investments in marketable securities such as stocks, bonds and options; tangible assets like buildings and equipment; or intangible assets such as brands, patents and trademarks.@en",
    :db/ident :fibo-fnd-arr-asmt/ValuationMethod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
-   :rdfs/label #voc/lstr "valuation method@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
+   :rdfs/label #xsd/langString "valuation method@en",
    :rdfs/subClassOf :fibo-fnd-gao-obj/Strategy,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "method used to determine the present or expected worth of an asset@en"})
 
 (def ValueAssessment
@@ -218,38 +237,39 @@
    :db/ident :fibo-fnd-arr-asmt/ValueAssessment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "value assessment",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-asmt/hasAppraiser,
                       :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-arr-asmt/ValuationMethod,
                       :owl/onProperty :fibo-fnd-arr-asmt/appliesMethodology,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-arr-asmt/Appraisal,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-arr-asmt/AssessmentEvent
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
-                      :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minCardinality 0,
+                     {:owl/minCardinality #xsd/nonNegativeInteger 0,
                       :owl/onProperty     :fibo-fnd-rel-rel/evaluates,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
-                      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-dt-oc/hasOutput,
                       :owl/someValuesFrom :fibo-fnd-arr-asmt/Opinion,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/onClass    :fibo-fnd-arr-asmt/AssessmentActivity,
+                      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
+                      :owl/someValuesFrom :fibo-fnd-pty-rl/AgentInRole,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-arr-asmt/AssessmentReport,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence],
    :skos/definition "assessment event to estimate the value of something"})
 
 (def appliesMethodology
@@ -257,7 +277,8 @@
   {:db/ident :fibo-fnd-arr-asmt/appliesMethodology,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "applies methodology",
    :rdfs/range :fibo-fnd-arr-asmt/ValuationMethod,
    :rdfs/subPropertyOf :fibo-fnd-gao-obj/hasStrategy,
@@ -269,7 +290,8 @@
   {:db/ident :fibo-fnd-arr-asmt/estimatesValueAt,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "estimates value at",
    :rdfs/range :fibo-fnd-arr-asmt/AppraisedValue,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
@@ -281,7 +303,8 @@
   {:db/ident :fibo-fnd-arr-asmt/hasAppraiser,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "has appraiser",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
    :skos/definition
@@ -292,11 +315,12 @@
   {:db/ident :fibo-fnd-arr-asmt/hasDateOfAssessment,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
-   :rdfs/label #voc/lstr "has date of assessment@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
+   :rdfs/label #xsd/langString "has date of assessment@en",
    :rdfs/range :cmns-dt/ExplicitDate,
    :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "date on which an assessment process was completed@en"})
 
 (def hasEstimatedValue
@@ -304,7 +328,8 @@
   {:db/ident :fibo-fnd-arr-asmt/hasEstimatedValue,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "has estimated value",
    :rdfs/range :fibo-fnd-arr-asmt/AppraisedValue,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
@@ -317,7 +342,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-arr-asmt/AppraisedValue,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/"},
    :rdfs/label "is estimated value of",
    :rdfs/subPropertyOf :fibo-fnd-utl-alx/isValueOf,
    :skos/definition

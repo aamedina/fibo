@@ -5,36 +5,59 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
    :dcterms/abstract
    "Process ontology for the process of issuance (securitization) of mortgage backed securities by commercial institutions rather than by government agencies.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceProcess/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/AgencyMBSIssuance/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/TransactionsExt/REATransactions/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/MortgageBackedSecurities/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceDocuments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/MBSIssuance/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/PoolBackedSecurities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/DebtIssuance/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/TransactionsExt/SecuritiesTransactions/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MortgageLoans/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceProcess/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/AgencyMBSIssuance/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/TransactionsExt/REATransactions/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/MortgageBackedSecurities/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceDocuments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/MBSIssuance/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/PoolBackedSecurities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/DebtIssuance/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/TransactionsExt/SecuritiesTransactions/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MortgageLoans/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -87,15 +110,16 @@
    :rdfa/prefix "fibo-bp-iss-pmbs",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "PrivateLabelMBSIssuance@en"})
+   :rdfs/label #xsd/langString "PrivateLabelMBSIssuance@en"})
 
 (def AllocatePrimaryIdentifier
   "allocate primary identifier"
   {:db/ident :fibo-bp-iss-pmbs/AllocatePrimaryIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "allocate primary identifier@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "allocate primary identifier@en",
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def AllocateRatings
@@ -103,8 +127,9 @@
   {:db/ident :fibo-bp-iss-pmbs/AllocateRatings,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "allocate ratings@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "allocate ratings@en",
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def AssessPoolSuitabilityForIssuance
@@ -112,8 +137,9 @@
   {:db/ident :fibo-bp-iss-pmbs/AssessPoolSuitabilityForIssuance,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "assess pool suitability for issuance@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "assess pool suitability for issuance@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/isAssessmentOf,
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/InAssemblyMortgagePool,
@@ -125,8 +151,9 @@
   {:db/ident :fibo-bp-iss-pmbs/AssessRatings,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "assess ratings@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "assess ratings@en",
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def BrokerDealer
@@ -134,14 +161,15 @@
   {:db/ident :fibo-bp-iss-pmbs/BrokerDealer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "broker dealer@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "broker dealer@en",
    :rdfs/subClassOf {:owl/onProperty :fibo-bp-iss-pmbs/commitsTo,
                      :owl/someValuesFrom
                      :fibo-bp-iss-pmbs/GetCommitmentFromInvestors,
                      :rdf/type :owl/Restriction},
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "An entity which may become a primary investor in the issue. Term origin:MBS PoC Reviews@en"})
 
 (def CloseDeal
@@ -149,8 +177,9 @@
   {:db/ident :fibo-bp-iss-pmbs/CloseDeal,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "close deal@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "close deal@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/resultsInPublicationOf,
                       :owl/someValuesFrom :fibo-bp-iss-pmbs/RemittanceReport,
                       :rdf/type :owl/Restriction}
@@ -165,22 +194,24 @@
   {:db/ident :fibo-bp-iss-pmbs/DefineNotesParameters,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "define notes parameters@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "define notes parameters@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/resultsIn.1,
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/DraftTrancheNotesParameters,
                       :rdf/type :owl/Restriction}
                      :fibo-bp-iss-prc/IssuanceProcessActivity],
-   :skos/definition #voc/lstr "the denom of the notes@en"})
+   :skos/definition #xsd/langString "the denom of the notes@en"})
 
 (def DefinePoolCharacteristics
   "define pool characteristics"
   {:db/ident :fibo-bp-iss-pmbs/DefinePoolCharacteristics,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "define pool characteristics@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "define pool characteristics@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/isDefiningOf,
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/NotYetIssuedNonAgencyMortgagePool,
@@ -192,11 +223,12 @@
   {:db/ident :fibo-bp-iss-pmbs/DraftTrancheNotesParameters,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "draft tranche notes parameters@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "draft tranche notes parameters@en",
    :rdfs/subClassOf :fibo-fnd-arr-doc/Document,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Draft of set of information defining the notes breakdown of one tranche. covers denominations and amounts that you can byu of the instrument in this tranche. Term origin:MBS PoC Reviews@en"})
 
 (def DraftTrancheStructure
@@ -204,11 +236,12 @@
   {:db/ident :fibo-bp-iss-pmbs/DraftTrancheStructure,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "draft tranche structure@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "draft tranche structure@en",
    :rdfs/subClassOf :fibo-fnd-arr-doc/Document,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Draft of set of information defining the tranches in the tranched issue and how these relate to one another. Term origin:MBS PoC Reviews@en"})
 
 (def DraftTrancheTermsheet
@@ -216,11 +249,12 @@
   {:db/ident :fibo-bp-iss-pmbs/DraftTrancheTermsheet,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "draft tranche termsheet@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "draft tranche termsheet@en",
    :rdfs/subClassOf :fibo-fnd-agr-ctr/TermSheet,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Draft of set of information defining one tranche of a tranched issue. This will become the termsheet of an individual tranche within that issue. Term origin:MBS PoC Reviews@en"})
 
 (def DrawUpOfferingMemorandum
@@ -228,8 +262,9 @@
   {:db/ident :fibo-bp-iss-pmbs/DrawUpOfferingMemorandum,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "draw up offering memorandum@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "draw up offering memorandum@en",
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity})
 
 (def DrawUpTrancheTermsheets
@@ -237,8 +272,9 @@
   {:db/ident :fibo-bp-iss-pmbs/DrawUpTrancheTermsheets,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "draw up tranche termsheets@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "draw up tranche termsheets@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/requires,
                       :owl/someValuesFrom
                       :fibo-sec-dbt-mbs/NonAgencyMortgagePool,
@@ -250,8 +286,9 @@
   {:db/ident :fibo-bp-iss-pmbs/FinalizePoolContent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "finalize pool content@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "finalize pool content@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/finalizes.1,
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/InIssuanceNonAgencyMortgagePool,
@@ -263,8 +300,9 @@
   {:db/ident :fibo-bp-iss-pmbs/FinalizeProspectus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "finalize prospectus@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "finalize prospectus@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/resultsIn.2,
                       :owl/someValuesFrom
                       :fibo-sec-dbt-mbs/TranchedMBSDealProspectus,
@@ -276,8 +314,9 @@
   {:db/ident :fibo-bp-iss-pmbs/GetCommitmentFromInvestors,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "get commitment from investors@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "get commitment from investors@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-bp-iss-pmbs/hasResource.2,
      :owl/someValuesFrom :fibo-bp-iss-pmbs/DraftTrancheNotesParameters,
@@ -295,8 +334,9 @@
   {:db/ident :fibo-bp-iss-pmbs/IdentifyConformingMortgage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "identify conforming mortgage@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "identify conforming mortgage@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-bp-iss-pmbs/refersTo,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
                       :rdf/type           :owl/Restriction}
@@ -307,8 +347,9 @@
   {:db/ident :fibo-bp-iss-pmbs/IdentifyUnderwriter,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "identify underwriter@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "identify underwriter@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-dbti/resultsIn,
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/PotentialTranchedIssueUnderwriter,
@@ -320,8 +361,9 @@
   {:db/ident :fibo-bp-iss-pmbs/InAssemblyMortgagePool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "in assembly mortgage pool@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "in assembly mortgage pool@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-lif/hasStage,
                       :owl/someValuesFrom :fibo-bp-iss-dbti/InAssembly,
                       :rdf/type           :owl/Restriction}
@@ -335,8 +377,9 @@
   {:db/ident :fibo-bp-iss-pmbs/InIssuanceNonAgencyMortgagePool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "in issuance non agency mortgage pool@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "in issuance non agency mortgage pool@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-lif/hasStage,
                       :owl/someValuesFrom :fibo-bp-iss-dbti/InIssuance,
                       :rdf/type           :owl/Restriction}
@@ -350,8 +393,9 @@
   {:db/ident :fibo-bp-iss-pmbs/IndividualTrancheDefinitions,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "individual tranche definitions@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "individual tranche definitions@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-agr-ctr/hasContractualElement,
                       :owl/someValuesFrom :fibo-sec-dbt-bnd/CouponPaymentTerms,
                       :rdf/type :owl/Restriction}
@@ -363,7 +407,7 @@
                      :fibo-bp-iss-pmbs/TranchedMBSIssueProspectusPart
                      :fibo-bp-iss-mbs/ProspectusPart],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "In reality there is one termsheet that has sets of information for the terms for each Tranche. This class of information identifies the terms of one tranche, but it does not exist as a separate document in its own right. Further Notes ? We may need to firm up the relationship between the individual tranche termsheet and the information about the relationships among these (some of which are quite complex) and the terms that are common to more than one tranche. In practice these may be separate sections of one document. Term origin:MBS PoC Reviews@en"})
 
 (def Investor
@@ -371,32 +415,36 @@
   {:db/ident :fibo-bp-iss-pmbs/Investor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "investor@en"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "investor@en"})
 
 (def MBSSecuritizationEnd
   "m b s securitization end"
   {:db/ident :fibo-bp-iss-pmbs/MBSSecuritizationEnd,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "m b s securitization end@en"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "m b s securitization end@en"})
 
 (def MBSSecuritizationStart
   "m b s securitization start"
   {:db/ident :fibo-bp-iss-pmbs/MBSSecuritizationStart,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "m b s securitization start@en"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "m b s securitization start@en"})
 
 (def MakeSecuritiesAvailableInMarket
   "What happens here? e.g. notices / marketing (phone calls) Structured Finance: There's not really notices in the newspaper, it's a very small market and it's all based on relationships so there's no public notice. So you would get an email from the sales person at the bank who has just closed the deal and is now selling these (this bank is the broker/dealer who bought it?) There's not really much of a secondary market - the initial investors would often hold on to these. There is something around Bloomberg - you can go there and see what's available, if someone has a number of notes from a iven tranche, that they are willing to sell. So there's no transpoarency (!!) Sales would be OTC but less transparent e.g. if you look up a normal OTC stock, you would be able to see more of this information, than in these (non Agency) MBS issues and other SF. DOES THIS APPLY IN ALL MBS??."
   {:db/ident :fibo-bp-iss-pmbs/MakeSecuritiesAvailableInMarket,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "make securities available in market@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "make securities available in market@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/requires.1,
                       :owl/someValuesFrom
                       :fibo-sec-dbt-mbs/TranchedMBSDealProspectus,
@@ -406,7 +454,7 @@
                       :rdf/type           :owl/Restriction}
                      :fibo-bp-iss-prc/IssuanceProcessActivity],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "What happens here? e.g. notices / marketing (phone calls) Structured Finance: There's not really notices in the newspaper, it's a very small market and it's all based on relationships so there's no public notice. So you would get an email from the sales person at the bank who has just closed the deal and is now selling these (this bank is the broker/dealer who bought it?) There's not really much of a secondary market - the initial investors would often hold on to these. There is something around Bloomberg - you can go there and see what's available, if someone has a number of notes from a iven tranche, that they are willing to sell. So there's no transpoarency (!!) Sales would be OTC but less transparent e.g. if you look up a normal OTC stock, you would be able to see more of this information, than in these (non Agency) MBS issues and other SF. DOES THIS APPLY IN ALL MBS??.@en"})
 
 (def MarketIssueToPrimaryInvestors
@@ -414,8 +462,9 @@
   {:db/ident :fibo-bp-iss-pmbs/MarketIssueToPrimaryInvestors,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "market issue to primary investors@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "market issue to primary investors@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/hasResource.1,
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/TranchedOfferingMemorandum,
@@ -427,8 +476,9 @@
   {:db/ident :fibo-bp-iss-pmbs/NonAgencyPoolCreationEnd,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "non agency pool creation end@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "non agency pool creation end@en",
    :rdfs/subClassOf {:owl/onProperty :fibo-bp-iss-pmbs/flow,
                      :owl/someValuesFrom
                      :fibo-bp-iss-pmbs/MBSSecuritizationStart,
@@ -439,8 +489,9 @@
   {:db/ident :fibo-bp-iss-pmbs/NonAgencyPoolCreationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "non agency pool creation process@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "non agency pool creation process@en",
    :rdfs/subClassOf :fibo-bp-iss-dbti/RetailAssetPoolCreationProcess})
 
 (def NonAgencyPoolCreationStart
@@ -448,16 +499,18 @@
   {:db/ident :fibo-bp-iss-pmbs/NonAgencyPoolCreationStart,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "non agency pool creation start@en"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "non agency pool creation start@en"})
 
 (def NotYetIssuedNonAgencyMortgagePool
   "not yet issued non agency mortgage pool"
   {:db/ident :fibo-bp-iss-pmbs/NotYetIssuedNonAgencyMortgagePool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "not yet issued non agency mortgage pool@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "not yet issued non agency mortgage pool@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-lif/hasStage,
                       :owl/someValuesFrom :fibo-bp-iss-dbti/NotYetIssued,
                       :rdf/type           :owl/Restriction}
@@ -471,8 +524,9 @@
   {:db/ident :fibo-bp-iss-pmbs/NumberingAgency,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "numbering agency@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "numbering agency@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-bp-iss-pmbs/allocatesIdentifier,
      :owl/someValuesFrom :fibo-bp-iss-pmbs/AllocatePrimaryIdentifier,
@@ -482,7 +536,7 @@
      :rdf/type           :owl/Restriction}
     :fibo-bp-iss-prc/SecuritiesIssuanceProcessActor],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The agency which will provide the primary securitiy identifier for the security. Term origin:MBS PoC Reviews@en"})
 
 (def PoolLifecycleStateSelection
@@ -490,8 +544,9 @@
   {:db/ident :fibo-bp-iss-pmbs/PoolLifecycleStateSelection,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "PoolLifecycleStateSelection@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "PoolLifecycleStateSelection@en",
    :rdfs/subClassOf :fibo-fnd-arr-lif/LifecycleStage})
 
 (def PoolReadyForIssue
@@ -503,16 +558,18 @@
                          :rdf/type :owl/Class},
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "pool ready for issue@en"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "pool ready for issue@en"})
 
 (def PoolTrustee
   "pool trustee"
   {:db/ident :fibo-bp-iss-pmbs/PoolTrustee,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "pool trustee@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "pool trustee@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/mayBecome,
                       :owl/someValuesFrom
                       :fibo-sec-dbt-mbs/TranchedMBSIssueUnderwriter,
@@ -524,16 +581,18 @@
   {:db/ident :fibo-bp-iss-pmbs/PotentialMBSInvestor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "potential m b s investor@en"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "potential m b s investor@en"})
 
 (def PotentialNonAgencyMBSIssuer
   "The entity which will become the issuing party for the Tranched MBS Issue. This entity is the principal actor in most of the activities involved in the issue. Term origin:MBS PoC Reviews"
   {:db/ident :fibo-bp-iss-pmbs/PotentialNonAgencyMBSIssuer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "potential non agency m b s issuer@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "potential non agency m b s issuer@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-rel-rel/evaluates,
      :owl/someValuesFrom :fibo-bp-iss-pmbs/AssessRatings,
@@ -543,7 +602,7 @@
      :rdf/type           :owl/Restriction}
     :fibo-bp-iss-dbti/PoolBackedSecuritySecuritizationProcessActor],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The entity which will become the issuing party for the Tranched MBS Issue. This entity is the principal actor in most of the activities involved in the issue. Term origin:MBS PoC Reviews@en"})
 
 (def PotentialTranchedIssueUnderwriter
@@ -551,11 +610,12 @@
   {:db/ident :fibo-bp-iss-pmbs/PotentialTranchedIssueUnderwriter,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "potential tranched issue underwriter@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "potential tranched issue underwriter@en",
    :rdfs/subClassOf :fibo-bp-iss-prc/PotentialUnderwriter,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The entity which will become the underwriter for the tranched MBS issue. Term origin:MBS PoC Reviews@en"})
 
 (def PrimaryInvestor
@@ -563,10 +623,11 @@
   {:db/ident :fibo-bp-iss-pmbs/PrimaryInvestor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "primary investor@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "primary investor@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "A party which becomes the primary investor in the issue, by purchasing some of the tranches of the issue. Term origin:MBS PoC Reviews@en"})
 
 (def PurchaseMortgageIntoPool
@@ -574,8 +635,9 @@
   {:db/ident :fibo-bp-iss-pmbs/PurchaseMortgageIntoPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "purchase mortgage into pool@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "purchase mortgage into pool@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-bp-iss-pmbs/isPurchaseOf,
                       :owl/someValuesFrom :fibo-loan-reln-mtg/Mortgage,
                       :rdf/type           :owl/Restriction}
@@ -590,8 +652,9 @@
   {:db/ident :fibo-bp-iss-pmbs/RatingsAgency,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "ratings agency@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "ratings agency@en",
    :rdfs/subClassOf {:owl/onProperty     :fibo-bp-iss-pmbs/allocatesRatings,
                      :owl/someValuesFrom :fibo-bp-iss-pmbs/AllocateRatings,
                      :rdf/type           :owl/Restriction}})
@@ -605,19 +668,21 @@
                          :rdf/type :owl/Class},
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "ratings suitable for issue@en"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "ratings suitable for issue@en"})
 
 (def RegisterSecurity
   "After the deal is closed the security is formally registered with some registraton authority This is the \"official\" bit - there is not a separate \"Issue\" activity which is official ?????"
   {:db/ident :fibo-bp-iss-pmbs/RegisterSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "register security@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "register security@en",
    :rdfs/subClassOf :fibo-bp-iss-prc/IssuanceProcessActivity,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "After the deal is closed the security is formally registered with some registraton authority This is the \"official\" bit - there is not a separate \"Issue\" activity which is official ?????@en"})
 
 (def RemittanceReport
@@ -625,11 +690,12 @@
   {:db/ident :fibo-bp-iss-pmbs/RemittanceReport,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "remittance report@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "remittance report@en",
    :rdfs/subClassOf :fibo-fnd-arr-rep/Report,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Report containing a specific and limited set of information about the Deal. Term origin:MBS PoC Reviews@en"})
 
 (def TrancheNotesParameters
@@ -637,49 +703,52 @@
   {:db/ident :fibo-bp-iss-pmbs/TrancheNotesParameters,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "tranche notes parameters@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "tranche notes parameters@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
                       :owl/someValuesFrom :fibo-sec-dbt-mbs/MBSTrancheNote,
                       :rdf/type           :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-bp-iss-pmbs/maximumAmount,
                       :rdf/type       :owl/Restriction}
                      :fibo-bp-iss-pmbs/TranchedMBSIssueProspectusPart
                      :fibo-bp-iss-mbs/ProspectusPart],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "One set of information defining the notes breakdown of one tranche. Covers denominations and amounts that you can byu of the instrument in this tranche. Q: Is this really defined in the prospectus? A: yes The prospectus lists the characteristics including e.g. \"The notes will be sold in denominations of X AND Increuemtns of Y e.g. $250 000 incremented by $1000. Parameters include: Denominations Minimum amounts what else? Term origin:MBS PoC Reviews@en"})
 
 (def TrancheStructureAndTermsheet
-  "The termsheet with the terms for individual tranches is a separate component, known as the Tranche Termsheet or Individual Tranche Definitions. These may in practice be in one sheet or document deliverable but is a set of termsheets defining the terms for the set of tranches. Term origin:MBS PoC Reviews"
+  "tranche structure and termsheet"
   {:db/ident :fibo-bp-iss-pmbs/TrancheStructureAndTermsheet,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "tranche structure and termsheet@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "tranche structure and termsheet@en",
    :rdfs/subClassOf [:fibo-bp-iss-pmbs/TranchedMBSIssueProspectusPart
                      :fibo-bp-iss-mbs/ProspectusPart],
    :skos/definition
-   [#voc/lstr
+   [#xsd/langString
      "The termsheet with the terms for individual tranches is a separate component, known as the Tranche Termsheet or Individual Tranche Definitions. These may in practice be in one sheet or document deliverable but is a set of termsheets defining the terms for the set of tranches. Term origin:MBS PoC Reviews@en"
-    #voc/lstr "One sheet defining the MBS structure.@en"]})
+    #xsd/langString "One sheet defining the MBS structure.@en"]})
 
 (def TranchedDraftProspectus
   "The draft prospectus for a tranched Mortgage Backed Securities issue, as determined by the issuing entity prior to marketing the issue. Certain terms in the draft prospectus will be finalized later in the issuance process to become the actual Prospectus. Term origin:MBS PoC Reviews"
   {:db/ident :fibo-bp-iss-pmbs/TranchedDraftProspectus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "tranched draft prospectus@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "tranched draft prospectus@en",
    :rdfs/subClassOf [{:owl/onProperty :cmns-dt/precedes,
                       :owl/someValuesFrom
                       :fibo-sec-dbt-mbs/TranchedMBSDealProspectus,
                       :rdf/type :owl/Restriction}
                      :fibo-bp-iss-doc/PreliminaryProspectus],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The draft prospectus for a tranched Mortgage Backed Securities issue, as determined by the issuing entity prior to marketing the issue. Certain terms in the draft prospectus will be finalized later in the issuance process to become the actual Prospectus. Term origin:MBS PoC Reviews@en"})
 
 (def TranchedMBSDealSettlement
@@ -687,8 +756,9 @@
   {:db/ident :fibo-bp-iss-pmbs/TranchedMBSDealSettlement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "tranched m b s deal settlement@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "tranched m b s deal settlement@en",
    :rdfs/subClassOf
    {:owl/onProperty :fibo-bp-iss-pmbs/decomposesInto,
     :owl/someValuesFrom
@@ -700,8 +770,9 @@
   {:db/ident :fibo-bp-iss-pmbs/TranchedMBSDealTransaction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "tranched m b s deal transaction@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "tranched m b s deal transaction@en",
    :rdfs/subClassOf
    [{:owl/onProperty :fibo-fnd-txn-sec/follows,
      :owl/someValuesFrom
@@ -712,7 +783,7 @@
      :rdf/type           :owl/Restriction}
     :fibo-fnd-txn-sec/FinancialPrimaryMarketTransaction],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The deal transaction by which the MBS Issue is issued to primary investors. Term origin:MBS PoC Reviews@en"})
 
 (def TranchedMBSIssueProspectusPart
@@ -720,11 +791,12 @@
   {:db/ident :fibo-bp-iss-pmbs/TranchedMBSIssueProspectusPart,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "tranched m b s issue prospectus part@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "tranched m b s issue prospectus part@en",
    :rdfs/subClassOf :fibo-bp-iss-mbs/ProspectusPart,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "A part or section of a prospectus for a tranched mortgage backed securities issue. Term origin:MBS PoC Reviews@en"})
 
 (def TranchedMBSPrimaryDealTransactionSettlementProcess
@@ -733,12 +805,13 @@
    :fibo-bp-iss-pmbs/TranchedMBSPrimaryDealTransactionSettlementProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString
                 "tranched m b s primary deal transaction settlement process@en",
    :rdfs/subClassOf :fibo-fnd-txn-sec/SettlementProcess,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The process by which the primary deal transaction is settled. Term origin:MBS PoC Reviews@en"})
 
 (def TranchedMBSProspectusOutline
@@ -746,15 +819,16 @@
   {:db/ident :fibo-bp-iss-pmbs/TranchedMBSProspectusOutline,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "tranched m b s prospectus outline@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "tranched m b s prospectus outline@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-pmbs/hasContent.1,
                       :owl/someValuesFrom
                       :fibo-bp-iss-pmbs/DraftTrancheTermsheet,
                       :rdf/type :owl/Restriction}
                      :fibo-bp-iss-doc/PreliminaryProspectus],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "An outline of the tranched prospectus, provind an intial representation of the possible tranches and their features. Term origin:MBS PoC Reviews@en"})
 
 (def TranchedMBSSecuritizationProcess
@@ -762,17 +836,19 @@
   {:db/ident :fibo-bp-iss-pmbs/TranchedMBSSecuritizationProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "tranched m b s securitization process@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "tranched m b s securitization process@en",
    :rdfs/subClassOf :fibo-bp-iss-mbs/MBSSecuritizationProcess})
 
 (def TranchedOfferingMemorandum
-  "The offering memorandum for a tranched MBS issue, setting out basic information about a future issue, for the information of prospective investors and their agents."
+  "tranched offering memorandum"
   {:db/ident :fibo-bp-iss-pmbs/TranchedOfferingMemorandum,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "tranched offering memorandum@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "tranched offering memorandum@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-bp-iss-pmbs/includesDetailsAbout.1,
      :owl/someValuesFrom :fibo-bp-iss-pmbs/IndividualTrancheDefinitions,
@@ -780,15 +856,15 @@
     {:owl/onProperty     :fibo-bp-iss-pmbs/includesDetailsAbout,
      :owl/someValuesFrom :fibo-bp-iss-pmbs/TrancheStructureAndTermsheet,
      :rdf/type           :owl/Restriction}
-    {:owl/maxQualifiedCardinality 1,
+    {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
      :owl/onClass    :fibo-bp-iss-pmbs/DraftTrancheNotesParameters,
      :owl/onProperty :fibo-bp-iss-pmbs/mayIncludeDetailsAbout,
      :rdf/type       :owl/Restriction}
     :fibo-sec-sec-iss/OfferingDocument],
    :skos/definition
-   [#voc/lstr
+   [#xsd/langString
      "The offering memorandum for a tranched MBS issue, setting out basic information about a future issue, for the information of prospective investors and their agents.@en"
-    #voc/lstr
+    #xsd/langString
      "The Offering Memorandum will include or attach the terms for two or more individual tranches that will make up the issue, and the structure of the tranches, including how they will relate to one another (priorities and so on). Term origin:MBS PoC Reviews@en"]})
 
 (def addsTo
@@ -797,8 +873,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/PurchaseMortgageIntoPool,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "adds to@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "adds to@en",
    :rdfs/range :fibo-bp-iss-pmbs/InAssemblyMortgagePool})
 
 (def allocatesIdentifier
@@ -807,8 +884,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/NumberingAgency,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "allocates identifier@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "allocates identifier@en",
    :rdfs/range :fibo-bp-iss-pmbs/AllocatePrimaryIdentifier})
 
 (def allocatesRatings
@@ -817,8 +895,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/RatingsAgency,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "allocates ratings@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "allocates ratings@en",
    :rdfs/range :fibo-bp-iss-pmbs/AllocateRatings})
 
 (def commitmentBasedOn
@@ -827,8 +906,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/GetCommitmentFromInvestors,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "commitment based on@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "commitment based on@en",
    :rdfs/range :fibo-bp-iss-pmbs/TranchedDraftProspectus})
 
 (def commitsTo
@@ -837,8 +917,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/BrokerDealer,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "commits to@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "commits to@en",
    :rdfs/range :fibo-bp-iss-pmbs/GetCommitmentFromInvestors})
 
 (def decomposesInto
@@ -847,8 +928,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedMBSDealSettlement,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "decomposes into@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "decomposes into@en",
    :rdfs/range
    :fibo-bp-iss-pmbs/TranchedMBSPrimaryDealTransactionSettlementProcess})
 
@@ -858,8 +940,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TrancheNotesParameters,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "denomination increment@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "denomination increment@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount})
 
 (def finalizes_1
@@ -868,8 +951,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/FinalizePoolContent,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "finalizes@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "finalizes@en",
    :rdfs/range :fibo-bp-iss-pmbs/InIssuanceNonAgencyMortgagePool})
 
 (def flow
@@ -878,8 +962,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/NonAgencyPoolCreationEnd,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "flow@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "flow@en",
    :rdfs/range :fibo-bp-iss-pmbs/MBSSecuritizationStart})
 
 (def hasContent
@@ -888,8 +973,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedMBSProspectusOutline,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "has content@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "has content@en",
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheStructure,
    :rdfs/subPropertyOf :cmns-col/hasPart})
 
@@ -899,8 +985,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedMBSProspectusOutline,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "has content@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "has content@en",
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheTermsheet,
    :rdfs/subPropertyOf :cmns-col/hasPart})
 
@@ -910,8 +997,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedMBSDealTransaction,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "has counterparty@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "has counterparty@en",
    :rdfs/range :fibo-bp-iss-pmbs/PrimaryInvestor})
 
 (def hasPrimaryHolder
@@ -920,8 +1008,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/TranchedMBSInstrument,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "has primary holder@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "has primary holder@en",
    :rdfs/range :fibo-bp-iss-pmbs/PrimaryInvestor})
 
 (def hasPrincipalParty
@@ -930,8 +1019,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedMBSDealTransaction,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "has principal party@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "has principal party@en",
    :rdfs/range :fibo-sec-dbt-mbs/NonAgencyMBSIssuer})
 
 (def hasResource
@@ -940,8 +1030,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/GetCommitmentFromInvestors,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "has resource@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "has resource@en",
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheNotesParameters})
 
 (def hasResource_1
@@ -950,8 +1041,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/MarketIssueToPrimaryInvestors,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "has resource@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "has resource@en",
    :rdfs/range :fibo-bp-iss-pmbs/TranchedOfferingMemorandum})
 
 (def hasResource_2
@@ -960,8 +1052,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/GetCommitmentFromInvestors,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "has resource@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "has resource@en",
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheNotesParameters})
 
 (def hasTrustee
@@ -970,8 +1063,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/NonAgencyMortgagePool,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "has trustee@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "has trustee@en",
    :rdfs/range :fibo-bp-iss-pmbs/PoolTrustee})
 
 (def identifierIssuedBy
@@ -980,8 +1074,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-mbs/TranchedMBSInstrument,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "identifier issued by@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "identifier issued by@en",
    :rdfs/range :fibo-bp-iss-prc/PrimaryIdentifierIssuer})
 
 (def includesDetailsAbout
@@ -990,8 +1085,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedOfferingMemorandum,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "includes details about@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "includes details about@en",
    :rdfs/range :fibo-bp-iss-pmbs/TrancheStructureAndTermsheet})
 
 (def includesDetailsAbout_1
@@ -1000,8 +1096,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedOfferingMemorandum,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "includes details about@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "includes details about@en",
    :rdfs/range :fibo-bp-iss-pmbs/IndividualTrancheDefinitions})
 
 (def isAssessmentOf
@@ -1010,8 +1107,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/AssessPoolSuitabilityForIssuance,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "is assessment of@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "is assessment of@en",
    :rdfs/range :fibo-bp-iss-pmbs/InAssemblyMortgagePool})
 
 (def isDefiningOf
@@ -1020,8 +1118,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/DefinePoolCharacteristics,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "isDefiningOf@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "isDefiningOf@en",
    :rdfs/range :fibo-bp-iss-pmbs/NotYetIssuedNonAgencyMortgagePool})
 
 (def isIssueOf
@@ -1030,8 +1129,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/MakeSecuritiesAvailableInMarket,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "is issue of@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "is issue of@en",
    :rdfs/range :fibo-sec-dbt-mbs/TranchedMBSDeal})
 
 (def isPurchaseOf
@@ -1040,8 +1140,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/PurchaseMortgageIntoPool,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "is purchase of@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "is purchase of@en",
    :rdfs/range :fibo-loan-reln-mtg/Mortgage})
 
 (def maximumAmount
@@ -1050,11 +1151,12 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TrancheNotesParameters,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "maximum amount@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "maximum amount@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "This has not been seen - incliuded as it's implicit but we might want to get rid of this. ACTION: Look at example prospectus document, mark up against this model; if this item is not seen, we could remove it@en"})
 
 (def mayBecome
@@ -1063,8 +1165,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/PoolTrustee,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "may become@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "may become@en",
    :rdfs/range :fibo-sec-dbt-mbs/TranchedMBSIssueUnderwriter})
 
 (def mayIncludeDetailsAbout
@@ -1073,8 +1176,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TranchedOfferingMemorandum,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "may include details about@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "may include details about@en",
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheNotesParameters})
 
 (def minimumDenomination
@@ -1083,8 +1187,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/TrancheNotesParameters,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "minimum denomination@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "minimum denomination@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount})
 
 (def refersTo
@@ -1093,8 +1198,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/IdentifyConformingMortgage,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "refers to@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "refers to@en",
    :rdfs/range :fibo-loan-reln-mtg/Mortgage})
 
 (def requires
@@ -1103,8 +1209,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/DrawUpTrancheTermsheets,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "requires@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "requires@en",
    :rdfs/range :fibo-sec-dbt-mbs/NonAgencyMortgagePool})
 
 (def requires_1
@@ -1113,8 +1220,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/MakeSecuritiesAvailableInMarket,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "requires@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "requires@en",
    :rdfs/range :fibo-sec-dbt-mbs/TranchedMBSDealProspectus})
 
 (def resultsIn
@@ -1123,8 +1231,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/CloseDeal,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "results in@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "results in@en",
    :rdfs/range :fibo-bp-iss-pmbs/TranchedMBSDealTransaction})
 
 (def resultsIn_1
@@ -1133,8 +1242,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/DefineNotesParameters,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "results in@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "results in@en",
    :rdfs/range :fibo-bp-iss-pmbs/DraftTrancheNotesParameters})
 
 (def resultsIn_2
@@ -1143,8 +1253,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/FinalizeProspectus,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "results in@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "results in@en",
    :rdfs/range :fibo-sec-dbt-mbs/TranchedMBSDealProspectus})
 
 (def resultsInPublicationOf
@@ -1153,6 +1264,7 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-pmbs/CloseDeal,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-   :rdfs/label #voc/lstr "results in publication of@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/"},
+   :rdfs/label #xsd/langString "results in publication of@en",
    :rdfs/range :fibo-bp-iss-pmbs/RemittanceReport})

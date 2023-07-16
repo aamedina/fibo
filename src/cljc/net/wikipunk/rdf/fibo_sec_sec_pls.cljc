@@ -6,22 +6,32 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
    :dcterms/abstract
    "This ontology defines concepts related to high-level securities pools.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -70,7 +80,8 @@
   {:db/ident :fibo-sec-sec-pls/DebtPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"},
    :rdfs/label "debt pool",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/DebtInstrument,
@@ -79,10 +90,10 @@
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
                       :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/Pool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/Pool
                      :cmns-col/Collection],
    :skos/definition
    "a pool consisting of debt instruments, such as bonds, loans or mortgages"})
@@ -92,14 +103,15 @@
   {:db/ident :fibo-sec-sec-pls/FundFamily,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"},
    :rdfs/label "fund family",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/ManagedInvestment,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fbc-fct-fse/FinancialInstitution,
                       :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :cmns-col/Collection],
    :skos/definition
@@ -110,7 +122,8 @@
   {:db/ident :fibo-sec-sec-pls/InstrumentPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"},
    :rdfs/label "instrument pool",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
@@ -128,7 +141,8 @@
   {:db/ident :fibo-sec-sec-pls/InstrumentPoolAsAsset,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"},
    :rdfs/label "instrument pool as asset",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom :fibo-sec-sec-pls/InstrumentPool,
@@ -148,11 +162,12 @@
 
 (def ManagedInvestment
   "investment pool that is controlled by a professional investment manager who invests the pool in various financial instruments and assets that align with their investment objectives and is overseen by a board of directors"
-  {:cmns-av/adaptedFrom "Bloomberg LP",
+  {:cmns-av/adaptedFrom {:xsd/string "Bloomberg LP"},
    :db/ident :fibo-sec-sec-pls/ManagedInvestment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"},
    :rdfs/label "managed investment",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
                       :owl/someValuesFrom
@@ -162,22 +177,24 @@
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/Pool
-                     :cmns-col/Collection
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/AmountOfMoney,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/Pool
+                     :cmns-col/Collection],
    :skos/definition
    "investment pool that is controlled by a professional investment manager who invests the pool in various financial instruments and assets that align with their investment objectives and is overseen by a board of directors"})
 
 (def Pool
   "a combination of resources for a common purpose or benefit"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   {:xsd/string
+    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014"},
    :db/ident :fibo-sec-sec-pls/Pool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"},
    :rdfs/label "pool",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
@@ -196,7 +213,8 @@
                          :rdf/type           :owl/Restriction},
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"},
    :rdfs/label "pool constituent",
    :rdfs/subClassOf :cmns-col/Constituent,
    :skos/definition "component of a pool"})
@@ -206,7 +224,8 @@
   {:db/ident :fibo-sec-sec-pls/PooledFund,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"},
    :rdfs/label "pooled fund",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/AmountOfMoney,
@@ -226,7 +245,8 @@
   {:db/ident :fibo-sec-sec-pls/SecuritiesPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"},
    :rdfs/label "securities pool",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasConstituent,
                       :owl/someValuesFrom
@@ -236,10 +256,10 @@
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-sec-sec-pls/PoolConstituent,
                       :rdf/type           :owl/Restriction}
+                     :fibo-sec-sec-pls/Pool
                      {:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/FinancialInstrument,
                       :rdf/type           :owl/Restriction}
-                     :fibo-sec-sec-pls/Pool
                      :cmns-col/Collection],
    :skos/definition
    "a pool of securities organized for the purpose of issuing notes against those securities"})
@@ -254,7 +274,8 @@
                          :rdf/type           :owl/Restriction},
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/"},
    :rdfs/label "securities pool constituent",
    :rdfs/subClassOf [:fibo-sec-sec-pls/PoolConstituent
                      :fibo-fbc-fi-fi/Security

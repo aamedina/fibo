@@ -5,14 +5,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/MetadataMDTemporalCore/TemporalCoreModule",
    :dcterms/abstract
    "This module covers time-dependent concepts common to all instruments, funds and loans, such as pricing, yields and analytics.",
-   :dcterms/issued #inst "2018-08-27T22:00:00.000-00:00",
-   :dcterms/license "https://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-03-31T22:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-08-27T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-03-31T18:00:00.000-04:00",
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/TemporalCore/MetadataMDTemporalCore/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/TemporalCore/MetadataMDTemporalCore/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -42,12 +44,13 @@
      "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/"}
     {:rdfa/uri
      "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/"}],
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Market Data (MD) Temporal Core Module"
     "FIBO MD Temporal Core Module"],
    :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/MetadataMDTemporalCore/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/MetadataMDTemporalCore/"},
    :rdfs/label "temporal core module",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})

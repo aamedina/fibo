@@ -6,27 +6,42 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
    :dcterms/abstract
    "This ontology defines formal business organizations and related concepts. The ontology covers parts of organizations, membership, classification, address relations and other properties which are applicable to formal business organizations generally. The concept of a formal business organization forms the basis for articulation of types of organization, both incorporated and non-incorporated, in other FIBO-BE ontologies.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://www.omg.org/spec/Commons/Classifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
@@ -90,7 +105,8 @@
   {:db/ident :fibo-be-le-fbo/Branch,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"},
    :rdfs/label "branch",
    :rdfs/subClassOf :fibo-fnd-org-org/OrganizationalSubUnit,
    :skos/definition
@@ -101,7 +117,8 @@
   {:db/ident :fibo-be-le-fbo/Division,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"},
    :rdfs/label "division",
    :rdfs/subClassOf :fibo-fnd-org-org/OrganizationalSubUnit,
    :skos/definition
@@ -114,17 +131,18 @@
    :db/ident :fibo-be-le-fbo/JointVenture,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"},
    :rdfs/label "joint venture",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
-                      :owl/onProperty :cmns-cls/isClassifiedBy,
-                      :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass
                       :fibo-be-le-fbo/OrganizationCoveringAgreement,
                       :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
+                      :rdf/type :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass :fibo-fnd-arr-cls/IndustrySectorClassifier,
+                      :owl/onProperty :cmns-cls/isClassifiedBy,
                       :rdf/type :owl/Restriction}],
    :skos/definition
    "legal entity that is formed between parties that pool their resources for the purpose of accomplishing a specific task but otherwise retain their distinct identities"})
@@ -138,16 +156,17 @@
    :db/ident :fibo-be-le-fbo/NonGovernmentalOrganization,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"},
    :rdfs/label "non-governmental organization",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/PublicPurpose,
                       :rdf/type           :owl/Restriction}
                      :fibo-be-le-fbo/NotForProfitOrganization
-                     :fibo-fnd-org-fm/FormalOrganization
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/NotForProfitObjective,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-org-fm/FormalOrganization],
    :skos/definition
    "not-for-profit organization that functions independently of government"})
 
@@ -163,7 +182,8 @@
                       :rdf/type           :owl/Restriction},
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"},
    :rdfs/label "not for profit organization",
    :rdfs/subClassOf [:fibo-fnd-org-fm/FormalOrganization
                      {:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
@@ -178,7 +198,8 @@
    :db/ident :fibo-be-le-fbo/OrganizationCoveringAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"},
    :rdfs/label "organization covering agreement",
    :rdfs/subClassOf :fibo-fnd-agr-ctr/WrittenContract,
    :skos/definition
@@ -188,14 +209,16 @@
   "tax identifier that identifies a taxable person (business) or non-taxable legal entity for a consumption tax that is assessed incrementally, levied on the price of a product or service at each stage of production, distribution, and sale to the end consumer"
   {:cmns-av/abbreviation "VATIN",
    :cmns-av/adaptedFrom
-   "https://ec.europa.eu/taxation_customs/business/vat/eu-vat-rules-topic/vat-identification-numbers_en",
+   {:rdfa/uri
+    "https://ec.europa.eu/taxation_customs/business/vat/eu-vat-rules-topic/vat-identification-numbers_en"},
    :cmns-av/explanatoryNote
    "If the ultimate consumer is a business that collects and pays to the government VAT on its products or services, it can reclaim the tax paid. Not all localities require VAT to be charged, and exports are often exempt. VAT is usually implemented as a destination-based tax, where the tax rate is based on the location of the consumer and applied to the sales price.",
    :cmns-av/synonym ["VAT identification number" "VAT registration number"],
    :db/ident :fibo-be-le-fbo/ValueAddedTaxIdentificationNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"},
    :rdfs/label "value-added tax identification number",
    :rdfs/subClassOf [:fibo-fnd-pty-pty/TaxIdentifier
                      :fibo-fnd-org-org/OrganizationIdentifier
@@ -212,7 +235,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-le-lp/LegalEntity,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"},
    :rdfs/label "has equity",
    :rdfs/range :fibo-fnd-acc-aeq/OwnersEquity,
    :rdfs/subPropertyOf :fibo-fnd-utl-alx/hasExpression,
@@ -221,11 +245,13 @@
 (def hasHeadquartersAddress
   "indicates the main address at which communications may be delivered for the organization"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-be-le-fbo/hasHeadquartersAddress,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"},
    :rdfs/label "has headquarters address",
    :rdfs/range :fibo-fnd-plc-adr/PhysicalAddress,
    :rdfs/subPropertyOf [:fibo-be-le-fbo/hasOperatingAddress
@@ -239,7 +265,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-org/Organization,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"},
    :rdfs/label "has operating address",
    :rdfs/range :fibo-fnd-plc-adr/PhysicalAddress,
    :rdfs/subPropertyOf :fibo-fnd-plc-adr/hasAddress,
@@ -252,7 +279,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pty-pty/IndependentParty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/"},
    :rdfs/label "has registered address",
    :rdfs/range :fibo-fnd-plc-adr/ConventionalStreetAddress,
    :rdfs/subPropertyOf :fibo-fnd-plc-adr/hasAddress,

@@ -6,14 +6,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
    :dcterms/abstract
    "This ontology provides a very high level definition of geographic region and geopolitical entity related concepts, including, but not limited to, countries, sub-country regions such as states and provinces, municipalities, etc., extending the Object Management Group (OMG)'s Languages, Countries, and Codes (LCC) ontologies as needed in FIBO. As such, these terms are automatically mapped to the LCC controlled vocabulary representing ISO 3166 country and country subdivision codes, and may be mapped to other de facto standards such as Geonames and the CIA World Factbook. The concept of a business center, defined herein, maps directly to the FpML concept with the same name, and to the set of business centers and broader municipalities included in ISO 10383, Codes for exchanges and market identification (MIC).",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -42,11 +44,13 @@
 (def BusinessCenter
   "municipality where business is conducted, especially one that is considered a financial center"
   {:cmns-av/adaptedFrom
-   "FpML Business Center and related codes, see http://www.fpml.org/coding-scheme/business-center-7-14.xml",
+   {:xsd/string
+    "FpML Business Center and related codes, see http://www.fpml.org/coding-scheme/business-center-7-14.xml"},
    :db/ident :fibo-fnd-plc-loc/BusinessCenter,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "business center",
    :rdfs/subClassOf [:fibo-fnd-plc-loc/Municipality :lcc-cr/GeopoliticalEntity],
    :skos/definition
@@ -57,11 +61,12 @@
   {:db/ident :fibo-fnd-plc-loc/County,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-   :rdfs/label #voc/lstr "county@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
+   :rdfs/label #xsd/langString "county@en",
    :rdfs/subClassOf :lcc-cr/CountrySubdivision,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "political and administrative division of a country, state or province, providing certain local governmental services@en"})
 
 (def FederalCapitalArea
@@ -69,7 +74,8 @@
   {:db/ident :fibo-fnd-plc-loc/FederalCapitalArea,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "federal capital area",
    :rdfs/subClassOf :lcc-cr/GeopoliticalEntity,
    :skos/definition
@@ -84,7 +90,8 @@
    :db/ident :fibo-fnd-plc-loc/FederalState,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "federal state",
    :rdfs/subClassOf :lcc-cr/CountrySubdivision,
    :skos/definition
@@ -92,13 +99,14 @@
 
 (def Municipality
   "urban administrative division having corporate status and usually powers of self-government or jurisdiction"
-  {:cmns-av/adaptedFrom "http://en.wikipedia.org/wiki/Municipality",
+  {:cmns-av/adaptedFrom {:rdfa/uri "http://en.wikipedia.org/wiki/Municipality"},
    :cmns-av/explanatoryNote
    "A municipality is a general-purpose administrative subdivision, as opposed to a special-purpose district.",
    :db/ident :fibo-fnd-plc-loc/Municipality,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "municipality",
    :rdfs/subClassOf :lcc-cr/GeopoliticalEntity,
    :skos/definition
@@ -115,17 +123,19 @@
    :db/ident :fibo-fnd-plc-loc/Parcel,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-   :rdfs/label #voc/lstr "parcel@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
+   :rdfs/label #xsd/langString "parcel@en",
    :rdfs/subClassOf :lcc-cr/GeographicRegion,
-   :skos/definition #voc/lstr "tract or plot of land@en"})
+   :skos/definition #xsd/langString "tract or plot of land@en"})
 
 (def PhysicalLocation
   "location in physical space"
   {:db/ident :fibo-fnd-plc-loc/PhysicalLocation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "physical location",
    :rdfs/subClassOf :lcc-cr/Location,
    :skos/definition "location in physical space"})
@@ -135,7 +145,8 @@
   {:db/ident :fibo-fnd-plc-loc/PopulatedPlace,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "populated place",
    :rdfs/subClassOf [:fibo-fnd-plc-loc/PhysicalLocation :lcc-cr/Location],
    :skos/definition
@@ -148,8 +159,9 @@
    :db/ident :fibo-fnd-plc-loc/RealEstate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-   :rdfs/label #voc/lstr "real estate@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
+   :rdfs/label #xsd/langString "real estate@en",
    :rdfs/subClassOf [:fibo-fnd-plc-loc/PhysicalLocation :lcc-cr/Location],
    :skos/definition
    "tract or plot of land including any fixed structures on it, as well as the natural resources of the land including uncultivated flora and fauna, farmed crops and livestock, water, and any additional mineral deposits"})
@@ -159,20 +171,22 @@
   {:db/ident :fibo-fnd-plc-loc/hasBusinessCenter,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "has business center",
    :rdfs/range :fibo-fnd-plc-loc/BusinessCenter,
    :rdfs/subPropertyOf [:fibo-fnd-plc-loc/hasMunicipality
-                        :fibo-fnd-plc-loc/isLocatedAt
-                        :fibo-fnd-plc-loc/hasRegion],
+                        :fibo-fnd-plc-loc/hasRegion
+                        :fibo-fnd-plc-loc/isLocatedAt],
    :skos/definition
    "identifies a location where business is conducted, and hence the business calendar used to adjust dates"})
 
 (def hasCityName
   "indicates the name of a large, permanent, and densely settled place"
   {:cmns-av/adaptedFrom
-   ["https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"
-    "https://en.wikipedia.org/wiki/City"],
+   [{:rdfa/uri
+     "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"}
+    {:rdfa/uri "https://en.wikipedia.org/wiki/City"}],
    :cmns-av/explanatoryNote
    "Typical working definitions for small-city populations start at around 100,000 people. Common population definitions for an urban area (city or town) range between 1,500 and 50,000 people, with most U.S states using a minimum between 1,500 and 5,000 inhabitants. Some jurisdictions set no such minima.",
    :cmns-av/usageNote
@@ -180,7 +194,8 @@
    :db/ident :fibo-fnd-plc-loc/hasCityName,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "has city",
    :skos/definition
    "indicates the name of a large, permanent, and densely settled place"})
@@ -188,11 +203,13 @@
 (def hasCountry
   "identifies a country"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fnd-plc-loc/hasCountry,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "has country",
    :rdfs/range :lcc-cr/Country,
    :rdfs/subPropertyOf [:fibo-fnd-plc-loc/hasRegion
@@ -204,12 +221,13 @@
   {:db/ident :fibo-fnd-plc-loc/hasCounty,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "has county",
    :rdfs/range :fibo-fnd-plc-loc/County,
    :rdfs/subPropertyOf [:fibo-fnd-plc-loc/hasSubdivision
-                        :fibo-fnd-plc-loc/isLocatedAt
-                        :fibo-fnd-plc-loc/hasRegion],
+                        :fibo-fnd-plc-loc/hasRegion
+                        :fibo-fnd-plc-loc/isLocatedAt],
    :skos/definition
    "indicates a country subdivision providing certain local governmental services"})
 
@@ -218,7 +236,8 @@
   {:db/ident :fibo-fnd-plc-loc/hasCoverageArea,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "has coverage area",
    :rdfs/range :lcc-cr/GeographicRegion,
    :rdfs/subPropertyOf [:fibo-fnd-plc-loc/hasRegion
@@ -233,7 +252,8 @@
    :db/ident :fibo-fnd-plc-loc/hasMunicipality,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "has municipality",
    :rdfs/range :fibo-fnd-plc-loc/Municipality,
    :rdfs/subPropertyOf [:fibo-fnd-plc-loc/hasRegion
@@ -245,7 +265,8 @@
   {:db/ident :fibo-fnd-plc-loc/hasRegion,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "has region",
    :rdfs/range :lcc-cr/GeographicRegion,
    :rdfs/subPropertyOf :fibo-fnd-plc-loc/isLocatedAt,
@@ -254,11 +275,13 @@
 (def hasSubdivision
   "identifies a country subdivision (state, province, region, etc.)"
   {:cmns-av/adaptedFrom
-   "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1",
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/common-data-file-format/lei-cdf-format/lei-cdf-format-version-2-1"},
    :db/ident :fibo-fnd-plc-loc/hasSubdivision,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "has subdivision",
    :rdfs/range :lcc-cr/CountrySubdivision,
    :rdfs/subPropertyOf [:fibo-fnd-plc-loc/hasRegion
@@ -271,7 +294,8 @@
   {:db/ident :fibo-fnd-plc-loc/isLocatedAt,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"},
    :rdfs/label "is located at",
    :rdfs/range :lcc-cr/Location,
    :skos/definition

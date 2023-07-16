@@ -6,16 +6,21 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
    :dcterms/abstract
    "This ontology defines the concept of an agreement and roles that parties to an agreement play in the context of financial agreements. Agreements represent an understanding between parties, whereas contracts typically formalize such agreements.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -52,12 +57,13 @@
   {:db/ident :fibo-fnd-agr-agr/Agreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
-   :rdfs/label #voc/lstr "agreement@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
+   :rdfs/label #xsd/langString "agreement@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-fnd-agr-agr/Commitment,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 2,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 2,
                       :owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
                       :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
                       :rdf/type       :owl/Restriction}],
@@ -69,11 +75,13 @@
   {:db/ident :fibo-fnd-agr-agr/Beneficiary,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
    :rdfs/label "beneficiary",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom {:owl/minQualifiedCardinality 0,
+     :owl/someValuesFrom {:owl/minQualifiedCardinality #xsd/nonNegativeInteger
+                                                        0,
                           :owl/onClass    :fibo-fnd-agr-agr/Agreement,
                           :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
                           :rdf/type       :owl/Restriction},
@@ -89,8 +97,9 @@
    :db/ident :fibo-fnd-agr-agr/Commitment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
-   :rdfs/label #voc/lstr "commitment@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
+   :rdfs/label #xsd/langString "commitment@en",
    :skos/definition
    "promise made by some party to act or refrain from acting in some manner"})
 
@@ -99,7 +108,8 @@
   {:db/ident :fibo-fnd-agr-agr/CommitmentAtLarge,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
    :rdfs/label "commitment at large",
    :rdfs/subClassOf [:fibo-fnd-agr-agr/UnilateralCommitment
                      :fibo-fnd-agr-agr/Commitment],
@@ -113,7 +123,8 @@
   {:db/ident :fibo-fnd-agr-agr/IndividualUnilateralCommitment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
    :rdfs/label "individual unilateral commitment",
    :rdfs/subClassOf [:fibo-fnd-agr-agr/UnilateralCommitment
                      :fibo-fnd-agr-agr/Commitment],
@@ -125,19 +136,20 @@
   {:db/ident :fibo-fnd-agr-agr/MutualAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
    :rdfs/label "mutual agreement",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-fnd-agr-agr/MutualCommitment,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-agr-agr/Agreement
-                     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
-                      :owl/someValuesFrom :fibo-fnd-agr-agr/Commitment,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 2,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 2,
                       :owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
                       :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/confers,
+                      :owl/someValuesFrom :fibo-fnd-agr-agr/Commitment,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "agreement between two or more specific named parties whereby the rights and obligations embodied in the agreement cannot be transferred to another party without prior agreement",
    :skos/scopeNote
@@ -148,9 +160,10 @@
   {:db/ident :fibo-fnd-agr-agr/MutualCommitment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
    :rdfs/label "mutual commitment",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 2,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 2,
                       :owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
                       :owl/onProperty :fibo-fnd-pty-pty/hasPartyInRole,
                       :rdf/type       :owl/Restriction}
@@ -162,11 +175,13 @@
   {:db/ident :fibo-fnd-agr-agr/Obligee,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
    :rdfs/label "obligee",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom {:owl/minQualifiedCardinality 0,
+     :owl/someValuesFrom {:owl/minQualifiedCardinality #xsd/nonNegativeInteger
+                                                        0,
                           :owl/onClass    :fibo-fnd-agr-agr/Agreement,
                           :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
                           :rdf/type       :owl/Restriction},
@@ -181,11 +196,13 @@
    :db/ident :fibo-fnd-agr-agr/Obligor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
    :rdfs/label "obligor",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
-     :owl/someValuesFrom {:owl/minQualifiedCardinality 0,
+     :owl/someValuesFrom {:owl/minQualifiedCardinality #xsd/nonNegativeInteger
+                                                        0,
                           :owl/onClass    :fibo-fnd-agr-agr/Agreement,
                           :owl/onProperty :fibo-fnd-pty-pty/isAPartyTo,
                           :rdf/type       :owl/Restriction},
@@ -202,7 +219,8 @@
   {:db/ident :fibo-fnd-agr-agr/UnilateralCommitment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
    :rdfs/label "unilateral commitment",
    :rdfs/subClassOf :fibo-fnd-agr-agr/Commitment,
    :skos/definition
@@ -215,7 +233,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-agr-agr/Obligor,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
    :rdfs/label "has obligation",
    :skos/definition
    "identifies a duty or obligation that a given party has taken on"})
@@ -225,7 +244,8 @@
   {:db/ident :fibo-fnd-agr-agr/isObligationOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/"},
    :rdfs/label "is obligation of",
    :rdfs/range :fibo-fnd-agr-agr/Obligor,
    :skos/definition "identifies a party that has a given obligation"})

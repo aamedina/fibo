@@ -6,19 +6,25 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
    :dcterms/abstract
    "This ontology provides scaffolding for use in describing concepts related to facilities, both virtual and physical, including physical sites that provide various facilities.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Facilities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Facilities/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
@@ -59,11 +65,13 @@
 (def Capability
   "ability to perform a particular type of work that may involve people with particular skills and knowledge, intellectual property, defined practices, operating facilities, tools and equipment"
   {:cmns-av/adaptedFrom
-   "Value Delivery Modeling Language Specification, http://www.omg.org/spec/VDML/",
+   {:xsd/string
+    "Value Delivery Modeling Language Specification, http://www.omg.org/spec/VDML/"},
    :db/ident :fibo-fnd-plc-fac/Capability,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/"},
    :rdfs/label "capability",
    :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-rel-rel/involves,
                      :owl/someValuesFrom :fibo-fnd-plc-fac/Facility,
@@ -78,16 +86,17 @@
    :db/ident :fibo-fnd-plc-fac/Facility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/"},
    :rdfs/label "facility",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fnd-plc-fac/Capability,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-plc-fac/Site,
                       :owl/onProperty :fibo-fnd-plc-fac/isSituatedAt,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-plc-adr/Address,
                       :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
                       :rdf/type       :owl/Restriction}],
@@ -101,22 +110,23 @@
    :db/ident :fibo-fnd-plc-fac/Site,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/"},
    :rdfs/label "site",
    :rdfs/subClassOf [:fibo-fnd-pty-rl/ThingInRole
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-fnd-plc-adr/Address,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/onProperty
                                            :fibo-fnd-plc-fac/situates,
                                            :owl/someValuesFrom :owl/Thing,
                                            :rdf/type :owl/Restriction},
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-adr/Address,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
-                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :lcc-cr/Location,
                       :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "place, setting, or context in which something, such as a facility, is situated",
@@ -128,27 +138,28 @@
   {:db/ident :fibo-fnd-plc-fac/Venue,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/"},
    :rdfs/label "venue",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
                       :owl/someValuesFrom :owl/Thing,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-plc-fac/Site
+                     {:owl/onClass    :lcc-cr/Location,
+                      :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-fnd-plc-adr/Address,
+                      :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-pty-rl/ThingInRole
                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/onProperty
                                            :fibo-fnd-plc-fac/situates,
                                            :owl/someValuesFrom :owl/Thing,
                                            :rdf/type :owl/Restriction},
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pty-rl/ThingInRole
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-plc-adr/Address,
-                      :owl/onProperty :fibo-fnd-plc-adr/hasAddress,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :lcc-cr/Location,
-                      :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "site where something happens, described in the context of the event or activity that occurs there"})
 
@@ -159,7 +170,8 @@
    :db/ident :fibo-fnd-plc-fac/isSituatedAt,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/"},
    :rdfs/label "is situated at",
    :skos/definition "is placed at"})
 
@@ -169,7 +181,8 @@
    :owl/inverseOf :fibo-fnd-plc-fac/isSituatedAt,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/"},
    :rdfs/label "situates",
    :skos/definition
    "indicates the place, setting, or context in which something is placed"})

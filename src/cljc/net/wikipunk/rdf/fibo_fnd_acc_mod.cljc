@@ -6,14 +6,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/MetadataFNDAccounting/AccountingModule",
    :dcterms/abstract
    "This module contains ontologies of general accounting concepts including currency and the ISO 4217 reference currency codes.",
-   :dcterms/issued #inst "2020-02-24T23:00:00.000-00:00",
-   :dcterms/license "https://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-01-06T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2020-02-24T18:00:00.000-05:00",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-01-06T18:00:00.000-05:00",
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/MetadataFNDAccounting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/MetadataFNDAccounting/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -46,12 +48,13 @@
      "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/"}
     {:rdfa/uri
      "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"}],
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :dcterms/title
    ["FIBO FND Accounting Module"
     "Financial Industry Business Ontology (FIBO) Foundations (FND) Accounting Module"],
    :rdf/type [:owl/NamedIndividual :fibo-fnd-utl-av/Module],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/MetadataFNDAccounting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/MetadataFNDAccounting/"},
    :rdfs/label "accounting module",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})

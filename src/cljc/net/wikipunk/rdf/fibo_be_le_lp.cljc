@@ -6,25 +6,37 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :dcterms/abstract
    "This ontology defines legal personhood concepts. A legal person as defined here is any natural person or organization which is capable of accruing liability on its own part.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
@@ -90,13 +102,14 @@
    :db/ident :fibo-be-le-lp/BusinessEntity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "business entity",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-law-lcap/License,
                       :owl/onProperty :fibo-fnd-rel-rel/holds,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-gao-obj/BusinessObjective,
                       :owl/onProperty :fibo-fnd-gao-obj/hasObjective,
                       :rdf/type       :owl/Restriction}
@@ -109,14 +122,15 @@
   {:db/ident :fibo-be-le-lp/BusinessLicense,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "business license",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-be-le-lp/BusinessEntity,
                       :owl/onProperty :cmns-cxtdsg/appliesTo,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-law-lcap/License],
    :skos/definition
@@ -129,15 +143,16 @@
    :db/ident :fibo-be-le-lp/CharteredLegalPerson,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "chartered legal person",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
+                     :fibo-fnd-org-fm/FormalOrganization
+                     :fibo-be-le-lp/LegalPerson
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-le-lp/LegalPerson
-                     :fibo-fnd-org-fm/FormalOrganization
                      {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
@@ -149,7 +164,8 @@
 (def LegalEntity
   "legal person that is a partnership, corporation, or other organization having the capacity to negotiate contracts, assume financial obligations, and pay off debts, organized under the laws of some jurisdiction"
   {:cmns-av/adaptedFrom
-   "ISO 17442, Financial services - Legal Entity Identifier (LEI), first edition, 2012-06-01, section 3.1",
+   {:xsd/string
+    "ISO 17442, Financial services - Legal Entity Identifier (LEI), first edition, 2012-06-01, section 3.1"},
    :cmns-av/synonym ["juridical person"
                      "juridical entity"
                      "juristic person"
@@ -158,14 +174,15 @@
    :owl/disjointWith :fibo-be-le-lp/LegallyCompetentNaturalPerson,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "legal entity",
    :rdfs/subClassOf [:fibo-fnd-org-fm/FormalOrganization
-                     :fibo-be-le-lp/LegalPerson
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
+                     :fibo-be-le-lp/LegalPerson
                      {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
@@ -184,8 +201,9 @@
    :db/ident :fibo-be-le-lp/LegalPerson,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-   :rdfs/label #voc/lstr "legal person@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
+   :rdfs/label #xsd/langString "legal person@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
@@ -201,7 +219,8 @@
    :owl/disjointWith :fibo-fnd-aap-ppl/IncapacitatedAdult,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "legally competent natural person",
    :rdfs/subClassOf [:fibo-fnd-aap-ppl/Person
                      :fibo-be-le-lp/LegalPerson
@@ -221,7 +240,8 @@
    :owl/disjointWith :fibo-be-le-lp/ProfitObjective,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "not for profit objective",
    :rdfs/subClassOf :fibo-fnd-gao-obj/Objective,
    :skos/definition
@@ -234,13 +254,14 @@
    :db/ident :fibo-be-le-lp/PowerOfAttorney,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "power of attorney",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :owl/someValuesFrom
                       :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :rdf/type :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
@@ -256,7 +277,8 @@
    :db/ident :fibo-be-le-lp/ProfitObjective,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "profit objective",
    :rdfs/subClassOf :fibo-fnd-gao-obj/BusinessObjective,
    :skos/definition
@@ -268,7 +290,8 @@
    :db/ident :fibo-be-le-lp/PublicPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "public purpose",
    :rdfs/subClassOf :fibo-fnd-gao-obj/Objective,
    :skos/definition
@@ -279,7 +302,8 @@
   {:db/ident :fibo-be-le-lp/ReligiousObjective,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "religious objective",
    :rdfs/subClassOf [:fibo-be-le-lp/NotForProfitObjective
                      :fibo-fnd-gao-obj/Objective],
@@ -288,30 +312,31 @@
 
 (def SpecialPurposeVehicle
   "legal entity created to fulfill narrow, specific, and frequently temporary objectives"
-  {:cmns-av/abbreviation [#voc/lstr "SPE@en" #voc/lstr "SPV@en"],
+  {:cmns-av/abbreviation [#xsd/langString "SPE@en" #xsd/langString "SPV@en"],
    :cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "A special purpose vehicle (SPV), also known as a special purpose entity (SPE), refers to a legal entity, typically a limited company or partnership, created to isolate a parent company from financial risk, including bankruptcy.@en",
-   :cmns-av/synonym #voc/lstr "special purpose entity@en",
+   :cmns-av/synonym #xsd/langString "special purpose entity@en",
    :db/ident :fibo-be-le-lp/SpecialPurposeVehicle,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-   :rdfs/label [#voc/lstr "special purpose vehicle@en-US"
-                #voc/lstr "fonds commun de placement@fr-FR"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
+   :rdfs/label [#xsd/langString "special purpose vehicle@en-US"
+                #xsd/langString "fonds commun de placement@fr-FR"],
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
+                     :fibo-fnd-org-fm/FormalOrganization
+                     :fibo-be-le-lp/LegalPerson
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-le-lp/LegalPerson
-                     :fibo-fnd-org-fm/FormalOrganization
                      {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pty-pty/IndependentParty],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "legal entity created to fulfill narrow, specific, and frequently temporary objectives@en"})
 
 (def StatutoryBody
@@ -319,15 +344,16 @@
   {:db/ident :fibo-be-le-lp/StatutoryBody,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "statutory body",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
+                     :fibo-fnd-org-fm/FormalOrganization
+                     :fibo-be-le-lp/LegalPerson
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-le-lp/LegalPerson
-                     :fibo-fnd-org-fm/FormalOrganization
                      {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
@@ -337,29 +363,30 @@
 
 (def VariableInterestEntity
   "legal entity whose shareholders are entitled to a percentage of a named company's profits via a private contract"
-  {:cmns-av/abbreviation #voc/lstr "VIE@en",
+  {:cmns-av/abbreviation #xsd/langString "VIE@en",
    :cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "Variable interest entity (VIE) is a term used by the Financial Accounting Standards Board (FASB) to refer to a legal entity with certain characteristics such that a public company with a financial interest in the entity is subject to certain financial reporting requirements. Examples include certain Chinese companies, such as Alibaba, that leverage VIEs to gain access to foreign capital that would otherwise not be available due to Chinese government regulations.@en",
-   :cmns-av/synonym #voc/lstr "shell company@en",
+   :cmns-av/synonym #xsd/langString "shell company@en",
    :db/ident :fibo-be-le-lp/VariableInterestEntity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-   :rdfs/label #voc/lstr "variable interest entity@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
+   :rdfs/label #xsd/langString "variable interest entity@en",
    :rdfs/subClassOf [:fibo-be-le-lp/LegalEntity
+                     :fibo-fnd-org-fm/FormalOrganization
+                     :fibo-be-le-lp/LegalPerson
                      {:owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
                       :owl/onProperty :fibo-be-le-lp/isOrganizedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-be-le-lp/LegalPerson
-                     :fibo-fnd-org-fm/FormalOrganization
                      {:owl/onProperty     :fibo-be-le-lp/isRecognizedIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pty-pty/IndependentParty],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "legal entity whose shareholders are entitled to a percentage of a named company's profits via a private contract@en"})
 
 (def isOrganizedIn
@@ -368,7 +395,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-le-lp/LegalEntity,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "is organized in",
    :rdfs/range :fibo-fnd-law-jur/Jurisdiction,
    :rdfs/subPropertyOf :fibo-be-le-lp/isRecognizedIn,
@@ -383,7 +411,8 @@
                                :fibo-fnd-agr-agr/Agreement],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/"},
    :rdfs/label "is recognized in",
    :rdfs/range :fibo-fnd-law-jur/Jurisdiction,
    :skos/definition

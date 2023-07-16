@@ -6,21 +6,30 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides the set of basic federal government, provincial, and territory level entities and jurisdictions for use in other Canada-specific FIBO ontologies.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -74,9 +83,10 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-caj/GovernmentOfCanada,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Canadian entity",
-   :rdfs/seeAlso ["https://www.canada.ca/en/index.html"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.canada.ca/en/index.html"},
    :skos/definition
    "individual representing the federated sovereignty and polity that is Canada"})
 
@@ -89,9 +99,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Canada,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Canadian jurisdiction",
-   :rdfs/seeAlso ["http://www.justice.gc.ca/eng/csj-sjc/just/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.justice.gc.ca/eng/csj-sjc/just/"},
    :skos/definition
    "individual representing the overall jurisdiction for Canada"})
 
@@ -102,9 +113,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/Alberta,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of Alberta",
-   :rdfs/seeAlso ["http://www.alberta.ca/organizational-structure.cfm"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "http://www.alberta.ca/organizational-structure.cfm"},
    :skos/definition
    "individual representing the regional government of the province of Alberta"})
 
@@ -116,9 +129,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/BritishColumbia,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of British Columbia",
-   :rdfs/seeAlso ["http://www2.gov.bc.ca/gov/content/governments"],
+   :rdfs/seeAlso {:rdfa/uri "http://www2.gov.bc.ca/gov/content/governments"},
    :skos/definition
    "individual representing the regional government of the province of British Columbia"})
 
@@ -131,9 +145,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Canada,
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Government of Canada",
-   :rdfs/seeAlso ["https://www.canada.ca/en/index.html"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.canada.ca/en/index.html"},
    :skos/definition
    "individual representing the federal parliamentary democracy and constitutional monarchy of Canada"})
 
@@ -145,9 +160,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/Manitoba,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of Manitoba",
-   :rdfs/seeAlso ["http://www.gov.mb.ca/government/index.html"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gov.mb.ca/government/index.html"},
    :skos/definition
    "individual representing the regional government of the province of Manitoba"})
 
@@ -159,10 +175,12 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/NewBrunswick,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of New Brunswick",
    :rdfs/seeAlso
-   ["http://www2.gnb.ca/content/gnb/en/gateways/your_government.html"],
+   {:rdfa/uri
+    "http://www2.gnb.ca/content/gnb/en/gateways/your_government.html"},
    :skos/definition
    "individual representing the regional government of the province of New Brunswick"})
 
@@ -174,9 +192,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/NewfoundlandAndLabrador,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of Newfoundland and Labrador",
-   :rdfs/seeAlso ["http://www.gov.nf.ca/government/index.html"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gov.nf.ca/government/index.html"},
    :skos/definition
    "individual representing the regional government of the province of Newfoundland and Labrador"})
 
@@ -188,9 +207,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/NorthwestTerritories,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of Northwest Territories",
-   :rdfs/seeAlso ["http://www.gov.nt.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gov.nt.ca/"},
    :skos/definition
    "individual representing the regional government of the Northwest Territories"})
 
@@ -202,9 +222,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/NovaScotia,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of Nova Scotia",
-   :rdfs/seeAlso ["http://novascotia.ca/government/"],
+   :rdfs/seeAlso {:rdfa/uri "http://novascotia.ca/government/"},
    :skos/definition
    "individual representing the regional government of the province of Nova Scotia"})
 
@@ -215,9 +236,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/Nunavut,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of Nunavut",
-   :rdfs/seeAlso ["http://gov.nu.ca/about-gn"],
+   :rdfs/seeAlso {:rdfa/uri "http://gov.nu.ca/about-gn"},
    :skos/definition
    "individual representing the regional government of Nunavut"})
 
@@ -228,9 +250,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/Ontario,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of Ontario",
-   :rdfs/seeAlso ["https://www.ontario.ca/page/government-ontario"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.ontario.ca/page/government-ontario"},
    :skos/definition
    "individual representing the regional government of the province of Ontario"})
 
@@ -242,9 +265,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/PrinceEdwardIsland,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of Prince Edward Island",
-   :rdfs/seeAlso ["http://www.gov.pe.ca/index.php3"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gov.pe.ca/index.php3"},
    :skos/definition
    "individual representing the regional government of the province of Prince Edward Island"})
 
@@ -255,10 +279,12 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/Quebec,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of Quebec",
    :rdfs/seeAlso
-   ["http://www.gouv.qc.ca/EN/VotreGouvernement/Pages/Accueil.aspx?pgs"],
+   {:rdfa/uri
+    "http://www.gouv.qc.ca/EN/VotreGouvernement/Pages/Accueil.aspx?pgs"},
    :skos/definition
    "individual representing the regional government of the province of Quebec"})
 
@@ -270,10 +296,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/Saskatchewan,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of Saskatchewan",
-   :rdfs/seeAlso ["http://www.saskatchewan.ca/government"
-                  "http://gov.sk.ca/about-government/"],
+   :rdfs/seeAlso [{:rdfa/uri "http://www.saskatchewan.ca/government"}
+                  {:rdfa/uri "http://gov.sk.ca/about-government/"}],
    :skos/definition
    "individual representing the regional government of the province of Saskatchewan"})
 
@@ -284,9 +311,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-2-ca/Yukon,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "government of Yukon",
-   :rdfs/seeAlso ["http://www.gov.yk.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gov.yk.ca/"},
    :skos/definition
    "individual representing the regional government of the Yukon territory of Canada"})
 
@@ -298,9 +326,10 @@
    :fibo-be-ge-caj/GovernmentOfNorthwestTerritories,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Northwest Territories entity",
-   :rdfs/seeAlso ["http://www.gov.nt.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gov.nt.ca/"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian Northwest Territories"})
 
@@ -312,9 +341,11 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/NorthwestTerritories,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Northwest Territories jurisdiction",
-   :rdfs/seeAlso ["https://www.justice.gov.nt.ca/en/browse/court-information/"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.justice.gov.nt.ca/en/browse/court-information/"},
    :skos/definition
    "individual representing the overall jurisdiction for the Courts of the Northwest Territories"})
 
@@ -325,9 +356,10 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-caj/GovernmentOfNunavut,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Nunavut entity",
-   :rdfs/seeAlso ["http://www.gov.nu.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gov.nu.ca/"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian territory of Nunavut"})
 
@@ -338,9 +370,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/Nunavut,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Nunavut jurisdiction",
-   :rdfs/seeAlso ["http://www.nunavutcourts.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.nunavutcourts.ca/"},
    :skos/definition
    "individual representing the overall jurisdiction for the Courts of Nunavut"})
 
@@ -351,9 +384,10 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-caj/GovernmentOfAlberta,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Province of Alberta entity",
-   :rdfs/seeAlso ["http://www.alberta.ca/index.cfm"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.alberta.ca/index.cfm"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian Province of Alberta"})
 
@@ -364,9 +398,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/Alberta,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "province of Alberta jurisdiction",
-   :rdfs/seeAlso ["https://albertacourts.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "https://albertacourts.ca/"},
    :skos/definition
    "individual representing the overall jurisdiction for the Canadian Province Of Alberta, i.e., that of the Alberta Court of Appeal, Court of Queen's Bench, and Provincial Court of Alberta"})
 
@@ -377,9 +412,10 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-caj/GovernmentOfBritishColumbia,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Province of British Columbia entity",
-   :rdfs/seeAlso ["http://www2.gov.bc.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www2.gov.bc.ca/"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian Province of British Columbia"})
 
@@ -390,9 +426,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/BritishColumbia,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "province of British Columbia jurisdiction",
-   :rdfs/seeAlso ["http://www.ag.gov.bc.ca/courts/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.ag.gov.bc.ca/courts/"},
    :skos/definition
    "individual representing the overall jurisdiction for the Canadian Province Of British Columbia, i.e., that of the British Columbia Court of Appeal, Supreme Court, and Provincial Court of British Columbia"})
 
@@ -403,9 +440,10 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-caj/GovernmentOfManitoba,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Province of Manitoba entity",
-   :rdfs/seeAlso ["http://gov.mb.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://gov.mb.ca/"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian Province of Manitoba"})
 
@@ -416,9 +454,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/Manitoba,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "province of Manitoba jurisdiction",
-   :rdfs/seeAlso ["http://www.manitobacourts.mb.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.manitobacourts.mb.ca/"},
    :skos/definition
    "individual representing the overall jurisdiction for the Canadian Province Of Manitoba, i.e., that of the Manitoba Court of Appeal, Court of Queen's Bench, and Provincial Court of Manitoba"})
 
@@ -429,9 +468,10 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-caj/GovernmentOfNewBrunswick,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Province of New Brunswick entity",
-   :rdfs/seeAlso ["http://www2.gnb.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www2.gnb.ca/"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian Province of New Brunswick"})
 
@@ -442,9 +482,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/NewBrunswick,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "province of New Brunswick jurisdiction",
-   :rdfs/seeAlso ["http://www.gnb.ca/Cour/index-e.asp"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gnb.ca/Cour/index-e.asp"},
    :skos/definition
    "individual representing the overall jurisdiction for the Canadian Province Of New Brunswick, i.e., that of the New Brunswick Court of Appeal, Court of Queen's Bench, and Provincial Court of New Brunswick"})
 
@@ -457,9 +498,10 @@
    :fibo-be-ge-caj/GovernmentOfNewfoundlandAndLabrador,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Province of Newfoundland and Labrador entity",
-   :rdfs/seeAlso ["http://www.gov.nf.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gov.nf.ca/"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian Province of Newfoundland and Labrador"})
 
@@ -471,9 +513,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/NewfoundlandAndLabrador,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "province of Newfoundland and Labrador jurisdiction",
-   :rdfs/seeAlso ["http://www.court.nl.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.court.nl.ca/"},
    :skos/definition
    "individual representing the overall jurisdiction for the Canadian Province Of Newfoundland and Labrador, i.e., that of the Newfoundland and Labrador Supreme and Provincial Courts"})
 
@@ -484,9 +527,10 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-caj/GovernmentOfNovaScotia,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Province of Nova Scotia entity",
-   :rdfs/seeAlso ["http://novascotia.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://novascotia.ca/"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian Province of Nova Scotia"})
 
@@ -497,10 +541,12 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/NovaScotia,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "province of Nova Scotia jurisdiction",
    :rdfs/seeAlso
-   ["http://www.courts.ns.ca/Courthouse_Locations/Courthouse_Locations_Map.htm"],
+   {:rdfa/uri
+    "http://www.courts.ns.ca/Courthouse_Locations/Courthouse_Locations_Map.htm"},
    :skos/definition
    "individual representing the overall jurisdiction for the Canadian Province Of Nova Scotia, i.e., that of the Nova Scotia Supreme and Provincial Courts and Court of Appeals"})
 
@@ -511,9 +557,10 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-caj/GovernmentOfOntario,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Province of Ontario entity",
-   :rdfs/seeAlso ["https://www.ontario.ca/page/government-ontario"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.ontario.ca/page/government-ontario"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian Province of Ontario"})
 
@@ -524,9 +571,11 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/Ontario,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "province of Ontario jurisdiction",
-   :rdfs/seeAlso ["http://www.attorneygeneral.jus.gov.on.ca/english/courts/"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "http://www.attorneygeneral.jus.gov.on.ca/english/courts/"},
    :skos/definition
    "individual representing the overall jurisdiction for the Canadian Province Of Ontario, i.e., that of the Ontario Superior and Provincial Court of Justice as well as Court of Appeals"})
 
@@ -538,9 +587,10 @@
    :fibo-be-ge-caj/GovernmentOfPrinceEdwardIsland,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Province of Prince Edward Island entity",
-   :rdfs/seeAlso ["http://www.gov.pe.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gov.pe.ca/"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian Province of Prince Edward Island"})
 
@@ -552,9 +602,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/PrinceEdwardIsland,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "province of Prince Edward Island jurisdiction",
-   :rdfs/seeAlso ["http://www.courts.pe.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.courts.pe.ca/"},
    :skos/definition
    "individual representing the overall jurisdiction for the Canadian Province Of Prince Edward Island, i.e., that of the Prince Edward Island Court of Appeal, as well as the Supreme and Provincial Courts of Prince Edward Island"})
 
@@ -565,9 +616,10 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-caj/GovernmentOfQuebec,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Province of Quebec entity",
-   :rdfs/seeAlso ["http://www.gouv.qc.ca/EN/Pages/Accueil.aspx"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gouv.qc.ca/EN/Pages/Accueil.aspx"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian Province of Quebec"})
 
@@ -578,9 +630,11 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/Quebec,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "province of Quebec jurisdiction",
-   :rdfs/seeAlso ["http://www.gouv.qc.ca/EN/LeQuebec/Pages/Justice.aspx"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "http://www.gouv.qc.ca/EN/LeQuebec/Pages/Justice.aspx"},
    :skos/definition
    "individual representing the overall jurisdiction for the Canadian Province Of Quebec, i.e., that of the Quebec Court of Appeal, and the Supreme and Provincial Courts of Quebec"})
 
@@ -591,9 +645,10 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-caj/GovernmentOfSaskatchewan,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Province of Saskatchewan entity",
-   :rdfs/seeAlso ["http://gov.sk.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://gov.sk.ca/"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian Province of Saskatchewan"})
 
@@ -604,9 +659,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/Saskatchewan,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "province of Saskatchewan jurisdiction",
-   :rdfs/seeAlso ["http://www.sasklawcourts.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.sasklawcourts.ca/"},
    :skos/definition
    "individual representing the overall jurisdiction for the Canadian Province Of Saskatchewan, i.e., that of the Saskatchewan Court of Appeal, Court of Queen's Bench, and Provincial Court of Saskatchewan"})
 
@@ -617,9 +673,10 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-caj/GovernmentOfYukon,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Yukon entity",
-   :rdfs/seeAlso ["http://www.gov.yk.ca/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gov.yk.ca/"},
    :skos/definition
    "individual representing the regional sovereignty and polity that is the Canadian Yukon territory"})
 
@@ -630,8 +687,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-2-ca/Yukon,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Yukon jurisdiction",
-   :rdfs/seeAlso ["http://www.justice.gov.yk.ca/prog/cs/csindex.html"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "http://www.justice.gov.yk.ca/prog/cs/csindex.html"},
    :skos/definition
    "individual representing the overall jurisdiction for the Courts of Yukon"})

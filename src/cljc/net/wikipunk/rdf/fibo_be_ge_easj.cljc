@@ -6,18 +6,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides government entities and jurisdictions for countries that are defined as being part of Eastern Asia in the U.N. M49 codes, primarily those that are considered independent countries in ISO 3166, or are important from a banking perspective.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -56,8 +61,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Japan,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "日本国@ja" #voc/lstr "Government of Japan@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "日本国@ja"
+                #xsd/langString "Government of Japan@en"],
    :skos/definition
    "unitary parliamentary constitutional monarchy with a bicameral legislature in Eastern Asia, bordered on the west by the Sea of Japan, and extending from the Sea of Okhotsk in the north toward the East China Sea and Taiwan in the south"})
 
@@ -68,9 +75,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Mongolia,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Монгол Улс@mn"
-                #voc/lstr "Government of Mongolia@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Монгол Улс@mn"
+                #xsd/langString "Government of Mongolia@en"],
    :skos/definition
    "unitary semi-presidential representative democratic republic and landlocked country in Eastern Asia, situated between Russia to the north and China to the south, where it neighbours the Inner Mongolia Autonomous Region"})
 
@@ -82,9 +90,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/KoreaDemocraticPeoplesRepublicOf,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "조선민주주의인민공화국@ko"
-                #voc/lstr
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "조선민주주의인민공화국@ko"
+                #xsd/langString
                  "Government of the Democratic People's Republic of Korea@en"],
    :skos/definition
    "unitary one-party republic under a totalitarian dictatorship in Eastern Asia, constituting the northern part of the Korean Peninsula, bordered to the north by China and by Russia along the Amnok (known as the Yalu in Chinese) and Tumen rivers, and to the south by South Korea, with the heavily fortified Korean Demilitarized Zone (DMZ) separating the two"})
@@ -98,10 +107,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/HongKong,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label
-   [#voc/lstr "中華人民共和國香港特別行政區@zh"
-    #voc/lstr
+   [#xsd/langString "中華人民共和國香港特別行政區@zh"
+    #xsd/langString
      "Government of the Hong Kong Special Administrative Region of the People's Republic of China@en"],
    :skos/definition
    "devolved executive-led system within a socialist republic that is a metropolitan area and special administrative region of the People's Republic of China on the eastern Pearl River Delta of the South China Sea"})
@@ -114,10 +124,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Macao,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label
-   [#voc/lstr "中華人民共和國澳門特別行政區@zh"
-    #voc/lstr
+   [#xsd/langString "中華人民共和國澳門特別行政區@zh"
+    #xsd/langString
      "Government of the Macao Special Administrative Region of the People's Republic of China@en"],
    :skos/definition
    "devolved executive-led system within a socialist republic that is a metropolitan area and special administrative region of the People's Republic of China in the western Pearl River Delta by the South China Sea"})
@@ -129,9 +140,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/China,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "中华人民共和国@zh"
-                #voc/lstr "Government of the People's Republic of China@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "中华人民共和国@zh"
+                #xsd/langString
+                 "Government of the People's Republic of China@en"],
    :skos/definition
    "unitary Marxist-Leninist single-party socialist republic in Eastern Asia, covering approximately 9.6 million square kilometers (3.7 million square miles), that is the world's third or fourth-largest country by area"})
 
@@ -143,9 +156,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Taiwan,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "中華民國@zh"
-                #voc/lstr "Government of the Republic of China@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "中華民國@zh"
+                #xsd/langString "Government of the Republic of China@en"],
    :skos/definition
    "unitary semi-presidential constitutional republic whose neighbors include the People's Republic of China (PRC) to the northwest, Japan to the northeast, and the Philippines to the south"})
 
@@ -157,9 +171,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/KoreaRepublicOf,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "대한민국@ko"
-                #voc/lstr "Government of the Republic of Korea@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "대한민국@ko"
+                #xsd/langString "Government of the Republic of Korea@en"],
    :skos/definition
    "unitary presidential constitutional republic in Eastern Asia, constituting the southern part of the Korean Peninsula, and sharing a land border with North Korea"})
 
@@ -171,7 +186,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/China,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of China",
    :skos/definition
    "jurisdiction of the judiciary of China, which is the system of courts that interprets and applies the law in China"})
@@ -184,7 +200,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/HongKong,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Hong Kong",
    :skos/definition
    "jurisdiction of the judiciary of Hong Kong, which is the system of courts that interprets and applies the law in Hong Kong"})
@@ -196,7 +213,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Japan,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Japan",
    :skos/definition
    "jurisdiction of the judiciary of Japan, which is the system of courts, divided into four basic tiers including the Supreme Court and three levels of lower courts, that interprets and applies the law in Japan"})
@@ -209,7 +227,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Macao,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Macao",
    :skos/definition
    "jurisdiction of the judiciary of Macao, which is the system of courts that interprets and applies the law in Macao"})
@@ -221,7 +240,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Mongolia,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Mongolia",
    :skos/definition
    "jurisdiction of the judiciary of Mongolia, which is the system of courts that interpret and apply the law in Mongolia"})
@@ -234,7 +254,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/KoreaDemocraticPeoplesRepublicOf,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Democratic People's Republic of Korea",
    :skos/definition
    "jurisdiction of the judiciary of the Democratic People's Republic of Korea, which is the system of courts that interpret and apply the law in North Korea"})
@@ -247,7 +268,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Taiwan,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Republic of China",
    :skos/definition
    "jurisdiction of the judiciary of the Republic of China, which is the system of courts, including the Judicial Yuan, Supreme Court, Council of Grand Justices, and lower courts, that interpret and apply the law in Taiwan"})
@@ -260,7 +282,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/KoreaRepublicOf,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Republic of Korea",
    :skos/definition
    "jurisdiction of the judiciary of the Republic of Korea, which is the system of courts, including the Supreme Court, Constitutional Court, and lower courts, that interpret and apply the law in South Korea"})
@@ -273,7 +296,8 @@
    :fibo-be-ge-easj/GovernmentOfTheHongKongSpecialAdministrativeRegionOfThePeoplesRepublicOfChina,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "regional state of Hong Kong",
    :skos/definition "regional sovereignty and polity that is Hong Kong"})
 
@@ -285,7 +309,8 @@
    :fibo-be-ge-easj/GovernmentOfTheMacaoSpecialAdministrativeRegionOfThePeoplesRepublicOfChina,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "regional state of Macao",
    :skos/definition "regional sovereignty and polity that is Macao"})
 
@@ -299,7 +324,8 @@
    :fibo-be-ge-easj/GovernmentOfThePeoplesRepublicOfChina,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of China",
    :skos/definition "sovereign state and polity that is China"})
 
@@ -310,7 +336,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-easj/GovernmentOfJapan,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Japan",
    :skos/definition "sovereign state and polity that is Japan"})
 
@@ -321,7 +348,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-easj/GovernmentOfMongolia,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Mongolia",
    :skos/definition "sovereign state and polity that is Mongolia"})
 
@@ -334,7 +362,8 @@
    :fibo-be-ge-easj/GovernmentOfTheDemocraticPeoplesRepublicOfKorea,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of North Korea",
    :skos/definition "sovereign state and polity that is North Korea"})
 
@@ -346,7 +375,8 @@
    :fibo-be-ge-easj/GovernmentOfTheRepublicOfKorea,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of South Korea",
    :skos/definition "sovereign state and polity that is South Korea"})
 
@@ -358,6 +388,7 @@
    :fibo-be-ge-easj/GovernmentOfTheRepublicOfChina,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "regional state of Taiwan",
    :skos/definition "regional sovereignty and polity that is Taiwan"})

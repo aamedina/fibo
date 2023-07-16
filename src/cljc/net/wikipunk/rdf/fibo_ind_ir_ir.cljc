@@ -6,24 +6,34 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
    :dcterms/abstract
    "This ontology provides the basic types of interest rate which are recognized in the financial markets, and the relationships between these where applicable. These include bank base rates, inter-bank offer rates, overnight rates of interest and the US Federal Funds rate which is widely used as a rate of reference. It also includes the concept of a market rate spread between two interest rates.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://www.omg.org/spec/Commons/Classifiers/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
@@ -78,25 +88,26 @@
    :db/ident :fibo-ind-ir-ir/BaseRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "base rate",
    :rdfs/subClassOf [:fibo-ind-ir-ir/ReferenceInterestRate
-                     :fibo-fnd-acc-cur/InterestRate
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :cmns-dt/Duration,
-                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
-                      :rdf/type          :owl/Restriction}
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-ind-ind-ind/MarketRate
+                     :fibo-fnd-acc-cur/InterestRate
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/allValuesFrom :cmns-dt/Duration,
+                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
+                      :rdf/type          :owl/Restriction}],
    :skos/definition
    "basic rate of interest on which the actual rate a bank charges on loans to its customers is calculated"})
 
@@ -106,7 +117,8 @@
    :db/ident :fibo-ind-ir-ir/EighteenMonths,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "eighteen months",
    :skos/definition
    "duration of exactly eighteen months, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -117,7 +129,8 @@
    :db/ident :fibo-ind-ir-ir/FifteenYears,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "fifteen years",
    :skos/definition "duration of exactly fifteen years"})
 
@@ -127,7 +140,8 @@
    :db/ident :fibo-ind-ir-ir/FiveYears,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "five years",
    :skos/definition "duration of exactly five years"})
 
@@ -137,7 +151,8 @@
    :db/ident :fibo-ind-ir-ir/FortyEightMonths,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "forty-eight months",
    :skos/definition
    "duration of exactly forty-eight months, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -148,7 +163,8 @@
    :db/ident :fibo-ind-ir-ir/FourYears,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "four years",
    :skos/definition "duration of exactly four years"})
 
@@ -159,26 +175,27 @@
    :db/ident :fibo-ind-ir-ir/InterbankBidRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "interbank bid rate",
    :rdfs/subClassOf [:fibo-ind-ir-ir/InterbankRate
-                     :fibo-fnd-acc-cur/InterestRate
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :cmns-dt/Duration,
-                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
-                      :rdf/type          :owl/Restriction}
                      :fibo-ind-ir-ir/ReferenceInterestRate
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-ind-ind-ind/MarketRate
+                     :fibo-fnd-acc-cur/InterestRate
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/allValuesFrom :cmns-dt/Duration,
+                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
+                      :rdf/type          :owl/Restriction}],
    :skos/definition
    "interbank rate that is the interest rate at which participating banks are willing to borrow deposits from other banks"})
 
@@ -187,26 +204,27 @@
   {:db/ident :fibo-ind-ir-ir/InterbankMidRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "interbank mid rate",
    :rdfs/subClassOf [:fibo-ind-ir-ir/InterbankRate
-                     :fibo-fnd-acc-cur/InterestRate
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :cmns-dt/Duration,
-                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
-                      :rdf/type          :owl/Restriction}
                      :fibo-ind-ir-ir/ReferenceInterestRate
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-ind-ind-ind/MarketRate
+                     :fibo-fnd-acc-cur/InterestRate
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/allValuesFrom :cmns-dt/Duration,
+                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
+                      :rdf/type          :owl/Restriction}],
    :skos/definition
    "interbank rate that represents the mid-point between bid and offer rates"})
 
@@ -215,26 +233,27 @@
   {:db/ident :fibo-ind-ir-ir/InterbankOfferedRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "interbank offered rate",
    :rdfs/subClassOf [:fibo-ind-ir-ir/InterbankRate
-                     :fibo-fnd-acc-cur/InterestRate
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :cmns-dt/Duration,
-                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
-                      :rdf/type          :owl/Restriction}
                      :fibo-ind-ir-ir/ReferenceInterestRate
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-ind-ind-ind/MarketRate
+                     :fibo-fnd-acc-cur/InterestRate
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/allValuesFrom :cmns-dt/Duration,
+                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
+                      :rdf/type          :owl/Restriction}],
    :skos/definition
    "interbank rate that is the interest rate at which participating banks lend money"})
 
@@ -245,25 +264,26 @@
    :db/ident :fibo-ind-ir-ir/InterbankRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "interbank rate",
    :rdfs/subClassOf [:fibo-ind-ir-ir/ReferenceInterestRate
-                     :fibo-fnd-acc-cur/InterestRate
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :cmns-dt/Duration,
-                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
-                      :rdf/type          :owl/Restriction}
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-ind-ind-ind/MarketRate
+                     :fibo-fnd-acc-cur/InterestRate
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/allValuesFrom :cmns-dt/Duration,
+                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
+                      :rdf/type          :owl/Restriction}],
    :skos/definition
    "reference rate that is the rate of interest charged on short-term loans between banks"})
 
@@ -272,7 +292,8 @@
   {:db/ident :fibo-ind-ir-ir/InterestRateAuthority,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "interest rate authority",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/produces,
                       :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
@@ -291,31 +312,32 @@
    :db/ident :fibo-ind-ir-ir/InterestRateBenchmark,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "interest rate benchmark",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-qt-qtu/QuantityKind
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-qt-qtu/QuantityKind
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-be-fct-pub/MarketDataProvider,
-                      :owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-be-fct-pub/Publisher,
                       :owl/onProperty :fibo-fnd-rel-rel/isProducedBy,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-be-fct-pub/MarketDataProvider,
+                      :owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/Duration,
                       :owl/onProperty :fibo-ind-ir-ir/hasTenor,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "classifier for regularly updated interest rates that are publicly accessible, typically set by a central bank or group of financial institutions"})
@@ -325,7 +347,8 @@
   {:db/ident :fibo-ind-ir-ir/InterestRateBenchmarkClassificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "interest rate benchmark classification scheme",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
@@ -340,7 +363,8 @@
    :owl/equivalentClass :fibo-be-fct-pub/MarketDataProvider,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"}})
 
 (def NineMonths
   "duration of exactly nine months, regardless of the length in days of a given calendar month, but typically 30 days"
@@ -348,7 +372,8 @@
    :db/ident :fibo-ind-ir-ir/NineMonths,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "nine months",
    :skos/definition
    "duration of exactly nine months, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -359,7 +384,8 @@
    :db/ident :fibo-ind-ir-ir/OneDay,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "one day",
    :skos/definition
    "duration of exactly one day, or 24 hours, such as for an overnight rate"})
@@ -370,7 +396,8 @@
    :db/ident :fibo-ind-ir-ir/OneHundredEightyMonths,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "one hundred eighty months",
    :skos/definition
    "duration of exactly one hundred eighty months, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -381,7 +408,8 @@
    :db/ident :fibo-ind-ir-ir/OneMonth,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "one month",
    :skos/definition
    "duration of exactly one month, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -392,7 +420,8 @@
    :db/ident :fibo-ind-ir-ir/OneWeek,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "one week",
    :skos/definition "duration of exactly one week, or 7 days"})
 
@@ -402,7 +431,8 @@
    :db/ident :fibo-ind-ir-ir/OneYear,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "one year",
    :skos/definition "duration of exactly one year"})
 
@@ -413,28 +443,29 @@
    :db/ident :fibo-ind-ir-ir/OvernightRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "overnight rate",
    :rdfs/subClassOf [{:owl/hasValue   :fibo-ind-ir-ir/OneDay,
                       :owl/onProperty :fibo-ind-ir-ir/hasTenor,
                       :rdf/type       :owl/Restriction}
                      :fibo-ind-ir-ir/ReferenceInterestRate
-                     :fibo-fnd-acc-cur/InterestRate
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :cmns-dt/Duration,
-                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
-                      :rdf/type          :owl/Restriction}
-                     :fibo-ind-ind-ind/MarketRate
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
-                      :rdf/type           :owl/Restriction}],
+                     :fibo-ind-ind-ind/MarketRate
+                     :fibo-fnd-acc-cur/InterestRate
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/allValuesFrom :cmns-dt/Duration,
+                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
+                      :rdf/type          :owl/Restriction}],
    :skos/definition
    "reference rate that is an interest rate at which a depository institution lends funds to another depository institution (short-term), or the interest rate the central bank charges a financial institution to borrow money overnight"})
 
@@ -445,24 +476,25 @@
    :db/ident :fibo-ind-ir-ir/ReferenceInterestRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "reference interest rate",
-   :rdfs/subClassOf [:fibo-ind-ind-ind/MarketRate
-                     {:owl/allValuesFrom :cmns-dt/Duration,
-                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
-                      :rdf/type          :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-ind-ind-ind/MarketRate
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-qt-qtu/hasQuantityKind,
                       :owl/someValuesFrom :fibo-ind-ir-ir/InterestRateBenchmark,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-acc-cur/InterestRate
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                     {:owl/allValuesFrom :cmns-dt/Duration,
+                      :owl/onProperty    :fibo-ind-ir-ir/hasTenor,
+                      :rdf/type          :owl/Restriction}],
    :skos/definition
    "market rate that is a rate of interest paid by or agreed among some bank or set of banks"})
 
@@ -472,7 +504,8 @@
    :db/ident :fibo-ind-ir-ir/SixMonths,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "six months",
    :skos/definition
    "duration of exactly six months, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -483,7 +516,8 @@
    :db/ident :fibo-ind-ir-ir/SixtyMonths,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "sixty months",
    :skos/definition
    "duration of exactly sixty months, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -495,37 +529,38 @@
    :db/ident :fibo-ind-ir-ir/SpecificProviderInterestRateBenchmark,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "specific-provider interest rate benchmark",
    :rdfs/subClassOf [{:owl/onClass    :fibo-be-fct-pub/MarketDataProvider,
                       :owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-ind-ir-ir/InterestRateBenchmark
-                     {:owl/onProperty     :cmns-cls/classifies,
-                      :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/Duration,
-                      :owl/onProperty :fibo-ind-ir-ir/hasTenor,
+                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
+                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-qt-qtu/QuantityKind
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-be-fct-pub/MarketDataProvider,
-                      :owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/DateTime,
                       :owl/onProperty :fibo-ind-ir-ir/hasRateResetTimeOfDay,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-qt-qtu/QuantityKind
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-be-fct-pub/Publisher,
                       :owl/onProperty :fibo-fnd-rel-rel/isProducedBy,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-acc-cur/Currency,
-                      :owl/onProperty :fibo-ind-ir-ir/hasReferenceCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :cmns-dt/Duration,
+                      :owl/onProperty :fibo-ind-ir-ir/hasTenor,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-be-fct-pub/MarketDataProvider,
+                      :owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :cmns-cls/classifies,
+                      :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "interest rate benchmark that is made available by a specific market data provider for reference purposes"})
 
@@ -535,7 +570,8 @@
    :db/ident :fibo-ind-ir-ir/TenYears,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "ten years",
    :skos/definition "duration of exactly ten years"})
 
@@ -545,7 +581,8 @@
    :db/ident :fibo-ind-ir-ir/ThirtySixMonths,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "thirty-six months",
    :skos/definition
    "duration of exactly thirty-six months, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -556,7 +593,8 @@
    :db/ident :fibo-ind-ir-ir/ThirtyYears,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "thirty years",
    :skos/definition "duration of exactly thirty years"})
 
@@ -566,7 +604,8 @@
    :db/ident :fibo-ind-ir-ir/ThreeHundredSixtyMonths,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "three hundred sixty months",
    :skos/definition
    "duration of exactly three hundred sixty months, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -577,7 +616,8 @@
    :db/ident :fibo-ind-ir-ir/ThreeMonths,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "three months",
    :skos/definition
    "duration of exactly three months, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -588,7 +628,8 @@
    :db/ident :fibo-ind-ir-ir/ThreeYears,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "three years",
    :skos/definition "duration of exactly three years"})
 
@@ -598,7 +639,8 @@
    :db/ident :fibo-ind-ir-ir/TwelveMonths,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "twelve months",
    :skos/definition
    "duration of exactly twelve months, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -609,7 +651,8 @@
    :db/ident :fibo-ind-ir-ir/TwentyFourMonths,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "twenty-four months",
    :skos/definition
    "duration of exactly twenty-four months, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -620,7 +663,8 @@
    :db/ident :fibo-ind-ir-ir/TwentyYears,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "twenty years",
    :skos/definition "duration of exactly twenty years"})
 
@@ -630,7 +674,8 @@
    :db/ident :fibo-ind-ir-ir/TwoMonths,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "two months",
    :skos/definition
    "duration of exactly two months, regardless of the length in days of a given calendar month, but typically 30 days"})
@@ -641,7 +686,8 @@
    :db/ident :fibo-ind-ir-ir/TwoYears,
    :rdf/type [:cmns-dt/ExplicitDuration :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "two years",
    :skos/definition "duration of exactly two years"})
 
@@ -650,7 +696,8 @@
   {:db/ident :fibo-ind-ir-ir/hasRateResetTimeOfDay,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "has rate reset time of day",
    :rdfs/range :cmns-dt/DateTime,
    :rdfs/subPropertyOf :cmns-dt/hasDateTime,
@@ -662,7 +709,8 @@
   {:db/ident :fibo-ind-ir-ir/hasReferenceCurrency,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "has reference currency",
    :rdfs/range :fibo-fnd-acc-cur/Currency,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasCurrency,
@@ -675,7 +723,8 @@
    :db/ident :fibo-ind-ir-ir/hasTenor,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/"},
    :rdfs/label "has tenor",
    :rdfs/range :cmns-dt/Duration,
    :rdfs/subPropertyOf :cmns-dt/hasDuration,

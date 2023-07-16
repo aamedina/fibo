@@ -6,16 +6,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
    :dcterms/abstract
    "This ontology defines the concept of autonomous agent for use in other FIBO ontology elements. As defined here, autonomous agent corresponds to what is often referred to as \"agent\" in software and other systems. It is defined as any entity which is able to act on its own part, and embraces all such things, including people, animals, software agents organizations and all forms of legal persons, although not all of these concepts are elaborated in FIBO as not all are relevant to financial services.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/Designators/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/TextDatatype/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/TextDatatype/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
@@ -52,21 +55,23 @@
 (def AutomatedSystem
   "system that reduces or eliminates the need for human involvement in order to complete a task"
   {:cmns-av/adaptedFrom
-   "https://www.reference.com/technology/automated-system-c85583d0f17a632",
+   {:rdfa/uri
+    "https://www.reference.com/technology/automated-system-c85583d0f17a632"},
    :db/ident :fibo-fnd-aap-agt/AutomatedSystem,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"},
    :rdfs/label "automated system",
    :rdfs/subClassOf [:fibo-fnd-aap-agt/AutonomousAgent
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :cmns-txt/Text,
-                      :owl/onProperty  :fibo-fnd-rel-rel/hasTextualName,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dsg/Name,
                       :owl/onProperty :cmns-dsg/hasName,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onDataRange :cmns-txt/Text,
+                      :owl/onProperty  :fibo-fnd-rel-rel/hasTextualName,
+                      :rdf/type        :owl/Restriction}],
    :skos/definition
    "system that reduces or eliminates the need for human involvement in order to complete a task"})
 
@@ -80,21 +85,23 @@
    :cmns-av/usageNote
    "The use of custom datatypes is outside the OWL 2 RL profile and so users should consider commenting out the restriction on hasTextValue altogether or change the data range to rdfs:Literal in applications that are constrained to OWL 2 RL.",
    :db/ident :fibo-fnd-aap-agt/AutonomousAgent,
-   :dcterms/source "http://www.omg.org/spec/SoaML/",
+   :dcterms/source {:rdfa/uri "http://www.omg.org/spec/SoaML/"},
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"},
    :rdfs/label "autonomous agent",
-   :rdfs/seeAlso ["http://www.jamesodell.com/WhyShouldWeCareAboutAgents.pdf"
-                  "http://www.jamesodell.com/WhatIsAnAgent.pdf"],
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dsg/Name,
-                      :owl/onProperty :cmns-dsg/hasName,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/seeAlso [{:rdfa/uri
+                   "http://www.jamesodell.com/WhyShouldWeCareAboutAgents.pdf"}
+                  {:rdfa/uri "http://www.jamesodell.com/WhatIsAnAgent.pdf"}],
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onDataRange :cmns-txt/Text,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasTextualName,
-                      :rdf/type        :owl/Restriction}],
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :cmns-dsg/Name,
+                      :owl/onProperty :cmns-dsg/hasName,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "something autonomous that can adapt to and interact with its environment"})
 
@@ -104,7 +111,8 @@
    :owl/equivalentClass :cmns-dsg/Name,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"}})
 
 (def Text
   {:db/ident :fibo-fnd-aap-agt/Text,
@@ -112,7 +120,8 @@
    :owl/equivalentDatatype :cmns-txt/Text,
    :rdf/type :rdfs/Datatype,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"}})
 
 (def hasStructuredName
   {:db/ident :fibo-fnd-aap-agt/hasStructuredName,
@@ -120,7 +129,8 @@
    :owl/equivalentProperty :cmns-dsg/hasName,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"}})
 
 (def hasTextValue
   {:db/ident :fibo-fnd-aap-agt/hasTextValue,
@@ -128,7 +138,8 @@
    :owl/equivalentProperty :cmns-txt/hasTextValue,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"}})
 
 (def isStructuredNameOf
   {:db/ident :fibo-fnd-aap-agt/isStructuredNameOf,
@@ -136,4 +147,5 @@
    :owl/equivalentProperty :cmns-dsg/isNameOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"}})

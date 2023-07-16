@@ -1258,14 +1258,6 @@
    :rdfa/prefix "fibo-fbc-pas-caa",
    :rdf/type :rdfa/PrefixMapping})
 
-(def fibo-fbc-pas-crd
-  {:dcat/downloadURL
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
-   :rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/CardAccounts/",
-   :rdfa/prefix "fibo-fbc-pas-crd",
-   :rdf/type :rdfa/PrefixMapping})
-
 (def fibo-fnd-aap-ppl
   {:dcat/downloadURL
      "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
@@ -1530,7 +1522,8 @@
      "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
    :rdfa/prefix "fibo-fnd-plc-adr",
-   :rdf/type :rdfa/PrefixMapping})
+   :rdf/type :rdfa/PrefixMapping
+   :reasoner nil})
 
 (def fibo-fnd-plc-uspsa
   {:dcat/downloadURL
@@ -1770,11 +1763,19 @@
    :rdfa/prefix "fibo-loan-spc-cns",
    :rdf/type :rdfa/PrefixMapping})
 
+(def fibo-loan-spc-crd
+  {:dcat/downloadURL
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts/",
+   :rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts/",
+   :rdfa/prefix "fibo-loan-spc-crd",
+   :rdf/type :rdfa/PrefixMapping})
+
 (def fibo-loan-spc-prod
   {:dcat/downloadURL
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
    :rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
    :rdfa/prefix "fibo-loan-spc-prod",
    :rdf/type :rdfa/PrefixMapping})
 
@@ -2164,21 +2165,24 @@
    "https://www.gleif.org/ontology/v1.0/Base/ontology.ttl"
    :rdfa/uri "https://www.gleif.org/ontology/Base/"
    :rdfa/prefix "gleif-base"
-   :rdf/type :rdfa/PrefixMapping})
+   :rdf/type :rdfa/PrefixMapping
+   :emit false})
 
 (def gleif-L1
   {:dcat/downloadURL #_"https://lov.linkeddata.es/dataset/lov/vocabs/gleif-L1/versions/2019-02-01.n3"
    "https://www.gleif.org/ontology/v1.0/L1/ontology.ttl"
    :rdfa/uri "https://www.gleif.org/ontology/L1/"
    :rdfa/prefix "gleif-L1"
-   :rdf/type :rdfa/PrefixMapping})
+   :rdf/type :rdfa/PrefixMapping
+   :emit false})
 
 (def gleif-L2
   {:dcat/downloadURL #_"https://lov.linkeddata.es/dataset/lov/vocabs/gleif-L2/versions/2019-02-01.n3"
    "https://www.gleif.org/ontology/v1.0/L2/ontology.ttl"
    :rdfa/uri "https://www.gleif.org/ontology/L2/"
    :rdfa/prefix "gleif-L2"
-   :rdf/type :rdfa/PrefixMapping})
+   :rdf/type :rdfa/PrefixMapping
+   :emit false})
 
 (def gleif-geo
   {:dcat/downloadURL "https://www.gleif.org/ontology/v1.0/Geocoding/ontology.ttl"
@@ -2198,67 +2202,77 @@
     "voaf"       "http://purl.org/vocommons/voaf#",
     "geo"        "http://www.w3.org/2003/01/geo/wgs84_pos#",
     "xml"        "http://www.w3.org/XML/1998/namespace",
-    "xsd"        "http://www.w3.org/2001/XMLSchema#"}})
+    "xsd"        "http://www.w3.org/2001/XMLSchema#"}
+   :emit false})
 
 (def EntityLegalForm
   {:dcat/downloadURL #_"https://lov.linkeddata.es/dataset/lov/vocabs/gleif-elf/versions/2019-02-01.n3"
    "https://www.gleif.org/ontology/v1.0/EntityLegalForm/ontology.ttl"
    :rdfa/uri "https://www.gleif.org/ontology/EntityLegalForm/"
    :rdfa/prefix "gleif-elf"
-   :rdf/type :rdfa/PrefixMapping})
+   :rdf/type :rdfa/PrefixMapping
+   :emit false})
 
 (def RegistrationAuthority
   {:dcat/downloadURL #_"https://lov.linkeddata.es/dataset/lov/vocabs/gleif-ra/versions/2019-02-01.n3"
    "https://www.gleif.org/ontology/v1.0/RegistrationAuthority/ontology.ttl"
    :rdfa/uri "https://www.gleif.org/ontology/RegistrationAuthority/"
    :rdfa/prefix "gleif-ra"
-   :rdf/type :rdfa/PrefixMapping})
+   :rdf/type :rdfa/PrefixMapping
+   :emit false})
 
 (def ReportingException
   {:dcat/downloadURL #_"https://lov.linkeddata.es/dataset/lov/vocabs/gleif-repex/versions/2019-02-01.n3"
    "https://www.gleif.org/ontology/v1.0/ReportingException/ontology.ttl"
    :rdfa/uri "https://www.gleif.org/ontology/ReportingException/"
    :rdfa/prefix "gleif-repex"
-   :rdf/type :rdfa/PrefixMapping})
+   :rdf/type :rdfa/PrefixMapping
+   :emit false})
 
 ;; :dcat/downloadURL "resources/gleif-lei-data/L1Data.ttl.gz"
 
 (def gleif-L1-data
   {:rdfa/prefix "gleif-L1-data"
    :rdfa/uri    "https://rdf.gleif.org/L1/"
-   :rdf/type    :rdfa/PrefixMapping})
+   :rdf/type    :rdfa/PrefixMapping
+   :emit false})
 
 ;; :dcat/downloadURL "resources/gleif-lei-data/L2Data.ttl.gz"
 
 (def gleif-L2-data
   {:rdfa/prefix "gleif-L2-data"
    :rdfa/uri    "https://rdf.gleif.org/L2/"
-   :rdf/type    :rdfa/PrefixMapping})
+   :rdf/type    :rdfa/PrefixMapping
+   :emit false})
 
 (def gleif-BIC-data
   {:rdfa/prefix      "gleif-BIC-data"
    :rdfa/uri         "https://rdf.gleif.org/BIC/"
    :rdf/type         :rdfa/PrefixMapping
-   :dcat/downloadURL "resources/gleif-lei-data/BICData.ttl"})
+   :dcat/downloadURL "resources/gleif-lei-data/BICData.ttl"
+   :emit false})
 
 (def gleif-ELF-data
   {:rdfa/prefix      "gleif-ELF-data"
    :rdfa/uri         "https://rdf.gleif.org/EntityLegalForm/"
    :rdf/type         :rdfa/PrefixMapping
-   :dcat/downloadURL "resources/gleif-lei-data/EntityLegalFormData.ttl"})
+   :dcat/downloadURL "resources/gleif-lei-data/EntityLegalFormData.ttl"
+   :emit false})
 
 (def gleif-RA-data
   {:rdfa/prefix      "gleif-RA-data"
    :rdfa/uri         "https://rdf.gleif.org/RegistrationAuthority/"
    :rdf/type         :rdfa/PrefixMapping
-   :dcat/downloadURL "resources/gleif-lei-data/RegistrationAuthorityData.ttl"})
+   :dcat/downloadURL "resources/gleif-lei-data/RegistrationAuthorityData.ttl"
+   :emit false})
 
 ;; :dcat/downloadURL "resources/gleif-lei-data/RepExData.ttl.gz"
 
 (def gleif-repex-data
   {:rdfa/prefix      "gleif-repex-data"
    :rdfa/uri         "https://rdf.gleif.org/ReportingException/"
-   :rdf/type         :rdfa/PrefixMapping})
+   :rdf/type         :rdfa/PrefixMapping
+   :emit false})
 
 (def lcc-3166-1-adj
   {:rdfa/uri    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes-Adjunct/"

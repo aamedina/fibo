@@ -5,31 +5,48 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
    :dcterms/abstract
    "This ontology describes loan and mortgage loan products. A product as defined here is something marketed and offered for sale, in this case a loan, such that when a customer takes on the product, they become signatories to a corresponding loan contract. A loan product in this sense is a contractual , off-the-shelf product with terms corresponding to those in the actual contract when it is signed.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/LoansRegulatory/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://www.omg.org/spec/Commons/Classifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MortgageLoans/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/ClientsAndAccounts/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/LoansRegulatory/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MortgageLoans/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/ClientsAndAccounts/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/LoanProducts/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
@@ -77,15 +94,16 @@
    :rdfa/prefix "fibo-loan-spc-prod",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "Loan Products Ontology@en"})
+   :rdfs/label #xsd/langString "Loan Products Ontology@en"})
 
 (def AutoLoanPurpose
   "auto loan purpose"
   {:db/ident :fibo-loan-spc-prod/AutoLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "auto loan purpose@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "auto loan purpose@en",
    :rdfs/subClassOf [:fibo-loan-spc-prod/LoanPurpose
                      :fibo-fnd-gao-obj/Objective]})
 
@@ -94,8 +112,9 @@
   {:db/ident :fibo-loan-spc-prod/BridgingLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "bridging loan purpose@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "bridging loan purpose@en",
    :rdfs/subClassOf [:fibo-loan-spc-prod/LoanPurpose
                      :fibo-fnd-gao-obj/Objective]})
 
@@ -104,8 +123,9 @@
   {:db/ident :fibo-loan-spc-prod/ConstructionLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "construction loan purpose@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "construction loan purpose@en",
    :rdfs/subClassOf [:fibo-loan-spc-prod/LoanPurpose
                      :fibo-fnd-gao-obj/Objective]})
 
@@ -114,8 +134,9 @@
   {:db/ident :fibo-loan-spc-prod/CreditCardReceivablePurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "credit card receivable purpose@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "credit card receivable purpose@en",
    :rdfs/subClassOf [:fibo-loan-spc-prod/LoanPurpose
                      :fibo-fnd-gao-obj/Objective]})
 
@@ -124,8 +145,9 @@
   {:db/ident :fibo-loan-spc-prod/HomeEquityLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "home equity loan purpose@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "home equity loan purpose@en",
    :rdfs/subClassOf [:fibo-loan-spc-prod/LoanPurpose
                      :fibo-fnd-gao-obj/Objective]})
 
@@ -134,20 +156,21 @@
   {:db/ident :fibo-loan-spc-prod/LineItem,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
    :rdfs/label "line item",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
-                      :owl/onProperty :fibo-loan-spc-prod/hasUnitCost,
-                      :rdf/type       :owl/Restriction}
-                     :cmns-col/Constituent
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [:cmns-col/Constituent
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-qt-qtu/hasNumericValue,
                       :rdf/type        :owl/Restriction}
                      {:owl/onProperty     :fibo-loan-ln-ln/hasCost,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
+                      :owl/onProperty :fibo-loan-spc-prod/hasUnitCost,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-fnd-pas-pas/Product
@@ -164,7 +187,8 @@
   {:db/ident :fibo-loan-spc-prod/LoanMarketCategory,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
    :rdfs/label "loan market category",
    :rdfs/subClassOf :fibo-fnd-arr-cls/IndustrySectorClassifier,
    :skos/definition
@@ -177,7 +201,8 @@
               :owl/NamedIndividual
               :fibo-fnd-arr-cls/IndustrySectorClassifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
    :rdfs/label "auto loan"})
 
 (def LoanMarketCategory-Commercial
@@ -187,7 +212,8 @@
               :owl/NamedIndividual
               :fibo-fnd-arr-cls/IndustrySectorClassifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
    :rdfs/label "commercial loan"})
 
 (def LoanMarketCategory-Construction
@@ -197,7 +223,8 @@
               :owl/NamedIndividual
               :fibo-fnd-arr-cls/IndustrySectorClassifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
    :rdfs/label "construction loan"})
 
 (def LoanMarketCategory-Education
@@ -207,7 +234,8 @@
               :owl/NamedIndividual
               :fibo-fnd-arr-cls/IndustrySectorClassifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
    :rdfs/label "education loan"})
 
 (def LoanMarketCategory-Mortgage
@@ -217,7 +245,8 @@
               :owl/NamedIndividual
               :fibo-fnd-arr-cls/IndustrySectorClassifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
    :rdfs/label "mortgage loan"})
 
 (def LoanMarketCategory-Personal
@@ -227,7 +256,8 @@
               :owl/NamedIndividual
               :fibo-fnd-arr-cls/IndustrySectorClassifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
    :rdfs/label "personal loan"})
 
 (def LoanMarketCategory-SmallBusiness
@@ -239,7 +269,8 @@
               :owl/NamedIndividual
               :fibo-fnd-arr-cls/IndustrySectorClassifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
    :rdfs/label "small business loan"})
 
 (def LoanProduct
@@ -247,17 +278,18 @@
   {:db/ident :fibo-loan-spc-prod/LoanProduct,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
    :rdfs/label "loan product",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-loan-ln-ln/Loan,
                       :owl/onProperty :fibo-fbc-pas-caa/isRealizedBy,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
                       :owl/onProperty :fibo-loan-spc-prod/hasPreconditions,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
                       :owl/onProperty :fibo-fnd-rel-rel/refersTo,
                       :rdf/type       :owl/Restriction}
@@ -271,11 +303,12 @@
   {:db/ident :fibo-loan-spc-prod/LoanProductDisclosureRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "loan product disclosure right@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "loan product disclosure right@en",
    :rdfs/subClassOf :fibo-loan-ln-reg/ProductDisclosureRight,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Right to fair representation of the facts about Loan products before entrering into agreements for same.@en"})
 
 (def LoanProductOffering
@@ -283,12 +316,13 @@
   {:db/ident :fibo-loan-spc-prod/LoanProductOffering,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
    :rdfs/label "loan offering",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-loan-spc-prod/LoanProduct,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-loan-spc-prod/LineItem,
                       :owl/onProperty :cmns-col/hasConstituent,
                       :rdf/type       :owl/Restriction}
@@ -301,11 +335,12 @@
   {:db/ident :fibo-loan-spc-prod/LoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "loan purpose@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "loan purpose@en",
    :rdfs/subClassOf :fibo-fnd-gao-obj/Objective,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "A selection of different types of loan purpose, being the purpose for which and manner in which loan (credit) draw-down amounts are to be used. This shows the purpose for which credit is to be used, and implies certain kinds of fact that relate to that specific type of loan e.g. mortgages. These are also identified as tranche types in tranches of a credit facility.@en"})
 
 (def MortgageProduct
@@ -313,35 +348,37 @@
   {:db/ident :fibo-loan-spc-prod/MortgageProduct,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "mortgage product@en",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "mortgage product@en",
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-loan-reln-mtg/Mortgage,
                       :owl/onProperty :fibo-fbc-pas-caa/isRealizedBy,
                       :rdf/type       :owl/Restriction}
                      :fibo-loan-spc-prod/LoanProduct
-                     :fibo-fbc-pas-fpas/FinancialProduct
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-loan-ln-ln/Loan,
-                      :owl/onProperty :fibo-fbc-pas-caa/isRealizedBy,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
-                      :owl/onProperty :fibo-loan-spc-prod/hasPreconditions,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fbc-dae-dbt/CreditFacility
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fbc-dae-dbt/Collateral,
                       :owl/onProperty :fibo-fnd-rel-rel/refersTo,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fbc-dae-dbt/CreditFacility]})
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-fnd-agr-ctr/ConditionPrecedent,
+                      :owl/onProperty :fibo-loan-spc-prod/hasPreconditions,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialProduct
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-loan-ln-ln/Loan,
+                      :owl/onProperty :fibo-fbc-pas-caa/isRealizedBy,
+                      :rdf/type       :owl/Restriction}]})
 
 (def MotorhomeLoanPurpose
   "motorhome loan purpose"
   {:db/ident :fibo-loan-spc-prod/MotorhomeLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "motorhome loan purpose@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "motorhome loan purpose@en",
    :rdfs/subClassOf [:fibo-loan-spc-prod/LoanPurpose
                      :fibo-fnd-gao-obj/Objective]})
 
@@ -350,8 +387,9 @@
   {:db/ident :fibo-loan-spc-prod/OrdinaryLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "ordinary loan purpose@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "ordinary loan purpose@en",
    :rdfs/subClassOf [:fibo-loan-spc-prod/LoanPurpose
                      :fibo-fnd-gao-obj/Objective]})
 
@@ -360,8 +398,9 @@
   {:db/ident :fibo-loan-spc-prod/OverdraftFacilityPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "overdraft facility purpose@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "overdraft facility purpose@en",
    :rdfs/subClassOf [:fibo-loan-spc-prod/LoanPurpose
                      :fibo-fnd-gao-obj/Objective]})
 
@@ -370,8 +409,9 @@
   {:db/ident :fibo-loan-spc-prod/ResidentialHouseboatLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "residential houseboat loan purpose@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "residential houseboat loan purpose@en",
    :rdfs/subClassOf [:fibo-loan-spc-prod/LoanPurpose
                      :fibo-fnd-gao-obj/Objective]})
 
@@ -380,8 +420,9 @@
   {:db/ident :fibo-loan-spc-prod/StudentLoanPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "student loan purpose@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "student loan purpose@en",
    :rdfs/subClassOf [:fibo-loan-spc-prod/LoanPurpose
                      :fibo-fnd-gao-obj/Objective]})
 
@@ -390,8 +431,9 @@
   {:db/ident :fibo-loan-spc-prod/WorkingCapitalPurpose,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "working capital purpose@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "working capital purpose@en",
    :rdfs/subClassOf [:fibo-loan-spc-prod/LoanPurpose
                      :fibo-fnd-gao-obj/Objective]})
 
@@ -401,8 +443,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-loan-spc-prod/LoanProduct,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
-   :rdfs/label #voc/lstr "has preconditions@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
+   :rdfs/label #xsd/langString "has preconditions@en",
    :rdfs/range :fibo-fnd-agr-ctr/ConditionPrecedent})
 
 (def hasUnitCost
@@ -410,7 +453,8 @@
   {:db/ident :fibo-loan-spc-prod/hasUnitCost,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/LoanProducts/"},
    :rdfs/label "has unit cost",
    :rdfs/subPropertyOf :fibo-loan-ln-ln/hasCost,
    :skos/definition "relates an item to its unit cost",

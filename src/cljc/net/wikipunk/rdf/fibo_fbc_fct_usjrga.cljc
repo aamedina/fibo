@@ -6,47 +6,77 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
    :dcterms/abstract
    "This ontology extends the primary regulatory agencies ontology in FBC with additional regulators that are specific to the United States and augments certain U.S. financial services entities based on who regulates them.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
-    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -143,7 +173,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:owl/NamedIndividual :fibo-be-corp-corp/RegistrationIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "ABA business entity identifier",
    :skos/definition
    "Delaware Department of Corporations business entity identifier for the American Bankers Association (ABA)"})
@@ -158,7 +189,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/DistrictOfColumbia,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/ConventionalStreetAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "ABA headquarters address",
    :skos/definition
    "registered address identified as the headquarters address for the American Bankers Association (ABA)"})
@@ -170,7 +202,8 @@
    :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
    :rdf/type [:fibo-fbc-fct-ra/Registry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "ABA IIN Registry",
    :skos/definition
    "American Bankers Association (ABA) Issuer Identification Number (IIN) registry, a repository of institution characteristics for those that have assigned IINs, managed by the ABA"})
@@ -180,7 +213,8 @@
   {:db/ident :fibo-fbc-fct-usjrga/ABAIINRegistryEntry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "ABA IIN registry entry",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
@@ -203,7 +237,8 @@
    :fibo-fbc-fct-usjrga/AmericanBankersAssociationRTNRegistrar,
    :rdf/type [:fibo-fbc-fct-ra/Registry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "ABA RTN Registry",
    :skos/definition
    "American Bankers Association (ABA) Routing Transit Number (RTN) registry, a repository of institution characteristics for those that have assigned RTNs, managed by the ABA's designated registration authority (RA)"})
@@ -213,7 +248,8 @@
   {:db/ident :fibo-fbc-fct-usjrga/ABARTNRegistryEntry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "ABA RTN registry entry",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
@@ -237,11 +273,12 @@
    :fibo-fbc-fct-usjrga/AccuityIncHeadquartersAddress,
    :fibo-fbc-pas-fpas/hasLegalAgent
    :fibo-fbc-fct-usjrga/CorporationTrustCompany,
-   :fibo-fnd-plc-vrt/hasWebsite "https://accuity.com/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://accuity.com/"},
    :fibo-fnd-rel-rel/hasLegalName "Accuity Inc.",
    :rdf/type [:fibo-be-le-cb/Corporation :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Accuity Inc. US-DE",
    :skos/definition
    "Accuity Inc. legal entity that is a Delaware corporation and subsidiary of Wolters Kluwer"})
@@ -258,7 +295,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Accuity Inc. business entity identifier",
    :skos/definition
    "Delaware Department of Corporations business entity identifier for Accuity Inc."})
@@ -273,7 +311,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/Illinois,
    :rdf/type [:fibo-fnd-plc-adr/ConventionalStreetAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Accuity Inc. headquarters address",
    :skos/definition
    "registered address that is identified as the headquarters address for Accuity Inc."})
@@ -287,11 +326,13 @@
    :fibo-fbc-fct-usjrga/ABAHeadquartersAddress,
    :fibo-fbc-pas-fpas/hasLegalAgent
    :fibo-fbc-fct-usjrga/CorporationServiceCompany,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.aba.com/Pages/default.aspx",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri
+                                 "https://www.aba.com/Pages/default.aspx"},
    :fibo-fnd-rel-rel/hasLegalName "American Bankers Association",
    :rdf/type [:fibo-be-le-cb/Corporation :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "American Bankers Association",
    :skos/definition
    "American Bankers Association (ABA) legal entity, which is a trade association whose membership comprises financial institutions of all sizes"})
@@ -306,7 +347,8 @@
               :fibo-fbc-fct-ra/Registrar
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "American Bankers Association RTN Registrar",
    :skos/definition
    "American Bankers Association (ABA) Routing Transit Number (RTN) Registrar, which is a delegated capability currently provided by Accuity"})
@@ -323,14 +365,16 @@
               :fibo-fbc-fct-ra/RegistrationAuthority
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "American Bankers Association Registration Authority",
    :skos/definition
    "American Bankers Association (ABA) Registration Authority (RA), which is a function of the ABA for registration of issuer identification numbers in the US"})
 
 (def BoardOfGovernorsOfTheFederalReserveSystem
   "regulatory agency and registration authority for the overall Federal Reserve System"
-  {:cmns-av/adaptedFrom "http://www.federalreserve.gov/faqs/about_12591.htm",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "http://www.federalreserve.gov/faqs/about_12591.htm"},
    :cmns-col/isPartOf
    :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
    :db/ident :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
@@ -339,7 +383,8 @@
               :fibo-fbc-fct-ra/RegistrationAuthority
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Board of Governors of the Federal Reserve System",
    :skos/definition
    "regulatory agency and registration authority for the overall Federal Reserve System"})
@@ -347,13 +392,15 @@
 (def CFTCIndustryFilingsRepository
   "CFTC Industry Filings repository, a repository of organizational characteristics and financial data for Designated Contract Markets (DCM), Swap Execution Facilities (SEF), Derivatives Clearing Organizations (DCO), Swap Data Repositories (SDR), and Lists of Foreign Boards of Trade (FBOT) Registered with the Commission"
   {:cmns-av/adaptedFrom
-   "http://www.cftc.gov/IndustryOversight/IndustryFilings/index.htm",
+   {:rdfa/uri
+    "http://www.cftc.gov/IndustryOversight/IndustryFilings/index.htm"},
    :db/ident :fibo-fbc-fct-usjrga/CFTCIndustryFilingsRepository,
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/CommoditiesFuturesAndDerivativesRegulator,
    :rdf/type [:fibo-fbc-fct-ra/Registry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "CFTC Industry Filings Repository",
    :skos/definition
    "CFTC Industry Filings repository, a repository of organizational characteristics and financial data for Designated Contract Markets (DCM), Swap Execution Facilities (SEF), Derivatives Clearing Organizations (DCO), Swap Data Repositories (SDR), and Lists of Foreign Boards of Trade (FBOT) Registered with the Commission"})
@@ -367,9 +414,10 @@
               :fibo-fbc-fct-ra/RegistrationAuthority
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "California banking regulator",
-   :rdfs/seeAlso ["http://dbo.ca.gov/"],
+   :rdfs/seeAlso {:rdfa/uri "http://dbo.ca.gov/"},
    :skos/definition
    "regulatory agency, registration authority, and oversight role of the State of California's Department of Business Oversight"})
 
@@ -377,15 +425,18 @@
   "registry of business entities for businesses that have registered with the State of California Business Programs Division"
   {:db/ident :fibo-fbc-fct-usjrga/CaliforniaBusinessEntitiesRegistry,
    :fibo-fbc-fct-breg/hasRegistryName "California Business Entities (BE)",
-   :fibo-fnd-plc-vrt/hasWebsite "https://businesssearch.sos.ca.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri
+                                 "https://businesssearch.sos.ca.gov/"},
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfCaliforniaJurisdiction,
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/CaliforniaBusinessRegistrar,
    :rdf/type [:owl/NamedIndividual :fibo-fbc-fct-breg/BusinessRegistry],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "California business entities registry",
-   :rdfs/seeAlso ["http://www.sos.ca.gov/business-programs/business-entities/"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "http://www.sos.ca.gov/business-programs/business-entities/"},
    :skos/definition
    "registry of business entities for businesses that have registered with the State of California Business Programs Division"})
 
@@ -393,15 +444,11 @@
   "State of California, Secretary of State, Business Programs Division"
   {:cmns-col/isPartOf :fibo-be-ge-usj/StateOfCaliforniaGovernment,
    :db/ident :fibo-fbc-fct-usjrga/CaliforniaBusinessProgramsDivision,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.sos.ca.gov/business-programs/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri
+                                 "http://www.sos.ca.gov/business-programs/"},
    :rdf/type [:fibo-fbc-fct-usjrga/StateGovernmentEntity
               :fibo-be-ge-ge/GovernmentDepartment
               :owl/NamedIndividual
-              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
-                             :fibo-be-ge-ge/RegionalSovereignty
-                             :fibo-be-ge-ge/GovernmentAgency
-                             :fibo-be-ge-ge/GovernmentDepartment],
-               :rdf/type    :owl/Class}
               :fibo-be-ge-ge/GovernmentBody
               {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                :owl/someValuesFrom {:owl/onProperty :fibo-fnd-law-jur/hasReach,
@@ -414,9 +461,15 @@
                                        :rdf/type :owl/Restriction}],
                                      :rdf/type :owl/Class},
                                     :rdf/type :owl/Restriction},
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
+                             :fibo-be-ge-ge/RegionalSovereignty
+                             :fibo-be-ge-ge/GovernmentAgency
+                             :fibo-be-ge-ge/GovernmentDepartment],
+               :rdf/type    :owl/Class}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "California Business Programs Division",
    :skos/definition
    "State of California, Secretary of State, Business Programs Division"})
@@ -434,7 +487,8 @@
               :fibo-fbc-fct-breg/BusinessRegistrationAuthority
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "California business registrar",
    :skos/definition
    "regulatory agency and registration authority role of the State of California's Business Programs Division"})
@@ -446,7 +500,8 @@
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "California business registration identifier scheme",
    :skos/definition
    "registration identifier scheme for business entity identifiers defined by the State of California, Secretary of State for the registration of business entities"})
@@ -460,10 +515,12 @@
    :fibo-fbc-fct-usjrga/CaliforniaBusinessRegistrar,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "California business registration service",
    :rdfs/seeAlso
-   ["http://www.sos.ca.gov/business-programs/business-entities/service-options"],
+   {:rdfa/uri
+    "http://www.sos.ca.gov/business-programs/business-entities/service-options"},
    :skos/definition
    "State of California, Secretary of State, service for the registration of business entities"})
 
@@ -474,15 +531,10 @@
    :cmns-col/isPartOf :fibo-be-ge-usj/StateOfCaliforniaGovernment,
    :db/ident :fibo-fbc-fct-usjrga/CaliforniaDepartmentOfBusinessOversight,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/StateOfCaliforniaJurisdiction,
-   :fibo-fnd-plc-vrt/hasWebsite "http://dbo.ca.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://dbo.ca.gov/"},
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-usjrga/StateGovernmentEntity
               :fibo-be-ge-ge/GovernmentDepartment
-              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
-                             :fibo-be-ge-ge/RegionalSovereignty
-                             :fibo-be-ge-ge/GovernmentAgency
-                             :fibo-be-ge-ge/GovernmentDepartment],
-               :rdf/type    :owl/Class}
               :fibo-be-ge-ge/GovernmentBody
               {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                :owl/someValuesFrom {:owl/onProperty :fibo-fnd-law-jur/hasReach,
@@ -495,9 +547,15 @@
                                        :rdf/type :owl/Restriction}],
                                      :rdf/type :owl/Class},
                                     :rdf/type :owl/Restriction},
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
+                             :fibo-be-ge-ge/RegionalSovereignty
+                             :fibo-be-ge-ge/GovernmentAgency
+                             :fibo-be-ge-ge/GovernmentDepartment],
+               :rdf/type    :owl/Class}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "California Department of Business Oversight",
    :skos/definition "State of California's Department of Business Oversight"})
 
@@ -509,10 +567,12 @@
    :rdf/type [:fibo-fbc-fct-breg/RegistrationAuthorityCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "California registration authority code",
    :rdfs/seeAlso
-   ["https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"],
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"},
    :skos/definition
    "GLEIF Registration Authority List identifier for the California Business Entities Registry"})
 
@@ -526,7 +586,8 @@
               :fibo-fbc-fct-ra/RegistrationAuthority
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "commodities, futures and derivatives regulator",
    :skos/definition
    "regulatory agency and registration authority role of the Commodity Futures Trading Commission (CFTC)"})
@@ -537,34 +598,37 @@
    :cmns-col/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :db/ident :fibo-fbc-fct-usjrga/CommodityFuturesTradingCommission,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.cftc.gov/index.htm",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.cftc.gov/index.htm"},
    :rdf/type [:fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :fibo-be-ge-ge/GovernmentAgency
               :owl/NamedIndividual
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Commodity Futures Trading Commission",
    :skos/definition
    "Commodity Futures Trading Commission (CFTC), an independent Federal agency whose mission is to foster open, transparent, competitive, and financially sound markets, to avoid systemic risk, and to protect the market users and their funds, consumers, and the public from fraud, manipulation, and abusive practices related to derivatives and other products that are subject to the Commodity Exchange Act"})
 
 (def ConsumerFinanceRegulator
   "regulatory agency and registration authority role of the Consumer Financial Protection Bureau (CFPB)"
-  {:cmns-av/adaptedFrom "http://www.consumerfinance.gov/the-bureau/",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "http://www.consumerfinance.gov/the-bureau/"},
    :db/ident :fibo-fbc-fct-usjrga/ConsumerFinanceRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/ConsumerFinancialProtectionBureau,
    :rdf/type [:fibo-fbc-fct-rga/RegulatoryAgency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "consumer finance regulator",
    :skos/definition
    "regulatory agency and registration authority role of the Consumer Financial Protection Bureau (CFPB)"})
@@ -575,21 +639,22 @@
    :cmns-col/isPartOf :fibo-fbc-fct-usjrga/USDepartmentOfTheTreasury,
    :db/ident :fibo-fbc-fct-usjrga/ConsumerFinancialProtectionBureau,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.consumerfinance.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.consumerfinance.gov/"},
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :fibo-be-ge-ge/GovernmentDepartment
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Consumer Financial Protection Bureau",
    :skos/definition
    "Consumer Financial Protection Bureau (CFPB), an independent Federal agency that helps consumer finance markets work by making rules more effective, by consistently and fairly enforcing those rules, and by empowering consumers to take more control over their economic lives"})
@@ -603,9 +668,10 @@
               :fibo-fbc-pas-fpas/AgentForServiceOfProcess
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Corporation Service Company",
-   :rdfs/seeAlso ["https://www.cscglobal.com/cscglobal/home/"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.cscglobal.com/cscglobal/home/"},
    :skos/definition
    "registration and legal agency role of the Corporation Service Company"})
 
@@ -618,11 +684,13 @@
    :fibo-fbc-fct-usjrga/CorporationServiceCompanyAddress,
    :fibo-fbc-pas-fpas/hasLegalAgent
    :fibo-fbc-fct-usjrga/CorporationServiceCompany,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.cscglobal.com/cscglobal/home/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri
+                                 "https://www.cscglobal.com/cscglobal/home/"},
    :fibo-fnd-rel-rel/hasLegalName "Corporation Service Company",
    :rdf/type [:owl/NamedIndividual :fibo-be-le-cb/Corporation],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Corporation Service Company US-DE",
    :skos/definition
    "Corporation Service Company (CSC) legal entity, which was founded in 1899, and provides registered agent, corporate governance, corporate compliance, and intellectual property management for businesses worldwide"})
@@ -637,7 +705,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/Delaware,
    :rdf/type [:fibo-fnd-plc-adr/PhysicalAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Corporation Service Company legal address",
    :skos/definition
    "registration address that is identified as the headquarters address for the Corporation Service Company"})
@@ -655,7 +724,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Corporation Service Company business entity identifier",
    :skos/definition
    "Delaware Department of Corporations business entity identifier for the Corporation Service Company"})
@@ -669,9 +739,10 @@
               :fibo-fbc-pas-fpas/AgentForServiceOfProcess
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Corporation Trust Company",
-   :rdfs/seeAlso ["https://ct.wolterskluwer.com/"],
+   :rdfs/seeAlso {:rdfa/uri "https://ct.wolterskluwer.com/"},
    :skos/definition
    "registration and legal agency role of the The Corporation Trust Company, a wholly-owned subsidiary of Wolters Kluwer"})
 
@@ -682,11 +753,12 @@
    :fibo-be-le-cb/isIncorporatedIn :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :fibo-be-le-fbo/hasHeadquartersAddress
    :fibo-fbc-fct-usjrga/CorporationTrustCompanyHeadquartersAddress,
-   :fibo-fnd-plc-vrt/hasWebsite "https://ct.wolterskluwer.com/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://ct.wolterskluwer.com/"},
    :fibo-fnd-rel-rel/hasLegalName "CT Corporation",
    :rdf/type [:fibo-be-le-cb/Corporation :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Corporation Trust Company US-DE",
    :skos/definition
    "The Corporation Trust Company (CT Corporation) legal entity, which provides registered agent and incorporation services"})
@@ -704,7 +776,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Corporation Trust Company business entity identifier",
    :skos/definition
    "Delaware Department of Corporations business entity identifier for The Corporation Trust Company (CT Corporation)"})
@@ -720,7 +793,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/Delaware,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Corporation Trust Company headquarters address",
    :skos/definition
    "registration address that is identified as the headquarters address for the The Corporation Trust Company (CT Corporation)"})
@@ -729,13 +803,15 @@
   "State of Delaware, Division of Corporations, registry of business entities"
   {:db/ident :fibo-fbc-fct-usjrga/DelawareBusinessEntitiesRegistry,
    :fibo-fnd-plc-vrt/hasWebsite
-   "https://icis.corp.delaware.gov/Ecorp/EntitySearch/NameSearch.aspx",
+   {:rdfa/uri
+    "https://icis.corp.delaware.gov/Ecorp/EntitySearch/NameSearch.aspx"},
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/DelawareCorporationsRegulator,
    :rdf/type [:fibo-fbc-fct-breg/BusinessRegistry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Delaware business entities registry",
    :skos/definition
    "State of Delaware, Division of Corporations, registry of business entities"})
@@ -746,7 +822,8 @@
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Delaware business registration identifier scheme",
    :skos/definition
    "registration identifier scheme for business entity identifiers defined by the State of Delaware, Division of Corporations for the registration of business entities"})
@@ -760,9 +837,10 @@
    :fibo-fbc-fct-usjrga/DelawareCorporationsRegulator,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Delaware business registration service",
-   :rdfs/seeAlso ["http://corp.delaware.gov/"],
+   :rdfs/seeAlso {:rdfa/uri "http://corp.delaware.gov/"},
    :skos/definition
    "State of Delaware, Division of Corporations, service for the registration of business entities"})
 
@@ -779,9 +857,10 @@
               :fibo-fbc-fct-breg/BusinessRegistrationAuthority
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Delaware corporations regulator",
-   :rdfs/seeAlso ["http://corp.delaware.gov/aboutagency.shtml"],
+   :rdfs/seeAlso {:rdfa/uri "http://corp.delaware.gov/aboutagency.shtml"},
    :skos/definition
    "regulatory agency and registration authority role of the State of Delaware's Division of Corporations"})
 
@@ -789,15 +868,10 @@
   "State of Delaware's Division of Corporations"
   {:cmns-col/isPartOf :fibo-be-ge-usj/StateOfDelawareGovernment,
    :db/ident :fibo-fbc-fct-usjrga/DelawareDivisionOfCorporations,
-   :fibo-fnd-plc-vrt/hasWebsite "http://corp.delaware.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://corp.delaware.gov/"},
    :rdf/type [:fibo-fbc-fct-usjrga/StateGovernmentEntity
               :fibo-be-ge-ge/GovernmentDepartment
               :owl/NamedIndividual
-              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
-                             :fibo-be-ge-ge/RegionalSovereignty
-                             :fibo-be-ge-ge/GovernmentAgency
-                             :fibo-be-ge-ge/GovernmentDepartment],
-               :rdf/type    :owl/Class}
               :fibo-be-ge-ge/GovernmentBody
               {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                :owl/someValuesFrom {:owl/onProperty :fibo-fnd-law-jur/hasReach,
@@ -810,9 +884,15 @@
                                        :rdf/type :owl/Restriction}],
                                      :rdf/type :owl/Class},
                                     :rdf/type :owl/Restriction},
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
+                             :fibo-be-ge-ge/RegionalSovereignty
+                             :fibo-be-ge-ge/GovernmentAgency
+                             :fibo-be-ge-ge/GovernmentDepartment],
+               :rdf/type    :owl/Class}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Delaware Division of Corporations",
    :skos/definition "State of Delaware's Division of Corporations"})
 
@@ -824,16 +904,18 @@
    :rdf/type [:fibo-fbc-fct-breg/RegistrationAuthorityCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Delaware registration authority code",
    :rdfs/seeAlso
-   ["https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"],
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"},
    :skos/definition
    "GLEIF Registration Authority List identifier for the Delaware Business Entities Registry"})
 
 (def EDGARRepository
   "EDGAR repository, a repository of financial information about securities and their issuers, including but not limited to corporate quarterly and annual filings, collected by the SEC"
-  {:cmns-av/adaptedFrom "http://www.sec.gov/edgar/aboutedgar.htm",
+  {:cmns-av/adaptedFrom {:rdfa/uri "http://www.sec.gov/edgar/aboutedgar.htm"},
    :cmns-av/explanatoryNote
    "EDGAR, the Electronic Data Gathering, Analysis, and Retrieval system, performs automated collection, validation, indexing, acceptance, and forwarding of submissions by companies and others who are required by law to file forms with the U.S. Securities and Exchange Commission (SEC). Its primary purpose is to increase the efficiency and fairness of the securities market for the benefit of investors, corporations, and the economy by accelerating the receipt, acceptance, dissemination, and analysis of time-sensitive corporate information filed with the agency.",
    :db/ident :fibo-fbc-fct-usjrga/EDGARRepository,
@@ -841,7 +923,8 @@
    :fibo-fbc-fct-usjrga/SecuritiesAndExchangeRegulator,
    :rdf/type [:fibo-fbc-fct-ra/Registry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "EDGAR Repository",
    :skos/definition
    "EDGAR repository, a repository of financial information about securities and their issuers, including but not limited to corporate quarterly and annual filings, collected by the SEC"})
@@ -850,7 +933,8 @@
   "unique nine-digit number assigned by the Internal Revenue Service (IRS) to business entities operating in the United States for the purposes of identification"
   {:cmns-av/abbreviation ["FEIN" "EIN"],
    :cmns-av/adaptedFrom
-   "https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers",
+   {:rdfa/uri
+    "https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers"},
    :cmns-av/explanatoryNote
    "Note that despite the name, the business may not necessarily employ anyone.",
    :cmns-av/synonym ["Federal Employer Identification Number"
@@ -858,22 +942,23 @@
    :db/ident :fibo-fbc-fct-usjrga/EmployerIdentificationNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "employer identification number",
    :rdfs/subClassOf
-   [:fibo-fbc-fct-usjrga/TaxpayerIdentificationNumber
-    {:owl/onClass    :fibo-fbc-fct-usjrga/EmployerIdentificationNumberingScheme,
+   [{:owl/onClass    :fibo-fbc-fct-usjrga/EmployerIdentificationNumberingScheme,
      :owl/onProperty :cmns-col/isMemberOf,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usjrga/TaxpayerIdentificationNumber
     :fibo-fnd-org-org/OrganizationIdentifier
+    {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
+     :rdf/type       :owl/Restriction}
     :fibo-fnd-pty-pty/TaxIdentifier
     {:owl/onClass    :fibo-fbc-fct-usjrga/TaxpayerIdentificationNumberingScheme,
      :owl/onProperty :cmns-col/isMemberOf,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-     :owl/onProperty :cmns-cxtdsg/isApplicableIn,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}],
    :skos/definition
    "unique nine-digit number assigned by the Internal Revenue Service (IRS) to business entities operating in the United States for the purposes of identification"})
@@ -881,17 +966,19 @@
 (def EmployerIdentificationNumberingScheme
   "taxpayer identification numbering scheme used in the United States to identify business entities"
   {:cmns-av/adaptedFrom
-   "https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers",
+   {:rdfa/uri
+    "https://www.irs.gov/businesses/small-businesses-self-employed/employer-id-numbers"},
    :db/ident :fibo-fbc-fct-usjrga/EmployerIdentificationNumberingScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "employer identification numbering scheme",
    :rdfs/subClassOf [:fibo-fbc-fct-usjrga/TaxpayerIdentificationNumberingScheme
+                     :fibo-fnd-pty-pty/TaxIdentificationScheme
                      {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
                       :owl/onProperty :cmns-cxtdsg/isApplicableIn,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-pty/TaxIdentificationScheme],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "taxpayer identification numbering scheme used in the United States to identify business entities"})
 
@@ -905,18 +992,20 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "FDIC business entity identifier",
    :skos/definition
    "Delaware Department of Corporations business entity identifier for the FDIC"})
 
 (def FDICCertificateNumber
   "identifier issued to a depository institution by the FDIC on approval of that institution's application for insurance"
-  {:cmns-av/adaptedFrom "http://www.fdic.gov/",
+  {:cmns-av/adaptedFrom {:rdfa/uri "http://www.fdic.gov/"},
    :db/ident :fibo-fbc-fct-usjrga/FDICCertificateNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "FDIC Certificate Number",
    :rdfs/subClassOf
    [{:owl/hasValue   :fibo-fbc-fct-usjrga/FederalDepositInsurerAndRegulator,
@@ -932,24 +1021,26 @@
 
 (def FDICInstitutionDirectory
   "Federal Deposit Insurance Corporation's (FDIC) institution directory, a repository of financial data and institution characteristics for covered institutions collected by the FDIC"
-  {:cmns-av/adaptedFrom "https://www7.fdic.gov/idasp/index.asp",
+  {:cmns-av/adaptedFrom {:rdfa/uri "https://www7.fdic.gov/idasp/index.asp"},
    :db/ident :fibo-fbc-fct-usjrga/FDICInstitutionDirectory,
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/FederalDepositInsurerAndRegulator,
    :rdf/type [:fibo-fbc-fct-ra/Registry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "FDIC Institution Directory",
    :skos/definition
    "Federal Deposit Insurance Corporation's (FDIC) institution directory, a repository of financial data and institution characteristics for covered institutions collected by the FDIC"})
 
 (def FDICRegistryEntry
   "an entry in the FDIC institution directory, a repository of financial institution characteristics collected by the FDIC related to the institutions they insure"
-  {:cmns-av/adaptedFrom "https://www7.fdic.gov/idasp/index.asp",
+  {:cmns-av/adaptedFrom {:rdfa/uri "https://www7.fdic.gov/idasp/index.asp"},
    :db/ident :fibo-fbc-fct-usjrga/FDICRegistryEntry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "FDIC registry entry",
    :rdfs/subClassOf
    [{:owl/onProperty     :cmns-col/comprises,
@@ -971,7 +1062,8 @@
    :owl/equivalentClass :fibo-fbc-fct-usjrga/FederalReserveSystemMember,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}})
 
 (def FRSNonMemberBank
   {:db/ident :fibo-fbc-fct-usjrga/FRSNonMemberBank,
@@ -980,7 +1072,8 @@
    :fibo-fbc-fct-usjrga/FederalReserveSystemNonMemberInstitution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}})
 
 (def FRSStateMemberBank
   {:db/ident :fibo-fbc-fct-usjrga/FRSStateMemberBank,
@@ -988,7 +1081,8 @@
    :owl/equivalentClass :fibo-fbc-fct-usjrga/StateMemberBank,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}})
 
 (def FarmCreditAdministration
   "Farm Credit Administration (FCA), an independent Federal agency that regulates and examines the banks, associations, and related entities of the Farm Credit System (FCS), including the Federal Agricultural Mortgage Corporation (Farmer Mac)"
@@ -998,28 +1092,29 @@
    :cmns-col/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :db/ident :fibo-fbc-fct-usjrga/FarmCreditAdministration,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
-   :fibo-fnd-plc-vrt/hasWebsite "http://fca.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://fca.gov/"},
    :rdf/type [:fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :fibo-be-ge-ge/GovernmentAgency
               :owl/NamedIndividual
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Farm Credit Administration",
    :skos/definition
    "Farm Credit Administration (FCA), an independent Federal agency that regulates and examines the banks, associations, and related entities of the Farm Credit System (FCS), including the Federal Agricultural Mortgage Corporation (Farmer Mac)"})
 
 (def FarmCreditRegulator
   "regulatory agency and registration authority role of the Farm Credit Administration (FCA)"
-  {:cmns-av/adaptedFrom "http://fca.gov/about/fca_in_brief.html",
+  {:cmns-av/adaptedFrom {:rdfa/uri "http://fca.gov/about/fca_in_brief.html"},
    :db/ident :fibo-fbc-fct-usjrga/FarmCreditRegulator,
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/FarmCreditAdministration,
    :rdf/type [:fibo-fbc-pas-fpas/FinancialServiceProvider
@@ -1027,13 +1122,14 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-be-ge-ge/GovernmentBody,
                :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :fibo-fbc-fct-rga/RegulatoryAgency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "farm credit regulator",
-   :rdfs/seeAlso ["http://fca.gov/"],
+   :rdfs/seeAlso {:rdfa/uri "http://fca.gov/"},
    :skos/definition
    "regulatory agency and registration authority role of the Farm Credit Administration (FCA)"})
 
@@ -1044,22 +1140,23 @@
    "An independent agency of the federal government, the FDIC was created in 1933 in response to the thousands of bank failures that occurred in the 1920s and early 1930s. Since the start of FDIC insurance on January 1, 1934, no depositor has lost a single cent of insured funds as a result of a failure.",
    :db/ident :fibo-fbc-fct-usjrga/FederalDepositInsuranceCorporation,
    :fibo-be-ge-ge/isInstrumentOf :fibo-be-ge-usj/UnitedStatesGovernment,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.fdic.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.fdic.gov/"},
    :rdf/type [:fibo-be-ge-ge/Instrumentality
               :fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :owl/NamedIndividual
               :fibo-be-le-cb/Corporation
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Deposit Insurance Corporation",
    :skos/definition
    "Federal Deposit Insurance Corporation (FDIC), which preserves and promotes public confidence in the U.S. financial system by insuring deposits in banks and thrift institutions for at least $250,000; by identifying, monitoring and addressing risks to the deposit insurance funds; and by limiting the effect on the economy and the financial system when a bank or thrift institution fails."})
@@ -1076,13 +1173,14 @@
               :fibo-fbc-fct-usjrga/PrimaryFederalRegulator
               {:owl/onClass    :fibo-be-ge-ge/GovernmentBody,
                :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :fibo-fbc-fct-rga/RegulatoryAgency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "federal deposit insurer and regulator",
-   :rdfs/seeAlso ["https://www.fdic.gov/"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.fdic.gov/"},
    :skos/definition
    "regulatory agency and registration authority role of the Federal Deposit Insurance Corporation (FDIC)"})
 
@@ -1101,28 +1199,29 @@
    :db/ident
    :fibo-fbc-fct-usjrga/FederalFinancialInstitutionsExaminationCouncil,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.ffiec.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.ffiec.gov/"},
    :rdf/type [:owl/NamedIndividual
               :fibo-be-ge-ge/GovernmentAgency
               :fibo-fbc-fct-usjrga/FederalGovernmentEntity
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Financial Institutions Examination Council",
    :skos/definition
    "FFIEC, a formal interagency body empowered to prescribe uniform principles, standards, and report forms for the federal examination of financial institutions by the Board of Governors of the Federal Reserve System (FRB), the Federal Deposit Insurance Corporation (FDIC), the National Credit Union Administration (NCUA), the Office of the Comptroller of the Currency (OCC), and the Consumer Financial Protection Bureau (CFPB), and to make recommendations to promote uniformity in the supervision of financial institutions"})
 
 (def FederalFinancialInstitutionsExaminationRegulator
   "regulatory agency and registration authority role of the Federal Financial Institutions Examination Council (FFIEC)"
-  {:cmns-av/adaptedFrom "http://www.ffiec.gov/about.htm",
+  {:cmns-av/adaptedFrom {:rdfa/uri "http://www.ffiec.gov/about.htm"},
    :db/ident
    :fibo-fbc-fct-usjrga/FederalFinancialInstitutionsExaminationRegulator,
    :fibo-fnd-rel-rel/hasIdentity
@@ -1133,7 +1232,8 @@
               :fibo-fbc-fct-ra/RegistrationAuthority
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "federal financial institutions examination regulator",
    :skos/definition
    "regulatory agency and registration authority role of the Federal Financial Institutions Examination Council (FFIEC)"})
@@ -1143,7 +1243,8 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalGovernmentEntity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "federal government entity",
    :rdfs/subClassOf [{:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
                       :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
@@ -1165,28 +1266,29 @@
    :cmns-col/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :db/ident :fibo-fbc-fct-usjrga/FederalHousingFinanceAgency,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.fhfa.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.fhfa.gov/"},
    :rdf/type [:fibo-be-ge-ge/GovernmentAgency
               :owl/NamedIndividual
               :fibo-fbc-fct-usjrga/FederalGovernmentEntity
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Housing Finance Agency",
    :skos/definition
    "Federal Housing Finance Agency (FHFA), responsible for strengthening and securing the United States secondary mortgage markets by providing effective supervision, sound research, reliable data, and relevant policies"})
 
 (def FederalHousingFinanceRegulator
   "regulatory agency and registration authority role of the Federal Housing Finance Agency (FHFA)"
-  {:cmns-av/adaptedFrom "http://www.fhfa.gov/AboutUs",
+  {:cmns-av/adaptedFrom {:rdfa/uri "http://www.fhfa.gov/AboutUs"},
    :db/ident :fibo-fbc-fct-usjrga/FederalHousingFinanceRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/FederalHousingFinanceAgency,
@@ -1195,11 +1297,12 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-be-ge-ge/GovernmentBody,
                :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :fibo-fbc-fct-rga/RegulatoryAgency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "federal housing finance regulator",
    :skos/definition
    "regulatory agency and registration authority role of the Federal Housing Finance Agency (FHFA)"})
@@ -1209,14 +1312,15 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfAtlanta,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveSixthDistrict,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.frbatlanta.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.frbatlanta.org/"},
    :rdf/type
    [:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
     :owl/NamedIndividual
-    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :cmns-col/isPartOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/CentralBank
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
@@ -1224,15 +1328,15 @@
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :cmns-col/isPartOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
+     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of Atlanta",
    :skos/definition
    "Federal Reserve Bank of Atlanta, whose jurisdiction is the Sixth District of the Federal Reserve"})
@@ -1242,14 +1346,15 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfBoston,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveFirstDistrict,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.bostonfed.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.bostonfed.org/"},
    :rdf/type
    [:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
     :owl/NamedIndividual
-    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :cmns-col/isPartOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/CentralBank
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
@@ -1257,15 +1362,15 @@
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :cmns-col/isPartOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
+     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of Boston",
    :skos/definition
    "Federal Reserve Bank of Boston, whose jurisdiction is the First District of the Federal Reserve"})
@@ -1275,14 +1380,15 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfChicago,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveSeventhDistrict,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.chicagofed.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.chicagofed.org/"},
    :rdf/type
    [:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
     :owl/NamedIndividual
-    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :cmns-col/isPartOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/CentralBank
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
@@ -1290,15 +1396,15 @@
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :cmns-col/isPartOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
+     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of Chicago",
    :skos/definition
    "Federal Reserve Bank of Chicago, whose jurisdiction is the Seventh District of the Federal Reserve"})
@@ -1308,14 +1414,15 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfCleveland,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveFourthDistrict,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.clevelandfed.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.clevelandfed.org/"},
    :rdf/type
    [:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
     :owl/NamedIndividual
-    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :cmns-col/isPartOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/CentralBank
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
@@ -1323,15 +1430,15 @@
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :cmns-col/isPartOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
+     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of Cleveland",
    :skos/definition
    "Federal Reserve Bank of Cleveland, whose jurisdiction is the Fourth District of the Federal Reserve"})
@@ -1341,14 +1448,15 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfDallas,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveEleventhDistrict,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.dallasfed.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.dallasfed.org/"},
    :rdf/type
    [:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
     :owl/NamedIndividual
-    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :cmns-col/isPartOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/CentralBank
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
@@ -1356,15 +1464,15 @@
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :cmns-col/isPartOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
+     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of Dallas",
    :skos/definition
    "Federal Reserve Bank of Dallas, whose jurisdiction is the Eleventh District of the Federal Reserve"})
@@ -1374,14 +1482,15 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfKansasCity,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveTenthDistrict,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.kansascityfed.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.kansascityfed.org/"},
    :rdf/type
    [:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
     :owl/NamedIndividual
-    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :cmns-col/isPartOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/CentralBank
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
@@ -1389,15 +1498,15 @@
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :cmns-col/isPartOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
+     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of Kansas City",
    :skos/definition
    "Federal Reserve Bank of Kansas City, whose jurisdiction is the Tenth District of the Federal Reserve"})
@@ -1407,14 +1516,15 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfMinneapolis,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveNinthDistrict,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.minneapolisfed.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.minneapolisfed.org/"},
    :rdf/type
    [:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
     :owl/NamedIndividual
-    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :cmns-col/isPartOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/CentralBank
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
@@ -1422,15 +1532,15 @@
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :cmns-col/isPartOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
+     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of Minneapolis",
    :skos/definition
    "Federal Reserve Bank of Minneapolis, whose jurisdiction is the Ninth District of the Federal Reserve"})
@@ -1440,16 +1550,17 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfNewYork,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveSecondDistrict,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.newyorkfed.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.newyorkfed.org/"},
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/FederalReserveBankOfNewYork-US-NY,
    :rdf/type
    [:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
     :owl/NamedIndividual
-    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :cmns-col/isPartOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/CentralBank
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
@@ -1457,15 +1568,15 @@
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :cmns-col/isPartOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
+     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of New York",
    :skos/definition
    "Federal Reserve Bank of New York, whose jurisdiction is the Second District of the Federal Reserve"})
@@ -1475,21 +1586,22 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfNewYork-US-NY,
    :fibo-be-le-fbo/hasHeadquartersAddress
    :fibo-fbc-fct-usjrga/FederalReserveBankOfNewYorkAddress,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.newyorkfed.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.newyorkfed.org/"},
    :rdf/type [:fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :fibo-be-ge-ge/Instrumentality
               :owl/NamedIndividual
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of New York US-NY",
    :skos/definition
    "legal entity and instrumentality that is Federal Reserve Bank of New York"})
@@ -1504,7 +1616,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/NewYork,
    :rdf/type [:fibo-fnd-plc-adr/ConventionalStreetAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of New York address",
    :skos/definition
    "headquarters address for the Federal Reserve Bank of New York"})
@@ -1514,14 +1627,15 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfPhiladelphia,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveThirdDistrict,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.philadelphiafed.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.philadelphiafed.org/"},
    :rdf/type
    [:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
     :owl/NamedIndividual
-    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :cmns-col/isPartOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/CentralBank
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
@@ -1529,15 +1643,15 @@
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :cmns-col/isPartOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
+     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of Philadelphia",
    :skos/definition
    "Federal Reserve Bank of Philadelphia, whose jurisdiction is the Third District of the Federal Reserve"})
@@ -1547,14 +1661,15 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfRichmond,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveFifthDistrict,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.richmondfed.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.richmondfed.org/"},
    :rdf/type
    [:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
     :owl/NamedIndividual
-    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :cmns-col/isPartOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/CentralBank
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
@@ -1562,15 +1677,15 @@
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :cmns-col/isPartOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
+     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of Richmond",
    :skos/definition
    "Federal Reserve Bank of Richmond, whose jurisdiction is the Fifth District of the Federal Reserve"})
@@ -1580,14 +1695,15 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfSanFrancisco,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveTwelfthDistrict,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.frbsf.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.frbsf.org/"},
    :rdf/type
    [:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
     :owl/NamedIndividual
-    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :cmns-col/isPartOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/CentralBank
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
@@ -1595,15 +1711,15 @@
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :cmns-col/isPartOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
+     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of San Francisco",
    :skos/definition
    "Federal Reserve Bank of San Francisco, whose jurisdiction is the Twelfth District of the Federal Reserve"})
@@ -1613,14 +1729,15 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveBankOfStLouis,
    :fibo-be-ge-ge/hasJurisdiction
    :fibo-fbc-fct-usjrga/FederalReserveEighthDistrict,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.stlouisfed.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.stlouisfed.org/"},
    :rdf/type
    [:fibo-fbc-fct-usjrga/FederalReserveDistrictBank
     :owl/NamedIndividual
-    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
-     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialInstitution
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
+     :owl/onProperty :cmns-col/isPartOf,
+     :rdf/type :owl/Restriction}
     :fibo-fbc-fct-fse/CentralBank
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
@@ -1628,15 +1745,15 @@
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
-     :owl/onProperty :cmns-col/isPartOf,
-     :rdf/type :owl/Restriction}
+    :fibo-fnd-org-org/OrganizationMember
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
+     :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+     :rdf/type       :owl/Restriction}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Bank of St. Louis",
    :skos/definition
    "Federal Reserve Bank of St. Louis, whose jurisdiction is the Eighth District of the Federal Reserve"})
@@ -1649,33 +1766,35 @@
    :cmns-av/synonym "Federal Reserve Board of Governors",
    :cmns-col/isPartOf :fibo-fbc-fct-usjrga/FederalReserveSystem,
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveBoard,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.federalreserve.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.federalreserve.gov/"},
    :rdf/type [:fibo-be-ge-ge/GovernmentDepartment
               :fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :owl/NamedIndividual
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Board",
    :skos/definition "Federal Reserve Board (FRB)"})
 
 (def FederalReserveDistrict
   "a region of the US identifying the jurisdiction of a Federal Reserve Bank, numbered and named for the city in which that reserve bank is located"
-  {:cmns-av/adaptedFrom "http://federalreserve.gov/otherfrb.htm",
+  {:cmns-av/adaptedFrom {:rdfa/uri "http://federalreserve.gov/otherfrb.htm"},
    :cmns-av/explanatoryNote
    "The Federal Reserve officially identifies Districts by number and Reserve Bank city. In the 12th District, the Seattle Branch serves Alaska, and the San Francisco Bank serves Hawaii. The System serves commonwealths and territories as follows: the New York Bank serves the Commonwealth of Puerto Rico and the U.S. Virgin Islands; the San Francisco Bank serves American Samoa, Guam, and the Commonwealth of the Northern Mariana Islands. The Board of Governors revised the branch boundaries of the System in February 1996.",
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveDistrict,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve district",
    :rdfs/subClassOf :fibo-fnd-law-jur/Jurisdiction,
    :skos/definition
@@ -1683,16 +1802,17 @@
 
 (def FederalReserveDistrictBank
   "Federal Reserve district and member bank, with jurisdiction over a specific region of the US, named for the city in which the reserve bank is located"
-  {:cmns-av/adaptedFrom "http://federalreserve.gov/",
+  {:cmns-av/adaptedFrom {:rdfa/uri "http://federalreserve.gov/"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveDistrictBank,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve district bank",
    :rdfs/subClassOf
    [{:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
      :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
     {:owl/hasValue
      :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
@@ -1700,14 +1820,14 @@
      :rdf/type :owl/Restriction}
     :fibo-fbc-fct-usjrga/FederalReserveSystemMember
     :fibo-fbc-fct-fse/CentralBank
+    :fibo-fnd-org-org/OrganizationMember
     {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
      :owl/someValuesFrom {:owl/hasValue
                           :fibo-fbc-fct-usjrga/FederalReserveSystem,
                           :owl/onProperty :cmns-col/isMemberOf,
                           :rdf/type :owl/Restriction},
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fct-fse/FinancialInstitution
-    :fibo-fnd-org-org/OrganizationMember],
+    :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "Federal Reserve district and member bank, with jurisdiction over a specific region of the US, named for the city in which the reserve bank is located"})
 
@@ -1716,18 +1836,20 @@
   {:db/ident :fibo-fbc-fct-usjrga/FederalReserveDistrictIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve district identifier",
    :rdfs/subClassOf [{:owl/onClass :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                       :owl/onProperty :cmns-id/identifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type :owl/Restriction}
                      :lcc-cr/GeographicRegionIdentifier],
    :skos/definition "identifier associated with a Federal Reserve district"})
 
 (def FederalReserveEighthDistrict
   "jurisdiction of the Eighth District of the Federal Reserve, which covers all of Arkansas, eastern Missouri, western Kentucky, western Tennessee, southern Illinois, southern Indiana and northern Mississippi"
-  {:cmns-av/adaptedFrom "https://www.stlouisfed.org/about-us/what-we-do",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://www.stlouisfed.org/about-us/what-we-do"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveEighthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/Indiana
                                :lcc-3166-2-us/Missouri
@@ -1740,7 +1862,8 @@
               :fibo-fbc-fct-usjrga/FederalReserveDistrict
               :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Eighth District",
    :skos/definition
    "jurisdiction of the Eighth District of the Federal Reserve, which covers all of Arkansas, eastern Missouri, western Kentucky, western Tennessee, southern Illinois, southern Indiana and northern Mississippi"})
@@ -1756,18 +1879,19 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                :owl/onProperty :cmns-id/identifies,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :lcc-cr/GeographicRegionIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve eighth district identifier",
    :skos/definition
    "identifier for the eighth district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of St. Louis"})
 
 (def FederalReserveEleventhDistrict
   "jurisdiction of the Eleventh District of the Federal Reserve, which covers Texas, northern Louisiana and southern New Mexico"
-  {:cmns-av/adaptedFrom "https://www.dallasfed.org/fed",
+  {:cmns-av/adaptedFrom {:rdfa/uri "https://www.dallasfed.org/fed"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveEleventhDistrict,
    :fibo-fnd-law-jur/hasReach
    [:lcc-3166-2-us/Texas :lcc-3166-2-us/NewMexico :lcc-3166-2-us/Louisiana],
@@ -1775,7 +1899,8 @@
               :owl/NamedIndividual
               :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Eleventh District",
    :skos/definition
    "jurisdiction of the Eleventh District of the Federal Reserve, which covers Texas, northern Louisiana and southern New Mexico"})
@@ -1791,11 +1916,12 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                :owl/onProperty :cmns-id/identifies,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :lcc-cr/GeographicRegionIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve eleventh district identifier",
    :skos/definition
    "identifier for the eleventh district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of Dallas"})
@@ -1803,7 +1929,7 @@
 (def FederalReserveFifthDistrict
   "jurisdiction of the Fifth District of the Federal Reserve, which covers Maryland, North Carolina, South Carolina, Washington, D.C., and most of West Virginia"
   {:cmns-av/adaptedFrom
-   "https://www.richmondfed.org/about_us/who_we_are_what_we_do",
+   {:rdfa/uri "https://www.richmondfed.org/about_us/who_we_are_what_we_do"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveFifthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/NorthCarolina
                                :lcc-3166-2-us/Maryland
@@ -1814,7 +1940,8 @@
               :owl/NamedIndividual
               :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Fifth District",
    :skos/definition
    "jurisdiction of the Fifth District of the Federal Reserve, which covers Maryland, North Carolina, South Carolina, Washington, D.C., and most of West Virginia"})
@@ -1830,11 +1957,12 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                :owl/onProperty :cmns-id/identifies,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :lcc-cr/GeographicRegionIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve fifth district identifier",
    :skos/definition
    "identifier for the fifth district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of Richmond"})
@@ -1842,7 +1970,8 @@
 (def FederalReserveFirstDistrict
   "jurisdiction of the First District of the Federal Reserve, which covers the New England states of Maine, New Hampshire, Vermont, and Massachusetts"
   {:cmns-av/adaptedFrom
-   "http://federalreserve.gov/aboutthefed/directors/map-of-districts.htm",
+   {:rdfa/uri
+    "http://federalreserve.gov/aboutthefed/directors/map-of-districts.htm"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveFirstDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/NewHampshire
                                :lcc-3166-2-us/Massachusetts
@@ -1851,7 +1980,8 @@
               :owl/NamedIndividual
               :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve First District",
    :skos/definition
    "jurisdiction of the First District of the Federal Reserve, which covers the New England states of Maine, New Hampshire, Vermont, and Massachusetts"})
@@ -1867,11 +1997,12 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                :owl/onProperty :cmns-id/identifies,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :lcc-cr/GeographicRegionIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve first district identifier",
    :skos/definition
    "identifier for the first district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of Boston"})
@@ -1879,7 +2010,8 @@
 (def FederalReserveFourthDistrict
   "jurisdiction of the Fourth District of the Federal Reserve, which covers Ohio, western Pennsylvania, the northern panhandle of West Virginia, and eastern Kentucky"
   {:cmns-av/adaptedFrom
-   "https://www.clevelandfed.org/en/about-us/the-cleveland-fed.aspx",
+   {:rdfa/uri
+    "https://www.clevelandfed.org/en/about-us/the-cleveland-fed.aspx"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveFourthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/Ohio
                                :lcc-3166-2-us/Pennsylvania
@@ -1889,7 +2021,8 @@
               :fibo-fbc-fct-usjrga/FederalReserveDistrict
               :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Fourth District",
    :skos/definition
    "jurisdiction of the Fourth District of the Federal Reserve, which covers Ohio, western Pennsylvania, the northern panhandle of West Virginia, and eastern Kentucky"})
@@ -1905,18 +2038,19 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                :owl/onProperty :cmns-id/identifies,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :lcc-cr/GeographicRegionIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve fourth district identifier",
    :skos/definition
    "identifier for the fourth district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of Cleveland"})
 
 (def FederalReserveNinthDistrict
   "jurisdiction of the Ninth District of the Federal Reserve, which covers Minnesota, Montana, North and South Dakota, 26 counties in northwestern Wisconsin and the Upper Peninsula of Michigan"
-  {:cmns-av/adaptedFrom "https://www.minneapolisfed.org/",
+  {:cmns-av/adaptedFrom {:rdfa/uri "https://www.minneapolisfed.org/"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveNinthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/NorthDakota
                                :lcc-3166-2-us/Montana
@@ -1928,7 +2062,8 @@
               :owl/NamedIndividual
               :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Ninth District",
    :skos/definition
    "jurisdiction of the Ninth District of the Federal Reserve, which covers Minnesota, Montana, North and South Dakota, 26 counties in northwestern Wisconsin and the Upper Peninsula of Michigan"})
@@ -1944,11 +2079,12 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                :owl/onProperty :cmns-id/identifies,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :lcc-cr/GeographicRegionIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve ninth district identifier",
    :skos/definition
    "identifier for the ninth district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of Minneapolis"})
@@ -1965,19 +2101,21 @@
               :fibo-fbc-fct-ra/RegistrationAuthority
               {:owl/onClass    :fibo-be-ge-ge/GovernmentBody,
                :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :fibo-fbc-fct-rga/RegulatoryAgency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve regulatory agency and central bank",
-   :rdfs/seeAlso ["http://www.federalreserve.gov/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.federalreserve.gov/"},
    :skos/definition
    "regulatory agency and registration authority role of the Federal Reserve System"})
 
 (def FederalReserveSecondDistrict
   "jurisdiction of the Second District of the Federal Reserve, which covers New York state, the 12 northern counties of New Jersey, Fairfield County in Connecticut, Puerto Rico and the U.S. Virgin Islands"
-  {:cmns-av/adaptedFrom "http://www.newyorkfed.org/aboutthefed/whatwedo.html",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "http://www.newyorkfed.org/aboutthefed/whatwedo.html"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveSecondDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/NewJersey
                                :lcc-3166-2-us/NewYork
@@ -1988,7 +2126,8 @@
               :owl/NamedIndividual
               :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Second District",
    :skos/definition
    "jurisdiction of the Second District of the Federal Reserve, which covers New York state, the 12 northern counties of New Jersey, Fairfield County in Connecticut, Puerto Rico and the U.S. Virgin Islands"})
@@ -2004,18 +2143,20 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                :owl/onProperty :cmns-id/identifies,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :lcc-cr/GeographicRegionIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve second district identifier",
    :skos/definition
    "identifier for the second district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of New York"})
 
 (def FederalReserveSeventhDistrict
   "jurisdiction of the Seventh District of the Federal Reserve, which covers all of Iowa and most of Illinois, Indiana, Michigan and Wisconsin"
-  {:cmns-av/adaptedFrom "https://www.chicagofed.org/utilities/about-us/index",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://www.chicagofed.org/utilities/about-us/index"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveSeventhDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/Iowa
                                :lcc-3166-2-us/Michigan
@@ -2026,7 +2167,8 @@
               :fibo-fbc-fct-usjrga/FederalReserveDistrict
               :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Seventh District",
    :skos/definition
    "jurisdiction of the Seventh District of the Federal Reserve, which covers all of Iowa and most of Illinois, Indiana, Michigan and Wisconsin"})
@@ -2042,18 +2184,20 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                :owl/onProperty :cmns-id/identifies,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :lcc-cr/GeographicRegionIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve seventh district identifier",
    :skos/definition
    "identifier for the seventh district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of Chicago"})
 
 (def FederalReserveSixthDistrict
   "jurisdiction of the Sixth District of the Federal Reserve, which covers Alabama, Florida, and Georgia, and portions of Louisiana, Mississippi, and Tennessee"
-  {:cmns-av/adaptedFrom "https://www.frbatlanta.org/about/atlantafed.aspx",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://www.frbatlanta.org/about/atlantafed.aspx"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveSixthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/Tennessee
                                :lcc-3166-2-us/Alabama
@@ -2065,7 +2209,8 @@
               :fibo-fbc-fct-usjrga/FederalReserveDistrict
               :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Sixth District",
    :skos/definition
    "jurisdiction of the Sixth District of the Federal Reserve, which covers Alabama, Florida, and Georgia, and portions of Louisiana, Mississippi, and Tennessee"})
@@ -2081,11 +2226,12 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                :owl/onProperty :cmns-id/identifies,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :lcc-cr/GeographicRegionIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve sixth district identifier",
    :skos/definition
    "identifier for the sixth district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of Atlanta"})
@@ -2099,21 +2245,22 @@
    :cmns-col/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveSystem,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.federalreserve.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.federalreserve.gov/"},
    :rdf/type [:owl/NamedIndividual
               :fibo-be-ge-ge/GovernmentAgency
               :fibo-fbc-fct-usjrga/FederalGovernmentEntity
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve System",
    :skos/definition
    "central banking system of the U.S., comprised of the Federal Reserve Board, the 12 Federal Reserve Banks, the Federal Open Market Committee, and the national and state member banks"})
@@ -2125,18 +2272,20 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/FederalReserveSystem,
    :rdf/type [:fibo-fnd-org-org/MemberBearingOrganization :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve System as member bearing organization",
    :skos/definition
    "central banking system as an organization that has members that are people or other organizations"})
 
 (def FederalReserveSystemMember
   "financial institution that is a member of the Federal Reserve System (FRS)"
-  {:cmns-av/adaptedFrom "http://federalreserve.gov/",
+  {:cmns-av/adaptedFrom {:rdfa/uri "http://federalreserve.gov/"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveSystemMember,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve System member",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -2156,14 +2305,16 @@
    :fibo-fbc-fct-usjrga/FederalReserveSystemAsMemberBearingOrganization,
    :rdf/type [:fibo-fnd-org-org/Membership :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve System membership",
    :skos/definition
    "membership situation, in which the Federal Reserve System has at least one member for some period of time"})
 
 (def FederalReserveSystemNonMemberInstitution
   "depository institution that is not member of the Federal Reserve System (FRS)"
-  {:cmns-av/adaptedFrom "https://www.ffiec.gov/npw/Help/InstitutionTypes",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://www.ffiec.gov/npw/Help/InstitutionTypes"},
    :cmns-av/explanatoryNote
    "A non-member bank is a commercial bank that is state-chartered and NOT a member of the Federal Reserve System. It includes all insured commercial banks and industrial banks.",
    :cmns-av/synonym "non-member bank",
@@ -2171,12 +2322,10 @@
    :owl/disjointWith :fibo-fbc-fct-usjrga/FederalReserveSystemMember,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve System non-member institution",
-   :rdfs/subClassOf [{:owl/unionOf [:fibo-fbc-fct-usfse/StateCharteredBank
-                                    :fibo-fbc-fct-usfse/IndustrialBank],
-                      :rdf/type    :owl/Class}
-                     {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+   :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
                       {:owl/intersectionOf
                        [{:owl/hasValue   :lcc-3166-1/UnitedStatesOfAmerica,
@@ -2187,6 +2336,9 @@
                          :rdf/type :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
+                     {:owl/unionOf [:fibo-fbc-fct-usfse/StateCharteredBank
+                                    :fibo-fbc-fct-usfse/IndustrialBank],
+                      :rdf/type    :owl/Class}
                      :fibo-fbc-fct-fse/DepositoryInstitution],
    :skos/definition
    "depository institution that is not member of the Federal Reserve System (FRS)"})
@@ -2194,7 +2346,7 @@
 (def FederalReserveTenthDistrict
   "jurisdiction of the Tenth District of the Federal Reserve, which covers western Missouri, Nebraska, Kansas, Oklahoma, Wyoming, Colorado and northern New Mexico"
   {:cmns-av/adaptedFrom
-   "https://www.kansascityfed.org/aboutus/kcfedinformation",
+   {:rdfa/uri "https://www.kansascityfed.org/aboutus/kcfedinformation"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveTenthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/Kansas
                                :lcc-3166-2-us/Missouri
@@ -2207,7 +2359,8 @@
               :owl/NamedIndividual
               :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Tenth District",
    :skos/definition
    "jurisdiction of the Tenth District of the Federal Reserve, which covers western Missouri, Nebraska, Kansas, Oklahoma, Wyoming, Colorado and northern New Mexico"})
@@ -2223,18 +2376,20 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                :owl/onProperty :cmns-id/identifies,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :lcc-cr/GeographicRegionIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve tenth district identifier",
    :skos/definition
    "identifier for the tenth district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of Kansas City"})
 
 (def FederalReserveThirdDistrict
   "jurisdiction of the Third District of the Federal Reserve, which covers eastern Pennsylvania, southern New Jersey, and Delaware"
-  {:cmns-av/adaptedFrom "https://www.philadelphiafed.org/about-the-fed/",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://www.philadelphiafed.org/about-the-fed/"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveThirdDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/Pennsylvania
                                :lcc-3166-2-us/NewJersey
@@ -2243,7 +2398,8 @@
               :owl/NamedIndividual
               :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Third District",
    :skos/definition
    "jurisdiction of the Third District of the Federal Reserve, which covers eastern Pennsylvania, southern New Jersey, and Delaware"})
@@ -2259,18 +2415,20 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                :owl/onProperty :cmns-id/identifies,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :lcc-cr/GeographicRegionIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve third district identifier",
    :skos/definition
    "identifier for the third district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of Philadelphia"})
 
 (def FederalReserveTwelfthDistrict
   "jurisdiction of the Twelfth District of the Federal Reserve, which covers Arizona, California, Idaho, Nevada, Oregon, Utah, and Washington, as well as Alaska, Hawaii, American Samoa, Guam, and the Commonwealth of the Northern Mariana Islands"
-  {:cmns-av/adaptedFrom "http://www.frbsf.org/our-district/about/our-history/",
+  {:cmns-av/adaptedFrom
+   {:rdfa/uri "http://www.frbsf.org/our-district/about/our-history/"},
    :db/ident :fibo-fbc-fct-usjrga/FederalReserveTwelfthDistrict,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-2-us/California
                                :lcc-3166-2-us/Arizona
@@ -2288,7 +2446,8 @@
               :fibo-fbc-fct-usjrga/FederalReserveDistrict
               :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve Twelfth District",
    :skos/definition
    "jurisdiction of the Twelfth District of the Federal Reserve, which covers Arizona, California, Idaho, Nevada, Oregon, Utah, and Washington, as well as Alaska, Hawaii, American Samoa, Guam, and the Commonwealth of the Northern Mariana Islands"})
@@ -2304,11 +2463,12 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-fbc-fct-usjrga/FederalReserveDistrict,
                :owl/onProperty :cmns-id/identifies,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :lcc-cr/GeographicRegionIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Federal Reserve twelfth district identifier",
    :skos/definition
    "identifier for the twelfth district of the Federal Reserve, which represents the district governed by the Federal Reserve Bank of San Francisco"})
@@ -2316,27 +2476,29 @@
 (def FederalStabilityMonitorAndRegulator
   "regulatory agency role of the Federal Stability Oversight Council (FSOC)"
   {:cmns-av/adaptedFrom
-   "http://www.treasury.gov/initiatives/fsoc/Pages/home.aspx",
+   {:rdfa/uri "http://www.treasury.gov/initiatives/fsoc/Pages/home.aspx"},
    :db/ident :fibo-fbc-fct-usjrga/FederalStabilityMonitorAndRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/FinancialStabilityOversightCouncil,
    :rdf/type [:fibo-fbc-fct-rga/RegulatoryAgency :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "federal stability monitor and regulator",
    :skos/definition
    "regulatory agency role of the Federal Stability Oversight Council (FSOC)"})
 
 (def FinancialIndustryRegulator
   "regulatory agency and self-regulatory organizational role of the Financial Industry Regulatory Authority (FINRA)"
-  {:cmns-av/adaptedFrom "http://www.finra.org/about/what-we-do",
+  {:cmns-av/adaptedFrom {:rdfa/uri "http://www.finra.org/about/what-we-do"},
    :db/ident :fibo-fbc-fct-usjrga/FinancialIndustryRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/FinancialIndustryRegulatoryAuthority,
    :rdf/type [:fibo-fbc-fct-fse/SelfRegulatingOrganization
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "financial industry regulator",
    :skos/definition
    "regulatory agency and self-regulatory organizational role of the Financial Industry Regulatory Authority (FINRA)"})
@@ -2344,12 +2506,13 @@
 (def FinancialIndustryRegulatoryAuthority
   "largest non-governmental regulator of securities firms in the United States, namely, the Financial Industry Regulatory Authority (FINRA)"
   {:cmns-av/abbreviation "FINRA",
-   :cmns-av/adaptedFrom "http://www.finra.org/about/what-we-do",
+   :cmns-av/adaptedFrom {:rdfa/uri "http://www.finra.org/about/what-we-do"},
    :db/ident :fibo-fbc-fct-usjrga/FinancialIndustryRegulatoryAuthority,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.finra.org/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.finra.org/"},
    :rdf/type [:fibo-be-le-fbo/NonGovernmentalOrganization :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Financial Industry Regulatory Authority",
    :skos/definition
    "largest non-governmental regulator of securities firms in the United States, namely, the Financial Industry Regulatory Authority (FINRA)"})
@@ -2371,21 +2534,22 @@
    :db/ident :fibo-fbc-fct-usjrga/FinancialStabilityOversightCouncil,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
    :fibo-fnd-plc-vrt/hasWebsite
-   "https://www.treasury.gov/initiatives/fsoc/Pages/home.aspx",
+   {:rdfa/uri "https://www.treasury.gov/initiatives/fsoc/Pages/home.aspx"},
    :rdf/type [:fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :fibo-be-ge-ge/GovernmentDepartment
               :owl/NamedIndividual
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Financial Stability Oversight Council",
    :skos/definition
    "Financial Stability Oversight Council (FSOC), which provides comprehensive monitoring of the stability of our nation's financial system, as established under the Dodd-Frank Wall Street Reform and Consumer Protection Act"})
@@ -2399,25 +2563,26 @@
    :db/ident :fibo-fbc-fct-usjrga/IssuerIdentificationNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "issuer identification number",
-   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/ISO/IEC_7812"],
+   :rdfs/seeAlso {:rdfa/uri "https://en.wikipedia.org/wiki/ISO/IEC_7812"},
    :rdfs/subClassOf
-   [{:owl/hasValue   :fibo-fbc-fct-usjrga/ABAIINRegistry,
+   [{:owl/hasValue
+     :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
+     :rdf/type :owl/Restriction}
+    :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
+    {:owl/hasValue   :fibo-fbc-fct-usjrga/ABAIINRegistry,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
+     :rdf/type       :owl/Restriction}
+    {:owl/onClass    :fibo-fbc-fct-fse/FinancialInstitution,
+     :owl/onProperty :cmns-id/identifies,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
     {:owl/hasValue
      :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
      :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
-     :rdf/type :owl/Restriction}
-    {:owl/onClass    :fibo-fbc-fct-fse/FinancialInstitution,
-     :owl/onProperty :cmns-id/identifies,
-     :owl/qualifiedCardinality 1,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
      :rdf/type :owl/Restriction}
     :fibo-fbc-fct-ra/RegistryIdentifier],
    :skos/definition
@@ -2436,9 +2601,10 @@
               :fibo-fbc-fct-breg/BusinessRegistrationAuthority
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Massachusetts business registrar",
-   :rdfs/seeAlso ["http://www.sec.state.ma.us/cor/coridx.htm"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.sec.state.ma.us/cor/coridx.htm"},
    :skos/definition
    "regulatory agency and registration authority role of the Commonwealth of Massachusetts's Corporations Division"})
 
@@ -2449,7 +2615,8 @@
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Massachusetts business registration identifier scheme",
    :skos/definition
    "registration identifier scheme for business entity identifiers defined by the Commonwealth of Massachusetts's Corporations Division for the registration of business entities"})
@@ -2463,9 +2630,10 @@
    :fibo-fbc-fct-usjrga/MassachusettsBusinessRegistrar,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Massachusetts business registration service",
-   :rdfs/seeAlso ["http://www.sec.state.ma.us/cor/corservices.htm"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.sec.state.ma.us/cor/corservices.htm"},
    :skos/definition
    "Commonwealth of Massachusetts, Secretary of State, Corporations Division, service for the registration of business entities"})
 
@@ -2474,14 +2642,15 @@
   {:db/ident :fibo-fbc-fct-usjrga/MassachusettsCorporationRegistry,
    :fibo-fbc-fct-breg/hasRegistryName "Massachusetts Corporation Registry",
    :fibo-fnd-plc-vrt/hasWebsite
-   "http://corp.sec.state.ma.us/corpweb/CorpSearch/CorpSearch.aspx",
+   {:rdfa/uri "http://corp.sec.state.ma.us/corpweb/CorpSearch/CorpSearch.aspx"},
    :fibo-fnd-rel-rel/isGovernedBy
    :fibo-be-ge-usj/StateOfMassachusettsJurisdiction,
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/MassachusettsBusinessRegistrar,
    :rdf/type [:fibo-fbc-fct-breg/BusinessRegistry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Massachusetts corporation registry",
    :skos/definition
    "registry of business entities for businesses that have registered with the Commonwealth of Massachusetts Secretary of State"})
@@ -2490,15 +2659,11 @@
   "Commonwealth of Massachusetts, Secretary of State, Corporations Division"
   {:cmns-col/isPartOf :fibo-be-ge-usj/StateOfMassachusettsGovernment,
    :db/ident :fibo-fbc-fct-usjrga/MassachusettsCorporationsDivision,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.sec.state.ma.us/cor/coridx.htm",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri
+                                 "http://www.sec.state.ma.us/cor/coridx.htm"},
    :rdf/type [:fibo-fbc-fct-usjrga/StateGovernmentEntity
               :fibo-be-ge-ge/GovernmentDepartment
               :owl/NamedIndividual
-              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
-                             :fibo-be-ge-ge/RegionalSovereignty
-                             :fibo-be-ge-ge/GovernmentAgency
-                             :fibo-be-ge-ge/GovernmentDepartment],
-               :rdf/type    :owl/Class}
               :fibo-be-ge-ge/GovernmentBody
               {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                :owl/someValuesFrom {:owl/onProperty :fibo-fnd-law-jur/hasReach,
@@ -2511,9 +2676,15 @@
                                        :rdf/type :owl/Restriction}],
                                      :rdf/type :owl/Class},
                                     :rdf/type :owl/Restriction},
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
+                             :fibo-be-ge-ge/RegionalSovereignty
+                             :fibo-be-ge-ge/GovernmentAgency
+                             :fibo-be-ge-ge/GovernmentDepartment],
+               :rdf/type    :owl/Class}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Massachusetts Corporations Division",
    :skos/definition
    "Commonwealth of Massachusetts, Secretary of State, Corporations Division"})
@@ -2526,20 +2697,24 @@
    :rdf/type [:fibo-fbc-fct-breg/RegistrationAuthorityCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Massachusetts Registration Authority Code",
    :rdfs/seeAlso
-   ["https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"],
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"},
    :skos/definition
    "GLEIF Registration Authority List identifier for the Massachusetts Corporation Registry"})
 
 (def NICRegistryEntry
   "an entry in the the National Information Center (NIC) repository, a repository of financial data and institution characteristics collected by the Federal Reserve System"
-  {:cmns-av/adaptedFrom "http://www.ffiec.gov/nicpubweb/nicweb/NicHome.aspx",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "http://www.ffiec.gov/nicpubweb/nicweb/NicHome.aspx"},
    :db/ident :fibo-fbc-fct-usjrga/NICRegistryEntry,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "National Information Center (NIC) registry entry",
    :rdfs/subClassOf
    [{:owl/onProperty :cmns-col/comprises,
@@ -2559,7 +2734,7 @@
 (def NationalBankingRegulator
   "regulatory agency and registration authority role of the Office of the Comptroller of the Currency (OCC)"
   {:cmns-av/adaptedFrom
-   "http://www.occ.gov/about/what-we-do/mission/index-about.html",
+   {:rdfa/uri "http://www.occ.gov/about/what-we-do/mission/index-about.html"},
    :db/ident :fibo-fbc-fct-usjrga/NationalBankingRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/OfficeOfTheComptrollerOfTheCurrency,
@@ -2568,13 +2743,14 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-be-ge-ge/GovernmentBody,
                :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :fibo-fbc-fct-rga/RegulatoryAgency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "national banking regulator",
-   :rdfs/seeAlso ["http://www.occ.gov/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.occ.gov/"},
    :skos/definition
    "regulatory agency and registration authority role of the Office of the Comptroller of the Currency (OCC)"})
 
@@ -2586,28 +2762,31 @@
    :cmns-col/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :db/ident :fibo-fbc-fct-usjrga/NationalCreditUnionAdministration,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.ncua.gov/Pages/default.aspx",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri
+                                 "http://www.ncua.gov/Pages/default.aspx"},
    :rdf/type [:fibo-be-ge-ge/GovernmentAgency
               :owl/NamedIndividual
               :fibo-fbc-fct-usjrga/FederalGovernmentEntity
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "National Credit Union Administration",
    :skos/definition
    "National Credit Union Administration (NCUA), the independent federal agency that regulates, charters and supervises federal credit unions"})
 
 (def NationalCreditUnionInsurerAndRegulator
   "regulatory agency and registration authority role of the National Credit Union Administration (NCUA)"
-  {:cmns-av/adaptedFrom "http://www.ncua.gov/about/Pages/default.aspx",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "http://www.ncua.gov/about/Pages/default.aspx"},
    :db/ident :fibo-fbc-fct-usjrga/NationalCreditUnionInsurerAndRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/NationalCreditUnionAdministration,
@@ -2617,13 +2796,14 @@
               :fibo-fbc-fct-usjrga/PrimaryFederalRegulator
               {:owl/onClass    :fibo-be-ge-ge/GovernmentBody,
                :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :fibo-fbc-fct-rga/RegulatoryAgency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "national credit union insurer and regulator",
-   :rdfs/seeAlso ["http://www.ncua.gov/Pages/default.aspx"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.ncua.gov/Pages/default.aspx"},
    :skos/definition
    "regulatory agency and registration authority role of the National Credit Union Administration (NCUA)"})
 
@@ -2633,15 +2813,17 @@
    "The National Information Center (NIC)repository provides comprehensive information on banks and other institutions for which the Federal Reserve has a supervisory, regulatory, or research interest including both domestic and foreign banking organizations operating in the U.S.",
    :db/ident :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
    :fibo-fnd-plc-vrt/hasWebsite
-   "http://www.ffiec.gov/nicpubweb/nicweb/NicHome.aspx",
+   {:rdfa/uri "http://www.ffiec.gov/nicpubweb/nicweb/NicHome.aspx"},
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
    :rdf/type [:fibo-fbc-fct-ra/Registry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "National Information Center (NIC) Repository",
    :rdfs/seeAlso
-   ["https://www.ffiec.gov/nicpubweb/content/DataDownload/NPW%20Data%20Dictionary.pdf/"],
+   {:rdfa/uri
+    "https://www.ffiec.gov/nicpubweb/content/DataDownload/NPW%20Data%20Dictionary.pdf/"},
    :skos/definition
    "National Information Center (NIC) repository, a repository of financial data and institution characteristics collected by the Federal Reserve System"})
 
@@ -2649,13 +2831,15 @@
   "New York State (NYS) Department of State, Division of Corporations, State Records and Uniform Commercial Code (UCC) registry of business entities"
   {:db/ident :fibo-fbc-fct-usjrga/NewYorkBusinessEntitiesRegistry,
    :fibo-fnd-plc-vrt/hasWebsite
-   "https://appext20.dos.ny.gov/corp_public/corpsearch.entity_search_entry",
+   {:rdfa/uri
+    "https://appext20.dos.ny.gov/corp_public/corpsearch.entity_search_entry"},
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfNewYorkJurisdiction,
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/NewYorkCorporationsRegulator,
    :rdf/type [:fibo-fbc-fct-breg/BusinessRegistry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "New York State (NYS) business entities registry",
    :skos/definition
    "New York State (NYS) Department of State, Division of Corporations, State Records and Uniform Commercial Code (UCC) registry of business entities"})
@@ -2666,7 +2850,8 @@
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "New York business registration identifier scheme",
    :skos/definition
    "registration identifier scheme for business entity identifiers defined by the New York State (NYS) Department of State, Division of Corporations for the registration of business entities"})
@@ -2680,9 +2865,11 @@
    :fibo-fbc-fct-usjrga/NewYorkCorporationsRegulator,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "State of New York business registration service",
-   :rdfs/seeAlso ["https://www.dos.ny.gov/about/corps-licensing.html"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.dos.ny.gov/about/corps-licensing.html"},
    :skos/definition
    "New York State (NYS) Department of State, Division of Corporations service for the registration of business entities"})
 
@@ -2699,9 +2886,10 @@
               :fibo-fbc-fct-rga/RegulatoryAgency
               :fibo-fbc-fct-breg/BusinessRegistrationAuthority],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "State of New York corporations regulator",
-   :rdfs/seeAlso ["https://www.dos.ny.gov/corps/index.html"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.dos.ny.gov/corps/index.html"},
    :skos/definition
    "regulatory agency and registration authority role of the State of New York's Division of Corporations"})
 
@@ -2709,15 +2897,11 @@
   "New York State (NYS) Department of State's Division of Corporations"
   {:cmns-col/isPartOf :fibo-be-ge-usj/StateOfNewYorkGovernment,
    :db/ident :fibo-fbc-fct-usjrga/NewYorkDivisionOfCorporations,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.dos.ny.gov/corps/index.html",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri
+                                 "https://www.dos.ny.gov/corps/index.html"},
    :rdf/type [:fibo-fbc-fct-usjrga/StateGovernmentEntity
               :fibo-be-ge-ge/GovernmentDepartment
               :owl/NamedIndividual
-              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
-                             :fibo-be-ge-ge/RegionalSovereignty
-                             :fibo-be-ge-ge/GovernmentAgency
-                             :fibo-be-ge-ge/GovernmentDepartment],
-               :rdf/type    :owl/Class}
               :fibo-be-ge-ge/GovernmentBody
               {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                :owl/someValuesFrom {:owl/onProperty :fibo-fnd-law-jur/hasReach,
@@ -2730,9 +2914,15 @@
                                        :rdf/type :owl/Restriction}],
                                      :rdf/type :owl/Class},
                                     :rdf/type :owl/Restriction},
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
+                             :fibo-be-ge-ge/RegionalSovereignty
+                             :fibo-be-ge-ge/GovernmentAgency
+                             :fibo-be-ge-ge/GovernmentDepartment],
+               :rdf/type    :owl/Class}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label
    "New York State (NYS) Department of State Division of Corporations",
    :skos/definition
@@ -2746,44 +2936,50 @@
    :rdf/type [:fibo-fbc-fct-breg/RegistrationAuthorityCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "New York Registration Authority Code",
    :rdfs/seeAlso
-   ["https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"],
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"},
    :skos/definition
    "GLEIF Registration Authority List identifier for the New York State (NYS) Department of State, Division of Corporations, State Records and Uniform Commercial Code (UCC) registry of business entities"})
 
 (def NonDepositoryTrustCompany-MemberInstitution
   "non-depository trust company that is a member of the Federal Reserve system"
-  {:cmns-av/adaptedFrom "https://www.ffiec.gov/npw/Help/InstitutionTypes",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://www.ffiec.gov/npw/Help/InstitutionTypes"},
    :db/ident :fibo-fbc-fct-usjrga/NonDepositoryTrustCompany-MemberInstitution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "non-depository trust company - member institution",
    :rdfs/subClassOf [:fibo-fbc-fct-usjrga/FederalReserveSystemMember
                      :fibo-fbc-fct-usfse/NonDepositoryTrustCompany
+                     :fibo-fnd-org-org/OrganizationMember
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
                       {:owl/hasValue :fibo-fbc-fct-usjrga/FederalReserveSystem,
                        :owl/onProperty :cmns-col/isMemberOf,
                        :rdf/type :owl/Restriction},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fnd-org-org/OrganizationMember],
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "non-depository trust company that is a member of the Federal Reserve system"})
 
 (def NonDepositoryTrustCompany-NonMemberInstitution
   "non-depository trust company that is not a member of the Federal Reserve system"
-  {:cmns-av/adaptedFrom "https://www.ffiec.gov/npw/Help/InstitutionTypes",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://www.ffiec.gov/npw/Help/InstitutionTypes"},
    :db/ident
    :fibo-fbc-fct-usjrga/NonDepositoryTrustCompany-NonMemberInstitution,
    :owl/disjointWith
    :fibo-fbc-fct-usjrga/NonDepositoryTrustCompany-MemberInstitution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "non-depository trust company - non-member institution",
    :rdfs/subClassOf :fibo-fbc-fct-usfse/NonDepositoryTrustCompany,
    :skos/definition
@@ -2797,10 +2993,11 @@
    :cmns-col/isPartOf :fibo-fbc-fct-usjrga/USDepartmentOfTheTreasury,
    :db/ident :fibo-fbc-fct-usjrga/OfficeOfTheComptrollerOfTheCurrency,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.occ.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.occ.gov/"},
    :rdf/type [:fibo-be-ge-ge/GovernmentDepartment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Office of the Comptroller of the Currency",
    :skos/definition
    "OCC, which charters, regulates, and supervises all national banks and federal savings associations as well as federal branches and agencies of foreign banks. The OCC is an independent bureau of the U.S. Department of the Treasury."})
@@ -2811,21 +3008,22 @@
    :cmns-col/isPartOf :fibo-fbc-fct-usjrga/OfficeOfTheComptrollerOfTheCurrency,
    :db/ident :fibo-fbc-fct-usjrga/OfficeOfThriftSupervision,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.occ.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.occ.gov/"},
    :rdf/type [:owl/NamedIndividual
               :fibo-be-ge-ge/GovernmentDepartment
               :fibo-fbc-fct-usjrga/FederalGovernmentEntity
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Office of Thrift Supervision",
    :skos/definition
    "OTS, which is a part of the OCC, responsible for chartering, regulating, and supervising all federal savings associations"})
@@ -2834,12 +3032,14 @@
   "registry of business entities for businesses that have registered with the Ohio Secretary of State"
   {:db/ident :fibo-fbc-fct-usjrga/OhioBusinessFilingPortal,
    :fibo-fbc-fct-breg/hasRegistryName "Ohio Business Filing Portal",
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.sos.state.oh.us/businesses/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri
+                                 "https://www.sos.state.oh.us/businesses/"},
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfOhioJurisdiction,
    :fibo-fnd-rel-rel/isManagedBy :fibo-fbc-fct-usjrga/OhioBusinessRegistrar,
    :rdf/type [:fibo-fbc-fct-breg/BusinessRegistry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Ohio Business Filing Portal",
    :skos/definition
    "registry of business entities for businesses that have registered with the Ohio Secretary of State"})
@@ -2856,9 +3056,10 @@
               :fibo-fbc-fct-rga/RegulatoryAgency
               :fibo-fbc-fct-breg/BusinessRegistrationAuthority],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Ohio business registrar",
-   :rdfs/seeAlso ["https://www.sos.state.oh.us/businesses/"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.sos.state.oh.us/businesses/"},
    :skos/definition
    "regulatory agency and registration authority role of the Ohio Secretary of State, Business Services Division"})
 
@@ -2868,7 +3069,8 @@
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Ohio business registration identifier scheme",
    :skos/definition
    "registration identifier scheme for business entity identifiers defined by the Ohio Secretary of State, Business Services Division for the registration of business entities"})
@@ -2880,9 +3082,10 @@
    :fibo-fnd-rel-rel/isProvidedBy :fibo-fbc-fct-usjrga/OhioBusinessRegistrar,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Ohio business registration service",
-   :rdfs/seeAlso ["https://www.sos.state.oh.us/businesses/"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.sos.state.oh.us/businesses/"},
    :skos/definition
    "Ohio Secretary of State, Business Services Division service for the registration of business entities"})
 
@@ -2890,15 +3093,11 @@
   "Ohio Secretary of State, Business Services Division"
   {:cmns-col/isPartOf :fibo-be-ge-usj/StateOfOhioGovernment,
    :db/ident :fibo-fbc-fct-usjrga/OhioBusinessServicesDivision,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.sos.state.oh.us/businesses/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri
+                                 "https://www.sos.state.oh.us/businesses/"},
    :rdf/type [:fibo-fbc-fct-usjrga/StateGovernmentEntity
               :fibo-be-ge-ge/GovernmentDepartment
               :owl/NamedIndividual
-              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
-                             :fibo-be-ge-ge/RegionalSovereignty
-                             :fibo-be-ge-ge/GovernmentAgency
-                             :fibo-be-ge-ge/GovernmentDepartment],
-               :rdf/type    :owl/Class}
               :fibo-be-ge-ge/GovernmentBody
               {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                :owl/someValuesFrom {:owl/onProperty :fibo-fnd-law-jur/hasReach,
@@ -2911,9 +3110,15 @@
                                        :rdf/type :owl/Restriction}],
                                      :rdf/type :owl/Class},
                                     :rdf/type :owl/Restriction},
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
+                             :fibo-be-ge-ge/RegionalSovereignty
+                             :fibo-be-ge-ge/GovernmentAgency
+                             :fibo-be-ge-ge/GovernmentDepartment],
+               :rdf/type    :owl/Class}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Ohio Business Services Division",
    :skos/definition "Ohio Secretary of State, Business Services Division"})
 
@@ -2925,16 +3130,19 @@
    :rdf/type [:fibo-fbc-fct-breg/RegistrationAuthorityCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Ohio Registration Authority Code",
    :rdfs/seeAlso
-   ["https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"],
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"},
    :skos/definition
    "GLEIF Registration Authority List identifier for the Ohio Business Filing Portal"})
 
 (def PrimaryFederalRegulator
   "federal regulatory agency that is designated as the main agency responsible for oversight of a given institution for an institution"
-  {:cmns-av/adaptedFrom "http://www.ffiec.gov/nicpubweb/nicweb/NicHome.aspx",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "http://www.ffiec.gov/nicpubweb/nicweb/NicHome.aspx"},
    :db/ident :fibo-fbc-fct-usjrga/PrimaryFederalRegulator,
    :owl/equivalentClass
    {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
@@ -2950,11 +3158,12 @@
     :rdf/type :owl/Restriction},
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "primary federal regulator",
    :rdfs/subClassOf [{:owl/onClass    :fibo-be-ge-ge/GovernmentBody,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-fct-rga/RegulatoryAgency],
    :skos/definition
@@ -2964,26 +3173,27 @@
   "unique identifier assigned by the Federal Reserve to financial institutions for regulatory and oversight purposes"
   {:cmns-av/abbreviation "RSSD ID",
    :cmns-av/adaptedFrom
-   "https://cdr.ffiec.gov/CDR/Public/CDRHelp/FAQs1205.htm#FAQ16",
+   {:rdfa/uri "https://cdr.ffiec.gov/CDR/Public/CDRHelp/FAQs1205.htm#FAQ16"},
    :cmns-av/synonym "ID_RSSD",
    :db/ident
    :fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   ["https://www.federalreserve.gov/reportforms/mdrm/pdf/RSSD.PDF"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"],
+   [{:rdfa/uri "https://www.federalreserve.gov/reportforms/mdrm/pdf/RSSD.PDF"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}],
    :rdfs/label
    "Research, Statistics, Supervision and Regulation, and Discount and Credit identifier",
    :rdfs/subClassOf
    [:fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
     :fibo-fbc-fct-ra/RegistryIdentifier
+    {:owl/hasValue   :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
+     :rdf/type       :owl/Restriction}
     {:owl/hasValue
      :fibo-fbc-fct-usjrga/FederalReserveRegulatoryAgencyAndCentralBank,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
-     :rdf/type :owl/Restriction}
-    {:owl/hasValue   :fibo-fbc-fct-usjrga/NationalInformationCenterRepository,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
-     :rdf/type       :owl/Restriction}],
+     :rdf/type :owl/Restriction}],
    :skos/definition
    "unique identifier assigned by the Federal Reserve to financial institutions for regulatory and oversight purposes"})
 
@@ -2996,21 +3206,22 @@
    :db/ident :fibo-fbc-fct-usjrga/RoutingTransitNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "routing transit number",
-   :rdfs/seeAlso ["http://www.accuity.com/aba-registrar/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.accuity.com/aba-registrar/"},
    :rdfs/subClassOf
    [:fibo-fbc-fct-fse/FinancialServiceProviderIdentifier
-    {:owl/hasValue
-     :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
-     :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
+    {:owl/hasValue :fibo-fbc-fct-usjrga/AmericanBankersAssociationRTNRegistrar,
+     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
      :rdf/type :owl/Restriction}
-    :fibo-fbc-fct-ra/RegistryIdentifier
     {:owl/hasValue   :fibo-fbc-fct-usjrga/ABARTNRegistry,
      :owl/onProperty :fibo-fbc-fct-ra/isRegisteredIn,
      :rdf/type       :owl/Restriction}
-    {:owl/hasValue :fibo-fbc-fct-usjrga/AmericanBankersAssociationRTNRegistrar,
-     :owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
+    :fibo-fbc-fct-ra/RegistryIdentifier
+    {:owl/hasValue
+     :fibo-fbc-fct-usjrga/AmericanBankersAssociationRegistrationAuthority,
+     :owl/onProperty :fibo-fbc-fct-ra/hasRegistrationAuthority,
      :rdf/type :owl/Restriction}],
    :skos/definition
    "unique nine digit identifier, used primarily in the United States, to identify a banking or other financial institution for clearing funds, and, as it appears on a check, denotes the banking institution that holds the account from which funds are to be drawn"})
@@ -3023,28 +3234,29 @@
    :cmns-col/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :db/ident :fibo-fbc-fct-usjrga/SecuritiesAndExchangeCommission,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.sec.gov/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "http://www.sec.gov/"},
    :rdf/type [:fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :fibo-be-ge-ge/GovernmentAgency
               :owl/NamedIndividual
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Securities and Exchange Commission",
    :skos/definition
    "independent commission established by the Securities Act of 1933 and Securities Exchange Act of 1934 whose mission is to protect investors, maintain fair, orderly, and efficient markets, and facilitate capital formation"})
 
 (def SecuritiesAndExchangeRegulator
   "regulatory agency and registration authority role of the Securities and Exchange Commission (SEC)"
-  {:cmns-av/adaptedFrom "http://www.sec.gov/about/whatwedo.shtml",
+  {:cmns-av/adaptedFrom {:rdfa/uri "http://www.sec.gov/about/whatwedo.shtml"},
    :db/ident :fibo-fbc-fct-usjrga/SecuritiesAndExchangeRegulator,
    :fibo-fnd-rel-rel/hasIdentity
    :fibo-fbc-fct-usjrga/SecuritiesAndExchangeCommission,
@@ -3054,11 +3266,12 @@
               :owl/NamedIndividual
               {:owl/onClass    :fibo-be-ge-ge/GovernmentBody,
                :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :fibo-fbc-fct-rga/RegulatoryAgency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "securities and exchange regulator",
    :skos/definition
    "regulatory agency and registration authority role of the Securities and Exchange Commission (SEC)"})
@@ -3067,14 +3280,15 @@
   "State of South Dakota registry of business information"
   {:db/ident :fibo-fbc-fct-usjrga/SouthDakotaBusinessInformationRegistry,
    :fibo-fnd-plc-vrt/hasWebsite
-   "https://sosenterprise.sd.gov/businessservices/",
+   {:rdfa/uri "https://sosenterprise.sd.gov/businessservices/"},
    :fibo-fnd-rel-rel/isGovernedBy
    :fibo-be-ge-usj/StateOfSouthDakotaJurisdiction,
    :fibo-fnd-rel-rel/isManagedBy
    :fibo-fbc-fct-usjrga/SouthDakotaCorporationsRegulator,
    :rdf/type [:fibo-fbc-fct-breg/BusinessRegistry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "South Dakota business entities registry",
    :skos/definition "State of South Dakota registry of business information"})
 
@@ -3085,7 +3299,8 @@
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifierScheme
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "South Dakota business registration identifier scheme",
    :skos/definition
    "registration identifier scheme for business entity identifiers defined by the State of South Dakota, Secretary of State, Corporations Division for the registration of business entities"})
@@ -3099,9 +3314,10 @@
    :fibo-fbc-fct-usjrga/SouthDakotaCorporationsRegulator,
    :rdf/type [:fibo-fbc-fct-ra/RegistrationService :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "South Dakota business registration service",
-   :rdfs/seeAlso ["https://sosenterprise.sd.gov/businessservices/"],
+   :rdfs/seeAlso {:rdfa/uri "https://sosenterprise.sd.gov/businessservices/"},
    :skos/definition
    "State of South Dakota, Secretary of State, Corporations Division service for the registration of business entities"})
 
@@ -3110,15 +3326,10 @@
   {:cmns-col/isPartOf :fibo-be-ge-usj/StateOfSouthDakotaGovernment,
    :db/ident :fibo-fbc-fct-usjrga/SouthDakotaCorporationsDivision,
    :fibo-fnd-plc-vrt/hasWebsite
-   "https://sosenterprise.sd.gov/businessservices/",
+   {:rdfa/uri "https://sosenterprise.sd.gov/businessservices/"},
    :rdf/type [:fibo-fbc-fct-usjrga/StateGovernmentEntity
               :fibo-be-ge-ge/GovernmentDepartment
               :owl/NamedIndividual
-              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
-                             :fibo-be-ge-ge/RegionalSovereignty
-                             :fibo-be-ge-ge/GovernmentAgency
-                             :fibo-be-ge-ge/GovernmentDepartment],
-               :rdf/type    :owl/Class}
               :fibo-be-ge-ge/GovernmentBody
               {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                :owl/someValuesFrom {:owl/onProperty :fibo-fnd-law-jur/hasReach,
@@ -3131,9 +3342,15 @@
                                        :rdf/type :owl/Restriction}],
                                      :rdf/type :owl/Class},
                                     :rdf/type :owl/Restriction},
-               :rdf/type           :owl/Restriction}],
+               :rdf/type           :owl/Restriction}
+              {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
+                             :fibo-be-ge-ge/RegionalSovereignty
+                             :fibo-be-ge-ge/GovernmentAgency
+                             :fibo-be-ge-ge/GovernmentDepartment],
+               :rdf/type    :owl/Class}],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "South Dakota, Secretary of State Corporations Division",
    :skos/definition "State of South Dakota's Corporations Division"})
 
@@ -3150,9 +3367,10 @@
               :owl/NamedIndividual
               :fibo-fbc-fct-rga/RegulatoryAgency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "South Dakota corporations regulator",
-   :rdfs/seeAlso ["https://sosenterprise.sd.gov/businessservices/"],
+   :rdfs/seeAlso {:rdfa/uri "https://sosenterprise.sd.gov/businessservices/"},
    :skos/definition
    "regulatory agency and registration authority role of the State of South Dakota's Secretary of State, Corporations Division"})
 
@@ -3165,10 +3383,12 @@
    :rdf/type [:fibo-fbc-fct-breg/RegistrationAuthorityCode
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "South Dakota Registration Authority Code",
    :rdfs/seeAlso
-   ["https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"],
+   {:rdfa/uri
+    "https://www.gleif.org/en/about-lei/gleif-registration-authorities-list"},
    :skos/definition
    "GLEIF Registration Authority List identifier for the South Dakota Business Information Registry"})
 
@@ -3177,7 +3397,8 @@
   {:db/ident :fibo-fbc-fct-usjrga/StateGovernmentEntity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "state government entity or agency",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
@@ -3203,22 +3424,24 @@
 (def StateMemberBank
   "state-chartered bank that is a member of the Federal Reserve System (FRS)"
   {:cmns-av/adaptedFrom
-   "http://www.ffiec.gov/nicpubweb/Content/HELP/Institution%20Type%20Description.htm",
+   {:rdfa/uri
+    "http://www.ffiec.gov/nicpubweb/Content/HELP/Institution%20Type%20Description.htm"},
    :db/ident :fibo-fbc-fct-usjrga/StateMemberBank,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "state member bank",
    :rdfs/subClassOf [:fibo-fbc-fct-usjrga/FederalReserveSystemMember
                      :fibo-fbc-fct-usfse/StateCharteredBank
+                     :fibo-fnd-org-org/OrganizationMember
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
                       {:owl/hasValue :fibo-fbc-fct-usjrga/FederalReserveSystem,
                        :owl/onProperty :cmns-col/isMemberOf,
                        :rdf/type :owl/Restriction},
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fnd-org-org/OrganizationMember],
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "state-chartered bank that is a member of the Federal Reserve System (FRS)"})
 
@@ -3226,19 +3449,21 @@
   "identification number used by the Internal Revenue Service (IRS) in the administration of tax laws in the United States"
   {:cmns-av/abbreviation "TIN",
    :cmns-av/adaptedFrom
-   "https://www.irs.gov/individuals/international-taxpayers/taxpayer-identification-numbers-tin",
+   {:rdfa/uri
+    "https://www.irs.gov/individuals/international-taxpayers/taxpayer-identification-numbers-tin"},
    :cmns-av/explanatoryNote
    "A TIN must be furnished on returns, statements, and other tax related documents. For example a number must be furnished:\n- When filing tax returns.\n- When claiming treaty benefits.\n\nA TIN must be on a withholding certificate if the beneficial owner is claiming any of the following:\n- Tax treaty benefits (other than for income from marketable securities)\n- Exemption for effectively connected income\n- Exemption for certain annuities.",
    :db/ident :fibo-fbc-fct-usjrga/TaxpayerIdentificationNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "taxpayer identification number",
    :rdfs/subClassOf
    [:fibo-fnd-pty-pty/TaxIdentifier
     {:owl/onClass    :fibo-fbc-fct-usjrga/TaxpayerIdentificationNumberingScheme,
      :owl/onProperty :cmns-col/isMemberOf,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
     {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
      :owl/onProperty :cmns-cxtdsg/isApplicableIn,
@@ -3249,11 +3474,13 @@
 (def TaxpayerIdentificationNumberingScheme
   "tax identification scheme used in the United States"
   {:cmns-av/adaptedFrom
-   "https://www.irs.gov/individuals/international-taxpayers/taxpayer-identification-numbers-tin",
+   {:rdfa/uri
+    "https://www.irs.gov/individuals/international-taxpayers/taxpayer-identification-numbers-tin"},
    :db/ident :fibo-fbc-fct-usjrga/TaxpayerIdentificationNumberingScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "taxpayer identification numbering scheme",
    :rdfs/subClassOf [{:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
                       :owl/onProperty :cmns-cxtdsg/isApplicableIn,
@@ -3264,18 +3491,19 @@
 (def ThriftRegulator
   "regulatory agency and registration authority role of the Office of Thrift Supervision (OTS)"
   {:cmns-av/adaptedFrom
-   "http://www.occ.gov/about/what-we-do/mission/index-about.html",
+   {:rdfa/uri "http://www.occ.gov/about/what-we-do/mission/index-about.html"},
    :db/ident :fibo-fbc-fct-usjrga/ThriftRegulator,
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usjrga/OfficeOfThriftSupervision,
    :rdf/type [:fibo-fbc-fct-usjrga/PrimaryFederalRegulator
               :owl/NamedIndividual
               {:owl/onClass    :fibo-be-ge-ge/GovernmentBody,
                :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-               :owl/qualifiedCardinality 1,
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                :rdf/type       :owl/Restriction}
               :fibo-fbc-fct-rga/RegulatoryAgency],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "thrift regulator",
    :skos/definition
    "regulatory agency and registration authority role of the Office of Thrift Supervision (OTS)"})
@@ -3288,21 +3516,23 @@
    :cmns-col/isPartOf :fibo-be-ge-usj/UnitedStatesGovernment,
    :db/ident :fibo-fbc-fct-usjrga/USDepartmentOfTheTreasury,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-usj/UnitedStatesJurisdiction,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.treasury.gov/Pages/default.aspx",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri
+                                 "http://www.treasury.gov/Pages/default.aspx"},
    :rdf/type [:fibo-fbc-fct-usjrga/FederalGovernmentEntity
               :fibo-be-ge-ge/GovernmentAgency
               :owl/NamedIndividual
+              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
+               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
+               :rdf/type       :owl/Restriction}
               {:owl/unionOf [:fibo-be-ge-ge/Instrumentality
                              :fibo-be-ge-ge/Polity
                              :fibo-be-ge-ge/GovernmentAgency
                              :fibo-be-ge-ge/GovernmentDepartment],
                :rdf/type    :owl/Class}
-              {:owl/hasValue   :fibo-be-ge-usj/UnitedStatesJurisdiction,
-               :owl/onProperty :fibo-be-ge-ge/hasJurisdiction,
-               :rdf/type       :owl/Restriction}
               :fibo-be-ge-ge/GovernmentBody],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "U.S. Department of the Treasury",
    :skos/definition
    "U.S. Department of the Treasury, the executive agency responsible for promoting economic prosperity and ensuring the financial security of the United States"})
@@ -3316,7 +3546,8 @@
    :fibo-fbc-fct-usjrga/FederalFinancialInstitutionsExaminationRegulator,
    :rdf/type [:fibo-fbc-fct-ra/Registry :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "Uniform Bank Performance Report (UBPR) Repository",
    :skos/definition
    "Federal Financial Institutions Examination Council (FFIEC)'s Uniform Bank Performance Report (UBPR) Repository, a repository of institution characteristics and analytical tool created for bank supervisory, examination, and management purposes"})
@@ -3327,7 +3558,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-pas-fpas/FinancialServiceProvider,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "has primary federal regulator",
    :rdfs/range :fibo-fbc-fct-usjrga/PrimaryFederalRegulator,
    :rdfs/subPropertyOf :fibo-fbc-fct-rga/isRegulatedBy,
@@ -3340,7 +3572,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-pas-fpas/FinancialServiceProvider,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"},
    :rdfs/label "has secondary federal regulator",
    :rdfs/range :fibo-fbc-fct-rga/RegulatoryAgency,
    :rdfs/subPropertyOf :fibo-fbc-fct-rga/isRegulatedBy,

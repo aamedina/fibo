@@ -9,9 +9,11 @@
    :dcterms/contributor ["Mark Linehan, Thematix Partners LLC"
                          "Pete Rivett, agnos.ai U.K. Ltd"
                          "Elisa Kendall, Thematix Partners LLC"],
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :owl/imports "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-   :owl/versionIRI "https://www.omg.org/spec/Commons/20220501/DatesAndTimes/",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :owl/imports {:rdfa/uri
+                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/"},
+   :owl/versionIRI {:rdfa/uri
+                    "https://www.omg.org/spec/Commons/20221101/DatesAndTimes/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
@@ -25,6 +27,8 @@
    :rdfa/prefix "cmns-dt",
    :rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/",
    :rdfs/label "Commons Dates and Times Ontology",
+   :skos/changeNote
+   "https://www.omg.org/spec/Commons/20220501/DatesAndTimes.rdf version of this ontology was modified to eliminate a double space in the scope note on CombinedDateTime (COMMONS-6).",
    :skos/note
    "The dates and times ontology conforms with the OWL 2 DL semantics, and is outside of OWL 2 RL due to the inclusion of exact cardinality constraints on explicit date, explicit duration and time of day. These constraints can be changed to maximum cardinality constraints if needed to support OWL RL rule-based applications that cannot be extended to support them."})
 
@@ -41,14 +45,14 @@
    :skos/note
    "Valid values must use the ISO 8601 representation for a date, or the corresponding XML Schema Datatypes representation for a date and time, or date and time including the time zone.",
    :skos/scopeNote
-   "There are many cases where the representation of a date may or may not include a time, and where the underlying data representation varies.  This composite datatype should only be used in cases where a standard representation using one of the options in the union for date or date and time value specification does not work."})
+   "There are many cases where the representation of a date may or may not include a time, and where the underlying data representation varies. This composite datatype should only be used in cases where a standard representation using one of the options in the union for date or date and time value specification does not work."})
 
 (def Date
   "calendar day on some calendar"
   {:db/ident :cmns-dt/Date,
    :rdf/type :owl/Class,
    :rdfs/label "date",
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :cmns-dt/hasDateValue,
                       :rdf/type        :owl/Restriction}
@@ -63,15 +67,15 @@
   {:db/ident :cmns-dt/DatePeriod,
    :rdf/type :owl/Class,
    :rdfs/label "date period",
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :cmns-dt/Duration,
                       :owl/onProperty :cmns-dt/hasDuration,
                       :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :cmns-dt/hasStartDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :cmns-dt/hasEndDate,
                       :rdf/type       :owl/Restriction}
@@ -87,7 +91,7 @@
   {:db/ident :cmns-dt/DateTime,
    :rdf/type :owl/Class,
    :rdfs/label "date time",
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :xsd/dateTime,
                       :owl/onProperty  :cmns-dt/hasDateTimeValue,
                       :rdf/type        :owl/Restriction}
@@ -104,7 +108,7 @@
    :db/ident :cmns-dt/DateTimeStamp,
    :rdf/type :owl/Class,
    :rdfs/label "date time stamp",
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :xsd/dateTimeStamp,
                       :owl/onProperty  :cmns-dt/hasDateTimeStampValue,
                       :rdf/type        :owl/Restriction}
@@ -122,26 +126,26 @@
    :rdf/type        [:cmns-dt/ExplicitDuration
                      :owl/NamedIndividual
                      :cmns-dt/Duration
-                     :cmns-dt/TimeInterval
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :cmns-dt/hasDurationValue,
                       :rdf/type        :owl/Restriction}
                      :cmns-dt/ProperInterval
                      {:owl/onDataRange :xsd/string,
                       :owl/onProperty  :cmns-dt/hasDurationValue,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
-                     :cmns-dt/TemporalEntity],
-   :rdfs/label      #voc/lstr "day@en",
-   :skos/definition #voc/lstr "explicit period of 24 hours@en"})
+                     :cmns-dt/TemporalEntity
+                     :cmns-dt/TimeInterval],
+   :rdfs/label      #xsd/langString "day@en",
+   :skos/definition #xsd/langString "explicit period of 24 hours@en"})
 
 (def Duration
   "interval of time of some specific length"
   {:db/ident :cmns-dt/Duration,
    :rdf/type :owl/Class,
    :rdfs/label "duration",
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :cmns-dt/hasDurationValue,
                       :rdf/type        :owl/Restriction}
@@ -158,15 +162,15 @@
    :rdfs/label      "explicit date",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :cmns-dt/hasDateValue,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      :cmns-dt/Date
                      :cmns-dt/TimeInstant
-                     {:owl/maxQualifiedCardinality 1,
+                     :cmns-dt/TemporalEntity
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :cmns-dt/hasDateValue,
-                      :rdf/type        :owl/Restriction}
-                     :cmns-dt/TemporalEntity],
+                      :rdf/type        :owl/Restriction}],
    :skos/definition "date in which the 'has date value' property is required"})
 
 (def ExplicitDatePeriod
@@ -174,34 +178,34 @@
   {:db/ident :cmns-dt/ExplicitDatePeriod,
    :rdf/type :owl/Class,
    :rdfs/label "explicit date period",
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :cmns-dt/ExplicitDuration,
                       :owl/onProperty :cmns-dt/hasDuration,
                       :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :cmns-dt/hasStartDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :cmns-dt/hasEndDate,
                       :rdf/type       :owl/Restriction}
                      :cmns-dt/ProperInterval
                      :cmns-dt/DatePeriod
-                     {:owl/maxQualifiedCardinality 1,
-                      :owl/onClass    :cmns-dt/Duration,
-                      :owl/onProperty :cmns-dt/hasDuration,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     :cmns-dt/TimeInterval
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :cmns-dt/hasEndDate,
                       :rdf/type       :owl/Restriction}
-                     :cmns-dt/TimeInterval
-                     {:owl/maxQualifiedCardinality 1,
+                     :cmns-dt/TemporalEntity
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :cmns-dt/hasStartDate,
                       :rdf/type       :owl/Restriction}
-                     :cmns-dt/TemporalEntity],
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :owl/onClass    :cmns-dt/Duration,
+                      :owl/onProperty :cmns-dt/hasDuration,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "date period for which the start date, end date, and/or duration are required",
    :skos/note
@@ -214,15 +218,15 @@
    :rdfs/label "explicit duration",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :cmns-dt/hasDurationValue,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      :cmns-dt/ProperInterval
                      :cmns-dt/Duration
-                     {:owl/maxQualifiedCardinality 1,
+                     :cmns-dt/TimeInterval
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :xsd/string,
                       :owl/onProperty  :cmns-dt/hasDurationValue,
                       :rdf/type        :owl/Restriction}
-                     :cmns-dt/TimeInterval
                      :cmns-dt/TemporalEntity],
    :skos/definition
    "duration for which the 'has duration value' property must have a value",
@@ -232,7 +236,8 @@
 (def ProperInterval
   "time interval with a non-zero extent or duration"
   {:db/ident :cmns-dt/ProperInterval,
-   :dcterms/source "https://www.w3.org/TR/owl-time/#time:ProperInterval",
+   :dcterms/source {:rdfa/uri
+                    "https://www.w3.org/TR/owl-time/#time:ProperInterval"},
    :owl/disjointWith :cmns-dt/TimeInstant,
    :rdf/type :owl/Class,
    :rdfs/label "proper interval",
@@ -246,13 +251,14 @@
   {:db/ident        :cmns-dt/TemporalEntity,
    :rdf/type        :owl/Class,
    :rdfs/label      "temporal entity",
-   :rdfs/seeAlso    ["http://www.w3.org/2006/time#TemporalEntity"],
+   :rdfs/seeAlso    :time/TemporalEntity,
    :skos/definition "time interval or instant"})
 
 (def TimeInstant
   "temporal entity that is a member of a time scale, with no extent or duration"
-  {:cmns-av/adaptedFrom ["https://www.w3.org/TR/owl-time/#time:Instant"
-                         "https://www.omg.org/spec/DTV/"],
+  {:cmns-av/adaptedFrom [{:rdfa/uri
+                          "https://www.w3.org/TR/owl-time/#time:Instant"}
+                         {:rdfa/uri "https://www.omg.org/spec/DTV/"}],
    :cmns-av/synonym ["instant in time" "time point"],
    :db/ident :cmns-dt/TimeInstant,
    :rdf/type :owl/Class,
@@ -268,8 +274,9 @@
 
 (def TimeInterval
   "segment of the time axis, a location in time, with an extent or duration"
-  {:cmns-av/adaptedFrom ["https://www.omg.org/spec/DTV/"
-                         "https://www.w3.org/TR/owl-time/#time:Interval"],
+  {:cmns-av/adaptedFrom [{:rdfa/uri "https://www.omg.org/spec/DTV/"}
+                         {:rdfa/uri
+                          "https://www.w3.org/TR/owl-time/#time:Interval"}],
    :db/ident :cmns-dt/TimeInterval,
    :rdf/type :owl/Class,
    :rdfs/label "time interval",
@@ -289,7 +296,7 @@
    :rdfs/label "time of day",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :cmns-dt/hasTimeValue,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      :cmns-dt/TimeInstant
                      :cmns-dt/TemporalEntity],
@@ -442,7 +449,8 @@
   "associates based on prior spatial or temporal proximity; occurs before in a logical order or sequence"
   {:db/ident :cmns-dt/precedes,
    :dcterms/source
-   "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09, clause 3.2.24",
+   {:xsd/string
+    "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09, clause 3.2.24"},
    :rdf/type :owl/ObjectProperty,
    :rdfs/label "precedes",
    :skos/definition
@@ -452,7 +460,8 @@
   "associates based on subsequent spatial or temporal proximity; follows in a logical order or sequence"
   {:db/ident :cmns-dt/succeeds,
    :dcterms/source
-   "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09, clause 3.2.24",
+   {:xsd/string
+    "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09, clause 3.2.24"},
    :owl/inverseOf :cmns-dt/precedes,
    :rdf/type :owl/ObjectProperty,
    :rdfs/label "succeeds",

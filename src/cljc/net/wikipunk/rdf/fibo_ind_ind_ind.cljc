@@ -6,23 +6,32 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
    :dcterms/abstract
    "This ontology provides the concepts common to all market rates, indices and indicators; that is concepts descriptive of the numeric parameters themselves. These are modeled independently of the values they may take over time.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -67,29 +76,31 @@
 
 (def DailyAverageMarketRate
   "overall level of a given rate, calculated as the sum of some selected observed values of the rates for a particular reference rate, foreign exchange rate, lending rate, or other market rate divided by the number of samples collected over the course of a twenty-four (24) hour period for a specific date"
-  {:cmns-av/adaptedFrom "http://www.investopedia.com/terms/m/marketaverage.asp",
+  {:cmns-av/adaptedFrom
+   {:rdfa/uri "http://www.investopedia.com/terms/m/marketaverage.asp"},
    :db/ident :fibo-ind-ind-ind/DailyAverageMarketRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "daily average market rate",
    :rdfs/subClassOf [{:owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-ind-ind-ind/MarketRate
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :cmns-dt/CombinedDateTime,
-                      :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
-                      :rdf/type        :owl/Restriction}
                      :fibo-fnd-utl-alx/RatioValue
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/onDataRange :xsd/decimal,
+                      :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
                       :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :xsd/decimal,
-                      :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
-                      :owl/qualifiedCardinality 1,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onDataRange :cmns-dt/CombinedDateTime,
+                      :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
                       :rdf/type        :owl/Restriction}],
    :skos/definition
    "overall level of a given rate, calculated as the sum of some selected observed values of the rates for a particular reference rate, foreign exchange rate, lending rate, or other market rate divided by the number of samples collected over the course of a twenty-four (24) hour period for a specific date"})
@@ -99,25 +110,26 @@
   {:db/ident :fibo-ind-ind-ind/EndOfDayMarketRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "end-of-day market rate",
    :rdfs/subClassOf [{:owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-ind-ind-ind/MarketRate
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onDataRange :cmns-dt/CombinedDateTime,
-                      :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
-                      :rdf/type        :owl/Restriction}
                      :fibo-fnd-utl-alx/RatioValue
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/onDataRange :xsd/decimal,
+                      :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
                       :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onDataRange :xsd/decimal,
-                      :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
-                      :owl/qualifiedCardinality 1,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onDataRange :cmns-dt/CombinedDateTime,
+                      :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
                       :rdf/type        :owl/Restriction}],
    :skos/definition
    "value of a given market rate of the end of the business day for a specific date"})
@@ -128,7 +140,8 @@
    :owl/equivalentClass :fibo-be-fct-pub/Publisher,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"}})
 
 (def HistoricalPriceVolatility
   "historical volatility measure of past trading ranges of prices of underlying securities and indexes"
@@ -137,25 +150,26 @@
    :db/ident :fibo-ind-ind-ind/HistoricalPriceVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "historical price volatility",
    :rdfs/subClassOf [:fibo-ind-ind-ind/PriceVolatility
                      :fibo-ind-ind-ind/HistoricalVolatility
-                     :fibo-ind-ind-ind/Volatility
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-ind-ind-ind/PriceStructure,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-dt/hasDatePeriod,
-                      :owl/someValuesFrom :cmns-dt/DatePeriod,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/Dispersion
-                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
-                                    :fibo-fnd-utl-alx/StandardDeviation],
-                      :rdf/type    :owl/Class}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom
                       :fibo-fnd-dt-fd/DatedStructuredCollection,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :cmns-dt/hasDatePeriod,
+                      :owl/someValuesFrom :cmns-dt/DatePeriod,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-ind-ind-ind/PriceStructure,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
+                                    :fibo-fnd-utl-alx/StandardDeviation],
+                      :rdf/type    :owl/Class}
+                     :fibo-ind-ind-ind/Volatility],
    :skos/definition
    "historical volatility measure of past trading ranges of prices of underlying securities and indexes"})
 
@@ -165,20 +179,21 @@
    :db/ident :fibo-ind-ind-ind/HistoricalVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "historical volatility",
    :rdfs/subClassOf [:fibo-ind-ind-ind/Volatility
-                     {:owl/onProperty     :cmns-dt/hasDatePeriod,
-                      :owl/someValuesFrom :cmns-dt/DatePeriod,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/Dispersion
-                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
-                                    :fibo-fnd-utl-alx/StandardDeviation],
-                      :rdf/type    :owl/Class}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom
                       :fibo-fnd-dt-fd/DatedStructuredCollection,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :cmns-dt/hasDatePeriod,
+                      :owl/someValuesFrom :cmns-dt/DatePeriod,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
+                                    :fibo-fnd-utl-alx/StandardDeviation],
+                      :rdf/type    :owl/Class}],
    :skos/definition
    "measure of volatility that uses actual values for pricing, rates, and other measurements calculated over some prior period"})
 
@@ -187,25 +202,26 @@
   {:db/ident :fibo-ind-ind-ind/ImpliedPriceVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "implied price volatility",
    :rdfs/subClassOf [:fibo-ind-ind-ind/PriceVolatility
                      :fibo-ind-ind-ind/ImpliedVolatility
-                     :fibo-ind-ind-ind/Volatility
-                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
-                      :owl/someValuesFrom :fibo-ind-ind-ind/PriceStructure,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :cmns-dt/hasDatePeriod,
-                      :owl/someValuesFrom :cmns-dt/DatePeriod,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/Dispersion
-                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
-                                    :fibo-fnd-utl-alx/StandardDeviation],
-                      :rdf/type    :owl/Class}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom
                       :fibo-fnd-dt-fd/DatedStructuredCollection,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :cmns-dt/hasDatePeriod,
+                      :owl/someValuesFrom :cmns-dt/DatePeriod,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
+                      :owl/someValuesFrom :fibo-ind-ind-ind/PriceStructure,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
+                                    :fibo-fnd-utl-alx/StandardDeviation],
+                      :rdf/type    :owl/Class}
+                     :fibo-ind-ind-ind/Volatility],
    :skos/definition
    "measure of volatility that represents the expected fluctuations of an underlying stock or index over a specific time frame"})
 
@@ -215,20 +231,21 @@
    :db/ident :fibo-ind-ind-ind/ImpliedVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "implied volatility",
    :rdfs/subClassOf [:fibo-ind-ind-ind/Volatility
-                     {:owl/onProperty     :cmns-dt/hasDatePeriod,
-                      :owl/someValuesFrom :cmns-dt/DatePeriod,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/Dispersion
-                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
-                                    :fibo-fnd-utl-alx/StandardDeviation],
-                      :rdf/type    :owl/Class}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom
                       :fibo-fnd-dt-fd/DatedStructuredCollection,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :cmns-dt/hasDatePeriod,
+                      :owl/someValuesFrom :cmns-dt/DatePeriod,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
+                                    :fibo-fnd-utl-alx/StandardDeviation],
+                      :rdf/type    :owl/Class}],
    :skos/definition
    "measure of volatility that is a forward-looking metric used to calculate probability"})
 
@@ -237,21 +254,22 @@
   {:db/ident :fibo-ind-ind-ind/MarketRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "market rate",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
-                      :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [:fibo-fnd-utl-alx/RatioValue
+                     {:owl/onDataRange :xsd/decimal,
+                      :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
                       :rdf/type        :owl/Restriction}
-                     {:owl/onDataRange :xsd/decimal,
-                      :owl/onProperty  :fibo-fnd-acc-cur/hasRateValue,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type        :owl/Restriction}
-                     :fibo-fnd-utl-alx/RatioValue],
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-fnd-utl-alx/ScopedMeasure,
+                      :owl/onProperty :fibo-fnd-utl-alx/isValueOf,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "value of a rate established in the marketplace for a set of instruments or that describes the economic climate for an industry and/or political region (e.g., SOFR, Prime)",
    :skos/example
@@ -265,11 +283,12 @@
   {:db/ident :fibo-ind-ind-ind/MarketSpread,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "market spread",
    :rdfs/subClassOf [{:owl/onClass    :fibo-ind-ind-ind/MarketRate,
                       :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
-                      :owl/qualifiedCardinality 2,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 2,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-utl-alx/ScopedMeasure],
    :skos/definition
@@ -283,7 +302,8 @@
    :db/ident :fibo-ind-ind-ind/PriceStructure,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "price structure",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryPrice,
@@ -299,23 +319,24 @@
    :db/ident :fibo-ind-ind-ind/PriceVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "price volatility",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-ind-ind-ind/PriceStructure,
                       :rdf/type           :owl/Restriction}
                      :fibo-ind-ind-ind/Volatility
-                     {:owl/onProperty     :cmns-dt/hasDatePeriod,
-                      :owl/someValuesFrom :cmns-dt/DatePeriod,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-utl-alx/Dispersion
-                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
-                                    :fibo-fnd-utl-alx/StandardDeviation],
-                      :rdf/type    :owl/Class}
                      {:owl/onProperty :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom
                       :fibo-fnd-dt-fd/DatedStructuredCollection,
-                      :rdf/type :owl/Restriction}],
+                      :rdf/type :owl/Restriction}
+                     {:owl/onProperty     :cmns-dt/hasDatePeriod,
+                      :owl/someValuesFrom :cmns-dt/DatePeriod,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/unionOf [:fibo-fnd-utl-alx/Variance
+                                    :fibo-fnd-utl-alx/StandardDeviation],
+                      :rdf/type    :owl/Class}],
    :skos/definition
    "statistical measure of the rate of change in pricing for a given security or market index",
    :skos/editorialNote
@@ -327,18 +348,20 @@
    :owl/equivalentClass :fibo-be-fct-pub/Publication,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"}})
 
 (def QuotedPrice
   "a monetary price quoted by some publisher on a given date"
   {:db/ident :fibo-ind-ind-ind/QuotedPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "quoted price",
    :rdfs/subClassOf [{:owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty  :fibo-ind-ind-ind/hasQuotationDateTime,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-acc-cur/MonetaryPrice],
    :skos/definition
@@ -351,7 +374,8 @@
    :db/ident :fibo-ind-ind-ind/TermStructure,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "term structure",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-ind-ind-ind/MarketRate,
@@ -365,7 +389,8 @@
   {:db/ident :fibo-ind-ind-ind/Volatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "volatility",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dt/hasDatePeriod,
                       :owl/someValuesFrom :cmns-dt/DatePeriod,
@@ -390,7 +415,8 @@
    :db/ident :fibo-ind-ind-ind/hasQuotationDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "has quotation date",
    :rdfs/range :cmns-dt/Date,
    :rdfs/subPropertyOf :cmns-dt/hasDate,
@@ -402,7 +428,8 @@
   {:db/ident :fibo-ind-ind-ind/hasQuotationDateTime,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "has quotation date and time",
    :rdfs/range :cmns-dt/CombinedDateTime,
    :rdfs/subPropertyOf :cmns-dt/hasObservedDateTime,
@@ -415,7 +442,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-ind-ind-ind/Volatility,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/"},
    :rdfs/label "is volatility of",
    :rdfs/subPropertyOf :cmns-cxtdsg/appliesTo,
    :skos/definition

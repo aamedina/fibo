@@ -6,19 +6,28 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for representing sole proprietorships -- i.e., organizations that are owned by an individual that is responsible for the liabilities of the organization.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/OwnershipAndControl/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/OwnershipAndControl/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/SoleProprietorships/SoleProprietorships/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/SoleProprietorships/SoleProprietorships/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -64,11 +73,16 @@
    :db/ident :fibo-be-sps-sps/SoleProprietor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships/"},
    :rdfs/label "sole proprietor",
-   :rdfs/subClassOf [{:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-be-oac-opty/hasInvestmentEntity,
+                      :owl/someValuesFrom :fibo-be-sps-sps/SoleProprietorship,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-be-oac-opty/EntityOwner
+                     {:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/onProperty
@@ -76,10 +90,6 @@
                                            :owl/someValuesFrom
                                            :fibo-be-sps-sps/SoleProprietorship,
                                            :rdf/type :owl/Restriction},
-                      :rdf/type           :owl/Restriction}
-                     :fibo-be-oac-opty/EntityOwner
-                     {:owl/onProperty     :fibo-be-oac-opty/hasInvestmentEntity,
-                      :owl/someValuesFrom :fibo-be-sps-sps/SoleProprietorship,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "party that owns a business, has the rights to all profits from that business and is considered a single entity (unincorporated) together with that business for tax and liability purposes"})
@@ -89,14 +99,15 @@
   {:db/ident :fibo-be-sps-sps/SoleProprietorship,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships/"},
    :rdfs/label "sole proprietorship",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-lcap/hasCapacity,
                       :owl/someValuesFrom :fibo-fnd-law-lcap/LiabilityCapacity,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :owl/onProperty :fibo-fnd-oac-oac/isOwnedAndControlledBy,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type :owl/Restriction}
                      :fibo-be-le-lp/LegalPerson
                      :fibo-be-le-lp/BusinessEntity],

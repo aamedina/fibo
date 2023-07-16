@@ -6,15 +6,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
    :dcterms/abstract
    "This ontology defines high-level concepts concerning roles, including the basic property whereby something has some role, along with the high-level concept of an agent in a role. The agent in role concept provides the basis for party role concepts in the Parties ontology and is framed as some entity defined specifically in respect to some role which it performs in some context.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -45,18 +49,19 @@
 (def AgentInRole
   "relative concept that ties an agent to a part they play in a given situational context"
   {:cmns-av/adaptedFrom
-   "OMG Property and Casualty Information Models, dtc/12-01-04, Annex A, Glossary of Data Model Terms and Definitions",
+   {:xsd/string
+    "OMG Property and Casualty Information Models, dtc/12-01-04, Annex A, Glossary of Data Model Terms and Definitions"},
    :db/ident :fibo-fnd-pty-rl/AgentInRole,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/"},
    :rdfs/label "agent-in-role",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-aap-agt/AutonomousAgent,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-pty-rl/ThingInRole
-                     {:owl/cardinality 1,
+                     {:owl/cardinality #xsd/nonNegativeInteger 1,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasIdentity,
                       :rdf/type        :owl/Restriction}],
    :skos/definition
@@ -67,9 +72,9 @@
   {:db/ident :fibo-fnd-pty-rl/ThingInRole,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/"},
    :rdfs/label "thing-in-role",
-   :rdfs/subClassOf {:owl/cardinality 1,
+   :rdfs/subClassOf {:owl/cardinality #xsd/nonNegativeInteger 1,
                      :owl/onProperty  :fibo-fnd-rel-rel/hasIdentity,
                      :rdf/type        :owl/Restriction},
    :skos/definition
@@ -82,7 +87,7 @@
    :rdf/type [:owl/FunctionalProperty :owl/ObjectProperty],
    :rdfs/domain :fibo-fnd-pty-rl/ThingInRole,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/"},
    :rdfs/label "is played by",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/hasIdentity,
    :skos/definition
@@ -95,7 +100,7 @@
   {:db/ident :fibo-fnd-pty-rl/playsRole,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/"},
    :rdfs/label "plays role",
    :rdfs/range :fibo-fnd-pty-rl/ThingInRole,
    :skos/definition

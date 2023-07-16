@@ -6,14 +6,15 @@
    "The Annotation Vocabulary provides commonly used annotation properties for documentation to facilitate understanding.",
    :dcterms/description
    "The Annotation Vocabulary provides commonly used annotation properties for documentation to facilitate understanding.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/references ["http://www.w3.org/2004/02/skos/core#"
-                        "http://purl.org/dc/terms/"],
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :dcterms/references [{:rdfa/uri "http://www.w3.org/2004/02/skos/core#"}
+                        {:rdfa/uri "http://purl.org/dc/terms/"}],
    :dcterms/rights ["Copyright (c) 2022 Object Management Group, Inc."
                     "Copyright (c) 2022 EDM Council, Inc."],
    :dcterms/title "Commons Annotation Vocabulary",
    :owl/versionIRI
-   "https://www.omg.org/spec/Commons/20220501/AnnotationVocabulary/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/Commons/20221101/AnnotationVocabulary/"},
    :rdf/ns-prefix-map {"cmns-av"
                        "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
                        "dcterms" "http://purl.org/dc/terms/",
@@ -26,26 +27,31 @@
    :rdfa/prefix "cmns-av",
    :rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
    :rdfs/label "Annotation Vocabulary",
+   :skos/changeNote
+   "https://www.omg.org/spec/Commons/20220501/AnnotationVocabulary.rdf version of this ontology was modified to normalize the use of rdfs:isDefinedBy for SKOS and Dublin Core annotations (COMMONS-1).",
    :skos/note
    ["Note that any of the annotation properties provided in Dublin Core can be used in addition to those declared herein. However, Dublin Core terms that are not explicitly defined herein must be declared explicitly as annotation properties in the ontologies that use them."
     "The annotation properties defined below are derived from similar annotation vocabularies used in (1) the Object Management Group (OMG) specification metadata - see http://www.omg.org/techprocess/ab/SpecificationMetadata/, (2) annotations used in the Financial Industry Business Ontology (FIBO) - see https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/, and (3) other ontology efforts such as the NIST-sponsored Industrial Ontology Foundation (IOF)."
-    "The Annotation Vocabulary provides commonly used annotation properties for documentation to facilitate understanding."]}
+    "The Annotation Vocabulary provides commonly used annotation properties for documentation to facilitate understanding."
+    "https://www.omg.org/spec/Commons/20220501/AnnotationVocabulary.rdf version of this ontology was modified to normalize the use of rdfs:isDefinedBy for SKOS and Dublin Core annotations (COMMONS-1)."]}
   (:refer-clojure :exclude [symbol]))
 
 (def abbreviation
   "designation formed by omitting parts from the full form of a term that denotes the same concept"
   {:cmns-av/adaptedFrom
-   ["ISO 31-0 Quantities and units - General principles"
-    "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09"],
+   [{:xsd/string "ISO 31-0 Quantities and units - General principles"}
+    {:xsd/string
+     "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09"}],
    :cmns-av/explanatoryNote
    "The symbols for quantities are generally single letters of the Latin or Greek alphabet, sometimes with subscripts or other modifying signs. These letters, including those that are members of the Greek alphabet are not symbols for the purposes of this ontology, however, they are abbreviations. Expressions of chemical formulae may, however, include a combination of abbreviations and symbols, as needed to define a given quantity.",
    :db/ident :cmns-av/abbreviation,
    :dcterms/source
-   ["ISO 31-0 Quantities and units - General principles"
-    "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09"],
+   [{:xsd/string "ISO 31-0 Quantities and units - General principles"}
+    {:xsd/string
+     "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09"}],
    :rdf/type :owl/AnnotationProperty,
    :rdfs/label "abbreviation",
-   :rdfs/subPropertyOf [:cmns-av/synonym :rdfs/label :skos/altLabel],
+   :rdfs/subPropertyOf [:cmns-av/synonym :skos/altLabel :rdfs/label],
    :skos/definition
    "designation formed by omitting parts from the full form of a term that denotes the same concept",
    :skos/example "Chemical Symbols: H, O, Mg; Units of Measure: Km, Kg, G",
@@ -58,14 +64,16 @@
 (def acronym
   "abbreviation that is made up of the initial letters of the components of the full form of a term or proper name or from syllables of the full form"
   {:cmns-av/adaptedFrom
-   "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09",
+   {:xsd/string
+    "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09"},
    :db/ident :cmns-av/acronym,
    :dcterms/source
-   "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09",
+   {:xsd/string
+    "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09"},
    :rdf/type :owl/AnnotationProperty,
    :rdfs/label "acronym",
    :rdfs/subPropertyOf
-   [:cmns-av/abbreviation :rdfs/label :skos/altLabel :cmns-av/synonym],
+   [:cmns-av/abbreviation :skos/altLabel :cmns-av/synonym :rdfs/label],
    :skos/definition
    "abbreviation that is made up of the initial letters of the components of the full form of a term or proper name or from syllables of the full form",
    :skos/example "Examples of acronyms are: laser, ISO, GATT, UNESCO, UNICEF",
@@ -140,7 +148,7 @@
   {:db/ident :cmns-av/symbol,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/label "symbol",
-   :rdfs/subPropertyOf [:cmns-av/synonym :rdfs/label :skos/altLabel],
+   :rdfs/subPropertyOf [:cmns-av/synonym :skos/altLabel :rdfs/label],
    :skos/definition
    "abbreviation that is a design or mark, or other non-alpha-numeric character(s) conventionally used to represent something, such as a currency or mathematical sign or operator",
    :skos/note
@@ -149,10 +157,12 @@
 (def synonym
   "designation that can be substituted for the primary representation of something"
   {:cmns-av/adaptedFrom
-   "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09",
+   {:xsd/string
+    "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09"},
    :db/ident :cmns-av/synonym,
    :dcterms/source
-   "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09",
+   {:xsd/string
+    "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09"},
    :rdf/type :owl/AnnotationProperty,
    :rdfs/label "synonym",
    :rdfs/subPropertyOf [:skos/altLabel :rdfs/label],

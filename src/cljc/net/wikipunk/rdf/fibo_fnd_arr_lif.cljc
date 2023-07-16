@@ -6,19 +6,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
    :dcterms/abstract
    "This ontology defines a set of basic concepts for lifecycles, including the various stages and events that make up a given lifecycle, for use in describing product, trade, instrument, production, and other lifecycles in FIBO.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://www.omg.org/spec/Commons/Classifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Lifecycles/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
@@ -55,7 +59,8 @@
   {:db/ident :fibo-fnd-arr-lif/Lifecycle,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"},
    :rdfs/label "lifecycle",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-fnd-arr-lif/LifecycleStage,
@@ -77,7 +82,8 @@
   {:db/ident :fibo-fnd-arr-lif/LifecycleEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"},
    :rdfs/label "lifecycle event",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fnd-arr-lif/LifecycleStage,
@@ -93,7 +99,8 @@
   {:db/ident :fibo-fnd-arr-lif/LifecycleEventOccurrence,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"},
    :rdfs/label "lifecycle event occurrence",
    :rdfs/subClassOf [{:owl/onProperty :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom
@@ -101,7 +108,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-lif/LifecycleEvent,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-dt-oc/Occurrence],
    :skos/definition "realization of an event in a stage of a lifecycle"})
@@ -111,7 +118,8 @@
   {:db/ident :fibo-fnd-arr-lif/LifecycleOccurrence,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"},
    :rdfs/label "lifecycle occurrence",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-arr-lif/hasStage,
                       :owl/someValuesFrom
@@ -119,7 +127,7 @@
                       :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-lif/Lifecycle,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-dt-oc/Occurrence],
    :skos/definition "realization of a lifecycle"})
@@ -129,7 +137,8 @@
   {:db/ident :fibo-fnd-arr-lif/LifecycleStage,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"},
    :rdfs/label "lifecycle stage",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/isDefinedIn,
                       :owl/someValuesFrom :fibo-fnd-arr-lif/Lifecycle,
@@ -150,7 +159,8 @@
   {:db/ident :fibo-fnd-arr-lif/LifecycleStageOccurrence,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"},
    :rdfs/label "lifecycle stage occurrence",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/comprises,
                       :owl/someValuesFrom
@@ -161,7 +171,7 @@
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-lif/LifecycleStage,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-dt-oc/Occurrence],
    :skos/definition "realization of a phase in a given lifecycle"})
@@ -171,7 +181,8 @@
   {:db/ident :fibo-fnd-arr-lif/LifecycleStatus,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"},
    :rdfs/label "lifecycle status",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-arr-lif/hasStage,
                       :owl/someValuesFrom
@@ -186,7 +197,8 @@
   {:db/ident :fibo-fnd-arr-lif/hasLifecycle,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"},
    :rdfs/label "has lifecycle",
    :rdfs/range :fibo-fnd-arr-lif/Lifecycle,
    :rdfs/subPropertyOf :cmns-cls/isCharacterizedBy,
@@ -198,7 +210,8 @@
   {:db/ident :fibo-fnd-arr-lif/hasStage,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"},
    :rdfs/label "has stage",
    :rdfs/range {:owl/unionOf [:fibo-fnd-arr-lif/LifecycleStage
                               :fibo-fnd-arr-lif/LifecycleStageOccurrence],
@@ -214,7 +227,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-arr-lif/Lifecycle,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"},
    :rdfs/label "is lifecycle of",
    :rdfs/subPropertyOf :cmns-cls/characterizes,
    :skos/definition "relates a lifecycle to something it characterizes"})
@@ -228,7 +242,8 @@
                                :fibo-fnd-arr-lif/LifecycleStageOccurrence],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/"},
    :rdfs/label "is stage of",
    :rdfs/subPropertyOf :cmns-col/isPartOf,
    :skos/definition

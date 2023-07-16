@@ -6,36 +6,58 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
    :dcterms/abstract
    "This ontology defines indiividuals that represent swaps repositories and intermediaries, including and related schemes, registries, and authorities.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateControl/"
-    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Swaps/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/DerivativesBasics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateControl/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Swaps/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/DerivativesBasics/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
@@ -111,7 +133,8 @@
    :fibo-fnd-rel-rel/hasTag "5202500",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "BSDR LLC business entity identifier",
    :skos/definition
    "Delaware Division of Corporations business entity identifier for BSDR LLC"})
@@ -122,7 +145,8 @@
    :db/ident :fibo-der-drc-swpind/BSDRDateEstablished,
    :rdf/type [:cmns-dt/Date :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "BSDR date established",
    :skos/definition "date that BSDR LLC was established"})
 
@@ -136,7 +160,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/NewYork,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "BSDR LLC headquarters address",
    :skos/definition "headquarters address for BSDR LLC"})
 
@@ -154,9 +179,10 @@
    :rdf/type [:fibo-be-plc-plc/PrivateCompanyWithLimitedLiability
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "BSDR LLC US-DE",
-   :rdfs/seeAlso ["http://www.bloombergsdr.com/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.bloombergsdr.com/"},
    :skos/definition
    "BSDR LLC legal entity that is a Delaware Limited Liability Company"})
 
@@ -169,7 +195,8 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-der-drc-swpind/BSDRLLC-US-DE,
    :rdf/type [:fibo-der-drc-swp/SwapDataRepository :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "Bloomberg SDR",
    :skos/definition "BSDR swap data repository"})
 
@@ -186,7 +213,8 @@
               :fibo-fbc-fct-fse/SelfRegulatingOrganization
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "Chicago Mercantile Exchange",
    :skos/definition
    "Chicago Mercantile Exchange, established in 1848 as the world's first futures exchange based in Chicago"})
@@ -203,7 +231,8 @@
    :fibo-fnd-rel-rel/hasTag "3151025",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "Chicago Mercantile Exchange (CME) business entity identifier",
    :skos/definition
    "Delaware Division of Corporations business entity identifier for Chicago Mercantile Exchange, Inc."})
@@ -214,7 +243,8 @@
    :db/ident :fibo-der-drc-swpind/ChicagoMercantileExchangeDateEstablished,
    :rdf/type [:cmns-dt/Date :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "Chicago Mercantile Exchange (CME) date established",
    :skos/definition
    "date that Chicago Mercantile Exchange (CME) was established as a Delaware Corporation"})
@@ -229,7 +259,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/Illinois,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "Chicago Mercantile Exchange (CME) headquarters address",
    :skos/definition
    "headquarters address for Chicago Mercantile Exchange (CME)"})
@@ -246,9 +277,10 @@
    :fibo-fnd-rel-rel/hasLegalName "Chicago Mercantile Exchange, Inc.",
    :rdf/type [:fibo-be-le-cb/StockCorporation :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "Chicago Mercantile Exchange, Inc. US-DE",
-   :rdfs/seeAlso ["http://www.cmegroup.com/company/cme.html"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.cmegroup.com/company/cme.html"},
    :skos/definition
    "Chicago Mercantile Exchange legal entity that is a Delaware Corporation"})
 
@@ -262,7 +294,8 @@
    :fibo-der-drc-swpind/DTCCDataRepositoryLLC-US-NY,
    :rdf/type [:fibo-der-drc-swp/SwapDataRepository :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "DTCC Data Repository",
    :skos/definition "DTCC Data Repository"})
 
@@ -277,7 +310,8 @@
    :fibo-fnd-rel-rel/hasTag "4156912",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "business entity identifier for DTCC Data Repository (U.S) LLC",
    :skos/definition
    "New York State Division of Corporations business entity identifier for DTCC Data Repository (U.S.) LLC"})
@@ -288,7 +322,8 @@
    :db/ident :fibo-der-drc-swpind/DTCCDataRepositoryDateEstablished,
    :rdf/type [:cmns-dt/Date :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "DTCC Data Repository (U.S) LLC date established",
    :skos/definition "date that DTCC Data Repository (U.S) LLC was established"})
 
@@ -302,7 +337,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/NewYork,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "DTCC Data Repository (U.S) LLC headquarters address",
    :skos/definition "headquarters address for DTCC Data Repository (U.S) LLC"})
 
@@ -321,10 +357,11 @@
    :rdf/type [:owl/NamedIndividual
               :fibo-be-plc-plc/PrivateCompanyWithLimitedLiability],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "DTCC Data Repository (U.S) LLC US-NY",
    :rdfs/seeAlso
-   ["http://www.dtcc.com/about/businesses-and-subsidiaries/ddr-us"],
+   {:rdfa/uri "http://www.dtcc.com/about/businesses-and-subsidiaries/ddr-us"},
    :skos/definition
    "DTCC Data Repository (U.S) LLC legal entity that is a New York Limited Liability Company"})
 
@@ -336,7 +373,8 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-der-drc-swpind/ICETradeVaultLLC-US-DE,
    :rdf/type [:fibo-der-drc-swp/SwapDataRepository :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "ICE Trade Vault",
    :skos/definition "ICE Trade Vault"})
 
@@ -355,9 +393,10 @@
    :rdf/type [:owl/NamedIndividual
               :fibo-be-plc-plc/PrivateCompanyWithLimitedLiability],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "ICE Trade Vault, LLC US-DE",
-   :rdfs/seeAlso ["https://www.icetradevault.com/"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.icetradevault.com/"},
    :skos/definition
    "ICE Trade Vault, LLC legal entity that is a Delaware Limited Liability Company"})
 
@@ -372,7 +411,8 @@
    :fibo-fnd-rel-rel/hasTag "4960384",
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "business entity identifier for ICE Trade Vault, LLC",
    :skos/definition
    "Delaware Division of Corporations business entity identifier for ICE Trade Vault, LLC"})
@@ -383,7 +423,8 @@
    :db/ident :fibo-der-drc-swpind/ICETradeVaultLLCDateEstablished,
    :rdf/type [:cmns-dt/Date :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "ICE Trade Vault, LLC date established",
    :skos/definition "date that ICE Trade Vault, LLC was established"})
 
@@ -397,6 +438,7 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/Georgia,
    :rdf/type [:fibo-fnd-plc-adr/PhysicalAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdfs/label "ICE Trade Vault, LLC headquarters address",
    :skos/definition "headquarters address for ICE Trade Vault, LLC"})

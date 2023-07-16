@@ -6,18 +6,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
    :dcterms/abstract
    "This ontology defines high level concepts relating to jurisdictions for use in other FIBO ontology elements. This includes a general definition of jurisdiction along with some basic types of jurisdiction, along with the factors which distinguish one type of jurisdiction from another.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
@@ -55,12 +60,14 @@
 
 (def Jurisdiction
   "power of a court to adjudicate cases, issue orders, and interpret and apply the law with respect to some specific geographic area"
-  {:cmns-av/adaptedFrom "https://www.law.cornell.edu/wex/jurisdiction",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://www.law.cornell.edu/wex/jurisdiction"},
    :db/ident :fibo-fnd-law-jur/Jurisdiction,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
-   :rdfs/label #voc/lstr "jurisdiction@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/"},
+   :rdfs/label #xsd/langString "jurisdiction@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-jur/hasReach,
                       :owl/someValuesFrom :lcc-cr/GeographicRegion,
                       :rdf/type           :owl/Restriction}
@@ -70,15 +77,16 @@
 
 (def StatuteLaw
   "law enacted by a legislature"
-  {:cmns-av/adaptedFrom "https://www.law.cornell.edu/wex/statute",
+  {:cmns-av/adaptedFrom {:rdfa/uri "https://www.law.cornell.edu/wex/statute"},
    :cmns-av/explanatoryNote
    ["Statutes may originate with national, state legislatures or local municipalities. Statutory laws are subordinate to the higher constitutional laws of the land."
     "In the United States, statutes may also be called acts, such as the Civil Rights Act of 1964 or the Sarbanes-Oxley Act. Federal laws must be passed by both houses of Congress, the House of Representative and the Senate, and then usually require approval from the president before they can take effect."],
    :db/ident :fibo-fnd-law-jur/StatuteLaw,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
-   :rdfs/label #voc/lstr "statute law@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/"},
+   :rdfs/label #xsd/langString "statute law@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-cor/isInForceIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
@@ -92,7 +100,8 @@
    :owl/equivalentProperty :cmns-cxtdsg/isApplicableIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/"}})
 
 (def hasReach
   "indicates the geopolitical area covered by the jurisdiction"
@@ -100,7 +109,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-law-jur/Jurisdiction,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/"},
    :rdfs/label "has reach",
    :rdfs/range :lcc-cr/GeographicRegion,
    :skos/definition

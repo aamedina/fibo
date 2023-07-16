@@ -6,25 +6,37 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
    :dcterms/abstract
    "This ontology defines basic concepts such as payment, payee, payer, and payment schedule, extending the scheduling concepts from the Dates and Times module, among others.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/PaymentsAndSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/PaymentsAndSchedules/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -80,7 +92,8 @@
   {:db/ident :fibo-fnd-pas-psch/Payee,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/"},
    :rdfs/label "payee",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/onProperty
@@ -98,7 +111,8 @@
   {:db/ident :fibo-fnd-pas-psch/Payer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/"},
    :rdfs/label "payer",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-pas-psch/PaymentObligation,
                       :owl/onProperty    :fibo-fnd-agr-agr/hasObligation,
@@ -112,7 +126,8 @@
   {:db/ident :fibo-fnd-pas-psch/Payment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/"},
    :rdfs/label "payment",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pas-psch/hasPaymentAmount,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
@@ -126,15 +141,16 @@
   {:db/ident :fibo-fnd-pas-psch/PaymentEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/"},
    :rdfs/label "payment event",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-pas-psch/PaymentObligation,
                       :owl/onProperty :cmns-cxtdsg/appliesTo,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-pas-psch/Payment,
                       :owl/onProperty :fibo-fnd-rel-rel/involves,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-pas-pas/TransactionEvent],
    :skos/definition
@@ -145,17 +161,18 @@
   {:db/ident :fibo-fnd-pas-psch/PaymentObligation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/"},
    :rdfs/label "payment obligation",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-agr-ctr/Contract,
                       :owl/onProperty    :fibo-fnd-rel-rel/isConferredBy,
                       :rdf/type          :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
-                      :owl/someValuesFrom :fibo-fnd-pas-psch/Payee,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-fnd-agr-agr/Commitment
                      {:owl/onProperty     :fibo-fnd-agr-agr/isObligationOf,
                       :owl/someValuesFrom :fibo-fnd-pas-psch/Payer,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fnd-agr-agr/Commitment
+                     {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
+                      :owl/someValuesFrom :fibo-fnd-pas-psch/Payee,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-law-lcap/Duty],
    :skos/definition
@@ -168,7 +185,8 @@
   {:db/ident :fibo-fnd-pas-psch/PaymentSchedule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/"},
    :rdfs/label "payment schedule",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fnd-pas-psch/Payment,
@@ -185,7 +203,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pas-psch/Payment,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/"},
    :rdfs/label "fulfills obligation",
    :rdfs/range :fibo-fnd-pas-psch/PaymentObligation,
    :skos/definition
@@ -197,7 +216,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pas-psch/Payment,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/"},
    :rdfs/label "has payment amount",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
@@ -208,7 +228,8 @@
   {:db/ident :fibo-fnd-pas-psch/hasPaymentSchedule,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/"},
    :rdfs/label "has payment schedule",
    :rdfs/range :fibo-fnd-pas-psch/PaymentSchedule,
    :skos/definition "specifies the schedule for fulfillment of an obligation"})

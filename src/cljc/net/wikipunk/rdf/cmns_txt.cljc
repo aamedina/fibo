@@ -7,9 +7,11 @@
    "The text datatype ontology defines a custom datatype that combines language tagged and plain string values. This text datatype is useful in cases where it is not clear whether string values will be tagged or not, but where it is anticipated that multilingual strings might be appropriate.",
    :dcterms/contributor ["Elisa Kendall, Thematix Partners LLC"
                          "Evren Sirin, Stardog Union"],
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :owl/imports "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-   :owl/versionIRI "https://www.omg.org/spec/Commons/20220501/TextDatatype/",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :owl/imports {:rdfa/uri
+                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/"},
+   :owl/versionIRI {:rdfa/uri
+                    "https://www.omg.org/spec/Commons/20221101/TextDatatype/"},
    :rdf/ns-prefix-map
    {"cmns-av"  "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
@@ -23,14 +25,19 @@
    :rdfa/prefix "cmns-txt",
    :rdfa/uri "https://www.omg.org/spec/Commons/TextDatatype/",
    :rdfs/label "Commons Text Datatype Ontology",
+   :skos/changeNote
+   "The https://www.omg.org/spec/Commons/20220501/TextDatatype.rdf version of this ontology was modified to add a note to the Text datatype that makes a stronger statement about potential adverse reasoning consequences if used (COMMONS-18).",
    :skos/note
    "Note that custom datatypes are outside the OWL 2 RL profile and so its usage in applications may need to be commented out."})
 
 (def Text
   "datatype that maps to xsd:string and rdf:langString base types for string-valued data properties and annotations"
-  {:db/ident :cmns-txt/Text,
+  {:cmns-av/usageNote
+   "Commons users that depend on tools that lack support for rdf:langString may not want to use this datatype in their applications. Testing with specific reasoners, for example, is advised.",
+   :db/ident :cmns-txt/Text,
    :dcterms/source
-   "ISO/IEC 11179-3 Information technology - Metadata registries (MDR) - Registry metamodel and basic attributes, Third edition, 2013-02-15",
+   {:xsd/string
+    "ISO/IEC 11179-3 Information technology - Metadata registries (MDR) - Registry metamodel and basic attributes, Third edition, 2013-02-15"},
    :owl/equivalentClass {:owl/unionOf [:xsd/string :rdf/langString],
                          :rdf/type    :rdfs/Datatype},
    :rdf/type :rdfs/Datatype,

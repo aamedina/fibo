@@ -6,16 +6,19 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
    :dcterms/abstract
    "This ontology defines abstract concepts for representation of classification schemes that themselves are intended to permit the classification of arbitrary concepts into hierarchies (or partial orders) for use in other FIBO ontology elements.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"
-    "https://www.omg.org/spec/Commons/Classifiers/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/ClassificationSchemes/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
@@ -52,7 +55,8 @@
    :owl/equivalentClass :cmns-cls/ClassificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/"}})
 
 (def Classifier
   {:db/ident :fibo-fnd-arr-cls/Classifier,
@@ -60,24 +64,26 @@
    :owl/equivalentClass :cmns-cls/Classifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/"}})
 
 (def IndustrySectorClassificationScheme
   "system for allocating classifiers to organizations by industry sector"
   {:db/ident :fibo-fnd-arr-cls/IndustrySectorClassificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/"},
    :rdfs/label "industry sector classification scheme",
    :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/defines,
                       :owl/someValuesFrom
                       :fibo-fnd-arr-cls/IndustrySectorClassifier,
                       :rdf/type :owl/Restriction}
                      :cmns-cls/ClassificationScheme
+                     :fibo-fnd-arr-arr/Scheme
                      {:owl/allValuesFrom :cmns-cls/Classifier,
                       :owl/onProperty    :cmns-dsg/defines,
-                      :rdf/type          :owl/Restriction}
-                     :fibo-fnd-arr-arr/Scheme],
+                      :rdf/type          :owl/Restriction}],
    :skos/definition
    "system for allocating classifiers to organizations by industry sector",
    :skos/example
@@ -88,12 +94,13 @@
   {:db/ident :fibo-fnd-arr-cls/IndustrySectorClassifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/"},
    :rdfs/label "industry sector classifier",
    :rdfs/subClassOf [{:owl/onClass
                       :fibo-fnd-arr-cls/IndustrySectorClassificationScheme,
                       :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type :owl/Restriction}
                      :cmns-cls/Classifier],
    :skos/definition

@@ -6,32 +6,50 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
    :dcterms/abstract
    "This ontology defines general purpose concepts for representation of regulatory agencies, also known as regulatory authorities or regulators. Examples of financial industry regulatory agencies in the US include the Securities Exchange Commission, FINRA, and the FDIC, among others. The SEC and FINRA are both registration authorities and regulatory agencies. The FDIC is a regulatory agency and an insurer, and may be a registration authority for certain state-chartered banks in the US without bank holding companies.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -91,12 +109,14 @@
 (def Examiner
   "a party empowered as an official representative by a regulatory agency to investigate and review specified documents for accuracy and truthfulness"
   {:cmns-av/adaptedFrom
-   ["EDM Council"
-    "Black's Law Dictionary, see http://thelawdictionary.org/examiner/"],
+   [{:xsd/string "EDM Council"}
+    {:xsd/string
+     "Black's Law Dictionary, see http://thelawdictionary.org/examiner/"}],
    :db/ident :fibo-fbc-fct-rga/Examiner,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"},
    :rdfs/label "examiner",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -107,13 +127,13 @@
                          :rdf/type :owl/Restriction}
                         {:owl/onClass    :fibo-fbc-fct-rga/RegulatoryAgency,
                          :owl/onProperty :cmns-dsg/denotes,
-                         :owl/qualifiedCardinality 1,
+                         :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                          :rdf/type       :owl/Restriction}],
                        :rdf/type :owl/Class},
                       :rdf/type :owl/Restriction}
                      {:owl/onClass :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type :owl/Restriction}
                      :fibo-be-oac-exec/ResponsibleParty],
    :skos/definition
@@ -122,11 +142,13 @@
 (def GovernmentIssuedLicense
   "grant of permission needed to legally perform some task, provide some service, exercise a certain privilege, or pursue some business or occupation"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Business and Economics Terms, Fifth Edition, 2012",
+   {:xsd/string
+    "Barron's Dictionary of Business and Economics Terms, Fifth Edition, 2012"},
    :db/ident :fibo-fbc-fct-rga/GovernmentIssuedLicense,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"},
    :rdfs/label "government-issued license",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
@@ -140,7 +162,8 @@
   {:db/ident :fibo-fbc-fct-rga/RegulationIdentificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"},
    :rdfs/label "regulation identification scheme",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasMember,
                       :owl/someValuesFrom
@@ -155,44 +178,47 @@
   {:db/ident :fibo-fbc-fct-rga/RegulationIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"},
    :rdfs/label "regulation identifier",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-law-lcap/Regulation,
                       :owl/onProperty :cmns-id/identifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass
                       :fibo-fbc-fct-rga/RegulationIdentificationScheme,
                       :owl/onProperty :cmns-col/isMemberOf,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type :owl/Restriction}
                      :cmns-id/Identifier],
    :skos/definition "an identifier associated with a regulation"})
 
 (def RegulatoryAgency
   "public authority or government agency responsible for exercising authority over something in a regulatory or supervisory capacity"
-  {:cmns-av/adaptedFrom ["http://en.wikipedia.org/wiki/Regulatory_agency"
-                         "http://www.thefreedictionary.com/regulatory+agency"],
+  {:cmns-av/adaptedFrom
+   [{:rdfa/uri "http://en.wikipedia.org/wiki/Regulatory_agency"}
+    {:rdfa/uri "http://www.thefreedictionary.com/regulatory+agency"}],
    :cmns-av/explanatoryNote
    "Typically, a regulatory agency is chartered to protect some constituancy, (e.g., investors in the financial industry), to ensure the fairness and integrity of some market (e.g., the securities market), and fair and safe business practices among the service providers in that market.",
    :cmns-av/synonym ["regulator" "regulatory authority" "regulatory body"],
    :db/ident :fibo-fbc-fct-rga/RegulatoryAgency,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"},
    :rdfs/label "regulatory agency",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-fct-rga/GovernmentIssuedLicense,
-                      :owl/onProperty :fibo-fnd-rel-rel/issues,
-                      :rdf/type       :owl/Restriction}
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/provides,
+                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryService,
+                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-pas-pas/ServiceProvider
                      {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/provides,
-                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryService,
-                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-fbc-fct-rga/GovernmentIssuedLicense,
+                      :owl/onProperty :fibo-fnd-rel-rel/issues,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}],
@@ -206,7 +232,8 @@
   {:db/ident :fibo-fbc-fct-rga/RegulatoryCapacity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"},
    :rdfs/label "regulatory capacity",
    :rdfs/subClassOf :fibo-fnd-law-lcap/LegalCapacity,
    :skos/definition
@@ -219,7 +246,8 @@
    :db/ident :fibo-fbc-fct-rga/RegulatoryReport,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"},
    :rdfs/label "regulatory report",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/someValuesFrom {:owl/unionOf
@@ -238,7 +266,8 @@
   {:db/ident :fibo-fbc-fct-rga/RegulatoryService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"},
    :rdfs/label "regulatory service",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
@@ -250,15 +279,17 @@
 (def TaxAuthority
   "regulatory agency that has jurisdiction over the assessment, determination, collection, imposition and other aspects of any tax"
   {:cmns-av/adaptedFrom
-   ["https://www.collinsdictionary.com/dictionary/english/tax-authority"
-    "https://www.lawinsider.com/dictionary/tax-authority"],
+   [{:rdfa/uri
+     "https://www.collinsdictionary.com/dictionary/english/tax-authority"}
+    {:rdfa/uri "https://www.lawinsider.com/dictionary/tax-authority"}],
    :db/ident :fibo-fbc-fct-rga/TaxAuthority,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"},
    :rdfs/label "tax authority",
    :rdfs/subClassOf [:fibo-fbc-fct-rga/RegulatoryAgency
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/TaxIdentifier,
                       :owl/onProperty :fibo-fnd-rel-rel/issues,
                       :rdf/type       :owl/Restriction}
@@ -269,21 +300,21 @@
                      {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-pas-pas/ServiceProvider
                      {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/provides,
-                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryService,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fbc-fct-rga/GovernmentIssuedLicense,
-                      :owl/onProperty :fibo-fnd-rel-rel/issues,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-be-ge-ge/hasJurisdiction,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-pas-pas/ServiceProvider],
+                     {:owl/onProperty     :fibo-fnd-rel-rel/provides,
+                      :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryService,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-fbc-fct-rga/GovernmentIssuedLicense,
+                      :owl/onProperty :fibo-fnd-rel-rel/issues,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "regulatory agency that has jurisdiction over the assessment, determination, collection, imposition and other aspects of any tax"})
 
@@ -292,7 +323,8 @@
   {:db/ident :fibo-fbc-fct-rga/isRegulatedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"},
    :rdfs/label "is regulated by",
    :rdfs/range :fibo-fbc-fct-rga/RegulatoryAgency,
    :skos/definition
@@ -300,12 +332,14 @@
 
 (def regulates
   "has regulatory authority over or directs according to rule or law, typically an industry, organization, or product"
-  {:cmns-av/adaptedFrom "http://www.merriam-webster.com/dictionary/regulate",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "http://www.merriam-webster.com/dictionary/regulate"},
    :db/ident :fibo-fbc-fct-rga/regulates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-fct-rga/RegulatoryAgency,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/"},
    :rdfs/label "regulates",
    :skos/definition
    "has regulatory authority over or directs according to rule or law, typically an industry, organization, or product"})

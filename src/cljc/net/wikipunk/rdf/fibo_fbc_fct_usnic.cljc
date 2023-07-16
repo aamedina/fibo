@@ -3,25 +3,32 @@
   {:cmns-av/copyright "Copyright (c) 2023 EDM Council, Inc.",
    :dcterms/abstract
    "This ontology extends the US regulatory agencies ontology with a number of controlled vocabularies required for mapping FIBO to the National Information Center (NIC) Data Dictionary.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :dcterms/source
-   ["https://www.ffiec.gov/NPW"
-    "https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf"],
+   [{:rdfa/uri "https://www.ffiec.gov/NPW"}
+    {:rdfa/uri
+     "https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf"}],
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://www.omg.org/spec/Commons/Classifiers/"
-    "https://www.omg.org/spec/Commons/TextDatatype/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/TextDatatype/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
@@ -59,20 +66,22 @@
   {:db/ident :fibo-fbc-fct-usnic/NICEntityTypeClassifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   ["https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"],
+   [{:rdfa/uri
+     "https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"}],
    :rdfs/label "National Information Center (NIC) entity type classifier",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
+   [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
      :owl/onProperty :cmns-cls/classifies,
      :rdf/type       :owl/Restriction}
     :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
+    :cmns-cls/Classifier
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
-    :cmns-cls/Classifier
     :cmns-cds/CodeElement
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
@@ -88,23 +97,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - AGB",
    :skos/definition "term and code for an Agreement Corporation - Banking"})
 
@@ -115,23 +125,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - AGI",
    :skos/definition "term and code for an Agreement Corporation - Investment"})
 
@@ -142,23 +153,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - BHC",
    :skos/definition "term and code for a Bank Holding Company"})
 
@@ -169,23 +181,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - CPB",
    :skos/definition "term and code for a Cooperative Bank"})
 
@@ -196,23 +209,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - DBR",
    :skos/definition "term and code for a Domestic Branch of a Domestic Bank"})
 
@@ -223,23 +237,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - DEO",
    :skos/definition "term and code for a Domestic Entity Other"})
 
@@ -250,23 +265,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - DPS",
    :skos/definition "term and code for a Data Processing Servicer"})
 
@@ -277,23 +293,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - EBR",
    :skos/definition "term and code for an Edge Corporation - Domestic Branch"})
 
@@ -304,23 +321,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - EDB",
    :skos/definition "term and code for an Edge Corporation - Banking"})
 
@@ -331,23 +349,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - EDI",
    :skos/definition "term and code for an Edge Corporation - Investment"})
 
@@ -358,23 +377,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - FBH",
    :skos/definition
    "term and code for a Foreign Banking Organization as a Bank Holding Company"})
@@ -386,23 +406,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - FBK",
    :skos/definition "term and code for a Foreign Bank"})
 
@@ -413,23 +434,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - FBO",
    :skos/definition "term and code for a Foreign Banking Organization"})
 
@@ -440,23 +462,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - FCU",
    :skos/definition "term and code for a Federal Credit Union"})
 
@@ -467,23 +490,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - FEO",
    :skos/definition "term and code for a Foreign Entity Other"})
 
@@ -494,23 +518,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - FHD",
    :skos/definition
    "term and code for a Financial Holding Company / Bank Holding Company"})
@@ -522,23 +547,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - FHF",
    :skos/definition
    "term and code for a Financial Holding Company / Foreign Banking Organization"})
@@ -550,23 +576,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - FNC",
    :skos/definition "term and code for a Finance Company"})
 
@@ -577,23 +604,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - FSB",
    :skos/definition "term and code for a Federal Savings Bank"})
 
@@ -604,23 +632,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - IBK",
    :skos/definition
    "term and code for a International Bank of a U.S. Depository - Edge or Trust Co."})
@@ -632,23 +661,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - IBR",
    :skos/definition "term and code for a Foreign Branch of a U.S. Bank"})
 
@@ -659,23 +689,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - IFB",
    :skos/definition "term and code for an Insured Federal Branch of an FBO"})
 
@@ -686,23 +717,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - IHC",
    :skos/definition "term and code for an Intermediate Holding Company"})
 
@@ -713,23 +745,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - INB",
    :skos/definition
    "term and code for an International Non-bank Subs of Domestic Entities"})
@@ -741,23 +774,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - ISB",
    :skos/definition "term and code for an Insured State Branch of an FBO"})
 
@@ -768,23 +802,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - MTC",
    :skos/definition "term and code for a Non-deposit Trust Company - Member"})
 
@@ -795,23 +830,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - NAT",
    :skos/definition "term and code for a National Bank"})
 
@@ -822,23 +858,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - NMB",
    :skos/definition "term and code for a Non-member Bank"})
 
@@ -849,23 +886,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - NTC",
    :skos/definition
    "term and code for a Non-deposit Trust Company - Non-member"})
@@ -877,23 +915,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - NYI",
    :skos/definition "term and code for a New York Investment Company"})
 
@@ -904,23 +943,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - PST",
    :skos/definition
    "term and code for a Non-U.S. Branch managed by a U.S. Branch/Agency of a Foreign Bank for 002's reporting - Pseudo Twig"})
@@ -932,23 +972,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - REP",
    :skos/definition "term and code for a Representative Office"})
 
@@ -959,23 +1000,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - SAL",
    :skos/definition "term and code for a Savings & Loan Association"})
 
@@ -986,23 +1028,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - SBD",
    :skos/definition "term and code for a Securities Broker / Dealer"})
 
@@ -1013,23 +1056,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - SCU",
    :skos/definition "term and code for a State Credit Union"})
 
@@ -1040,23 +1084,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - SLHC",
    :skos/definition "term and code for a Savings and Loan Holding Company"})
 
@@ -1067,23 +1112,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - SMB",
    :skos/definition "term and code for a State Member Bank"})
 
@@ -1094,23 +1140,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - SSB",
    :skos/definition "term and code for a State Savings Bank"})
 
@@ -1121,23 +1168,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - TWG",
    :skos/definition
    "term and code for a Non-U.S. Branch managed by a U.S. Branch/Agency of a Foreign Bank - TWIG"})
@@ -1149,23 +1197,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - UFA",
    :skos/definition "term and code for an Uninsured Federal Agency of an FBO"})
 
@@ -1176,23 +1225,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - UFB",
    :skos/definition "term and code for an Uninsured Federal Branch of an FBO"})
 
@@ -1203,23 +1253,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - USA",
    :skos/definition "term and code for an Uninsured State Agency of an FBO"})
 
@@ -1230,23 +1281,24 @@
    :rdf/type
    [:fibo-fbc-fct-usnic/NICEntityTypeClassifier
     :owl/NamedIndividual
-    :cmns-cls/Classifier
     {:owl/hasValue
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :owl/onProperty :cmns-dsg/isDefinedIn,
      :rdf/type :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
-     :owl/onProperty :cmns-cls/classifies,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     {:owl/onProperty :cmns-col/isMemberOf,
      :owl/someValuesFrom
      :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
      :rdf/type :owl/Restriction}
+    :cmns-cls/Classifier
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
+     :owl/onProperty :cmns-cls/classifies,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary
     :cmns-cds/CodeElement],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdfs/label "NIC entity type classifier - USB",
    :skos/definition "term and code for an Uninsured State Branch of an FBO"})
 
@@ -1256,8 +1308,10 @@
    :fibo-fbc-fct-usnic/NationalInformationCenterClassificationSchemeAndCodeSet,
    :rdf/type :cmns-cls/ClassificationScheme,
    :rdfs/isDefinedBy
-   ["https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"],
+   [{:rdfa/uri
+     "https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"}],
    :rdfs/label
    "National Information Center (NIC) Classification Scheme And Code Set",
    :rdfs/subClassOf :cmns-cds/CodeSet,
@@ -1269,8 +1323,10 @@
   {:db/ident :fibo-fbc-fct-usnic/NationalInformationCenterControlledVocabulary,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   ["https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"],
+   [{:rdfa/uri
+     "https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"}],
    :rdfs/label "National Information Center (NIC) controlled vocabulary",
    :rdfs/subClassOf
    [{:owl/onProperty :cmns-col/isMemberOf,

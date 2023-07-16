@@ -6,24 +6,32 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
    :dcterms/abstract
    "This ontology defines high-level concepts for organizations and related terms, which is purposefully underspecified to facilitate mapping to specific organization ontologies, such as the W3C organization ontology, organization from a BMM or BPMN perspective, organization from a records management (RMS) perspective, and so forth.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/TextDatatype/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/TextDatatype/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -73,7 +81,8 @@
   {:db/ident :fibo-fnd-org-org/MemberBearingOrganization,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "member-bearing organization",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/onProperty :cmns-col/hasMember,
@@ -90,9 +99,11 @@
   {:db/ident :fibo-fnd-org-org/Membership,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
-   :rdfs/label #voc/lstr "membership@en",
-   :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#class-membership"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
+   :rdfs/label #xsd/langString "membership@en",
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.w3.org/TR/vocab-org/#class-membership"},
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-org-org/hasOrganizationMember,
                       :owl/someValuesFrom :fibo-fnd-org-org/OrganizationMember,
                       :rdf/type :owl/Restriction}
@@ -107,28 +118,30 @@
 (def Organization
   "collection of one or more people, or groups of people formed together into a community or other social, commercial or political structure to act, or that is designated to act, towards some purpose, such as to meet a need or pursue collective goals on a continuing basis"
   {:cmns-av/adaptedFrom
-   "https://www.iso.org/obp/ui/#iso:std:iso-iec:6523:-1:ed-1:v1:en",
+   {:rdfa/uri "https://www.iso.org/obp/ui/#iso:std:iso-iec:6523:-1:ed-1:v1:en"},
    :db/ident :fibo-fnd-org-org/Organization,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
-   :rdfs/label #voc/lstr "organization@en",
-   :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:Organization"],
-   :rdfs/subClassOf [:fibo-fnd-pty-pty/IndependentParty
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
+   :rdfs/label #xsd/langString "organization@en",
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.w3.org/TR/vocab-org/#org:Organization"},
+   :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-org-org/Organization,
+                      :owl/onProperty    :cmns-col/hasPart,
+                      :rdf/type          :owl/Restriction}
                      {:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty    :cmns-col/hasMember,
                       :rdf/type          :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-org-org/OrganizationName,
-                      :owl/onProperty :cmns-dsg/hasName,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-gao-obj/Goal,
                       :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
                       :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-org-org/Organization,
-                      :owl/onProperty    :cmns-col/hasPart,
-                      :rdf/type          :owl/Restriction}],
+                     :fibo-fnd-pty-pty/IndependentParty
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-fnd-org-org/OrganizationName,
+                      :owl/onProperty :cmns-dsg/hasName,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "collection of one or more people, or groups of people formed together into a community or other social, commercial or political structure to act, or that is designated to act, towards some purpose, such as to meet a need or pursue collective goals on a continuing basis",
    :skos/example
@@ -137,11 +150,12 @@
 (def OrganizationIdentificationScheme
   "identification scheme dedicated to the unique identification of organizations"
   {:cmns-av/adaptedFrom
-   "https://www.iso.org/obp/ui/#iso:std:iso-iec:6523:-1:ed-1:v1:en",
+   {:rdfa/uri "https://www.iso.org/obp/ui/#iso:std:iso-iec:6523:-1:ed-1:v1:en"},
    :db/ident :fibo-fnd-org-org/OrganizationIdentificationScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "organization identification scheme",
    :rdfs/subClassOf :cmns-id/IdentificationScheme,
    :skos/definition
@@ -150,20 +164,21 @@
 (def OrganizationIdentifier
   "identifier assigned to an organization within an organization identification scheme, and unique within that scheme"
   {:cmns-av/adaptedFrom
-   "https://www.iso.org/obp/ui/#iso:std:iso-iec:6523:-1:ed-1:v1:en",
+   {:rdfa/uri "https://www.iso.org/obp/ui/#iso:std:iso-iec:6523:-1:ed-1:v1:en"},
    :db/ident :fibo-fnd-org-org/OrganizationIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "organization identifier",
    :rdfs/subClassOf [{:owl/onClass
                       :fibo-fnd-org-org/OrganizationIdentificationScheme,
                       :owl/onProperty :cmns-col/isMemberOf,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-org-org/Organization,
                       :owl/onProperty :cmns-id/identifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :cmns-id/Identifier],
    :skos/definition
@@ -174,9 +189,10 @@
   {:db/ident :fibo-fnd-org-org/OrganizationMember,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "organization member",
-   :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:Role"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.w3.org/TR/vocab-org/#org:Role"},
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/allValuesFrom
                                            :fibo-fnd-org-org/Organization,
@@ -192,13 +208,14 @@
   {:db/ident :fibo-fnd-org-org/OrganizationName,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "organization name",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onDataRange :cmns-txt/Text,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasLegalName,
                       :rdf/type        :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-org-org/Organization,
                       :owl/onProperty :cmns-dsg/isNameOf,
                       :rdf/type       :owl/Restriction}
@@ -210,16 +227,17 @@
   "identifier allocated to a particular organizational sub-unit"
   {:cmns-av/abbreviation "OPI",
    :cmns-av/adaptedFrom
-   "https://www.iso.org/obp/ui/#iso:std:iso-iec:6523:-1:ed-1:v1:en",
+   {:rdfa/uri "https://www.iso.org/obp/ui/#iso:std:iso-iec:6523:-1:ed-1:v1:en"},
    :cmns-av/synonym "organization sub-unit identifier",
    :db/ident :fibo-fnd-org-org/OrganizationPartIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "organization part identifier",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-org-org/OrganizationalSubUnit,
                       :owl/onProperty :cmns-id/identifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :cmns-id/Identifier],
    :skos/definition
@@ -228,35 +246,37 @@
 (def OrganizationalSubUnit
   "any department, service, and other entity within a larger organization that only has full recognition within the context of that organization, but requires identification for some purpose"
   {:cmns-av/adaptedFrom
-   "https://www.iso.org/obp/ui/#iso:std:iso-iec:6523:-1:ed-1:v1:en",
+   {:rdfa/uri "https://www.iso.org/obp/ui/#iso:std:iso-iec:6523:-1:ed-1:v1:en"},
    :cmns-av/explanatoryNote
    "In other words, it is not a legal entity in its own right.",
    :cmns-av/synonym "organization part",
    :db/ident :fibo-fnd-org-org/OrganizationalSubUnit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "organizational sub-unit",
-   :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:OrganizationalUnit"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.w3.org/TR/vocab-org/#org:OrganizationalUnit"},
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-org-org/Organization,
                       :owl/onProperty    :cmns-col/isPartOf,
                       :rdf/type          :owl/Restriction}
                      :fibo-fnd-org-org/Organization
-                     {:owl/allValuesFrom :fibo-fnd-org-org/Organization,
-                      :owl/onProperty    :cmns-col/hasPart,
-                      :rdf/type          :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-gao-obj/Goal,
-                      :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
-                      :owl/onProperty    :cmns-col/hasMember,
-                      :rdf/type          :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-org-org/OrganizationName,
                       :owl/onProperty :cmns-dsg/hasName,
                       :rdf/type       :owl/Restriction}
-                     :fibo-fnd-pty-pty/IndependentParty],
+                     {:owl/allValuesFrom :fibo-fnd-org-org/Organization,
+                      :owl/onProperty    :cmns-col/hasPart,
+                      :rdf/type          :owl/Restriction}
+                     {:owl/allValuesFrom :fibo-fnd-pty-pty/IndependentParty,
+                      :owl/onProperty    :cmns-col/hasMember,
+                      :rdf/type          :owl/Restriction}
+                     :fibo-fnd-pty-pty/IndependentParty
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-fnd-gao-obj/Goal,
+                      :owl/onProperty :fibo-fnd-gao-obj/hasGoal,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "any department, service, and other entity within a larger organization that only has full recognition within the context of that organization, but requires identification for some purpose"})
 
@@ -267,10 +287,12 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-org/Membership,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "has membership role",
    :rdfs/range :fibo-fnd-org-org/MemberBearingOrganization,
-   :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:organization"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.w3.org/TR/vocab-org/#org:organization"},
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasActor,
    :skos/definition
    "identifies the organization acting in the role of having members in an organizational membership situation"})
@@ -282,10 +304,11 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-org/Membership,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "has organization member",
    :rdfs/range :fibo-fnd-org-org/OrganizationMember,
-   :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:member"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.w3.org/TR/vocab-org/#org:member"},
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasUndergoer,
    :skos/definition
    "indicates the party that is the member in an organizational membership situation"})
@@ -297,10 +320,12 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-org/Organization,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "has sub-unit",
    :rdfs/range :fibo-fnd-org-org/OrganizationalSubUnit,
-   :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:hasSubOrganization"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.w3.org/TR/vocab-org/#org:hasSubOrganization"},
    :rdfs/subPropertyOf :cmns-col/hasPart,
    :skos/definition "relates an organization to a part of that organization"})
 
@@ -310,7 +335,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-org/MemberBearingOrganization,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "is membership party in",
    :rdfs/range :fibo-fnd-org-org/Membership,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsIn,
@@ -323,10 +349,11 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-org/OrganizationMember,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "is organization member",
    :rdfs/range :fibo-fnd-org-org/Membership,
-   :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:role"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.w3.org/TR/vocab-org/#org:role"},
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/undergoes,
    :skos/definition
    "indicates the context of membership in which some party is an organization member"})
@@ -337,9 +364,11 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-org/OrganizationalSubUnit,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/"},
    :rdfs/label "is sub-unit of",
    :rdfs/range :fibo-fnd-org-org/Organization,
-   :rdfs/seeAlso ["https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.w3.org/TR/vocab-org/#org:subOrganizationOf"},
    :rdfs/subPropertyOf :cmns-col/isPartOf,
    :skos/definition "relates a part of an organization to the larger entity"})

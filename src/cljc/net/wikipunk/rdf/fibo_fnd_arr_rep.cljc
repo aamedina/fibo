@@ -6,18 +6,24 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
    :dcterms/abstract
    "This ontology defines the notion of a Report and related party concepts.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
@@ -57,34 +63,35 @@
    :db/ident :fibo-fnd-arr-rep/Report,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "report",
    :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
-                     {:owl/onProperty     :fibo-fnd-arr-rep/isReportedTo,
-                      :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
-                      :owl/someValuesFrom :fibo-fnd-arr-rep/ReportingParty,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :cmns-dt/DatePeriod,
+                      :owl/onProperty :fibo-fnd-arr-doc/hasReportingPeriod,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-arr-rep/Submitter,
                       :owl/onProperty :fibo-fnd-arr-rep/isSubmittedBy,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/ExplicitDate,
-                      :owl/onProperty :fibo-fnd-arr-rep/hasReportDate,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/DateTime,
                       :owl/onProperty :fibo-fnd-arr-rep/hasReportDateTime,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
+                      :owl/someValuesFrom :fibo-fnd-arr-rep/ReportingParty,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/PartyInRole,
                       :owl/onProperty :fibo-fnd-arr-rep/isSubmittedTo,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/DatePeriod,
-                      :owl/onProperty :fibo-fnd-arr-doc/hasReportingPeriod,
+                     {:owl/onProperty     :fibo-fnd-arr-rep/isReportedTo,
+                      :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :cmns-dt/ExplicitDate,
+                      :owl/onProperty :fibo-fnd-arr-rep/hasReportDate,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "document that provides a structured description of something, prepared on ad hoc, periodic, recurring, regular, or as required basis"})
@@ -94,7 +101,8 @@
   {:db/ident :fibo-fnd-arr-rep/ReportingParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "reporting party",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fnd-arr-rep/Report,
@@ -108,23 +116,24 @@
   {:db/ident :fibo-fnd-arr-rep/Request,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "request",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/DateTime,
-                      :owl/onProperty :fibo-fnd-arr-rep/hasRequestDateTime,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-fnd-dt-oc/Occurrence
-                     {:owl/onProperty     :fibo-fnd-arr-rep/isRequestedOf,
-                      :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-rep/isRequestedBy,
+   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-rep/isRequestedBy,
                       :owl/someValuesFrom :fibo-fnd-arr-rep/Requester,
                       :rdf/type           :owl/Restriction}
+                     :fibo-fnd-dt-oc/Occurrence
                      {:owl/onProperty     :fibo-fnd-dt-oc/exemplifies,
                       :owl/someValuesFrom :fibo-fnd-arr-rep/RequestActivity,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/onProperty     :fibo-fnd-arr-rep/isRequestedOf,
+                      :owl/someValuesFrom :fibo-fnd-pty-pty/PartyInRole,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :cmns-dt/DateTime,
+                      :owl/onProperty :fibo-fnd-arr-rep/hasRequestDateTime,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-dt/ExplicitDate,
                       :owl/onProperty :fibo-fnd-arr-rep/hasRequestDate,
                       :rdf/type       :owl/Restriction}],
@@ -136,7 +145,8 @@
   {:db/ident :fibo-fnd-arr-rep/RequestActivity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "request activity",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-rep/requests,
                       :owl/someValuesFrom :owl/Thing,
@@ -150,17 +160,19 @@
   {:db/ident :fibo-fnd-arr-rep/Requester,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
-   :rdfs/label #voc/lstr "requester@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
+   :rdfs/label #xsd/langString "requester@en",
    :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole,
-   :skos/definition #voc/lstr "party that asks for something@en"})
+   :skos/definition #xsd/langString "party that asks for something@en"})
 
 (def Submitter
   "party presenting something, such as a regulatory report"
   {:db/ident :fibo-fnd-arr-rep/Submitter,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "submitter",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-rep/submits,
                       :owl/someValuesFrom :fibo-fnd-arr-rep/Report,
@@ -173,52 +185,59 @@
   {:db/ident :fibo-fnd-arr-rep/hasReportDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
-   :rdfs/label #voc/lstr "has report date@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
+   :rdfs/label #xsd/langString "has report date@en",
    :rdfs/range :cmns-dt/ExplicitDate,
    :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
                         :fibo-fnd-arr-doc/hasDateOfIssuance],
-   :skos/definition #voc/lstr "date on which a report was issued@en"})
+   :skos/definition #xsd/langString "date on which a report was issued@en"})
 
 (def hasReportDateTime
   "date and time at which a report was issued"
   {:db/ident :fibo-fnd-arr-rep/hasReportDateTime,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
-   :rdfs/label #voc/lstr "has report date time@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
+   :rdfs/label #xsd/langString "has report date time@en",
    :rdfs/range :cmns-dt/DateTime,
    :rdfs/subPropertyOf :cmns-dt/hasDateTime,
-   :skos/definition #voc/lstr "date and time at which a report was issued@en"})
+   :skos/definition #xsd/langString
+                     "date and time at which a report was issued@en"})
 
 (def hasRequestDate
   "date on which a request was made"
   {:db/ident :fibo-fnd-arr-rep/hasRequestDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
-   :rdfs/label #voc/lstr "has request date@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
+   :rdfs/label #xsd/langString "has request date@en",
    :rdfs/range :cmns-dt/ExplicitDate,
    :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
-   :skos/definition #voc/lstr "date on which a request was made@en"})
+   :skos/definition #xsd/langString "date on which a request was made@en"})
 
 (def hasRequestDateTime
   "date and time at which a request was made"
   {:db/ident :fibo-fnd-arr-rep/hasRequestDateTime,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
-   :rdfs/label #voc/lstr "has request date time@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
+   :rdfs/label #xsd/langString "has request date time@en",
    :rdfs/range :cmns-dt/DateTime,
    :rdfs/subPropertyOf :cmns-dt/hasDateTime,
-   :skos/definition #voc/lstr "date and time at which a request was made@en"})
+   :skos/definition #xsd/langString
+                     "date and time at which a request was made@en"})
 
 (def isReportedTo
   "indicates the party to which something is reported"
   {:db/ident :fibo-fnd-arr-rep/isReportedTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "is reported to",
    :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
@@ -229,7 +248,8 @@
   {:db/ident :fibo-fnd-arr-rep/isRequestedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "is requested by",
    :rdfs/range :fibo-fnd-arr-rep/Requester,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
@@ -240,7 +260,8 @@
   {:db/ident :fibo-fnd-arr-rep/isRequestedOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "is requested of",
    :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
@@ -252,7 +273,8 @@
    :owl/inverseOf :fibo-fnd-arr-rep/submits,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "is submitted by",
    :rdfs/range :fibo-fnd-arr-rep/Submitter,
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
@@ -263,7 +285,8 @@
   {:db/ident :fibo-fnd-arr-rep/isSubmittedTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "is submitted to",
    :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasPartyInRole,
@@ -275,7 +298,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-arr-rep/Report,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "reports on",
    :rdfs/subPropertyOf :fibo-fnd-arr-doc/isAbout,
    :skos/definition
@@ -286,7 +310,8 @@
   {:db/ident :fibo-fnd-arr-rep/requests,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "requests",
    :rdfs/subPropertyOf :fibo-fnd-arr-doc/isAbout,
    :skos/definition "asks for something"})
@@ -297,7 +322,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-arr-rep/Submitter,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/"},
    :rdfs/label "submits",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/provides,
    :skos/definition

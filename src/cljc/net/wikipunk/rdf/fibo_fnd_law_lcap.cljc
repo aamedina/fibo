@@ -6,26 +6,38 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
    :dcterms/abstract
    "This ontology defines high-level legal concepts related to legal responsibilities. The ontology defines things which are conferred upon some entity by some legal instrument, and elaborates this into a number of specific capacities, responsibilities and powers, each of which forms the basis for many of the concepts used elsewhere in FIBO in defining legal personhood, executive powers and the like.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Agreements/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
@@ -88,14 +100,15 @@
    :db/ident :fibo-fnd-law-lcap/Claim,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
-   :rdfs/label #voc/lstr "claim@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
+   :rdfs/label #xsd/langString "claim@en",
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -111,8 +124,9 @@
   {:db/ident :fibo-fnd-law-lcap/ContingentObligation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
-   :rdfs/label #voc/lstr "contingent obligation@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
+   :rdfs/label #xsd/langString "contingent obligation@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-law-lcap/isImpliedBy,
                       :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentRight,
                       :rdf/type           :owl/Restriction}
@@ -120,12 +134,12 @@
                       :owl/someValuesFrom :fibo-fnd-agr-agr/Obligor,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-law-lcap/Duty
-                     :fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-law-lcap/LegalConstruct
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -143,8 +157,9 @@
    :db/ident :fibo-fnd-law-lcap/ContingentRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
-   :rdfs/label #voc/lstr "contingent right@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
+   :rdfs/label #xsd/langString "contingent right@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-law-lcap/isConferredOn,
      :owl/someValuesFrom :fibo-fnd-pty-pty/IndependentParty,
@@ -153,12 +168,12 @@
      :owl/someValuesFrom :fibo-fnd-law-lcap/ContingentObligation,
      :rdf/type           :owl/Restriction}
     :fibo-fnd-law-lcap/Right
-    :fibo-fnd-law-lcap/LegalConstruct
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    :fibo-fnd-law-lcap/LegalConstruct
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
                                     :fibo-fnd-law-cor/Constitution
                                     :fibo-fnd-law-cor/Law],
@@ -173,15 +188,16 @@
   {:db/ident :fibo-fnd-law-lcap/ContractualCapability,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
-   :rdfs/label #voc/lstr "contractual capability@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
+   :rdfs/label #xsd/langString "contractual capability@en",
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalCapacity
-                     :fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-law-lcap/LegalConstruct
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -198,7 +214,8 @@
   {:db/ident :fibo-fnd-law-lcap/ContractualObligation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "contractual obligation",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-rel-rel/isConferredBy,
@@ -214,12 +231,19 @@
                                         :fibo-fnd-law-lcap/Regulation],
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
-    :fibo-fnd-law-lcap/LegalConstruct
-    {:owl/minQualifiedCardinality 0,
+    {:owl/onProperty     :fibo-fnd-rel-rel/isMandatedBy,
+     :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
+                                        :fibo-fnd-law-jur/StatuteLaw
+                                        :fibo-fnd-law-lcap/Regulation],
+                          :rdf/type    :owl/Class},
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    :fibo-fnd-law-lcap/Duty
+    :fibo-fnd-law-lcap/LegalConstruct
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
                                     :fibo-fnd-law-cor/Constitution
                                     :fibo-fnd-law-cor/Law],
@@ -228,13 +252,6 @@
      :rdf/type       :owl/Restriction}
     {:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
      :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
-     :rdf/type           :owl/Restriction}
-    :fibo-fnd-law-lcap/Duty
-    {:owl/onProperty     :fibo-fnd-rel-rel/isMandatedBy,
-     :owl/someValuesFrom {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
-                                        :fibo-fnd-law-jur/StatuteLaw
-                                        :fibo-fnd-law-lcap/Regulation],
-                          :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "obligation or duty that is specified in and imposed by a contract"})
@@ -244,29 +261,30 @@
   {:db/ident :fibo-fnd-law-lcap/ContractualOption,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "contractual option",
    :rdfs/subClassOf
    [:fibo-fnd-law-lcap/ContractualRight
-    :fibo-fnd-law-lcap/LegalConstruct
-    {:owl/minQualifiedCardinality 0,
+    {:owl/onProperty     :fibo-fnd-law-lcap/implies,
+     :owl/someValuesFrom :fibo-fnd-law-lcap/ContractualObligation,
+     :rdf/type           :owl/Restriction}
+    :fibo-fnd-law-lcap/Right
+    {:owl/onProperty     :fibo-fnd-rel-rel/isConferredBy,
+     :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
      :rdf/type       :owl/Restriction}
-    :fibo-fnd-law-lcap/Right
-    {:owl/minQualifiedCardinality 0,
+    :fibo-fnd-law-lcap/LegalConstruct
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
                                     :fibo-fnd-law-cor/Constitution
                                     :fibo-fnd-law-cor/Law],
                       :rdf/type    :owl/Class},
      :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
-     :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-law-lcap/implies,
-     :owl/someValuesFrom :fibo-fnd-law-lcap/ContractualObligation,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isConferredBy,
-     :owl/someValuesFrom :fibo-fnd-agr-ctr/Contract,
-     :rdf/type           :owl/Restriction}],
+     :rdf/type       :owl/Restriction}],
    :skos/definition
    "contractual right that may be exercised at some point in the future, such as an option to extend a contract, or other available but not obligatory rights as defined in the contract"})
 
@@ -275,7 +293,8 @@
   {:db/ident :fibo-fnd-law-lcap/ContractualRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "contractual right",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-rel-rel/isConferredBy,
@@ -285,12 +304,12 @@
      :owl/someValuesFrom :fibo-fnd-law-lcap/ContractualObligation,
      :rdf/type           :owl/Restriction}
     :fibo-fnd-law-lcap/Right
-    :fibo-fnd-law-lcap/LegalConstruct
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    :fibo-fnd-law-lcap/LegalConstruct
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
                                     :fibo-fnd-law-cor/Constitution
                                     :fibo-fnd-law-cor/Law],
@@ -307,15 +326,16 @@
    :db/ident :fibo-fnd-law-lcap/DelegatedLegalAuthority,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "delegated legal authority",
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalCapacity
-                     :fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-law-lcap/LegalConstruct
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -333,14 +353,15 @@
   {:db/ident :fibo-fnd-law-lcap/Duty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "duty",
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -358,14 +379,15 @@
   {:db/ident :fibo-fnd-law-lcap/LegalCapacity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "legal capacity",
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -381,9 +403,10 @@
   {:db/ident :fibo-fnd-law-lcap/LegalConstruct,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "legal construct",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -391,7 +414,7 @@
                                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-rel-rel/isConferredBy,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}],
@@ -405,7 +428,8 @@
   {:db/ident :fibo-fnd-law-lcap/LegalObligation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "legal obligation",
    :rdfs/subClassOf
    [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
@@ -424,12 +448,12 @@
                           :rdf/type    :owl/Class},
      :rdf/type           :owl/Restriction}
     :fibo-fnd-law-lcap/Duty
-    :fibo-fnd-law-lcap/LegalConstruct
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
      :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    :fibo-fnd-law-lcap/LegalConstruct
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    {:owl/unionOf [:fibo-fnd-agr-ctr/Contract
                                     :fibo-fnd-law-cor/Constitution
                                     :fibo-fnd-law-cor/Law],
@@ -445,7 +469,8 @@
    :db/ident :fibo-fnd-law-lcap/LegalRight,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "legal right",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
@@ -457,12 +482,12 @@
                       :owl/someValuesFrom :fibo-fnd-law-lcap/LegalObligation,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-law-lcap/Right
-                     :fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-law-lcap/LegalConstruct
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -478,15 +503,16 @@
   {:db/ident :fibo-fnd-law-lcap/LiabilityCapacity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
-   :rdfs/label #voc/lstr "liability capacity@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
+   :rdfs/label #xsd/langString "liability capacity@en",
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalCapacity
-                     :fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-law-lcap/LegalConstruct
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -501,28 +527,30 @@
 (def License
   "grant of permission needed to do something"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Business and Economics Terms, Fifth Edition, 2012",
+   {:xsd/string
+    "Barron's Dictionary of Business and Economics Terms, Fifth Edition, 2012"},
    :cmns-av/explanatoryNote
    "Note that in some cases, a license may also be considered an agreement or contract, depending on the specifics of the license and jurisdiction.",
    :db/ident :fibo-fnd-law-lcap/License,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "license",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
+   :rdfs/subClassOf [:fibo-fnd-arr-doc/LegalDocument
+                     {:owl/onClass    :cmns-dt/DatePeriod,
+                      :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/isIssuedBy,
                       :owl/someValuesFrom :fibo-fnd-law-lcap/Licensor,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-arr-doc/LegalDocument
                      {:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-fnd-law-lcap/Licensee,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/confers,
                       :owl/someValuesFrom :fibo-fnd-law-lcap/LegalCapacity,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/onClass    :cmns-dt/DatePeriod,
-                      :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition "grant of permission needed to do something"})
 
 (def LicenseIdentifier
@@ -530,11 +558,12 @@
   {:db/ident :fibo-fnd-law-lcap/LicenseIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "license identifier",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-law-lcap/License,
                       :owl/onProperty :cmns-id/identifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :cmns-id/Identifier],
    :skos/definition "an identifier associated with a license"})
@@ -542,11 +571,13 @@
 (def Licensee
   "a party to whom a license has been granted"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Business and Economics Terms, Fifth Edition, 2012",
+   {:xsd/string
+    "Barron's Dictionary of Business and Economics Terms, Fifth Edition, 2012"},
    :db/ident :fibo-fnd-law-lcap/Licensee,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "licensee",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
@@ -560,11 +591,13 @@
 (def Licensor
   "a party who grants a license"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Business and Economics Terms, Fifth Edition, 2012",
+   {:xsd/string
+    "Barron's Dictionary of Business and Economics Terms, Fifth Edition, 2012"},
    :db/ident :fibo-fnd-law-lcap/Licensor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "licensor",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fnd-rel-rel/issues,
@@ -586,15 +619,16 @@
   {:db/ident :fibo-fnd-law-lcap/LitigationCapacity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "litigation capacity",
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalCapacity
-                     :fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-law-lcap/LegalConstruct
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -609,12 +643,13 @@
   {:db/ident :fibo-fnd-law-lcap/Policy,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "policy",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :fibo-fnd-gao-obj/Strategy,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-law-lcap/LegalConstruct
                                         :fibo-fnd-gao-obj/Goal
@@ -632,7 +667,8 @@
    :db/ident :fibo-fnd-law-lcap/Regulation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "regulation",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
                       :owl/someValuesFrom :fibo-fnd-law-jur/Jurisdiction,
@@ -641,11 +677,11 @@
                       :owl/someValuesFrom :fibo-fnd-law-cor/Law,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -660,10 +696,11 @@
   {:db/ident :fibo-fnd-law-lcap/ReportingPolicy,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "reporting policy",
    :rdfs/subClassOf [:fibo-fnd-law-lcap/Policy
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-law-lcap/LegalConstruct
                                         :fibo-fnd-gao-obj/Goal
@@ -686,15 +723,16 @@
    :db/ident :fibo-fnd-law-lcap/Right,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "right",
-   :rdfs/seeAlso ["https://plato.stanford.edu/entries/rights/"],
+   :rdfs/seeAlso {:rdfa/uri "https://plato.stanford.edu/entries/rights/"},
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -712,15 +750,16 @@
   {:db/ident :fibo-fnd-law-lcap/SignatoryCapacity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "signatory capacity",
    :rdfs/subClassOf [:fibo-fnd-law-lcap/LegalCapacity
-                     :fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-law-lcap/isConferredOn,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-fnd-law-lcap/LegalConstruct
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    {:owl/unionOf
                                        [:fibo-fnd-agr-ctr/Contract
                                         :fibo-fnd-law-cor/Constitution
@@ -738,7 +777,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pty-pty/IndependentParty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "has capacity",
    :rdfs/range :fibo-fnd-law-lcap/LegalCapacity,
    :skos/definition
@@ -749,7 +789,8 @@
   {:db/ident :fibo-fnd-law-lcap/implements,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "implements",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/involves,
    :skos/definition "carries out or puts into effect, fulfills"})
@@ -759,7 +800,8 @@
   {:db/ident :fibo-fnd-law-lcap/implies,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "implies",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/involves,
    :skos/definition
@@ -771,7 +813,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-law-lcap/LegalCapacity,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "is capacity of",
    :rdfs/range :fibo-fnd-pty-pty/IndependentParty,
    :rdfs/subPropertyOf :fibo-fnd-law-lcap/isConferredOn,
@@ -785,7 +828,8 @@
   {:db/ident :fibo-fnd-law-lcap/isConferredOn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "is conferred on",
    :rdfs/range :fibo-fnd-pty-pty/IndependentParty,
    :skos/definition
@@ -797,7 +841,8 @@
    :owl/inverseOf :fibo-fnd-law-lcap/implements,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "is implemented by",
    :skos/definition
    "indicates something that is carried out, incorporated or put into effect by",
@@ -810,7 +855,8 @@
    :owl/inverseOf :fibo-fnd-law-lcap/implies,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "is implied by",
    :skos/definition
    "indicates something that is strongly suggested by something else, such as a logical consequence based on some set of observations, facts, or events"})
@@ -821,7 +867,8 @@
    :owl/inverseOf :fibo-fnd-law-lcap/licenses,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "is licensed by",
    :rdfs/range :fibo-fnd-pty-pty/PartyInRole,
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/isGovernedBy,
@@ -834,7 +881,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pty-pty/PartyInRole,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/"},
    :rdfs/label "licenses",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/governs,
    :skos/definition

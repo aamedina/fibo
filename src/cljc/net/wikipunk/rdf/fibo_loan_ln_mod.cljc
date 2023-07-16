@@ -6,14 +6,16 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/LoansGeneralModule",
    :dcterms/abstract
    "This module contains ontologies defining concepts that apply to most loans, including but not limited to applications.",
-   :dcterms/issued #inst "2018-03-31T22:00:00.000-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-02-03T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-03-31T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-02-03T18:00:00.000-05:00",
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/MetadataLOANLoansGeneral/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -58,12 +60,13 @@
      "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/"}
     {:rdfa/uri
      "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/"}],
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :dcterms/title
    ["FIBO LOAN Loans General Module"
     "Financial Industry Business Ontology (FIBO) Loans (LOAN) Loans General Module"],
    :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"},
    :rdfs/label "loans general module",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})

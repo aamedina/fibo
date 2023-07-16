@@ -6,18 +6,24 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
    :dcterms/abstract
    "This ontology defines high-level, control-related concepts, including basic concepts for control, along with a distinction between de jure and de facto control, the former being derived with reference to terms in the LegalCapacity ontology.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
@@ -60,7 +66,8 @@
    :db/ident :fibo-fnd-oac-ctl/Control,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "control",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-oac-ctl/involvesControlledThing,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
@@ -77,7 +84,8 @@
   {:db/ident :fibo-fnd-oac-ctl/ControlledThing,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "controlled thing",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-oac-ctl/isControlledThingIn,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/Control,
@@ -87,7 +95,7 @@
                       :rdf/type           :owl/Restriction}
                      {:owl/onDataRange :cmns-dt/CombinedDateTime,
                       :owl/onProperty :fibo-fnd-oac-ctl/isInitiallyControlledOn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-pty-pty/Undergoer],
    :skos/definition
@@ -98,7 +106,8 @@
   {:db/ident :fibo-fnd-oac-ctl/ControllingParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "controlling party",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-oac-ctl/isPartyControlling,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
@@ -120,16 +129,17 @@
    :owl/disjointWith :fibo-fnd-oac-ctl/DeJureControl,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "de facto control",
    :rdfs/subClassOf [:fibo-fnd-oac-ctl/Control
-                     {:owl/onProperty     :fibo-fnd-oac-ctl/hasPartyInControl,
-                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControllingParty,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-oac-ctl/involvesControlledThing,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-pty-pty/Situation],
+                     :fibo-fnd-pty-pty/Situation
+                     {:owl/onProperty     :fibo-fnd-oac-ctl/hasPartyInControl,
+                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControllingParty,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "control that exists informally and is accepted, although not formally recognized"})
 
@@ -138,17 +148,18 @@
   {:db/ident :fibo-fnd-oac-ctl/DeJureControl,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "de jure control",
    :rdfs/subClassOf [:fibo-fnd-oac-ctl/Control
                      :fibo-fnd-law-lcap/LegalConstruct
-                     {:owl/onProperty     :fibo-fnd-oac-ctl/hasPartyInControl,
-                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControllingParty,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty :fibo-fnd-oac-ctl/involvesControlledThing,
                       :owl/someValuesFrom :fibo-fnd-oac-ctl/ControlledThing,
                       :rdf/type :owl/Restriction}
-                     :fibo-fnd-pty-pty/Situation],
+                     :fibo-fnd-pty-pty/Situation
+                     {:owl/onProperty     :fibo-fnd-oac-ctl/hasPartyInControl,
+                      :owl/someValuesFrom :fibo-fnd-oac-ctl/ControllingParty,
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "control that exists as a matter of law, i.e., legitimate, legal control of something"})
 
@@ -158,7 +169,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-oac-ctl/ControlledThing,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "has controlling party",
    :rdfs/range :fibo-fnd-oac-ctl/ControllingParty,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
@@ -171,7 +183,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-oac-ctl/Control,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "has party in control",
    :rdfs/range :fibo-fnd-oac-ctl/ControllingParty,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasActor,
@@ -184,7 +197,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-oac-ctl/Control,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "involves controlled thing",
    :rdfs/range :fibo-fnd-oac-ctl/ControlledThing,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasUndergoer,
@@ -196,7 +210,8 @@
   {:db/ident :fibo-fnd-oac-ctl/isControlledPartyOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "is controlled party of",
    :rdfs/range :fibo-fnd-oac-ctl/ControllingParty,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/isDirectlyAffectedBy,
@@ -210,7 +225,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-oac-ctl/ControlledThing,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "is controlled thing in",
    :rdfs/range :fibo-fnd-oac-ctl/Control,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/undergoes,
@@ -224,7 +240,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-oac-ctl/ControllingParty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "is controlling party in",
    :rdfs/range :fibo-fnd-oac-ctl/Control,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsIn,
@@ -237,7 +254,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-oac-ctl/ControllingParty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "is controlling party of",
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/directlyAffects,
    :skos/definition
@@ -248,7 +266,8 @@
   {:db/ident :fibo-fnd-oac-ctl/isInitiallyControlledOn,
    :rdf/type [:owl/FunctionalProperty :owl/DatatypeProperty],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "is initially controlled on",
    :rdfs/range :cmns-dt/CombinedDateTime,
    :rdfs/subPropertyOf :cmns-dt/hasObservedDateTime,
@@ -262,7 +281,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-oac-ctl/ControllingParty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/"},
    :rdfs/label "is party controlling",
    :rdfs/range :fibo-fnd-oac-ctl/ControlledThing,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,

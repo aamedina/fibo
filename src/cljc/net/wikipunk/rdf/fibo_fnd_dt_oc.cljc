@@ -6,21 +6,28 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
    :dcterms/abstract
    "This ontology extends definitions of date and schedule concepts from the FinancialDates ontology with concepts defining occurrences (i.e., event-related concepts) for use in other FIBO ontologies.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/Classifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
@@ -69,30 +76,31 @@
    :db/ident :fibo-fnd-dt-oc/Occurrence,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "occurrence",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
-     :owl/onClass    :lcc-cr/Location,
-     :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
-     :rdf/type       :owl/Restriction}
-    {:owl/onClass    :fibo-fnd-dt-oc/OccurrenceKind,
+   [{:owl/onClass    :fibo-fnd-dt-oc/OccurrenceKind,
      :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
     {:owl/unionOf [{:owl/onClass    :cmns-dt/DatePeriod,
                     :owl/onProperty :fibo-fnd-dt-bd/holdsDuring,
-                    :owl/qualifiedCardinality 1,
+                    :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                     :rdf/type       :owl/Restriction}
                    {:owl/onClass    :cmns-dt/Date,
                     :owl/onProperty :fibo-fnd-dt-oc/hasEventDate,
-                    :owl/qualifiedCardinality 1,
+                    :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                     :rdf/type       :owl/Restriction}
                    {:owl/onDataRange :cmns-dt/CombinedDateTime,
                     :owl/onProperty  :fibo-fnd-dt-oc/hasEventDateValue,
-                    :owl/qualifiedCardinality 1,
+                    :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                     :rdf/type        :owl/Restriction}],
-     :rdf/type    :owl/Class}],
+     :rdf/type    :owl/Class}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :lcc-cr/Location,
+     :owl/onProperty :fibo-fnd-plc-loc/isLocatedAt,
+     :rdf/type       :owl/Restriction}],
    :skos/definition "happening of an OccurrenceKind, i.e., an event"})
 
 (def OccurrenceBasedDate
@@ -102,11 +110,12 @@
    :db/ident :fibo-fnd-dt-oc/OccurrenceBasedDate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "occurrence-based date",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-dt-oc/OccurrenceKind,
                       :owl/onProperty :fibo-fnd-dt-oc/isTriggeredBy,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-dt-fd/CalculatedDate],
    :skos/definition
@@ -121,24 +130,27 @@
    :db/ident :fibo-fnd-dt-oc/OccurrenceKind,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "occurrence kind",
-   :rdfs/subClassOf [{:owl/onProperty     :cmns-cls/classifies,
+   :rdfs/subClassOf [:cmns-cls/Classifier
+                     {:owl/onProperty     :cmns-cls/classifies,
                       :owl/someValuesFrom :fibo-fnd-dt-oc/Occurrence,
-                      :rdf/type           :owl/Restriction}
-                     :cmns-cls/Classifier],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "classifier that specifies the general nature of an occurrence (event)",
    :skos/example ["trade settlement" "loan origination"]})
 
 (def exemplifies
   "is a realization or example of"
-  {:cmns-av/adaptedFrom "http://www.merriam-webster.com/dictionary/exemplify",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "http://www.merriam-webster.com/dictionary/exemplify"},
    :db/ident :fibo-fnd-dt-oc/exemplifies,
    :rdf/type [:owl/FunctionalProperty :owl/ObjectProperty],
    :rdfs/domain :fibo-fnd-dt-oc/Occurrence,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "exemplifies",
    :rdfs/range :fibo-fnd-dt-oc/OccurrenceKind,
    :skos/definition "is a realization or example of"})
@@ -148,7 +160,8 @@
   {:db/ident :fibo-fnd-dt-oc/hasEventDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "has event date",
    :rdfs/range :cmns-dt/Date,
    :rdfs/subPropertyOf :cmns-dt/hasDate,
@@ -159,7 +172,8 @@
   {:db/ident :fibo-fnd-dt-oc/hasEventDateValue,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "has event date value",
    :rdfs/range :cmns-dt/CombinedDateTime,
    :skos/definition
@@ -171,7 +185,8 @@
    :owl/inverseOf :fibo-fnd-dt-oc/isInputTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "has input",
    :skos/definition
    "relates something (e.g. an occurrence) to something that is used as an input to some activity or process"})
@@ -181,7 +196,8 @@
   {:db/ident :fibo-fnd-dt-oc/hasOccurrence,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "has occurrence",
    :rdfs/range :fibo-fnd-dt-oc/Occurrence,
    :skos/definition
@@ -193,7 +209,8 @@
    :owl/inverseOf :fibo-fnd-dt-oc/isOutputFrom,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "has output",
    :skos/definition
    "relates something (e.g. an occurrence) to something that is the result of some activity or process"})
@@ -205,7 +222,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-dt-oc/OccurrenceKind,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "is exemplified by",
    :rdfs/range :fibo-fnd-dt-oc/Occurrence,
    :skos/definition "identifies examples of a given concept"})
@@ -215,7 +233,8 @@
   {:db/ident :fibo-fnd-dt-oc/isInputTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "is input to",
    :skos/definition
    "indicates a precondition, requirement, or other contribution (e.g., data) to some activity, process, system, report, analysis, etc."})
@@ -225,7 +244,8 @@
   {:db/ident :fibo-fnd-dt-oc/isOutputFrom,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "is output from",
    :skos/definition
    "indicates post condition or other product of some activity, process, system, report, analysis, etc."})
@@ -238,7 +258,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-dt-oc/OccurrenceBasedDate,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/"},
    :rdfs/label "is triggered by",
    :rdfs/range :fibo-fnd-dt-oc/OccurrenceKind,
    :skos/definition "is activated or initiated by"})

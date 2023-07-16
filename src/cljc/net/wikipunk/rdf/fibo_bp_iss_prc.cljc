@@ -5,31 +5,47 @@
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
    :dcterms/abstract
    "General ontology for the process by which securities are issued. Contains the process features common to all or most securities issuance. These are extended in the process ontologies that are specific to particular types of issuance",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/DebtIssuance/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/MuniIssuance/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/PaymentsAndSchedules/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceDocuments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/DebtIssuance/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/MuniIssuance/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/PaymentsAndSchedules/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceDocuments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceProcess/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BP/SecuritiesIssuance/IssuanceProcess/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -74,15 +90,16 @@
    :rdfa/prefix "fibo-bp-iss-prc",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "IssuanceProcess@en"})
+   :rdfs/label #xsd/langString "IssuanceProcess@en"})
 
 (def AllotmentInformation
   "Information about the allotment of quantities of the issue to different subscribers. This relates a single instrument allotment against the subscription amounts allotted to each Subscriber."
   {:db/ident :fibo-bp-iss-prc/AllotmentInformation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "allotment information@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "allotment information@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :cmns-col/comprises,
      :owl/someValuesFrom :fibo-bp-iss-prc/SubscriptionClosingInformation,
@@ -96,7 +113,7 @@
      :owl/someValuesFrom :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
      :rdf/type           :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Information about the allotment of quantities of the issue to different subscribers. This relates a single instrument allotment against the subscription amounts allotted to each Subscriber.@en"})
 
 (def Announcement
@@ -104,8 +121,9 @@
   {:db/ident :fibo-bp-iss-prc/Announcement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "announcement@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "announcement@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-bp-iss-muni/offeringRequestor,
                       :owl/someValuesFrom :fibo-bp-iss-prc/PotentialIssuer,
                       :rdf/type           :owl/Restriction}
@@ -116,41 +134,45 @@
   {:db/ident :fibo-bp-iss-prc/CompetitiveSaleMethod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "competitive sale method@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "competitive sale method@en",
    :rdfs/subClassOf [:fibo-bp-iss-prc/SecurityOfferingSaleMethod
                      :fibo-fnd-gao-obj/SalesStrategy],
-   :skos/definition #voc/lstr "No definition@en"})
+   :skos/definition #xsd/langString "No definition@en"})
 
 (def IssuanceProcessActivity
   "issuance process activity"
   {:db/ident :fibo-bp-iss-prc/IssuanceProcessActivity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "issuance process activity@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "issuance process activity@en",
    :rdfs/subClassOf :fibo-fnd-dt-oc/OccurrenceKind})
 
 (def IssuanceProgramme
   "A series of issuances over time."
-  {:cmns-av/explanatoryNote #voc/lstr "See for example MTN.@en",
+  {:cmns-av/explanatoryNote #xsd/langString "See for example MTN.@en",
    :db/ident :fibo-bp-iss-prc/IssuanceProgramme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "issuance programme@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "issuance programme@en",
    :rdfs/subClassOf {:owl/onProperty     :cmns-col/comprises,
                      :owl/someValuesFrom :fibo-sec-sec-iss/SecuritiesOffering,
                      :rdf/type           :owl/Restriction},
-   :skos/definition #voc/lstr "A series of issuances over time.@en"})
+   :skos/definition #xsd/langString "A series of issuances over time.@en"})
 
 (def IssueSubscriptionInformation
   "Information relating to the subscription of the issue."
   {:db/ident :fibo-bp-iss-prc/IssueSubscriptionInformation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "issue subscription information@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "issue subscription information@en",
    :rdfs/subClassOf [:fibo-bp-iss-prc/TradedInstrumentIssuanceProcessInformation
                      :fibo-fnd-arr-doc/Document
                      {:owl/onProperty :cmns-col/isPartOf,
@@ -158,15 +180,16 @@
                       :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
                       :rdf/type :owl/Restriction}],
    :skos/definition
-   #voc/lstr "Information relating to the subscription of the issue.@en"})
+   #xsd/langString "Information relating to the subscription of the issue.@en"})
 
 (def IssuedSecurityIssueInformation
-  "Information about the Issuance of a Security, which is maintained throughout the life of the Security."
+  "issued security issue information"
   {:db/ident :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "issued security issue information@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "issued security issue information@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/Security,
                       :rdf/type           :owl/Restriction}
@@ -176,9 +199,9 @@
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-arr-doc/Document],
    :skos/definition
-   [#voc/lstr
+   [#xsd/langString
      "Information about the Issuance of a Security, which is maintained throughout the life of the Security.@en"
-    #voc/lstr
+    #xsd/langString
      "FIBIM: \"Elements relating to issue preparation/bringing to market (also known as primary market or Initial Public Offering (IPO) issuance) through to issue date.\"@en"]})
 
 (def NegotiatedSaleMethod
@@ -186,38 +209,40 @@
   {:db/ident :fibo-bp-iss-prc/NegotiatedSaleMethod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "negotiated sale method@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "negotiated sale method@en",
    :rdfs/subClassOf [:fibo-bp-iss-prc/SecurityOfferingSaleMethod
                      :fibo-fnd-gao-obj/SalesStrategy],
-   :skos/definition #voc/lstr "No definition@en"})
+   :skos/definition #xsd/langString "No definition@en"})
 
 (def OfferingProcess
   "The process step of offering a security for issue. This is the making available of a new securities issue through an underwriting."
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "It is assumed that this exists for all security types as the precise issuance process is defined among the Offering terms. Terms which only exist for specific types of instrument are given as specialized variants of this class of Thing.@en",
    :db/ident :fibo-bp-iss-prc/OfferingProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "offering@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "offering@en",
    :rdfs/subClassOf
-   [{:owl/onProperty     :fibo-bp-iss-prc/requiredToMakeEligible,
+   [{:owl/onProperty     :fibo-bp-iss-muni/givesRiseTo,
+     :owl/someValuesFrom :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
+     :rdf/type           :owl/Restriction}
+    {:owl/onProperty     :fibo-bp-iss-prc/requiredToMakeEligible,
      :owl/someValuesFrom :fibo-sec-sec-iss/OfferingDocument,
      :rdf/type           :owl/Restriction}
-    :fibo-bp-iss-dbti/IssuanceProcessActivity
     {:owl/onProperty     :fibo-bp-iss-prc/hasDistributionType,
      :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingDistributionMethod,
      :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-bp-iss-muni/givesRiseTo,
-     :owl/someValuesFrom :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
-     :rdf/type           :owl/Restriction}
+    :fibo-bp-iss-dbti/IssuanceProcessActivity
     {:owl/onProperty     :fibo-bp-iss-prc/hasSaleMethod,
      :owl/someValuesFrom :fibo-bp-iss-prc/SecurityOfferingSaleMethod,
      :rdf/type           :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The process step of offering a security for issue. This is the making available of a new securities issue through an underwriting.@en"})
 
 (def PotentialIssuer
@@ -225,8 +250,9 @@
   {:db/ident :fibo-bp-iss-prc/PotentialIssuer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "potential issuer@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "potential issuer@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-prc/isPotentialIssuer,
                       :owl/someValuesFrom
                       :fibo-bp-iss-prc/SecuritiesIssuanceProcess,
@@ -239,12 +265,13 @@
   {:db/ident :fibo-bp-iss-prc/PotentialUnderwriter,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "potential underwriter@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "potential underwriter@en",
    :rdfs/subClassOf [:fibo-bp-iss-prc/SecuritiesIssuanceProcessActor
                      :fibo-fnd-pty-rl/AgentInRole],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The entity which will become the underwriter for an issue. Term origin:MBS PoC Reviews@en"})
 
 (def PrimaryIdentifierIssuer
@@ -252,11 +279,12 @@
   {:db/ident :fibo-bp-iss-prc/PrimaryIdentifierIssuer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "primary identifier issuer@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "primary identifier issuer@en",
    :rdfs/subClassOf :fibo-fnd-agr-ctr/ContractThirdParty,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The party which formally issues the primary security identifier to the security. Term origin:MBS PoC Reviews@en"})
 
 (def PrimarySecurityOfferingDistribution
@@ -264,12 +292,13 @@
   {:db/ident :fibo-bp-iss-prc/PrimarySecurityOfferingDistribution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "primary security offering distribution@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "primary security offering distribution@en",
    :rdfs/subClassOf [:fibo-bp-iss-prc/SecurityOfferingDistributionMethod
                      :fibo-fnd-gao-obj/DistributionStrategy],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The original sale of a company's securities, in which the proceeds from the sale are received directly by the company.@en"})
 
 (def RegistrationInformation
@@ -277,8 +306,9 @@
   {:db/ident :fibo-bp-iss-prc/RegistrationInformation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "registration information@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "registration information@en",
    :rdfs/subClassOf [:fibo-bp-iss-prc/TradedInstrumentIssuanceProcessInformation
                      :fibo-fnd-arr-doc/Document
                      {:owl/onProperty :cmns-col/isPartOf,
@@ -286,7 +316,7 @@
                       :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
                       :rdf/type :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Information relating to the registration of a registered security.@en"})
 
 (def SecondarySecurityOfferingDistribution
@@ -294,20 +324,23 @@
   {:db/ident :fibo-bp-iss-prc/SecondarySecurityOfferingDistribution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "secondary security offering distribution@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "secondary security offering distribution@en",
    :rdfs/subClassOf [:fibo-bp-iss-prc/SecurityOfferingDistributionMethod
                      :fibo-fnd-gao-obj/DistributionStrategy],
    :skos/definition
-   #voc/lstr "An Offering of a security which has been previously issued.@en"})
+   #xsd/langString
+    "An Offering of a security which has been previously issued.@en"})
 
 (def SecuritiesIssuanceProcess
   "The process by which a financial security is issued."
   {:db/ident :fibo-bp-iss-prc/SecuritiesIssuanceProcess,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "securities issuance process@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "securities issuance process@en",
    :rdfs/subClassOf
    [{:owl/onProperty :fibo-fnd-rel-rel/produces,
      :owl/someValuesFrom
@@ -322,7 +355,7 @@
     {:owl/onProperty     :fibo-bp-iss-muni/hasIssuanceGuarantor,
      :owl/someValuesFrom :fibo-bp-iss-prc/SecurityIssuanceGuarantor,
      :rdf/type           :owl/Restriction}],
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "The process by which a financial security is issued.@en"})
 
 (def SecuritiesIssuanceProcessActor
@@ -330,8 +363,9 @@
   {:db/ident :fibo-bp-iss-prc/SecuritiesIssuanceProcessActor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "securities issuance process actor@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "securities issuance process actor@en",
    :rdfs/subClassOf :fibo-fnd-pty-rl/AgentInRole})
 
 (def SecurityIssuanceGuarantor
@@ -339,8 +373,9 @@
   {:db/ident :fibo-bp-iss-prc/SecurityIssuanceGuarantor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "security issuance guarantor@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "security issuance guarantor@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-prc/isIssuanceGuarantor,
                       :owl/someValuesFrom
                       :fibo-bp-iss-prc/SecuritiesIssuanceProcess,
@@ -353,10 +388,11 @@
   {:db/ident :fibo-bp-iss-prc/SecurityOfferingDistributionMethod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "security offering distribution method@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "security offering distribution method@en",
    :rdfs/subClassOf :fibo-fnd-gao-obj/DistributionStrategy,
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "The distribution type of a securities Offering.@en"})
 
 (def SecurityOfferingSaleMethod
@@ -364,18 +400,21 @@
   {:db/ident :fibo-bp-iss-prc/SecurityOfferingSaleMethod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "security offering sale method@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "security offering sale method@en",
    :rdfs/subClassOf :fibo-fnd-gao-obj/SalesStrategy,
-   :skos/definition #voc/lstr "Method for sale of a new security offering.@en"})
+   :skos/definition #xsd/langString
+                     "Method for sale of a new security offering.@en"})
 
 (def Subscriber
   "subscriber"
   {:db/ident :fibo-bp-iss-prc/Subscriber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "subscriber@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "subscriber@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-bp-iss-muni/subscribesTo,
                       :owl/someValuesFrom
                       :fibo-bp-iss-muni/SecuritiesUnderwritingIssuanceProcess,
@@ -387,8 +426,9 @@
   {:db/ident :fibo-bp-iss-prc/SubscriptionClosingInformation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "subscription closing information@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "subscription closing information@en",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-bp-iss-prc/Subscriber,
                       :rdf/type           :owl/Restriction}
@@ -404,15 +444,17 @@
   {:db/ident :fibo-bp-iss-prc/TradedInstrumentIssuanceProcessInformation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "traded instrument issuance process information@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString
+                "traded instrument issuance process information@en",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/isPartOf,
                       :owl/someValuesFrom
                       :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-arr-doc/Document],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Information on one Security issue, arising from the Issuance Process. Note that one Issuance Process (Offering) may relate to more than on Issue, which itself may be the issue of more than one Traded Security.@en"})
 
 (def UnderwriterTakedown
@@ -420,27 +462,28 @@
   {:db/ident :fibo-bp-iss-prc/UnderwriterTakedown,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "underwriter takedown@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "underwriter takedown@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-bp-iss-prc/takenDownBy,
      :owl/someValuesFrom :fibo-bp-iss-dbti/MuniIssueUnderwriter,
      :rdf/type           :owl/Restriction}
-    {:owl/maxQualifiedCardinality 1,
+    {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
      :owl/onDataRange :xsd/integer,
      :owl/onProperty  :fibo-bp-iss-prc/underwriterTakedownShares,
      :rdf/type        :owl/Restriction}
     :fibo-bp-iss-prc/UnderwritingProcessDetails
+    :fibo-bp-iss-prc/TradedInstrumentIssuanceProcessInformation
     :fibo-fnd-arr-doc/Document
     {:owl/onProperty     :cmns-col/isPartOf,
      :owl/someValuesFrom :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
-     :rdf/type           :owl/Restriction}
-    :fibo-bp-iss-prc/TradedInstrumentIssuanceProcessInformation],
+     :rdf/type           :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Infomation on Takedown quantity of the security handled by the underwriter (that will be brought into DTC).@en",
    :skos/editorialNote
-   #voc/lstr
+   #xsd/langString
     "Question: Do securities issued through processes other than the one formally identified as \"Underwriting Process\", have Underwriters? Our research would indicate that agency and non agency MBS issuance processes are not \"Underwriting\" processes as defined for the DTCC Muni unwriting process, but they do have a step which involves identifying and appointing an underwriter, so the issue is underwritten. It may be that these two processes should be defined as types of (variants on) a more general Underwriting Process, which is itself more general than the one captured separately for DTCC Muni Issuance, which is where this term now lives. Modeling Note: Definition is too DTC specific, from DTCC earliy reviews on Muni process. Need to have a global definition and understanding of this term.@en"})
 
 (def UnderwritingProcessDetails
@@ -448,8 +491,9 @@
   {:db/ident :fibo-bp-iss-prc/UnderwritingProcessDetails,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "underwriting process details@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "underwriting process details@en",
    :rdfs/subClassOf [:fibo-bp-iss-prc/TradedInstrumentIssuanceProcessInformation
                      :fibo-fnd-arr-doc/Document
                      {:owl/onProperty :cmns-col/isPartOf,
@@ -457,7 +501,7 @@
                       :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
                       :rdf/type :owl/Restriction}],
    :skos/definition
-   #voc/lstr "Information specific to the Underwriting of the Issue.@en"})
+   #xsd/langString "Information specific to the Underwriting of the Issue.@en"})
 
 (def actualClosingDate
   "The Closing Date for the Issue, recorded after the event."
@@ -465,11 +509,13 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "actual closing date@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "actual closing date@en",
    :rdfs/range :cmns-dt/Date,
    :skos/definition
-   #voc/lstr "The Closing Date for the Issue, recorded after the event.@en"})
+   #xsd/langString
+    "The Closing Date for the Issue, recorded after the event.@en"})
 
 (def announcementDate
   "Date/time, as announced by the issuer, at which the securities were to be issued and subsequently were issued."
@@ -477,11 +523,12 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "announcement date@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "announcement date@en",
    :rdfs/range :cmns-dt/Date,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Date/time, as announced by the issuer, at which the securities were to be issued and subsequently were issued.@en"})
 
 (def describesAllotmentOf
@@ -490,8 +537,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/AllotmentInformation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "describes allotment of@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "describes allotment of@en",
    :rdfs/range :fibo-fbc-fi-fi/Security,
    :rdfs/subPropertyOf :fibo-fnd-arr-doc/isAbout})
 
@@ -501,11 +549,12 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/OfferingProcess,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "expected closing date@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "expected closing date@en",
    :rdfs/range :cmns-dt/Date,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The date on which the transfer of positions to underwriters is expected to take place. This date is provided by underwriters as part of an announcement.@en"})
 
 (def finalStateDescribedIn
@@ -514,8 +563,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-sec-iss/SecuritiesOffering,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "final state described in@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "final state described in@en",
    :rdfs/range :fibo-bp-iss-doc/FinalProspectus})
 
 (def firstTradeDate
@@ -524,11 +574,12 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "first trade date@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "first trade date@en",
    :rdfs/range :cmns-dt/Date,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The date of the first trade of the security in the secondary market.@en"})
 
 (def firstTradeDateAndTime
@@ -537,11 +588,12 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/OfferingProcess,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "first trade date and time@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "first trade date and time@en",
    :rdfs/range :cmns-dt/DateTime,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "First Date and Time a trade may be executed for this security. All times in Eastern Time Zone only. NOTE: This is a date in the future tense at the time of the Offering.@en"})
 
 (def firstTradeSettlementDate
@@ -550,11 +602,12 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "first trade settlement date@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "first trade settlement date@en",
    :rdfs/range :cmns-dt/Date,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The date the Issuer and Underwriter exchange money for bonds.@en"})
 
 (def formalAwardDateAndTime
@@ -563,11 +616,12 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/OfferingProcess,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "formal award date and time@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "formal award date and time@en",
    :rdfs/range :cmns-dt/DateTime,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Date and time the issuer formally accepts a bid for Competitive Issues or, the Date and Time the Bond Purchase Agreement is executed for Negotiated Issues. Time Zone: Include in date/time data or add a term for it?@en"})
 
 (def hasDistributionType
@@ -575,7 +629,8 @@
   {:db/ident :fibo-bp-iss-prc/hasDistributionType,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
    :rdfs/label "has distribution type"})
 
 (def hasPartiallyPaidIssuanceSchedule
@@ -584,11 +639,12 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "has partially paid issuance schedule@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "has partially paid issuance schedule@en",
    :rdfs/range :fibo-fnd-pas-psch/PaymentSchedule,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Partially paid issue: Schedule of partial payments and dates.@en"})
 
 (def hasSaleMethod
@@ -597,10 +653,11 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/OfferingProcess,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "has sale method@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "has sale method@en",
    :rdfs/range :fibo-bp-iss-prc/SecurityOfferingSaleMethod,
-   :skos/definition #voc/lstr "Sale Method of the security.@en"})
+   :skos/definition #xsd/langString "Sale Method of the security.@en"})
 
 (def isIssuanceGuarantor
   "is issuance guarantor"
@@ -608,8 +665,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/SecurityIssuanceGuarantor,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "is issuance guarantor@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "is issuance guarantor@en",
    :rdfs/range :fibo-bp-iss-prc/SecuritiesIssuanceProcess})
 
 (def isPotentialIssuer
@@ -618,8 +676,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/PotentialIssuer,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "is potential issuer@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "is potential issuer@en",
    :rdfs/range :fibo-bp-iss-prc/SecuritiesIssuanceProcess})
 
 (def issueNominalNumberOfUnits
@@ -628,10 +687,11 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "issue nominal number of units@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "issue nominal number of units@en",
    :rdfs/range :xsd/integer,
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "Total original quantity of securities issued.@en"})
 
 (def issueOfferingUnits
@@ -640,11 +700,12 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-sec-sec-iss/SecuritiesOffering,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "issue offering units@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "issue offering units@en",
    :rdfs/range :xsd/integer,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Quantity of all securities that is offered in an equity or Corporate Bond issue.@en"})
 
 (def minimumIssueSubscription
@@ -653,11 +714,12 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-bp-iss-prc/IssueSubscriptionInformation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "minimum issue subscription@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "minimum issue subscription@en",
    :rdfs/range :xsd/decimal,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Minimum or incremental denomination required for the transfer or change of ownership of a security.@en"})
 
 (def offerIssueSeries
@@ -666,11 +728,12 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-sec-sec-iss/SecuritiesOffering,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "series@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "series@en",
    :rdfs/range :xsd/string,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Uniquely identified collection of securities within an Issue with same Expected Closing Date. The text gives the Series Identifier within the Issuance process. There may be one or more Series within one Issue.@en"})
 
 (def overAlloted
@@ -679,11 +742,12 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-bp-iss-prc/SubscriptionClosingInformation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "over alloted@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "over alloted@en",
    :rdfs/range :xsd/boolean,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Whether the subscriber has been over-alloted the requested number of units. REVIEW: Not seen in data terms but implied elsewhere.@en"})
 
 (def requiredToMakeEligible
@@ -692,8 +756,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/OfferingProcess,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "required to make eligible@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "required to make eligible@en",
    :rdfs/range :fibo-sec-sec-iss/OfferingDocument})
 
 (def series
@@ -702,11 +767,12 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-bp-iss-prc/IssuedSecurityIssueInformation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "series@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "series@en",
    :rdfs/range :xsd/string,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Series identification for the individual Traded Financial Security.@en"})
 
 (def subscriptionAmount
@@ -715,11 +781,12 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-bp-iss-prc/SubscriptionClosingInformation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "subscription amount@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "subscription amount@en",
    :rdfs/range :xsd/integer,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Number of units of the issue that an individual subscriber is allocated.@en"})
 
 (def subscriptionPeriod
@@ -728,11 +795,12 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/IssueSubscriptionInformation,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "subscription period@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "subscription period@en",
    :rdfs/range :cmns-dt/DatePeriod,
    :skos/definition
-   #voc/lstr "Period during which the security can be subscribed to.@en"})
+   #xsd/langString "Period during which the security can be subscribed to.@en"})
 
 (def takenDownBy
   "taken down by"
@@ -740,8 +808,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-bp-iss-prc/UnderwriterTakedown,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "taken down by@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "taken down by@en",
    :rdfs/range :fibo-bp-iss-dbti/MuniIssueUnderwriter})
 
 (def underwriterTakedownShares
@@ -750,9 +819,10 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-bp-iss-prc/UnderwriterTakedown,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-   :rdfs/label #voc/lstr "underwriter takedown shares@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/"},
+   :rdfs/label #xsd/langString "underwriter takedown shares@en",
    :rdfs/range :xsd/integer,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "Takedown quantity of the security handled by the underwriter (that will be brought into DTC).@en"})

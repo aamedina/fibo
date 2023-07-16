@@ -6,18 +6,24 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/SECDomain",
    :dcterms/abstract
    "The Securities (SEC) Domain covers many of the concepts that are common to a wide variety of securities as well as those specific to equities and various debt instruments, including but not limited to bonds and a wide range of asset-backed securities. This ontology provides metadata about the Securities Domain and its contents.",
-   :dcterms/issued #inst "2018-03-31T22:00:00.000-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-02-03T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-03-31T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-02-03T18:00:00.000-05:00",
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/MetadataSECDebt/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/MetadataSECSecurities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/MetadataSECEquities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/MetadataSECFunds/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/MetadataSECDebt/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/MetadataSECSecurities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/MetadataSECEquities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/MetadataSECFunds/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/MetadataSEC/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/MetadataSEC/"},
    :rdf/ns-prefix-map
    {"cmns-av"      "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms"      "http://purl.org/dc/terms/",
@@ -73,17 +79,18 @@
     "John F. Gemski"
     "Mizuho"],
    :dcterms/creator
-   "https://wiki.edmcouncil.org/pages/viewpage.action?pageId=786661",
+   {:rdfa/uri
+    "https://wiki.edmcouncil.org/pages/viewpage.action?pageId=786661"},
    :dcterms/hasPart [:fibo-sec-eq-mod/EquitiesModule
                      :fibo-sec-sec-mod/SecuritiesModule
                      :fibo-sec-dbt-mod/DebtModule
                      :fibo-sec-fnd-mod/FundsModule],
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :dcterms/title
    ["FIBO SEC Domain"
     "Financial Industry Business Ontology (FIBO) Securities (SEC) Domain"],
    :rdf/type [:owl/NamedIndividual :fibo-fnd-utl-av/Module],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/"},
    :rdfs/label "securities domain",
-   :rdfs/seeAlso ["https://www.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://www.edmcouncil.org/fibo/"}})

@@ -6,18 +6,24 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/MetadataFBC/FBCDomain",
    :dcterms/abstract
    "This ontology provides metadata about the FIBO Financial Business and Commerce (FBC) Domain, which covers business concepts that are common to common to a number of finance domain areas, such as loans, securities, and corporate actions, including products and services, financial intermediaries, registrars and regulators, and financial instruments and products.",
-   :dcterms/issued #inst "2015-08-13T22:00:00.000-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-01-30T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2015-08-13T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-01-30T18:00:00.000-05:00",
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/MetadataFBCFunctionalEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/MetadataFBCProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/MetadataFBCFunctionalEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/MetadataFBCProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/MetadataFBCDebtAndEquities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/MetadataFBC/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/MetadataFBC/"},
    :rdf/ns-prefix-map
    {"cmns-av"      "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms"      "http://purl.org/dc/terms/",
@@ -71,17 +77,18 @@
     "Citigroup"
     "Thematix Partners LLC"],
    :dcterms/creator
-   "https://wiki.edmcouncil.org/pages/viewpage.action?pageId=786677",
+   {:rdfa/uri
+    "https://wiki.edmcouncil.org/pages/viewpage.action?pageId=786677"},
    :dcterms/hasPart [:fibo-fbc-pas-mod/FBCProductsAndServicesModule
                      :fibo-fbc-fi-mod/FinancialInstrumentsModule
                      :fibo-fbc-dae-mod/DebtAndEquitiesModule
                      :fibo-fbc-fct-mod/FunctionalEntitiesModule],
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :dcterms/title
    ["FIBO FBC Domain"
     "EDMC Financial Industry Business Ontology (FIBO) Financial Business and Commerce (FBC) Domain"],
    :rdf/type [:owl/NamedIndividual :fibo-fnd-utl-av/Module],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/MetadataFBC/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FBC/MetadataFBC/"},
    :rdfs/label "financial business and commerce domain",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})

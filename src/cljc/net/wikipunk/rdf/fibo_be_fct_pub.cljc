@@ -6,16 +6,21 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for publishers of information, including entities whose primary function is to publish, and entities (whether or not they are publishers in that sense) which are in the role of the publisher of some information. This ontology also includes the published information itself, i.e. the publication.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -53,12 +58,13 @@
    :db/ident :fibo-be-fct-pub/MarketDataProvider,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/"},
    :rdfs/label "market data provider",
    :rdfs/subClassOf [:fibo-be-fct-pub/Publisher
                      {:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition "publisher of data relevant to financial markets"})
@@ -68,7 +74,8 @@
   {:db/ident :fibo-be-fct-pub/Publication,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/"},
    :rdfs/label "publication",
    :rdfs/subClassOf :fibo-fnd-arr-doc/Document,
    :skos/definition
@@ -81,11 +88,12 @@
    :db/ident :fibo-be-fct-pub/Publisher,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/"},
    :rdfs/label "publisher",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-pty-pty/IndependentParty,
                       :owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition
@@ -97,7 +105,8 @@
    :owl/equivalentClass :fibo-be-fct-pub/Publisher,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/"}})
 
 (def hasPublisher
   "indicates the party in the role of issuing the information"
@@ -106,7 +115,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-fct-pub/Publication,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/"},
    :rdfs/label "has publisher",
    :rdfs/range :fibo-be-fct-pub/Publisher,
    :skos/definition
@@ -118,7 +128,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-fct-pub/Publication,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/"},
    :rdfs/label "is published by",
    :rdfs/range :fibo-fnd-pty-pty/IndependentParty,
    :skos/definition
@@ -130,7 +141,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-fct-pub/Publisher,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/"},
    :rdfs/label "publishes",
    :rdfs/range :fibo-be-fct-pub/Publication,
    :skos/definition "prepares and issues material for public consumption"})

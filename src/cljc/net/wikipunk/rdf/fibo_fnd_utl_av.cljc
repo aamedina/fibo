@@ -1,17 +1,19 @@
 (ns net.wikipunk.rdf.fibo-fnd-utl-av
-  "This vocabulary provides a set of metadata annotations for use in describing FIBO ontology elements. The annotations extend properties defined in the OMG's Commons Ontology Library (Commons) Annotation Vocabulary, in the Dublin Core Metadata Terms Vocabulary and in the W3C Simple Knowledge Organization System (SKOS) Vocabulary, and have been customized to suit the FIBO specification development process. Note that any of the original properties provided in Dublin Core and SKOS can be used in addition to the terms provided herein. However, any Dublin Core terms that are not explicitly defined as OWL annotation properties in this ontology or in any of its imports must be so declared in the ontologies that use them."
+  "This vocabulary provides a set of metadata annotations for use in describing FIBO ontology elements. The annotations extend properties defined in the OMG's Commons Ontology Library (Commons) Annotation Vocabulary, in the Dublin Core Metadata Terms Vocabulary and in the W3C Simple Knowledge Organization System (SKOS) Vocabulary, and have been customized to suit the FIBO specification development process. \n\nNote that any of the original properties provided in Dublin Core and SKOS can be used in addition to the terms provided herein. However, any Dublin Core terms that are not explicitly defined as OWL annotation properties in this ontology or in any of its imports must be so declared in the ontologies that use them."
   {:cmns-av/copyright ["Copyright (c) 2013-2023 EDM Council, Inc."
                        "Copyright (c) 2013-2023 Object Management Group, Inc."],
    :dcat/downloadURL
    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :dcterms/abstract
    "This vocabulary provides a set of metadata annotations for use in describing FIBO ontology elements. The annotations extend properties defined in the OMG's Commons Ontology Library (Commons) Annotation Vocabulary, in the Dublin Core Metadata Terms Vocabulary and in the W3C Simple Knowledge Organization System (SKOS) Vocabulary, and have been customized to suit the FIBO specification development process. \n\nNote that any of the original properties provided in Dublin Core and SKOS can be used in addition to the terms provided herein. However, any Dublin Core terms that are not explicitly defined as OWL annotation properties in this ontology or in any of its imports must be so declared in the ontologies that use them.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
-   :owl/imports ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-                 "https://www.omg.org/spec/Commons/Classifiers/"],
+   :owl/imports [{:rdfa/uri
+                  "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+                 {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
@@ -42,27 +44,29 @@
 (def Informative
   "entity that is considered deprecated but included for informational purposes because it is referenced by some provisional concept"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "Informative content will be removed as soon as all dependencies have been eliminated, thus FIBO users should not depend on it going forward.@en",
    :db/ident :fibo-fnd-utl-av/Informative,
    :rdf/type
    [:fibo-fnd-utl-av/MaturityLevel :owl/NamedIndividual :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"},
    :rdfs/label "informative",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "entity that is considered deprecated but included for informational purposes because it is referenced by some provisional concept@en"})
 
 (def MaturityLevel
   "classifier used to indicate the state of an artifact with respect to its development lifecycle"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "FIBO currently has three maturity levels: Informative, Provisional, and Release.@en",
    :db/ident :fibo-fnd-utl-av/MaturityLevel,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"},
    :rdfs/label "maturity level",
    :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
@@ -75,7 +79,8 @@
    :db/ident :fibo-fnd-utl-av/Module,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"},
    :rdfs/label "module",
    :rdfs/subClassOf :cmns-cls/Classifier,
    :skos/definition
@@ -84,30 +89,32 @@
 (def Provisional
   "entity that is considered to be under development"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "Provisional content is subject to change, and may change substantially prior to release. FIBO users should be aware that it is not dependable, but could be used for reference and as the basis for further work.@en",
    :db/ident :fibo-fnd-utl-av/Provisional,
    :rdf/type
    [:fibo-fnd-utl-av/MaturityLevel :owl/NamedIndividual :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"},
    :rdfs/label "provisional",
-   :skos/definition #voc/lstr
+   :skos/definition #xsd/langString
                      "entity that is considered to be under development@en"})
 
 (def Release
   "entity that is considered to be stable and mature from a development perspective"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "Release notes will be provided for any changes with respect to released content, and any revisions will be backwards compatible with the prior version to the degree possible.@en",
    :db/ident :fibo-fnd-utl-av/Release,
    :rdf/type
    [:fibo-fnd-utl-av/MaturityLevel :owl/NamedIndividual :cmns-cls/Classifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"},
    :rdfs/label "release",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "entity that is considered to be stable and mature from a development perspective@en"})
 
 (def abbreviation
@@ -116,7 +123,8 @@
    :owl/equivalentProperty :cmns-av/abbreviation,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
 
 (def adaptedFrom
   {:db/ident :fibo-fnd-utl-av/adaptedFrom,
@@ -124,15 +132,18 @@
    :owl/equivalentProperty :cmns-av/adaptedFrom,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
 
 (def commonDesignation
   "frequently used designation for an entity"
-  {:cmns-av/adaptedFrom "https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"},
    :db/ident :fibo-fnd-utl-av/commonDesignation,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"},
    :rdfs/label "common designation",
    :rdfs/subPropertyOf :cmns-av/synonym,
    :skos/definition "frequently used designation for an entity"})
@@ -142,7 +153,8 @@
   {:db/ident :fibo-fnd-utl-av/definitionOrigin,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"},
    :rdfs/label "definition origin",
    :rdfs/subPropertyOf :cmns-av/directSource,
    :skos/definition
@@ -154,14 +166,16 @@
    :owl/equivalentProperty :cmns-av/explanatoryNote,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
 
 (def hasMaturityLevel
   "links something to its state with respect to a development lifecycle"
   {:db/ident :fibo-fnd-utl-av/hasMaturityLevel,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"},
    :rdfs/label "has maturity level",
    :skos/definition
    "links something to its state with respect to a development lifecycle"})
@@ -172,29 +186,34 @@
    :owl/equivalentProperty :cmns-av/logicalDefinition,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
 
 (def modifiedBy
   {:db/ident :fibo-fnd-utl-av/modifiedBy,
    :owl/deprecated true,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
 
 (def modifiedOn
   {:db/ident :fibo-fnd-utl-av/modifiedOn,
    :owl/deprecated true,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
 
 (def preferredDesignation
   "recommended designation for an entity in some context"
-  {:cmns-av/adaptedFrom "https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://pe.usps.com/cpim/ftp/pubs/Pub28/pub28.pdf"},
    :db/ident :fibo-fnd-utl-av/preferredDesignation,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"},
    :rdfs/label "preferred designation",
    :rdfs/subPropertyOf :cmns-av/synonym,
    :skos/definition "recommended designation for an entity in some context"})
@@ -205,7 +224,8 @@
    :owl/equivalentProperty :cmns-av/symbol,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
 
 (def synonym
   {:db/ident :fibo-fnd-utl-av/synonym,
@@ -213,14 +233,16 @@
    :owl/equivalentProperty :cmns-av/synonym,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})
 
 (def termOrigin
   "document or other source from which a given term was taken directly; the range for this annotation can be a string, URI, or BibliographicCitation"
   {:db/ident :fibo-fnd-utl-av/termOrigin,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"},
    :rdfs/label "term origin",
    :rdfs/subPropertyOf :cmns-av/directSource,
    :skos/definition
@@ -232,4 +254,5 @@
    :owl/equivalentProperty :cmns-av/usageNote,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}})

@@ -6,18 +6,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
    :dcterms/abstract
    "This ontology defines concepts related to parametric schedules, including how to represent individual schedules as well as related date periods, explicit dates, and other concepts needed for parametric schedule representation.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/Designators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/ParametricSchedules/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
@@ -55,7 +60,8 @@
   {:db/ident :fibo-sec-sec-sch/AuctionDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "auction date rule",
    :rdfs/subClassOf :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
    :skos/definition
@@ -66,17 +72,18 @@
   {:db/ident :fibo-sec-sec-sch/CalculationPeriod,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "calculation period",
-   :rdfs/subClassOf [{:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :cmns-dt/hasStartDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :cmns-dt/hasEndDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :fibo-sec-sec-sch/CalculationPeriodLength,
                       :owl/onProperty :cmns-dt/hasDuration,
                       :rdf/type       :owl/Restriction}
@@ -89,7 +96,8 @@
   {:db/ident :fibo-sec-sec-sch/CalculationPeriodLength,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "calculation period length",
    :rdfs/subClassOf :cmns-dt/ExplicitDuration,
    :skos/definition
@@ -100,7 +108,8 @@
   {:db/ident :fibo-sec-sec-sch/DateReturnedBySettlementDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "date returned by settlement date rule",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-sec-sec-sch/SettlementDateRule,
                       :owl/onProperty    :cmns-dsg/isDefinedIn,
@@ -115,7 +124,8 @@
   {:db/ident :fibo-sec-sec-sch/DateReturnedByTradingDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "date returned by trading date rule",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-sec-sec-sch/TradingDateRule,
                       :owl/onProperty    :cmns-dsg/isDefinedIn,
@@ -131,11 +141,12 @@
    :db/ident :fibo-sec-sec-sch/FloatingRateNoteDate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "floating-rate note date",
    :rdfs/subClassOf [{:owl/onClass :fibo-sec-sec-sch/FloatingRateNoteDateRule,
                       :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayAdjustment,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-dt-fd/CalculatedDate],
    :skos/definition
@@ -147,7 +158,8 @@
    :db/ident :fibo-sec-sec-sch/FloatingRateNoteDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "floating-rate note date rule",
    :rdfs/subClassOf :fibo-fnd-dt-bd/BusinessDayAdjustment,
    :skos/definition
@@ -157,12 +169,14 @@
   "a trading date rule defined as the last trading day of an Australian Stock Exchange (ASX) 90-Day Bank Accepted Futures and Options product, one Sydney business day preceding the second Friday of the relevant settlement month"
   {:cmns-av/abbreviation "IMM AUD trading date rule",
    :cmns-av/adaptedFrom
-   "http://www.asx.com.au/documents/products/90-Day-bank-bill-futures-factsheet.pdf",
+   {:rdfa/uri
+    "http://www.asx.com.au/documents/products/90-Day-bank-bill-futures-factsheet.pdf"},
    :db/ident
    :fibo-sec-sec-sch/InternationalMoneyMarketAustralianDollarTradingDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label
    "International Money Market (IMM) Australian Dollar (AUD) trading date rule",
    :rdfs/subClassOf [:fibo-sec-sec-sch/TradingDateRule
@@ -177,7 +191,8 @@
    :fibo-sec-sec-sch/InternationalMoneyMarketCanadianDollarTradingDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label
    "International Money Market (IMM) Canadian Dollar (CAD) trading date rule",
    :rdfs/subClassOf [{:owl/hasValue   :fibo-fnd-dt-bd/BusinessDayPreceding,
@@ -197,7 +212,8 @@
    :fibo-sec-sec-sch/InternationalMoneyMarketNewZealandDollarTradingDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label
    "International Money Market (IMM) New Zealand Dollar (NZD) trading date rule",
    :rdfs/subClassOf [:fibo-sec-sec-sch/TradingDateRule
@@ -213,7 +229,8 @@
    :db/ident :fibo-sec-sec-sch/InternationalMoneyMarketSettlementDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "International Money Market (IMM) settlement date rule",
    :rdfs/subClassOf [:fibo-sec-sec-sch/SettlementDateRule
                      :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention],
@@ -225,7 +242,8 @@
   {:db/ident :fibo-sec-sec-sch/NonRollingDate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "non-rolling date",
    :rdfs/subClassOf :cmns-dt/ExplicitDate,
    :skos/definition
@@ -236,7 +254,8 @@
   {:db/ident :fibo-sec-sec-sch/ParametricSchedule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "parametric schedule",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-dt-fd/hasRecurrenceStartDate,
                       :owl/someValuesFrom
@@ -253,7 +272,8 @@
   {:db/ident :fibo-sec-sec-sch/PeriodicScheduledEventDate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "periodic scheduled event date",
    :rdfs/subClassOf [{:owl/unionOf [:fibo-fnd-dt-bd/DayOfMonth
                                     :fibo-fnd-dt-bd/DayOfWeek
@@ -270,7 +290,8 @@
   {:db/ident :fibo-sec-sec-sch/RuleDeterminedDate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "rule-determined date",
    :rdfs/subClassOf :fibo-fnd-dt-fd/CalculatedDate,
    :skos/definition "a date determined by the application of some rule"})
@@ -282,7 +303,8 @@
    :db/ident :fibo-sec-sec-sch/ScheduledCalculationPeriodEndEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "scheduled calculation period end event",
    :rdfs/subClassOf :fibo-fnd-dt-oc/OccurrenceKind,
    :skos/definition "the end date of a specific calculation period"})
@@ -294,7 +316,8 @@
    :db/ident :fibo-sec-sec-sch/ScheduledCalculationPeriodStartEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "scheduled calculation period start event",
    :rdfs/subClassOf :fibo-fnd-dt-oc/OccurrenceKind,
    :skos/definition "the start of a specific calculation period"})
@@ -304,7 +327,8 @@
   {:db/ident :fibo-sec-sec-sch/SettlementDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "settlement date rule",
    :rdfs/subClassOf :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
    :skos/definition
@@ -315,7 +339,8 @@
   {:db/ident :fibo-sec-sec-sch/TradingDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "trading date rule",
    :rdfs/subClassOf :fibo-fnd-dt-bd/BusinessRecurrenceIntervalConvention,
    :skos/definition
@@ -326,13 +351,14 @@
 (def USTreasuryBillAuctionDateRule
   "a rule for setting auction dates for US Treasury bills"
   {:cmns-av/adaptedFrom
-   "https://www.treasurydirect.gov/instit/auctfund/work/work.htm",
+   {:rdfa/uri "https://www.treasurydirect.gov/instit/auctfund/work/work.htm"},
    :cmns-av/explanatoryNote
    "To finance the public debt, the U.S. Treasury sells bills, notes, bonds, Floating Rate Notes (FRNs), and Treasury Inflation-Protected Securities (TIPS) to institutional and individual investors through public auctions. Treasury auctions occur regularly and have a set schedule. Rules and other information are available via announcements of pending auctions.",
    :db/ident :fibo-sec-sec-sch/USTreasuryBillAuctionDateRule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "US Treasury bill auction date rule",
    :rdfs/subClassOf [{:owl/hasValue   :fibo-fnd-dt-bd/BusinessDayFollowing,
                       :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayConvention,
@@ -346,12 +372,13 @@
   {:db/ident :fibo-sec-sec-sch/USTreasuryBillDate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/"},
    :rdfs/label "US Treasury bill date",
    :rdfs/subClassOf [{:owl/onClass
                       :fibo-sec-sec-sch/USTreasuryBillAuctionDateRule,
                       :owl/onProperty :fibo-fnd-dt-bd/hasBusinessDayAdjustment,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type :owl/Restriction}
                      :fibo-fnd-dt-fd/CalculatedDate],
    :skos/definition "an auction date for US 13 week and 26 week Treasury bills",

@@ -6,20 +6,28 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides the set of basic government-level entities and jurisdictions for independent countries identified as part of South America in the U.N. M49 classification.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -59,7 +67,8 @@
    :fibo-ge-ge-saj/GovernmentOfTheArgentineRepublic,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Argentinian entity",
    :skos/definition
    "federated sovereignty and polity that is located in the southern half of South America, bordered by Bolivia and Paraguay to the north, Brazil to the northeast, Uruguay and the South Atlantic Ocean to the east, and the Drake Passage to the south"})
@@ -72,7 +81,8 @@
    :fibo-ge-ge-saj/GovernmentOfThePlurinationalStateOfBolivia,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Bolivian entity",
    :skos/definition
    "sovereign state and polity that is a landlocked country located in western-central South America"})
@@ -85,7 +95,8 @@
    :fibo-ge-ge-saj/GovernmentOfTheFederativeRepublicOfBrazil,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Brazilian entity",
    :skos/definition
    "federated sovereignty and polity that is the largest country in both South America and Latin America"})
@@ -98,7 +109,8 @@
    :fibo-ge-ge-saj/GovernmentOfTheRepublicOfChile,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Chilean entity",
    :skos/definition
    "sovereign state and polity that occupies a long, narrow strip of land between the Andes to the east and the Pacific Ocean to the west, and borders Peru to the north, Bolivia to the northeast, Argentina to the east, and the Drake Passage in the far south"})
@@ -111,7 +123,8 @@
    :fibo-ge-ge-saj/GovernmentOfTheRepublicOfColombia,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Colombian entity",
    :skos/definition
    "sovereign state and polity that is a transcontinental country largely in the north of South America, bounded on the north by the Caribbean Sea, the northwest by Panama, the south by Ecuador and Peru, the east by Venezuela, the southeast by Brazil, and the west by the Pacific Ocean"})
@@ -124,7 +137,8 @@
    :fibo-ge-ge-saj/GovernmentOfTheRepublicOfEcuador,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Ecuadorian entity",
    :skos/definition
    "sovereign state and polity that is located in northwestern South America, bordered by Colombia on the north, Peru on the east and south, and the Pacific Ocean on the west"})
@@ -136,9 +150,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Argentina,
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "República Argentina@es"
-                #voc/lstr "Government of the Argentine Republic@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "República Argentina@es"
+                #xsd/langString "Government of the Argentine Republic@en"],
    :skos/definition
    "federal presidential constitutional republic and representative democracy whose president is both head of state and head of government"})
 
@@ -149,9 +164,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Venezuela,
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "República Bolivariana de Venezuela@es"
-                #voc/lstr
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "República Bolivariana de Venezuela@es"
+                #xsd/langString
                  "Government of the Bolivarian Republic of Venezuela@en"],
    :skos/definition
    "federal dominant-party presidential constitutional republic, whose president is both head of state and head of government"})
@@ -163,8 +179,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Guyana,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of the Co-operative Republic of Guyana@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString
+                "Government of the Co-operative Republic of Guyana@en",
    :skos/definition
    "unitary presidential constitutional republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -175,9 +193,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Brazil,
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "República Federativa do Brasil@pt"
-                #voc/lstr "Government of the Federative Republic of Brazil@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "República Federativa do Brasil@pt"
+                #xsd/langString
+                 "Government of the Federative Republic of Brazil@en"],
    :skos/definition
    "democratic federative republic, with a presidential system, whose president is both head of state and head of government"})
 
@@ -188,10 +208,12 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Uruguay,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "República Oriental do Uruguai@pt"
-                #voc/lstr "República Oriental del Uruguay@es"
-                #voc/lstr "Government of the Oriental Republic of Uruguay@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "República Oriental do Uruguai@pt"
+                #xsd/langString "República Oriental del Uruguay@es"
+                #xsd/langString
+                 "Government of the Oriental Republic of Uruguay@en"],
    :skos/definition
    "unitary presidential constitutional republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -202,9 +224,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Bolivia,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Government of the Plurinational State of Bolivia@en"
-                #voc/lstr "Estado Plurinacional de Bolivia@es"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString
+                 "Government of the Plurinational State of Bolivia@en"
+                #xsd/langString "Estado Plurinacional de Bolivia@es"],
    :skos/definition
    "Unitary presidential constitutional republic and representative democracy whose president is both head of state and head of government"})
 
@@ -215,9 +239,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Chile,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "República de Chile@es"
-                #voc/lstr "Government of the Republic of Chile@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "República de Chile@es"
+                #xsd/langString "Government of the Republic of Chile@en"],
    :skos/definition
    "unitary presidential constitutional republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -228,9 +253,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Colombia,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "República de Colombia@es"
-                #voc/lstr "Government of the Republic of Colombia@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "República de Colombia@es"
+                #xsd/langString "Government of the Republic of Colombia@en"],
    :skos/definition
    "unitary presidential constitutional republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -241,9 +267,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Ecuador,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "República del Ecuador@es"
-                #voc/lstr "Government of the Republic of Ecuador@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "República del Ecuador@es"
+                #xsd/langString "Government of the Republic of Ecuador@en"],
    :skos/definition
    "unitary presidential constitutional republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -254,9 +281,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Paraguay,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "República del Paraguay@es"
-                #voc/lstr "Government of the Republic of Paraguay@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "República del Paraguay@es"
+                #xsd/langString "Government of the Republic of Paraguay@en"],
    :skos/definition
    "unitary dominant-party presidential republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -267,9 +295,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Peru,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "República del Perú@es"
-                #voc/lstr "Government of the Republic of Peru@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "República del Perú@es"
+                #xsd/langString "Government of the Republic of Peru@en"],
    :skos/definition
    "unitary presidential constitutional republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -280,9 +309,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Suriname,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Republiek Suriname@nl"
-                #voc/lstr "Government of the Republic of Suriname@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Republiek Suriname@nl"
+                #xsd/langString "Government of the Republic of Suriname@en"],
    :skos/definition
    "unitary republic and representative democracy, whose president is both head of state and head of government"})
 
@@ -294,7 +324,8 @@
    :fibo-ge-ge-saj/GovernmentOfTheCo-operativeRepublicOfGuyana,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Guyanese entity",
    :skos/definition
    "sovereign state and polity that is bordered by the Atlantic Ocean to the north, Brazil to the south and southwest, Venezuela to the west, and Suriname to the east"})
@@ -307,7 +338,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Argentina,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Argentina",
    :skos/definition
    "jurisdiction of the judiciary of Argentina, which is the system of courts, including the Supreme Court and lower federal courts, that interprets and applies the law in Argentina"})
@@ -320,7 +352,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Bolivia,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Bolivia",
    :skos/definition
    "jurisdiction of the judiciary of Bolivia, including the Supreme Court of Justice, the Plurinational Constitutional Court, the Judiciary Council, Agrarian and Environmental Court, and District (departmental) and lower courts that interpret and apply the law in Bolivia"})
@@ -333,7 +366,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Brazil,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Brazil",
    :skos/definition
    "jurisdiction of the judiciary of Brazil, which is the system of courts, including the Federal Supreme Court and Federal District Courts, that interprets and applies the law in Brazil"})
@@ -346,7 +380,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Chile,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Chile",
    :skos/definition
    "jurisdiction of the judiciary of Chile, which is the system of courts, including a court of appeal, a system of military courts, a constitutional tribunal, and the Supreme Court of Chile, that interprets and applies the law in Chile"})
@@ -359,7 +394,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Colombia,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Colombia",
    :skos/definition
    "jurisdiction of the judiciary of Colombia, which is the system of courts, including the Supreme Court which deals with penal and civil matters, the Council of State, which has special responsibility for administrative law and also provides legal advice to the executive, the Constitutional Court, responsible for assuring the integrity of the Colombian constitution, and the Superior Council of Judicature, responsible for auditing the judicial branch, that interprets and applies the law in Colombia"})
@@ -372,7 +408,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Ecuador,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Ecuador",
    :skos/definition
    "jurisdiction of the judiciary of Ecuador, which is the system of courts, including as its main body the Judicial Council, and also includes the National Court of Justice, provincial courts, and lower courts, that interprets and applies the law in Ecuador"})
@@ -385,7 +422,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Guyana,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Guyana",
    :skos/definition
    "jurisdiction of the judiciary of Guyana, which is the system of courts, including the Supreme Court of Guyana, that interprets and applies the law in Guyana"})
@@ -398,7 +436,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Paraguay,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Paraguay",
    :skos/definition
    "jurisdiction of the judiciary of Paraguay, which is the system of courts, including tribunals and Courts of Civil Law and a nine-member Supreme Court of Justice, that interprets and applies the law in Paraguay"})
@@ -411,7 +450,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Peru,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Peru",
    :skos/definition
    "jurisdiction of the judiciary of Peru, which is the system of courts, including the Supreme Court of Peru, also known as the Royal Audencia of Lima, that interprets and applies the law in Peru"})
@@ -424,7 +464,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Suriname,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Suriname",
    :skos/definition
    "jurisdiction of the judiciary of Suriname, which is the system of courts, headed by the High Court of Justice of Suriname (Supreme Court), that interprets and applies the law in Suriname"})
@@ -437,7 +478,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Uruguay,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Uruguay",
    :skos/definition
    "jurisdiction of the judiciary of Uruguay, which is the system of courts, including the Supreme Court, the bench and judges, that interprets and applies the law in Uruguay"})
@@ -450,7 +492,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Venezuela,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Venezuela",
    :skos/definition
    "jurisdiction of the judiciary of Venezuela, which is the system of courts, including the Venezuelan Supreme Court, that interprets and applies the law in Venezuela"})
@@ -463,7 +506,8 @@
    :fibo-ge-ge-saj/GovernmentOfTheRepublicOfParaguay,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Paraguayan entity",
    :skos/definition
    "sovereign state and polity that is bordered by Argentina to the south and southwest, Brazil to the east and northeast, and Bolivia to the northwest"})
@@ -475,7 +519,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-ge-ge-saj/GovernmentOfTheRepublicOfPeru,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Peruvian entity",
    :skos/definition
    "sovereign state and polity that is bordered in the north by Ecuador and Colombia, in the east by Brazil, in the southeast by Bolivia, in the south by Chile, and in the west by the Pacific Ocean"})
@@ -488,7 +533,8 @@
    :fibo-ge-ge-saj/GovernmentOfTheRepublicOfSuriname,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Surinamese entity",
    :skos/definition
    "sovereign state and polity that is located on the northeastern Atlantic coast of South America, bordered by the Atlantic Ocean to the north, French Guiana to the east, Guyana to the west and Brazil to the south"})
@@ -501,7 +547,8 @@
    :fibo-ge-ge-saj/GovernmentOfTheOrientalRepublicOfUruguay,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Uruguayan entity",
    :skos/definition
    "sovereign state and polity that is located in the southeastern region of South America, bordered by Argentina to its west and southwest and Brazil to its north and east, with the Rio de la Plata (River of Silver) to the south and the Atlantic Ocean to the southeast"})
@@ -514,7 +561,8 @@
    :fibo-ge-ge-saj/GovernmentOfTheBolivarianRepublicOfVenezuela,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Venezuelan entity",
    :skos/definition
    "sovereign state and polity that is located on the northern coast of South America, consisting of a continental landmass and many small islands and islets in the Caribbean Sea"})

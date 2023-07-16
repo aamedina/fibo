@@ -6,18 +6,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides government entities and jurisdictions for countries that are defined as being part of Central Asia in the U.N. M49 codes, primarily those that are considered independent countries in ISO 3166, or are important from a banking perspective.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -56,9 +61,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Kyrgyzstan,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Кыргыз Республикасы@ky"
-                #voc/lstr "Government of the Kyrgyz Republic@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Кыргыз Республикасы@ky"
+                #xsd/langString "Government of the Kyrgyz Republic@en"],
    :skos/definition
    "unitary parliamentary secular constitutional republic in Central Asia, bordered by Kazakhstan, Uzbekistan, Tajikistan, and China"})
 
@@ -70,9 +76,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Kazakhstan,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Қазақстан Республикасы@kk"
-                #voc/lstr "Government of the Republic of Kazakhstan@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Қазақстан Республикасы@kk"
+                #xsd/langString "Government of the Republic of Kazakhstan@en"],
    :skos/definition
    "unitary dominant-party presidential constitutional republic in Central Asia, bordered by Russia in the north, China in the east, and Kyrgyzstan, Uzbekistan, and Turkmenistan in the south while also adjoining a large part of the Caspian Sea in the southwest"})
 
@@ -84,9 +91,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Tajikistan,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Ҷумҳурии Тоҷикистон@tg"
-                #voc/lstr "Government of the Republic of Tajikistan@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Ҷумҳурии Тоҷикистон@tg"
+                #xsd/langString "Government of the Republic of Tajikistan@en"],
    :skos/definition
    "unitary dominant-party presidential constitutional secular republic in Central Asia, bordered by Afghanistan to the south, Uzbekistan to the west, Kyrgyzstan to the north and China to the east"})
 
@@ -98,9 +106,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Uzbekistan,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Oʻzbekiston Respublikasi@uz"
-                #voc/lstr "Government of the Republic of Uzbekistan@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Oʻzbekiston Respublikasi@uz"
+                #xsd/langString "Government of the Republic of Uzbekistan@en"],
    :skos/definition
    "unitary presidential constitutional secular republic in Central Asia, bordered by Kazakhstan to the north, Kyrgyzstan to the northeast, Tajikistan to the southeast, Afghanistan to the south, Turkmenistan and the autonomous republic of Karakalpakstan to the south-west"})
 
@@ -111,9 +120,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Turkmenistan,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Türkmenistan@tk"
-                #voc/lstr "Government of Turkmenistan@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Türkmenistan@tk"
+                #xsd/langString "Government of Turkmenistan@en"],
    :skos/definition
    "unitary dominant-party presidential republic in Central Asia, bordered by Kazakhstan to the northwest, Uzbekistan to the north, east and northeast, Afghanistan to the southeast, Iran to the south and southwest and the Caspian Sea to the west"})
 
@@ -125,7 +135,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Kyrgyzstan,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Kyrgyz Republic",
    :skos/definition
    "jurisdiction of the judiciary of Kyrgyzstan, which is the system of courts, including the Supreme Court, that interprets and applies the law in Kyrgyzstan"})
@@ -138,7 +149,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Kazakhstan,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Republic of Kazakhstan",
    :skos/definition
    "jurisdiction of the judiciary of Kazakhstan, which is the system of courts that interprets and applies the law in Kazakhstan"})
@@ -151,7 +163,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Tajikistan,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Republic of Tajikistan",
    :skos/definition
    "jurisdiction of the judiciary of Tajikistan, which is the system of courts that interprets and applies the law in Tajikistan"})
@@ -164,7 +177,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Uzbekistan,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Republic of Uzbekistan",
    :skos/definition
    "jurisdiction of the judiciary of Uzbekistan, which is the system of courts that interprets and applies the law in Uzbekistan"})
@@ -176,7 +190,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Turkmenistan,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Turkmenistan",
    :skos/definition
    "jurisdiction of the judiciary of Turkmenistan, which is the system of courts, including the Supreme Court of Turkmenistan and its divisions, that interprets and applies the law in Turkmenistan"})
@@ -189,7 +204,8 @@
    :fibo-be-ge-casj/GovernmentOfTheRepublicOfKazakhstan,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Kazakhstan",
    :skos/definition "sovereign state and polity that is Kazakhstan"})
 
@@ -201,7 +217,8 @@
    :fibo-be-ge-casj/GovernmentOfTheKyrgyzRepublic,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Kyrgyzstan",
    :skos/definition "sovereign state and polity that is Kyrgyzstan"})
 
@@ -213,7 +230,8 @@
    :fibo-be-ge-casj/GovernmentOfTheRepublicOfTajikistan,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Tajikistan",
    :skos/definition "sovereign state and polity that is Tajikistan"})
 
@@ -224,7 +242,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-casj/GovernmentOfTurkmenistan,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Turkmenistan",
    :skos/definition "sovereign state and polity that is Turkmenistan"})
 
@@ -236,6 +255,7 @@
    :fibo-be-ge-casj/GovernmentOfTheRepublicOfUzbekistan,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Uzbekistan",
    :skos/definition "sovereign state and polity that is Uzbekistan"})

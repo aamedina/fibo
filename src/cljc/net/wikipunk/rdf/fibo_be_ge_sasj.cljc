@@ -6,17 +6,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides government entities and jurisdictions for countries that are defined as being part of Southern Asia in the U.N. M49 codes, primarily those that are considered independent countries in ISO 3166, or are important from a banking perspective.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -55,12 +61,13 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/SriLanka,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label
-   [#voc/lstr "ශ්‍රී ලංකා ප්‍රජාතාන්ත්‍රික සමාජවාදී ජනරජය@si"
-    #voc/lstr
+   [#xsd/langString "ශ්‍රී ලංකා ප්‍රජාතාන්ත්‍රික සමාජවාදී ජනරජය@si"
+    #xsd/langString
      "Government of the Democratic Socialist Republic of Sri Lanka@en"],
-   :rdfs/seeAlso ["http://www.gov.lk/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gov.lk/"},
    :skos/definition
    "unitary semi-presidential constitutional republic in Southern Asia that is an island country situated on the Indian Ocean, southwest of the Bay of Bengal, and southeast of the Arabian Sea"})
 
@@ -71,9 +78,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Nepal,
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "सङ्घीय लोकतान्त्रिक गणतन्त्र नेपाल@ne"
-                #voc/lstr
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "सङ्घीय लोकतान्त्रिक गणतन्त्र नेपाल@ne"
+                #xsd/langString
                  "Government of the Federal Democratic Republic of Nepal@en"],
    :skos/definition
    "federal parliamentary republic in Southern Asia, mainly situated in the Himalayas, bordering Tibet of China to the north, and India in the south, east, and west"})
@@ -85,10 +93,13 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Afghanistan,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Government of the Islamic Republic of Afghanistan@en"
-                #voc/lstr "Da Afġānistān Islāmī Jumhoryat@ps"],
-   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Politics_of_Afghanistan"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString
+                 "Government of the Islamic Republic of Afghanistan@en"
+                #xsd/langString "Da Afġānistān Islāmī Jumhoryat@ps"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://en.wikipedia.org/wiki/Politics_of_Afghanistan"},
    :skos/definition
    "unitary presidential Islamic republic in Southern Asia, bordered by Pakistan to the east and south, Iran to the west, Turkmenistan, Uzbekistan, and Tajikistan to the north, and China to the northeast"})
 
@@ -99,10 +110,12 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Iran,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "جمهوری اسلامی ایران@fa"
-                #voc/lstr "Government of the Islamic Republic of Iran@en"],
-   :rdfs/seeAlso ["http://www.icana.ir/"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "جمهوری اسلامی ایران@fa"
+                #xsd/langString
+                 "Government of the Islamic Republic of Iran@en"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.icana.ir/"},
    :skos/definition
    "unitary Khomeinist presidential Islamic republic in Southern Asia, bordered to the northwest by Armenia and Azerbaijan, to the north by the Caspian Sea, to the northeast by Turkmenistan, to the east by Afghanistan, to the southeast by Pakistan, to the south by the Persian Gulf and the Gulf of Oman, and to the west by Turkey and Iraq"})
 
@@ -113,10 +126,12 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Pakistan,
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "اِسلامی جمہوریہ پاكِستان@ur"
-                #voc/lstr "Government of the Islamic Republic of Pakistan@en"],
-   :rdfs/seeAlso ["http://www.pakistan.gov.pk/"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "اِسلامی جمہوریہ پاكِستان@ur"
+                #xsd/langString
+                 "Government of the Islamic Republic of Pakistan@en"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.pakistan.gov.pk/"},
    :skos/definition
    "federal parliamentary constitutional republic in Southern Asia, bordered by India to the east, Afghanistan to the west, Iran to the southwest, and China to the northeast"})
 
@@ -127,9 +142,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Bhutan,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "འབྲུག་རྒྱལ་ཁབ་@dz"
-                #voc/lstr "Government of the Kingdom of Bhutan@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "འབྲུག་རྒྱལ་ཁབ་@dz"
+                #xsd/langString "Government of the Kingdom of Bhutan@en"],
    :skos/definition
    "unitary parliamentary constitutional monarchy in Southern Asia, bordered by China to the north and India to the south"})
 
@@ -140,11 +156,12 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Bangladesh,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "গণপ্রজাতন্ত্রী বাংলাদেশ@bn"
-                #voc/lstr
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "গণপ্রজাতন্ত্রী বাংলাদেশ@bn"
+                #xsd/langString
                  "Government of the People's Republic of Bangladesh@en"],
-   :rdfs/seeAlso ["http://bangladesh.gov.bd/"],
+   :rdfs/seeAlso {:rdfa/uri "http://bangladesh.gov.bd/"},
    :skos/definition
    "unitary dominant-party parliamentary constitutional republic in Southern Asia, bordered by India to the west, north, and east, Myanmar to the southeast, and the Bay of Bengal to the south"})
 
@@ -155,10 +172,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/India,
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Government of the Republic of India@en"
-                #voc/lstr "Bhārat Gaṇarājya@hi"],
-   :rdfs/seeAlso ["http://parliamentofindia.nic.in/"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Government of the Republic of India@en"
+                #xsd/langString "Bhārat Gaṇarājya@hi"],
+   :rdfs/seeAlso {:rdfa/uri "http://parliamentofindia.nic.in/"},
    :skos/definition
    "federal parliamentary constitutional and democratic republic in Southern Asia, bordered by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, it shares land borders with Pakistan to the northwest; China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar to the east"})
 
@@ -169,9 +187,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Maldives,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "ދިވެހިރާއްޖެ@dv"
-                #voc/lstr "Government of the Republic of Maldives@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "ދިވެހިރާއްޖެ@dv"
+                #xsd/langString "Government of the Republic of Maldives@en"],
    :skos/definition
    "unitary presidential republic in Southern Asia, a small archipelagic state situated in the Indian Ocean"})
 
@@ -183,9 +202,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Afghanistan,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Afghanistan",
-   :rdfs/seeAlso ["http://supremecourt.gov.af/en"],
+   :rdfs/seeAlso {:rdfa/uri "http://supremecourt.gov.af/en"},
    :skos/definition
    "jurisdiction of the judiciary of Afghanistan, which is the system of courts, including its Supreme Court or Stera Mahkama, that interprets and applies the law in Afghanistan"})
 
@@ -197,9 +217,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Bangladesh,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Bangladesh",
-   :rdfs/seeAlso ["http://supremecourt.gov.bd/"],
+   :rdfs/seeAlso {:rdfa/uri "http://supremecourt.gov.bd/"},
    :skos/definition
    "jurisdiction of the judiciary of Bangladesh, which is the system of courts, including its Supreme Court, High Court, and Appellate Divisions, that interprets and applies the law in Bangladesh"})
 
@@ -211,7 +232,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Bhutan,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Bhutan",
    :skos/definition
    "jurisdiction of the judiciary of Bhutan, which is the system of courts that interprets and applies the law in Bhutan"})
@@ -224,7 +246,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/India,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of India",
    :skos/definition
    "jurisdiction of the judiciary of India, a three-tier unitary independent judiciary comprising the supreme court, headed by the Chief Justice of India, 25 high courts, and a large number of trial courts, which is the system of courts that interprets and applies the law in India"})
@@ -237,7 +260,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Iran,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Iran",
    :skos/definition
    "jurisdiction of the judiciary of India, which is the system of courts that interprets and applies the law in Iran"})
@@ -250,7 +274,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Maldives,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Maldives",
    :skos/definition
    "jurisdiction of the judiciary of Maldives, which is the system of courts that interprets and applies the law in Maldives"})
@@ -263,7 +288,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Nepal,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Nepal",
    :skos/definition
    "jurisdiction of the judiciary of Nepal, which is the system of courts, including the Supreme Court, that interprets and applies the law in Nepal"})
@@ -276,7 +302,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Pakistan,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Pakistan",
    :skos/definition
    "jurisdiction of the judiciary of Pakistan, which is the system of courts that interprets and applies the law in Pakistan"})
@@ -289,7 +316,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/SriLanka,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Sri Lanka",
    :skos/definition
    "jurisdiction of the judiciary of Sri Lanka, which is the system of courts that interprets and applies the law in Sri Lanka"})
@@ -302,7 +330,8 @@
    :fibo-be-ge-sasj/GovernmentOfTheIslamicRepublicOfAfghanistan,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Afghanistan",
    :skos/definition "sovereign state and polity that is Afghanistan"})
 
@@ -314,7 +343,8 @@
    :fibo-be-ge-sasj/GovernmentOfThePeoplesRepublicOfBangladesh,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Bangladesh",
    :skos/definition "sovereign state and polity that is Bangladesh"})
 
@@ -326,7 +356,8 @@
    :fibo-be-ge-sasj/GovernmentOfTheKingdomOfBhutan,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Bhutan",
    :skos/definition "sovereign state and polity that is Bhutan"})
 
@@ -338,7 +369,8 @@
    :fibo-be-ge-sasj/GovernmentOfTheRepublicOfIndia,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of India",
    :skos/definition "federated sovereignty and polity that is India"})
 
@@ -350,7 +382,8 @@
    :fibo-be-ge-sasj/GovernmentOfTheIslamicRepublicOfIran,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Iran",
    :skos/definition "sovereign state and polity that is Iran"})
 
@@ -362,7 +395,8 @@
    :fibo-be-ge-sasj/GovernmentOfTheRepublicOfMaldives,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Maldives",
    :skos/definition "sovereign state and polity that is Maldives"})
 
@@ -374,7 +408,8 @@
    :fibo-be-ge-sasj/GovernmentOfTheFederalDemocraticRepublicOfNepal,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Nepal",
    :skos/definition "federated sovereignty and polity that is Nepal"})
 
@@ -386,7 +421,8 @@
    :fibo-be-ge-sasj/GovernmentOfTheIslamicRepublicOfPakistan,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Pakistan",
    :skos/definition "federated sovereignty and polity that is Pakistan"})
 
@@ -398,6 +434,7 @@
    :fibo-be-ge-sasj/GovernmentOfTheDemocraticSocialistRepublicOfSriLanka,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Sri Lanka",
    :skos/definition "sovereign state and polity that is Sri Lanka"})

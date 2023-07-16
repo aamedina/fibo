@@ -6,25 +6,37 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
    :dcterms/abstract
    "This ontology defines fundamental concepts for buyers, sellers, clients, customers, products, goods and services for use in other FIBO ontologies.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Facilities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Facilities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
@@ -88,7 +100,8 @@
    :db/ident :fibo-fnd-pas-pas/Buyer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "buyer",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pas-pas/buys,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
@@ -102,7 +115,8 @@
   {:db/ident :fibo-fnd-pas-pas/Client,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "client",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom {:owl/onProperty
@@ -120,11 +134,12 @@
   {:db/ident :fibo-fnd-pas-pas/ClientIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "client identifier",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-pas-pas/Client,
                       :owl/onProperty :cmns-id/identifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-pty-pty/PartyInRoleIdentifier],
    :skos/definition
@@ -137,7 +152,8 @@
    :db/ident :fibo-fnd-pas-pas/Commodity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "commodity",
    :rdfs/subClassOf :fibo-fnd-pas-pas/Good,
    :skos/definition
@@ -150,9 +166,10 @@
    :db/ident :fibo-fnd-pas-pas/Consumer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "consumer",
-   :rdfs/seeAlso ["http://www.oecd.org/sti/consumer/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.oecd.org/sti/consumer/"},
    :rdfs/subClassOf :fibo-fnd-pty-pty/PartyInRole,
    :skos/definition
    "party that utilizes economic goods or services, typically for personal, family, or household purposes"})
@@ -164,7 +181,8 @@
    :db/ident :fibo-fnd-pas-pas/ContractualProduct,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "contractual product",
    :rdfs/subClassOf [:fibo-fnd-pas-pas/Product
                      {:owl/unionOf [:fibo-fnd-pas-pas/Good
@@ -178,15 +196,16 @@
   {:db/ident :fibo-fnd-pas-pas/ContractualTemplateProduct,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "contractual template product",
    :rdfs/subClassOf [:fibo-fnd-pas-pas/OffTheShelfProduct
                      :fibo-fnd-pas-pas/ContractualProduct
-                     :fibo-fnd-pas-pas/Product
                      {:owl/unionOf [:fibo-fnd-pas-pas/Good
                                     :fibo-fnd-law-lcap/ContractualRight
                                     :fibo-fnd-pas-pas/Service],
-                      :rdf/type    :owl/Class}],
+                      :rdf/type    :owl/Class}
+                     :fibo-fnd-pas-pas/Product],
    :skos/definition
    "contractual product that is finalized through specification of values for parameters defined in a template"})
 
@@ -198,7 +217,8 @@
    :owl/disjointWith :fibo-fnd-pas-pas/OffTheShelfProduct,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "custom product",
    :rdfs/subClassOf [:fibo-fnd-pas-pas/Product
                      {:owl/unionOf [:fibo-fnd-pas-pas/Good
@@ -213,7 +233,8 @@
   {:db/ident :fibo-fnd-pas-pas/Customer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "customer",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pas-pas/buysFrom,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Supplier,
@@ -231,11 +252,12 @@
   {:db/ident :fibo-fnd-pas-pas/CustomerIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "customer identifier",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-pas-pas/Customer,
                       :owl/onProperty :cmns-id/identifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-pty-pty/PartyInRoleIdentifier],
    :skos/definition
@@ -243,8 +265,9 @@
 
 (def Good
   "physical, produced item over which ownership rights can be established, whose ownership can be passed from one party to another by engaging in transactions, and that is not money or real estate"
-  {:cmns-av/adaptedFrom ["https://data.oecd.org/trade/trade-in-goods.htm"
-                         "https://www.law.cornell.edu/ucc/9/9-102#goods"],
+  {:cmns-av/adaptedFrom
+   [{:rdfa/uri "https://data.oecd.org/trade/trade-in-goods.htm"}
+    {:rdfa/uri "https://www.law.cornell.edu/ucc/9/9-102#goods"}],
    :cmns-av/explanatoryNote
    ["An inherently useful and relatively scarce tangible item produced from agricultural, construction, manufacturing, or mining activities. Off-the-shelf products, including off-the-shelf software products and customization of software products, are generally considered to be goods. Energy, such as electricity, is also considered to be a good from a legal perspective, and meets the criteria of being manufactured or produced via some process, including but not limited to a mining process. According to the UN Convention On Contract For The International Sale Of Goods, the term 'good' does not include (1) items bought for personal use, (2) items bought at an auction or foreclosure sale, (3) aircraft or ocean-going vessels."
     "From the Universal Commercial Code (UCC) in the United States, the term 'good' includes (i) fixtures, (ii) standing timber that is to be cut and removed under a conveyance or contract for sale, (iii) the unborn young of animals, (iv) crops grown, growing, or to be grown, even if the crops are produced on trees, vines, or bushes, and (v) manufactured homes. The term also includes a computer program embedded in goods and any supporting information provided in connection with a transaction relating to the program if (i) the program is associated with the goods in such a manner that it customarily is considered part of the goods, or (ii) by becoming the owner of the goods, a person acquires a right to use the program in connection with the goods. The term does not include a computer program embedded in goods that consist solely of the medium in which the program is embedded. The term also does not include accounts, chattel paper, commercial tort claims, deposit accounts, documents, general intangibles, instruments, investment property, letter-of-credit rights, letters of credit, money, or oil, gas, or other minerals before extraction."],
@@ -253,7 +276,8 @@
                       :fibo-fnd-plc-loc/RealEstate],
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "good",
    :skos/definition
    "physical, produced item over which ownership rights can be established, whose ownership can be passed from one party to another by engaging in transactions, and that is not money or real estate"})
@@ -263,7 +287,8 @@
   {:db/ident :fibo-fnd-pas-pas/NegotiableCommodity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "negotiable commodity",
    :rdfs/subClassOf [:fibo-fnd-pas-pas/Commodity :fibo-fnd-pas-pas/Good],
    :skos/definition "commodity that can be bought or sold in some marketplace"})
@@ -276,7 +301,8 @@
    :db/ident :fibo-fnd-pas-pas/OffTheShelfProduct,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "off-the-shelf product",
    :rdfs/subClassOf [:fibo-fnd-pas-pas/Product
                      {:owl/unionOf [:fibo-fnd-pas-pas/Good
@@ -291,7 +317,8 @@
   {:db/ident :fibo-fnd-pas-pas/Producer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "producer",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/produces,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Good,
@@ -307,7 +334,8 @@
    :db/ident :fibo-fnd-pas-pas/Product,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "product",
    :rdfs/subClassOf {:owl/unionOf [:fibo-fnd-pas-pas/Good
                                    :fibo-fnd-law-lcap/ContractualRight
@@ -321,11 +349,12 @@
   {:db/ident :fibo-fnd-pas-pas/ProductIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "product identifier",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-pas-pas/Product,
                       :owl/onProperty :cmns-id/identifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :cmns-id/Identifier],
    :skos/definition
@@ -336,27 +365,28 @@
   {:db/ident :fibo-fnd-pas-pas/Sale,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "sale",
    :rdfs/subClassOf [:fibo-fnd-pas-pas/TransactionEvent
-                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
-                      :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
-                      :rdf/type           :owl/Restriction}
                      :fibo-fnd-pty-pty/Situation
+                     {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
+                      :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
+                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-acc-cur/hasPrice,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-pas-pas/hasBuyer,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Buyer,
                       :rdf/type           :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-pas-pas/hasSeller,
-                      :owl/someValuesFrom :fibo-fnd-pas-pas/Seller,
+                     {:owl/onProperty     :cmns-cxtdsg/appliesTo,
+                      :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fnd-dt-oc/OccurrenceKind
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pas-pas/TransactionConfirmation,
                       :owl/onProperty :fibo-fnd-agr-ctr/isEvidencedBy,
-                      :rdf/type       :owl/Restriction}],
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-dt-oc/OccurrenceKind],
    :skos/definition "exchange of goods or services for money"})
 
 (def Seller
@@ -365,7 +395,8 @@
    :db/ident :fibo-fnd-pas-pas/Seller,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "seller",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pas-pas/sells,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
@@ -381,7 +412,8 @@
    :db/ident :fibo-fnd-pas-pas/Service,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "service",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fnd-plc-fac/Capability,
@@ -389,7 +421,7 @@
                      {:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/ServiceProvider,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pas-pas/ServiceProvider,
                       :owl/onProperty :fibo-fnd-pas-pas/isProvisionedBy,
                       :rdf/type       :owl/Restriction}],
@@ -404,14 +436,15 @@
    :db/ident :fibo-fnd-pas-pas/ServiceAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "service agreement",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Service,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-pas-pas/ServiceProvider,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasContractParty,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-agr-ctr/WrittenContract
                      :fibo-fnd-agr-ctr/MutualContractualAgreement],
@@ -423,16 +456,17 @@
   {:db/ident :fibo-fnd-pas-pas/ServiceProvider,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "service provider",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Service,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pas-pas/Service,
                       :owl/onProperty :fibo-fnd-pas-pas/provisions,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-plc-fac/Facility,
                       :owl/onProperty :fibo-fnd-pas-pas/provisions,
                       :rdf/type       :owl/Restriction}
@@ -447,7 +481,8 @@
    :db/ident :fibo-fnd-pas-pas/Supplier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "supplier",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pas-pas/supplies,
                       :owl/someValuesFrom :fibo-fnd-pas-pas/Product,
@@ -461,11 +496,12 @@
   {:db/ident :fibo-fnd-pas-pas/TransactionConfirmation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "transaction confirmation",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-pas-pas/TransactionEvent,
                       :owl/onProperty :fibo-fnd-agr-ctr/isEvidenceFor,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-arr-doc/LegalDocument],
    :skos/definition
@@ -476,9 +512,10 @@
   {:db/ident :fibo-fnd-pas-pas/TransactionEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "transaction event",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-pas-pas/TransactionConfirmation,
                       :owl/onProperty :fibo-fnd-agr-ctr/isEvidencedBy,
                       :rdf/type       :owl/Restriction}
@@ -492,7 +529,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pas-pas/Buyer,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "buys",
    :rdfs/range :fibo-fnd-pas-pas/Product,
    :skos/definition
@@ -504,7 +542,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pas-pas/Buyer,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "buys from",
    :rdfs/range :fibo-fnd-pas-pas/Seller,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
@@ -516,8 +555,9 @@
   {:db/ident :fibo-fnd-pas-pas/hasBuyer,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
-   :rdfs/label #voc/lstr "has buyer@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
+   :rdfs/label #xsd/langString "has buyer@en",
    :rdfs/range :fibo-fnd-pas-pas/Buyer,
    :rdfs/subPropertyOf [:fibo-fnd-pty-pty/hasUndergoer
                         :fibo-fnd-pty-pty/hasPartyInRole],
@@ -529,8 +569,9 @@
   {:db/ident :fibo-fnd-pas-pas/hasSeller,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
-   :rdfs/label #voc/lstr "has seller@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
+   :rdfs/label #xsd/langString "has seller@en",
    :rdfs/range :fibo-fnd-pas-pas/Seller,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/hasActor,
    :skos/definition
@@ -542,7 +583,8 @@
    :owl/inverseOf :fibo-fnd-pas-pas/provisions,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "is provisioned by",
    :rdfs/range :fibo-fnd-pas-pas/ServiceProvider,
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
@@ -556,7 +598,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pas-pas/Product,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "is supplied by",
    :rdfs/range :fibo-fnd-pas-pas/Supplier,
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
@@ -569,7 +612,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pas-pas/ServiceProvider,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "provisions",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/provides,
    :skos/definition
@@ -581,7 +625,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pas-pas/Seller,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "sells",
    :rdfs/range :fibo-fnd-pas-pas/Product,
    :skos/definition
@@ -594,7 +639,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pas-pas/Seller,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "sells to",
    :rdfs/range :fibo-fnd-pas-pas/Buyer,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
@@ -607,7 +653,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-pas-pas/Supplier,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/"},
    :rdfs/label "supplies",
    :rdfs/range :fibo-fnd-pas-pas/Product,
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/provides,

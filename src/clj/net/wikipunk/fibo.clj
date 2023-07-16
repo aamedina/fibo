@@ -142,8 +142,7 @@
    [net.wikipunk.rdf.fibo-fbc-fi-fi]
    [net.wikipunk.rdf.fibo-fbc-fi-ip]
    [net.wikipunk.rdf.fibo-fbc-fi-stl]
-   [net.wikipunk.rdf.fibo-fbc-pas-caa]
-   [net.wikipunk.rdf.fibo-fbc-pas-crd]
+   [net.wikipunk.rdf.fibo-fbc-pas-caa]   
    [net.wikipunk.rdf.fibo-fbc-pas-fpas]
    [net.wikipunk.rdf.fibo-fnd-aap-agt]
    [net.wikipunk.rdf.fibo-fnd-aap-ppl]
@@ -208,11 +207,12 @@
    [net.wikipunk.rdf.fibo-loan-reln-cnst]
    [net.wikipunk.rdf.fibo-loan-reln-hmda]
    [net.wikipunk.rdf.fibo-loan-reln-mtg]
+   [net.wikipunk.rdf.fibo-loan-spc-crd]
    [net.wikipunk.rdf.fibo-loan-spc-cns]
    [net.wikipunk.rdf.fibo-loan-spc-com]
    [net.wikipunk.rdf.fibo-loan-spc-mar]
    [net.wikipunk.rdf.fibo-loan-spc-prod]
-   [net.wikipunk.rdf.fibo-loan-spc-stu]
+   [net.wikipunk.rdf.fibo-loan-spc-stu]   
    [net.wikipunk.rdf.fibo-md-civx-fun]
    [net.wikipunk.rdf.fibo-md-dbtx-aly]
    [net.wikipunk.rdf.fibo-md-der-fut]
@@ -246,13 +246,41 @@
    [net.wikipunk.rdf.fibo-sec-sec-rst]
    [net.wikipunk.rdf.fibo-sec-sec-sch]))
 
-(declare quickstart)
+(defmethod rdf/rdf-doc :skos/definition [[k v]] (rdf/rdf-doc v))
+(prefer-method rdf/infer-datomic-type :dc11/description :owl/AnnotationProperty)
+(prefer-method rdf/infer-datomic-type :dcterms/source :owl/AnnotationProperty)
+(defmethod rdf/infer-datomic-type :dcterms/source [_] :db.type/ref)
+(defmethod rdf/infer-datomic-type :dcterms/license [_] :db.type/ref)
+(defmethod rdf/infer-datomic-type :cmns-av/directSource [_] :db.type/string)
+(defmethod rdf/infer-datomic-type :dc11/rights [_] :db.type/string)
+(defmethod rdf/infer-datomic-type :dc11/contributor [_] :db.type/string)
+(prefer-method rdf/infer-datomic-type :dc11/contributor :owl/AnnotationProperty)
+(prefer-method rdf/infer-datomic-type :dc11/contributor :dc11/creator)
+(prefer-method rdf/infer-datomic-type :dc11/rights :owl/AnnotationProperty)
+(prefer-method rdf/infer-datomic-type :dc11/date :owl/AnnotationProperty)
+(prefer-method rdf/infer-datomic-type :dc11/title :owl/AnnotationProperty)
+(prefer-method rdf/infer-datomic-type :dc11/creator :owl/AnnotationProperty)
+(defmethod rdf/infer-datomic-type :cmns-txt/hasTextValue [_] :db.type/string)
+(defmethod rdf/infer-datomic-type :lcc-lr/hasName [_] :db.type/string)
+(defmethod rdf/infer-datomic-type :fibo-sec-sec-lst/hasListingDate [_] :db.type/string)
+(defmethod rdf/infer-datomic-type :fibo-fnd-plc-adr/requiresSecondaryUnitRange [_] :db.type/boolean)
+(defmethod rdf/infer-datomic-type :cmns-dt/hasObservedDateTime [_] :db.type/instant)
+(defmethod rdf/infer-datomic-type :fibo-fnd-plc-loc/hasCityName [_] :db.type/string)
+(defmethod rdf/infer-datomic-type :fibo-fnd-utl-alx/isCalculatedViaMethodology [_] :db.type/string)
+(defmethod rdf/infer-datomic-type :fibo-fbc-fct-ra/hasRegistrationDate [_] :db.type/string)
+(defmethod rdf/infer-datomic-type :fibo-fbc-fct-breg/hasRenewalDate [_] :db.type/instant)
+(defmethod rdf/infer-datomic-type :fibo-fbc-fct-breg/hasRegistrationRevisionDate [_] :db.type/instant)
+(defmethod rdf/infer-datomic-type :fibo-fbc-fct-breg/hasInitialRegistrationDate [_] :db.type/instant)
+(defmethod rdf/infer-datomic-type :rdfs/label [_] :db.type/string)
+(defmethod rdf/infer-datomic-type :fibo-fnd-utl-av/adaptedFrom [_] :db.type/ref)
+(defmethod rdf/infer-datomic-type :sm/directSource [_] :db.type/string)
+(defmethod rdf/infer-datomic-type :skos/notation [_] :db.type/string)
+(prefer-method rdf/infer-datomic-type :rdfs/label :owl/AnnotationProperty)
+(prefer-method rdf/infer-datomic-type :dc11/title :rdfs/label)
 
-(defrecord FIBO [vocab]
+(defrecord FIBO []
   com/Lifecycle
   (start [this]
-    #_(rdf/import-from 'net.wikipunk.rdf.fibo-fbc-fct-mkti
-                       'net.wikipunk.rdf.gleif-L1-data)
     this)
   (stop [this]
     this))

@@ -6,25 +6,36 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for companies incorporated by the issuance of shares. Terms defined in this ontology are those which are applicable to all such entities. Many of these concepts form the basis of the relationships of ownership and control which obtain between entities of this type.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
@@ -82,7 +93,8 @@
   {:db/ident :fibo-be-corp-corp/BoardAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"},
    :rdfs/label "board agreement",
    :rdfs/subClassOf :fibo-be-le-fbo/OrganizationCoveringAgreement,
    :skos/definition
@@ -95,7 +107,8 @@
    :db/ident :fibo-be-corp-corp/JointStockCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"},
    :rdfs/label "joint stock company",
    :rdfs/subClassOf :fibo-be-le-lp/BusinessEntity,
    :skos/definition
@@ -109,23 +122,24 @@
    :db/ident :fibo-be-corp-corp/PrivatelyHeldCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"},
    :rdfs/label "privately held company",
    :rdfs/subClassOf [:fibo-be-le-cb/StockCorporation
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :cmns-dt/ExplicitDate,
+                      :owl/onProperty :fibo-be-corp-corp/hasDateOfRegistration,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :cmns-dt/ExplicitDate,
+                      :owl/onProperty :fibo-be-corp-corp/hasDateOfIncorporation,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/someValuesFrom :fibo-be-corp-corp/BoardAgreement,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-be-corp-corp/hasIssuedCapital,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :cmns-dt/ExplicitDate,
-                      :owl/onProperty :fibo-be-corp-corp/hasDateOfIncorporation,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/ExplicitDate,
-                      :owl/onProperty :fibo-be-corp-corp/hasDateOfRegistration,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "corporation whose issued shares are all held by a family or a small group of investors and, therefore, cannot be bought by the public"})
@@ -135,23 +149,24 @@
   {:db/ident :fibo-be-corp-corp/PubliclyHeldCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"},
    :rdfs/label "publicly held company",
    :rdfs/subClassOf [:fibo-be-le-cb/StockCorporation
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :cmns-dt/ExplicitDate,
+                      :owl/onProperty :fibo-be-corp-corp/hasDateOfRegistration,
+                      :rdf/type       :owl/Restriction}
+                     {:owl/onClass    :cmns-dt/ExplicitDate,
+                      :owl/onProperty :fibo-be-corp-corp/hasDateOfIncorporation,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/isGovernedBy,
                       :owl/someValuesFrom :fibo-be-corp-corp/BoardAgreement,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty :fibo-be-corp-corp/hasIssuedCapital,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :cmns-dt/ExplicitDate,
-                      :owl/onProperty :fibo-be-corp-corp/hasDateOfIncorporation,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :cmns-dt/ExplicitDate,
-                      :owl/onProperty :fibo-be-corp-corp/hasDateOfRegistration,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition "corporation whose shares are traded and held publicly"})
 
@@ -162,21 +177,22 @@
    :db/ident :fibo-be-corp-corp/RegistrationIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"},
    :rdfs/label "registration identifier",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
-                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
-                      :rdf/type       :owl/Restriction}
+   :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/isDefinedIn,
+                      :owl/someValuesFrom
+                      :fibo-be-corp-corp/RegistrationIdentifierScheme,
+                      :rdf/type :owl/Restriction}
                      :fibo-fnd-org-org/OrganizationIdentifier
                      {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :cmns-id/identifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/someValuesFrom
-                      :fibo-be-corp-corp/RegistrationIdentifierScheme,
-                      :rdf/type :owl/Restriction}],
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "identifier that is officially allocated to an organization at the time of registration, typically in a jurisdiction in which said organization is organized or registered and used in that jurisdiction to identify the organization",
    :skos/scopeNote
@@ -187,7 +203,8 @@
   {:db/ident :fibo-be-corp-corp/RegistrationIdentifierScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"},
    :rdfs/label "registration identifier scheme",
    :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/defines,
                       :owl/someValuesFrom
@@ -204,7 +221,8 @@
    :db/ident :fibo-be-corp-corp/ReligiousCorporation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"},
    :rdfs/label "religious corporation",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-gao-obj/hasObjective,
                       :owl/someValuesFrom :fibo-be-le-lp/ReligiousObjective,
@@ -218,7 +236,8 @@
   {:db/ident :fibo-be-corp-corp/hasDateOfIncorporation,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"},
    :rdfs/label "has date of incorporation",
    :rdfs/range :cmns-dt/ExplicitDate,
    :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
@@ -230,7 +249,8 @@
   {:db/ident :fibo-be-corp-corp/hasDateOfRegistration,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"},
    :rdfs/label "has date of registration",
    :rdfs/range :cmns-dt/ExplicitDate,
    :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
@@ -245,7 +265,8 @@
    :db/ident :fibo-be-corp-corp/hasIssuedCapital,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"},
    :rdfs/label "has issued capital",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
@@ -255,15 +276,16 @@
 (def hasSharesAuthorized
   "indicates the maximum number of shares that are permitted to be issued, as established by the board of directors"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "An initial number of authorized shares is typically established at the time of incorporation, and is documented in articles of incorporation. The number of shares authorized may be extended from time to time by the board of directors as needed, and articles of incorporation and other legal documentation will be amended accordingly. It includes shares that are available, but not yet issued, for sale to generate capital, and shares available for distribution to insiders as part of their compensation packages.@en",
    :db/ident :fibo-be-corp-corp/hasSharesAuthorized,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
-   :rdfs/label #voc/lstr "has shares authorized@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/"},
+   :rdfs/label #xsd/langString "has shares authorized@en",
    :rdfs/range :xsd/nonNegativeInteger,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasAmount,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "indicates the maximum number of shares that are permitted to be issued, as established by the board of directors@en"})

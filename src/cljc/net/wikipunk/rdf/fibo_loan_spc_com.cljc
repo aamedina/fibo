@@ -5,17 +5,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CommercialLoans/",
    :dcterms/abstract
    "Commercial loans are loans where the loan purpose is some commercial purpose. Note that these are distinguished by the loan purpose not by the borrower type - borrowers may be corporate or personal, though in the majority of cases they would also be corporate loans that is loans with a corporate borrower.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/CommercialLoans/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/CommercialLoans/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -40,19 +46,20 @@
    :rdfa/prefix "fibo-loan-spc-com",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CommercialLoans/",
-   :rdfs/label #voc/lstr "Commercial Loans Ontology@en"})
+   :rdfs/label #xsd/langString "Commercial Loans Ontology@en"})
 
 (def CommercialLoan
   "loan extended to a corporation, commercial enterprise, joint venture, or other organization as opposed to a consumer"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "Such loans may include those that provide working capital, are used to finance the purchase of equipment and/or materials, for facilities and/or improvement of facilities, and so forth, and are typically secured.@en",
-   :cmns-av/synonym #voc/lstr "commercial and industrial loan@en",
+   :cmns-av/synonym #xsd/langString "commercial and industrial loan@en",
    :db/ident :fibo-loan-spc-com/CommercialLoan,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CommercialLoans/",
-   :rdfs/label #voc/lstr "commercial loan@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CommercialLoans/"},
+   :rdfs/label #xsd/langString "commercial loan@en",
    :rdfs/subClassOf
    [{:owl/onProperty     :fibo-fbc-dae-dbt/hasBorrower,
      :owl/someValuesFrom {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
@@ -61,5 +68,5 @@
      :rdf/type           :owl/Restriction}
     :fibo-loan-ln-ln/Loan],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "loan extended to a corporation, commercial enterprise, joint venture, or other organization as opposed to a consumer@en"})

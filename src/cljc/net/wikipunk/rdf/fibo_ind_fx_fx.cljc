@@ -6,22 +6,31 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
    :dcterms/abstract
    "This ontology provides the parameters for foreign exchange rates, covering spot and forward rates, as well as foreign exchange spot rate volatilities.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/ForeignExchange/ForeignExchange/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -69,7 +78,8 @@
    :db/ident :fibo-ind-fx-fx/CurrencyConversionService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "currency conversion service",
    :rdfs/subClassOf [:fibo-ind-fx-fx/ForeignExchangeService
                      :fibo-fbc-pas-fpas/FinancialService],
@@ -81,18 +91,19 @@
   {:db/ident :fibo-ind-fx-fx/CurrencyForwardRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "currency forward rate",
    :rdfs/subClassOf [{:owl/allValuesFrom :cmns-dt/Date,
                       :owl/onProperty    :fibo-fbc-pas-fpas/hasSettlementDate,
                       :rdf/type          :owl/Restriction}
                      :fibo-ind-fx-fx/QuotedExchangeRate
                      :fibo-ind-ind-ind/MarketRate
-                     :fibo-fnd-acc-cur/ExchangeRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-acc-cur/ExchangeRate],
    :skos/definition
    "rate of exchange between two currencies for settlement at some future point in time, expressed as a premium on the spot rate"})
 
@@ -101,7 +112,8 @@
   {:db/ident :fibo-ind-fx-fx/CurrencyForwardRateVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "currency forward rate volatility",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-ind-fx-fx/CurrencyForwardRate,
                       :owl/onProperty    :fibo-ind-ind-ind/isVolatilityOf,
@@ -120,16 +132,17 @@
   {:db/ident :fibo-ind-fx-fx/CurrencySpotBuyRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "currency spot buy rate",
    :rdfs/subClassOf [:fibo-ind-fx-fx/CurrencySpotRate
                      :fibo-ind-ind-ind/MarketRate
-                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-fx-fx/QuotedExchangeRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-acc-cur/ExchangeRate],
    :skos/definition
    "indicative spot buying market rate as observed by the reporting source"})
 
@@ -138,16 +151,17 @@
   {:db/ident :fibo-ind-fx-fx/CurrencySpotMidRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "currency spot mid rate",
    :rdfs/subClassOf [:fibo-ind-fx-fx/CurrencySpotRate
                      :fibo-ind-ind-ind/MarketRate
-                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-fx-fx/QuotedExchangeRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-acc-cur/ExchangeRate],
    :skos/definition
    "indicative middle market (mean of spot buying and selling) rate as observed by the reporting source"})
 
@@ -158,15 +172,16 @@
    :db/ident :fibo-ind-fx-fx/CurrencySpotRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "currency spot rate",
    :rdfs/subClassOf [:fibo-ind-fx-fx/QuotedExchangeRate
                      :fibo-ind-ind-ind/MarketRate
-                     :fibo-fnd-acc-cur/ExchangeRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-acc-cur/ExchangeRate],
    :skos/definition
    "rate at which one currency may be exchanged for another for immediate delivery"})
 
@@ -175,16 +190,17 @@
   {:db/ident :fibo-ind-fx-fx/CurrencySpotSellRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "currency spot sell rate",
    :rdfs/subClassOf [:fibo-ind-fx-fx/CurrencySpotRate
                      :fibo-ind-ind-ind/MarketRate
-                     :fibo-fnd-acc-cur/ExchangeRate
                      :fibo-ind-fx-fx/QuotedExchangeRate
                      {:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fnd-acc-cur/ExchangeRate],
    :skos/definition
    "indicative spot selling market rate as observed by the reporting source"})
 
@@ -193,7 +209,8 @@
   {:db/ident :fibo-ind-fx-fx/CurrencySpotVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "currency spot volatility",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-ind-fx-fx/CurrencySpotRate,
                       :owl/onProperty    :fibo-ind-ind-ind/isVolatilityOf,
@@ -212,7 +229,8 @@
   {:db/ident :fibo-ind-fx-fx/ExchangeRateStructure,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "exchange rate structure",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/hasConstituent,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/ExchangeRate,
@@ -228,7 +246,8 @@
    :db/ident :fibo-ind-fx-fx/ExchangeRateVolatility,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "exchange rate volatility",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-ind-fx-fx/ExchangeRateStructure,
@@ -242,7 +261,8 @@
   {:db/ident :fibo-ind-fx-fx/ForeignExchangeService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "foreign exchange service",
    :rdfs/subClassOf :fibo-fbc-pas-fpas/FinancialService,
    :skos/definition
@@ -254,7 +274,8 @@
    :db/ident :fibo-ind-fx-fx/InternationalElectronicFundsTransferService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "international electronic funds transfer service",
    :rdfs/subClassOf [:fibo-ind-fx-fx/ForeignExchangeService
                      :fibo-fbc-fct-fse/ElectronicFundsTransferService
@@ -269,11 +290,12 @@
    :db/ident :fibo-ind-fx-fx/QuotedExchangeRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "quoted exchange rate",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-acc-cur/Currency,
                       :owl/onProperty :fibo-ind-fx-fx/hasQuoteCurrency,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-ind-ind-ind/MarketRate
                      :fibo-fnd-acc-cur/ExchangeRate],
@@ -286,7 +308,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-ind-fx-fx/QuotedExchangeRate,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "has quotation block amount basis",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
    :skos/definition
@@ -298,7 +321,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-ind-fx-fx/QuotedExchangeRate,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "has quotation settlement basis",
    :rdfs/range :cmns-dt/Duration,
    :rdfs/subPropertyOf :cmns-dt/hasDuration,
@@ -310,7 +334,8 @@
   {:db/ident :fibo-ind-fx-fx/hasQuoteCurrency,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "has quote currency",
    :rdfs/range :fibo-fnd-acc-cur/Currency,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasDealtCurrency,
@@ -323,7 +348,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-ind-fx-fx/CurrencyForwardRate,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/"},
    :rdfs/label "is premium on",
    :rdfs/range :fibo-ind-fx-fx/QuotedExchangeRate,
    :skos/definition

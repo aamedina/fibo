@@ -1,16 +1,19 @@
 (ns net.wikipunk.rdf.lcc-3166-2-us
-  "ISO 3166-2 Subdivision Codes for United States of America (the) Ontology"
+  "This ontology represents the subset of the ISO 3166 standard that includes the actual ISO 3166-2 subdivision codes for United States of America (the), with the ontology and codes for the other parts of the standard represented in models that this ontology depends on."
   {:dcat/downloadURL
    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US.rdf",
-   :dcterms/issued #inst "2021-10-29T23:57:18.465-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/issued #xsd/dateTime #inst "2021-10-29T23:57:18.465+00:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"],
+   [{:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}],
    :owl/versionIRI
-   "https://www.omg.org/spec/LCC/20211101/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/20211101/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdf/ns-prefix-map
    {"dcterms" "http://purl.org/dc/terms/",
     "lcc-3166-1"
@@ -33,19 +36,23 @@
    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
    :rdfs/label
    "ISO 3166-2 Subdivision Codes for United States of America (the) Ontology",
-   :rdfs/seeAlso ["https://www.omg.org/spec/LCC/Countries/AboutCountries/"
-                  "https://www.omg.org/spec/LCC/AboutLCC/"],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
+   :rdfs/seeAlso [{:rdfa/uri
+                   "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}
+                  {:rdfa/uri "https://www.omg.org/spec/LCC/AboutLCC/"}],
+   :sm/contentLanguage {:rdfa/uri
+                        "https://www.w3.org/TR/owl2-quick-reference/"},
    :sm/copyright ["Copyright (c) 2015-2017 Unisys"
                   "Copyright (c) 2015-2020 Adaptive Inc."
                   "Copyright (c) 2015-2021 Object Management Group, Inc."
                   "Copyright (c) 2021 agnos.ai UK Ltd."
                   "Copyright (c) 2015-2021 Thematix Partners LLC"],
    :sm/dependsOn
-   ["https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"],
+   [{:rdfa/uri "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}],
    :sm/fileAbbreviation "lcc-3166-2-us",
    :sm/fileAbstract
    "This ontology represents the subset of the ISO 3166 standard that includes the actual ISO 3166-2 subdivision codes for United States of America (the), with the ontology and codes for the other parts of the standard represented in models that this ontology depends on.",
@@ -311,8 +318,9 @@
   {:db/ident :lcc-3166-2-us/US-141-RegionKind,
    :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "district@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "district@en",
    :skos/definition
    "subdivision category district in the country of United States of America (the)"})
 
@@ -321,8 +329,9 @@
   {:db/ident :lcc-3166-2-us/US-265-RegionKind,
    :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "outlying area@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "outlying area@en",
    :skos/definition
    "subdivision category outlying area in the country of United States of America (the)"})
 
@@ -331,8 +340,9 @@
   {:db/ident :lcc-3166-2-us/US-335-RegionKind,
    :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "state@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "state@en",
    :skos/definition
    "subdivision category state in the country of United States of America (the)"})
 
@@ -350,7 +360,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-AK",
    :skos/definition
    "subdivision code for the state of Alaska in the country of United States of America (the)"})
@@ -358,13 +369,14 @@
 (def US-AK-Subdivision
   "the state of Alaska in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-AK-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Alaska@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Alaska@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Alaska@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Alaska@en",
    :skos/definition
    "the state of Alaska in the country of United States of America (the)"})
 
@@ -382,7 +394,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-AL",
    :skos/definition
    "subdivision code for the state of Alabama in the country of United States of America (the)"})
@@ -390,13 +403,14 @@
 (def US-AL-Subdivision
   "the state of Alabama in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-AL-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Alabama@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Alabama@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Alabama@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Alabama@en",
    :skos/definition
    "the state of Alabama in the country of United States of America (the)"})
 
@@ -414,7 +428,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-AR",
    :skos/definition
    "subdivision code for the state of Arkansas in the country of United States of America (the)"})
@@ -422,13 +437,14 @@
 (def US-AR-Subdivision
   "the state of Arkansas in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-AR-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Arkansas@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Arkansas@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Arkansas@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Arkansas@en",
    :skos/definition
    "the state of Arkansas in the country of United States of America (the)"})
 
@@ -446,7 +462,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-AS",
    :skos/definition
    "subdivision code for the outlying area of American Samoa (see also separate country code entry under AS) in the country of United States of America (the)"})
@@ -459,9 +476,10 @@
    :owl/sameAs :lcc-3166-1/AmericanSamoa,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label
-   #voc/lstr
+   #xsd/langString
     "American Samoa (see also separate country code entry under AS)@en",
    :skos/definition
    "the outlying area of American Samoa (see also separate country code entry under AS) in the country of United States of America (the)"})
@@ -480,7 +498,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-AZ",
    :skos/definition
    "subdivision code for the state of Arizona in the country of United States of America (the)"})
@@ -488,13 +507,14 @@
 (def US-AZ-Subdivision
   "the state of Arizona in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-AZ-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Arizona@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Arizona@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Arizona@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Arizona@en",
    :skos/definition
    "the state of Arizona in the country of United States of America (the)"})
 
@@ -512,7 +532,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-CA",
    :skos/definition
    "subdivision code for the state of California in the country of United States of America (the)"})
@@ -520,13 +541,14 @@
 (def US-CA-Subdivision
   "the state of California in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-CA-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "California@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "California@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "California@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "California@en",
    :skos/definition
    "the state of California in the country of United States of America (the)"})
 
@@ -544,7 +566,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-CO",
    :skos/definition
    "subdivision code for the state of Colorado in the country of United States of America (the)"})
@@ -552,13 +575,14 @@
 (def US-CO-Subdivision
   "the state of Colorado in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-CO-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Colorado@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Colorado@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Colorado@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Colorado@en",
    :skos/definition
    "the state of Colorado in the country of United States of America (the)"})
 
@@ -576,7 +600,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-CT",
    :skos/definition
    "subdivision code for the state of Connecticut in the country of United States of America (the)"})
@@ -584,13 +609,14 @@
 (def US-CT-Subdivision
   "the state of Connecticut in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-CT-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Connecticut@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Connecticut@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Connecticut@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Connecticut@en",
    :skos/definition
    "the state of Connecticut in the country of United States of America (the)"})
 
@@ -608,7 +634,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-DC",
    :skos/definition
    "subdivision code for the district of District of Columbia in the country of United States of America (the)"})
@@ -616,13 +643,14 @@
 (def US-DC-Subdivision
   "the district of District of Columbia in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-DC-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "District of Columbia@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "District of Columbia@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-141-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "District of Columbia@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "District of Columbia@en",
    :skos/definition
    "the district of District of Columbia in the country of United States of America (the)"})
 
@@ -640,7 +668,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-DE",
    :skos/definition
    "subdivision code for the state of Delaware in the country of United States of America (the)"})
@@ -648,13 +677,14 @@
 (def US-DE-Subdivision
   "the state of Delaware in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-DE-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Delaware@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Delaware@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Delaware@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Delaware@en",
    :skos/definition
    "the state of Delaware in the country of United States of America (the)"})
 
@@ -672,7 +702,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-FL",
    :skos/definition
    "subdivision code for the state of Florida in the country of United States of America (the)"})
@@ -680,13 +711,14 @@
 (def US-FL-Subdivision
   "the state of Florida in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-FL-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Florida@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Florida@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Florida@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Florida@en",
    :skos/definition
    "the state of Florida in the country of United States of America (the)"})
 
@@ -704,7 +736,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-GA",
    :skos/definition
    "subdivision code for the state of Georgia in the country of United States of America (the)"})
@@ -712,13 +745,14 @@
 (def US-GA-Subdivision
   "the state of Georgia in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-GA-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Georgia@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Georgia@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Georgia@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Georgia@en",
    :skos/definition
    "the state of Georgia in the country of United States of America (the)"})
 
@@ -736,7 +770,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-GU",
    :skos/definition
    "subdivision code for the outlying area of Guam (see also separate country code entry under GU) in the country of United States of America (the)"})
@@ -749,8 +784,9 @@
    :owl/sameAs :lcc-3166-1/Guam,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString
                 "Guam (see also separate country code entry under GU)@en",
    :skos/definition
    "the outlying area of Guam (see also separate country code entry under GU) in the country of United States of America (the)"})
@@ -769,7 +805,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-HI",
    :skos/definition
    "subdivision code for the state of Hawaii in the country of United States of America (the)"})
@@ -777,13 +814,14 @@
 (def US-HI-Subdivision
   "the state of Hawaii in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-HI-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Hawaii@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Hawaii@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Hawaii@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Hawaii@en",
    :skos/definition
    "the state of Hawaii in the country of United States of America (the)"})
 
@@ -801,7 +839,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-IA",
    :skos/definition
    "subdivision code for the state of Iowa in the country of United States of America (the)"})
@@ -809,13 +848,14 @@
 (def US-IA-Subdivision
   "the state of Iowa in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-IA-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Iowa@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Iowa@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Iowa@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Iowa@en",
    :skos/definition
    "the state of Iowa in the country of United States of America (the)"})
 
@@ -833,7 +873,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-ID",
    :skos/definition
    "subdivision code for the state of Idaho in the country of United States of America (the)"})
@@ -841,13 +882,14 @@
 (def US-ID-Subdivision
   "the state of Idaho in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-ID-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Idaho@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Idaho@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Idaho@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Idaho@en",
    :skos/definition
    "the state of Idaho in the country of United States of America (the)"})
 
@@ -865,7 +907,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-IL",
    :skos/definition
    "subdivision code for the state of Illinois in the country of United States of America (the)"})
@@ -873,13 +916,14 @@
 (def US-IL-Subdivision
   "the state of Illinois in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-IL-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Illinois@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Illinois@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Illinois@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Illinois@en",
    :skos/definition
    "the state of Illinois in the country of United States of America (the)"})
 
@@ -897,7 +941,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-IN",
    :skos/definition
    "subdivision code for the state of Indiana in the country of United States of America (the)"})
@@ -905,13 +950,14 @@
 (def US-IN-Subdivision
   "the state of Indiana in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-IN-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Indiana@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Indiana@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Indiana@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Indiana@en",
    :skos/definition
    "the state of Indiana in the country of United States of America (the)"})
 
@@ -929,7 +975,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-KS",
    :skos/definition
    "subdivision code for the state of Kansas in the country of United States of America (the)"})
@@ -937,13 +984,14 @@
 (def US-KS-Subdivision
   "the state of Kansas in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-KS-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Kansas@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Kansas@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Kansas@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Kansas@en",
    :skos/definition
    "the state of Kansas in the country of United States of America (the)"})
 
@@ -961,7 +1009,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-KY",
    :skos/definition
    "subdivision code for the state of Kentucky in the country of United States of America (the)"})
@@ -969,13 +1018,14 @@
 (def US-KY-Subdivision
   "the state of Kentucky in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-KY-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Kentucky@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Kentucky@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Kentucky@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Kentucky@en",
    :skos/definition
    "the state of Kentucky in the country of United States of America (the)"})
 
@@ -993,7 +1043,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-LA",
    :skos/definition
    "subdivision code for the state of Louisiana in the country of United States of America (the)"})
@@ -1001,13 +1052,14 @@
 (def US-LA-Subdivision
   "the state of Louisiana in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-LA-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Louisiana@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Louisiana@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Louisiana@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Louisiana@en",
    :skos/definition
    "the state of Louisiana in the country of United States of America (the)"})
 
@@ -1025,7 +1077,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-MA",
    :skos/definition
    "subdivision code for the state of Massachusetts in the country of United States of America (the)"})
@@ -1033,13 +1086,14 @@
 (def US-MA-Subdivision
   "the state of Massachusetts in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-MA-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Massachusetts@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Massachusetts@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Massachusetts@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Massachusetts@en",
    :skos/definition
    "the state of Massachusetts in the country of United States of America (the)"})
 
@@ -1057,7 +1111,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-MD",
    :skos/definition
    "subdivision code for the state of Maryland in the country of United States of America (the)"})
@@ -1065,13 +1120,14 @@
 (def US-MD-Subdivision
   "the state of Maryland in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-MD-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Maryland@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Maryland@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Maryland@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Maryland@en",
    :skos/definition
    "the state of Maryland in the country of United States of America (the)"})
 
@@ -1089,7 +1145,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-ME",
    :skos/definition
    "subdivision code for the state of Maine in the country of United States of America (the)"})
@@ -1097,13 +1154,14 @@
 (def US-ME-Subdivision
   "the state of Maine in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-ME-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Maine@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Maine@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Maine@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Maine@en",
    :skos/definition
    "the state of Maine in the country of United States of America (the)"})
 
@@ -1121,7 +1179,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-MI",
    :skos/definition
    "subdivision code for the state of Michigan in the country of United States of America (the)"})
@@ -1129,13 +1188,14 @@
 (def US-MI-Subdivision
   "the state of Michigan in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-MI-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Michigan@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Michigan@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Michigan@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Michigan@en",
    :skos/definition
    "the state of Michigan in the country of United States of America (the)"})
 
@@ -1153,7 +1213,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-MN",
    :skos/definition
    "subdivision code for the state of Minnesota in the country of United States of America (the)"})
@@ -1161,13 +1222,14 @@
 (def US-MN-Subdivision
   "the state of Minnesota in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-MN-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Minnesota@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Minnesota@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Minnesota@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Minnesota@en",
    :skos/definition
    "the state of Minnesota in the country of United States of America (the)"})
 
@@ -1185,7 +1247,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-MO",
    :skos/definition
    "subdivision code for the state of Missouri in the country of United States of America (the)"})
@@ -1193,13 +1256,14 @@
 (def US-MO-Subdivision
   "the state of Missouri in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-MO-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Missouri@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Missouri@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Missouri@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Missouri@en",
    :skos/definition
    "the state of Missouri in the country of United States of America (the)"})
 
@@ -1217,7 +1281,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-MP",
    :skos/definition
    "subdivision code for the outlying area of Northern Mariana Islands (see also separate country code entry under MP) in the country of United States of America (the)"})
@@ -1230,9 +1295,10 @@
    :owl/sameAs :lcc-3166-1/NorthernMarianaIslands,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label
-   #voc/lstr
+   #xsd/langString
     "Northern Mariana Islands (see also separate country code entry under MP)@en",
    :skos/definition
    "the outlying area of Northern Mariana Islands (see also separate country code entry under MP) in the country of United States of America (the)"})
@@ -1251,7 +1317,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-MS",
    :skos/definition
    "subdivision code for the state of Mississippi in the country of United States of America (the)"})
@@ -1259,13 +1326,14 @@
 (def US-MS-Subdivision
   "the state of Mississippi in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-MS-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Mississippi@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Mississippi@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Mississippi@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Mississippi@en",
    :skos/definition
    "the state of Mississippi in the country of United States of America (the)"})
 
@@ -1283,7 +1351,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-MT",
    :skos/definition
    "subdivision code for the state of Montana in the country of United States of America (the)"})
@@ -1291,13 +1360,14 @@
 (def US-MT-Subdivision
   "the state of Montana in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-MT-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Montana@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Montana@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Montana@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Montana@en",
    :skos/definition
    "the state of Montana in the country of United States of America (the)"})
 
@@ -1315,7 +1385,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-NC",
    :skos/definition
    "subdivision code for the state of North Carolina in the country of United States of America (the)"})
@@ -1323,13 +1394,14 @@
 (def US-NC-Subdivision
   "the state of North Carolina in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-NC-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "North Carolina@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "North Carolina@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "North Carolina@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "North Carolina@en",
    :skos/definition
    "the state of North Carolina in the country of United States of America (the)"})
 
@@ -1347,7 +1419,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-ND",
    :skos/definition
    "subdivision code for the state of North Dakota in the country of United States of America (the)"})
@@ -1355,13 +1428,14 @@
 (def US-ND-Subdivision
   "the state of North Dakota in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-ND-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "North Dakota@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "North Dakota@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "North Dakota@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "North Dakota@en",
    :skos/definition
    "the state of North Dakota in the country of United States of America (the)"})
 
@@ -1379,7 +1453,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-NE",
    :skos/definition
    "subdivision code for the state of Nebraska in the country of United States of America (the)"})
@@ -1387,13 +1462,14 @@
 (def US-NE-Subdivision
   "the state of Nebraska in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-NE-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Nebraska@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Nebraska@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Nebraska@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Nebraska@en",
    :skos/definition
    "the state of Nebraska in the country of United States of America (the)"})
 
@@ -1411,7 +1487,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-NH",
    :skos/definition
    "subdivision code for the state of New Hampshire in the country of United States of America (the)"})
@@ -1419,13 +1496,14 @@
 (def US-NH-Subdivision
   "the state of New Hampshire in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-NH-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "New Hampshire@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "New Hampshire@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "New Hampshire@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "New Hampshire@en",
    :skos/definition
    "the state of New Hampshire in the country of United States of America (the)"})
 
@@ -1443,7 +1521,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-NJ",
    :skos/definition
    "subdivision code for the state of New Jersey in the country of United States of America (the)"})
@@ -1451,13 +1530,14 @@
 (def US-NJ-Subdivision
   "the state of New Jersey in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-NJ-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "New Jersey@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "New Jersey@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "New Jersey@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "New Jersey@en",
    :skos/definition
    "the state of New Jersey in the country of United States of America (the)"})
 
@@ -1475,7 +1555,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-NM",
    :skos/definition
    "subdivision code for the state of New Mexico in the country of United States of America (the)"})
@@ -1483,13 +1564,14 @@
 (def US-NM-Subdivision
   "the state of New Mexico in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-NM-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "New Mexico@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "New Mexico@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "New Mexico@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "New Mexico@en",
    :skos/definition
    "the state of New Mexico in the country of United States of America (the)"})
 
@@ -1507,7 +1589,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-NV",
    :skos/definition
    "subdivision code for the state of Nevada in the country of United States of America (the)"})
@@ -1515,13 +1598,14 @@
 (def US-NV-Subdivision
   "the state of Nevada in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-NV-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Nevada@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Nevada@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Nevada@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Nevada@en",
    :skos/definition
    "the state of Nevada in the country of United States of America (the)"})
 
@@ -1539,7 +1623,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-NY",
    :skos/definition
    "subdivision code for the state of New York in the country of United States of America (the)"})
@@ -1547,13 +1632,14 @@
 (def US-NY-Subdivision
   "the state of New York in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-NY-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "New York@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "New York@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "New York@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "New York@en",
    :skos/definition
    "the state of New York in the country of United States of America (the)"})
 
@@ -1571,7 +1657,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-OH",
    :skos/definition
    "subdivision code for the state of Ohio in the country of United States of America (the)"})
@@ -1579,13 +1666,14 @@
 (def US-OH-Subdivision
   "the state of Ohio in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-OH-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Ohio@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Ohio@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Ohio@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Ohio@en",
    :skos/definition
    "the state of Ohio in the country of United States of America (the)"})
 
@@ -1603,7 +1691,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-OK",
    :skos/definition
    "subdivision code for the state of Oklahoma in the country of United States of America (the)"})
@@ -1611,13 +1700,14 @@
 (def US-OK-Subdivision
   "the state of Oklahoma in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-OK-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Oklahoma@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Oklahoma@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Oklahoma@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Oklahoma@en",
    :skos/definition
    "the state of Oklahoma in the country of United States of America (the)"})
 
@@ -1635,7 +1725,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-OR",
    :skos/definition
    "subdivision code for the state of Oregon in the country of United States of America (the)"})
@@ -1643,13 +1734,14 @@
 (def US-OR-Subdivision
   "the state of Oregon in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-OR-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Oregon@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Oregon@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Oregon@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Oregon@en",
    :skos/definition
    "the state of Oregon in the country of United States of America (the)"})
 
@@ -1667,7 +1759,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-PA",
    :skos/definition
    "subdivision code for the state of Pennsylvania in the country of United States of America (the)"})
@@ -1675,13 +1768,14 @@
 (def US-PA-Subdivision
   "the state of Pennsylvania in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-PA-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Pennsylvania@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Pennsylvania@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Pennsylvania@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Pennsylvania@en",
    :skos/definition
    "the state of Pennsylvania in the country of United States of America (the)"})
 
@@ -1699,7 +1793,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-PR",
    :skos/definition
    "subdivision code for the outlying area of Puerto Rico (see also separate country code entry under PR) in the country of United States of America (the)"})
@@ -1712,9 +1807,11 @@
    :owl/sameAs :lcc-3166-1/PuertoRico,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label
-   #voc/lstr "Puerto Rico (see also separate country code entry under PR)@en",
+   #xsd/langString
+    "Puerto Rico (see also separate country code entry under PR)@en",
    :skos/definition
    "the outlying area of Puerto Rico (see also separate country code entry under PR) in the country of United States of America (the)"})
 
@@ -1732,7 +1829,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-RI",
    :skos/definition
    "subdivision code for the state of Rhode Island in the country of United States of America (the)"})
@@ -1740,13 +1838,14 @@
 (def US-RI-Subdivision
   "the state of Rhode Island in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-RI-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Rhode Island@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Rhode Island@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Rhode Island@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Rhode Island@en",
    :skos/definition
    "the state of Rhode Island in the country of United States of America (the)"})
 
@@ -1764,7 +1863,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-SC",
    :skos/definition
    "subdivision code for the state of South Carolina in the country of United States of America (the)"})
@@ -1772,13 +1872,14 @@
 (def US-SC-Subdivision
   "the state of South Carolina in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-SC-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "South Carolina@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "South Carolina@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "South Carolina@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "South Carolina@en",
    :skos/definition
    "the state of South Carolina in the country of United States of America (the)"})
 
@@ -1796,7 +1897,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-SD",
    :skos/definition
    "subdivision code for the state of South Dakota in the country of United States of America (the)"})
@@ -1804,13 +1906,14 @@
 (def US-SD-Subdivision
   "the state of South Dakota in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-SD-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "South Dakota@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "South Dakota@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "South Dakota@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "South Dakota@en",
    :skos/definition
    "the state of South Dakota in the country of United States of America (the)"})
 
@@ -1828,7 +1931,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-TN",
    :skos/definition
    "subdivision code for the state of Tennessee in the country of United States of America (the)"})
@@ -1836,13 +1940,14 @@
 (def US-TN-Subdivision
   "the state of Tennessee in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-TN-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Tennessee@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Tennessee@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Tennessee@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Tennessee@en",
    :skos/definition
    "the state of Tennessee in the country of United States of America (the)"})
 
@@ -1860,7 +1965,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-TX",
    :skos/definition
    "subdivision code for the state of Texas in the country of United States of America (the)"})
@@ -1868,13 +1974,14 @@
 (def US-TX-Subdivision
   "the state of Texas in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-TX-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Texas@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Texas@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Texas@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Texas@en",
    :skos/definition
    "the state of Texas in the country of United States of America (the)"})
 
@@ -1892,7 +1999,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-UM",
    :skos/definition
    "subdivision code for the outlying area of United States Minor Outlying Islands (see also separate country code entry under UM) in the country of United States of America (the)"})
@@ -1905,9 +2013,10 @@
    :owl/sameAs :lcc-3166-1/UnitedStatesMinorOutlyingIslands,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label
-   #voc/lstr
+   #xsd/langString
     "United States Minor Outlying Islands (see also separate country code entry under UM)@en",
    :skos/definition
    "the outlying area of United States Minor Outlying Islands (see also separate country code entry under UM) in the country of United States of America (the)"})
@@ -1926,7 +2035,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-UT",
    :skos/definition
    "subdivision code for the state of Utah in the country of United States of America (the)"})
@@ -1934,13 +2044,14 @@
 (def US-UT-Subdivision
   "the state of Utah in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-UT-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Utah@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Utah@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Utah@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Utah@en",
    :skos/definition
    "the state of Utah in the country of United States of America (the)"})
 
@@ -1958,7 +2069,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-VA",
    :skos/definition
    "subdivision code for the state of Virginia in the country of United States of America (the)"})
@@ -1966,13 +2078,14 @@
 (def US-VA-Subdivision
   "the state of Virginia in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-VA-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Virginia@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Virginia@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Virginia@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Virginia@en",
    :skos/definition
    "the state of Virginia in the country of United States of America (the)"})
 
@@ -1990,7 +2103,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-VI",
    :skos/definition
    "subdivision code for the outlying area of Virgin Islands, U.S. (see also separate country code entry under VI) in the country of United States of America (the)"})
@@ -2003,9 +2117,10 @@
    :owl/sameAs :lcc-3166-1/VirginIslandsUS,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label
-   #voc/lstr
+   #xsd/langString
     "Virgin Islands, U.S. (see also separate country code entry under VI)@en",
    :skos/definition
    "the outlying area of Virgin Islands, U.S. (see also separate country code entry under VI) in the country of United States of America (the)"})
@@ -2024,7 +2139,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-VT",
    :skos/definition
    "subdivision code for the state of Vermont in the country of United States of America (the)"})
@@ -2032,13 +2148,14 @@
 (def US-VT-Subdivision
   "the state of Vermont in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-VT-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Vermont@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Vermont@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Vermont@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Vermont@en",
    :skos/definition
    "the state of Vermont in the country of United States of America (the)"})
 
@@ -2056,7 +2173,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-WA",
    :skos/definition
    "subdivision code for the state of Washington in the country of United States of America (the)"})
@@ -2064,13 +2182,14 @@
 (def US-WA-Subdivision
   "the state of Washington in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-WA-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Washington@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Washington@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Washington@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Washington@en",
    :skos/definition
    "the state of Washington in the country of United States of America (the)"})
 
@@ -2088,7 +2207,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-WI",
    :skos/definition
    "subdivision code for the state of Wisconsin in the country of United States of America (the)"})
@@ -2096,13 +2216,14 @@
 (def US-WI-Subdivision
   "the state of Wisconsin in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-WI-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Wisconsin@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Wisconsin@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Wisconsin@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Wisconsin@en",
    :skos/definition
    "the state of Wisconsin in the country of United States of America (the)"})
 
@@ -2120,7 +2241,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-WV",
    :skos/definition
    "subdivision code for the state of West Virginia in the country of United States of America (the)"})
@@ -2128,13 +2250,14 @@
 (def US-WV-Subdivision
   "the state of West Virginia in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-WV-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "West Virginia@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "West Virginia@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "West Virginia@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "West Virginia@en",
    :skos/definition
    "the state of West Virginia in the country of United States of America (the)"})
 
@@ -2152,7 +2275,8 @@
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
    :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
    :rdfs/label "US-WY",
    :skos/definition
    "subdivision code for the state of Wyoming in the country of United States of America (the)"})
@@ -2160,13 +2284,14 @@
 (def US-WY-Subdivision
   "the state of Wyoming in the country of United States of America (the)"
   {:db/ident :lcc-3166-2-us/US-WY-Subdivision,
-   :lcc-cr/hasEnglishShortName #voc/lstr "Wyoming@en",
+   :lcc-cr/hasEnglishShortName #xsd/langString "Wyoming@en",
    :lcc-cr/isClassifiedBy :lcc-3166-2-us/US-335-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/UnitedStatesOfAmerica,
    :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-   :rdfs/label #voc/lstr "Wyoming@en",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"},
+   :rdfs/label #xsd/langString "Wyoming@en",
    :skos/definition
    "the state of Wyoming in the country of United States of America (the)"})
 

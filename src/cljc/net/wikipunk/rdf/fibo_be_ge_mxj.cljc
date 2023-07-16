@@ -6,21 +6,30 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides the set of basic federal government, provincial, and territory level entities and jurisdictions for use in other Mexico-specific FIBO ontologies.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -55,16 +64,17 @@
 
 (def FederalGovernmentOfMexico
   "federal presidential constitutional republic with shared sovereignty over the republic with the governments of the 31 individual Mexican states, which functions per the Constitution of the United Mexican States"
-  {:cmns-av/synonym #voc/lstr "Gobierno de la República@es-MX",
+  {:cmns-av/synonym #xsd/langString "Gobierno de la República@es-MX",
    :db/ident :fibo-be-ge-mxj/FederalGovernmentOfMexico,
    :fibo-be-ge-ge/hasJurisdiction :fibo-be-ge-mxj/MexicanJurisdiction,
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Mexico,
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/FederalGovernment],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Federal Government of Mexico@en"
-                #voc/lstr "Gobierno Federal de México@es-MX"],
-   :rdfs/seeAlso ["http://www.gob.mx/"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Federal Government of Mexico@en"
+                #xsd/langString "Gobierno Federal de México@es-MX"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gob.mx/"},
    :skos/definition
    "federal presidential constitutional republic with shared sovereignty over the republic with the governments of the 31 individual Mexican states, which functions per the Constitution of the United Mexican States"})
 
@@ -108,9 +118,10 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-mxj/FederalGovernmentOfMexico,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Mexican entity",
-   :rdfs/seeAlso ["http://www.gob.mx/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.gob.mx/"},
    :skos/definition "federated sovereignty and polity that is Mexico"})
 
 (def MexicanJurisdiction
@@ -122,8 +133,9 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Mexico,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Mexican jurisdiction",
-   :rdfs/seeAlso ["https://www.scjn.gob.mx/"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.scjn.gob.mx/"},
    :skos/definition
    "jurisdiction of the Supreme Court of Justice of the Nation, including the system of courts that interprets and applies the law at the federal level in Mexico"})

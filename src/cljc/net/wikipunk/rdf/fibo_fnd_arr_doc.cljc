@@ -6,15 +6,17 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
    :dcterms/abstract
    "This ontology defines abstract concepts for representation documents for use in other FIBO ontology elements.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -53,7 +55,8 @@
   {:db/ident :fibo-fnd-arr-doc/Certificate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "certificate",
    :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
                      {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
@@ -69,7 +72,8 @@
    :db/ident :fibo-fnd-arr-doc/Document,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "document",
    :rdfs/subClassOf {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
                      :owl/someValuesFrom :owl/Thing,
@@ -84,7 +88,8 @@
    :db/ident :fibo-fnd-arr-doc/LegalDocument,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "legal document",
    :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
                      {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
@@ -102,7 +107,8 @@
    :db/ident :fibo-fnd-arr-doc/Notice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "notice",
    :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
                      {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
@@ -118,7 +124,8 @@
    :db/ident :fibo-fnd-arr-doc/Record,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "record",
    :rdfs/subClassOf :cmns-col/Collection,
    :skos/definition
@@ -129,11 +136,13 @@
 (def ReferenceDocument
   "a document that provides pertinent details for consultation about a subject"
   {:cmns-av/adaptedFrom
-   "ISO/IEC 11179-3 Information technology - Metadata registries (MDR) - Part 3: Registry metamodel and basic attributes, Third edition, 2013-02-15",
+   {:xsd/string
+    "ISO/IEC 11179-3 Information technology - Metadata registries (MDR) - Part 3: Registry metamodel and basic attributes, Third edition, 2013-02-15"},
    :db/ident :fibo-fnd-arr-doc/ReferenceDocument,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "reference document",
    :rdfs/subClassOf [:fibo-fnd-arr-doc/Document
                      {:owl/onProperty     :fibo-fnd-arr-doc/isAbout,
@@ -147,7 +156,8 @@
   {:db/ident :fibo-fnd-arr-doc/hasDataSource,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "has data source",
    :skos/definition
    "relates something, such as an agreement, contract, document, report, process, and so forth to a source of data used to analyze, develop, explain, produce, or otherwise create it (e.g., Experian provides data for a CreditReport)"})
@@ -157,7 +167,8 @@
   {:db/ident :fibo-fnd-arr-doc/hasDateOfIssuance,
    :rdf/type [:owl/FunctionalProperty :owl/ObjectProperty],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "has date of issuance",
    :rdfs/range :cmns-dt/Date,
    :rdfs/subPropertyOf :cmns-dt/hasStartDate,
@@ -169,7 +180,8 @@
   {:db/ident :fibo-fnd-arr-doc/hasExpirationDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "has expiration date",
    :rdfs/range :cmns-dt/Date,
    :rdfs/subPropertyOf :cmns-dt/hasEndDate,
@@ -181,7 +193,8 @@
   {:db/ident :fibo-fnd-arr-doc/hasRecord,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "has record",
    :rdfs/range :fibo-fnd-arr-doc/Record,
    :rdfs/subPropertyOf :cmns-col/comprises,
@@ -192,7 +205,8 @@
   {:db/ident :fibo-fnd-arr-doc/hasReportingPeriod,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "has reporting period",
    :rdfs/range :cmns-dt/ExplicitDatePeriod,
    :rdfs/subPropertyOf :cmns-dt/hasDatePeriod,
@@ -204,7 +218,8 @@
   {:db/ident :fibo-fnd-arr-doc/hasTerminationDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "has termination date",
    :rdfs/range :cmns-dt/Date,
    :rdfs/subPropertyOf :cmns-dt/hasEndDate,
@@ -216,7 +231,8 @@
   {:db/ident :fibo-fnd-arr-doc/isAbout,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "is about",
    :skos/definition "indicates the subject or topic of a given document"})
 
@@ -225,6 +241,7 @@
   {:db/ident :fibo-fnd-arr-doc/records,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/"},
    :rdfs/label "records",
    :skos/definition "documents for later reference"})

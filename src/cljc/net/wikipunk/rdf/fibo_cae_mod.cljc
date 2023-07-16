@@ -6,15 +6,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/CAE/MetadataCAE/CAEDomain",
    :dcterms/abstract
    "The Corporate Actions and Events (CAE) domain covers events and actions that may occur during the life of a security, ranging from announcements regarding stock offerings, splits, dividends and so forth, as well as more general business events that are relevant to investors and regulators alike.",
-   :dcterms/issued #inst "2018-03-31T22:00:00.000-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-03-31T22:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-03-31T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-03-31T18:00:00.000-04:00",
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/MetadataCAECorporateEvents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/MetadataCAECorporateEvents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/MetadataCAE/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/MetadataCAE/"},
    :rdf/ns-prefix-map
    {"cmns-av"      "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms"      "http://purl.org/dc/terms/",
@@ -64,12 +67,12 @@
     "Tahoe Blue Ltd"
     "Statistics Canada"],
    :dcterms/hasPart :fibo-cae-ce-mod/CorporateEventsModule,
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :dcterms/title
    ["Financial Industry Business Ontology (FIBO) Corporate Actions and Events (CAE) Domain"
     "FIBO CAE Domain"],
    :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/MetadataCAE/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/CAE/MetadataCAE/"},
    :rdfs/label "corporate actions and events domain",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})

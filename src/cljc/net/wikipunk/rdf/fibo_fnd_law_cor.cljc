@@ -6,16 +6,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
    :dcterms/abstract
    "This ontology defines high-level legal concepts for use in other FIBO ontology elements. These concepts include law and constitution, both of which are framed at a more abstract level than national or state laws and constitutions, so that law forms the basis both for statutes and for company by-laws, and constitution forms the basis both for national or state constitutions and for instruments which are constitutive of incorporated legal entities. This ontology also defines some of the variants of these such as governmental constitutions and ordinances. Court of Law is also defined here.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCore/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -54,7 +58,7 @@
    :db/ident :fibo-fnd-law-cor/Constitution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/"},
    :rdfs/label "constitution",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/governs,
                       :owl/someValuesFrom :fibo-fnd-law-cor/Law,
@@ -70,7 +74,7 @@
    :db/ident :fibo-fnd-law-cor/CourtOfLaw,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/"},
    :rdfs/label "court of law",
    :rdfs/subClassOf :fibo-fnd-org-fm/FormalOrganization,
    :skos/definition
@@ -83,7 +87,7 @@
    :db/ident :fibo-fnd-law-cor/Law,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/"},
    :rdfs/label "law",
    :skos/definition
    "rule recognized by some community as regulating the behavior of its members and that it may enforce through the imposition of penalties"})
@@ -94,7 +98,7 @@
    :owl/inverseOf :fibo-fnd-law-cor/isInForceIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/"},
    :rdfs/label "has in force",
    :rdfs/range :fibo-fnd-law-cor/Law,
    :skos/definition
@@ -106,6 +110,6 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-law-cor/Law,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
+   {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/"},
    :rdfs/label "is in force in",
    :skos/definition "identifies a jurisdiction in which some law has effect"})

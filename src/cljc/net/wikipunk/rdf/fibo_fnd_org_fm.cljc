@@ -6,21 +6,29 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
    :dcterms/abstract
    "This ontology defines the high level concept of a formal organization, which is purposefully underspecified to facilitate mapping to other organization ontologies, such as the W3C organization ontology, or others defined for specific business and financial services standards. It also defines general concepts related to employment by a formal organization.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"},
    :rdf/ns-prefix-map
    {"cmns-av"  "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -66,9 +74,11 @@
   {:db/ident :fibo-fnd-org-fm/Employee,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "employee",
-   :rdfs/seeAlso ["https://www.bls.gov/opub/mlr/2002/01/art1full.pdf"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.bls.gov/opub/mlr/2002/01/art1full.pdf"},
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom :fibo-fnd-aap-ppl/Person,
                       :rdf/type           :owl/Restriction}
@@ -87,7 +97,8 @@
   {:db/ident :fibo-fnd-org-fm/Employer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "employer",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-org-fm/isEmployingParty,
                       :owl/someValuesFrom :fibo-fnd-org-fm/Employment,
@@ -106,8 +117,9 @@
    :db/ident :fibo-fnd-org-fm/Employment,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
-   :rdfs/label #voc/lstr "employment@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
+   :rdfs/label #xsd/langString "employment@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-org-fm/hasEmployingParty,
                       :owl/someValuesFrom :fibo-fnd-org-fm/Employer,
                       :rdf/type           :owl/Restriction}
@@ -123,12 +135,13 @@
 (def FormalOrganization
   "organization that is recognized in some legal jurisdiction, with associated rights and responsibilities"
   {:cmns-av/adaptedFrom
-   "https://www.w3.org/TR/vocab-org/#class-formalorganization",
+   {:rdfa/uri "https://www.w3.org/TR/vocab-org/#class-formalorganization"},
    :db/ident :fibo-fnd-org-fm/FormalOrganization,
    :owl/disjointWith :fibo-fnd-org-fm/InformalOrganization,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "formal organization",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-org-fm/isDomiciledIn,
                       :owl/someValuesFrom :lcc-cr/GeopoliticalEntity,
@@ -144,7 +157,8 @@
   {:db/ident :fibo-fnd-org-fm/Group,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "group",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-aap-agt/AutonomousAgent,
                       :owl/onProperty    :cmns-col/hasMember,
@@ -158,7 +172,8 @@
   {:db/ident :fibo-fnd-org-fm/InformalOrganization,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "informal organization",
    :rdfs/subClassOf :fibo-fnd-org-org/Organization,
    :skos/definition
@@ -169,7 +184,8 @@
   {:db/ident :fibo-fnd-org-fm/employs,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "employs",
    :rdfs/range :fibo-fnd-aap-ppl/Person,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/playsActiveRoleThatDirectlyAffects,
@@ -182,7 +198,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-fm/Employment,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "has employed party",
    :rdfs/range :fibo-fnd-org-fm/Employee,
    :rdfs/subPropertyOf :fibo-fnd-org-org/hasOrganizationMember,
@@ -195,7 +212,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-fm/Employer,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "has employee",
    :rdfs/range :fibo-fnd-org-fm/Employee,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/actsOn,
@@ -208,7 +226,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-fm/Employment,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "has employing party",
    :rdfs/range :fibo-fnd-org-fm/Employer,
    :rdfs/subPropertyOf :fibo-fnd-org-org/hasMembership,
@@ -224,7 +243,8 @@
                                :fibo-fnd-org-org/OrganizationalSubUnit],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "is domiciled in",
    :rdfs/range :lcc-cr/GeopoliticalEntity,
    :skos/definition
@@ -236,7 +256,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-aap-ppl/Person,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "is employed by",
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/experiencesDirectly,
    :skos/definition
@@ -248,7 +269,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-fm/Employee,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "is employed in",
    :rdfs/range :fibo-fnd-org-fm/Employment,
    :rdfs/subPropertyOf :fibo-fnd-org-org/isOrganizationMember,
@@ -261,7 +283,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-fm/Employee,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "is employee of",
    :rdfs/range :fibo-fnd-org-fm/Employer,
    :rdfs/subPropertyOf :fibo-fnd-pty-pty/isAffectedBy,
@@ -274,7 +297,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-org-fm/Employer,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/"},
    :rdfs/label "is employing party",
    :rdfs/range :fibo-fnd-org-fm/Employment,
    :rdfs/subPropertyOf :fibo-fnd-org-org/isMembershipPartyIn,

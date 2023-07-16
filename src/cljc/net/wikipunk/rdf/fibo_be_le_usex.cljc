@@ -6,26 +6,38 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
    :dcterms/abstract
    "This ontology includes example corporate executives and other people to demonstrate how to begin to model those entities in FIBO.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/People/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/Executives/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/AgentsAndPeople/Agents/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
@@ -70,7 +82,8 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-be-le-usee/AppleInc-US-CA,
    :rdf/type [:fibo-be-oac-cpty/ControlledParty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Apple Inc. as controlled party",
    :skos/definition
    "Apple Inc. in its role as a corporation that is controlled to some degree by its corporate officers"})
@@ -81,7 +94,8 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-be-le-usee/AppleInc-US-CA,
    :rdf/type [:fibo-fnd-org-fm/Employer :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Apple Inc. as employer",
    :skos/definition
    "Apple Inc. in its role as a corporation that has employees"})
@@ -93,7 +107,8 @@
    :fibo-fnd-org-fm/hasEmployingParty :fibo-be-le-usex/AppleIncAsEmployer,
    :rdf/type [:fibo-fnd-org-fm/Employment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Employment of Katherine Adams at Apple Inc.",
    :skos/definition
    "situation representing the relationship between Apple Inc. as an employer and Katherine Adams as an employee"})
@@ -106,7 +121,8 @@
    :fibo-fnd-org-fm/hasEmployingParty :fibo-be-le-usex/AppleIncAsEmployer,
    :rdf/type [:fibo-fnd-org-fm/Employment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Employment of Tim Cook at Apple Inc.",
    :skos/definition
    "situation representing the relationship between Apple Inc. as an employer and Tim Cook as an employee"})
@@ -119,7 +135,8 @@
    :fibo-fnd-aap-ppl/hasDateOfBirth :fibo-be-le-usex/KatherineAdamsDateOfBirth,
    :rdf/type [:fibo-fnd-aap-ppl/Person :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Katherine Adams",
    :skos/definition "person that is an American attorney and corporate lawyer"})
 
@@ -132,7 +149,8 @@
    :fibo-fnd-pty-rl/isPlayedBy :fibo-be-le-usex/KatherineAdams,
    :rdf/type [:fibo-fnd-org-fm/Employee :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Katherine Adams as employee",
    :skos/definition
    "Katherine Adams in the role of being employed by Apple Inc."})
@@ -144,7 +162,8 @@
    :fibo-fnd-pty-rl/isPlayedBy :fibo-be-le-usex/KatherineAdams,
    :rdf/type [:fibo-be-oac-exec/CorporateOfficer :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Katherine Adams as General Counsel",
    :skos/definition
    "Katherine Adams in the role of Senior Vice President of Legal and Global Security and General Counsel of Apple Inc."})
@@ -155,7 +174,8 @@
    :db/ident :fibo-be-le-usex/KatherineAdamsDateOfBirth,
    :rdf/type [:fibo-fnd-aap-ppl/DateOfBirth :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Katherine Adams date of birth",
    :skos/definition "date on which Katherine Adams was born"})
 
@@ -166,7 +186,8 @@
    :fibo-fnd-aap-ppl/hasFullLegalName "Katherine Leatherman Adams",
    :rdf/type [:fibo-fnd-aap-ppl/PersonName :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Katherine Adams full legal name",
    :skos/definition
    "name that is on Katherine Adams' birth certificate and that she uses for legal purposes"})
@@ -179,7 +200,8 @@
    :fibo-fnd-aap-ppl/hasDateOfBirth :fibo-be-le-usex/TimCookDateOfBirth,
    :rdf/type [:fibo-fnd-aap-ppl/Person :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Tim Cook",
    :skos/definition
    "person that lives in Palo Alto, California in the San Francisco Bay Area"})
@@ -191,7 +213,8 @@
    :fibo-fnd-pty-rl/isPlayedBy :fibo-be-le-usex/TimCook,
    :rdf/type [:fibo-be-oac-exec/ChiefExecutiveOfficer :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Tim Cook as Chief Executive Officer",
    :skos/definition "Tim Cook in the role of CEO of Apple Inc."})
 
@@ -203,7 +226,8 @@
    :fibo-fnd-pty-rl/isPlayedBy :fibo-be-le-usex/TimCook,
    :rdf/type [:fibo-fnd-org-fm/Employee :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Tim Cook as employee",
    :skos/definition "Tim Cook in the role of being employed by Apple Inc."})
 
@@ -213,7 +237,8 @@
    :db/ident :fibo-be-le-usex/TimCookDateOfBirth,
    :rdf/type [:fibo-fnd-aap-ppl/DateOfBirth :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Tim Cook date of birth",
    :skos/definition "date on which Tim Cook was born"})
 
@@ -224,7 +249,8 @@
    :fibo-fnd-aap-ppl/hasFullLegalName "Timothy Donald Cook",
    :rdf/type [:fibo-fnd-aap-ppl/PersonName :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Tim Cook full legal name",
    :skos/definition
    "name that is on Tim Cook's birth certificate and that he uses for legal purposes"})
@@ -235,7 +261,8 @@
    :db/ident :fibo-be-le-usex/TimCookHireDate,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Tim Cook hire date",
    :skos/definition "date on which Tim Cook was hired by Apple Inc."})
 
@@ -245,7 +272,8 @@
    :db/ident :fibo-be-le-usex/TimCookPeriodOfEmployment,
    :rdf/type [:cmns-dt/DatePeriod :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/NorthAmericanEntities/USExampleExecutives/"},
    :rdfs/label "Tim Cook period of employment",
    :skos/definition
    "date period reflecting when Tim Cook was (is) employed by Apple Inc."})

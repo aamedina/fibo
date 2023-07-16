@@ -1,13 +1,15 @@
 (ns net.wikipunk.rdf.lcc-m49
-  "United Nations Standard Country or Area Codes for Statistical Use (M49 Geographic Region Codes) Ontology"
-  {:dcterms/issued #inst "2021-11-07T23:48:51.125-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+  "This ontology represents the United Nations publication 'Standard Country or Area Codes for Statistical Use' originally published as Series M, No. 49 and now commonly referred to as the M49 standard. The assignment of countries or areas to specific groupings is for statistical convenience and does not imply any assumption regarding political or other affiliation of countries or territories by the United Nations. The codes included herein are current as of the version IRI for this ontology."
+  {:dcterms/issued #xsd/dateTime #inst "2021-11-07T23:48:51.125+00:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"],
+   [{:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}],
    :owl/versionIRI
-   "https://www.omg.org/spec/LCC/20211101/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/20211101/Countries/UN-M49-RegionCodes/"},
    :rdf/ns-prefix-map
    {"dcterms" "http://purl.org/dc/terms/",
     "lcc-3166-1"
@@ -26,21 +28,24 @@
    :rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
    :rdfs/label
    "United Nations Standard Country or Area Codes for Statistical Use (M49 Geographic Region Codes) Ontology",
-   :rdfs/seeAlso ["https://www.omg.org/spec/LCC/Countries/AboutCountries/"
-                  "https://www.omg.org/spec/LCC/AboutLCC/"],
+   :rdfs/seeAlso [{:rdfa/uri
+                   "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}
+                  {:rdfa/uri "https://www.omg.org/spec/LCC/AboutLCC/"}],
    :skos/changeNote
    ["The https://www.omg.org/spec/LCC/20190201/Countries/UN-M49-RegionCodes/ version of this ontology has been revised to reflect the issues addressed by the LCC 1.1 RTF report.  The country codes and related metadata contained herein are current as of the February 2019 revision to the online code set."
     "The https://www.omg.org/spec/LCC/20211101/Countries/UN-M49-RegionCodes/ version of this ontology has been revised to reflect changed URI for North Macedonia (code MK) made by the LCC 1.2 RTF."],
-   :sm/contentLanguage "https://www.w3.org/TR/owl2-quick-reference/",
+   :sm/contentLanguage {:rdfa/uri
+                        "https://www.w3.org/TR/owl2-quick-reference/"},
    :sm/copyright ["Copyright (c) 2021 agnos.ai UK Ltd."
                   "Copyright (c) 2015-2017 Unisys"
                   "Copyright (c) 2015-2020 Adaptive Inc."
                   "Copyright (c) 2015-2021 Thematix Partners LLC"
                   "Copyright (c) 2015-2021 Object Management Group, Inc."],
    :sm/dependsOn
-   ["https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"],
+   [{:rdfa/uri "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}],
    :sm/fileAbbreviation "lcc-m49",
    :sm/fileAbstract
    "This ontology represents the United Nations publication 'Standard Country or Area Codes for Statistical Use' originally published as Series M, No. 49 and now commonly referred to as the M49 standard. The assignment of countries or areas to specific groupings is for statistical convenience and does not imply any assumption regarding political or other affiliation of countries or territories by the United Nations. The codes included herein are current as of the version IRI for this ontology.",
@@ -55,7 +60,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/World,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Africa",
    :skos/definition "individual representing the continent Africa"})
 
@@ -68,7 +73,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/World,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Americas",
    :skos/definition "individual representing the continent Americas"})
 
@@ -81,7 +86,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/World,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Asia",
    :skos/definition "individual representing the continent Asia"})
 
@@ -94,7 +99,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Oceania,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Australia and New Zealand",
    :skos/definition
    "individual representing the region Australia and New Zealand"})
@@ -108,7 +113,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/LatinAmericaAndTheCaribbean,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Caribbean",
    :skos/definition "individual representing the subregion Caribbean"})
 
@@ -121,7 +126,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/LatinAmericaAndTheCaribbean,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Central America",
    :skos/definition "individual representing the subregion Central America"})
 
@@ -134,7 +139,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Asia,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Central Asia",
    :skos/definition "individual representing the region Central Asia"})
 
@@ -147,7 +152,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/NorthernEurope,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Channel Islands",
    :skos/definition "individual representing the subregion Channel Islands"})
 
@@ -156,7 +161,7 @@
   {:db/ident :lcc-m49/Continent,
    :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "continent",
    :skos/definition "the kind of region that is a continent"})
 
@@ -169,7 +174,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Sub-SaharanAfrica,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Eastern Africa",
    :skos/definition "individual representing the subregion Eastern Africa"})
 
@@ -182,7 +187,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Asia,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Eastern Asia",
    :skos/definition "individual representing the region Eastern Asia"})
 
@@ -195,7 +200,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Europe,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Eastern Europe",
    :skos/definition "individual representing the region Eastern Europe"})
 
@@ -208,7 +213,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/World,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Europe",
    :skos/definition "individual representing the continent Europe"})
 
@@ -221,7 +226,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Americas,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Latin America and the Caribbean",
    :skos/definition
    "individual representing the region Latin America and the Caribbean"})
@@ -235,7 +240,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Oceania,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Melanesia",
    :skos/definition "individual representing the region Melanesia"})
 
@@ -248,7 +253,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Oceania,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Micronesia",
    :skos/definition "individual representing the region Micronesia"})
 
@@ -261,7 +266,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Sub-SaharanAfrica,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Middle Africa",
    :skos/definition "individual representing the subregion Middle Africa"})
 
@@ -274,7 +279,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Africa,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Northern Africa",
    :skos/definition "individual representing the region Northern Africa"})
 
@@ -287,7 +292,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Americas,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Northern America",
    :skos/definition "individual representing the region Northern America"})
 
@@ -300,7 +305,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Europe,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Northern Europe",
    :skos/definition "individual representing the region Northern Europe"})
 
@@ -313,7 +318,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/World,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Oceania",
    :skos/definition "individual representing the continent Oceania"})
 
@@ -322,7 +327,7 @@
   {:db/ident :lcc-m49/Planet,
    :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "planet",
    :skos/definition "the kind of region that is a planet"})
 
@@ -335,7 +340,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Oceania,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Polynesia",
    :skos/definition "individual representing the region Polynesia"})
 
@@ -344,7 +349,7 @@
   {:db/ident :lcc-m49/Region,
    :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "region",
    :skos/definition "the kind of region that is a region within a continent"})
 
@@ -357,7 +362,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Asia,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "South-eastern Asia",
    :skos/definition "individual representing the region South-eastern Asia"})
 
@@ -370,7 +375,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/LatinAmericaAndTheCaribbean,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "South America",
    :skos/definition "individual representing the subregion South America"})
 
@@ -383,7 +388,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Sub-SaharanAfrica,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Southern Africa",
    :skos/definition "individual representing the subregion Southern Africa"})
 
@@ -396,7 +401,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Asia,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Southern Asia",
    :skos/definition "individual representing the region Southern Asia"})
 
@@ -409,7 +414,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Europe,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Southern Europe",
    :skos/definition "individual representing the region Southern Europe"})
 
@@ -422,7 +427,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Africa,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Sub-Saharan Africa",
    :skos/definition "individual representing the region Sub-Saharan Africa"})
 
@@ -431,7 +436,7 @@
   {:db/ident :lcc-m49/Subregion,
    :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "subregion",
    :skos/definition "the kind of region that is a subregion"})
 
@@ -444,7 +449,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Sub-SaharanAfrica,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Western Africa",
    :skos/definition "individual representing the subregion Western Africa"})
 
@@ -457,7 +462,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Asia,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Western Asia",
    :skos/definition "individual representing the region Western Asia"})
 
@@ -470,7 +475,7 @@
    :lcc-cr/isSubregionOf :lcc-m49/Europe,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "Western Europe",
    :skos/definition "individual representing the region Western Europe"})
 
@@ -482,6 +487,6 @@
    :lcc-cr/isClassifiedBy :lcc-m49/Planet,
    :rdf/type [:lcc-cr/GeographicRegion :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+   {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"},
    :rdfs/label "World",
    :skos/definition "individual representing the planet World"})

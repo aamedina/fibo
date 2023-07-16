@@ -1,12 +1,14 @@
 (ns net.wikipunk.rdf.lcc-3166-1-adj
-  "ISO 3166-1 Country Codes Adjunct Ontology"
-  {:dcterms/issued #inst "2021-11-07T23:48:51.125-00:00",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+  "This ontology represents an additional set of URIs for ISO 3166-1 countries, based on their 2-char codes."
+  {:dcterms/issued #xsd/dateTime #inst "2021-11-07T23:48:51.125+00:00",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :owl/imports
-   ["https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"],
+   [{:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}],
    :owl/versionIRI
-   "https://www.omg.org/spec/LCC/20211101/Countries/ISO3166-1-CountryCodes-Adjunct/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/LCC/20211101/Countries/ISO3166-1-CountryCodes-Adjunct/"},
    :rdf/ns-prefix-map
    {"dcterms" "http://purl.org/dc/terms/",
     "lcc-3166-1"

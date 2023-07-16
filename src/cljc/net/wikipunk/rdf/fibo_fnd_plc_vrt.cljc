@@ -6,18 +6,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
    :dcterms/abstract
    "This ontology provides scaffolding for use in describing virtual location-oriented concepts.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
@@ -55,7 +60,8 @@
    :db/ident :fibo-fnd-plc-vrt/ElectronicMailAddress,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"},
    :rdfs/label "electronic mail address",
    :rdfs/subClassOf :fibo-fnd-plc-adr/VirtualAddress,
    :skos/definition
@@ -66,11 +72,12 @@
   {:db/ident :fibo-fnd-plc-vrt/NetworkLocation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"},
    :rdfs/label "network location",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-plc-adr/Address,
                       :owl/onProperty :cmns-id/isIdentifiedBy,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-plc-vrt/VirtualLocation
                      :lcc-cr/Location],
@@ -82,7 +89,8 @@
   {:db/ident :fibo-fnd-plc-vrt/NotionalPlace,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"},
    :rdfs/label "notional place",
    :rdfs/subClassOf :lcc-cr/Location,
    :skos/definition
@@ -96,7 +104,8 @@
    :db/ident :fibo-fnd-plc-vrt/TelephoneNumber,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"},
    :rdfs/label "telephone number",
    :rdfs/subClassOf :fibo-fnd-plc-adr/VirtualAddress,
    :skos/definition
@@ -107,8 +116,9 @@
   {:db/ident :fibo-fnd-plc-vrt/VirtualLocation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
-   :rdfs/label #voc/lstr "virtual location@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"},
+   :rdfs/label #xsd/langString "virtual location@en",
    :rdfs/subClassOf :lcc-cr/Location,
    :skos/definition
    "place that is not located in any single physical location; a network location without geographic boundaries"})
@@ -119,7 +129,8 @@
    :db/ident :fibo-fnd-plc-vrt/hasElectronicMailAddress,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"},
    :rdfs/label "has electronic mail address",
    :rdfs/range :fibo-fnd-plc-vrt/ElectronicMailAddress,
    :rdfs/subPropertyOf :fibo-fnd-plc-adr/hasAddress,
@@ -131,7 +142,8 @@
   {:db/ident :fibo-fnd-plc-vrt/hasTelephoneNumber,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"},
    :rdfs/label "has telephone number",
    :rdfs/range :fibo-fnd-plc-vrt/TelephoneNumber,
    :rdfs/subPropertyOf :fibo-fnd-plc-adr/hasAddress,
@@ -144,7 +156,8 @@
    :db/ident :fibo-fnd-plc-vrt/hasURL,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"},
    :rdfs/label "has URL",
    :rdfs/range :xsd/anyURI,
    :skos/definition
@@ -157,10 +170,11 @@
    :db/ident :fibo-fnd-plc-vrt/hasWebsite,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"},
    :rdfs/label "has website",
    :rdfs/range :xsd/anyURI,
-   :rdfs/seeAlso ["https://www.w3.org/standards/webdesign/"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.w3.org/standards/webdesign/"},
    :rdfs/subPropertyOf :fibo-fnd-plc-vrt/hasURL,
    :skos/definition
    "links something to a page or set of related web pages located under a single domain name, typically produced by a single person or organization"})

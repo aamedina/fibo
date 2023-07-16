@@ -6,18 +6,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides government entities and jurisdictions for countries that are defined as being part of Southeastern Asia in the U.N. M49 codes, primarily those that are considered independent countries in ISO 3166, or are important from a banking perspective.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -56,8 +61,9 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Malaysia,
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of Malaysia@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of Malaysia@en",
    :skos/definition
    "federal parliamentary constitutional elective monarchy in Southeastern Asia, separated by the South China Sea into two regions, Peninsular Malaysia and Borneo's East Malaysia, that shares land and maritime borders with Thailand, Brunei, and Indonesia, and maritime borders with Singapore, Vietnam, and the Philippines"})
 
@@ -69,10 +75,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Timor-Leste,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Repúblika Demokrátika Timór-Leste@tet"
-                #voc/lstr "República Democrática de Timor-Leste@pt"
-                #voc/lstr
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Repúblika Demokrátika Timór-Leste@tet"
+                #xsd/langString "República Democrática de Timor-Leste@pt"
+                #xsd/langString
                  "Government of the Democratic Republic of Timor-Leste@en"],
    :skos/definition
    "unitary semi-presidential constitutional republic in Southeastern Asia, an island country that comprises the eastern half of the island of Timor, the nearby islands of Atauro and Jaco, and Oecusse, an exclave on the northwestern side of the island surrounded by Indonesian West Timor"})
@@ -84,8 +91,9 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Cambodia,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of the Kingdom of Cambodia@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of the Kingdom of Cambodia@en",
    :skos/definition
    "unitary dominant-party parliamentary elective constitutional monarchy in Southeastern Asia, located in the southern portion of the Indochinese peninsula, bordered by Thailand to the northwest, Laos to the northeast, Vietnam to the east and the Gulf of Thailand to the southwest"})
 
@@ -97,9 +105,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/LaoPeoplesDemocraticRepublic,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "ສາທາລະນະລັດ ປະຊາທິປະໄຕ ປະຊາຊົນລາວ@lo"
-                #voc/lstr
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "ສາທາລະນະລັດ ປະຊາທິປະໄຕ ປະຊາຊົນລາວ@lo"
+                #xsd/langString
                  "Government of the Lao People's Democratic Republic@en"],
    :skos/definition
    "unitary Marxist-Leninist one-party socialist republic in Southeastern Asia, located on the Indochinese Peninsula, bordered by Myanmar and China to the northwest, Vietnam to the east, Cambodia to the southeast and Thailand to the west and southwest"})
@@ -111,9 +120,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/BruneiDarussalam,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Negara Brunei Darussalam@ms"
-                #voc/lstr
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Negara Brunei Darussalam@ms"
+                #xsd/langString
                  "Government of the Nation of Brunei, the Abode of Peace@en"],
    :skos/definition
    "unitary Islamic absolute monarchy in Southeastern Asia, located on the north coast of the island of Borneo"})
@@ -125,9 +135,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Indonesia,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Republik Indonesia@id"
-                #voc/lstr "Government of the Republic of Indonesia@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Republik Indonesia@id"
+                #xsd/langString "Government of the Republic of Indonesia@en"],
    :skos/definition
    "unitary presidential constitutional republic in Southeastern Asia, consisting of more than seventeen thousand islands, including Sumatra, Java, Sulawesi, and parts of Borneo and New Guinea, located between the Indian and Pacific oceans"})
 
@@ -139,11 +150,12 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Singapore,
    :rdf/type [:owl/NamedIndividual :fibo-be-ge-ge/NationalGovernment],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "சிங்கப்பூர் குடியரசு@ta"
-                #voc/lstr "Republik Singapura@ms"
-                #voc/lstr "Government of the Republic of Singapore@en"
-                #voc/lstr "新加坡共和国@zh"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "சிங்கப்பூர் குடியரசு@ta"
+                #xsd/langString "Republik Singapura@ms"
+                #xsd/langString "Government of the Republic of Singapore@en"
+                #xsd/langString "新加坡共和国@zh"],
    :skos/definition
    "unitary dominant-party parliamentary constitutional republic in Southeastern Asia, located off the southern tip of the Malay Peninsula, bordering the Straits of Malacca to the west, the Riau Islands (Indonesia) to the south, and the South China Sea to the east"})
 
@@ -155,10 +167,12 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Philippines,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Republika ng Pilipinas@tl"
-                #voc/lstr "Government of the Republic of the Philippines@en"],
-   :rdfs/seeAlso ["https://www.gov.ph/"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Republika ng Pilipinas@tl"
+                #xsd/langString
+                 "Government of the Republic of the Philippines@en"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.gov.ph/"},
    :skos/definition
    "unitary presidential constitutional republic in Southeastern Asia, an archipelagic country bordered by the South China Sea to the west, the Philippine Sea to the east, and the Celebes Sea to the southwest, and shares maritime borders with Taiwan to the north, Japan to the northeast, Palau to the east and southeast, Indonesia to the south, Malaysia and Brunei to the southwest, Vietnam to the west, and China to the northwest"})
 
@@ -170,9 +184,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Myanmar,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော်@my"
-                #voc/lstr
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "ပြည်ထောင်စု သမ္မတ မြန်မာနိုင်ငံတော်@my"
+                #xsd/langString
                  "Government of the Republic of the Union of Myanmar@en"],
    :skos/definition
    "unitary parliamentary assembly-independent republic under a military junta in Southeastern Asia, bordered by Bangladesh and India to its northwest, China to its northeast, Laos and Thailand to its east and southeast, and the Andaman Sea and the Bay of Bengal to its south and southwest"})
@@ -185,9 +200,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/VietNam,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Government of the Socialist Republic of Viet Nam@en"
-                #voc/lstr "Cộng hòa Xã hội chủ nghĩa Việt Nam@vi"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString
+                 "Government of the Socialist Republic of Viet Nam@en"
+                #xsd/langString "Cộng hòa Xã hội chủ nghĩa Việt Nam@vi"],
    :skos/definition
    "unitary Marxist-Leninist one-party socialist republic in Southeastern Asia, located at the eastern edge of the Indochinese Peninsula, bordering China to the north, and Laos and Cambodia to the west; while maintaining maritime borders with Thailand through the Gulf of Thailand, and the Philippines, Indonesia and Malaysia through the South China Sea"})
 
@@ -199,7 +216,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/BruneiDarussalam,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Brunei",
    :skos/definition
    "jurisdiction of the judiciary of Brunei, which is the system of courts that interprets and applies the law in Brunei"})
@@ -212,7 +230,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Cambodia,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Cambodia",
    :skos/definition
    "jurisdiction of the judiciary of Cambodia, which is the system of courts that interprets and applies the law in Cambodia"})
@@ -225,7 +244,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Indonesia,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Indonesia",
    :skos/definition
    "jurisdiction of the judiciary of Indonesia, which is the system of courts, including the Supreme Court of Indonesia, that interprets and applies the law in Indonesia"})
@@ -237,9 +257,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Malaysia,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Malaysia",
-   :rdfs/seeAlso ["http://www.kehakiman.gov.my/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.kehakiman.gov.my/"},
    :skos/definition
    "jurisdiction of the judiciary of Malaysia, which is the system of courts, including the Federal Court of Malaysia, that interprets and applies the law in Malaysia"})
 
@@ -251,7 +272,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Timor-Leste,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Democratic Republic of Timor-Leste",
    :skos/definition
    "jurisdiction of the judiciary of Timor-Leste, which is the system of courts that interprets and applies the law in Timor-Leste"})
@@ -264,7 +286,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/LaoPeoplesDemocraticRepublic,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Lao People's Democratic Republic",
    :skos/definition
    "jurisdiction of the judiciary of the Lao People's Democratic Republic, which is the system of courts that interprets and applies the law in Laos"})
@@ -277,9 +300,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Singapore,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Republic of Singapore",
-   :rdfs/seeAlso ["http://www.supremecourt.gov.sg/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.supremecourt.gov.sg/"},
    :skos/definition
    "jurisdiction of the judiciary of Singapore, which is the system of courts, including the Supreme Court and State Courts, that interprets and applies the law in Singapore"})
 
@@ -291,9 +315,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Philippines,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Republic of the Philippines",
-   :rdfs/seeAlso ["http://sc.judiciary.gov.ph/"],
+   :rdfs/seeAlso {:rdfa/uri "http://sc.judiciary.gov.ph/"},
    :skos/definition
    "jurisdiction of the judiciary of the Philippines, which is the system of courts, including the Supreme Court of the Philippines, that interprets and applies the law in the Philippines"})
 
@@ -305,7 +330,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Myanmar,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Republic of the Union of Myanmar",
    :skos/definition
    "jurisdiction of the judiciary of Myanmar, which is the system of courts that interprets and applies the law in Myanmar"})
@@ -317,7 +343,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Thailand,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Royal Thai Government",
    :skos/definition
    "jurisdiction of the judiciary of Thailand, which is the system of courts that interprets and applies the law in Thailand"})
@@ -330,9 +357,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/VietNam,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Socialist Republic of Viet Nam",
-   :rdfs/seeAlso ["http://www.toaan.gov.vn/"],
+   :rdfs/seeAlso {:rdfa/uri "http://www.toaan.gov.vn/"},
    :skos/definition
    "jurisdiction of the judiciary of Viet Nam, which is the system of courts, including the Supreme People's Court of Viet Nam, that interprets and applies the law in the Viet Nam"})
 
@@ -344,8 +372,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Thailand,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "รัฐบาลไทย@th" #voc/lstr "Royal Thai Government@en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "รัฐบาลไทย@th"
+                #xsd/langString "Royal Thai Government@en"],
    :skos/definition
    "unitary military-junta constitutional monarchy in Southeastern Asia, bordered to the north by Myanmar and Laos, to the east by Laos and Cambodia, to the south by the Gulf of Thailand and Malaysia, and to the west by the Andaman Sea and the southern extremity of Myanmar, and sharing maritime borders with Vietnam in the Gulf of Thailand to the southeast, and Indonesia and India on the Andaman Sea to the southwest"})
 
@@ -357,7 +387,8 @@
    :fibo-be-ge-seasj/GovernmentOfTheNationOfBruneiTheAbodeOfPeace,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Brunei",
    :skos/definition "sovereign state and polity that is Brunei"})
 
@@ -369,7 +400,8 @@
    :fibo-be-ge-seasj/GovernmentOfTheKingdomOfCambodia,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Cambodia",
    :skos/definition "sovereign state and polity that is Cambodia"})
 
@@ -381,7 +413,8 @@
    :fibo-be-ge-seasj/GovernmentOfTheRepublicOfIndonesia,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Indonesia",
    :skos/definition "sovereign state and polity that is Indonesia"})
 
@@ -394,7 +427,8 @@
    :fibo-be-ge-seasj/GovernmentOfTheLaoPeoplesDemocraticRepublic,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Laos",
    :skos/definition
    "sovereign state and polity that is the Lao People's Democratic Republic"})
@@ -406,7 +440,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-seasj/GovernmentOfMalaysia,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Malaysia",
    :skos/definition "federated sovereignty and polity that is Malaysia"})
 
@@ -418,7 +453,8 @@
    :fibo-be-ge-seasj/GovernmentOfTheRepublicOfTheUnionOfMyanmar,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Myanmar",
    :skos/definition "sovereign state and polity that is Myanmar"})
 
@@ -430,7 +466,8 @@
    :fibo-be-ge-seasj/GovernmentOfTheRepublicOfSingapore,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Singapore",
    :skos/definition "sovereign state and polity that is Singapore"})
 
@@ -441,7 +478,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-seasj/RoyalThaiGovernment,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Thailand",
    :skos/definition "sovereign state and polity that is Thailand"})
 
@@ -453,7 +491,8 @@
    :fibo-be-ge-seasj/GovernmentOfTheRepublicOfThePhilippines,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of the Philippines",
    :skos/definition "sovereign state and polity that is the Philippines"})
 
@@ -465,7 +504,8 @@
    :fibo-be-ge-seasj/GovernmentOfTheDemocraticRepublicOfTimor-Leste,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Timor-Leste",
    :skos/definition "sovereign state and polity that is Timor-Leste"})
 
@@ -477,6 +517,7 @@
    :fibo-be-ge-seasj/GovernmentOfTheSocialistRepublicOfVietNam,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "state of Viet Nam",
    :skos/definition "sovereign state and polity that is Viet Nam"})

@@ -1,22 +1,26 @@
 (ns net.wikipunk.rdf.sm
-  "This ontology provides a set of basic metadata annotations for use in describing Object Management Group (OMG) specifications, standards, and documents. It was recommended for use by the OMG Architecture Board (AB) in OMG standard ontologies, vocabularies and other models at the March 2013 Reston meeting. The annotations defined herein extend properties defined in the Dublin Core Metadata Terms Vocabulary and in the W3C Simple Knowledge Organization System (SKOS) Vocabulary, and have been customized to support the OMG specification development process. Note that any of the original properties provided in Dublin Core and SKOS can be used in addition to the terms provided herein. However, any Dublin Core terms that are not explicitly defined as OWL annotation properties below must be so declared in the ontologies that use them."
+  "This ontology provides a set of basic metadata annotations for use in describing Object Management Group (OMG) specifications, standards, and documents.  It was recommended for use by the OMG Architecture Board (AB) in OMG standard ontologies, vocabularies and other models at the March 2013 Reston meeting. \n\nThe annotations defined herein extend properties defined in the Dublin Core Metadata Terms Vocabulary and in the W3C Simple Knowledge Organization System (SKOS) Vocabulary, and have been customized to support the OMG specification development process.  Note that any of the original properties provided in Dublin Core and SKOS can be used in addition to the terms provided herein.  However, any Dublin Core terms that are not explicitly defined as OWL annotation properties below must be so declared in the ontologies that use them."
   {:dcterms/abstract
    "This ontology provides a set of basic metadata annotations for use in describing Object Management Group (OMG) specifications, standards, and documents.  It was recommended for use by the OMG Architecture Board (AB) in OMG standard ontologies, vocabularies and other models at the March 2013 Reston meeting. \n\nThe annotations defined herein extend properties defined in the Dublin Core Metadata Terms Vocabulary and in the W3C Simple Knowledge Organization System (SKOS) Vocabulary, and have been customized to support the OMG specification development process.  Note that any of the original properties provided in Dublin Core and SKOS can be used in addition to the terms provided herein.  However, any Dublin Core terms that are not explicitly defined as OWL annotation properties below must be so declared in the ontologies that use them.",
    :dcterms/hasVersion
-   ["http://www.omg.org/techprocess/ab/20130301/SpecificationMetadata.owl"
-    "http://www.omg.org/techprocess/ab/20130701/SpecificationMetadata/"],
-   :dcterms/issued #inst "2014-08-18T22:00:00.000-00:00",
+   [{:rdfa/uri
+     "http://www.omg.org/techprocess/ab/20130301/SpecificationMetadata.owl"}
+    {:rdfa/uri
+     "http://www.omg.org/techprocess/ab/20130701/SpecificationMetadata/"}],
+   :dcterms/issued #xsd/dateTime #inst "2014-08-18T18:00:00.000-04:00",
    :dcterms/license :sm/MITLicense,
-   :dcterms/references "http://www.metadata-standards.org/24706/index.html",
+   :dcterms/references {:rdfa/uri
+                        "http://www.metadata-standards.org/24706/index.html"},
    :dcterms/rights
    "Copyright (c) 2012-2014 Adaptive\nCopyright (c) 2012-2014 Object Management Group, Inc.\nCopyright (c) 2012-2014 Thematix Partners LLC",
-   :dcterms/source "http://www.omg.org/cgi-bin/doc?pp",
+   :dcterms/source {:rdfa/uri "http://www.omg.org/cgi-bin/doc?pp"},
    :dcterms/subject ["specification metadata" "analysis and design"],
    :dcterms/title "Specification Metadata (SM) Ontology",
-   :dcterms/type "http://www.w3.org/standards/techs/owl#w3c_all",
-   :owl/imports "http://www.w3.org/2004/02/skos/core",
+   :dcterms/type {:rdfa/uri "http://www.w3.org/standards/techs/owl#w3c_all"},
+   :owl/imports {:rdfa/uri "http://www.w3.org/2004/02/skos/core"},
    :owl/versionIRI
-   "http://www.omg.org/techprocess/ab/20140801/SpecificationMetadata/",
+   {:rdfa/uri
+    "http://www.omg.org/techprocess/ab/20140801/SpecificationMetadata/"},
    :rdf/ns-prefix-map
    {"dcterms" "http://purl.org/dc/terms/",
     "owl"     "http://www.w3.org/2002/07/owl#",
@@ -28,16 +32,16 @@
    :rdf/type [:owl/Ontology
               :sm/Specification
               :sm/SpecificationVersion
+              :skos/Concept
               {:owl/onClass    :sm/Specification,
                :owl/onProperty :sm/isVersionOf,
-               :owl/qualifiedCardinality 1,
-               :rdf/type       :owl/Restriction}
-              :skos/Concept],
+               :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+               :rdf/type       :owl/Restriction}],
    :rdfa/prefix "sm",
    :rdfa/uri "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
    :rdfs/label "Specification Metadata (SM) Vocabulary",
-   :rdfs/seeAlso ["http://www.w3.org/2004/02/skos/core.rdf"
-                  "http://purl.org/dc/terms/"],
+   :rdfs/seeAlso [{:rdfa/uri "http://www.w3.org/2004/02/skos/core.rdf"}
+                  {:rdfa/uri "http://purl.org/dc/terms/"}],
    :skos/altLabel "SM",
    :skos/changeNote
    ["The ontology was revised in July, 2013, as follows:\n   (1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing and specifically for the Financial Industry Business Ontology (FIBO) and other forthcoming OMG ontology specifications  \n   (2) to introduce the use of version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n   (3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n   (4) to extend the file-level metadata to allow for cases such as FIBO, where the specification includes family, specification, spcification version, module, and ontology level detail that should be documented via annotations (e.g., family level of FIBO, specification level of Foundations, module level such as Utilities, and ontology level including annotation vocabulary, business types, and relations) \n   (5) to make other minor corrections in the metadata and definitions for clarification purposes"
@@ -45,36 +49,40 @@
    :skos/historyNote
    "Revisions are managed per the process outlined in the Policies and Procedures for OMG standards, with the intent to maintain backwards compatibility to the degree possible.\n  \nThe RDF/XML serialized OWL corresponding to the ODM/OWL model has been checked for syntactic errors and logical consistency with Protege 4 (http://protege.stanford.edu/), HermiT 1.3.8 (http://www.hermit-reasoner.com/) and Pellet 2.2 (http://clarkparsia.com/pellet/).",
    :skos/note "OMG Architecture Board Recommendation",
-   :sm/addressForComments "http://www.omg.org/issues/",
-   :sm/contentLanguage "http://www.w3.org/standards/techs/owl#w3c_all",
+   :sm/addressForComments {:rdfa/uri "http://www.omg.org/issues/"},
+   :sm/contentLanguage {:rdfa/uri
+                        "http://www.w3.org/standards/techs/owl#w3c_all"},
    :sm/copyright
    "Copyright (c) 2012-2014 Adaptive\nCopyright (c) 2012-2014 Object Management Group, Inc.\nCopyright (c) 2012-2014 Thematix Partners LLC",
-   :sm/dependsOn ["http://www.w3.org/2004/02/skos/core.rdf"
-                  "http://purl.org/dc/terms/"],
+   :sm/dependsOn [{:rdfa/uri "http://www.w3.org/2004/02/skos/core.rdf"}
+                  {:rdfa/uri "http://purl.org/dc/terms/"}],
    :sm/filename "SpecificationMetadata.rdf",
-   :sm/isNormative true,
+   :sm/isNormative #xsd/boolean true,
    :sm/keyword "specification metadata",
    :sm/priorVersion
-   ["http://www.omg.org/techprocess/ab/20130701/SpecificationMetadata/"
-    "http://www.omg.org/techprocess/ab/20130301/SpecificationMetadata.owl"],
-   :sm/publicationDate #inst "2014-08-18T22:00:00.000-00:00",
+   [{:rdfa/uri
+     "http://www.omg.org/techprocess/ab/20130701/SpecificationMetadata/"}
+    {:rdfa/uri
+     "http://www.omg.org/techprocess/ab/20130301/SpecificationMetadata.owl"}],
+   :sm/publicationDate #xsd/dateTime #inst "2014-08-18T18:00:00.000-04:00",
    :sm/relatedSpecification
-   "http://www.metadata-standards.org/24706/index.html",
-   :sm/responsibleTaskForce "http://www.omg.org/news/about/ab.htm",
+   {:rdfa/uri "http://www.metadata-standards.org/24706/index.html"},
+   :sm/responsibleTaskForce {:rdfa/uri "http://www.omg.org/news/about/ab.htm"},
    :sm/specificationAbbreviation "SM",
    :sm/specificationAbstract
    "This ontology provides a set of basic metadata annotations for use in describing Object Management Group (OMG) specifications, standards, and documents.  It was recommended for use by the OMG Architecture Board (AB) in OMG standard ontologies, vocabularies and other models at the March 2013 Reston meeting. \n\nThe annotations defined herein extend properties defined in the Dublin Core Metadata Terms Vocabulary and in the W3C Simple Knowledge Organization System (SKOS) Vocabulary, and have been customized to support the OMG specification development process.  Note that any of the original properties provided in Dublin Core and SKOS can be used in addition to the terms provided herein.  However, any Dublin Core terms that are not explicitly defined as OWL annotation properties below must be so declared in the ontologies that use them.",
    :sm/specificationTitle "Specification Metadata (SM) Ontology",
    :sm/specificationURL
-   "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
+   {:rdfa/uri "http://www.omg.org/techprocess/ab/SpecificationMetadata/"},
    :sm/specificationVersionStatus "OMG Architecture Board Recommendation",
    :sm/specificationVersionURL
-   "http://www.omg.org/techprocess/ab/20140801/SpecificationMetadata/",
+   {:rdfa/uri
+    "http://www.omg.org/techprocess/ab/20140801/SpecificationMetadata/"},
    :sm/topicArea "analysis and design"}
   (:refer-clojure :exclude [format keyword]))
 
 (def BibliographicCitation
-  "a reference to an authoritative source for provenance or substatiation purposes; The form of bibliographic citation may be specific to a domain, publication, or community, thus specific properties to define the details are not provided. FRBR, ISO 690, and others provide reasonable approaches if none is explicitly required for a specification."
+  "a reference to an authoritative source for provenance or substatiation purposes; \n\nThe form of bibliographic citation may be specific to a domain, publication, or community, thus specific properties to define the details are not provided. FRBR, ISO 690, and others provide reasonable approaches if none is explicitly required for a specification."
   {:db/ident :sm/BibliographicCitation,
    :rdf/type :owl/Class,
    :rdfs/label "bibliographic citation",
@@ -83,17 +91,17 @@
    "a reference to an authoritative source for provenance or substatiation purposes; \n\nThe form of bibliographic citation may be specific to a domain, publication, or community, thus specific properties to define the details are not provided. FRBR, ISO 690, and others provide reasonable approaches if none is explicitly required for a specification."})
 
 (def IssueResolution
-  "An Issue is a report made to OMG of an error in an OMG Specification. An F/RTF Report lists the issues and comments received by the F/RTF against a specification, and the resolution, if any, for each comment (referred to by its Issue Number). For resolutions that involve changes to the models (machine readable artifacts) corresponding to the specification, an individual of type IssueResolution should be included in the administrative metadata for the version of the specification to which it applies, for each issue resolved, linking to the appropriate issue page in the OMG JIRA system where further information about the issue and how it was dealt with can be found."
+  "An Issue is a report made to OMG of an error in an OMG Specification. An F/RTF Report lists the issues and comments received by the F/RTF against a specification, and the resolution, if any, for each comment (referred to by its Issue Number).  \n\nFor resolutions that involve changes to the models (machine readable artifacts) corresponding to the specification, an individual of type IssueResolution should be included in the administrative metadata for the version of the specification to which it applies, for each issue resolved, linking to the appropriate issue page in the OMG JIRA system where further information about the issue and how it was dealt with can be found.\n"
   {:db/ident :sm/IssueResolution,
    :rdf/type :owl/Class,
    :rdfs/label "issue resolution",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :sm/isIdentifiedBy,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      {:owl/onDataRange :xsd/anyURI,
                       :owl/onProperty  :sm/hasIssueReference,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      :skos/Concept],
    :skos/definition
@@ -102,9 +110,9 @@
 (def MITLicense
   "license document representing the actual text of the MIT License"
   {:db/ident :sm/MITLicense,
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/mit-license.php"}
    :dcterms/rights
-   ["http://opensource.org/licenses/mit-license.php"
-    "The MIT License:  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE\nAND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."],
+   "The MIT License:  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE\nAND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
    :rdf/type [:dcterms/LicenseDocument :owl/NamedIndividual],
    :rdfs/label "The MIT License",
    :skos/definition
@@ -116,12 +124,12 @@
    :rdf/type :owl/Class,
    :rdfs/label "MIME MediaType",
    :rdfs/seeAlso
-   ["http://www.iana.org/assignments/media-types/media-types.xhtml"],
+   {:rdfa/uri "http://www.iana.org/assignments/media-types/media-types.xhtml"},
    :rdfs/subClassOf :skos/Concept,
    :skos/definition "MIME media type as defined by the IANA standard"})
 
 (def Module
-  "Modularization of any engineering model involves principles of the model driven architecture methodology (MDA), including but not limited to separation of concerns, coherence, and establishing clear logical boundaries in order to increase reusability and maintainability. A module should be designed to reflect these principles, including a small number of models that have well-defined relationships with one another, that form a coherent and cohesive whole for some purpose, and that have clear boundaries or interfaces to other external modules."
+  "Modularization of any engineering model involves principles of the model driven architecture methodology (MDA), including but not limited to separation of concerns, coherence, and establishing clear logical boundaries in order to increase reusability and maintainability.  \n\nA module should be designed to reflect these principles, including a small number of models that have well-defined relationships with one another, that form a coherent and cohesive whole for some purpose, and that have clear boundaries or interfaces to other external modules."
   {:db/ident :sm/Module,
    :rdf/type :owl/Class,
    :rdfs/label "module",
@@ -132,7 +140,7 @@
 (def Organization
   "an entity, such as an institution or an association, that has a collective goal and is linked to an external environment"
   {:db/ident :sm/Organization,
-   :dcterms/source "http://en.wikipedia.org/wiki/Organization",
+   :dcterms/source {:rdfa/uri "http://en.wikipedia.org/wiki/Organization"},
    :rdf/type :owl/Class,
    :rdfs/label "organization",
    :rdfs/subClassOf :skos/Concept,
@@ -142,7 +150,7 @@
 (def Specification
   "an explicit set of requirements to be satisfied by a material, product, or service"
   {:db/ident :sm/Specification,
-   :dcterms/source "http://en.wikipedia.org/wiki/Specification",
+   :dcterms/source {:rdfa/uri "http://en.wikipedia.org/wiki/Specification"},
    :rdf/type :owl/Class,
    :rdfs/label "specification",
    :rdfs/subClassOf :skos/Concept,
@@ -166,14 +174,14 @@
    :rdfs/label "specification version",
    :rdfs/subClassOf [{:owl/onClass    :sm/Specification,
                       :owl/onProperty :sm/isVersionOf,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :skos/Concept],
    :skos/definition
    "a formal revision of a given specification, produced through the efforts of a finalization or revision task force"})
 
 (def TypeOfContent
-  "the content type for the model or module, for example, MOF metamodel, UML profile, UML model, vocabulary, ontology, ruleset, etc. The actual content language for the module (for example, RDF Schema, OWL, or SBVR in the case of a vocabulary) should be specified using the contentLanguage annotation property. Valid values are specified as individuals."
+  "the content type for the model or module, for example, MOF metamodel, UML profile, UML model, vocabulary, ontology, ruleset, etc.  \n\nThe actual content language for the module (for example, RDF Schema, OWL, or SBVR in the case of a vocabulary) should be specified using the contentLanguage annotation property.  Valid values are specified as individuals."
   {:db/ident :sm/TypeOfContent,
    :rdf/type :owl/Class,
    :rdfs/label "content type",
@@ -382,7 +390,7 @@
    "a link to the latest published formal specification (document)"})
 
 (def format
-  "serialization format for the file in terms of its MIME Type, such as xmi, rdf/xml, owl/xml, etc."
+  "serialization format for the file in terms of its MIME Type, such as xmi, rdf/xml, owl/xml, etc.\n"
   {:db/ident :sm/format,
    :rdf/type :owl/AnnotationProperty,
    :rdfs/label "format",

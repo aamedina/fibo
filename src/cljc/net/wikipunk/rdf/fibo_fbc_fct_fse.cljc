@@ -6,43 +6,68 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
    :dcterms/abstract
    "This ontology defines basic financial service providers, such as holding companies, financial institutions (both depository and non-depository institutions), and clearing houses at a relatively general level. Nuances specific to the institutions located in a specific country are defined in jurisdiction specific dependent ontologies.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/PaymentsAndSchedules/"
-    "https://www.omg.org/spec/Commons/ContextualIdentifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Partnerships/Partnerships/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://www.omg.org/spec/Commons/Designators/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/Organizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/PaymentsAndSchedules/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualIdentifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Control/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Partnerships/Partnerships/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
@@ -134,47 +159,50 @@
 (def Bank
   "depository institution, usually a corporation, that accepts deposits, makes loans, pays checks, and performs related services, for individual members of the public, businesses or other organizations"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Banking Terms, Sixth Edition, 2012",
+   {:xsd/string "Barron's Dictionary of Banking Terms, Sixth Edition, 2012"},
    :db/ident :fibo-fbc-fct-fse/Bank,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "bank",
-   :rdfs/seeAlso ["https://www.sec.gov/about/laws/ica40.pdf"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.sec.gov/about/laws/ica40.pdf"},
    :rdfs/subClassOf [:fibo-fbc-fct-fse/DepositoryInstitution
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "depository institution, usually a corporation, that accepts deposits, makes loans, pays checks, and performs related services, for individual members of the public, businesses or other organizations"})
 
 (def BankHoldingCompany
   "any company that owns and/or has direct or indirect control of one or more banks; BHCs may also own nonbanking subsidiaries such as broker-dealers and asset managers"
   {:cmns-av/adaptedFrom
-   "Office of Financial Research (OFR) Annual Report, 2012, Glossary",
+   {:xsd/string
+    "Office of Financial Research (OFR) Annual Report, 2012, Glossary"},
    :cmns-av/explanatoryNote
    "A bank holding company may also own another bank holding company, which in turn owns or controls a bank; the company at the top of the ownership chain is called the top holder.",
    :db/ident :fibo-fbc-fct-fse/BankHoldingCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "bank holding company",
    :rdfs/subClassOf [{:owl/onClass    :fibo-be-le-cb/Corporation,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      :fibo-fbc-fct-fse/HoldingCompany
-                     {:owl/minQualifiedCardinality 0,
+                     :fibo-be-fct-fct/FunctionalBusinessEntity
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-be-oac-cpty/ControlledParty,
                       :owl/onProperty :fibo-fbc-fct-fse/hasPortfolioCompany,
-                      :rdf/type       :owl/Restriction}
-                     :fibo-be-fct-fct/FunctionalBusinessEntity],
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "any company that owns and/or has direct or indirect control of one or more banks; BHCs may also own nonbanking subsidiaries such as broker-dealers and asset managers"})
 
@@ -183,7 +211,8 @@
   {:db/ident :fibo-fbc-fct-fse/BankingProduct,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "banking product",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom
@@ -200,7 +229,8 @@
   {:db/ident :fibo-fbc-fct-fse/BankingService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "banking service",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom
@@ -214,7 +244,8 @@
 (def BrokerageFirm
   "firm in the business of buying and selling securities, operating as both a broker and a dealer, depending on the transaction"
   {:cmns-av/adaptedFrom
-   "https://www.worldbank.org/en/publication/gfdr/gfdr-2016/background/nonbank-financial-institution",
+   {:rdfa/uri
+    "https://www.worldbank.org/en/publication/gfdr/gfdr-2016/background/nonbank-financial-institution"},
    :cmns-av/explanatoryNote
    "The term broker-dealer is used in U.S. securities regulation parlance to describe stock brokerages, because most of them act as both agents and principals. A brokerage acts as a broker (or agent) when it executes orders on behalf of clients, whereas it acts as a dealer (or principal) when it trades for its own account.",
    :cmns-av/synonym "market maker",
@@ -223,18 +254,19 @@
    "Office of Financial Research (OFR) Annual Report, 2012, Glossary",
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "brokerage firm",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/NonDepositoryInstitution
                      :fibo-fbc-pas-fpas/BrokerDealer
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "firm in the business of buying and selling securities, operating as both a broker and a dealer, depending on the transaction"})
 
@@ -242,7 +274,8 @@
   "international identifier for financial and non-financial institutions used to facilitate automated processing of information for financial services"
   {:cmns-av/abbreviation "BIC",
    :cmns-av/adaptedFrom
-   "ISO 9362:2014 Banking -- Banking telecommunication messages -- Business identifier code (BIC)",
+   {:xsd/string
+    "ISO 9362:2014 Banking -- Banking telecommunication messages -- Business identifier code (BIC)"},
    :cmns-av/explanatoryNote
    "The BIC is used for addressing messages, routing business transactions and identifying business parties. Note that the use of OrganizationPartIdentifier in FIBO corresponds to the Branch Code in the SWIFT scheme.",
    :cmns-av/synonym ["SWIFT code"
@@ -253,34 +286,35 @@
    :db/ident :fibo-fbc-fct-fse/BusinessIdentifierCode,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "business identifier code",
-   :rdfs/subClassOf [:cmns-cds/CodeElement
-                     {:owl/onProperty :cmns-col/isMemberOf,
+   :rdfs/subClassOf [{:owl/onProperty :cmns-col/isMemberOf,
                       :owl/someValuesFrom
                       :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
                       :rdf/type :owl/Restriction}
                      {:owl/onClass    :lcc-cr/Alpha2Code,
                       :owl/onProperty :cmns-col/comprises,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-fnd-org-org/OrganizationPartIdentifier,
-                      :owl/onProperty :cmns-col/comprises,
-                      :rdf/type :owl/Restriction}
-                     :cmns-cxtid/StructuredIdentifier
+                     :cmns-cds/CodeElement
                      {:owl/onClass    :fibo-fbc-fct-fse/BusinessPartyPrefix,
                       :owl/onProperty :cmns-col/comprises,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-org-fm/FormalOrganization,
                       :owl/onProperty :cmns-dsg/denotes,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
+                     :cmns-cxtid/StructuredIdentifier
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass :fibo-fnd-org-org/OrganizationPartIdentifier,
+                      :owl/onProperty :cmns-col/comprises,
+                      :rdf/type :owl/Restriction}
                      :fibo-fnd-org-org/OrganizationIdentifier
                      {:owl/onClass    :fibo-fbc-fct-fse/BusinessPartySuffix,
                       :owl/onProperty :cmns-col/comprises,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "international identifier for financial and non-financial institutions used to facilitate automated processing of information for financial services"})
@@ -288,12 +322,14 @@
 (def BusinessIdentifierCodeScheme
   "scheme that specifies the elements of a unique business identifier code (BIC) scheme to identify financial and non-financial institutions used to facilitate automated processing of information for financial services"
   {:cmns-av/adaptedFrom
-   ["https://www.iso.org/standard/60390.html"
-    "ISO 9362:2014 Banking -- Banking telecommunication messages -- Business identifier code (BIC)"],
+   [{:rdfa/uri "https://www.iso.org/standard/60390.html"}
+    {:xsd/string
+     "ISO 9362:2014 Banking -- Banking telecommunication messages -- Business identifier code (BIC)"}],
    :db/ident :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "business identifier code scheme",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasMember,
                       :owl/someValuesFrom
@@ -307,7 +343,8 @@
 (def BusinessPartyPrefix
   "four-character (4 alphanumeric) code associated with an organization for the purposes of banking telecommunications"
   {:cmns-av/adaptedFrom
-   "ISO 9362:2014 Banking -- Banking telecommunication messages -- Business identifier code (BIC)",
+   {:xsd/string
+    "ISO 9362:2014 Banking -- Banking telecommunication messages -- Business identifier code (BIC)"},
    :cmns-av/explanatoryNote
    ["For new BIC registration by an organization already identified with a BIC or an affiliated organization [after the transition period ending November 2018], SWIFT will still reserve the usage of an existing party prefix to these organizations. This legacy rule will be reserved to existing BIC owners. If they wish to preserve this value, no other organization will be allowed to use the same code"
     "For new BIC registration from an organization not yet identified by a BIC, the party prefix will be allocated at the discretion of the RA. The code will not have a mnemonic or acronym value anymore."],
@@ -315,17 +352,18 @@
    :db/ident :fibo-fbc-fct-fse/BusinessPartyPrefix,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "business party prefix",
-   :rdfs/subClassOf [{:owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/someValuesFrom
-                      :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
-                      :rdf/type :owl/Restriction}
-                     :cmns-cds/CodeElement
-                     {:owl/maxQualifiedCardinality 1,
+   :rdfs/subClassOf [{:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :fibo-fbc-fct-fse/BusinessIdentifierCode,
                       :owl/onProperty :cmns-col/isIncludedIn,
                       :rdf/type       :owl/Restriction}
+                     :cmns-cds/CodeElement
+                     {:owl/onProperty :cmns-dsg/isDefinedIn,
+                      :owl/someValuesFrom
+                      :fibo-fbc-fct-fse/BusinessIdentifierCodeScheme,
+                      :rdf/type :owl/Restriction}
                      :fibo-fnd-org-org/OrganizationIdentifier],
    :skos/definition
    "four-character (4 alphanumeric) code associated with an organization for the purposes of banking telecommunications"})
@@ -333,14 +371,16 @@
 (def BusinessPartySuffix
   "two-character (2 alphanumeric) code associated with the organization for the purposes of banking telecommunications"
   {:cmns-av/adaptedFrom
-   "ISO 9362:2014 Banking -- Banking telecommunication messages -- Business identifier code (BIC)",
+   {:xsd/string
+    "ISO 9362:2014 Banking -- Banking telecommunication messages -- Business identifier code (BIC)"},
    :cmns-av/explanatoryNote
    ["With the revision of the standard [and transition period ending November 2018], the location code has been re-defined as a 'party suffix' without any specific meaning. A new reference data attribute has been introduced in the SWIFTRef directories to indicate where the institution is located and to which time zone it refers."
     "In the prior version of the standard, position 7 of the BIC determined the location of the BIC in a particular country. In a country spanning over multiple time zones, each character may have been used to define a different time zone. If an organization moved location to a different time zone within the same country, the existing BIC would normally have been deleted and replaced by a new BIC with the appropriate location code."],
    :db/ident :fibo-fbc-fct-fse/BusinessPartySuffix,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "business party suffix",
    :rdfs/subClassOf
    [:cmns-cds/CodeElement
@@ -360,26 +400,27 @@
    :db/ident :fibo-fbc-fct-fse/CentralBank,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "central bank",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-be-ge-ge/Instrumentality,
                       :owl/onProperty    :fibo-fnd-rel-rel/hasIdentity,
                       :rdf/type          :owl/Restriction}
                      :fibo-fbc-fct-fse/MonetaryAuthority
                      :fibo-fbc-fct-fse/Bank
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
-                     {:owl/onProperty     :fibo-fbc-fct-fse/regulatesSupplyOf,
-                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-fse/regulatesSupplyOf,
+                      :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-fct-rga/RegulatoryAgency
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      :fibo-fbc-fct-fse/DepositoryInstitution
-                     :fibo-fbc-fct-rga/RegulatoryAgency],
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "financial institution that is the monetary authority and major regulatory bank for a country (or group of countries)"})
 
@@ -391,9 +432,11 @@
    :db/ident :fibo-fbc-fct-fse/CentralCounterpartyClearingHouse,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "central counterparty clearing house",
-   :rdfs/seeAlso ["https://www.esma.europa.eu/sites/default/files/EACH2.pdf"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.esma.europa.eu/sites/default/files/EACH2.pdf"},
    :rdfs/subClassOf [:fibo-fbc-fct-fse/ClearingHouse
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
@@ -405,13 +448,14 @@
 (def CentralSecuritiesDepository
   "functional entity that provides a central point for depositing financial instruments ('securities'), for example, bonds and shares"
   {:cmns-av/abbreviation "CSD",
-   :cmns-av/adaptedFrom "http://ecsda.eu/facts/faq",
+   :cmns-av/adaptedFrom {:rdfa/uri "http://ecsda.eu/facts/faq"},
    :cmns-av/explanatoryNote
    "CSDs' clients are typically financial institutions themselves (such as custodian banks and brokers) rather than individual investors.",
    :db/ident :fibo-fbc-fct-fse/CentralSecuritiesDepository,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "central securities depository",
    :rdfs/subClassOf :fibo-fbc-pas-fpas/FinancialServiceProvider,
    :skos/definition
@@ -424,42 +468,45 @@
    "Office of Financial Research (OFR) Annual Report, 2012, Glossary",
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "clearing bank",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/CommercialBank
                      :fibo-fbc-fct-fse/ClearingHouse
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
-                     :fibo-fbc-fct-fse/Bank
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
                       :rdf/type           :owl/Restriction}
+                     {:owl/onClass    :fibo-be-le-cb/Corporation,
+                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-fct-fse/ClearingService,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-fct-fse/DepositoryInstitution
-                     {:owl/onClass    :fibo-be-le-cb/Corporation,
-                      :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}],
+                     :fibo-fbc-fct-fse/Bank
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "commercial bank that facilitates payment and settlement of financial transactions, such as check clearing or facilitating trades between the sellers and buyers of securities or other financial instruments or contracts"})
 
 (def ClearingCorporation
   "clearing house that is organized as a corporation"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   {:xsd/string
+    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014"},
    :db/ident :fibo-fbc-fct-fse/ClearingCorporation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "clearing corporation",
    :rdfs/subClassOf [{:owl/onClass    :fibo-be-le-cb/Corporation,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-fct-fse/ClearingHouse
                      :fibo-fbc-pas-fpas/FinancialServiceProvider
@@ -471,11 +518,13 @@
 (def ClearingHouse
   "financial service provider that is exchange affiliated and provides clearing services, including the validation, delivery, and settlement of financial transactions, for financial intermediaries"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   {:xsd/string
+    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014"},
    :db/ident :fibo-fbc-fct-fse/ClearingHouse,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "clearing house",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-fct-fse/ClearingService,
@@ -486,14 +535,16 @@
 
 (def ClearingService
   "service provided on behalf of an institutional market participant by a clearing services provider following a trade that finalizes the transfer of security ownership"
-  {:cmns-av/adaptedFrom "EDM Council / Quarule",
+  {:cmns-av/adaptedFrom {:xsd/string "EDM Council / Quarule"},
    :db/ident :fibo-fbc-fct-fse/ClearingService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "clearing service",
    :rdfs/seeAlso
-   ["https://dtcclearning.com/helpfiles/cross_bus/glossary/Content/Topics/gloss.htm"],
+   {:rdfa/uri
+    "https://dtcclearning.com/helpfiles/cross_bus/glossary/Content/Topics/gloss.htm"},
    :rdfs/subClassOf :fibo-fbc-pas-fpas/FinancialService,
    :skos/definition
    "service provided on behalf of an institutional market participant by a clearing services provider following a trade that finalizes the transfer of security ownership"})
@@ -506,47 +557,51 @@
    :db/ident :fibo-fbc-fct-fse/CommercialBank,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "commercial bank",
    :rdfs/seeAlso
-   ["http://www.ffiec.gov/nicpubweb/Content/HELP/Institution%20Type%20Description.htm"],
+   {:rdfa/uri
+    "http://www.ffiec.gov/nicpubweb/Content/HELP/Institution%20Type%20Description.htm"},
    :rdfs/subClassOf [{:owl/onClass    :fibo-be-le-cb/Corporation,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-fct-fse/Bank
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fct-fse/DepositoryInstitution],
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/DepositoryInstitution
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "depository institution that engages in various financial services, such as accepting deposits and making loans"})
 
 (def CommercialFinanceCompany
   "finance company that makes loans to manufacturers and wholesalers, secured by accounts receivable, inventories, and equipment"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   {:xsd/string
+    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014"},
    :cmns-av/synonym "commercial credit company",
    :db/ident :fibo-fbc-fct-fse/CommercialFinanceCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "commercial finance company",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/FinanceCompany
-                     :fibo-fbc-fct-fse/FinancialInstitution
                      :fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "finance company that makes loans to manufacturers and wholesalers, secured by accounts receivable, inventories, and equipment"})
 
@@ -554,67 +609,73 @@
   "party that directly or indirectly advises others as to the value or advisability of buying or selling futures contracts or options"
   {:cmns-av/abbreviation "CTA",
    :cmns-av/adaptedFrom
-   "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   {:xsd/string
+    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014"},
    :cmns-av/explanatoryNote
    "Indirect advice includes exercising trading authority over a customer's account. In the U.S., registered CTAs are registered with the Commodities Futures Trading Commission (CFTC) and are generally required to be members of the National Futures Association (NFA).",
    :db/ident :fibo-fbc-fct-fse/CommodityTradingAdvisor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "commodity trading advisor",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "party that directly or indirectly advises others as to the value or advisability of buying or selling futures contracts or options"})
 
 (def ConsumerFinanceCompany
   "finance company that lends to individuals under the small loans laws of the jurisdiction in which they operate"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   {:xsd/string
+    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014"},
    :cmns-av/synonym ["small loan company" "direct loan company"],
    :db/ident :fibo-fbc-fct-fse/ConsumerFinanceCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "consumer finance company",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/FinanceCompany
-                     :fibo-fbc-fct-fse/FinancialInstitution
                      :fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "finance company that lends to individuals under the small loans laws of the jurisdiction in which they operate"})
 
 (def ContractualSavingsInstitution
   "financial institution that provides the opportunity for individuals to invest in collective investment vehicles in a fiduciary rather than a principle role"
   {:cmns-av/adaptedFrom
-   "https://www.worldbank.org/en/publication/gfdr/gfdr-2016/background/nonbank-financial-institution",
+   {:rdfa/uri
+    "https://www.worldbank.org/en/publication/gfdr/gfdr-2016/background/nonbank-financial-institution"},
    :cmns-av/explanatoryNote
    ["Typically more than 70 percent of the daily trading on the New York Stock Exchange is conducted on behalf of institutional investors."
     "Collective investment vehicles invest the pooled resources of the individuals and firms into numerous equity, debt, and derivatives promises. The individual, however, holds equity in the CIV itself rather what the CIV invests in specifically. The two most popular examples of contractual savings institutions are mutual funds and private pension plans."],
-   :cmns-av/synonym [#voc/lstr "institutional investor@en-US"
-                     #voc/lstr "institutional investment firm@en-US"
-                     #voc/lstr "investisseur institutionnel@fr-FR"],
+   :cmns-av/synonym [#xsd/langString "institutional investor@en-US"
+                     #xsd/langString "institutional investment firm@en-US"
+                     #xsd/langString "investisseur institutionnel@fr-FR"],
    :db/ident :fibo-fbc-fct-fse/ContractualSavingsInstitution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "contractual savings institution",
    :rdfs/subClassOf [:fibo-be-oac-opty/Investor
                      :fibo-fbc-fct-fse/NonDepositoryInstitution
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass
                       {:owl/unionOf
                        [:fibo-be-le-lp/SpecialPurposeVehicle
@@ -623,14 +684,14 @@
                        :rdf/type :owl/Class},
                       :owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :rdf/type :owl/Restriction}
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "financial institution that provides the opportunity for individuals to invest in collective investment vehicles in a fiduciary rather than a principle role",
    :skos/example
@@ -641,32 +702,35 @@
   {:db/ident :fibo-fbc-fct-fse/CreditUnion,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "credit union",
    :rdfs/subClassOf [{:owl/onClass    :fibo-be-le-fbo/NotForProfitOrganization,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-fct-fse/DepositoryInstitution
                      :fibo-be-fct-fct/CooperativeSociety
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "not-for-profit depository institution that makes personal loans and offers other consumer banking services, organized for the purpose of promoting thrift among its members and creating a source of credit for provident or productive purposes"})
 
 (def DataProcessingService
   "financial service offered by an entity primarily engaged in providing infrastructure for hosting or data processing services"
-  {:cmns-av/adaptedFrom "https://www.ffiec.gov/npw/Help/InstitutionTypes",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://www.ffiec.gov/npw/Help/InstitutionTypes"},
    :db/ident :fibo-fbc-fct-fse/DataProcessingService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "data processing service",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom
@@ -678,13 +742,15 @@
 
 (def DataProcessingServicer
   "finance services provider primarily engaged in providing infrastructure for hosting or data processing services"
-  {:cmns-av/adaptedFrom "https://www.ffiec.gov/npw/Help/InstitutionTypes",
+  {:cmns-av/adaptedFrom {:rdfa/uri
+                         "https://www.ffiec.gov/npw/Help/InstitutionTypes"},
    :cmns-av/explanatoryNote
    "These establishments may provide specialized hosting activities, such as web hosting, streaming services or application hosting, provide application service provisioning, or may provide general time-share mainframe facilities to clients. Data processing establishments provide complete processing and specialized reports from data supplied by clients or provide automated data processing and data entry services.",
    :db/ident :fibo-fbc-fct-fse/DataProcessingServicer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "data processing service",
    :rdfs/subClassOf :fibo-fbc-pas-fpas/FinancialServiceProvider,
    :skos/definition
@@ -693,21 +759,24 @@
 (def DepositoryInstitution
   "any financial institution engaged in the business of receiving demand deposits from the public or other institutions"
   {:cmns-av/adaptedFrom
-   ["https://www.fdic.gov/regulations/laws/rules/1000-400.html#fdic1000sec.3a"
-    "12 U.S. Code Section 1813 - Definitions, see, for example, http://www.law.cornell.edu/uscode/text/12/1813"],
+   [{:rdfa/uri
+     "https://www.fdic.gov/regulations/laws/rules/1000-400.html#fdic1000sec.3a"}
+    {:xsd/string
+     "12 U.S. Code Section 1813 - Definitions, see, for example, http://www.law.cornell.edu/uscode/text/12/1813"}],
    :db/ident :fibo-fbc-fct-fse/DepositoryInstitution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "depository institution",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider],
    :skos/definition
    "any financial institution engaged in the business of receiving demand deposits from the public or other institutions"})
 
@@ -718,16 +787,17 @@
    :db/ident :fibo-fbc-fct-fse/DevelopmentBank,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "development bank",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider],
    :skos/definition
    "national or regional financial institution designed to provide medium- and long-term capital for productive investment, often accompanied by technical assistance, in poor countries"})
 
@@ -735,15 +805,18 @@
   "service involving any transfer of funds other than a transaction involving a paper instrument, that is initiated through an electronic terminal, telephone, or computer and that orders or authorizes a financial institution to debit or credit an account"
   {:cmns-av/abbreviation "EFT",
    :cmns-av/adaptedFrom
-   "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   {:xsd/string
+    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014"},
    :cmns-av/synonym "wire transfer service",
    :db/ident :fibo-fbc-fct-fse/ElectronicFundsTransferService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "electronic funds transfer service",
    :rdfs/seeAlso
-   ["https://www.federalreserve.gov/boarddocs/caletters/2008/0807/08-07_attachment.pdf"],
+   {:rdfa/uri
+    "https://www.federalreserve.gov/boarddocs/caletters/2008/0807/08-07_attachment.pdf"},
    :rdfs/subClassOf :fibo-fbc-pas-fpas/FinancialService,
    :skos/definition
    "service involving any transfer of funds other than a transaction involving a paper instrument, that is initiated through an electronic terminal, telephone, or computer and that orders or authorizes a financial institution to debit or credit an account",
@@ -760,60 +833,64 @@
    :owl/disjointWith :fibo-fbc-fct-fse/ManagementCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "face amount certificate company",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/InvestmentCompany
-                     :fibo-fbc-fct-fse/FinancialInstitution
                      :fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "investment company which is engaged or proposes to engage in the business of issuing face-amount certificates of the installment type, or which has been engaged in such business and has any such certificate outstanding"})
 
 (def FinanceCompany
   "financial intermediary in the business of making loans that obtains its financing from banks, institutions, and other money market sources rather than from deposits"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   {:xsd/string
+    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014"},
    :db/ident :fibo-fbc-fct-fse/FinanceCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "finance company",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "financial intermediary in the business of making loans that obtains its financing from banks, institutions, and other money market sources rather than from deposits"})
 
 (def FinancialInstitution
   "financial service provider identified as either a government agency or privately owned entity that collects funds from the public and from other institutions, and invests those funds in financial assets, such as loans, securities, bank deposits, and income-generating property"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Banking Terms, Sixth Edition, 2012",
+   {:xsd/string "Barron's Dictionary of Banking Terms, Sixth Edition, 2012"},
    :cmns-av/explanatoryNote
    "Financial institutions are differentiated by the way they obtain and invest funds. Depository institutions accept public deposits, which are insured by the government against loss, and channel those deposits into lending activities. Non-depository institutions, such as brokerage firms, life insurance companies, pension funds, and investment companies, fund their investment activities directly from financial markets by selling securities to the public or by selling insurance policies, in the case of insurance companies.",
    :cmns-av/synonym "financial intermediary",
    :db/ident :fibo-fbc-fct-fse/FinancialInstitution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "financial institution",
    :rdfs/subClassOf [:fibo-fbc-pas-fpas/FinancialServiceProvider
-                     {:owl/onProperty     :fibo-fnd-rel-rel/provides,
-                      :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/provides,
+                      :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
    "financial service provider identified as either a government agency or privately owned entity that collects funds from the public and from other institutions, and invests those funds in financial assets, such as loans, securities, bank deposits, and income-generating property"})
@@ -823,18 +900,19 @@
   {:db/ident :fibo-fbc-fct-fse/FinancialServiceProviderIdentifier,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "financial service provider identifier",
    :rdfs/subClassOf
    [{:owl/onClass    :fibo-fbc-pas-fpas/FinancialServiceProvider,
      :owl/onProperty :cmns-id/identifies,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
     {:owl/onClass    :fibo-fbc-fct-fse/FinancialServiceProviderIdentifierScheme,
      :owl/onProperty :cmns-col/isMemberOf,
-     :owl/qualifiedCardinality 1,
+     :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fnd-law-jur/Jurisdiction,
      :owl/onProperty :fibo-fnd-rel-rel/isGovernedBy,
      :rdf/type       :owl/Restriction}
@@ -847,7 +925,8 @@
   {:db/ident :fibo-fbc-fct-fse/FinancialServiceProviderIdentifierScheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "financial service provider identifier scheme",
    :rdfs/subClassOf [{:owl/onProperty :cmns-col/hasMember,
                       :owl/someValuesFrom
@@ -860,21 +939,22 @@
 (def FuturesCommissionMerchant
   "party that does both of the following: (1) solicits or accepts orders to buy or sell futures contracts, options on futures, retail off-exchange forex contracts, or swaps and (2) accepts money or other assets from customers to support such orders"
   {:cmns-av/abbreviation "FCM",
-   :cmns-av/adaptedFrom "National Futures Association",
+   :cmns-av/adaptedFrom {:xsd/string "National Futures Association"},
    :db/ident :fibo-fbc-fct-fse/FuturesCommissionMerchant,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "futures commission merchant",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "party that does both of the following: (1) solicits or accepts orders to buy or sell futures contracts, options on futures, retail off-exchange forex contracts, or swaps and (2) accepts money or other assets from customers to support such orders"})
 
@@ -885,9 +965,10 @@
    :db/ident :fibo-fbc-fct-fse/HoldingCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "holding company",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-be-oac-cpty/ControlledParty,
                       :owl/onProperty :fibo-fbc-fct-fse/hasPortfolioCompany,
                       :rdf/type       :owl/Restriction}
@@ -898,38 +979,42 @@
 (def InsuranceCompany
   "non-depository institution whose primary and predominant business activity is the writing of insurance or the reinsuring of risks underwritten by insurance companies, and that provides compensation based on the happening of at least one contingency"
   {:cmns-av/adaptedFrom
-   ["https://www.sec.gov/about/laws/ica40.pdf"
-    "http://www.ffiec.gov/nicpubweb/Content/HELP/Institution%20Type%20Description.htm"],
+   [{:rdfa/uri "https://www.sec.gov/about/laws/ica40.pdf"}
+    {:rdfa/uri
+     "http://www.ffiec.gov/nicpubweb/Content/HELP/Institution%20Type%20Description.htm"}],
    :cmns-av/explanatoryNote
    "In the US, insurance companies are subject to supervision by the insurance commissioner or a similar official or agency of a State; or any receiver or similar official or any liquidating agent for such a company, in his capacity as such. Common forms of insurance include life, property and casualty, and health insurance. In addition to insuring against hazards, many insurance companies also sell investments or investment-like products. The most prevalent investment products offered by insurers are annuities and life insurance policies that also feature investment elements.\n\nA number of insurance companies operate brokerage arms that trade securities on behalf of clients.",
    :db/ident :fibo-fbc-fct-fse/InsuranceCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "insurance company",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/RiskPoolingInstitution
-                     :fibo-fbc-fct-fse/FinancialInstitution
                      :fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "non-depository institution whose primary and predominant business activity is the writing of insurance or the reinsuring of risks underwritten by insurance companies, and that provides compensation based on the happening of at least one contingency"})
 
 (def InsuranceService
   "financial service in which the insurer promises to provide compensation for specific potential future losses in exchange for a periodic payment"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   {:xsd/string
+    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014"},
    :cmns-av/explanatoryNote
    "Insurance providers invest the compensation they receive in order to make a profit. In general, insurance transfers risk from individuals or organizations to a larger pool of individuals or organizations that are better able to mitigate that risk.",
    :db/ident :fibo-fbc-fct-fse/InsuranceService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "insurance service",
    :rdfs/subClassOf :fibo-fbc-pas-fpas/FinancialService,
    :skos/definition
@@ -942,19 +1027,20 @@
    :db/ident :fibo-fbc-fct-fse/InvestmentBank,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "investment bank",
    :rdfs/subClassOf [{:owl/unionOf [:fibo-fbc-fct-fse/Bank
                                     :fibo-fbc-fct-fse/BrokerageFirm],
                       :rdf/type    :owl/Class}
                      :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider],
    :skos/definition
    "financial service provider that acts as an underwriter or agent that serves as intermediary between the issuer of securities and the investing public"})
 
@@ -968,28 +1054,31 @@
    "Section 3a of the Investment Company Act of 1940 as amended in January, 2012, https://www.sec.gov/about/laws/ica40.pdf",
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "investment company",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "any issuer which: (a) is or holds itself out as being engaged primarily, or proposes to engage primarily, in the business of investing, reinvesting, or trading in securities; (b) is engaged or proposes to engage in the business of issuing face-amount certificates of the installment type, or has been engaged in such business and has any such certificate outstanding; or (c) is engaged or proposes to engage in the business of investing, reinvesting, owning, holding, or trading in securities, and owns or proposes to acquire investment securities having a value exceeding 40 per centum of the value of such issuer&apos;s total assets (exclusive of Government securities and cash items) on an unconsolidated basis"})
 
 (def InvestmentService
   "financial service designed to assist investors in using capital to create more money, either through income-producing vehicles or through more risk-oriented ventures to result in capital gains, including but not limited to providing investment advice, asset and portfolio management, and brokerage services"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   {:xsd/string
+    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014"},
    :db/ident :fibo-fbc-fct-fse/InvestmentService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "investment service",
    :rdfs/subClassOf :fibo-fbc-pas-fpas/FinancialService,
    :skos/definition
@@ -1005,29 +1094,32 @@
    :owl/disjointWith :fibo-fbc-fct-fse/UnitInvestmentTrust,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "management company",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/InvestmentCompany
-                     :fibo-fbc-fct-fse/FinancialInstitution
                      :fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "investment company that sells and manages a portfolio of securities other than a face-amount certificate company or unit investment fund"})
 
 (def MerchantService
   "financial service provided by a financial institution to a merchant or other business, including but not limited to managing financial transactions via a secure channel"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   {:xsd/string
+    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014"},
    :db/ident :fibo-fbc-fct-fse/MerchantService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "merchant service",
    :rdfs/subClassOf :fibo-fbc-pas-fpas/FinancialService,
    :skos/definition
@@ -1038,11 +1130,13 @@
 (def MonetaryAuthority
   "regulatory agency that controls the monetary policy, regulation and supply of money in some country or group of countries"
   {:cmns-av/adaptedFrom
-   "http://www.investordictionary.com/definition/monetary-authority",
+   {:rdfa/uri
+    "http://www.investordictionary.com/definition/monetary-authority"},
    :db/ident :fibo-fbc-fct-fse/MonetaryAuthority,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "monetary authority",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fct-fse/regulatesSupplyOf,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/Currency,
@@ -1061,18 +1155,20 @@
    :db/ident :fibo-fbc-fct-fse/MoneyServicesBusiness,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "money services business",
-   :rdfs/seeAlso ["https://www.fincen.gov/money-services-business-definition"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.fincen.gov/money-services-business-definition"},
    :rdfs/subClassOf [:fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "any person doing business, whether or not on a regular basis or as an organized business concern, in one of the following capacities: (1) currency dealer or exchanger, (2) check casher, (3) issuer of traveler's checks, money orders, or stored value, (4) seller or redeemer of traveler's checks, money orders, or stored value, (5) money transmitter, or (6) postal service"})
 
@@ -1081,7 +1177,8 @@
   {:db/ident :fibo-fbc-fct-fse/MortgageCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "mortgage company",
    :rdfs/subClassOf :fibo-fbc-pas-fpas/FinancialServiceProvider,
    :skos/definition
@@ -1090,8 +1187,9 @@
 (def NonDepositoryInstitution
   "financial institution that does not have a full banking license and typically is not supervised by a national or international banking regulatory agency"
   {:cmns-av/adaptedFrom
-   ["https://www.worldbank.org/en/publication/gfdr/gfdr-2016/background/nonbank-financial-institution"
-    "Barron's Dictionary of Banking Terms, Sixth Edition, 2012"],
+   [{:rdfa/uri
+     "https://www.worldbank.org/en/publication/gfdr/gfdr-2016/background/nonbank-financial-institution"}
+    {:xsd/string "Barron's Dictionary of Banking Terms, Sixth Edition, 2012"}],
    :cmns-av/explanatoryNote
    "A non-depository financial institution acts as a middleman between two parties in a financial transaction, and does not provide traditional depository services, such as brokerage firms, insurance companies, and investment companies. These kinds of institutions facilitate alternative financial services, such as investment (both collective and individual), risk pooling, financial consulting, brokering, money transmission, and check cashing. NBFIs are a source of consumer credit (along with licensed banks). Examples of nonbank financial institutions include insurance firms, venture capitalists, currency exchanges, some microloan organizations, and pawn shops. These non-bank financial institutions provide services that are not necessarily suited to banks, serve as competition to banks, and specialize in sectors or groups.",
    :cmns-av/synonym ["non-bank financial company (NBFC)"
@@ -1101,16 +1199,17 @@
    :owl/disjointWith :fibo-fbc-fct-fse/DepositoryInstitution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "non-depository institution",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider],
    :skos/definition
    "financial institution that does not have a full banking license and typically is not supervised by a national or international banking regulatory agency",
    :skos/historyNote
@@ -1121,10 +1220,12 @@
   {:db/ident :fibo-fbc-fct-fse/PaymentService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "payment service",
    :rdfs/seeAlso
-   ["https://ec.europa.eu/info/business-economy-euro/banking-and-finance/consumer-finance-and-payments/payment-services/payment-services_en"],
+   {:rdfa/uri
+    "https://ec.europa.eu/info/business-economy-euro/banking-and-finance/consumer-finance-and-payments/payment-services/payment-services_en"},
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/involves,
                       :owl/someValuesFrom :fibo-fnd-pas-psch/PaymentObligation,
                       :rdf/type           :owl/Restriction}
@@ -1140,7 +1241,8 @@
    :db/ident :fibo-fbc-fct-fse/PayrollService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "payroll service",
    :rdfs/subClassOf :fibo-fbc-pas-fpas/FinancialService,
    :skos/definition
@@ -1149,13 +1251,15 @@
 (def PrincipalUnderwriter
   "underwriter who, as principal, purchases from an investment company, or pursuant to some contract has the right to purchase from such company, any security for distribution, or who as agent for such company sells or has the right to sell any security to a dealer or to the public, excluding any dealer who purchases from such company through sn underwriter acting as an agent for such company"
   {:cmns-av/adaptedFrom
-   "Section 3a of the Investment Company Act of 1940 as amended in January, 2012, https://www.sec.gov/about/laws/ica40.pdf",
+   {:xsd/string
+    "Section 3a of the Investment Company Act of 1940 as amended in January, 2012, https://www.sec.gov/about/laws/ica40.pdf"},
    :cmns-av/explanatoryNote
    "Principal underwriter of or for a closed-end company or any issuer which is not an investment company, or of any security issued by such a company or issuer, means any underwriter who, in connection with a primary distribution of securities, (a) is in privity of contract with the issuer or an affiliated person of the issuer; (b) acting alone or in concert with one or more other persons, initiates or directs the formation of an underwriting syndicate; or (c) is allowed a rate of gross commission, spread, or other profit greater than the rate allowed another underwriter participating in the distribution.",
    :db/ident :fibo-fbc-fct-fse/PrincipalUnderwriter,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "principal underwriter",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/Underwriter
                      {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
@@ -1175,7 +1279,8 @@
    :db/ident :fibo-fbc-fct-fse/RegisteredInvestmentAdvisor,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "registered investment advisor",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fct-ra/isRegisteredBy,
                       :owl/someValuesFrom
@@ -1194,21 +1299,23 @@
 (def RiskPoolingInstitution
   "financial institution that provides some financial service while spreading the financial risk inherent in that service to lower the probability of a catastrophic financial event by aggregating customers across diverse dimensions as a risk management practice"
   {:cmns-av/adaptedFrom
-   "https://www.worldbank.org/en/publication/gfdr/gfdr-2016/background/nonbank-financial-institution",
+   {:rdfa/uri
+    "https://www.worldbank.org/en/publication/gfdr/gfdr-2016/background/nonbank-financial-institution"},
    :db/ident :fibo-fbc-fct-fse/RiskPoolingInstitution,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "risk pooling institution",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "financial institution that provides some financial service while spreading the financial risk inherent in that service to lower the probability of a catastrophic financial event by aggregating customers across diverse dimensions as a risk management practice",
    :skos/example
@@ -1217,44 +1324,48 @@
 (def SalesFinanceCompany
   "finance company that purchases retail and wholesale paper from automobile and other consumer and commercial goods dealers"
   {:cmns-av/adaptedFrom
-   "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014",
+   {:xsd/string
+    "Barron's Dictionary of Finance and Investment Terms, Ninth Edition, 2014"},
    :cmns-av/synonym "acceptance company",
    :db/ident :fibo-fbc-fct-fse/SalesFinanceCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "sales finance company",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/FinanceCompany
-                     :fibo-fbc-fct-fse/FinancialInstitution
                      :fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "finance company that purchases retail and wholesale paper from automobile and other consumer and commercial goods dealers"})
 
 (def SavingsAssociation
   "depository institution that is (a) any federal savings bank or association chartered under section 1464 of the Federal Deposit Insurance Act; (b) any state chartered building and loan association, savings and loan association, or homestead association; or (c) any cooperative bank (other than a cooperative bank which is a state bank as defined in subsection (a)(2)) of the Federal Deposit Insurance Act, which is organized and operating according to the laws of the State (as defined in subsection (a)(3)) in which it is chartered or organized; and (c) any corporation (other than a bank) that the board of directors and the comptroller of the currency jointly determine to be operating in substantially the same manner as such a depository institution"
   {:cmns-av/adaptedFrom
-   "https://www.fdic.gov/regulations/laws/rules/1000-400.html#fdic1000sec.3a",
+   {:rdfa/uri
+    "https://www.fdic.gov/regulations/laws/rules/1000-400.html#fdic1000sec.3a"},
    :db/ident :fibo-fbc-fct-fse/SavingsAssociation,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "savings association",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/DepositoryInstitution
-                     :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "depository institution that is (a) any federal savings bank or association chartered under section 1464 of the Federal Deposit Insurance Act; (b) any state chartered building and loan association, savings and loan association, or homestead association; or (c) any cooperative bank (other than a cooperative bank which is a state bank as defined in subsection (a)(2)) of the Federal Deposit Insurance Act, which is organized and operating according to the laws of the State (as defined in subsection (a)(3)) in which it is chartered or organized; and (c) any corporation (other than a bank) that the board of directors and the comptroller of the currency jointly determine to be operating in substantially the same manner as such a depository institution"})
 
@@ -1264,7 +1375,8 @@
    :db/ident :fibo-fbc-fct-fse/SelfRegulatingOrganization,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "self-regulating organization",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
                       :owl/someValuesFrom
@@ -1281,20 +1393,21 @@
    :db/ident :fibo-fbc-fct-fse/TrustCompany,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "trust company",
    :rdfs/subClassOf [{:owl/onClass    :fibo-be-le-cb/Corporation,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-fct-fse/FinancialInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider],
    :skos/definition
    "financial institution that acts as a fiduciary, trustee or agent of trusts and agencies"})
 
@@ -1303,7 +1416,8 @@
   {:db/ident :fibo-fbc-fct-fse/Underwriter,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "underwriter",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
                       :owl/someValuesFrom
@@ -1321,7 +1435,8 @@
   {:db/ident :fibo-fbc-fct-fse/UnderwritingArrangement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "underwriting arrangement",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-pty-pty/hasPartyInRole,
                       :owl/someValuesFrom :fibo-fbc-fct-fse/Underwriter,
@@ -1338,18 +1453,19 @@
    "Section 4, definition of investment companies, Investment Company Act of 1940 as amended and approved as of 3 January 2012, see https://www.sec.gov/about/laws/ica40.pdf",
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "unit investment trust",
    :rdfs/subClassOf [:fibo-fbc-fct-fse/InvestmentCompany
-                     :fibo-fbc-fct-fse/FinancialInstitution
                      :fibo-fbc-fct-fse/NonDepositoryInstitution
-                     :fibo-fbc-pas-fpas/FinancialServiceProvider
                      {:owl/onProperty     :fibo-fnd-rel-rel/provides,
                       :owl/someValuesFrom :fibo-fbc-pas-fpas/FinancialService,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fct-rga/isRegulatedBy,
                       :owl/someValuesFrom :fibo-fbc-fct-rga/RegulatoryAgency,
-                      :rdf/type           :owl/Restriction}],
+                      :rdf/type           :owl/Restriction}
+                     :fibo-fbc-pas-fpas/FinancialServiceProvider
+                     :fibo-fbc-fct-fse/FinancialInstitution],
    :skos/definition
    "investment company which (a) is organized under a trust indenture, contract of custodianship or agency, or similar instrument, (b) does not have a board of directors, and (c) issues only redeemable securities, each of which represents an undivided interest in a unit of specified securities; but does not include a voting trust"})
 
@@ -1358,7 +1474,8 @@
   {:db/ident :fibo-fbc-fct-fse/WealthManagementService,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "wealth management service",
    :rdfs/subClassOf :fibo-fbc-pas-fpas/FinancialService,
    :skos/definition
@@ -1367,14 +1484,16 @@
 (def hasDateEstablished
   "the date that the financial service provider was formally established"
   {:cmns-av/adaptedFrom
-   "https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf",
+   {:rdfa/uri
+    "https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf"},
    :cmns-av/explanatoryNote
    "This may be the date on its papers of incorporation or formation document, or the date on which it was granted a license.",
    :cmns-av/synonym "date of commencement of existence",
    :db/ident :fibo-fbc-fct-fse/hasDateEstablished,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "has date established",
    :rdfs/range :cmns-dt/ExplicitDate,
    :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate :cmns-dt/hasStartDate],
@@ -1384,11 +1503,13 @@
 (def hasDateEstablishmentTerminated
   "last full day that the entity existed"
   {:cmns-av/adaptedFrom
-   "https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf",
+   {:rdfa/uri
+    "https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf"},
    :db/ident :fibo-fbc-fct-fse/hasDateEstablishmentTerminated,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "has date establishment terminated",
    :rdfs/range :cmns-dt/ExplicitDate,
    :rdfs/subPropertyOf [:cmns-dt/hasExplicitDate
@@ -1399,11 +1520,13 @@
 (def hasDateInsured
   "date on which insurance became effective"
   {:cmns-av/adaptedFrom
-   "https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf",
+   {:rdfa/uri
+    "https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf"},
    :db/ident :fibo-fbc-fct-fse/hasDateInsured,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "has date insured",
    :rdfs/range :cmns-dt/ExplicitDate,
    :rdfs/subPropertyOf [:cmns-dt/hasStartDate :cmns-dt/hasExplicitDate],
@@ -1416,7 +1539,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-oac-ctl/ControllingParty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "has portfolio company",
    :rdfs/range :fibo-be-oac-cpty/ControlledParty,
    :rdfs/subPropertyOf :fibo-fnd-oac-ctl/isPartyControlling,
@@ -1429,7 +1553,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-be-oac-cpty/ControlledParty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "is portfolio company of",
    :rdfs/range :fibo-fnd-oac-ctl/ControllingParty,
    :rdfs/subPropertyOf :fibo-fnd-oac-ctl/hasControllingParty,
@@ -1442,7 +1567,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-fct-rga/RegulatoryAgency,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/"},
    :rdfs/label "regulates supply of",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/governs,
    :skos/definition

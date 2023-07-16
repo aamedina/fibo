@@ -6,37 +6,61 @@
    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
    :dcterms/abstract
    "This ontology provides examples of how to represent common equity indices as identified in the IND-EFT-DEV use case.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesClassification/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquitiesExampleIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/BasketIndices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesClassification/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Equities/EquitiesExampleIndividuals/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/BasketIndices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -98,17 +122,18 @@
 (def DowJonesIndustrialAverage
   "equity index of 30 substantial stocks that are traded on the New York Stock Exchange (NYSE) and the Nasdaq"
   {:cmns-av/abbreviation ["Dow" "DJIA"],
-   :cmns-av/explanatoryNote #voc/lstr "@en",
+   :cmns-av/explanatoryNote #xsd/langString "@en",
    :db/ident :fibo-ind-mkt-eqind/DowJonesIndustrialAverage,
    :fibo-be-fct-pub/hasPublisher :fibo-ind-mkt-eqind/SPDowJonesIndices,
    :fibo-fbc-dae-dbt/isBasedOn
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket,
    :fibo-fnd-utl-alx/isCalculatedViaMethodology
-   #voc/lstr
+   #xsd/langString
     "The index is calculated by adding the price of a single share of each stock together, with equal weighting, and dividing by the Dow Divisor which is constantly adjusted, and is currently around 0.1474.@en",
    :rdf/type [:fibo-ind-mkt-bas/EquityIndex :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label "Dow Jones Industrial Average",
    :skos/definition
    "equity index of 30 substantial stocks that are traded on the New York Stock Exchange (NYSE) and the Nasdaq"})
@@ -122,7 +147,8 @@
    :fibo-ind-mkt-bas/CapitalizationBasedWeightingFunction,
    :rdf/type [:fibo-ind-mkt-bas/BasketOfEquities :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label "Dow Jones Industrial Average basket",
    :skos/definition
    "basket of 30 substantial stocks that are traded on the New York Stock Exchange (NYSE) and the Nasdaq"})
@@ -136,11 +162,12 @@
    :fibo-fnd-dt-fd/hasDateAdded
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-AppleIncCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves :fibo-sec-eq-eqind/XNASListedAppleIncCommonStock,
-   :fibo-fnd-utl-alx/hasWeight 1M,
+   :fibo-fnd-utl-alx/hasWeight #xsd/decimal 1,
    :rdf/type [:fibo-sec-sec-bsk/SecuritiesBasketConstituent
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label
    "Dow Jones Industrial Average basket - Apple Inc. common stock constituent",
    :skos/definition
@@ -153,7 +180,8 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-AppleIncCommonStockDateAdded,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label
    "Dow Jones Industrial Average basket - Apple Inc. common stock date added",
    :skos/definition
@@ -169,11 +197,12 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-IBMCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves
    :fibo-sec-eq-eqind/XNYSListedInternationalBusinessMachinesCorporationCommonStock,
-   :fibo-fnd-utl-alx/hasWeight 1M,
+   :fibo-fnd-utl-alx/hasWeight #xsd/decimal 1,
    :rdf/type [:fibo-sec-sec-bsk/SecuritiesBasketConstituent
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label
    "Dow Jones Industrial Average basket - IBM common stock constituent",
    :skos/definition
@@ -186,7 +215,8 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-IBMCommonStockDateAdded,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label
    "Dow Jones Industrial Average basket - IBM common stock date added",
    :skos/definition
@@ -202,11 +232,12 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheCoca-ColaCompanyCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves
    :fibo-sec-eq-eqind/XNYSListedTheCoca-ColaCompanyCommonStock,
-   :fibo-fnd-utl-alx/hasWeight 1M,
+   :fibo-fnd-utl-alx/hasWeight #xsd/decimal 1,
    :rdf/type [:fibo-sec-sec-bsk/SecuritiesBasketConstituent
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label
    "Dow Jones Industrial Average basket - The Coca-Cola Company common stock constituent",
    :skos/definition
@@ -219,7 +250,8 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheCoca-ColaCompanyCommonStockDateAdded,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label
    "Dow Jones Industrial Average basket - The Coca-Cola Company common stock date added",
    :skos/definition
@@ -235,11 +267,12 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheHomeDepotCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves
    :fibo-sec-eq-eqind/XNYSListedTheHomeDepotIncCommonStock,
-   :fibo-fnd-utl-alx/hasWeight 1M,
+   :fibo-fnd-utl-alx/hasWeight #xsd/decimal 1,
    :rdf/type [:fibo-sec-sec-bsk/SecuritiesBasketConstituent
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label
    "Dow Jones Industrial Average basket - The Home Depot, Inc. common stock constituent",
    :skos/definition
@@ -252,7 +285,8 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheHomeDepotCommonStockDateAdded,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label
    "Dow Jones Industrial Average basket - The Home Depot, Inc. common stock date added",
    :skos/definition
@@ -269,11 +303,12 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheProctorAndGambleCompanyCommonStockDateAdded,
    :fibo-fnd-rel-rel/involves
    :fibo-sec-eq-eqind/XNYSListedTheProctorAndGambleCompanyCommonStock,
-   :fibo-fnd-utl-alx/hasWeight 1M,
+   :fibo-fnd-utl-alx/hasWeight #xsd/decimal 1,
    :rdf/type [:fibo-sec-sec-bsk/SecuritiesBasketConstituent
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label
    "Dow Jones Industrial Average basket - The Proctor & Gamble Company common stock constituent",
    :skos/definition
@@ -287,7 +322,8 @@
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageBasket-TheProctorAndGambleCompanyCommonStockDateAdded,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label
    "Dow Jones Industrial Average basket - The Proctor & Gamble Company common stock date added",
    :skos/definition
@@ -297,12 +333,14 @@
   "individual representing the value of the DJIA on 6 Mar 2020 at 12:05:14 pm in NYC"
   {:db/ident
    :fibo-ind-mkt-eqind/DowJonesIndustrialAverageValue-2023-03-06T120514-0500,
-   :fibo-fnd-acc-cur/hasRateValue 25523.2M,
+   :fibo-fnd-acc-cur/hasRateValue #xsd/decimal 25523.2M,
    :fibo-fnd-utl-alx/isValueOf :fibo-ind-mkt-eqind/DowJonesIndustrialAverage,
-   :fibo-ind-ind-ind/hasQuotationDateTime #inst "2020-03-06T17:05:14.000-00:00",
+   :fibo-ind-ind-ind/hasQuotationDateTime
+   #xsd/dateTime #inst "2020-03-06T17:05:14.000+00:00",
    :rdf/type [:fibo-fnd-utl-alx/NumericIndexValue :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label "Dow Jones Industrial Average value as of Mar 6, 2020",
    :skos/definition
    "individual representing the value of the DJIA on 6 Mar 2020 at 12:05:14 pm in NYC"})
@@ -315,7 +353,8 @@
               :fibo-be-fct-pub/MarketDataProvider
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label "S & P Dow Jones Indices",
    :skos/definition
    "financial service and market data provider that is a global provider of index-based data and research"})
@@ -328,11 +367,12 @@
    :fibo-be-oac-cctl/hasDomesticUltimateParent :fibo-fbc-fct-usfsind/SPGlobal,
    :fibo-fbc-pas-fpas/hasLegalAgent
    :fibo-fbc-fct-usjrga/CorporationServiceCompany,
-   :fibo-fnd-plc-vrt/hasWebsite "https://us.spindices.com/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://us.spindices.com/"},
    :rdf/type [:fibo-be-plc-plc/PrivateCompanyWithLimitedLiability
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label "S & P Dow Jones Indices LLC US-DE",
    :skos/definition
    "the S & P Dow Jones Indices LLC legal entity that is a Delaware limited liability company"})
@@ -341,18 +381,19 @@
   "equity index that is calculated based on the float-adjusted market capitalization of approximately 500 large companies listed on stock exchanges in the United States"
   {:cmns-av/abbreviation "S&P 500",
    :cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "The S&P 500 is a market capitalization-weighted index and the performance of the 10 largest companies in the index account for 21.8 percent of the performance of the index.@en",
    :db/ident :fibo-ind-mkt-eqind/StandardAndPoors500CompositeIndex,
    :fibo-be-fct-pub/hasPublisher :fibo-ind-mkt-eqind/SPDowJonesIndices,
    :fibo-fbc-dae-dbt/isBasedOn
    :fibo-ind-mkt-eqind/StandardAndPoors500CompositeIndexBasket,
    :fibo-fnd-utl-alx/isCalculatedViaMethodology
-   #voc/lstr
+   #xsd/langString
     "The components of the S&P 500 are selected by a committee. When considering the eligibility of a new addition, the committee assesses the company's merit using eight primary criteria: market capitalization, liquidity, domicile, public float, sector classification, financial viability, and length of time publicly traded and stock exchange.@en",
    :rdf/type [:fibo-ind-mkt-bas/EquityIndex :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label "Standard & Poor's Composite Index",
    :skos/definition
    "equity index that is calculated based on the float-adjusted market capitalization of approximately 500 large companies listed on stock exchanges in the United States"})
@@ -368,7 +409,8 @@
    :fibo-ind-mkt-bas/CapitalizationBasedWeightingFunction,
    :rdf/type [:fibo-ind-mkt-bas/BasketOfEquities :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/EquityIndexExampleIndividuals/"},
    :rdfs/label "Standard & Poor's Composite Index basket",
    :skos/definition
    "basket of common shares issued by approximately 500 large-cap companies that are traded on American stock exchanges"})

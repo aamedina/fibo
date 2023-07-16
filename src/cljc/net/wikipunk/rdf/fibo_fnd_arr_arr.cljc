@@ -6,16 +6,18 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
    :dcterms/abstract
    "This ontology defines abstract structural concepts, extending the Commons concept of an arrangement to represent schemes.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
-    "https://www.omg.org/spec/Commons/Designators/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Arrangements/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
@@ -55,16 +57,18 @@
    :owl/equivalentClass :cmns-col/Constituent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"}})
 
 (def Scheme
   "structure or means of organizing information such as a blueprint, schema, numbering system, organization structure, measurement system, plan, taxonomy, or language for organizing information"
   {:db/ident :fibo-fnd-arr-arr/Scheme,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"},
    :rdfs/label "scheme",
-   :rdfs/subClassOf [{:owl/minCardinality 0,
+   :rdfs/subClassOf [{:owl/minCardinality #xsd/nonNegativeInteger 0,
                       :owl/onProperty     :cmns-dsg/defines,
                       :rdf/type           :owl/Restriction}
                      :cmns-col/Arrangement],
@@ -77,14 +81,16 @@
    :owl/equivalentClass :cmns-col/StructuredCollection,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"}})
 
 (def hasCollectionSize
   "indicates the number of elements in a given collection"
   {:db/ident :fibo-fnd-arr-arr/hasCollectionSize,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"},
    :rdfs/label "has collection size",
    :rdfs/range :xsd/nonNegativeInteger,
    :skos/definition "indicates the number of elements in a given collection"})
@@ -95,7 +101,8 @@
    :owl/equivalentProperty :cmns-col/hasConstituent,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"}})
 
 (def isConstituentOf
   {:db/ident :fibo-fnd-arr-arr/isConstituentOf,
@@ -103,4 +110,5 @@
    :owl/equivalentProperty :cmns-col/isConstituentOf,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/"}})

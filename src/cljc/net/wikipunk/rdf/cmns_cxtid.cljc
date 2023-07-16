@@ -7,14 +7,16 @@
    :dcterms/contributor
    ["Elisa Kendall, Thematix Partners LLC"
     "Evan Wallace, U.S. National Institute of Standards and Technology (NIST)"],
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :owl/imports ["https://www.omg.org/spec/Commons/Identifiers/"
-                 "https://www.omg.org/spec/Commons/Collections/"
-                 "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
-                 "https://www.omg.org/spec/Commons/ContextualDesignators/"
-                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :owl/imports
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://www.omg.org/spec/Commons/20220501/ContextualIdentifiers/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/Commons/20221101/ContextualIdentifiers/"},
    :rdf/ns-prefix-map
    {"cmns-av"     "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cds"    "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
@@ -31,14 +33,32 @@
    :rdf/type :owl/Ontology,
    :rdfa/prefix "cmns-cxtid",
    :rdfa/uri "https://www.omg.org/spec/Commons/ContextualIdentifiers/",
-   :rdfs/label "Commons Contextual Identifiers Ontology"})
+   :rdfs/label "Commons Contextual Identifiers Ontology",
+   :skos/changeNote
+   "https://www.omg.org/spec/Commons/20220501/ContextualIdentifiers.rdf version of this ontology was modified to add a ContextualIdentificationScheme and require a ContextualIdentifier to have context (COMMONS-26)."})
+
+(def ContextualIdentificationScheme
+  "identification scheme that applies within one or more contexts"
+  {:db/ident :cmns-cxtid/ContextualIdentificationScheme,
+   :rdf/type :owl/Class,
+   :rdfs/label "contextual identification scheme",
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
+                      :owl/someValuesFrom :cmns-cxtdsg/Context,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-id/IdentificationScheme],
+   :skos/definition
+   "identification scheme that applies within one or more contexts"})
 
 (def ContextualIdentifier
   "sequence of characters uniquely identifying that with which it is associated, within a specified context"
   {:db/ident :cmns-cxtid/ContextualIdentifier,
    :rdf/type :owl/Class,
    :rdfs/label "contextual identifier",
-   :rdfs/subClassOf [:cmns-id/Identifier :cmns-cxtdsg/ContextualDesignation],
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
+                      :owl/someValuesFrom :cmns-cxtdsg/Context,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-id/Identifier
+                     :cmns-cxtdsg/ContextualDesignation],
    :skos/definition
    "sequence of characters uniquely identifying that with which it is associated, within a specified context",
    :skos/note
@@ -49,11 +69,11 @@
   {:db/ident :cmns-cxtid/StructuredIdentifier,
    :rdf/type :owl/Class,
    :rdfs/label "structured identifier",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-id/Identifier,
                       :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-cds/CodeElement,
                       :owl/onProperty :cmns-col/comprises,
                       :rdf/type       :owl/Restriction}

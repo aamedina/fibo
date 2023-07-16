@@ -6,20 +6,29 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides the set of basic government-level entities and jurisdictions for independent countries and British Commonwealth regional sovereignties identified as part of the Caribbean in the U.N. M49 classification.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/IdentifiersAndIndices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -60,7 +69,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-cbj/GovernmentOfAntiguaAndBarbuda,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Antigua and Barbuda entity",
    :skos/definition
    "sovereign state and polity that consists of two major islands, Antigua and Barbuda (separated by 39 miles), and a number of smaller islands in the middle of the Leeward Islands, that is part of the Lesser Antilles"})
@@ -73,7 +83,8 @@
    :fibo-be-ge-cbj/GovernmentOfTheCommonwealthOfTheBahamas,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Bahamian entity",
    :skos/definition "sovereign state and polity that is The Bahamas"})
 
@@ -84,7 +95,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-cbj/GovernmentOfBarbados,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Barbadian entity",
    :skos/definition "sovereign state and polity that is Barbados"})
 
@@ -95,7 +107,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-cbj/GovernmentOfBermuda,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Bermudan entity",
    :skos/definition "regional sovereignty and polity that is Bermuda"})
 
@@ -106,7 +119,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-cbj/GovernmentOfTheCaymanIslands,
    :rdf/type [:fibo-be-ge-ge/RegionalSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Cayman Islands entity",
    :skos/definition
    "regional sovereignty and polity that is the Cayman Islands"})
@@ -118,7 +132,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-cbj/GovernmentOfTheRepublicOfCuba,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Cuban entity",
    :skos/definition "sovereign state and polity that is Cuba"})
 
@@ -130,7 +145,8 @@
    :fibo-be-ge-cbj/GovernmentOfTheCommonwealthOfDominica,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Dominica entity",
    :skos/definition "soverign state and polity that is Dominica"})
 
@@ -142,7 +158,8 @@
    :fibo-be-ge-cbj/GovernmentOfTheDominicanRepublic,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Dominican Republic entity",
    :skos/definition "soverign state and polity that is the Dominican Republic"})
 
@@ -154,8 +171,9 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/AntiguaAndBarbuda,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of Antigua and Barbuda@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of Antigua and Barbuda@en",
    :skos/definition
    "unitary parliamentary constitutional monarchy, with the queen (Elizabeth II) as head of state represented locally by a governor-general"})
 
@@ -166,8 +184,9 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Barbados,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of Barbados@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of Barbados@en",
    :skos/definition
    "unitary parliamentary constitutional monarchy, modeled on the British Westminster system, with the Queen of Barbados (Elizabeth II) as head of state, represented locally by a governor-general"})
 
@@ -178,9 +197,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Bermuda,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of Bermuda@en",
-   :rdfs/seeAlso ["https://www.gov.bm/"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of Bermuda@en",
+   :rdfs/seeAlso {:rdfa/uri "https://www.gov.bm/"},
    :skos/definition
    "parliamentary representative democratic dependency and a British island territory in the North Atlantic Ocean"})
 
@@ -191,8 +211,9 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Grenada,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of Grenada@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of Grenada@en",
    :skos/definition
    "unitary two-party parliamentary constitutional monarchy that is a Commonwealth realm with Queen Elizabeth II as head of state, represented locally by a governor-general, located in the West Indies in the Caribbean Sea at the southern end of the Grenadines island chain"})
 
@@ -203,8 +224,9 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Jamaica,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of Jamaica@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of Jamaica@en",
    :skos/definition
    "parliamentary constitutional monarchy with legislative power vested in the bicameral Parliament of Jamaica, consisting of an appointed Senate and a directly elected House of Representatives, and an independent member of the British Commonwealth, situated in the Caribbean Sea"})
 
@@ -215,8 +237,9 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/SaintLucia,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of Saint Lucia@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of Saint Lucia@en",
    :skos/definition
    "unitary parliamentary constitutional monarchy that is a Commonwealth realm with Queen Elizabeth II as head of state, represented locally by a governor-general, located in the West Indies in the eastern Caribbean Sea on the boundary with the Atlantic Ocean"})
 
@@ -228,8 +251,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/SaintVincentAndTheGrenadines,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of Saint Vincent and the Grenadines@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString
+                "Government of Saint Vincent and the Grenadines@en",
    :skos/definition
    "unitary parliamentary constitutional monarchy, with the Queen of Saint Vincent and the Grenadines (Elizabeth II) as head of state represented locally by a governor-general, an Anglo-Caribbean country of several islands in the Lesser Antilles island arc, in the southeast Windward Islands, which lies in the West Indies at the southern end of the eastern border of the Caribbean Sea where the latter meets the Atlantic Ocean"})
 
@@ -241,9 +266,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/CaymanIslands,
    :rdf/type [:fibo-be-ge-ge/RegionalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of the Cayman Islands@en",
-   :rdfs/seeAlso ["http://www.gov.ky/"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of the Cayman Islands@en",
+   :rdfs/seeAlso {:rdfa/uri "http://www.gov.ky/"},
    :skos/definition
    "parliamentary democracy with judicial, executive and legislative branches, and a British Overseas Territory, encompassing 3 islands in the western Caribbean Sea"})
 
@@ -254,8 +280,9 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Dominica,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of the Commonwealth of Dominica@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of the Commonwealth of Dominica@en",
    :skos/definition
    "unitary parliamentary democracy that is an independent republic and member of the Commonwealth of Nations, one of few republics in the Caribbean"})
 
@@ -267,8 +294,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Bahamas,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of the Commonwealth of the Bahamas@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString
+                "Government of the Commonwealth of the Bahamas@en",
    :skos/definition
    "parliamentary constitutional monarchy, with the queen of the Bahamas (Elizabeth II) as head of state represented locally by a governor-general"})
 
@@ -280,8 +309,9 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/DominicanRepublic,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of the the Dominican Republic@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of the the Dominican Republic@en",
    :skos/definition
    "unitary presidential republic that occupies the eastern five-eighths of the island of Hispaniola in the Greater Antilles archipelago, which it shares with Haiti"})
 
@@ -294,9 +324,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/SaintKittsAndNevis,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label
-   #voc/lstr "Government of the Federation of Saint Christopher and Nevis@en",
+   #xsd/langString
+    "Government of the Federation of Saint Christopher and Nevis@en",
    :skos/definition
    "federal parliamentary constitutional monarchy that is a Commonwealth realm with the Queen of Saint Christopher and Nevis (Queen Elizabeth II) as head of state, represented locally by a governor-general, located in the Leeward Islands chain of the Lesser Antilles"})
 
@@ -307,10 +339,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Cuba,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Government of the Republic of Cuba@en"
-                #voc/lstr "Gobierno de la República de Cuba@es"],
-   :rdfs/seeAlso ["https://www.presidencia.gob.cu/en/government/"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Government of the Republic of Cuba@en"
+                #xsd/langString "Gobierno de la República de Cuba@es"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.presidencia.gob.cu/en/government/"},
    :skos/definition
    "unitary Marxist-Leninist, one party socialist republic that includes the island of Cuba as well as Isla de la Juventud and several minor archipelagos"})
 
@@ -321,9 +354,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Haiti,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Government of the Republic of Haiti@en"
-                #voc/lstr "Gouvernement de la République d'Haïti@fr"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Government of the Republic of Haiti@en"
+                #xsd/langString "Gouvernement de la République d'Haïti@fr"],
    :skos/definition
    "unitary semi-presidential republic located on the island of Hispaniola in the Greater Antilles archipelago"})
 
@@ -335,8 +369,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/TrinidadAndTobago,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of the Republic of Trinidad and Tobago@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString
+                "Government of the Republic of Trinidad and Tobago@en",
    :skos/definition
    "unitary parliamentary constitutional republic with a two-party system and a bicameral parliamentary system based on the Westminster System, that is the southernmost island country in the Caribbean"})
 
@@ -347,7 +383,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-cbj/GovernmentOfGrenada,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Grenadian entity",
    :skos/definition "soverign state and polity that is Grenada"})
 
@@ -359,7 +396,8 @@
    :fibo-be-ge-cbj/GovernmentOfTheRepublicOfHaiti,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Haitian entity",
    :skos/definition "soverign state and polity that is Haiti"})
 
@@ -370,7 +408,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-cbj/GovernmentOfJamaica,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Jamaican entity",
    :skos/definition "soverign state and polity that is Jamaica"})
 
@@ -382,7 +421,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/AntiguaAndBarbuda,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Antigua and Barbuda",
    :skos/definition
    "jurisdiction of the Eastern Caribbean Supreme Court (based in Saint Lucia; one judge of the Supreme Court is a resident of the islands and presides over the High Court of Justice, including the Judicial Committee of the Privy Council (JCPC), which is the highest court of appeal for certain British territories, some Commonwealth countries and a few UK bodies"})
@@ -394,7 +434,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Barbados,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Barbados",
    :skos/definition
    "jurisdiction of the judiciary of Barbados, an independent branch of the Barbadian government, subject only to the Barbadian Constitution, including the Magistrates' Court, Supreme Court, and Caribbean Court of Justice"})
@@ -406,7 +447,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Bermuda,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Bermuda",
    :skos/definition
    "jurisdiction of the judiciary of Bermuda, including the Magistrates' Court, Supreme Court, Court of Appeal, and Judicial Committee of the Privy Council (JCPC), which is the highest court of appeal for certain British territories, some Commonwealth countries and a few UK bodies"})
@@ -419,9 +461,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Cuba,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "jurisdiction of Cuba@en"
-                #voc/lstr "jurisdicción de la República de Cuba@es"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "jurisdiction of Cuba@en"
+                #xsd/langString "jurisdicción de la República de Cuba@es"],
    :skos/definition
    "jurisdiction of the judiciary of the Republic of Cuba, including the system of courts that interprets and applies the law in Cuba"})
 
@@ -433,7 +476,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Dominica,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Dominica",
    :skos/definition
    "jurisdiction of the judiciary of the Commonwealth of Dominica, which is a member of the International Criminal Court, with a Bilateral Immunity Agreement of protection with the US military, as covered under Article 98"})
@@ -445,7 +489,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Grenada,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Grenada",
    :skos/definition
    "jurisdiction of the judiciary of Grenada, which is part of the Eastern Caribbean States Supreme Court with an associate judge residing in Grenada"})
@@ -458,9 +503,10 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Haiti,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "jurisdiction of Haiti@en"
-                #voc/lstr "juridiction de la République d'Haïti@fr"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "jurisdiction of Haiti@en"
+                #xsd/langString "juridiction de la République d'Haïti@fr"],
    :skos/definition
    "jurisdiction of the judiciary of Haiti, whose highest court is the Cour de Cassation, assisted by local and civil courts at a communal level"})
 
@@ -471,7 +517,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Jamaica,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Jamaica",
    :skos/definition
    "the jurisdiction of the judiciary of Jamaica, a system based on English common law and local statutes, including the Judicial Committee of the Privy Council (JCPC), which is the highest court of appeal for certain British territories, some Commonwealth countries and a few UK bodies"})
@@ -483,7 +530,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/SaintLucia,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Saint Lucia",
    :skos/definition
    "jurisdiction of the judiciary of Saint Lucia, a mixed judicial system based on on both the civil law and English common law"})
@@ -496,7 +544,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/SaintVincentAndTheGrenadines,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label
    "jurisdiction of the Federation of Saint Vincent and the Grenadines",
    :skos/definition
@@ -509,7 +558,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/CaymanIslands,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Cayman Islands",
    :skos/definition
    "jurisdiction of the judiciary of the Cayman Islands, a four-tiered judicial system is based on English common law, colonial and local statutes, including the Judicial Committee of the Privy Council (JCPC), which is the highest court of appeal for certain British territories, some Commonwealth countries and a few UK bodies"})
@@ -522,7 +572,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Bahamas,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Commonwealth of the Bahamas",
    :skos/definition
    "jurisdiction of the judiciary of the Bahamas, a judicial system based on English common law and local statutes, including the Judicial Committee of the Privy Council (JCPC), which is the highest court of appeal for certain British territories, some Commonwealth countries and a few UK bodies, and which considered a safe jurisdiction as an International Financial Center (IFC), with a legal framework that is in compliance with the standards set by Organization for Economic Cooperation and Development (OECD)"})
@@ -535,7 +586,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/DominicanRepublic,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Dominican Republic",
    :skos/definition
    "jurisdiction of the judiciary of the Dominican Republic, whose highest court is the Supreme Court of Justice, composed of 16 judges appointed by the National Council of Magistrates, an entity created by the constitutional reform of 1994 to ensure the independence of the Judicial Branch"})
@@ -549,7 +601,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/SaintKittsAndNevis,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Federation of Saint Christopher and Nevis",
    :skos/definition
    "jurisdiction of the judiciary of Saint Kitts and Nevis, a mixed judicial system based on on both the civil law and English common law"})
@@ -562,7 +615,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/TrinidadAndTobago,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Republic of Trinidad and Tobago",
    :skos/definition
    "jurisdiction of the judiciary of Trinidad and Tobago, a hierarchical system comprising a Supreme Court of Judicature, a Magistracy and a Family Court, with final appeal on some matters decided by the Judicial Committee of the Privy Council (JCPC)"})
@@ -575,7 +629,8 @@
    :fibo-be-ge-cbj/GovernmentOfTheFederationOfSaintChristopherAndNevis,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Saint Kitts and Nevis entity",
    :skos/definition
    "soverign state and polity that is the Federation of Saint Christopher and Nevis"})
@@ -587,7 +642,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-cbj/GovernmentOfSaintLucia,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Saint Lucian entity",
    :skos/definition "soverign state and polity that is Saint Lucia"})
 
@@ -600,7 +656,8 @@
    :fibo-be-ge-cbj/GovernmentOfSaintVincentAndTheGrenadines,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Saint Vincentian entity",
    :skos/definition
    "soverign state and polity that is Saint Vincent and the Grenadines (or simply Saint Vincent)"})
@@ -613,7 +670,8 @@
    :fibo-be-ge-cbj/GovernmentOfTheRepublicOfTrinidadAndTobago,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Trinidadian and Tobagonian entity",
    :skos/definition
    "soverign state and polity that is the Republic of Trinidad and Tobago"})

@@ -6,32 +6,50 @@
    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
    :dcterms/abstract
    "This ontology defines concepts that are specific to debt instruments (tradable and non-tradable).",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Guaranty/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Guaranty/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -102,7 +120,8 @@
               :owl/NamedIndividual
               :fibo-fbc-fi-ip/SecurityPrice],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "at a discount",
    :skos/definition
    "a selling price that is less than the face or nominal value"})
@@ -115,7 +134,8 @@
               :owl/NamedIndividual
               :fibo-fbc-fi-ip/SecurityPrice],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "at a premium",
    :skos/definition
    "a selling price significantly above the stated face or redemption value due to high demand or timing of redemption"})
@@ -125,7 +145,8 @@
   {:db/ident :fibo-sec-dbt-dbti/CallEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "call event",
    :rdfs/subClassOf [:fibo-sec-dbt-dbti/RedemptionEvent
                      :fibo-sec-dbt-dbti/PrescriptiveEvent
@@ -141,12 +162,13 @@
    :db/ident :fibo-sec-dbt-dbti/CallFeature,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "call feature",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/CallSchedule,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass :fibo-sec-dbt-dbti/CallNotificationProvision,
                       :owl/onProperty
                       :fibo-sec-dbt-dbti/hasNotificationProvision,
@@ -160,7 +182,8 @@
   {:db/ident :fibo-sec-dbt-dbti/CallNotificationProvision,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "call notification provision",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-sec-dbt-dbti/CallWindow,
                       :owl/onProperty    :cmns-dt/hasDatePeriod,
@@ -178,7 +201,8 @@
   {:db/ident :fibo-sec-dbt-dbti/CallPremium,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "call premium",
    :rdfs/subClassOf :fibo-fnd-acc-cur/MonetaryPrice,
    :skos/definition
@@ -189,7 +213,8 @@
   {:db/ident :fibo-sec-dbt-dbti/CallSchedule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "call schedule",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom {:owl/unionOf
@@ -208,7 +233,8 @@
   {:db/ident :fibo-sec-dbt-dbti/CallWindow,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "call window",
    :rdfs/subClassOf :cmns-dt/DatePeriod,
    :skos/definition
@@ -219,7 +245,8 @@
   {:db/ident :fibo-sec-dbt-dbti/DebtOffering,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "debt offering",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-fi/DebtInstrument,
@@ -234,41 +261,42 @@
    :db/ident :fibo-sec-dbt-dbti/FixedIncomeSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "fixed income security",
    :rdfs/subClassOf
    [:fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-fbc-fi-fi/hasRedemptionProvision,
      :owl/someValuesFrom :fibo-fbc-fi-fi/RedemptionProvision,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
-     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/CallFeature,
-     :owl/onProperty :fibo-sec-dbt-dbti/hasCallFeature,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/TradableDebtInstrument,
      :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-dae-gty/Guarantor,
      :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/PutFeature,
-     :owl/onProperty :fibo-sec-dbt-dbti/hasPutFeature,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
      :owl/someValuesFrom :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Security],
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/CallFeature,
+     :owl/onProperty :fibo-sec-dbt-dbti/hasCallFeature,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
+     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/PutFeature,
+     :owl/onProperty :fibo-sec-dbt-dbti/hasPutFeature,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/Security
+    :fibo-fbc-fi-fi/DebtInstrument
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "tradeable debt instrument that provides a return in the form of fixed periodic payments and typically the return of principal at maturity"})
 
@@ -279,14 +307,15 @@
    :db/ident :fibo-sec-dbt-dbti/FullyIndexedInterestRate,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "fully-indexed interest rate",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-utl-alx/hasArgument,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/Margin,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-ind-ir-ir/BaseRate,
                       :owl/onProperty :fibo-fnd-utl-alx/hasArgument,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-fnd-utl-alx/Expression
                      :fibo-fbc-dae-dbt/FloatingInterestRate],
@@ -297,49 +326,50 @@
   "a strip that represents the non-principal portion of the monthly payments on the underlying debt instrument, such as a bond"
   {:cmns-av/explanatoryNote
    "An interest-only strip holder is interested in rising rates and no prepayment, as prepayment would cause them forfeit future interest payments and receive nothing from the return of the principal.",
-   :cmns-av/synonym #voc/lstr "IO strip@en",
+   :cmns-av/synonym #xsd/langString "IO strip@en",
    :db/ident :fibo-sec-dbt-dbti/InterestOnlyStrip,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
-   :rdfs/label #voc/lstr "interest-only strip@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
+   :rdfs/label #xsd/langString "interest-only strip@en",
    :rdfs/subClassOf
    [:fibo-sec-dbt-dbti/Strip
     {:owl/onProperty     :fibo-fbc-fi-fi/hasRedemptionProvision,
      :owl/someValuesFrom :fibo-fbc-fi-fi/RedemptionProvision,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/TradableDebtInstrument,
      :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Security
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
-     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/CallFeature,
      :owl/onProperty :fibo-sec-dbt-dbti/hasCallFeature,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
+     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
+     :rdf/type       :owl/Restriction}
+    :fibo-sec-dbt-dbti/FixedIncomeSecurity
+    :fibo-fbc-fi-fi/Security
+    :fibo-fbc-fi-fi/DebtInstrument
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-dae-gty/Guarantor,
      :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-dbti/FixedIncomeSecurity
-    {:owl/minQualifiedCardinality 0,
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/PutFeature,
      :owl/onProperty :fibo-sec-dbt-dbti/hasPutFeature,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+     :rdf/type       :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "a strip that represents the non-principal portion of the monthly payments on the underlying debt instrument, such as a bond@en",
    :skos/example
    "An interest-only strip can be reintegrated into other synthetic or engineered products. For example, interest-only strips can be pooled to create or make up a portion of a larger collateralized mortgage obligation (CMO), asset-backed security (ABS) or collateralized debt obligation (CDO) structure."})
@@ -349,7 +379,8 @@
   {:db/ident :fibo-sec-dbt-dbti/IssuedDebt,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "issued debt",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty    :fibo-fbc-dae-dbt/hasDebtAmount,
@@ -369,18 +400,19 @@
    :db/ident :fibo-sec-dbt-dbti/MakeWholeFeature,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "make whole feature",
    :rdfs/subClassOf [:fibo-sec-dbt-dbti/CallFeature
-                     {:owl/minQualifiedCardinality 0,
-                      :owl/onClass :fibo-sec-dbt-dbti/CallNotificationProvision,
-                      :owl/onProperty
-                      :fibo-sec-dbt-dbti/hasNotificationProvision,
-                      :rdf/type :owl/Restriction}
+                     :fibo-fbc-fi-fi/RedemptionProvision
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/CallSchedule,
                       :rdf/type           :owl/Restriction}
-                     :fibo-fbc-fi-fi/RedemptionProvision],
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+                      :owl/onClass :fibo-sec-dbt-dbti/CallNotificationProvision,
+                      :owl/onProperty
+                      :fibo-sec-dbt-dbti/hasNotificationProvision,
+                      :rdf/type :owl/Restriction}],
    :skos/definition
    "a call provision allowing the issuer to pay off remaining debt early"})
 
@@ -390,7 +422,8 @@
    :db/ident :fibo-sec-dbt-dbti/Margin,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "margin",
    :rdfs/subClassOf :fibo-fnd-utl-alx/Variable,
    :skos/definition
@@ -404,41 +437,42 @@
    :owl/disjointWith :fibo-sec-dbt-dbti/TradableDebtInstrument,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "non-tradable debt instrument",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
+   [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-fi-fi/RedemptionProvision,
      :owl/onProperty :fibo-fbc-fi-fi/hasRedemptionProvision,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRelativePriceAtRedemption,
-     :owl/someValuesFrom :fibo-sec-dbt-dbti/RelativePrice,
-     :rdf/type           :owl/Restriction}
+    :fibo-fbc-fi-fi/DebtInstrument
+    :fibo-fnd-agr-ctr/MutualContractualAgreement
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
      :owl/someValuesFrom :fibo-sec-dbt-dbti/RelativePrice,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument
-    :fibo-fnd-agr-ctr/MutualContractualAgreement
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRelativePriceAtRedemption,
+     :owl/someValuesFrom :fibo-sec-dbt-dbti/RelativePrice,
+     :rdf/type           :owl/Restriction}
     {:owl/onProperty     :fibo-fbc-fi-fi/hasRedemptionProvision,
      :owl/someValuesFrom :fibo-fbc-fi-fi/RedemptionProvision,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
-     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/CallFeature,
      :owl/onProperty :fibo-sec-dbt-dbti/hasCallFeature,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
+     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/PutFeature,
      :owl/onProperty :fibo-sec-dbt-dbti/hasPutFeature,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition "a debt instrument that may not be bought or sold",
    :skos/example
@@ -449,7 +483,8 @@
   {:db/ident :fibo-sec-dbt-dbti/NotificationProvision,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "notification provision",
    :rdfs/subClassOf [{:owl/allValuesFrom :cmns-dt/DatePeriod,
                       :owl/onProperty    :cmns-dt/hasDatePeriod,
@@ -466,7 +501,8 @@
               :owl/NamedIndividual
               :fibo-fbc-fi-ip/SecurityPrice],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "par value",
    :skos/definition
    "the stated value of a negotiable instrument, stock, or bond, as compared with the value that instrument might receive when sold"})
@@ -476,7 +512,8 @@
   {:db/ident :fibo-sec-dbt-dbti/PrescriptiveEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "prescriptive event",
    :rdfs/subClassOf :fibo-fnd-dt-oc/OccurrenceKind,
    :skos/definition
@@ -488,45 +525,46 @@
    :owl/disjointWith :fibo-sec-dbt-dbti/InterestOnlyStrip,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
-   :rdfs/label #voc/lstr "principal-only strip@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
+   :rdfs/label #xsd/langString "principal-only strip@en",
    :rdfs/subClassOf
    [:fibo-sec-dbt-dbti/Strip
     {:owl/onProperty     :fibo-fbc-fi-fi/hasRedemptionProvision,
      :owl/someValuesFrom :fibo-fbc-fi-fi/RedemptionProvision,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/TradableDebtInstrument,
      :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
-     :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Security
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
-     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/CallFeature,
      :owl/onProperty :fibo-sec-dbt-dbti/hasCallFeature,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
+     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
+     :rdf/type       :owl/Restriction}
+    :fibo-sec-dbt-dbti/FixedIncomeSecurity
+    :fibo-fbc-fi-fi/Security
+    :fibo-fbc-fi-fi/DebtInstrument
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
+     :rdf/type           :owl/Restriction}
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-dae-gty/Guarantor,
      :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-dbti/FixedIncomeSecurity
-    {:owl/minQualifiedCardinality 0,
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/PutFeature,
      :owl/onProperty :fibo-sec-dbt-dbti/hasPutFeature,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument],
+     :rdf/type       :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "a strip that represents the principal portion of the monthly payments on the underlying debt instrument, such as a bond@en"})
 
 (def PubliclyIssuedDebt
@@ -534,7 +572,8 @@
   {:db/ident :fibo-sec-dbt-dbti/PubliclyIssuedDebt,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "publicly issued debt",
    :rdfs/subClassOf [{:owl/allValuesFrom
                       :fibo-sec-dbt-dbti/TradableDebtInstrument,
@@ -544,10 +583,10 @@
                      {:owl/allValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :owl/onProperty    :fibo-fbc-dae-dbt/hasDebtAmount,
                       :rdf/type          :owl/Restriction}
+                     :fibo-fbc-dae-dbt/Debt
                      {:owl/allValuesFrom :fibo-fbc-fi-fi/DebtInstrument,
                       :owl/onProperty    :fibo-fnd-rel-rel/isConferredBy,
-                      :rdf/type          :owl/Restriction}
-                     :fibo-fbc-dae-dbt/Debt],
+                      :rdf/type          :owl/Restriction}],
    :skos/definition
    "an issued debt in the form of a tradable debt instrument (security)"})
 
@@ -556,7 +595,8 @@
   {:db/ident :fibo-sec-dbt-dbti/PutEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "put event",
    :rdfs/subClassOf [:fibo-sec-dbt-dbti/RedemptionEvent
                      :fibo-sec-dbt-dbti/PrescriptiveEvent
@@ -570,15 +610,16 @@
    :db/ident :fibo-sec-dbt-dbti/PutFeature,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "put feature",
    :rdfs/subClassOf [:fibo-fbc-dae-dbt/DebtTerms
-                     :fibo-fbc-fi-fi/RedemptionProvision
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass :fibo-sec-dbt-dbti/PutNotificationProvision,
                       :owl/onProperty
                       :fibo-sec-dbt-dbti/hasNotificationProvision,
                       :rdf/type :owl/Restriction}
+                     :fibo-fbc-fi-fi/RedemptionProvision
                      {:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom :fibo-sec-dbt-dbti/PutSchedule,
                       :rdf/type           :owl/Restriction}],
@@ -592,7 +633,8 @@
   {:db/ident :fibo-sec-dbt-dbti/PutNotificationProvision,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "put notification provision",
    :rdfs/subClassOf [{:owl/allValuesFrom :fibo-sec-dbt-dbti/PutWindow,
                       :owl/onProperty    :cmns-dt/hasDatePeriod,
@@ -610,7 +652,8 @@
   {:db/ident :fibo-sec-dbt-dbti/PutPremium,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "put premium",
    :rdfs/subClassOf :fibo-fnd-acc-cur/MonetaryPrice,
    :skos/definition
@@ -621,7 +664,8 @@
   {:db/ident :fibo-sec-dbt-dbti/PutSchedule,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "put schedule",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-col/comprises,
                       :owl/someValuesFrom {:owl/unionOf
@@ -641,7 +685,8 @@
   {:db/ident :fibo-sec-dbt-dbti/PutWindow,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "put window",
    :rdfs/subClassOf :cmns-dt/DatePeriod,
    :skos/definition
@@ -652,7 +697,8 @@
   {:db/ident :fibo-sec-dbt-dbti/RedemptionEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "redemption event",
    :rdfs/subClassOf [:fibo-sec-dbt-dbti/PrescriptiveEvent
                      :fibo-fnd-dt-oc/OccurrenceKind],
@@ -664,7 +710,8 @@
   {:db/ident :fibo-sec-dbt-dbti/RelativePrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "relative price",
    :rdfs/subClassOf :fibo-fbc-fi-ip/SecurityPrice,
    :skos/definition
@@ -673,52 +720,53 @@
 (def Strip
   "a tradeable debt instrument created either through the process of removing coupons from a bond and then selling the separate parts as a zero coupon bond and an interest paying coupon bond or through taking the opposite position from some variant in the options market"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "STRIPS is an acronym for Separate Trading of Registered Interest and Principal of Securities, which has come to be used as a term in its own right.@en",
    :cmns-av/synonym
-   #voc/lstr
+   #xsd/langString
     "Separate Trading of Registered Interest and Principal of Securities@en",
    :db/ident :fibo-sec-dbt-dbti/Strip,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
-   :rdfs/label #voc/lstr "strip@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
+   :rdfs/label #xsd/langString "strip@en",
    :rdfs/subClassOf
    [:fibo-sec-dbt-dbti/FixedIncomeSecurity
     {:owl/onProperty     :fibo-fbc-fi-fi/hasRedemptionProvision,
      :owl/someValuesFrom :fibo-fbc-fi-fi/RedemptionProvision,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
-     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/CallFeature,
-     :owl/onProperty :fibo-sec-dbt-dbti/hasCallFeature,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    :fibo-sec-dbt-dbti/TradableDebtInstrument
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/TradableDebtInstrument,
      :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
      :rdf/type       :owl/Restriction}
-    :fibo-sec-dbt-dbti/TradableDebtInstrument
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-dae-gty/Guarantor,
      :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/PutFeature,
-     :owl/onProperty :fibo-sec-dbt-dbti/hasPutFeature,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
      :owl/someValuesFrom :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Security],
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/CallFeature,
+     :owl/onProperty :fibo-sec-dbt-dbti/hasCallFeature,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
+     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/PutFeature,
+     :owl/onProperty :fibo-sec-dbt-dbti/hasPutFeature,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/Security
+    :fibo-fbc-fi-fi/DebtInstrument
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "a tradeable debt instrument created either through the process of removing coupons from a bond and then selling the separate parts as a zero coupon bond and an interest paying coupon bond or through taking the opposite position from some variant in the options market@en"})
 
 (def TradableDebtInstrument
@@ -728,14 +776,15 @@
    :db/ident :fibo-sec-dbt-dbti/TradableDebtInstrument,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "tradable debt instrument",
    :rdfs/subClassOf
-   [{:owl/minQualifiedCardinality 0,
+   [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/TradableDebtInstrument,
      :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-dae-gty/Guarantor,
      :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
      :rdf/type       :owl/Restriction}
@@ -744,23 +793,23 @@
     {:owl/onProperty     :fibo-fbc-fi-fi/hasRedemptionProvision,
      :owl/someValuesFrom :fibo-fbc-fi-fi/RedemptionProvision,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
-     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
+     :rdf/type           :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/CallFeature,
      :owl/onProperty :fibo-sec-dbt-dbti/hasCallFeature,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
+     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/PutFeature,
      :owl/onProperty :fibo-sec-dbt-dbti/hasPutFeature,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
      :rdf/type           :owl/Restriction}],
    :skos/definition
    "a debt instrument that is also a security, i.e., that can be bought and sold by the holder"})
@@ -772,41 +821,42 @@
    :db/ident :fibo-sec-dbt-dbti/VariableIncomeSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "variable income security",
    :rdfs/subClassOf
    [:fibo-sec-dbt-dbti/TradableDebtInstrument
     {:owl/onProperty     :fibo-fbc-fi-fi/hasRedemptionProvision,
      :owl/someValuesFrom :fibo-fbc-fi-fi/RedemptionProvision,
      :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
-     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/CallFeature,
-     :owl/onProperty :fibo-sec-dbt-dbti/hasCallFeature,
-     :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-sec-dbt-dbti/TradableDebtInstrument,
      :owl/onProperty :fibo-sec-dbt-dbti/isSubordinatedTo,
      :rdf/type       :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
      :owl/onClass    :fibo-fbc-dae-gty/Guarantor,
      :owl/onProperty :fibo-fbc-dae-gty/hasGuarantor,
      :rdf/type       :owl/Restriction}
-    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
-     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
-     :rdf/type           :owl/Restriction}
-    {:owl/minQualifiedCardinality 0,
-     :owl/onClass    :fibo-sec-dbt-dbti/PutFeature,
-     :owl/onProperty :fibo-sec-dbt-dbti/hasPutFeature,
-     :rdf/type       :owl/Restriction}
-    :fibo-fbc-fi-fi/DebtInstrument
     {:owl/onProperty     :fibo-sec-dbt-dbti/hasRepaymentTerms,
      :owl/someValuesFrom :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
      :rdf/type           :owl/Restriction}
-    :fibo-fbc-fi-fi/Security],
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/CallFeature,
+     :owl/onProperty :fibo-sec-dbt-dbti/hasCallFeature,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/DebtOffering,
+     :owl/onProperty :fibo-fbc-pas-fpas/hasOffering,
+     :rdf/type       :owl/Restriction}
+    {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
+     :owl/onClass    :fibo-sec-dbt-dbti/PutFeature,
+     :owl/onProperty :fibo-sec-dbt-dbti/hasPutFeature,
+     :rdf/type       :owl/Restriction}
+    :fibo-fbc-fi-fi/Security
+    :fibo-fbc-fi-fi/DebtInstrument
+    {:owl/onProperty     :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
+     :owl/someValuesFrom :fibo-fbc-dae-dbt/InterestPaymentTerms,
+     :rdf/type           :owl/Restriction}],
    :skos/definition
    "tradeable debt instrument that provide their owners with a rate of return that is dynamic and determined by market forces"})
 
@@ -816,7 +866,8 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fbc-dae-dbt/InterestPaymentTerms,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "allows auto-reinvestment",
    :rdfs/range :xsd/boolean,
    :skos/definition
@@ -828,7 +879,8 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fbc-fi-fi/RedemptionProvision,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "allows payment in kind",
    :rdfs/range :xsd/boolean,
    :skos/definition
@@ -842,7 +894,8 @@
                                :fibo-fbc-fi-fi/DebtInstrument],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has call feature",
    :rdfs/range :fibo-sec-dbt-dbti/CallFeature,
    :rdfs/subPropertyOf [:fibo-sec-dbt-dbti/hasRepaymentTerms
@@ -853,13 +906,14 @@
 (def hasDatedDate
   "specifies the date on which interest begins to accrue on a fixed-income security"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "Investors who purchase a fixed-income security between interest payment dates must also pay the seller or issuer any interest that has accrued from the dated date to the purchase date, or settlement date, in addition to the face value.@en",
    :db/ident :fibo-sec-dbt-dbti/hasDatedDate,
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-dae-dbt/InterestPaymentTerms,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has dated date",
    :rdfs/range :cmns-dt/ExplicitDate,
    :rdfs/subPropertyOf :cmns-dt/hasExplicitDate,
@@ -876,7 +930,8 @@
                                :fibo-fbc-fi-fi/DebtInstrument],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has default lot size",
    :rdfs/range :xsd/decimal,
    :rdfs/subPropertyOf :fibo-fbc-fi-ip/hasLotSize,
@@ -889,7 +944,8 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-sec-dbt-dbti/PutFeature,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has estate or death put feature",
    :rdfs/range :xsd/boolean,
    :skos/definition
@@ -900,7 +956,8 @@
   {:db/ident :fibo-sec-dbt-dbti/hasInterestPaymentTerms,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has interest payment terms",
    :rdfs/range :fibo-fbc-dae-dbt/InterestPaymentTerms,
    :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement,
@@ -913,7 +970,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-fi-fi/RedemptionProvision,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has notification provision",
    :rdfs/range :fibo-sec-dbt-dbti/NotificationProvision,
    :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement,
@@ -926,7 +984,8 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-sec-dbt-dbti/PubliclyIssuedDebt,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has pool number",
    :rdfs/range :xsd/integer,
    :rdfs/subPropertyOf :fibo-fnd-qt-qtu/hasNumericValue,
@@ -937,7 +996,8 @@
   {:db/ident :fibo-sec-dbt-dbti/hasPriceAndYieldDayCountConvention,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has price and yield day count convention",
    :rdfs/range :fibo-fbc-dae-dbt/DayCountConvention,
    :rdfs/subPropertyOf :fibo-fnd-dt-bd/hasBusinessRecurrenceIntervalConvention,
@@ -952,7 +1012,8 @@
                                :fibo-fbc-fi-fi/DebtInstrument],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has put feature",
    :rdfs/range :fibo-sec-dbt-dbti/PutFeature,
    :rdfs/subPropertyOf [:fibo-sec-dbt-dbti/hasRepaymentTerms
@@ -965,7 +1026,8 @@
   {:db/ident :fibo-sec-dbt-dbti/hasRelativePriceAtIssue,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has relative price at issue",
    :rdfs/range :fibo-sec-dbt-dbti/RelativePrice,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasPrice,
@@ -977,7 +1039,8 @@
   {:db/ident :fibo-sec-dbt-dbti/hasRelativePriceAtMaturity,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has relative price at maturity",
    :rdfs/range :fibo-sec-dbt-dbti/RelativePrice,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasPrice,
@@ -989,7 +1052,8 @@
   {:db/ident :fibo-sec-dbt-dbti/hasRelativePriceAtRedemption,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has relative price at redemption",
    :rdfs/range :fibo-sec-dbt-dbti/RelativePrice,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasPrice,
@@ -1001,7 +1065,8 @@
   {:db/ident :fibo-sec-dbt-dbti/hasRepaymentTerms,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "has repayment terms",
    :rdfs/range :fibo-fbc-dae-dbt/PrincipalRepaymentTerms,
    :rdfs/subPropertyOf :fibo-fnd-agr-ctr/hasContractualElement,
@@ -1014,7 +1079,8 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-sec-dbt-dbti/PutFeature,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "right to retain",
    :rdfs/range :xsd/boolean,
    :skos/definition
@@ -1028,7 +1094,8 @@
                                :fibo-fbc-fi-fi/DebtInstrument],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "is callable",
    :rdfs/range :xsd/boolean,
    :skos/definition
@@ -1042,7 +1109,8 @@
                                :fibo-fbc-fi-fi/DebtInstrument],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "is exchangeable",
    :rdfs/range :xsd/boolean,
    :skos/definition
@@ -1054,7 +1122,8 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fbc-fi-fi/RedemptionProvision,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "is extendable by holder",
    :rdfs/range :xsd/boolean,
    :skos/definition
@@ -1068,7 +1137,8 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fbc-fi-fi/RedemptionProvision,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "is extendable by issuer",
    :rdfs/range :xsd/boolean,
    :skos/definition
@@ -1082,7 +1152,8 @@
                                :fibo-fbc-fi-fi/DebtInstrument],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "is putable",
    :rdfs/range :xsd/boolean,
    :skos/definition
@@ -1096,7 +1167,8 @@
                                :fibo-fbc-fi-fi/DebtInstrument],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "is strippable",
    :rdfs/range :xsd/boolean,
    :skos/definition
@@ -1110,7 +1182,8 @@
                                :fibo-fbc-fi-fi/DebtInstrument],
                  :rdf/type    :owl/Class},
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "is subordinated",
    :rdfs/range :xsd/boolean,
    :skos/definition
@@ -1122,7 +1195,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-sec-dbt-dbti/TradableDebtInstrument,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/"},
    :rdfs/label "is subordinated to",
    :rdfs/range :fibo-sec-dbt-dbti/TradableDebtInstrument,
    :skos/definition

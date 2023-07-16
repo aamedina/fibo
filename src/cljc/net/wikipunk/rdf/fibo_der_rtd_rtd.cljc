@@ -6,22 +6,33 @@
    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
    :dcterms/abstract
    "This ontology defines concepts that are common to derivatives based on variation in some defined variable, such as an economic rate, an interest rate or an index value.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/DerivativesBasics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/ForeignExchange/ForeignExchange/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/DerivativesBasics/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Baskets/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/ForeignExchange/ForeignExchange/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/InterestRates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/FinancialDates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/RateDerivatives/RateDerivatives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/RateDerivatives/RateDerivatives/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -65,7 +76,8 @@
   {:db/ident :fibo-der-rtd-rtd/EconomicRateBasedDerivativeInstrument,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/"},
    :rdfs/label "economic rate-based derivative instrument",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom
@@ -84,13 +96,15 @@
   {:db/ident :fibo-der-rtd-rtd/EconomicRateObservable,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
-   :rdfs/label #voc/lstr "economic rate observable@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/"},
+   :rdfs/label #xsd/langString "economic rate observable@en",
    :rdfs/subClassOf [{:owl/onClass    :fibo-ind-ei-ei/EconomicIndicator,
                       :owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
                      :fibo-der-rtd-rtd/RateBasedObservable
+                     :fibo-der-drc-bsc/ObservableValue
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-sec-sec-bsk/BasketOfIndices
@@ -98,8 +112,7 @@
                                             :fibo-ind-ei-ei/EconomicIndicator
                                             :fibo-ind-fx-fx/QuotedExchangeRate],
                                            :rdf/type :owl/Class},
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-bsc/ObservableValue],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "rate-based observable that is specifically an economic indicator"})
 
@@ -108,12 +121,14 @@
   {:db/ident :fibo-der-rtd-rtd/ForeignExchangeRateObservable,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
-   :rdfs/label #voc/lstr "foreign exchange rate observable@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/"},
+   :rdfs/label #xsd/langString "foreign exchange rate observable@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                       :owl/someValuesFrom :fibo-ind-fx-fx/QuotedExchangeRate,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-rtd-rtd/RateBasedObservable
+                     :fibo-der-drc-bsc/ObservableValue
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-sec-sec-bsk/BasketOfIndices
@@ -121,34 +136,34 @@
                                             :fibo-ind-ei-ei/EconomicIndicator
                                             :fibo-ind-fx-fx/QuotedExchangeRate],
                                            :rdf/type :owl/Class},
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-bsc/ObservableValue],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "rate-based observable that is an exchange rate, typically a quoted exchange rate"})
 
 (def ForwardRateAgreement
   "agreement to exchange an interest rate commitment on a notional amount"
-  {:cmns-av/abbreviation #voc/lstr "FRA@en",
+  {:cmns-av/abbreviation #xsd/langString "FRA@en",
    :cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "The FRA determines the rates to be used along with the termination date and notional value. FRAs are cash-settled with the payment based on the net difference between the interest rate of the contract and the floating rate in the market called the reference rate. The notional amount is not exchanged, but rather a cash amount based on the rate differentials and the notional value of the contract.@en",
    :db/ident :fibo-der-rtd-rtd/ForwardRateAgreement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
-   :rdfs/label #voc/lstr "forward rate agreement@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/"},
+   :rdfs/label #xsd/langString "forward rate agreement@en",
    :rdfs/subClassOf [:fibo-der-rtd-rtd/InterestRateDerivativeInstrument
-                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
                      {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-der-rtd-rtd/RateBasedObservable,
                       :rdf/type           :owl/Restriction}
                      :fibo-fbc-fi-fi/DerivativeInstrument
+                     :fibo-der-rtd-rtd/RateBasedDerivativeInstrument
                      {:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom
                       :fibo-der-rtd-rtd/InterestRateObservable,
                       :rdf/type :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "agreement to exchange an interest rate commitment on a notional amount@en"})
 
 (def InterestRateDerivativeInstrument
@@ -156,7 +171,8 @@
   {:db/ident :fibo-der-rtd-rtd/InterestRateDerivativeInstrument,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/"},
    :rdfs/label "interest rate derivative instrument",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom
@@ -175,12 +191,14 @@
   {:db/ident :fibo-der-rtd-rtd/InterestRateObservable,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/"},
    :rdfs/label "interest rate observable",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                       :owl/someValuesFrom :fibo-ind-ir-ir/ReferenceInterestRate,
                       :rdf/type           :owl/Restriction}
                      :fibo-der-rtd-rtd/RateBasedObservable
+                     :fibo-der-drc-bsc/ObservableValue
                      {:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                       :owl/someValuesFrom {:owl/unionOf
                                            [:fibo-sec-sec-bsk/BasketOfIndices
@@ -188,8 +206,7 @@
                                             :fibo-ind-ei-ei/EconomicIndicator
                                             :fibo-ind-fx-fx/QuotedExchangeRate],
                                            :rdf/type :owl/Class},
-                      :rdf/type           :owl/Restriction}
-                     :fibo-der-drc-bsc/ObservableValue],
+                      :rdf/type           :owl/Restriction}],
    :skos/definition
    "rate-based observable that is an interest rate, typically a well-known reference interest rate"})
 
@@ -198,7 +215,8 @@
   {:db/ident :fibo-der-rtd-rtd/RateBasedDerivativeInstrument,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/"},
    :rdfs/label "rate-based derivative instrument",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                       :owl/someValuesFrom :fibo-der-rtd-rtd/RateBasedObservable,
@@ -214,7 +232,8 @@
    :db/ident :fibo-der-rtd-rtd/RateBasedObservable,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/"},
    :rdfs/label "rate-based observable",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                       :owl/someValuesFrom {:owl/unionOf

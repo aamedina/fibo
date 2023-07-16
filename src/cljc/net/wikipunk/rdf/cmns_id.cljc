@@ -10,11 +10,13 @@
    ["Elisa Kendall, Thematix Partners LLC"
     "Pete Rivett, agnos.ai U.K. Ltd"
     "Evan Wallace, U.S. National Institute of Standards and Technology (NIST)"],
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :owl/imports ["https://www.omg.org/spec/Commons/Designators/"
-                 "https://www.omg.org/spec/Commons/Collections/"
-                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
-   :owl/versionIRI "https://www.omg.org/spec/Commons/20220501/Identifiers/",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :owl/imports [{:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+                 {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+                 {:rdfa/uri
+                  "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
+   :owl/versionIRI {:rdfa/uri
+                    "https://www.omg.org/spec/Commons/20221101/Identifiers/"},
    :rdf/ns-prefix-map
    {"cmns-av"  "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -30,6 +32,8 @@
    :rdfa/prefix "cmns-id",
    :rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/",
    :rdfs/label "Commons Identifiers Ontology",
+   :skos/changeNote
+   "The https://www.omg.org/spec/Commons/20220501/Identifiers.rdf version of this ontology was modified to make the property 'identifies' functional (COMMONS-26).",
    :skos/note
    ["This ontology was originally designed for use in the OMG Languages, Countries and Codes (LCC) specification as part of the broader LanguageRepresentation ontology. The concepts have also been used in the Financial Industry Business Ontology (FIBO) for representing financial instrument, legal entity, and other identifiers."
     "The identifiers ontology conforms with the OWL 2 DL semantics, and is outside of OWL 2 RL due to (1) imported axioms from the designations ontology, and (2) the inclusion of local some values constraints on the Identifier class. The latter could be removed as needed to support OWL RL rule-based applications that cannot be extended to support it."]})
@@ -37,7 +41,8 @@
 (def IdentificationScheme
   "system for minting identifiers for things that specifies constraints on the structure of the identifier"
   {:cmns-av/adaptedFrom
-   "ISO/IEC 11179-3 Information technology - Metadata registries (MDR) - Part 3: Registry metamodel and basic attributes, Third edition, 2013-02-15",
+   {:xsd/string
+    "ISO/IEC 11179-3 Information technology - Metadata registries (MDR) - Part 3: Registry metamodel and basic attributes, Third edition, 2013-02-15"},
    :db/ident :cmns-id/IdentificationScheme,
    :rdf/type :owl/Class,
    :rdfs/label "identification scheme",
@@ -49,14 +54,15 @@
   "sequence of characters uniquely identifying that with which it is associated"
   {:db/ident :cmns-id/Identifier,
    :dcterms/source
-   "ISO/IEC 11179-3 Information technology - Metadata registries (MDR) - Part 3: Registry metamodel and basic attributes, Third edition, 2013-02-15, clause 3.1.1",
+   {:xsd/string
+    "ISO/IEC 11179-3 Information technology - Metadata registries (MDR) - Part 3: Registry metamodel and basic attributes, Third edition, 2013-02-15, clause 3.1.1"},
    :owl/disjointWith :cmns-dsg/Name,
    :rdf/type :owl/Class,
    :rdfs/label "identifier",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-id/identifies,
                       :owl/someValuesFrom :owl/Thing,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-id/IdentificationScheme,
                       :owl/onProperty :cmns-col/compliesWith,
                       :rdf/type       :owl/Restriction}
@@ -69,7 +75,7 @@
 (def identifies
   "recognizes or establishes identity within some context"
   {:db/ident :cmns-id/identifies,
-   :rdf/type :owl/ObjectProperty,
+   :rdf/type [:owl/FunctionalProperty :owl/ObjectProperty],
    :rdfs/domain :cmns-id/Identifier,
    :rdfs/label "identifies",
    :rdfs/subPropertyOf :cmns-dsg/denotes,

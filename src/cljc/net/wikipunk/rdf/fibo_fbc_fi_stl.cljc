@@ -6,24 +6,36 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
    :dcterms/abstract
    "This ontology defines high-level concepts for settlement that are applicable across FIBO domain areas, such as for loans, securities, and derivatives.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/GoalsAndObjectives/Objectives/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/BusinessDates/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Quantities/QuantitiesAndUnits/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/Settlement/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/Settlement/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
@@ -63,7 +75,7 @@
    :rdfa/prefix "fibo-fbc-fi-stl",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-   :rdfs/label #voc/lstr "Settlement Ontology@en",
+   :rdfs/label #xsd/langString "Settlement Ontology@en",
    :skos/changeNote
    ["The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
     "The https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement.rdf version of this ontology was revised to integrate the notion of a value assessment with a settlement event and to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."]})
@@ -75,12 +87,13 @@
    :db/ident :fibo-fbc-fi-stl/CashSettlementTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-   :rdfs/label #voc/lstr "cash settlement terms@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
+   :rdfs/label #xsd/langString "cash settlement terms@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-fi-stl/hasSettlementAmount,
                       :owl/someValuesFrom :fibo-fnd-acc-cur/MonetaryAmount,
                       :rdf/type           :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fbc-fi-ip/SecurityPrice,
                       :owl/onProperty :fibo-fnd-acc-cur/hasPrice,
                       :rdf/type       :owl/Restriction}
@@ -88,28 +101,29 @@
                       :owl/onProperty :fibo-fbc-fi-stl/hasDeliveryMethod,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-fpas/SettlementTerms
-                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-                      :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fi-stl/hasDeliveryMethod,
                       :owl/someValuesFrom :fibo-fbc-fi-stl/DeliveryMethod,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-stl/Settlement,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
                       :rdf/type           :owl/Restriction}],
    :skos/definition "contractual commitment to settle in cash"})
 
 (def DeliveryInCash
   "commitment to deliver an amount of money at the earliest available date as per settlement convention"
   {:cmns-av/adaptedFrom
-   #voc/lstr
+   #xsd/langString
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019@en",
    :db/ident :fibo-fbc-fi-stl/DeliveryInCash,
    :rdf/type [:fibo-fbc-fi-stl/DeliveryMethod
               :owl/NamedIndividual
               :fibo-fnd-gao-obj/DistributionStrategy],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
    :rdfs/label "delivery in cash",
    :skos/definition
    "commitment to deliver an amount of money at the earliest available date as per settlement convention"})
@@ -119,8 +133,9 @@
   {:db/ident :fibo-fbc-fi-stl/DeliveryMethod,
    :rdf/type [:fibo-fnd-agr-ctr/ContractualCommitment :owl/Class],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-   :rdfs/label #voc/lstr "delivery method@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
+   :rdfs/label #xsd/langString "delivery method@en",
    :rdfs/subClassOf :fibo-fnd-gao-obj/DistributionStrategy,
    :skos/definition
    "method and commitment to transfer a commodity, currency, security, cash or another instrument as defined in the settlement terms of the contract"})
@@ -128,79 +143,83 @@
 (def ElectAtExerciseMethod
   "commitment to determine the delivery strategy at the time of exercise"
   {:cmns-av/adaptedFrom
-   #voc/lstr
+   #xsd/langString
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019@en",
    :db/ident :fibo-fbc-fi-stl/ElectAtExerciseMethod,
    :rdf/type [:fibo-fbc-fi-stl/DeliveryMethod
               :owl/NamedIndividual
               :fibo-fnd-gao-obj/DistributionStrategy],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-   :rdfs/label #voc/lstr "elect at exercise method@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
+   :rdfs/label #xsd/langString "elect at exercise method@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "commitment to determine the delivery strategy at the time of exercise@en"})
 
 (def NonDeliverableMethod
   "commitment with respect to synthetic options on foreign exchange forwards that are based on non-convertible or thinly traded currencies"
   {:cmns-av/adaptedFrom
-   #voc/lstr
+   #xsd/langString
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019@en",
    :db/ident :fibo-fbc-fi-stl/NonDeliverableMethod,
    :rdf/type [:fibo-fbc-fi-stl/DeliveryMethod
               :owl/NamedIndividual
               :fibo-fnd-gao-obj/DistributionStrategy],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-   :rdfs/label #voc/lstr "non-deliverable method@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
+   :rdfs/label #xsd/langString "non-deliverable method@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "commitment with respect to synthetic options on foreign exchange forwards that are based on non-convertible or thinly traded currencies@en"})
 
 (def PhysicalDeliveryMethod
   "commitment to settle an obligation through the receipt or delivery of the actual underlying instrument(s) or other asset, such as a commodity, instead of through cash settlement"
   {:cmns-av/adaptedFrom
-   #voc/lstr
+   #xsd/langString
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019@en",
    :db/ident :fibo-fbc-fi-stl/PhysicalDeliveryMethod,
    :rdf/type [:fibo-fbc-fi-stl/DeliveryMethod
               :owl/NamedIndividual
               :fibo-fnd-gao-obj/DistributionStrategy],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-   :rdfs/label #voc/lstr "physical delivery method@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
+   :rdfs/label #xsd/langString "physical delivery method@en",
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "commitment to settle an obligation through the receipt or delivery of the actual underlying instrument(s) or other asset, such as a commodity, instead of through cash settlement@en"})
 
 (def PhysicalSettlementTerms
   "commitment to deliver the actual underlying asset on the specified delivery date, rather than cash"
   {:cmns-av/adaptedFrom
-   #voc/lstr
+   #xsd/langString
     "ISO 10962, Securities and related financial instruments - Classification of financial instruments (CFI) code, Fourth Edition, October 2019@en",
    :cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "If you sell a gold futures contract of say 100 troy ounces then you have to deliver real gold to the buyer on the mutually agreed date. Most derivatives are not actually exercised, but are traded out before their delivery date. However, physical delivery still occurs with some trades: it is most common with commodities, but can also occur with other financial instruments.@en",
    :db/ident :fibo-fbc-fi-stl/PhysicalSettlementTerms,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-   :rdfs/label #voc/lstr "physical settlement terms@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
+   :rdfs/label #xsd/langString "physical settlement terms@en",
    :rdfs/subClassOf [{:owl/hasValue   :fibo-fbc-fi-stl/PhysicalDeliveryMethod,
                       :owl/onProperty :fibo-fbc-fi-stl/hasDeliveryMethod,
                       :rdf/type       :owl/Restriction}
                      :fibo-fbc-pas-fpas/SettlementTerms
-                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
-                      :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fbc-fi-stl/hasDeliveryMethod,
                       :owl/someValuesFrom :fibo-fbc-fi-stl/DeliveryMethod,
                       :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :cmns-cxtdsg/appliesTo,
                       :owl/someValuesFrom :fibo-fbc-fi-stl/Settlement,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fbc-fct-ra/specifies,
+                      :owl/someValuesFrom :fibo-fbc-fi-stl/SettlementConvention,
                       :rdf/type           :owl/Restriction}],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "commitment to deliver the actual underlying asset on the specified delivery date, rather than cash@en"})
 
 (def Settlement
@@ -208,8 +227,9 @@
   {:db/ident :fibo-fbc-fi-stl/Settlement,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-   :rdfs/label #voc/lstr "settlement@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
+   :rdfs/label #xsd/langString "settlement@en",
    :rdfs/subClassOf :fibo-fnd-dt-oc/OccurrenceKind,
    :skos/definition
    "act of finalizing a transaction, including but not limited to finalizing accounting, exchanging consideration, and/or legally recording documents, as applicable"})
@@ -221,7 +241,8 @@
    :db/ident :fibo-fbc-fi-stl/SettlementConvention,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
    :rdfs/label "settlement convention",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-qt-qtu/hasNumericValue,
                       :owl/someValuesFrom :xsd/positiveInteger,
@@ -235,17 +256,18 @@
   {:db/ident :fibo-fbc-fi-stl/SettlementEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-   :rdfs/label #voc/lstr "settlement event@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
+   :rdfs/label #xsd/langString "settlement event@en",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fbc-fi-stl/Settlement,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-arr-asmt/ValueAssessment,
                       :owl/onProperty :fibo-fnd-rel-rel/involves,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fbc-fi-ip/SecurityPrice,
                       :owl/onProperty :fibo-fnd-acc-cur/hasPrice,
                       :rdf/type       :owl/Restriction}
@@ -259,8 +281,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-pas-fpas/SettlementTerms,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-   :rdfs/label #voc/lstr "has settlement method@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
+   :rdfs/label #xsd/langString "has settlement method@en",
    :rdfs/range :fibo-fbc-fi-stl/DeliveryMethod,
    :rdfs/subPropertyOf :fibo-fnd-gao-obj/hasStrategy,
    :skos/definition
@@ -274,7 +297,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-pas-fpas/SettlementTerms,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
    :rdfs/label "has preferred settlement currency",
    :rdfs/range :fibo-fnd-acc-cur/Currency,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasCurrency,
@@ -286,8 +310,9 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fbc-pas-fpas/SettlementTerms,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-   :rdfs/label #voc/lstr "has settlement amount@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
+   :rdfs/label #xsd/langString "has settlement amount@en",
    :rdfs/range :fibo-fnd-acc-cur/MonetaryAmount,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasMonetaryAmount,
    :skos/definition
@@ -299,7 +324,8 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fbc-pas-fpas/SettlementTerms,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
    :rdfs/label "is fractional eligible",
    :rdfs/range :xsd/boolean,
    :skos/definition
@@ -314,7 +340,8 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fbc-pas-fpas/SettlementTerms,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/"},
    :rdfs/label "is fully automated securities transfer applicable",
    :rdfs/range :xsd/boolean,
    :skos/definition

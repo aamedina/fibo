@@ -6,18 +6,23 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides government entities and jurisdictions for countries that are defined as being part of Western Europe in the U.N. M49 codes, primarily those that are considered independent countries in ISO 3166, or are important from a banking perspective.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -56,7 +61,8 @@
    :fibo-be-ge-weuj/GovernmentOfTheRepublicOfAustria,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Austrian entity",
    :skos/definition "federated sovereignty and polity that is Austria"})
 
@@ -68,7 +74,8 @@
    :fibo-be-ge-weuj/GovernmentOfTheKingdomOfBelgium,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Belgian entity",
    :skos/definition "federated sovereignty and polity that is Belgium"})
 
@@ -92,7 +99,8 @@
    :fibo-be-ge-weuj/GovernmentOfTheFrenchRepublic,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "French entity",
    :skos/definition "sovereign state and polity that is France"})
 
@@ -104,7 +112,8 @@
    :fibo-be-ge-weuj/GovernmentOfTheFederalRepublicOfGermany,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "German entity",
    :skos/definition "federated sovereignty and polity that is Germany"})
 
@@ -115,10 +124,12 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Germany,
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Government of the Federal Republic of Germany@en"
-                #voc/lstr "Bundesrepublik Deutschland@de"],
-   :rdfs/seeAlso ["https://www.bundesregierung.de/breg-en"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString
+                 "Government of the Federal Republic of Germany@en"
+                #xsd/langString "Bundesrepublik Deutschland@de"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.bundesregierung.de/breg-en"},
    :skos/definition
    "democratic, federal parliamentary republic led by a chancellor, where federal legislative power is vested in the parliament, consisting of the Bundestag and the Bundesrat"})
 
@@ -129,10 +140,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/France,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Government of the French Republic@en"
-                #voc/lstr "Gouvernement de la République française@fr"],
-   :rdfs/seeAlso ["https://www.gouvernement.fr/en/news"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Government of the French Republic@en"
+                #xsd/langString "Gouvernement de la République française@fr"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.gouvernement.fr/en/news"},
    :skos/definition
    "unitary semi-presidential constitutional republic, built on strong representative democratic roots, based on the Constitution of the Fifth Republic which was approved in 1958"})
 
@@ -143,9 +155,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Luxembourg,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Government of the Grand Duchy of Luxembourg",
-   :rdfs/seeAlso ["https://gouvernement.lu/en.html"],
+   :rdfs/seeAlso {:rdfa/uri "https://gouvernement.lu/en.html"},
    :skos/definition
    "representative democracy that is a unitary, parliamentary constitutional monarchy, headed by the Grand Duke, which is the world's only remaining sovereign grand duchy"})
 
@@ -156,9 +169,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Belgium,
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of the Kingdom of Belgium@en",
-   :rdfs/seeAlso ["https://www.belgium.be/en/about_belgium/government"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of the Kingdom of Belgium@en",
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://www.belgium.be/en/about_belgium/government"},
    :skos/definition
    "federal parliamentary constitutional monarchy, whose head of state is the king, though with limited prerogatives"})
 
@@ -169,10 +184,11 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Netherlands,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label [#voc/lstr "Rijksoverheid@nl"
-                #voc/lstr "Government of the Netherlands@en"],
-   :rdfs/seeAlso ["https://www.government.nl/"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label [#xsd/langString "Rijksoverheid@nl"
+                #xsd/langString "Government of the Netherlands@en"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.government.nl/"},
    :skos/definition
    "parliamentary constitutional monarchy with a unitary structure, with its monarch as head of state"})
 
@@ -183,10 +199,12 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Liechtenstein,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Government of the Principality of Liechtenstein",
    :rdfs/seeAlso
-   ["https://www.liechtenstein.li/en/country-and-people/state/government/"],
+   {:rdfa/uri
+    "https://www.liechtenstein.li/en/country-and-people/state/government/"},
    :skos/definition
    "semi-constitutional monarchy headed by the Prince of Liechtenstein, with an elected parliament that enacts the law, as well as being a direct democracy, where voters can propose and enact constitutional amendments and legislation independently of the legislature"})
 
@@ -197,9 +215,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Monaco,
    :rdf/type [:fibo-be-ge-ge/NationalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Government of the Principality of Monaco",
-   :rdfs/seeAlso ["https://en.gouv.mc/"],
+   :rdfs/seeAlso {:rdfa/uri "https://en.gouv.mc/"},
    :skos/definition
    "constitutional monarchy with the Sovereign Prince of Monaco as head of state, and a Minister of State as the head of government, who presides over a five-member Council of Government"})
 
@@ -210,9 +229,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Austria,
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
-   :rdfs/label #voc/lstr "Government of the Republic of Austria@en",
-   :rdfs/seeAlso ["https://www.bundeskanzleramt.gv.at/en.html"],
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
+   :rdfs/label #xsd/langString "Government of the Republic of Austria@en",
+   :rdfs/seeAlso {:rdfa/uri "https://www.bundeskanzleramt.gv.at/en.html"},
    :skos/definition
    "federal, representative democratic republic, with nine states, whose head of state is the Federal President (Bundespräsident), and head of the federal government is the Federal Chancellor (Bundeskanzler)"})
 
@@ -223,9 +243,10 @@
    :fibo-fnd-rel-rel/governs :lcc-3166-1/Switzerland,
    :rdf/type [:fibo-be-ge-ge/FederalGovernment :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Government of the Swiss Confederation",
-   :rdfs/seeAlso ["https://www.admin.ch/gov/en/start.html/"],
+   :rdfs/seeAlso {:rdfa/uri "https://www.admin.ch/gov/en/start.html/"},
    :skos/definition
    "federal semi-direct democracy under a multi-party presidential directorial republic, which represents a confederation of 26 cantons and communes with executive, legislative and judiciary branches"})
 
@@ -237,7 +258,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Austria,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Austria",
    :skos/definition
    "jurisdiction of the judiciary of Austria (österreichische Justiz), consisting of general courts (ordentliche Gerichte) and courts of public law (Gerichte öffentlichen Rechts)"})
@@ -250,7 +272,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Belgium,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Belgium",
    :skos/definition
    "jurisdiction of the judiciary of Belgium, which is based on civil law and originates from the Napoleonic code, including the Court of Cassation and the courts of appeal, one level below"})
@@ -263,7 +286,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/France,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of France",
    :skos/definition
    "jurisdiction of the judiciary of France, which is part of the Ministry of Justice based on a civil legal system, headed by the Court of Cassation and Council of State"})
@@ -276,9 +300,11 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Germany,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "German jurisdiction",
-   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Judiciary_of_Germany/"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://en.wikipedia.org/wiki/Judiciary_of_Germany/"},
    :skos/definition
    "jurisdiction of the judiciary of Germany, whose civil law system is based on Roman law with some references to early Germanic law, headed by the Bundesverfassungsgericht (German supreme court) responsible for constitutional matters"})
 
@@ -290,7 +316,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Liechtenstein,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Liechtenstein",
    :skos/definition
    "jurisdiction of the judiciary of Liechtenstein, the system of courts and tribunals which interpret and apply the law in Liechtenstein, including the Regional Court at Vaduz, the Princely High Court of Appeal at Vaduz, the Princely Supreme Court, the Administrative Court, and the State Court"})
@@ -303,10 +330,12 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Luxembourg,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Luxembourg",
    :rdfs/seeAlso
-   ["https://gouvernement.lu/en/systeme-politique/cours-tribunaux.html"],
+   {:rdfa/uri
+    "https://gouvernement.lu/en/systeme-politique/cours-tribunaux.html"},
    :skos/definition
    "jurisdiction of the judiciary of Luxembourg, the system of courts and tribunals which interpret and apply the law in Luxembourg, including three lower tribunals (justices de paix; in Esch-sur-Alzette, the city of Luxembourg, and Diekirch), two district tribunals (Luxembourg and Diekirch), and a Superior Court of Justice (Luxembourg), which includes the Court of Appeal and the Court of Cassation"})
 
@@ -318,7 +347,8 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Monaco,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Monaco",
    :skos/definition
    "jurisdiction of the judiciary of Monaco, the system of courts and tribunals which interpret and apply the law in Monaco, including the Monegasque Supreme Court, one of the highest courts of law in the city-state of Monaco for judicial appeals as well as ensuring the constitution of Monaco is upheld"})
@@ -331,10 +361,12 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Switzerland,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of Switzerland",
    :rdfs/seeAlso
-   ["https://www.ch.ch/en/demokratie/federalism/separation-of-powers/switzerlands-courts/"],
+   {:rdfa/uri
+    "https://www.ch.ch/en/demokratie/federalism/separation-of-powers/switzerlands-courts/"},
    :skos/definition
    "jurisdiction of the Federal Supreme Court, Federal Criminal Court, Federal Administrative Court, and the Federal Patent Court representing the judiciary branch at the federal level in Switzerland"})
 
@@ -345,9 +377,11 @@
    :fibo-fnd-law-jur/hasReach :lcc-3166-1/Netherlands,
    :rdf/type [:fibo-fnd-law-jur/Jurisdiction :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "jurisdiction of the Netherlands",
-   :rdfs/seeAlso ["https://en.wikipedia.org/wiki/Judiciary_of_the_Netherlands"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://en.wikipedia.org/wiki/Judiciary_of_the_Netherlands"},
    :skos/definition
    "jurisdiction of the judiciary of the Netherlands, the system of courts which interprets and applies the law in the Netherlands"})
 
@@ -359,7 +393,8 @@
    :fibo-be-ge-weuj/GovernmentOfThePrincipalityOfLiechtenstein,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Liechtensteiner entity",
    :skos/definition "sovereign state and polity that is Liechtenstein"})
 
@@ -371,7 +406,8 @@
    :fibo-be-ge-weuj/GovernmentOfTheGrandDuchyOfLuxembourg,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Luxembourger entity",
    :skos/definition "sovereign state and polity that is Luxembourg"})
 
@@ -383,7 +419,8 @@
    :fibo-be-ge-weuj/GovernmentOfThePrincipalityOfMonaco,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Monegasque entity",
    :skos/definition "sovereign state and polity that is Monaco"})
 
@@ -396,7 +433,8 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-weuj/GovernmentOfTheNetherlands,
    :rdf/type [:fibo-be-ge-ge/SovereignState :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Netherlands entity",
    :skos/definition "sovereign state and polity that is the Netherlands"})
 
@@ -408,6 +446,7 @@
    :fibo-be-ge-weuj/GovernmentOfTheSwissConfederation,
    :rdf/type [:fibo-be-ge-ge/FederatedSovereignty :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Swiss entity",
    :skos/definition "federated sovereignty and polity that is Switzerland"})

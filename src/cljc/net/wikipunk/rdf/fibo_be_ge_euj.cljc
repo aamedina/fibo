@@ -6,17 +6,22 @@
    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides the set of basic European Union specific government level entities and jurisdictions for use in other FIBO ontologies.",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -82,16 +87,18 @@
    :fibo-be-ge-ge/isRepresentedBy :fibo-be-ge-euj/GovernmentOfTheEuropeanUnion,
    :rdf/type [:fibo-be-ge-ge/SupranationalEntity :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "European Union entity",
-   :rdfs/seeAlso ["https://europa.eu/european-union/about-eu/countries_en"],
+   :rdfs/seeAlso {:rdfa/uri
+                  "https://europa.eu/european-union/about-eu/countries_en"},
    :skos/definition
    "individual representing the federated sovereignty and polity that is the European Union"})
 
 (def EuropeanUnionJurisdiction
   "individual representing the overall jurisdiction for the European Union, namely, that of the Court of Justice of the EU and Court of Auditors of the EU"
   {:cmns-av/adaptedFrom
-   "https://europa.eu/european-union/about-eu/countries_en",
+   {:rdfa/uri "https://europa.eu/european-union/about-eu/countries_en"},
    :db/ident :fibo-be-ge-euj/EuropeanUnionJurisdiction,
    :fibo-be-ge-ge/isJurisdictionOf :fibo-be-ge-euj/GovernmentOfTheEuropeanUnion,
    :fibo-fnd-law-jur/hasReach [:lcc-3166-1/Ireland
@@ -123,7 +130,8 @@
                                :lcc-3166-1/Czechia],
    :rdf/type [:owl/NamedIndividual :fibo-fnd-law-jur/Jurisdiction],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "European Union jurisdiction",
    :skos/definition
    "individual representing the overall jurisdiction for the European Union, namely, that of the Court of Justice of the EU and Court of Auditors of the EU"})
@@ -131,7 +139,7 @@
 (def GovernmentOfTheEuropeanUnion
   "individual representing the parliament, council, and other institutions that comprise the government of the European Union"
   {:cmns-av/adaptedFrom
-   "https://europa.eu/european-union/about-eu/countries_en",
+   {:rdfa/uri "https://europa.eu/european-union/about-eu/countries_en"},
    :cmns-av/explanatoryNote
    "In the EU's unique institutional set-up:\n- the EU's broad priorities are set by the European Council, which brings together national and EU-level leaders directly elected MEPs represent European citizens in the European Parliament\n- the interests of the EU as a whole are promoted by the European Commission, whose members are appointed by national governments\n- governments defend their own country's national interests in the Council of the European Union.",
    :db/ident :fibo-be-ge-euj/GovernmentOfTheEuropeanUnion,
@@ -165,7 +173,8 @@
                               :lcc-3166-1/Netherlands],
    :rdf/type [:fibo-be-ge-ge/Government :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/"},
    :rdfs/label "Government of the European Union",
    :skos/definition
    "individual representing the parliament, council, and other institutions that comprise the government of the European Union"})

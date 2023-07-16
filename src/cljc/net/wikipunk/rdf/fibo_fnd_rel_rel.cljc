@@ -6,18 +6,20 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
    :dcterms/abstract
    "This ontology defines a set of general purpose relations for use in other FIBO ontology elements. These include a number of properties required for reuse across the foundations and business entities models.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://www.omg.org/spec/Commons/TextDatatype/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://www.omg.org/spec/Commons/Classifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/TextDatatype/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
@@ -67,7 +69,8 @@
    :db/ident :fibo-fnd-rel-rel/Reference,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "reference",
    :skos/definition
    "concept that stands in for how something may be interpreted/understood in some context"})
@@ -77,7 +80,8 @@
   {:db/ident :fibo-fnd-rel-rel/Referent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "referent",
    :skos/definition
    "something that another concept stands for, exemplifies, symbolizes, or otherwise mentions"})
@@ -88,14 +92,16 @@
    :owl/equivalentProperty :cmns-cxtdsg/appliesTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def causes
   "relationship between an event or set of events or factors (the cause) and a second event, phenomenon, situation, or result (the effect), where the second event or outcome is understood as a consequence of the first"
   {:db/ident :fibo-fnd-rel-rel/causes,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "causes",
    :skos/definition
    "relationship between an event or set of events or factors (the cause) and a second event, phenomenon, situation, or result (the effect), where the second event or outcome is understood as a consequence of the first"})
@@ -106,7 +112,8 @@
    :owl/equivalentProperty :cmns-cls/characterizes,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def comprises
   {:db/ident :fibo-fnd-rel-rel/comprises,
@@ -114,7 +121,8 @@
    :owl/equivalentProperty :cmns-col/comprises,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def confers
   "grants or bestows by virtue of some authority"
@@ -124,7 +132,8 @@
    :db/ident :fibo-fnd-rel-rel/confers,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "confers",
    :skos/definition "grants or bestows by virtue of some authority"})
 
@@ -133,7 +142,8 @@
   {:db/ident :fibo-fnd-rel-rel/controls,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "controls",
    :skos/definition "exercises authority or influence over"})
 
@@ -143,7 +153,8 @@
    :owl/equivalentProperty :cmns-dsg/defines,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def describes
   {:db/ident :fibo-fnd-rel-rel/describes,
@@ -151,7 +162,8 @@
    :owl/equivalentProperty :cmns-dsg/describes,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def designates
   "appoints someone officially"
@@ -160,7 +172,8 @@
    :db/ident :fibo-fnd-rel-rel/designates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "designates",
    :skos/definition "appoints someone officially"})
 
@@ -169,7 +182,8 @@
   {:db/ident :fibo-fnd-rel-rel/embodies,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "embodies",
    :skos/definition
    "is an expression of, gives a tangible or visible form to (an idea, quality, or feeling), makes concrete and perceptible"})
@@ -179,7 +193,8 @@
   {:db/ident :fibo-fnd-rel-rel/evaluates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "evaluates",
    :rdfs/subPropertyOf :cmns-cxtdsg/appliesTo,
    :skos/definition
@@ -190,7 +205,8 @@
   {:db/ident :fibo-fnd-rel-rel/exchanges,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "exchanges",
    :skos/definition "gives something in return something else"})
 
@@ -199,7 +215,8 @@
   {:db/ident :fibo-fnd-rel-rel/generates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "generates",
    :skos/definition
    "produces through the application of one or more mathematical or logical steps or rules"})
@@ -209,7 +226,8 @@
   {:db/ident :fibo-fnd-rel-rel/governs,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "governs",
    :skos/definition "has and exercises authority over, regulates"})
 
@@ -218,7 +236,8 @@
   {:db/ident :fibo-fnd-rel-rel/hasAlias,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "has alias",
    :rdfs/subPropertyOf [:fibo-fnd-rel-rel/hasTextualName
                         :cmns-txt/hasTextValue],
@@ -230,7 +249,8 @@
   {:db/ident :fibo-fnd-rel-rel/hasCommonName,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "has common name",
    :rdfs/subPropertyOf [:fibo-fnd-rel-rel/hasTextualName
                         :cmns-txt/hasTextValue],
@@ -243,14 +263,16 @@
    :owl/equivalentProperty :cmns-cxtdsg/isApplicableIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def hasDesignation
   "relates an individual or organization to a position, role, or other designation"
   {:db/ident :fibo-fnd-rel-rel/hasDesignation,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "has designation",
    :skos/definition
    "relates an individual or organization to a position, role, or other designation"})
@@ -260,7 +282,8 @@
   {:db/ident :fibo-fnd-rel-rel/hasFormalName,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "has formal name",
    :rdfs/subPropertyOf [:fibo-fnd-rel-rel/hasTextualName
                         :cmns-txt/hasTextValue],
@@ -274,7 +297,8 @@
    :db/ident :fibo-fnd-rel-rel/hasIdentity,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "has identity",
    :skos/definition
    "provides a means for identifying something that fills a particular role"})
@@ -284,11 +308,12 @@
   {:db/ident :fibo-fnd-rel-rel/hasLegalName,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "has legal name",
    :rdfs/subPropertyOf [:fibo-fnd-rel-rel/hasFormalName
-                        :cmns-txt/hasTextValue
-                        :fibo-fnd-rel-rel/hasTextualName],
+                        :fibo-fnd-rel-rel/hasTextualName
+                        :cmns-txt/hasTextValue],
    :skos/definition
    "specifies the name used to refer to a party in legal communications"})
 
@@ -298,14 +323,16 @@
    :owl/equivalentProperty :cmns-dsg/isSignifiedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def hasTag
   "combination of alphanumeric characters corresponding to a label for something"
   {:db/ident :fibo-fnd-rel-rel/hasTag,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "has tag",
    :rdfs/range :xsd/string,
    :rdfs/subPropertyOf :cmns-txt/hasTextValue,
@@ -321,7 +348,8 @@
    :db/ident :fibo-fnd-rel-rel/hasTextualName,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "has textual name",
    :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition
@@ -332,7 +360,8 @@
   {:db/ident :fibo-fnd-rel-rel/holds,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "holds",
    :skos/definition
    "is the relationship between a party and something it possesses, or over which it exercises some ownership or control or has at its discretion the ability to dispose of it as it sees fit"})
@@ -342,7 +371,8 @@
   {:db/ident :fibo-fnd-rel-rel/involves,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "involves",
    :skos/definition
    "(of a situation or event) includes (something) as a necessary part or result"})
@@ -353,7 +383,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/causes,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is caused by",
    :skos/definition
    "is the relationship between an event (the effect) and a second event (the cause), where the first event is understood as a consequence of the second; also, the relationship between a set of factors (causes) and a phenomenon (the effect)"})
@@ -364,7 +395,8 @@
    :owl/equivalentProperty :cmns-cls/isCharacterizedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def isConferredBy
   "a relationship between a right or obligation and the vehicle, such as an agreement or contract, that vests (or confers) said right or obligation"
@@ -374,7 +406,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/confers,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is conferred by",
    :skos/definition
    "a relationship between a right or obligation and the vehicle, such as an agreement or contract, that vests (or confers) said right or obligation"})
@@ -386,7 +419,8 @@
    :owl/deprecated true,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def isControlledBy
   "is influenced, managed, or directed by"
@@ -394,7 +428,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/controls,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is controlled by",
    :skos/definition "is influenced, managed, or directed by"})
 
@@ -404,7 +439,8 @@
    :owl/equivalentProperty :cmns-dsg/isDefinedIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def isDescribedBy
   {:db/ident :fibo-fnd-rel-rel/isDescribedBy,
@@ -412,7 +448,8 @@
    :owl/equivalentProperty :cmns-dsg/isDescribedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def isDesignatedBy
   "indicates the party that has assigned or appointed someone to an office or position"
@@ -420,7 +457,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/designates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is designated by",
    :skos/definition
    "indicates the party that has assigned or appointed someone to an office or position"})
@@ -431,7 +469,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/evaluates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is evaluated by",
    :skos/definition "is ascertained or determined by"})
 
@@ -441,7 +480,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/generates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is generated by",
    :skos/definition
    "identifies some party or something that produces something via some equation, logic, or rules"})
@@ -454,7 +494,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/governs,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is governed by",
    :skos/definition
    "relates a contract, agreement, jurisdiction, or other legal construct and the regulation, policy, procedure, or legal person that regulates or oversees (governs) it"})
@@ -465,7 +506,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/holds,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is held by",
    :skos/definition
    "indicates the party that possesses and has at least partial control of something, regardless of ownership"})
@@ -476,14 +518,16 @@
    :owl/equivalentProperty :cmns-col/isIncludedIn,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def isIssuedBy
   "indicates a functional entity or party responsible for circulating, distributing, or publishing something"
   {:db/ident :fibo-fnd-rel-rel/isIssuedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is issued by",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProvidedBy,
    :skos/definition
@@ -496,7 +540,8 @@
    :db/ident :fibo-fnd-rel-rel/isManagedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is managed by",
    :skos/definition
    "relates something to another thing that has some role in directing its affairs"})
@@ -506,7 +551,8 @@
   {:db/ident :fibo-fnd-rel-rel/isMandatedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is mandated by",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/isConferredBy,
    :skos/definition
@@ -518,7 +564,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/produces,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is produced by",
    :skos/definition
    "identifies the producer that fabricates, manufactures or otherwise creates something through some production process"})
@@ -531,7 +578,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/provides,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "is provided by",
    :skos/definition "is made available by"})
 
@@ -541,7 +589,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/isIssuedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "issues",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/provides,
    :skos/definition "officially makes something available"})
@@ -552,7 +601,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/isManagedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "manages",
    :skos/definition "relates a party to something that it directs in some way"})
 
@@ -562,7 +612,8 @@
    :owl/inverseOf :fibo-fnd-rel-rel/isMandatedBy,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "mandates",
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/confers,
    :skos/definition
@@ -573,7 +624,8 @@
   {:db/ident :fibo-fnd-rel-rel/produces,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "produces",
    :skos/definition
    "creates through a fabrication, manufacturing or production process"})
@@ -583,7 +635,8 @@
   {:db/ident :fibo-fnd-rel-rel/provides,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "provides",
    :skos/definition "makes something available"})
 
@@ -592,7 +645,8 @@
   {:db/ident :fibo-fnd-rel-rel/refersTo,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "refers to",
    :skos/definition "classifies, provides context for, or indicates"})
 
@@ -602,14 +656,16 @@
    :owl/equivalentProperty :cmns-dsg/denotes,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"})
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"}})
 
 (def wasFormerlyKnownAs
   "indicates a name by which something was known in the past"
   {:db/ident :fibo-fnd-rel-rel/wasFormerlyKnownAs,
    :rdf/type :owl/DatatypeProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/"},
    :rdfs/label "was formerly known as",
    :rdfs/subPropertyOf :cmns-txt/hasTextValue,
    :skos/definition

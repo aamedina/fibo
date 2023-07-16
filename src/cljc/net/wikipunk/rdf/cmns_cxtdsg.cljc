@@ -9,13 +9,15 @@
    :dcterms/contributor ["Dean Allemang, Working Ontologist"
                          "Pete Rivett, agnos.ai U.K. Ltd"
                          "Elisa Kendall, Thematix Partners LLC"],
-   :dcterms/license "http://opensource.org/licenses/MIT",
-   :owl/imports ["https://www.omg.org/spec/Commons/Collections/"
-                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-                 "https://www.omg.org/spec/Commons/DatesAndTimes/"
-                 "https://www.omg.org/spec/Commons/Designators/"],
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :owl/imports [{:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+                 {:rdfa/uri
+                  "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+                 {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+                 {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}],
    :owl/versionIRI
-   "https://www.omg.org/spec/Commons/20220501/ContextualDesignators/",
+   {:rdfa/uri
+    "https://www.omg.org/spec/Commons/20221101/ContextualDesignators/"},
    :rdf/ns-prefix-map
    {"cmns-av"     "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col"    "https://www.omg.org/spec/Commons/Collections/",
@@ -32,6 +34,8 @@
    :rdfa/prefix "cmns-cxtdsg",
    :rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/",
    :rdfs/label "Commons Contextual Designators Ontology",
+   :skos/changeNote
+   "https://www.omg.org/spec/Commons/20220501/ContextualDesignators.rdf version of this ontology was modified to eliminate a double space in a note on ContextualName (COMMONS-6) and to require a ContextualName to have context (COMMONS-26).",
    :skos/note
    "The contextual designators ontology conforms with the OWL 2 DL semantics, and is outside of OWL 2 RL due to (1) imported axioms from the designations and dates and times ontologies, and (2) the inclusion of local some values and min 0 cardinality constraints. The latter could be removed as needed to support OWL RL rule-based applications that cannot be extended to support it."})
 
@@ -39,8 +43,10 @@
   "situation or frame of reference in which something applies, exists, happens, or is used and that helps to illustrate or explain it"
   {:db/ident :cmns-cxtdsg/Context,
    :dcterms/source
-   ["ISO/IEC 11179-3 Information technology - Metadata registries (MDR) - Part 3: Registry metamodel and basic attributes, Third edition, 2013-02-15"
-    "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09, clause 3.6.5"],
+   [{:xsd/string
+     "ISO/IEC 11179-3 Information technology - Metadata registries (MDR) - Part 3: Registry metamodel and basic attributes, Third edition, 2013-02-15"}
+    {:xsd/string
+     "ISO 1087 Terminology work and terminology science - Vocabulary, Second edition, 2019-09, clause 3.6.5"}],
    :rdf/type :owl/Class,
    :rdfs/label "context",
    :skos/definition
@@ -53,7 +59,7 @@
   {:db/ident :cmns-cxtdsg/ContextualDesignation,
    :rdf/type :owl/Class,
    :rdfs/label "contextual designation",
-   :rdfs/subClassOf [{:owl/minQualifiedCardinality 0,
+   :rdfs/subClassOf [{:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-cxtdsg/Context,
                       :owl/onProperty :cmns-cxtdsg/isApplicableIn,
                       :rdf/type       :owl/Restriction}
@@ -71,22 +77,26 @@
   {:db/ident :cmns-cxtdsg/ContextualName,
    :rdf/type :owl/Class,
    :rdfs/label "contextual name",
-   :rdfs/subClassOf [:cmns-dsg/Name
+   :rdfs/subClassOf [{:owl/onProperty     :cmns-cxtdsg/isApplicableIn,
+                      :owl/someValuesFrom :cmns-cxtdsg/Context,
+                      :rdf/type           :owl/Restriction}
+                     :cmns-dsg/Name
                      :cmns-cxtdsg/ContextualDesignation
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/allValuesFrom :cmns-dt/DatePeriod,
+                      :owl/onProperty    :cmns-cxtdsg/hasApplicablePeriod,
+                      :rdf/type          :owl/Restriction}
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :cmns-cxtdsg/Context,
                       :owl/onProperty :cmns-cxtdsg/isApplicableIn,
                       :rdf/type       :owl/Restriction}
-                     :cmns-dsg/Designation
-                     {:owl/allValuesFrom :cmns-dt/DatePeriod,
-                      :owl/onProperty    :cmns-cxtdsg/hasApplicablePeriod,
-                      :rdf/type          :owl/Restriction}],
+                     :cmns-dsg/Designation],
    :skos/definition
    "designation by which someone, some place, or something is known in some context",
    :skos/note
-   ["This class is designed to be extended to include provenance details regarding the source for a particular name as well as links to the various contexts in which it is used."
-    "Names of people, places, and organizations often change over time, and may be used in a particular context, such as a DBA name for a business or legal name for a person."
-    "Names for people may be considered to be personally identifying information (PII), especially when other details are also available.  Specifying names as string values attached directly to an individual makes name reconciliation and management, including from a privacy perspective, more challenging."]})
+   ["Names of people, places, and organizations often change over time, and may be used in a particular context, such as a DBA name for a business or legal name for a person."
+    "Names for people may be considered to be personally identifying information (PII), especially when other details are also available. Specifying names as string values attached directly to an individual makes name reconciliation and management, including from a privacy perspective, more challenging."],
+   :skos/scopeNote
+   "This class is designed to be extended to include provenance details regarding the source for a particular name as well as links to the various contexts in which it is used."})
 
 (def appliesTo
   "indicates something for which a context is material, germane, or relevant in some way"

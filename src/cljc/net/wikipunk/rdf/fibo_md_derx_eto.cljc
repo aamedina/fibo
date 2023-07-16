@@ -5,21 +5,31 @@
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/",
    :dcterms/abstract
    "Exchange traded options date and time dependent terms such as pricing and other analytics, including greeks (deltas, thetas etc.)",
-   :dcterms/license "http://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Options/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/DerivativesBasics/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/Publishers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/Options/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/InstrumentPricing/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/DER/DerivativesContracts/DerivativesBasics/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/DerivativesTemporal/ETOptionsTemporal/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/DerivativesTemporal/ETOptionsTemporal/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -48,22 +58,23 @@
    :rdfa/prefix "fibo-md-derx-eto",
    :rdfa/uri
    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/",
-   :rdfs/label #voc/lstr "Exchange-Traded Options Temporal@en"})
+   :rdfs/label #xsd/langString "Exchange-Traded Options Temporal@en"})
 
 (def Delta
   "First derivative of option value with respect to theoretical price is a delta (or on a position). Theoretical price"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "Delta tells you what options to buy to get the equivalent price sensitivity to the underlying. How many at that price to get that hedge. So for example an at the money option has a delta of 50. Units@en",
    :db/ident :fibo-md-derx-eto/Delta,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/",
-   :rdfs/label #voc/lstr "delta@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/"},
+   :rdfs/label #xsd/langString "delta@en",
    :rdfs/subClassOf [:fibo-md-derx-eto/OptionsGreek
                      :fibo-fbc-fi-ip/PriceAnalytic],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "First derivative of option value with respect to theoretical price is a delta (or on a position). Theoretical price@en"})
 
 (def OptionDailySettlementPrice
@@ -71,8 +82,9 @@
   {:db/ident :fibo-md-derx-eto/OptionDailySettlementPrice,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/",
-   :rdfs/label #voc/lstr "option daily settlement price@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/"},
+   :rdfs/label #xsd/langString "option daily settlement price@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-be-fct-pub/hasPublisher,
                       :owl/someValuesFrom
                       {:owl/unionOf
@@ -83,25 +95,26 @@
                      :fibo-fbc-fi-ip/SecurityPrice
                      :fibo-fbc-fi-ip/ClosingPrice],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "The official price at the end of a trading session. This price is established by The Options Clearing Corporation and is used to determine changes in account equity, margin requirements, and for other purposes.@en"})
 
 (def OptionTheoreticalValue
   "fair value of the option as determined by an option pricing model"
   {:cmns-av/explanatoryNote
-   #voc/lstr
+   #xsd/langString
     "The pricing model (such as the Black-Scholes model) takes into account current values such as implied volatility, the price of the underlying, the strike price, and time to expiration to determine what an option should be worth.  Each of the input values fluctuate, which means theoretical price will also be a fluctuating value.@en",
    :db/ident :fibo-md-derx-eto/OptionTheoreticalValue,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/",
-   :rdfs/label #voc/lstr "option theoretical value@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/"},
+   :rdfs/label #xsd/langString "option theoretical value@en",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom :fibo-fbc-fi-ip/PricingModel,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-acc-cur/MonetaryAmount],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "fair value of the option as determined by an option pricing model@en"})
 
 (def OptionsGreek
@@ -109,11 +122,12 @@
   {:db/ident :fibo-md-derx-eto/OptionsGreek,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/",
-   :rdfs/label #voc/lstr "options greek@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/"},
+   :rdfs/label #xsd/langString "options greek@en",
    :rdfs/subClassOf :fibo-fbc-fi-ip/PriceAnalytic,
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "quantity representing the sensitivity of the price of an option or options to a change in underlying parameters on which the value depends@en"})
 
 (def OptionsTheta
@@ -121,8 +135,9 @@
   {:db/ident :fibo-md-derx-eto/OptionsTheta,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/",
-   :rdfs/label #voc/lstr "options theta@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/"},
+   :rdfs/label #xsd/langString "options theta@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom
                       :fibo-md-derx-eto/OptionTheoreticalValue,
@@ -130,7 +145,7 @@
                      :fibo-md-derx-eto/OptionsGreek
                      :fibo-fbc-fi-ip/PriceAnalytic],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "A measure of the rate of change in an option's theoretical value for a one-unit change in time to the option's expiration date. Action: add terms that define or influence this.@en"})
 
 (def OptionsVega
@@ -138,8 +153,9 @@
   {:db/ident :fibo-md-derx-eto/OptionsVega,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/",
-   :rdfs/label #voc/lstr "options vega@en",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/MD/DerivativesTemporal/ETOptionsTemporal/"},
+   :rdfs/label #xsd/langString "options vega@en",
    :rdfs/subClassOf [{:owl/onProperty :fibo-fnd-rel-rel/refersTo,
                       :owl/someValuesFrom
                       :fibo-md-derx-eto/OptionTheoreticalValue,
@@ -147,5 +163,5 @@
                      :fibo-md-derx-eto/OptionsGreek
                      :fibo-fbc-fi-ip/PriceAnalytic],
    :skos/definition
-   #voc/lstr
+   #xsd/langString
     "A measure of the rate of change in an option's theoretical value for a one-unit change in the volatility assumption. Action: add terms that define or influence this.@en"})

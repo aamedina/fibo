@@ -6,25 +6,35 @@
    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
    :dcterms/abstract
    "This ontology defines abstract concepts for representation of ratings and rating schemes, particularly for ratings describing aspects of business performance, credit worthiness, and investment quality at a high level.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://www.omg.org/spec/Commons/CodesAndCodeSets/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Assessments/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://www.omg.org/spec/Commons/Classifiers/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Documents/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Assessments/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/DatesAndTimes/Occurrences/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Parties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Reporting/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Arrangements/Ratings/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
@@ -79,22 +89,23 @@
    :db/ident :fibo-fnd-arr-rt/QualitativeRatingScore,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "qualitative rating score",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/string,
                       :owl/onProperty  :fibo-fnd-rel-rel/hasTag,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      :cmns-cds/CodeElement
                      :fibo-fnd-arr-rt/RatingScore
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-arr-rt/hasMeasureWithinScale,
                       :rdf/type        :owl/Restriction}
                      :cmns-cls/Classifier
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingScale,
                       :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "rating score that is represented as a qualitative code with respect to some rating scale"})
@@ -104,21 +115,22 @@
   {:db/ident :fibo-fnd-arr-rt/QuantitativeRatingScore,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "quantitative rating score",
    :rdfs/subClassOf [{:owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-arr-rt/hasMeasureWithinScale,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type        :owl/Restriction}
                      :fibo-fnd-arr-rt/RatingScore
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-arr-rt/hasMeasureWithinScale,
                       :rdf/type        :owl/Restriction}
                      :cmns-cls/Classifier
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingScale,
                       :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}],
    :skos/definition
    "rating score that is a simple numeric value on some scale, such as a credit rating for an individual"})
@@ -128,31 +140,32 @@
   {:db/ident :fibo-fnd-arr-rt/Rating,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating",
    :rdfs/subClassOf [:fibo-fnd-arr-asmt/Opinion
+                     {:owl/onProperty     :fibo-fnd-arr-rt/hasRatingScore,
+                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onClass    :cmns-dt/Date,
+                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingIssuer,
                       :owl/onProperty :fibo-fnd-rel-rel/isIssuedBy,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :fibo-fnd-arr-rt/RatingParty,
-                      :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/cardinality #xsd/nonNegativeInteger 1,
+                      :owl/onProperty  :fibo-fnd-arr-rt/rates,
+                      :rdf/type        :owl/Restriction}
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onClass    :cmns-dt/Date,
                       :owl/onProperty :fibo-fnd-agr-ctr/hasEffectiveDate,
                       :rdf/type       :owl/Restriction}
-                     {:owl/onClass    :cmns-dt/Date,
-                      :owl/onProperty :fibo-fnd-arr-doc/hasDateOfIssuance,
-                      :owl/qualifiedCardinality 1,
-                      :rdf/type       :owl/Restriction}
-                     {:owl/cardinality 1,
-                      :owl/onProperty  :fibo-fnd-arr-rt/rates,
-                      :rdf/type        :owl/Restriction}
-                     {:owl/onProperty     :fibo-fnd-arr-rt/hasRatingScore,
-                      :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
-                      :rdf/type           :owl/Restriction}],
+                     {:owl/onClass    :fibo-fnd-arr-rt/RatingParty,
+                      :owl/onProperty :fibo-fnd-rel-rel/isGeneratedBy,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
+                      :rdf/type       :owl/Restriction}],
    :skos/definition
    "standing of something at a particular time, indicated by at least one scores with respect to some scale, based on an assessment by some party"})
 
@@ -161,18 +174,19 @@
   {:db/ident :fibo-fnd-arr-rt/RatingAgency,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating agency",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/hasIdentity,
                       :owl/someValuesFrom :fibo-fnd-org-fm/FormalOrganization,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-arr-rt/RatingScalePublisher
                      :fibo-fnd-arr-rt/RatingIssuer
-                     {:owl/onProperty     :fibo-fnd-rel-rel/issues,
-                      :owl/someValuesFrom :fibo-fnd-arr-rt/Rating,
-                      :rdf/type           :owl/Restriction}
                      {:owl/onProperty     :fibo-fnd-rel-rel/manages,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScale,
+                      :rdf/type           :owl/Restriction}
+                     {:owl/onProperty     :fibo-fnd-rel-rel/issues,
+                      :owl/someValuesFrom :fibo-fnd-arr-rt/Rating,
                       :rdf/type           :owl/Restriction}
                      :fibo-fnd-pty-pty/PartyInRole],
    :skos/definition
@@ -183,7 +197,8 @@
   {:db/ident :fibo-fnd-arr-rt/RatingAssessmentActivity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating assessment activity",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/RatingParty,
@@ -197,7 +212,8 @@
   {:db/ident :fibo-fnd-arr-rt/RatingAssessmentEvent,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating assessment event",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/isProvidedBy,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/RatingParty,
@@ -207,9 +223,9 @@
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingAssessmentActivity,
                       :owl/onProperty :fibo-fnd-dt-oc/exemplifies,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/minQualifiedCardinality 0,
+                     {:owl/minQualifiedCardinality #xsd/nonNegativeInteger 0,
                       :owl/onClass    :fibo-fnd-arr-rt/RatingReport,
                       :owl/onProperty :fibo-fnd-dt-oc/hasOutput,
                       :rdf/type       :owl/Restriction}
@@ -224,7 +240,8 @@
    :db/ident :fibo-fnd-arr-rt/RatingIssuer,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating issuer",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/issues,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/Rating,
@@ -237,7 +254,8 @@
   {:db/ident :fibo-fnd-arr-rt/RatingParty,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating party",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/generates,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/Rating,
@@ -251,7 +269,8 @@
   {:db/ident :fibo-fnd-arr-rt/RatingReport,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating report",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-arr-rep/reportsOn,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/Rating,
@@ -264,20 +283,21 @@
   {:db/ident :fibo-fnd-arr-rt/RatingScale,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating scale",
    :rdfs/subClassOf [{:owl/onProperty     :cmns-dsg/defines,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScore,
                       :rdf/type           :owl/Restriction}
                      {:owl/onClass    :fibo-fnd-arr-rt/RatingScalePublisher,
                       :owl/onProperty :fibo-fnd-rel-rel/isManagedBy,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-arr-rt/hasWorstMeasure,
                       :rdf/type        :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-arr-rt/hasBestMeasure,
                       :rdf/type        :owl/Restriction}
@@ -292,7 +312,8 @@
    :db/ident :fibo-fnd-arr-rt/RatingScalePublisher,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating scale publisher",
    :rdfs/subClassOf [{:owl/onProperty     :fibo-fnd-rel-rel/manages,
                       :owl/someValuesFrom :fibo-fnd-arr-rt/RatingScale,
@@ -308,13 +329,14 @@
    :db/ident :fibo-fnd-arr-rt/RatingScore,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rating score",
    :rdfs/subClassOf [{:owl/onClass    :fibo-fnd-arr-rt/RatingScale,
                       :owl/onProperty :cmns-dsg/isDefinedIn,
-                      :owl/qualifiedCardinality 1,
+                      :owl/qualifiedCardinality #xsd/nonNegativeInteger 1,
                       :rdf/type       :owl/Restriction}
-                     {:owl/maxQualifiedCardinality 1,
+                     {:owl/maxQualifiedCardinality #xsd/nonNegativeInteger 1,
                       :owl/onDataRange :xsd/decimal,
                       :owl/onProperty  :fibo-fnd-arr-rt/hasMeasureWithinScale,
                       :rdf/type        :owl/Restriction}
@@ -330,7 +352,8 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fnd-arr-rt/RatingScale,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "has best measure",
    :rdfs/range :xsd/decimal,
    :skos/definition
@@ -342,7 +365,8 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fnd-arr-rt/RatingScore,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "has measure within scale",
    :rdfs/range :xsd/decimal,
    :skos/definition
@@ -354,7 +378,8 @@
    :owl/inverseOf :fibo-fnd-arr-rt/rates,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "has rating",
    :rdfs/range :fibo-fnd-arr-rt/Rating,
    :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
@@ -367,7 +392,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-arr-rt/Rating,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "has rating score",
    :rdfs/range :fibo-fnd-arr-rt/RatingScore,
    :rdfs/subPropertyOf :cmns-cls/isClassifiedBy,
@@ -382,7 +408,8 @@
    :rdf/type :owl/DatatypeProperty,
    :rdfs/domain :fibo-fnd-arr-rt/RatingScale,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "has worst measure",
    :rdfs/range :xsd/decimal,
    :skos/definition
@@ -395,7 +422,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-arr-rt/RatingParty,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "produces ratings for",
    :rdfs/range :fibo-fnd-arr-rt/RatingIssuer,
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/produces,
@@ -407,7 +435,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-arr-rt/Rating,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "rates",
    :rdfs/subPropertyOf :cmns-cls/classifies,
    :skos/definition
@@ -419,7 +448,8 @@
    :rdf/type :owl/ObjectProperty,
    :rdfs/domain :fibo-fnd-arr-rt/RatingIssuer,
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/"},
    :rdfs/label "uses rating performer",
    :rdfs/range :fibo-fnd-arr-rt/RatingParty,
    :rdfs/subPropertyOf :fibo-fnd-rel-rel/isProducedBy,

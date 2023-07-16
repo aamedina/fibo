@@ -6,24 +6,26 @@
    "https://raw.githubusercontent.com/edmcouncil/fibo/master/MetadataFIBO.rdf",
    :dcterms/abstract
    "This is the metadata ontology used to describe the FIBO Specification.",
-   :dcterms/issued #inst "2018-03-31T22:00:00.000-00:00",
-   :dcterms/license "https://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-02-13T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-03-31T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-02-13T18:00:00.000-05:00",
    :owl/imports
-   ["https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/MetadataFND/"
-    "https://spec.edmcouncil.org/fibo/ontology/MD/MetadataMD/"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/MetadataLOAN/"
-    "https://spec.edmcouncil.org/fibo/ontology/CAE/MetadataCAE/"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/MetadataFBC/"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/BP/MetadataBP/"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/MetadataBE/"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/"
-    "https://spec.edmcouncil.org/fibo/ontology/IND/MetadataIND/"],
+   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/MetadataFND/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/MD/MetadataMD/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/LOAN/MetadataLOAN/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/CAE/MetadataCAE/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FBC/MetadataFBC/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BP/MetadataBP/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/BE/MetadataBE/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/"}
+    {:rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/IND/MetadataIND/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/20230201/MetadataFIBO/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/20230201/MetadataFIBO/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "dcterms" "http://purl.org/dc/terms/",
@@ -52,7 +54,7 @@
    :rdfs/label "Metadata for the EDMC-FIBO Specification"})
 
 (def FIBOSpecification
-  "The Financial Industry Business Ontology (FIBO) is a collaborative effort among industry practitioners, semantic technology experts and information scientists to standardize the language used to precisely define the terms, conditions, and characteristics of financial instruments; the legal and relationship structure of business entities; the content and time dimensions of market data; and the legal obligations and process aspects of corporate actions. The definitions and relationships that comprise the FIBO specification have been modularized into a number of domains, which in turn include a number of modules, each of which is further modularized into one or more constituent ontologies. The FIBO ontologies are available as OWL 2 ontologies from the EDM Council site, and as UML models that are compliant with the Semantics for Information Modeling and Federation (SMIF) draft specification, and are linked at https://spec.edmcouncil.org/fibo/ontology/ ."
+  "The Financial Industry Business Ontology (FIBO) is a collaborative effort among industry practitioners, semantic technology experts and information scientists to standardize the language used to precisely define the terms, conditions, and characteristics of financial instruments; the legal and relationship structure of business entities; the content and time dimensions of market data; and the legal obligations and process aspects of corporate actions.  The definitions and relationships that comprise the FIBO specification have been modularized into a number of domains, which in turn include a number of modules, each of which is further modularized into one or more constituent ontologies. \n\nThe FIBO ontologies are available as OWL 2 ontologies from the EDM Council site, and as UML models that are compliant with the Semantics for Information Modeling and Federation (SMIF) draft specification, and are linked at https://spec.edmcouncil.org/fibo/ontology/ ."
   {:cmns-av/copyright ["Copyright (c) 2013-2023 EDM Council, Inc."
                        "Copyright (c) 2013-2023 Object Management Group, Inc."],
    :db/ident :fibo-spec/FIBOSpecification,
@@ -68,10 +70,10 @@
                      :fibo-cae-mod/CAEDomain
                      :fibo-md-mod/MDDomain
                      :fibo-ind-mod/INDDomain],
-   :dcterms/issued #inst "2018-03-31T22:00:00.000-00:00",
-   :dcterms/license "https://opensource.org/licenses/MIT",
-   :dcterms/modified #inst "2023-02-13T23:00:00.000-00:00",
+   :dcterms/issued #xsd/dateTime #inst "2018-03-31T18:00:00.000-04:00",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
+   :dcterms/modified #xsd/dateTime #inst "2023-02-13T18:00:00.000-05:00",
    :dcterms/title "Financial Industry Business Ontology (FIBO)",
    :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
    :rdfs/label "Financial Industry Business Ontology",
-   :rdfs/seeAlso ["https://spec.edmcouncil.org/fibo/"]})
+   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})

@@ -6,52 +6,87 @@
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
    :dcterms/abstract
    "This ontology includes example individuals for US national banks, state chartered banks, and other institutions, as well as details related to some of the larger corporations that issue stock and are represented in the Dow Jones Industrial Average and S&P 500.",
-   :dcterms/license "https://opensource.org/licenses/MIT",
+   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   ["https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"
-    "https://www.omg.org/spec/Commons/DatesAndTimes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateControl/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"
-    "https://www.omg.org/spec/Commons/Identifiers/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"
-    "https://www.omg.org/spec/Commons/Collections/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"
-    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"
-    "https://www.omg.org/spec/Commons/ContextualDesignators/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Trusts/Trusts/"
-    "https://www.omg.org/spec/Commons/Designators/"
-    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"],
+   [{:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/VirtualPlaces/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/DatesAndTimes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/FinancialServicesEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/CorporateControl/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/LegalCapacity/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Locations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Law/Jurisdiction/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Organizations/FormalOrganizations/"}
+    {:rdfa/uri
+     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/CorporateBodies/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessRegistries/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/ControlParties/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LEIEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegulatoryAgencies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Trusts/Trusts/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/Designators/"}
+    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/GovernmentEntities/GovernmentEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/FormalBusinessOrganizations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Corporations/Corporations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/Markets/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/Addresses/"}
+    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/NorthAmericanEntities/USExampleEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/RegistrationAuthorities/"}
+    {:rdfa/uri
+     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}],
    :owl/versionIRI
-   "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdf/ns-prefix-map
    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
@@ -154,7 +189,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/California,
    :rdf/type [:fibo-fnd-plc-adr/PhysicalAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Alphabet Inc. corporate address",
    :skos/definition "registration address for Alphabet Inc."})
 
@@ -163,17 +199,19 @@
   {:cmns-col/comprises :gleif-L1-data/L-5493006MHB84DD0ZWV18-LEI,
    :db/ident :fibo-fbc-fct-usind/AlphabetIncLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2015-08-31T20:16:00.000-00:00",
+   #xsd/dateTime #inst "2015-08-31T16:16:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-11-30T04:17:00.000-00:00",
+   #xsd/dateTime #inst "2021-11-29T23:17:00.000-05:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-11-29T22:57:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-11-29T17:57:00.000-05:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Alphabet Inc. legal entity identifier registry entry",
    :skos/definition "legal entity identifier registry entry for Alphabet Inc."})
 
@@ -187,7 +225,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/California,
    :rdf/type [:fibo-fnd-plc-adr/PhysicalAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Apple Inc. corporate address",
    :skos/definition "registration address for Apple Inc."})
 
@@ -196,17 +235,19 @@
   {:cmns-col/comprises :gleif-L1-data/L-HWUPKR0MPOU8FGXBT394-LEI,
    :db/ident :fibo-fbc-fct-usind/AppleIncLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-06T19:53:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-06T15:53:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-08-20T01:31:00.000-00:00",
+   #xsd/dateTime #inst "2021-08-19T21:31:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-08-09T21:42:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-08-09T17:42:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Apple Inc. legal entity identifier registry entry",
    :skos/definition
    "legal entity identifier registry entry for for Apple Inc."})
@@ -222,7 +263,8 @@
    :fibo-fbc-fct-usind/BNYMellonNationalAssociation-US-DE,
    :rdf/type [:fibo-fbc-fct-usfse/NationalBank :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "BNY Mellon, National Association",
    :skos/definition
    "BNY Mellon, National Association functional entity that is a state-chartered bank and a member of the Federal Reserve based in New York"})
@@ -245,7 +287,8 @@
    :fibo-fnd-rel-rel/hasLegalName "BNY Mellon, National Association",
    :rdf/type [:fibo-be-le-cb/StockCorporation :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "BNY Mellon, National Association US-DE",
    :skos/definition
    "BNY Mellon, National Association legal entity that is a Delaware Corporation"})
@@ -260,7 +303,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/Pennsylvania,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "BNY Mellon, National Association address",
    :skos/definition
    "registration address for BNY Mellon, National Association"})
@@ -281,7 +325,8 @@
    :fibo-be-ge-usj/StateOfSouthDakotaJurisdiction,
    :rdf/type [:owl/NamedIndividual :fibo-be-corp-corp/RegistrationIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "business entity identifier for BNY Mellon, National Association",
    :skos/definition
@@ -300,7 +345,8 @@
    :fibo-fnd-rel-rel/hasTag "MELNUS3PXXX",
    :rdf/type [:fibo-fbc-fct-fse/BusinessIdentifierCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "BNY Mellon, National Association - Business Identifier Code (BIC)",
    :skos/definition
@@ -315,7 +361,8 @@
    :fibo-fnd-rel-rel/hasTag "MELN",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartyPrefix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "BNY Mellon, National Association business party prefix"})
 
 (def BNYMellonNationalAssociationBusinessPartySuffix
@@ -327,7 +374,8 @@
    :fibo-fnd-rel-rel/hasTag "3P",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartySuffix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "BNY Mellon, National Association business party suffix"})
 
 (def BNYMellonNationalAssociationDateEstablished
@@ -336,7 +384,8 @@
    :db/ident :fibo-fbc-fct-usind/BNYMellonNationalAssociationDateEstablished,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "BNY Mellon, National Association date established",
    :skos/definition
    "date that BNY Mellon, National Association (originally Mellon National Bank and Trust Company in Pennsylvania) was established according to the NIC Repository"})
@@ -347,7 +396,8 @@
    :db/ident :fibo-fbc-fct-usind/BNYMellonNationalAssociationDateInsured,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "BNY Mellon, National Association date insured",
    :skos/definition
    "date that BNY Mellon, National Association (originally Mellon National Bank and Trust Company in Pennsylvania) was initially insured with respect to deposit insurance"})
@@ -360,7 +410,8 @@
    :fibo-fnd-rel-rel/hasTag "7946",
    :rdf/type [:fibo-fbc-fct-usjrga/FDICCertificateNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "BNY Mellon, National Association FDIC Certificate number",
    :skos/definition
    "FDIC Certificate number for BNY Mellon, National Association"})
@@ -371,17 +422,19 @@
    :db/ident
    :fibo-fbc-fct-usind/BNYMellonNationalAssociationLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-26T17:54:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-26T13:54:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-04-27T17:02:00.000-00:00",
+   #xsd/dateTime #inst "2021-04-27T13:02:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-04-27T17:06:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-04-27T13:06:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "BNY Mellon, National Association legal entity identifier registry entry",
    :skos/definition
@@ -398,7 +451,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "BNY Mellon, National Association RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to BNY Mellon, National Association"})
@@ -410,7 +464,8 @@
    :fibo-fnd-rel-rel/hasTag "043019265",
    :rdf/type [:fibo-fbc-fct-usjrga/RoutingTransitNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "BNY Mellon, National Association RTN",
    :skos/definition
    "routing transit number (RTN) for BNY Mellon, National Association"})
@@ -422,7 +477,8 @@
    :fibo-fbc-fct-usind/BankOfNewYorkMellonCorporation-US-DE,
    :rdf/type [:fibo-fbc-fct-usfse/FinancialHoldingCompany :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Bank of New York Mellon Corporation",
    :skos/definition
    "financial holding company functional entity for the Bank of New York Mellon Corporation"})
@@ -438,13 +494,14 @@
    :fibo-fbc-pas-fpas/hasLegalAgent
    :fibo-fbc-fct-usjrga/CorporationTrustCompany,
    :fibo-fnd-org-fm/isDomiciledIn :lcc-3166-1/UnitedStatesOfAmerica,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.bnymellon.com/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.bnymellon.com/"},
    :fibo-fnd-rel-rel/hasLegalName "The Bank of New York Mellon Corporation",
    :rdf/type [:fibo-be-le-cb/ForProfitCorporation
               :owl/NamedIndividual
               :fibo-be-corp-corp/PubliclyHeldCompany],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Bank of New York Mellon Corporation US-DE",
    :skos/definition
    "publicly held company and for profit corporation that is The Bank of New York Mellon Corporation legal entity, incorporated in Delaware"})
@@ -459,7 +516,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/NewYork,
    :rdf/type [:fibo-fnd-plc-adr/PhysicalAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Bank of New York Mellon Corporation address",
    :skos/definition
    "registration address for The Bank of New York Mellon Corporation"})
@@ -478,7 +536,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:owl/NamedIndividual :fibo-be-corp-corp/RegistrationIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Bank of New York Mellon Corporation business entity identifier",
    :skos/definition
    "registration identifier assigned by the Delaware Department of Corporations for the Bank of New York Mellon Corporation"})
@@ -490,7 +549,8 @@
    :fibo-fbc-fct-usind/BankOfNewYorkMellonCorporationIncorporationDate,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Bank of New York Mellon Corporation incorporation date",
    :skos/definition
    "the date that the Bank of New York Mellon Corporation was first incorporated in the State of Delaware"})
@@ -501,17 +561,19 @@
    :db/ident
    :fibo-fbc-fct-usind/BankOfNewYorkMellonCorporationLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-06T19:53:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-06T15:53:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-09-01T19:31:00.000-00:00",
+   #xsd/dateTime #inst "2021-09-01T15:31:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-08-04T03:22:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-08-03T23:22:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "Bank of New York Mellon Corporation legal entity identifier registry entry",
    :skos/definition
@@ -528,7 +590,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Bank of New York Mellon Corporation RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to The Bank of New York Mellon Corporation"})
@@ -539,7 +602,8 @@
    :db/ident :fibo-fbc-fct-usind/BankOfNewYorkMellonDateEstablished,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Bank of New York Mellon Corporation date established",
    :skos/definition
    "date that The Bank of New York Mellon Corporation was established by Alexander Hamilton"})
@@ -551,7 +615,8 @@
    :fibo-fbc-fct-usind/CitiCardsSouthDakotaAcceptanceCorp-US-DE,
    :rdf/type [:fibo-fbc-fct-fse/FinanceCompany :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citi Cards South Dakota Acceptance Corp.",
    :skos/definition
    "finance company functional entity for the Citi Cards South Dakota Acceptance Corp., a credit card provider based in Sioux Falls, South Dakota"})
@@ -576,7 +641,8 @@
    :fibo-fnd-rel-rel/hasLegalName "Citi Cards South Dakota Acceptance Corp.",
    :rdf/type [:fibo-be-le-cb/StockCorporation :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citi Cards South Dakota Acceptance Corp. US-DE",
    :skos/definition
    "stock corporation legal entity for Citi Cards South Dakota Acceptance Corp., a Delaware Corporation headquartered in Sioux Falls, South Dakota"})
@@ -598,7 +664,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "Citi Cards South Dakota Acceptance Corp. business entity identifier",
    :skos/definition
@@ -615,7 +682,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/SouthDakota,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citi Cards South Dakota Acceptance Corp. headquarters address",
    :skos/definition
    "registration address for Citi Cards South Dakota Acceptance Corp."})
@@ -627,7 +695,8 @@
    :fibo-fbc-fct-usind/CitiCardsSouthDakotaAcceptanceCorpIncorporationDate,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citi Cards South Dakota Acceptance Corp. incorporation date",
    :skos/definition
    "date that Citi Cards South Dakota Acceptance Corp. was first incorporated in the State of Delaware"})
@@ -635,7 +704,7 @@
 (def CitiCardsSouthDakotaAcceptanceCorpOwnership
   "entity ownership context for Citi Cards South Dakota Acceptance Corp., a wholly owned subsidiary of Citigroup Inc."
   {:db/ident :fibo-fbc-fct-usind/CitiCardsSouthDakotaAcceptanceCorpOwnership,
-   :fibo-be-le-lei/hasOwnershipPercentage 100M,
+   :fibo-be-le-lei/hasOwnershipPercentage #xsd/decimal 100,
    :fibo-be-oac-opty/hasOwnedEntity
    :fibo-fbc-fct-usind/CitiCardsSouthDakotaAcceptanceCorp-US-DE,
    :fibo-be-oac-opty/hasOwningEntity :fibo-fbc-fct-usind/CitigroupInc-US-DE,
@@ -643,7 +712,8 @@
    :fibo-be-le-lei/GenerallyAcceptedAccountingPrinciples,
    :rdf/type [:fibo-be-oac-opty/DirectConsolidation :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citi Cards South Dakota Acceptance Corp. ownership",
    :skos/definition
    "entity ownership context for Citi Cards South Dakota Acceptance Corp., a wholly owned subsidiary of Citigroup Inc."})
@@ -660,7 +730,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citi Cards South Dakota Acceptance Corp. RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to Citi Cards South Dakota Acceptance Corp."})
@@ -674,7 +745,8 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usind/CitibankNA-US-DE,
    :rdf/type [:fibo-fbc-fct-usfse/NationalBank :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank, N.A.",
    :skos/definition
    "national bank functional entity for Citibank, N.A. (National Association), a national bank based in Sioux Falls, South Dakota"})
@@ -696,7 +768,8 @@
    :fibo-fnd-rel-rel/hasLegalName "Citibank, National Association",
    :rdf/type [:owl/NamedIndividual :fibo-be-le-cb/StockCorporation],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank, N.A. US-DE",
    :skos/definition
    "stock corporation legal entity for Citibank, N.A. (National Association), a Delaware Corporation headquartered in Sioux Falls, South Dakota"})
@@ -716,7 +789,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:owl/NamedIndividual :fibo-be-corp-corp/RegistrationIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank, N.A. business entity identifier",
    :skos/definition
    "registration identifier assigned by the Delaware Department of Corporations for Citibank N.A."})
@@ -727,7 +801,8 @@
    :db/ident :fibo-fbc-fct-usind/CitibankNADateEstablished,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank, N.A. date established",
    :skos/definition
    "date that Citibank, N.A. (originally First National City Bank Of New York) was established"})
@@ -738,7 +813,8 @@
    :db/ident :fibo-fbc-fct-usind/CitibankNADateInsured,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank, N.A. date insured",
    :skos/definition
    "date that Citibank, N.A. (as First National City Bank Of New York) was initially insured with respect to deposit insurance by the FDIC"})
@@ -752,7 +828,8 @@
    :fibo-fnd-rel-rel/hasTag "7213",
    :rdf/type [:fibo-fbc-fct-usjrga/FDICCertificateNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank, N.A. FDIC Certificate number",
    :skos/definition "FDIC Certificate number for Citibank, N.A."})
 
@@ -766,7 +843,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/NewYork,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank, N.A headquarters address",
    :skos/definition
    "registration address that is identified as a headquarters address for Citibank N.A."})
@@ -777,7 +855,8 @@
    :db/ident :fibo-fbc-fct-usind/CitibankNAIncorporationDate,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank, N.A. incorporation date",
    :skos/definition
    "date that Citibank, N.A. (National Association) was first incorporated in the State of Delaware"})
@@ -792,7 +871,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/SouthDakota,
    :rdf/type [:fibo-fnd-plc-adr/PhysicalAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank N.A. legal address",
    :skos/definition
    "registration address that is identified as a legal address for Citibank N.A. (National Association)"})
@@ -802,17 +882,19 @@
   {:cmns-col/comprises :gleif-L1-data/L-E57ODZWZ7FF32TWEFA76-LEI,
    :db/ident :fibo-fbc-fct-usind/CitibankNALegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-06T19:53:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-06T15:53:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-05-27T23:56:00.000-00:00",
+   #xsd/dateTime #inst "2021-05-27T19:56:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-05-28T00:19:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-05-27T20:19:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank, N.A. legal entity identifier registry entry",
    :skos/definition
    "legal entity identifier registry entry for Citibank, N.A."})
@@ -820,14 +902,15 @@
 (def CitibankNAOwnership
   "entity ownership context for Citibank, N.A., a wholly owned subsidiary of Citicorp LLC"
   {:db/ident :fibo-fbc-fct-usind/CitibankNAOwnership,
-   :fibo-be-le-lei/hasOwnershipPercentage 100M,
+   :fibo-be-le-lei/hasOwnershipPercentage #xsd/decimal 100,
    :fibo-be-oac-opty/hasOwnedEntity :fibo-fbc-fct-usind/CitibankNA-US-DE,
    :fibo-be-oac-opty/hasOwningEntity :fibo-fbc-fct-usind/CiticorpLLC-US-DE,
    :fibo-fnd-agr-ctr/isQualifiedBy
    :fibo-be-le-lei/GenerallyAcceptedAccountingPrinciples,
    :rdf/type [:fibo-be-oac-opty/DirectConsolidation :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank, N.A. ownership",
    :skos/definition
    "entity ownership context for Citibank, N.A., a wholly owned subsidiary of Citicorp LLC"})
@@ -845,7 +928,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank, N.A. RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to Citibank, N.A."})
@@ -857,7 +941,8 @@
    :fibo-fnd-rel-rel/hasTag "021000089",
    :rdf/type [:fibo-fbc-fct-usjrga/RoutingTransitNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citibank, N.A. RTN",
    :skos/definition "routing transit number (RTN) for Citibank, N.A."})
 
@@ -867,7 +952,8 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usind/CiticorpLLC-US-DE,
    :rdf/type [:fibo-fbc-fct-usfse/FinancialHoldingCompany :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citicorp LLC",
    :skos/definition
    "financial holding company functional entity for Citicorp LLC"})
@@ -888,7 +974,8 @@
    :rdf/type [:owl/NamedIndividual
               :fibo-be-plc-plc/PrivateCompanyWithLimitedLiability],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citicorp LLC US-DE",
    :skos/definition
    "private company with limited liability legal entity for Citicorp LLC, a Delaware Limited Liability Company"})
@@ -905,7 +992,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citicorp LLC business entity identifier",
    :skos/definition
    "registration identifier assigned by the Delaware Department of Corporations for Citicorp LLC"})
@@ -915,31 +1003,34 @@
   {:cmns-col/comprises :gleif-L1-data/L-549300PSHWOM1D1JVL23-LEI,
    :db/ident :fibo-fbc-fct-usind/CiticorpLLCLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2016-05-05T05:54:00.000-00:00",
+   #xsd/dateTime #inst "2016-05-05T01:54:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-06-09T19:32:00.000-00:00",
+   #xsd/dateTime #inst "2021-06-09T15:32:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-05-28T00:19:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-05-27T20:19:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citicorp LLC legal entity identifier registry entry",
    :skos/definition "legal entity identifier registry entry for Citicorp LLC"})
 
 (def CiticorpLLCOwnership
   "entity ownership context for Citicorp LLC, a wholly owned subsidiary of Citigroup Inc."
   {:db/ident :fibo-fbc-fct-usind/CiticorpLLCOwnership,
-   :fibo-be-le-lei/hasOwnershipPercentage 100M,
+   :fibo-be-le-lei/hasOwnershipPercentage #xsd/decimal 100,
    :fibo-be-oac-opty/hasOwnedEntity :fibo-fbc-fct-usind/CiticorpLLC-US-DE,
    :fibo-be-oac-opty/hasOwningEntity :fibo-fbc-fct-usind/CitigroupInc-US-DE,
    :fibo-fnd-agr-ctr/isQualifiedBy
    :fibo-be-le-lei/GenerallyAcceptedAccountingPrinciples,
    :rdf/type [:fibo-be-oac-opty/DirectConsolidation :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citicorp LLC ownership",
    :skos/definition
    "entity ownership context for Citicorp LLC, a wholly owned subsidiary of Citigroup Inc."})
@@ -955,7 +1046,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citicorp LLC RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to Citicorp LLC"})
@@ -966,7 +1058,8 @@
    :db/ident :fibo-fbc-fct-usind/CiticorpLLCRegistrationDate,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citicorp LLC registration date",
    :skos/definition
    "date that Citicorp LLC was first registered as a limited liability company in the State of Delaware"})
@@ -977,7 +1070,8 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usind/CitigroupInc-US-DE,
    :rdf/type [:fibo-fbc-fct-usfse/FinancialHoldingCompany :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citigroup Inc.",
    :skos/definition
    "financial holding company functional entity for Citigroup Inc."})
@@ -1003,7 +1097,8 @@
               :fibo-be-le-cb/ForProfitCorporation
               :fibo-be-corp-corp/PubliclyHeldCompany],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citigroup Inc. US-DE",
    :skos/definition
    "stock corporation legal entity for Citigroup Inc., a Delaware Corporation"})
@@ -1020,7 +1115,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:owl/NamedIndividual :fibo-be-corp-corp/RegistrationIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citigroup Inc. business entity identifier",
    :skos/definition
    "registration identifier assigned by the Delaware Department of Corporations for Citigroup Inc."})
@@ -1035,7 +1131,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/NewYork,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citigroup Inc. headquarters address",
    :skos/definition
    "registration address identified as a headquarters address for Citigroup Inc."})
@@ -1046,7 +1143,8 @@
    :db/ident :fibo-fbc-fct-usind/CitigroupIncIncorporationDate,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citigroup Inc. incorporation date",
    :skos/definition
    "date that Citigroup Inc. was first registered as a corporation in the State of Delaware"})
@@ -1056,17 +1154,19 @@
   {:cmns-col/comprises :gleif-L1-data/L-6SHGI4ZSSLCXXQSBB395-LEI,
    :db/ident :fibo-fbc-fct-usind/CitigroupIncLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-06T19:53:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-06T15:53:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-06-17T19:33:00.000-00:00",
+   #xsd/dateTime #inst "2021-06-17T15:33:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-05-28T00:19:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-05-27T20:19:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citigroup Inc. legal entity identifier registry entry",
    :skos/definition
    "legal entity identifier registry entry for Citigroup Inc."})
@@ -1082,7 +1182,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Citigroup Inc. RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to Citigroup Inc."})
@@ -1095,7 +1196,8 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usind/FMRLLC-US-DE,
    :rdf/type [:fibo-fbc-fct-fse/ManagementCompany :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "FMR LLC",
    :skos/definition
    "management company functional entity for FMR LLC, a multinational financial services corporation based in Boston, MA"})
@@ -1109,12 +1211,13 @@
    "Fidelity Management and Research Company",
    :fibo-fbc-pas-fpas/hasLegalAgent
    :fibo-fbc-fct-usjrga/CorporationTrustCompany,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.fidelity.com/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.fidelity.com/"},
    :fibo-fnd-rel-rel/hasLegalName "FMR LLC",
    :rdf/type [:fibo-be-plc-plc/PrivateCompanyWithLimitedLiability
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "FMR LLC US-DE",
    :skos/definition
    "private company with limited liability legal entity for FMR LLC that is a Delaware Limited Liability Company"})
@@ -1131,7 +1234,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "FMR LLC business entity identifier",
    :skos/definition
    "registration identifier assigned by the Delaware Department of Corporations for FMR LLC"})
@@ -1142,7 +1246,8 @@
    :db/ident :fibo-fbc-fct-usind/FMRLLCDateEstablished,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "FMR LLC date established",
    :skos/definition
    "date that FMR LLC (originally Fidelity Management and Research Company) was first established"})
@@ -1157,7 +1262,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/Massachusetts,
    :rdf/type [:fibo-fnd-plc-adr/PhysicalAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "FMR LLC headquarters address",
    :skos/definition
    "registration address identified as a headquarters address for FMR LLC"})
@@ -1167,17 +1273,19 @@
   {:cmns-col/comprises :gleif-L1-data/L-6X064LF7Y6B4DKF2GZ26-LEI,
    :db/ident :fibo-fbc-fct-usind/FMRLLCLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-06T19:52:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-06T15:52:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-06-28T16:47:00.000-00:00",
+   #xsd/dateTime #inst "2021-06-28T12:47:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-06-28T16:51:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-06-28T12:51:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "FMR LLC legal entity identifier registry entry",
    :skos/definition "legal entity identifier registry entry for FMR LLC"})
 
@@ -1192,7 +1300,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "FMR LLC RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to FMR LLC"})
@@ -1208,7 +1317,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/NewYork,
    :rdf/type [:fibo-fnd-plc-adr/PhysicalAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "International Business Machines Corporation address",
    :skos/definition
    "registration address for International Business Machines Corporation"})
@@ -1227,7 +1337,8 @@
    :fibo-fnd-rel-rel/hasTag "IBMXUS33XXX",
    :rdf/type [:owl/NamedIndividual :fibo-fbc-fct-fse/BusinessIdentifierCode],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "International Business Machines Corporation Business Identifier Code (BIC)",
    :skos/definition
@@ -1242,7 +1353,8 @@
    :fibo-fnd-rel-rel/hasTag "IBMX",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartyPrefix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "International Business Machines Corporation business party prefix",
    :skos/definition
@@ -1257,7 +1369,8 @@
    :fibo-fnd-rel-rel/hasTag "33",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartySuffix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "International Business Machines Corporation business party suffix",
    :skos/definition
@@ -1269,17 +1382,19 @@
    :db/ident
    :fibo-fbc-fct-usind/InternationalBusinessMachinesCorporationLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-27T15:47:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-27T11:47:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-05-28T01:33:00.000-00:00",
+   #xsd/dateTime #inst "2021-05-27T21:33:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-05-11T01:00:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-05-10T21:00:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "International Business Machines Corporation legal entity identifier registry entry",
    :skos/definition
@@ -1291,7 +1406,8 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usind/JPMorganChaseAndCo-US-DE,
    :rdf/type [:fibo-fbc-fct-usfse/FinancialHoldingCompany :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase & Co.",
    :skos/definition
    "financial holding company functional entity for JPMorgan Chase & Co."})
@@ -1307,13 +1423,14 @@
    :fibo-fbc-pas-fpas/hasLegalAgent
    :fibo-fbc-fct-usjrga/CorporationTrustCompany,
    :fibo-fnd-org-fm/isDomiciledIn :lcc-3166-1/UnitedStatesOfAmerica,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.jpmorganchase.com/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.jpmorganchase.com/"},
    :fibo-fnd-rel-rel/hasLegalName "JPMorgan Chase & Co.",
    :rdf/type [:owl/NamedIndividual
               :fibo-be-le-cb/ForProfitCorporation
               :fibo-be-corp-corp/PubliclyHeldCompany],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase & Co. US-DE",
    :skos/definition
    "publicly held company and for profit corporation legal entity for the JPMorgan Chase & Co., a Delaware Corporation"})
@@ -1331,7 +1448,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:owl/NamedIndividual :fibo-be-corp-corp/RegistrationIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase & Co. business entity identifier",
    :skos/definition
    "registration identifier assigned by the Delaware Department of Corporations for JPMorgan Chase & Co."})
@@ -1348,7 +1466,8 @@
    :fibo-fnd-rel-rel/hasTag "HAMQUS31XXX",
    :rdf/type [:owl/NamedIndividual :fibo-fbc-fct-fse/BusinessIdentifierCode],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase & Co. Business Identifier Code (BIC)",
    :skos/definition "business identifier code (BIC) for JPMorgan Chase & Co."})
 
@@ -1360,7 +1479,8 @@
    :fibo-fnd-rel-rel/hasTag "HAMQ",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartyPrefix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase & Co. business party prefix",
    :skos/definition "business party prefix for JPMorgan Chase & Co."})
 
@@ -1372,7 +1492,8 @@
    :fibo-fnd-rel-rel/hasTag "31",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartySuffix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase & Co. business party suffix",
    :skos/definition "business party suffix for JPMorgan Chase & Co."})
 
@@ -1386,7 +1507,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/NewYork,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase & Co. headquarters address",
    :skos/definition
    "registration address identified as the headquarters address for JPMorgan Chase & Co."})
@@ -1397,7 +1519,8 @@
    :db/ident :fibo-fbc-fct-usind/JPMorganChaseAndCoIncorporationDate,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase & Co. incorporation date",
    :skos/definition
    "date that JPMorgan Chase & Co. was first registered as a corporation in the State of Delaware"})
@@ -1408,17 +1531,19 @@
    :db/ident
    :fibo-fbc-fct-usind/JPMorganChaseAndCoLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-06T19:53:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-06T15:53:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-01-08T04:26:00.000-00:00",
+   #xsd/dateTime #inst "2021-01-07T23:26:00.000-05:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-01-08T04:27:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-01-07T23:27:00.000-05:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase & Co. legal entity identifier registry entry",
    :skos/definition
    "legal entity identifier registry entry for JPMorgan Chase & Co."})
@@ -1434,7 +1559,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase & Co. RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to JPMorgan Chase & Co."})
@@ -1450,7 +1576,8 @@
    :fibo-fbc-fct-usind/JPMorganChaseBankNationalAssociation-US-OH,
    :rdf/type [:fibo-fbc-fct-usfse/NationalBank :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase Bank, National Association",
    :skos/definition
    "national bank functional entity for JPMorgan Chase Bank, National Association"})
@@ -1471,11 +1598,12 @@
    :fibo-fbc-pas-fpas/hasLegalAgent
    :fibo-fbc-fct-usjrga/CorporationTrustCompany,
    :fibo-fnd-org-fm/isDomiciledIn :lcc-3166-1/UnitedStatesOfAmerica,
-   :fibo-fnd-plc-vrt/hasWebsite "https://www.chase.com/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://www.chase.com/"},
    :fibo-fnd-rel-rel/hasLegalName "JPMorgan Chase Bank, National Association",
    :rdf/type [:fibo-be-le-cb/StockCorporation :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase Bank, National Association US-DE",
    :skos/definition
    "stock corporation legal entity for JPMorgan Chase Bank, National Association, an Ohio Corporation"})
@@ -1490,7 +1618,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/Ohio,
    :rdf/type [:fibo-fnd-plc-adr/PhysicalAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase Bank, National Association address",
    :skos/definition
    "registration address for JPMorgan Chase Bank, National Association"})
@@ -1510,7 +1639,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfOhioJurisdiction,
    :rdf/type [:owl/NamedIndividual :fibo-be-corp-corp/RegistrationIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "JPMorgan Chase Bank, National Association business entity identifier",
    :skos/definition
@@ -1530,7 +1660,8 @@
    :fibo-fnd-rel-rel/hasTag "CHASUS33XXX",
    :rdf/type [:fibo-fbc-fct-fse/BusinessIdentifierCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "JPMorgan Chase Bank, National Association - business identifier code (BIC)",
    :skos/definition
@@ -1545,7 +1676,8 @@
    :fibo-fnd-rel-rel/hasTag "CHAS",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartyPrefix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "JPMorgan Chase Bank, National Association business party prefix",
    :skos/definition
@@ -1560,7 +1692,8 @@
    :fibo-fnd-rel-rel/hasTag "33",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartySuffix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "JPMorgan Chase Bank, National Association business party suffix",
    :skos/definition
@@ -1573,7 +1706,8 @@
    :fibo-fbc-fct-usind/JPMorganChaseBankNationalAssociationDateEstablished,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase Bank, National Association date established",
    :skos/definition
    "date that JPMorgan Chase Bank, National Association was established"})
@@ -1585,7 +1719,8 @@
    :fibo-fbc-fct-usind/JPMorganChaseBankNationalAssociationDateInsured,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase Bank, National Association date insured",
    :skos/definition
    "date that JPMorgan Chase Bank, National Association was initially insured with respect to deposit insurance by the FDIC"})
@@ -1598,7 +1733,8 @@
    :fibo-fnd-rel-rel/hasTag "628",
    :rdf/type [:fibo-fbc-fct-usjrga/FDICCertificateNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "JPMorgan Chase Bank, National Association FDIC Certificate number",
    :skos/definition
@@ -1610,17 +1746,19 @@
    :db/ident
    :fibo-fbc-fct-usind/JPMorganChaseBankNationalAssociationLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-06T19:51:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-06T15:51:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-08-25T00:52:00.000-00:00",
+   #xsd/dateTime #inst "2021-08-24T20:52:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-01-08T04:30:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-01-07T23:30:00.000-05:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "JPMorgan Chase Bank, National Association legal entity identifier registry entry",
    :skos/definition
@@ -1638,7 +1776,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase Bank, National Association RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to JPMorgan Chase Bank, National Association"})
@@ -1650,7 +1789,8 @@
    :fibo-fnd-rel-rel/hasTag "021000021",
    :rdf/type [:fibo-fbc-fct-usjrga/RoutingTransitNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase Bank, National Association RTN",
    :skos/definition
    "routing transit number (RTN) for JPMorgan Chase Bank, National Association"})
@@ -1662,7 +1802,8 @@
    :fibo-fbc-fct-usind/JPMorganChaseBankNationalAssociationRegistrationDate,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "JPMorgan Chase Bank, National Association registration date",
    :skos/definition
    "date that JPMorgan Chase Bank, National Association was first registered as a corporation in the State of Ohio"})
@@ -1677,7 +1818,8 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usind/PinnacleBank-US-CA,
    :rdf/type [:fibo-fbc-fct-usfse/StateCharteredBank :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Pinnacle Bank",
    :skos/definition "state-chartered bank functional entity for Pinnacle Bank"})
 
@@ -1690,11 +1832,12 @@
    :fibo-fbc-fct-usind/PinnacleBankHeadquartersAddress,
    :fibo-be-le-lei/hasLegalAddress :fibo-fbc-fct-usind/PinnacleBankLegalAddress,
    :fibo-fnd-org-fm/isDomiciledIn :lcc-3166-1/UnitedStatesOfAmerica,
-   :fibo-fnd-plc-vrt/hasWebsite "https://pinnacle.bank/",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri "https://pinnacle.bank/"},
    :fibo-fnd-rel-rel/hasLegalName "Pinnacle Bank",
    :rdf/type [:owl/NamedIndividual :fibo-be-le-cb/StockCorporation],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Pinnacle Bank US-CA",
    :skos/definition
    "stock corporation legal entity for Pinnacle Bank, a California Corporation"})
@@ -1714,7 +1857,8 @@
               :fibo-fbc-fct-ra/RegistryIdentifier
               :fibo-be-corp-corp/RegistrationIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Pinnacle Bank business entity identifier",
    :skos/definition
    "registration identifier assigned by the California Division of Corporations for Pinnacle Bank"})
@@ -1726,7 +1870,8 @@
    :fibo-fnd-rel-rel/isIssuedBy :fibo-fbc-fct-usjrga/CaliforniaBankingRegulator,
    :rdf/type [:fibo-fbc-fct-rga/GovernmentIssuedLicense :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Pinnacle Bank California Certificate of Authority",
    :skos/definition
    "certificate issued by the California Department of Business Oversight, California's primary regulator of financial service providers and products, for Pinnacle Bank"})
@@ -1742,7 +1887,8 @@
    :fibo-fnd-rel-rel/hasTag "2261",
    :rdf/type [:fibo-fnd-law-lcap/LicenseIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Pinnacle Bank California Certificate of Authority identifier",
    :skos/definition
    "registration identifier assigned by the California Department of Business Oversight for the California Certificate of Authority (banking license) for Pinnacle Bank"})
@@ -1753,7 +1899,8 @@
    :db/ident :fibo-fbc-fct-usind/PinnacleBankDateOfRegistration,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Pinnacle Bank date of registration",
    :skos/definition
    "date that Pinnacle Bank was first registered as a stock corporation in the State of California"})
@@ -1767,7 +1914,8 @@
    :fibo-fnd-rel-rel/hasTag "58297",
    :rdf/type [:fibo-fbc-fct-usjrga/FDICCertificateNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Pinnacle Bank FDIC Certificate",
    :skos/definition "FDIC Certificate number for Pinnacle Bank"})
 
@@ -1781,7 +1929,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/California,
    :rdf/type [:fibo-fnd-plc-adr/PhysicalAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Pinnacle Bank headquarters address",
    :skos/definition
    "registration address identified as the headquarters address for Pinnacle Bank"})
@@ -1798,7 +1947,8 @@
               :fibo-fnd-plc-adr/PhysicalAddress
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Pinnacle Bank legal address",
    :skos/definition
    "registration address identified as the legal address for Pinnacle Bank"})
@@ -1814,7 +1964,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Pinnacle Bank RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to Pinnacle Bank"})
@@ -1826,7 +1977,8 @@
    :fibo-fnd-rel-rel/hasTag "121144340",
    :rdf/type [:fibo-fbc-fct-usjrga/RoutingTransitNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Pinnacle Bank RTN",
    :skos/definition "routing transit number (RTN) for Pinnacle Bank"})
 
@@ -1841,7 +1993,8 @@
    :fibo-fbc-fct-usind/StateStreetBankAndTrustCompany-US-MA,
    :rdf/type [:fibo-fbc-fct-usjrga/StateMemberBank :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Bank and Trust",
    :skos/definition
    "Federal Reserve state-chartered member bank functional entity for the State Street Bank and Trust, based in Boston, Massachusetts"})
@@ -1865,7 +2018,8 @@
    :fibo-fnd-rel-rel/hasLegalName "State Street Bank And Trust Company",
    :rdf/type [:fibo-be-tr-tr/Trust :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Bank and Trust Company US-MA",
    :skos/definition
    "trust legal entity for the State Street Bank and Trust Company, a Massachusetts Trust Company headquartered in Boston"})
@@ -1885,7 +2039,8 @@
    :fibo-be-ge-usj/StateOfMassachusettsJurisdiction,
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Bank and Trust Company business entity identifier",
    :skos/definition
    "registration identifier assigned by the Massachusetts Corporations Division for State Street Bank and Trust Company"})
@@ -1903,7 +2058,8 @@
    :fibo-fnd-rel-rel/hasTag "SBOSUS33XXX",
    :rdf/type [:fibo-fbc-fct-fse/BusinessIdentifierCode :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "State Street Bank and Trust Company - business identifier code (BIC)",
    :skos/definition
@@ -1918,7 +2074,8 @@
    :fibo-fnd-rel-rel/hasTag "SBOS",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartyPrefix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Bank and Trust Company business party prefix",
    :skos/definition
    "business party prefix for State Street Bank and Trust Company"})
@@ -1932,7 +2089,8 @@
    :fibo-fnd-rel-rel/hasTag "33",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartySuffix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Bank and Trust Company business party suffix",
    :skos/definition
    "business party suffix for State Street Bank and Trust Company"})
@@ -1943,7 +2101,8 @@
    :db/ident :fibo-fbc-fct-usind/StateStreetBankAndTrustCompanyDateEstablished,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Bank and Trust Company date established",
    :skos/definition
    "date that State Street Bank and Trust (originally Second Bank - State Street Trust Company) was established as a state member bank with the FRS"})
@@ -1954,7 +2113,8 @@
    :db/ident :fibo-fbc-fct-usind/StateStreetBankAndTrustCompanyDateInsured,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Bank and Trust Company date insured",
    :skos/definition
    "date that State Street Bank and Trust Company was initially insured with respect to deposit insurance by the FDIC"})
@@ -1967,7 +2127,8 @@
    :fibo-fnd-rel-rel/hasTag "14",
    :rdf/type [:fibo-fbc-fct-usjrga/FDICCertificateNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Bank and Trust Company FDIC Certificate number",
    :skos/definition
    "FDIC Certificate number for State Street Bank and Trust Company"})
@@ -1978,17 +2139,19 @@
    :db/ident
    :fibo-fbc-fct-usind/StateStreetBankAndTrustCompanyLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-06T19:51:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-06T15:51:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-10-22T19:33:00.000-00:00",
+   #xsd/dateTime #inst "2021-10-22T15:33:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-08-26T22:01:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-08-26T18:01:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "State Street Bank and Trust Company legal entity identifier registry entry",
    :skos/definition
@@ -2005,7 +2168,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Bank and Trust Company RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to State Street Bank and Trust Company"})
@@ -2017,7 +2181,8 @@
    :fibo-fnd-rel-rel/hasTag "011000028",
    :rdf/type [:fibo-fbc-fct-usjrga/RoutingTransitNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Bank and Trust Company RTN",
    :skos/definition
    "routing transit number (RTN) for State Street Bank and Trust Company"})
@@ -2028,7 +2193,8 @@
    :db/ident :fibo-fbc-fct-usind/StateStreetBankAndTrustCompanyRegistrationDate,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Bank and Trust Company registration date",
    :skos/definition
    "date that State Street Bank and Trust Company was first registered as a trust company in the State of Massachusetts"})
@@ -2040,7 +2206,8 @@
    :fibo-fbc-fct-usind/StateStreetCorporation-US-MA,
    :rdf/type [:fibo-fbc-fct-usfse/FinancialHoldingCompany :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Corporation",
    :skos/definition
    "financial holding company functional entity for the State Street Corporation"})
@@ -2057,13 +2224,15 @@
    :fibo-fbc-pas-fpas/hasLegalAgent
    :fibo-fbc-fct-usjrga/CorporationTrustCompany,
    :fibo-fnd-org-fm/isDomiciledIn :lcc-3166-1/UnitedStatesOfAmerica,
-   :fibo-fnd-plc-vrt/hasWebsite "http://www.statestreet.com/home.html",
+   :fibo-fnd-plc-vrt/hasWebsite {:rdfa/uri
+                                 "http://www.statestreet.com/home.html"},
    :fibo-fnd-rel-rel/hasLegalName "State Street Corporation",
    :rdf/type [:fibo-be-corp-corp/PubliclyHeldCompany
               :owl/NamedIndividual
               :fibo-be-le-cb/ForProfitCorporation],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Corporation US-MA",
    :skos/definition
    "publicly held company and for profit corporation legal entity for State Street Corporation"})
@@ -2082,7 +2251,8 @@
    :fibo-be-ge-usj/StateOfMassachusettsJurisdiction,
    :rdf/type [:owl/NamedIndividual :fibo-be-corp-corp/RegistrationIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Corporation business entity identifier",
    :skos/definition
    "registration identifier assigned by the Massachusetts Corporations Division for State Street Corporation"})
@@ -2097,7 +2267,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/Massachusetts,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Corporation headquarters address",
    :skos/definition
    "registration address identified as the headquarters address for State Street Corporation"})
@@ -2108,7 +2279,8 @@
    :db/ident :fibo-fbc-fct-usind/StateStreetCorporationIncorporationDate,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Corporation incorporation date",
    :skos/definition
    "date that State Street Corporation was first registered as a corporation in the State of Delaware"})
@@ -2119,17 +2291,19 @@
    :db/ident
    :fibo-fbc-fct-usind/StateStreetCorporationLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-12-12T02:45:00.000-00:00",
+   #xsd/dateTime #inst "2012-12-11T21:45:00.000-05:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-09-06T19:31:00.000-00:00",
+   #xsd/dateTime #inst "2021-09-06T15:31:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-08-26T22:01:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-08-26T18:01:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "State Street Corporation legal entity identifier registry entry",
    :skos/definition
@@ -2146,7 +2320,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "State Street Corporation RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to State Street Corporation"})
@@ -2163,7 +2338,8 @@
    :fibo-fnd-rel-rel/hasTag "TCCCUS33XXX",
    :rdf/type [:owl/NamedIndividual :fibo-fbc-fct-fse/BusinessIdentifierCode],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Coca-Cola Company business identifier code (BIC)",
    :skos/definition "business identifier code (BIC) for The Coca-Cola Company"})
 
@@ -2175,7 +2351,8 @@
    :fibo-fnd-rel-rel/hasTag "TCCC",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartyPrefix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Coca-Cola Company business party prefix",
    :skos/definition "business party prefix for The Coca-Cola Company"})
 
@@ -2187,7 +2364,8 @@
    :fibo-fnd-rel-rel/hasTag "33",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartySuffix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Coca-Cola Company business party suffix",
    :skos/definition "business party suffix for The Coca-Cola Company"})
 
@@ -2201,7 +2379,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/Georgia,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Coca-Cola Company corporate address",
    :skos/definition "registration address for The Coca-Cola Company"})
 
@@ -2211,17 +2390,19 @@
    :db/ident
    :fibo-fbc-fct-usind/TheCoca-ColaCompanyLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-10-19T22:57:00.000-00:00",
+   #xsd/dateTime #inst "2012-10-19T18:57:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-04-26T18:19:00.000-00:00",
+   #xsd/dateTime #inst "2021-04-26T14:19:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-04-27T17:14:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-04-27T13:14:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Coca-Cola Company legal entity identifier registry entry",
    :skos/definition
    "legal entity identifier registry entry for The Coca-Cola Company"})
@@ -2236,7 +2417,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/Georgia,
    :rdf/type [:fibo-fnd-plc-adr/PhysicalAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Home Depot, Inc. corporate address",
    :skos/definition "registration address for The Home Depot, Inc."})
 
@@ -2246,17 +2428,19 @@
    :db/ident
    :fibo-fbc-fct-usind/TheHomeDepotIncLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-06T19:51:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-06T15:51:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-09-29T01:32:00.000-00:00",
+   #xsd/dateTime #inst "2021-09-28T21:32:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-09-02T20:53:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-09-02T16:53:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Home Depot, Inc. legal entity identifier registry entry",
    :skos/definition
    "legal entity identifier registry entry for The Home Depot, Inc."})
@@ -2274,7 +2458,8 @@
    :fibo-fnd-rel-rel/hasTag "PGGTUS33XXX",
    :rdf/type [:owl/NamedIndividual :fibo-fbc-fct-fse/BusinessIdentifierCode],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Proctor & Gamble Company business identifier code (BIC)",
    :skos/definition
    "business identifier code (BIC) for The Proctor & Gamble Company"})
@@ -2287,7 +2472,8 @@
    :fibo-fnd-rel-rel/hasTag "PGGT",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartyPrefix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Proctor & Gamble Company business party prefix",
    :skos/definition "business party prefix for The Proctor & Gamble Company"})
 
@@ -2299,7 +2485,8 @@
    :fibo-fnd-rel-rel/hasTag "33",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartySuffix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Proctor & Gamble Company business party suffix",
    :skos/definition "business party suffix for The Proctor & Gamble Company"})
 
@@ -2313,7 +2500,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/Ohio,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Proctor & Gamble Company corporate address",
    :skos/definition "registration address for The Proctor & Gamble Company"})
 
@@ -2323,7 +2511,8 @@
    :db/ident :fibo-fbc-fct-usind/TheProctorAndGambleCompanyDateEstablished,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "The Proctor & Gamble Company date established",
    :skos/definition "date that The Proctor & Gamble was founded"})
 
@@ -2333,17 +2522,19 @@
    :db/ident
    :fibo-fbc-fct-usind/TheProctorAndGambleCompanyLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-11-29T01:59:00.000-00:00",
+   #xsd/dateTime #inst "2012-11-28T20:59:00.000-05:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-08-12T19:32:00.000-00:00",
+   #xsd/dateTime #inst "2021-08-12T15:32:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-08-02T11:54:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-08-02T07:54:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "The Proctor & Gamble Company legal entity identifier registry entry",
    :skos/definition
@@ -2355,7 +2546,8 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usind/WFCHoldingsLLC-US-DE,
    :rdf/type [:fibo-fbc-fct-usfse/FinancialHoldingCompany :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "WFC Holdings, LLC",
    :skos/definition
    "financial holding company functional entity for WFC Holdings, LLC"})
@@ -2380,7 +2572,8 @@
    :rdf/type [:owl/NamedIndividual
               :fibo-be-plc-plc/PrivateCompanyWithLimitedLiability],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "WFC Holdings, LLC US-DE",
    :skos/definition
    "private company with limited liability legal entity for WFC Holdings, LLC legal entity, a Delaware Limited Liability Corporation"})
@@ -2398,7 +2591,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:owl/NamedIndividual :fibo-be-corp-corp/RegistrationIdentifier],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "WFC Holdings, LLC business entity identifier",
    :skos/definition
    "registration identifier assigned by the Delaware Department of Corporations for WFC Holdings, LLC"})
@@ -2413,7 +2607,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/California,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "WFC Holdings, LLC headquarters address",
    :skos/definition
    "registration address identified as the headquarters address for WFC Holdings, LLC"})
@@ -2424,7 +2619,8 @@
    :db/ident :fibo-fbc-fct-usind/WFCHoldingsLLCIncorporationDate,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "WFC Holdings, LLC incorporation date",
    :skos/definition
    "date that WFC Holdings, LLC was first registered as a corporation in the State of Delaware"})
@@ -2435,17 +2631,19 @@
    :db/ident
    :fibo-fbc-fct-usind/WFCHoldingsLLCLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-06T19:51:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-06T15:51:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-10-06T23:01:53.589-00:00",
+   #xsd/dateTime #inst "2021-10-06T19:01:53.589-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-10-24T04:30:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-10-24T00:30:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelPartiallyCorroborated,
    :rdf/type [:fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry
               :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "WFC Holdings, LLC legal entity identifier registry entry",
    :skos/definition
    "legal entity identifier registry entry for WFC Holdings, LLC"})
@@ -2453,7 +2651,7 @@
 (def WFCHoldingsLLCOwnership
   "entity ownership context for WFC Holdings, LLC, a wholly-owned subsidiary of Wells Fargo & Company"
   {:db/ident :fibo-fbc-fct-usind/WFCHoldingsLLCOwnership,
-   :fibo-be-le-lei/hasOwnershipPercentage 100M,
+   :fibo-be-le-lei/hasOwnershipPercentage #xsd/decimal 100,
    :fibo-be-oac-opty/hasOwnedEntity :fibo-fbc-fct-usind/WFCHoldingsLLC-US-DE,
    :fibo-be-oac-opty/hasOwningEntity
    :fibo-fbc-fct-usind/WellsFargoAndCompany-US-DE,
@@ -2461,7 +2659,8 @@
    :fibo-be-le-lei/GenerallyAcceptedAccountingPrinciples,
    :rdf/type [:fibo-be-oac-opty/DirectConsolidation :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "WFC Holdings, LLC ownership",
    :skos/definition
    "entity ownership context for WFC Holdings, LLC, a wholly-owned subsidiary of Wells Fargo & Company"})
@@ -2472,7 +2671,8 @@
    :fibo-fnd-rel-rel/hasIdentity :fibo-fbc-fct-usind/WellsFargoAndCompany-US-DE,
    :rdf/type [:fibo-fbc-fct-usfse/FinancialHoldingCompany :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo & Company",
    :skos/definition
    "financial holding company functional entity for Wells Fargo & Company"})
@@ -2496,7 +2696,8 @@
               :owl/NamedIndividual
               :fibo-be-le-cb/ForProfitCorporation],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo & Company US-DE",
    :skos/definition
    "publicly held company and for profit corporation legal entity for Wells Fargo & Company, a Delaware Corporation"})
@@ -2514,7 +2715,8 @@
    :fibo-fnd-rel-rel/isGovernedBy :fibo-be-ge-usj/StateOfDelawareJurisdiction,
    :rdf/type [:fibo-be-corp-corp/RegistrationIdentifier :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo & Company business entity identifier",
    :skos/definition
    "registration identifier assigned by the Delaware Department of Corporations for Wells Fargo & Company"})
@@ -2529,7 +2731,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/California,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo & Company headquarters address",
    :skos/definition
    "registration address identified as the headquarters address for Wells Fargo & Company"})
@@ -2542,7 +2745,8 @@
    :db/ident :fibo-fbc-fct-usind/WellsFargoAndCompanyIncorporationDate,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo & Company incorporation date",
    :skos/definition
    "date that Wells Fargo & Company was first registered as a corporation in the State of Delaware"})
@@ -2553,17 +2757,19 @@
    :db/ident
    :fibo-fbc-fct-usind/WellsFargoAndCompanyLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-06T19:52:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-06T15:52:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-10-06T23:01:52.884-00:00",
+   #xsd/dateTime #inst "2021-10-06T19:01:52.884-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-10-11T04:31:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-10-11T00:31:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelPartiallyCorroborated,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo & Company legal entity identifier registry entry",
    :skos/definition
    "legal entity identifier registry entry for Wells Fargo & Company"})
@@ -2579,7 +2785,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo & Company RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to Wells Fargo & Company"})
@@ -2597,7 +2804,8 @@
    :fibo-fbc-fct-usind/WellsFargoBankNationalAssociation-US,
    :rdf/type [:fibo-fbc-fct-usfse/NationalBank :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo Bank, National Association",
    :skos/definition
    "national bank functional entity for Wells Fargo Bank, National Association"})
@@ -2618,7 +2826,8 @@
    :fibo-fnd-rel-rel/hasLegalName "Wells Fargo Bank, National Association",
    :rdf/type [:owl/NamedIndividual :fibo-be-le-lp/BusinessEntity],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo Bank, National Association, US",
    :skos/definition
    "business entity for the Wells Fargo Bank, National Association, a national banking entity established under the National Banking Act of 1864"})
@@ -2636,7 +2845,8 @@
    :fibo-fnd-rel-rel/hasTag "WFBIUS6SXXX",
    :rdf/type [:owl/NamedIndividual :fibo-fbc-fct-fse/BusinessIdentifierCode],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "Wells Fargo Bank, National Association - business identifier code (BIC)",
    :skos/definition
@@ -2651,7 +2861,8 @@
    :fibo-fnd-rel-rel/hasTag "WFBI",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartyPrefix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo Bank, National Association business party prefix",
    :skos/definition
    "business party prefix for Wells Fargo Bank, National Association"})
@@ -2665,7 +2876,8 @@
    :fibo-fnd-rel-rel/hasTag "6S",
    :rdf/type [:fibo-fbc-fct-fse/BusinessPartySuffix :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo Bank, National Association business party suffix",
    :skos/definition
    "business party suffix for Wells Fargo Bank, National Association"})
@@ -2677,7 +2889,8 @@
    :fibo-fbc-fct-usind/WellsFargoBankNationalAssociationDateEstablished,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo Bank, National Association date established",
    :skos/definition
    "date that Wells Fargo Bank, National Association was established under the National Banking Act of 1863"})
@@ -2688,7 +2901,8 @@
    :db/ident :fibo-fbc-fct-usind/WellsFargoBankNationalAssociationDateInsured,
    :rdf/type [:cmns-dt/ExplicitDate :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo Bank, National Association date insured",
    :skos/definition
    "date that Wells Fargo Bank, National Association was initially insured with respect to deposit insurance by the FDIC"})
@@ -2701,7 +2915,8 @@
    :fibo-fnd-rel-rel/hasTag "3511",
    :rdf/type [:fibo-fbc-fct-usjrga/FDICCertificateNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo Bank, National Association FDIC Certificate number",
    :skos/definition
    "FDIC Certificate number for Wells Fargo Bank, National Association"})
@@ -2717,7 +2932,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/NorthCarolina,
    :rdf/type [:fibo-fnd-plc-adr/PhysicalAddress :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo Bank, National Association headquarters address",
    :skos/definition
    "registration address identified as the headquarters address for Wells Fargo Bank, National Association"})
@@ -2732,7 +2948,8 @@
    :fibo-fnd-plc-loc/hasSubdivision :lcc-3166-2-us/SouthDakota,
    :rdf/type [:owl/NamedIndividual :fibo-fnd-plc-adr/PhysicalAddress],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo Bank, National Association legal address",
    :skos/definition
    "registration address identified as the legal address for Wells Fargo Bank, National Association"})
@@ -2743,17 +2960,19 @@
    :db/ident
    :fibo-fbc-fct-usind/WellsFargoBankNationalAssociationLegalEntityIdentifierRegistryEntry,
    :fibo-fbc-fct-breg/hasInitialRegistrationDate
-   #inst "2012-06-06T19:53:00.000-00:00",
+   #xsd/dateTime #inst "2012-06-06T15:53:00.000-04:00",
    :fibo-fbc-fct-breg/hasRegistrationRevisionDate
-   #inst "2021-08-18T18:04:54.256-00:00",
+   #xsd/dateTime #inst "2021-08-18T14:04:54.256-04:00",
    :fibo-fbc-fct-breg/hasRegistrationStatus :fibo-fbc-fct-breg/IssuedStatus,
-   :fibo-fbc-fct-breg/hasRenewalDate #inst "2022-08-28T00:07:00.000-00:00",
+   :fibo-fbc-fct-breg/hasRenewalDate #xsd/dateTime
+                                      #inst "2022-08-27T20:07:00.000-04:00",
    :fibo-fbc-fct-breg/hasValidationLevel
    :fibo-fbc-fct-breg/EntityValidationLevelFullyCorroborated,
    :rdf/type [:owl/NamedIndividual
               :fibo-fbc-fct-breg/LegalEntityIdentifierRegistryEntry],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label
    "Wells Fargo Bank, National Association legal entity identifier registry entry",
    :skos/definition
@@ -2762,7 +2981,7 @@
 (def WellsFargoBankNationalAssociationOwnership
   "entity ownership context for Wells Fargo Bank, National Association, a subsidiary of WFC Holdings, LLC"
   {:db/ident :fibo-fbc-fct-usind/WellsFargoBankNationalAssociationOwnership,
-   :fibo-be-le-lei/hasOwnershipPercentage 97.9M,
+   :fibo-be-le-lei/hasOwnershipPercentage #xsd/decimal 97.9M,
    :fibo-be-oac-opty/hasOwnedEntity
    :fibo-fbc-fct-usind/WellsFargoBankNationalAssociation-US,
    :fibo-be-oac-opty/hasOwningEntity :fibo-fbc-fct-usind/WFCHoldingsLLC-US-DE,
@@ -2770,7 +2989,8 @@
    :fibo-be-le-lei/GenerallyAcceptedAccountingPrinciples,
    :rdf/type [:fibo-be-oac-opty/DirectConsolidation :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo Bank, National Association ownership",
    :skos/definition
    "entity ownership context for Wells Fargo Bank, National Association, a subsidiary of WFC Holdings, LLC"})
@@ -2787,7 +3007,8 @@
    [:fibo-fbc-fct-usjrga/ResearchStatisticsSupervisionDiscountIdentifier
     :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo Bank, National Association RSSD identifier",
    :skos/definition
    "research statistics supervision discount identifier (RSSD ID), assigned by the Federal Reserve to Wells Fargo Bank, National Association"})
@@ -2799,7 +3020,8 @@
    :fibo-fnd-rel-rel/hasTag "121000248",
    :rdf/type [:fibo-fbc-fct-usjrga/RoutingTransitNumber :owl/NamedIndividual],
    :rdfs/isDefinedBy
-   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/",
+   {:rdfa/uri
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USExampleIndividuals/"},
    :rdfs/label "Wells Fargo Bank, National Association RTN",
    :skos/definition
    "routing transit number (RTN) for Wells Fargo Bank, National Association"})
