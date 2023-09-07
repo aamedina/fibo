@@ -1,61 +1,67 @@
 (ns net.wikipunk.rdf.lcc-3166-2-gb
-  "This ontology represents the subset of the ISO 3166 standard that includes the actual ISO 3166-2 subdivision codes for United Kingdom of Great Britain and Northern Ireland (the), with the ontology and codes for the other parts of the standard represented in models that this ontology depends on."
-  {:dcat/downloadURL
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB.rdf",
-   :dcterms/issued #xsd/dateTime #inst "2021-11-30T01:58:21.842+00:00",
-   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
-   :owl/imports
-   [{:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
-    {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
-    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
-    {:rdfa/uri
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}],
-   :owl/versionIRI
-   {:rdfa/uri
-    "https://www.omg.org/spec/LCC/20211101/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
-    "lcc-3166-1"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-    "lcc-3166-2"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/",
-    "lcc-3166-2-gb"
+  ^{:base
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
-    "owl" "http://www.w3.org/2002/07/owl#",
-    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-    "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-    "xsd" "http://www.w3.org/2001/XMLSchema#"},
+    :namespaces
+    {"dcterms" "http://purl.org/dc/terms/",
+     "lcc-3166-1"
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
+     "lcc-3166-2"
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/",
+     "lcc-3166-2-gb"
+     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/",
+     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+     "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
+     "owl" "http://www.w3.org/2002/07/owl#",
+     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+     "skos" "http://www.w3.org/2004/02/skos/core#",
+     "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
+     "xsd" "http://www.w3.org/2001/XMLSchema#"},
+    :prefix "lcc-3166-2-gb",
+    :source
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB.rdf"}
+  {:dcterms/issued #inst "2021-11-30T01:58:21.841-00:00",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :owl/imports
+   #{{:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
+   :owl/versionIRI
+   {:xsd/anyURI
+    "https://www.omg.org/spec/LCC/20211101/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdf/type :owl/Ontology,
-   :rdfa/prefix "lcc-3166-2-gb",
-   :rdfa/uri
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/",
    :rdfs/label
    "ISO 3166-2 Subdivision Codes for United Kingdom of Great Britain and Northern Ireland (the) Ontology",
-   :rdfs/seeAlso [{:rdfa/uri "https://www.omg.org/spec/LCC/AboutLCC/"}
-                  {:rdfa/uri
-                   "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}],
-   :sm/contentLanguage {:rdfa/uri
+   :rdfs/seeAlso #{{:xsd/anyURI
+                    "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}
+                   {:xsd/anyURI "https://www.omg.org/spec/LCC/AboutLCC/"}},
+   :sm/contentLanguage {:xsd/anyURI
                         "https://www.w3.org/TR/owl2-quick-reference/"},
-   :sm/copyright ["Copyright (c) 2015-2021 Thematix Partners LLC"
-                  "Copyright (c) 2015-2017 Unisys"
-                  "Copyright (c) 2015-2020 Adaptive Inc."
-                  "Copyright (c) 2015-2021 Object Management Group, Inc."
-                  "Copyright (c) 2021 agnos.ai UK Ltd."],
+   :sm/copyright #{"Copyright (c) 2015-2020 Adaptive Inc."
+                   "Copyright (c) 2021 agnos.ai UK Ltd."
+                   "Copyright (c) 2015-2021 Object Management Group, Inc."
+                   "Copyright (c) 2015-2017 Unisys"
+                   "Copyright (c) 2015-2021 Thematix Partners LLC"},
    :sm/dependsOn
-   [{:rdfa/uri
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
-    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
-    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
-    {:rdfa/uri
-     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}],
+   #{{:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :sm/fileAbbreviation "lcc-3166-2-gb",
    :sm/fileAbstract
    "This ontology represents the subset of the ISO 3166 standard that includes the actual ISO 3166-2 subdivision codes for United Kingdom of Great Britain and Northern Ireland (the), with the ontology and codes for the other parts of the standard represented in models that this ontology depends on.",
-   :sm/filename "ISO3166-2-SubdivisionCodes-GB.rdf"})
+   :sm/filename "ISO3166-2-SubdivisionCodes-GB.rdf",
+   :xsd/anyURI
+   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"})
 
 (def AberdeenCity
   {:db/ident   :lcc-3166-2-gb/AberdeenCity,
@@ -448,101 +454,101 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-112-RegionKind
-  "subdivision category council area in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-112-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "council area@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "council area"},
    :skos/definition
    "subdivision category council area in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-113-RegionKind
-  "subdivision category two-tier county in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-113-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "two-tier county@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "two-tier county"},
    :skos/definition
    "subdivision category two-tier county in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-283-RegionKind
-  "subdivision category district in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-283-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "district@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "district"},
    :skos/definition
    "subdivision category district in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-284-RegionKind
-  "subdivision category unitary authority in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-284-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "unitary authority@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "unitary authority"},
    :skos/definition
    "subdivision category unitary authority in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-369-RegionKind
-  "subdivision category metropolitan district in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-369-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "metropolitan district@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "metropolitan district"},
    :skos/definition
    "subdivision category metropolitan district in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-370-RegionKind
-  "subdivision category London borough in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-370-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "London borough@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "London borough"},
    :skos/definition
    "subdivision category London borough in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-402-RegionKind
-  "subdivision category city corporation in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-402-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "city corporation@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "city corporation"},
    :skos/definition
    "subdivision category city corporation in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-491-RegionKind
-  "subdivision category country in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-491-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "country@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "country"},
    :skos/definition
    "subdivision category country in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-492-RegionKind
-  "subdivision category province in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-492-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "province@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "province"},
    :skos/definition
    "subdivision category province in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -552,32 +558,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ABC-RegionIdentifier
-  "subdivision code for the district of Armagh City, Banbridge and Craigavon in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ABC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ABC-Subdivision,
    :lcc-lr/hasTag "GB-ABC",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ABC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ABC",
    :skos/definition
    "subdivision code for the district of Armagh City, Banbridge and Craigavon in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ABC-Subdivision
-  "the district of Armagh City, Banbridge and Craigavon in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ABC-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Armagh City, Banbridge and Craigavon@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value
+                                "Armagh City, Banbridge and Craigavon"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-283-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-NIR-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Armagh City, Banbridge and Craigavon@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Armagh City, Banbridge and Craigavon"},
    :skos/definition
    "the district of Armagh City, Banbridge and Craigavon in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -587,31 +593,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ABD-RegionIdentifier
-  "subdivision code for the council area of Aberdeenshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ABD-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ABD-Subdivision,
    :lcc-lr/hasTag "GB-ABD",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ABD-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ABD",
    :skos/definition
    "subdivision code for the council area of Aberdeenshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ABD-Subdivision
-  "the council area of Aberdeenshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ABD-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Aberdeenshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Aberdeenshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Aberdeenshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Aberdeenshire"},
    :skos/definition
    "the council area of Aberdeenshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -621,31 +627,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ABE-RegionIdentifier
-  "subdivision code for the council area of Aberdeen City in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ABE-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ABE-Subdivision,
    :lcc-lr/hasTag "GB-ABE",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ABE-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ABE",
    :skos/definition
    "subdivision code for the council area of Aberdeen City in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ABE-Subdivision
-  "the council area of Aberdeen City in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ABE-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Aberdeen City@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Aberdeen City"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Aberdeen City@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Aberdeen City"},
    :skos/definition
    "the council area of Aberdeen City in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -655,31 +661,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-AGB-RegionIdentifier
-  "subdivision code for the council area of Argyll and Bute in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-AGB-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-AGB-Subdivision,
    :lcc-lr/hasTag "GB-AGB",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-AGB-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-AGB",
    :skos/definition
    "subdivision code for the council area of Argyll and Bute in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-AGB-Subdivision
-  "the council area of Argyll and Bute in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-AGB-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Argyll and Bute@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Argyll and Bute"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Argyll and Bute@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Argyll and Bute"},
    :skos/definition
    "the council area of Argyll and Bute in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -689,32 +695,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-AGY-RegionIdentifier
-  "subdivision code for the unitary authority of Isle of Anglesey [Sir Ynys Môn GB-YNM] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-AGY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-AGY-Subdivision,
    :lcc-lr/hasTag "GB-AGY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-AGY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-AGY",
    :skos/definition
    "subdivision code for the unitary authority of Isle of Anglesey [Sir Ynys Môn GB-YNM] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-AGY-Subdivision
-  "the unitary authority of Isle of Anglesey [Sir Ynys Môn GB-YNM] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-AGY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Isle of Anglesey [Sir Ynys Môn GB-YNM]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value
+                                "Isle of Anglesey [Sir Ynys Môn GB-YNM]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Isle of Anglesey [Sir Ynys Môn GB-YNM]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Isle of Anglesey [Sir Ynys Môn GB-YNM]"},
    :skos/definition
    "the unitary authority of Isle of Anglesey [Sir Ynys Môn GB-YNM] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -724,31 +730,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-AND-RegionIdentifier
-  "subdivision code for the district of Ards and North Down in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-AND-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-AND-Subdivision,
    :lcc-lr/hasTag "GB-AND",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-AND-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-AND",
    :skos/definition
    "subdivision code for the district of Ards and North Down in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-AND-Subdivision
-  "the district of Ards and North Down in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-AND-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Ards and North Down@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Ards and North Down"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-283-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-NIR-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Ards and North Down@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Ards and North Down"},
    :skos/definition
    "the district of Ards and North Down in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -758,31 +764,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ANN-RegionIdentifier
-  "subdivision code for the district of Antrim and Newtownabbey in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ANN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ANN-Subdivision,
    :lcc-lr/hasTag "GB-ANN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ANN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ANN",
    :skos/definition
    "subdivision code for the district of Antrim and Newtownabbey in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ANN-Subdivision
-  "the district of Antrim and Newtownabbey in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ANN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Antrim and Newtownabbey@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Antrim and Newtownabbey"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-283-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-NIR-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Antrim and Newtownabbey@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Antrim and Newtownabbey"},
    :skos/definition
    "the district of Antrim and Newtownabbey in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -792,31 +798,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ANS-RegionIdentifier
-  "subdivision code for the council area of Angus in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ANS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ANS-Subdivision,
    :lcc-lr/hasTag "GB-ANS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ANS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ANS",
    :skos/definition
    "subdivision code for the council area of Angus in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ANS-Subdivision
-  "the council area of Angus in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ANS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Angus@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Angus"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Angus@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Angus"},
    :skos/definition
    "the council area of Angus in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -826,32 +832,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BAS-RegionIdentifier
-  "subdivision code for the unitary authority of Bath and North East Somerset in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BAS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BAS-Subdivision,
    :lcc-lr/hasTag "GB-BAS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BAS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BAS",
    :skos/definition
    "subdivision code for the unitary authority of Bath and North East Somerset in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BAS-Subdivision
-  "the unitary authority of Bath and North East Somerset in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BAS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Bath and North East Somerset@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Bath and North East Somerset"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Bath and North East Somerset@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Bath and North East Somerset"},
    :skos/definition
    "the unitary authority of Bath and North East Somerset in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -861,31 +866,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BBD-RegionIdentifier
-  "subdivision code for the unitary authority of Blackburn with Darwen in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BBD-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BBD-Subdivision,
    :lcc-lr/hasTag "GB-BBD",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BBD-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BBD",
    :skos/definition
    "subdivision code for the unitary authority of Blackburn with Darwen in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BBD-Subdivision
-  "the unitary authority of Blackburn with Darwen in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BBD-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Blackburn with Darwen@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Blackburn with Darwen"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Blackburn with Darwen@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Blackburn with Darwen"},
    :skos/definition
    "the unitary authority of Blackburn with Darwen in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -895,32 +900,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BCP-RegionIdentifier
-  "subdivision code for the unitary authority of Bournemouth, Christchurch and Poole in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BCP-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BCP-Subdivision,
    :lcc-lr/hasTag "GB-BCP",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BCP-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BCP",
    :skos/definition
    "subdivision code for the unitary authority of Bournemouth, Christchurch and Poole in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BCP-Subdivision
-  "the unitary authority of Bournemouth, Christchurch and Poole in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BCP-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Bournemouth, Christchurch and Poole@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value
+                                "Bournemouth, Christchurch and Poole"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Bournemouth, Christchurch and Poole@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Bournemouth, Christchurch and Poole"},
    :skos/definition
    "the unitary authority of Bournemouth, Christchurch and Poole in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -930,31 +935,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BDF-RegionIdentifier
-  "subdivision code for the unitary authority of Bedford in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BDF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BDF-Subdivision,
    :lcc-lr/hasTag "GB-BDF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BDF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BDF",
    :skos/definition
    "subdivision code for the unitary authority of Bedford in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BDF-Subdivision
-  "the unitary authority of Bedford in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BDF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Bedford@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Bedford"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Bedford@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Bedford"},
    :skos/definition
    "the unitary authority of Bedford in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -964,31 +969,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BDG-RegionIdentifier
-  "subdivision code for the London borough of Barking and Dagenham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BDG-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BDG-Subdivision,
    :lcc-lr/hasTag "GB-BDG",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BDG-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BDG",
    :skos/definition
    "subdivision code for the London borough of Barking and Dagenham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BDG-Subdivision
-  "the London borough of Barking and Dagenham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BDG-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Barking and Dagenham@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Barking and Dagenham"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Barking and Dagenham@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Barking and Dagenham"},
    :skos/definition
    "the London borough of Barking and Dagenham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -998,31 +1003,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BEN-RegionIdentifier
-  "subdivision code for the London borough of Brent in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BEN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BEN-Subdivision,
    :lcc-lr/hasTag "GB-BEN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BEN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BEN",
    :skos/definition
    "subdivision code for the London borough of Brent in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BEN-Subdivision
-  "the London borough of Brent in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BEN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Brent@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Brent"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Brent@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Brent"},
    :skos/definition
    "the London borough of Brent in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1032,31 +1037,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BEX-RegionIdentifier
-  "subdivision code for the London borough of Bexley in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BEX-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BEX-Subdivision,
    :lcc-lr/hasTag "GB-BEX",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BEX-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BEX",
    :skos/definition
    "subdivision code for the London borough of Bexley in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BEX-Subdivision
-  "the London borough of Bexley in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BEX-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Bexley@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Bexley"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Bexley@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Bexley"},
    :skos/definition
    "the London borough of Bexley in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1066,31 +1071,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BFS-RegionIdentifier
-  "subdivision code for the district of Belfast City in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BFS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BFS-Subdivision,
    :lcc-lr/hasTag "GB-BFS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BFS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BFS",
    :skos/definition
    "subdivision code for the district of Belfast City in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BFS-Subdivision
-  "the district of Belfast City in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BFS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Belfast City@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Belfast City"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-283-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-NIR-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Belfast City@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Belfast City"},
    :skos/definition
    "the district of Belfast City in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1100,32 +1105,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BGE-RegionIdentifier
-  "subdivision code for the unitary authority of Bridgend [Pen-y-bont ar Ogwr GB-POG] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BGE-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BGE-Subdivision,
    :lcc-lr/hasTag "GB-BGE",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BGE-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BGE",
    :skos/definition
    "subdivision code for the unitary authority of Bridgend [Pen-y-bont ar Ogwr GB-POG] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BGE-Subdivision
-  "the unitary authority of Bridgend [Pen-y-bont ar Ogwr GB-POG] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BGE-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Bridgend [Pen-y-bont ar Ogwr GB-POG]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value
+                                "Bridgend [Pen-y-bont ar Ogwr GB-POG]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Bridgend [Pen-y-bont ar Ogwr GB-POG]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Bridgend [Pen-y-bont ar Ogwr GB-POG]"},
    :skos/definition
    "the unitary authority of Bridgend [Pen-y-bont ar Ogwr GB-POG] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1135,31 +1140,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BGW-RegionIdentifier
-  "subdivision code for the unitary authority of Blaenau Gwent in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BGW-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BGW-Subdivision,
    :lcc-lr/hasTag "GB-BGW",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BGW-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BGW",
    :skos/definition
    "subdivision code for the unitary authority of Blaenau Gwent in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BGW-Subdivision
-  "the unitary authority of Blaenau Gwent in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BGW-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Blaenau Gwent@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Blaenau Gwent"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Blaenau Gwent@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Blaenau Gwent"},
    :skos/definition
    "the unitary authority of Blaenau Gwent in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1169,31 +1174,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BIR-RegionIdentifier
-  "subdivision code for the metropolitan district of Birmingham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BIR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BIR-Subdivision,
    :lcc-lr/hasTag "GB-BIR",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BIR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BIR",
    :skos/definition
    "subdivision code for the metropolitan district of Birmingham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BIR-Subdivision
-  "the metropolitan district of Birmingham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BIR-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Birmingham@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Birmingham"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Birmingham@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Birmingham"},
    :skos/definition
    "the metropolitan district of Birmingham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1203,31 +1208,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BKM-RegionIdentifier
-  "subdivision code for the two-tier county of Buckinghamshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BKM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BKM-Subdivision,
    :lcc-lr/hasTag "GB-BKM",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BKM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BKM",
    :skos/definition
    "subdivision code for the two-tier county of Buckinghamshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BKM-Subdivision
-  "the two-tier county of Buckinghamshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BKM-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Buckinghamshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Buckinghamshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Buckinghamshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Buckinghamshire"},
    :skos/definition
    "the two-tier county of Buckinghamshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1237,31 +1242,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BNE-RegionIdentifier
-  "subdivision code for the London borough of Barnet in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BNE-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BNE-Subdivision,
    :lcc-lr/hasTag "GB-BNE",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BNE-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BNE",
    :skos/definition
    "subdivision code for the London borough of Barnet in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BNE-Subdivision
-  "the London borough of Barnet in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BNE-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Barnet@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Barnet"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Barnet@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Barnet"},
    :skos/definition
    "the London borough of Barnet in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1271,31 +1276,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BNH-RegionIdentifier
-  "subdivision code for the unitary authority of Brighton and Hove in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BNH-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BNH-Subdivision,
    :lcc-lr/hasTag "GB-BNH",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BNH-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BNH",
    :skos/definition
    "subdivision code for the unitary authority of Brighton and Hove in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BNH-Subdivision
-  "the unitary authority of Brighton and Hove in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BNH-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Brighton and Hove@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Brighton and Hove"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Brighton and Hove@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Brighton and Hove"},
    :skos/definition
    "the unitary authority of Brighton and Hove in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1305,31 +1310,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BNS-RegionIdentifier
-  "subdivision code for the metropolitan district of Barnsley in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BNS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BNS-Subdivision,
    :lcc-lr/hasTag "GB-BNS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BNS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BNS",
    :skos/definition
    "subdivision code for the metropolitan district of Barnsley in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BNS-Subdivision
-  "the metropolitan district of Barnsley in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BNS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Barnsley@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Barnsley"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Barnsley@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Barnsley"},
    :skos/definition
    "the metropolitan district of Barnsley in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1339,31 +1344,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BOL-RegionIdentifier
-  "subdivision code for the metropolitan district of Bolton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BOL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BOL-Subdivision,
    :lcc-lr/hasTag "GB-BOL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BOL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BOL",
    :skos/definition
    "subdivision code for the metropolitan district of Bolton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BOL-Subdivision
-  "the metropolitan district of Bolton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BOL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Bolton@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Bolton"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Bolton@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Bolton"},
    :skos/definition
    "the metropolitan district of Bolton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1373,31 +1378,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BPL-RegionIdentifier
-  "subdivision code for the unitary authority of Blackpool in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BPL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BPL-Subdivision,
    :lcc-lr/hasTag "GB-BPL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BPL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BPL",
    :skos/definition
    "subdivision code for the unitary authority of Blackpool in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BPL-Subdivision
-  "the unitary authority of Blackpool in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BPL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Blackpool@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Blackpool"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Blackpool@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Blackpool"},
    :skos/definition
    "the unitary authority of Blackpool in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1407,31 +1412,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BRC-RegionIdentifier
-  "subdivision code for the unitary authority of Bracknell Forest in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BRC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BRC-Subdivision,
    :lcc-lr/hasTag "GB-BRC",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BRC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BRC",
    :skos/definition
    "subdivision code for the unitary authority of Bracknell Forest in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BRC-Subdivision
-  "the unitary authority of Bracknell Forest in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BRC-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Bracknell Forest@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Bracknell Forest"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Bracknell Forest@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Bracknell Forest"},
    :skos/definition
    "the unitary authority of Bracknell Forest in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1441,31 +1446,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BRD-RegionIdentifier
-  "subdivision code for the metropolitan district of Bradford in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BRD-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BRD-Subdivision,
    :lcc-lr/hasTag "GB-BRD",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BRD-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BRD",
    :skos/definition
    "subdivision code for the metropolitan district of Bradford in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BRD-Subdivision
-  "the metropolitan district of Bradford in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BRD-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Bradford@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Bradford"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Bradford@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Bradford"},
    :skos/definition
    "the metropolitan district of Bradford in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1475,31 +1480,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BRY-RegionIdentifier
-  "subdivision code for the London borough of Bromley in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BRY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BRY-Subdivision,
    :lcc-lr/hasTag "GB-BRY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BRY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BRY",
    :skos/definition
    "subdivision code for the London borough of Bromley in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BRY-Subdivision
-  "the London borough of Bromley in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BRY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Bromley@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Bromley"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Bromley@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Bromley"},
    :skos/definition
    "the London borough of Bromley in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1509,31 +1514,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BST-RegionIdentifier
-  "subdivision code for the unitary authority of Bristol, City of in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BST-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BST-Subdivision,
    :lcc-lr/hasTag "GB-BST",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BST-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BST",
    :skos/definition
    "subdivision code for the unitary authority of Bristol, City of in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BST-Subdivision
-  "the unitary authority of Bristol, City of in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BST-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Bristol, City of@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Bristol, City of"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Bristol, City of@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Bristol, City of"},
    :skos/definition
    "the unitary authority of Bristol, City of in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1543,31 +1548,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-BUR-RegionIdentifier
-  "subdivision code for the metropolitan district of Bury in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BUR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-BUR-Subdivision,
    :lcc-lr/hasTag "GB-BUR",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-BUR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-BUR",
    :skos/definition
    "subdivision code for the metropolitan district of Bury in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-BUR-Subdivision
-  "the metropolitan district of Bury in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-BUR-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Bury@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Bury"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Bury@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Bury"},
    :skos/definition
    "the metropolitan district of Bury in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1577,31 +1582,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CAM-RegionIdentifier
-  "subdivision code for the two-tier county of Cambridgeshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CAM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CAM-Subdivision,
    :lcc-lr/hasTag "GB-CAM",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CAM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CAM",
    :skos/definition
    "subdivision code for the two-tier county of Cambridgeshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CAM-Subdivision
-  "the two-tier county of Cambridgeshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CAM-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Cambridgeshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Cambridgeshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Cambridgeshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Cambridgeshire"},
    :skos/definition
    "the two-tier county of Cambridgeshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1611,32 +1616,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CAY-RegionIdentifier
-  "subdivision code for the unitary authority of Caerphilly [Caerffili GB-CAF] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CAY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CAY-Subdivision,
    :lcc-lr/hasTag "GB-CAY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CAY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CAY",
    :skos/definition
    "subdivision code for the unitary authority of Caerphilly [Caerffili GB-CAF] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CAY-Subdivision
-  "the unitary authority of Caerphilly [Caerffili GB-CAF] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CAY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Caerphilly [Caerffili GB-CAF]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Caerphilly [Caerffili GB-CAF]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Caerphilly [Caerffili GB-CAF]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Caerphilly [Caerffili GB-CAF]"},
    :skos/definition
    "the unitary authority of Caerphilly [Caerffili GB-CAF] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1646,31 +1650,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CBF-RegionIdentifier
-  "subdivision code for the unitary authority of Central Bedfordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CBF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CBF-Subdivision,
    :lcc-lr/hasTag "GB-CBF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CBF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CBF",
    :skos/definition
    "subdivision code for the unitary authority of Central Bedfordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CBF-Subdivision
-  "the unitary authority of Central Bedfordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CBF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Central Bedfordshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Central Bedfordshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Central Bedfordshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Central Bedfordshire"},
    :skos/definition
    "the unitary authority of Central Bedfordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1680,31 +1684,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CCG-RegionIdentifier
-  "subdivision code for the district of Causeway Coast and Glens in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CCG-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CCG-Subdivision,
    :lcc-lr/hasTag "GB-CCG",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CCG-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CCG",
    :skos/definition
    "subdivision code for the district of Causeway Coast and Glens in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CCG-Subdivision
-  "the district of Causeway Coast and Glens in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CCG-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Causeway Coast and Glens@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Causeway Coast and Glens"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-283-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-NIR-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Causeway Coast and Glens@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Causeway Coast and Glens"},
    :skos/definition
    "the district of Causeway Coast and Glens in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1714,31 +1718,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CGN-RegionIdentifier
-  "subdivision code for the unitary authority of Ceredigion [Sir Ceredigion] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CGN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CGN-Subdivision,
    :lcc-lr/hasTag "GB-CGN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CGN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CGN",
    :skos/definition
    "subdivision code for the unitary authority of Ceredigion [Sir Ceredigion] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CGN-Subdivision
-  "the unitary authority of Ceredigion [Sir Ceredigion] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CGN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Ceredigion [Sir Ceredigion]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Ceredigion [Sir Ceredigion]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Ceredigion [Sir Ceredigion]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Ceredigion [Sir Ceredigion]"},
    :skos/definition
    "the unitary authority of Ceredigion [Sir Ceredigion] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1748,31 +1752,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CHE-RegionIdentifier
-  "subdivision code for the unitary authority of Cheshire East in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CHE-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CHE-Subdivision,
    :lcc-lr/hasTag "GB-CHE",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CHE-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CHE",
    :skos/definition
    "subdivision code for the unitary authority of Cheshire East in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CHE-Subdivision
-  "the unitary authority of Cheshire East in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CHE-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Cheshire East@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Cheshire East"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Cheshire East@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Cheshire East"},
    :skos/definition
    "the unitary authority of Cheshire East in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1782,31 +1786,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CHW-RegionIdentifier
-  "subdivision code for the unitary authority of Cheshire West and Chester in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CHW-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CHW-Subdivision,
    :lcc-lr/hasTag "GB-CHW",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CHW-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CHW",
    :skos/definition
    "subdivision code for the unitary authority of Cheshire West and Chester in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CHW-Subdivision
-  "the unitary authority of Cheshire West and Chester in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CHW-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Cheshire West and Chester@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Cheshire West and Chester"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Cheshire West and Chester@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Cheshire West and Chester"},
    :skos/definition
    "the unitary authority of Cheshire West and Chester in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1816,31 +1820,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CLD-RegionIdentifier
-  "subdivision code for the metropolitan district of Calderdale in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CLD-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CLD-Subdivision,
    :lcc-lr/hasTag "GB-CLD",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CLD-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CLD",
    :skos/definition
    "subdivision code for the metropolitan district of Calderdale in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CLD-Subdivision
-  "the metropolitan district of Calderdale in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CLD-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Calderdale@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Calderdale"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Calderdale@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Calderdale"},
    :skos/definition
    "the metropolitan district of Calderdale in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1850,31 +1854,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CLK-RegionIdentifier
-  "subdivision code for the council area of Clackmannanshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CLK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CLK-Subdivision,
    :lcc-lr/hasTag "GB-CLK",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CLK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CLK",
    :skos/definition
    "subdivision code for the council area of Clackmannanshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CLK-Subdivision
-  "the council area of Clackmannanshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CLK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Clackmannanshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Clackmannanshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Clackmannanshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Clackmannanshire"},
    :skos/definition
    "the council area of Clackmannanshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1884,31 +1888,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CMA-RegionIdentifier
-  "subdivision code for the two-tier county of Cumbria in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CMA-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CMA-Subdivision,
    :lcc-lr/hasTag "GB-CMA",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CMA-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CMA",
    :skos/definition
    "subdivision code for the two-tier county of Cumbria in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CMA-Subdivision
-  "the two-tier county of Cumbria in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CMA-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Cumbria@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Cumbria"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Cumbria@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Cumbria"},
    :skos/definition
    "the two-tier county of Cumbria in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1918,31 +1922,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CMD-RegionIdentifier
-  "subdivision code for the London borough of Camden in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CMD-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CMD-Subdivision,
    :lcc-lr/hasTag "GB-CMD",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CMD-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CMD",
    :skos/definition
    "subdivision code for the London borough of Camden in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CMD-Subdivision
-  "the London borough of Camden in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CMD-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Camden@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Camden"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Camden@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Camden"},
    :skos/definition
    "the London borough of Camden in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1952,32 +1956,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CMN-RegionIdentifier
-  "subdivision code for the unitary authority of Carmarthenshire [Sir Gaerfyrddin GB-GFY] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CMN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CMN-Subdivision,
    :lcc-lr/hasTag "GB-CMN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CMN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CMN",
    :skos/definition
    "subdivision code for the unitary authority of Carmarthenshire [Sir Gaerfyrddin GB-GFY] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CMN-Subdivision
-  "the unitary authority of Carmarthenshire [Sir Gaerfyrddin GB-GFY] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CMN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Carmarthenshire [Sir Gaerfyrddin GB-GFY]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value
+                                "Carmarthenshire [Sir Gaerfyrddin GB-GFY]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Carmarthenshire [Sir Gaerfyrddin GB-GFY]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Carmarthenshire [Sir Gaerfyrddin GB-GFY]"},
    :skos/definition
    "the unitary authority of Carmarthenshire [Sir Gaerfyrddin GB-GFY] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -1987,31 +1991,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CON-RegionIdentifier
-  "subdivision code for the unitary authority of Cornwall in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CON-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CON-Subdivision,
    :lcc-lr/hasTag "GB-CON",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CON-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CON",
    :skos/definition
    "subdivision code for the unitary authority of Cornwall in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CON-Subdivision
-  "the unitary authority of Cornwall in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CON-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Cornwall@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Cornwall"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Cornwall@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Cornwall"},
    :skos/definition
    "the unitary authority of Cornwall in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2021,31 +2025,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-COV-RegionIdentifier
-  "subdivision code for the metropolitan district of Coventry in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-COV-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-COV-Subdivision,
    :lcc-lr/hasTag "GB-COV",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-COV-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-COV",
    :skos/definition
    "subdivision code for the metropolitan district of Coventry in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-COV-Subdivision
-  "the metropolitan district of Coventry in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-COV-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Coventry@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Coventry"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Coventry@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Coventry"},
    :skos/definition
    "the metropolitan district of Coventry in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2055,31 +2059,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CRF-RegionIdentifier
-  "subdivision code for the unitary authority of Cardiff [Caerdydd GB-CRD] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CRF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CRF-Subdivision,
    :lcc-lr/hasTag "GB-CRF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CRF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CRF",
    :skos/definition
    "subdivision code for the unitary authority of Cardiff [Caerdydd GB-CRD] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CRF-Subdivision
-  "the unitary authority of Cardiff [Caerdydd GB-CRD] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CRF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Cardiff [Caerdydd GB-CRD]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Cardiff [Caerdydd GB-CRD]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Cardiff [Caerdydd GB-CRD]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Cardiff [Caerdydd GB-CRD]"},
    :skos/definition
    "the unitary authority of Cardiff [Caerdydd GB-CRD] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2089,31 +2093,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CRY-RegionIdentifier
-  "subdivision code for the London borough of Croydon in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CRY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CRY-Subdivision,
    :lcc-lr/hasTag "GB-CRY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CRY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CRY",
    :skos/definition
    "subdivision code for the London borough of Croydon in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CRY-Subdivision
-  "the London borough of Croydon in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CRY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Croydon@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Croydon"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Croydon@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Croydon"},
    :skos/definition
    "the London borough of Croydon in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2123,31 +2127,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-CWY-RegionIdentifier
-  "subdivision code for the unitary authority of Conwy in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CWY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-CWY-Subdivision,
    :lcc-lr/hasTag "GB-CWY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-CWY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-CWY",
    :skos/definition
    "subdivision code for the unitary authority of Conwy in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-CWY-Subdivision
-  "the unitary authority of Conwy in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-CWY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Conwy@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Conwy"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Conwy@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Conwy"},
    :skos/definition
    "the unitary authority of Conwy in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2157,31 +2161,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-DAL-RegionIdentifier
-  "subdivision code for the unitary authority of Darlington in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DAL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-DAL-Subdivision,
    :lcc-lr/hasTag "GB-DAL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-DAL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-DAL",
    :skos/definition
    "subdivision code for the unitary authority of Darlington in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-DAL-Subdivision
-  "the unitary authority of Darlington in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DAL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Darlington@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Darlington"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Darlington@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Darlington"},
    :skos/definition
    "the unitary authority of Darlington in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2191,31 +2195,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-DBY-RegionIdentifier
-  "subdivision code for the two-tier county of Derbyshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DBY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-DBY-Subdivision,
    :lcc-lr/hasTag "GB-DBY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-DBY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-DBY",
    :skos/definition
    "subdivision code for the two-tier county of Derbyshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-DBY-Subdivision
-  "the two-tier county of Derbyshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DBY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Derbyshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Derbyshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Derbyshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Derbyshire"},
    :skos/definition
    "the two-tier county of Derbyshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2225,32 +2229,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-DEN-RegionIdentifier
-  "subdivision code for the unitary authority of Denbighshire [Sir Ddinbych GB-DDB] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DEN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-DEN-Subdivision,
    :lcc-lr/hasTag "GB-DEN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-DEN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-DEN",
    :skos/definition
    "subdivision code for the unitary authority of Denbighshire [Sir Ddinbych GB-DDB] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-DEN-Subdivision
-  "the unitary authority of Denbighshire [Sir Ddinbych GB-DDB] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DEN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Denbighshire [Sir Ddinbych GB-DDB]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value
+                                "Denbighshire [Sir Ddinbych GB-DDB]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Denbighshire [Sir Ddinbych GB-DDB]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Denbighshire [Sir Ddinbych GB-DDB]"},
    :skos/definition
    "the unitary authority of Denbighshire [Sir Ddinbych GB-DDB] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2260,31 +2264,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-DER-RegionIdentifier
-  "subdivision code for the unitary authority of Derby in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DER-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-DER-Subdivision,
    :lcc-lr/hasTag "GB-DER",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-DER-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-DER",
    :skos/definition
    "subdivision code for the unitary authority of Derby in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-DER-Subdivision
-  "the unitary authority of Derby in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DER-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Derby@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Derby"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Derby@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Derby"},
    :skos/definition
    "the unitary authority of Derby in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2294,31 +2298,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-DEV-RegionIdentifier
-  "subdivision code for the two-tier county of Devon in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DEV-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-DEV-Subdivision,
    :lcc-lr/hasTag "GB-DEV",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-DEV-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-DEV",
    :skos/definition
    "subdivision code for the two-tier county of Devon in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-DEV-Subdivision
-  "the two-tier county of Devon in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DEV-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Devon@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Devon"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Devon@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Devon"},
    :skos/definition
    "the two-tier county of Devon in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2328,31 +2332,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-DGY-RegionIdentifier
-  "subdivision code for the council area of Dumfries and Galloway in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DGY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-DGY-Subdivision,
    :lcc-lr/hasTag "GB-DGY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-DGY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-DGY",
    :skos/definition
    "subdivision code for the council area of Dumfries and Galloway in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-DGY-Subdivision
-  "the council area of Dumfries and Galloway in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DGY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Dumfries and Galloway@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Dumfries and Galloway"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Dumfries and Galloway@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Dumfries and Galloway"},
    :skos/definition
    "the council area of Dumfries and Galloway in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2362,31 +2366,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-DNC-RegionIdentifier
-  "subdivision code for the metropolitan district of Doncaster in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DNC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-DNC-Subdivision,
    :lcc-lr/hasTag "GB-DNC",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-DNC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-DNC",
    :skos/definition
    "subdivision code for the metropolitan district of Doncaster in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-DNC-Subdivision
-  "the metropolitan district of Doncaster in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DNC-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Doncaster@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Doncaster"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Doncaster@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Doncaster"},
    :skos/definition
    "the metropolitan district of Doncaster in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2396,31 +2400,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-DND-RegionIdentifier
-  "subdivision code for the council area of Dundee City in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DND-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-DND-Subdivision,
    :lcc-lr/hasTag "GB-DND",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-DND-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-DND",
    :skos/definition
    "subdivision code for the council area of Dundee City in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-DND-Subdivision
-  "the council area of Dundee City in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DND-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Dundee City@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Dundee City"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Dundee City@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Dundee City"},
    :skos/definition
    "the council area of Dundee City in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2430,31 +2434,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-DOR-RegionIdentifier
-  "subdivision code for the two-tier county of Dorset in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DOR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-DOR-Subdivision,
    :lcc-lr/hasTag "GB-DOR",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-DOR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-DOR",
    :skos/definition
    "subdivision code for the two-tier county of Dorset in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-DOR-Subdivision
-  "the two-tier county of Dorset in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DOR-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Dorset@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Dorset"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Dorset@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Dorset"},
    :skos/definition
    "the two-tier county of Dorset in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2464,31 +2468,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-DRS-RegionIdentifier
-  "subdivision code for the district of Derry and Strabane in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DRS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-DRS-Subdivision,
    :lcc-lr/hasTag "GB-DRS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-DRS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-DRS",
    :skos/definition
    "subdivision code for the district of Derry and Strabane in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-DRS-Subdivision
-  "the district of Derry and Strabane in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DRS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Derry and Strabane@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Derry and Strabane"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-283-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-NIR-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Derry and Strabane@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Derry and Strabane"},
    :skos/definition
    "the district of Derry and Strabane in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2498,31 +2502,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-DUD-RegionIdentifier
-  "subdivision code for the metropolitan district of Dudley in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DUD-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-DUD-Subdivision,
    :lcc-lr/hasTag "GB-DUD",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-DUD-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-DUD",
    :skos/definition
    "subdivision code for the metropolitan district of Dudley in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-DUD-Subdivision
-  "the metropolitan district of Dudley in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DUD-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Dudley@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Dudley"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Dudley@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Dudley"},
    :skos/definition
    "the metropolitan district of Dudley in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2532,31 +2536,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-DUR-RegionIdentifier
-  "subdivision code for the unitary authority of Durham, County in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DUR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-DUR-Subdivision,
    :lcc-lr/hasTag "GB-DUR",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-DUR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-DUR",
    :skos/definition
    "subdivision code for the unitary authority of Durham, County in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-DUR-Subdivision
-  "the unitary authority of Durham, County in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-DUR-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Durham, County@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Durham, County"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Durham, County@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Durham, County"},
    :skos/definition
    "the unitary authority of Durham, County in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2566,31 +2570,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-EAL-RegionIdentifier
-  "subdivision code for the London borough of Ealing in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-EAL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-EAL-Subdivision,
    :lcc-lr/hasTag "GB-EAL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-EAL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-EAL",
    :skos/definition
    "subdivision code for the London borough of Ealing in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-EAL-Subdivision
-  "the London borough of Ealing in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-EAL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Ealing@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Ealing"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Ealing@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Ealing"},
    :skos/definition
    "the London borough of Ealing in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2600,31 +2604,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-EAY-RegionIdentifier
-  "subdivision code for the council area of East Ayrshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-EAY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-EAY-Subdivision,
    :lcc-lr/hasTag "GB-EAY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-EAY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-EAY",
    :skos/definition
    "subdivision code for the council area of East Ayrshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-EAY-Subdivision
-  "the council area of East Ayrshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-EAY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "East Ayrshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "East Ayrshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "East Ayrshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "East Ayrshire"},
    :skos/definition
    "the council area of East Ayrshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2634,31 +2638,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-EDH-RegionIdentifier
-  "subdivision code for the council area of Edinburgh, City of in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-EDH-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-EDH-Subdivision,
    :lcc-lr/hasTag "GB-EDH",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-EDH-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-EDH",
    :skos/definition
    "subdivision code for the council area of Edinburgh, City of in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-EDH-Subdivision
-  "the council area of Edinburgh, City of in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-EDH-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Edinburgh, City of@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Edinburgh, City of"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Edinburgh, City of@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Edinburgh, City of"},
    :skos/definition
    "the council area of Edinburgh, City of in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2668,31 +2672,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-EDU-RegionIdentifier
-  "subdivision code for the council area of East Dunbartonshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-EDU-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-EDU-Subdivision,
    :lcc-lr/hasTag "GB-EDU",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-EDU-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-EDU",
    :skos/definition
    "subdivision code for the council area of East Dunbartonshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-EDU-Subdivision
-  "the council area of East Dunbartonshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-EDU-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "East Dunbartonshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "East Dunbartonshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "East Dunbartonshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "East Dunbartonshire"},
    :skos/definition
    "the council area of East Dunbartonshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2702,31 +2706,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ELN-RegionIdentifier
-  "subdivision code for the council area of East Lothian in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ELN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ELN-Subdivision,
    :lcc-lr/hasTag "GB-ELN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ELN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ELN",
    :skos/definition
    "subdivision code for the council area of East Lothian in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ELN-Subdivision
-  "the council area of East Lothian in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ELN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "East Lothian@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "East Lothian"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "East Lothian@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "East Lothian"},
    :skos/definition
    "the council area of East Lothian in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2736,31 +2740,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ELS-RegionIdentifier
-  "subdivision code for the council area of Eilean Siar in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ELS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ELS-Subdivision,
    :lcc-lr/hasTag "GB-ELS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ELS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ELS",
    :skos/definition
    "subdivision code for the council area of Eilean Siar in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ELS-Subdivision
-  "the council area of Eilean Siar in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ELS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Eilean Siar@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Eilean Siar"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Eilean Siar@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Eilean Siar"},
    :skos/definition
    "the council area of Eilean Siar in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2770,31 +2774,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ENF-RegionIdentifier
-  "subdivision code for the London borough of Enfield in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ENF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ENF-Subdivision,
    :lcc-lr/hasTag "GB-ENF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ENF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ENF",
    :skos/definition
    "subdivision code for the London borough of Enfield in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ENF-Subdivision
-  "the London borough of Enfield in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ENF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Enfield@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Enfield"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Enfield@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Enfield"},
    :skos/definition
    "the London borough of Enfield in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2804,32 +2808,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ENG-RegionIdentifier
-  "subdivision code for the country of England in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ENG-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ENG-Subdivision,
    :lcc-lr/hasTag "GB-ENG",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ENG-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ENG",
    :skos/definition
    "subdivision code for the country of England in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ENG-Subdivision
-  "the country of England in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "England@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "England"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-491-RegionKind,
    :lcc-cr/isSubregionOf
    :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "England@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "England"},
    :skos/definition
    "the country of England in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2839,31 +2843,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ERW-RegionIdentifier
-  "subdivision code for the council area of East Renfrewshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ERW-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ERW-Subdivision,
    :lcc-lr/hasTag "GB-ERW",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ERW-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ERW",
    :skos/definition
    "subdivision code for the council area of East Renfrewshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ERW-Subdivision
-  "the council area of East Renfrewshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ERW-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "East Renfrewshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "East Renfrewshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "East Renfrewshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "East Renfrewshire"},
    :skos/definition
    "the council area of East Renfrewshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2873,31 +2877,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ERY-RegionIdentifier
-  "subdivision code for the unitary authority of East Riding of Yorkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ERY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ERY-Subdivision,
    :lcc-lr/hasTag "GB-ERY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ERY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ERY",
    :skos/definition
    "subdivision code for the unitary authority of East Riding of Yorkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ERY-Subdivision
-  "the unitary authority of East Riding of Yorkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ERY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "East Riding of Yorkshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "East Riding of Yorkshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "East Riding of Yorkshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "East Riding of Yorkshire"},
    :skos/definition
    "the unitary authority of East Riding of Yorkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2907,31 +2911,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ESS-RegionIdentifier
-  "subdivision code for the two-tier county of Essex in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ESS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ESS-Subdivision,
    :lcc-lr/hasTag "GB-ESS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ESS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ESS",
    :skos/definition
    "subdivision code for the two-tier county of Essex in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ESS-Subdivision
-  "the two-tier county of Essex in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ESS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Essex@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Essex"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Essex@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Essex"},
    :skos/definition
    "the two-tier county of Essex in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2941,31 +2945,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ESX-RegionIdentifier
-  "subdivision code for the two-tier county of East Sussex in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ESX-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ESX-Subdivision,
    :lcc-lr/hasTag "GB-ESX",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ESX-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ESX",
    :skos/definition
    "subdivision code for the two-tier county of East Sussex in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ESX-Subdivision
-  "the two-tier county of East Sussex in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ESX-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "East Sussex@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "East Sussex"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "East Sussex@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "East Sussex"},
    :skos/definition
    "the two-tier county of East Sussex in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -2975,31 +2979,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-FAL-RegionIdentifier
-  "subdivision code for the council area of Falkirk in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-FAL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-FAL-Subdivision,
    :lcc-lr/hasTag "GB-FAL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-FAL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-FAL",
    :skos/definition
    "subdivision code for the council area of Falkirk in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-FAL-Subdivision
-  "the council area of Falkirk in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-FAL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Falkirk@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Falkirk"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Falkirk@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Falkirk"},
    :skos/definition
    "the council area of Falkirk in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3009,31 +3013,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-FIF-RegionIdentifier
-  "subdivision code for the council area of Fife in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-FIF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-FIF-Subdivision,
    :lcc-lr/hasTag "GB-FIF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-FIF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-FIF",
    :skos/definition
    "subdivision code for the council area of Fife in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-FIF-Subdivision
-  "the council area of Fife in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-FIF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Fife@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Fife"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Fife@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Fife"},
    :skos/definition
    "the council area of Fife in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3043,32 +3047,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-FLN-RegionIdentifier
-  "subdivision code for the unitary authority of Flintshire [Sir y Fflint GB-FFL] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-FLN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-FLN-Subdivision,
    :lcc-lr/hasTag "GB-FLN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-FLN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-FLN",
    :skos/definition
    "subdivision code for the unitary authority of Flintshire [Sir y Fflint GB-FFL] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-FLN-Subdivision
-  "the unitary authority of Flintshire [Sir y Fflint GB-FFL] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-FLN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Flintshire [Sir y Fflint GB-FFL]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value "Flintshire [Sir y Fflint GB-FFL]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Flintshire [Sir y Fflint GB-FFL]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Flintshire [Sir y Fflint GB-FFL]"},
    :skos/definition
    "the unitary authority of Flintshire [Sir y Fflint GB-FFL] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3078,31 +3081,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-FMO-RegionIdentifier
-  "subdivision code for the district of Fermanagh and Omagh in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-FMO-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-FMO-Subdivision,
    :lcc-lr/hasTag "GB-FMO",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-FMO-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-FMO",
    :skos/definition
    "subdivision code for the district of Fermanagh and Omagh in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-FMO-Subdivision
-  "the district of Fermanagh and Omagh in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-FMO-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Fermanagh and Omagh@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Fermanagh and Omagh"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-283-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-NIR-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Fermanagh and Omagh@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Fermanagh and Omagh"},
    :skos/definition
    "the district of Fermanagh and Omagh in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3112,31 +3115,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-GAT-RegionIdentifier
-  "subdivision code for the metropolitan district of Gateshead in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-GAT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-GAT-Subdivision,
    :lcc-lr/hasTag "GB-GAT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-GAT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-GAT",
    :skos/definition
    "subdivision code for the metropolitan district of Gateshead in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-GAT-Subdivision
-  "the metropolitan district of Gateshead in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-GAT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Gateshead@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Gateshead"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Gateshead@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Gateshead"},
    :skos/definition
    "the metropolitan district of Gateshead in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3146,31 +3149,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-GLG-RegionIdentifier
-  "subdivision code for the council area of Glasgow City in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-GLG-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-GLG-Subdivision,
    :lcc-lr/hasTag "GB-GLG",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-GLG-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-GLG",
    :skos/definition
    "subdivision code for the council area of Glasgow City in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-GLG-Subdivision
-  "the council area of Glasgow City in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-GLG-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Glasgow City@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Glasgow City"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Glasgow City@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Glasgow City"},
    :skos/definition
    "the council area of Glasgow City in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3180,31 +3183,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-GLS-RegionIdentifier
-  "subdivision code for the two-tier county of Gloucestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-GLS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-GLS-Subdivision,
    :lcc-lr/hasTag "GB-GLS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-GLS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-GLS",
    :skos/definition
    "subdivision code for the two-tier county of Gloucestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-GLS-Subdivision
-  "the two-tier county of Gloucestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-GLS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Gloucestershire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Gloucestershire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Gloucestershire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Gloucestershire"},
    :skos/definition
    "the two-tier county of Gloucestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3214,31 +3217,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-GRE-RegionIdentifier
-  "subdivision code for the London borough of Greenwich in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-GRE-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-GRE-Subdivision,
    :lcc-lr/hasTag "GB-GRE",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-GRE-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-GRE",
    :skos/definition
    "subdivision code for the London borough of Greenwich in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-GRE-Subdivision
-  "the London borough of Greenwich in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-GRE-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Greenwich@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Greenwich"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Greenwich@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Greenwich"},
    :skos/definition
    "the London borough of Greenwich in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3248,31 +3251,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-GWN-RegionIdentifier
-  "subdivision code for the unitary authority of Gwynedd in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-GWN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-GWN-Subdivision,
    :lcc-lr/hasTag "GB-GWN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-GWN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-GWN",
    :skos/definition
    "subdivision code for the unitary authority of Gwynedd in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-GWN-Subdivision
-  "the unitary authority of Gwynedd in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-GWN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Gwynedd@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Gwynedd"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Gwynedd@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Gwynedd"},
    :skos/definition
    "the unitary authority of Gwynedd in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3282,31 +3285,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HAL-RegionIdentifier
-  "subdivision code for the unitary authority of Halton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HAL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HAL-Subdivision,
    :lcc-lr/hasTag "GB-HAL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HAL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HAL",
    :skos/definition
    "subdivision code for the unitary authority of Halton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HAL-Subdivision
-  "the unitary authority of Halton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HAL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Halton@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Halton"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Halton@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Halton"},
    :skos/definition
    "the unitary authority of Halton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3316,31 +3319,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HAM-RegionIdentifier
-  "subdivision code for the two-tier county of Hampshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HAM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HAM-Subdivision,
    :lcc-lr/hasTag "GB-HAM",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HAM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HAM",
    :skos/definition
    "subdivision code for the two-tier county of Hampshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HAM-Subdivision
-  "the two-tier county of Hampshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HAM-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Hampshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Hampshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Hampshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Hampshire"},
    :skos/definition
    "the two-tier county of Hampshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3350,31 +3353,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HAV-RegionIdentifier
-  "subdivision code for the London borough of Havering in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HAV-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HAV-Subdivision,
    :lcc-lr/hasTag "GB-HAV",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HAV-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HAV",
    :skos/definition
    "subdivision code for the London borough of Havering in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HAV-Subdivision
-  "the London borough of Havering in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HAV-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Havering@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Havering"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Havering@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Havering"},
    :skos/definition
    "the London borough of Havering in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3384,31 +3387,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HCK-RegionIdentifier
-  "subdivision code for the London borough of Hackney in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HCK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HCK-Subdivision,
    :lcc-lr/hasTag "GB-HCK",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HCK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HCK",
    :skos/definition
    "subdivision code for the London borough of Hackney in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HCK-Subdivision
-  "the London borough of Hackney in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HCK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Hackney@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Hackney"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Hackney@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Hackney"},
    :skos/definition
    "the London borough of Hackney in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3418,31 +3421,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HEF-RegionIdentifier
-  "subdivision code for the unitary authority of Herefordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HEF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HEF-Subdivision,
    :lcc-lr/hasTag "GB-HEF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HEF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HEF",
    :skos/definition
    "subdivision code for the unitary authority of Herefordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HEF-Subdivision
-  "the unitary authority of Herefordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HEF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Herefordshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Herefordshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Herefordshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Herefordshire"},
    :skos/definition
    "the unitary authority of Herefordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3452,31 +3455,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HIL-RegionIdentifier
-  "subdivision code for the London borough of Hillingdon in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HIL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HIL-Subdivision,
    :lcc-lr/hasTag "GB-HIL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HIL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HIL",
    :skos/definition
    "subdivision code for the London borough of Hillingdon in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HIL-Subdivision
-  "the London borough of Hillingdon in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HIL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Hillingdon@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Hillingdon"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Hillingdon@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Hillingdon"},
    :skos/definition
    "the London borough of Hillingdon in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3486,31 +3489,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HLD-RegionIdentifier
-  "subdivision code for the council area of Highland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HLD-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HLD-Subdivision,
    :lcc-lr/hasTag "GB-HLD",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HLD-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HLD",
    :skos/definition
    "subdivision code for the council area of Highland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HLD-Subdivision
-  "the council area of Highland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HLD-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Highland@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Highland"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Highland@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Highland"},
    :skos/definition
    "the council area of Highland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3520,31 +3523,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HMF-RegionIdentifier
-  "subdivision code for the London borough of Hammersmith and Fulham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HMF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HMF-Subdivision,
    :lcc-lr/hasTag "GB-HMF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HMF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HMF",
    :skos/definition
    "subdivision code for the London borough of Hammersmith and Fulham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HMF-Subdivision
-  "the London borough of Hammersmith and Fulham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HMF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Hammersmith and Fulham@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Hammersmith and Fulham"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Hammersmith and Fulham@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Hammersmith and Fulham"},
    :skos/definition
    "the London borough of Hammersmith and Fulham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3554,31 +3557,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HNS-RegionIdentifier
-  "subdivision code for the London borough of Hounslow in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HNS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HNS-Subdivision,
    :lcc-lr/hasTag "GB-HNS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HNS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HNS",
    :skos/definition
    "subdivision code for the London borough of Hounslow in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HNS-Subdivision
-  "the London borough of Hounslow in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HNS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Hounslow@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Hounslow"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Hounslow@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Hounslow"},
    :skos/definition
    "the London borough of Hounslow in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3588,31 +3591,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HPL-RegionIdentifier
-  "subdivision code for the unitary authority of Hartlepool in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HPL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HPL-Subdivision,
    :lcc-lr/hasTag "GB-HPL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HPL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HPL",
    :skos/definition
    "subdivision code for the unitary authority of Hartlepool in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HPL-Subdivision
-  "the unitary authority of Hartlepool in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HPL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Hartlepool@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Hartlepool"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Hartlepool@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Hartlepool"},
    :skos/definition
    "the unitary authority of Hartlepool in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3622,31 +3625,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HRT-RegionIdentifier
-  "subdivision code for the two-tier county of Hertfordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HRT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HRT-Subdivision,
    :lcc-lr/hasTag "GB-HRT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HRT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HRT",
    :skos/definition
    "subdivision code for the two-tier county of Hertfordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HRT-Subdivision
-  "the two-tier county of Hertfordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HRT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Hertfordshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Hertfordshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Hertfordshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Hertfordshire"},
    :skos/definition
    "the two-tier county of Hertfordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3656,31 +3659,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HRW-RegionIdentifier
-  "subdivision code for the London borough of Harrow in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HRW-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HRW-Subdivision,
    :lcc-lr/hasTag "GB-HRW",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HRW-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HRW",
    :skos/definition
    "subdivision code for the London borough of Harrow in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HRW-Subdivision
-  "the London borough of Harrow in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HRW-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Harrow@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Harrow"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Harrow@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Harrow"},
    :skos/definition
    "the London borough of Harrow in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3690,31 +3693,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-HRY-RegionIdentifier
-  "subdivision code for the London borough of Haringey in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HRY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-HRY-Subdivision,
    :lcc-lr/hasTag "GB-HRY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-HRY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-HRY",
    :skos/definition
    "subdivision code for the London borough of Haringey in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-HRY-Subdivision
-  "the London borough of Haringey in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-HRY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Haringey@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Haringey"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Haringey@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Haringey"},
    :skos/definition
    "the London borough of Haringey in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3724,31 +3727,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-IOS-RegionIdentifier
-  "subdivision code for the unitary authority of Isles of Scilly in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-IOS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-IOS-Subdivision,
    :lcc-lr/hasTag "GB-IOS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-IOS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-IOS",
    :skos/definition
    "subdivision code for the unitary authority of Isles of Scilly in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-IOS-Subdivision
-  "the unitary authority of Isles of Scilly in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-IOS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Isles of Scilly@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Isles of Scilly"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Isles of Scilly@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Isles of Scilly"},
    :skos/definition
    "the unitary authority of Isles of Scilly in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3758,31 +3761,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-IOW-RegionIdentifier
-  "subdivision code for the unitary authority of Isle of Wight in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-IOW-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-IOW-Subdivision,
    :lcc-lr/hasTag "GB-IOW",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-IOW-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-IOW",
    :skos/definition
    "subdivision code for the unitary authority of Isle of Wight in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-IOW-Subdivision
-  "the unitary authority of Isle of Wight in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-IOW-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Isle of Wight@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Isle of Wight"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Isle of Wight@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Isle of Wight"},
    :skos/definition
    "the unitary authority of Isle of Wight in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3792,31 +3795,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ISL-RegionIdentifier
-  "subdivision code for the London borough of Islington in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ISL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ISL-Subdivision,
    :lcc-lr/hasTag "GB-ISL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ISL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ISL",
    :skos/definition
    "subdivision code for the London borough of Islington in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ISL-Subdivision
-  "the London borough of Islington in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ISL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Islington@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Islington"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Islington@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Islington"},
    :skos/definition
    "the London borough of Islington in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3826,31 +3829,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-IVC-RegionIdentifier
-  "subdivision code for the council area of Inverclyde in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-IVC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-IVC-Subdivision,
    :lcc-lr/hasTag "GB-IVC",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-IVC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-IVC",
    :skos/definition
    "subdivision code for the council area of Inverclyde in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-IVC-Subdivision
-  "the council area of Inverclyde in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-IVC-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Inverclyde@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Inverclyde"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Inverclyde@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Inverclyde"},
    :skos/definition
    "the council area of Inverclyde in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3860,31 +3863,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-KEC-RegionIdentifier
-  "subdivision code for the London borough of Kensington and Chelsea in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-KEC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-KEC-Subdivision,
    :lcc-lr/hasTag "GB-KEC",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-KEC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-KEC",
    :skos/definition
    "subdivision code for the London borough of Kensington and Chelsea in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-KEC-Subdivision
-  "the London borough of Kensington and Chelsea in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-KEC-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Kensington and Chelsea@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Kensington and Chelsea"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Kensington and Chelsea@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Kensington and Chelsea"},
    :skos/definition
    "the London borough of Kensington and Chelsea in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3894,31 +3897,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-KEN-RegionIdentifier
-  "subdivision code for the two-tier county of Kent in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-KEN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-KEN-Subdivision,
    :lcc-lr/hasTag "GB-KEN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-KEN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-KEN",
    :skos/definition
    "subdivision code for the two-tier county of Kent in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-KEN-Subdivision
-  "the two-tier county of Kent in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-KEN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Kent@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Kent"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Kent@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Kent"},
    :skos/definition
    "the two-tier county of Kent in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3928,31 +3931,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-KHL-RegionIdentifier
-  "subdivision code for the unitary authority of Kingston upon Hull in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-KHL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-KHL-Subdivision,
    :lcc-lr/hasTag "GB-KHL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-KHL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-KHL",
    :skos/definition
    "subdivision code for the unitary authority of Kingston upon Hull in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-KHL-Subdivision
-  "the unitary authority of Kingston upon Hull in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-KHL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Kingston upon Hull@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Kingston upon Hull"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Kingston upon Hull@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Kingston upon Hull"},
    :skos/definition
    "the unitary authority of Kingston upon Hull in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3962,31 +3965,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-KIR-RegionIdentifier
-  "subdivision code for the metropolitan district of Kirklees in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-KIR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-KIR-Subdivision,
    :lcc-lr/hasTag "GB-KIR",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-KIR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-KIR",
    :skos/definition
    "subdivision code for the metropolitan district of Kirklees in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-KIR-Subdivision
-  "the metropolitan district of Kirklees in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-KIR-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Kirklees@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Kirklees"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Kirklees@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Kirklees"},
    :skos/definition
    "the metropolitan district of Kirklees in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -3996,31 +3999,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-KTT-RegionIdentifier
-  "subdivision code for the London borough of Kingston upon Thames in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-KTT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-KTT-Subdivision,
    :lcc-lr/hasTag "GB-KTT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-KTT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-KTT",
    :skos/definition
    "subdivision code for the London borough of Kingston upon Thames in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-KTT-Subdivision
-  "the London borough of Kingston upon Thames in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-KTT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Kingston upon Thames@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Kingston upon Thames"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Kingston upon Thames@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Kingston upon Thames"},
    :skos/definition
    "the London borough of Kingston upon Thames in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4030,31 +4033,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-KWL-RegionIdentifier
-  "subdivision code for the metropolitan district of Knowsley in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-KWL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-KWL-Subdivision,
    :lcc-lr/hasTag "GB-KWL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-KWL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-KWL",
    :skos/definition
    "subdivision code for the metropolitan district of Knowsley in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-KWL-Subdivision
-  "the metropolitan district of Knowsley in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-KWL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Knowsley@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Knowsley"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Knowsley@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Knowsley"},
    :skos/definition
    "the metropolitan district of Knowsley in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4064,31 +4067,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-LAN-RegionIdentifier
-  "subdivision code for the two-tier county of Lancashire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LAN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-LAN-Subdivision,
    :lcc-lr/hasTag "GB-LAN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-LAN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-LAN",
    :skos/definition
    "subdivision code for the two-tier county of Lancashire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-LAN-Subdivision
-  "the two-tier county of Lancashire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LAN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Lancashire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Lancashire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Lancashire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Lancashire"},
    :skos/definition
    "the two-tier county of Lancashire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4098,31 +4101,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-LBC-RegionIdentifier
-  "subdivision code for the district of Lisburn and Castlereagh in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LBC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-LBC-Subdivision,
    :lcc-lr/hasTag "GB-LBC",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-LBC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-LBC",
    :skos/definition
    "subdivision code for the district of Lisburn and Castlereagh in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-LBC-Subdivision
-  "the district of Lisburn and Castlereagh in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LBC-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Lisburn and Castlereagh@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Lisburn and Castlereagh"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-283-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-NIR-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Lisburn and Castlereagh@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Lisburn and Castlereagh"},
    :skos/definition
    "the district of Lisburn and Castlereagh in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4132,31 +4135,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-LBH-RegionIdentifier
-  "subdivision code for the London borough of Lambeth in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LBH-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-LBH-Subdivision,
    :lcc-lr/hasTag "GB-LBH",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-LBH-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-LBH",
    :skos/definition
    "subdivision code for the London borough of Lambeth in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-LBH-Subdivision
-  "the London borough of Lambeth in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LBH-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Lambeth@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Lambeth"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Lambeth@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Lambeth"},
    :skos/definition
    "the London borough of Lambeth in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4166,31 +4169,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-LCE-RegionIdentifier
-  "subdivision code for the unitary authority of Leicester in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LCE-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-LCE-Subdivision,
    :lcc-lr/hasTag "GB-LCE",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-LCE-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-LCE",
    :skos/definition
    "subdivision code for the unitary authority of Leicester in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-LCE-Subdivision
-  "the unitary authority of Leicester in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LCE-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Leicester@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Leicester"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Leicester@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Leicester"},
    :skos/definition
    "the unitary authority of Leicester in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4200,31 +4203,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-LDS-RegionIdentifier
-  "subdivision code for the metropolitan district of Leeds in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LDS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-LDS-Subdivision,
    :lcc-lr/hasTag "GB-LDS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-LDS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-LDS",
    :skos/definition
    "subdivision code for the metropolitan district of Leeds in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-LDS-Subdivision
-  "the metropolitan district of Leeds in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LDS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Leeds@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Leeds"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Leeds@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Leeds"},
    :skos/definition
    "the metropolitan district of Leeds in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4234,31 +4237,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-LEC-RegionIdentifier
-  "subdivision code for the two-tier county of Leicestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LEC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-LEC-Subdivision,
    :lcc-lr/hasTag "GB-LEC",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-LEC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-LEC",
    :skos/definition
    "subdivision code for the two-tier county of Leicestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-LEC-Subdivision
-  "the two-tier county of Leicestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LEC-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Leicestershire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Leicestershire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Leicestershire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Leicestershire"},
    :skos/definition
    "the two-tier county of Leicestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4268,31 +4271,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-LEW-RegionIdentifier
-  "subdivision code for the London borough of Lewisham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LEW-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-LEW-Subdivision,
    :lcc-lr/hasTag "GB-LEW",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-LEW-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-LEW",
    :skos/definition
    "subdivision code for the London borough of Lewisham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-LEW-Subdivision
-  "the London borough of Lewisham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LEW-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Lewisham@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Lewisham"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Lewisham@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Lewisham"},
    :skos/definition
    "the London borough of Lewisham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4302,31 +4305,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-LIN-RegionIdentifier
-  "subdivision code for the two-tier county of Lincolnshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LIN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-LIN-Subdivision,
    :lcc-lr/hasTag "GB-LIN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-LIN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-LIN",
    :skos/definition
    "subdivision code for the two-tier county of Lincolnshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-LIN-Subdivision
-  "the two-tier county of Lincolnshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LIN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Lincolnshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Lincolnshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Lincolnshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Lincolnshire"},
    :skos/definition
    "the two-tier county of Lincolnshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4336,31 +4339,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-LIV-RegionIdentifier
-  "subdivision code for the metropolitan district of Liverpool in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LIV-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-LIV-Subdivision,
    :lcc-lr/hasTag "GB-LIV",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-LIV-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-LIV",
    :skos/definition
    "subdivision code for the metropolitan district of Liverpool in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-LIV-Subdivision
-  "the metropolitan district of Liverpool in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LIV-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Liverpool@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Liverpool"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Liverpool@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Liverpool"},
    :skos/definition
    "the metropolitan district of Liverpool in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4370,31 +4373,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-LND-RegionIdentifier
-  "subdivision code for the city corporation of London, City of in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LND-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-LND-Subdivision,
    :lcc-lr/hasTag "GB-LND",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-LND-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-LND",
    :skos/definition
    "subdivision code for the city corporation of London, City of in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-LND-Subdivision
-  "the city corporation of London, City of in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LND-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "London, City of@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "London, City of"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-402-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "London, City of@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "London, City of"},
    :skos/definition
    "the city corporation of London, City of in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4404,31 +4407,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-LUT-RegionIdentifier
-  "subdivision code for the unitary authority of Luton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LUT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-LUT-Subdivision,
    :lcc-lr/hasTag "GB-LUT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-LUT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-LUT",
    :skos/definition
    "subdivision code for the unitary authority of Luton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-LUT-Subdivision
-  "the unitary authority of Luton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-LUT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Luton@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Luton"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Luton@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Luton"},
    :skos/definition
    "the unitary authority of Luton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4438,31 +4441,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-MAN-RegionIdentifier
-  "subdivision code for the metropolitan district of Manchester in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MAN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-MAN-Subdivision,
    :lcc-lr/hasTag "GB-MAN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-MAN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-MAN",
    :skos/definition
    "subdivision code for the metropolitan district of Manchester in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-MAN-Subdivision
-  "the metropolitan district of Manchester in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MAN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Manchester@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Manchester"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Manchester@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Manchester"},
    :skos/definition
    "the metropolitan district of Manchester in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4472,31 +4475,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-MDB-RegionIdentifier
-  "subdivision code for the unitary authority of Middlesbrough in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MDB-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-MDB-Subdivision,
    :lcc-lr/hasTag "GB-MDB",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-MDB-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-MDB",
    :skos/definition
    "subdivision code for the unitary authority of Middlesbrough in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-MDB-Subdivision
-  "the unitary authority of Middlesbrough in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MDB-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Middlesbrough@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Middlesbrough"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Middlesbrough@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Middlesbrough"},
    :skos/definition
    "the unitary authority of Middlesbrough in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4506,31 +4509,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-MDW-RegionIdentifier
-  "subdivision code for the unitary authority of Medway in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MDW-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-MDW-Subdivision,
    :lcc-lr/hasTag "GB-MDW",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-MDW-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-MDW",
    :skos/definition
    "subdivision code for the unitary authority of Medway in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-MDW-Subdivision
-  "the unitary authority of Medway in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MDW-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Medway@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Medway"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Medway@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Medway"},
    :skos/definition
    "the unitary authority of Medway in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4540,31 +4543,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-MEA-RegionIdentifier
-  "subdivision code for the district of Mid and East Antrim in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MEA-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-MEA-Subdivision,
    :lcc-lr/hasTag "GB-MEA",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-MEA-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-MEA",
    :skos/definition
    "subdivision code for the district of Mid and East Antrim in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-MEA-Subdivision
-  "the district of Mid and East Antrim in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MEA-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Mid and East Antrim@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Mid and East Antrim"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-283-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-NIR-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Mid and East Antrim@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Mid and East Antrim"},
    :skos/definition
    "the district of Mid and East Antrim in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4574,31 +4577,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-MIK-RegionIdentifier
-  "subdivision code for the unitary authority of Milton Keynes in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MIK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-MIK-Subdivision,
    :lcc-lr/hasTag "GB-MIK",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-MIK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-MIK",
    :skos/definition
    "subdivision code for the unitary authority of Milton Keynes in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-MIK-Subdivision
-  "the unitary authority of Milton Keynes in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MIK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Milton Keynes@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Milton Keynes"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Milton Keynes@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Milton Keynes"},
    :skos/definition
    "the unitary authority of Milton Keynes in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4608,31 +4611,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-MLN-RegionIdentifier
-  "subdivision code for the council area of Midlothian in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MLN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-MLN-Subdivision,
    :lcc-lr/hasTag "GB-MLN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-MLN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-MLN",
    :skos/definition
    "subdivision code for the council area of Midlothian in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-MLN-Subdivision
-  "the council area of Midlothian in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MLN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Midlothian@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Midlothian"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Midlothian@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Midlothian"},
    :skos/definition
    "the council area of Midlothian in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4642,32 +4645,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-MON-RegionIdentifier
-  "subdivision code for the unitary authority of Monmouthshire [Sir Fynwy GB-FYN] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MON-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-MON-Subdivision,
    :lcc-lr/hasTag "GB-MON",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-MON-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-MON",
    :skos/definition
    "subdivision code for the unitary authority of Monmouthshire [Sir Fynwy GB-FYN] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-MON-Subdivision
-  "the unitary authority of Monmouthshire [Sir Fynwy GB-FYN] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MON-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Monmouthshire [Sir Fynwy GB-FYN]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value "Monmouthshire [Sir Fynwy GB-FYN]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Monmouthshire [Sir Fynwy GB-FYN]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Monmouthshire [Sir Fynwy GB-FYN]"},
    :skos/definition
    "the unitary authority of Monmouthshire [Sir Fynwy GB-FYN] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4677,31 +4679,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-MRT-RegionIdentifier
-  "subdivision code for the London borough of Merton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MRT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-MRT-Subdivision,
    :lcc-lr/hasTag "GB-MRT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-MRT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-MRT",
    :skos/definition
    "subdivision code for the London borough of Merton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-MRT-Subdivision
-  "the London borough of Merton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MRT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Merton@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Merton"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Merton@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Merton"},
    :skos/definition
    "the London borough of Merton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4711,31 +4713,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-MRY-RegionIdentifier
-  "subdivision code for the council area of Moray in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MRY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-MRY-Subdivision,
    :lcc-lr/hasTag "GB-MRY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-MRY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-MRY",
    :skos/definition
    "subdivision code for the council area of Moray in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-MRY-Subdivision
-  "the council area of Moray in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MRY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Moray@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Moray"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Moray@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Moray"},
    :skos/definition
    "the council area of Moray in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4745,32 +4747,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-MTY-RegionIdentifier
-  "subdivision code for the unitary authority of Merthyr Tydfil [Merthyr Tudful GB-MTU] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MTY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-MTY-Subdivision,
    :lcc-lr/hasTag "GB-MTY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-MTY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-MTY",
    :skos/definition
    "subdivision code for the unitary authority of Merthyr Tydfil [Merthyr Tudful GB-MTU] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-MTY-Subdivision
-  "the unitary authority of Merthyr Tydfil [Merthyr Tudful GB-MTU] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MTY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Merthyr Tydfil [Merthyr Tudful GB-MTU]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value
+                                "Merthyr Tydfil [Merthyr Tudful GB-MTU]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Merthyr Tydfil [Merthyr Tudful GB-MTU]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Merthyr Tydfil [Merthyr Tudful GB-MTU]"},
    :skos/definition
    "the unitary authority of Merthyr Tydfil [Merthyr Tudful GB-MTU] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4780,31 +4782,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-MUL-RegionIdentifier
-  "subdivision code for the district of Mid-Ulster in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MUL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-MUL-Subdivision,
    :lcc-lr/hasTag "GB-MUL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-MUL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-MUL",
    :skos/definition
    "subdivision code for the district of Mid-Ulster in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-MUL-Subdivision
-  "the district of Mid-Ulster in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-MUL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Mid-Ulster@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Mid-Ulster"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-283-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-NIR-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Mid-Ulster@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Mid-Ulster"},
    :skos/definition
    "the district of Mid-Ulster in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4814,31 +4816,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NAY-RegionIdentifier
-  "subdivision code for the council area of North Ayrshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NAY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NAY-Subdivision,
    :lcc-lr/hasTag "GB-NAY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NAY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NAY",
    :skos/definition
    "subdivision code for the council area of North Ayrshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NAY-Subdivision
-  "the council area of North Ayrshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NAY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "North Ayrshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "North Ayrshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "North Ayrshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "North Ayrshire"},
    :skos/definition
    "the council area of North Ayrshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4848,31 +4850,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NBL-RegionIdentifier
-  "subdivision code for the unitary authority of Northumberland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NBL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NBL-Subdivision,
    :lcc-lr/hasTag "GB-NBL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NBL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NBL",
    :skos/definition
    "subdivision code for the unitary authority of Northumberland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NBL-Subdivision
-  "the unitary authority of Northumberland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NBL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Northumberland@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Northumberland"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Northumberland@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Northumberland"},
    :skos/definition
    "the unitary authority of Northumberland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4882,31 +4884,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NEL-RegionIdentifier
-  "subdivision code for the unitary authority of North East Lincolnshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NEL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NEL-Subdivision,
    :lcc-lr/hasTag "GB-NEL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NEL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NEL",
    :skos/definition
    "subdivision code for the unitary authority of North East Lincolnshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NEL-Subdivision
-  "the unitary authority of North East Lincolnshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NEL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "North East Lincolnshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "North East Lincolnshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "North East Lincolnshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "North East Lincolnshire"},
    :skos/definition
    "the unitary authority of North East Lincolnshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4916,31 +4918,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NET-RegionIdentifier
-  "subdivision code for the metropolitan district of Newcastle upon Tyne in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NET-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NET-Subdivision,
    :lcc-lr/hasTag "GB-NET",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NET-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NET",
    :skos/definition
    "subdivision code for the metropolitan district of Newcastle upon Tyne in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NET-Subdivision
-  "the metropolitan district of Newcastle upon Tyne in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NET-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Newcastle upon Tyne@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Newcastle upon Tyne"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Newcastle upon Tyne@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Newcastle upon Tyne"},
    :skos/definition
    "the metropolitan district of Newcastle upon Tyne in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4950,31 +4952,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NFK-RegionIdentifier
-  "subdivision code for the two-tier county of Norfolk in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NFK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NFK-Subdivision,
    :lcc-lr/hasTag "GB-NFK",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NFK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NFK",
    :skos/definition
    "subdivision code for the two-tier county of Norfolk in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NFK-Subdivision
-  "the two-tier county of Norfolk in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NFK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Norfolk@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Norfolk"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Norfolk@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Norfolk"},
    :skos/definition
    "the two-tier county of Norfolk in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -4984,31 +4986,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NGM-RegionIdentifier
-  "subdivision code for the unitary authority of Nottingham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NGM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NGM-Subdivision,
    :lcc-lr/hasTag "GB-NGM",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NGM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NGM",
    :skos/definition
    "subdivision code for the unitary authority of Nottingham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NGM-Subdivision
-  "the unitary authority of Nottingham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NGM-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Nottingham@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Nottingham"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Nottingham@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Nottingham"},
    :skos/definition
    "the unitary authority of Nottingham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5018,32 +5020,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NIR-RegionIdentifier
-  "subdivision code for the province of Northern Ireland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NIR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NIR-Subdivision,
    :lcc-lr/hasTag "GB-NIR",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NIR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NIR",
    :skos/definition
    "subdivision code for the province of Northern Ireland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NIR-Subdivision
-  "the province of Northern Ireland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NIR-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Northern Ireland@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Northern Ireland"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-492-RegionKind,
    :lcc-cr/isSubregionOf
    :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Northern Ireland@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Northern Ireland"},
    :skos/definition
    "the province of Northern Ireland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5053,31 +5055,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NLK-RegionIdentifier
-  "subdivision code for the council area of North Lanarkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NLK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NLK-Subdivision,
    :lcc-lr/hasTag "GB-NLK",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NLK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NLK",
    :skos/definition
    "subdivision code for the council area of North Lanarkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NLK-Subdivision
-  "the council area of North Lanarkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NLK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "North Lanarkshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "North Lanarkshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "North Lanarkshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "North Lanarkshire"},
    :skos/definition
    "the council area of North Lanarkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5087,31 +5089,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NLN-RegionIdentifier
-  "subdivision code for the unitary authority of North Lincolnshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NLN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NLN-Subdivision,
    :lcc-lr/hasTag "GB-NLN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NLN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NLN",
    :skos/definition
    "subdivision code for the unitary authority of North Lincolnshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NLN-Subdivision
-  "the unitary authority of North Lincolnshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NLN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "North Lincolnshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "North Lincolnshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "North Lincolnshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "North Lincolnshire"},
    :skos/definition
    "the unitary authority of North Lincolnshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5121,31 +5123,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NMD-RegionIdentifier
-  "subdivision code for the district of Newry, Mourne and Down in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NMD-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NMD-Subdivision,
    :lcc-lr/hasTag "GB-NMD",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NMD-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NMD",
    :skos/definition
    "subdivision code for the district of Newry, Mourne and Down in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NMD-Subdivision
-  "the district of Newry, Mourne and Down in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NMD-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Newry, Mourne and Down@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Newry, Mourne and Down"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-283-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-NIR-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Newry, Mourne and Down@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Newry, Mourne and Down"},
    :skos/definition
    "the district of Newry, Mourne and Down in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5155,31 +5157,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NSM-RegionIdentifier
-  "subdivision code for the unitary authority of North Somerset in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NSM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NSM-Subdivision,
    :lcc-lr/hasTag "GB-NSM",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NSM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NSM",
    :skos/definition
    "subdivision code for the unitary authority of North Somerset in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NSM-Subdivision
-  "the unitary authority of North Somerset in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NSM-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "North Somerset@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "North Somerset"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "North Somerset@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "North Somerset"},
    :skos/definition
    "the unitary authority of North Somerset in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5189,31 +5191,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NTH-RegionIdentifier
-  "subdivision code for the two-tier county of Northamptonshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NTH-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NTH-Subdivision,
    :lcc-lr/hasTag "GB-NTH",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NTH-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NTH",
    :skos/definition
    "subdivision code for the two-tier county of Northamptonshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NTH-Subdivision
-  "the two-tier county of Northamptonshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NTH-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Northamptonshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Northamptonshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Northamptonshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Northamptonshire"},
    :skos/definition
    "the two-tier county of Northamptonshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5223,33 +5225,33 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NTL-RegionIdentifier
-  "subdivision code for the unitary authority of Neath Port Talbot [Castell-nedd Port Talbot GB-CTL] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NTL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NTL-Subdivision,
    :lcc-lr/hasTag "GB-NTL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NTL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NTL",
    :skos/definition
    "subdivision code for the unitary authority of Neath Port Talbot [Castell-nedd Port Talbot GB-CTL] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NTL-Subdivision
-  "the unitary authority of Neath Port Talbot [Castell-nedd Port Talbot GB-CTL] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NTL-Subdivision,
    :lcc-cr/hasEnglishShortName
-   #xsd/langString "Neath Port Talbot [Castell-nedd Port Talbot GB-CTL]@en",
+   {:rdf/language "en",
+    :rdf/value    "Neath Port Talbot [Castell-nedd Port Talbot GB-CTL]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString
-                "Neath Port Talbot [Castell-nedd Port Talbot GB-CTL]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value
+                "Neath Port Talbot [Castell-nedd Port Talbot GB-CTL]"},
    :skos/definition
    "the unitary authority of Neath Port Talbot [Castell-nedd Port Talbot GB-CTL] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5259,31 +5261,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NTT-RegionIdentifier
-  "subdivision code for the two-tier county of Nottinghamshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NTT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NTT-Subdivision,
    :lcc-lr/hasTag "GB-NTT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NTT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NTT",
    :skos/definition
    "subdivision code for the two-tier county of Nottinghamshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NTT-Subdivision
-  "the two-tier county of Nottinghamshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NTT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Nottinghamshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Nottinghamshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Nottinghamshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Nottinghamshire"},
    :skos/definition
    "the two-tier county of Nottinghamshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5293,31 +5295,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NTY-RegionIdentifier
-  "subdivision code for the metropolitan district of North Tyneside in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NTY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NTY-Subdivision,
    :lcc-lr/hasTag "GB-NTY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NTY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NTY",
    :skos/definition
    "subdivision code for the metropolitan district of North Tyneside in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NTY-Subdivision
-  "the metropolitan district of North Tyneside in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NTY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "North Tyneside@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "North Tyneside"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "North Tyneside@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "North Tyneside"},
    :skos/definition
    "the metropolitan district of North Tyneside in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5327,31 +5329,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NWM-RegionIdentifier
-  "subdivision code for the London borough of Newham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NWM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NWM-Subdivision,
    :lcc-lr/hasTag "GB-NWM",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NWM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NWM",
    :skos/definition
    "subdivision code for the London borough of Newham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NWM-Subdivision
-  "the London borough of Newham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NWM-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Newham@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Newham"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Newham@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Newham"},
    :skos/definition
    "the London borough of Newham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5361,31 +5363,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NWP-RegionIdentifier
-  "subdivision code for the unitary authority of Newport [Casnewydd GB-CNW] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NWP-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NWP-Subdivision,
    :lcc-lr/hasTag "GB-NWP",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NWP-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NWP",
    :skos/definition
    "subdivision code for the unitary authority of Newport [Casnewydd GB-CNW] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NWP-Subdivision
-  "the unitary authority of Newport [Casnewydd GB-CNW] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NWP-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Newport [Casnewydd GB-CNW]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Newport [Casnewydd GB-CNW]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Newport [Casnewydd GB-CNW]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Newport [Casnewydd GB-CNW]"},
    :skos/definition
    "the unitary authority of Newport [Casnewydd GB-CNW] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5395,31 +5397,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-NYK-RegionIdentifier
-  "subdivision code for the two-tier county of North Yorkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NYK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-NYK-Subdivision,
    :lcc-lr/hasTag "GB-NYK",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-NYK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-NYK",
    :skos/definition
    "subdivision code for the two-tier county of North Yorkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-NYK-Subdivision
-  "the two-tier county of North Yorkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-NYK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "North Yorkshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "North Yorkshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "North Yorkshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "North Yorkshire"},
    :skos/definition
    "the two-tier county of North Yorkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5429,31 +5431,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-OLD-RegionIdentifier
-  "subdivision code for the metropolitan district of Oldham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-OLD-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-OLD-Subdivision,
    :lcc-lr/hasTag "GB-OLD",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-OLD-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-OLD",
    :skos/definition
    "subdivision code for the metropolitan district of Oldham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-OLD-Subdivision
-  "the metropolitan district of Oldham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-OLD-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Oldham@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Oldham"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Oldham@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Oldham"},
    :skos/definition
    "the metropolitan district of Oldham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5463,31 +5465,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ORK-RegionIdentifier
-  "subdivision code for the council area of Orkney Islands in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ORK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ORK-Subdivision,
    :lcc-lr/hasTag "GB-ORK",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ORK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ORK",
    :skos/definition
    "subdivision code for the council area of Orkney Islands in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ORK-Subdivision
-  "the council area of Orkney Islands in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ORK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Orkney Islands@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Orkney Islands"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Orkney Islands@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Orkney Islands"},
    :skos/definition
    "the council area of Orkney Islands in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5497,31 +5499,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-OXF-RegionIdentifier
-  "subdivision code for the two-tier county of Oxfordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-OXF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-OXF-Subdivision,
    :lcc-lr/hasTag "GB-OXF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-OXF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-OXF",
    :skos/definition
    "subdivision code for the two-tier county of Oxfordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-OXF-Subdivision
-  "the two-tier county of Oxfordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-OXF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Oxfordshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Oxfordshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Oxfordshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Oxfordshire"},
    :skos/definition
    "the two-tier county of Oxfordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5531,32 +5533,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-PEM-RegionIdentifier
-  "subdivision code for the unitary authority of Pembrokeshire [Sir Benfro GB-BNF] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-PEM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-PEM-Subdivision,
    :lcc-lr/hasTag "GB-PEM",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-PEM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-PEM",
    :skos/definition
    "subdivision code for the unitary authority of Pembrokeshire [Sir Benfro GB-BNF] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-PEM-Subdivision
-  "the unitary authority of Pembrokeshire [Sir Benfro GB-BNF] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-PEM-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Pembrokeshire [Sir Benfro GB-BNF]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value "Pembrokeshire [Sir Benfro GB-BNF]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Pembrokeshire [Sir Benfro GB-BNF]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Pembrokeshire [Sir Benfro GB-BNF]"},
    :skos/definition
    "the unitary authority of Pembrokeshire [Sir Benfro GB-BNF] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5566,31 +5567,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-PKN-RegionIdentifier
-  "subdivision code for the council area of Perth and Kinross in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-PKN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-PKN-Subdivision,
    :lcc-lr/hasTag "GB-PKN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-PKN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-PKN",
    :skos/definition
    "subdivision code for the council area of Perth and Kinross in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-PKN-Subdivision
-  "the council area of Perth and Kinross in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-PKN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Perth and Kinross@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Perth and Kinross"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Perth and Kinross@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Perth and Kinross"},
    :skos/definition
    "the council area of Perth and Kinross in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5600,31 +5601,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-PLY-RegionIdentifier
-  "subdivision code for the unitary authority of Plymouth in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-PLY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-PLY-Subdivision,
    :lcc-lr/hasTag "GB-PLY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-PLY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-PLY",
    :skos/definition
    "subdivision code for the unitary authority of Plymouth in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-PLY-Subdivision
-  "the unitary authority of Plymouth in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-PLY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Plymouth@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Plymouth"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Plymouth@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Plymouth"},
    :skos/definition
    "the unitary authority of Plymouth in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5634,31 +5635,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-POR-RegionIdentifier
-  "subdivision code for the unitary authority of Portsmouth in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-POR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-POR-Subdivision,
    :lcc-lr/hasTag "GB-POR",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-POR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-POR",
    :skos/definition
    "subdivision code for the unitary authority of Portsmouth in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-POR-Subdivision
-  "the unitary authority of Portsmouth in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-POR-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Portsmouth@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Portsmouth"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Portsmouth@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Portsmouth"},
    :skos/definition
    "the unitary authority of Portsmouth in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5668,31 +5669,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-POW-RegionIdentifier
-  "subdivision code for the unitary authority of Powys in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-POW-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-POW-Subdivision,
    :lcc-lr/hasTag "GB-POW",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-POW-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-POW",
    :skos/definition
    "subdivision code for the unitary authority of Powys in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-POW-Subdivision
-  "the unitary authority of Powys in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-POW-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Powys@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Powys"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Powys@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Powys"},
    :skos/definition
    "the unitary authority of Powys in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5702,31 +5703,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-PTE-RegionIdentifier
-  "subdivision code for the unitary authority of Peterborough in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-PTE-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-PTE-Subdivision,
    :lcc-lr/hasTag "GB-PTE",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-PTE-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-PTE",
    :skos/definition
    "subdivision code for the unitary authority of Peterborough in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-PTE-Subdivision
-  "the unitary authority of Peterborough in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-PTE-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Peterborough@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Peterborough"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Peterborough@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Peterborough"},
    :skos/definition
    "the unitary authority of Peterborough in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5736,31 +5737,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-RCC-RegionIdentifier
-  "subdivision code for the unitary authority of Redcar and Cleveland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RCC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-RCC-Subdivision,
    :lcc-lr/hasTag "GB-RCC",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-RCC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-RCC",
    :skos/definition
    "subdivision code for the unitary authority of Redcar and Cleveland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-RCC-Subdivision
-  "the unitary authority of Redcar and Cleveland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RCC-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Redcar and Cleveland@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Redcar and Cleveland"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Redcar and Cleveland@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Redcar and Cleveland"},
    :skos/definition
    "the unitary authority of Redcar and Cleveland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5770,31 +5771,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-RCH-RegionIdentifier
-  "subdivision code for the metropolitan district of Rochdale in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RCH-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-RCH-Subdivision,
    :lcc-lr/hasTag "GB-RCH",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-RCH-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-RCH",
    :skos/definition
    "subdivision code for the metropolitan district of Rochdale in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-RCH-Subdivision
-  "the metropolitan district of Rochdale in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RCH-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Rochdale@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Rochdale"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Rochdale@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Rochdale"},
    :skos/definition
    "the metropolitan district of Rochdale in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5804,32 +5805,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-RCT-RegionIdentifier
-  "subdivision code for the unitary authority of Rhondda Cynon Taff [Rhondda CynonTaf] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RCT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-RCT-Subdivision,
    :lcc-lr/hasTag "GB-RCT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-RCT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-RCT",
    :skos/definition
    "subdivision code for the unitary authority of Rhondda Cynon Taff [Rhondda CynonTaf] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-RCT-Subdivision
-  "the unitary authority of Rhondda Cynon Taff [Rhondda CynonTaf] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RCT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString
-                                "Rhondda Cynon Taff [Rhondda CynonTaf]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value
+                                "Rhondda Cynon Taff [Rhondda CynonTaf]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Rhondda Cynon Taff [Rhondda CynonTaf]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Rhondda Cynon Taff [Rhondda CynonTaf]"},
    :skos/definition
    "the unitary authority of Rhondda Cynon Taff [Rhondda CynonTaf] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5839,31 +5840,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-RDB-RegionIdentifier
-  "subdivision code for the London borough of Redbridge in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RDB-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-RDB-Subdivision,
    :lcc-lr/hasTag "GB-RDB",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-RDB-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-RDB",
    :skos/definition
    "subdivision code for the London borough of Redbridge in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-RDB-Subdivision
-  "the London borough of Redbridge in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RDB-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Redbridge@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Redbridge"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Redbridge@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Redbridge"},
    :skos/definition
    "the London borough of Redbridge in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5873,31 +5874,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-RDG-RegionIdentifier
-  "subdivision code for the unitary authority of Reading in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RDG-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-RDG-Subdivision,
    :lcc-lr/hasTag "GB-RDG",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-RDG-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-RDG",
    :skos/definition
    "subdivision code for the unitary authority of Reading in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-RDG-Subdivision
-  "the unitary authority of Reading in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RDG-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Reading@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Reading"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Reading@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Reading"},
    :skos/definition
    "the unitary authority of Reading in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5907,31 +5908,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-RFW-RegionIdentifier
-  "subdivision code for the council area of Renfrewshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RFW-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-RFW-Subdivision,
    :lcc-lr/hasTag "GB-RFW",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-RFW-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-RFW",
    :skos/definition
    "subdivision code for the council area of Renfrewshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-RFW-Subdivision
-  "the council area of Renfrewshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RFW-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Renfrewshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Renfrewshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Renfrewshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Renfrewshire"},
    :skos/definition
    "the council area of Renfrewshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5941,31 +5942,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-RIC-RegionIdentifier
-  "subdivision code for the London borough of Richmond upon Thames in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RIC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-RIC-Subdivision,
    :lcc-lr/hasTag "GB-RIC",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-RIC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-RIC",
    :skos/definition
    "subdivision code for the London borough of Richmond upon Thames in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-RIC-Subdivision
-  "the London borough of Richmond upon Thames in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RIC-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Richmond upon Thames@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Richmond upon Thames"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Richmond upon Thames@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Richmond upon Thames"},
    :skos/definition
    "the London borough of Richmond upon Thames in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -5975,31 +5976,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ROT-RegionIdentifier
-  "subdivision code for the metropolitan district of Rotherham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ROT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ROT-Subdivision,
    :lcc-lr/hasTag "GB-ROT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ROT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ROT",
    :skos/definition
    "subdivision code for the metropolitan district of Rotherham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ROT-Subdivision
-  "the metropolitan district of Rotherham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ROT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Rotherham@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Rotherham"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Rotherham@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Rotherham"},
    :skos/definition
    "the metropolitan district of Rotherham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6009,31 +6010,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-RUT-RegionIdentifier
-  "subdivision code for the unitary authority of Rutland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RUT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-RUT-Subdivision,
    :lcc-lr/hasTag "GB-RUT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-RUT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-RUT",
    :skos/definition
    "subdivision code for the unitary authority of Rutland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-RUT-Subdivision
-  "the unitary authority of Rutland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-RUT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Rutland@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Rutland"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Rutland@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Rutland"},
    :skos/definition
    "the unitary authority of Rutland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6043,31 +6044,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SAW-RegionIdentifier
-  "subdivision code for the metropolitan district of Sandwell in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SAW-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SAW-Subdivision,
    :lcc-lr/hasTag "GB-SAW",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SAW-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SAW",
    :skos/definition
    "subdivision code for the metropolitan district of Sandwell in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SAW-Subdivision
-  "the metropolitan district of Sandwell in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SAW-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Sandwell@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Sandwell"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Sandwell@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Sandwell"},
    :skos/definition
    "the metropolitan district of Sandwell in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6077,31 +6078,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SAY-RegionIdentifier
-  "subdivision code for the council area of South Ayrshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SAY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SAY-Subdivision,
    :lcc-lr/hasTag "GB-SAY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SAY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SAY",
    :skos/definition
    "subdivision code for the council area of South Ayrshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SAY-Subdivision
-  "the council area of South Ayrshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SAY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "South Ayrshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "South Ayrshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "South Ayrshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "South Ayrshire"},
    :skos/definition
    "the council area of South Ayrshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6111,31 +6112,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SCB-RegionIdentifier
-  "subdivision code for the council area of Scottish Borders in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SCB-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SCB-Subdivision,
    :lcc-lr/hasTag "GB-SCB",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SCB-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SCB",
    :skos/definition
    "subdivision code for the council area of Scottish Borders in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SCB-Subdivision
-  "the council area of Scottish Borders in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SCB-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Scottish Borders@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Scottish Borders"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Scottish Borders@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Scottish Borders"},
    :skos/definition
    "the council area of Scottish Borders in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6145,32 +6146,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SCT-RegionIdentifier
-  "subdivision code for the country of Scotland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SCT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SCT-Subdivision,
    :lcc-lr/hasTag "GB-SCT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SCT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SCT",
    :skos/definition
    "subdivision code for the country of Scotland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SCT-Subdivision
-  "the country of Scotland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Scotland@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Scotland"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-491-RegionKind,
    :lcc-cr/isSubregionOf
    :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Scotland@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Scotland"},
    :skos/definition
    "the country of Scotland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6180,31 +6181,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SFK-RegionIdentifier
-  "subdivision code for the two-tier county of Suffolk in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SFK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SFK-Subdivision,
    :lcc-lr/hasTag "GB-SFK",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SFK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SFK",
    :skos/definition
    "subdivision code for the two-tier county of Suffolk in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SFK-Subdivision
-  "the two-tier county of Suffolk in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SFK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Suffolk@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Suffolk"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Suffolk@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Suffolk"},
    :skos/definition
    "the two-tier county of Suffolk in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6214,31 +6215,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SFT-RegionIdentifier
-  "subdivision code for the metropolitan district of Sefton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SFT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SFT-Subdivision,
    :lcc-lr/hasTag "GB-SFT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SFT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SFT",
    :skos/definition
    "subdivision code for the metropolitan district of Sefton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SFT-Subdivision
-  "the metropolitan district of Sefton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SFT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Sefton@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Sefton"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Sefton@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Sefton"},
    :skos/definition
    "the metropolitan district of Sefton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6248,31 +6249,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SGC-RegionIdentifier
-  "subdivision code for the unitary authority of South Gloucestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SGC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SGC-Subdivision,
    :lcc-lr/hasTag "GB-SGC",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SGC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SGC",
    :skos/definition
    "subdivision code for the unitary authority of South Gloucestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SGC-Subdivision
-  "the unitary authority of South Gloucestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SGC-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "South Gloucestershire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "South Gloucestershire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "South Gloucestershire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "South Gloucestershire"},
    :skos/definition
    "the unitary authority of South Gloucestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6282,31 +6283,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SHF-RegionIdentifier
-  "subdivision code for the metropolitan district of Sheffield in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SHF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SHF-Subdivision,
    :lcc-lr/hasTag "GB-SHF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SHF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SHF",
    :skos/definition
    "subdivision code for the metropolitan district of Sheffield in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SHF-Subdivision
-  "the metropolitan district of Sheffield in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SHF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Sheffield@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Sheffield"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Sheffield@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Sheffield"},
    :skos/definition
    "the metropolitan district of Sheffield in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6316,31 +6317,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SHN-RegionIdentifier
-  "subdivision code for the metropolitan district of St. Helens in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SHN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SHN-Subdivision,
    :lcc-lr/hasTag "GB-SHN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SHN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SHN",
    :skos/definition
    "subdivision code for the metropolitan district of St. Helens in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SHN-Subdivision
-  "the metropolitan district of St. Helens in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SHN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "St. Helens@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "St. Helens"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "St. Helens@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "St. Helens"},
    :skos/definition
    "the metropolitan district of St. Helens in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6350,31 +6351,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SHR-RegionIdentifier
-  "subdivision code for the unitary authority of Shropshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SHR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SHR-Subdivision,
    :lcc-lr/hasTag "GB-SHR",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SHR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SHR",
    :skos/definition
    "subdivision code for the unitary authority of Shropshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SHR-Subdivision
-  "the unitary authority of Shropshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SHR-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Shropshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Shropshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Shropshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Shropshire"},
    :skos/definition
    "the unitary authority of Shropshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6384,31 +6385,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SKP-RegionIdentifier
-  "subdivision code for the metropolitan district of Stockport in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SKP-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SKP-Subdivision,
    :lcc-lr/hasTag "GB-SKP",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SKP-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SKP",
    :skos/definition
    "subdivision code for the metropolitan district of Stockport in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SKP-Subdivision
-  "the metropolitan district of Stockport in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SKP-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Stockport@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Stockport"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Stockport@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Stockport"},
    :skos/definition
    "the metropolitan district of Stockport in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6418,31 +6419,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SLF-RegionIdentifier
-  "subdivision code for the metropolitan district of Salford in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SLF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SLF-Subdivision,
    :lcc-lr/hasTag "GB-SLF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SLF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SLF",
    :skos/definition
    "subdivision code for the metropolitan district of Salford in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SLF-Subdivision
-  "the metropolitan district of Salford in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SLF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Salford@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Salford"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Salford@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Salford"},
    :skos/definition
    "the metropolitan district of Salford in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6452,31 +6453,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SLG-RegionIdentifier
-  "subdivision code for the unitary authority of Slough in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SLG-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SLG-Subdivision,
    :lcc-lr/hasTag "GB-SLG",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SLG-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SLG",
    :skos/definition
    "subdivision code for the unitary authority of Slough in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SLG-Subdivision
-  "the unitary authority of Slough in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SLG-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Slough@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Slough"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Slough@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Slough"},
    :skos/definition
    "the unitary authority of Slough in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6486,31 +6487,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SLK-RegionIdentifier
-  "subdivision code for the council area of South Lanarkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SLK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SLK-Subdivision,
    :lcc-lr/hasTag "GB-SLK",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SLK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SLK",
    :skos/definition
    "subdivision code for the council area of South Lanarkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SLK-Subdivision
-  "the council area of South Lanarkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SLK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "South Lanarkshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "South Lanarkshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "South Lanarkshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "South Lanarkshire"},
    :skos/definition
    "the council area of South Lanarkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6520,31 +6521,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SND-RegionIdentifier
-  "subdivision code for the metropolitan district of Sunderland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SND-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SND-Subdivision,
    :lcc-lr/hasTag "GB-SND",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SND-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SND",
    :skos/definition
    "subdivision code for the metropolitan district of Sunderland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SND-Subdivision
-  "the metropolitan district of Sunderland in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SND-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Sunderland@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Sunderland"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Sunderland@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Sunderland"},
    :skos/definition
    "the metropolitan district of Sunderland in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6554,31 +6555,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SOL-RegionIdentifier
-  "subdivision code for the metropolitan district of Solihull in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SOL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SOL-Subdivision,
    :lcc-lr/hasTag "GB-SOL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SOL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SOL",
    :skos/definition
    "subdivision code for the metropolitan district of Solihull in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SOL-Subdivision
-  "the metropolitan district of Solihull in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SOL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Solihull@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Solihull"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Solihull@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Solihull"},
    :skos/definition
    "the metropolitan district of Solihull in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6588,31 +6589,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SOM-RegionIdentifier
-  "subdivision code for the two-tier county of Somerset in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SOM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SOM-Subdivision,
    :lcc-lr/hasTag "GB-SOM",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SOM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SOM",
    :skos/definition
    "subdivision code for the two-tier county of Somerset in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SOM-Subdivision
-  "the two-tier county of Somerset in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SOM-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Somerset@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Somerset"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Somerset@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Somerset"},
    :skos/definition
    "the two-tier county of Somerset in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6622,31 +6623,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SOS-RegionIdentifier
-  "subdivision code for the unitary authority of Southend-on-Sea in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SOS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SOS-Subdivision,
    :lcc-lr/hasTag "GB-SOS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SOS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SOS",
    :skos/definition
    "subdivision code for the unitary authority of Southend-on-Sea in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SOS-Subdivision
-  "the unitary authority of Southend-on-Sea in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SOS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Southend-on-Sea@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Southend-on-Sea"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Southend-on-Sea@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Southend-on-Sea"},
    :skos/definition
    "the unitary authority of Southend-on-Sea in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6656,31 +6657,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SRY-RegionIdentifier
-  "subdivision code for the two-tier county of Surrey in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SRY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SRY-Subdivision,
    :lcc-lr/hasTag "GB-SRY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SRY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SRY",
    :skos/definition
    "subdivision code for the two-tier county of Surrey in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SRY-Subdivision
-  "the two-tier county of Surrey in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SRY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Surrey@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Surrey"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Surrey@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Surrey"},
    :skos/definition
    "the two-tier county of Surrey in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6690,31 +6691,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-STE-RegionIdentifier
-  "subdivision code for the unitary authority of Stoke-on-Trent in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STE-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-STE-Subdivision,
    :lcc-lr/hasTag "GB-STE",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-STE-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-STE",
    :skos/definition
    "subdivision code for the unitary authority of Stoke-on-Trent in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-STE-Subdivision
-  "the unitary authority of Stoke-on-Trent in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STE-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Stoke-on-Trent@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Stoke-on-Trent"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Stoke-on-Trent@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Stoke-on-Trent"},
    :skos/definition
    "the unitary authority of Stoke-on-Trent in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6724,31 +6725,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-STG-RegionIdentifier
-  "subdivision code for the council area of Stirling in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STG-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-STG-Subdivision,
    :lcc-lr/hasTag "GB-STG",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-STG-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-STG",
    :skos/definition
    "subdivision code for the council area of Stirling in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-STG-Subdivision
-  "the council area of Stirling in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STG-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Stirling@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Stirling"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Stirling@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Stirling"},
    :skos/definition
    "the council area of Stirling in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6758,31 +6759,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-STH-RegionIdentifier
-  "subdivision code for the unitary authority of Southampton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STH-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-STH-Subdivision,
    :lcc-lr/hasTag "GB-STH",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-STH-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-STH",
    :skos/definition
    "subdivision code for the unitary authority of Southampton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-STH-Subdivision
-  "the unitary authority of Southampton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STH-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Southampton@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Southampton"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Southampton@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Southampton"},
    :skos/definition
    "the unitary authority of Southampton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6792,31 +6793,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-STN-RegionIdentifier
-  "subdivision code for the London borough of Sutton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-STN-Subdivision,
    :lcc-lr/hasTag "GB-STN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-STN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-STN",
    :skos/definition
    "subdivision code for the London borough of Sutton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-STN-Subdivision
-  "the London borough of Sutton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Sutton@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Sutton"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Sutton@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Sutton"},
    :skos/definition
    "the London borough of Sutton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6826,31 +6827,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-STS-RegionIdentifier
-  "subdivision code for the two-tier county of Staffordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-STS-Subdivision,
    :lcc-lr/hasTag "GB-STS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-STS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-STS",
    :skos/definition
    "subdivision code for the two-tier county of Staffordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-STS-Subdivision
-  "the two-tier county of Staffordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Staffordshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Staffordshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Staffordshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Staffordshire"},
    :skos/definition
    "the two-tier county of Staffordshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6860,31 +6861,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-STT-RegionIdentifier
-  "subdivision code for the unitary authority of Stockton-on-Tees in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-STT-Subdivision,
    :lcc-lr/hasTag "GB-STT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-STT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-STT",
    :skos/definition
    "subdivision code for the unitary authority of Stockton-on-Tees in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-STT-Subdivision
-  "the unitary authority of Stockton-on-Tees in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Stockton-on-Tees@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Stockton-on-Tees"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Stockton-on-Tees@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Stockton-on-Tees"},
    :skos/definition
    "the unitary authority of Stockton-on-Tees in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6894,31 +6895,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-STY-RegionIdentifier
-  "subdivision code for the metropolitan district of South Tyneside in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-STY-Subdivision,
    :lcc-lr/hasTag "GB-STY",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-STY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-STY",
    :skos/definition
    "subdivision code for the metropolitan district of South Tyneside in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-STY-Subdivision
-  "the metropolitan district of South Tyneside in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-STY-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "South Tyneside@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "South Tyneside"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "South Tyneside@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "South Tyneside"},
    :skos/definition
    "the metropolitan district of South Tyneside in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6928,31 +6929,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SWA-RegionIdentifier
-  "subdivision code for the unitary authority of Swansea [Abertawe GB-ATA] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SWA-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SWA-Subdivision,
    :lcc-lr/hasTag "GB-SWA",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SWA-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SWA",
    :skos/definition
    "subdivision code for the unitary authority of Swansea [Abertawe GB-ATA] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SWA-Subdivision
-  "the unitary authority of Swansea [Abertawe GB-ATA] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SWA-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Swansea [Abertawe GB-ATA]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Swansea [Abertawe GB-ATA]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Swansea [Abertawe GB-ATA]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Swansea [Abertawe GB-ATA]"},
    :skos/definition
    "the unitary authority of Swansea [Abertawe GB-ATA] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6962,31 +6963,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SWD-RegionIdentifier
-  "subdivision code for the unitary authority of Swindon in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SWD-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SWD-Subdivision,
    :lcc-lr/hasTag "GB-SWD",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SWD-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SWD",
    :skos/definition
    "subdivision code for the unitary authority of Swindon in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SWD-Subdivision
-  "the unitary authority of Swindon in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SWD-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Swindon@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Swindon"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Swindon@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Swindon"},
    :skos/definition
    "the unitary authority of Swindon in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -6996,31 +6997,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-SWK-RegionIdentifier
-  "subdivision code for the London borough of Southwark in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SWK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-SWK-Subdivision,
    :lcc-lr/hasTag "GB-SWK",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-SWK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-SWK",
    :skos/definition
    "subdivision code for the London borough of Southwark in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-SWK-Subdivision
-  "the London borough of Southwark in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-SWK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Southwark@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Southwark"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Southwark@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Southwark"},
    :skos/definition
    "the London borough of Southwark in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7030,31 +7031,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-TAM-RegionIdentifier
-  "subdivision code for the metropolitan district of Tameside in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-TAM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-TAM-Subdivision,
    :lcc-lr/hasTag "GB-TAM",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-TAM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-TAM",
    :skos/definition
    "subdivision code for the metropolitan district of Tameside in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-TAM-Subdivision
-  "the metropolitan district of Tameside in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-TAM-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Tameside@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Tameside"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Tameside@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Tameside"},
    :skos/definition
    "the metropolitan district of Tameside in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7064,31 +7065,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-TFW-RegionIdentifier
-  "subdivision code for the unitary authority of Telford and Wrekin in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-TFW-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-TFW-Subdivision,
    :lcc-lr/hasTag "GB-TFW",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-TFW-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-TFW",
    :skos/definition
    "subdivision code for the unitary authority of Telford and Wrekin in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-TFW-Subdivision
-  "the unitary authority of Telford and Wrekin in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-TFW-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Telford and Wrekin@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Telford and Wrekin"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Telford and Wrekin@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Telford and Wrekin"},
    :skos/definition
    "the unitary authority of Telford and Wrekin in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7098,31 +7099,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-THR-RegionIdentifier
-  "subdivision code for the unitary authority of Thurrock in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-THR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-THR-Subdivision,
    :lcc-lr/hasTag "GB-THR",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-THR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-THR",
    :skos/definition
    "subdivision code for the unitary authority of Thurrock in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-THR-Subdivision
-  "the unitary authority of Thurrock in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-THR-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Thurrock@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Thurrock"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Thurrock@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Thurrock"},
    :skos/definition
    "the unitary authority of Thurrock in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7132,31 +7133,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-TOB-RegionIdentifier
-  "subdivision code for the unitary authority of Torbay in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-TOB-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-TOB-Subdivision,
    :lcc-lr/hasTag "GB-TOB",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-TOB-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-TOB",
    :skos/definition
    "subdivision code for the unitary authority of Torbay in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-TOB-Subdivision
-  "the unitary authority of Torbay in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-TOB-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Torbay@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Torbay"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Torbay@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Torbay"},
    :skos/definition
    "the unitary authority of Torbay in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7166,31 +7167,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-TOF-RegionIdentifier
-  "subdivision code for the unitary authority of Torfaen [Tor-faen] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-TOF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-TOF-Subdivision,
    :lcc-lr/hasTag "GB-TOF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-TOF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-TOF",
    :skos/definition
    "subdivision code for the unitary authority of Torfaen [Tor-faen] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-TOF-Subdivision
-  "the unitary authority of Torfaen [Tor-faen] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-TOF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Torfaen [Tor-faen]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Torfaen [Tor-faen]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Torfaen [Tor-faen]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Torfaen [Tor-faen]"},
    :skos/definition
    "the unitary authority of Torfaen [Tor-faen] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7200,31 +7201,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-TRF-RegionIdentifier
-  "subdivision code for the metropolitan district of Trafford in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-TRF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-TRF-Subdivision,
    :lcc-lr/hasTag "GB-TRF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-TRF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-TRF",
    :skos/definition
    "subdivision code for the metropolitan district of Trafford in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-TRF-Subdivision
-  "the metropolitan district of Trafford in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-TRF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Trafford@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Trafford"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Trafford@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Trafford"},
    :skos/definition
    "the metropolitan district of Trafford in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7234,31 +7235,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-TWH-RegionIdentifier
-  "subdivision code for the London borough of Tower Hamlets in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-TWH-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-TWH-Subdivision,
    :lcc-lr/hasTag "GB-TWH",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-TWH-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-TWH",
    :skos/definition
    "subdivision code for the London borough of Tower Hamlets in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-TWH-Subdivision
-  "the London borough of Tower Hamlets in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-TWH-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Tower Hamlets@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Tower Hamlets"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Tower Hamlets@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Tower Hamlets"},
    :skos/definition
    "the London borough of Tower Hamlets in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7268,33 +7269,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-VGL-RegionIdentifier
-  "subdivision code for the unitary authority of Vale of Glamorgan, The [Bro Morgannwg GB-BMG] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-VGL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-VGL-Subdivision,
    :lcc-lr/hasTag "GB-VGL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-VGL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-VGL",
    :skos/definition
    "subdivision code for the unitary authority of Vale of Glamorgan, The [Bro Morgannwg GB-BMG] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-VGL-Subdivision
-  "the unitary authority of Vale of Glamorgan, The [Bro Morgannwg GB-BMG] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-VGL-Subdivision,
    :lcc-cr/hasEnglishShortName
-   #xsd/langString "Vale of Glamorgan, The [Bro Morgannwg GB-BMG]@en",
+   {:rdf/language "en",
+    :rdf/value    "Vale of Glamorgan, The [Bro Morgannwg GB-BMG]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString
-                "Vale of Glamorgan, The [Bro Morgannwg GB-BMG]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Vale of Glamorgan, The [Bro Morgannwg GB-BMG]"},
    :skos/definition
    "the unitary authority of Vale of Glamorgan, The [Bro Morgannwg GB-BMG] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7304,31 +7304,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WAR-RegionIdentifier
-  "subdivision code for the two-tier county of Warwickshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WAR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WAR-Subdivision,
    :lcc-lr/hasTag "GB-WAR",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WAR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WAR",
    :skos/definition
    "subdivision code for the two-tier county of Warwickshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WAR-Subdivision
-  "the two-tier county of Warwickshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WAR-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Warwickshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Warwickshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Warwickshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Warwickshire"},
    :skos/definition
    "the two-tier county of Warwickshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7338,31 +7338,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WBK-RegionIdentifier
-  "subdivision code for the unitary authority of West Berkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WBK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WBK-Subdivision,
    :lcc-lr/hasTag "GB-WBK",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WBK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WBK",
    :skos/definition
    "subdivision code for the unitary authority of West Berkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WBK-Subdivision
-  "the unitary authority of West Berkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WBK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "West Berkshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "West Berkshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "West Berkshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "West Berkshire"},
    :skos/definition
    "the unitary authority of West Berkshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7372,31 +7372,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WDU-RegionIdentifier
-  "subdivision code for the council area of West Dunbartonshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WDU-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WDU-Subdivision,
    :lcc-lr/hasTag "GB-WDU",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WDU-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WDU",
    :skos/definition
    "subdivision code for the council area of West Dunbartonshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WDU-Subdivision
-  "the council area of West Dunbartonshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WDU-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "West Dunbartonshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "West Dunbartonshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "West Dunbartonshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "West Dunbartonshire"},
    :skos/definition
    "the council area of West Dunbartonshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7406,31 +7406,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WFT-RegionIdentifier
-  "subdivision code for the London borough of Waltham Forest in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WFT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WFT-Subdivision,
    :lcc-lr/hasTag "GB-WFT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WFT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WFT",
    :skos/definition
    "subdivision code for the London borough of Waltham Forest in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WFT-Subdivision
-  "the London borough of Waltham Forest in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WFT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Waltham Forest@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Waltham Forest"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Waltham Forest@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Waltham Forest"},
    :skos/definition
    "the London borough of Waltham Forest in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7440,31 +7440,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WGN-RegionIdentifier
-  "subdivision code for the metropolitan district of Wigan in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WGN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WGN-Subdivision,
    :lcc-lr/hasTag "GB-WGN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WGN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WGN",
    :skos/definition
    "subdivision code for the metropolitan district of Wigan in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WGN-Subdivision
-  "the metropolitan district of Wigan in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WGN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Wigan@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Wigan"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Wigan@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Wigan"},
    :skos/definition
    "the metropolitan district of Wigan in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7474,31 +7474,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WIL-RegionIdentifier
-  "subdivision code for the unitary authority of Wiltshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WIL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WIL-Subdivision,
    :lcc-lr/hasTag "GB-WIL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WIL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WIL",
    :skos/definition
    "subdivision code for the unitary authority of Wiltshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WIL-Subdivision
-  "the unitary authority of Wiltshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WIL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Wiltshire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Wiltshire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Wiltshire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Wiltshire"},
    :skos/definition
    "the unitary authority of Wiltshire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7508,31 +7508,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WKF-RegionIdentifier
-  "subdivision code for the metropolitan district of Wakefield in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WKF-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WKF-Subdivision,
    :lcc-lr/hasTag "GB-WKF",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WKF-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WKF",
    :skos/definition
    "subdivision code for the metropolitan district of Wakefield in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WKF-Subdivision
-  "the metropolitan district of Wakefield in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WKF-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Wakefield@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Wakefield"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Wakefield@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Wakefield"},
    :skos/definition
    "the metropolitan district of Wakefield in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7542,31 +7542,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WLL-RegionIdentifier
-  "subdivision code for the metropolitan district of Walsall in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WLL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WLL-Subdivision,
    :lcc-lr/hasTag "GB-WLL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WLL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WLL",
    :skos/definition
    "subdivision code for the metropolitan district of Walsall in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WLL-Subdivision
-  "the metropolitan district of Walsall in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WLL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Walsall@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Walsall"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Walsall@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Walsall"},
    :skos/definition
    "the metropolitan district of Walsall in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7576,31 +7576,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WLN-RegionIdentifier
-  "subdivision code for the council area of West Lothian in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WLN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WLN-Subdivision,
    :lcc-lr/hasTag "GB-WLN",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WLN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WLN",
    :skos/definition
    "subdivision code for the council area of West Lothian in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WLN-Subdivision
-  "the council area of West Lothian in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WLN-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "West Lothian@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "West Lothian"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "West Lothian@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "West Lothian"},
    :skos/definition
    "the council area of West Lothian in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7610,32 +7610,32 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WLS-RegionIdentifier
-  "subdivision code for the country of Wales [Cymru GB-CYM] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WLS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WLS-Subdivision,
    :lcc-lr/hasTag "GB-WLS",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WLS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WLS",
    :skos/definition
    "subdivision code for the country of Wales [Cymru GB-CYM] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WLS-Subdivision
-  "the country of Wales [Cymru GB-CYM] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Wales [Cymru GB-CYM]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Wales [Cymru GB-CYM]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-491-RegionKind,
    :lcc-cr/isSubregionOf
    :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Wales [Cymru GB-CYM]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Wales [Cymru GB-CYM]"},
    :skos/definition
    "the country of Wales [Cymru GB-CYM] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7645,31 +7645,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WLV-RegionIdentifier
-  "subdivision code for the metropolitan district of Wolverhampton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WLV-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WLV-Subdivision,
    :lcc-lr/hasTag "GB-WLV",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WLV-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WLV",
    :skos/definition
    "subdivision code for the metropolitan district of Wolverhampton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WLV-Subdivision
-  "the metropolitan district of Wolverhampton in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WLV-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Wolverhampton@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Wolverhampton"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Wolverhampton@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Wolverhampton"},
    :skos/definition
    "the metropolitan district of Wolverhampton in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7679,31 +7679,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WND-RegionIdentifier
-  "subdivision code for the London borough of Wandsworth in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WND-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WND-Subdivision,
    :lcc-lr/hasTag "GB-WND",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WND-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WND",
    :skos/definition
    "subdivision code for the London borough of Wandsworth in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WND-Subdivision
-  "the London borough of Wandsworth in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WND-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Wandsworth@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Wandsworth"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Wandsworth@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Wandsworth"},
    :skos/definition
    "the London borough of Wandsworth in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7713,31 +7713,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WNM-RegionIdentifier
-  "subdivision code for the unitary authority of Windsor and Maidenhead in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WNM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WNM-Subdivision,
    :lcc-lr/hasTag "GB-WNM",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WNM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WNM",
    :skos/definition
    "subdivision code for the unitary authority of Windsor and Maidenhead in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WNM-Subdivision
-  "the unitary authority of Windsor and Maidenhead in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WNM-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Windsor and Maidenhead@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Windsor and Maidenhead"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Windsor and Maidenhead@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Windsor and Maidenhead"},
    :skos/definition
    "the unitary authority of Windsor and Maidenhead in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7747,31 +7747,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WOK-RegionIdentifier
-  "subdivision code for the unitary authority of Wokingham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WOK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WOK-Subdivision,
    :lcc-lr/hasTag "GB-WOK",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WOK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WOK",
    :skos/definition
    "subdivision code for the unitary authority of Wokingham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WOK-Subdivision
-  "the unitary authority of Wokingham in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WOK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Wokingham@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Wokingham"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Wokingham@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Wokingham"},
    :skos/definition
    "the unitary authority of Wokingham in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7781,31 +7781,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WOR-RegionIdentifier
-  "subdivision code for the two-tier county of Worcestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WOR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WOR-Subdivision,
    :lcc-lr/hasTag "GB-WOR",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WOR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WOR",
    :skos/definition
    "subdivision code for the two-tier county of Worcestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WOR-Subdivision
-  "the two-tier county of Worcestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WOR-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Worcestershire@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Worcestershire"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Worcestershire@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Worcestershire"},
    :skos/definition
    "the two-tier county of Worcestershire in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7815,31 +7815,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WRL-RegionIdentifier
-  "subdivision code for the metropolitan district of Wirral in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WRL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WRL-Subdivision,
    :lcc-lr/hasTag "GB-WRL",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WRL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WRL",
    :skos/definition
    "subdivision code for the metropolitan district of Wirral in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WRL-Subdivision
-  "the metropolitan district of Wirral in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WRL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Wirral@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Wirral"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-369-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Wirral@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Wirral"},
    :skos/definition
    "the metropolitan district of Wirral in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7849,31 +7849,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WRT-RegionIdentifier
-  "subdivision code for the unitary authority of Warrington in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WRT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WRT-Subdivision,
    :lcc-lr/hasTag "GB-WRT",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WRT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WRT",
    :skos/definition
    "subdivision code for the unitary authority of Warrington in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WRT-Subdivision
-  "the unitary authority of Warrington in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WRT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Warrington@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Warrington"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Warrington@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Warrington"},
    :skos/definition
    "the unitary authority of Warrington in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7883,31 +7883,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WRX-RegionIdentifier
-  "subdivision code for the unitary authority of Wrexham [Wrecsam GB-WRC] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WRX-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WRX-Subdivision,
    :lcc-lr/hasTag "GB-WRX",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WRX-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WRX",
    :skos/definition
    "subdivision code for the unitary authority of Wrexham [Wrecsam GB-WRC] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WRX-Subdivision
-  "the unitary authority of Wrexham [Wrecsam GB-WRC] in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WRX-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Wrexham [Wrecsam GB-WRC]@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Wrexham [Wrecsam GB-WRC]"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-WLS-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Wrexham [Wrecsam GB-WRC]@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Wrexham [Wrecsam GB-WRC]"},
    :skos/definition
    "the unitary authority of Wrexham [Wrecsam GB-WRC] in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7917,31 +7917,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WSM-RegionIdentifier
-  "subdivision code for the London borough of Westminster in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WSM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WSM-Subdivision,
    :lcc-lr/hasTag "GB-WSM",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WSM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WSM",
    :skos/definition
    "subdivision code for the London borough of Westminster in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WSM-Subdivision
-  "the London borough of Westminster in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WSM-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Westminster@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Westminster"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-370-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Westminster@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Westminster"},
    :skos/definition
    "the London borough of Westminster in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7951,31 +7951,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-WSX-RegionIdentifier
-  "subdivision code for the two-tier county of West Sussex in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WSX-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-WSX-Subdivision,
    :lcc-lr/hasTag "GB-WSX",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-WSX-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-WSX",
    :skos/definition
    "subdivision code for the two-tier county of West Sussex in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-WSX-Subdivision
-  "the two-tier county of West Sussex in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-WSX-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "West Sussex@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "West Sussex"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-113-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "West Sussex@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "West Sussex"},
    :skos/definition
    "the two-tier county of West Sussex in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -7985,31 +7985,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-YOR-RegionIdentifier
-  "subdivision code for the unitary authority of York in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-YOR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-YOR-Subdivision,
    :lcc-lr/hasTag "GB-YOR",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-YOR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-YOR",
    :skos/definition
    "subdivision code for the unitary authority of York in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-YOR-Subdivision
-  "the unitary authority of York in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-YOR-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "York@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "York"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-284-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-ENG-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "York@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "York"},
    :skos/definition
    "the unitary authority of York in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -8019,31 +8019,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def GB-ZET-RegionIdentifier
-  "subdivision code for the council area of Shetland Islands in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ZET-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-gb/GB-ZET-Subdivision,
    :lcc-lr/hasTag "GB-ZET",
    :lcc-lr/identifies :lcc-3166-2-gb/GB-ZET-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
    :rdfs/label "GB-ZET",
    :skos/definition
    "subdivision code for the council area of Shetland Islands in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
 (def GB-ZET-Subdivision
-  "the council area of Shetland Islands in the country of United Kingdom of Great Britain and Northern Ireland (the)"
   {:db/ident :lcc-3166-2-gb/GB-ZET-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Shetland Islands@en",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Shetland Islands"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-gb/GB-112-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-2-gb/GB-SCT-Subdivision,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
-   :rdfs/label #xsd/langString "Shetland Islands@en",
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Shetland Islands"},
    :skos/definition
    "the council area of Shetland Islands in the country of United Kingdom of Great Britain and Northern Ireland (the)"})
 
@@ -8801,3 +8801,47 @@
   {:db/ident   :lcc-3166-2-gb/York,
    :owl/sameAs :lcc-3166-2-gb/GB-YOR-Subdivision,
    :rdf/type   :owl/NamedIndividual})
+
+(def urn:uuid:1fa4cb34-f113-51d3-af86-677dd9cdb455
+  {:dcterms/issued #inst "2021-11-30T01:58:21.841-00:00",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :owl/imports
+   #{{:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
+   :owl/versionIRI
+   {:xsd/anyURI
+    "https://www.omg.org/spec/LCC/20211101/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"},
+   :rdf/type :owl/Ontology,
+   :rdfs/label
+   "ISO 3166-2 Subdivision Codes for United Kingdom of Great Britain and Northern Ireland (the) Ontology",
+   :rdfs/seeAlso #{{:xsd/anyURI
+                    "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}
+                   {:xsd/anyURI "https://www.omg.org/spec/LCC/AboutLCC/"}},
+   :sm/contentLanguage {:xsd/anyURI
+                        "https://www.w3.org/TR/owl2-quick-reference/"},
+   :sm/copyright #{"Copyright (c) 2015-2020 Adaptive Inc."
+                   "Copyright (c) 2021 agnos.ai UK Ltd."
+                   "Copyright (c) 2015-2021 Object Management Group, Inc."
+                   "Copyright (c) 2015-2017 Unisys"
+                   "Copyright (c) 2015-2021 Thematix Partners LLC"},
+   :sm/dependsOn
+   #{{:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
+   :sm/fileAbbreviation "lcc-3166-2-gb",
+   :sm/fileAbstract
+   "This ontology represents the subset of the ISO 3166 standard that includes the actual ISO 3166-2 subdivision codes for United Kingdom of Great Britain and Northern Ireland (the), with the ontology and codes for the other parts of the standard represented in models that this ontology depends on.",
+   :sm/filename "ISO3166-2-SubdivisionCodes-GB.rdf",
+   :xsd/anyURI
+   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-GB/"})

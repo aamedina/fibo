@@ -1,72 +1,86 @@
 (ns net.wikipunk.rdf.fibo-loan-ln-mod
-  "This module contains ontologies defining concepts that apply to most loans, including but not limited to applications."
-  {:cmns-av/copyright ["Copyright (c) 2018-2023 EDM Council, Inc."
-                       "Copyright (c) 2018-2023 Object Management Group, Inc."],
-   :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/LoansGeneralModule",
+  ^{:base
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/",
+    :namespaces
+    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+     "dcterms" "http://purl.org/dc/terms/",
+     "fibo-fnd-utl-av"
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+     "fibo-loan-ln-mod"
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/",
+     "owl" "http://www.w3.org/2002/07/owl#",
+     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+     "xsd" "http://www.w3.org/2001/XMLSchema#"},
+    :prefix "fibo-loan-ln-mod",
+    :source
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/LoansGeneralModule"}
+  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
+                        "Copyright (c) 2018-2023 EDM Council, Inc."},
    :dcterms/abstract
    "This module contains ontologies defining concepts that apply to most loans, including but not limited to applications.",
-   :dcterms/issued #xsd/dateTime #inst "2018-03-31T18:00:00.000-04:00",
-   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
-   :dcterms/modified #xsd/dateTime #inst "2023-02-03T18:00:00.000-05:00",
+   :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #inst "2023-02-03T18:00:00.000-00:00",
    :owl/imports
-   [{:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
-    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"},
-   :rdf/ns-prefix-map
-   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-    "dcterms" "http://purl.org/dc/terms/",
-    "fibo-fnd-utl-av"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "fibo-loan-ln-mod"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/",
-    "owl" "http://www.w3.org/2002/07/owl#",
-    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdfa/prefix "fibo-loan-ln-mod",
-   :rdfa/uri
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/",
-   :rdfs/label "Metadata for the EDMC-FIBO Loans (LOAN) Loans General Module"})
+   :rdfs/label "Metadata for the EDMC-FIBO Loans (LOAN) Loans General Module",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"})
 
 (def LoansGeneralModule
-  "This module contains ontologies defining concepts that apply to most loans, including but not limited to applications."
-  {:cmns-av/copyright ["Copyright (c) 2018-2023 Object Management Group, Inc."
-                       "Copyright (c) 2018-2023 EDM Council, Inc."],
+  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
+                        "Copyright (c) 2018-2023 EDM Council, Inc."},
    :db/ident :fibo-loan-ln-mod/LoansGeneralModule,
    :dcterms/abstract
    "This module contains ontologies defining concepts that apply to most loans, including but not limited to applications.",
    :dcterms/contributor
-   ["Wells Fargo"
-    "agnos.ai U.K. Ltd"
-    "Federated Knowledge LLC"
-    "Hypercube Ltd."
-    "John F. Gemski"
-    "Thematix Partners LLC"
-    "Office of Financial Research (US Dept of the Treasury)"
-    "Tahoe Blue Ltd"
-    "Adaptive, Inc."
-    "Semantic Arts, Inc."],
+   #{"Semantic Arts, Inc." "John F. Gemski" "Adaptive, Inc." "Tahoe Blue Ltd"
+     "Thematix Partners LLC" "Wells Fargo" "agnos.ai U.K. Ltd" "Hypercube Ltd."
+     "Federated Knowledge LLC"
+     "Office of Financial Research (US Dept of the Treasury)"},
    :dcterms/hasPart
-   [{:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/"}],
-   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanEvents/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/"}},
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :dcterms/title
-   ["FIBO LOAN Loans General Module"
-    "Financial Industry Business Ontology (FIBO) Loans (LOAN) Loans General Module"],
-   :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
+   #{"Financial Industry Business Ontology (FIBO) Loans (LOAN) Loans General Module"
+     "FIBO LOAN Loans General Module"},
+   :rdf/type #{:fibo-fnd-utl-av/Module :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"},
    :rdfs/label "loans general module",
-   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})
+   :rdfs/seeAlso {:xsd/anyURI "https://spec.edmcouncil.org/fibo/"}})
+
+(def urn:uuid:0081dfee-bec1-5bf6-bf52-a19687ffe7ea
+  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
+                        "Copyright (c) 2018-2023 EDM Council, Inc."},
+   :dcterms/abstract
+   "This module contains ontologies defining concepts that apply to most loans, including but not limited to applications.",
+   :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #inst "2023-02-03T18:00:00.000-00:00",
+   :owl/imports
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+   :owl/versionIRI
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"},
+   :rdf/type :owl/Ontology,
+   :rdfs/label "Metadata for the EDMC-FIBO Loans (LOAN) Loans General Module",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"})

@@ -1,71 +1,86 @@
 (ns net.wikipunk.rdf.fibo-loan-reln-mod
-  "This module contains ontologies defining concepts that apply to loans related to land and anything permanently attached to it, whether natural or man-made, including but not limited to construction loans."
-  {:cmns-av/copyright ["Copyright (c) 2018-2023 Object Management Group, Inc."
-                       "Copyright (c) 2018-2023 EDM Council, Inc."],
-   :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/RealEstateLoansModule",
+  ^{:base
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/",
+    :namespaces
+    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+     "dcterms" "http://purl.org/dc/terms/",
+     "fibo-fnd-utl-av"
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+     "fibo-loan-reln-mod"
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/",
+     "owl" "http://www.w3.org/2002/07/owl#",
+     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+     "xsd" "http://www.w3.org/2001/XMLSchema#"},
+    :prefix "fibo-loan-reln-mod",
+    :source
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/RealEstateLoansModule"}
+  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
+                        "Copyright (c) 2018-2023 EDM Council, Inc."},
    :dcterms/abstract
    "This module contains ontologies defining concepts that apply to loans related to land and anything permanently attached to it, whether natural or man-made, including but not limited to construction loans.",
-   :dcterms/issued #xsd/dateTime #inst "2018-03-31T18:00:00.000-04:00",
-   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
-   :dcterms/modified #xsd/dateTime #inst "2023-03-31T18:00:00.000-04:00",
+   :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
    :owl/imports
-   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/"},
-   :rdf/ns-prefix-map
-   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-    "dcterms" "http://purl.org/dc/terms/",
-    "fibo-fnd-utl-av"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "fibo-loan-reln-mod"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/",
-    "owl" "http://www.w3.org/2002/07/owl#",
-    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdfa/prefix "fibo-loan-reln-mod",
-   :rdfa/uri
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/",
    :rdfs/label
-   "Metadata for the EDMC-FIBO Loans (LOAN) Real Estate Loans Module"})
+   "Metadata for the EDMC-FIBO Loans (LOAN) Real Estate Loans Module",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/"})
 
 (def RealEstateLoansModule
-  "This module contains ontologies defining concepts that apply to related to land and anything permanently attached to it, whether natural or man-made, including but not limited to construction loans."
-  {:cmns-av/copyright ["Copyright (c) 2018-2023 Object Management Group, Inc."
-                       "Copyright (c) 2018-2023 EDM Council, Inc."],
+  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
+                        "Copyright (c) 2018-2023 EDM Council, Inc."},
    :db/ident :fibo-loan-reln-mod/RealEstateLoansModule,
    :dcterms/abstract
    "This module contains ontologies defining concepts that apply to related to land and anything permanently attached to it, whether natural or man-made, including but not limited to construction loans.",
    :dcterms/contributor
-   ["Tahoe Blue Ltd"
-    "Thematix Partners LLC"
-    "Federated Knowledge LLC"
-    "Semantic Arts, Inc."
-    "agnos.ai U.K. Ltd"
-    "Adaptive, Inc."
-    "John F. Gemski"
-    "Wells Fargo"
-    "Office of Financial Research (US Dept of the Treasury)"
-    "Hypercube Ltd."],
+   #{"Semantic Arts, Inc." "John F. Gemski" "Adaptive, Inc." "Tahoe Blue Ltd"
+     "Thematix Partners LLC" "Wells Fargo" "agnos.ai U.K. Ltd" "Hypercube Ltd."
+     "Federated Knowledge LLC"
+     "Office of Financial Research (US Dept of the Treasury)"},
    :dcterms/hasPart
-   [{:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/"}],
-   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MortgageLoans/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/ConstructionLoans/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/HomeMortgageDisclosureActCoveredMortgages/"}},
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :dcterms/title
-   ["FIBO LOAN Real Estate Loans Module"
-    "Financial Industry Business Ontology (FIBO) Loans (LOAN) Real Estate Loans Module"],
-   :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
+   #{"Financial Industry Business Ontology (FIBO) Loans (LOAN) Real Estate Loans Module"
+     "FIBO LOAN Real Estate Loans Module"},
+   :rdf/type #{:fibo-fnd-utl-av/Module :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/"},
    :rdfs/label "real estate loans module",
-   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})
+   :rdfs/seeAlso {:xsd/anyURI "https://spec.edmcouncil.org/fibo/"}})
+
+(def urn:uuid:bc70b7f5-7e4b-563e-8a22-0021300e007c
+  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
+                        "Copyright (c) 2018-2023 EDM Council, Inc."},
+   :dcterms/abstract
+   "This module contains ontologies defining concepts that apply to loans related to land and anything permanently attached to it, whether natural or man-made, including but not limited to construction loans.",
+   :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
+   :owl/imports
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+   :owl/versionIRI
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/"},
+   :rdf/type :owl/Ontology,
+   :rdfs/label
+   "Metadata for the EDMC-FIBO Loans (LOAN) Real Estate Loans Module",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/"})

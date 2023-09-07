@@ -1,62 +1,83 @@
 (ns net.wikipunk.rdf.fibo-cae-ce-mod
-  "This module contains ontologies of general corporate events and securities-related actions."
-  {:cmns-av/copyright ["Copyright (c) 2018-2023 Object Management Group, Inc."
-                       "Copyright (c) 2018-2023 EDM Council, Inc."],
-   :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/MetadataCAECorporateEvents/CorporateEventsModule",
+  ^{:base
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/MetadataCAECorporateEvents/",
+    :namespaces
+    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+     "dcterms" "http://purl.org/dc/terms/",
+     "fibo-cae-ce-mod"
+     "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/MetadataCAECorporateEvents/",
+     "fibo-fnd-utl-av"
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+     "owl"     "http://www.w3.org/2002/07/owl#",
+     "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+     "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
+     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
+    :prefix "fibo-cae-ce-mod",
+    :source
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/MetadataCAECorporateEvents/CorporateEventsModule"}
+  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
+                        "Copyright (c) 2018-2023 EDM Council, Inc."},
    :dcterms/abstract
    "This module contains ontologies of general corporate events and securities-related actions.",
-   :dcterms/issued #xsd/dateTime #inst "2018-03-31T18:00:00.000-04:00",
-   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
-   :dcterms/modified #xsd/dateTime #inst "2023-02-03T18:00:00.000-05:00",
+   :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #inst "2023-02-03T18:00:00.000-00:00",
    :owl/imports
-   [{:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}],
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/MetadataCAECorporateEvents/"},
-   :rdf/ns-prefix-map
-   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-    "dcterms" "http://purl.org/dc/terms/",
-    "fibo-cae-ce-mod"
-    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/MetadataCAECorporateEvents/",
-    "fibo-fnd-utl-av"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "owl"     "http://www.w3.org/2002/07/owl#",
-    "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdfa/prefix "fibo-cae-ce-mod",
-   :rdfa/uri
-   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/MetadataCAECorporateEvents/",
    :rdfs/label
-   "Metadata for the EDMC-FIBO Corporate Actions and Events (CAE) Corporate Events Module"})
+   "Metadata for the EDMC-FIBO Corporate Actions and Events (CAE) Corporate Events Module",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/MetadataCAECorporateEvents/"})
 
 (def CorporateEventsModule
-  "This module contains ontologies that define common, general corporate events and securities-related actions."
-  {:cmns-av/copyright ["Copyright (c) 2018-2023 Object Management Group, Inc."
-                       "Copyright (c) 2018-2023 EDM Council, Inc."],
+  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
+                        "Copyright (c) 2018-2023 EDM Council, Inc."},
    :db/ident :fibo-cae-ce-mod/CorporateEventsModule,
    :dcterms/abstract
    "This module contains ontologies that define common, general corporate events and securities-related actions.",
    :dcterms/hasPart
-   [{:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/"}],
-   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/SecurityRelatedCorporateActions/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/ISO15022-CorporateActionIndividuals/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/"}},
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :dcterms/title
-   ["Financial Industry Business Ontology (FIBO) Corporate Actions and Events (CAE) Domain, Corporate Events Module"
-    "FIBO CAE Corporate Events Module"],
-   :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
+   #{"FIBO CAE Corporate Events Module"
+     "Financial Industry Business Ontology (FIBO) Corporate Actions and Events (CAE) Domain, Corporate Events Module"},
+   :rdf/type #{:fibo-fnd-utl-av/Module :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/MetadataCAECorporateEvents/"},
    :rdfs/label "corporate events module",
-   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})
+   :rdfs/seeAlso {:xsd/anyURI "https://spec.edmcouncil.org/fibo/"}})
+
+(def urn:uuid:af998142-349b-56ae-9dc0-7006a6b979f7
+  {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
+                        "Copyright (c) 2018-2023 EDM Council, Inc."},
+   :dcterms/abstract
+   "This module contains ontologies of general corporate events and securities-related actions.",
+   :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :dcterms/modified #inst "2023-02-03T18:00:00.000-00:00",
+   :owl/imports
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+   :owl/versionIRI
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/CAE/CorporateEvents/MetadataCAECorporateEvents/"},
+   :rdf/type :owl/Ontology,
+   :rdfs/label
+   "Metadata for the EDMC-FIBO Corporate Actions and Events (CAE) Corporate Events Module",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/MetadataCAECorporateEvents/"})

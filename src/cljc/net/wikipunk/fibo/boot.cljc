@@ -2189,7 +2189,7 @@
    :rdfa/uri "https://www.gleif.org/ontology/Geocoding/"
    :rdfa/prefix "gleif-geo"
    :rdf/type :rdfa/PrefixMapping
-   :rdf/ns-prefix-map
+   :namespaces
    {"dcterms"    "http://purl.org/dc/terms/",
     "gleif-base" "https://www.gleif.org/ontology/Base/",
     "gleif-geo"  "https://www.gleif.org/ontology/Geocoding/",
@@ -2249,21 +2249,21 @@
   {:rdfa/prefix      "gleif-BIC-data"
    :rdfa/uri         "https://rdf.gleif.org/BIC/"
    :rdf/type         :rdfa/PrefixMapping
-   :dcat/downloadURL "resources/gleif-lei-data/BICData.ttl"
+   :dcat/downloadURL "gleif-lei-data/BICData.ttl"
    :emit false})
 
 (def gleif-ELF-data
   {:rdfa/prefix      "gleif-ELF-data"
    :rdfa/uri         "https://rdf.gleif.org/EntityLegalForm/"
    :rdf/type         :rdfa/PrefixMapping
-   :dcat/downloadURL "resources/gleif-lei-data/EntityLegalFormData.ttl"
+   :dcat/downloadURL "gleif-lei-data/EntityLegalFormData.ttl"
    :emit false})
 
 (def gleif-RA-data
   {:rdfa/prefix      "gleif-RA-data"
    :rdfa/uri         "https://rdf.gleif.org/RegistrationAuthority/"
    :rdf/type         :rdfa/PrefixMapping
-   :dcat/downloadURL "resources/gleif-lei-data/RegistrationAuthorityData.ttl"
+   :dcat/downloadURL "gleif-lei-data/RegistrationAuthorityData.ttl"
    :emit false})
 
 ;; :dcat/downloadURL "resources/gleif-lei-data/RepExData.ttl.gz"

@@ -1,141 +1,178 @@
 (ns net.wikipunk.rdf.fibo-sec-sec-ast
-  "This ontology defines basic concepts such as portfolio, security holding and holder, and extends the notion of a financial asset to include an acquisition price."
-  {:cmns-av/copyright ["Copyright (c) 2016-2023 Object Management Group, Inc."
-                       "Copyright (c) 2016-2023 EDM Council, Inc."],
-   :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/",
+  ^{:base
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/",
+    :namespaces
+    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+     "dcterms" "http://purl.org/dc/terms/",
+     "fibo-be-oac-opty"
+     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
+     "fibo-fbc-pas-fpas"
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
+     "fibo-fnd-acc-aeq"
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
+     "fibo-fnd-acc-cur"
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+     "fibo-fnd-rel-rel"
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+     "fibo-fnd-utl-av"
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+     "fibo-sec-sec-ast"
+     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/",
+     "owl" "http://www.w3.org/2002/07/owl#",
+     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+     "skos" "http://www.w3.org/2004/02/skos/core#",
+     "xsd" "http://www.w3.org/2001/XMLSchema#"},
+    :prefix "fibo-sec-sec-ast",
+    :source
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/"}
+  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
+                        "Copyright (c) 2016-2023 EDM Council, Inc."},
    :dcterms/abstract
    "This ontology defines basic concepts such as portfolio, security holding and holder, and extends the notion of a financial asset to include an acquisition price.",
-   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
-   [{:rdfa/uri "https://www.omg.org/spec/Commons/Collections/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
-    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"}],
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}},
    :owl/versionIRI
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecurityAssets/"},
-   :rdf/ns-prefix-map
-   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-    "dcterms" "http://purl.org/dc/terms/",
-    "fibo-be-oac-opty"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
-    "fibo-fbc-pas-fpas"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
-    "fibo-fnd-acc-aeq"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
-    "fibo-fnd-acc-cur"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-    "fibo-fnd-utl-av"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "fibo-sec-sec-ast"
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/",
-    "owl" "http://www.w3.org/2002/07/owl#",
-    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-    "skos" "http://www.w3.org/2004/02/skos/core#",
-    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdfa/prefix "fibo-sec-sec-ast",
-   :rdfa/uri
-   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/",
    :rdfs/label "Security Assets Ontology",
    :skos/changeNote
-   ["The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
-    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was revised to eliminate duplication with concepts in LCC."
-    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was revised to simplify the contract party hierarchy and eliminate complexity introduced by 'security holding'."
-    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was revised to address text formatting hygiene issues."
-    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was revised to fix spelling errors."
-    "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."]})
+   #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was revised to fix spelling errors."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was revised to eliminate duplication with concepts in LCC."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was revised to simplify the contract party hierarchy and eliminate complexity introduced by 'security holding'."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was revised to address text formatting hygiene issues."},
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/"})
 
 (def Portfolio
-  "a collection of investments (financial assets) such as stocks, bonds and cash equivalents, as well as mutual funds"
-  {:cmns-av/adaptedFrom {:rdfa/uri
+  {:cmns-av/adaptedFrom {:xsd/anyURI
                          "http://www.investopedia.com/terms/p/portfolio.asp"},
    :db/ident :fibo-sec-sec-ast/Portfolio,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/"},
    :rdfs/label "portfolio",
    :rdfs/subClassOf
-   [{:owl/onProperty     :cmns-col/comprises,
-     :owl/someValuesFrom :fibo-sec-sec-ast/PortfolioHolding,
-     :rdf/type           :owl/Restriction}
-    {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
-     :owl/someValuesFrom {:owl/unionOf
+   #{:cmns-col/Collection
+     {:owl/allValuesFrom {:owl/unionOf
                           [:fibo-be-oac-opty/Investor
                            :fibo-fbc-pas-fpas/FinancialServiceProvider],
                           :rdf/type :owl/Class},
-     :rdf/type           :owl/Restriction}
-    {:owl/allValuesFrom {:owl/unionOf
-                         [:fibo-be-oac-opty/Investor
-                          :fibo-fbc-pas-fpas/FinancialServiceProvider],
-                         :rdf/type :owl/Class},
-     :owl/onProperty    :fibo-fnd-rel-rel/isHeldBy,
-     :rdf/type          :owl/Restriction}
-    :cmns-col/Collection],
+      :owl/onProperty    :fibo-fnd-rel-rel/isHeldBy,
+      :rdf/type          :owl/Restriction}
+     {:owl/onProperty     :fibo-fnd-rel-rel/isManagedBy,
+      :owl/someValuesFrom {:owl/unionOf
+                           [:fibo-be-oac-opty/Investor
+                            :fibo-fbc-pas-fpas/FinancialServiceProvider],
+                           :rdf/type :owl/Class},
+      :rdf/type           :owl/Restriction}
+     {:owl/onProperty     :cmns-col/comprises,
+      :owl/someValuesFrom :fibo-sec-sec-ast/PortfolioHolding,
+      :rdf/type           :owl/Restriction}},
    :skos/definition
    "a collection of investments (financial assets) such as stocks, bonds and cash equivalents, as well as mutual funds"})
 
 (def PortfolioHolding
-  "the contents of holding of one or more portfolios of investments held by an individual investor or entity"
-  {:cmns-av/adaptedFrom {:rdfa/uri
+  {:cmns-av/adaptedFrom {:xsd/anyURI
                          "http://www.investopedia.com/terms/h/holdings.asp"},
    :cmns-av/explanatoryNote
    "Portfolio holdings may cover a variety of investment products, including stocks, bonds and mutual funds to options, futures and exchange-traded funds, and relatively esoteric instruments such as private equity and hedge funds. \n\nThe number and nature of holdings contribute to the degree of diversification of a portfolio. A mix of stocks across different sectors, bonds of different maturities, and other investments would suggest a well-diversified portfolio, while concentrated holdings in a handful of stocks within a single sector indicates a portfolio with limited diversification.",
    :db/ident :fibo-sec-sec-ast/PortfolioHolding,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/"},
    :rdfs/label "portfolio holding",
-   :rdfs/subClassOf [{:owl/onProperty     :cmns-col/isPartOf,
-                      :owl/someValuesFrom :fibo-sec-sec-ast/Portfolio,
-                      :rdf/type           :owl/Restriction}
-                     {:owl/allValuesFrom
-                      {:owl/unionOf
-                       [:fibo-be-oac-opty/Investor
-                        :fibo-fbc-pas-fpas/FinancialServiceProvider],
-                       :rdf/type :owl/Class},
-                      :owl/onProperty :fibo-fnd-rel-rel/isHeldBy,
-                      :rdf/type :owl/Restriction}
-                     :fibo-fnd-acc-aeq/FinancialAsset
-                     {:owl/allValuesFrom :fibo-fnd-acc-cur/Price,
-                      :owl/onProperty    :fibo-sec-sec-ast/hasAcquisitionPrice,
-                      :rdf/type          :owl/Restriction}],
+   :rdfs/subClassOf
+   #{{:owl/onProperty     :cmns-col/isPartOf,
+      :owl/someValuesFrom :fibo-sec-sec-ast/Portfolio,
+      :rdf/type           :owl/Restriction} :fibo-fnd-acc-aeq/FinancialAsset
+     {:owl/allValuesFrom {:owl/unionOf
+                          [:fibo-be-oac-opty/Investor
+                           :fibo-fbc-pas-fpas/FinancialServiceProvider],
+                          :rdf/type :owl/Class},
+      :owl/onProperty    :fibo-fnd-rel-rel/isHeldBy,
+      :rdf/type          :owl/Restriction}},
    :skos/definition
    "the contents of holding of one or more portfolios of investments held by an individual investor or entity"})
 
 (def hasAcquisitionPrice
-  "has a value as of the date of acquisition, expressed as an amount of money or goods"
   {:db/ident :fibo-sec-sec-ast/hasAcquisitionPrice,
    :rdf/type :owl/ObjectProperty,
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/"},
    :rdfs/label "has acquisition price",
    :rdfs/range :fibo-fnd-acc-cur/Price,
    :rdfs/subPropertyOf :fibo-fnd-acc-cur/hasPrice,
    :skos/definition
    "has a value as of the date of acquisition, expressed as an amount of money or goods"})
+
+(def urn:uuid:28d117c4-9b2c-599a-be55-a0ece714ec7d
+  {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
+                        "Copyright (c) 2016-2023 EDM Council, Inc."},
+   :dcterms/abstract
+   "This ontology defines basic concepts such as portfolio, security holding and holder, and extends the notion of a financial asset to include an acquisition price.",
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
+   :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :owl/imports
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Agreements/Contracts/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/ProductsAndServices/FinancialProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/AccountingEquity/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/OwnershipAndControl/OwnershipParties/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}},
+   :owl/versionIRI
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecurityAssets/"},
+   :rdf/type :owl/Ontology,
+   :rdfs/label "Security Assets Ontology",
+   :skos/changeNote
+   #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was revised to fix spelling errors."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was revised to eliminate duplication with concepts in LCC."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was revised to simplify the contract party hierarchy and eliminate complexity introduced by 'security holding'."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."
+     "The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets.rdf version of this ontology was revised to address text formatting hygiene issues."},
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecurityAssets/"})

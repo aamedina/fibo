@@ -1,61 +1,66 @@
 (ns net.wikipunk.rdf.lcc-3166-2-ca
-  "This ontology represents the subset of the ISO 3166 standard that includes the actual ISO 3166-2 subdivision codes for Canada, with the ontology and codes for the other parts of the standard represented in models that this ontology depends on."
-  {:dcat/downloadURL
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA.rdf",
-   :dcterms/issued #xsd/dateTime #inst "2021-10-29T23:57:18.465+00:00",
-   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
-   :owl/imports
-   [{:rdfa/uri "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
-    {:rdfa/uri
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
-    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
-    {:rdfa/uri
-     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}],
-   :owl/versionIRI
-   {:rdfa/uri
-    "https://www.omg.org/spec/LCC/20211101/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
-    "lcc-3166-1"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-    "lcc-3166-2"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/",
-    "lcc-3166-2-ca"
+  ^{:base
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
-    "owl" "http://www.w3.org/2002/07/owl#",
-    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-    "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-    "xsd" "http://www.w3.org/2001/XMLSchema#"},
+    :namespaces
+    {"dcterms" "http://purl.org/dc/terms/",
+     "lcc-3166-1"
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
+     "lcc-3166-2"
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/",
+     "lcc-3166-2-ca"
+     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/",
+     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+     "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
+     "owl" "http://www.w3.org/2002/07/owl#",
+     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+     "skos" "http://www.w3.org/2004/02/skos/core#",
+     "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
+     "xsd" "http://www.w3.org/2001/XMLSchema#"},
+    :prefix "lcc-3166-2-ca",
+    :source
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA.rdf"}
+  {:dcterms/issued #inst "2021-10-29T23:57:18.464-00:00",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :owl/imports
+   #{{:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
+   :owl/versionIRI
+   {:xsd/anyURI
+    "https://www.omg.org/spec/LCC/20211101/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdf/type :owl/Ontology,
-   :rdfa/prefix "lcc-3166-2-ca",
-   :rdfa/uri
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/",
    :rdfs/label "ISO 3166-2 Subdivision Codes for Canada Ontology",
-   :rdfs/seeAlso [{:rdfa/uri "https://www.omg.org/spec/LCC/AboutLCC/"}
-                  {:rdfa/uri
-                   "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}],
-   :sm/contentLanguage {:rdfa/uri
+   :rdfs/seeAlso #{{:xsd/anyURI
+                    "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}
+                   {:xsd/anyURI "https://www.omg.org/spec/LCC/AboutLCC/"}},
+   :sm/contentLanguage {:xsd/anyURI
                         "https://www.w3.org/TR/owl2-quick-reference/"},
-   :sm/copyright ["Copyright (c) 2015-2017 Unisys"
-                  "Copyright (c) 2015-2021 Object Management Group, Inc."
-                  "Copyright (c) 2021 agnos.ai UK Ltd."
-                  "Copyright (c) 2015-2021 Thematix Partners LLC"
-                  "Copyright (c) 2015-2020 Adaptive Inc."],
+   :sm/copyright #{"Copyright (c) 2015-2020 Adaptive Inc."
+                   "Copyright (c) 2021 agnos.ai UK Ltd."
+                   "Copyright (c) 2015-2021 Object Management Group, Inc."
+                   "Copyright (c) 2015-2017 Unisys"
+                   "Copyright (c) 2015-2021 Thematix Partners LLC"},
    :sm/dependsOn
-   [{:rdfa/uri
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
-    {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
-    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
-    {:rdfa/uri
-     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}],
+   #{{:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :sm/fileAbbreviation "lcc-3166-2-ca",
    :sm/fileAbstract
    "This ontology represents the subset of the ISO 3166 standard that includes the actual ISO 3166-2 subdivision codes for Canada, with the ontology and codes for the other parts of the standard represented in models that this ontology depends on.",
-   :sm/filename "ISO3166-2-SubdivisionCodes-CA.rdf"})
+   :sm/filename "ISO3166-2-SubdivisionCodes-CA.rdf",
+   :xsd/anyURI
+   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"})
 
 (def Alberta
   {:db/ident   :lcc-3166-2-ca/Alberta,
@@ -68,23 +73,27 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-233-RegionKind
-  "subdivision category territory in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-233-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "territoire@fr" #xsd/langString "territory@en"],
+   :rdfs/label #{{:rdf/language "en",
+                  :rdf/value    "territory"}
+                 {:rdf/language "fr",
+                  :rdf/value    "territoire"}},
    :skos/definition "subdivision category territory in the country of Canada"})
 
 (def CA-412-RegionKind
-  "subdivision category province in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-412-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "province@fr" #xsd/langString "province@en"],
+   :rdfs/label #{{:rdf/language "fr",
+                  :rdf/value    "province"}
+                 {:rdf/language "en",
+                  :rdf/value    "province"}},
    :skos/definition "subdivision category province in the country of Canada"})
 
 (def CA-AB
@@ -93,32 +102,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-AB-RegionIdentifier
-  "subdivision code for the province of Alberta in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-AB-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-AB-Subdivision,
    :lcc-lr/hasTag "CA-AB",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-AB-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-AB",
    :skos/definition
    "subdivision code for the province of Alberta in the country of Canada"})
 
 (def CA-AB-Subdivision
-  "the province of Alberta in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-AB-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Alberta@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Alberta@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Alberta"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Alberta"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-412-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "Alberta@fr" #xsd/langString "Alberta@en"],
+   :rdfs/label #{{:rdf/language "fr",
+                  :rdf/value    "Alberta"}
+                 {:rdf/language "en",
+                  :rdf/value    "Alberta"}},
    :skos/definition "the province of Alberta in the country of Canada"})
 
 (def CA-BC
@@ -127,33 +139,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-BC-RegionIdentifier
-  "subdivision code for the province of British Columbia in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-BC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-BC-Subdivision,
    :lcc-lr/hasTag "CA-BC",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-BC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-BC",
    :skos/definition
    "subdivision code for the province of British Columbia in the country of Canada"})
 
 (def CA-BC-Subdivision
-  "the province of British Columbia in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-BC-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "British Columbia@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Colombie-Britannique@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "British Columbia"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Colombie-Britannique"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-412-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:owl/NamedIndividual :lcc-cr/CountrySubdivision],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "British Columbia@en"
-                #xsd/langString "Colombie-Britannique@fr"],
+   :rdfs/label #{{:rdf/language "en",
+                  :rdf/value    "British Columbia"}
+                 {:rdf/language "fr",
+                  :rdf/value    "Colombie-Britannique"}},
    :skos/definition
    "the province of British Columbia in the country of Canada"})
 
@@ -163,32 +177,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-MB-RegionIdentifier
-  "subdivision code for the province of Manitoba in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-MB-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-MB-Subdivision,
    :lcc-lr/hasTag "CA-MB",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-MB-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-MB",
    :skos/definition
    "subdivision code for the province of Manitoba in the country of Canada"})
 
 (def CA-MB-Subdivision
-  "the province of Manitoba in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-MB-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Manitoba@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Manitoba@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Manitoba"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Manitoba"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-412-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:owl/NamedIndividual :lcc-cr/CountrySubdivision],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "Manitoba@fr" #xsd/langString "Manitoba@en"],
+   :rdfs/label #{{:rdf/language "fr",
+                  :rdf/value    "Manitoba"}
+                 {:rdf/language "en",
+                  :rdf/value    "Manitoba"}},
    :skos/definition "the province of Manitoba in the country of Canada"})
 
 (def CA-NB
@@ -197,33 +214,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-NB-RegionIdentifier
-  "subdivision code for the province of New Brunswick in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-NB-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-NB-Subdivision,
    :lcc-lr/hasTag "CA-NB",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-NB-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-NB",
    :skos/definition
    "subdivision code for the province of New Brunswick in the country of Canada"})
 
 (def CA-NB-Subdivision
-  "the province of New Brunswick in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-NB-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "New Brunswick@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Nouveau-Brunswick@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "New Brunswick"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Nouveau-Brunswick"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-412-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:owl/NamedIndividual :lcc-cr/CountrySubdivision],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "Nouveau-Brunswick@fr"
-                #xsd/langString "New Brunswick@en"],
+   :rdfs/label #{{:rdf/language "en",
+                  :rdf/value    "New Brunswick"}
+                 {:rdf/language "fr",
+                  :rdf/value    "Nouveau-Brunswick"}},
    :skos/definition "the province of New Brunswick in the country of Canada"})
 
 (def CA-NL
@@ -232,33 +251,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-NL-RegionIdentifier
-  "subdivision code for the province of Newfoundland and Labrador in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-NL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-NL-Subdivision,
    :lcc-lr/hasTag "CA-NL",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-NL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-NL",
    :skos/definition
    "subdivision code for the province of Newfoundland and Labrador in the country of Canada"})
 
 (def CA-NL-Subdivision
-  "the province of Newfoundland and Labrador in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-NL-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Newfoundland and Labrador@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Terre-Neuve-et-Labrador@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Newfoundland and Labrador"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Terre-Neuve-et-Labrador"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-412-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "Terre-Neuve-et-Labrador@fr"
-                #xsd/langString "Newfoundland and Labrador@en"],
+   :rdfs/label #{{:rdf/language "en",
+                  :rdf/value    "Newfoundland and Labrador"}
+                 {:rdf/language "fr",
+                  :rdf/value    "Terre-Neuve-et-Labrador"}},
    :skos/definition
    "the province of Newfoundland and Labrador in the country of Canada"})
 
@@ -268,33 +289,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-NS-RegionIdentifier
-  "subdivision code for the province of Nova Scotia in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-NS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-NS-Subdivision,
    :lcc-lr/hasTag "CA-NS",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-NS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-NS",
    :skos/definition
    "subdivision code for the province of Nova Scotia in the country of Canada"})
 
 (def CA-NS-Subdivision
-  "the province of Nova Scotia in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-NS-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Nova Scotia@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Nouvelle-Écosse@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Nova Scotia"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Nouvelle-Écosse"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-412-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "Nova Scotia@en"
-                #xsd/langString "Nouvelle-Écosse@fr"],
+   :rdfs/label #{{:rdf/language "en",
+                  :rdf/value    "Nova Scotia"}
+                 {:rdf/language "fr",
+                  :rdf/value    "Nouvelle-Écosse"}},
    :skos/definition "the province of Nova Scotia in the country of Canada"})
 
 (def CA-NT
@@ -303,33 +326,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-NT-RegionIdentifier
-  "subdivision code for the territory of Northwest Territories in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-NT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-NT-Subdivision,
    :lcc-lr/hasTag "CA-NT",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-NT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-NT",
    :skos/definition
    "subdivision code for the territory of Northwest Territories in the country of Canada"})
 
 (def CA-NT-Subdivision
-  "the territory of Northwest Territories in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-NT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Northwest Territories@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Territoires du Nord-Ouest@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Northwest Territories"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Territoires du Nord-Ouest"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-233-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:owl/NamedIndividual :lcc-cr/CountrySubdivision],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "Northwest Territories@en"
-                #xsd/langString "Territoires du Nord-Ouest@fr"],
+   :rdfs/label #{{:rdf/language "en",
+                  :rdf/value    "Northwest Territories"}
+                 {:rdf/language "fr",
+                  :rdf/value    "Territoires du Nord-Ouest"}},
    :skos/definition
    "the territory of Northwest Territories in the country of Canada"})
 
@@ -339,32 +364,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-NU-RegionIdentifier
-  "subdivision code for the territory of Nunavut in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-NU-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-NU-Subdivision,
    :lcc-lr/hasTag "CA-NU",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-NU-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-NU",
    :skos/definition
    "subdivision code for the territory of Nunavut in the country of Canada"})
 
 (def CA-NU-Subdivision
-  "the territory of Nunavut in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-NU-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Nunavut@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Nunavut@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Nunavut"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Nunavut"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-233-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:owl/NamedIndividual :lcc-cr/CountrySubdivision],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "Nunavut@en" #xsd/langString "Nunavut@fr"],
+   :rdfs/label #{{:rdf/language "en",
+                  :rdf/value    "Nunavut"}
+                 {:rdf/language "fr",
+                  :rdf/value    "Nunavut"}},
    :skos/definition "the territory of Nunavut in the country of Canada"})
 
 (def CA-ON
@@ -373,32 +401,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-ON-RegionIdentifier
-  "subdivision code for the province of Ontario in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-ON-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-ON-Subdivision,
    :lcc-lr/hasTag "CA-ON",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-ON-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-ON",
    :skos/definition
    "subdivision code for the province of Ontario in the country of Canada"})
 
 (def CA-ON-Subdivision
-  "the province of Ontario in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-ON-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Ontario@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Ontario@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Ontario"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Ontario"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-412-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:owl/NamedIndividual :lcc-cr/CountrySubdivision],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "Ontario@en" #xsd/langString "Ontario@fr"],
+   :rdfs/label #{{:rdf/language "fr",
+                  :rdf/value    "Ontario"}
+                 {:rdf/language "en",
+                  :rdf/value    "Ontario"}},
    :skos/definition "the province of Ontario in the country of Canada"})
 
 (def CA-PE
@@ -407,33 +438,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-PE-RegionIdentifier
-  "subdivision code for the province of Prince Edward Island in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-PE-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-PE-Subdivision,
    :lcc-lr/hasTag "CA-PE",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-PE-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-PE",
    :skos/definition
    "subdivision code for the province of Prince Edward Island in the country of Canada"})
 
 (def CA-PE-Subdivision
-  "the province of Prince Edward Island in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-PE-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Prince Edward Island@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Île-du-Prince-Édouard@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Prince Edward Island"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Île-du-Prince-Édouard"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-412-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:owl/NamedIndividual :lcc-cr/CountrySubdivision],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "Île-du-Prince-Édouard@fr"
-                #xsd/langString "Prince Edward Island@en"],
+   :rdfs/label #{{:rdf/language "en",
+                  :rdf/value    "Prince Edward Island"}
+                 {:rdf/language "fr",
+                  :rdf/value    "Île-du-Prince-Édouard"}},
    :skos/definition
    "the province of Prince Edward Island in the country of Canada"})
 
@@ -443,32 +476,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-QC-RegionIdentifier
-  "subdivision code for the province of Quebec in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-QC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-QC-Subdivision,
    :lcc-lr/hasTag "CA-QC",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-QC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-QC",
    :skos/definition
    "subdivision code for the province of Quebec in the country of Canada"})
 
 (def CA-QC-Subdivision
-  "the province of Quebec in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-QC-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Quebec@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Québec@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Quebec"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Québec"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-412-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "Québec@fr" #xsd/langString "Quebec@en"],
+   :rdfs/label #{{:rdf/language "fr",
+                  :rdf/value    "Québec"}
+                 {:rdf/language "en",
+                  :rdf/value    "Quebec"}},
    :skos/definition "the province of Quebec in the country of Canada"})
 
 (def CA-SK
@@ -477,33 +513,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-SK-RegionIdentifier
-  "subdivision code for the province of Saskatchewan in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-SK-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-SK-Subdivision,
    :lcc-lr/hasTag "CA-SK",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-SK-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-SK",
    :skos/definition
    "subdivision code for the province of Saskatchewan in the country of Canada"})
 
 (def CA-SK-Subdivision
-  "the province of Saskatchewan in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-SK-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Saskatchewan@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Saskatchewan@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Saskatchewan"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Saskatchewan"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-412-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:owl/NamedIndividual :lcc-cr/CountrySubdivision],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "Saskatchewan@en"
-                #xsd/langString "Saskatchewan@fr"],
+   :rdfs/label #{{:rdf/language "fr",
+                  :rdf/value    "Saskatchewan"}
+                 {:rdf/language "en",
+                  :rdf/value    "Saskatchewan"}},
    :skos/definition "the province of Saskatchewan in the country of Canada"})
 
 (def CA-YT
@@ -512,32 +550,35 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def CA-YT-RegionIdentifier
-  "subdivision code for the territory of Yukon in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-YT-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-ca/CA-YT-Subdivision,
    :lcc-lr/hasTag "CA-YT",
    :lcc-lr/identifies :lcc-3166-2-ca/CA-YT-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
    :rdfs/label "CA-YT",
    :skos/definition
    "subdivision code for the territory of Yukon in the country of Canada"})
 
 (def CA-YT-Subdivision
-  "the territory of Yukon in the country of Canada"
   {:db/ident :lcc-3166-2-ca/CA-YT-Subdivision,
-   :lcc-cr/hasEnglishShortName #xsd/langString "Yukon@en",
-   :lcc-cr/hasFrenchShortName #xsd/langString "Yukon@fr",
+   :lcc-cr/hasEnglishShortName {:rdf/language "en",
+                                :rdf/value    "Yukon"},
+   :lcc-cr/hasFrenchShortName {:rdf/language "fr",
+                               :rdf/value    "Yukon"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-ca/CA-233-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Canada,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
-   :rdfs/label [#xsd/langString "Yukon@fr" #xsd/langString "Yukon@en"],
+   :rdfs/label #{{:rdf/language "fr",
+                  :rdf/value    "Yukon"}
+                 {:rdf/language "en",
+                  :rdf/value    "Yukon"}},
    :skos/definition "the territory of Yukon in the country of Canada"})
 
 (def Manitoba
@@ -604,3 +645,46 @@
   {:db/ident   :lcc-3166-2-ca/Yukon,
    :owl/sameAs :lcc-3166-2-ca/CA-YT-Subdivision,
    :rdf/type   :owl/NamedIndividual})
+
+(def urn:uuid:253fcff9-fdd0-55b8-a900-3b60cb10cdeb
+  {:dcterms/issued #inst "2021-10-29T23:57:18.464-00:00",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :owl/imports
+   #{{:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
+   :owl/versionIRI
+   {:xsd/anyURI
+    "https://www.omg.org/spec/LCC/20211101/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"},
+   :rdf/type :owl/Ontology,
+   :rdfs/label "ISO 3166-2 Subdivision Codes for Canada Ontology",
+   :rdfs/seeAlso #{{:xsd/anyURI
+                    "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}
+                   {:xsd/anyURI "https://www.omg.org/spec/LCC/AboutLCC/"}},
+   :sm/contentLanguage {:xsd/anyURI
+                        "https://www.w3.org/TR/owl2-quick-reference/"},
+   :sm/copyright #{"Copyright (c) 2015-2020 Adaptive Inc."
+                   "Copyright (c) 2021 agnos.ai UK Ltd."
+                   "Copyright (c) 2015-2021 Object Management Group, Inc."
+                   "Copyright (c) 2015-2017 Unisys"
+                   "Copyright (c) 2015-2021 Thematix Partners LLC"},
+   :sm/dependsOn
+   #{{:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
+   :sm/fileAbbreviation "lcc-3166-2-ca",
+   :sm/fileAbstract
+   "This ontology represents the subset of the ISO 3166 standard that includes the actual ISO 3166-2 subdivision codes for Canada, with the ontology and codes for the other parts of the standard represented in models that this ontology depends on.",
+   :sm/filename "ISO3166-2-SubdivisionCodes-CA.rdf",
+   :xsd/anyURI
+   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CA/"})

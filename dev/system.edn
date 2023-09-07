@@ -1,12 +1,14 @@
-{:vocab  {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
-          :sc/refs      [:fibo :db]
-          :boot         [net.wikipunk.fibo.boot]
-          :config       {:xtdb.lucene/lucene-store
-                         {:db-dir ".vocab/lucene"}}}
- :fibo   {:sc/create-fn net.wikipunk.fibo/map->FIBO}
+{:asami  {:sc/create-fn net.wikipunk.asami/map->Connection
+          :uri          "asami:mem://.vocab"}
  :client {:sc/create-fn datomic.client.api/client
-          :server-type  :dev-local
+          :server-type  :datomic-local
           :system       "dev"}
  :db     {:sc/create-fn net.wikipunk.datomic/map->Connection
           :sc/refs      [:client]
-          :db-name      "fibo"}}
+          :db-name      "fibo"} 
+ :vocab  {:sc/create-fn net.wikipunk.rdf/map->UniversalTranslator
+          :sc/refs      {:env :asami :fibo :fibo}
+          :ns-prefix    "net.wikipunk.rdf."
+          :output-to    "src/cljc/net/wikipunk/rdf/"
+          :context      [net.wikipunk.fibo.boot]}
+ :fibo   {:sc/create-fn net.wikipunk.fibo/map->FIBO}}

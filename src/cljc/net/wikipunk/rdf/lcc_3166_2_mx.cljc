@@ -1,60 +1,66 @@
 (ns net.wikipunk.rdf.lcc-3166-2-mx
-  "This ontology represents the subset of the ISO 3166 standard that includes the actual ISO 3166-2 subdivision codes for Mexico, with the ontology and codes for the other parts of the standard represented in models that this ontology depends on."
-  {:dcat/downloadURL
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX.rdf",
-   :dcterms/issued #xsd/dateTime #inst "2021-10-29T23:57:18.465+00:00",
-   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
-   :owl/imports
-   [{:rdfa/uri
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
-    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
-    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
-    {:rdfa/uri
-     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}],
-   :owl/versionIRI
-   {:rdfa/uri
-    "https://www.omg.org/spec/LCC/20211101/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdf/ns-prefix-map
-   {"dcterms" "http://purl.org/dc/terms/",
-    "lcc-3166-1"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-    "lcc-3166-2"
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/",
-    "lcc-3166-2-mx"
+  ^{:base
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/",
-    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
-    "owl" "http://www.w3.org/2002/07/owl#",
-    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-    "skos" "http://www.w3.org/2004/02/skos/core#",
-    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-    "xsd" "http://www.w3.org/2001/XMLSchema#"},
+    :namespaces
+    {"dcterms" "http://purl.org/dc/terms/",
+     "lcc-3166-1"
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
+     "lcc-3166-2"
+     "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/",
+     "lcc-3166-2-mx"
+     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/",
+     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+     "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
+     "owl" "http://www.w3.org/2002/07/owl#",
+     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+     "skos" "http://www.w3.org/2004/02/skos/core#",
+     "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
+     "xsd" "http://www.w3.org/2001/XMLSchema#"},
+    :prefix "lcc-3166-2-mx",
+    :source
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX.rdf"}
+  {:dcterms/issued #inst "2021-10-29T23:57:18.464-00:00",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :owl/imports
+   #{{:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
+   :owl/versionIRI
+   {:xsd/anyURI
+    "https://www.omg.org/spec/LCC/20211101/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdf/type :owl/Ontology,
-   :rdfa/prefix "lcc-3166-2-mx",
-   :rdfa/uri
-   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/",
    :rdfs/label "ISO 3166-2 Subdivision Codes for Mexico Ontology",
-   :rdfs/seeAlso [{:rdfa/uri
-                   "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}
-                  {:rdfa/uri "https://www.omg.org/spec/LCC/AboutLCC/"}],
-   :sm/contentLanguage {:rdfa/uri
+   :rdfs/seeAlso #{{:xsd/anyURI
+                    "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}
+                   {:xsd/anyURI "https://www.omg.org/spec/LCC/AboutLCC/"}},
+   :sm/contentLanguage {:xsd/anyURI
                         "https://www.w3.org/TR/owl2-quick-reference/"},
-   :sm/copyright ["Copyright (c) 2015-2020 Adaptive Inc."
-                  "Copyright (c) 2015-2021 Object Management Group, Inc."
-                  "Copyright (c) 2015-2021 Thematix Partners LLC"
-                  "Copyright (c) 2015-2017 Unisys"
-                  "Copyright (c) 2021 agnos.ai UK Ltd."],
+   :sm/copyright #{"Copyright (c) 2015-2020 Adaptive Inc."
+                   "Copyright (c) 2021 agnos.ai UK Ltd."
+                   "Copyright (c) 2015-2021 Object Management Group, Inc."
+                   "Copyright (c) 2015-2017 Unisys"
+                   "Copyright (c) 2015-2021 Thematix Partners LLC"},
    :sm/dependsOn
-   [{:rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
-    {:rdfa/uri "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}
-    {:rdfa/uri "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
-    {:rdfa/uri
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}],
+   #{{:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
    :sm/fileAbbreviation "lcc-3166-2-mx",
    :sm/fileAbstract
    "This ontology represents the subset of the ISO 3166 standard that includes the actual ISO 3166-2 subdivision codes for Mexico, with the ontology and codes for the other parts of the standard represented in models that this ontology depends on.",
-   :sm/filename "ISO3166-2-SubdivisionCodes-MX.rdf"})
+   :sm/filename "ISO3166-2-SubdivisionCodes-MX.rdf",
+   :xsd/anyURI
+   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"})
 
 (def Aguascalientes
   {:db/ident   :lcc-3166-2-mx/Aguascalientes,
@@ -137,23 +143,23 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-239-RegionKind
-  "subdivision category estado in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-239-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "estado@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "estado"},
    :skos/definition "subdivision category estado in the country of Mexico"})
 
 (def MX-341-RegionKind
-  "subdivision category distrito federal in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-341-RegionKind,
-   :rdf/type [:lcc-cr/GeographicRegionKind :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionKind :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "distrito federal@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "distrito federal"},
    :skos/definition
    "subdivision category distrito federal in the country of Mexico"})
 
@@ -163,31 +169,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-AGU-RegionIdentifier
-  "subdivision code for the estado of Aguascalientes in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-AGU-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-AGU-Subdivision,
    :lcc-lr/hasTag "MX-AGU",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-AGU-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-AGU",
    :skos/definition
    "subdivision code for the estado of Aguascalientes in the country of Mexico"})
 
 (def MX-AGU-Subdivision
-  "the estado of Aguascalientes in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-AGU-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Aguascalientes@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Aguascalientes"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Aguascalientes@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Aguascalientes"},
    :skos/definition "the estado of Aguascalientes in the country of Mexico"})
 
 (def MX-BCN
@@ -196,31 +202,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-BCN-RegionIdentifier
-  "subdivision code for the estado of Baja California in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-BCN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-BCN-Subdivision,
    :lcc-lr/hasTag "MX-BCN",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-BCN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-BCN",
    :skos/definition
    "subdivision code for the estado of Baja California in the country of Mexico"})
 
 (def MX-BCN-Subdivision
-  "the estado of Baja California in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-BCN-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Baja California@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Baja California"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Baja California@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Baja California"},
    :skos/definition "the estado of Baja California in the country of Mexico"})
 
 (def MX-BCS
@@ -229,31 +235,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-BCS-RegionIdentifier
-  "subdivision code for the estado of Baja California Sur in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-BCS-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-BCS-Subdivision,
    :lcc-lr/hasTag "MX-BCS",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-BCS-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-BCS",
    :skos/definition
    "subdivision code for the estado of Baja California Sur in the country of Mexico"})
 
 (def MX-BCS-Subdivision
-  "the estado of Baja California Sur in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-BCS-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Baja California Sur@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Baja California Sur"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Baja California Sur@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Baja California Sur"},
    :skos/definition
    "the estado of Baja California Sur in the country of Mexico"})
 
@@ -263,31 +269,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-CAM-RegionIdentifier
-  "subdivision code for the estado of Campeche in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-CAM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-CAM-Subdivision,
    :lcc-lr/hasTag "MX-CAM",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-CAM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-CAM",
    :skos/definition
    "subdivision code for the estado of Campeche in the country of Mexico"})
 
 (def MX-CAM-Subdivision
-  "the estado of Campeche in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-CAM-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Campeche@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Campeche"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Campeche@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Campeche"},
    :skos/definition "the estado of Campeche in the country of Mexico"})
 
 (def MX-CHH
@@ -296,31 +302,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-CHH-RegionIdentifier
-  "subdivision code for the estado of Chihuahua in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-CHH-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-CHH-Subdivision,
    :lcc-lr/hasTag "MX-CHH",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-CHH-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-CHH",
    :skos/definition
    "subdivision code for the estado of Chihuahua in the country of Mexico"})
 
 (def MX-CHH-Subdivision
-  "the estado of Chihuahua in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-CHH-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Chihuahua@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Chihuahua"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Chihuahua@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Chihuahua"},
    :skos/definition "the estado of Chihuahua in the country of Mexico"})
 
 (def MX-CHP
@@ -329,31 +335,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-CHP-RegionIdentifier
-  "subdivision code for the estado of Chiapas in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-CHP-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-CHP-Subdivision,
    :lcc-lr/hasTag "MX-CHP",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-CHP-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-CHP",
    :skos/definition
    "subdivision code for the estado of Chiapas in the country of Mexico"})
 
 (def MX-CHP-Subdivision
-  "the estado of Chiapas in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-CHP-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Chiapas@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Chiapas"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Chiapas@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Chiapas"},
    :skos/definition "the estado of Chiapas in the country of Mexico"})
 
 (def MX-CMX
@@ -362,31 +368,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-CMX-RegionIdentifier
-  "subdivision code for the distrito federal of Ciudad de México in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-CMX-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-CMX-Subdivision,
    :lcc-lr/hasTag "MX-CMX",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-CMX-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-CMX",
    :skos/definition
    "subdivision code for the distrito federal of Ciudad de México in the country of Mexico"})
 
 (def MX-CMX-Subdivision
-  "the distrito federal of Ciudad de México in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-CMX-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Ciudad de México@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Ciudad de México"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-341-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Ciudad de México@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Ciudad de México"},
    :skos/definition
    "the distrito federal of Ciudad de México in the country of Mexico"})
 
@@ -396,31 +402,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-COA-RegionIdentifier
-  "subdivision code for the estado of Coahuila de Zaragoza in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-COA-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-COA-Subdivision,
    :lcc-lr/hasTag "MX-COA",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-COA-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-COA",
    :skos/definition
    "subdivision code for the estado of Coahuila de Zaragoza in the country of Mexico"})
 
 (def MX-COA-Subdivision
-  "the estado of Coahuila de Zaragoza in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-COA-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Coahuila de Zaragoza@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Coahuila de Zaragoza"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Coahuila de Zaragoza@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Coahuila de Zaragoza"},
    :skos/definition
    "the estado of Coahuila de Zaragoza in the country of Mexico"})
 
@@ -430,31 +436,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-COL-RegionIdentifier
-  "subdivision code for the estado of Colima in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-COL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-COL-Subdivision,
    :lcc-lr/hasTag "MX-COL",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-COL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-COL",
    :skos/definition
    "subdivision code for the estado of Colima in the country of Mexico"})
 
 (def MX-COL-Subdivision
-  "the estado of Colima in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-COL-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Colima@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Colima"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Colima@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Colima"},
    :skos/definition "the estado of Colima in the country of Mexico"})
 
 (def MX-DUR
@@ -463,31 +469,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-DUR-RegionIdentifier
-  "subdivision code for the estado of Durango in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-DUR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-DUR-Subdivision,
    :lcc-lr/hasTag "MX-DUR",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-DUR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-DUR",
    :skos/definition
    "subdivision code for the estado of Durango in the country of Mexico"})
 
 (def MX-DUR-Subdivision
-  "the estado of Durango in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-DUR-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Durango@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Durango"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Durango@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Durango"},
    :skos/definition "the estado of Durango in the country of Mexico"})
 
 (def MX-GRO
@@ -496,31 +502,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-GRO-RegionIdentifier
-  "subdivision code for the estado of Guerrero in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-GRO-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-GRO-Subdivision,
    :lcc-lr/hasTag "MX-GRO",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-GRO-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-GRO",
    :skos/definition
    "subdivision code for the estado of Guerrero in the country of Mexico"})
 
 (def MX-GRO-Subdivision
-  "the estado of Guerrero in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-GRO-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Guerrero@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Guerrero"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Guerrero@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Guerrero"},
    :skos/definition "the estado of Guerrero in the country of Mexico"})
 
 (def MX-GUA
@@ -529,31 +535,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-GUA-RegionIdentifier
-  "subdivision code for the estado of Guanajuato in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-GUA-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-GUA-Subdivision,
    :lcc-lr/hasTag "MX-GUA",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-GUA-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-GUA",
    :skos/definition
    "subdivision code for the estado of Guanajuato in the country of Mexico"})
 
 (def MX-GUA-Subdivision
-  "the estado of Guanajuato in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-GUA-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Guanajuato@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Guanajuato"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Guanajuato@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Guanajuato"},
    :skos/definition "the estado of Guanajuato in the country of Mexico"})
 
 (def MX-HID
@@ -562,31 +568,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-HID-RegionIdentifier
-  "subdivision code for the estado of Hidalgo in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-HID-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-HID-Subdivision,
    :lcc-lr/hasTag "MX-HID",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-HID-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-HID",
    :skos/definition
    "subdivision code for the estado of Hidalgo in the country of Mexico"})
 
 (def MX-HID-Subdivision
-  "the estado of Hidalgo in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-HID-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Hidalgo@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Hidalgo"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Hidalgo@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Hidalgo"},
    :skos/definition "the estado of Hidalgo in the country of Mexico"})
 
 (def MX-JAL
@@ -595,31 +601,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-JAL-RegionIdentifier
-  "subdivision code for the estado of Jalisco in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-JAL-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-JAL-Subdivision,
    :lcc-lr/hasTag "MX-JAL",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-JAL-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-JAL",
    :skos/definition
    "subdivision code for the estado of Jalisco in the country of Mexico"})
 
 (def MX-JAL-Subdivision
-  "the estado of Jalisco in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-JAL-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Jalisco@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Jalisco"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Jalisco@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Jalisco"},
    :skos/definition "the estado of Jalisco in the country of Mexico"})
 
 (def MX-MEX
@@ -628,31 +634,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-MEX-RegionIdentifier
-  "subdivision code for the estado of México in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-MEX-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-MEX-Subdivision,
    :lcc-lr/hasTag "MX-MEX",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-MEX-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-MEX",
    :skos/definition
    "subdivision code for the estado of México in the country of Mexico"})
 
 (def MX-MEX-Subdivision
-  "the estado of México in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-MEX-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "México@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "México"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "México@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "México"},
    :skos/definition "the estado of México in the country of Mexico"})
 
 (def MX-MIC
@@ -661,31 +667,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-MIC-RegionIdentifier
-  "subdivision code for the estado of Michoacán de Ocampo in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-MIC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-MIC-Subdivision,
    :lcc-lr/hasTag "MX-MIC",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-MIC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-MIC",
    :skos/definition
    "subdivision code for the estado of Michoacán de Ocampo in the country of Mexico"})
 
 (def MX-MIC-Subdivision
-  "the estado of Michoacán de Ocampo in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-MIC-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Michoacán de Ocampo@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Michoacán de Ocampo"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Michoacán de Ocampo@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Michoacán de Ocampo"},
    :skos/definition
    "the estado of Michoacán de Ocampo in the country of Mexico"})
 
@@ -695,31 +701,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-MOR-RegionIdentifier
-  "subdivision code for the estado of Morelos in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-MOR-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-MOR-Subdivision,
    :lcc-lr/hasTag "MX-MOR",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-MOR-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-MOR",
    :skos/definition
    "subdivision code for the estado of Morelos in the country of Mexico"})
 
 (def MX-MOR-Subdivision
-  "the estado of Morelos in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-MOR-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Morelos@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Morelos"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Morelos@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Morelos"},
    :skos/definition "the estado of Morelos in the country of Mexico"})
 
 (def MX-NAY
@@ -728,31 +734,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-NAY-RegionIdentifier
-  "subdivision code for the estado of Nayarit in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-NAY-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-NAY-Subdivision,
    :lcc-lr/hasTag "MX-NAY",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-NAY-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-NAY",
    :skos/definition
    "subdivision code for the estado of Nayarit in the country of Mexico"})
 
 (def MX-NAY-Subdivision
-  "the estado of Nayarit in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-NAY-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Nayarit@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Nayarit"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Nayarit@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Nayarit"},
    :skos/definition "the estado of Nayarit in the country of Mexico"})
 
 (def MX-NLE
@@ -761,31 +767,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-NLE-RegionIdentifier
-  "subdivision code for the estado of Nuevo León in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-NLE-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-NLE-Subdivision,
    :lcc-lr/hasTag "MX-NLE",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-NLE-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-NLE",
    :skos/definition
    "subdivision code for the estado of Nuevo León in the country of Mexico"})
 
 (def MX-NLE-Subdivision
-  "the estado of Nuevo León in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-NLE-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Nuevo León@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Nuevo León"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Nuevo León@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Nuevo León"},
    :skos/definition "the estado of Nuevo León in the country of Mexico"})
 
 (def MX-OAX
@@ -794,31 +800,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-OAX-RegionIdentifier
-  "subdivision code for the estado of Oaxaca in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-OAX-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-OAX-Subdivision,
    :lcc-lr/hasTag "MX-OAX",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-OAX-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-OAX",
    :skos/definition
    "subdivision code for the estado of Oaxaca in the country of Mexico"})
 
 (def MX-OAX-Subdivision
-  "the estado of Oaxaca in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-OAX-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Oaxaca@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Oaxaca"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Oaxaca@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Oaxaca"},
    :skos/definition "the estado of Oaxaca in the country of Mexico"})
 
 (def MX-PUE
@@ -827,31 +833,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-PUE-RegionIdentifier
-  "subdivision code for the estado of Puebla in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-PUE-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-PUE-Subdivision,
    :lcc-lr/hasTag "MX-PUE",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-PUE-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-PUE",
    :skos/definition
    "subdivision code for the estado of Puebla in the country of Mexico"})
 
 (def MX-PUE-Subdivision
-  "the estado of Puebla in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-PUE-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Puebla@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Puebla"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Puebla@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Puebla"},
    :skos/definition "the estado of Puebla in the country of Mexico"})
 
 (def MX-QUE
@@ -860,31 +866,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-QUE-RegionIdentifier
-  "subdivision code for the estado of Querétaro in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-QUE-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-QUE-Subdivision,
    :lcc-lr/hasTag "MX-QUE",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-QUE-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-QUE",
    :skos/definition
    "subdivision code for the estado of Querétaro in the country of Mexico"})
 
 (def MX-QUE-Subdivision
-  "the estado of Querétaro in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-QUE-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Querétaro@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Querétaro"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Querétaro@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Querétaro"},
    :skos/definition "the estado of Querétaro in the country of Mexico"})
 
 (def MX-ROO
@@ -893,31 +899,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-ROO-RegionIdentifier
-  "subdivision code for the estado of Quintana Roo in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-ROO-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-ROO-Subdivision,
    :lcc-lr/hasTag "MX-ROO",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-ROO-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-ROO",
    :skos/definition
    "subdivision code for the estado of Quintana Roo in the country of Mexico"})
 
 (def MX-ROO-Subdivision
-  "the estado of Quintana Roo in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-ROO-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Quintana Roo@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Quintana Roo"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Quintana Roo@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Quintana Roo"},
    :skos/definition "the estado of Quintana Roo in the country of Mexico"})
 
 (def MX-SIN
@@ -926,31 +932,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-SIN-RegionIdentifier
-  "subdivision code for the estado of Sinaloa in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-SIN-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-SIN-Subdivision,
    :lcc-lr/hasTag "MX-SIN",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-SIN-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-SIN",
    :skos/definition
    "subdivision code for the estado of Sinaloa in the country of Mexico"})
 
 (def MX-SIN-Subdivision
-  "the estado of Sinaloa in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-SIN-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Sinaloa@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Sinaloa"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Sinaloa@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Sinaloa"},
    :skos/definition "the estado of Sinaloa in the country of Mexico"})
 
 (def MX-SLP
@@ -959,31 +965,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-SLP-RegionIdentifier
-  "subdivision code for the estado of San Luis Potosí in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-SLP-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-SLP-Subdivision,
    :lcc-lr/hasTag "MX-SLP",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-SLP-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-SLP",
    :skos/definition
    "subdivision code for the estado of San Luis Potosí in the country of Mexico"})
 
 (def MX-SLP-Subdivision
-  "the estado of San Luis Potosí in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-SLP-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "San Luis Potosí@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "San Luis Potosí"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "San Luis Potosí@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "San Luis Potosí"},
    :skos/definition "the estado of San Luis Potosí in the country of Mexico"})
 
 (def MX-SON
@@ -992,31 +998,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-SON-RegionIdentifier
-  "subdivision code for the estado of Sonora in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-SON-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-SON-Subdivision,
    :lcc-lr/hasTag "MX-SON",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-SON-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-SON",
    :skos/definition
    "subdivision code for the estado of Sonora in the country of Mexico"})
 
 (def MX-SON-Subdivision
-  "the estado of Sonora in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-SON-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Sonora@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Sonora"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Sonora@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Sonora"},
    :skos/definition "the estado of Sonora in the country of Mexico"})
 
 (def MX-TAB
@@ -1025,31 +1031,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-TAB-RegionIdentifier
-  "subdivision code for the estado of Tabasco in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-TAB-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-TAB-Subdivision,
    :lcc-lr/hasTag "MX-TAB",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-TAB-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-TAB",
    :skos/definition
    "subdivision code for the estado of Tabasco in the country of Mexico"})
 
 (def MX-TAB-Subdivision
-  "the estado of Tabasco in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-TAB-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Tabasco@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Tabasco"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Tabasco@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Tabasco"},
    :skos/definition "the estado of Tabasco in the country of Mexico"})
 
 (def MX-TAM
@@ -1058,31 +1064,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-TAM-RegionIdentifier
-  "subdivision code for the estado of Tamaulipas in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-TAM-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-TAM-Subdivision,
    :lcc-lr/hasTag "MX-TAM",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-TAM-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-TAM",
    :skos/definition
    "subdivision code for the estado of Tamaulipas in the country of Mexico"})
 
 (def MX-TAM-Subdivision
-  "the estado of Tamaulipas in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-TAM-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Tamaulipas@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Tamaulipas"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Tamaulipas@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Tamaulipas"},
    :skos/definition "the estado of Tamaulipas in the country of Mexico"})
 
 (def MX-TLA
@@ -1091,31 +1097,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-TLA-RegionIdentifier
-  "subdivision code for the estado of Tlaxcala in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-TLA-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-TLA-Subdivision,
    :lcc-lr/hasTag "MX-TLA",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-TLA-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-TLA",
    :skos/definition
    "subdivision code for the estado of Tlaxcala in the country of Mexico"})
 
 (def MX-TLA-Subdivision
-  "the estado of Tlaxcala in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-TLA-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Tlaxcala@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Tlaxcala"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Tlaxcala@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Tlaxcala"},
    :skos/definition "the estado of Tlaxcala in the country of Mexico"})
 
 (def MX-VER
@@ -1124,32 +1130,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-VER-RegionIdentifier
-  "subdivision code for the estado of Veracruz de Ignacio de la Llave in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-VER-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-VER-Subdivision,
    :lcc-lr/hasTag "MX-VER",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-VER-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-VER",
    :skos/definition
    "subdivision code for the estado of Veracruz de Ignacio de la Llave in the country of Mexico"})
 
 (def MX-VER-Subdivision
-  "the estado of Veracruz de Ignacio de la Llave in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-VER-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString
-                              "Veracruz de Ignacio de la Llave@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Veracruz de Ignacio de la Llave"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Veracruz de Ignacio de la Llave@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Veracruz de Ignacio de la Llave"},
    :skos/definition
    "the estado of Veracruz de Ignacio de la Llave in the country of Mexico"})
 
@@ -1159,31 +1164,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-YUC-RegionIdentifier
-  "subdivision code for the estado of Yucatán in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-YUC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-YUC-Subdivision,
    :lcc-lr/hasTag "MX-YUC",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-YUC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-YUC",
    :skos/definition
    "subdivision code for the estado of Yucatán in the country of Mexico"})
 
 (def MX-YUC-Subdivision
-  "the estado of Yucatán in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-YUC-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Yucatán@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Yucatán"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Yucatán@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Yucatán"},
    :skos/definition "the estado of Yucatán in the country of Mexico"})
 
 (def MX-ZAC
@@ -1192,31 +1197,31 @@
    :rdf/type   :owl/NamedIndividual})
 
 (def MX-ZAC-RegionIdentifier
-  "subdivision code for the estado of Zacatecas in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-ZAC-RegionIdentifier,
    :lcc-lr/denotes :lcc-3166-2-mx/MX-ZAC-Subdivision,
    :lcc-lr/hasTag "MX-ZAC",
    :lcc-lr/identifies :lcc-3166-2-mx/MX-ZAC-Subdivision,
    :lcc-lr/isMemberOf :lcc-3166-2/ISO3166-2-CodeSet,
-   :rdf/type [:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual],
+   :rdf/type #{:lcc-cr/GeographicRegionIdentifier :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdfs/label "MX-ZAC",
    :skos/definition
    "subdivision code for the estado of Zacatecas in the country of Mexico"})
 
 (def MX-ZAC-Subdivision
-  "the estado of Zacatecas in the country of Mexico"
   {:db/ident :lcc-3166-2-mx/MX-ZAC-Subdivision,
-   :lcc-cr/hasLocalShortName #xsd/langString "Zacatecas@es",
+   :lcc-cr/hasLocalShortName {:rdf/language "es",
+                              :rdf/value    "Zacatecas"},
    :lcc-cr/isClassifiedBy :lcc-3166-2-mx/MX-239-RegionKind,
    :lcc-cr/isSubregionOf :lcc-3166-1/Mexico,
-   :rdf/type [:lcc-cr/CountrySubdivision :owl/NamedIndividual],
+   :rdf/type #{:owl/NamedIndividual :lcc-cr/CountrySubdivision},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
-   :rdfs/label #xsd/langString "Zacatecas@es",
+   :rdfs/label {:rdf/language "es",
+                :rdf/value    "Zacatecas"},
    :skos/definition "the estado of Zacatecas in the country of Mexico"})
 
 (def Mexico
@@ -1308,3 +1313,46 @@
   {:db/ident   :lcc-3166-2-mx/Zacatecas,
    :owl/sameAs :lcc-3166-2-mx/MX-ZAC-Subdivision,
    :rdf/type   :owl/NamedIndividual})
+
+(def urn:uuid:b2825a02-f69a-5305-ac04-ad8bdcfb8dbe
+  {:dcterms/issued #inst "2021-10-29T23:57:18.464-00:00",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :owl/imports
+   #{{:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
+   :owl/versionIRI
+   {:xsd/anyURI
+    "https://www.omg.org/spec/LCC/20211101/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
+   :rdf/type :owl/Ontology,
+   :rdfs/label "ISO 3166-2 Subdivision Codes for Mexico Ontology",
+   :rdfs/seeAlso #{{:xsd/anyURI
+                    "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}
+                   {:xsd/anyURI "https://www.omg.org/spec/LCC/AboutLCC/"}},
+   :sm/contentLanguage {:xsd/anyURI
+                        "https://www.w3.org/TR/owl2-quick-reference/"},
+   :sm/copyright #{"Copyright (c) 2015-2020 Adaptive Inc."
+                   "Copyright (c) 2021 agnos.ai UK Ltd."
+                   "Copyright (c) 2015-2021 Object Management Group, Inc."
+                   "Copyright (c) 2015-2017 Unisys"
+                   "Copyright (c) 2015-2021 Thematix Partners LLC"},
+   :sm/dependsOn
+   #{{:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/"}
+     {:xsd/anyURI
+      "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/"}},
+   :sm/fileAbbreviation "lcc-3166-2-mx",
+   :sm/fileAbstract
+   "This ontology represents the subset of the ISO 3166 standard that includes the actual ISO 3166-2 subdivision codes for Mexico, with the ontology and codes for the other parts of the standard represented in models that this ontology depends on.",
+   :sm/filename "ISO3166-2-SubdivisionCodes-MX.rdf",
+   :xsd/anyURI
+   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"})

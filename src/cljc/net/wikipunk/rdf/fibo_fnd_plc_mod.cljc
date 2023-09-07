@@ -1,65 +1,85 @@
 (ns net.wikipunk.rdf.fibo-fnd-plc-mod
-  "This is the metadata ontology used to describe the Foundations Places Module."
-  {:cmns-av/copyright ["Copyright (c) 2017-2023 Object Management Group, Inc."
-                       "Copyright (c) 2017-2023 EDM Council, Inc."],
-   :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/MetadataFNDPlaces/PlacesModule",
+  ^{:base
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/MetadataFNDPlaces/",
+    :namespaces
+    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+     "dcterms" "http://purl.org/dc/terms/",
+     "fibo-fnd-plc-mod"
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/MetadataFNDPlaces/",
+     "fibo-fnd-utl-av"
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+     "owl" "http://www.w3.org/2002/07/owl#",
+     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+     "xsd" "http://www.w3.org/2001/XMLSchema#"},
+    :prefix "fibo-fnd-plc-mod",
+    :source
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/MetadataFNDPlaces/PlacesModule"}
+  {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
+                        "Copyright (c) 2017-2023 EDM Council, Inc."},
    :dcterms/abstract
    "This is the metadata ontology used to describe the Foundations Places Module.",
-   :dcterms/issued #xsd/dateTime #inst "2022-06-14T18:00:00.000-04:00",
-   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
-   :dcterms/modified #xsd/dateTime #inst "2023-01-20T18:00:00.000-05:00",
+   :dcterms/issued #inst "2022-06-14T18:00:00.000-00:00",
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
+   :dcterms/modified #inst "2023-01-20T18:00:00.000-00:00",
    :owl/imports
-   [{:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
-    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}],
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/MetadataFNDPlaces/"},
-   :rdf/ns-prefix-map
-   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-    "dcterms" "http://purl.org/dc/terms/",
-    "fibo-fnd-plc-mod"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/MetadataFNDPlaces/",
-    "fibo-fnd-utl-av"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "owl" "http://www.w3.org/2002/07/owl#",
-    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdfa/prefix "fibo-fnd-plc-mod",
-   :rdfa/uri
-   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/MetadataFNDPlaces/",
-   :rdfs/label "Metadata for the EDMC-FIBO Foundations (FND) Places Module"})
+   :rdfs/label "Metadata for the EDMC-FIBO Foundations (FND) Places Module",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/MetadataFNDPlaces/"})
 
 (def PlacesModule
-  "This module includes ontologies defining concepts to do with real or virtual places and the addresses to such places."
-  {:cmns-av/copyright ["Copyright (c) 2017-2023 EDM Council, Inc."
-                       "Copyright (c) 2017-2023 Object Management Group, Inc."],
+  {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
+                        "Copyright (c) 2017-2023 EDM Council, Inc."},
    :db/ident :fibo-fnd-plc-mod/PlacesModule,
    :dcterms/abstract
    "This module includes ontologies defining concepts to do with real or virtual places and the addresses to such places.",
    :dcterms/hasPart
-   [{:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/"}],
-   :dcterms/license {:rdfa/uri "https://opensource.org/licenses/MIT"},
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/"}},
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :dcterms/title
-   ["Financial Industry Business Ontology (FIBO) Foundations (FND) Places Module"
-    "FIBO FND Places Module"],
-   :rdf/type [:fibo-fnd-utl-av/Module :owl/NamedIndividual],
+   #{"Financial Industry Business Ontology (FIBO) Foundations (FND) Places Module"
+     "FIBO FND Places Module"},
+   :rdf/type #{:fibo-fnd-utl-av/Module :owl/NamedIndividual},
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/MetadataFNDPlaces/"},
    :rdfs/label "places module",
-   :rdfs/seeAlso {:rdfa/uri "https://spec.edmcouncil.org/fibo/"}})
+   :rdfs/seeAlso {:xsd/anyURI "https://spec.edmcouncil.org/fibo/"}})
+
+(def urn:uuid:340a6638-8477-58ca-b1ee-f1c2876c345a
+  {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
+                        "Copyright (c) 2017-2023 EDM Council, Inc."},
+   :dcterms/abstract
+   "This is the metadata ontology used to describe the Foundations Places Module.",
+   :dcterms/issued #inst "2022-06-14T18:00:00.000-00:00",
+   :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
+   :dcterms/modified #inst "2023-01-20T18:00:00.000-00:00",
+   :owl/imports
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
+   :owl/versionIRI
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Places/MetadataFNDPlaces/"},
+   :rdf/type :owl/Ontology,
+   :rdfs/label "Metadata for the EDMC-FIBO Foundations (FND) Places Module",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Places/MetadataFNDPlaces/"})

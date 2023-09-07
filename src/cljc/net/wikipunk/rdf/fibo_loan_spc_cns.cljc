@@ -1,129 +1,219 @@
 (ns net.wikipunk.rdf.fibo-loan-spc-cns
-  "The consumer loans ontology defines concepts specific to loans that are offered only to consumers rather than to organization, primarily for personal, family, or household purposes."
+  ^{:base
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/",
+    :namespaces
+    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+     "dcterms" "http://purl.org/dc/terms/",
+     "fibo-be-le-lp"
+     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+     "fibo-fbc-dae-dbt"
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
+     "fibo-fnd-pas-pas"
+     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+     "fibo-fnd-pty-rl"
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+     "fibo-fnd-utl-av"
+     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+     "fibo-loan-ln-ln"
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
+     "fibo-loan-spc-cns"
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/",
+     "fibo-loan-spc-crd"
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts/",
+     "owl" "http://www.w3.org/2002/07/owl#",
+     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+     "skos" "http://www.w3.org/2004/02/skos/core#",
+     "xsd" "http://www.w3.org/2001/XMLSchema#"},
+    :prefix "fibo-loan-spc-cns",
+    :source
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/"}
   {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
-   :dcat/downloadURL
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/",
    :dcterms/abstract
    "The consumer loans ontology defines concepts specific to loans that are offered only to consumers rather than to organization, primarily for personal, family, or household purposes.",
-   :dcterms/license {:rdfa/uri "http://opensource.org/licenses/MIT"},
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
    :owl/imports
-   [{:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"}
-    {:rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
-    {:rdfa/uri
-     "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"}],
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/CardAccounts/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"}},
    :owl/versionIRI
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/ConsumerLoans/"},
-   :rdf/ns-prefix-map
-   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-    "dcterms" "http://purl.org/dc/terms/",
-    "fibo-be-le-lp"
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-    "fibo-fbc-dae-dbt"
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
-    "fibo-fnd-rel-rel"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-    "fibo-fnd-utl-av"
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    "fibo-loan-ln-ln"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
-    "fibo-loan-spc-cns"
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/",
-    "owl" "http://www.w3.org/2002/07/owl#",
-    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-    "skos" "http://www.w3.org/2004/02/skos/core#",
-    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :rdf/type :owl/Ontology,
-   :rdfa/prefix "fibo-loan-spc-cns",
-   :rdfa/uri
-   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/",
-   :rdfs/label #xsd/langString "Consumer Loans Ontology@en"})
-
-(def AutoLoan
-  "collateralized, simple-interest loan that is repaid in monthly installments over a period of typically three to five years, for the purpose of purchasing a vehicle"
-  {:cmns-av/explanatoryNote
-   #xsd/langString
-    "Many lenders will only approve auto loans for vehicles (i.e., cars, trucks) that are a certain age (typically 5 years or less) due to depreciation of the value of the vehicle. Because an auto loan is a 'secured' type of loan, the vehicle that is being financed is used as collateral (i.e. if the borrower fails to repay the loan, the vehicle may be seized by the lender).@en",
-   :db/ident :fibo-loan-spc-cns/AutoLoan,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:rdfa/uri
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/"},
-   :rdfs/label #xsd/langString "auto loan@en",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-dae-dbt/isCollateralizedBy,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/PhysicalCollateral,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-loan-spc-cns/ConsumerLoan
-                     :fibo-loan-ln-ln/CollateralizedLoan
-                     :fibo-loan-ln-ln/Loan
-                     {:owl/onProperty :fibo-fbc-dae-dbt/hasBorrower,
-                      :owl/someValuesFrom
-                      {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                       :owl/someValuesFrom
-                       :fibo-be-le-lp/LegallyCompetentNaturalPerson,
-                       :rdf/type :owl/Restriction},
-                      :rdf/type :owl/Restriction}],
-   :skos/definition
-   #xsd/langString
-    "collateralized, simple-interest loan that is repaid in monthly installments over a period of typically three to five years, for the purpose of purchasing a vehicle@en"})
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Consumer Loans Ontology"},
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/"})
 
 (def ConsumerLoan
-  "loan whose borrower is person as opposed to an organization, i.e., a consumer"
-  {:db/ident :fibo-loan-spc-cns/ConsumerLoan,
+  {:cmns-av/adaptedFrom
+   {:rdf/language "en",
+    :rdf/value
+    "12 CFR § 228.12, https://www.law.cornell.edu/cfr/text/12/228.12"},
+   :cmns-av/explanatoryNote
+   #{{:rdf/language "en",
+      :rdf/value
+      "In the United Kingdom and per the Bank of England, lending to individuals (excluding student loans) consists of sterling lending secured on dwellings (i.e. mortgages) and sterling consumer credit to UK-resident individuals. See https://www.bankofengland.co.uk/statistics/details/further-details-about-total-lending-to-individuals-data. This definition is broader than the definition used in the US, however."}
+     {:rdf/language "en",
+      :rdf/value
+      "In the United States, consumer loans do not include a home mortgage, small business, or small farm loans. They are defined by law to include the following: (1) Motor vehicle loan, which is a consumer loan extended for the purchase of and secured by a motor vehicle; (2) Credit card loan, which is a line of credit for household, family, or other personal expenditures that is accessed by a borrower's use of a 'credit card,' as this term is defined in § 1026.2 of 12 CFR § 228.12; (3) Other secured consumer loan, which is a secured consumer loan that is not included in one of the other categories of consumer loans; and (4) Other unsecured consumer loan, which is an unsecured consumer loan that is not included in one of the other categories of consumer loans."}},
+   :db/ident :fibo-loan-spc-cns/ConsumerLoan,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/"},
-   :rdfs/label #xsd/langString "consumer loan@en",
-   :rdfs/subClassOf [{:owl/onProperty :fibo-fbc-dae-dbt/hasBorrower,
-                      :owl/someValuesFrom
-                      {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "consumer loan"},
+   :rdfs/subClassOf #{:fibo-loan-ln-ln/Loan
+                      {:owl/onProperty :fibo-fbc-dae-dbt/hasBorrower,
                        :owl/someValuesFrom
-                       :fibo-be-le-lp/LegallyCompetentNaturalPerson,
-                       :rdf/type :owl/Restriction},
-                      :rdf/type :owl/Restriction}
-                     :fibo-loan-ln-ln/Loan],
+                       {:owl/unionOf
+                        [:fibo-fnd-pas-pas/Consumer
+                         {:owl/onProperty :fibo-fnd-pty-rl/isPlayedBy,
+                          :owl/someValuesFrom
+                          :fibo-be-le-lp/LegallyCompetentNaturalPerson,
+                          :rdf/type :owl/Restriction}],
+                        :rdf/type :owl/Class},
+                       :rdf/type :owl/Restriction}},
    :skos/definition
-   #xsd/langString
-    "loan whose borrower is person as opposed to an organization, i.e., a consumer@en"})
+   {:rdf/language "en",
+    :rdf/value
+    "loan to one or more individuals for household, family, or other personal expenditures, excluding mortgages and student loans"},
+   :skos/example
+   {:rdf/language "en",
+    :rdf/value
+    "Other secured consumer loans may include loans against insurance policies, against securities held in a retirement account, loans secured with collateral other than for the loan's stated purpose, lines of credit other than credit card agreements, and so forth."}})
 
 (def HomeEquityLineOfCredit
-  "line of credit secured by equity value in a borrower's home or other property"
-  {:cmns-av/abbreviation #xsd/langString "HELOC@en",
+  {:cmns-av/acronym {:rdf/language "en",
+                     :rdf/value    "HELOC"},
    :cmns-av/explanatoryNote
-   [#xsd/langString
-     "Home equity loans allow the borrower to borrow against the difference between the fair market value of the property, as determined by an appraisal, and the amount of any outstanding debt on that property, which is typically a first mortgage. Common practice is to set the maximum amount that can be borrowed of up to 80 percent of the fair market value less any outstanding debt.@en"
-    #xsd/langString
-     "This is both a revolving line of credit and a mortgage, in that the collateral for the revolving line of credit in this case is some real estate, which is a defining fact for a mortgage. This form of product can either have an increase or decrease in principal, according to the actions of the borrower. These may also be used in the formation of asset pools for asset backed securities.@en"],
+   #{{:rdf/language "en",
+      :rdf/value
+      "Usually, the term of a HELOC can vary from 5 to up to 25 years, with an initial draw period during which the borrower can access the line of credit, followed by a repayment period during which monthly payments on principal and interest are due until the loan is paid in full."}
+     {:rdf/language "en",
+      :rdf/value
+      "Home equity loans allow the borrower to borrow against the difference between the fair market value of the property, as determined by an appraisal, and the amount of any outstanding debt on that property, which is typically a first mortgage. Common practice is to set the maximum amount that can be borrowed of up to 80 percent of the fair market value less any outstanding debt."}},
    :db/ident :fibo-loan-spc-cns/HomeEquityLineOfCredit,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
-   {:rdfa/uri
+   {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/"},
-   :rdfs/label #xsd/langString "home equity line of credit@en",
-   :rdfs/subClassOf [{:owl/onProperty     :fibo-fbc-dae-dbt/isCollateralizedBy,
-                      :owl/someValuesFrom :fibo-fbc-dae-dbt/PhysicalCollateral,
-                      :rdf/type           :owl/Restriction}
-                     :fibo-loan-ln-ln/CollateralizedLoan
-                     :fibo-loan-spc-cns/ConsumerLoan
-                     :fibo-fbc-dae-dbt/RevolvingLineOfCredit
-                     :fibo-loan-ln-ln/Loan
-                     {:owl/onProperty :fibo-fbc-dae-dbt/hasBorrower,
-                      :owl/someValuesFrom
-                      {:owl/onProperty :fibo-fnd-rel-rel/hasIdentity,
-                       :owl/someValuesFrom
-                       :fibo-be-le-lp/LegallyCompetentNaturalPerson,
-                       :rdf/type :owl/Restriction},
-                      :rdf/type :owl/Restriction}],
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "home equity line of credit"},
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fbc-dae-dbt/isCollateralizedBy,
+                       :owl/someValuesFrom :fibo-fbc-dae-dbt/PhysicalCollateral,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-loan-ln-ln/CollateralizedLoan
+                      :fibo-loan-spc-cns/SecuredConsumerLoan
+                      :fibo-fbc-dae-dbt/RevolvingLineOfCredit},
    :skos/definition
-   #xsd/langString
-    "line of credit secured by equity value in a borrower's home or other property@en"})
+   {:rdf/language "en",
+    :rdf/value
+    "line of credit granted to a homeowner secured by the equity value in a borrower's home or other property"}})
+
+(def MotorVehicleLoan
+  {:cmns-av/adaptedFrom
+   {:rdf/language "en",
+    :rdf/value
+    "12 CFR § 228.12, https://www.law.cornell.edu/cfr/text/12/228.12"},
+   :cmns-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "Many lenders will only approve auto loans for vehicles (i.e., cars, trucks) that are a certain age (typically 5 years or less) due to depreciation of the value of the vehicle. Because an auto loan is a 'secured' type of loan, the vehicle that is being financed is used as collateral (i.e. if the borrower fails to repay the loan, the vehicle may be seized by the lender)."},
+   :cmns-av/synonym {:rdf/language "en",
+                     :rdf/value    "auto loan"},
+   :db/ident :fibo-loan-spc-cns/MotorVehicleLoan,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "motor vehicle loan"},
+   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fbc-dae-dbt/isCollateralizedBy,
+                       :owl/someValuesFrom :fibo-fbc-dae-dbt/PhysicalCollateral,
+                       :rdf/type           :owl/Restriction}
+                      :fibo-loan-ln-ln/CollateralizedLoan
+                      :fibo-loan-spc-cns/SecuredConsumerLoan},
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "collateralized, simple-interest loan that is repaid in monthly installments over a period of typically three to five years, for the purpose of purchasing a vehicle"}})
+
+(def SecuredConsumerLoan
+  {:db/ident :fibo-loan-spc-cns/SecuredConsumerLoan,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "secured consumer loan"},
+   :rdfs/subClassOf #{:fibo-loan-ln-ln/SecuredLoan
+                      :fibo-loan-spc-cns/ConsumerLoan},
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "loan to one or more individuals for household, family, or other personal expenditures in which the borrower pledges some asset via a security agreement as collateral for the loan, or that is secured via third-party guarantee"}})
+
+(def UnsecuredConsumerLoan
+  {:db/ident :fibo-loan-spc-cns/UnsecuredConsumerLoan,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "unsecured consumer loan"},
+   :rdfs/subClassOf #{:fibo-loan-ln-ln/UnsecuredLoan
+                      :fibo-loan-spc-cns/ConsumerLoan},
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "loan to one or more individuals for household, family, or other personal expenditures granted based on the strength of the borrower's credit history or reputation in the community"}})
+
+(def urn:uuid:e2da2a06-5cc0-5e51-a69c-036bff66dd63
+  {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
+   :dcterms/abstract
+   "The consumer loans ontology defines concepts specific to loans that are offered only to consumers rather than to organization, primarily for personal, family, or household purposes.",
+   :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :owl/imports
+   #{{:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/CardAccounts/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/ProductsAndServices/ProductsAndServices/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Parties/Roles/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+     {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"}},
+   :owl/versionIRI
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/ConsumerLoans/"},
+   :rdf/type :owl/Ontology,
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "Consumer Loans Ontology"},
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/"})
