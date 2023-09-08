@@ -1,14 +1,12 @@
 {:deps
  {io.github.aamedina/rdf
-  {:sha     "710a6861e054797a9c738a62a58b239f38a2bffc"
+  {:sha     "f43c5961c85c274f84aa85496c0023abe10fafc9"
    :git/url "https://github.com/aamedina/rdf.git"}}
  :paths ["src/clj" "src/cljc" "classes" "resources"]
  :aliases
  {:dev
   {:extra-deps
-   {com.datomic/dev-local
-    {:mvn/version "1.0.243"}
-    com.walmartlabs/schematic
+   {com.walmartlabs/schematic
     {:mvn/version "1.3.0"}
     com.stuartsierra/component.repl
     {:mvn/version "1.0.0"}
