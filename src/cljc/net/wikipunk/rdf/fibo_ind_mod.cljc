@@ -23,7 +23,7 @@
      "xsd" "http://www.w3.org/2001/XMLSchema#"},
     :prefix "fibo-ind-mod",
     :source
-    "https://spec.edmcouncil.org/fibo/ontology/IND/MetadataIND/INDDomain"}
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/MetadataIND/INDDomain"}
   {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
                         "Copyright (c) 2014-2023 EDM Council, Inc."},
    :dcterms/abstract
@@ -33,21 +33,21 @@
    :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/ForeignExchange/MetadataINDForeignExchange/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/MetadataINDIndicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/MarketIndices/MetadataINDMarketIndices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/MetadataINDMarketIndices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/MetadataINDInterestRates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/InterestRates/MetadataINDInterestRates/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/MetadataINDIndicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/ForeignExchange/MetadataINDForeignExchange/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/MetadataINDEconomicIndicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/EconomicIndicators/MetadataINDEconomicIndicators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MetadataIND/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/MetadataIND/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Indices and Indicators (IND) Domain",
@@ -99,21 +99,21 @@
    :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/ForeignExchange/MetadataINDForeignExchange/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/MetadataINDIndicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/MarketIndices/MetadataINDMarketIndices/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MarketIndices/MetadataINDMarketIndices/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/InterestRates/MetadataINDInterestRates/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/InterestRates/MetadataINDInterestRates/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/MetadataINDIndicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/ForeignExchange/MetadataINDForeignExchange/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/MetadataINDEconomicIndicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/EconomicIndicators/MetadataINDEconomicIndicators/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/MetadataIND/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/MetadataIND/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Indices and Indicators (IND) Domain",

@@ -5,12 +5,16 @@
     {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
      "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
      "dcterms" "http://purl.org/dc/terms/",
+     "fibo-fbc-dae-dbt"
+     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
      "fibo-fbc-fi-fi"
      "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
      "fibo-fnd-utl-av"
      "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
      "fibo-loan-spc-cns"
      "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/",
+     "fibo-loan-spc-crd"
+     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts/",
      "fibo-loan-spc-stu"
      "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/StudentLoans/",
      "fibo-sec-dbt-abs"
@@ -30,54 +34,57 @@
      "xsd" "http://www.w3.org/2001/XMLSchema#"},
     :prefix "fibo-sec-dbt-abs",
     :source
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/"}
-  {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/AssetBackedSecurities/"}
+  {:cmns-av/copyright #{"Copyright (c) 2015-2023 EDM Council, Inc."
+                        "Copyright (c) 2023 Object Management Group, Inc."},
    :dcterms/abstract
    "Debt securities backed by a pool of assets, including loans of various kinds, credit card pools and home equity lines of credit, as well as esoteric assets.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
-   :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/Indicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/Funds/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/StudentLoans/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/PoolBackedSecurities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/CardAccounts/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/StudentLoans/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/EconomicIndicators/EconomicIndicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/ConsumerLoans/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/ConsumerLoans/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/DebtInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/PoolBackedSecurities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Funds/Funds/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/Bonds/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/Pools/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/AssetBackedSecurities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/AssetBackedSecurities/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Asset-backed Securities Ontology"},
@@ -91,10 +98,10 @@
    :cmns-av/explanatoryNote
    #{{:rdf/language "en",
       :rdf/value
-      "Auto asset-backed securities (auto ABS) are typically structured finance securities that are collateralized by auto loans or leases, such as those to prime (good credit standing) and subprime (poor credit standing) borrowers. Loans or leases are bundled into pools and transferred to a special-purpose entity (SPE), which, in turn, transfers the pool to a (bankruptcy remote) trust. Payments on the underlying auto loans and leases are pooled in the trust, and the funds are used to pay note investors their respective principal which, in turn, transfers the pool to a (bankruptcy remote) trust. Payments on the underlying auto loans and leases are pooled in the trust, and the funds are used to pay note investors their respective principal and interest when due. Any leftover funds - known as excess spread, or the net interest margin - are paid to the equity holder (usually the issuer, such as an auto finance company)."}
+      "If the credit risk of the pool has been decoupled from the institution via an SPV, then an auto asset-backed security is also a structured finance instrument."}
      {:rdf/language "en",
       :rdf/value
-      "If the credit risk of the pool has been decoupled from the institution via an SPV, then an auto asset-backed security is also a structured finance instrument."}},
+      "Auto asset-backed securities (auto ABS) are typically structured finance securities that are collateralized by auto loans or leases, such as those to prime (good credit standing) and subprime (poor credit standing) borrowers. Loans or leases are bundled into pools and transferred to a special-purpose entity (SPE), which, in turn, transfers the pool to a (bankruptcy remote) trust. Payments on the underlying auto loans and leases are pooled in the trust, and the funds are used to pay note investors their respective principal which, in turn, transfers the pool to a (bankruptcy remote) trust, i.e., one that protects the security from bankruptcy. Payments on the underlying auto loans and leases are pooled in the trust, and the funds are used to pay note investors their respective principal and interest when due. Any leftover funds - known as excess spread, or the net interest margin - are paid to the equity holder (usually the issuer, such as an auto finance company)."}},
    :db/ident :fibo-sec-dbt-abs/AutoAssetBackedSecurity,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -109,7 +116,7 @@
    :skos/definition
    {:rdf/language "en",
     :rdf/value
-    "asset-backed security issued by an auto finance company that is backed by an underlying pool of auto-related loans or leases"}})
+    "asset-backed security that is backed by an underlying pool of auto-related loans and/or leases"}})
 
 (def AutoDebtPool
   {:db/ident :fibo-sec-dbt-abs/AutoDebtPool,
@@ -120,11 +127,16 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "auto debt pool"},
    :rdfs/subClassOf #{:fibo-sec-sec-pls/DebtPool
-                      {:owl/onProperty     :cmns-col/hasConstituent,
-                       :owl/someValuesFrom :fibo-loan-spc-cns/MotorVehicleLoan,
-                       :rdf/type           :owl/Restriction}},
-   :skos/definition {:rdf/language "en",
-                     :rdf/value "debt pool of auto-related loans or leases"}})
+                      {:owl/onProperty :cmns-col/hasConstituent,
+                       :owl/someValuesFrom
+                       {:owl/unionOf [:fibo-loan-spc-cns/MotorVehicleLoan
+                                      :fibo-fbc-dae-dbt/MotorVehicleLease],
+                        :rdf/type    :owl/Class},
+                       :rdf/type :owl/Restriction}},
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "debt pool of loans and/or leases that are motor vehicle-related"}})
 
 (def BondPool
   {:db/ident :fibo-sec-dbt-abs/BondPool,
@@ -153,12 +165,7 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "consumer asset-backed security"},
    :rdfs/subClassOf #{:fibo-sec-dbt-pbs/StructuredFinanceInstrument
-                      :fibo-sec-dbt-pbs/AssetBackedSecurity
-                      {:owl/unionOf
-                       [:fibo-sec-dbt-abs/AutoAssetBackedSecurity
-                        :fibo-sec-dbt-abs/CreditCardAssetBackedSecurity
-                        :fibo-sec-dbt-abs/StudentLoanAssetBackedSecurity],
-                       :rdf/type :owl/Class}},
+                      :fibo-sec-dbt-pbs/AssetBackedSecurity},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -179,7 +186,7 @@
    :rdfs/label "controlled amortization asset-backed security",
    :rdfs/subClassOf #{{:owl/onProperty :fibo-sec-dbt-dbti/hasRepaymentTerms,
                        :owl/someValuesFrom
-                       :fibo-sec-dbt-abs/ControlledAmortizationStructure,
+                       :fibo-sec-dbt-bnd/BondAmortizationPaymentTerms,
                        :rdf/type :owl/Restriction}
                       :fibo-sec-dbt-pbs/AssetBackedSecurity
                       {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
@@ -188,16 +195,30 @@
    :skos/definition
    "asset-backed security based on a pool of bonds securitized using a controlled amortization structure"})
 
-(def ControlledAmortizationStructure
-  {:db/ident :fibo-sec-dbt-abs/ControlledAmortizationStructure,
+(def CreditCardAccountPool
+  {:cmns-av/adaptedFrom
+   {:rdf/language "en",
+    :rdf/value
+    "Federal Deposit Insurance Corporation (FDIC) Credit Card Securitization Manual, available at https://www.fdic.gov/regulations/examinations/credit_card_securitization/ch2.html"},
+   :cmns-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "In a credit card securitization transaction only the receivables are sold, not the accounts that generate the receivables. The financial institution retains legal ownership of the credit card accounts and can continue to change the terms on the accounts. Accounts corresponding to securitized loans are typically referred to as the designated accounts (or sometimes trust accounts). The initial outstanding balances on the designated accounts are sold to the trust as are the rights to any new charges on the designated accounts. Subsequently, as cardholder purchase activity generates more receivables on the designated accounts, these new receivables are purchased by the trust from the originating institution/seller/transferor. The trust uses the monthly principal payments received from the cardholders to acquire these new charges or receivables. When the securitization is initially set up, the originating institution/seller adds sufficient receivables to support the principal balance of the certificates plus an additional amount (seller's interest) that serves to absorb fluctuations in the outstanding balance of the receivables. The originating institution/seller will make subsequent additions to the trust in order to keep the seller's interest at the required level."},
+   :db/ident :fibo-sec-dbt-abs/CreditCardAccountPool,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/"},
-   :rdfs/label "controlled amortization structure",
-   :rdfs/subClassOf :fibo-sec-dbt-bnd/BondAmortizationPaymentTerms,
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "credit card account pool"},
+   :rdfs/subClassOf #{:fibo-sec-sec-pls/DebtPool
+                      {:owl/onProperty     :cmns-col/hasConstituent,
+                       :owl/someValuesFrom :fibo-loan-spc-crd/CreditCardAccount,
+                       :rdf/type           :owl/Restriction}},
    :skos/definition
-   "method of providing investors with a relatively predictable repayment schedule, even though the underlying assets are non-amortizing"})
+   {:rdf/language "en",
+    :rdf/value
+    "pool of credit card receivables associated with designated accounts"}})
 
 (def CreditCardAssetBackedSecurity
   {:cmns-av/adaptedFrom
@@ -215,34 +236,14 @@
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/"},
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "credit card asset-backed security"},
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
-                       :owl/someValuesFrom :fibo-sec-dbt-abs/CreditCardPool,
-                       :rdf/type           :owl/Restriction}
+   :rdfs/subClassOf #{{:owl/onProperty :fibo-fbc-fi-fi/hasUnderlier,
+                       :owl/someValuesFrom
+                       :fibo-sec-dbt-abs/CreditCardAccountPool,
+                       :rdf/type :owl/Restriction}
                       :fibo-sec-dbt-pbs/AssetBackedSecurity},
    :skos/definition {:rdf/language "en",
                      :rdf/value
                      "asset-backed security based on credit card receivables"}})
-
-(def CreditCardPool
-  {:cmns-av/adaptedFrom
-   {:rdf/language "en",
-    :rdf/value
-    "Federal Deposit Insurance Corporation (FDIC) Credit Card Securitization Manual, available at https://www.fdic.gov/regulations/examinations/credit_card_securitization/ch2.html"},
-   :cmns-av/explanatoryNote
-   {:rdf/language "en",
-    :rdf/value
-    "In a credit card securitization transaction only the receivables are sold, not the accounts that generate the receivables. The financial institution retains legal ownership of the credit card accounts and can continue to change the terms on the accounts. Accounts corresponding to securitized loans are typically referred to as the designated accounts (or sometimes trust accounts). The initial outstanding balances on the designated accounts are sold to the trust as are the rights to any new charges on the designated accounts. Subsequently, as cardholder purchase activity generates more receivables on the designated accounts, these new receivables are purchased by the trust from the originating institution/seller/transferor. The trust uses the monthly principal payments received from the cardholders to acquire these new charges or receivables. When the securitization is initially set up, the originating institution/seller adds sufficient receivables to support the principal balance of the certificates plus an additional amount (seller's interest) that serves to absorb fluctuations in the outstanding balance of the receivables. The originating institution/seller will make subsequent additions to the trust in order to keep the seller's interest at the required level."},
-   :db/ident :fibo-sec-dbt-abs/CreditCardPool,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "credit card pool"},
-   :rdfs/subClassOf :fibo-sec-sec-pls/DebtPool,
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "pool of outstanding balances on designated accounts"}})
 
 (def FullyAmortizingAssetBackedSecurity
   {:cmns-av/adaptedFrom
@@ -259,11 +260,7 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/"},
    :rdfs/label "fully amortizing asset-backed security",
-   :rdfs/subClassOf #{{:owl/onProperty :fibo-sec-dbt-dbti/hasRepaymentTerms,
-                       :owl/someValuesFrom
-                       :fibo-sec-dbt-abs/ControlledAmortizationStructure,
-                       :rdf/type :owl/Restriction}
-                      :fibo-sec-dbt-pbs/AssetBackedSecurity
+   :rdfs/subClassOf #{:fibo-sec-dbt-pbs/AssetBackedSecurity
                       {:owl/onProperty     :fibo-fbc-fi-fi/hasUnderlier,
                        :owl/someValuesFrom :fibo-sec-sec-pls/DebtPool,
                        :rdf/type           :owl/Restriction}},
@@ -348,63 +345,57 @@
    :skos/definition {:rdf/language "en",
                      :rdf/value    "debt pool consisting of student loans"}})
 
-(def WACBondCoupon
-  {:db/ident :fibo-sec-dbt-abs/WACBondCoupon,
-   :rdf/type :owl/Class,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/"},
-   :rdfs/label "w a c bond coupon",
-   :rdfs/subClassOf :fibo-sec-dbt-bnd/BondVariableCoupon})
-
 (def urn:uuid:328a8711-a888-5ce5-9ee9-402d6724a6e0
-  {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
+  {:cmns-av/copyright #{"Copyright (c) 2015-2023 EDM Council, Inc."
+                        "Copyright (c) 2023 Object Management Group, Inc."},
    :dcterms/abstract
    "Debt securities backed by a pool of assets, including loans of various kinds, credit card pools and home equity lines of credit, as well as esoteric assets.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
-   :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/Indicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Funds/Funds/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/Bonds/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/Pools/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/StudentLoans/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/PoolBackedSecurities/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/DebtInstruments/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/CardAccounts/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/StudentLoans/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/EconomicIndicators/EconomicIndicators/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/Analytics/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/ConsumerLoans/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/ConsumerLoans/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/CurrencyAmount/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/EconomicIndicators/EconomicIndicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/DebtInstruments/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/PoolBackedSecurities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Funds/Funds/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/IND/Indicators/Indicators/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIssuance/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Accounting/CurrencyAmount/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/Bonds/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/OwnershipAndControl/Ownership/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/Ownership/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/FunctionalEntities/FunctionalEntities/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/FinancialInstruments/"}
+     {:xsd/anyURI
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/FunctionalEntities/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Securities/SecuritiesIssuance/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"}
-     {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/FinancialInstruments/FinancialInstruments/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/Pools/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/SEC/Debt/AssetBackedSecurities/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/AssetBackedSecurities/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Asset-backed Securities Ontology"},

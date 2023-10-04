@@ -19,7 +19,7 @@
      "xsd" "http://www.w3.org/2001/XMLSchema#"},
     :prefix "fibo-loan-mod",
     :source
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/MetadataLOAN/LOANDomain"}
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/MetadataLOAN/LOANDomain"}
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2018-2023 EDM Council, Inc."},
    :dcterms/abstract
@@ -29,17 +29,17 @@
    :dcterms/modified #inst "2023-02-03T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/MetadataLOANLoansSpecific/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/MetadataLOANLoansSpecific/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/MetadataLOAN/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/MetadataLOAN/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Metadata for the EDMC-FIBO Loans (LOAN) Domain",
    :xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/LOAN/MetadataLOAN/"})
@@ -78,17 +78,17 @@
    :dcterms/modified #inst "2023-02-03T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/RealEstateLoans/MetadataLOANRealEstateLoans/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/MetadataLOANLoansSpecific/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/MetadataLOANLoansSpecific/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/MetadataLOANLoansGeneral/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/MetadataLOAN/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/MetadataLOAN/"},
    :rdf/type :owl/Ontology,
    :rdfs/label "Metadata for the EDMC-FIBO Loans (LOAN) Domain",
    :xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/LOAN/MetadataLOAN/"})

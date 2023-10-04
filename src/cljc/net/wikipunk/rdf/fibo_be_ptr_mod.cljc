@@ -14,7 +14,7 @@
      "xsd"     "http://www.w3.org/2001/XMLSchema#"},
     :prefix "fibo-be-ptr-mod",
     :source
-    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/MetadataBEPartnerships/PartnershipsModule"}
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Partnerships/MetadataBEPartnerships/PartnershipsModule"}
   {:cmns-av/copyright
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
@@ -25,11 +25,11 @@
    :dcterms/modified #inst "2023-01-27T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Partnerships/MetadataBEPartnerships/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Partnerships/MetadataBEPartnerships/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Business Entities (BE) Partnerships Module",
@@ -68,11 +68,11 @@
    :dcterms/modified #inst "2023-01-27T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/Partnerships/MetadataBEPartnerships/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Partnerships/MetadataBEPartnerships/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata about the EDMC-FIBO Business Entities (BE) Partnerships Module",

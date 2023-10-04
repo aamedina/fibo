@@ -23,38 +23,72 @@
      "xsd" "http://www.w3.org/2001/XMLSchema#"},
     :prefix "fibo-loan-spc-stu",
     :source
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/StudentLoans/"}
-  {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/StudentLoans/"}
+  {:cmns-av/copyright #{"Copyright (c) 2015-2023 EDM Council, Inc."
+                        "Copyright (c) 2023 Object Management Group, Inc."},
    :dcterms/abstract
    "A loan or series of loans made for the purposes of study at some institution of learning.\n\t\tThis ontology and much of the common supporting information on loan applications are based on extensive review and input from Sallie Mae in the US and there may be other variants of student loans that are not covered here. For example in principle a student loan may be framed as a credit facility in some arrangements and as a single loan with separate payment phases in others.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
-   :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/Loans/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/StudentLoans/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/StudentLoans/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Student Loans Ontology"},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/StudentLoans/"})
 
+(def PrivateStudentLoan
+  {:db/ident :fibo-loan-spc-stu/PrivateStudentLoan,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/StudentLoans/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "private student loan"},
+   :rdfs/subClassOf #{:fibo-loan-spc-stu/RegulatedStudentLoan
+                      :fibo-loan-spc-stu/StudentLoan},
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "student loan that is not considered a government-backed / regulated loan"}})
+
+(def RegulatedStudentLoan
+  {:cmns-av/explanatoryNote
+   {:rdf/language "en",
+    :rdf/value
+    "In the United States, certain student loans survive bankruptcy and are subject to additional tax regulations that do not apply to other kinds of loans."},
+   :db/ident :fibo-loan-spc-stu/RegulatedStudentLoan,
+   :rdf/type :owl/Class,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/StudentLoans/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "regulated student loan"},
+   :rdfs/subClassOf :fibo-loan-spc-stu/StudentLoan,
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "student loan (1) whose lender is a government agency or instrumentality, and/or (2) that is treated uniquely due to tax regulations"}})
+
 (def StudentLoan
   {:cmns-av/explanatoryNote
    {:rdf/language "en",
     :rdf/value
-    "Also loans which are Bridge Loan between education and professional certification, e.g. between Law School and Bar Exam. These are considered Student Loans also. So this adds to the list of types of Student Loan and the facts thereof. Also Resident and Relocation e.g. Med students, e..g when doing internship. Provide money for that purpose. Also considered a student loan. Implications: There are different crieteria in making the loan, for each of these, e.g. whether you have graduated. If residentcy and relocation aplication: would have to be completing Med raining and getting ready to go into internship. So there are liufecycle (phase) terms about the Borrower (student). In these the borrower is alwways the student."},
+    "Student loans may include loans for graduate and professional education. Student loans may be obtained from government institutions, from private sources such as a bank or financial institution, or from other organizations."},
    :db/ident :fibo-loan-spc-stu/StudentLoan,
    :rdf/type :owl/Class,
    :rdfs/isDefinedBy
@@ -69,31 +103,33 @@
                         :fibo-be-le-lp/LegallyCompetentNaturalPerson,
                         :rdf/type :owl/Restriction},
                        :rdf/type :owl/Restriction} :fibo-loan-ln-ln/Loan},
-   :skos/definition {:rdf/language "en",
-                     :rdf/value
-                     "A loan provided for the purposes of education."}})
+   :skos/definition
+   {:rdf/language "en",
+    :rdf/value
+    "loan provided for the purposes of education, allowing students and parents/guardians to borrow money for college"}})
 
 (def urn:uuid:b0780b98-353b-5d92-af4a-54c44567f403
-  {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
+  {:cmns-av/copyright #{"Copyright (c) 2015-2023 EDM Council, Inc."
+                        "Copyright (c) 2023 Object Management Group, Inc."},
    :dcterms/abstract
    "A loan or series of loans made for the purposes of study at some institution of learning.\n\t\tThis ontology and much of the common supporting information on loan applications are based on extensive review and input from Sallie Mae in the US and there may be other variants of student loans that are not covered here. For example in principle a student loan may be framed as a credit facility in some arrangements and as a single loan with separate payment phases in others.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
-   :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Relations/Relations/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/Loans/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansGeneral/Loans/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/BE/LegalEntities/LegalPersons/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Relations/Relations/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
      {:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FBC/DebtAndEquities/Debt/"}},
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/LOAN/LoansSpecific/StudentLoans/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansSpecific/StudentLoans/"},
    :rdf/type :owl/Ontology,
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Student Loans Ontology"},

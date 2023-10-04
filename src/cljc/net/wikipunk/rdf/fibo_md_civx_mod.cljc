@@ -14,7 +14,7 @@
      "xsd" "http://www.w3.org/2001/XMLSchema#"},
     :prefix "fibo-md-civx-mod",
     :source
-    "https://spec.edmcouncil.org/fibo/ontology/MD/CIVTemporal/MetadataMDCIVTemporal/CIVTemporalModule"}
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MD/CIVTemporal/MetadataMDCIVTemporal/CIVTemporalModule"}
   {:cmns-av/copyright "Copyright (c) 2018-2023 EDM Council, Inc.",
    :dcterms/abstract
    "This module provides time-dependent concepts specific to funds and other collective investment vehicles.",
@@ -23,11 +23,11 @@
    :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/CIVTemporal/MetadataMDCIVTemporal/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MD/CIVTemporal/MetadataMDCIVTemporal/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata for the EDMC-FIBO Market Data (MD) CIV Temporal Module",
@@ -62,11 +62,11 @@
    :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/CIVTemporal/MetadataMDCIVTemporal/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MD/CIVTemporal/MetadataMDCIVTemporal/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata for the EDMC-FIBO Market Data (MD) CIV Temporal Module",

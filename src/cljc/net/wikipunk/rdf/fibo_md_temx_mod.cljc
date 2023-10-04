@@ -14,7 +14,7 @@
      "xsd" "http://www.w3.org/2001/XMLSchema#"},
     :prefix "fibo-md-temx-mod",
     :source
-    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/MetadataMDTemporalCore/TemporalCoreModule"}
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MD/TemporalCore/MetadataMDTemporalCore/TemporalCoreModule"}
   {:cmns-av/copyright "Copyright (c) 2018-2023 EDM Council, Inc.",
    :dcterms/abstract
    "This module covers time-dependent concepts common to all instruments, funds and loans, such as pricing, yields and analytics.",
@@ -23,11 +23,11 @@
    :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/TemporalCore/MetadataMDTemporalCore/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MD/TemporalCore/MetadataMDTemporalCore/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata for the EDMC-FIBO Market Data (MD) TemporalCore Module",
@@ -64,11 +64,11 @@
    :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/MD/TemporalCore/MetadataMDTemporalCore/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MD/TemporalCore/MetadataMDTemporalCore/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata for the EDMC-FIBO Market Data (MD) TemporalCore Module",

@@ -1,12 +1,14 @@
 {:deps
  {io.github.aamedina/rdf
-  {:sha     "21b95070baef9663739cd358bf3c1bae16bd44ef"
+  {:sha     "dfcc3bf6ec088ce1af538b68104c312b08c65c94"
    :git/url "https://github.com/aamedina/rdf.git"}}
  :paths ["src/clj" "src/cljc" "classes" "resources"]
  :aliases
  {:dev
   {:extra-deps
-   {com.walmartlabs/schematic
+   {org.obolibrary.robot/robot-core
+    {:mvn/version "1.9.5"}
+    com.walmartlabs/schematic
     {:mvn/version "1.3.0"}
     com.stuartsierra/component.repl
     {:mvn/version "1.0.0"}
@@ -19,7 +21,6 @@
     vlaaad/reveal
     {:mvn/version "1.3.280"}}
    :extra-paths ["dev"]
-   :jvm-opts    ["-Xmx110g"
-                 "-XX:-OmitStackTraceInFastThrow"
+   :jvm-opts    ["-XX:-OmitStackTraceInFastThrow"
                  "-XX:+HeapDumpOnOutOfMemoryError"
                  "-Dorg.slf4j.simpleLogger.defaultLogLevel=warn"]}}}

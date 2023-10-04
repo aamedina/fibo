@@ -15,7 +15,7 @@
      "xsd" "http://www.w3.org/2001/XMLSchema#"},
     :prefix "fibo-fnd-txn-mod",
     :source
-    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MetadataFNDTransactionsExt/TransactionsExtModule"}
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/TransactionsExt/MetadataFNDTransactionsExt/TransactionsExtModule"}
   {:cmns-av/copyright "Copyright (c) 2017-2023 EDM Council, Inc.",
    :dcterms/abstract
    "This is the metadata ontology used to describe the Foundations Transactions Module.",
@@ -24,11 +24,11 @@
    :dcterms/modified #inst "2023-01-20T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/TransactionsExt/MetadataFNDTransactionsExt/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/TransactionsExt/MetadataFNDTransactionsExt/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata for the EDMC-FIBO Foundations (FND) TransactionsExt Module",
@@ -69,11 +69,11 @@
    :dcterms/modified #inst "2023-01-20T18:00:00.000-00:00",
    :owl/imports
    #{{:xsd/anyURI
-      "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/Utilities/AnnotationVocabulary/"}
+      "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI
    {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/master/latest/FND/TransactionsExt/MetadataFNDTransactionsExt/"},
+    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/TransactionsExt/MetadataFNDTransactionsExt/"},
    :rdf/type :owl/Ontology,
    :rdfs/label
    "Metadata for the EDMC-FIBO Foundations (FND) TransactionsExt Module",
