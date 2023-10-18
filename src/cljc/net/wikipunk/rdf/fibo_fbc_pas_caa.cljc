@@ -1,73 +1,70 @@
 (ns net.wikipunk.rdf.fibo-fbc-pas-caa
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
-     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
-     "cmns-cxtid" "https://www.omg.org/spec/Commons/ContextualIdentifiers/",
-     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
-     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-fct-fct"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
-     "fibo-be-oac-exec"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
-     "fibo-fbc-dae-dbt"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
-     "fibo-fbc-fct-fse"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
-     "fibo-fbc-fct-ra"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
-     "fibo-fbc-fi-fi"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-     "fibo-fbc-pas-caa"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
-     "fibo-fbc-pas-fpas"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
-     "fibo-fnd-acc-aeq"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
-     "fibo-fnd-acc-cur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-     "fibo-fnd-agr-ctr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-     "fibo-fnd-arr-doc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
-     "fibo-fnd-dt-fd"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
-     "fibo-fnd-dt-oc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
-     "fibo-fnd-oac-own"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
-     "fibo-fnd-pas-pas"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
-     "fibo-fnd-pty-pty"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-     "fibo-fnd-pty-rl"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fbc-pas-caa",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"}
   {:cmns-av/copyright
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/",
    :dcterms/abstract
    "This ontology provides basic concepts such as account, account holder, account provider, relationship manager that are commonly used by financial services providers to describe customers and to determine counterparty identities.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-cxtid" "https://www.omg.org/spec/Commons/ContextualIdentifiers/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-fct-fct"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
+    "fibo-be-oac-exec"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
+    "fibo-fbc-dae-dbt"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
+    "fibo-fbc-fct-fse"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+    "fibo-fbc-fct-ra"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
+    "fibo-fbc-fi-fi"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+    "fibo-fbc-pas-caa"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
+    "fibo-fbc-pas-fpas"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
+    "fibo-fnd-acc-aeq"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
+    "fibo-fnd-acc-cur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+    "fibo-fnd-agr-ctr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
+    "fibo-fnd-arr-doc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+    "fibo-fnd-dt-fd"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
+    "fibo-fnd-dt-oc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+    "fibo-fnd-oac-own"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
+    "fibo-fnd-pas-pas"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+    "fibo-fnd-pty-pty"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
+    "fibo-fnd-pty-rl"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
@@ -124,6 +121,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/ProductsAndServices/ClientsAndAccounts/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fbc-pas-caa",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
    :rdfs/label "Clients and Accounts Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts.rdf version of this ontology was revised to link a credit agreement with an account and loosen transaction-related constraints such that the notion of a transaction can be applied to credit agreements generally."

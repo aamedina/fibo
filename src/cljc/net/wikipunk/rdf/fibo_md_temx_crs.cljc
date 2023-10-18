@@ -1,31 +1,28 @@
 (ns net.wikipunk.rdf.fibo-md-temx-crs
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fbc-fi-fi"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-     "fibo-fnd-arr-lif"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-md-temx-crs"
-     "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-md-temx-crs",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MD/TemporalCore/SecurityCreditStatuses/"}
   {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MD/TemporalCore/SecurityCreditStatuses/",
    :dcterms/abstract
    "This ontology extends the credit status ontology to define credit status concepts that are specific to issued securities. These include cashflow status and the basic credit statuses of being OK or in default. \n\t\tNote that in application data models these concepts would be represented as one or more selectable code lists or enumerations.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fbc-fi-fi"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+    "fibo-fnd-arr-lif"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-md-temx-crs"
+    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -41,6 +38,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MD/TemporalCore/SecurityCreditStatuses/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-md-temx-crs",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityCreditStatuses/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "SecurityCreditStatuses"},
    :xsd/anyURI

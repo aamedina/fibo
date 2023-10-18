@@ -1,19 +1,4 @@
 (ns net.wikipunk.rdf.cmns-cds
-  ^{:base       "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
-    :namespaces {"cmns-av"
-                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-                 "cmns-cds"
-                 "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
-                 "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-                 "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-                 "dcterms" "http://purl.org/dc/terms/",
-                 "owl" "http://www.w3.org/2002/07/owl#",
-                 "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                 "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                 "skos" "http://www.w3.org/2004/02/skos/core#",
-                 "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix     "cmns-cds",
-    :source     "https://www.omg.org/spec/Commons/CodesAndCodeSets/"}
   {:cmns-av/copyright #{"Copyright (c) 2021-2022 agnos.ai U.K. Ltd"
                         "Copyright (c) 2014-2022 EDM Council, Inc."
                         "Copyright (c) 2022 Object Management Group, Inc."
@@ -23,6 +8,17 @@
    :dcterms/contributor #{"Pete Rivett, agnos.ai U.K. Ltd"
                           "Elisa Kendall, Thematix Partners LLC"},
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces {"cmns-av"
+                "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+                "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+                "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+                "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+                "dcterms" "http://purl.org/dc/terms/",
+                "owl" "http://www.w3.org/2002/07/owl#",
+                "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+                "skos" "http://www.w3.org/2004/02/skos/core#",
+                "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
                   {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
                   {:xsd/anyURI
@@ -30,6 +26,8 @@
    :owl/versionIRI
    {:xsd/anyURI "https://www.omg.org/spec/Commons/20221101/CodesAndCodeSets/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "cmns-cds",
+   :rdfa/uri "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
    :rdfs/label "Commons Codes and Code Sets Ontology",
    :skos/changeNote
    "The https://www.omg.org/spec/Commons/20220501/CodesAndCodeSets.rdf version of this ontology was modified to make CodeSet a subclass of Arrangement (COMMONS-19) and to add a note to code set for clarity (COMMONS-26).",

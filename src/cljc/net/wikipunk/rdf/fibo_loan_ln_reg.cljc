@@ -1,42 +1,39 @@
 (ns net.wikipunk.rdf.fibo-loan-ln-reg
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fbc-fct-rga"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
-     "fibo-fnd-agr-ctr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-     "fibo-fnd-law-jur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
-     "fibo-fnd-law-lcap"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
-     "fibo-fnd-org-fm"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-loan-ln-app"
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
-     "fibo-loan-ln-ln"
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
-     "fibo-loan-ln-reg"
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-loan-ln-reg",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/LoansRegulatory/"}
   {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/LoansRegulatory/",
    :dcterms/abstract
    "This ontology contains concepts relating to regulatory requirements around loans, including disclosure rights and a small number of regulation-specific concepts. These include definitions of rights conferred on borrowers under consumer protection law, rights to equal treatment and the like.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fbc-fct-rga"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+    "fibo-fnd-agr-ctr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
+    "fibo-fnd-law-jur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
+    "fibo-fnd-law-lcap"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+    "fibo-fnd-org-fm"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-loan-ln-app"
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoanApplications/",
+    "fibo-loan-ln-ln"
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
+    "fibo-loan-ln-reg"
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/Loans/"}
@@ -63,6 +60,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/LOAN/LoansGeneral/LoansRegulatory/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-loan-ln-reg",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/LoansRegulatory/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "LoansRegulatory"},
    :xsd/anyURI

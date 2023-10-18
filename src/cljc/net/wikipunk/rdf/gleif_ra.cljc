@@ -1,22 +1,7 @@
 (ns net.wikipunk.rdf.gleif-ra
-  ^{:base "https://www.gleif.org/ontology/RegistrationAuthority/",
-    :namespaces
-    {"dcterms" "http://purl.org/dc/terms/",
-     "gleif-base" "https://www.gleif.org/ontology/Base/",
-     "gleif-ra" "https://www.gleif.org/ontology/RegistrationAuthority/",
-     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "vann" "http://purl.org/vocab/vann/",
-     "voaf" "http://purl.org/vocommons/voaf#",
-     "xml" "http://www.w3.org/XML/1998/namespace",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "gleif-ra",
-    :source
-    "https://www.gleif.org/ontology/v1.0/RegistrationAuthority/ontology.ttl"}
-  {:dcterms/abstract
+  {:dcat/downloadURL
+   "https://www.gleif.org/ontology/v1.0/RegistrationAuthority/ontology.ttl",
+   :dcterms/abstract
    {:rdf/language "en",
     :rdf/value
     "Ontology defining concepts for Business Registries, including the jurisdictions served. This is based on the Registration Authority Code List (RAL) used for Global Legal Entity Identifier Foundation (GLEIF) registration, but is more broadly applicable."},
@@ -38,6 +23,19 @@
    {:rdf/language "en",
     :rdf/value
     "Global Legal Entity Identifier Foundation Registration Authority Ontology"},
+   :namespaces
+   {"dcterms" "http://purl.org/dc/terms/",
+    "gleif-base" "https://www.gleif.org/ontology/Base/",
+    "gleif-ra" "https://www.gleif.org/ontology/RegistrationAuthority/",
+    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "vann" "http://purl.org/vocab/vann/",
+    "voaf" "http://purl.org/vocommons/voaf#",
+    "xml" "http://www.w3.org/XML/1998/namespace",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI "https://www.gleif.org/ontology/Base/"}
      {:xsd/anyURI
@@ -46,6 +44,8 @@
    {:xsd/anyURI
     "https://www.gleif.org/ontology/RegistrationAuthority-1.0/RegistrationAuthority/"},
    :rdf/type #{:owl/Ontology :voaf/Vocabulary},
+   :rdfa/prefix "gleif-ra",
+   :rdfa/uri "https://www.gleif.org/ontology/RegistrationAuthority/",
    :rdfs/label "GLEIF Registration Authority Ontology",
    :vann/preferredNamespacePrefix "gleif-ra",
    :vann/preferredNamespaceUri

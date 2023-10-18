@@ -1,33 +1,30 @@
 (ns net.wikipunk.rdf.fibo-md-temx-trs
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fbc-fi-fi"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-     "fibo-fnd-arr-lif"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-md-temx-trs"
-     "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/",
-     "fibo-sec-sec-lst"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-md-temx-trs",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MD/TemporalCore/SecurityTradingStatuses/"}
   {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MD/TemporalCore/SecurityTradingStatuses/",
    :dcterms/abstract
    "This ontology defines the various kinds of trading status that a security may be in at any given point in time. These includes such terms as active and halted, inactive and so on, along with their qualifying terms.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fbc-fi-fi"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+    "fibo-fnd-arr-lif"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-md-temx-trs"
+    "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/",
+    "fibo-sec-sec-lst"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -45,6 +42,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MD/TemporalCore/SecurityTradingStatuses/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-md-temx-trs",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/MD/TemporalCore/SecurityTradingStatuses/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "SecurityTradingStatuses"},
    :xsd/anyURI

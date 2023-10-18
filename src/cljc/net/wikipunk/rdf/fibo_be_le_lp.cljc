@@ -1,49 +1,46 @@
 (ns net.wikipunk.rdf.fibo-be-le-lp
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
-     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-le-lp"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-     "fibo-fnd-aap-ppl"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
-     "fibo-fnd-agr-agr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
-     "fibo-fnd-agr-ctr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-     "fibo-fnd-gao-obj"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
-     "fibo-fnd-law-jur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
-     "fibo-fnd-law-lcap"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
-     "fibo-fnd-org-fm"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
-     "fibo-fnd-pty-pty"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-     "fibo-fnd-pty-rl"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-be-le-lp",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"}
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/",
    :dcterms/abstract
    "This ontology defines legal personhood concepts. A legal person as defined here is any natural person or organization which is capable of accruing liability on its own part.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-le-lp"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+    "fibo-fnd-aap-ppl"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
+    "fibo-fnd-agr-agr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+    "fibo-fnd-agr-ctr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
+    "fibo-fnd-gao-obj"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
+    "fibo-fnd-law-jur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
+    "fibo-fnd-law-lcap"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+    "fibo-fnd-org-fm"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+    "fibo-fnd-pty-pty"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
+    "fibo-fnd-pty-rl"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -74,6 +71,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/LegalEntities/LegalPersons/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-be-le-lp",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
    :rdfs/label "Legal Persons Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons.rdf version of the ontology was modified to add a French label to special purpose vehicle."

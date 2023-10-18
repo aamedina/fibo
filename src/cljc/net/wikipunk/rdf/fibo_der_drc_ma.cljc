@@ -1,47 +1,44 @@
 (ns net.wikipunk.rdf.fibo-der-drc-ma
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-der-drc-ma"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
-     "fibo-fbc-dae-cre"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
-     "fibo-fnd-acc-cur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-     "fibo-fnd-agr-ctr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-     "fibo-fnd-arr-doc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
-     "fibo-fnd-dt-oc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
-     "fibo-fnd-gao-obj"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
-     "fibo-fnd-law-lcap"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
-     "fibo-fnd-pas-pas"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-der-drc-ma",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/DerivativesMasterAgreements/"}
   {:cmns-av/copyright
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :dcterms/abstract
    "Terms that make up the OTC Derivatives Master agreement as defined in the ISDA literature. This is an experimental ontology and needs considerable re-work if it is to be considered for release.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-der-drc-ma"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
+    "fibo-fbc-dae-cre"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
+    "fibo-fnd-acc-cur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+    "fibo-fnd-agr-ctr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
+    "fibo-fnd-arr-doc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+    "fibo-fnd-dt-oc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+    "fibo-fnd-gao-obj"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
+    "fibo-fnd-law-lcap"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+    "fibo-fnd-pas-pas"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/CreditEvents/"}
@@ -73,6 +70,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/DerivativesMasterAgreements/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-der-drc-ma",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Derivatives Master Agreements Ontology"},
    :xsd/anyURI
@@ -433,10 +433,13 @@
    :rdfs/label
    {:rdf/language "en",
     :rdf/value "master agreement right to termination following default event"},
-   :rdfs/subClassOf #{{:owl/onProperty     :fibo-der-drc-ma/invokedInEventOf.1,
-                       :owl/someValuesFrom :fibo-fbc-dae-cre/CreditEvent,
-                       :rdf/type           :owl/Restriction}
-                      :fibo-der-drc-ma/MasterAgreementEarlyTerminationRight},
+   :rdfs/subClassOf
+   #{{:owl/onProperty
+      {:xsd/anyURI
+       "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/invokedInEventOf.1"},
+      :owl/someValuesFrom :fibo-fbc-dae-cre/CreditEvent,
+      :rdf/type :owl/Restriction}
+     :fibo-der-drc-ma/MasterAgreementEarlyTerminationRight},
    :skos/definition
    {:rdf/language "en",
     :rdf/value
@@ -930,18 +933,6 @@
                 :rdf/value    "invoked in event of"},
    :rdfs/range :fibo-der-drc-ma/MasterAgreementTerminationEvent})
 
-(def invokedInEventOf_1
-  {:db/ident :fibo-der-drc-ma/invokedInEventOf.1,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain
-   :fibo-der-drc-ma/MasterAgreementRightToTerminationFollowingDefaultEvent,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "invoked in event of"},
-   :rdfs/range :fibo-fbc-dae-cre/CreditEvent})
-
 (def isFailureInForceOf
   {:db/ident :fibo-der-drc-ma/isFailureInForceOf,
    :rdf/type :owl/ObjectProperty,
@@ -1254,3 +1245,16 @@
                 :rdf/value    "Derivatives Master Agreements Ontology"},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/"})
+
+(def urn:uuid:c0579cad-95b1-5904-b1f7-de6f49728929
+  {:rdf/type :owl/ObjectProperty,
+   :rdfs/domain
+   :fibo-der-drc-ma/MasterAgreementRightToTerminationFollowingDefaultEvent,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "invoked in event of"},
+   :rdfs/range :fibo-fbc-dae-cre/CreditEvent,
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/invokedInEventOf.1"})

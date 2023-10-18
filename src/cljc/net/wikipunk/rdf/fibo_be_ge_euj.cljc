@@ -1,35 +1,32 @@
 (ns net.wikipunk.rdf.fibo-be-ge-euj
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-ge-euj"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
-     "fibo-be-ge-ge"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
-     "fibo-fnd-law-jur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "lcc-3166-1"
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-be-ge-euj",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/"}
   {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
                         "Copyright (c) 2016-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
    :dcterms/abstract
    "This ontology provides the set of basic European Union specific government level entities and jurisdictions for use in other FIBO ontologies.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-ge-euj"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
+    "fibo-be-ge-ge"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
+    "fibo-fnd-law-jur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "lcc-3166-1"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/GovernmentEntities/"}
@@ -46,6 +43,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-be-ge-euj",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
    :rdfs/label "European Government Entities and Jurisdictions Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."

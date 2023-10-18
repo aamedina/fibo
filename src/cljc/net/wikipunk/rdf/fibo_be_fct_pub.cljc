@@ -1,33 +1,30 @@
 (ns net.wikipunk.rdf.fibo-be-fct-pub
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-fct-pub"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
-     "fibo-fnd-arr-doc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
-     "fibo-fnd-pty-pty"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-     "fibo-fnd-pty-rl"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl"     "http://www.w3.org/2002/07/owl#",
-     "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
-     "skos"    "http://www.w3.org/2004/02/skos/core#",
-     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-be-fct-pub",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/Publishers/"}
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/Publishers/",
    :dcterms/abstract
    "This ontology defines the fundamental concepts for publishers of information, including entities whose primary function is to publish, and entities (whether or not they are publishers in that sense) which are in the role of the publisher of some information. This ontology also includes the published information itself, i.e. the publication.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-fct-pub"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
+    "fibo-fnd-arr-doc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+    "fibo-fnd-pty-pty"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
+    "fibo-fnd-pty-rl"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl"     "http://www.w3.org/2002/07/owl#",
+    "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
+    "skos"    "http://www.w3.org/2004/02/skos/core#",
+    "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -42,6 +39,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/FunctionalEntities/Publishers/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-be-fct-pub",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
    :rdfs/label "Publishers Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers.rdf version of this ontology was modified to eliminate references to external dictionary sites that no longer resolve."

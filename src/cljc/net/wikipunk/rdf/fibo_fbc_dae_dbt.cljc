@@ -1,67 +1,65 @@
 (ns net.wikipunk.rdf.fibo-fbc-dae-dbt
-  ^{:base "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
-     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
-     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-le-lp"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-     "fibo-fbc-dae-dbt"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
-     "fibo-fbc-pas-fpas"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
-     "fibo-fnd-acc-aeq"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
-     "fibo-fnd-acc-cur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-     "fibo-fnd-agr-agr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
-     "fibo-fnd-agr-ctr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-     "fibo-fnd-arr-asmt"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
-     "fibo-fnd-dt-bd"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
-     "fibo-fnd-dt-fd"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
-     "fibo-fnd-oac-own"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
-     "fibo-fnd-pas-pas"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
-     "fibo-fnd-pas-psch"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
-     "fibo-fnd-plc-loc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-     "fibo-fnd-pty-pty"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-     "fibo-fnd-pty-rl"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-     "fibo-fnd-qt-qtu"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-alx"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fbc-dae-dbt",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"}
   {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
                         "Copyright (c) 2016-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/",
    :dcterms/abstract
    "This ontology defines concepts that are common to all debt instruments, such as debt, borrower, lender, debtor, creditor, interest, principal, and the like. It is designed to be used by various other FIBO specifications, including but not limited to SEC/Debt and LOAN.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-le-lp"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+    "fibo-fbc-dae-dbt"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
+    "fibo-fbc-pas-fpas"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
+    "fibo-fnd-acc-aeq"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
+    "fibo-fnd-acc-cur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+    "fibo-fnd-agr-agr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+    "fibo-fnd-agr-ctr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
+    "fibo-fnd-arr-asmt"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+    "fibo-fnd-dt-bd"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+    "fibo-fnd-dt-fd"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
+    "fibo-fnd-oac-own"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
+    "fibo-fnd-pas-pas"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+    "fibo-fnd-pas-psch"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
+    "fibo-fnd-plc-loc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+    "fibo-fnd-pty-pty"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
+    "fibo-fnd-pty-rl"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+    "fibo-fnd-qt-qtu"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-alx"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
@@ -113,6 +111,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/Debt/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fbc-dae-dbt",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
    :rdfs/label "Debt Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/ version of this ontology was modified to make redemption provision a child of contractual commitment and move it to financial instruments, as such provisions apply to preferred shares and other instruments in addition to debt."

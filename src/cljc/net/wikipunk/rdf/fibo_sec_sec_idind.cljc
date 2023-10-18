@@ -1,51 +1,48 @@
 (ns net.wikipunk.rdf.fibo-sec-sec-idind
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
-     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-fct-pub"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
-     "fibo-fbc-fct-eufseind"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
-     "fibo-fbc-fct-fse"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
-     "fibo-fbc-fct-ra"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
-     "fibo-fbc-fct-usfsind"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
-     "fibo-fbc-fi-fi"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-     "fibo-fbc-pas-fpas"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-sec-sec-id"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
-     "fibo-sec-sec-idind"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/",
-     "fibo-sec-sec-lst"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-sec-sec-idind",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIdentificationIndividuals/"}
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2016-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIdentificationIndividuals/",
    :dcterms/abstract
    "This ontology defines concepts and primarily individuals required to identify securities, including the individuals that represent a number of well-known securities identifiers and related schemes, registries, and registration authorities.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-fct-pub"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
+    "fibo-fbc-fct-eufseind"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
+    "fibo-fbc-fct-fse"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+    "fibo-fbc-fct-ra"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
+    "fibo-fbc-fct-usfsind"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
+    "fibo-fbc-fi-fi"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+    "fibo-fbc-pas-fpas"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-sec-sec-id"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+    "fibo-sec-sec-idind"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/",
+    "fibo-sec-sec-lst"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
@@ -86,6 +83,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Securities/SecuritiesIdentificationIndividuals/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-sec-sec-idind",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/",
    :rdfs/label "Securities Identification Individuals Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals.rdf version of this ontology was revised to correct a typo in an annotation property name."

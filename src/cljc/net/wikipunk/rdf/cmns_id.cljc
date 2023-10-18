@@ -1,18 +1,4 @@
 (ns net.wikipunk.rdf.cmns-id
-  ^{:base       "https://www.omg.org/spec/Commons/Identifiers/",
-    :namespaces {"cmns-av"
-                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-                 "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-                 "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-                 "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
-                 "dcterms" "http://purl.org/dc/terms/",
-                 "owl" "http://www.w3.org/2002/07/owl#",
-                 "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                 "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                 "skos" "http://www.w3.org/2004/02/skos/core#",
-                 "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix     "cmns-id",
-    :source     "https://www.omg.org/spec/Commons/Identifiers/"}
   {:cmns-av/copyright #{"Copyright (c) 2021-2022 agnos.ai U.K. Ltd"
                         "Copyright (c) 2021-2022 Object Management Group, Inc."
                         "Copyright (c) 2021-2022 EDM Council, Inc."
@@ -23,6 +9,17 @@
    #{"Evan Wallace, U.S. National Institute of Standards and Technology (NIST)"
      "Pete Rivett, agnos.ai U.K. Ltd" "Elisa Kendall, Thematix Partners LLC"},
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces {"cmns-av"
+                "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+                "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+                "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+                "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+                "dcterms" "http://purl.org/dc/terms/",
+                "owl" "http://www.w3.org/2002/07/owl#",
+                "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+                "skos" "http://www.w3.org/2004/02/skos/core#",
+                "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
                   {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
                   {:xsd/anyURI
@@ -30,6 +27,8 @@
    :owl/versionIRI {:xsd/anyURI
                     "https://www.omg.org/spec/Commons/20221101/Identifiers/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "cmns-id",
+   :rdfa/uri "https://www.omg.org/spec/Commons/Identifiers/",
    :rdfs/label "Commons Identifiers Ontology",
    :skos/changeNote
    "The https://www.omg.org/spec/Commons/20220501/Identifiers.rdf version of this ontology was modified to make the property 'identifies' functional (COMMONS-26).",

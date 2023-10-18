@@ -1,42 +1,34 @@
 (ns net.wikipunk.rdf.fibo-spec
-  ^{:base "https://spec.edmcouncil.org/fibo/ontology/MetadataFIBO/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-mod" "https://spec.edmcouncil.org/fibo/ontology/BE/MetadataBE/",
-     "fibo-bp-mod" "https://spec.edmcouncil.org/fibo/ontology/BP/MetadataBP/",
-     "fibo-cae-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/CAE/MetadataCAE/",
-     "fibo-der-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/",
-     "fibo-fbc-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/MetadataFBC/",
-     "fibo-fnd-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/MetadataFND/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-ind-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/MetadataIND/",
-     "fibo-loan-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/LOAN/MetadataLOAN/",
-     "fibo-md-mod" "https://spec.edmcouncil.org/fibo/ontology/MD/MetadataMD/",
-     "fibo-sec-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/",
-     "fibo-spec" "https://spec.edmcouncil.org/fibo/ontology/MetadataFIBO/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-spec",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MetadataFIBO/FIBOSpecification"}
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MetadataFIBO/FIBOSpecification",
    :dcterms/abstract
    "This is the metadata ontology used to describe the FIBO Specification.",
    :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :dcterms/modified #inst "2023-02-13T18:00:00.000-00:00",
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-mod" "https://spec.edmcouncil.org/fibo/ontology/BE/MetadataBE/",
+    "fibo-bp-mod" "https://spec.edmcouncil.org/fibo/ontology/BP/MetadataBP/",
+    "fibo-cae-mod" "https://spec.edmcouncil.org/fibo/ontology/CAE/MetadataCAE/",
+    "fibo-der-mod" "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/",
+    "fibo-fbc-mod" "https://spec.edmcouncil.org/fibo/ontology/FBC/MetadataFBC/",
+    "fibo-fnd-mod" "https://spec.edmcouncil.org/fibo/ontology/FND/MetadataFND/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-ind-mod" "https://spec.edmcouncil.org/fibo/ontology/IND/MetadataIND/",
+    "fibo-loan-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/LOAN/MetadataLOAN/",
+    "fibo-md-mod" "https://spec.edmcouncil.org/fibo/ontology/MD/MetadataMD/",
+    "fibo-sec-mod" "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/",
+    "fibo-spec" "https://spec.edmcouncil.org/fibo/ontology/MetadataFIBO/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/MetadataIND/"}
@@ -65,6 +57,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/MetadataFIBO/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-spec",
+   :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/MetadataFIBO/",
    :rdfs/label "Metadata for the EDMC-FIBO Specification",
    :xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/MetadataFIBO/"})
 

@@ -1,30 +1,27 @@
 (ns net.wikipunk.rdf.fibo-bp-iss-mbs
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MBSIssuance/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-bp-iss-dbti"
-     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-     "fibo-bp-iss-mbs"
-     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MBSIssuance/",
-     "fibo-fnd-agr-ctr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl"     "http://www.w3.org/2002/07/owl#",
-     "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
-     "skos"    "http://www.w3.org/2004/02/skos/core#",
-     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-bp-iss-mbs",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/MBSIssuance/"}
   {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/MBSIssuance/",
    :dcterms/abstract
    "Ontology of the overall process of issuing mortgage backed securities. These are the process elements that are common to different kinds of MBS issuance (agency and private label).",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-bp-iss-dbti"
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
+    "fibo-bp-iss-mbs"
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MBSIssuance/",
+    "fibo-fnd-agr-ctr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl"     "http://www.w3.org/2002/07/owl#",
+    "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
+    "skos"    "http://www.w3.org/2004/02/skos/core#",
+    "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/DebtIssuance/"}
@@ -39,6 +36,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/MBSIssuance/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-bp-iss-mbs",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MBSIssuance/",
    :rdfs/label "MBSIssuance",
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MBSIssuance/"})

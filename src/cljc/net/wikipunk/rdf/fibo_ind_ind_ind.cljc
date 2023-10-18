@@ -1,38 +1,35 @@
 (ns net.wikipunk.rdf.fibo-ind-ind-ind
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
-     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-fct-pub"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
-     "fibo-fnd-acc-cur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-     "fibo-fnd-dt-fd"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
-     "fibo-fnd-utl-alx"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-ind-ind-ind"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-ind-ind-ind",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/Indicators/"}
   {:cmns-av/copyright #{"Copyright (c) 2014-2023 Object Management Group, Inc."
                         "Copyright (c) 2014-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/Indicators/",
    :dcterms/abstract
    "This ontology provides the concepts common to all market rates, indices and indicators; that is concepts descriptive of the numeric parameters themselves. These are modeled independently of the values they may take over time.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-fct-pub"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
+    "fibo-fnd-acc-cur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+    "fibo-fnd-dt-fd"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
+    "fibo-fnd-utl-alx"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-ind-ind-ind"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
@@ -58,6 +55,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/Indicators/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-ind-ind-ind",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
    :rdfs/label "Indicators Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators.rdf version of this ontology was modified to loosen the nature of a price in a price structure to include any price, not limited to a quoted price from a specific source, to allow for calculated prices to be included in the structure and to deprecate redundant terms including financial information publisher, and published financial information."

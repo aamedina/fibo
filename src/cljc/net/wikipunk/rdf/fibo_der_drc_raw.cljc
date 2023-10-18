@@ -1,64 +1,61 @@
 (ns net.wikipunk.rdf.fibo-der-drc-raw
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-le-cb"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
-     "fibo-der-drc-comm"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CommoditiesContracts/",
-     "fibo-der-drc-cur"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/",
-     "fibo-der-drc-exo"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
-     "fibo-der-drc-raw"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
-     "fibo-der-sbd-sbd"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
-     "fibo-fbc-fct-fse"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
-     "fibo-fbc-fi-fi"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-     "fibo-fnd-qt-qtu"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-alx"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-ind-ei-ei"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
-     "fibo-ind-mkt-bas"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
-     "fibo-sec-dbt-bnd"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
-     "fibo-sec-dbt-ex"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
-     "fibo-sec-eq-eq"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
-     "fibo-sec-sec-bsk"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
-     "fibo-sec-sec-iss"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
-     "fibo-sec-sec-lst"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-der-drc-raw",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/RightsAndWarrants/"}
   {:cmns-av/copyright
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/RightsAndWarrants/",
    :dcterms/abstract
    "The Rights and Warrants ontology covers a range of financial instruments providing the holder with the privilege to subscribe to or receive specific assets on terms specified. These include rights (privileges) extended to existing security holders to make new securities available to them at reduced prices or for free, and warrants whereby the holder can purchase or sell back a given quantity of the instrument, commodity or currency during a specified period at a pre-defined price.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-le-cb"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
+    "fibo-der-drc-comm"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CommoditiesContracts/",
+    "fibo-der-drc-cur"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/",
+    "fibo-der-drc-exo"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
+    "fibo-der-drc-raw"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
+    "fibo-der-sbd-sbd"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
+    "fibo-fbc-fct-fse"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+    "fibo-fbc-fi-fi"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+    "fibo-fnd-qt-qtu"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-alx"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-ind-ei-ei"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
+    "fibo-ind-mkt-bas"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
+    "fibo-sec-dbt-bnd"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
+    "fibo-sec-dbt-ex"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
+    "fibo-sec-eq-eq"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
+    "fibo-sec-sec-bsk"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
+    "fibo-sec-sec-iss"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
+    "fibo-sec-sec-lst"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Quantities/QuantitiesAndUnits/"}
@@ -105,6 +102,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/RightsAndWarrants/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-der-drc-raw",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Rights and Warrants Ontology"},
    :skos/changeNote

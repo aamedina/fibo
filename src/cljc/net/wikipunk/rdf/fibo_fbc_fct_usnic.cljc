@@ -1,35 +1,7 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-usnic
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
-     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-     "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fbc-fct-fse"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
-     "fibo-fbc-fct-usfse"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
-     "fibo-fbc-fct-usjrga"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
-     "fibo-fbc-fct-usnic"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
-     "fibo-fbc-pas-fpas"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fbc-fct-usnic",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"}
   {:cmns-av/copyright "Copyright (c) 2023 EDM Council, Inc.",
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
    :dcterms/abstract
    "This ontology extends the US regulatory agencies ontology with a number of controlled vocabularies required for mapping FIBO to the National Information Center (NIC) Data Dictionary.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
@@ -38,6 +10,31 @@
      {:xsd/anyURI
       "https://www.ffiec.gov/nicpubweb/Content/DataDownload/NPW%20Data%20Dictionary.pdf"}},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fbc-fct-fse"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+    "fibo-fbc-fct-usfse"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
+    "fibo-fbc-fct-usjrga"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+    "fibo-fbc-fct-usnic"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
+    "fibo-fbc-pas-fpas"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
@@ -59,6 +56,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fbc-fct-usnic",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USNationalInformationCenterControlledVocabularies/",
    :rdfs/label
    "US National Information Center (NIC) Controlled Vocabularies Ontology",
    :xsd/anyURI

@@ -1,49 +1,46 @@
 (ns net.wikipunk.rdf.fibo-ind-ei-caei
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-fct-pub"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
-     "fibo-be-ge-caj"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
-     "fibo-be-ge-ge"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
-     "fibo-fnd-arr-cls"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
-     "fibo-fnd-plc-loc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-     "fibo-fnd-pty-rl"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-alx"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-ind-ei-caei"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
-     "fibo-ind-ei-ei"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
-     "lcc-3166-1"
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-ind-ei-caei",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/"}
   {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
                         "Copyright (c) 2016-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
    :dcterms/abstract
    "This ontology provides specific parameters which make up the various types of market economic indicators applicable to the Canadian economy.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-fct-pub"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
+    "fibo-be-ge-caj"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+    "fibo-be-ge-ge"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
+    "fibo-fnd-arr-cls"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
+    "fibo-fnd-plc-loc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+    "fibo-fnd-pty-rl"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-alx"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-ind-ei-caei"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
+    "fibo-ind-ei-ei"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
+    "lcc-3166-1"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/ClassificationSchemes/"}
@@ -74,6 +71,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-ind-ei-caei",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
    :rdfs/label "Canadian Economic Indicators Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."

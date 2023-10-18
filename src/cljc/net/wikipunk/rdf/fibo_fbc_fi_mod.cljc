@@ -1,28 +1,25 @@
 (ns net.wikipunk.rdf.fibo-fbc-fi-mod
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fbc-fi-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl"     "http://www.w3.org/2002/07/owl#",
-     "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
-     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fbc-fi-mod",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/FinancialInstrumentsModule"}
   {:cmns-av/copyright
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/FinancialInstrumentsModule",
    :dcterms/abstract
    "The financial instruments module includes ontologies defining general purpose financial instruments, i.e., agreements, contracts, notes, equities, options, debt instruments, and so forth, some of which may be negotiable.",
    :dcterms/issued #inst "2015-08-13T18:00:00.000-00:00",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :dcterms/modified #inst "2023-01-30T18:00:00.000-00:00",
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fbc-fi-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl"     "http://www.w3.org/2002/07/owl#",
+    "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -31,6 +28,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fbc-fi-mod",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/MetadataFBCFinancialInstruments/",
    :rdfs/label
    "Metadata about the EDMC-FIBO Financial Business and Commerce(FBC) Financial Instruments Module",
    :xsd/anyURI

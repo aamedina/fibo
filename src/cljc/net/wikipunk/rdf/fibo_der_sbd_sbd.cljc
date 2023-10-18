@@ -1,40 +1,37 @@
 (ns net.wikipunk.rdf.fibo-der-sbd-sbd
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-der-sbd-sbd"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
-     "fibo-fbc-fi-fi"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-ind-mkt-bas"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
-     "fibo-sec-dbt-dbti"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
-     "fibo-sec-eq-eq"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
-     "fibo-sec-sec-bsk"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-der-sbd-sbd",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"}
   {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
                         "Copyright (c) 2016-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
    :dcterms/abstract
    "This ontology defines common concepts for derivatives based on securities as their underliers, including those based on indices or baskets of these assets.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-der-sbd-sbd"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
+    "fibo-fbc-fi-fi"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-ind-mkt-bas"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
+    "fibo-sec-dbt-dbti"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+    "fibo-sec-eq-eq"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
+    "fibo-sec-sec-bsk"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/Indicators/"}
@@ -64,6 +61,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-der-sbd-sbd",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
    :rdfs/label "Security-Based Derivatives Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."

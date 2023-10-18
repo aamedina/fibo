@@ -1,36 +1,33 @@
 (ns net.wikipunk.rdf.fibo-sec-dbt-lpn
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/LoanParticipationNotes/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-oac-exec"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
-     "fibo-fbc-dae-dbt"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
-     "fibo-fnd-agr-ctr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-     "fibo-fnd-pty-pty"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-sec-dbt-lpn"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/LoanParticipationNotes/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-sec-dbt-lpn",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/LoanParticipationNotes/"}
   {:cmns-av/copyright "Copyright (c) 2016-2023 EDM Council, Inc.",
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/LoanParticipationNotes/",
    :dcterms/abstract
    "This ontology defines contracts which give the holder some formal participation in some loan.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-oac-exec"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
+    "fibo-fbc-dae-dbt"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
+    "fibo-fnd-agr-ctr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
+    "fibo-fnd-pty-pty"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-sec-dbt-lpn"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/LoanParticipationNotes/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -55,6 +52,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/LoanParticipationNotes/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-sec-dbt-lpn",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/LoanParticipationNotes/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Loan Participation Notes Ontology"},
    :xsd/anyURI

@@ -1,50 +1,47 @@
 (ns net.wikipunk.rdf.fibo-fbc-fi-stl
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fbc-fct-ra"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
-     "fibo-fbc-fi-ip"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
-     "fibo-fbc-fi-stl"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
-     "fibo-fbc-pas-fpas"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
-     "fibo-fnd-acc-cur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-     "fibo-fnd-agr-ctr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-     "fibo-fnd-arr-asmt"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
-     "fibo-fnd-dt-bd"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
-     "fibo-fnd-dt-oc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
-     "fibo-fnd-gao-obj"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
-     "fibo-fnd-qt-qtu"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fbc-fi-stl",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/Settlement/"}
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2018-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/Settlement/",
    :dcterms/abstract
    "This ontology defines high-level concepts for settlement that are applicable across FIBO domain areas, such as for loans, securities, and derivatives.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fbc-fct-ra"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
+    "fibo-fbc-fi-ip"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
+    "fibo-fbc-fi-stl"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
+    "fibo-fbc-pas-fpas"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
+    "fibo-fnd-acc-cur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+    "fibo-fnd-agr-ctr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
+    "fibo-fnd-arr-asmt"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+    "fibo-fnd-dt-bd"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+    "fibo-fnd-dt-oc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+    "fibo-fnd-gao-obj"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
+    "fibo-fnd-qt-qtu"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
@@ -74,6 +71,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FinancialInstruments/Settlement/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fbc-fi-stl",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Settlement Ontology"},
    :skos/changeNote

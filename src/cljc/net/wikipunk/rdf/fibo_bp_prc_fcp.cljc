@@ -1,29 +1,26 @@
 (ns net.wikipunk.rdf.fibo-bp-prc-fcp
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-bp-prc-fcp"
-     "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
-     "fibo-fbc-fi-fi"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-bp-prc-fcp",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/Process/FinancialContextAndProcess/"}
   {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/Process/FinancialContextAndProcess/",
    :dcterms/abstract
    "This ontology defines process concepts in general for refinement and re-use elsewhere in the FIBO business process domain.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-bp-prc-fcp"
+    "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
+    "fibo-fbc-fi-fi"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -35,6 +32,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/Process/FinancialContextAndProcess/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-bp-prc-fcp",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/BP/Process/FinancialContextAndProcess/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Financial Context and Process Ontology"},
    :xsd/anyURI

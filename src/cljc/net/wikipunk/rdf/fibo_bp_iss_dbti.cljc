@@ -1,61 +1,58 @@
 (ns net.wikipunk.rdf.fibo-bp-iss-dbti
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
-     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-bp-iss-dbti"
-     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
-     "fibo-bp-iss-muni"
-     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MuniIssuance/",
-     "fibo-bp-iss-pmbs"
-     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
-     "fibo-bp-iss-prc"
-     "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
-     "fibo-der-drc-raw"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
-     "fibo-fbc-pas-fpas"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
-     "fibo-fnd-acc-cur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-     "fibo-fnd-agr-ctr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
-     "fibo-fnd-arr-doc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
-     "fibo-fnd-arr-lif"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
-     "fibo-fnd-gao-obj"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-alx"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-sec-dbt-bnd"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
-     "fibo-sec-dbt-dbti"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
-     "fibo-sec-sec-iss"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
-     "fibo-sec-sec-pls"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-bp-iss-dbti",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/DebtIssuance/"}
   {:cmns-av/copyright "Copyright (c) 2013-2023 EDM Council, Inc.",
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/DebtIssuance/",
    :dcterms/abstract
    "General issuance process for issuance of debt instruments. Forms the basis for more detailed issuance processes such as MBS issuance and municipal bonds issue.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-bp-iss-dbti"
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
+    "fibo-bp-iss-muni"
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/MuniIssuance/",
+    "fibo-bp-iss-pmbs"
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/PrivateLabelMBSIssuance/",
+    "fibo-bp-iss-prc"
+    "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/IssuanceProcess/",
+    "fibo-der-drc-raw"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
+    "fibo-fbc-pas-fpas"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
+    "fibo-fnd-acc-cur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+    "fibo-fnd-agr-ctr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
+    "fibo-fnd-arr-doc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+    "fibo-fnd-arr-lif"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+    "fibo-fnd-gao-obj"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-alx"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-sec-dbt-bnd"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
+    "fibo-sec-dbt-dbti"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+    "fibo-sec-sec-iss"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
+    "fibo-sec-sec-pls"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/Analytics/"}
@@ -101,6 +98,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BP/SecuritiesIssuance/DebtIssuance/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-bp-iss-dbti",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/BP/SecuritiesIssuance/DebtIssuance/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Debt Issuance Ontology"},
    :xsd/anyURI

@@ -1,41 +1,38 @@
 (ns net.wikipunk.rdf.fibo-fbc-fct-bci
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fbc-fct-bc"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCenters/",
-     "fibo-fbc-fct-bci"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
-     "fibo-fnd-dt-bd"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
-     "fibo-fnd-plc-loc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "lcc-3166-1"
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fbc-fct-bci",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessCentersIndividuals/"}
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Thematix Partners LLC"
                         "Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2020-2023 agnos.ai, UK Ltd."
                         "Copyright (c) 2018-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessCentersIndividuals/",
    :dcterms/abstract
    "This ontology includes individuals representing the set of international business centers corresponding to those identified in FpML as well as additional municipalities called out in the ISO 10383 Codes for exchanges and market identification (MIC) standard.\n\t\tThis set of business centers is current with respect to the FpML published XML data as of Q2 2023. Note that we have deviated from the standard FIBO naming convention of strict use of camel case to add underscores in certain city names for readability purposes.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fbc-fct-bc"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCenters/",
+    "fibo-fbc-fct-bci"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
+    "fibo-fnd-dt-bd"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+    "fibo-fnd-plc-loc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "lcc-3166-1"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-CH/"}
@@ -62,6 +59,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/BusinessCentersIndividuals/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fbc-fct-bci",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
    :rdfs/label "Business Centers Individuals",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/ version of this ontology was modified to add municipalities required for the ISO revision to the MIC codes as of June 2022."
@@ -2852,7 +2852,9 @@
 
 (def JESH
   {:cmns-col/isMemberOf :fibo-fbc-fct-bci/FpMLBusinessCenterCodeScheme,
-   :cmns-id/identifies :fibo-fbc-fct-bci/St._Helier,
+   :cmns-id/identifies
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/St._Helier"},
    :db/ident :fibo-fbc-fct-bci/JESH,
    :dcterms/description
    "the FpML business center code for St. Helier, Channel Islands, Jersey",
@@ -5252,16 +5254,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/"},
    :rdfs/label "Split"})
 
-(def St__Helier
-  {:cmns-col/isPartOf :lcc-3166-1/Jersey,
-   :db/ident :fibo-fbc-fct-bci/St._Helier,
-   :dcterms/description "the international business center of St. Helier",
-   :rdf/type #{:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual},
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/"},
-   :rdfs/label "St. Helier"})
-
 (def St_Albans
   {:cmns-col/isPartOf :lcc-3166-1/UnitedKingdomOfGreatBritainAndNorthernIreland,
    :db/ident :fibo-fbc-fct-bci/St_Albans,
@@ -6433,3 +6425,14 @@
      "The https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/"})
+
+(def urn:uuid:917a17ac-eed4-5f89-b107-9ca069e55016
+  {:cmns-col/isPartOf :lcc-3166-1/Jersey,
+   :dcterms/description "the international business center of St. Helier",
+   :rdf/type #{:fibo-fnd-plc-loc/BusinessCenter :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/"},
+   :rdfs/label "St. Helier",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/St._Helier"})

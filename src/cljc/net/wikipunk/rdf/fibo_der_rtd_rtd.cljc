@@ -1,43 +1,40 @@
 (ns net.wikipunk.rdf.fibo-der-rtd-rtd
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-der-drc-bsc"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
-     "fibo-der-rtd-rtd"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
-     "fibo-fbc-fi-fi"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-ind-ei-ei"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
-     "fibo-ind-fx-fx"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
-     "fibo-ind-ind-ind"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
-     "fibo-ind-ir-ir"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
-     "fibo-sec-sec-bsk"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-der-rtd-rtd",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/RateDerivatives/RateDerivatives/"}
   {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
                         "Copyright (c) 2016-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/RateDerivatives/RateDerivatives/",
    :dcterms/abstract
    "This ontology defines concepts that are common to derivatives based on variation in some defined variable, such as an economic rate, an interest rate or an index value.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-der-drc-bsc"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
+    "fibo-der-rtd-rtd"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
+    "fibo-fbc-fi-fi"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-ind-ei-ei"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
+    "fibo-ind-fx-fx"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+    "fibo-ind-ind-ind"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+    "fibo-ind-ir-ir"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+    "fibo-sec-sec-bsk"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/Indicators/Indicators/"}
@@ -64,6 +61,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/RateDerivatives/RateDerivatives/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-der-rtd-rtd",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
    :rdfs/label "Rate Derivatives Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives.rdf version of this ontology was modified to eliminate the dependency on NonPhysicalUnderlier, which was redundant."

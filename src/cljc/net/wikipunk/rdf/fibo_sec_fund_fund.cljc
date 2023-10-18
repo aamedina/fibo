@@ -1,53 +1,51 @@
 (ns net.wikipunk.rdf.fibo-sec-fund-fund
-  ^{:base "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-le-fbo"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
-     "fibo-be-le-lp"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-     "fibo-be-tr-tr"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
-     "fibo-fbc-fct-fse"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
-     "fibo-fnd-acc-aeq"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
-     "fibo-fnd-acc-cur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-     "fibo-fnd-gao-obj"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
-     "fibo-fnd-law-jur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
-     "fibo-fnd-law-lcap"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-sec-eq-eq"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
-     "fibo-sec-fund-fund"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
-     "fibo-sec-sec-pls"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-sec-fund-fund",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Funds/Funds/"}
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2018-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Funds/Funds/",
    :dcterms/abstract
    "This ontology defines fundamental concepts about funds and collective investment vehicles (CIVs).",
    :dcterms/contributor #{"Wells Fargo Bank, N.A." "Thematix Partners LLC"},
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-le-fbo"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+    "fibo-be-le-lp"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+    "fibo-be-tr-tr"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+    "fibo-fbc-fct-fse"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+    "fibo-fnd-acc-aeq"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
+    "fibo-fnd-acc-cur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+    "fibo-fnd-gao-obj"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
+    "fibo-fnd-law-jur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/Jurisdiction/",
+    "fibo-fnd-law-lcap"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-sec-eq-eq"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
+    "fibo-sec-fund-fund"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
+    "fibo-sec-sec-pls"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -84,6 +82,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Funds/Funds/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-sec-fund-fund",
+   :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "Funds Ontology"},
    :skos/changeNote

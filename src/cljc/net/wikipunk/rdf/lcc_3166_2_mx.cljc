@@ -1,27 +1,24 @@
 (ns net.wikipunk.rdf.lcc-3166-2-mx
-  ^{:base
-    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/",
-    :namespaces
-    {"dcterms" "http://purl.org/dc/terms/",
-     "lcc-3166-1"
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-     "lcc-3166-2"
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/",
-     "lcc-3166-2-mx"
-     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/",
-     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-     "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "lcc-3166-2-mx",
-    :source
-    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX.rdf"}
-  {:dcterms/issued #inst "2021-10-29T23:57:18.464-00:00",
+  {:dcat/downloadURL
+   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX.rdf",
+   :dcterms/issued #inst "2021-10-29T23:57:18.464-00:00",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces
+   {"dcterms" "http://purl.org/dc/terms/",
+    "lcc-3166-1"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
+    "lcc-3166-2"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-2-SubdivisionCodes/",
+    "lcc-3166-2-mx"
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/",
+    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
@@ -35,6 +32,9 @@
    {:xsd/anyURI
     "https://www.omg.org/spec/LCC/20211101/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "lcc-3166-2-mx",
+   :rdfa/uri
+   "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-MX/",
    :rdfs/label "ISO 3166-2 Subdivision Codes for Mexico Ontology",
    :rdfs/seeAlso #{{:xsd/anyURI
                     "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}

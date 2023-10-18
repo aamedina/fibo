@@ -1,33 +1,30 @@
 (ns net.wikipunk.rdf.fibo-fnd-arr-lif
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
-     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fnd-arr-lif"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
-     "fibo-fnd-dt-oc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fnd-arr-lif",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Lifecycles/"}
   {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
                         "Copyright (c) 2017-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Lifecycles/",
    :dcterms/abstract
    "This ontology defines a set of basic concepts for lifecycles, including the various stages and events that make up a given lifecycle, for use in describing product, trade, instrument, production, and other lifecycles in FIBO.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fnd-arr-lif"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+    "fibo-fnd-dt-oc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -44,6 +41,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Arrangements/Lifecycles/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fnd-arr-lif",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
    :rdfs/label "Lifecycles Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC), eliminating redundancies in FIBO as appropriate."

@@ -1,48 +1,45 @@
 (ns net.wikipunk.rdf.fibo-be-ptr-ptr
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-le-fbo"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
-     "fibo-be-le-lp"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-     "fibo-be-oac-cpty"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
-     "fibo-be-oac-opty"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
-     "fibo-be-ptr-ptr"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
-     "fibo-fnd-gao-obj"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
-     "fibo-fnd-law-lcap"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
-     "fibo-fnd-org-org"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
-     "fibo-fnd-pty-pty"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
-     "fibo-fnd-pty-rl"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-be-ptr-ptr",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Partnerships/Partnerships/"}
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Partnerships/Partnerships/",
    :dcterms/abstract
    "This ontology defines partnerships and related concepts. The concepts distinguish general from limited partners, as well as the types of equity that they hold. Included are abstract definitions of partnership types based on whether they have general, limited or both kinds of partners. Both legally incorporated and non incorporated forms of partnerships are covered.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-le-fbo"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+    "fibo-be-le-lp"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+    "fibo-be-oac-cpty"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+    "fibo-be-oac-opty"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
+    "fibo-be-ptr-ptr"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
+    "fibo-fnd-gao-obj"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
+    "fibo-fnd-law-lcap"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+    "fibo-fnd-org-org"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/Organizations/",
+    "fibo-fnd-pty-pty"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
+    "fibo-fnd-pty-rl"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/OwnershipAndControl/ControlParties/"}
@@ -72,6 +69,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/Partnerships/Partnerships/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-be-ptr-ptr",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
    :rdfs/label "Partnerships Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships.rdf version of this ontology was modified per the FIBO 2.0 RFC to reference shareholders' equity vs. stockholders' equity and correct a number of restrictions."

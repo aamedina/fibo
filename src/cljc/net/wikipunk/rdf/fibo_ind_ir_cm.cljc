@@ -1,43 +1,40 @@
 (ns net.wikipunk.rdf.fibo-ind-ir-cm
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fbc-fct-usfsind"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
-     "fibo-fbc-fct-usjrga"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
-     "fibo-fnd-acc-4217"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-ind-ir-cm"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
-     "fibo-ind-ir-ir"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
-     "fibo-ind-ir-mdp"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-ind-ir-cm",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/InterestRates/CommonInterestRates/"}
   {:cmns-av/adaptedFrom
    {:xsd/anyURI
     "http://www.fpml.org/coding-scheme/floating-rate-index-3-6.xml"},
    :cmns-av/copyright
    #{"Copyright (c) 2015-2023 EDM Council, Inc."
      "Copyright (c) 2015-2023 Object Management Group, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/InterestRates/CommonInterestRates/",
    :dcterms/abstract
    "This ontology provides reference data for commonly referenced interest rates, specifically those that are referenced in the ISDA FpML codes for floating interest rates. The rates included herein are generated directly from the FpML published reference data.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fbc-fct-usfsind"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
+    "fibo-fbc-fct-usjrga"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+    "fibo-fnd-acc-4217"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-ind-ir-cm"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
+    "fibo-ind-ir-ir"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+    "fibo-ind-ir-mdp"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/"}
@@ -58,6 +55,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/InterestRates/CommonInterestRates/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-ind-ir-cm",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
    :rdfs/label "Common Interest Rates Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was revised to reflect the latest FpML rates, which include a number of changes, including deprecating some rates and replacing them with others."
@@ -5608,20 +5608,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
    :rdfs/label "USD-Annual Swap Rate-4:00-TRADITION"})
 
-(def USD-BA-H_15
-  {:cmns-av/abbreviation "USD-BA-H.15",
-   :cmns-av/explanatoryNote
-   "Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
-   :db/ident :fibo-ind-ir-cm/USD-BA-H.15,
-   :fibo-fnd-rel-rel/isProducedBy
-   :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
-   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/USDollar,
-   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
-   :rdfs/label "USD-BA-H.15"})
-
 (def USD-BA-Reference_Dealers
   {:cmns-av/abbreviation "USD-BA-Reference Dealers",
    :cmns-av/explanatoryNote
@@ -5657,20 +5643,6 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
    :rdfs/label "USD-BSBY"})
-
-(def USD-CD-H_15
-  {:cmns-av/abbreviation "USD-CD-H.15",
-   :cmns-av/explanatoryNote
-   "Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
-   :db/ident :fibo-ind-ir-cm/USD-CD-H.15,
-   :fibo-fnd-rel-rel/isProducedBy
-   :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
-   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/USDollar,
-   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
-   :rdfs/label "USD-CD-H.15"})
 
 (def USD-CD-Reference_Dealers
   {:cmns-av/abbreviation "USD-CD-Reference Dealers",
@@ -6330,20 +6302,6 @@
     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
    :rdfs/label "USD-SandP Index High Grade"})
 
-(def USD-TBILL-H_15
-  {:cmns-av/abbreviation "USD-TBILL-H.15",
-   :cmns-av/explanatoryNote
-   "Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
-   :db/ident :fibo-ind-ir-cm/USD-TBILL-H.15,
-   :fibo-fnd-rel-rel/isProducedBy
-   :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
-   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/USDollar,
-   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
-   :rdfs/label "USD-TBILL-H.15"})
-
 (def USD-TBILL-H_15-Bloomberg
   {:cmns-av/abbreviation "USD-TBILL-H.15-Bloomberg",
    :cmns-av/explanatoryNote
@@ -6671,3 +6629,48 @@
      "The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates.rdf version of this ontology was revised extensively to restructure the way in which interest rate benchmarks are modeled and eliminate references to the merged interest rate publishers ontology."},
    :xsd/anyURI
    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"})
+
+(def urn:uuid:8f379e5f-9ba2-5b68-bc77-d66f62cefac9
+  {:cmns-av/abbreviation "USD-CD-H.15",
+   :cmns-av/explanatoryNote
+   "Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
+   :fibo-fnd-rel-rel/isProducedBy
+   :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/USDollar,
+   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
+   :rdfs/label "USD-CD-H.15",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/USD-CD-H.15"})
+
+(def urn:uuid:7f0677e7-bf6e-5e5e-86a1-13b305f4eb69
+  {:cmns-av/abbreviation "USD-BA-H.15",
+   :cmns-av/explanatoryNote
+   "Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
+   :fibo-fnd-rel-rel/isProducedBy
+   :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/USDollar,
+   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
+   :rdfs/label "USD-BA-H.15",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/USD-BA-H.15"})
+
+(def urn:uuid:58289e8f-177e-5e0f-a9af-4249ecff913c
+  {:cmns-av/abbreviation "USD-TBILL-H.15",
+   :cmns-av/explanatoryNote
+   "Per 2006 ISDA Definitions or Annex to the 2000 ISDA Definitions, Section 7.1 Rate Options, as amended and supplemented through the date on which parties enter into the relevant transaction.",
+   :fibo-fnd-rel-rel/isProducedBy
+   :fibo-fbc-fct-usjrga/BoardOfGovernorsOfTheFederalReserveSystem,
+   :fibo-ind-ir-ir/hasReferenceCurrency :fibo-fnd-acc-4217/USDollar,
+   :rdf/type #{:fibo-ind-ir-ir/InterestRateBenchmark :owl/NamedIndividual},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/"},
+   :rdfs/label "USD-TBILL-H.15",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/USD-TBILL-H.15"})

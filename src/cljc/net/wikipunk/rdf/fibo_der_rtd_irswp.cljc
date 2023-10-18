@@ -1,60 +1,57 @@
 (ns net.wikipunk.rdf.fibo-der-rtd-irswp
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-der-drc-swp"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/",
-     "fibo-der-rtd-irswp"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
-     "fibo-der-rtd-rtd"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
-     "fibo-fbc-dae-dbt"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
-     "fibo-fbc-fct-ra"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
-     "fibo-fbc-fi-fi"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
-     "fibo-fnd-acc-cur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-     "fibo-fnd-dt-bd"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
-     "fibo-fnd-dt-fd"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
-     "fibo-fnd-pas-psch"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
-     "fibo-fnd-qt-qtu"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-alx"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-ind-ei-ei"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
-     "fibo-ind-ir-ir"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
-     "fibo-sec-dbt-bnd"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
-     "fibo-sec-sec-sch"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-der-rtd-irswp",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/RateDerivatives/IRSwaps/"}
   {:cmns-av/copyright #{"Copyright (c) 2016-2023 Object Management Group, Inc."
                         "Copyright (c) 2016-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/RateDerivatives/IRSwaps/",
    :dcterms/abstract
    "This ontology defines concepts specific to interest rate swap contracts, including but not limited to fixed and floating rate combinations, single and cross-currency contracts, etc.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-der-drc-swp"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/",
+    "fibo-der-rtd-irswp"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
+    "fibo-der-rtd-rtd"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
+    "fibo-fbc-dae-dbt"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
+    "fibo-fbc-fct-ra"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
+    "fibo-fbc-fi-fi"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+    "fibo-fnd-acc-cur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+    "fibo-fnd-dt-bd"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+    "fibo-fnd-dt-fd"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
+    "fibo-fnd-pas-psch"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
+    "fibo-fnd-qt-qtu"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/QuantitiesAndUnits/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-alx"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-ind-ei-ei"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
+    "fibo-ind-ir-ir"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+    "fibo-sec-dbt-bnd"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
+    "fibo-sec-sec-sch"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
@@ -102,6 +99,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/RateDerivatives/IRSwaps/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-der-rtd-irswp",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
    :rdfs/label "Interest Rate Swaps Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/ version of this ontology was modified to reflect the addition of the concept of a rates swap and the corresponding rate-based leg to the Swaps ontology and augment this ontology to include both OIS and zero coupon swaps to facilitate mapping to the CFI standard as well as eliminate a redundant notional step percentage amount, which is not used anywhere."

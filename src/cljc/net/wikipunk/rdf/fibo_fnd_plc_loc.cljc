@@ -1,27 +1,25 @@
 (ns net.wikipunk.rdf.fibo-fnd-plc-loc
-  ^{:base "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fnd-plc-loc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fnd-plc-loc",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"}
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/",
    :dcterms/abstract
    "This ontology provides a very high level definition of geographic region and geopolitical entity related concepts, including, but not limited to, countries, sub-country regions such as states and provinces, municipalities, etc., extending the Object Management Group (OMG)'s Languages, Countries, and Codes (LCC) ontologies as needed in FIBO. As such, these terms are automatically mapped to the LCC controlled vocabulary representing ISO 3166 country and country subdivision codes, and may be mapped to other de facto standards such as Geonames and the CIA World Factbook. The concept of a business center, defined herein, maps directly to the FpML concept with the same name, and to the set of business centers and broader municipalities included in ISO 10383, Codes for exchanges and market identification (MIC).",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fnd-plc-loc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -32,6 +30,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Places/Locations/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fnd-plc-loc",
+   :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
    :rdfs/label "Locations Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations.rdf version of the ontology was modified to use the Commons Ontology Library (Commons) Annotation Vocabulary rather than the OMG's Specification Metadata vocabulary."

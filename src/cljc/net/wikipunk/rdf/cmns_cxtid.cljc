@@ -1,23 +1,4 @@
 (ns net.wikipunk.rdf.cmns-cxtid
-  ^{:base       "https://www.omg.org/spec/Commons/ContextualIdentifiers/",
-    :namespaces {"cmns-av"
-                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-                 "cmns-cds"
-                 "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
-                 "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-                 "cmns-cxtdsg"
-                 "https://www.omg.org/spec/Commons/ContextualDesignators/",
-                 "cmns-cxtid"
-                 "https://www.omg.org/spec/Commons/ContextualIdentifiers/",
-                 "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
-                 "dcterms" "http://purl.org/dc/terms/",
-                 "owl" "http://www.w3.org/2002/07/owl#",
-                 "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                 "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                 "skos" "http://www.w3.org/2004/02/skos/core#",
-                 "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix     "cmns-cxtid",
-    :source     "https://www.omg.org/spec/Commons/ContextualIdentifiers/"}
   {:cmns-av/copyright #{"Copyright (c) 2022 Thematix Partners LLC"
                         "Copyright (c) 2022 Object Management Group, Inc."},
    :dcterms/abstract
@@ -26,6 +7,19 @@
    #{"Evan Wallace, U.S. National Institute of Standards and Technology (NIST)"
      "Elisa Kendall, Thematix Partners LLC"},
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces
+   {"cmns-av"     "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds"    "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-col"    "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-cxtid"  "https://www.omg.org/spec/Commons/ContextualIdentifiers/",
+    "cmns-id"     "https://www.omg.org/spec/Commons/Identifiers/",
+    "dcterms"     "http://purl.org/dc/terms/",
+    "owl"         "http://www.w3.org/2002/07/owl#",
+    "rdf"         "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs"        "http://www.w3.org/2000/01/rdf-schema#",
+    "skos"        "http://www.w3.org/2004/02/skos/core#",
+    "xsd"         "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Identifiers/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/ContextualDesignators/"}
@@ -36,6 +30,8 @@
    {:xsd/anyURI
     "https://www.omg.org/spec/Commons/20221101/ContextualIdentifiers/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "cmns-cxtid",
+   :rdfa/uri "https://www.omg.org/spec/Commons/ContextualIdentifiers/",
    :rdfs/label "Commons Contextual Identifiers Ontology",
    :skos/changeNote
    "https://www.omg.org/spec/Commons/20220501/ContextualIdentifiers.rdf version of this ontology was modified to add a ContextualIdentificationScheme and require a ContextualIdentifier to have context (COMMONS-26).",

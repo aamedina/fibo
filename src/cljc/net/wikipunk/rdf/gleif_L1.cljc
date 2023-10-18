@@ -1,23 +1,6 @@
 (ns net.wikipunk.rdf.gleif-L1
-  ^{:base "https://www.gleif.org/ontology/L1/",
-    :namespaces
-    {"dcterms" "http://purl.org/dc/terms/",
-     "gleif-L1" "https://www.gleif.org/ontology/L1/",
-     "gleif-base" "https://www.gleif.org/ontology/Base/",
-     "gleif-elf" "https://www.gleif.org/ontology/EntityLegalForm/",
-     "gleif-ra" "https://www.gleif.org/ontology/RegistrationAuthority/",
-     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "vann" "http://purl.org/vocab/vann/",
-     "voaf" "http://purl.org/vocommons/voaf#",
-     "xml" "http://www.w3.org/XML/1998/namespace",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "gleif-L1",
-    :source "https://www.gleif.org/ontology/v1.0/L1/ontology.ttl"}
-  {:dcterms/abstract
+  {:dcat/downloadURL "https://www.gleif.org/ontology/v1.0/L1/ontology.ttl",
+   :dcterms/abstract
    {:rdf/language "en",
     :rdf/value
     "Ontology for legal entity identifier registration. It was designed for Global Legal Entity Identifier Foundation (GLEIF) Level 1 data corresponding to the Common Data Format version 2.1. It covers key reference data for a legal entity identifiable with an LEI. The ISO 17442 standard developed by the International Organization for Standardization defines a set of attributes or LEI reference data that comprises the most essential elements of identification. It specifies the minimum reference data, which must be supplied for each LEI:\n    The official name of the legal entity as recorded in the official registers.\n    The registered address of that legal entity.\n    The country of formation.\n    The codes for the representation of names of countries and their subdivisions.\n    The date of the first LEI assignment; the date of last update of the LEI information; and the date of expiry, if applicable."},
@@ -39,12 +22,29 @@
    {:rdf/language "en",
     :rdf/value
     "Global Legal Entity Identifier Foundation Level 1 Ontology - Who Is Who"},
+   :namespaces
+   {"dcterms" "http://purl.org/dc/terms/",
+    "gleif-L1" "https://www.gleif.org/ontology/L1/",
+    "gleif-base" "https://www.gleif.org/ontology/Base/",
+    "gleif-elf" "https://www.gleif.org/ontology/EntityLegalForm/",
+    "gleif-ra" "https://www.gleif.org/ontology/RegistrationAuthority/",
+    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "vann" "http://purl.org/vocab/vann/",
+    "voaf" "http://purl.org/vocommons/voaf#",
+    "xml" "http://www.w3.org/XML/1998/namespace",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI "https://www.gleif.org/ontology/Base/"}
      {:xsd/anyURI "https://www.gleif.org/ontology/EntityLegalForm/"}
      {:xsd/anyURI "https://www.gleif.org/ontology/RegistrationAuthority/"}},
    :owl/versionIRI {:xsd/anyURI "https://www.gleif.org/ontology/L1-v1.0/L1/"},
    :rdf/type #{:owl/Ontology :voaf/Vocabulary},
+   :rdfa/prefix "gleif-L1",
+   :rdfa/uri "https://www.gleif.org/ontology/L1/",
    :rdfs/label "GLEIF L1 Ontology",
    :vann/preferredNamespacePrefix "gleif-L1",
    :vann/preferredNamespaceUri "https://www.gleif.org/ontology/L1/",
@@ -653,7 +653,7 @@
 (def hasOtherAuthority
   {:db/ident :gleif-L1/hasOtherAuthority,
    :rdf/type :owl/DatatypeProperty,
-   :rdfs/domain :gleif-L1/BusinessRegistryIdentifier,
+   :rdfs/domain :gleif-ra/BusinessRegistry
    :rdfs/isDefinedBy {:xsd/anyURI "https://www.gleif.org/ontology/L1/"},
    :rdfs/label "has other authority",
    :skos/definition
@@ -721,7 +721,7 @@
 (def hasRegisteredAuthority
   {:db/ident :gleif-L1/hasRegisteredAuthority,
    :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :gleif-L1/BusinessRegistryIdentifier,
+   :rdfs/domain :gleif-ra/RegistrationAuthorityCode,
    :rdfs/isDefinedBy {:xsd/anyURI "https://www.gleif.org/ontology/L1/"},
    :rdfs/label "has registered authority",
    :rdfs/range :gleif-ra/BusinessRegistry,

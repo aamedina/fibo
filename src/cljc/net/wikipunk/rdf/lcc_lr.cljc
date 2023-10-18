@@ -1,16 +1,4 @@
 (ns net.wikipunk.rdf.lcc-lr
-  ^{:base "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
-    :namespaces
-    {"dcterms" "http://purl.org/dc/terms/",
-     "lcc-lr"  "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
-     "owl"     "http://www.w3.org/2002/07/owl#",
-     "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
-     "skos"    "http://www.w3.org/2004/02/skos/core#",
-     "sm"      "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "lcc-lr",
-    :source "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
   {:dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :dcterms/source
    #{{:rdf/value
@@ -25,10 +13,21 @@
       "ISO 639-6 Codes for the representation of names of languages - Part 6: Alpha-4 code for comprehensive coverage of language variants, First edition, 2009-12-01"}
      {:rdf/value
       "ISO 639-1 Codes for the representation of names of languages - Part 1: Alpha-2 code, First edition, 2002-07-15"}},
+   :namespaces
+   {"dcterms" "http://purl.org/dc/terms/",
+    "lcc-lr"  "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
+    "owl"     "http://www.w3.org/2002/07/owl#",
+    "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
+    "skos"    "http://www.w3.org/2004/02/skos/core#",
+    "sm"      "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
+    "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :owl/versionIRI
    {:xsd/anyURI
     "https://www.omg.org/spec/LCC/20211101/Languages/LanguageRepresentation/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "lcc-lr",
+   :rdfa/uri "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
    :rdfs/label "Language Representation Ontology",
    :rdfs/seeAlso #{{:xsd/anyURI "https://www.omg.org/spec/LCC/AboutLCC/"}
                    {:xsd/anyURI

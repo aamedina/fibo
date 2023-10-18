@@ -1,30 +1,28 @@
 (ns net.wikipunk.rdf.fibo-fnd-pty-rl
-  ^{:base "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fnd-aap-agt"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
-     "fibo-fnd-pty-rl"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl"     "http://www.w3.org/2002/07/owl#",
-     "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
-     "skos"    "http://www.w3.org/2004/02/skos/core#",
-     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fnd-pty-rl",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"}
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/",
    :dcterms/abstract
    "This ontology defines high-level concepts concerning roles, including the basic property whereby something has some role, along with the high-level concept of an agent in a role. The agent in role concept provides the basis for party role concepts in the Parties ontology and is framed as some entity defined specifically in respect to some role which it performs in some context.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fnd-aap-agt"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
+    "fibo-fnd-pty-rl"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl"     "http://www.w3.org/2002/07/owl#",
+    "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
+    "skos"    "http://www.w3.org/2004/02/skos/core#",
+    "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/Agents/"}
@@ -37,6 +35,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Parties/Roles/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fnd-pty-rl",
+   :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Roles/",
    :rdfs/label "Roles Ontology",
    :skos/changeNote
    #{"The http://www.omg.org/spec/FIBO/Foundations/20130601/Roles/Roles.owl version of the ontology was revised in advance of the September 2013 New Brunswick, NJ meeting, as follows:\n   (1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing \n   (2) to use version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n   (3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n   (4) to use 4-level abbreviations and corresponding namespace prefixes for all FIBO ontologies, reflecting a family/specification/module/ontology structure\n   (5) to incorporate changes to the specification metadata to support documentation at the family, specification, module, and ontology level, similar to the abbreviations.\n   (6) to combine Parties, Party Roles, and Roles in a single, new, Parties module."

@@ -1,17 +1,4 @@
 (ns net.wikipunk.rdf.cmns-col
-  ^{:base       "https://www.omg.org/spec/Commons/Collections/",
-    :namespaces {"cmns-av"
-                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-                 "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-                 "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
-                 "dcterms" "http://purl.org/dc/terms/",
-                 "owl" "http://www.w3.org/2002/07/owl#",
-                 "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                 "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                 "skos" "http://www.w3.org/2004/02/skos/core#",
-                 "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix     "cmns-col",
-    :source     "https://www.omg.org/spec/Commons/Collections/"}
   {:cmns-av/copyright #{"Copyright (c) 2019-2022 Thematix Partners LLC"
                         "Copyright (c) 2021-2022 Mayo Clinic"
                         "Copyright (c) 2021-2022 agnos.ai U.K. Ltd"
@@ -22,12 +9,24 @@
    :dcterms/contributor #{"Davide Sottara, Mayo Clinic" "Pete Rivett, agnos.ai"
                           "Elisa Kendall, Thematix Partners LLC"},
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces {"cmns-av"
+                "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+                "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+                "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
+                "dcterms" "http://purl.org/dc/terms/",
+                "owl" "http://www.w3.org/2002/07/owl#",
+                "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+                "skos" "http://www.w3.org/2004/02/skos/core#",
+                "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports #{{:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
                   {:xsd/anyURI
                    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI {:xsd/anyURI
                     "https://www.omg.org/spec/Commons/20221101/Collections/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "cmns-col",
+   :rdfa/uri "https://www.omg.org/spec/Commons/Collections/",
    :rdfs/label "Commons Collections Ontology",
    :skos/changeNote
    "The https://www.omg.org/spec/Commons/20220501/Collections.rdf version of this ontology was modified to better differentiate some of the properties that are subproperties of comprises to aid in user understanding, add new properties that allow for taxonomic parthood, and add a property allowing users to describe the intended method used with respect to arrangement (COMMONS-12).",

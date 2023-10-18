@@ -1,65 +1,62 @@
 (ns net.wikipunk.rdf.fibo-der-drc-swpind
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
-     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-corp-corp"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
-     "fibo-be-le-cb"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
-     "fibo-be-le-fbo"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
-     "fibo-be-le-lei"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
-     "fibo-be-oac-cctl"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
-     "fibo-be-plc-plc"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
-     "fibo-der-drc-swp"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/",
-     "fibo-der-drc-swpind"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
-     "fibo-fbc-fct-bci"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
-     "fibo-fbc-fct-fse"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
-     "fibo-fbc-fct-mkt"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
-     "fibo-fbc-fct-ra"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
-     "fibo-fbc-fct-usfsind"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
-     "fibo-fbc-fct-usjrga"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
-     "fibo-fnd-plc-adr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
-     "fibo-fnd-plc-loc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "lcc-3166-1"
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-     "lcc-3166-2-us"
-     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-der-drc-swpind",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/SwapsIndividuals/"}
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2018-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/SwapsIndividuals/",
    :dcterms/abstract
    "This ontology defines indiividuals that represent swaps repositories and intermediaries, including and related schemes, registries, and authorities.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-corp-corp"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+    "fibo-be-le-cb"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
+    "fibo-be-le-fbo"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+    "fibo-be-le-lei"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
+    "fibo-be-oac-cctl"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+    "fibo-be-plc-plc"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
+    "fibo-der-drc-swp"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/",
+    "fibo-der-drc-swpind"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+    "fibo-fbc-fct-bci"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
+    "fibo-fbc-fct-fse"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+    "fibo-fbc-fct-mkt"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
+    "fibo-fbc-fct-ra"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
+    "fibo-fbc-fct-usfsind"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
+    "fibo-fbc-fct-usjrga"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+    "fibo-fnd-plc-adr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
+    "fibo-fnd-plc-loc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "lcc-3166-1"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
+    "lcc-3166-2-us"
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/Markets/"}
@@ -112,6 +109,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/DerivativesContracts/SwapsIndividuals/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-der-drc-swpind",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
    :rdfs/label "Swaps Individuals Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals.rdf version of this ontology was modified to use the Commons Ontology Library (Commons) rather than the OMG's Languages, Countries and Codes (LCC) and to eliminate redundancies in FIBO as appropriate."

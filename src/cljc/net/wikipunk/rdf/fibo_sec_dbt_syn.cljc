@@ -1,43 +1,41 @@
 (ns net.wikipunk.rdf.fibo-sec-dbt-syn
-  ^{:base "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-le-lp"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
-     "fibo-der-cr-cds"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/CreditDefaultSwaps/",
-     "fibo-fbc-dae-crt"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
-     "fibo-fnd-acc-aeq"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-alx"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-sec-dbt-cdo"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
-     "fibo-sec-dbt-pbs"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/",
-     "fibo-sec-dbt-syn"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
-     "fibo-sec-sec-pls"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-sec-dbt-syn",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/SyntheticCDOs/"}
   {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/SyntheticCDOs/",
    :dcterms/abstract
    "Synthetic collateralized debt obligations are instruments designed to provide the same kind of structure and returns as a CDO, but these are not backed by an actual pool of debt assets.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-le-lp"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+    "fibo-der-cr-cds"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/CreditDefaultSwaps/",
+    "fibo-fbc-dae-crt"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditRatings/",
+    "fibo-fnd-acc-aeq"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-alx"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-sec-dbt-cdo"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/CollateralizedDebtObligations/",
+    "fibo-sec-dbt-pbs"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/",
+    "fibo-sec-dbt-syn"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
+    "fibo-sec-sec-pls"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/CreditDerivatives/CreditDefaultSwaps/"}
@@ -66,6 +64,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/Debt/SyntheticCDOs/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-sec-dbt-syn",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "SyntheticCDOs"},
    :xsd/anyURI
@@ -435,16 +436,6 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "simulates"}})
 
-(def simulates_1
-  {:db/ident :fibo-sec-dbt-syn/simulates.1,
-   :rdf/type :owl/ObjectProperty,
-   :rdfs/domain :fibo-sec-dbt-syn/SyntheticDebtInstrumentPool,
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/"},
-   :rdfs/label {:rdf/language "en",
-                :rdf/value    "simulates"}})
-
 (def trancheType
   {:db/ident :fibo-sec-dbt-syn/trancheType,
    :rdf/type :owl/ObjectProperty,
@@ -455,6 +446,17 @@
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "tranche type"},
    :rdfs/range :fibo-sec-dbt-cdo/CDOTrancheSenioritySelection})
+
+(def urn:uuid:9f7c5193-940f-5ed4-9359-4e99868557b6
+  {:rdf/type :owl/ObjectProperty,
+   :rdfs/domain :fibo-sec-dbt-syn/SyntheticDebtInstrumentPool,
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/"},
+   :rdfs/label {:rdf/language "en",
+                :rdf/value    "simulates"},
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/SyntheticCDOs/simulates.1"})
 
 (def urn:uuid:a77515cb-0551-50ad-b3fd-3a369b2b6d36
   {:cmns-av/copyright "Copyright (c) 2015-2023 EDM Council, Inc.",

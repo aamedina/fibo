@@ -1,20 +1,6 @@
 (ns net.wikipunk.rdf.gleif-L2
-  ^{:base       "https://www.gleif.org/ontology/L2/",
-    :namespaces {"dcterms"    "http://purl.org/dc/terms/",
-                 "gleif-L1"   "https://www.gleif.org/ontology/L1/",
-                 "gleif-L2"   "https://www.gleif.org/ontology/L2/",
-                 "gleif-base" "https://www.gleif.org/ontology/Base/",
-                 "owl"        "http://www.w3.org/2002/07/owl#",
-                 "rdf"        "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                 "rdfs"       "http://www.w3.org/2000/01/rdf-schema#",
-                 "skos"       "http://www.w3.org/2004/02/skos/core#",
-                 "vann"       "http://purl.org/vocab/vann/",
-                 "voaf"       "http://purl.org/vocommons/voaf#",
-                 "xml"        "http://www.w3.org/XML/1998/namespace",
-                 "xsd"        "http://www.w3.org/2001/XMLSchema#"},
-    :prefix     "gleif-L2",
-    :source     "https://www.gleif.org/ontology/v1.0/L2/ontology.ttl"}
-  {:dcterms/abstract
+  {:dcat/downloadURL "https://www.gleif.org/ontology/v1.0/L2/ontology.ttl",
+   :dcterms/abstract
    {:rdf/language "en",
     :rdf/value
     "Ontology for legal entity parent relationships. It was designed for Global Legal Entity Identifier Foundation (GLEIF) Level 2 data corresponding to the Relationship Record format, version 1.1. Legal entities that have or acquire an LEI report their ‘direct accounting consolidating parent’ as well as their ‘ultimate accounting consolidating parent’, or for International Branches ‘is an International Branch of'. Otherwise they must provide a Reporting Exception."},
@@ -36,10 +22,24 @@
    {:rdf/language "en",
     :rdf/value
     "Global Legal Entity Identifier Foundation Level 2 Ontology - Who Owns Whom"},
+   :namespaces {"dcterms"    "http://purl.org/dc/terms/",
+                "gleif-L1"   "https://www.gleif.org/ontology/L1/",
+                "gleif-L2"   "https://www.gleif.org/ontology/L2/",
+                "gleif-base" "https://www.gleif.org/ontology/Base/",
+                "owl"        "http://www.w3.org/2002/07/owl#",
+                "rdf"        "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "rdfs"       "http://www.w3.org/2000/01/rdf-schema#",
+                "skos"       "http://www.w3.org/2004/02/skos/core#",
+                "vann"       "http://purl.org/vocab/vann/",
+                "voaf"       "http://purl.org/vocommons/voaf#",
+                "xml"        "http://www.w3.org/XML/1998/namespace",
+                "xsd"        "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports #{{:xsd/anyURI "https://www.gleif.org/ontology/Base/"}
                   {:xsd/anyURI "https://www.gleif.org/ontology/L1/"}},
    :owl/versionIRI {:xsd/anyURI "https://www.gleif.org/ontology/L2-v1.0/L2/"},
    :rdf/type #{:owl/Ontology :voaf/Vocabulary},
+   :rdfa/prefix "gleif-L2",
+   :rdfa/uri "https://www.gleif.org/ontology/L2/",
    :rdfs/label "GLEIF L2 Ontology",
    :vann/preferredNamespacePrefix "gleif-L2",
    :vann/preferredNamespaceUri "https://www.gleif.org/ontology/L2/",

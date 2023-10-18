@@ -1,19 +1,16 @@
 (ns net.wikipunk.rdf.lcc-639-1
-  ^{:base "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
-    :namespaces
-    {"dcterms" "http://purl.org/dc/terms/",
-     "lcc-639-1"
-     "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
-     "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "lcc-639-1",
-    :source "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/"}
   {:dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces
+   {"dcterms" "http://purl.org/dc/terms/",
+    "lcc-639-1"
+    "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
+    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"},
@@ -21,6 +18,8 @@
    {:xsd/anyURI
     "https://www.omg.org/spec/LCC/20211101/Languages/ISO639-1-LanguageCodes/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "lcc-639-1",
+   :rdfa/uri "https://www.omg.org/spec/LCC/Languages/ISO639-1-LanguageCodes/",
    :rdfs/label "ISO 639-1 Language Codes Ontology",
    :rdfs/seeAlso
    #{{:xsd/anyURI "http://www.loc.gov/standards/iso639-2/php/code_list.php/"}

@@ -1,27 +1,24 @@
 (ns net.wikipunk.rdf.fibo-fnd-txn-mod
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MetadataFNDTransactionsExt/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fnd-txn-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MetadataFNDTransactionsExt/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fnd-txn-mod",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/TransactionsExt/MetadataFNDTransactionsExt/TransactionsExtModule"}
   {:cmns-av/copyright "Copyright (c) 2017-2023 EDM Council, Inc.",
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/TransactionsExt/MetadataFNDTransactionsExt/TransactionsExtModule",
    :dcterms/abstract
    "This is the metadata ontology used to describe the Foundations Transactions Module.",
    :dcterms/issued #inst "2021-12-27T18:00:00.000-00:00",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :dcterms/modified #inst "2023-01-20T18:00:00.000-00:00",
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fnd-txn-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MetadataFNDTransactionsExt/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -30,6 +27,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/TransactionsExt/MetadataFNDTransactionsExt/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fnd-txn-mod",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MetadataFNDTransactionsExt/",
    :rdfs/label
    "Metadata for the EDMC-FIBO Foundations (FND) TransactionsExt Module",
    :xsd/anyURI

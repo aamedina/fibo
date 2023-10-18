@@ -1,20 +1,4 @@
 (ns net.wikipunk.rdf.cmns-cxtdsg
-  ^{:base       "https://www.omg.org/spec/Commons/ContextualDesignators/",
-    :namespaces {"cmns-av"
-                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-                 "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-                 "cmns-cxtdsg"
-                 "https://www.omg.org/spec/Commons/ContextualDesignators/",
-                 "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-                 "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
-                 "dcterms" "http://purl.org/dc/terms/",
-                 "owl" "http://www.w3.org/2002/07/owl#",
-                 "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                 "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                 "skos" "http://www.w3.org/2004/02/skos/core#",
-                 "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix     "cmns-cxtdsg",
-    :source     "https://www.omg.org/spec/Commons/ContextualDesignators/"}
   {:cmns-av/copyright #{"Copyright (c) 2022 Object Management Group, Inc."
                         "Copyright (c) 2020-2022 Thematix Partners LLC"
                         "Copyright (c) 2020-2022 Working Ontologist LLC"
@@ -25,6 +9,18 @@
                           "Elisa Kendall, Thematix Partners LLC"
                           "Dean Allemang, Working Ontologist"},
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces
+   {"cmns-av"     "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col"    "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg"    "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-dt"     "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "dcterms"     "http://purl.org/dc/terms/",
+    "owl"         "http://www.w3.org/2002/07/owl#",
+    "rdf"         "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs"        "http://www.w3.org/2000/01/rdf-schema#",
+    "skos"        "http://www.w3.org/2004/02/skos/core#",
+    "xsd"         "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
      {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
@@ -34,6 +30,8 @@
    {:xsd/anyURI
     "https://www.omg.org/spec/Commons/20221101/ContextualDesignators/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "cmns-cxtdsg",
+   :rdfa/uri "https://www.omg.org/spec/Commons/ContextualDesignators/",
    :rdfs/label "Commons Contextual Designators Ontology",
    :skos/changeNote
    "https://www.omg.org/spec/Commons/20220501/ContextualDesignators.rdf version of this ontology was modified to eliminate a double space in a note on ContextualName (COMMONS-6) and to require a ContextualName to have context (COMMONS-26).",

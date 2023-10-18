@@ -1,26 +1,23 @@
 (ns net.wikipunk.rdf.fibo-fnd-utl-av
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fnd-utl-av",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/",
    :dcterms/abstract
    "This vocabulary provides a set of metadata annotations for use in describing FIBO ontology elements. The annotations extend properties defined in the OMG's Commons Ontology Library (Commons) Annotation Vocabulary, in the Dublin Core Metadata Terms Vocabulary and in the W3C Simple Knowledge Organization System (SKOS) Vocabulary, and have been customized to suit the FIBO specification development process. \n\nNote that any of the original properties provided in Dublin Core and SKOS can be used in addition to the terms provided herein. However, any Dublin Core terms that are not explicitly defined as OWL annotation properties in this ontology or in any of its imports must be so declared in the ontologies that use them.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Classifiers/"}
                   {:xsd/anyURI
                    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
@@ -28,6 +25,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fnd-utl-av",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
    :rdfs/label "FIBO Annotation Vocabulary",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary.rdf version of this ontology was modified to add common and preferred designations as needed for postal addresses and other purposes, to correct named individuals to be properly declared, and to revise definitions to be ISO 704 compliant."

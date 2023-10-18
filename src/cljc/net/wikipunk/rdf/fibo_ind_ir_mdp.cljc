@@ -1,76 +1,73 @@
 (ns net.wikipunk.rdf.fibo-ind-ir-mdp
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
-     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-corp-corp"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
-     "fibo-be-fct-pub"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
-     "fibo-be-le-cb"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
-     "fibo-be-le-fbo"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
-     "fibo-be-le-lei"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
-     "fibo-fbc-dae-dbt"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
-     "fibo-fbc-fct-bci"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
-     "fibo-fbc-fct-breg"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
-     "fibo-fbc-fct-cajrga"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
-     "fibo-fbc-fct-eufseind"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
-     "fibo-fbc-fct-eurga"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EURegulatoryAgencies/",
-     "fibo-fbc-fct-fse"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
-     "fibo-fbc-fct-ra"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
-     "fibo-fbc-fct-usfsind"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
-     "fibo-fbc-fct-usjrga"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
-     "fibo-fbc-pas-fpas"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
-     "fibo-fnd-dt-bd"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
-     "fibo-fnd-plc-adr"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
-     "fibo-fnd-plc-loc"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-ind-ir-ir"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
-     "fibo-ind-ir-mdp"
-     "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
-     "lcc-3166-1"
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-     "lcc-3166-2-us"
-     "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-ind-ir-mdp",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/InterestRates/MarketDataProviders/"}
   {:cmns-av/copyright #{"Copyright (c) 2020-2023 Object Management Group, Inc."
                         "Copyright (c) 2020-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/InterestRates/MarketDataProviders/",
    :dcterms/abstract
    "This ontology provides reference data for a number of international market data providers, including, but not limited to, those that publish interest rate benchmarks referenced in the published FpML benchmark reference.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-dt" "https://www.omg.org/spec/Commons/DatesAndTimes/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-corp-corp"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/Corporations/Corporations/",
+    "fibo-be-fct-pub"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
+    "fibo-be-le-cb"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
+    "fibo-be-le-fbo"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+    "fibo-be-le-lei"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
+    "fibo-fbc-dae-dbt"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
+    "fibo-fbc-fct-bci"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
+    "fibo-fbc-fct-breg"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+    "fibo-fbc-fct-cajrga"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+    "fibo-fbc-fct-eufseind"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
+    "fibo-fbc-fct-eurga"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EURegulatoryAgencies/",
+    "fibo-fbc-fct-fse"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+    "fibo-fbc-fct-ra"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegistrationAuthorities/",
+    "fibo-fbc-fct-usfsind"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntitiesIndividuals/",
+    "fibo-fbc-fct-usjrga"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+    "fibo-fbc-pas-fpas"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
+    "fibo-fnd-dt-bd"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+    "fibo-fnd-plc-adr"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
+    "fibo-fnd-plc-loc"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-ind-ir-ir"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+    "fibo-ind-ir-mdp"
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
+    "lcc-3166-1"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
+    "lcc-3166-2-us"
+    "https://www.omg.org/spec/LCC/Countries/Regions/ISO3166-2-SubdivisionCodes-US/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/FunctionalEntities/RegistrationAuthorities/"}
@@ -128,6 +125,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/IND/InterestRates/MarketDataProviders/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-ind-ir-mdp",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
    :rdfs/label "Market Data Providers Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders.rdf version of this ontology was revised to clean up the LEI data."
@@ -231,22 +231,6 @@
    :skos/definition
    "individual representing the European Money Markets Institute (EMMI) functional entity that is an international financial information publisher, responsible for the publication of euro-based benchmarks, including Euribor"})
 
-(def FederalReserveBoardH_15RateResetTimeOfDay
-  {:cmns-av/adaptedFrom {:xsd/anyURI
-                         "https://www.federalreserve.gov/releases/h15/"},
-   :cmns-dt/hasTimeValue "T16:15:00",
-   :db/ident :fibo-ind-ir-mdp/FederalReserveBoardH.15RateResetTimeOfDay,
-   :fibo-fnd-dt-bd/hasBusinessDayAdjustment
-   :fibo-fbc-fct-bci/NewYorkFederalReserveBusinessDay,
-   :fibo-fnd-plc-loc/hasBusinessCenter :fibo-fbc-fct-bci/New_York,
-   :rdf/type #{:owl/NamedIndividual :fibo-fbc-dae-dbt/RateResetTimeOfDay},
-   :rdfs/isDefinedBy
-   {:xsd/anyURI
-    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/"},
-   :rdfs/label "Federal Reserve Board H.15 rate reset time of day",
-   :skos/definition
-   "the time of day that the Federal Reserve Board publishes Selected Interest Rates (Daily) in Schedule H.15"})
-
 (def FenicsMarketData
   {:db/ident :fibo-ind-ir-mdp/FenicsMarketData,
    :fibo-fnd-rel-rel/hasIdentity :fibo-ind-ir-mdp/BGCPartnersInc-US-DE,
@@ -316,6 +300,23 @@
    :rdfs/label "Tradition",
    :skos/definition
    "Tradition functional entity that is a financial service and market data provider and division of Compagnie Financiere Tradition"})
+
+(def urn:uuid:f6a8a8c5-bbc4-5f7a-894d-660ca15b96f7
+  {:cmns-av/adaptedFrom {:xsd/anyURI
+                         "https://www.federalreserve.gov/releases/h15/"},
+   :cmns-dt/hasTimeValue "T16:15:00",
+   :fibo-fnd-dt-bd/hasBusinessDayAdjustment
+   :fibo-fbc-fct-bci/NewYorkFederalReserveBusinessDay,
+   :fibo-fnd-plc-loc/hasBusinessCenter :fibo-fbc-fct-bci/New_York,
+   :rdf/type #{:owl/NamedIndividual :fibo-fbc-dae-dbt/RateResetTimeOfDay},
+   :rdfs/isDefinedBy
+   {:xsd/anyURI
+    "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/"},
+   :rdfs/label "Federal Reserve Board H.15 rate reset time of day",
+   :skos/definition
+   "the time of day that the Federal Reserve Board publishes Selected Interest Rates (Daily) in Schedule H.15",
+   :xsd/anyURI
+   "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/FederalReserveBoardH.15RateResetTimeOfDay"})
 
 (def urn:uuid:beeef9ce-8779-5147-9f47-e345f457ca7c
   {:cmns-av/copyright #{"Copyright (c) 2020-2023 Object Management Group, Inc."

@@ -1,17 +1,4 @@
 (ns net.wikipunk.rdf.cmns-dsg
-  ^{:base       "https://www.omg.org/spec/Commons/Designators/",
-    :namespaces {"cmns-av"
-                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-                 "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-                 "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
-                 "dcterms" "http://purl.org/dc/terms/",
-                 "owl" "http://www.w3.org/2002/07/owl#",
-                 "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                 "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                 "skos" "http://www.w3.org/2004/02/skos/core#",
-                 "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix     "cmns-dsg",
-    :source     "https://www.omg.org/spec/Commons/Designators/"}
   {:cmns-av/copyright #{"Copyright (c) 2021-2022 Working Ontologist LLC"
                         "Copyright (c) 2021-2022 Mayo Clinic"
                         "Copyright (c) 2021-2022 agnos.ai U.K. Ltd"
@@ -24,12 +11,24 @@
                           "Elisa Kendall, Thematix Partners LLC"
                           "Dean Allemang, Working Ontologist"},
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces {"cmns-av"
+                "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+                "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+                "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
+                "dcterms" "http://purl.org/dc/terms/",
+                "owl" "http://www.w3.org/2002/07/owl#",
+                "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+                "skos" "http://www.w3.org/2004/02/skos/core#",
+                "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports #{{:xsd/anyURI "https://www.omg.org/spec/Commons/TextDatatype/"}
                   {:xsd/anyURI
                    "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}},
    :owl/versionIRI {:xsd/anyURI
                     "https://www.omg.org/spec/Commons/20221101/Designators/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "cmns-dsg",
+   :rdfa/uri "https://www.omg.org/spec/Commons/Designators/",
    :rdfs/label "Commons Designators Ontology",
    :skos/changeNote
    "The https://www.omg.org/spec/Commons/20220501/Designators.rdf version of this ontology was modified to eliminate a double space in the abstract and a note on Designation (COMMONS-6) and to clarify the definition of designation, denotes, and name, and better align them with ISO 704 / ISO 1087 (COMMONS-26).",

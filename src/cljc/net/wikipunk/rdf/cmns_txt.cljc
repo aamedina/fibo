@@ -1,16 +1,4 @@
 (ns net.wikipunk.rdf.cmns-txt
-  ^{:base       "https://www.omg.org/spec/Commons/TextDatatype/",
-    :namespaces {"cmns-av"
-                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-                 "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
-                 "dcterms" "http://purl.org/dc/terms/",
-                 "owl" "http://www.w3.org/2002/07/owl#",
-                 "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                 "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                 "skos" "http://www.w3.org/2004/02/skos/core#",
-                 "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix     "cmns-txt",
-    :source     "https://www.omg.org/spec/Commons/TextDatatype/"}
   {:cmns-av/copyright #{"Copyright (c) 2022 Object Management Group, Inc."
                         "Copyright (c) 2020-2022 Thematix Partners LLC"
                         "Copyright (c) 2020-2022 Stardog Union"},
@@ -19,11 +7,22 @@
    :dcterms/contributor #{"Evren Sirin, Stardog Union"
                           "Elisa Kendall, Thematix Partners LLC"},
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces {"cmns-av"
+                "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+                "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
+                "dcterms" "http://purl.org/dc/terms/",
+                "owl" "http://www.w3.org/2002/07/owl#",
+                "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+                "skos" "http://www.w3.org/2004/02/skos/core#",
+                "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports {:xsd/anyURI
                  "https://www.omg.org/spec/Commons/AnnotationVocabulary/"},
    :owl/versionIRI {:xsd/anyURI
                     "https://www.omg.org/spec/Commons/20221101/TextDatatype/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "cmns-txt",
+   :rdfa/uri "https://www.omg.org/spec/Commons/TextDatatype/",
    :rdfs/label "Commons Text Datatype Ontology",
    :skos/changeNote
    "The https://www.omg.org/spec/Commons/20220501/TextDatatype.rdf version of this ontology was modified to add a note to the Text datatype that makes a stronger statement about potential adverse reasoning consequences if used (COMMONS-18).",

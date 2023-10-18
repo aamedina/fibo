@@ -1,34 +1,31 @@
 (ns net.wikipunk.rdf.fibo-der-mod
-  ^{:base "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-der-cr-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/MetadataDERCreditDerivatives/",
-     "fibo-der-drc-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/MetadataDERDerivativesContracts/",
-     "fibo-der-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/",
-     "fibo-der-rat-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/MetadataDERRateDerivatives/",
-     "fibo-der-sbd-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/MetadataDERSecurityBasedDerivatives/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-der-mod",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/MetadataDER/DERDomain"}
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2018-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/MetadataDER/DERDomain",
    :dcterms/abstract
    "The Derivatives (DER) Domain covers many of the concepts that are common to derivative instruments, including but not limited to options, futures, forwards, swaps, and a wide range of other derivatives. This ontology provides metadata about the Derivatives Domain and its contents.",
    :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :dcterms/modified #inst "2023-02-03T18:00:00.000-00:00",
+   :namespaces
+   {"cmns-av"      "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms"      "http://purl.org/dc/terms/",
+    "fibo-der-cr-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/MetadataDERCreditDerivatives/",
+    "fibo-der-drc-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/MetadataDERDerivativesContracts/",
+    "fibo-der-mod" "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/",
+    "fibo-der-rat-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/MetadataDERRateDerivatives/",
+    "fibo-der-sbd-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/MetadataDERSecurityBasedDerivatives/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl"          "http://www.w3.org/2002/07/owl#",
+    "rdf"          "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs"         "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd"          "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -45,6 +42,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/DER/MetadataDER/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-der-mod",
+   :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/",
    :rdfs/label "Metadata about the EDMC-FIBO Derivatives (DER) Domain",
    :xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/DER/MetadataDER/"})
 

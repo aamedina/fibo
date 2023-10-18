@@ -1,15 +1,4 @@
 (ns net.wikipunk.rdf.cmns-av
-  ^{:base       "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-    :namespaces {"cmns-av"
-                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-                 "dcterms" "http://purl.org/dc/terms/",
-                 "owl" "http://www.w3.org/2002/07/owl#",
-                 "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                 "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                 "skos" "http://www.w3.org/2004/02/skos/core#",
-                 "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix     "cmns-av",
-    :source     "https://www.omg.org/spec/Commons/AnnotationVocabulary/"}
   {:cmns-av/copyright #{"Copyright (c) 2022 EDM Council, Inc."
                         "Copyright (c) 2022 Object Management Group, Inc."},
    :dcterms/abstract
@@ -18,10 +7,20 @@
    :dcterms/references #{{:xsd/anyURI "http://purl.org/dc/terms/"}
                          {:xsd/anyURI "http://www.w3.org/2004/02/skos/core#"}},
    :dcterms/title "Commons Annotation Vocabulary",
+   :namespaces {"cmns-av"
+                "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+                "dcterms" "http://purl.org/dc/terms/",
+                "owl" "http://www.w3.org/2002/07/owl#",
+                "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+                "skos" "http://www.w3.org/2004/02/skos/core#",
+                "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/versionIRI
    {:xsd/anyURI
     "https://www.omg.org/spec/Commons/20221101/AnnotationVocabulary/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "cmns-av",
+   :rdfa/uri "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
    :rdfs/label "Annotation Vocabulary",
    :skos/changeNote
    "https://www.omg.org/spec/Commons/20220501/AnnotationVocabulary.rdf version of this ontology was modified to normalize the use of rdfs:isDefinedBy for SKOS and Dublin Core annotations (COMMONS-1).",

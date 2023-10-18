@@ -1,32 +1,4 @@
 (ns net.wikipunk.rdf.fibo-fnd-acc-4217
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
-     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-     "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fnd-acc-4217"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
-     "fibo-fnd-acc-cur"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "lcc-3166-1"
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fnd-acc-4217",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/ISO4217-CurrencyCodes/"}
   {:cmns-av/copyright #{"Copyright (c) 2015-2023 EDM Council, Inc."
                         "Copyright (c) 2015-2023 Object Management Group, Inc."
                         "Copyright (c) 2015-2023 Thematix Partners LLC"
@@ -36,12 +8,37 @@
      "ISO 4217:2015 Codes for the representation of currencies and funds"},
    :cmns-av/explanatoryNote
    "This release includes all codes included in the ISO 4217 published code set.",
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/ISO4217-CurrencyCodes/",
    :dcterms/abstract
    "This ontology represents the subset of the ISO 4217 standard that include the actual currency codes.",
    :dcterms/issued #inst "2023-01-01T00:00:00.000-00:00",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :dcterms/modified #inst "2023-03-11T00:00:00.000-00:00",
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cds" "https://www.omg.org/spec/Commons/CodesAndCodeSets/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "cmns-cxtdsg" "https://www.omg.org/spec/Commons/ContextualDesignators/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-id" "https://www.omg.org/spec/Commons/Identifiers/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fnd-acc-4217"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+    "fibo-fnd-acc-cur"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "lcc-3166-1"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -61,6 +58,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Accounting/ISO4217-CurrencyCodes/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fnd-acc-4217",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
    :rdfs/label "ISO 4217-1 Currency Codes Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/ version of this ontology was modified to eliminate unnecessary dependencies on the relations ontology, and to replace rdfs:comment with skos:definition per FIBO policy."

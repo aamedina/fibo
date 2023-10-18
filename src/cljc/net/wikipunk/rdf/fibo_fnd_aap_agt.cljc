@@ -1,31 +1,28 @@
 (ns net.wikipunk.rdf.fibo-fnd-aap-agt
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-     "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fnd-aap-agt"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fnd-aap-agt",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/Agents/"}
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/Agents/",
    :dcterms/abstract
    "This ontology defines the concept of autonomous agent for use in other FIBO ontology elements. As defined here, autonomous agent corresponds to what is often referred to as \"agent\" in software and other systems. It is defined as any entity which is able to act on its own part, and embraces all such things, including people, animals, software agents organizations and all forms of legal persons, although not all of these concepts are elaborated in FIBO as not all are relevant to financial services.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "cmns-txt" "https://www.omg.org/spec/Commons/TextDatatype/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fnd-aap-agt"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -38,6 +35,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/AgentsAndPeople/Agents/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fnd-aap-agt",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/",
    :rdfs/label "Agents Ontology",
    :skos/changeNote
    #{"The https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents.rdf version of this ontology was modified to address hygiene issues with respect to text formatting."

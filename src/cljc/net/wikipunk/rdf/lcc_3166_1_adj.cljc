@@ -1,25 +1,20 @@
 (ns net.wikipunk.rdf.lcc-3166-1-adj
-  ^{:base
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes-Adjunct/",
-    :namespaces
-    {"dcterms" "http://purl.org/dc/terms/",
-     "lcc-3166-1"
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-     "lcc-3166-1-adj"
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes-Adjunct/",
-     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-     "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "lcc-3166-1-adj",
-    :source
-    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes-Adjunct/"}
   {:dcterms/issued #inst "2021-11-07T23:48:51.124-00:00",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces
+   {"dcterms" "http://purl.org/dc/terms/",
+    "lcc-3166-1"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
+    "lcc-3166-1-adj"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes-Adjunct/",
+    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
@@ -29,6 +24,9 @@
    {:xsd/anyURI
     "https://www.omg.org/spec/LCC/20211101/Countries/ISO3166-1-CountryCodes-Adjunct/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "lcc-3166-1-adj",
+   :rdfa/uri
+   "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes-Adjunct/",
    :rdfs/label "ISO 3166-1 Country Codes Adjunct Ontology",
    :skos/changeNote
    #{"This ontology was amended by the LCC 1.2 RTF to reflect the changed URI for North Macedonia (code MK)"

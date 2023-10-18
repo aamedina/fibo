@@ -1,24 +1,21 @@
 (ns net.wikipunk.rdf.cmns-cls
-  ^{:base       "https://www.omg.org/spec/Commons/Classifiers/",
-    :namespaces {"cmns-av"
-                 "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-                 "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
-                 "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-                 "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-                 "dcterms" "http://purl.org/dc/terms/",
-                 "owl" "http://www.w3.org/2002/07/owl#",
-                 "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                 "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                 "skos" "http://www.w3.org/2004/02/skos/core#",
-                 "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix     "cmns-cls",
-    :source     "https://www.omg.org/spec/Commons/Classifiers/"}
   {:cmns-av/copyright #{"Copyright (c) 2014-2022 EDM Council, Inc."
                         "Copyright (c) 2022 Object Management Group, Inc."
                         "Copyright (c) 2014-2022 Thematix Partners LLC"},
    :dcterms/abstract
    "This ontology defines abstract concepts for representation of classification schemes that enable the classification of arbitrary concepts into hierarchies (or partial orders) for use in many other ontologies, derived in part from the patterns defined in ISO 1087-1 for terminology work and ISO 11179-3, Metadata Registries.",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces {"cmns-av"
+                "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+                "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+                "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+                "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+                "dcterms" "http://purl.org/dc/terms/",
+                "owl" "http://www.w3.org/2002/07/owl#",
+                "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+                "skos" "http://www.w3.org/2004/02/skos/core#",
+                "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports #{{:xsd/anyURI "https://www.omg.org/spec/Commons/Collections/"}
                   {:xsd/anyURI "https://www.omg.org/spec/Commons/Designators/"}
                   {:xsd/anyURI
@@ -26,6 +23,8 @@
    :owl/versionIRI {:xsd/anyURI
                     "https://www.omg.org/spec/Commons/20221101/Classifiers/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "cmns-cls",
+   :rdfa/uri "https://www.omg.org/spec/Commons/Classifiers/",
    :rdfs/label "Commons Classifiers Ontology",
    :skos/changeNote
    "https://www.omg.org/spec/Commons/20220501/Classifiers.rdf version of this ontology was modified to eliminate a double space in a note on ClassificationScheme (COMMONS-6), loosen the constraints on the restriction on Classifier for property classifies (COMMONS-9), and add a boolean property allowing users to state that only one classifier from a particular scheme can be used to classify something (i.e., the classifiers in the scheme are mutually exclusive and only one can apply to the thing being classified).",

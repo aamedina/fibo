@@ -1,22 +1,20 @@
 (ns net.wikipunk.rdf.sm
-  ^{:base       "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-    :namespaces {"dcterms" "http://purl.org/dc/terms/",
-                 "owl" "http://www.w3.org/2002/07/owl#",
-                 "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                 "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                 "skos" "http://www.w3.org/2004/02/skos/core#",
-                 "sm"
-                 "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-                 "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix     "sm",
-    :source     "http://www.omg.org/techprocess/ab/SpecificationMetadata/"}
   {:dcterms/license :sm/MITLicense,
    :dcterms/source {:xsd/anyURI "http://www.omg.org/cgi-bin/doc?pp"},
+   :namespaces {"dcterms" "http://purl.org/dc/terms/",
+                "owl" "http://www.w3.org/2002/07/owl#",
+                "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+                "skos" "http://www.w3.org/2004/02/skos/core#",
+                "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
+                "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports {:xsd/anyURI "http://www.w3.org/2004/02/skos/core"},
    :owl/versionIRI
    {:xsd/anyURI
     "http://www.omg.org/techprocess/ab/20140801/SpecificationMetadata/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "sm",
+   :rdfa/uri "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
    :rdfs/label "Specification Metadata (SM) Vocabulary",
    :skos/changeNote
    #{"The ontology was revised in July, 2013, as follows:\n   (1) to use slash style URI/IRIss (also called 303 URIs, vs. hash style) as required to support server side processing and specifically for the Financial Industry Business Ontology (FIBO) and other forthcoming OMG ontology specifications  \n   (2) to introduce the use of version-independent IRIs for all definitions internally as opposed to version-specific IRIs\n   (3) to change the file suffix from .owl to .rdf to increase usability in RDF tools\n   (4) to extend the file-level metadata to allow for cases such as FIBO, where the specification includes family, specification, spcification version, module, and ontology level detail that should be documented via annotations (e.g., family level of FIBO, specification level of Foundations, module level such as Utilities, and ontology level including annotation vocabulary, business types, and relations) \n   (5) to make other minor corrections in the metadata and definitions for clarification purposes"

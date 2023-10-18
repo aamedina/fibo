@@ -1,21 +1,7 @@
 (ns net.wikipunk.rdf.gleif-elf
-  ^{:base "https://www.gleif.org/ontology/EntityLegalForm/",
-    :namespaces
-    {"dcterms" "http://purl.org/dc/terms/",
-     "gleif-base" "https://www.gleif.org/ontology/Base/",
-     "gleif-elf" "https://www.gleif.org/ontology/EntityLegalForm/",
-     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "vann" "http://purl.org/vocab/vann/",
-     "voaf" "http://purl.org/vocommons/voaf#",
-     "xml" "http://www.w3.org/XML/1998/namespace",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "gleif-elf",
-    :source "https://www.gleif.org/ontology/v1.0/EntityLegalForm/ontology.ttl"}
-  {:dcterms/abstract
+  {:dcat/downloadURL
+   "https://www.gleif.org/ontology/v1.0/EntityLegalForm/ontology.ttl",
+   :dcterms/abstract
    {:rdf/language "en",
     :rdf/value
     "Ontology defining concepts for Entity Legal Forms and their abbreviations by jurisdiction, based on ISO 20275. Though used by Global Legal Entity Identifier Foundation (GLEIF)  for Legal Entity Identifier registration, it is more broadly applicable."},
@@ -35,6 +21,19 @@
     "https://www.gleif.org/en/about-lei/code-lists/iso-20275-entity-legal-forms-code-list"},
    :dcterms/title {:rdf/language "en",
                    :rdf/value    "Entity Legal Form Ontology"},
+   :namespaces {"dcterms" "http://purl.org/dc/terms/",
+                "gleif-base" "https://www.gleif.org/ontology/Base/",
+                "gleif-elf" "https://www.gleif.org/ontology/EntityLegalForm/",
+                "lcc-cr"
+                "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+                "owl" "http://www.w3.org/2002/07/owl#",
+                "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+                "skos" "http://www.w3.org/2004/02/skos/core#",
+                "vann" "http://purl.org/vocab/vann/",
+                "voaf" "http://purl.org/vocommons/voaf#",
+                "xml" "http://www.w3.org/XML/1998/namespace",
+                "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI "https://www.gleif.org/ontology/Base/"}
      {:xsd/anyURI
@@ -43,6 +42,8 @@
    {:xsd/anyURI
     "https://www.gleif.org/ontology/EntityLegalForm-v1.0/EntityLegalForm/"},
    :rdf/type #{:owl/Ontology :voaf/Vocabulary},
+   :rdfa/prefix "gleif-elf",
+   :rdfa/uri "https://www.gleif.org/ontology/EntityLegalForm/",
    :rdfs/label "Entity Legal Form Ontology",
    :vann/preferredNamespacePrefix "gleif-elf",
    :vann/preferredNamespaceUri

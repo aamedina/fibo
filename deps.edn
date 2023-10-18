@@ -1,6 +1,6 @@
 {:deps
  {io.github.aamedina/rdf
-  {:sha     "dfcc3bf6ec088ce1af538b68104c312b08c65c94"
+  {:sha     "ac470d53b861cda30904ff21532ecafa23ab3b7b"
    :git/url "https://github.com/aamedina/rdf.git"}}
  :paths ["src/clj" "src/cljc" "classes" "resources"]
  :aliases

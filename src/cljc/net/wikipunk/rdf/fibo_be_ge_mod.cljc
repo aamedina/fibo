@@ -1,28 +1,25 @@
 (ns net.wikipunk.rdf.fibo-be-ge-mod
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/MetadataBEGovernmentEntities/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-be-ge-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/MetadataBEGovernmentEntities/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-be-ge-mod",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/MetadataBEGovernmentEntities/GovernmentEntitiesModule"}
   {:cmns-av/copyright
    #{"Copyright (c) 2021-2023 EDM Council, Inc."
      "Copyright (c) 2021-2023 Object Management Group, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/MetadataBEGovernmentEntities/GovernmentEntitiesModule",
    :dcterms/abstract
    "The government entities module includes ontologies describing polities, government entities and their relations.",
    :dcterms/issued #inst "2021-06-28T18:00:00.000-00:00",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :dcterms/modified #inst "2023-01-27T18:00:00.000-00:00",
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-be-ge-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/MetadataBEGovernmentEntities/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -31,6 +28,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/BE/GovernmentEntities/MetadataBEGovernmentEntities/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-be-ge-mod",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/MetadataBEGovernmentEntities/",
    :rdfs/label
    "Metadata about the EDMC-FIBO Business Entities (BE) Government Entities Module",
    :xsd/anyURI

@@ -1,34 +1,31 @@
 (ns net.wikipunk.rdf.fibo-sec-mod
-  ^{:base "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-sec-dbt-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MetadataSECDebt/",
-     "fibo-sec-eq-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/MetadataSECEquities/",
-     "fibo-sec-fnd-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/MetadataSECFunds/",
-     "fibo-sec-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/",
-     "fibo-sec-sec-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/MetadataSECSecurities/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-sec-mod",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/MetadataSEC/SECDomain"}
   {:cmns-av/copyright #{"Copyright (c) 2018-2023 Object Management Group, Inc."
                         "Copyright (c) 2018-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/MetadataSEC/SECDomain",
    :dcterms/abstract
    "The Securities (SEC) Domain covers many of the concepts that are common to a wide variety of securities as well as those specific to equities and various debt instruments, including but not limited to bonds and a wide range of asset-backed securities. This ontology provides metadata about the Securities Domain and its contents.",
    :dcterms/issued #inst "2018-03-31T18:00:00.000-00:00",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
    :dcterms/modified #inst "2023-02-03T18:00:00.000-00:00",
+   :namespaces
+   {"cmns-av"      "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms"      "http://purl.org/dc/terms/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-sec-dbt-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/MetadataSECDebt/",
+    "fibo-sec-eq-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/MetadataSECEquities/",
+    "fibo-sec-fnd-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/MetadataSECFunds/",
+    "fibo-sec-mod" "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/",
+    "fibo-sec-sec-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/MetadataSECSecurities/",
+    "owl"          "http://www.w3.org/2002/07/owl#",
+    "rdf"          "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs"         "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd"          "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -45,6 +42,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/SEC/MetadataSEC/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-sec-mod",
+   :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/",
    :rdfs/label "Metadata about the EDMC-FIBO Securities (SEC) Domain",
    :xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/SEC/MetadataSEC/"})
 

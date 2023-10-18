@@ -1,34 +1,31 @@
 (ns net.wikipunk.rdf.fibo-cae-ce-GLEIF
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
-     "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-cae-ce-GLEIF"
-     "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
-     "fibo-cae-ce-act"
-     "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
-     "fibo-fbc-dae-cre"
-     "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-cae-ce-GLEIF",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"}
   {:cmns-av/copyright "Copyright (c) 2022-2023 EDM Council, Inc.",
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
    :dcterms/abstract
    "This ontology includes the codes for corporate action events as specified in GLEIF LEI Common Data Format (CDF) schema, as of 4 March 2021.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Provisional,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-cls" "https://www.omg.org/spec/Commons/Classifiers/",
+    "cmns-dsg" "https://www.omg.org/spec/Commons/Designators/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-cae-ce-GLEIF"
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
+    "fibo-cae-ce-act"
+    "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
+    "fibo-fbc-dae-cre"
+    "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FBC/DebtAndEquities/CreditEvents/"}
@@ -45,6 +42,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-cae-ce-GLEIF",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/GLEIF-CorporateActionIndividuals/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "GLEIF Corporate Action Individuals Ontology"},
    :xsd/anyURI

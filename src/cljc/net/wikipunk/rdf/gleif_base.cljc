@@ -1,20 +1,6 @@
 (ns net.wikipunk.rdf.gleif-base
-  ^{:base "https://www.gleif.org/ontology/Base/",
-    :namespaces
-    {"dcterms" "http://purl.org/dc/terms/",
-     "gleif-base" "https://www.gleif.org/ontology/Base/",
-     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "vann" "http://purl.org/vocab/vann/",
-     "voaf" "http://purl.org/vocommons/voaf#",
-     "xml" "http://www.w3.org/XML/1998/namespace",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "gleif-base",
-    :source "https://www.gleif.org/ontology/v1.0/Base/ontology.ttl"}
-  {:dcterms/abstract
+  {:dcat/downloadURL "https://www.gleif.org/ontology/v1.0/Base/ontology.ttl",
+   :dcterms/abstract
    {:rdf/language "en",
     :rdf/value
     "Ontology defining generic concepts for reuse by other Global Legal Entity Identifier Foundation (GLEIF) ontologies. It defines generic classes for (legal) Entities and their relationships and statuses; and generic properties for different types of name and address. It makes use of the OMG Languages Countries and Codes (LCC) ontology (based on the ISO 3166 standard) for country and region information."},
@@ -35,12 +21,26 @@
    :dcterms/title {:rdf/language "en",
                    :rdf/value
                    "Global Legal Entity Identifier Foundation Base Ontology"},
+   :namespaces {"dcterms" "http://purl.org/dc/terms/",
+                "gleif-base" "https://www.gleif.org/ontology/Base/",
+                "lcc-cr"
+                "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+                "owl" "http://www.w3.org/2002/07/owl#",
+                "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+                "skos" "http://www.w3.org/2004/02/skos/core#",
+                "vann" "http://purl.org/vocab/vann/",
+                "voaf" "http://purl.org/vocommons/voaf#",
+                "xml" "http://www.w3.org/XML/1998/namespace",
+                "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"},
    :owl/versionIRI {:xsd/anyURI
                     "https://www.gleif.org/ontology/Base-v1.0/Base/"},
    :rdf/type #{:owl/Ontology :voaf/Vocabulary},
+   :rdfa/prefix "gleif-base",
+   :rdfa/uri "https://www.gleif.org/ontology/Base/",
    :rdfs/label {:rdf/language "en",
                 :rdf/value    "GLEIF Base Ontology"},
    :vann/preferredNamespacePrefix "gleif-base",

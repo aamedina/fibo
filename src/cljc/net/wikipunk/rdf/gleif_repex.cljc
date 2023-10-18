@@ -1,23 +1,7 @@
 (ns net.wikipunk.rdf.gleif-repex
-  ^{:base "https://www.gleif.org/ontology/ReportingException/",
-    :namespaces {"dcterms" "http://purl.org/dc/terms/",
-                 "gleif-L1" "https://www.gleif.org/ontology/L1/",
-                 "gleif-L2" "https://www.gleif.org/ontology/L1/",
-                 "gleif-base" "https://www.gleif.org/ontology/Base/",
-                 "gleif-repex"
-                 "https://www.gleif.org/ontology/ReportingException/",
-                 "owl" "http://www.w3.org/2002/07/owl#",
-                 "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                 "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-                 "skos" "http://www.w3.org/2004/02/skos/core#",
-                 "vann" "http://purl.org/vocab/vann/",
-                 "voaf" "http://purl.org/vocommons/voaf#",
-                 "xml" "http://www.w3.org/XML/1998/namespace",
-                 "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "gleif-repex",
-    :source
-    "https://www.gleif.org/ontology/v1.0/ReportingException/ontology.ttl"}
-  {:dcterms/abstract
+  {:dcat/downloadURL
+   "https://www.gleif.org/ontology/v1.0/ReportingException/ontology.ttl",
+   :dcterms/abstract
    "Ontology for representing exceptions to reporting of parents, for entities registered with a Legal Entity Identifier. The Global Legal Identifier System (GLEIS) requires that legal entities with an LEI provide information on their ultimate and direct accounting consolidating parents. Relationship reporting is mandatory with exceptions allowed for certain well-defined reasons. This ontology provides a simple structure for recording reasons for each exception by LEI.",
    :dcterms/contributor #{{:xsd/anyURI "http://purl.org/bryon"}
                           {:xsd/anyURI "http://www.workingontologist.com"}
@@ -37,12 +21,28 @@
    {:rdf/language "en",
     :rdf/value
     "Global Legal Entity Identifier Foundation Reporting Exception Ontology"},
+   :namespaces {"dcterms" "http://purl.org/dc/terms/",
+                "gleif-L1" "https://www.gleif.org/ontology/L1/",
+                "gleif-L2" "https://www.gleif.org/ontology/L1/",
+                "gleif-base" "https://www.gleif.org/ontology/Base/",
+                "gleif-repex"
+                "https://www.gleif.org/ontology/ReportingException/",
+                "owl" "http://www.w3.org/2002/07/owl#",
+                "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+                "skos" "http://www.w3.org/2004/02/skos/core#",
+                "vann" "http://purl.org/vocab/vann/",
+                "voaf" "http://purl.org/vocommons/voaf#",
+                "xml" "http://www.w3.org/XML/1998/namespace",
+                "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports #{{:xsd/anyURI "https://www.gleif.org/ontology/L2/"}
                   {:xsd/anyURI "https://www.gleif.org/ontology/L1/"}},
    :owl/versionIRI
    {:xsd/anyURI
     "https://www.gleif.org/ontology/ReportingException-v1.0/ReportingException/"},
    :rdf/type #{:owl/Ontology :voaf/Vocabulary},
+   :rdfa/prefix "gleif-repex",
+   :rdfa/uri "https://www.gleif.org/ontology/ReportingException/",
    :rdfs/label "GLEIF Reporting Exception Ontology",
    :vann/preferredNamespacePrefix "gleif-repex",
    :vann/preferredNamespaceUri

@@ -1,27 +1,24 @@
 (ns net.wikipunk.rdf.fibo-fnd-oac-mod
-  ^{:base
-    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fnd-oac-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fnd-oac-mod",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/OwnershipAndControlModule"}
   {:cmns-av/copyright #{"Copyright (c) 2017-2023 Object Management Group, Inc."
                         "Copyright (c) 2017-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/OwnershipAndControlModule",
    :dcterms/abstract
    "This is the metadata ontology used to describe the Foundations Ownership and Control Module.",
    :dcterms/issued #inst "2018-08-27T18:00:00.000-00:00",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :dcterms/modified #inst "2023-01-20T18:00:00.000-00:00",
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fnd-oac-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -30,6 +27,9 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fnd-oac-mod",
+   :rdfa/uri
+   "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/",
    :rdfs/label
    "Metadata for the EDMC-FIBO Foundations (FND) Ownership and Control Module",
    :xsd/anyURI

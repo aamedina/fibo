@@ -1,18 +1,15 @@
 (ns net.wikipunk.rdf.lcc-cr
-  ^{:base "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-    :namespaces
-    {"dcterms" "http://purl.org/dc/terms/",
-     "lcc-cr"  "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-     "lcc-lr"  "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
-     "owl"     "http://www.w3.org/2002/07/owl#",
-     "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
-     "skos"    "http://www.w3.org/2004/02/skos/core#",
-     "sm"      "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-     "xsd"     "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "lcc-cr",
-    :source "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/"}
   {:dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces
+   {"dcterms" "http://purl.org/dc/terms/",
+    "lcc-cr"  "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+    "lcc-lr"  "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
+    "owl"     "http://www.w3.org/2002/07/owl#",
+    "rdf"     "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs"    "http://www.w3.org/2000/01/rdf-schema#",
+    "skos"    "http://www.w3.org/2004/02/skos/core#",
+    "sm"      "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
+    "xsd"     "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    {:xsd/anyURI
     "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"},
@@ -20,6 +17,8 @@
    {:xsd/anyURI
     "https://www.omg.org/spec/LCC/20211101/Countries/CountryRepresentation/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "lcc-cr",
+   :rdfa/uri "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
    :rdfs/label "Country and Subdivision Representation Ontology",
    :rdfs/seeAlso #{{:xsd/anyURI
                     "https://www.omg.org/spec/LCC/Countries/AboutCountries/"}

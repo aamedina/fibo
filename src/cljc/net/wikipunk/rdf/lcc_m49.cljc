@@ -1,22 +1,19 @@
 (ns net.wikipunk.rdf.lcc-m49
-  ^{:base "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
-    :namespaces
-    {"dcterms" "http://purl.org/dc/terms/",
-     "lcc-3166-1"
-     "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
-     "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
-     "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
-     "lcc-m49" "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "lcc-m49",
-    :source "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/"}
   {:dcterms/issued #inst "2021-11-07T23:48:51.124-00:00",
    :dcterms/license {:xsd/anyURI "http://opensource.org/licenses/MIT"},
+   :namespaces
+   {"dcterms" "http://purl.org/dc/terms/",
+    "lcc-3166-1"
+    "https://www.omg.org/spec/LCC/Countries/ISO3166-1-CountryCodes/",
+    "lcc-cr" "https://www.omg.org/spec/LCC/Countries/CountryRepresentation/",
+    "lcc-lr" "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/",
+    "lcc-m49" "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "sm" "http://www.omg.org/techprocess/ab/SpecificationMetadata/",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://www.omg.org/spec/LCC/Languages/LanguageRepresentation/"}
@@ -28,6 +25,8 @@
    {:xsd/anyURI
     "https://www.omg.org/spec/LCC/20211101/Countries/UN-M49-RegionCodes/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "lcc-m49",
+   :rdfa/uri "https://www.omg.org/spec/LCC/Countries/UN-M49-RegionCodes/",
    :rdfs/label
    "United Nations Standard Country or Area Codes for Statistical Use (M49 Geographic Region Codes) Ontology",
    :rdfs/seeAlso #{{:xsd/anyURI

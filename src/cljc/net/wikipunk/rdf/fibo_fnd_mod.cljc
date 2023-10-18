@@ -1,57 +1,54 @@
 (ns net.wikipunk.rdf.fibo-fnd-mod
-  ^{:base "https://spec.edmcouncil.org/fibo/ontology/FND/MetadataFND/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fnd-aap-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/MetadataFNDAgentsAndPeople/",
-     "fibo-fnd-acc-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/MetadataFNDAccounting/",
-     "fibo-fnd-agr-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/MetadataFNDAgreements/",
-     "fibo-fnd-arr-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/MetadataFNDArrangements/",
-     "fibo-fnd-dt-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/MetadataFNDDatesAndTimes/",
-     "fibo-fnd-gao-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/MetadataFNDGoalsAndObjectives/",
-     "fibo-fnd-law-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/MetadataFNDLaw/",
-     "fibo-fnd-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/MetadataFND/",
-     "fibo-fnd-oac-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/",
-     "fibo-fnd-org-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/MetadataFNDOrganizations/",
-     "fibo-fnd-pas-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/MetadataFNDProductsAndServices/",
-     "fibo-fnd-plc-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Places/MetadataFNDPlaces/",
-     "fibo-fnd-pty-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/MetadataFNDParties/",
-     "fibo-fnd-qt-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/MetadataFNDQuantities/",
-     "fibo-fnd-rel-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/MetadataFNDRelations/",
-     "fibo-fnd-txn-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MetadataFNDTransactionsExt/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "fibo-fnd-utl-mod"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/MetadataFNDUtilities/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fnd-mod",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/MetadataFND/FNDDomain"}
   {:cmns-av/copyright #{"Copyright (c) 2013-2023 Object Management Group, Inc."
                         "Copyright (c) 2013-2023 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/MetadataFND/FNDDomain",
    :dcterms/abstract "The 'metadata for FND' describes the FND domain.",
    :dcterms/issued #inst "2021-03-29T18:00:00.000-00:00",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :dcterms/modified #inst "2023-03-31T18:00:00.000-00:00",
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fnd-aap-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/MetadataFNDAgentsAndPeople/",
+    "fibo-fnd-acc-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/MetadataFNDAccounting/",
+    "fibo-fnd-agr-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/MetadataFNDAgreements/",
+    "fibo-fnd-arr-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/MetadataFNDArrangements/",
+    "fibo-fnd-dt-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/MetadataFNDDatesAndTimes/",
+    "fibo-fnd-gao-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/MetadataFNDGoalsAndObjectives/",
+    "fibo-fnd-law-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/MetadataFNDLaw/",
+    "fibo-fnd-mod" "https://spec.edmcouncil.org/fibo/ontology/FND/MetadataFND/",
+    "fibo-fnd-oac-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/MetadataFNDOwnershipAndControl/",
+    "fibo-fnd-org-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/MetadataFNDOrganizations/",
+    "fibo-fnd-pas-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/MetadataFNDProductsAndServices/",
+    "fibo-fnd-plc-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Places/MetadataFNDPlaces/",
+    "fibo-fnd-pty-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/MetadataFNDParties/",
+    "fibo-fnd-qt-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Quantities/MetadataFNDQuantities/",
+    "fibo-fnd-rel-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/MetadataFNDRelations/",
+    "fibo-fnd-txn-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/MetadataFNDTransactionsExt/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "fibo-fnd-utl-mod"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/MetadataFNDUtilities/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/MetadataFNDLaw/"}
@@ -92,6 +89,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/MetadataFND/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fnd-mod",
+   :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/MetadataFND/",
    :rdfs/label "Metadata for the EDMC-FIBO Foundations (FND) Domain",
    :xsd/anyURI "https://spec.edmcouncil.org/fibo/ontology/FND/MetadataFND/"})
 

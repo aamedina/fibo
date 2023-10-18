@@ -1,31 +1,29 @@
 (ns net.wikipunk.rdf.fibo-fnd-law-cor
-  ^{:base "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
-    :namespaces
-    {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
-     "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
-     "dcterms" "http://purl.org/dc/terms/",
-     "fibo-fnd-law-cor"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
-     "fibo-fnd-org-fm"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
-     "fibo-fnd-rel-rel"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
-     "fibo-fnd-utl-av"
-     "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
-     "owl" "http://www.w3.org/2002/07/owl#",
-     "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-     "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
-     "skos" "http://www.w3.org/2004/02/skos/core#",
-     "xsd" "http://www.w3.org/2001/XMLSchema#"},
-    :prefix "fibo-fnd-law-cor",
-    :source
-    "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/"}
   {:cmns-av/copyright #{"Copyright (c) 2013-2022 Object Management Group, Inc."
                         "Copyright (c) 2013-2022 EDM Council, Inc."},
+   :dcat/downloadURL
+   "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/",
    :dcterms/abstract
    "This ontology defines high-level legal concepts for use in other FIBO ontology elements. These concepts include law and constitution, both of which are framed at a more abstract level than national or state laws and constitutions, so that law forms the basis both for statutes and for company by-laws, and constitution forms the basis both for national or state constitutions and for instruments which are constitutive of incorporated legal entities. This ontology also defines some of the variants of these such as governmental constitutions and ordinances. Court of Law is also defined here.",
    :dcterms/license {:xsd/anyURI "https://opensource.org/licenses/MIT"},
    :fibo-fnd-utl-av/hasMaturityLevel :fibo-fnd-utl-av/Release,
+   :namespaces
+   {"cmns-av" "https://www.omg.org/spec/Commons/AnnotationVocabulary/",
+    "cmns-col" "https://www.omg.org/spec/Commons/Collections/",
+    "dcterms" "http://purl.org/dc/terms/",
+    "fibo-fnd-law-cor"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
+    "fibo-fnd-org-fm"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+    "fibo-fnd-rel-rel"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+    "fibo-fnd-utl-av"
+    "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+    "owl" "http://www.w3.org/2002/07/owl#",
+    "rdf" "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs" "http://www.w3.org/2000/01/rdf-schema#",
+    "skos" "http://www.w3.org/2004/02/skos/core#",
+    "xsd" "http://www.w3.org/2001/XMLSchema#"},
    :owl/imports
    #{{:xsd/anyURI
       "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Utilities/AnnotationVocabulary/"}
@@ -39,6 +37,8 @@
    {:xsd/anyURI
     "https://spec.edmcouncil.org/fibo/ontology/master/2023Q3/FND/Law/LegalCore/"},
    :rdf/type :owl/Ontology,
+   :rdfa/prefix "fibo-fnd-law-cor",
+   :rdfa/uri "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
    :rdfs/label "Legal Core Ontology",
    :skos/changeNote
    #{"The http://www.omg.org/spec/EDMC-FIBO/FND/20141101/Law/LegalCore.rdf version of the ontology was was modified per the FIBO 2.0 RFC."
